@@ -7,14 +7,14 @@ and its anchor must change together. The same is true of a `*"…"*` quotation p
 anchor. This probe finds both, so a directory move can be priced before it happens and re-checked
 after it.
 
-The anchor set is the **moved** surface only — `notes/<page>.md|tsv`, `notes/reports/…`,
-`notes/development/…`, `notes/tables/…`. A pattern that allows `/` freely in the body matches anchors
-naming directories the reorg leaves in place (`notes/index/README.md:12`), which would read as an
+The anchor set is the **moved** surface only — `notes/<page>.md|tsv`, `notes/gen/reports/…`,
+`notes/development/…`, `notes/gen/tables/…`. A pattern that allows `/` freely in the body matches anchors
+naming directories the reorg leaves in place (`notes/gen/index/README.md:12`), which would read as an
 attributed block that no move touches. Recorded baseline: 0 attributed blocks, 4 quotation lines in
 `t0-chains.md` = 4 anchored citations. The fifth was a quotation in `summaries-workflow.md` whose
 anchor is now a code span, so that line no longer carries a quotation.
 
-Scope is the 30 pages the reorg moves: the top-level `notes/*.md`, plus `notes/reports/*.md` and
+Scope is the 30 pages the reorg moves: the top-level `notes/*.md`, plus `notes/gen/reports/*.md` and
 `notes/development/*.md` once those directories exist. Report-only: writes nothing.
 """
 

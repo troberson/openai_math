@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write notes/tables/gate-rows.tsv: the wall time of each row of the last completed gate run.
+"""Write notes/gen/tables/gate-rows.tsv: the wall time of each row of the last completed gate run.
 
 The report is **read**, not produced. `.qwen/tmp/reports/gate_run1.txt` is the driver's output for the
 last completed run, and the driver truncates it at run start, so a writer reading it sees the previous

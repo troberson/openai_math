@@ -39,7 +39,7 @@ The clean test asserts the passes are silent and proves each one non-vacuous **a
 it reads**, not against a recorded measurement: the anchor count equals the anchors the page carries,
 the phrase count equals `count_phrases(population())` plus the four site-paragraph phrases, the
 atomicity and env counts equal their site-set sizes, all sync scripts are `verify_*`, the purity table
-is a non-empty subset of the probe parse, the TSV count equals the `notes/tables/` tree and the
+is a non-empty subset of the probe parse, the TSV count equals the `notes/gen/tables/` tree and the
 probe-record count equals the tracked record tree. The figures with no invariant to state — the three
 `du` sizes, the probe wall and opens, the CLI wall, the gate and writer row counts — are asserted
 positive, which is all a measured size can be tested for. A pass that reads nothing fails.
@@ -182,9 +182,9 @@ MUTANTS = [
     # template text, not a slot, so the count pass never reads it: the needle is the page line the
     # render diff names.
     ("TSV count understated",
-     lambda c, mod, p: render_needle(c, f"**{p['tsv_count'] - 1}** `notes/tables/*.tsv` present on disk"),
-     lambda t, p, mod: t.replace(f"**{p['tsv_count']}** `notes/tables/*.tsv` present on disk",
-                            f"**{p['tsv_count'] - 1}** `notes/tables/*.tsv` present on disk", 1)),
+     lambda c, mod, p: render_needle(c, f"**{p['tsv_count'] - 1}** `notes/gen/tables/*.tsv` present on disk"),
+     lambda t, p, mod: t.replace(f"**{p['tsv_count']}** `notes/gen/tables/*.tsv` present on disk",
+                            f"**{p['tsv_count'] - 1}** `notes/gen/tables/*.tsv` present on disk", 1)),
     # The probe-record count is measured from the tracked record tree, so a page that names a record
     # the tree does not carry is caught by the count pass.
     ("probe record count understated",
@@ -268,7 +268,7 @@ def test_clean_page(mod, text):
     # The purity table is the mode-verified subset of the probe parse, so the invariant is the
     # containment; the equality of the page's rows with the subset is what the row scan asserts.
     assert 0 < len(p["purity"]) <= len(p["rows"]), f"purity {len(p['purity'])}, rows {len(p['rows'])}"
-    tsv = len(list((mod.ROOT / "notes" / "tables").glob("*.tsv")))
+    tsv = len(list((mod.ROOT / "notes" / "gen" / "tables").glob("*.tsv")))
     assert p["tsv_count"] == tsv and p["tsv_bytes"] > 0, f"tsv count {p['tsv_count']} vs tree {tsv}"
     # The page counts the tracked record tree; mod.PROBE is the two records the probe parse
     # reads, which is a narrower set, so the invariant is the tree the page counts.

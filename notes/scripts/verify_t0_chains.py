@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Verify every citation, quotation, table row, and count in notes/reports/t0-chains.md.
+r"""Verify every citation, quotation, table row, and count in notes/gen/reports/t0-chains.md.
 
 Report-only: writes nothing, runs nothing. Lean is never invoked, so nothing here proves a theorem.
 
@@ -13,11 +13,11 @@ Checks, in order:
   3. every *"…"* quotation is pinned to an anchor in its own row (an anchor earlier in the same
      line, else the last anchor in the contiguous lines above it) and must appear verbatim,
      modulo whitespace, on that anchored line;
-  4. the count phrases are re-derived from notes/tables/catalog.tsv, notes/tables/subfindings.tsv,
-     notes/reports/t0-triage.md and the .bib layer by importing extract_t0_chains;
+  4. the count phrases are re-derived from notes/gen/tables/catalog.tsv, notes/gen/tables/subfindings.tsv,
+     notes/gen/reports/t0-triage.md and the .bib layer by importing extract_t0_chains;
   5. the 27-row summary table and the 5-row chain table are re-derived field by field;
   6. the 27 per-family blocks match the population, each names exactly its own two manuscripts
-     with titles that match notes/tables/subfindings.tsv and sit verbatim on the family's anchor line,
+     with titles that match notes/gen/tables/subfindings.tsv and sit verbatim on the family's anchor line,
      and each Citation layer line matches the recomputed .bib / edge / mutual counts;
   7. the named mutual, one-directional, no-edge and no-.bib lists match the recomputation;
   8. family 268's two verification directories exist;
@@ -47,7 +47,7 @@ from catlib.paths import NOTES, ROOT, owner
 from catlib.preprints import listed_dirs_from_contents
 from catlib.text import collapse_ws, first_group
 
-PAGE = NOTES / "reports" / "t0-chains.md"
+PAGE = NOTES / "gen" / "reports" / "t0-chains.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_MAN)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 HEAD = re.compile(r"^### (\d{3}) — ")

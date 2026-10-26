@@ -40,7 +40,7 @@ WRITE_MODES = {"w", "wb", "a", "ab", "x", "xb", "w+", "wb+", "a+", "ab+", "x+", 
 
 TOP_PREFIXES = ("preprints/", "lean/", "notes/", "reasoning_traces/", ".git/")
 BUCKET_PREFIXES = ("preprints/", "lean/OAI/", "lean/ComparatorChallenges/", "lean/docs/",
-                   "notes/index/", "notes/summaries/", "notes/scripts/", "notes/templates/",
+                   "notes/gen/index/", "notes/gen/summaries/", "notes/scripts/", "notes/templates/",
                    "notes/", "reasoning_traces/", ".git/", "upstream_history/")
 
 opens: collections.Counter = collections.Counter()

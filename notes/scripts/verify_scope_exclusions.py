@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every citation in notes/reports/scope-exclusions.md against the shipped scope notes. Writes nothing.
+"""Verify every citation in notes/gen/reports/scope-exclusions.md against the shipped scope notes. Writes nothing.
 
 The page carries one table row per family with a scope note. Each row is either **None stated.** or a
 sequence of “quotation” `lean/docs/NNN.md:<line>` pairs. Five passes read the same rows:
@@ -37,7 +37,7 @@ from catlib.paths import DOCS_DIR
 from catlib.text import strip_markup as norm
 
 ROOT = Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "reports" / "scope-exclusions.md"
+PAGE = ROOT / "notes" / "gen" / "reports" / "scope-exclusions.md"
 
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*$")
 PAIR = re.compile(r"^“(.+)”\s*`lean/docs/(\d{3})\.md:(\d+)`$")

@@ -5,7 +5,7 @@ backticked `path:line` shape must name a file that exists and a line inside it, 
 extension fails instead of being skipped, and every fenced block is attributed to its nearest
 preceding anchor and matched at consecutive lines. Counts: all 84 count and byte phrases are rebuilt
 from `measure_index_sizes.population()` — the node and edge totals, the citation-edge counts, the
-schema tables' row counts read from the generated files under `notes/index/`, the substring-versus-
+schema tables' row counts read from the generated files under `notes/gen/index/`, the substring-versus-
 line-start command counts, the ledger-set and all-TSV byte sums, the index tree byte total, the
 tracked-TSVs-outside-the-set count, the disk link check, and the raw-bib
 projection. Byte sizes: the five TSVs the page tabulates are re-read from disk. The page is compared
@@ -32,7 +32,7 @@ as **joins** where the ledger can produce the figure: the family count equals th
 the manuscript count equals the ledger's `paps` sum, the formalized count equals the ledger's
 `paps_form` sum, the two comparator surfaces count the same configs, and the `main_results` entry count
 exceeds the unique config count. The census counts are pinned as **walk equalities**: the test walks
-`preprints/`, `lean/OAI/`, `notes/index/`, `notes/tables/` and `reasoning_traces/` itself, and the
+`preprints/`, `lean/OAI/`, `notes/gen/index/`, `notes/gen/tables/` and `reasoning_traces/` itself, and the
 population's count must equal the walk — 749 preprint dirs, 122,458 `.lean` files, 1,033 index pages,
 16 index tables, 11 trace files folding to 10 distinct stems. The figures that stay literal are the ones
 neither the join nor a file walk can produce: 9 anchors, 3 block lines, 84 count and byte phrases, 0
@@ -41,7 +41,7 @@ sync problems, 2,560 nodes over 3,415 resolved edges (17,217 raw), 391 citation 
 verification bundles, 521 `.bib` files with 13,802 entries and 393 hrefs, 66,115 disk links with 0
 broken and 17,700 resolving to a directory, over 1,033 index pages, and the substring counts 18 / 373
 against the brace-qualified 17 / 372. The byte sums are not literals: the test re-derives the
-ledger-set and all-TSV totals by walking `notes/tables/*.tsv` on disk and requires the index-tree
+ledger-set and all-TSV totals by walking `notes/gen/tables/*.tsv` on disk and requires the index-tree
 total to be positive, so they move with a re-seed and the disk walk is the test. A page with fewer
 anchors, block lines or phrases is a pass that stopped checking, not a pass that passed.
 
@@ -100,16 +100,16 @@ REPO = pathlib.Path(__file__).resolve().parents[3]
 
 
 def tree_index_pages():
-    """The `.md` files under `notes/index/` — the pages the index renders. The population's count is the
+    """The `.md` files under `notes/gen/index/` — the pages the index renders. The population's count is the
     census; this is the tree, so the equality is the invariant: the census counted every page on disk."""
-    return list((REPO / "notes/index").rglob("*.md"))
+    return list((REPO / "notes/gen/index").rglob("*.md"))
 
 
 def tree_index_tables(mod):
-    """The generated index tables under `notes/tables/`, keyed by the registry's own name list. The
+    """The generated index tables under `notes/gen/tables/`, keyed by the registry's own name list. The
     equality is the invariant: every table the registry names is on disk and the count is the walk's."""
     names = set(mod.M.INDEX_TABLES)
-    return [p for p in (REPO / "notes/tables").glob("*.tsv") if p.name in names]
+    return [p for p in (REPO / "notes/gen/tables").glob("*.tsv") if p.name in names]
 
 
 def tree_traces():
@@ -238,20 +238,20 @@ def test_clean_page(mod, text, ledger):
     # equals the bytes it names is a stale page, not a changed corpus. The link count is the
     # checker's scan, so it is pinned as invariants — 0 broken, a strict containment of the
     # directory-resolving subset, and the raw-bib projection as the formula the page states.
-    led = sum((REPO / "notes" / "tables" / n).stat().st_size for n in LEDGER_SET)
-    alltsv = sum(q.stat().st_size for q in (REPO / "notes" / "tables").glob("*.tsv"))
+    led = sum((REPO / "notes" / "gen" / "tables" / n).stat().st_size for n in LEDGER_SET)
+    alltsv = sum(q.stat().st_size for q in (REPO / "notes" / "gen" / "tables").glob("*.tsv"))
     assert p["ledger_set_bytes"] == led > 0, \
         f"ledger set {p['ledger_set_bytes']} against {led} bytes in the five named TSVs"
     assert p["all_tsv_bytes"] == alltsv > p["ledger_set_bytes"], \
-        f"all TSV {p['all_tsv_bytes']} against {alltsv} bytes over notes/tables/*.tsv"
+        f"all TSV {p['all_tsv_bytes']} against {alltsv} bytes over notes/gen/tables/*.tsv"
     assert p["disk_broken"] == 0 and 0 < p["disk_dirs"] < p["disk_links"], \
         f"links {p['disk_links']}, broken {p['disk_broken']}, dirs {p['disk_dirs']}"
     assert p["rawbib_kib"] == p["bib_entries"] * 150 // 1024, \
         f"raw-bib {p['rawbib_kib']} KiB against {p['bib_entries']} entries at 150 B"
     assert p["index_pages"] == len(tree_index_pages()) > 0, \
-        f"index pages {p['index_pages']} against {len(tree_index_pages())} .md files walked under notes/index/"
+        f"index pages {p['index_pages']} against {len(tree_index_pages())} .md files walked under notes/gen/index/"
     assert p["index_tables"] == len(tree_index_tables(mod)) > 0, \
-        f"index tables {p['index_tables']} against {len(tree_index_tables(mod))} .tsv files walked under notes/tables/"
+        f"index tables {p['index_tables']} against {len(tree_index_tables(mod))} .tsv files walked under notes/gen/tables/"
     assert p["index_bytes"] > 0, f"index tree {p['index_bytes']} B"
     assert (p["substr_disc"], p["substr_res"], p["brace_disc"], p["brace_res"],
             p["resultentries"]) == (18, 373, 17, 372, 372), f"substring {p['substr_disc']}"

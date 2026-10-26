@@ -5,43 +5,43 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **21** templates, **9,297** lines, **595,054** bytes, **1,792** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,506** lines, **610,035** bytes, **1,895** slots.
+**Headline, with the rule that yields it:** report tree: **21** templates, **9,297** lines, **596,414** bytes, **1,792** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,506** lines, **611,395** bytes, **1,895** slots.
 
 ## The report tree
 
-`notes/templates/report/*.j2`, rendered by `notes/scripts/render_reports.py`. Needles is the count
+`notes/gen/templates/report/*.j2`, rendered by `notes/scripts/render_reports.py`. Needles is the count
 of (phrase, label) pairs the builder can derive from that page's checker source by calling its
 `count_phrases` / `size_phrases` with the population the checker exports as `population()`;
 `NOT DERIVED` is printed, not omitted, when the checker exposes no such call.
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 791 | 77,678 | 77 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `abstracts.md.j2` | 406 | 32,517 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
-| `counterexample-crosscheck.md.j2` | 1,089 | 45,859 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
-| `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
-| `findings.md.j2` | 282 | 21,453 | 4 | `notes/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
-| `fleet-design.md.j2` | 485 | 41,900 | 32 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
-| `formalization-faithfulness.md.j2` | 265 | 11,818 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
-| `index-design.md.j2` | 245 | 14,269 | 111 | `notes/development/index-design.md` | `verify_index_design.py` | 84 |
-| `index-links.md.j2` | 240 | 14,283 | 86 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
-| `links.md.j2` | 224 | 12,312 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |
-| `named-results.md.j2` | 368 | 25,308 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 65 |
-| `names.md.j2` | 277 | 13,873 | 130 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |
-| `proof-density.md.j2` | 122 | 8,661 | 66 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
-| `scope-exclusions.md.j2` | 328 | 26,788 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
-| `scripts-README.md.j2` | 733 | 66,725 | 65 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `sources.md.j2` | 156 | 9,400 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
-| `subfinding-pairs.md.j2` | 1,634 | 60,252 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
-| `t0-chains.md.j2` | 571 | 34,251 | 61 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
-| `templates.md.j2` | 109 | 5,115 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
-| `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **21** | **9,297** | **595,054** | **1,792** | | |
+| `README.md.j2` | 791 | 78,068 | 77 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `abstracts.md.j2` | 406 | 32,557 | 42 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
+| `counterexample-crosscheck.md.j2` | 1,089 | 45,875 | 87 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
+| `dependency-drift.md.j2` | 229 | 11,578 | 95 | `notes/gen/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
+| `findings.md.j2` | 282 | 21,539 | 4 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
+| `fleet-design.md.j2` | 485 | 42,056 | 32 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
+| `formalization-faithfulness.md.j2` | 265 | 11,826 | 65 | `notes/gen/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
+| `index-design.md.j2` | 245 | 14,349 | 111 | `notes/development/index-design.md` | `verify_index_design.py` | 83 |
+| `index-links.md.j2` | 240 | 14,323 | 86 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
+| `links.md.j2` | 224 | 12,328 | 110 | `notes/gen/reports/links.md` | `extract_links.py` | NOT DERIVED |
+| `named-results.md.j2` | 368 | 25,320 | 83 | `notes/gen/reports/named-results.md` | `verify_named_results.py` | 65 |
+| `names.md.j2` | 277 | 13,905 | 130 | `notes/gen/reports/names.md` | `measure_names.py` | NOT DERIVED |
+| `proof-density.md.j2` | 122 | 8,681 | 66 | `notes/gen/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
+| `scope-exclusions.md.j2` | 328 | 26,796 | 19 | `notes/gen/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
+| `scripts-README.md.j2` | 733 | 67,067 | 65 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `sources.md.j2` | 156 | 9,424 | 29 | `notes/gen/reports/sources.md` | `verify_sources.py` | 31 |
+| `subfinding-pairs.md.j2` | 1,634 | 60,268 | 422 | `notes/gen/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
+| `t0-chains.md.j2` | 571 | 34,287 | 61 | `notes/gen/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
+| `templates.md.j2` | 109 | 5,123 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
+| `verification-dirs.md.j2` | 408 | 37,956 | 44 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
+| **report tree** | **21** | **9,297** | **596,414** | **1,792** | | |
 
 ## The index tree
 
-`notes/templates/*.j2`, rendered by `notes/scripts/build_index.py` into `notes/index/`. Renders is
+`notes/templates/*.j2`, rendered by `notes/scripts/build_index.py` into `notes/gen/index/`. Renders is
 the count of pages on disk that the template produced, read from the tree it writes.
 
 | Template | Lines | Bytes | Slots | Renders |

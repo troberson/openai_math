@@ -4,9 +4,9 @@ r"""Report the T0 cross-family chains and the 27 two-manuscript second-pass fami
 Report-only: writes nothing, runs nothing. Lean is never invoked, so nothing here checks a proof.
 
 Population rule (all three conditions are needed to reproduce the 27):
-  1. tier == T0 in notes/tables/catalog.tsv,
-  2. paps == 2 in notes/tables/catalog.tsv,
-  3. the family id appears in the second-pass reading sections of notes/reports/t0-triage.md
+  1. tier == T0 in notes/gen/tables/catalog.tsv,
+  2. paps == 2 in notes/gen/tables/catalog.tsv,
+  3. the family id appears in the second-pass reading sections of notes/gen/reports/t0-triage.md
      (the "Second pass: the remaining 93 families" heading through the line before
      "What the triage shows").
 Repo-wide there are 96 families with exactly 2 manuscripts; 35 of them are T0; 8 of those 35
@@ -27,7 +27,7 @@ companion-word set; `catlib.bib` carries the release-labelled bib-edge shape; `c
 carries the `\resultentry` anchors; `catlib.preprints` carries the listed-manuscript scope and the
 `.bib` file list. The script stops importing `extract_links.py` and `extract_subfinding_pairs.py` —
 two report-only scripts it was reaching into for its joins. What stays here is the reading-pass
-shape: the second-pass span of `notes/reports/t0-triage.md`, the coverage-signal columns, and the
+shape: the second-pass span of `notes/gen/reports/t0-triage.md`, the coverage-signal columns, and the
 same-directory edge pairing.
 """
 import re
@@ -47,7 +47,7 @@ from catlib.preprints import bib_files, listed_dirs_from_contents
 from catlib.tsv import read_rows
 
 NOTES = ROOT / "notes"
-TRIAGE = NOTES / "reports" / "t0-triage.md"
+TRIAGE = NOTES / "gen" / "reports" / "t0-triage.md"
 SECOND_PASS_START = "## Second pass: the remaining 93 families"
 SECOND_PASS_END = "## What the triage shows"
 SIGNAL_COLS = ("paps_form", "chal", "mainres", "scope_note", "verification", "inputs", "covmd")
@@ -61,7 +61,7 @@ def second_pass_ids():
 
 
 def manuscripts():
-    """fam -> ordered list of manuscript rows from notes/tables/subfindings.tsv."""
+    """fam -> ordered list of manuscript rows from notes/gen/tables/subfindings.tsv."""
     out: dict[str, list[dict[str, str]]] = {}
     for r in read_rows(SUBFINDINGS_TSV):
         if r["kind"] == "manuscript":

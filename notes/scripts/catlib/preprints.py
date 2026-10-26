@@ -2,7 +2,7 @@
 
 Two rules name the same 719-manuscript population and they are not the same read: the manuscript
 links in `CONTENTS.md` (`overview.parse_contents`) and the `kind == "manuscript"` rows of
-`notes/tables/subfindings.tsv`. A walk of `preprints/` is **749** directories, not 719 manuscripts —
+`notes/gen/tables/subfindings.tsv`. A walk of `preprints/` is **749** directories, not 719 manuscripts —
 upstream keeps 27 superseded editions and 3 withdrawal notices on disk beside their replacements.
 
 A root is a `.tex` file with `\\documentclass` **at the start of a line**: over the 719 listed dirs,
@@ -154,7 +154,7 @@ def listed_dirs_from_contents() -> set[str]:
 
 
 def listed_dirs_from_subfindings() -> dict[str, dict[str, str]]:
-    """{slug: row} for the manuscript rows of notes/tables/subfindings.tsv (719 rows)."""
+    """{slug: row} for the manuscript rows of notes/gen/tables/subfindings.tsv (719 rows)."""
     return {r["path"].split("/")[1]: r for r in read_rows(SUBFINDINGS_TSV) if r["kind"] == "manuscript"}
 
 

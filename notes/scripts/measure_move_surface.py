@@ -10,12 +10,12 @@ after each pass.
 
 Two patterns, because one pattern cannot be comparable across the move. A single pattern that allows
 `/` reads 350 mentions over the 29 pages after the move, 25 of them naming locations the reorg leaves
-in place (`notes/scripts/README.md`, `notes/tables/names.tsv`, `notes/development/upstream_history/…`).
+in place (`notes/scripts/README.md`, `notes/gen/tables/names.tsv`, `notes/development/upstream_history/…`).
 A single pattern that forbids `/` reads 282 before the move and 305 after. So the probe prints three
 counts:
 
 - **moved, top level** — `notes/<page>.md|tsv`: 282 before the move, 0 after;
-- **moved, in the new directories** — `notes/reports/…`, `notes/development/…`, `notes/tables/…`:
+- **moved, in the new directories** — `notes/gen/reports/…`, `notes/development/…`, `notes/gen/tables/…`:
   0 before, 305 after. The two moved counts must agree; that is the comparability test;
 - **stable** — mentions under `scripts/`, `index/`, `summaries/`, `development/probe/`,
   `development/upstream_history/`, plus `notes/README.md` and the six paths the sweep records as
@@ -30,7 +30,7 @@ counts:
   excluded for the same reason: a mention of `notes/linting.md` is a record of a deletion, and a
   pass that moves pages cannot move it.
 
-Scope is the 29 pages the reorg moved: the top-level `notes/*.md`, plus `notes/reports/*.md` and
+Scope is the 29 pages the reorg moved: the top-level `notes/*.md`, plus `notes/gen/reports/*.md` and
 `notes/development/*.md` once those directories exist. Report-only: writes nothing.
 """
 

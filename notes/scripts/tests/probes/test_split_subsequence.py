@@ -49,10 +49,10 @@ GAP_ROWS = [
     ("notes/development/index-links.md", "prose_notesdoc", 12, 12),
     ("notes/development/index-links.md", "prose_notesdoc", 16, 16),
     ("notes/development/index-links.md", "prose_regchecked", 4, 4),
-    ("notes/reports/links.md", "rec_all", 8, 8),
-    ("notes/reports/links.md", "knob_quote", 4, 4),
-    ("notes/reports/topics.md", "tp_headline", 15, 15),
-    ("notes/reports/topics.md", "tp_yieldhist", 19, 19),
+    ("notes/gen/reports/links.md", "rec_all", 8, 8),
+    ("notes/gen/reports/links.md", "knob_quote", 4, 4),
+    ("notes/gen/reports/topics.md", "tp_headline", 15, 15),
+    ("notes/gen/reports/topics.md", "tp_yieldhist", 19, 19),
 ]
 
 MEASURED = {"parts": 134, "exact": 120, "gap": 14, "content": 1}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every quotation and source marker in notes/reports/abstracts.md against the shipped files.
+"""Verify every quotation and source marker in notes/gen/reports/abstracts.md against the shipped files.
 
 The page cites sources as [S1] .. [S33]; the Sources table at the bottom maps S# to a repo-relative
 path. Two passes read the same table:
@@ -52,7 +52,7 @@ from catlib.paths import LEDGER_TSV, NOTES, ROOT
 from catlib.text import collapse_ws
 from catlib.tsv import read_rows
 
-PAGE = NOTES / "reports" / "abstracts.md"
+PAGE = NOTES / "gen" / "reports" / "abstracts.md"
 
 ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*`([^`]+)`\s*\|\s*(.*?)\s*\|\s*$")
 MARKER = re.compile(r"\[(S\d+)\]")
@@ -139,7 +139,7 @@ def count_phrases(m):
     Passes A and B check quotations and markers and are silent about numbers, so a page whose counts
     are prose drifts silently. Each phrase is the exact string the page must contain, compared with
     whitespace collapsed on both sides. The pre-merge reproduction in the floor paragraph is a probe
-    (it points the extractor at a historical notes/tables/sources.tsv), not a shipped measurement, so its
+    (it points the extractor at a historical notes/gen/tables/sources.tsv), not a shipped measurement, so its
     figures are deliberately absent here.
     """
     n, fam = len(m["man"]), m["families"]

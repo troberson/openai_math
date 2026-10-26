@@ -8,7 +8,7 @@ traps, the batch workflow — lives in
 
 ## Current state (rewritten at every batch boundary, 2026-10-25)
 
-- **Live pages: 135** family pages in `notes/summaries/` (flat, no discipline
+- **Live pages: 135** family pages in `notes/gen/summaries/` (flat, no discipline
   subdirectory — bead `math-720` closed) plus the index `README.md` (136
   files). The ledger's `summary` column is 1 for all 135. Both summaries
   checkers pass clean (verify_summaries 0 problems over 136 pages;

@@ -1,6 +1,6 @@
 r"""The self-tests for `notes/scripts/verify_sources.py`.
 
-The checker verifies `notes/reports/sources.md` and `notes/tables/sources.tsv` against the manuscript trees on
+The checker verifies `notes/gen/reports/sources.md` and `notes/gen/tables/sources.tsv` against the manuscript trees on
 disk. TSV integrity: 719 rows over the shipped header, every `pdf` on disk and non-empty, every
 `main_tex` a file that declares `\\documentclass` at line start, every `fam` in the ledger, every
 family's row count equal to the ledger `paps`, every resolved main file under `build/`, and the
@@ -194,7 +194,7 @@ def text(mod):
 @pytest.fixture(scope="module")
 def ledger():
     """The ledger rows, read for the joins the sources population is checked against."""
-    return list(csv.DictReader(pathlib.Path("notes/tables/catalog.tsv").read_text(
+    return list(csv.DictReader(pathlib.Path("notes/gen/tables/catalog.tsv").read_text(
         encoding="utf-8").splitlines(), delimiter="\t"))
 
 

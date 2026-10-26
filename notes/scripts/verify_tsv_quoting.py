@@ -4,7 +4,7 @@
 GitHub's TSV viewer flags a `"` that is not at a field start as illegal quoting. Python's
 `csv.DictReader(delimiter='\t')` is lenient — it treats a mid-field quote as literal data — so
 the repo's checkers are silent on this class and GitHub is the only witness. This pass applies
-GitHub's rule to every TSV under `notes/tables/`.
+GitHub's rule to every TSV under `notes/gen/tables/`.
 
 Rules, per field:
   - a field that does not start with `"` carries no `"` at all;

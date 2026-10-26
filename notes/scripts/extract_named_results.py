@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-r"""Extract the named-result inventory the manuscript sources carry, for notes/reports/named-results.md.
+r"""Extract the named-result inventory the manuscript sources carry, for notes/gen/reports/named-results.md.
 
-Report-only: writes nothing. Every count in notes/reports/named-results.md comes from this report.
+Report-only: writes nothing. Every count in notes/gen/reports/named-results.md comes from this report.
 
 Rules, stated because each one changes a number:
   HEADLINE   = a statement environment named theorem, maintheorem, or thm. Measured over all
@@ -40,7 +40,7 @@ from catlib.records import cached
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 PRE = ROOT / "preprints"
-LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
+LEDGER = ROOT / "notes" / "gen" / "tables" / "catalog.tsv"
 OVERVIEW = ROOT / "overview.tex"
 
 HEADLINE = ("theorem", "maintheorem", "thm")
@@ -138,7 +138,7 @@ def rec_key() -> str:
 
 
 def population() -> dict:
-    """Everything the report and notes/reports/named-results.md assert, read from the keyed record.
+    """Everything the report and notes/gen/reports/named-results.md assert, read from the keyed record.
 
     The walk is paid once per key: this script, `render_reports.py`, `verify_named_results.py` and its
     extracted self-tests read the same bytes. The checker imports this so the page and the report are

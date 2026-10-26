@@ -13,7 +13,7 @@ the writer's numbers are right, which is the count pass's job, and the two are d
 independent.
 
 `--mutant` mutates each page's prose **in memory** and compares the mutated text with the
-render. It never writes a page, so `notes/development/index-links.md` and `notes/reports/proof-density.md` —
+render. It never writes a page, so `notes/development/index-links.md` and `notes/gen/reports/proof-density.md` —
 the two pages that had a second writer in the mutant branch — have one writer each. A needle that is
 absent from its page is reported as a problem: an inert mutant is not a pass.
 
@@ -52,16 +52,16 @@ def _count(pattern: str):
 
 
 PAGES = [
-    (ROOT / "notes" / "reports" / "links.md",
+    (ROOT / "notes" / "gen" / "reports" / "links.md",
      "A directory walk would count a superseded edition's bibliography a second time.",
      "A directory walk would count a superseded edition's bibliography twice over."),
-    (ROOT / "notes" / "reports" / "names.md",
+    (ROOT / "notes" / "gen" / "reports" / "names.md",
      "Names sit in four places in this release, and they do not",
      "Names sit in five places in this release, and they do not"),
-    (ROOT / "notes" / "reports" / "topics.md",
+    (ROOT / "notes" / "gen" / "reports" / "topics.md",
      "the pattern column is the source of truth",
      "the pattern column is the authoritative source"),
-    (ROOT / "notes" / "reports" / "proof-density.md",
+    (ROOT / "notes" / "gen" / "reports" / "proof-density.md",
      "a 40-line construction",
      "a 41-line construction"),
     (ROOT / "notes" / "development" / "index-links.md",
@@ -71,7 +71,7 @@ PAGES = [
     # that carries a hand-written family count is not the writer's measurement. The needle is derived
     # from the page's own count, because the slot moves whenever a summary page lands — a needle that
     # recorded the count as committed is inert the moment the count moves.
-    (ROOT / "notes" / "reports" / "findings.md",
+    (ROOT / "notes" / "gen" / "reports" / "findings.md",
      _count(r"\*\*(\d+)\*\* of 372 families have a summary page"),
      None),
     (ROOT / "notes" / "scripts" / "README.md",

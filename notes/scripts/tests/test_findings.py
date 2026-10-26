@@ -1,6 +1,6 @@
 r"""The self-tests for `notes/scripts/verify_findings.py`.
 
-The checker verifies `notes/reports/findings.md` in seven passes: the Sources table (rows exist, declare
+The checker verifies `notes/gen/reports/findings.md` in seven passes: the Sources table (rows exist, declare
 the line count they have, every row is cited, the body's `[Sn]` markers are contiguous and in first-use
 order), anchored quotations (a quotation next to a `[Sn:line]` marker must appear, markup aside, on the
 lines it cites), the ledger (every catalog row rebuilt from the shipped files through `catlib`'s parse
@@ -105,7 +105,7 @@ def mod(load):
 
 @pytest.fixture(scope="module")
 def page(mod):
-    return (mod.NOTES / "reports" / "findings.md").read_text(encoding="utf-8")
+    return (mod.NOTES / "gen" / "reports" / "findings.md").read_text(encoding="utf-8")
 
 
 def test_clean_page(mod, page):

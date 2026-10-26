@@ -31,7 +31,7 @@ import pytest
 import verify_dependency_drift as chk
 from catlib.text import first_match
 
-PAGE = pathlib.Path("notes/reports/dependency-drift.md")
+PAGE = pathlib.Path("notes/gen/reports/dependency-drift.md")
 
 
 def bump(t, pat, delta):
@@ -167,8 +167,8 @@ MUTANTS = [
     # Only the render diff can see it, so the needle is the page line the render diff names.
     ("prose row count outside the phrase list",
      lambda c, v, m: render_needle(c, "Measured 2026-10-07 from three sources only"),
-     lambda p: p.replace("`notes/tables/formalization-deps.tsv` (31 rows, 8 fields)",
-                         "`notes/tables/formalization-deps.tsv` (32 rows, 8 fields)", 1)),
+     lambda p: p.replace("`notes/gen/tables/formalization-deps.tsv` (31 rows, 8 fields)",
+                         "`notes/gen/tables/formalization-deps.tsv` (32 rows, 8 fields)", 1)),
 ]
 
 

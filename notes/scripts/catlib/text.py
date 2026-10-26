@@ -50,7 +50,7 @@ def strip_markup(s: str) -> str:
     # tags to nothing, not to a space - `prime-to-<i>p</i>` must normalize to `prime-to-p`, and a
     # space here would break the substring test against the page.
     s = re.sub(r"</?[a-zA-Z][^>]*>", "", s)
-    # The page links its sources relatively (../../../ from notes/summaries/<discipline>/), while
+    # The page links its sources relatively (../../../ from notes/gen/summaries/<discipline>/), while
     # the release text spells the same target as a repo-relative path.
     s = re.sub(r"(?:\.\./)+", "", s)
     # LaTeX-aware: a rendered cross-reference is not a misquote. `\ref{thm:main}` in the source is

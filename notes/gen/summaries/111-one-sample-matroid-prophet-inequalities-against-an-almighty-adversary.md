@@ -1,0 +1,191 @@
+[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 111](../index/theoretical-computer-science/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md)
+
+# 111 — One-sample matroid prophet inequalities against an almighty adversary
+
+[Index page](../index/theoretical-computer-science/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md)
+
+## Original CONTENTS.md summary
+
+[S1:2736] (family entry):
+
+> **111. One-sample matroid prophet inequalities against an almighty adversary.** For every finite matroid known in advance, gives a distribution-independent online rule using one independent sample per element and earning a universal constant fraction of the expected offline optimum. Values are independent and nonnegative, with finite expected optimum. The guarantee holds even when the arrival-order adversary sees all samples, values, and the rule's entire random seed; no polynomial-time implementation is asserted. ([Lean](../../lean/docs/111.md))
+
+[S1:2743] (the manuscript entry, with its abstract at [S1:2745]):
+
+> [One Sample Suffices for Matroid Prophet Inequalities against an Almighty Adversary](../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf)
+
+> We prove that one independent sample per element suffices for a constant-competitive prophet inequality on every finite matroid. The guarantee holds even when the arrival-order adversary observes all samples, all online values, and the algorithm's entire random seed. The rule needs no description of the value distributions and achieves the absolute competitive ratio $`2^{-310}`$.
+
+[S2:300] carries the `\resultentry`, so the release blurb and the overview
+agree on the statement.
+
+## Undergraduate summary
+
+A **prophet inequality** compares two decision-makers facing random
+values. The *prophet* sees all values at once and picks the best feasible
+option. An *online* rule sees the values one at a time and must accept or
+reject each before the next arrives, keeping its accepted set feasible.
+Here feasibility is a **matroid**: a set system closed under taking
+subsets (so you can always drop an element) with a specific exchange
+property.
+
+The twist is how many samples the online rule gets. Normally you would
+need to know each value's *distribution*. This paper shows **one
+independent sample per element is enough** — no distribution knowledge,
+no extra samples. The rule earns a universal constant fraction,
+$2^{-310}$, of the expected offline optimum [S4:24–40].
+
+The adversarial model is stronger than usual. A **standard** adversary
+chooses the arrival order without seeing the values. An **almighty**
+adversary sees everything — every sample, every realized value, and the
+rule's *entire random seed* — before choosing the order. The guarantee
+holds against this fully informed adversary [S4:17–22].
+
+## Graduate summary
+
+**Main theorem** ([S4:24–40], `thm:main`). "There is a measurable online
+selection rule, independent of the value distributions, with the
+following property. Let $M=(E,\mathcal I)$ be any finite known labeled
+matroid, and let $(S_e,V_e:e\in E)$ be mutually independent nonnegative
+real random variables, with $S_e$ and $V_e$ having the same arbitrary law
+$D_e$. Assume $\mathbb E[\mathrm{OPT}_M(V)]<\infty$" [S4:25–31]. For every measurable
+permutation rule $\pi$ depending on $M$, the laws $(D_e)$, $S$, $V$, and
+the seed $R$ — i.e. against an almighty adversary — the rule accepts an
+independent set $A$ and
+$\mathbb E\left[\sum_{e\in A}V_e\right]\ge 2^{-310}\mathbb E[\mathrm{OPT}_M(V)]$ [S4:36–38].
+
+**The constant is loose.** The stated bound is $2^{-310}$, but the
+accounting section "proves the stronger constant $2^{-293}$, leaving slack
+in the stated bound" [S4:45–46]. The constant is independent of the
+matroid, its size, its rank, and the distributions [S4:42–44].
+
+**No computational claim.** "The rule is a finite measurable construction;
+no running-time or polynomial independence-oracle guarantee is claimed"
+[S4:43–44].
+
+**Secretary consequence.** The proof also gives a **secretary** result:
+weights are fixed before randomness, the rule observes and rejects a
+random initial prefix of a uniformly random permutation, and after the
+prefix an adversary that sees all weights, the ordered prefix, and the
+complete seed may rearrange the remaining labels arbitrarily. The
+secretary corollary gives a constant guarantee even with this suffix
+order [S4:49–55]. Both results descend from the same fixed-weight
+guarantee.
+
+## History of the conjecture
+
+The connection between single-sample prophet inequalities and **secretary
+algorithms** runs through **Azar, Karlin, and Warnell** [S4:70–73], who
+showed secretary algorithms yield single-sample prophet algorithms.
+**Rey, Wu, and Wormald** gave the optimal one-sample reward fraction
+$1/2$ [S4:75]; **Caramanis et al.** developed greedy-ordered selection
+and a pointwise sample-pair framework for single-sample guarantees under
+structured feasibility [S4:76–78].
+
+The **matroid secretary** problem was introduced by **Babaioff, Immorlica,
+and Srinivasan** [S4:81–83]. **Feldman, Svensson, and Zenklusen** derived
+a one-sample prophet inequality with the same loss [S4:84–89]. Recent
+work on matroid secretary selection by **Singla** and **Huang** retains
+uniformly random arrival order [S4:91–94].
+
+The **sample-complexity** literature measures how many samples per element
+a distribution-agnostic rule needs: $O_\delta(\log^4(2+n))$ samples
+[S4:100], improved by **Feldman, Svensson, and Zenklusen** [S4:101].
+This paper's contribution is the **almighty adversary** [S4:103–108]: the
+adversary observes all random realizations before choosing the order,
+which is the almighty model of the greedy **Feldman–Svensson–Zenklusen**
+work [S4:105–107]. The distinction between one sample and a sample budget
+growing with the matroid remains essential [S4:107–108].
+
+**Prior (my training data, not this repo).** One-sample prophet
+inequalities are a central model for distribution-agnostic online
+selection. The $1/2$ bound is the classical secretary fraction. The
+contribution here is that one sample suffices against an adversary that
+sees the full random seed, which is a stronger model than the standard
+oblivious-adversary one. I cannot confirm these independently; the release
+ships the manuscript as a proof.
+
+## Consequences
+
+- **One-sample constant-competitive guarantee.** For every finite matroid
+  known in advance, one independent sample per element suffices for an
+  online rule earning $2^{-310}$ times the expected offline optimum
+  [S4:24–40].
+- **Distribution-independent.** The rule needs no description of the
+  value distributions [S4:25–28].
+- **Almighty adversary.** The guarantee holds when the arrival-order
+  adversary sees all samples, all realized values, and the rule's entire
+  random seed [S4:17–22].
+- **Secretary consequence.** The same machinery gives a constant
+  secretary guarantee with an almighty suffix-order adversary
+  [S4:49–55].
+
+## Section skeleton
+
+The manuscript [S3] is a 50-line root that ships its abstract at
+[S3:38–40] and then includes seven section files [S3:41–47]:
+`introduction` (198 lines), `setup`, `algorithm`, `safety`, `transfer`,
+`accounting`, `secretary`, followed by a plain-style bibliography over
+`references/literature` [S3:48–49]. The shipped PDF [S5] is the manuscript
+in the form the release distributes — note this family ships `final.pdf`,
+not a date-suffixed PDF.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier T2 with one scope note [S6]
+and two comparator stubs [S7] [S8], but **no `main_results` entry** and
+**no formalized manuscript** in the yaml. The scope note covers the
+manuscript; the comparator stubs state the targets the release set
+itself.
+
+The scope note states: "The formalization proves a one-sample matroid
+prophet inequality with expected reward at least $2^{-310}$ times the
+expected offline optimum. Each element has one independent sample paired
+with an identically distributed nonnegative online value, and all
+coordinates are independent. The rule and finite seed law depend only on
+the labeled matroid; choices are irrevocable and feasible after every
+prefix. The arrival order may depend measurably on all samples, values,
+and the seed, and only the offline optimum must be integrable" [S6:9].
+The supporting result: "A supporting hidden-vector selection result for
+fixed nonnegative matroid weights gives expected worst-order reward at
+least $2^{-293}$ times the optimum, again with a finite seed law and
+prefix feasibility" [S6:11].
+
+The `MatroidProphet.lean` stub [S7] (94 lines) defines `Matroid`,
+`OnlineRule`, `Feasible`, and `OneSampleChallenge` [S7:70]. The theorem
+`one_sample` at [S7:89–90] closes with `sorry`.
+
+The `MatroidSecretary.lean` stub [S8] (246 lines) is larger: it defines
+the prophet machinery plus `HiddenVectorChallenge`, `SamePrefix`,
+`SecretaryRule`, and `SecretaryChallenge`, and carries **three** theorem
+stubs — `one_sample` [S8:235], `hidden_vector` [S8:238], and `secretary`
+[S8:241] — each closing with `sorry`.
+
+The reading is of source text only — no `lake` or `lean` run elaborates
+the stubs, so the claim here is that the statement types and the
+`sorry` targets exist in the source, not that any proof is present.
+
+## Coverage
+
+The ledger row `fam=111` [S9] records: `tier=T2`, `paps=1`,
+`paps_form=0`, `chal=2`, `mainres=0`, `scope_note=1`, `verification=0`,
+`trace=`. There is **no formalized manuscript** in the yaml `sources:`
+and **no `main_results` entry** — the scope note links the two
+comparator configs, but neither carries a `main_results` entry, so the
+formalization chain is *absent*, not unformalized. The shape flag is
+`uniform`; `resolves_named=0` — the blurb names no conjecture with a
+resolve verb.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2736], manuscript link [S1:2743] and abstract [S1:2745] |
+| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 111 at [S2:300] |
+| S3 | [`preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/main.tex`](../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/main.tex) | 50 | root (`\documentclass`); abstract [S3:38–40]; seven `\input` directives [S3:41–47]; bibliography [S3:48–49]; 50 lines |
+| S4 | [`preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/sections/introduction.tex`](../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/sections/introduction.tex) | 198 | `thm:main` [S4:24–40]; constant and secretary [S4:42–55]; history [S4:68–198]; 198 lines |
+| S5 | [`preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf`](../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf) | 13081 | the manuscript as shipped |
+| S6 | [`lean/docs/111.md`](../../lean/docs/111.md) | 18 | scope note — Scope at [S6:9], hidden-vector result at [S6:11], two comparator links at [S6:17–18] |
+| S7 | [`lean/ComparatorChallenges/MatroidProphet.lean`](../../lean/ComparatorChallenges/MatroidProphet.lean) | 94 | the prophet comparator — `OneSampleChallenge` at [S7:70], theorem and `sorry` at [S7:89–90] |
+| S8 | [`lean/ComparatorChallenges/MatroidSecretary.lean`](../../lean/ComparatorChallenges/MatroidSecretary.lean) | 246 | the secretary comparator — three theorems and `sorry` at [S8:235–242] |
+| S9 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=111`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

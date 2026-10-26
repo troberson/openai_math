@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Check notes/reports/named-results.md against the shipped files. Report-only: writes nothing.
+r"""Check notes/gen/reports/named-results.md against the shipped files. Report-only: writes nothing.
 
 What it checks, and why each check exists:
   anchors   every backticked `file:line` resolves: the file exists under the repo root and the
@@ -47,7 +47,7 @@ from catlib.paths import COMPARATOR_DIR
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
-PAGE = ROOT / "notes" / "reports" / "named-results.md"
+PAGE = ROOT / "notes" / "gen" / "reports" / "named-results.md"
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml|bib)):(\d+)`")
 BARE = re.compile(r"(\d{3})\s+\(`:(\d+)`\)")
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')

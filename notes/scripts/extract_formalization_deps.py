@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract notes/tables/formalization-deps.tsv: one row per upstream library.
+"""Extract notes/gen/tables/formalization-deps.tsv: one row per upstream library.
 
 Pure extraction over four layers that ship in the repo, stdlib only, deterministic:
 
@@ -31,7 +31,7 @@ from catlib.promote import key_for, promote
 
 REPO = Path(__file__).resolve().parents[2]
 PATCHES = REPO / "lean" / "patches"
-OUT = REPO / "notes" / "tables" / "formalization-deps.tsv"
+OUT = REPO / "notes" / "gen" / "tables" / "formalization-deps.tsv"
 
 # The builder's key: every input is inside the five hashed trees, so L1 is empty.
 KEY = key_for("extract_formalization_deps.py", tuple(sys.argv[1:]))

@@ -1,0 +1,227 @@
+[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 105](../index/theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md)
+
+# 105 — The 2-to-1 Games Conjecture with perfect completeness
+
+[Index page](../index/theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md)
+
+## Original CONTENTS.md summary
+
+[S1:2613] (family entry):
+
+> **105. Perfect completeness for 2-to-1 games.** Proves Khot's 2-to-1 Games Conjecture with perfect completeness: for every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable games from games whose optimum is at most δ, on explicit unweighted instances. The alphabet depends only on δ, and every right-hand label has exactly two preimages under each constraint map. ([Lean](../../lean/docs/105.md))
+
+[S1:2620] (the manuscript entry, with its abstract at [S1:2622]):
+
+> [Perfect completeness for 2-to-1 games](../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf)
+
+> We prove the 2-to-1 Games Conjecture with perfect completeness. For every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable 2-to-1 games from games of value at most δ, with a fixed alphabet and an explicitly listed unweighted multiset of constraints.
+
+[S2:288] carries the `\resultentry`, so the release blurb and the overview agree
+on the statement.
+
+## Undergraduate summary
+
+A **projection game** is a finite bipartite multigraph with left vertices $U$
+and right vertices $V$, each carrying a finite answer set, and each edge
+occurrence $e=(u,v)$ carrying a map $\pi_e$ from the left answer set to the
+right one [S4:3–6]. A labeling picks one answer at each vertex and satisfies
+$e$ when the right answer equals $\pi_e$ applied to the left answer; the
+**value** of the game is the maximum fraction of satisfied edge occurrences
+[S4:7–9]. Parallel occurrences may have different projection maps [S4:10].
+
+A **2-to-1 game** is a projection game whose left alphabet is $[2q]$ and right
+alphabet is $[q]$ and where every projection map has exactly **two** preimages
+of every right answer [S4:12–17]. Khot's Games Conjectures ask, in this shape,
+for NP-hardness of distinguishing satisfiable games from games of arbitrarily
+small fixed value [S4:18–22]. "Satisfiable" means the *perfect-completeness*
+endpoint: "the satisfiable case is the perfect-completeness requirement: one
+labeling must satisfy every constraint" [S4:23–24]. A reduction that reaches
+completeness $1-\varepsilon$ for each fixed $\varepsilon>0$ does not give
+that endpoint, because its outputs need not be finite satisfiable games
+[S4:25–26].
+
+The obstacle is the fiber count. "There is also an obstruction to amplifying a
+constant gap by ordinary repetition: repeating an exact-two projection $k$
+times gives $2^k$ preimages" of every right answer [S4:27–28] — ordinary
+repetition destroys the 2-to-1 property. The result keeps two-element fibers
+while driving soundness to any fixed target.
+
+## Graduate summary
+
+**Main theorem** ([S4:32–45], `thm:main`). "For every fixed rational
+$\delta\in(0,1)$ there are an integer $q=q(\delta)\ge2$ and a deterministic
+polynomial-time reduction from $3$-SAT to $2$-to-$1$ games" [S4:33–34] with
+alphabets $[2q]$ and $[q]$ such that "a satisfiable formula produces a game of
+value $1$" [S4:37] and an unsatisfiable formula produces a game of value at
+most $\delta$ [S4:38]. The output is a nonempty explicit list of unweighted
+edge occurrences and an explicit table for every projection map; every table
+has exactly two preimages for each right answer, and the running-time bound is
+in the ordinary binary input length, with degree and constants allowed to
+depend on $\delta$ [S4:40–44].
+
+The proof is an assembly of four external inputs stated in the preliminaries.
+A **perfect-completeness PCP gap**: "there is a constant $\gamma_0>0$ and a
+deterministic polynomial-time map taking any Boolean $3$-CNF formula
+$\varphi$ to a nonempty $3$-CNF formula $\Psi$ such that every clause of
+$\Psi$ uses three distinct variables" [S5:49–52], preserving satisfiability
+and forcing a $\gamma_0$ fraction of violated clauses on unsatisfiable inputs
+[S5:53–54]. **Weighted projection-game repetition**: for any finite projection
+game $G$ and $0<g<1$, $\mathrm{val}(G)\le 1-g$ implies
+$\mathrm{val}(G^{\otimes k})\le (1-g^2/16)^k$ [S5:127–132]. The **Grassmann
+expansion consequence** [S5:235–241] and the **inverse theorem for a
+finite-range partial table** [S5:406–412] supply the agreement-to-rank
+estimates the tree construction needs.
+
+The construction starts from a clause-versus-variable game: the left player
+answers a clause with a satisfying assignment, the right player answers a
+variable with a bit, and the constraint checks agreement [S4:101–105].
+Independent copies of the PCP questions sit at the leaves of a finite rooted
+tree; each leaf carries all binary functions on its local domain, and an
+internal node takes the sum of the spans of pairwise products from its
+children [S4:106–109]. The upper and lower decoding sections compare the
+restricted bilinear forms against fixed forms of bounded rank.
+
+The final section fixes the constants in a strict order: row counts from the
+root downwards, the source repetition power, then branching numbers from the
+leaves upwards, so the upper agreement guarantee is fixed before the lower row
+counts test rank [S6:4–12]. The soundness closes at
+$\varepsilon+\delta/3+\delta/3=\delta$ [S6:255–259], completeness stays one
+because
+only accepting support edges are retained [S6:257], and degenerate cases are
+handled by fixed games — a single exact-two edge is satisfiable, and a fixed
+unsatisfiable output is enumerated as parallel exact-two maps whose accepting
+fraction is $1/q\le\delta$ [S6:262–268].
+
+**Corollaries** (in the introduction). The $k$-colorable corollary
+([S4:189–200], `cor:max-k-colorable`): "there are absolute constants $C>0$
+and an integer $k_0\ge3$ such that, for every fixed integer $k\ge k_0$, it is
+NP-hard to distinguish" a $k$-colorable graph from one where every coloring
+satisfies at most $1-1/k+C\log k/k^2$ of the edges [S4:190–198]. The Not-Two
+corollary ([S4:222–232], `cor:not-two-pcp`): for every fixed
+$0<\varepsilon<3/8$, distinguishing a satisfiable Not-Two instance from one
+of value at most $5/8+\varepsilon$ is NP-hard, and every language in NP gets
+a three-query nonadaptive PCP with $O(\log n)$ random bits, perfect
+completeness, and soundness at most $5/8+\varepsilon$ [S4:223–231]. Both
+are applied through O'Donnell and Wu's reduction, whose premise needs only
+projections that are $d$-to-1 at most; taking $d=2$ is exactly the
+theorem's premise [S4:234–240].
+
+## History of the conjecture
+
+The manuscript situates itself on a named line. **Khot** introduced the games
+conjectures in hardness of approximation, with fibers of size at most two; the
+exact-two convention is this paper's [S4:18–20]. **Austrin, O'Donnell, Tan and
+Wright** established perfect-completeness 2-to-1 Label Cover hardness with
+alphabets of sizes 6 and 3 and soundness $23/24+\varepsilon$ [S4:54–56]; the
+remaining issue was to drive soundness to zero while retaining perfect
+completeness and two-element fibers [S4:57–58]. The Grassmann program runs
+through **Khot, Minzer and Safra**'s candidate reduction [S4:61–62],
+**Dinur, Khot, Kindler, Minzer and Safra**'s reduction to a Grassmann
+agreement hypothesis [S4:62–65], and **Barak, Kothari and Steurer**'s
+shortcode-viewpoint link [S4:66–67]; the near-perfect expansion theorem of
+**Khot, Minzer and Safra** completed the ingredients [S4:68–70]. **Fei, Minzer
+and Wang** proved perfect-completeness hardness for 4-to-1 games at
+arbitrarily small soundness [S4:71–73], and the manuscript's bilinear-form
+passage cites their Lemmas 5.15–5.16 as a close counterpart [S4:92–94]. The
+Rich 2-to-1 framework of **Braverman, Khot and Minzer** imposes a uniform
+partition condition that `thm:main` does not require [S4:75–78]. The
+sampling comparisons have antecedents in **Khot and Safra**'s sub-code
+covering framework [S4:89–90].
+
+**Prior (my training data, not this repo).** The 2-to-1 Games Conjecture was
+the strong form of Khot's conjecture (2002); Khot–Minzer–Safra's 2022 result
+disproved the conjecture in its quasi-polynomial games form, which makes a
+perfect-completeness, 2-to-1-hardness result for *plain* 2-to-1 games the
+remaining positive direction; the $5/8+\varepsilon$ three-query PCP is the classical
+Hastad-level constant. I cannot confirm these results independently; the
+release ships the manuscript as a proof, and the Lean layer formalizes the
+reduction statement itself (see the comparison below).
+
+## Consequences
+
+- **The conjecture at the perfect-completeness endpoint.** NP-hardness of
+  distinguishing value-$1$ from value-$\le\delta$ 2-to-1 games for every fixed
+  rational $\delta$, with two-element fibers retained [S4:32–45].
+- **The $k$-colorable gap.** For fixed $k\ge k_0$, distinguishing $k$-colorable
+  graphs from graphs whose every coloring satisfies at most
+  $1-1/k+C\log k/k^2$ of the edges is NP-hard [S4:189–200].
+- **Not-Two hardness and a three-query PCP.** Distinguishing satisfiable
+  Not-Two instances from value at most $5/8+\varepsilon$ is NP-hard, and every NP
+  language gets a three-query verifier with perfect completeness and soundness
+  $5/8+\varepsilon$ [S4:222–232].
+- **A hypothesis for other reductions.** `thm:main` "supplies the hypothesis
+  of several perfect-completeness reductions" [S4:47–48] — its output is the
+  premise the O'Donnell–Wu reduction consumes [S4:234–240].
+
+## Section skeleton
+
+The root [S3:49] includes eight sections in the order [S3:54–61]:
+`00-introduction`, `01-preliminaries`, `02-construction`, `03-sampling`,
+`04-upper-decoding`, `05-lower-decoding`, `06-clean-repetition`,
+`07-parameters-output`, followed by `plain` style bibliography over
+`references.bib` [S3:62–63]. The section files sit beside the root in
+`build/`, not under a `sections/` subdirectory. The shipped PDF [S7] is the
+manuscript in the form the release distributes; the LaTeX under `build/` is
+the working source the page cites.
+
+## Comparison with the formalized statement
+
+The release formalises this family at tier T3 with one scope note [S8], one
+comparator stub [S9:179–180], and one `main_results` entry naming the formalized
+declaration [S11]. The scope note's Scope section states: "the formalized
+result establishes perfect-completeness hardness for 2-to-1 games. For every
+fixed rational $0<\delta<1$, a deterministic polynomial-time reduction from
+binary 3SAT produces a nonempty unweighted game of value exactly $1$ on
+satisfiable inputs and at most $\delta$ on unsatisfiable inputs" [S8:9], and
+"each constraint projection has exactly two preimages for each output label"
+[S8:9], with the alphabet depending only on $\delta$ [S8:9].
+
+The `main_results` entry [S11:1453–1455] names
+`OAI.PerfectCompleteness.Theorem11.exists_reduction` in
+`lean/OAI/Computability/PerfectCompleteness/Theorem11.lean`. In the source,
+that theorem "is stated and proved" — "theorem exists_reduction (δ : ℚ)
+(positive : 0 < δ) (less_than_one : δ < 1) : Nonempty (BinaryGapReduction δ)
+:= by" [S10:21–22] closes with
+"obtain ⟨parameters⟩ := FixedParameters.exists_parameters positive
+less_than_one" and `exact` over `FixedBinaryGapReduction.ofPreliminarySoundness`
+[S10:23–25]. `grep` finds **zero** `sorry` in the whole
+`lean/OAI/Computability/PerfectCompleteness/` tree (12 files).
+
+The comparator stub [S9:179–180] carries the same target statement
+"$theorem exists_reduction (δ : ℚ) (positive : 0 < δ) (less_than_one : δ < 1) : Nonempty (PerfectCompleteness.BinaryGapReduction δ) := by [S9:179–180]$" over the config `ComparatorChallenges/PerfectCompleteness.json`;
+the stub's copy ends in `sorry` at [S9:181], and the proved copy lives under
+`lean/OAI/` [S10:21–25]. A comparator stub is a target the release set
+itself; the proved version is the one the `main_results` entry names. The
+reading is of source text only — no `lake` or `lean` run elaborates the
+proof, so the claim here is that the proof body exists in the source, not
+that the file compiles.
+
+## Coverage
+
+The ledger row `fam=105` [S12] records the tier and the counts: `tier=T3`,
+`paps=1`, `paps_form=1`, `chal=1`, `mainres=1`, `scope_note=1`,
+`verification=0`, `trace=`. This family is one of the strong-coverage shapes
+in the ledger: the single manuscript is a formalization source, and the single
+`main_results` entry names the reduction theorem the manuscript's `thm:main`
+states [S4:32–45], with the shape flags `partial|uniform` and
+`resolves_named=1` — the family title names Khot's conjecture, and the ledger
+verb rule fires on the release blurb, not on manuscript theorem text. There is
+no verification bundle and no reasoning trace; the shipped PDF [S7] and the
+Lean layer [S8] [S9:179–180] [S10] [S11] are the two evidence surfaces.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2613], the manuscript link [S1:2620], and the manuscript abstract [S1:2622]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 105 at [S2:288] |
+| S3 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/main.tex`](../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/main.tex) | 64 | root (`\documentclass`); abstract [S3:48–53]; the eight-section include order [S3:54–61] |
+| S4 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/00-introduction.tex`](../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/00-introduction.tex) | 254 | the projection-game definition [S4:3–9]; the 2-to-1 definition [S4:12–17]; the main theorem [S4:32–45]; the $k$-colorable corollary [S4:189–200]; the Not-Two corollary [S4:222–232]; the historical paragraphs [S4:54–73] |
+| S5 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/01-preliminaries.tex`](../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/01-preliminaries.tex) | 529 | the PCP gap theorem [S5:47–57]; weighted projection-game repetition [S5:125–132]; the Grassmann expansion consequence [S5:235–241]; the inverse theorem [S5:406–412] |
+| S6 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/07-parameters-output.tex`](../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/07-parameters-output.tex) | 277 | the parameter choice order [S6:4–14]; the final soundness and degenerate-output handling [S6:255–276] |
+| S7 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf`](../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf) | 21215 | the manuscript as shipped |
+| S8 | [`lean/docs/105.md`](../../lean/docs/105.md) | 15 | scope note — the formalization's Scope at [S8:9] and its comparator link |
+| S9 | [`lean/ComparatorChallenges/PerfectCompleteness.lean`](../../lean/ComparatorChallenges/PerfectCompleteness.lean) | 185 | the comparator stub — `exists_reduction` at [S9:179–181] with its `sorry` |
+| S10 | [`lean/OAI/Computability/PerfectCompleteness/Theorem11.lean`](../../lean/OAI/Computability/PerfectCompleteness/Theorem11.lean) | 32 | the formalized file — `exists_reduction` proved at [S10:21–25] |
+| S11 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S11:1453–1455] |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=105`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

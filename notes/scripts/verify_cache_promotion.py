@@ -63,9 +63,9 @@ from catlib.promote import (
 # the script tree and the two 2026-10-11 records, which the 2026-10-11 record of itself cannot name.
 # `2026-10-12_extract_named_results` is the run that proves the population producer's L1: the older
 # record for that target names `notes/catalog.tsv`, the ledger's pre-`tables/` path, so the new record
-# is what makes the registry's `notes/tables/catalog.tsv` provable.
+# is what makes the registry's `notes/gen/tables/catalog.tsv` provable.
 # `2026-10-12_measure_templates_tables` and `2026-10-12_rr_tables` are the post-`math-faz.6` records:
-# the 16 generated tables moved out of `notes/index/` into `notes/tables/`, so the index tree these two
+# the 16 generated tables moved out of `notes/gen/index/` into `notes/gen/tables/`, so the index tree these two
 # writers read is 1,033 pages, not 1,049 files, and the older records for those targets name the 16 TSVs
 # under the path the writers no longer open.
 README = ROOT / "notes" / "scripts" / "README.md"

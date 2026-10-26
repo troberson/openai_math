@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_counterexample_crosscheck.py`.
 
-The checker verifies `notes/reports/counterexample-crosscheck.md` against the shipped files: the 28-family
+The checker verifies `notes/gen/reports/counterexample-crosscheck.md` against the shipped files: the 28-family
 population, its tier split, the ledger sums, the entry/config/gap counts, the carrier-typed count and
 the stub `sorry` totals are recomputed from the ledger, `overview.tex`, `lean/formalization.yaml`,
 `lean/docs/` and `lean/ComparatorChallenges/`; every anchor resolves; every fenced block matches its

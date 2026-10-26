@@ -1,6 +1,6 @@
 """The extracted self-tests for `notes/scripts/verify_scope_exclusions.py`.
 
-The checker measures; this file injects. Each test corrupts one part of `notes/reports/scope-exclusions.md`
+The checker measures; this file injects. Each test corrupts one part of `notes/gen/reports/scope-exclusions.md`
 in memory, runs the checker's own passes over the mutated lines, and requires the pass that owns that
 defect to name it. Nothing here writes a page: a mutation is a list of lines, never the file.
 

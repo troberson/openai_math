@@ -4,7 +4,7 @@ The checker's passes are: the population pass (one block per population family, 
 header pass (the block's `overview.tex` line is that family's `\resultentry`, `n` is its manuscript
 count, the tier matches the ledger); the quotation pass (every clause and every title verbatim on the
 cited line, and the clause's own anchor equal to the block anchor); the id pass (every `[fam:seq]`
-resolves in `notes/tables/subfindings.tsv` to that family's manuscript row, and the quoted title is
+resolves in `notes/gen/tables/subfindings.tsv` to that family's manuscript row, and the quoted title is
 that row's title); the coverage pass (`claimed` and `unclaimed` disjoint and covering the family's
 full seq set); the target pass (`claimed` equals the set of ids used as pair targets); the counts pass
 (the Summary table equal to the recomputation, the false-positive list consistent with the probe set);
@@ -31,7 +31,7 @@ import measure_names as M
 import pytest
 from catlib.text import first_group
 
-PAGE = pathlib.Path("notes/reports/subfinding-pairs.md")
+PAGE = pathlib.Path("notes/gen/reports/subfinding-pairs.md")
 
 
 def block_head(c, fam):

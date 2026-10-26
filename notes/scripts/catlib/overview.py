@@ -1,6 +1,6 @@
 """overview.tex and CONTENTS.md: the release's own claims, parsed.
 
-Moved verbatim from build_catalog.py, which stays the writer of notes/tables/catalog.tsv and
+Moved verbatim from build_catalog.py, which stays the writer of notes/gen/tables/catalog.tsv and
 re-exports these names for the scripts that import it.
 
 overview.tex declares both \\cataloguesection and \\resultentry with \\newcommand at lines 28

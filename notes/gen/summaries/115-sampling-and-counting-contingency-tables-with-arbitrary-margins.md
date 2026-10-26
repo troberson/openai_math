@@ -1,0 +1,241 @@
+[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 115](../index/theoretical-computer-science/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md)
+
+# 115 — Sampling and counting contingency tables with arbitrary margins
+
+[Index page](../index/theoretical-computer-science/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md)
+
+## Original CONTENTS.md summary
+
+[S1:2822] (family entry):
+
+> **115. Sampling and counting contingency tables with arbitrary margins.** For nonnegative integer matrices with prescribed row and column sums, gives exact uniform sampling in expected polynomial bit time and almost-uniform sampling in worst-case polynomial bit time. The dimensions and binary-encoded margins are unrestricted. Also gives a fully polynomial randomized approximation scheme for counting such tables with arbitrary individual cell bounds, including structural zeros, with polynomial cost on every execution. ([Lean](../../lean/docs/115.md))
+
+[S1:2829] (the exact-uniform manuscript entry, with its abstract at [S1:2831]):
+
+> [Exact Uniform Sampling of Contingency Tables with Arbitrary Margins](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf)
+
+> We give an exact uniform sampler for nonnegative integer contingency tables with arbitrary prescribed margins. It terminates almost surely and has expected bit complexity polynomial in both dimensions and the binary length of the margins. No positivity, balance, sparsity, or fixed-dimension assumption is required.
+
+[S1:2838] (the cell-bounded manuscript entry, with its abstract at [S1:2840]):
+
+> [An FPRAS for Cell-Bounded Contingency Tables](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf)
+
+> We give a fully polynomial randomized approximation scheme for counting nonnegative integer matrices with prescribed row sums, column sums, and individual entry bounds. Both dimensions vary, all numerical data are encoded in binary, and zero bounds are allowed. The algorithm uses only unbiased random bits and has a polynomial bound on its bit operations on every execution.
+
+[S2:308] carries the `\resultentry`, so the release blurb and the overview
+agree on the statement.
+
+## Undergraduate summary
+
+A **contingency table** is a matrix of nonnegative integers whose row sums
+and column sums are prescribed — think of a two-way contingency table in
+statistics, where the margins are fixed and the interior cells are what you
+are trying to fill in. The set of all such matrices is finite but can be
+enormous: a single entry can be as large as the total sum $N$, and the
+number of feasible tables can be exponential in the input size.
+
+The two manuscripts in this family tackle the two natural questions about
+this finite set. The **exact-uniform manuscript** asks: can you pick one
+table at random, with exactly equal probability for every feasible table,
+in polynomial time? It gives two answers: an **exact** sampler that
+terminates almost surely with polynomial *expected* running time, and a
+**bounded-time** sampler whose output is within $2^{-k}$ of uniform in
+total variation, running in polynomial worst-case time [S4:18–32].
+
+The **cell-bounded manuscript** asks: how many such tables are there? More
+precisely, it counts tables where each entry is also bounded by a prescribed
+cell bound (so $b_{ij}=0$ forbids a position), and gives a fully polynomial
+randomized approximation scheme (FPRAS) — a relative-error approximation
+whose running time is polynomial in the input size, the inverse
+error, and the log of the inverse failure probability, on *every*
+execution [S6:21–35]. No positivity, sparsity, balance, or
+fixed-dimension assumption is required in either result.
+
+## Graduate summary
+
+**Exact and bounded-time sampling** ([S4:18–32], `thm:main`). Two
+algorithms exist for arbitrary nonnegative integer margins of equal total.
+Part (i): given $k\ge1$, a bounded-time algorithm outputs a table whose
+law is within $2^{-k}$ in total variation of the uniform law, in time
+polynomial in $m,n,\log(N+1),k$ [S4:20–23]. Part (ii): an algorithm
+outputs an exactly uniform table, terminates almost surely, and has
+expected running time polynomial in $m,n,\log(N+1)$ [S4:25–28]. The
+polynomials are uniform over all margin vectors; no positivity, sparsity,
+balance, or fixed-dimension hypothesis is imposed [S4:30–31].
+
+**Cell-bounded FPRAS** ([S6:21–35], `thm:main`). "There is one randomized
+algorithm with the following guarantee. Given $(r,c,b)$ as above and
+rational $\varepsilon,\delta\in(0,1)$, it outputs a nonnegative rational
+$\widehat Z$ such that
+$\Pr((1-\varepsilon)Z(r,c,b)\le\widehat
+Z\le(1+\varepsilon)Z(r,c,b))\ge1-\delta$" [S6:23–27]. "If
+$\Omega(r,c,b)$ is empty, the output is zero on every execution. The
+algorithm uses independent unbiased bits, and one fixed polynomial in
+$L$, $\varepsilon^{-1}$, and $\log(\delta^{-1})$ bounds its total bit
+operations on every execution" [S6:28–32]. No counting or sampling oracle
+is required [S6:33].
+
+**Proof strategy — exact-uniform manuscript** ([S4:119–158]). Only cells
+incident to a small margin are explicit coordinates of the auxiliary chain;
+the remaining cells form a complete rectangle that is padded so every
+conditional completion problem is dense. Each explicit cell has two bounded
+values (row and column); states where they agree are *transversals*. The
+target law weights a state by the number of padded completions, so
+sampling a state then a uniform completion makes all pairs equally likely.
+Accept only a transversal whose large completion entries are all at least
+the padding; subtracting it gives a uniform original table. Signature
+inequalities (at most one positive eigenvalue, preserved under pair
+summation) and a Poincaré inequality bound the small chain's mixing time
+[S4:131–149]. Dense completion draws are implemented on a finite scaled
+grid with rational arithmetic [S4:151–153]. The exact correction uses the
+residual-mixture construction of Gölbel, Liu, Manurangsi, and Pappik,
+which requires tabulating the approximate sampler's actual finite law —
+an exponential-time step performed only on the rare correction branch
+[S4:99–117].
+
+**Proof strategy — cell-bounded manuscript** ([S6:57–145]). The proof
+"separates numerical size from combinatorial complexity. Large binary
+bounds cannot be expanded into that many binary choices" [S6:57–59].
+Instead, a maximum-capacity spanning forest in the bipartite graph of large
+cells identifies free coordinates; leaf elimination determines tree entries
+from margin equations. Small cells are replaced by labeled pairs with
+transversal weights; two weight extensions ($f_j$ and $\widetilde f_j$)
+control transport and defect masses via quadratic-signature (Lorentzian)
+tests [S6:97–117]. The chain simulates exchanges of selected and
+unselected elements with multipliers learned during annealing, in the style
+of Jerrum–Sinclair–Vigoda's permanent algorithm [S6:119–127]. Completion
+weights are evaluated by a walk on polynomially many bins per free
+coordinate [S6:139–145]. The construction builds on the common-bases
+framework of family 114 [S6:127].
+
+## History of the conjecture
+
+The exact-uniform manuscript positions itself against a named line of
+contingency-table sampling. **Diaconis and Gangolli** treat enumeration and
+generation as a basic problem [S4:46–47]. For two rows, **Dyer and
+Greenhill** give polynomial-time approximate counting and sampling via a
+heat-bath chain with mixing time at most $n(n-1)\log(N/\varepsilon)/2$
+[S4:49–50], and **Kijima and Matsui** give exact uniform sampling by
+monotone coupling from the past [S4:52–54]. The fixed-row case extends
+through **Cryan and Dyer** (dynamic programming + volume estimation),
+**Dyer** (dynamic-programming rejection), and **Cryan, Dyer, Goldberg,
+Jerrum, and Martin** (rapid mixing of the $2\times2$ heat-bath chain for
+every fixed row count) [S4:56–61], but the polynomial bounds in those
+results depend on the fixed row count. **DeSalvo and Zhao** give a general
+exact divide-and-conquer construction using $O(mn\log M)$ expected random
+bits, but their polynomial total-runtime conclusion is conditional on an
+open conjecture about parity-restricted counting quantities [S4:64–70].
+For dense margins, **Dyer, Kannan, and Mount** develop scaled coordinates,
+softened constraints, and lattice walks; **Morris** improves the dense
+bounds [S4:73–75]. For sparse margins, **Arman, Gao, and Wormald** give
+exact uniform generation under $5\Delta^4<N$ [S4:77–80]. Theorem
+`thm:main` removes the margin and dimension restrictions and includes all
+random bits and integer arithmetic in its cost [S4:82–84].
+
+The cell-bounded manuscript cites **Dyer, Kannan, and Mount** and
+**Morris** for the geometric table methods (scaled free coordinates and
+soft constraints) [S6:92–94], **Jerrum, Sinclair, and Vigoda** for the
+permanent-algorithm annealing structure [S6:119–120], **Brändén and Huh**
+for the Lorentzian quadratic-signature framework [S6:113–115], and the
+**common-bases construction of family 114** for the paired transport,
+variance, and trace analysis [S6:127].
+
+**Prior (my training data, not this repo).** Exact uniform generation of
+contingency tables with arbitrary margins was a long-standing open problem
+in the randomized-algorithms community; the two-row case was settled in the
+early 2000s. The removal of the fixed-row restriction and the binary
+encoding requirement (polynomial in the input *length*, not the numeric
+total) are the load-bearing contributions. The cell-bounded FPRAS extends
+the permanent FPRAS methodology to a natural class of constrained
+combinatorial counting. I cannot confirm these independently; the release
+ships both manuscripts as proofs.
+
+## Consequences
+
+- **Exact uniform sampling.** A sampler for arbitrary-margin contingency
+  tables with a.s. termination and polynomial expected bit cost, with no
+  structural assumptions [S4:18–32].
+- **Bounded-time almost-uniform sampling.** The same family with a
+  worst-case polynomial bound and a tunable total-variation tolerance
+  $2^{-k}$ [S4:18–23].
+- **Cell-bounded counting FPRAS.** A fully polynomial randomized
+  approximation for counting tables with individual entry bounds, including
+  structural zeros, with polynomial cost on every execution and exact zero
+  detection [S6:21–35].
+- **Method transfer.** The padding + transversal + signature framework is
+  shared between the two manuscripts and with family 114's common-bases
+  construction; the forest-coordinate and soft-constraint machinery is
+  available for other transportation-polytope problems [S6:57–59,
+  S6:92–94].
+
+## Section skeleton
+
+The exact-uniform manuscript [S3] is a 39-line root that includes six
+section files under `build/sections/` [S3:29–34]: `introduction` (159
+lines), `model-and-graph` (273), `signatures` (326), `transport` (339),
+`dense` (597), `algorithms` (443), followed by plain-style bibliography
+over `refs/sources.bib` [S3:37–38]. The shipped PDF [S7] is the manuscript
+in the form the release distributes.
+
+The cell-bounded manuscript [S5] is a 59-line root that includes eight
+section files under `build/sections/` [S5:45–52]: `introduction` (173),
+`scales` (294), `integer-signatures` (549), `signatures` (423), `transport`
+(775), `evaluation` (482), `algorithm` (707), `flows` (209), followed by
+plain-style bibliography over `references.bib` [S5:56–57]. The shipped PDF
+[S8] is the manuscript in the form the release distributes.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier T2 with one scope note [S9] and
+one comparator stub [S10], but **zero** `main_results` entries — no yaml
+entry names either manuscript. The scope note's Scope section states: "The
+formalization gives an exact uniform sampler for nonnegative integer
+contingency tables with arbitrary prescribed row and column sums having
+equal totals. It terminates almost surely, every halted output is feasible,
+and each table has exactly the uniform limiting probability. Expected bit
+complexity is polynomial in the dimensions and the binary length of the
+margins" [S9:10]. It also describes the bounded-time sampler with
+$2^{-k}$ TV error [S9:12] and the cell-bounded FPRAS [S9:14–16].
+
+The comparator stub [S10] defines the machine model (`RandomMachine`,
+`Configuration`, `tick`, `run`), the table types (`HasMargins`, `Table`,
+`BoundedTable`), the encoding functions (`encodeMatrix`, `encodeMargins`),
+and three statement types: `BoundedSamplingStatement` [S10:148],
+`ExactSamplingStatement` [S10:170], and `CountingStatement` [S10:199].
+Each is an existential over a machine, a constant, and a degree, with
+polynomial-time and accuracy constraints. The three target theorems close
+with `sorry`: `boundedSampling` at [S10:211], `exactSampling` at
+[S10:214], `counting` at [S10:217]. There is no proved copy under
+`lean/OAI/`.
+
+The reading is of source text only — no `lake` or `lean` run elaborates
+the stubs, so the claim here is that the statement types exist in the
+source, not that any proof is present.
+
+## Coverage
+
+The ledger row `fam=115` [S11] records: `tier=T2`, `paps=2`,
+`paps_form=0`, `chal=1`, `mainres=0`, `scope_note=1`, `verification=0`,
+`trace=`. This is the unformalized two-manuscript shape: the scope note
+describes the target statements and the comparator stub carries them, but
+no `main_results` entry names a proved declaration and no manuscript is
+listed in the yaml `sources:`. The two shipped PDFs [S7] [S8] and the Lean
+stub [S9] [S10] are the evidence surfaces. The shape flags are `bound` and
+`uniform`; `resolves_named=0` — the blurb names no conjecture with a
+resolve verb.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2822], exact-uniform link [S1:2829] and abstract [S1:2831], cell-bounded link [S1:2838] and abstract [S1:2840] |
+| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 115 at [S2:308] |
+| S3 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex`](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex) | 39 | root (`\documentclass`); abstract [S3:22–27]; six `\input` directives [S3:29–34]; 39 lines |
+| S4 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex`](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex) | 158 | `thm:main` [S4:18–32]; history [S4:44–97]; proof strategy [S4:119–158] |
+| S5 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex`](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex) | 58 | root (`\documentclass`); abstract [S5:38–43]; eight `\input` directives [S5:45–52]; 59 lines |
+| S6 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/sections/introduction.tex`](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/sections/introduction.tex) | 173 | `thm:main` [S6:21–35]; proof overview [S6:57–145] |
+| S7 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf`](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf) | 14964 | the exact-uniform manuscript as shipped |
+| S8 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf`](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf) | 18570 | the cell-bounded manuscript as shipped |
+| S9 | [`lean/docs/115.md`](../../lean/docs/115.md) | 23 | scope note — the Scope at [S9:10–16] and two comparator links at [S9:22–23] |
+| S10 | [`lean/ComparatorChallenges/ContingencyTables.lean`](../../lean/ComparatorChallenges/ContingencyTables.lean) | 221 | the comparator stub — `BoundedSamplingStatement` at [S10:148]; `ExactSamplingStatement` at [S10:170]; `CountingStatement` at [S10:199]; three `sorry` theorems at [S10:211] [S10:214] [S10:217] |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=115`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

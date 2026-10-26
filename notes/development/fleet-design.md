@@ -9,9 +9,9 @@ the rest is measured 2026-10-10 and re-checked by `verify_fleet_design.py`.
 | layer | what it is | who writes it | keyed by |
 |---|---|---|---|
 | **L0** | the release tree: `preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**` | upstream, via the merge commits | the git **tree digest** of each path |
-| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **10** hand-written prose pages — `notes/README.md` as the entry point and the **9** hand-written `notes/reports/*.md` pages (the other **14** report pages are generated, so they are L3) | a human, in a commit | the file's content hash |
-| **L2** | the derived records: the **27** `notes/tables/*.tsv` present on disk (9 from the ledger scripts, 16 rendered by `build_index.py` since `math-faz.6`), `notes/index/**` (1,033 files), `notes/summaries/**`, `notes/development/probe/**`, and the untracked keyed store `.qwen/cache/records/**` | the 11 writers | (L0 digests, script-source hash, L1 hashes, args) |
-| **L3** | the tracked output pages: the 19 report-fed `notes/reports/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
+| **L1** | the hand-authored inputs: `notes/data/topics.tsv`, `notes/data/conjecture-standing.tsv`, the **10** hand-written prose pages — `notes/README.md` as the entry point and the **9** hand-written `notes/gen/reports/*.md` pages (the other **14** report pages are generated, so they are L3) | a human, in a commit | the file's content hash |
+| **L2** | the derived records: the **25** `notes/gen/tables/*.tsv` present on disk (9 from the ledger scripts, 16 rendered by `build_index.py` since `math-faz.6`), `notes/gen/index/**` (1,033 files), `notes/gen/summaries/**`, `notes/development/probe/**`, and the untracked keyed store `.qwen/cache/records/**` | the 11 writers | (L0 digests, script-source hash, L1 hashes, args) |
+| **L3** | the tracked output pages: the 19 report-fed `notes/gen/reports/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
 
 ## The purity rule, stated precisely
 
@@ -19,10 +19,10 @@ A script may read a derived record **iff** that record is a pure function of L0 
 digest, and the graph over digests is a **DAG**. A read of a record that the same pass writes is not
 pure: the record's bytes depend on a script that has not run yet, so the key cannot name them.
 
-The rule is not "never read the output dir". `render_reports.py` reads `notes/tables/sources.tsv` and
-`notes/tables/links.tsv` and is legal, because those records are pure functions of L0 ∪ L1 — the renderer
-does not write them. `extract_links.py` reading `notes/reports/links.md` is not legal: that page is written by
-the renderer, in the same pass, from a key that includes `notes/tables/links.tsv`, which `extract_links.py`
+The rule is not "never read the output dir". `render_reports.py` reads `notes/gen/tables/sources.tsv` and
+`notes/gen/tables/links.tsv` and is legal, because those records are pure functions of L0 ∪ L1 — the renderer
+does not write them. `extract_links.py` reading `notes/gen/reports/links.md` is not legal: that page is written by
+the renderer, in the same pass, from a key that includes `notes/gen/tables/links.tsv`, which `extract_links.py`
 writes.
 
 ## The cache key
@@ -64,7 +64,7 @@ scan still reads files. The store lives under `.qwen/`, untracked by the repo's 
 cache write never touches the tracked tree: `git status` is identical before and after a build.
 
 Two scripts are not keyed by a tree digest, because they read git **history**, not the tree:
-`verify_upstream_history.py` (`git show <rev>:` of `lean/formalization.yaml` and `notes/tables/catalog.tsv`)
+`verify_upstream_history.py` (`git show <rev>:` of `lean/formalization.yaml` and `notes/gen/tables/catalog.tsv`)
 and `verify_script_ownership.py` (the four-scripts-named-nowhere gap from
 `git show <manifest-commit>^:`). Their key needs the commit graph. Enumerate them; do not cache them
 blind.
@@ -72,8 +72,8 @@ blind.
 ## The size argument
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is **631M**, `lean/OAI/` is **1740M**
-(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,538,944** bytes over the
-**27** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
+(122,458 files), `notes/gen/index/` is **13M**. `cat notes/gen/tables/*.tsv | wc -c` = **2,362,426** bytes over the
+**25** `notes/gen/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
 A full-corpus `.tex` scan is 128.8 MB over 8,007 files; a `lean/OAI` scan is 1.7 GB. With that little
@@ -123,7 +123,7 @@ passes now live in `verify_page_sync.py`, which owns the render diff for all fiv
 
 The 2026-10-10 probe recorded **two** pages with two writers: `notes/development/index-links.md`, written by
 `render_reports.py` (mode-verified in its 17-page `r,w` list) and by `check_index_links.py` (mode
-`r,w`); and `notes/reports/proof-density.md`, written by `render_reports.py` and by
+`r,w`); and `notes/gen/reports/proof-density.md`, written by `render_reports.py` and by
 `measure_proof_density.py --mutant` (mutant branch only). Both second writers were the sync-pass
 mutant, which wrote the mutated page to disk to test the render diff. `verify_page_sync.py` mutates
 the page text in memory and compares it with the render, so neither checker writes a page and each
@@ -143,20 +143,20 @@ mode strings are the authority. The probe is `notes/scripts/measure_open_probe.p
 `notes/development/probe/2026-10-11_writers.txt`, `notes/development/probe/2026-10-11_checkers.txt`,
 `notes/development/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
 after the store conversion), `notes/development/probe/2026-10-12_seed_quotes.txt` (the `seed_quotes.py` run, which
-reads `notes/reports/subfinding-pairs.md` and writes the TSV through the atomic sibling temp),
+reads `notes/gen/reports/subfinding-pairs.md` and writes the TSV through the atomic sibling temp),
 `notes/development/probe/2026-10-12_seed_quotes_summaries.txt` (the widened `seed_quotes.py` run, which reads the
 21 summaries pages, the notes pages their Sources cells cite, and the manuscript files those cells
 resolve to), `notes/development/probe/2026-10-12_rr_fleet.txt` (the `render_reports.py` record
 taken after the fleet census moved into the writer, which names the script tree the census scans),
 `notes/development/probe/2026-10-12_extract_named_results.txt` (the population producer's run — the older record
 for that target names `notes/catalog.tsv`, the ledger's pre-`tables/` path, so this is the record that
-makes the registry's `notes/tables/catalog.tsv` provable) and
+makes the registry's `notes/gen/tables/catalog.tsv` provable) and
 `notes/development/probe/2026-10-12_measure_templates.txt` (the template census's run, which names the 1,049-file
 index tree the census counts renders into and the 24-file template tree it reads),
 `notes/development/probe/2026-10-12_measure_templates_tables.txt` (the census run after `math-faz.6` moved
 the 16 index tables out, which names the 1,033-page index tree),
 `notes/development/probe/2026-10-12_rr_tables.txt` (the `render_reports.py` run after the move, which names
-`notes/tables/` as a tree),
+`notes/gen/tables/` as a tree),
 `notes/development/probe/2026-10-13_build_index_db.txt` (the FTS builder's run, which proves its L1 is empty
 and names its one write-mode path outside `notes/` — the keyed record's staging file) and
 `notes/development/probe/2026-10-13_seed_quotes_summaries.txt` (the `seed_quotes.py` run after `math-ckd.6`
@@ -185,18 +185,18 @@ thirty records for its L1 exactness pass; the
 
 | script | write modes | generated reads, and whether any points backwards |
 |---|---|---|
-| `build_sources.py` | `notes/tables/.sources.tsv.tmp` (w) — the atomic sibling temp, not the tracked target | `notes/tables/catalog.tsv` (r), written at row 1 — forward |
-| `extract_links.py` | `notes/tables/.links.tsv.tmp` (w) — the atomic sibling temp | `notes/tables/catalog.tsv` (r), written at row 1 — forward |
-| `render_reports.py` | 0 under `notes/`: 18 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,078 generated reads (6 `notes/tables/*.tsv`, 18 `notes/templates/report/*.j2`, 5 `notes/templates/*.j2`, 1,049 `notes/index/**`) — all written earlier in the same pass |
-| `build_index.py` | 0 under `notes/`: 1,049 staged slots (w), promoted by `os.replace` | 7 generated reads (2 `notes/tables/*.tsv`, 5 `notes/templates/*.j2`) — forward |
-| `check_index_links.py` | 0 — `math-o3a.3` removed its page write | 1,033 `notes/index/**` pages and `notes/tables/catalog.tsv` (r), written at row 3 — forward |
-| `measure_proof_density.py` | 0 — `math-o3a.3` removed its page write | `notes/tables/catalog.tsv`, `notes/tables/sources.tsv` (r) — forward |
-| `measure_names.py` | 0 under `notes/`: its write is the record's atomic sibling temp `.qwen/cache/records/<key>/.names.json.tmp` (w), outside `notes/`, moved onto the record by `os.replace` | `notes/tables/catalog.tsv` (r), written at row 1 — forward |
-| `verify_script_ownership.py` | 0 in a plain run (AST census says `RW` on `notes/README.md` and `notes/development/templates.md`; the probe records mode `r` only) | 25 generated reads (2 `notes/tables/*.tsv`, 23 `notes/templates/*.j2`) — forward |
+| `build_sources.py` | `notes/gen/tables/.sources.tsv.tmp` (w) — the atomic sibling temp, not the tracked target | `notes/gen/tables/catalog.tsv` (r), written at row 1 — forward |
+| `extract_links.py` | `notes/gen/tables/.links.tsv.tmp` (w) — the atomic sibling temp | `notes/gen/tables/catalog.tsv` (r), written at row 1 — forward |
+| `render_reports.py` | 0 under `notes/`: 18 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,078 generated reads (6 `notes/gen/tables/*.tsv`, 18 `notes/gen/templates/report/*.j2`, 5 `notes/templates/*.j2`, 1,049 `notes/gen/index/**`) — all written earlier in the same pass |
+| `build_index.py` | 0 under `notes/`: 1,049 staged slots (w), promoted by `os.replace` | 7 generated reads (2 `notes/gen/tables/*.tsv`, 5 `notes/templates/*.j2`) — forward |
+| `check_index_links.py` | 0 — `math-o3a.3` removed its page write | 1,033 `notes/gen/index/**` pages and `notes/gen/tables/catalog.tsv` (r), written at row 3 — forward |
+| `measure_proof_density.py` | 0 — `math-o3a.3` removed its page write | `notes/gen/tables/catalog.tsv`, `notes/gen/tables/sources.tsv` (r) — forward |
+| `measure_names.py` | 0 under `notes/`: its write is the record's atomic sibling temp `.qwen/cache/records/<key>/.names.json.tmp` (w), outside `notes/`, moved onto the record by `os.replace` | `notes/gen/tables/catalog.tsv` (r), written at row 1 — forward |
+| `verify_script_ownership.py` | 0 in a plain run (AST census says `RW` on `notes/README.md` and `notes/development/templates.md`; the probe records mode `r` only) | 25 generated reads (2 `notes/gen/tables/*.tsv`, 23 `notes/templates/*.j2`) — forward |
 
 **0** of the 8 scripts reads a generated file that a later gate row writes. The two backwards edges
 the 2026-10-10 probe recorded are gone: `build_sources.py` consumed the **previous pass's**
-`subfindings.tsv` as its manuscript list and `extract_links.py` read `notes/reports/links.md` that
+`subfindings.tsv` as its manuscript list and `extract_links.py` read `notes/gen/reports/links.md` that
 `render_reports.py` wrote in the previous pass, and no single-pass order satisfies both — which is
 why the row order in the shell list was provably not topological. `math-o3a.3` removed both: the
 manuscript list comes from `overview.tex`, and no writer reads a page. The remaining generated reads
@@ -237,7 +237,7 @@ dated observation, not a re-derivable count, and the wall column moves with it.
 
 `render_reports.py` opens **117,360** times over **18,935** distinct paths — **98,425 repeats
 (84 %)** — and pulls 4.1 GB through `read()`. The bucket split says where: `preprints/` **84,089**
-opens, `lean/OAI/` 23,275, `notes/index/` 5,229, `lean/docs/` 2,476, `lean/ComparatorChallenges/`
+opens, `lean/OAI/` 23,275, `notes/gen/index/` 5,229, `lean/docs/` 2,476, `lean/ComparatorChallenges/`
 1,823, `notes/` 94, `notes/templates/` 87, `notes/scripts/` 59 — the buckets sum to the row's 117,360,
 and **95 %** of the opens are release inputs. The record-store key changed when the 8 TSVs moved, so
 this run rebuilt the store, and the rebuild walks every `preprints/` directory: the `preprints/` bucket
@@ -279,7 +279,7 @@ when `math-o3a.3` moved its sync pass into `verify_page_sync.py`. The pass calle
 checker that owns it. `extract_links.py` is the one writer `math-o3a.4` has **not** converted to the
 record store: its six `preprints/**` walks are still its own.
 
-Decisive: `check("notes/reports/findings.md")` timed three times in one process — **104.50 s → 67.24 s →
+Decisive: `check("notes/gen/reports/findings.md")` timed three times in one process — **104.50 s → 67.24 s →
 0.13 s** on identical code, identical page, identical output. Memoising the 5 report subprocesses
 removes 37.26 s per call; the page-check work is 0.9 s. The gate's cost is re-collection, not
 computation. `math-o3a.4.3` realized that for the corpus measures: `@cache` on
@@ -290,14 +290,14 @@ computation. `math-o3a.4.3` realized that for the corpus measures: `@cache` on
 
 A process-wide memoised read is safe only for files **no writer in the same process writes**.
 `render_reports.py` is the case that decides the scope: it runs `extract_links.py` as a subprocess at
-`:1358` (comment at `:1354`: "extract_links.py writes `notes/tables/links.tsv`, and the renderer must" see
+`:1358` (comment at `:1354`: "extract_links.py writes `notes/gen/tables/links.tsv`, and the renderer must" see
 fresh bytes) and reads `LINKS_TSV` at `:1372` — **after** the child; it runs `build_index.py` at
 `:1131` and reads its report stdout. So the safe scope is the **immutable release inputs**
 (`preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**`, `lean/docs/**`) and
-**not** the generated layer (`notes/tables/*.tsv`, `notes/index/**`, `notes/summaries/**`).
+**not** the generated layer (`notes/gen/tables/*.tsv`, `notes/gen/index/**`, `notes/gen/summaries/**`).
 
 The probe prints per-path counts only for `notes/`, and those counts are exactly the generated side of
-the split: `notes/tables/catalog.tsv` **33** opens, every `notes/index/` page **4**, `notes/development/index-links.md`
+the split: `notes/gen/tables/catalog.tsv` **33** opens, every `notes/gen/index/` page **4**, `notes/development/index-links.md`
 **1**. All three are generated, so none is cacheable under this rule. The release-input side has no
 per-path count in the record — `overview.tex` and the manuscript main files sit in the bucket totals —
 so the bucket split is the evidence for that half, not a reopen count. The record store is safe under
@@ -307,9 +307,9 @@ name bytes read from a tree that is still the tree at `HEAD`, and it writes noth
 ## Why the assertion replaces the second run
 
 The gate's proof was **twice-run byte-identity** of the **8** TSV names `gate_driver.sh` snapshots
-(all **8** present on disk, all under `notes/tables/`; the snapshot used to name a ninth,
+(all **8** present on disk, all under `notes/gen/tables/`; the snapshot used to name a ninth,
 `notes/named-results.tsv`, which no writer produces, and the `2>/dev/null` that hid its absence is gone
-with it) plus every file under `notes/index/` (md5 snapshots), plus identical `git status` snapshots. The proof
+with it) plus every file under `notes/gen/index/` (md5 snapshots), plus identical `git status` snapshots. The proof
 is now the promote-and-verify assertion the gate's own `verify_cache_promotion.py` row carries: for
 every tracked artifact, the bytes the writer landed under its key equal the bytes on the tracked path,
 and the key is computed from the current `git rev-parse HEAD:<path>` tree digests, so a key that no
@@ -325,7 +325,7 @@ by class:
 - **Time / random / env:** **1 hit** — `render_reports.py:1220` sets
   `env={**os.environ, "RENDER_REPORTS_CHILD": "1"}` for the two render children. Zero `datetime`,
   `time.time`, `uuid`, `getpid`, `platform` in any writer, so no timestamp reaches a generated byte.
-- **Set iteration order:** **2 sites** — `build_catalog.py:128`, `build_index.py:591`, both
+- **Set iteration order:** **2 sites** — `build_catalog.py:128`, `build_index.py:592`, both
   `paps_all = [p for fam in fams for p in set(...) | set(...)]`, both consumed only as
   `len(set(paps_all))`: order-independent **by consumption**, not by construction.
 - **Unsorted filesystem walks: 9 sites in the writers + 9 in catlib** not wrapped in `sorted(`
@@ -404,7 +404,7 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    `catlib/…` path) **or bare** (`measure_index_sizes.py:93`, `extract_links.py:593`); a bare name resolves
    under `notes/scripts/`. The line exists in the named file and a `path:a-b` span fits inside it. The
    page carries the anchors the checker counts, the four named here
-   (`build_catalog.py:128`, `build_index.py:591`, `render_reports.py:1220`, `render_reports.py:2043`),
+   (`build_catalog.py:128`, `build_index.py:592`, `render_reports.py:1220`, `render_reports.py:2043`),
    the eight call-site anchors in the amplification section, the unsorted-walk list, the two measured
    site anchors the four do not carry (`catlib/atomic.py:51`, `catlib/atomic.py:96`), and
    `catlib/preprints.py:77`, `catlib/preprints.py:192`,
@@ -416,7 +416,7 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    and exists for the blocks the page will carry.
 3. **Counts** — every count phrase is re-derived: the atomicity grep, the sync-pass grep, the
    tree-digest `git rev-parse`, the `--ignored=matching` check, the byte sum over the present
-   `notes/tables/*.tsv`, the three `du -sk` sizes, the gate row count from `gate.py`'s `ROWS` block, the
+   `notes/gen/tables/*.tsv`, the three `du -sk` sizes, the gate row count from `gate.py`'s `ROWS` block, the
    three site counts (atomicity, env, set iteration), and the probe table's figures (parsed from
    `notes/development/probe/2026-10-11_writers.txt` and `notes/development/probe/2026-10-11_checkers.txt`, the records
    `notes/scripts/measure_open_probe.py` writes, tracked in git). The `free -h` available line, the

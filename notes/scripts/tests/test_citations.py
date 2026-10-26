@@ -1,4 +1,4 @@
-"""The extracted self-tests for `notes/scripts/verify_citations.py` and `notes/reports/citations.md`.
+"""The extracted self-tests for `notes/scripts/verify_citations.py` and `notes/gen/reports/citations.md`.
 
 The checker's passes are: the population gates (521 `.bib` files, 513 owner manuscripts, 13,802
 entries, 372 ledger families, 719 manuscript owners, 17 disciplines, 4 depth levels, 9 field types);
@@ -44,7 +44,7 @@ import verify_citations as v
 from catlib import bib
 from catlib.text import fold_apostrophe
 
-PAGE = pathlib.Path("notes/reports/citations.md")
+PAGE = pathlib.Path("notes/gen/reports/citations.md")
 
 REPO = pathlib.Path(__file__).resolve().parents[3]
 

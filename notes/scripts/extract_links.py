@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract notes/tables/links.tsv: the typed-edge inventory of the release.
+"""Extract notes/gen/tables/links.tsv: the typed-edge inventory of the release.
 
 One row per relation type. Every count is computed here, so the command column
 names this script and re-running it reproduces every number in the file.
@@ -30,8 +30,8 @@ directory beside its notice, so a directory walk is 749 dirs, not 719 manuscript
 superseded edition's bibliography would count its edges twice. The whole-tree counts and the
 superseded-target citation counts are printed in the report, not written to the TSV.
 
-The page check is not here: `notes/reports/links.md` is compared with `render_reports.py`'s render of it by
-`verify_page_sync.py`, which owns that pass. This script writes `notes/tables/links.tsv` and prints the
+The page check is not here: `notes/gen/reports/links.md` is compared with `render_reports.py`'s render of it by
+`verify_page_sync.py`, which owns that pass. This script writes `notes/gen/tables/links.tsv` and prints the
 report every count in the page comes from; it reads no page, so it is not order-dependent — the
 sync pass used to pull `render_reports` in-process, and that render read this script's own output.
 """
@@ -64,7 +64,7 @@ from catlib.paths import (
 from catlib.promote import key_for, promote
 
 REPO = Path(__file__).resolve().parents[2]
-OUT = REPO / "notes" / "tables" / "links.tsv"
+OUT = REPO / "notes" / "gen" / "tables" / "links.tsv"
 
 # The builder's key: the ledger, the page its sync pass compares, the topics vocabulary and the page's
 # template are the tracked reads outside the five hashed trees.
@@ -398,7 +398,7 @@ def main():
         "lean/lakefile.lean",
         "`require ... from git \"url\" @ \"commit\"`",
         len(lake),
-        "each pinned to a 40-char commit; see notes/tables/formalization-deps.tsv",
+        "each pinned to a 40-char commit; see notes/gen/tables/formalization-deps.tsv",
         "A declared pin. No lake run happened here, so no pin is verified buildable.",
     )
     row(
@@ -545,7 +545,7 @@ def main():
     named = [f for f, t in titles.items() if NOUN.search(t)]
     row(
         "named-in-title",
-        "overview.tex `\\resultentry` arg 2 (via notes/tables/catalog.tsv `title`)",
+        "overview.tex `\\resultentry` arg 2 (via notes/gen/tables/catalog.tsv `title`)",
         "title contains conjecture|problem|question|hypothesis",
         len(named),
         f"of {n_families} families",
@@ -644,7 +644,7 @@ def main():
     summary_rows = [r for r in rows if r["summary"].strip() == "1"]
     row(
         "family->notes summary page",
-        "notes/summaries/<NNN>-*.md",
+        "notes/gen/summaries/<NNN>-*.md",
         "file exists",
         len(summary_rows),
         f"of {n_families} families; {sum(int(r['paps']) for r in summary_rows)} manuscripts behind them",

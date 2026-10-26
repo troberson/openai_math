@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Triage the T0 families (no scope note, no challenge, no main result) by claim shape.
 
-Reads notes/tables/catalog.tsv; writes nothing. T0 is the tier with no coverage signal, so the
+Reads notes/gen/tables/catalog.tsv; writes nothing. T0 is the tier with no coverage signal, so the
 `shapes` column drives the buckets. The ledger's `resolves_named` and `counterex_broad` columns
 are second and third T0 discriminators and are deliberately not read here: buckets are first-match,
 so a broader signal added to the first-match chain would move families between buckets -- widening
 `counterexample` to the broad rule moves every T0 family that carries the flag but not the tag into
 C. The underlying `shapes` tags stay multi-label; the T0 counts for both columns are printed below.
 
-Usage: python3 notes/scripts/triage_t0.py [--tsv notes/tables/catalog.tsv]
+Usage: python3 notes/scripts/triage_t0.py [--tsv notes/gen/tables/catalog.tsv]
 
 The tier, the shape tags, and the first-match bucket rule are the package's
 (`catlib.ledger`); the prose each bucket carries is report formatting and stays here.

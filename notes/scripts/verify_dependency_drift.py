@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/reports/dependency-drift.md against the shipped dependency record.
+"""Verify notes/gen/reports/dependency-drift.md against the shipped dependency record.
 
 Report-only; writes nothing. Five passes:
 
@@ -12,7 +12,7 @@ Report-only; writes nothing. Five passes:
    elision and is exempt; so is anything path-shaped.
 4. Counts, table, name lists. Every number the page quotes is re-derived from the files —
    declarations and arrays from `lean/lakefile.lean`, hunks and toolchain rewrites from
-   `lean/patches/`, imports and patch lines from `notes/tables/formalization-deps.tsv` — and must
+   `lean/patches/`, imports and patch lines from `notes/gen/tables/formalization-deps.tsv` — and must
    appear in the page. The patch-size table must equal the TSV row by row, and every name
    list the page prints must equal the computed set.
 5. Sync. The page is compared with notes/scripts/render_reports.py's render of it, so prose that
@@ -21,7 +21,7 @@ Report-only; writes nothing. Five passes:
 
 `lean/OAI/**/*.lean` is never scanned here: import counts are read from the TSV, which
 `extract_formalization_deps.py` measured. The 122,458-file figure is reconciled against
-`notes/reports/formalization-deps.md`, which records it.
+`notes/gen/reports/formalization-deps.md`, which records it.
 
 The self-tests are in notes/scripts/tests/test_dependency_drift.py: that file injects the ten page
 faults — nine count, anchor, table, name-list and code-span faults plus a prose row count outside
@@ -42,11 +42,11 @@ from catlib.paths import LAKE_MANIFEST as MANIFEST
 from catlib.paths import LAKEFILE
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "reports" / "dependency-drift.md"
-TSV = ROOT / "notes" / "tables" / "formalization-deps.tsv"
+PAGE = ROOT / "notes" / "gen" / "reports" / "dependency-drift.md"
+TSV = ROOT / "notes" / "gen" / "tables" / "formalization-deps.tsv"
 PATCHDIR = ROOT / "lean" / "patches"
 TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
-DEPSMD = ROOT / "notes" / "reports" / "formalization-deps.md"
+DEPSMD = ROOT / "notes" / "gen" / "reports" / "formalization-deps.md"
 
 SUFFIX = "-lean4341.patch"
 

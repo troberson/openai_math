@@ -17,7 +17,7 @@ Passes:
   H. notes/development/templates.md -- the census of the two template trees. Lines, bytes and slot
      counts are re-measured here from the template files, the page<->checker pairing is re-read from the
      ALL_PAGES literal in `catlib/templates.py`, and the index tree's render counts are re-counted
-     from notes/index/. The pass re-measures rather than importing measure_templates.py: a checker
+     from notes/gen/index/. The pass re-measures rather than importing measure_templates.py: a checker
      that re-derives a count through the same code the page's writer calls proves only that the code
      agrees with itself.
 
@@ -46,11 +46,11 @@ README = NOTES / "README.md"
 TEMPLATES_PAGE = NOTES / "development" / "templates.md"
 TPL_DIR = NOTES / "templates"
 REPORT_TPL_DIR = TPL_DIR / "report"
-INDEX_DIR = NOTES / "index"
+INDEX_DIR = NOTES / "gen" / "index"
 PROBE_DIR = NOTES / "development" / "probe"
 DEV_DIR = NOTES / "development"
-REPORTS_DIR = NOTES / "reports"
-TABLES_DIR = NOTES / "tables"
+REPORTS_DIR = NOTES / "gen" / "reports"
+TABLES_DIR = NOTES / "gen" / "tables"
 SLOT_MARK = "{{ "
 # The record-store target the writers table carries. A record's directory is the digest key, which the
 # source does not name, so the rule keys on the literal record name — the only part of the path the
@@ -63,7 +63,7 @@ INDEX_PAGE_DIRS = {"discipline.md.j2": "disciplines", "name.md.j2": "names", "to
 INDEX_NON_FAMILY = {"disciplines", "names", "topics", "edges"}
 
 # The page's hand-authored tables, by rule rather than by generator.
-HAND_AUTHORED_TSVS = {"notes/tables/topics.tsv", "notes/tables/conjecture-standing.tsv"}
+HAND_AUTHORED_TSVS = {"notes/data/topics.tsv", "notes/data/conjecture-standing.tsv"}
 
 # The self-test entry points, whose page writes are a mutate-and-restore rather than ownership.
 SELFTEST_DEF = re.compile(r"^def (?:mutants?|mutant_test|selftest)\(", re.MULTILINE)
@@ -133,7 +133,7 @@ def importer_problems(text):
 def path_constants():
     """The notes/-rooted path constants the shared package defines: name -> repo-relative path.
 
-    The chain is two levels deep now: `TABLES = NOTES / "tables"` and then
+    The chain is two levels deep now: `TABLES = NOTES / "gen" / "tables"` and then
     `SOURCES_TSV = TABLES / "sources.tsv"`, so a rule that reads only `NAME = NOTES / "x"` loses the
     eight TSV constants and reports a writer that aliases them as a writer of nothing. Resolve the
     base identifier recursively, keeping only paths that start at `notes/`.
@@ -170,7 +170,7 @@ def path_constants():
 def notes_const(src: str, name: str) -> str | None:
     """The repo-relative path a module-level `NAME = ROOT / "notes" / ...` constant carries.
 
-    Every quoted part is joined: `TPL_DIR = ROOT / "notes" / "templates" / "report"` is
+    Every quoted part is joined: `TPL_DIR = ROOT / "notes" / "gen" / "templates" / "report"` is
     `notes/templates/report` — capturing only the last quoted part reads `notes/report`.
     """
     m = re.search(rf'^{name}\s*=\s*\w+\s*/\s*((?:"[^"]+"\s*/\s*)+"[^"]+")', src, re.MULTILINE)
@@ -258,7 +258,7 @@ def writer_targets(src: str) -> list[str]:
             targets.add(path)
             trees.add(path)
     for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
-        # The script may define the constant itself (`OUT = ROOT / "notes" / "tables" / "catalog.tsv"`), alias
+        # The script may define the constant itself (`OUT = ROOT / "notes" / "gen" / "tables" / "catalog.tsv"`), alias
         # the package constant (`OUT = SOURCES_TSV`), or name a package constant directly.
         direct = notes_const(src, const)
         if direct:
@@ -291,9 +291,9 @@ def writer_targets(src: str) -> list[str]:
     ):
         # The index tree is one target: the constant reads `notes/index` and the page's writers
         # table carries the directory form, so the base is flagged a tree.
-        targets.add("notes/index")
-        trees.add("notes/index")
-    # A base the writer stages a tree under is the directory: notes/summaries -> notes/summaries/.
+        targets.add("notes/gen/index")
+        trees.add("notes/gen/index")
+    # A base the writer stages a tree under is the directory: notes/summaries -> notes/gen/summaries/.
     return sorted(t + "/" if t in trees else t for t in targets)
 
 
@@ -416,7 +416,7 @@ def template_table_rows(text):
 
 
 def templates_problems(text):
-    """Pass H: notes/development/templates.md against the template files, the registry, and notes/index/."""
+    """Pass H: notes/development/templates.md against the template files, the registry, and notes/gen/index/."""
     p = []
     cen = template_measure()
     reg, names, anchor = registry_pairs()
@@ -560,8 +560,8 @@ def check(text):
     # `build_index.py` stages the 16 generated tables as `TABLES / basename`, so the target the rule
     # resolves is the directory, not a file. A TSV under a derived directory is generated; the
     # hand-authored pair is the rule that names which tables the writer set does not write.
-    gen = {n for n in tables_tsv if f"notes/tables/{n}" in derived_paths}
-    if "notes/tables" in derived_paths:
+    gen = {n for n in tables_tsv if f"notes/gen/tables/{n}" in derived_paths}
+    if "notes/gen/tables" in derived_paths:
         gen |= set(tables_tsv) - {n.split("/")[-1] for n in HAND_AUTHORED_TSVS}
     gen_tsv = sorted(gen)
     hand_tsv = sorted(set(tables_tsv) - gen)
@@ -591,15 +591,15 @@ def check(text):
     md_free = sorted(n for n in md_pages if f"notes/{n}" not in checked)
     census = census_rows(text)
     expect = {
-        "notes/index/": len(index),
-        "notes/summaries/": len(summaries),
+        "notes/gen/index/": len(index),
+        "notes/gen/summaries/": len(summaries),
         "notes/data/": len(data),
         "notes/templates/": len(templates),
         "notes/development/*.md": len(dev_md),
         "notes/development/upstream_history/": len(uphist),
         "notes/development/probe/": len(probe),
-        "notes/tables/*.tsv": len(tables_tsv),
-        "notes/reports/*.md": len(reports_md),
+        "notes/gen/tables/*.tsv": len(tables_tsv),
+        "notes/gen/reports/*.md": len(reports_md),
         "notes/*.md": len(top_md),
         "notes/": len(files),
     }

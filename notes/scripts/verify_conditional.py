@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every source citation in notes/reports/conditional.md against the shipped files.
+"""Verify every source citation in notes/gen/reports/conditional.md against the shipped files.
 
 Report-only; writes nothing. Two passes:
 
@@ -26,7 +26,7 @@ from catlib import anchors
 from catlib.paths import NOTES, ROOT
 from catlib.text import collapse_ws
 
-PAGE = NOTES / "reports" / "conditional.md"
+PAGE = NOTES / "gen" / "reports" / "conditional.md"
 
 ANCHOR = anchors.anchor_pattern(anchors.EXT_LEAN)
 QUOTE = re.compile(r'\*"([^"|]{12,})"\*')

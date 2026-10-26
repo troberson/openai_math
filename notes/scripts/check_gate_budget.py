@@ -20,7 +20,7 @@ from pathlib import Path
 BUDGET = 300.0
 ROOT = Path(__file__).resolve().parent.parent.parent
 LOG = ROOT / ".qwen/tmp/reports/gate_wall.txt"
-TSV = ROOT / "notes/tables/gate-rows.tsv"
+TSV = ROOT / "notes/gen/tables/gate-rows.tsv"
 
 
 def wall_of(log: Path) -> float | None:

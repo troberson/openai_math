@@ -9,7 +9,7 @@ the source at render time. The summaries renderer (`build_summaries`) reads the 
 quotes block (the page's quote), not this table. `mode` (raw/folded/none) is not stored: for a
 generated page there is no independent quote to classify.
 
-**The two page grammars are two seeders.** `notes/reports/subfinding-pairs.md` cites by anchor:
+**The two page grammars are two seeders.** `notes/gen/reports/subfinding-pairs.md` cites by anchor:
 
     - main|clause: "<clause>" (`overview.tex:94`) -> "<title>" (`overview.tex:94`) [009:3]
 
@@ -24,7 +24,7 @@ is needed. The span set, the attribution and the classification are the shared r
 here are exactly the spans `verify_summaries.py` pass C checks. `which` is `inline` or `block`; `seq` is the
 span's index in the page, which is also the slot key the per-family template's quote slots join to.
 
-The table lands at `notes/tables/quotes.tsv` through the promote registry, so the cached bytes and the
+The table lands at `notes/gen/tables/quotes.tsv` through the promote registry, so the cached bytes and the
 tracked bytes are the same bytes. `--check-only` runs the full measurement and writes nothing.
 
 Usage: python3 notes/scripts/seed_quotes.py [--tsv] [--check-only]
@@ -39,9 +39,9 @@ from catlib.summaries import Page
 from catlib.text import strip_markup
 from catlib.tsv import csv_text, rows_text
 
-PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
+PAGE = ROOT / "notes" / "gen" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"
-OUT = ROOT / "notes" / "tables" / "quotes.tsv"
+OUT = ROOT / "notes" / "gen" / "tables" / "quotes.tsv"
 PAGES = str(PAGE.relative_to(ROOT))
 
 COLS = ("page", "fam", "seq", "which", "path", "start", "end", "head", "tail")

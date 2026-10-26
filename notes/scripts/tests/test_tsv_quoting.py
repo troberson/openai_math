@@ -119,7 +119,7 @@ def test_clean(mod):
 
     The three totals are not pinned: they are what the pass measures, so a pin here grades
     the checker against itself and breaks on every table added - which is how this test
-    failed when notes/tables/splits.tsv landed. What the clean test can assert is that the
+    failed when notes/gen/tables/splits.tsv landed. What the clean test can assert is that the
     pass read a non-empty population, that the totals are non-zero, and that its per-file
     row count agrees with the repo's canonical reader (csv.DictReader, tab delimiter). The
     two rules can disagree only when a quoted field contains a newline, which the checker's
@@ -127,7 +127,7 @@ def test_clean(mod):
     quoted field, so the agreement on the clean corpus is a measurement, not a tautology.
     """
     files = sorted(TABLES.glob("*.tsv"))
-    assert files, "no TSV under notes/tables/ - the pass read nothing"
+    assert files, "no TSV under notes/gen/tables/ - the pass read nothing"
     problems = []
     rows = 0
     quoted = 0

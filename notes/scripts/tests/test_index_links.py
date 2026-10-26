@@ -6,7 +6,7 @@ paths fails — must not resolve and must classify as the category each claims; 
 from the rendered pages must resolve, because a checker that flags everything is useless; the
 paren-balanced scanner must keep the CAT(0) path whole where `[^)]*` truncates it; and what the
 classifier tags as a directory must be a directory on disk. The basename pass is the invariant
-`math-faz.6` moved the 16 generated tables on: the index tree and `notes/tables/` share no
+`math-faz.6` moved the 16 generated tables on: the index tree and `notes/gen/tables/` share no
 basename, so the two sets are required non-empty, the index must contain collisions, and a collision
 is injected by handing the pass a shared name — a pass that returns 0 because a set is empty is not a
 pass. The clean test asserts the scan baseline as the resolution invariant, not recorded counts: every
@@ -79,7 +79,7 @@ CONTROLS = [
 ]
 
 # The summaries tree is a second page set with its own links. A summary page sits three levels
-# down (notes/summaries/<discipline>/<NNN>-<slug>.md), so a manuscript link is `../../../…`, like
+# down (notes/gen/summaries/<discipline>/<NNN>-<slug>.md), so a manuscript link is `../../../…`, like
 # the index's. These cases resolve against SUMM, not IDX — `resolve` is index-scoped — so they use
 # `resolve_in(SUMM, …)`. One broken href per direction the summaries tree links (a manuscript PDF,
 # and a breadcrumb into the index) and one real href that must resolve.
@@ -101,9 +101,9 @@ CLASSIFIED = [
     ("preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf", "file"),
     ("lean/docs/003.md", "file"),
     ("lean/OAI/Combinatorics", "dir"),
-    ("notes/index/names/", "dir"),
-    ("notes/reports/names.md", "file"),
-    ("notes/tables/names.tsv", "file"),
+    ("notes/gen/index/names/", "dir"),
+    ("notes/gen/reports/names.md", "file"),
+    ("notes/gen/tables/names.tsv", "file"),
 ]
 
 
@@ -126,7 +126,7 @@ def test_injected_hrefs_do_not_resolve(mod):
 
 def test_injected_hrefs_classify_as_the_category_they_claim(mod):
     """A broken href must land in the category it is written to test. Three entry-point mutants
-    were originally written with hrefs that left `notes/index/` and classified as `notes-doc`, so
+    were originally written with hrefs that left `notes/gen/index/` and classified as `notes-doc`, so
     the mutants, not the checker, were the defect."""
     wrong = []
     for page, href, cat in INPUTS:
@@ -161,8 +161,8 @@ def test_paren_balanced_scanner_keeps_the_cat0_path_whole(mod):
 
 def test_directory_categories_match_disk(mod):
     """A link that resolves to a directory is not a link to a file, so the classifier's directory
-    set must be exactly the directories on disk. `notes/index/names/` was the defect the first
-    self-test caught: it sits under `notes/index/` with no `.md` suffix and was tagged
+    set must be exactly the directories on disk. `notes/gen/index/names/` was the defect the first
+    self-test caught: it sits under `notes/gen/index/` with no `.md` suffix and was tagged
     `index-table`."""
     missed = []
     for rel, expected in CLASSIFIED:
@@ -179,10 +179,10 @@ def test_directory_categories_match_disk(mod):
 
 def test_basename_collision_pass_is_nonvacuous(mod):
     """The invariant `math-faz.6` moved the 16 generated tables on: the index tree and
-    `notes/tables/` share no file basename. A pass that reports 0 because one of the sets is empty
+    `notes/gen/tables/` share no file basename. A pass that reports 0 because one of the sets is empty
     is not a pass, so both sets are pinned and a collision is injected by handing the pass a shared
-    name. `README.md` is the realistic shape: `notes/index/README.md` is the index entry point, and a
-    `notes/tables/README.md` would make a bare `README.md` reference ambiguous between the trees. The
+    name. `README.md` is the realistic shape: `notes/gen/index/README.md` is the index entry point, and a
+    `notes/gen/tables/README.md` would make a bare `README.md` reference ambiguous between the trees. The
     pass is scoped to the two trees, not to the index alone: inside the index, 6 discipline names are
     also topic terms, so `disciplines/differential-geometry.md` and `topics/differential-geometry.md`
     share a basename. The pins are the resolution invariant and the floors, not recorded set sizes:

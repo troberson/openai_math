@@ -1,13 +1,13 @@
 """Measure the shared-bibliography graph over the .bib files under preprints/.
 
-Report-only: writes nothing. Every count in notes/reports/citations.md comes from this report.
+Report-only: writes nothing. Every count in notes/gen/reports/citations.md comes from this report.
 
 Method, stated once so the page can quote it:
 
   Population.  Every `preprints/**/*.bib` file, owned by the path component after `preprints`
   (never `parts[-2]` -- the files sit at depths 4, 5, 6 and 9). Manuscripts are the unit; a
-  manuscript maps to a family through notes/tables/subfindings.tsv, and a family to a discipline through
-  notes/tables/catalog.tsv.
+  manuscript maps to a family through notes/gen/tables/subfindings.tsv, and a family to a discipline through
+  notes/gen/tables/catalog.tsv.
 
   Entries.  `@type{key,` at line start; the body runs to the next line-start `@`.
 
@@ -25,7 +25,7 @@ Method, stated once so the page can quote it:
 
   Release-internal works.  An entry is release-labelled when its body contains `OpenAI Math
   Release`; its target is the `preprints/<dir>/` component of the `\\href{...pdf}` in the body. This
-  is the rule notes/tables/links.tsv records for its 397-entry / 396-edge row.
+  is the rule notes/gen/tables/links.tsv records for its 397-entry / 396-edge row.
 
 Static reading only: never run lake, lean, or comparator. Run twice and diff -- the report must be
 identical.

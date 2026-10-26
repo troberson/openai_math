@@ -8,7 +8,7 @@ them. The page's quote is verbatim source text, so the resolver's output is the 
 byte.
 
 **The page grammar is shared with `catlib.anchors`.** `ANCH` is `anchor_pattern(EXT_MAN, ranges=True)`,
-the grammar `notes/reports/named-results.md` and `notes/reports/t0-chains.md` ship, so a seeder that reads a page's
+the grammar `notes/gen/reports/named-results.md` and `notes/gen/reports/t0-chains.md` ship, so a seeder that reads a page's
 anchors uses the same rule the page's checker uses: a page whose anchor grammar narrows fails the seeder
 the way it fails the checker. `nearest_anchor` is the block-quote attribution for a page that cites by
 an anchor; `catlib.summaries.candidates` is the same idea for a page that cites by a `[Sn:line]` marker.
@@ -24,7 +24,7 @@ normalizer and it is lossy on math: `overview.tex:505` carries
 `for $0<q\le4$ and to the Brownian continuum random tree for $q>4$`, and folding turns `\le` into a
 space, which leaves a `<` and a `>` with text between them -- the HTML-tag rule then deletes that text,
 so the folded line reads `for $04$, establishing` and the clause is gone. Measured 2026-10-12 over the
-236 quotes of `notes/reports/subfinding-pairs.md`: locating in the folded line reproduced 232 of 236 and failed
+236 quotes of `notes/gen/reports/subfinding-pairs.md`: locating in the folded line reproduced 232 of 236 and failed
 to find 2 heads; locating in the raw line reproduced 236 of 236 and found every head.
 
 The word pattern tolerates markup **inside** a word and **between** words, because the source writes

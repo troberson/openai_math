@@ -8,7 +8,7 @@ re-implementing it.
 Modules:
   paths      repository root and every release path, plus the path rules
   overview   overview.tex / CONTENTS.md parsing (read_args, parse_overview, parse_contents)
-  ledger     notes/tables/catalog.tsv rows and the claim-shape rules keyed to them
+  ledger     notes/gen/tables/catalog.tsv rows and the claim-shape rules keyed to them
   yaml       lean/formalization.yaml, ComparatorChallenges/*.json, docs/*.md, README.md traces
   preprints  manuscript directory listing, root/main-file resolution, environment counts
   tsv        the tab-separated writer and reader every table in notes/ uses

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate notes/tables/catalog.tsv: one row per result family.
+"""Generate notes/gen/tables/catalog.tsv: one row per result family.
 
 Reads only text metadata that ships in this repo:
   overview.tex, CONTENTS.md, lean/formalization.yaml, lean/docs/*.md,
@@ -16,7 +16,7 @@ from catlib import ledger, measure, overview, tsv, yaml
 from catlib.paths import ROOT
 from catlib.promote import key_for, promote
 
-OUT = ROOT / "notes" / "tables" / "catalog.tsv"
+OUT = ROOT / "notes" / "gen" / "tables" / "catalog.tsv"
 
 # The builder's key is computed at write time, not at import: build_catalog reads only the five
 # hashed trees, so its L1 list is empty and the key is the source plus the args.
@@ -65,7 +65,7 @@ def main():
 
     # Page presence is a filesystem fact, not a derived claim: the directory name is the
     # discipline lowercased with spaces hyphenated, so the glob is the whole test.
-    summary_fams = {p.name[:3] for p in (ROOT / "notes" / "summaries").glob("*/*.md")
+    summary_fams = {p.name[:3] for p in (ROOT / "notes" / "gen" / "summaries").glob("*/*.md")
                     if re.match(r"^\d{3}-", p.name)}
 
     cols = [

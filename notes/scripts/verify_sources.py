@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Verify notes/reports/sources.md and notes/tables/sources.tsv against the manuscript trees on disk.
+"""Verify notes/gen/reports/sources.md and notes/gen/tables/sources.tsv against the manuscript trees on disk.
 
 Report-only; writes nothing and runs nothing. Three passes:
 
 1. TSV integrity. 719 rows, the shipped header, every `pdf` on disk and non-empty, every
    `main_tex` a file that exists and declares `\\documentclass` at line start, every `fam` in
-   notes/tables/catalog.tsv, every family's row count equal to the ledger's `paps`, every resolved main
+   notes/gen/tables/catalog.tsv, every family's row count equal to the ledger's `paps`, every resolved main
    file sitting under `build/`, and the `roots` distribution equal to a fresh line-start recount
    over the **listed** manuscripts. The recount is scoped to the manuscript list, not to every
    directory under preprints/: upstream keeps superseded editions and withdrawal notices on disk.
@@ -40,8 +40,8 @@ from catlib import render as RD
 from catlib.paths import LEDGER_TSV, PREPRINTS, SUBFINDINGS_TSV
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "reports" / "sources.md"
-TSV = ROOT / "notes" / "tables" / "sources.tsv"
+PAGE = ROOT / "notes" / "gen" / "reports" / "sources.md"
+TSV = ROOT / "notes" / "gen" / "tables" / "sources.tsv"
 
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|tsv|yaml)):(\d+)`")
 ANCHOR_SHAPE = re.compile(r"`([\w./+-]+?\.[A-Za-z][A-Za-z0-9]{0,4}):(\d+)`")

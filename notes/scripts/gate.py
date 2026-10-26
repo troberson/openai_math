@@ -66,7 +66,7 @@ ROWS = [
     ("extract_citations.py", (), ()),
     # The render reads the keyed check() record, so the probe has to land it before the render.
     # measure_check_calls is not in L1_HEAD, so its key hashes the working-tree notes/ tree; it must
-    # run after the writers (which write notes/tables/*.tsv and notes/index/) so it lands the record
+    # run after the writers (which write notes/gen/tables/*.tsv and notes/gen/index/) so it lands the record
     # under the same post-writer key the render's cost_population resolves. The render writes
     # notes/scripts/README.md, which is inside that tree, so the probe runs a second time after the
     # render, before the census checker — a distinct tag, so a consumer needing the post-render key

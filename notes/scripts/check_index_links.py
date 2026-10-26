@@ -28,7 +28,7 @@ disciplines, entry point), which is what the coverage gap in notes/development/i
 quotes: the render-time registry total minus the scanned total, attributed per group.
 
 The basename pass is the invariant `math-faz.6` moved the 16 generated tables on: the index tree
-and `notes/tables/` must share no file basename. A page links a table by relative path, so a bare
+and `notes/gen/tables/` must share no file basename. A page links a table by relative path, so a bare
 basename is ambiguous when both trees carry it, and a link that looks like it resolves can resolve
 to the wrong tree. The pass takes the two basename sets as arguments so the self-tests can inject a
 collision without writing a file.
@@ -61,9 +61,9 @@ from catlib import yaml as Y
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
-IDX = ROOT / "notes" / "index"
-SUMM = ROOT / "notes" / "summaries"
-TABLES = ROOT / "notes" / "tables"
+IDX = ROOT / "notes" / "gen" / "index"
+SUMM = ROOT / "notes" / "gen" / "summaries"
+TABLES = ROOT / "notes" / "gen" / "tables"
 SCHEME = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
 # The main_results triples come from the package reader; build_index.py calls main() at module
 # scope, so importing it would run the build.
@@ -149,15 +149,17 @@ def category(rel):
         return "lean-other"
     if p[0] == "reasoning_traces":
         return "trace"
-    if p[0] == "notes" and len(p) >= 2 and p[1] == "index":
-        last = p[-1]
-        if last.endswith(".md"):
-            return "index-page"
-        if last.endswith(".tsv"):
-            return "index-table"
-        return "index-dir"
-    if p[0] == "notes" and len(p) >= 2 and p[1] == "tables":
-        return "tables-tsv" if p[-1].endswith(".tsv") else "notes-doc"
+    if p[0] == "notes" and len(p) >= 3 and p[1] == "gen":
+        if p[2] == "index":
+            last = p[-1]
+            if last.endswith(".md"):
+                return "index-page"
+            if last.endswith(".tsv"):
+                return "index-table"
+            return "index-dir"
+        if p[2] == "tables":
+            return "tables-tsv" if p[-1].endswith(".tsv") else "notes-doc"
+        return "notes-doc"
     if p[0] == "notes":
         return "notes-doc"
     return "release-surface"
@@ -223,16 +225,16 @@ def check_tree(tree, rel_root):
 
 def check_index():
     """Every link in every rendered index page, resolved against the page's directory."""
-    return check_tree(IDX, "notes/index")
+    return check_tree(IDX, "notes/gen/index")
 
 
 def check_summaries():
     """Every link in every rendered summary page, resolved against the page's directory."""
-    return check_tree(SUMM, "notes/summaries")
+    return check_tree(SUMM, "notes/gen/summaries")
 
 
 def page_group(rel_page: str) -> str:
-    """Page group a scanned link sits in, keyed by the top-level path under notes/index/.
+    """Page group a scanned link sits in, keyed by the top-level path under notes/gen/index/.
 
     The 17 discipline dirs hold family pages, so anything that is not names/, topics/,
     disciplines/ or the entry point is a family page.
@@ -274,9 +276,9 @@ def basename_dupes(d: pathlib.Path) -> list[str]:
 
 
 def basename_overlap(idx: set[str], tab: set[str]) -> list[str]:
-    """Basenames shared by the index tree and `notes/tables/`, in sorted order.
+    """Basenames shared by the index tree and `notes/gen/tables/`, in sorted order.
 
-    `math-faz.6` moved the 16 generated tables out of `notes/index/` into `notes/tables/` so every
+    `math-faz.6` moved the 16 generated tables out of `notes/gen/index/` into `notes/gen/tables/` so every
     TSV in the repo sits in one directory. The invariant that keeps that move safe is that the two
     trees share no basename: an index page links a table by relative path, so a page that names a
     bare basename is ambiguous when both trees carry it, and a link that appears to resolve can
@@ -323,7 +325,7 @@ def measure() -> dict[str, Any]:
                      for e in Y.main_results_entries())
     import csv
     ledger = {}
-    with open(ROOT / "notes" / "tables" / "catalog.tsv", newline="", encoding="utf-8") as fh:
+    with open(ROOT / "notes" / "gen" / "tables" / "catalog.tsv", newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             ledger[r["fam"]] = r
     paps = sum(int(r["paps"]) for r in ledger.values())
@@ -394,7 +396,7 @@ def measure() -> dict[str, Any]:
 def measure_summaries() -> dict[str, Any]:
     """Every number the summaries-tree report prints, as data.
 
-    The summaries tree (`notes/summaries/`) is where `build_summaries.py` renders the 60 family
+    The summaries tree (`notes/gen/summaries/`) is where `build_summaries.py` renders the 60 family
     pages and keeps the link-only README. It is a second page tree with its own links — breadcrumb
     to the index, manuscript PDFs and LaTeX, `CONTENTS.md`, `overview.tex` — and those links have
     no checker of their own: `verify_summaries.py` resolves a page's markdown links only relative to

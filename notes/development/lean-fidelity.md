@@ -224,10 +224,10 @@ for the general point: the divergence sits in a clause the numeric census only h
 ## Design decision on the page type
 
 **New directory?** No. The ownership manifest (`notes/scripts/verify_script_ownership.py`)
-owns only fixed note-tree shapes — `notes/index/`, `notes/summaries/`, `notes/data/`, the
+owns only fixed note-tree shapes — `notes/gen/index/`, `notes/gen/summaries/`, `notes/data/`, the
 template trees, `notes/development/upstream_history/`, `notes/development/probe/`,
-`notes/tables/`, files directly under `notes/`, and files directly under `notes/development/`
-and `notes/reports/`. A new `notes/fidelity/` directory would be flagged "file under notes/
+`notes/gen/tables/`, files directly under `notes/`, and files directly under `notes/development/`
+and `notes/gen/reports/`. A new `notes/fidelity/` directory would be flagged "file under notes/
 owned by no rule" and fail the ownership census. A hand-written analysis doc lives in
 `notes/development/`, which is where this page sits.
 

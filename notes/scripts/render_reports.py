@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Render the report-fed notes pages from the templates at notes/templates/report/.
+"""Render the report-fed notes pages from the templates at notes/gen/templates/report/.
 
 Writer: the 16 report-fed pages under notes/ — sources.md, abstracts.md, named-results.md,
 index-design.md, names.md, proof-density.md, index-links.md, links.md, dependency-drift.md,
 formalization-deps.md, verification-dirs.md, scope-exclusions.md, topics.md, t0-chains.md,
-subfinding-pairs.md and README.md — each from its template at notes/templates/report/. Every
+subfinding-pairs.md and README.md — each from its template at notes/gen/templates/report/. Every
 number on a page is measured here, either by calling the report the page itself names as its rule
 (compare_abstracts.measure() for abstracts.md, extract_named_results.population() for
 named-results.md, measure_index_sizes.population() for index-design.md, check_index_links.measure()
@@ -87,36 +87,36 @@ from catlib.promote import CHECKER_L1, key_for
 from catlib.quotes import resolve
 from jinja2 import Environment, FileSystemLoader
 
-TPL = ROOT / "notes" / "templates" / "report"
+TPL = ROOT / "notes" / "gen" / "templates" / "report"
 
 # The builder's key is computed inside main(), not at import: its L1 names the 1,049-file index tree
 # it reads, and `catlib/templates.py` imports this module, so a module-level key would make every
 # consumer of the registry pay that read. The L1 list is the registry's.
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
                   trim_blocks=True, lstrip_blocks=True, autoescape=False)
-TSV = ROOT / "notes" / "tables" / "sources.tsv"
+TSV = ROOT / "notes" / "gen" / "tables" / "sources.tsv"
 # One constant per page, written by name in main(): the ownership checker derives a writer's targets
 # from the receiver of its write call, so a write through a loop variable is invisible to it.
-SOURCES_MD = ROOT / "notes" / "reports" / "sources.md"
-ABSTRACTS_MD = ROOT / "notes" / "reports" / "abstracts.md"
-NAMED_RESULTS_MD = ROOT / "notes" / "reports" / "named-results.md"
+SOURCES_MD = ROOT / "notes" / "gen" / "reports" / "sources.md"
+ABSTRACTS_MD = ROOT / "notes" / "gen" / "reports" / "abstracts.md"
+NAMED_RESULTS_MD = ROOT / "notes" / "gen" / "reports" / "named-results.md"
 INDEX_DESIGN_MD = ROOT / "notes" / "development" / "index-design.md"
-NAMES_MD = ROOT / "notes" / "reports" / "names.md"
-PROOF_DENSITY_MD = ROOT / "notes" / "reports" / "proof-density.md"
+NAMES_MD = ROOT / "notes" / "gen" / "reports" / "names.md"
+PROOF_DENSITY_MD = ROOT / "notes" / "gen" / "reports" / "proof-density.md"
 INDEX_LINKS_MD = ROOT / "notes" / "development" / "index-links.md"
-LINKS_MD = ROOT / "notes" / "reports" / "links.md"
-LINKS_TSV = ROOT / "notes" / "tables" / "links.tsv"
-DRIFT_MD = ROOT / "notes" / "reports" / "dependency-drift.md"
+LINKS_MD = ROOT / "notes" / "gen" / "reports" / "links.md"
+LINKS_TSV = ROOT / "notes" / "gen" / "tables" / "links.tsv"
+DRIFT_MD = ROOT / "notes" / "gen" / "reports" / "dependency-drift.md"
 PATCHES_DIR = ROOT / "lean" / "patches"
 TOOLCHAIN_FILE = ROOT / "lean" / "lean-toolchain"
-DEPS_MD = ROOT / "notes" / "reports" / "formalization-deps.md"
-VERIF_MD = ROOT / "notes" / "reports" / "verification-dirs.md"
-EX_MD = ROOT / "notes" / "reports" / "scope-exclusions.md"
-TOPICS_MD = ROOT / "notes" / "reports" / "topics.md"
-T0_CHAINS_MD = ROOT / "notes" / "reports" / "t0-chains.md"
-SP_MD = ROOT / "notes" / "reports" / "subfinding-pairs.md"
+DEPS_MD = ROOT / "notes" / "gen" / "reports" / "formalization-deps.md"
+VERIF_MD = ROOT / "notes" / "gen" / "reports" / "verification-dirs.md"
+EX_MD = ROOT / "notes" / "gen" / "reports" / "scope-exclusions.md"
+TOPICS_MD = ROOT / "notes" / "gen" / "reports" / "topics.md"
+T0_CHAINS_MD = ROOT / "notes" / "gen" / "reports" / "t0-chains.md"
+SP_MD = ROOT / "notes" / "gen" / "reports" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
-CROSSCHECK_MD = ROOT / "notes" / "reports" / "counterexample-crosscheck.md"
+CROSSCHECK_MD = ROOT / "notes" / "gen" / "reports" / "counterexample-crosscheck.md"
 
 # The census trees notes/scripts/README.md tabulates. The page's checker walks them with its own rule;
 # the writer walks them here, so the census counts on the page are the writer's measurement and the
@@ -126,11 +126,11 @@ SCRIPTS_DIR = NOTES_DIR / "scripts"
 DEV_DIR = NOTES_DIR / "development"
 UPSTREAM_DIR = DEV_DIR / "upstream_history"
 PROBE_DIR = DEV_DIR / "probe"
-REPORTS_DIR = NOTES_DIR / "reports"
+REPORTS_DIR = NOTES_DIR / "gen" / "reports"
 SKEL_DIR = NOTES_DIR / "templates"
-INDEX_DIR = NOTES_DIR / "index"
-SUM_DIR = NOTES_DIR / "summaries"
-TABLES_DIR = NOTES_DIR / "tables"
+INDEX_DIR = NOTES_DIR / "gen" / "index"
+SUM_DIR = NOTES_DIR / "gen" / "summaries"
+TABLES_DIR = NOTES_DIR / "gen" / "tables"
 OWNERSHIP_MD = SCRIPTS_DIR / "README.md"
 # The two TSVs the page records as hand-authored, and the eight the ledger scripts write. The census
 # row splits the table tree into generated and hand-authored, so the writer names both sets.
@@ -145,13 +145,13 @@ OWN_PROBE_PREFIX = (
     "the 2026-10-10 pair that proves the fleet's write modes, the 2026-10-11 writers/checkers pair that "
     "measures the purity population, the 2026-10-11 `render_reports.py` after-record that proves the "
     "render writes nothing, the 2026-10-12 `render_reports.py` record that captures the fleet census, "
-    "the 2026-10-12 `render_reports.py` record that proves the writer's L1 names `notes/tables/` as a "
+    "the 2026-10-12 `render_reports.py` record that proves the writer's L1 names `notes/gen/tables/` as a "
     "tree after `math-faz.6` moved the tables out, the 2026-10-12 `extract_named_results.py` record that "
     "proves its L1 names the ledger at its `tables/` path, the 2026-10-12 `measure_templates.py` record "
     "that proves the census L1 names the index tree at its pre-move 1,049-file size, the 2026-10-12 "
     "`measure_templates.py` record that proves the census L1 names the 1,033-page index tree after the "
     "move, and the 2026-10-13 `build_index_db.py` record that proves the FTS builder's L1 is empty")
-FAITH_MD = ROOT / "notes" / "reports" / "formalization-faithfulness.md"
+FAITH_MD = ROOT / "notes" / "gen" / "reports" / "formalization-faithfulness.md"
 TEMPLATES_MD = ROOT / "notes" / "development" / "templates.md"
 FLEET_MD = ROOT / "notes" / "development" / "fleet-design.md"
 FINDINGS_MD = REPORTS_DIR / "findings.md"
@@ -298,7 +298,7 @@ def phrases(m: dict[str, Any]) -> dict[str, str]:
 
 
 def sources_page() -> str:
-    """notes/reports/sources.md, rendered."""
+    """notes/gen/reports/sources.md, rendered."""
     m = measure()
     p = phrases(m)
     return ENV.get_template("sources.md.j2").render(m=m, p=p, f=f, multi=m["multi"])
@@ -380,7 +380,7 @@ def abstracts_phrases(m: dict[str, Any]) -> dict[str, str]:
 
 
 def abstracts_page() -> str:
-    """notes/reports/abstracts.md, rendered."""
+    """notes/gen/reports/abstracts.md, rendered."""
     m = CA.measure()
     p = abstracts_phrases(m)
     low = [x for x in m["man"] if x["ratio"] < 0.05]
@@ -582,7 +582,7 @@ def tgt_rows(p: dict[str, Any]) -> list[str]:
 
 
 def named_results_page(p: dict[str, Any]) -> str:
-    """notes/reports/named-results.md, rendered from the extractor's population()."""
+    """notes/gen/reports/named-results.md, rendered from the extractor's population()."""
     return ENV.get_template("named-results.md.j2").render(
         p=named_results_phrases(p), tgtrows=tgt_rows(p), f=f,
         m={"titled": p["titled"], "titled_all": p["titled_all"]},
@@ -611,7 +611,7 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
     fam, man, disc = p["families"], p["manuscripts"], p["disciplines"]
     # The tracked TSVs outside the ledger set are every table on disk minus the five the page tabulates,
     # so a new table lands in the sentence the day it is written, not when someone remembers it.
-    added = [f"`notes/tables/{n}` (**{p['sizes'][n][0]}** B over **{p['sizes'][n][1]}** rows)"
+    added = [f"`notes/gen/tables/{n}` (**{p['sizes'][n][0]}** B over **{p['sizes'][n][1]}** rows)"
              for n in sorted(set(p["sizes"]) - set(M.LEDGER_SET))]
     added_list = ", ".join(added[:-1]) + " and " + added[-1]
 
@@ -659,7 +659,7 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "subfindings bytes per row": f"carries **{sf}** rows at **{p['sf_bpr']:.1f}** B/row",
         "ledger set byte total": f"the whole ledger set is **{setb}** B",
         "ledger set scope sentence": f"the ledger set the **{setb}** B figure covers",
-        "all-TSV byte total": f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B",
+        "all-TSV byte total": f"every `notes/gen/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B",
         "tracked TSVs outside the set count": f"The {len(added)} tracked TSVs outside it",
         "added TSV byte figures": added_list,
         "builds-on declaration count": f"(**{p['builds_on']}** `builds-on` declarations at "
@@ -714,7 +714,7 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "index tree bytes": f"the index tree carries **{p['index_bytes']}** B over the "
                             f"**{p['index_pages']:,}** pages",
         "names.tsv key count": f"has one row per folded name key (**{ir('names.tsv')}**)",
-        "page count": f"Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **{fam}** of them",
+        "page count": f"Pages: `notes/gen/index/<discipline>/<NNN>-<name>.md`, **{fam}** of them",
         "raw-bib projection": f"**{be}** rows at the measured **150** B/row is **{rawkib}** KiB",
         "resolved-edge projection": f"subset is **{p['resolved']}** rows (**{p['res_kib']}** KiB)",
         "scope-note config counts": f"scope notes: **{p['fam_cfg_occ']}** occurrences, "
@@ -772,26 +772,26 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
 INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
     "added TSV byte figures": [
-        ("`notes/tables/abstracts.tsv` (**89476** B over **372** rows), "
-         "`notes/tables/citation.tsv` (**64092** B over **391** rows),"),
-        ("`notes/tables/config-declaration.tsv` (**27385** B over **200** rows), "
-         "`notes/tables/configs.tsv` (**65761** B over **416** rows),"),
-        ("`notes/tables/families.tsv` (**108550** B over **372** rows), "
-         "`notes/tables/family-config.tsv` (**8893** B over **416** rows),"),
-        ("`notes/tables/family-lean.tsv` (**21287** B over **200** rows), "
-         "`notes/tables/family-manuscript.tsv` (**135963** B over **719** rows),"),
-        ("`notes/tables/family-name.tsv` (**136769** B over **9819** rows), "
-         "`notes/tables/family-topic.tsv` (**23682** B over **978** rows),"),
-        ("`notes/tables/family-trace.tsv` (**855** B over **10** rows), "
-         "`notes/tables/gate-rows.tsv` (**3211** B over **83** rows),"),
-        ("`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), "
-         "`notes/tables/manuscripts.tsv` (**277825** B over **719** rows),"),
-        ("`notes/tables/names.tsv` (**304513** B over **5842** rows), "
-         "`notes/tables/quotes.tsv` (**985428** B over **2848** rows),"),
-        ("`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), "
-         "`notes/tables/sources.tsv` (**221463** B over **719** rows), "
-         "`notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), "
-         "`notes/tables/topics.tsv` (**22650** B over **92** rows) and")],
+        ("`notes/gen/tables/abstracts.tsv` (**89476** B over **372** rows), "
+         "`notes/gen/tables/citation.tsv` (**64092** B over **391** rows),"),
+        ("`notes/gen/tables/config-declaration.tsv` (**27385** B over **200** rows), "
+         "`notes/gen/tables/configs.tsv` (**65761** B over **416** rows),"),
+        ("`notes/gen/tables/families.tsv` (**108550** B over **372** rows), "
+         "`notes/gen/tables/family-config.tsv` (**8893** B over **416** rows),"),
+        ("`notes/gen/tables/family-lean.tsv` (**21287** B over **200** rows), "
+         "`notes/gen/tables/family-manuscript.tsv` (**135963** B over **719** rows),"),
+        ("`notes/gen/tables/family-name.tsv` (**136769** B over **9819** rows), "
+         "`notes/gen/tables/family-topic.tsv` (**23682** B over **978** rows),"),
+        ("`notes/gen/tables/family-trace.tsv` (**855** B over **10** rows), "
+         "`notes/gen/tables/gate-rows.tsv` (**3211** B over **83** rows),"),
+        ("`notes/gen/tables/lean-dirs.tsv` (**41937** B over **559** rows), "
+         "`notes/gen/tables/manuscripts.tsv` (**277825** B over **719** rows),"),
+        ("`notes/gen/tables/names.tsv` (**304513** B over **5842** rows), "
+         "`notes/gen/tables/quotes.tsv` (**985428** B over **2848** rows),"),
+        ("`notes/gen/tables/scope-notes.tsv` (**26694** B over **242** rows), "
+         "`notes/gen/tables/sources.tsv` (**221463** B over **719** rows), "
+         "`notes/gen/tables/splits.tsv` (**18257** B over **174** rows), "
+         "`notes/gen/tables/topics-rendered.tsv` (**19127** B over **92** rows) and")],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
@@ -821,7 +821,7 @@ def index_page(p: dict[str, Any]) -> str:
     return ENV.get_template("index-design.md.j2").render(p=index_phrases(p))
 
 
-# --- notes/reports/names.md ------------------------------------------------------------------
+# --- notes/gen/reports/names.md ------------------------------------------------------------------
 # The page's fixed vocabularies, transcribed from the page: the probe tokens in the page's order,
 # the rejection-ladder buckets in the page's order, the layer flags with the layer names the page
 # prints, and the words-section keys in table order. The 40 yield rows are DERIVED (family count
@@ -842,7 +842,7 @@ def names_population() -> dict[str, Any]:
     """`measure_names.measure()`, plus the figures its report computes in `main()` and never returns.
 
     The page cites four joins the measurement function does not carry: the wider-pattern environment
-    total (from `notes/tables/sources.tsv`), the `main_results` entry and config counts (from
+    total (from `notes/gen/tables/sources.tsv`), the `main_results` entry and config counts (from
     `lean/formalization.yaml`), the 372-family denominator (from `overview.tex`), and the trace-table
     coverage (from the release's trace attribution). `measure_names.py` prints all of them and returns
     none, so the writer computes them here.
@@ -881,7 +881,7 @@ def names_population() -> dict[str, Any]:
 
 
 def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
-    """The slot dict for notes/reports/names.md, every value measured from the population.
+    """The slot dict for notes/gen/reports/names.md, every value measured from the population.
 
     Left literal by design: the 16-name escape list, the 6 merged-keys list, the deleted-gate names
     list, the singleton examples, the curated `decl_top` excerpt (the page drops two of the report's
@@ -937,7 +937,7 @@ def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
     p["wang_zhang a"] = (f"`wang` is a subject name in {len(wang['fams'])} families' records and a "
                          f"bibliography author in {len(wang['bib_fams'])} of")
     p["wang_zhang b"] = f"them; `zhang` in {len(zhang['fams'])} and {len(zhang['bib_fams'])}"
-    p["tsv_rows"] = f"`notes/tables/names.tsv` carries all {f(len(rows))} rows with a `role` column"
+    p["tsv_rows"] = f"`notes/gen/tables/names.tsv` carries all {f(len(rows))} rows with a `role` column"
     p["spellings"] = (f"{mp['spellings']} of the {f(len(subject))} subject names are spelled "
                       f"more than one way in prose alone")
     p["spellings_count"] = f"the count of names with >1 prose spelling is {mp['spellings']}"
@@ -981,7 +981,7 @@ def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
                      f"statement environments carrying an optional title;")
     p["totals b"] = (f"{f(meta['bib_entries'])} `.bib` entries, {f(meta['bib_author_keys'])} "
                      f"distinct author-surname keys")
-    p["sources_env a"] = f"`notes/tables/sources.tsv` reports {f(mp['wide_env'])}"
+    p["sources_env a"] = f"`notes/gen/tables/sources.tsv` reports {f(mp['wide_env'])}"
     p["sources_env b"] = "environments under a wider pattern"
     p["avg_family"] = f"The average family carries {avg} subject names"
     p["citation_no_page"] = f"({f(len(citation))} of them)"
@@ -1018,7 +1018,7 @@ def pd_median(v: float) -> str:
 
 
 def proof_density_population() -> dict[str, Any]:
-    """Everything notes/reports/proof-density.md quotes, measured through the script the page names.
+    """Everything notes/gen/reports/proof-density.md quotes, measured through the script the page names.
 
     This page's checker IS the measurement (measure_proof_density.py --mutant), so the writer reuses
     its statistic and its population build while the checker keeps its own gates and mutant list. The
@@ -1154,11 +1154,11 @@ IL_DIR_DESC = {
     "latex-build-tree": "`preprints/<dir>/build/` — the LaTeX source tree",
     "lean-dir": "the Lean module dir named by a `main_results` file path",
     "verification-dir": "`preprints/<dir>/verification/` — certificate bundles",
-    "index-dir": "`notes/index/names/`, linked from the entry point",
+    "index-dir": "`notes/gen/index/names/`, linked from the entry point",
 }
 IL_GROUP_CELL = {"name pages": "name pages", "family pages": "family pages",
                  "topic pages": "topic pages", "discipline pages": "discipline pages",
-                 "entry point": "entry point (`notes/index/README.md`)"}
+                 "entry point": "entry point (`notes/gen/index/README.md`)"}
 # Categories whose scanned count exceeds the render-time registered count, in the page's row order.
 IL_GAP_CATS = ["index-page", "manuscript-dir", "notes-doc", "tables-tsv", "config-json",
                "verification-dir", "index-dir"]
@@ -1175,22 +1175,22 @@ IL_SPLIT = {
                     "canonical count: 746")],
     "prose_superseded": ["The 27 extra targets are directories the upstream merge superseded —",
                          ("every one exists on disk, none is listed as a manuscript in "
-                         "`notes/tables/subfindings.tsv`, and all 27")],
+                         "`notes/gen/tables/subfindings.tsv`, and all 27")],
     "prose_indexpage": ["`index-page` 521 targets = 372 family pages + 92 topic",
                         ("pages + 17 discipline pages + 40 name pages, and the 40 name pages are "
                         "linked only from the entry")],
     "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
                           "all 719 present in")],
-    "prose_notesdoc": ["`notes-doc` 29 targets = `notes/reports/names.md` (552 links: one from each of the",
-                       ("551 name pages and one from the entry point), the 25 `notes/summaries/` "
+    "prose_notesdoc": ["`notes-doc` 29 targets = `notes/gen/reports/names.md` (552 links: one from each of the",
+                       ("551 name pages and one from the entry point), the 25 `notes/gen/summaries/` "
                        "pages family pages link,"),
                        ("and the 4 notes docs the entry point links (`index-design.md`, `names.md`, "
                        "`topics.md`,")],
-    "prose_tablestsv": [("`tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from "
+    "prose_tablestsv": [("`tables-tsv` 2 targets = `notes/gen/tables/names.tsv` (553 links: one from "
                         "each of the 551 name"),
-                        ("pages and 2 from the entry point) and `notes/tables/topics.tsv`")],
+                        ("pages and 2 from the entry point) and `notes/data/topics.tsv`")],
     "prose_basenames": [("The index tree carries 1,027 distinct file basenames over 1,033 pages "
-                        "and `notes/tables/` carries")],
+                        "and `notes/gen/tables/` carries")],
     "prose_regchecked": ["**48,016 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
     "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
@@ -1308,8 +1308,8 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
     fam_pg = sum(v for k, v in tops.items() if k not in ("names", "topics", "disciplines"))
     entry_docs = len({rel for pg, _h, rel in s["links"]
                       if pg == "README.md" and CI.category(rel) == "notes-doc"})
-    summaries = len([r for r in s["targets"]["notes-doc"] if r.startswith("notes/summaries/")])
-    names_links = sum(1 for _pg, _h, rel in s["links"] if rel == "notes/reports/names.md")
+    summaries = len([r for r in s["targets"]["notes-doc"] if r.startswith("notes/gen/summaries/")])
+    names_links = sum(1 for _pg, _h, rel in s["links"] if rel == "notes/gen/reports/names.md")
     extra = len(s["extra_dirs"])
     out: dict[str, str] = {}
     out["h_title"] = f"{f(nlinks)} links checked against the shipped files, {nbroken} broken"
@@ -1345,7 +1345,7 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
                           f"{canon['manuscript-dir']} shipped")
     out["prose_superseded"] = (f"The {extra} extra targets are directories the upstream merge "
                                f"superseded — every one exists on disk, none is listed as a "
-                               f"manuscript in `notes/tables/subfindings.tsv`, and all {extra} are "
+                               f"manuscript in `notes/gen/tables/subfindings.tsv`, and all {extra} are "
                                f"reached only from name pages, by {f(s['extra_dir_links'])} links")
     out["line_extra"] = (f"manuscript dirs linked outside the release set  {extra}  on disk "
                          f"{s['extra_dirs_on_disk']}  links {s['extra_dir_links']}")
@@ -1363,23 +1363,23 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
                               f"pages are linked only from the entry point")
     out["prose_latexsource"] = (f"`latex-source` {tg['latex-source']} = the `main_tex` of each of "
                                 f"the {tg['latex-source']} manuscripts, all {tg['latex-source']} "
-                                f"present in `notes/tables/sources.tsv`")
-    out["prose_notesdoc"] = (f"`notes-doc` {tg['notes-doc']} targets = `notes/reports/names.md` "
+                                f"present in `notes/gen/tables/sources.tsv`")
+    out["prose_notesdoc"] = (f"`notes-doc` {tg['notes-doc']} targets = `notes/gen/reports/names.md` "
                              f"({names_links} links: one from each of the {gp['name pages']} name "
                              f"pages and one from the entry point), the {summaries} "
-                             f"`notes/summaries/` pages family pages link, and the {entry_docs} "
+                             f"`notes/gen/summaries/` pages family pages link, and the {entry_docs} "
                              f"notes docs the entry point links (`index-design.md`, `names.md`, "
                              f"`topics.md`, `scripts/measure_names.py`)")
-    out["prose_tablestsv"] = (f"`tables-tsv` {tg['tables-tsv']} targets = `notes/tables/names.tsv` "
+    out["prose_tablestsv"] = (f"`tables-tsv` {tg['tables-tsv']} targets = `notes/gen/tables/names.tsv` "
                               f"({cats['tables-tsv'] - 1} links: one from each of the "
                               f"{gp['name pages']} name pages and "
                               f"{cats['tables-tsv'] - 1 - gp['name pages']} from the entry point) "
-                              f"and `notes/tables/topics.tsv` (1 link, the entry point)")
+                              f"and `notes/data/topics.tsv` (1 link, the entry point)")
     out["line_basenames"] = (f"basename collisions (notes/index vs notes/tables)  "
                              f"{len(s['collisions'])}  over {s['idx_basenames']} index basenames "
                              f"and {s['tab_basenames']} table basenames")
     out["prose_basenames"] = (f"The index tree carries {f(s['idx_basenames'])} distinct file "
-                              f"basenames over {f(npages)} pages and `notes/tables/` carries "
+                              f"basenames over {f(npages)} pages and `notes/gen/tables/` carries "
                               f"{s['tab_basenames']}; the pass reports {len(s['collisions'])} "
                               f"shared, and {s['idx_dupes']} basenames are shared *inside* the "
                               f"index tree")
@@ -1425,7 +1425,7 @@ def index_links_page(p: dict[str, str]) -> str:
     return ENV.get_template("index-links.md.j2").render(p=p)
 
 
-# --- notes/reports/links.md ---------------------------------------------------------------------
+# --- notes/gen/reports/links.md ---------------------------------------------------------------------
 
 # The table's 22 rows: label, the links.tsv edge key, the count-cell suffix, the page's prose.
 # Rows are slotted whole because the counts repeat (two 0s, two 30s, three 12s): a needle for a
@@ -1466,7 +1466,7 @@ LINKS_EDGE_DISP = {
     "manuscript->\\keywords macro": "manuscript→`\\keywords` macro",
 }
 
-# Where notes/reports/links.md wraps a phrase across lines, the prefix its first line ends with.
+# Where notes/gen/reports/links.md wraps a phrase across lines, the prefix its first line ends with.
 LINKS_SPLIT = {
     "sec426_chal": ["sums to **416** while this row"],
     "mm_targets": ["span **268** target"],
@@ -1482,7 +1482,7 @@ LINKS_SPLIT = {
 def links_report() -> dict[str, str]:
     """Run notes/scripts/extract_links.py and key its report lines by their leading label.
 
-    A subprocess, not an import: extract_links.py writes notes/tables/links.tsv, and the renderer must
+    A subprocess, not an import: extract_links.py writes notes/gen/tables/links.tsv, and the renderer must
     not become a second writer of a file the ownership manifest attributes to one script. It runs
     with `--check-only`, so the child writes nothing and two renders can run at once.
     """
@@ -1514,7 +1514,7 @@ def links_population() -> dict[str, Any]:
 
 
 def links_full(p: dict[str, Any]) -> dict[str, str]:
-    """Every count notes/reports/links.md quotes, read from the extract_links.py report and links.tsv."""
+    """Every count notes/gen/reports/links.md quotes, read from the extract_links.py report and links.tsv."""
     rep, tsv, bc_line = p["rep"], p["tsv"], p["bc_line"]
 
     def n(key: str, pat: str) -> int:
@@ -1740,12 +1740,12 @@ def links_page(p: dict[str, str]) -> str:
 
 
 # =============================================================================
-# notes/reports/dependency-drift.md — the pinned-commit / patch surface
+# notes/gen/reports/dependency-drift.md — the pinned-commit / patch surface
 # =============================================================================
 #
-# Read-only over the page's sources: notes/tables/formalization-deps.tsv, lean/lakefile.lean,
+# Read-only over the page's sources: notes/gen/tables/formalization-deps.tsv, lean/lakefile.lean,
 # lean/patches/*.patch, lean/lean-toolchain, lean/lake-manifest.json, lean/formalization.yaml and the
-# OAI source-file count recorded in notes/reports/formalization-deps.md. Nothing is built and nothing is run.
+# OAI source-file count recorded in notes/gen/reports/formalization-deps.md. Nothing is built and nothing is run.
 #
 # verify_dependency_drift.py is deliberately NOT imported. A checker that re-derives a count through
 # the same code as the page it checks proves nothing, so the checker keeps its own recomputation and
@@ -1897,7 +1897,7 @@ def drift_population() -> dict[str, Any]:
     pkg_names = {drift_strip(q["name"]) for q in manifest["packages"]}
     src = re.search(r'OAI/\*\*/\*\.lean` \((\d[\d,]*) files\)', DEPS_MD.read_text(encoding="utf-8"))
     if src is None:
-        msg = "notes/reports/formalization-deps.md names no OAI source-file count"
+        msg = "notes/gen/reports/formalization-deps.md names no OAI source-file count"
         raise ValueError(msg)
     return {
         "rows": rows, "fields": fields, "declared": declared, "reqs": reqs,
@@ -1948,7 +1948,7 @@ def drift_full(p: dict[str, Any]) -> dict[str, str]:
     out["t1_row2"] = (f"| Patch files | **{n_patch}**, **{f(p['total_lines'])}** lines, "
                       f"**{f(p['total_hunks'])}** `diff --git` file hunks | `lean/patches/` |")
     out["t1_row3"] = (f"| Declared libraries with **no** patch | **{len(p['nopatch'])}** | "
-                      "`notes/tables/formalization-deps.tsv` |")
+                      "`notes/gen/tables/formalization-deps.tsv` |")
     out["t1_row4"] = (f"| Patches that rewrite the dependency's `lean-toolchain` | "
                       f"**{p['tc']} of {n_patch}** | `lean/patches/*.patch` |")
     out["t1_row5"] = (f"| Distinct toolchain versions the patches migrate **from** | "
@@ -2104,7 +2104,7 @@ def group_fams(fams: list[str]) -> str:
 
 
 def verification_dirs_population() -> dict[str, Any]:
-    """Every count notes/reports/verification-dirs.md prints, recomputed from the shipped bundles.
+    """Every count notes/gen/reports/verification-dirs.md prints, recomputed from the shipped bundles.
 
     The rules are the ones verify_verification_dirs.py measures with, re-derived on the writer side
     through extract_verification_dirs.py. The checker deliberately does not import this module: a page
@@ -2303,7 +2303,7 @@ EX_PAIR = re.compile(r"^“(.+)”\s*`lean/docs/(\d{3})\.md:(\d+)`$")
 
 
 def scope_exclusions_population() -> dict[str, str]:
-    """Every derived figure on notes/reports/scope-exclusions.md, measured from the shipped scope notes.
+    """Every derived figure on notes/gen/reports/scope-exclusions.md, measured from the shipped scope notes.
 
     The Entries table is a hand read — which clause and which line each family gets is a reading
     decision, not a measurement — so the table stays literal in the template and the counts it
@@ -2522,14 +2522,14 @@ def ownership_population() -> dict[str, Any]:
     # A registry entry names the script that checks a page, and for four reports pages that script is a
     # report-only generator (extract_links.py, measure_topics.py, measure_names.py,
     # measure_proof_density.py), so the row counts the entries that name a checker.
-    checked = len([p for p in ALL_PAGES if p.startswith("notes/reports/")
+    checked = len([p for p in ALL_PAGES if p.startswith("notes/gen/reports/")
                    and ALL_PAGES[p].startswith(("verify_", "check_"))])
     return {
         "index_pages": len(list(INDEX_DIR.rglob("*.md"))),
         "index_tables": index_tables,
         "sum_pages": len(list(SUM_DIR.rglob("*.md"))),
         # The renderer's hand-maintained input tree, one data file per family page. Its own census
-        # rule, distinct from notes/summaries/ (the pages it renders) and notes/templates/.
+        # rule, distinct from notes/gen/summaries/ (the pages it renders) and notes/templates/.
         "data_files": len([p for p in (NOTES_DIR / "data").rglob("*") if p.is_file()]),
         # The checker compares the two trees by basename, so the shared-slug count is the
         # intersection of the basenames, not of the families: each tree carries its own README.md.
@@ -2583,11 +2583,11 @@ def probe_prose(added: list[tuple[str, list[str]]]) -> str:
     for date, pages in added:
         nrec[date] = nrec.get(date, 0) + 1
         for q in pages:
-            if q == "notes/summaries/README.md":
+            if q == "notes/gen/summaries/README.md":
                 continue
-            if q.startswith("notes/summaries/"):
+            if q.startswith("notes/gen/summaries/"):
                 fams.setdefault(date, []).append(q.split("/")[-1].split("-")[0])
-            elif not q.startswith("notes/summaries/"):
+            elif not q.startswith("notes/gen/summaries/"):
                 extra.setdefault(date, []).append(q)
     clauses: list[str] = []
     for date in sorted(nrec):
@@ -2605,46 +2605,46 @@ def probe_prose(added: list[tuple[str, list[str]]]) -> str:
 
 
 # The Cost table's 23 checker rows. The Checks column is the page's prose; the Cost cell is the wall
-# time the gate printed for that row, read from notes/tables/gate-rows.tsv, so the row line is a slot
+# time the gate printed for that row, read from notes/gen/tables/gate-rows.tsv, so the row line is a slot
 # the writer supplies. The Gate column is the self-tests sentence for every row but page_sync.
 COST_CHECKS = {
-    "verify_abstracts.py": "`notes/reports/abstracts.md`",
+    "verify_abstracts.py": "`notes/gen/reports/abstracts.md`",
     "verify_cache_promotion.py": "`catlib/promote.py` — the registry shape against the writers table, "
         "the L1 lists against the audit-hook records, and the cached bytes against every tracked "
         "artifact under its key",
-    "verify_citations.py": "`notes/reports/citations.md`",
-    "verify_conditional.py": "`notes/reports/conditional.md`",
-    "verify_conjecture_standing.py": "`notes/tables/conjecture-standing.tsv`",
-    "verify_counterexample_crosscheck.py": "`notes/reports/counterexample-crosscheck.md`",
-    "verify_dependency_drift.py": "`notes/reports/dependency-drift.md`, "
-        "`notes/reports/formalization-deps.md`",
-    "verify_faithfulness.py": "`notes/reports/formalization-faithfulness.md` — anchors, the count "
+    "verify_citations.py": "`notes/gen/reports/citations.md`",
+    "verify_conditional.py": "`notes/gen/reports/conditional.md`",
+    "verify_conjecture_standing.py": "`notes/data/conjecture-standing.tsv`",
+    "verify_counterexample_crosscheck.py": "`notes/gen/reports/counterexample-crosscheck.md`",
+    "verify_dependency_drift.py": "`notes/gen/reports/dependency-drift.md`, "
+        "`notes/gen/reports/formalization-deps.md`",
+    "verify_faithfulness.py": "`notes/gen/reports/formalization-faithfulness.md` — anchors, the count "
         "phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the "
         "writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff",
-    "verify_findings.py": "`notes/reports/findings.md`",
+    "verify_findings.py": "`notes/gen/reports/findings.md`",
     "verify_fleet_design.py": "`notes/development/fleet-design.md` — anchors, the count phrases "
         "re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, "
         "env, set iteration) and the checker-section anchor list compared with the measured "
         "`name:line` set, the purity and amplification tables, and the page against "
         "`render_reports.py`'s render of it",
     "verify_index_design.py": "`notes/development/index-design.md`",
-    "verify_named_conjectures.py": "`notes/reports/named-conjectures.md`",
-    "verify_named_results.py": "`notes/reports/named-results.md`",
-    "verify_page_sync.py": "`notes/reports/links.md`, `notes/reports/names.md`, "
-        "`notes/reports/topics.md`, `notes/reports/proof-density.md`, "
+    "verify_named_conjectures.py": "`notes/gen/reports/named-conjectures.md`",
+    "verify_named_results.py": "`notes/gen/reports/named-results.md`",
+    "verify_page_sync.py": "`notes/gen/reports/links.md`, `notes/gen/reports/names.md`, "
+        "`notes/gen/reports/topics.md`, `notes/gen/reports/proof-density.md`, "
         "`notes/development/index-links.md` — the render diff for the five pages whose sync pass "
         "used to live in a writer; the mutants mutate page prose in memory, so no page is written",
-    "verify_scope_exclusions.py": "`notes/reports/scope-exclusions.md`",
-    "verify_sources.py": "`notes/reports/sources.md`",
-    "verify_subfinding_pairs.py": "`notes/reports/subfinding-pairs.md`",
-    "verify_subfindings.py": "`notes/tables/subfindings.tsv`",
-    "verify_summaries.py": "`notes/summaries/`",
-    "verify_t0_chains.py": "`notes/reports/t0-chains.md`",
-    "verify_tsv_quoting.py": "`notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start "
+    "verify_scope_exclusions.py": "`notes/gen/reports/scope-exclusions.md`",
+    "verify_sources.py": "`notes/gen/reports/sources.md`",
+    "verify_subfinding_pairs.py": "`notes/gen/reports/subfinding-pairs.md`",
+    "verify_subfindings.py": "`notes/gen/tables/subfindings.tsv`",
+    "verify_summaries.py": "`notes/gen/summaries/`",
+    "verify_t0_chains.py": "`notes/gen/reports/t0-chains.md`",
+    "verify_tsv_quoting.py": "`notes/gen/tables/*.tsv` — the RFC 4180 rule: a field that does not start "
         "with a quote carries no quote at all, and a field that opens a quoted field must close "
         "inside the field with every interior quote doubled",
     "verify_upstream_history.py": "`notes/development/upstream_history/` — the three pages",
-    "verify_verification_dirs.py": "`notes/reports/verification-dirs.md`",
+    "verify_verification_dirs.py": "`notes/gen/reports/verification-dirs.md`",
 }
 
 # The one row whose Gate column is not the self-tests sentence.
@@ -2706,7 +2706,7 @@ CALLS_PHRASES = {
     # Its needle must carry the paragraph's tail: the bare "the {n} `check()` calls the
     # row makes" is shared by six rows, so when two carried the same value the builder
     # slotted one into the other's paragraph, leaving this count a stale literal.
-    "verify_index_design": "the {} `check()` calls the row makes pay the `notes/index/` walk once",
+    "verify_index_design": "the {} `check()` calls the row makes pay the `notes/gen/index/` walk once",
     "verify_fleet_design": "the {} `check()` calls the row makes pay the five",
     "verify_verification_dirs": "the {} `check()` calls",
     "verify_named_results": "the {} `check()` calls pay the 7,240-file walk once",
@@ -2757,14 +2757,14 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
 def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
     """The census table, one slot per row. Each row is one line, so the writer supplies the whole row."""
     out = {
-        "census_index": f"| `notes/index/` | **{p['index_pages']:,}** | generated — `build_index.py`; the "
-                        f"{p['index_tables']} tables it renders land in `notes/tables/` |",
-        "census_summaries": f"| `notes/summaries/` | **{p['sum_pages']}** | hand-written — the reading "
+        "census_index": f"| `notes/gen/index/` | **{p['index_pages']:,}** | generated — `build_index.py`; the "
+                        f"{p['index_tables']} tables it renders land in `notes/gen/tables/` |",
+        "census_summaries": f"| `notes/gen/summaries/` | **{p['sum_pages']}** | hand-written — the reading "
                             f"record: {p['sum_pages'] - 1} family pages and the link-only index page "
                             "`README.md` |",
         "census_data": f"| `notes/data/` | **{p['data_files']}** | the summary renderer's input: one "
                        f"data file per family page — the sources, quote spans and sections "
-                       "`build_summaries.py` renders `notes/summaries/` from |",
+                       "`build_summaries.py` renders `notes/gen/summaries/` from |",
         "census_templates": f"| `notes/templates/` | **{p['skels'] + p['report_tpls']}** | **{p['skels']}** "
                             f"hand-written index skeletons + **{p['report_tpls']}** report templates built "
                             "by `build_report_templates.py` |",
@@ -2777,10 +2777,10 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
                            "the record of each upstream merge, checked by `verify_upstream_history.py` |",
         "census_probe": f"| `notes/development/probe/` | **{p['probe_records']}** | the audit-hook probe "
                         f"records: {OWN_PROBE_PREFIX}, {p['probe_prose']}, {OWN_PROBE_SUFFIX} |",
-        "census_tables": f"| `notes/tables/*.tsv` | **{p['tsv_count']}** | **{p['tsv_gen']}** generated, "
+        "census_tables": f"| `notes/gen/tables/*.tsv` | **{p['tsv_count']}** | **{p['tsv_gen']}** generated, "
                          f"**{p['tsv_hand']}** hand-authored — {p['tsv_ledger']} written by the ledger "
                          f"scripts and {p['index_tables']} rendered by `build_index.py` since `math-faz.6` |",
-        "census_reports": f"| `notes/reports/*.md` | **{p['reports_md']}** | **{p['reports_gen']}** "
+        "census_reports": f"| `notes/gen/reports/*.md` | **{p['reports_md']}** | **{p['reports_gen']}** "
                           f"generated — the report-fed pages `render_reports.py` renders; "
                           f"**{p['reports_hand']}** hand-written. **{p['reports_checked']}** with a "
                           f"checker, **{p['reports_md'] - p['reports_checked']}** without. `math-faz.4` "
@@ -2812,7 +2812,7 @@ def ownership_page(p: dict[str, str]) -> str:
 
 
 def findings_population() -> dict[str, Any]:
-    """The counts notes/reports/findings.md quotes that move when a summary page is added: the families
+    """The counts notes/gen/reports/findings.md quotes that move when a summary page is added: the families
     with a page and the manuscripts behind them, the index page/link/broken census, and the t0-chains
     coverage-signal split. The index scan is the cached index-links population and the t0-chains
     population is cached, so both walks are paid once per render, not once per page."""
@@ -2828,7 +2828,7 @@ def findings_population() -> dict[str, Any]:
 
 
 def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
-    """label → full measured phrase, for notes/reports/findings.md."""
+    """label → full measured phrase, for notes/gen/reports/findings.md."""
     return {
         "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
@@ -2869,7 +2869,7 @@ def fleet_sh(*args: str) -> str:
 
 def fleet_layer(path: str) -> str:
     """The layer a probe-recorded `notes/` path belongs to."""
-    if path.startswith(("notes/index/", "notes/summaries/", "notes/templates/")):
+    if path.startswith(("notes/gen/index/", "notes/gen/summaries/", "notes/templates/")):
         return "generated"
     rest = path[len("notes/"):]
     if rest.endswith(".tsv"):
@@ -2948,7 +2948,7 @@ def fleet_population() -> dict[str, Any]:
     ignored = [l for l in fleet_sh("git", "status", "--porcelain", "--ignored=matching", "--",
                                    "preprints", "lean", "overview.tex", "CONTENTS.md",
                                    "reasoning_traces").splitlines() if l.strip()]
-    tsvs = sorted((ROOT / "notes/tables").glob("*.tsv"))
+    tsvs = sorted((ROOT / "notes/gen/tables").glob("*.tsv"))
     probe = sorted(p.name for p in (ROOT / "notes/development/probe").iterdir() if p.is_file())
     gate = (ROOT / "notes/scripts/gate.py").read_text(encoding="utf-8")
     rows_block = gate[gate.index("ROWS = ["):]
@@ -2970,7 +2970,7 @@ def fleet_population() -> dict[str, Any]:
         gen = [p for p, m in paths.items() if "r" in m and fleet_layer(p) == "generated"]
         purity.append((script, len(writes), len(gen)))
     du = {name: int(fleet_sh("du", "-sk", rel).split()[0]) // 1024
-          for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index"))}
+          for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/gen/index"))}
     return {
         "atomic": atomic, "atomic_sites": atomic_sites,
         "scripts": len(scripts), "modules": len(modules),
@@ -3017,8 +3017,8 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "sync_other": f"**{v['sync_other']}** are not",
         "digests": f"**{v['digests']}** digests",
         "ignored_line": f"returns **{v['ignored']} line{'s' if v['ignored'] != 1 else ''}**",
-        "tsv_bytes": f"`cat notes/tables/*.tsv | wc -c` = **{v['tsv_bytes']:,}** bytes",
-        "tsv_count": f"**{v['tsv_count']}** `notes/tables/*.tsv` present on disk",
+        "tsv_bytes": f"`cat notes/gen/tables/*.tsv | wc -c` = **{v['tsv_bytes']:,}** bytes",
+        "tsv_count": f"**{v['tsv_count']}** `notes/gen/tables/*.tsv` present on disk",
         "probe_records": f"The tracked records are **{v['probe_records']}**:",
         "du_preprints": f"**{du['preprints']}M**",
         "du_oai": f"**{du['oai']}M**",
@@ -3059,9 +3059,9 @@ def fleet_page(p: dict[str, str]) -> str:
 
 
 def topics_population(lf: dict[str, str]) -> dict[str, str]:
-    """Every derived figure on notes/reports/topics.md, measured from the curated vocabulary.
+    """Every derived figure on notes/gen/reports/topics.md, measured from the curated vocabulary.
 
-    notes/tables/topics.tsv is the source of truth and measure_topics.measure() matches its patterns over the
+    notes/data/topics.tsv is the source of truth and measure_topics.measure() matches its patterns over the
     four texts a family ships, so the 92-row yield table, the coverage line, and both histograms are
     measurements. The reading-pass table stays literal: its reach column mixes bare-stem probes with a
     shipped-pattern probe and with reading prose, and no single rule reproduces it. The MSC/keywords
@@ -3293,7 +3293,7 @@ def t0_chains_page(p: dict[str, str]) -> str:
     return ENV.get_template("t0-chains.md.j2").render(p=p)
 
 
-# --- page 10: notes/reports/subfinding-pairs.md -------------------------------------------------------
+# --- page 10: notes/gen/reports/subfinding-pairs.md -------------------------------------------------------
 # The pairing judgement is a reading record, so the writer reads it back out of the page it replaces
 # (the shape scope-exclusions.md's Entries table already uses): every Summary-table figure below is a
 # count of the page's own pair lines. verify_subfinding_pairs.py re-derives them independently and
@@ -3309,7 +3309,7 @@ SP_FP_SENT = re.compile(r"Probe-vocabulary false positives: ([0-9, ]+)\.")
 def sp_pair_lines() -> list[tuple[str, str]]:
     """Every pair line the quote-spec table resolves to, as (label, line text), in table order.
 
-    `notes/tables/quotes.tsv` is seeded in page order, so a clause row is followed by its title row. The
+    `notes/gen/tables/quotes.tsv` is seeded in page order, so a clause row is followed by its title row. The
     table also carries the summaries rows, which this page does not render, so the pair rows are selected
     by `page` — a writer that read the whole table would build 1,161 lines for a 127-line page. The table
     carries a locator (head/tail in a line window), not the span: the writer re-resolves it against the
@@ -3469,7 +3469,7 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
         out["sp_notread"] = (f"Every family with two or more manuscripts is read: the page covers "
                              f"{len(pop)} of the {len(multi)}, carrying "
                              f"{sum(counts[f] for f in pop)} manuscripts.")
-    out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/tables/subfindings.tsv` "
+    out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/gen/tables/subfindings.tsv` "
                       f"are not paired; only the {p['manuscript_rows']} manuscript rows")
     out["sp_rows2"] = f"only {mss} of those are in this population"
     out |= dict(p["pair_lines"])
@@ -3610,7 +3610,7 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
     out["col_ver"] = (f"| `verification` | manuscript dirs with a `verification/` subdir | "
                       f"{ver_dirs} dirs over {len(ver_fams)} families; family 348's {v348} are one "
                       "bundle shipped twice. A **count, not a pointer** — see the entry-point record "
-                      "in `notes/reports/verification-dirs.md` |")
+                      "in `notes/gen/reports/verification-dirs.md` |")
     inp = sorted(r["fam"] for r in rows if int(r["inputs"]))
     out["col_inputs"] = (f"| `inputs` | manuscript dirs with `INPUTS.md` | {sum(int(r['inputs']) for r in rows)} "
                          f"dirs over {len(inp)} families ({', '.join(inp)}) |")
@@ -3637,7 +3637,7 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
                            f"{len(ver)} families, {sum(int(r['versions']) for r in ver)} dated "
                            f"re-issues ({', '.join(r['fam'] for r in ver)}) |")
     out["col_summary"] = (f"| `summary` | a page exists at "
-                          "`notes/summaries/<NNN>-*.md` | Filesystem fact, not a derived "
+                          "`notes/gen/summaries/<NNN>-*.md` | Filesystem fact, not a derived "
                           f"claim; {sum(1 for r in rows if int(r['summary']))} of {fams} families, "
                           f"{sum(int(r['paps']) for r in rows if int(r['summary']))} manuscripts "
                           "behind them |")
@@ -3667,7 +3667,7 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
                          f"**{scan['dir_links']:,}** of them resolving to a directory and "
                          f"**{scan['file_links']:,}** to a file")
     out["pairings"] = f"{sum(1 for r in rows if int(r['summary']))} of 372 summary pairings"
-    out["summary_pages"] = (f"`notes/summaries/` is **{sum(1 for r in rows if int(r['summary']))}** "
+    out["summary_pages"] = (f"`notes/gen/summaries/` is **{sum(1 for r in rows if int(r['summary']))}** "
                            "hand-written per-family pages.")
     b = build_index_report()
     # The disk-check sentence names the registry surplus on the line after the count run, so the
@@ -3906,7 +3906,7 @@ def _lits(vals: list) -> str:
 
 
 def faithfulness_full(p: dict[str, Any]) -> dict[str, str]:
-    """The writer's slot dict for notes/reports/formalization-faithfulness.md, before the page-wrap split.
+    """The writer's slot dict for notes/gen/reports/formalization-faithfulness.md, before the page-wrap split.
 
     Each prose label is ONE single-line string: the page's own text with its whitespace runs collapsed
     to single spaces, so the builder can split it at the page's line breaks. The three tables are

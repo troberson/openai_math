@@ -1,6 +1,6 @@
 r"""The self-tests for `notes/scripts/verify_conditional.py`.
 
-The checker verifies `notes/reports/conditional.md` in three forms: a fenced block is matched against
+The checker verifies `notes/gen/reports/conditional.md` in three forms: a fenced block is matched against
 the lines of the `path:line` anchor that precedes it, a prose quotation in *"…"* form is matched against
 the file its nearest anchor names, and an inline `span` at `path:line` citation is matched against that
 file. This file injects six faults, one per check form the page uses, and asserts each is caught by the

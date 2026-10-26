@@ -1,4 +1,4 @@
-"""Verify notes/reports/citations.md against the shipped .bib files and a fresh measurement.
+"""Verify notes/gen/reports/citations.md against the shipped .bib files and a fresh measurement.
 
 Report-only: writes nothing. Re-derives the whole shared-bibliography population from
 `preprints/**/*.bib` through `catlib.bib`, then checks the page against it:
@@ -50,7 +50,7 @@ from catlib.bib import (
 from catlib.ledger import read_ledger
 from catlib.paths import NOTES, PREPRINTS, ROOT, owner, rel
 
-PAGE = str(NOTES / "reports" / "citations.md")
+PAGE = str(NOTES / "gen" / "reports" / "citations.md")
 ACCENT_NOGUARD = re.compile(r"\\(?:['`^~=\".]|c|v|u|H|k|r|d|b|t|o)\{?([a-zA-Z])\}?")
 
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Verify notes/tables/conjecture-standing.tsv against the shipped ledger and overview.tex.
+"""Verify notes/data/conjecture-standing.tsv against the shipped ledger and overview.tex.
 
 Checks, in order:
   1. the file parses as TSV with exactly 10 fields per row and no comment lines;
   2. the fam set is exactly the resolves_named=1 / resolution-shape intersection;
-  3. discipline and tier match notes/tables/catalog.tsv for every row;
+  3. discipline and tier match notes/gen/tables/catalog.tsv for every row;
   4. prior_confidence is filled and in the recorded vocabulary;
   5. every abstract_line is `overview.tex:<n>` and line <n> of overview.tex is that
      family's \\resultentry, so the anchor names the abstract line the row reads;

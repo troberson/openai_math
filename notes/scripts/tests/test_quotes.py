@@ -1,7 +1,7 @@
 r"""The self-tests for `notes/scripts/catlib/quotes.py` and `notes/scripts/seed_quotes.py`.
 
 The resolver resolves a `(path, start, end, head, tail)` spec to the verbatim source span; the seeder
-seeds a locator spec for `notes/reports/subfinding-pairs.md` and the summaries pages. The stored spec is
+seeds a locator spec for `notes/gen/reports/subfinding-pairs.md` and the summaries pages. The stored spec is
 `(page, fam, seq, which, path, start, end, head, tail)`: a locator, not content. The seeder's check is
 that every located row's locator resolves (to a non-None span in its source); the round-trip to the page
 quote is then reported, not required, as three classes — raw (byte-for-byte), folded (fold-equal after
@@ -31,7 +31,7 @@ from catlib.paths import ROOT
 from catlib.quotes import resolve, seed
 from catlib.text import strip_markup as norm
 
-PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
+PAGE = ROOT / "notes" / "gen" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"
 
 # Family 262's shape: the title is quoted twice in one abstract, once as the entry title and once as
@@ -187,9 +187,9 @@ def test_seeded_table_reproduces_the_page(page_rows, summary_rows):
     against the file its `path` names; a measured negative must carry `start` 0 with blank `head` and
     `tail`. The round-trip to the page quote (raw/folded/normalizer-gap) is asserted in `test_clean_page`.
     """
-    tsv = ROOT / "notes" / "tables" / "quotes.tsv"
+    tsv = ROOT / "notes" / "gen" / "tables" / "quotes.tsv"
     if not tsv.is_file():
-        pytest.skip("notes/tables/quotes.tsv has not been written yet")
+        pytest.skip("notes/gen/tables/quotes.tsv has not been written yet")
     from catlib.tsv import read_rows
     rows = read_rows(tsv)
     keyed = {(r["page"], r["fam"], r["seq"], r["which"]): r for r in rows}

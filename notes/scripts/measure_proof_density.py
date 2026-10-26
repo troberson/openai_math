@@ -2,11 +2,11 @@
 """Measure proof density over the 719 manuscripts and test whether it discriminates.
 
 Report-only: writes nothing. Every number it prints is derived here, from
-notes/tables/sources.tsv (per-manuscript counts) joined to notes/tables/catalog.tsv (tier and
+notes/gen/tables/sources.tsv (per-manuscript counts) joined to notes/gen/tables/catalog.tsv (tier and
 claim-shape tags) by family number.
 
 Pre-registered discrimination rule (fixed before the statistics were run, per the
-conditional-tag discipline in notes/reports/conditional.md):
+conditional-tag discipline in notes/gen/reports/conditional.md):
 
     A signal SEPARATES a pair when AUC >= 0.65 and two-sided p < 0.01.
     A signal is SIZE-EXPLAINED on a pair when its AUC is within 0.03 of the
@@ -15,7 +15,7 @@ conditional-tag discipline in notes/reports/conditional.md):
 AUC is P(X > Y) for the first-named group over the second (Mann-Whitney U); 0.5 is
 no separation. z uses the tie-corrected SD.
 
-The page check is not here: `notes/reports/proof-density.md` is compared with `render_reports.py`'s render
+The page check is not here: `notes/gen/reports/proof-density.md` is compared with `render_reports.py`'s render
 of it by `verify_page_sync.py`, which owns that pass and mutates the page in memory. The gates
 prove the numbers are measured; they prove nothing about the sentences around them.
 
@@ -32,11 +32,11 @@ import re
 from typing import Any
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
-SOURCES = REPO / "notes" / "tables" / "sources.tsv"
-LEDGER = REPO / "notes" / "tables" / "catalog.tsv"
+SOURCES = REPO / "notes" / "gen" / "tables" / "sources.tsv"
+LEDGER = REPO / "notes" / "gen" / "tables" / "catalog.tsv"
 YAML = REPO / "lean" / "formalization.yaml"
 
-# Totals recorded in beads math-hqd.3 and in notes/reports/sources.md, re-measured 2026-10-09 after the
+# Totals recorded in beads math-hqd.3 and in notes/gen/reports/sources.md, re-measured 2026-10-09 after the
 # upstream merge (719 manuscripts / 20,341 proofs / 21,288 statements / tiers 136-106-0-130).
 EXPECTED_ROWS = 719
 EXPECTED_FAMS = 372

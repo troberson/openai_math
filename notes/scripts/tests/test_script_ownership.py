@@ -43,27 +43,27 @@ def bump(t, pat, delta=1):
 # Faults in the census page's own text, each keyed to the problem string the check prints.
 PAGE_CASES = [
     ("writer target altered", "page says 'notes/catalog-x.tsv'",
-     lambda t: t.replace("| `build_catalog.py` | `notes/tables/catalog.tsv` |",
+     lambda t: t.replace("| `build_catalog.py` | `notes/gen/tables/catalog.tsv` |",
                          "| `build_catalog.py` | `notes/catalog-x.tsv` |")),
     ("writer row deleted", "writer extract_links.py: page says None",
-     lambda t: t.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached "
-                         "bytes == promoted bytes under the key | `notes/reports/links.md` |\n", "")),
+     lambda t: t.replace("| `extract_links.py` | `notes/gen/tables/links.tsv` | single run; cached "
+                         "bytes == promoted bytes under the key | `notes/gen/reports/links.md` |\n", "")),
     ("generated TSV count understated", "tsv census cell",
      lambda t: bump(t, r"\*\*(\d+)\*\* generated, \*\*\d+\*\* hand-authored", -1)),
-    ("index file count altered", "census row notes/index/",
-     lambda t: bump(t, r"\| `notes/index/` \| \*\*([\d,]+)\*\* \|", 1)),
+    ("index file count altered", "census row notes/gen/index/",
+     lambda t: bump(t, r"\| `notes/gen/index/` \| \*\*([\d,]+)\*\* \|", 1)),
     ("collision name altered", "collision sentence",
      lambda t: bump(t, r"\*\*(\d+)\*\* shared basename", 1)),
     ("checker name altered", "non-writers",
      lambda t: t.replace("| `verify_sources.py` |", "| `verify_sources2.py` |")),
     ("unchecked page claimed as checked", "md census cell",
-     lambda t: t.replace("| `verify_abstracts.py` | `notes/reports/abstracts.md` |",
-                         "| `verify_abstracts.py` | `notes/reports/abstracts.md`, "
-                         "`notes/reports/counterexample-tag.md` |")),
+     lambda t: t.replace("| `verify_abstracts.py` | `notes/gen/reports/abstracts.md` |",
+                         "| `verify_abstracts.py` | `notes/gen/reports/abstracts.md`, "
+                         "`notes/gen/reports/counterexample-tag.md` |")),
     ("Not checked section deleted", "no '## Not checked' section",
      lambda t: t.replace("## Not checked", "## Checked")),
-    ("summaries count altered", "census row notes/summaries/",
-     lambda t: bump(t, r"\| `notes/summaries/` \| \*\*(\d+)\*\* \|", -15)),
+    ("summaries count altered", "census row notes/gen/summaries/",
+     lambda t: bump(t, r"\| `notes/gen/summaries/` \| \*\*(\d+)\*\* \|", -15)),
     ("templates count altered", "census row notes/templates/",
      lambda t: bump(t, r"\| `notes/templates/` \| \*\*(\d+)\*\* \|", -24)),
 ]
@@ -182,7 +182,7 @@ def bump_num(t, pat, delta=1.0):
 
 
 # Faults in the Cost section, each keyed to the pass that owns it. Every figure the pass compares is
-# measured: the Cold and Wall cells come from notes/tables/gate-rows.tsv, the check() counts from the
+# measured: the Cold and Wall cells come from notes/gen/tables/gate-rows.tsv, the check() counts from the
 # keyed check_calls.json record. The self-test row times are not in the page — a run-dependent figure
 # cannot live in a template keyed to HEAD — so there is no row-figure mutant to inject.
 COST_CASES = [

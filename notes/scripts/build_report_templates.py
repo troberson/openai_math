@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 r"""Build a report template from a committed page and the slot dict its writer supplies.
 
-Writer: notes/templates/report/<page>.j2. It rewrites `git show HEAD:<page>` by replacing every
+Writer: notes/gen/templates/report/<page>.j2. It rewrites `git show HEAD:<page>` by replacing every
 phrase the writer can produce with a `{{ p['<label>'] }}` slot, so the template's literal text -
 quotations, anchors, fenced blocks, numbers the writer does not compute - is byte-exact by
 construction, and the slot labels and phrase strings come from the writer's own code, not from a
@@ -70,7 +70,7 @@ from catlib.promote import key_for
 from catlib.records import require_record
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-TPL_DIR = ROOT / "notes" / "templates" / "report"
+TPL_DIR = ROOT / "notes" / "gen" / "templates" / "report"
 # The builder reads each page from HEAD, so its L1 is the page set, and `key_for` hashes that L1 from
 # HEAD for this writer: the key is a function of the bytes it reads, not of the working tree. Its own
 # output feeds one L1 entry — notes/development/templates.md tabulates the template bytes — so a
@@ -178,7 +178,7 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     Every line this function would have printed is returned in `lines` so the parent prints the report
     in page order.
 
-    `rows` is this page's part of `notes/tables/splits.tsv`: one row per recorded part, in the page's
+    `rows` is this page's part of `notes/gen/tables/splits.tsv`: one row per recorded part, in the page's
     own order, for a label the page breaks. A label the page does not break is one slot and has no row.
     """
     lines: list[str] = []

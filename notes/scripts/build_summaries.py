@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render notes/summaries/ from the skeleton template and per-family data files.
+"""Render notes/gen/summaries/ from the skeleton template and per-family data files.
 
 Reads:
 - notes/templates/summaries/summary.md.j2 (the skeleton)
@@ -7,7 +7,7 @@ Reads:
 - preprints/<dir>/build/<main>.tex preamble (for macro expansion)
 - overview.tex (family discipline, title)
 
-Writes: notes/summaries/<NNN>-<slug>.md (flat, no discipline subdirectory)
+Writes: notes/gen/summaries/<NNN>-<slug>.md (flat, no discipline subdirectory)
 
 The renderer is pure over its digest key: it reads the working-tree templates and data
 files, resolves each quote through the normalizer, and stages the rendered pages. A second
@@ -38,7 +38,7 @@ from jinja2 import Environment, FileSystemLoader  # noqa: E402
 
 TPL_DIR = ROOT / "notes" / "templates" / "summaries"
 DATA_DIR = ROOT / "notes" / "data" / "summaries"
-SUMM_DIR = ROOT / "notes" / "summaries"
+SUMM_DIR = ROOT / "notes" / "gen" / "summaries"
 
 ENV = Environment(loader=FileSystemLoader(str(TPL_DIR)),
                   keep_trailing_newline=True,
@@ -695,7 +695,7 @@ def main() -> int:
             print(f"  {fam}: {unresolved} UNRESOLVED TOKENS")
             problems += 1
 
-    # The artifact tree is notes/summaries/, which also carries the index README. It is not a
+    # The artifact tree is notes/gen/summaries/, which also carries the index README. It is not a
     # family page, so the renderer passes it through unchanged: a cache entry for it must exist
     # (verify_cache_promotion.py Pass C) and its bytes must equal the tracked bytes.
     readme = SUMM_DIR / "README.md"

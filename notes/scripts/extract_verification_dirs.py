@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Measure the 30 verification bundles and the README sections that name them; report-only.
 
-Every count in the "Every bundle and its own entry point" section of notes/reports/verification-dirs.md
+Every count in the "Every bundle and its own entry point" section of notes/gen/reports/verification-dirs.md
 comes from this report, and every quoted line below is printed with its file and line number so the
 page can cite it. Run it twice and diff: the output must be identical. It writes nothing and runs
 nothing — bundles are read as text, per the repo rule that nothing in preprints/ is executed.

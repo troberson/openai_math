@@ -34,26 +34,26 @@ REGISTRY_CASES = [
     ("L1 entry the probe names removed", "L1 drift seed_quotes.py",
      lambda a, l, pg, ar: (a, {**l, "seed_quotes.py":
                                tuple(e for e in l["seed_quotes.py"]
-                                   if e != "notes/reports/t0-triage.md")}, pg, ar)),
+                                   if e != "notes/gen/reports/t0-triage.md")}, pg, ar)),
     ("L1 entry added that is a self-output", "L1 self-read: build_index.py",
-     lambda a, l, pg, ar: (a, {**l, "build_index.py": l["build_index.py"] + ("notes/index/",)}, pg, ar)),
+     lambda a, l, pg, ar: (a, {**l, "build_index.py": l["build_index.py"] + ("notes/gen/index/",)}, pg, ar)),
     ("writer dropped from ARTIFACTS", "ARTIFACTS + non-cached writer set",
      lambda a, l, pg, ar: ({k: v for k, v in a.items() if k != "extract_links.py"},
                            {k: v for k, v in l.items() if k != "extract_links.py"}, pg, ar)),
     ("REPORT_PAGES entry altered", "REPORT_PAGES != catlib/templates registry",
-     lambda a, l, pg, ar: (a, l, (*[p for p in pg if p != "notes/reports/topics.md"], "notes/topics2.md"), ar)),
+     lambda a, l, pg, ar: (a, l, (*[p for p in pg if p != "notes/gen/reports/topics.md"], "notes/topics2.md"), ar)),
     ("canonical args shifted", "cache entry missing: compare_abstracts.py",
      lambda a, l, pg, ar: (a, l, pg, {**ar, "compare_abstracts.py": ("--tsv", "extra")})),
 ]
 
 # Faults in the cache entries the byte comparison reads, each keyed to the problem string it prints.
 CACHE_CASES = [
-    ("cached page corrupted", "notes/reports/sources.md", "cache != disk: render_reports.py notes/reports/sources.md",
+    ("cached page corrupted", "notes/gen/reports/sources.md", "cache != disk: render_reports.py notes/gen/reports/sources.md",
      lambda text: text + "MUTANT\n"),
-    ("cached page deleted", "notes/reports/names.md", "cache entry missing: render_reports.py notes/reports/names.md",
+    ("cached page deleted", "notes/gen/reports/names.md", "cache entry missing: render_reports.py notes/gen/reports/names.md",
      None),
-    ("second cached page corrupted", "notes/reports/proof-density.md",
-     "cache != disk: render_reports.py notes/reports/proof-density.md", lambda text: text + "MUTANT\n"),
+    ("second cached page corrupted", "notes/gen/reports/proof-density.md",
+     "cache != disk: render_reports.py notes/gen/reports/proof-density.md", lambda text: text + "MUTANT\n"),
 ]
 
 # Faults in the CHECKER_L1 registry the checker pass reads, each keyed to the problem string it prints.
@@ -61,11 +61,11 @@ CHECKER_CASES = [
     ("CHECKER_L1 key removed", "CHECKER_L1 keys != keyable",
      lambda c: {k: v for k, v in c.items() if k != "verify_abstracts.py"}),
     ("CHECKER_L1 key added", "CHECKER_L1 keys != keyable",
-     lambda c: {**c, "verify_invented.py": ("notes/reports/sources.md",)}),
+     lambda c: {**c, "verify_invented.py": ("notes/gen/reports/sources.md",)}),
     ("CHECKER_L1 path drifted", "CHECKER_L1 drift verify_subfindings.py",
      lambda c: {**c, "verify_subfindings.py":
-                (*[p for p in c["verify_subfindings.py"] if p != "notes/tables/subfindings.tsv"],
-                 "notes/tables/invented.tsv")}),
+                (*[p for p in c["verify_subfindings.py"] if p != "notes/gen/tables/subfindings.tsv"],
+                 "notes/gen/tables/invented.tsv")}),
     ("surface record missing", "surface record missing",
      None),
 ]
@@ -180,7 +180,7 @@ def test_tree_entries_hash_only_tracked_files(monkeypatch):
     """A tree L1 entry expands to the tracked files, so an untracked file under the tree
     moves neither the expansion nor the writer's key: the record is a function of the
     tracked read surface, and a scratch probe under the tree is not part of it. The proof
-    is the writer's own key — `render_reports.py` names `notes/tables/` as a tree, and the
+    is the writer's own key — `render_reports.py` names `notes/gen/tables/` as a tree, and the
     key is identical with an untracked file sitting in that tree. RUN_ARGS carries a live
     bd count for this writer, so it is pinned to a constant and both reads see the same
     count; the only thing that may move is the surface. An explicit file entry is
@@ -188,15 +188,15 @@ def test_tree_entries_hash_only_tracked_files(monkeypatch):
     """
     from catlib import promote as PR
 
-    scratch = PR.ROOT / "notes" / "tables" / ".expansion-scratch.txt"
+    scratch = PR.ROOT / "notes" / "gen" / "tables" / ".expansion-scratch.txt"
     assert not scratch.exists(), "a stale scratch file would move the before key too"
     monkeypatch.setitem(PR.RUN_ARGS, "render_reports.py", lambda: ())
-    before_exp = PR.expand("notes/tables/")
+    before_exp = PR.expand("notes/gen/tables/")
     before_key = PR.key_for("render_reports.py", ())
     assert PR.expand("README.md") == [PR.ROOT / "README.md"], "an explicit file entry must stay as declared"
     scratch.write_text("scratch\n")
     try:
-        mid_exp = PR.expand("notes/tables/")
+        mid_exp = PR.expand("notes/gen/tables/")
         mid_key = PR.key_for("render_reports.py", ())
     finally:
         scratch.unlink()

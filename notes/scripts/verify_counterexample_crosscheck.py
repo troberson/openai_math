@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Verify notes/reports/counterexample-crosscheck.md against the shipped files.
+"""Verify notes/gen/reports/counterexample-crosscheck.md against the shipped files.
 
 Report-only; writes nothing; runs nothing. Lean files are read as text — lake, lean, and comparator
 are never invoked here, so no verdict in the page can mean "a proof was checked".
 
 1. Population. The 28-family population, its tier split, its ledger sums, the main_results entry and
    config counts, the per-family linked-config / entry / gap counts, the carrier-typed count, and the
-   stub and sorry counts are all recomputed from notes/tables/catalog.tsv, overview.tex,
+   stub and sorry counts are all recomputed from notes/gen/tables/catalog.tsv, overview.tex,
    lean/formalization.yaml, lean/docs/, and lean/ComparatorChallenges/. Every count phrase the page
    asserts is matched against that recomputation.
 2. Anchors. Every backticked `path:line` anchor must resolve inside its file.
@@ -50,7 +50,7 @@ from catlib import render as RD
 from catlib.paths import COMPARATOR_DIR, FORMALIZATION_YAML, NOTES, ROOT
 from catlib.text import collapse_ws
 
-PAGE = NOTES / "reports" / "counterexample-crosscheck.md"
+PAGE = NOTES / "gen" / "reports" / "counterexample-crosscheck.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_YAML)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(T\d)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|")

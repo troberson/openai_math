@@ -1,6 +1,6 @@
 """The summary-page read shape: family number, Sources table, `[Sn:line]` markers, manuscript roots.
 
-A page is `notes/summaries/<discipline>/<NNN>-<slug>.md`; the family number is the first token of the
+A page is `notes/gen/summaries/<discipline>/<NNN>-<slug>.md`; the family number is the first token of the
 file name. The body cites sources as `[S4:29]`, `[S4:29–56]` or `[S4]`; a Sources table at the bottom
 maps `S#` to a backticked file, a declared line count, and a description. A relative path in the table
 resolves against the manuscript root the page declares, with the repository root as fallback.

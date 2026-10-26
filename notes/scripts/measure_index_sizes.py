@@ -13,13 +13,13 @@ Rules stated where they matter:
 - Traces are counted as distinct stems over files: the Mézard–Parisi trace ships as both `.pdf` and
   `.tex`, so 11 files carry 10 traces.
 - Family→config is counted per family as a set, which is why it reads 416 here and 426 in
-  notes/tables/links.tsv, where 7 scope notes link one config twice.
+  notes/gen/tables/links.tsv, where 7 scope notes link one config twice.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`.
 - "The whole ledger set" is the five tracked TSVs notes/development/index-design.md tabulates, named
-  in LEDGER_SET below. The sum over *every* notes/tables/*.tsv is reported separately as
+  in LEDGER_SET below. The sum over *every* notes/gen/tables/*.tsv is reported separately as
   `all_tsv_bytes`: it grew from 296,283 B to 541,463 B when `sources.tsv` and `topics.tsv` were
   added, so quoting it as the ledger set would move a number the page states under a narrower rule.
-- Index table row counts are read from the generated files under `notes/index/`, not derived from
+- Index table row counts are read from the generated files under `notes/gen/index/`, not derived from
   the upstream counts they were built from, so a build that drops rows shows as a mismatch.
 """
 import collections
@@ -41,13 +41,14 @@ from catlib.paths import (
 )
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-IDX = ROOT / "notes" / "index"
+IDX = ROOT / "notes" / "gen" / "index"
 
-# The five TSVs notes/development/index-design.md tabulates as "the whole ledger set".
-LEDGER_SET = ("catalog.tsv", "conjecture-standing.tsv", "formalization-deps.tsv", "links.tsv",
+# The four TSVs notes/development/index-design.md tabulates as "the whole ledger set".
+# conjecture-standing.tsv moved to notes/data/ (curated spec, not generated).
+LEDGER_SET = ("catalog.tsv", "formalization-deps.tsv", "links.tsv",
               "subfindings.tsv")
-# The 16 tables build_index.py renders. `math-faz.6` moved them from `notes/index/` into
-# `notes/tables/`, so the schema-table row counts are read from the tables directory, and the
+# The 16 tables build_index.py renders. `math-faz.6` moved them from `notes/gen/index/` into
+# `notes/gen/tables/`, so the schema-table row counts are read from the tables directory, and the
 # index tree's own `*.tsv` glob is empty — which is the post-move state the page reports.
 INDEX_TABLES = ("families.tsv", "manuscripts.tsv", "configs.tsv", "lean-dirs.tsv",
                 "scope-notes.tsv", "traces.tsv", "topics-rendered.tsv", "names.tsv",
@@ -115,14 +116,14 @@ def population():
     kw_dirs = int(links["manuscript->\\keywords macro"]["count"])
 
     sizes = {}
-    for p in sorted((ROOT / "notes" / "tables").glob("*.tsv")):
+    for p in sorted((ROOT / "notes" / "gen" / "tables").glob("*.tsv")):
         n = len([l for l in p.read_text(encoding="utf-8").split("\n") if l.strip()]) - 1
         sizes[p.name] = (p.stat().st_size, n)
 
     def rows_of(p):
         return len([l for l in p.read_text(encoding="utf-8").split("\n") if l.strip()]) - 1
 
-    index_rows = {p.name: rows_of(p) for p in sorted((ROOT / "notes" / "tables").glob("*.tsv"))
+    index_rows = {p.name: rows_of(p) for p in sorted((ROOT / "notes" / "gen" / "tables").glob("*.tsv"))
                   if p.name in INDEX_TABLES}
     index_pages = len(list(IDX.rglob("*.md")))
 
@@ -242,20 +243,20 @@ def main():
     print(f"  scope notes linking a config twice {p['dup_docs']}")
     print(f"  yaml builds-on declarations       {p['builds_on']}")
     print(f"  subfindings B/row                 {p['sf_bpr']:.1f}")
-    print(f"  ledger set bytes (5 named TSVs)   {p['ledger_set_bytes']}")
-    print(f"  all notes/tables/*.tsv bytes      {p['all_tsv_bytes']}")
+    print(f"  ledger set bytes (4 named TSVs)   {p['ledger_set_bytes']}")
+    print(f"  all notes/gen/tables/*.tsv bytes      {p['all_tsv_bytes']}")
     print(f"  \\keywords share of manuscripts    {p['kw_pct']:.1f}%")
     print("TOTALS")
     print(f"  nodes (excl. {p['lean_files']} .lean files) {p['nodes']}")
     print(f"  edges (resolved citations)        {p['edges_resolved']}")
     print(f"  edges (incl. raw bib)             {p['edges_rawbib']}")
-    print("INDEX (generated files under notes/index/, row counts read from the files)")
+    print("INDEX (generated files under notes/gen/index/, row counts read from the files)")
     print(f"  pages (.md)                       {p['index_pages']}")
     print(f"  tables (.tsv)                     {p['index_tables']}")
     print(f"  index tree bytes                  {p['index_bytes']}")
     for name, n in sorted(p["index_rows"].items()):
         print(f"  {name:28} {n:6} rows")
-    print("DISK LINK CHECK (notes/scripts/check_index_links.py over notes/index/**/*.md)")
+    print("DISK LINK CHECK (notes/scripts/check_index_links.py over notes/gen/index/**/*.md)")
     print(f"  links scanned                     {p['disk_links']}")
     print(f"  broken                            {p['disk_broken']}")
     print(f"  resolving to a directory          {p['disk_dirs']}")

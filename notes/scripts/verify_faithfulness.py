@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/reports/formalization-faithfulness.md against the shipped files.
+"""Verify notes/gen/reports/formalization-faithfulness.md against the shipped files.
 
 Report-only; writes nothing; runs nothing. Lean files are read as text — lake, lean, and comparator
 are never invoked here, so no verdict in the page can mean "a statement was compiled" or "a proof
@@ -41,7 +41,7 @@ from catlib import yaml as Y
 from catlib.paths import DOCS_DIR, LEAN, NOTES, PREPRINTS, ROOT
 from catlib.text import collapse_ws, first_group
 
-PAGE = NOTES / "reports" / "formalization-faithfulness.md"
+PAGE = NOTES / "gen" / "reports" / "formalization-faithfulness.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_YAML, ranges=True)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 KEY = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json")

@@ -3,11 +3,11 @@
 The script measures proof density over the 719 manuscripts and tests whether it discriminates, under
 a discrimination rule fixed before the statistics were run: a signal SEPARATES a tier pair when
 AUC >= 0.65 and two-sided p < 0.01, and is SIZE-EXPLAINED on that pair when its AUC is within 0.03 of
-the tex-KB AUC on the same pair. Every number it prints is derived from `notes/tables/sources.tsv`
-joined to `notes/tables/catalog.tsv` by family number. The gates re-measure the population: rows,
+the tex-KB AUC on the same pair. Every number it prints is derived from `notes/gen/tables/sources.tsv`
+joined to `notes/gen/tables/catalog.tsv` by family number. The gates re-measure the population: rows,
 distinct dirs, the family set on both sides, the per-family source rows against the ledger `paps`, the
 proofs and statements sums, the tier counts, non-positive `tex_bytes`, negative counts, and every
-source dir present under `preprints/`. The page check is not here: `notes/reports/proof-density.md` is
+source dir present under `preprints/`. The page check is not here: `notes/gen/reports/proof-density.md` is
 compared with `render_reports.py`'s render of it by `verify_page_sync.py`, which owns that pass.
 
 This file injects eight faults into the TSV rows in memory and asserts each fires the gate that owns

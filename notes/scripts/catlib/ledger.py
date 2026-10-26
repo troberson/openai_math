@@ -1,4 +1,4 @@
-"""notes/tables/catalog.tsv and the claim-shape rules keyed to its abstracts.
+"""notes/gen/tables/catalog.tsv and the claim-shape rules keyed to its abstracts.
 
 The shape/tag rules live here because they are keyed to the overview.tex paraphrase, not to
 the manuscripts: compare_abstracts.py measures 0 of 719 manuscript comparisons and 0 of 372
@@ -40,13 +40,13 @@ NEG_BEFORE = re.compile(r"(?:without|no)\s*$")
 TECH_AFTER = re.compile(
     r"^[^.]{0,60}?(?:expectation|law|laws|probability|probabilities|measure|distribution|density)")
 
-# Named-target resolution, measured in notes/reports/resolution-tag.md.
+# Named-target resolution, measured in notes/gen/reports/resolution-tag.md.
 TARGET_NOUN = re.compile(r"conjectur|\bquestion|\bproblem")
 RESOLVE_VERB = re.compile(
     r"\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis"
     r"|\bconfirm|\bfail|\bviolat|\bcounterexample")
 
-# Counterexample language, measured in notes/reports/counterexample-tag.md. Phrase rule, not stem rule:
+# Counterexample language, measured in notes/gen/reports/counterexample-tag.md. Phrase rule, not stem rule:
 # an unbounded `negativ` stem flags 90 families, most of them adjectival.
 COUNTEREX_PHRASE = re.compile(
     r"\bcounterexample|\bdisprov|\brefut|\bviolat|\bfails?\b"
@@ -107,7 +107,7 @@ def resolves_named(title: str, abstract: str) -> int:
 
     Input scope is title + abstract, stated because it changes the count: abstract only yields
     233, the union yields 248, and the union is a strict superset -- 0 removals. The 15 additions
-    are recorded in notes/reports/named-results.md. Lowering the whole input is what makes the union a
+    are recorded in notes/gen/reports/named-results.md. Lowering the whole input is what makes the union a
     superset: a case-sensitive title read drops 100 of the 233 (capitalised "Conjecture" at title
     start) and yields 148, which is why the scope is stated with the case rule.
     """
@@ -120,7 +120,7 @@ def counterex_broad(title: str, abstract: str) -> int:
 
     A keyword floor: it says the family *uses* the language, not that the manuscript contains a
     counterexample. The 30 families this flags beyond the `counterexample` tag were each read at
-    the matched sentence and recorded in notes/reports/counterexample-tag.md.
+    the matched sentence and recorded in notes/gen/reports/counterexample-tag.md.
 
     Input scope is title + abstract, stated because it changes the count: abstract only yields 72,
     and the two title-only additions (088, 293) are families whose titles literally say

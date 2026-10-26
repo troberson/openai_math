@@ -1,0 +1,221 @@
+[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 140](../index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md)
+
+# 140 — Memory–sample lower bounds for noiseless Gaussian regression
+
+[Index page](../index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md)
+
+## Original CONTENTS.md summary
+
+[S1:3350] (family entry):
+
+> **140. Memory–sample lower bounds for noiseless Gaussian regression.** For fixed A > 0, a one-pass learner with $`Ad^2`$ persistent bits needs $`\Omega_A(d\log(1/\epsilon))`$ noiseless Gaussian samples to recover a unit vector to angular error $`0\lt \epsilon\le1/10`$ with probability 2/3, uniformly in accuracy for large d. Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness. ([Lean](lean/docs/140.md))
+
+[S2:357] carries the `\resultentry`, so the release blurb and the overview
+agree on the statement. The `\resultentry` lists six manuscripts:
+"Memory and precision" [S2:357], "Posterior replicas" [S2:357],
+"Localization costs" [S2:357], "Projection moments and Riesz estimates"
+[S2:357], "Observation replacement" [S2:357], and "Subsphere methods"
+[S2:357].
+
+## Undergraduate summary
+
+**The problem.** Imagine a learner who watches one measurement at a
+time: each measurement is an inner product $\langle x_t, s\rangle$
+where $s$ is a fixed unit vector in $\mathbb R^d$ and $x_t$ is a random
+Gaussian vector. The learner must *remember* something between
+measurements, but the memory is limited to $M$ bits (where a bit is a
+state in a set of size $2^M$). After $T$ measurements, the learner
+must output a unit vector $\hat s$ whose angle from $s$ is at most
+$\epsilon$.
+
+The question: **how many measurements $T$ are needed when memory is
+small?**
+
+The answer from this family is
+$$T \ge c_A\, d\,\log(1/\epsilon)$$
+for every $M \le A d^2$ bits [S4:59–73]. The $d\log(1/\epsilon)$
+scale is what you'd get from information theory: $d$ is the number of
+independent parameters of $s$, and $\log(1/\epsilon)$ is the number
+of bits of precision needed to pin down the direction to angle
+$\epsilon$.
+
+When the memory is *subquadratic* — $M = o(d^2)$ — the constant $c$
+is universal (does not depend on $A$) [S4:81–91].
+
+## Graduate summary
+
+**Main theorem** ([S4:59–73], `h:main`). "For every fixed finite
+$A>0$, there are constants $c_A>0$ and $d_A$ such that the following
+holds. Let $d\ge d_A$, let $0\le M\le Ad^2$ be an integer, and let
+$0<\epsilon\le1/10$. For any learner in Definition `h:model`, draw
+$S\sim\sigma_d$ independently of the rows and the learner's
+data-independent randomness. If
+$\mathbb P\{\arccos\langle\hat s,S\rangle\le\epsilon\}\ge\frac23$,
+then its prescribed horizon satisfies $T\ge c_A\,d\log(1/\epsilon)$"
+[S4:59–73].
+
+**The model** [S4:8–48]. The learner is a finite-state machine: after
+each observation, its persistent state belongs to a set of at most
+$2^M$ elements. Computation is unrestricted (no bit-complexity bound);
+randomization is allowed; the output uses only the terminal state,
+the stopping index, and fresh randomness — a discarded observation
+cannot be read again.
+
+**Two corollaries.** `h:subquadratic` [S4:81–91]: when $M(d)=o(d^2)$,
+the constant $c>0$ is absolute — it does not depend on $A$.
+`h:worst-signal` [S4:93–102]: the same bound holds when the
+average-success assumption is replaced by success for *every*
+$s\in S^{d-1}$.
+
+**The six manuscripts.** The main result [S4] is built on five
+supporting papers: posterior replicas and conditional information [S5],
+localization costs and information growth [S6], projection moments and
+Riesz estimates [S7], Gaussian observation replacement [S8], and
+subsphere methods [S9]. Together they provide the inverse
+Gram-matrix moments, exact-projection densities, regularization
+bounds, sphere- and cube-prior block estimates, and the subsphere
+comparisons that the main proof uses.
+
+## History of the conjecture
+
+The study of **memory-constrained estimation** connects information
+theory, learning, and high-dimensional geometry. In the noiseless
+Gaussian linear model, $d$ exact measurements determine $s$ almost
+surely — the information is there. The question is whether a learner
+with *limited persistent memory* can extract it.
+
+The **information-theoretic lower bound** $d\log(1/\epsilon)$ is
+standard: to specify a direction on $S^{d-1}$ to angle $\epsilon$,
+one needs about $d\log(1/\epsilon)$ bits. The content of this family
+is that the bound is *achieved* as a *sample lower bound*: even with
+unrestricted computation and randomization, a finite-memory learner
+needs $\Omega(d\log(1/\epsilon))$ observations, regardless of how
+cleverly it uses its memory.
+
+The **$Ad^2$ memory regime** is natural: $d^2$ bits is enough to store
+the full Gram matrix of $d$ Gaussian rows (up to the precision
+$\epsilon$), so $o(d^2)$ memory is genuinely less than "store
+everything." The universal constant for $o(d^2)$ memory [S4:81–91]
+separates the two regimes.
+
+**Prior (my training data, not this repo).** Information-theoretic
+lower bounds for estimation under memory constraints are a
+well-studied area. The precise constants and the separation between
+$Ad^2$ and $o(d^2)$ memory, together with the specific streaming and
+subsphere constructions used to prove the bound, are the load-bearing
+contributions of the release. I cannot independently confirm the
+specific constant $2^{-16}$ in the subsphere variant as a prior
+result, and the release ships the six manuscripts as proof.
+
+## Consequences
+
+- **The sample lower bound is $\Omega(d\log(1/\epsilon))$.** A
+  finite-memory learner in the noiseless Gaussian regression model
+  needs at least $c_A\,d\log(1/\epsilon)$ observations to achieve
+  angular error $\epsilon$ with probability $2/3$ under the uniform
+  sphere prior, for every $M\le Ad^2$ [S4:59–73][S1:3350].
+- **The constant is universal for subquadratic memory.** When
+  $M(d)=o(d^2)$, the bound $T\ge c\,d\log(1/\epsilon)$ holds with an
+  absolute $c>0$ [S4:81–91].
+- **The bound is worst-signal.** Replacing the average-success
+  assumption with success for every $s\in S^{d-1}$ does not change
+  the bound [S4:93–102].
+- **Computation is unrestricted.** The lower bound holds even when the
+  learner has unlimited computation between observations; the
+  constraint is purely on persistent memory [S4:12–16][S10:9].
+- **The proof uses a six-manuscript machinery.** Inverse Gram-matrix
+  moments, posterior replicas, localization costs, projection moments
+  and Riesz estimates, Gaussian observation replacement, and subsphere
+  methods together establish the bound [S10:9][S10:42–49].
+
+## Section skeleton
+
+The main manuscript [S3] is a 32-line root: preamble (via
+`\input{preamble}`), title, abstract [S3:9–14], `\tableofcontents`,
+and 12 section files [S3:15–26] (under `build/sections/`):
+`introduction` (294), `local-mass`, `projection`, `blocks`,
+`streaming`, `endpoint`, `alternative-selection`, `cube-application`,
+and four appendix sections (`density-variants`, `ellipsoid-variants`,
+`density-applications`, `full-data-tail`). The proof develops the
+local-mass and projection machinery, proves the block estimates,
+establishes the streaming lower bound, and handles the endpoint. The
+shipped PDF is at `paper.pdf`. The five companion manuscripts [S5]–[S9]
+each ship their own `paper.pdf` under their `build/` directory.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier T3 with one scope note
+[S10:9], **eight** comparator stubs, and **six** `main_results`
+declarations over **five** configs — the formalization is **complete
+at the declaration level**.
+
+The scope note [S10:9] states (in summary): "The formalization proves
+that, for every fixed $A>0$, there is $c_A>0$ such that, in
+sufficiently large dimension, a learner retaining at most $Ad^2$ bits
+between observations needs at least $c_A d\log(1/\varepsilon)$
+observations to attain angular error at most $\varepsilon$ with
+probability at least $2/3$ for a uniformly random unit signal, for
+$0<\varepsilon\le1/10$" [S10:9]. It also covers posterior-replica
+identities, localization/regularization bounds, projection moments
+and Riesz estimates, Gaussian replacement comparisons, and subsphere
+lower bounds.
+
+The scope note links **eight** comparator configs [S10:42–49]. Five of
+them carry `main_results` entries (six declarations):
+
+- `MemoryPrecision.lean` (812 lines) [S11] →
+  `OAI.MemoryPrecision.main` in
+  `OAI/Probability/MemoryPrecision/Main.lean`
+- `NoiselessRegression.lean` (125 lines) → *(no `main_results` entry)*
+- `PosteriorReplicas.lean` (455 lines) →
+  `OAI.PosteriorReplicas.source_main` in
+  `OAI/Probability/PosteriorReplicas/Main.lean`
+- `GaussianFiniteEntropy.lean` (205 lines) → *(no `main_results` entry)*
+- `GaussianInformation.lean` (204 lines) → *(no `main_results` entry)*
+- `ProjectionMoments.lean` (714 lines) →
+  `OAI.ProjectionMoments.main` in
+  `OAI/Probability/ProjectionMoments/Main.lean`
+- `GaussianReplacement.lean` (524 lines) →
+  `OAI.CurrentProjection.hybridBlockMain` in
+  `OAI/Probability/GaussianReplacement/Hybrid.lean` and
+  `OAI.CurrentProjection.fiberBlockMain` in
+  `OAI/Probability/GaussianReplacement/FiberBlock.lean`
+- `SubsphereCurrent.lean` (448 lines) →
+  `OAI.SubsphereCurrent.full_current_main_scope` in
+  `OAI/Probability/Subsphere/Main.lean`
+
+Three configs (`NoiselessRegression`, `GaussianFiniteEntropy`,
+`GaussianInformation`) carry no `main_results` entry, so their
+challenges are registered as targets without a named library
+declaration. The comparator stubs all carry `sorry`s — the reading is
+of source text only; no `lake` or `lean` run elaborates the library.
+
+## Coverage
+
+The ledger row `fam=140` [S12] records: `tier=T3`, `paps=6`,
+`paps_form=5`, `chal=8`, `mainres=5`, `scope_note=1`, `verification=0`,
+`trace=`. The formalization chain is **complete at the declaration
+level** for five of the eight configs: `MemoryPrecision`,
+`PosteriorReplicas`, `ProjectionMoments`, `GaussianReplacement` (two
+declarations), and `SubsphereCurrent`. Three configs
+(`NoiselessRegression`, `GaussianFiniteEntropy`, `GaussianInformation`)
+carry no `main_results` entry. Five of the six manuscripts are
+formalized (`paps_form=5`). The shape flags are `partial|uniform`;
+`resolves_named=0`; `counterex_broad=0`.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3350], manuscript links [S1:3350] |
+| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 140 at [S2:357] |
+| S3 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex`](../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex) | 32 | document root; abstract [S3:9–14]; 12 section `\input` directives [S3:15–26]; 32 lines |
+| S4 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex`](../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex) | 294 | `h:main` [S4:59–73], `h:subquadratic` [S4:81–91], `h:worst-signal` [S4:93–102]; 294 lines |
+| S5 | [`preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf`](../../preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf) | 21225 | the second manuscript as shipped |
+| S6 | [`preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf`](../../preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf) | 26140 | the third manuscript as shipped |
+| S7 | [`preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf`](../../preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf) | 14140 | the fourth manuscript as shipped |
+| S8 | [`preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf`](../../preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf) | 17889 | the fifth manuscript as shipped |
+| S9 | [`preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf`](../../preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf) | 13645 | the sixth manuscript as shipped |
+| S10 | [`lean/docs/140.md`](../../lean/docs/140.md) | 49 | scope note — Scope at [S10:9], comparator links at [S10:42–49] |
+| S11 | [`lean/ComparatorChallenges/MemoryPrecision.lean`](../../lean/ComparatorChallenges/MemoryPrecision.lean) | 812 | comparator — 812 lines |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=140`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

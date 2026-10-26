@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Render notes/index/: the entry point, one page per family, one per discipline, and the node
+"""Render notes/gen/index/: the entry point, one page per family, one per discipline, and the node
 and edge tables the pages are rendered from.
 
 Stdlib plus jinja2. Reads text that ships in this repo plus two generated ledgers; writes only
-under notes/index/; never invokes lean, lake, or comparator. Page text lives in
+under notes/gen/index/; never invokes lean, lake, or comparator. Page text lives in
 notes/templates/*.j2, so a page's wording is edited in the template, never in this file.
 
 The joins are imported from build_catalog.py, not re-derived: family -> manuscript from
@@ -28,8 +28,8 @@ Rules this generator encodes, all of them stated in notes/development/index-desi
   189 configs, so 8 configs carry more than one declaration and the page renders declarations
   separately.
 - **Page filenames are a mechanical slug of the title**, not the hand-shortened names used under
-  notes/summaries/. Index pages pair with summary pages by family number, never by filename.
-- **Topics come from the curated vocabulary at `notes/tables/topics.tsv`**, measured by
+  notes/gen/summaries/. Index pages pair with summary pages by family number, never by filename.
+- **Topics come from the curated vocabulary at `notes/data/topics.tsv`**, measured by
   measure_topics.py, never derived here. A topic is multi-label — a family carries zero or more —
   so it is an added label, not a partition: the 17 catalog disciplines stay the partition.
 - **Names come from measure_names.py, and only subject names get a page.** A name is a subject
@@ -77,15 +77,16 @@ from catlib.promote import key_for
 from jinja2 import Environment, FileSystemLoader
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-IDX = ROOT / "notes" / "index"
-TABLES = ROOT / "notes" / "tables"
-LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
-SRC = ROOT / "notes" / "tables" / "sources.tsv"
+IDX = ROOT / "notes" / "gen" / "index"
+TABLES = ROOT / "notes" / "gen" / "tables"
+SUMM_DIR = ROOT / "notes" / "gen" / "summaries"
+LEDGER = ROOT / "notes" / "gen" / "tables" / "catalog.tsv"
+SRC = ROOT / "notes" / "gen" / "tables" / "sources.tsv"
 # The builder's L1, read from the audit-hook open record: the three ledger TSVs and the page
 # skeletons, all outside the five hashed trees. The pages it writes are its own output, not L1.
 KEY = key_for("build_index.py", tuple(sys.argv[1:]))
 
-UP = "../../../"     # notes/index/<discipline>/<page>.md -> repo root
+UP = "../../../../"  # notes/gen/index/<discipline>/<page>.md -> repo root
 
 TRIPLE = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json\s*\n"
                     r"\s*declaration:\s*(\S+)\s*\n\s*file:\s*(\S+)")
@@ -149,7 +150,7 @@ def base(path):
 
 
 def citation_edges(dir2fam, report):
-    """manuscript -> corpus manuscript, the rule recorded in notes/tables/links.tsv.
+    """manuscript -> corpus manuscript, the rule recorded in notes/gen/tables/links.tsv.
 
     A `.bib` entry that carries the release marker `OpenAI Math Release` and an `\\href` whose
     `/preprints/<dir>/<file>.pdf` target exists on disk. Deduplicated to a set of dir pairs.
@@ -187,10 +188,10 @@ def write(relpath, text):
 
 
 def write_tsv(relpath, cols, rows):
-    """The generated tables live in notes/tables/, so every TSV in the repo sits in one directory.
+    """The generated tables live in notes/gen/tables/, so every TSV in the repo sits in one directory.
 
     The `edges/` prefix is dropped: the table name is the basename, which is what keeps the
-    basename-overlap invariant between `notes/tables/` and the index tree.
+    basename-overlap invariant between `notes/gen/tables/` and the index tree.
     """
     lines = ["\t".join(cols)]
     for r in rows:
@@ -313,7 +314,7 @@ def main():
     inputs_dirs = {p.parent.name for p in PRE.glob("*/INPUTS.md")}
     covmd_dirs = {p.parent.parent.name for p in PRE.glob("*/verification/COVERAGE.md")}
     summary_by_fam: dict[str, pathlib.Path] = {}
-    for sp in sorted((ROOT / "notes" / "summaries").glob("*.md")):
+    for sp in sorted((ROOT / "notes" / "gen" / "summaries").glob("*.md")):
         if re.match(r"^\d{3}-", sp.name):
             summary_by_fam.setdefault(sp.name[:3], sp)
 
@@ -408,7 +409,7 @@ def main():
             edges["edges/family-trace.tsv"].append(
                 {"fam": fam, "stem": s, "files": "|".join(x.name for x in sorted(TRACES.glob(f"{s}.*")))})
         spage = summary_by_fam.get(fam)
-        summary_href = f"notes/summaries/{spage.relative_to(ROOT / 'notes' / 'summaries')}" if spage else ""
+        summary_href = f"notes/gen/summaries/{spage.relative_to(SUMM_DIR)}" if spage else ""
         companions = [f"[{c}](../{page_of[c]})" for c in led["companions"].split("|")
                       if c and c in fams]
         tier = ("T3" if any(c in main_results for c in cfgs) else
@@ -630,7 +631,7 @@ def main():
          "One row per published reasoning trace and the family README.md attributes it to."),
         ("`topics-rendered.tsv`", topic_table_rows, "term",
          ("One row per curated vocabulary term: its pattern, its yield, its yield by layer, and "
-         "its page. The patterns live in `notes/tables/topics.tsv`; this table is the measured copy.")),
+         "its page. The patterns live in `notes/data/topics.tsv`; this table is the measured copy.")),
         ("`names.tsv`", name_table_rows, "name",
          ("One row per measured name — subject or citation-only — with its layer counts, prose "
          "counts, surface spellings, and its page (empty for a citation-only name).")),
@@ -757,7 +758,7 @@ def main():
           f"negative {len([r for r in topic_rows if not r['families']])}  "
           f"max {max(topic_rows, key=lambda r: len(r['families']))['term']} "
           f"{max(len(r['families']) for r in topic_rows)}  "
-          f"drift vs notes/tables/topics.tsv {len(drift)} {drift[:5]}")
+          f"drift vs notes/data/topics.tsv {len(drift)} {drift[:5]}")
     ne = edges["edges/family-name.tsv"]
     print(f"names               {len(name_rows)} measured  subject {len(subject_rows)} "
           f"(pages {len(name_pages)})  citation-only {len(citation_rows)}  "
@@ -779,7 +780,7 @@ def main():
           f"`.lean` files inside them {sum(r['lean_files'] for r in lean_dir_rows)} of "
           f"{Y.oai_lean_count()}")
     print(f"summary pairing     {sum(1 for r in family_rows if r['summary'] == '1')} of "
-          f"{len(family_rows)} families have a notes/summaries page")
+          f"{len(family_rows)} families have a notes/gen/summaries page")
     dupes = collections.Counter(r["page"] for r in family_rows)
     print(f"page collisions     {sum(1 for c in dupes.values() if c > 1)}  "
           f"max slug length {max(len(r['slug']) for r in family_rows)}")

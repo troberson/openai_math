@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write notes/tables/subfindings.tsv: the manuscript and comparator rows the catalog encodes.
+"""Write notes/gen/tables/subfindings.tsv: the manuscript and comparator rows the catalog encodes.
 
 Extraction only, no interpretation. Two row kinds in one file, typed by the `kind` column:
 
@@ -34,8 +34,8 @@ from catlib import yaml as Y
 from catlib.promote import key_for, promote
 
 ROOT = bc.ROOT
-OUT = ROOT / "notes" / "tables" / "subfindings.tsv"
-LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
+OUT = ROOT / "notes" / "gen" / "tables" / "subfindings.tsv"
+LEDGER = ROOT / "notes" / "gen" / "tables" / "catalog.tsv"
 
 # The builder's key: the ledger is the tracked read outside the five hashed trees.
 KEY = key_for("extract_subfindings.py", tuple(sys.argv[1:]))

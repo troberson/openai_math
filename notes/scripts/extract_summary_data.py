@@ -31,7 +31,7 @@ from catlib.quotes import seed_page  # noqa: E402
 from catlib.summaries import CELL, ROW, Page  # noqa: E402
 
 DATA_DIR = ROOT / "notes" / "data" / "summaries"
-SUMM = ROOT / "notes" / "summaries"
+SUMM = ROOT / "notes" / "gen" / "summaries"
 
 HEADING_MAP: dict[str, str] = {
     "Original CONTENTS.md summary": "contents",

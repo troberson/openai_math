@@ -1,6 +1,6 @@
-"""Verify notes/reports/named-conjectures.md against the shipped files.
+"""Verify notes/gen/reports/named-conjectures.md against the shipped files.
 
-Report-only: writes nothing. Re-derives the population from `notes/tables/catalog.tsv` and the bucket rule
+Report-only: writes nothing. Re-derives the population from `notes/gen/tables/catalog.tsv` and the bucket rule
 in `catlib.ledger` (`read_ledger` and `bucket_of` — `math-6s7.3` moved the first-match chain out of
 `triage_t0.py`, so this checker no longer imports a report-only script), resolves every statement
 anchor against the manuscript LaTeX it cites,
@@ -41,7 +41,7 @@ from catlib.ledger import bucket_of, read_ledger
 from catlib.paths import NOTES, ROOT, read_text
 from catlib.text import collapse_ws
 
-PAGE = NOTES / "reports" / "named-conjectures.md"
+PAGE = NOTES / "gen" / "reports" / "named-conjectures.md"
 
 PRIORITY = ["038", "078", "079", "101", "202", "344", "346", "375"]
 NAME_TOKEN = re.compile(r"conjectur|\bquestion|\bproblem", re.IGNORECASE)

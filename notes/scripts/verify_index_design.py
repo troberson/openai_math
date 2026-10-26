@@ -11,10 +11,10 @@ Report-only; writes nothing. Three passes over the page:
 2. Counts. Every bold count on the page is checked by matching the exact phrase the page must
    contain, built from notes/scripts/measure_index_sizes.population(). A count the page states in
    prose, not in a phrase listed here, is not verified by this script. The schema tables' row counts
-   are read from the generated files under `notes/index/`, so a rendered table that drops rows is a
+   are read from the generated files under `notes/gen/index/`, so a rendered table that drops rows is a
    mismatch rather than a phrase built from the upstream count it was derived from.
 3. Byte sizes. The five TSV sizes the page tabulates are re-read from disk and compared with the
-   values the page's byte phrases quote. The scope is the five named files, not every `notes/tables/*.tsv`:
+   values the page's byte phrases quote. The scope is the five named files, not every `notes/gen/tables/*.tsv`:
    the sum over all of them is a different quantity (see `LEDGER_SET`).
 4. Sync. The page bytes are diffed against the bytes `render_reports.py` renders for this page. The
    count passes prove the numbers on the page are measured by an independent recount; the sync pass
@@ -84,9 +84,9 @@ def count_phrases(p):
     # The tracked TSVs outside the ledger set, in the same rule the writer uses: every table on disk
     # minus the five the page tabulates. A new table moves the phrase the checker demands.
     added = sorted(set(p["sizes"]) - set(M.LEDGER_SET))
-    added_list = ", ".join(f"`notes/tables/{n}` (**{p['sizes'][n][0]}** B over "
+    added_list = ", ".join(f"`notes/gen/tables/{n}` (**{p['sizes'][n][0]}** B over "
                            f"**{p['sizes'][n][1]}** rows)" for n in added[:-1])
-    added_list += " and " + (f"`notes/tables/{added[-1]}` (**{p['sizes'][added[-1]][0]}** B over "
+    added_list += " and " + (f"`notes/gen/tables/{added[-1]}` (**{p['sizes'][added[-1]][0]}** B over "
                              f"**{p['sizes'][added[-1]][1]}** rows)")
 
     def ir(name):
@@ -136,7 +136,7 @@ def count_phrases(p):
         (f"carries **{sf}** rows at **{p['sf_bpr']:.1f}** B/row", "subfindings bytes per row"),
         (f"the whole ledger set is **{setb}** B", "ledger set byte total"),
         (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
-        (f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
+        (f"every `notes/gen/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
         (f"the index tree carries **{p['index_bytes']}** B over the **{p['index_pages']:,}** pages", "index tree byte total"),
         (f"The {len(added)} tracked TSVs outside it", "tracked TSVs outside the set count"),
         (added_list, "added TSV byte figures"),
@@ -194,7 +194,7 @@ def count_phrases(p):
         (f"**{p['index_pages']:,}** pages and **{p['index_tables']}** tables in total",
          "rendered page/table totals"),
         (f"has one row per folded name key (**{ir('names.tsv')}**)", "names.tsv key count"),
-        (f"Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **{fam}** of them", "page count"),
+        (f"Pages: `notes/gen/index/<discipline>/<NNN>-<name>.md`, **{fam}** of them", "page count"),
         (f"**{be}** rows at the measured **150** B/row is **{rawkib}** KiB",
          "raw-bib projection"),
         (f"subset is **{p['resolved']}** rows (**{p['res_kib']}** KiB)", "resolved-edge projection"),

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check notes/reports/subfinding-pairs.md against the shipped files, and re-measure every number it prints.
+"""Check notes/gen/reports/subfinding-pairs.md against the shipped files, and re-measure every number it prints.
 
 Read-only: writes nothing. Run it before quoting any count from the page.
 
@@ -9,7 +9,7 @@ Checks, in order:
   header       the block's overview.tex line is that family's \resultentry line; n is its manuscript
                count; the tier matches the generated ledger.
   quotes       every quoted clause and every quoted title appears verbatim on the cited line.
-  ids          every [fam:seq] resolves in notes/tables/subfindings.tsv to that family and that title.
+  ids          every [fam:seq] resolves in notes/gen/tables/subfindings.tsv to that family and that title.
   coverage     claimed and unclaimed are disjoint and cover the family's full seq set exactly.
   targets      the claimed set equals the set of ids used as pair targets.
   counts       the Summary table's numbers, the probe false-positive list, and the closing
@@ -42,7 +42,7 @@ def new_block(fam: str, line: int, n: int, tier: str) -> dict:
     return {"fam": fam, "line": line, "n": n, "tier": tier,
             "pairs": [], "claimed": None, "unclaimed": None}
 
-PAGE = NOTES / "reports" / "subfinding-pairs.md"
+PAGE = NOTES / "gen" / "reports" / "subfinding-pairs.md"
 
 HEADER = re.compile(r"^## (?P<fam>\d{3}) · `overview\.tex:(?P<line>\d+)` · "
                     r"n=(?P<n>\d+) · (?P<tier>T\d)\s*$")

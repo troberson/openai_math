@@ -98,11 +98,11 @@ def sh(*args: str) -> str:
 
 
 def layer(path: str) -> str:
-    if path.startswith(("notes/index/", "notes/summaries/", "notes/templates/")):
+    if path.startswith(("notes/gen/index/", "notes/gen/summaries/", "notes/templates/")):
         return "generated"
     rest = path[len("notes/"):]
     if rest.endswith(".tsv"):
-        # A TSV sits under `notes/tables/`, so the hand-authored test is on the basename: the two
+        # A TSV sits under `notes/gen/tables/`, so the hand-authored test is on the basename: the two
         # hand-authored tables are named by basename in HAND, the six generated ones are not.
         return "hand-authored" if rest.split("/")[-1] in HAND else "generated"
     return "page"
@@ -181,12 +181,12 @@ def population() -> Pop:
     ignored = [l for l in sh("git", "status", "--porcelain", "--ignored=matching", "--",
                              "preprints", "lean", "overview.tex", "CONTENTS.md",
                              "reasoning_traces").splitlines() if l.strip()]
-    tsvs = sorted((ROOT / "notes" / "tables").glob("*.tsv"))
+    tsvs = sorted((ROOT / "notes" / "gen" / "tables").glob("*.tsv"))
     probe_records = len([p for p in (ROOT / "notes" / "development" / "probe").iterdir()
                          if p.is_file()])
     tsv_bytes = sum(len(p.read_bytes()) for p in tsvs)
     du: dict[str, int] = {}
-    for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index")):
+    for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/gen/index")):
         du[name] = int(sh("du", "-sk", rel).split()[0]) // 1024
     gate = (SCRIPTS / "gate.py").read_text(encoding="utf-8")
     # Each ROWS entry is one invocation and the list order is the canonical print order, so counting
@@ -251,7 +251,7 @@ def count_phrases(pop: Pop) -> list[tuple[str, str]]:
         (f"**{pop['digests']}** digests", "digests"),
         (f"returns **{pop['ignored']} line{'s' if pop['ignored'] != 1 else ''}**", "ignored_line"),
         (f"**{pop['tsv_bytes']:,}** bytes", "tsv_bytes"),
-        (f"**{pop['tsv_count']}** `notes/tables/*.tsv` present on disk", "tsv_count"),
+        (f"**{pop['tsv_count']}** `notes/gen/tables/*.tsv` present on disk", "tsv_count"),
         (f"The tracked records are **{pop['probe_records']}**:", "probe_records"),
         (f"**{du['preprints']}M**", "du_preprints"),
         (f"**{du['oai']}M**", "du_oai"),
@@ -287,7 +287,7 @@ def anchor_path(rel: str) -> Path:
     if rel.startswith("notes/"):
         # A notes-page anchor is repo-relative, so it resolves against the root and a page move
         # needs no resolver change. Checked before the bare-name branch, which would read
-        # `notes/reports/x.md` as a script under notes/scripts/.
+        # `notes/gen/reports/x.md` as a script under notes/scripts/.
         return ROOT / rel
     return SCRIPTS / rel
 
@@ -441,7 +441,7 @@ def main() -> int:
           f"{pop['modules']} catlib modules")
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")
     print(f"tree digests: {pop['digests']}  ignored lines: {pop['ignored']}")
-    print(f"notes/tables/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
+    print(f"notes/gen/tables/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
     print(f"notes/development/probe/ records: {pop['probe_records']}")
     print(f"gate rows: {pop['gate_rows']}  env hits: {pop['env_hits']}")
     for label, sites in (("atomic sites", pop["atomic_sites"]), ("env sites", pop["env_sites"]),

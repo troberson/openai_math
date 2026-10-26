@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_abstracts.py`.
 
-Each test injects one corruption into the text of `notes/reports/abstracts.md` in memory and asserts the pass
+Each test injects one corruption into the text of `notes/gen/reports/abstracts.md` in memory and asserts the pass
 that owns it reports a problem: the quotation pass (word altered, fabricated, repointed), the marker
 pass (marker deleted, marker absent from the table, table path missing on disk), the count pass
 (headline, tag row, bucket row, disagreement count, multi-abstract directory), and the sync pass (a
@@ -106,7 +106,7 @@ def test_quotation_repointed_at_a_file_that_lacks_it(mod, page, table, counts, t
     _q, start, end = target
     cand = page[:start] + "[S31]" + page[end:]
     assert cand != page
-    hits = flagged(mod, cand, table, counts, "not in notes/tables/abstracts.tsv")
+    hits = flagged(mod, cand, table, counts, "not in notes/gen/tables/abstracts.tsv")
     assert hits, "a quotation repointed at a table row that cannot carry it was not flagged"
 
 

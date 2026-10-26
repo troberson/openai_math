@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_subfindings.py`.
 
-Each test injects one corruption into the bytes of `notes/tables/subfindings.tsv` in memory and asserts
+Each test injects one corruption into the bytes of `notes/gen/tables/subfindings.tsv` in memory and asserts
 the pass that owns it reports a problem: the manuscript pass (a display title renamed, a path moved off
 the `overview.tex` path the row must carry, a formalized flag flipped against `formalization.yaml`, a
 tier flipped against the ledger rule), the comparator pass (a named statement renamed, a row deleted so

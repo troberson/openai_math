@@ -31,7 +31,7 @@ REPO = pathlib.Path(__file__).resolve().parents[3]
 @pytest.fixture(scope="module")
 def ledger():
     """The ledger rows, for the joins a population is checked against. Read once per module."""
-    return list(csv.DictReader((REPO / "notes/tables/catalog.tsv").read_text(
+    return list(csv.DictReader((REPO / "notes/gen/tables/catalog.tsv").read_text(
         encoding="utf-8").splitlines(), delimiter="\t"))
 
 
@@ -43,7 +43,7 @@ def layout_shift(request):
     both go through `Path.read_text`, so the page and the population the needle derives from it
     shift together. A needle that re-derives its anchor from the mutated page moves with the page;
     a needle that recorded the anchor as committed fires a message the shifted page never prints.
-    The scope is the page tree the checkers verify — `notes/reports/` and `notes/development/` —
+    The scope is the page tree the checkers verify — `notes/gen/reports/` and `notes/development/` —
     not the index, the summaries, the manuscripts, or the Lean source, so the corpus the
     population is measured from is unchanged. `test_cache_promotion.py` is excluded: its pass
     compares cached bytes with the bytes on the tracked path, so shifting a page makes every page
@@ -53,7 +53,7 @@ def layout_shift(request):
         yield
         return
     orig = pathlib.Path.read_text
-    pages = (pathlib.Path("notes/reports"), pathlib.Path("notes/development"))
+    pages = (pathlib.Path("notes/gen/reports"), pathlib.Path("notes/development"))
 
     def read_text(self, *args, **kwargs):
         text = orig(self, *args, **kwargs)

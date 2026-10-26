@@ -1,6 +1,6 @@
 """The extracted self-tests for `notes/scripts/verify_conjecture_standing.py`.
 
-The checker measures `notes/tables/conjecture-standing.tsv` against the ledger and `overview.tex`;
+The checker measures `notes/data/conjecture-standing.tsv` against the ledger and `overview.tex`;
 this file injects the six defects the page records into the table text in memory and asserts the
 pass that owns each one reports it. The injections are targeted from the parsed rows, so they
 follow the table when a row's anchor or name changes; an injection that finds no target fails the
