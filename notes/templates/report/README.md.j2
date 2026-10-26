@@ -37,6 +37,7 @@ python3 notes/scripts/check_summary_manuscripts.py  # which manuscripts each sum
 python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where a quotation's text actually sits, when verify_summaries.py reports a miss; report-only
 python3 notes/scripts/extract_summary_data.py  # one-time bootstrap: reads the 60 family pages and writes the notes/data/summaries/ data files the summary renderer renders from; not a gate row — re-running would clobber the hand-edited prose
 python3 notes/scripts/build_summaries.py  # renders notes/summaries/ from the notes/data/summaries/ data files and the skeleton; a gate row, before seed_quotes.py so the render chain stays acyclic
+python3 notes/scripts/fix_blank_cites.py  # fixes blank-line citations in the notes/data/summaries/ data files; an authoring tool run by hand after writing a data file, before build_summaries.py
 python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript's abstract, section skeleton and titled statement environments with file:line anchors (--limit N, --all, --sections-only)
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/tables/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q  # the extracted self-tests: 6 injected defects in table text, each asserted against the pass that owns it

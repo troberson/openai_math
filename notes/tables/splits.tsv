@@ -5,7 +5,7 @@ notes/README.md	tier_flag	86 of the 130 are flagged, including 11 of the 19 fami
 notes/README.md	cc_decl	The 28
 notes/README.md	cc_gaps	Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3
 notes/README.md	cw_fire	fires on
-notes/README.md	scan_links	**66,223** links, **0** broken, **17,700** of
+notes/README.md	scan_links	**66,223** links, **133** broken, **17,700** of
 notes/README.md	trace_fams	(007, 017, 087, 102,
 notes/development/fleet-design.md	gate_rows	carries
 notes/development/fleet-design.md	gate_writers_class	Non-determinism sources in the **14** writers,
@@ -52,8 +52,8 @@ notes/development/index-links.md	prose_notesdoc	and the 4 notes docs the entry p
 notes/development/index-links.md	prose_tablestsv	`tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from each of the 551 name
 notes/development/index-links.md	prose_tablestsv	pages and 2 from the entry point) and `notes/tables/topics.tsv`
 notes/development/index-links.md	prose_tracefiles	`reasoning_traces/` ships **11 files
-notes/development/index-links.md	prose_regchecked	**48,128 links checked, 0
-notes/development/index-links.md	prose_surplus	The 18,095 surplus links are
+notes/development/index-links.md	prose_regchecked	**48,131 links checked, 0
+notes/development/index-links.md	prose_surplus	The 18,092 surplus links are
 notes/development/index-links.md	prose_basenames	The index tree carries 1,027 distinct file basenames over 1,033 pages and `notes/tables/` carries
 notes/reports/abstracts.md	family relation counts	Over the 372 family best matches: **0 identical,
 notes/reports/abstracts.md	near-identical families	**005** (0.972), **098** (0.901), **198** (0.989),
