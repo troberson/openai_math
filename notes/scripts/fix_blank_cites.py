@@ -123,15 +123,6 @@ def fix_text(data_text: str, sources: dict[str, str]) -> tuple[str, int]:
         return ls
 
     changed = 0
-    # Only fix markers in the body (after the quotes block), not in the sources
-    # block (which has no line references) or the quotes block (which has its
-    # own window semantics checked by the provenance pass).
-    body_start = data_text.find("<!-- family")
-    if body_start < 0:
-        return data_text, 0
-
-    before = data_text[:body_start]
-    body = data_text[body_start:]
 
     def repl(m: re.Match) -> str:
         nonlocal changed
@@ -152,8 +143,9 @@ def fix_text(data_text: str, sources: dict[str, str]) -> tuple[str, int]:
             return f"[{sid}:{a2}]"
         return f"[{sid}:{a2}\u2013{b2}]"
 
-    body_fixed = MARKER.sub(repl, body)
-    return before + body_fixed, changed
+    # The quotes block uses tab-separated `S1  0  0` fields that do not match
+    # the MARKER regex, so it is safe to scan the entire file.
+    return MARKER.sub(repl, data_text), changed
 
 
 def main() -> None:
@@ -185,35 +177,32 @@ def main() -> None:
                 target = DATA_DIR / doc.name
                 write_atomic(target, fixed)
         # Report unfixable windows (entire span blank)
-        body_start = text.find("<!-- family")
-        if body_start >= 0:
-            body = text[body_start:]
-            _cache: dict[str, list[str]] = {}
-            for m in MARKER.finditer(body):
-                sid = f"S{m.group(1)}"
-                a = int(m.group(2))
-                b = int(m.group(4)) if m.group(4) else a
-                if sid not in _cache:
-                    path = sources.get(sid)
-                    if path:
-                        fp = ROOT / path
-                        if fp.is_file():
-                            _cache[sid] = fp.read_text(
-                                encoding="utf-8", errors="replace"
-                            ).splitlines()
-                        else:
-                            _cache[sid] = []
+        _cache: dict[str, list[str]] = {}
+        for m in MARKER.finditer(text):
+            sid = f"S{m.group(1)}"
+            a = int(m.group(2))
+            b = int(m.group(4)) if m.group(4) else a
+            if sid not in _cache:
+                path = sources.get(sid)
+                if path:
+                    fp = ROOT / path
+                    if fp.is_file():
+                        _cache[sid] = fp.read_text(
+                            encoding="utf-8", errors="replace"
+                        ).splitlines()
                     else:
                         _cache[sid] = []
-                lines = _cache[sid]
-                if lines and 1 <= a <= len(lines) and 1 <= b <= len(lines):
-                    if a <= b:
-                        span = lines[a - 1 : b]
-                        if all(not l.strip() for l in span):
-                            total_unfixable += 1
-                            rel = doc.relative_to(ROOT)
-                            print(f"{rel}: UNFIXABLE [{sid}:{a}\u2013{b}] "
-                                  f"(entire window blank)")
+                else:
+                    _cache[sid] = []
+            lines = _cache[sid]
+            if lines and 1 <= a <= len(lines) and 1 <= b <= len(lines):
+                if a <= b:
+                    span = lines[a - 1 : b]
+                    if all(not l.strip() for l in span):
+                        total_unfixable += 1
+                        rel = doc.relative_to(ROOT)
+                        print(f"{rel}: UNFIXABLE [{sid}:{a}\u2013{b}] "
+                              f"(entire window blank)")
     status = "would fix" if args.check_only else "fixed"
     print(f"===== {len(docs)} data file(s): {total_fixes} citation(s) {status}, "
           f"{total_unfixable} unfixable")
