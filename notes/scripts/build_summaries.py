@@ -25,11 +25,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 
 import build_catalog as B  # noqa: E402
+import fix_blank_cites as FBC  # noqa: E402
 from catlib import bib as BIB  # noqa: E402
 from catlib import normalizer  # noqa: E402
 from catlib import summaries as CSUM  # noqa: E402
 from catlib import text as CTEXT  # noqa: E402
-from catlib.atomic import Staging  # noqa: E402
+from catlib.atomic import Staging, write_atomic  # noqa: E402
 from catlib.paths import ROOT as REPO  # noqa: E402
 from catlib.promote import key_for  # noqa: E402
 from catlib.records import manuscript_store  # noqa: E402
@@ -180,7 +181,7 @@ def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
         if path.endswith(".bib"):
             for e in _parse_bibtex(path):
                 author = e["author"].replace(" and ", ", ") if e["author"] else ""
-                title = e["title"] if e["title"] else "(untitled)"
+                title = e["title"] or "(untitled)"
                 year = f" ({e['year']})" if e["year"] else ""
                 raw.append(f"{author}, {title}{year}")
         elif path.endswith(".tex"):
@@ -577,7 +578,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     # duplicate a token's own window are stripped first (while the {{N}} token is
     # still visible for line location), then the token is resolved to the span text
     # plus its own-window marker, emitted from the same data row, then bare [S#]
-    # markers are expanded to [S#:start–end] when unambiguous.
+    # markers are expanded to [S#:start-end] when unambiguous.
     resolved: dict[str, str] = {}
     for key, body in sections.items():
         stripped = strip_own_markers(body, quotes)
@@ -628,7 +629,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         # The overview title carries LaTeX dashes (`M\'ezard--Parisi`); the accent is already
         # folded by parse_overview, so the remaining `--` needs the same dash rule as prose.
         # The slug is derived from the raw title above (before this fold), so the filename
-        # is unchanged — `--` and `–` slugify to the same `-`.
+        # is unchanged - `--` and the en-dash slugify to the same `-`.
         "title": CTEXT.fold_dashes(title),
         "contents": resolved.get("contents", ""),
         "headline": resolved.get("headline", ""),
@@ -674,6 +675,14 @@ def main() -> int:
             if not (REPO / path).is_file():
                 print(f"  {fam}: {sid} MISSING SOURCE {path}")
                 problems += 1
+        # Auto-fix blank-line citations so the render sees corrected markers.
+        src_map = {sid: path for sid, path, _r in sources}
+        fixed_text, nfix = FBC.fix_text(data_text, src_map)
+        if nfix:
+            data_text = fixed_text
+            if not check_only:
+                write_atomic(df, data_text)
+            print(f"  {fam}: {nfix} blank citation(s) auto-fixed")
         page_text, slug = render_page(fam, info, data_text)
         out = SUMM_DIR / f"{fam}-{slug}.md"
         if not check_only:
