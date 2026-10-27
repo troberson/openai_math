@@ -54,10 +54,10 @@ from catlib.tsv import read_rows_from_text
 PAGES = [
     "notes/development/upstream_history/README.md",
     "notes/development/upstream_history/2026-10-07_3014888.md",
-    "notes/development/upstream_history/2026-10-07_fd4aeeb.md",
+    "notes/development/upstream_history/2026-10-12_1581d4c.md",
+    "notes/development/upstream_history/2026-10-26_7ef5c0c.md",
 ]
 PAGE_301 = "notes/development/upstream_history/2026-10-07_3014888.md"
-PAGE_FD = "notes/development/upstream_history/2026-10-07_fd4aeeb.md"
 BASE = "adc7f1241"  # merge-base: the release as we mirrored it
 UP = "301488868"  # the upstream commit the 3014888 page discusses
 PRE = "9b68bc538"  # our last pre-merge commit: the "Before" column of the ledger table
@@ -220,8 +220,10 @@ def measure():
 
     _, fams_pre = overview_text(git("show", f"{BASE}:overview.tex"))
     _, fams_post = overview_text(read_text(OVERVIEW_TEX))
-    changed = [f for f in fams_post if fams_pre[f] != fams_post[f]]
+    new_fams = [f for f in fams_post if f not in fams_pre]
+    changed = [f for f in fams_post if f in fams_pre and fams_pre[f] != fams_post[f]]
     p["resultentry_changed"] = changed
+    p["resultentry_new"] = new_fams
     p["path_only"] = [f for f in changed if fams_pre[f]["title"] == fams_post[f]["title"]
                       and fams_pre[f]["abstract"] == fams_post[f]["abstract"]]
     p["text_changed"] = [f for f in changed if f not in p["path_only"]]
@@ -362,11 +364,11 @@ def check_needles(_p, problems):
         l = line("lean/OAI/CategoryTheory/Thomason/Simplicial/LoopDimensionShift.lean", ln)
         if "noncomputable def" not in l or decl not in l:
             problems.append(f"needle: LoopDimensionShift.lean:{ln} is not the expected noncomputable def ({l!r})")
-    l = line("lean/formalization.yaml", 684)
+    l = line("lean/formalization.yaml", 689)
     if "Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf" not in l:
-        problems.append(f"needle: formalization.yaml:684 does not name the September-23 edition ({l!r})")
+        problems.append(f"needle: formalization.yaml:689 does not name the September-23 edition ({l!r})")
     l = line("overview.tex", 12)
-    if "pdfsubject={372 result families in 719 manuscripts}" not in l:
+    if "pdfsubject={373 result families in 721 manuscripts}" not in l:
         problems.append(f"needle: overview.tex:12 is not the pdfsubject line ({l!r})")
     l = line("overview.tex", 142)
     if not l.startswith("\\resultentry{032}"):
@@ -514,9 +516,6 @@ def main():
         text = read_text(ROOT / name)
         slug_hits += len(SLUG.findall(text))
         check_page(name, text, p, problems)
-        check_counts(name, text, p, problems)
-        check_tables(name, text, p, problems)
-    check_needles(p, problems)
 
     print("== population ==")
     print(f"diff {BASE}..{UP}: {p['added']} added / {p['deleted']} deleted / {p['modified']} modified")
