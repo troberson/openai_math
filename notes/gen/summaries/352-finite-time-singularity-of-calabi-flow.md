@@ -96,9 +96,9 @@ The release records 1 manuscript for this family and 0 formalized paths, 0 compa
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 352's `\resultentry`, at line 802 |
-| S3 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 352 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 352's `\resultentry`, at line 802 |
+| S3 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 352 |
 | S4 | [`preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/README.md`](../../../preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/README.md) | 44 | Manuscript README: date, bibtex title, `## Verification` run command |
 | S5 | [`preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/paper.pdf`](../../../preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/paper.pdf) | 21383 | Manuscript PDF |
 | S6 | [`preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/build/main.tex`](../../../preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/build/main.tex) | 41 | Abstract, section order, appendix, bibliography inclusion |

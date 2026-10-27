@@ -1,10 +1,10 @@
 # Name: paley
 
-12 families · subject name · 1 carried by a title or a declaration · 12 by prose · 2 by bibliography author
+13 families · subject name · 1 carried by a title or a declaration · 13 by prose · 2 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 32 capitalized occurrences, 26 of them mid-sentence, 4 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 41 capitalized occurrences, 34 of them mid-sentence, 4 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 32 capitalized occurrences, 26 of them mid-sentence, 4 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 12 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 13 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 2 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -22,6 +22,7 @@ Prose counts: 32 capitalized occurrences, 26 of them mid-sentence, 4 lowercase. 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | — | — | — | — | yes | — |
 | [083](../real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md) | Stein's conjecture for Hilbert transforms along Lipschitz directions | — | — | — | — | yes | — |
 | [175](../combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md) | Talagrand's conjectures and graph decompositions at expectation thresholds | — | — | — | — | yes | — |
@@ -52,6 +53,7 @@ Prose counts: 32 capitalized occurrences, 26 of them mid-sentence, 4 lowercase. 
 | [`Functional-universality-of-critical-SK-autocorrelations-October-5-2026`](../../../../preprints/Functional-universality-of-critical-SK-autocorrelations-October-5-2026/) | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | prose | [critical-sk-autocorrelations.pdf](../../../../preprints/Functional-universality-of-critical-SK-autocorrelations-October-5-2026/critical-sk-autocorrelations.pdf) |
 | [`Graph-Decompositions-at-the-Integral-Expectation-Threshold-October-5-2026`](../../../../preprints/Graph-Decompositions-at-the-Integral-Expectation-Threshold-October-5-2026/) | [175](../combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md) | prose | [graph-threshold-decompositions.pdf](../../../../preprints/Graph-Decompositions-at-the-Integral-Expectation-Threshold-October-5-2026/graph-threshold-decompositions.pdf) |
 | [`Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026`](../../../../preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/) | [331](../functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) | prose | [manuscript.pdf](../../../../preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/manuscript.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026`](../../../../preprints/Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026/) | [282](../mathematical-physics/282-scale-to-conformal-enhancement-in-four-dimensional-qft.md) | prose | [main.pdf](../../../../preprints/Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026/main.pdf) |
 | [`Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026`](../../../../preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/) | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | prose | [paper.pdf](../../../../preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/paper.pdf) |
 | [`The-critical-correlation-exponent-of-the-planar-XY-model-September-24-2026`](../../../../preprints/The-critical-correlation-exponent-of-the-planar-XY-model-September-24-2026/) | [216](../probability-and-statistical-mechanics/216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md) | prose | [paper.pdf](../../../../preprints/The-critical-correlation-exponent-of-the-planar-XY-model-September-24-2026/paper.pdf) |

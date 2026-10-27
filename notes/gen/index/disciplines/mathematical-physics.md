@@ -1,6 +1,6 @@
 # Mathematical physics
 
-25 families · 59 manuscripts · 7 formalized at source level · 17 scope notes · 25 comparator configs · 1 reasoning traces · 6 verification bundles
+25 families · 59 manuscripts · 7 formalized at source level · 17 scope notes · 25 comparator configs · 1 reasoning traces · 7 verification bundles
 
 Tier: T3 6 · T2 11 · T1 0 · T0 8
 

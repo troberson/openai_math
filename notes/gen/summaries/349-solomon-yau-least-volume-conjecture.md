@@ -104,8 +104,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 349's `\resultentry`, at line 796 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 349's `\resultentry`, at line 796 |
 | S3 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/README.md`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/README.md) | 18 | Manuscript README: date, bibtex key |
 | S4 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf) | 13143 | Manuscript PDF |
 | S5 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/paper.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/paper.tex) | 83 | Preamble, theorem environments, abstract |
@@ -117,7 +117,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 | S11 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/cones.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/cones.tex) | 442 | The cone induction and exact attainment |
 | S12 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex) | 44 | The completed proof |
 | S13 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib) | 414 | Manuscript bibliography |
-| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 349 |
+| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 349 |
 
 ## Bibliography
 

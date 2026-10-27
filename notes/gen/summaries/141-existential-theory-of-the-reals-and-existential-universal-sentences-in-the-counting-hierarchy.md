@@ -143,9 +143,9 @@ training data, and the release ships the manuscript as proof.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3411], manuscript link [S1:3418] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 141 at [S2:359] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3411], manuscript link [S1:3418] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 141 at [S2:359] |
 | S3 | [`preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/main.tex`](../../../preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/main.tex) | 30 | document root; abstract [S3:9–13]; seven section `\input` directives [S3:17–23]; 30 lines |
 | S4 | [`preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/sections/01-introduction.tex`](../../../preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/sections/01-introduction.tex) | 178 | `thm:main` [S4:30–37]; 178 lines |
 | S5 | [`preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/etr-counting-hierarchy.pdf`](../../../preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/etr-counting-hierarchy.pdf) | 15364 | the manuscript as shipped |
-| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=141`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=141`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

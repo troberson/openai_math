@@ -157,8 +157,8 @@ bibliography — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 311 at line 7667. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 716. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 311 at line 7667. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 716. |
 | S3 | [`preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/paper.tex`](../../../preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/paper.tex) | 71 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/sections/01-introduction.tex) | 242 | Introduction: the setup, the two classification theorems, the history and the two classification problems, and the argument. |
 | S5 | [`preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/references.bib`](../../../preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/references.bib) | 231 | Manuscript bibliography. |

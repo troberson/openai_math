@@ -107,7 +107,7 @@ The declaration is `OAI.ComplexCancellation.main` [S14:32]. The comparator stub 
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 170 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 170 |
 | S2 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/README.md`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/README.md) | 18 | Manuscript title, date |
 | S3 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/main.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/main.tex) | 27 | Abstract, lines 9–17 |
 | S4 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/preamble.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/preamble.tex) | 43 | Macro definitions |

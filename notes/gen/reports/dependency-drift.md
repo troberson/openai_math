@@ -1,7 +1,7 @@
 # What the dependency record implies about automated formalization
 
-Measured 2026-10-07 from three sources only: `notes/gen/tables/formalization-deps.tsv` (31 rows, 8 fields),
-`lean/lakefile.lean` (335 lines), and `lean/patches/` (23 `*-lean4341.patch` files plus `README.md`).
+Measured 2026-10-07 from three sources only: `notes/gen/tables/formalization-deps.tsv` (32 rows, 8 fields),
+`lean/lakefile.lean` (362 lines), and `lean/patches/` (23 `*-lean4341.patch` files plus `README.md`).
 No `lake`, `lean`, `lake exe cache get`, or comparator run, and **no build was attempted** — every pin
 below is a declared pin, and every patch below is an asserted-applicable patch, not a verified one.
 Quote each number with the rule that yields it.
@@ -10,7 +10,7 @@ Quote each number with the rule that yields it.
 
 | Fact | Measured | Anchor |
 |---|---|---|
-| `require … from git "url" @ "commit"` declarations | **30**, every one pinned to a **40-char** commit | `lean/lakefile.lean:10`–`:86` |
+| `require … from git "url" @ "commit"` declarations | **30**, every one pinned to a **40-char** commit | `lean/lakefile.lean:11`–`:87` |
 | Patch files | **23**, **160,187** lines, **734** `diff --git` file hunks | `lean/patches/` |
 | Declared libraries with **no** patch | **7** | `notes/gen/tables/formalization-deps.tsv` |
 | Patches that rewrite the dependency's `lean-toolchain` | **22 of 23** | `lean/patches/*.patch` |
@@ -27,9 +27,9 @@ hunks move 8 distinct upstream versions onto the release's own: `v4.32.0` ×13, 
 each of `v4.18.0`, `v4.21.0`, `v4.29.0`, `v4.32.2`, `v4.33.0-rc2`, `v4.34.0-rc2`. The single patch
 with no toolchain hunk is `rellich-kondrachov-lean4341.patch`.
 
-**What that implies.** A 122,458-file agent-generated Lean tree does not sit on the published
+**What that implies.** A 162,417-file agent-generated Lean tree does not sit on the published
 ecosystem. It sits on 30 pinned commits plus 160,187 lines of release-specific edits to 23 of them,
-22 of which have had their toolchain rewritten to match. The compatibility layer is 1.3 lines of patch
+22 of which have had their toolchain rewritten to match. The compatibility layer is 1.0 lines of patch
 per source file in the tree it supports. Upstream is consumed as a starting point, not as a dependency.
 
 ## Drift is a build error, not a silent event
@@ -87,8 +87,8 @@ in its own source.
 
 | Phase | Anchor | Libraries | Patch lines |
 |---|---|---|---|
-| Pre-resolution (`run_cmd`) | `lean/lakefile.lean:161`–`:164`, driven at `:271`–`:275` | **11** | **6,658** |
-| `post_update` preflight | `lean/lakefile.lean:295`–`:297` | **12** | **153,529** |
+| Pre-resolution (`run_cmd`) | `lean/lakefile.lean:188`–`:191`, driven at `:271`–`:275` | **11** | **6,658** |
+| `post_update` preflight | `lean/lakefile.lean:322`–`:324` | **12** | **153,529** |
 
 The two sets are **disjoint** and their union is **exactly** the 23 patched libraries — every patch
 file on disk is named by one of the two arrays, and neither array names a library without a patch.
@@ -115,7 +115,7 @@ resolves. The removed line carries upstream's own provenance — a dated "steady
 > `lean/lakefile.lean:71:-- Declare shared dependencies last: Lake resolves later requirements first.`
 > `lean/lakefile.lean:72:-- These pins override the older versions in the upstream packages' manifests.`
 
-The block those comments introduce is **7** requires (`lean/lakefile.lean:73`–`:86`):
+The block those comments introduce is **7** requires (`lean/lakefile.lean:74`–`:87`):
 PrimeNumberTheoremAnd, leancert, LeanArchitect, PrimeCert, `«doc-gen4»`, checkdecls, mathlib. **6 of
 those 7 ship no patch** — all except PrimeNumberTheoremAnd. The shared layer is pinned clean; the
 mathematics layer is pinned *and* patched.
@@ -159,7 +159,7 @@ libraries with a patch, ordered by patch lines.
 
 Median patch lines: **2,575** for declared libraries with any direct import, **408** for declared
 libraries with none. The largest patch in the release, PrimeNumberTheoremAnd at 39,904 lines, sits
-beside the largest import count, mathlib at 56,416 — and mathlib itself ships **no** patch. The
+beside the largest import count, mathlib at 68,589 — and mathlib itself ships **no** patch. The
 largest patch on a library OAI never imports directly is AINTLIB at 23,288 lines.
 
 **What that implies.** Patch volume is a measure of how far a library has drifted from the release's

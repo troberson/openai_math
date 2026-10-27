@@ -170,8 +170,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 029 at line 698. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 134. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 029 at line 698. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 134. |
 | S3 | [`preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/README.md`](../../../preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S4 | [`preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/README.md`](../../../preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S5 | [`preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/build/main.tex`](../../../preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/build/main.tex) | 91 | The main file: document class, packages, and section inputs. |

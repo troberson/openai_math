@@ -129,8 +129,8 @@ What the family gives the rest of the release is a dyadic modularity theorem wit
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 010 entry at 232; manuscript blurbs at 241, 250 and 259 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 010 `\resultentry` at 96 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family 010 entry at 232; manuscript blurbs at 241, 250 and 259 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 010 `\resultentry` at 96 |
 | S3 | [`preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/README.md`](../../../preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/README.md) | 21 | Author at 3, date at 5, citation block at 9–17, version note at 19–21 |
 | S4 | [`preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/build/source/main.tex`](../../../preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/build/source/main.tex) | 75 | Title at 51, date at 53, abstract at 56–64, section inputs at 66–71 |
 | S5 | [`preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/build/source/sections/introduction.tex`](../../../preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/build/source/sections/introduction.tex) | 162 | `thm:main` at 33–49, pro-modularity naming at 51–54, context at 56–132, conventions from 134 |
@@ -158,7 +158,7 @@ What the family gives the rest of the release is a dyadic modularity theorem wit
 | S27 | [`preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/build/references.bib`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/build/references.bib) | 753 | Release entry `OpenAIH10Q2026` at 723–730 |
 | S28 | [`preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf) | 22140 | Typeset manuscript, 767,547 bytes |
 | S29 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Family 010 entry at 121–124 |
-| S30 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 010 at 11 |
+| S30 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 010 at 11 |
 
 ## Bibliography
 

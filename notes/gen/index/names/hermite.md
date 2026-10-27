@@ -1,10 +1,10 @@
 # Name: hermite
 
-20 families · subject name · 2 carried by a title or a declaration · 20 by prose · 0 by bibliography author
+21 families · subject name · 3 carried by a title or a declaration · 21 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 98 capitalized occurrences, 87 of them mid-sentence, 27 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 111 capitalized occurrences, 97 of them mid-sentence, 36 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -12,9 +12,9 @@ Prose counts: 98 capitalized occurrences, 87 of them mid-sentence, 27 lowercase.
 |---|---|---|---|
 | `F` — Family title | title | 0 | The release named the family after it — the strongest subject evidence there is. |
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
-| `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
+| `E` — Theorem title | title | 3 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 20 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 21 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -41,6 +41,7 @@ Prose counts: 98 capitalized occurrences, 87 of them mid-sentence, 27 lowercase.
 | [270](../mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md) | Threshold and positive-energy bound states of the BFSS model | — | — | — | — | yes | — |
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | — | — | — | — | yes | — |
 | [351](../differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) | Scalar curvature detects four-dimensional Ricci-flow singularities | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | yes | — | yes | — |
 
 ## Manuscripts
 
@@ -67,6 +68,7 @@ Prose counts: 98 capitalized occurrences, 87 of them mid-sentence, 27 lowercase.
 | [`Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026`](../../../../preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/) | [351](../differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) | prose | [paper.pdf](../../../../preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/paper.pdf) |
 | [`Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026`](../../../../preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/) | [270](../mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md) | prose | [positive-eigenvalues-relative-su2-bfss.pdf](../../../../preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/positive-eigenvalues-relative-su2-bfss.pdf) |
 | [`Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026`](../../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/) | [139](../theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md) | prose | [article.pdf](../../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026`](../../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/) | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | prose | [paper.pdf](../../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/paper.pdf) |
 | [`The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026`](../../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose | [main.pdf](../../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf) |
 | [`The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026`](../../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/) | — | prose | — |
@@ -84,6 +86,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Tapered Hermite recovery |
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Hermite expansion of the stationary evolution |
 | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | Hermite resolvent estimates |
 

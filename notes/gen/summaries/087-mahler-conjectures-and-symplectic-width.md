@@ -76,9 +76,9 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release entry and sub-entries for family 087 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Release's own family list |
-| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release entry and sub-entries for family 087 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Release's own family list |
+| S3 | [`README.md`](../../../README.md) | 53 | Trace attribution |
 | S4 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md) | 18 | Symmetric manuscript root |
 | S5 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex) | 59 | Symmetric abstract |
 | S6 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex) | 296 | Symmetric theorem, history, proof chain, functional corollary |
@@ -105,7 +105,7 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 | S27 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex) | 249 | Limit theorem, sharpness, packing corollary |
 | S28 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib) | 230 | Symplectic bibliography, including the symmetric companion and the ball-packing family |
 | S29 | [`lean/docs/087.md`](../../../lean/docs/087.md) | 30 | Release scope note and comparator table |
-| S30 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release bibliography and `main_results` index |
+| S30 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Release bibliography and `main_results` index |
 | S31 | [`lean/ComparatorChallenges/MahlerConjecture.lean`](../../../lean/ComparatorChallenges/MahlerConjecture.lean) | 26 | Symmetric challenge statement |
 | S32 | [`lean/ComparatorChallenges/MahlerConjecture.json`](../../../lean/ComparatorChallenges/MahlerConjecture.json) | 14 | Symmetric challenge record |
 | S33 | [`lean/ComparatorChallenges/SymmetricMahlerEquality.lean`](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.lean) | 54 | Equality challenge statement |

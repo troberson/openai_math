@@ -207,7 +207,7 @@ Its README gives the release date "Date: September 23, 2026 [S3:5]".
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb and manuscript sub-entry |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb and manuscript sub-entry |
 | S2 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex) | 37 | Manuscript source: title, abstract, section order |
 | S3 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md) | 18 | Manuscript build notes and release date |
 | S4 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex) | 343 | Theorem statement, prior work, proof outline |
@@ -230,7 +230,7 @@ Its README gives the release date "Date: September 23, 2026 [S3:5]".
 | S21 | [`lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean`](../../../lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean) | 45 | Conjunction of both theorems |
 | S22 | [`lean/OAI/Combinatorics/Progressions/Results/Reciprocal.lean`](../../../lean/OAI/Combinatorics/Progressions/Results/Reciprocal.lean) | 96 | Reciprocal-sum conclusion |
 | S23 | [`lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean`](../../../lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean) | 561 | Log log → polylog → dyadic bridge |
-| S24 | [`overview.tex`](../../../overview.tex) | 859 | Release entry list (family 159 at line 399) |
+| S24 | [`overview.tex`](../../../overview.tex) | 861 | Release entry list (family 159 at line 399) |
 | S25 | [`reasoning_traces/quasipolynomial-arithmetic-progressions.pdf`](../../../reasoning_traces/quasipolynomial-arithmetic-progressions.pdf) | 7552 | Published reasoning trace |
 
 ## Bibliography

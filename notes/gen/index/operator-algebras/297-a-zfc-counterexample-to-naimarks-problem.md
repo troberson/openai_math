@@ -29,7 +29,7 @@ No `main_results` declaration reaches this family: its scope note links 1 compar
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `Naimark` | [.json](../../../../lean/ComparatorChallenges/Naimark.json) | [.lean](../../../../lean/ComparatorChallenges/Naimark.lean) | 1 | 7 | no | no |
+| `Naimark` | [.json](../../../../lean/ComparatorChallenges/Naimark.json) | [.lean](../../../../lean/ComparatorChallenges/Naimark.lean) | 1 | 0 | no | no |
 
 ## Verification bundles
 

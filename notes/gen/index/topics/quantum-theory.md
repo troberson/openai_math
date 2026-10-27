@@ -1,12 +1,13 @@
 # Topic: quantum-theory
 
-14 families · pattern `quantum|schr[oö]dinger|qubit|entanglement|bell inequality|mutually unbiased` · hits by layer: title 8 · abstract 12 · scope 8 · path 1
+15 families · pattern `quantum|schr[oö]dinger|qubit|entanglement|bell inequality|mutually unbiased` · hits by layer: title 8 · abstract 13 · scope 8 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | yes | yes | — | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | yes | — | — |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | yes | — | — | — |
 | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | Geometry, diffusion, and spectra of random planar maps | — | yes | — | — |
 | [266](../mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md) | Exactly three mutually unbiased bases in dimension six | yes | yes | yes | — |

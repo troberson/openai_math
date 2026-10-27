@@ -204,7 +204,7 @@ claims exist and names their declarations; the comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 174 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 174 |
 | S2 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md) | 18 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex) | 51 | Abstract, lines 36–43 |
 | S4 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex) | 50 | Theorem 1, corollary, method, history |

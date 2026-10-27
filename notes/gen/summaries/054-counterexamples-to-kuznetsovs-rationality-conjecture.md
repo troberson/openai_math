@@ -182,8 +182,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 054 at line 1388. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 184. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 054 at line 1388. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 184. |
 | S3 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/README.md`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/README.md) | 17 | Manuscript readme: title, date. |
 | S4 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/paper.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/paper.tex) | 74 | The main file: abstract and section inputs. |
 | S5 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/introduction.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/introduction.tex) | 388 | The Kuznetsov component, the admissible definition, the theorem, and the two-evaluations argument. |

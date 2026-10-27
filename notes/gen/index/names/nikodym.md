@@ -1,10 +1,10 @@
 # Name: nikodym
 
-27 families · subject name · 1 carried by a title or a declaration · 27 by prose · 0 by bibliography author
+28 families · subject name · 1 carried by a title or a declaration · 28 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 64 capitalized occurrences, 56 of them mid-sentence, 8 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 69 capitalized occurrences, 59 of them mid-sentence, 11 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 64 capitalized occurrences, 56 of them mid-sentence, 8 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 27 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 28 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -26,6 +26,7 @@ Prose counts: 64 capitalized occurrences, 56 of them mid-sentence, 8 lowercase. 
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | — |
 | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | Kakeya in three and four dimensions | — | — | yes | — | yes | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [085](../real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md) | Endpoint regularity of the planar centered maximal function | — | — | — | — | yes | — |
 | [140](../theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md) | Memory--sample lower bounds for noiseless Gaussian regression | — | — | — | — | yes | — |
 | [170](../combinatorics/170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md) | Sharp logarithmic exponents for off-diagonal Ramsey numbers | — | — | — | — | yes | — |
@@ -71,6 +72,7 @@ Prose counts: 64 capitalized occurrences, 56 of them mid-sentence, 8 lowercase. 
 | [`Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026`](../../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/) | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | prose | [paper.pdf](../../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/paper.pdf) |
 | [`Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026`](../../../../preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/) | [331](../functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) | prose | [manuscript.pdf](../../../../preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/manuscript.pdf) |
 | [`Invariant-projection-counterexamples-for-every-irrational-rotation-September-27-2026`](../../../../preprints/Invariant-projection-counterexamples-for-every-irrational-rotation-September-27-2026/) | [293](../operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md) | prose | [paper.pdf](../../../../preprints/Invariant-projection-counterexamples-for-every-irrational-rotation-September-27-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026`](../../../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/) | [140](../theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md) | prose | [paper.pdf](../../../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf) |
 | [`Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026`](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf) |
 | [`Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026`](../../../../preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/) | [222](../probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md) | prose | [Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf](../../../../preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf) |

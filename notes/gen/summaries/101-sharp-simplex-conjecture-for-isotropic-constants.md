@@ -229,8 +229,8 @@ geometry arguments, and it is not a Lean check.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 101's block, at line 2486 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 101's `\resultentry`, at line 278 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family 101's block, at line 2486 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 101's `\resultentry`, at line 278 |
 | S3 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md) | 30 | The verification bundle's run command and scope |
 | S4 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/main.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/main.tex) | 64 | Title, date, abstract |
 | S5 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex) | 192 | The two theorems, prior work, ideas of the proof |

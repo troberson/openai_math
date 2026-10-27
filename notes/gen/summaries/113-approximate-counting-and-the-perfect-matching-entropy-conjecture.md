@@ -224,8 +224,8 @@ no verification bundle and no reasoning trace; the two shipped PDFs
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2768], the FPRAS manuscript link [S1:2775] and abstract [S1:2777], the Entropy manuscript link [S1:2784] and abstract [S1:2786–2790]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 113 at [S2:304] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2768], the FPRAS manuscript link [S1:2775] and abstract [S1:2777], the Entropy manuscript link [S1:2784] and abstract [S1:2786–2790]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 113 at [S2:304] |
 | S3 | [`preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex`](../../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex) | 3471 | root (`\documentclass`); `\newcommand{\eps}{\varepsilon}` at [S3:91]; abstract [S3:109–115]; `thm:main` [S3:132–143]; history [S3:151–241]; proof architecture [S3:243+] |
 | S4 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex`](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex) | 77 | root (`\documentclass`); `\DeclareMathOperator{\supp}{supp}` at [S4:23]; abstract [S4:48–59]; include order [S4:61–70] |
 | S5 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/sections/01-introduction.tex) | 287 | `ent:main` [S5:33–40]; the Shearer's-inequality paragraph [S5:48–54]; the Anari–Oveis Gharan–Vinzant conjecture [S5:70–79]; the $k$-disjoint consequence [S5:84–87]; the deterministic counting theorem [S5:201–212] |
@@ -241,8 +241,8 @@ no verification bundle and no reasoning trace; the two shipped PDFs
 | S15 | [`lean/OAI/Combinatorics/PerfectMatching/Main.lean`](../../../lean/OAI/Combinatorics/PerfectMatching/Main.lean) | 213 | the formalized entropy file — `entropy_main` proved at [S15:85–89] |
 | S16 | [`lean/OAI/Computability/MatchingCount/BinarySolve.lean`](../../../lean/OAI/Computability/MatchingCount/BinarySolve.lean) | 153 | the formalized deterministic-counting file — `deterministic_approximate_counting` proved at [S16:143–149] |
 | S17 | [`lean/OAI/Computability/LoopMatching/Main.lean`](../../../lean/OAI/Computability/LoopMatching/Main.lean) | 30 | the formalized singleton-loop file — `fullEndpoint` proved at [S17:24–26] |
-| S18 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `sources:` entry naming the Entropy manuscript at [S18:394]; the three `main_results` entries at [S18:1013–1015], [S18:1385–1387], [S18:1605–1607] |
-| S19 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=113`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S18 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the `sources:` entry naming the Entropy manuscript at [S18:394]; the three `main_results` entries at [S18:1013–1015], [S18:1385–1387], [S18:1605–1607] |
+| S19 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=113`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 

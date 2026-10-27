@@ -144,8 +144,8 @@ manuscript — a root `build/main.tex`, 9 `.tex` files under
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 338 at line 8240. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 774. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 338 at line 8240. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 774. |
 | S3 | [`preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/build/main.tex`](../../../preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/build/main.tex) | 101 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/build/sections/introduction.tex`](../../../preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/build/sections/introduction.tex) | 258 | Introduction: the main theorem, antecedents, the structure of the proof, and conventions. |
 | S5 | [`preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/build/bibliography.tex`](../../../preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/build/bibliography.tex) | 424 | Manuscript bibliography. |

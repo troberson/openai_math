@@ -194,7 +194,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 063 at line 1597. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 063 at line 1597. |
 | S2 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/main.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/main.tex) | 48 | Main file: title, abstract, and section inputs. |
 | S3 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/introduction.tex) | 137 | The Fano setup, the theorem, prior work, and the quantum-correspondence proof strategy. |
 | S4 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/setup.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/setup.tex) | 136 | Quantum cohomology setup and the divisor matrices. |

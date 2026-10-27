@@ -116,8 +116,8 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 016 `\resultentry` at 108 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 016 `\resultentry` at 108 |
 | S3 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex) | 31 | Title at 3, date at 5, abstract at 9–12, section inputs at 19–28 |
 | S5 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/sections/01-introduction.tex) | 254 | `thm:main` at 43–50, scope at 52–57, `thm:nondensity` at 67–71, Barroero–Dill passage at 73–77, `cor:finite-rank-translates` at 84–98, Pink Conjecture 5.2 at 100–101, history at 113–137, comparison at 165–167, proof strategy at 202–243 |
@@ -138,7 +138,7 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 | S20 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib) | 360 | Release entries `CompanionECM` at 162–168 and `CompanionQuaternion` at 169–175 |
 | S21 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf) | 20306 | Typeset manuscript, 719,203 bytes |
 | S22 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Family 016 entry at 129–130 |
-| S23 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 016 at 17 |
+| S23 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 016 at 17 |
 
 ## Bibliography
 

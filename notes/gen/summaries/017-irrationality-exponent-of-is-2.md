@@ -201,9 +201,9 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, at line 488 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Catalog entry, at line 110 |
-| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, at line 28 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, at line 488 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Catalog entry, at line 110 |
+| S3 | [`README.md`](../../../README.md) | 53 | Trace attribution, at line 28 |
 | S4 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md) | 18 | Manuscript metadata; date at line 5 |
 | S5 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex) | 264 | Abstract, theorem statements, history, proof outline |
 | S6 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex) | 584 | Uniform interpolation theorem |
@@ -212,7 +212,7 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 | S9 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex) | 155 | Flint–Hills convergence and the generalized criterion |
 | S10 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib) | 269 | Cited prior work behind the history |
 | S11 | [`lean/docs/017.md`](../../../lean/docs/017.md) | 17 | Scope note: selected statement and exclusion |
-| S12 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | No entry naming this manuscript |
+| S12 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | No entry naming this manuscript |
 | S13 | [`lean/ComparatorChallenges/PiExponent.lean`](../../../lean/ComparatorChallenges/PiExponent.lean) | 19 | Comparator challenge, `sorry` at line 15 |
 | S14 | [`lean/ComparatorChallenges/PiExponent.json`](../../../lean/ComparatorChallenges/PiExponent.json) | 14 | Challenge config: target module, axioms, `enable_nanoda` |
 | S15 | [`lean/OAI/NumberTheory/PiExponent/Main.lean`](../../../lean/OAI/NumberTheory/PiExponent/Main.lean) | 36 | Formalized main theorem and Flint–Hills summability |

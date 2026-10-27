@@ -31,10 +31,10 @@ specific to one library.
 
 ## The measured surface
 
-Over the **200** `main_results` entries over **189** unique configs:
+Over the **207** `main_results` entries over **191** unique configs:
 
-- **189** of the 189 declarations resolve to a statement in the file the yaml names.
-- **61** of the 189 statements are opaque: the type is a name that must be opened, not a formula.
+- **191** of the 191 declarations resolve to a statement in the file the yaml names.
+- **61** of the 191 statements are opaque: the type is a name that must be opened, not a formula.
   All **61** carriers resolve through the declaration file's import closure.
 - Carrier bodies: min **1** line, median **6**, max **17**, sum **417** lines.
 - **51** of the **61** carriers carry at least one integer literal; **126** distinct literals in total.
@@ -156,9 +156,9 @@ statement sees two different inequalities, and both are correct.
 
 The paper's second signature is a quantifier-scope change: prose says "for a.e. `t`", Lean says for all
 `t`. This catalog has little of the prose side to change. Over the 719 listed manuscripts there are
-**2,288** theorem environments; **48** carry an `a.e.`-style phrase (`a.e.`, `almost every`,
-`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. **19** of those 32 families
-have a scope-note config; the 19 link **54** configs, of which **19** have a `main_results` entry and
+**2,298** theorem environments; **49** carry an `a.e.`-style phrase (`a.e.`, `almost every`,
+`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. **20** of those 32 families
+have a scope-note config; the 20 link **55** configs, of which **20** have a `main_results` entry and
 **35** have none.
 
 | Family | `a.e.` envs | Configs linked | With entry | Without |
@@ -167,7 +167,7 @@ have a scope-note config; the 19 link **54** configs, of which **19** have a `ma
 | 022 | 1 | 0 | 0 | 0 |
 | 075 | 2 | 1 | 1 | 0 |
 | 078 | 1 | 0 | 0 | 0 |
-| 079 | 1 | 0 | 0 | 0 |
+| 079 | 2 | 1 | 1 | 0 |
 | 080 | 1 | 0 | 0 | 0 |
 | 082 | 1 | 1 | 1 | 0 |
 | 101 | 1 | 0 | 0 | 0 |

@@ -173,9 +173,9 @@ certificate ships with it.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 226 at line 5403. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 535. |
-| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 226 at line 5403. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 535. |
+| S3 | [`README.md`](../../../README.md) | 53 | The repo readme, which attributes no reasoning trace to this family. |
 | S4 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/README.md`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/README.md) | 17 | Citation-only manuscript readme: the model, the result, the method, no provenance. |
 | S5 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/main.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/main.tex) | 55 | The abstract at lines 42–45. |
 | S6 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/10-introduction.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/10-introduction.tex) | 259 | The theorem statement, the collection topology, the prior work, the mechanism. |

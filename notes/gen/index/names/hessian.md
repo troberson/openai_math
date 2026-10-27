@@ -1,10 +1,10 @@
 # Name: hessian
 
-86 families · subject name · 8 carried by a title or a declaration · 86 by prose · 0 by bibliography author
+87 families · subject name · 9 carried by a title or a declaration · 87 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 1367 capitalized occurrences, 1234 of them mid-sentence, 333 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 1408 capitalized occurrences, 1273 of them mid-sentence, 349 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -12,9 +12,9 @@ Prose counts: 1367 capitalized occurrences, 1234 of them mid-sentence, 333 lower
 |---|---|---|---|
 | `F` — Family title | title | 0 | The release named the family after it — the strongest subject evidence there is. |
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
-| `E` — Theorem title | title | 8 | A statement environment carries it in its optional title, so a theorem is named for it. |
+| `E` — Theorem title | title | 9 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 1 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 86 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 87 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -36,6 +36,7 @@ Prose counts: 1367 capitalized occurrences, 1234 of them mid-sentence, 333 lower
 | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | Kakeya in three and four dimensions | — | — | — | — | yes | — |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | — | — | — | — | yes | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | yes | — | yes | — |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | — | — | — | — | yes | — |
 | [082](../real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md) | Maximal and variational bounds for the triangular Hilbert transform | — | — | yes | — | yes | — |
 | [083](../real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md) | Stein's conjecture for Hilbert transforms along Lipschitz directions | — | — | — | — | yes | — |
@@ -185,6 +186,7 @@ Prose counts: 1367 capitalized occurrences, 1234 of them mid-sentence, 333 lower
 | [`Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026`](../../../../preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/) | [360](../differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md) | prose | [paper.pdf](../../../../preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf) |
 | [`Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026`](../../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/) | [347](../differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md) | prose | [paper.pdf](../../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf) |
 | [`Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026`](../../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/) | [345](../differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md) | prose | [paper.pdf](../../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026`](../../../../preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/) | [140](../theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md) | prose | [paper.pdf](../../../../preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf) |
 | [`Log-abundance-in-characteristic-zero-September-24-2026`](../../../../preprints/Log-abundance-in-characteristic-zero-September-24-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../../preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf) |
 | [`Marked-polygon-correlations-and-one-arc-bounds-September-26-2026`](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf) |

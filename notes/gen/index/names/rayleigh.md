@@ -1,10 +1,10 @@
 # Name: rayleigh
 
-22 families · subject name · 2 carried by a title or a declaration · 22 by prose · 0 by bibliography author
+23 families · subject name · 2 carried by a title or a declaration · 23 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 85 capitalized occurrences, 78 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 86 capitalized occurrences, 79 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,13 +14,14 @@ Prose counts: 85 capitalized occurrences, 78 of them mid-sentence, 12 lowercase.
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 22 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 23 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | — | — | — | — | yes | — |
 | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | The Euclidean Steinitz--Bergström conjecture | — | — | — | — | yes | — |
 | [114](../theoretical-computer-science/114-approximate-counting-of-common-integer-polymatroid-bases.md) | Approximate counting of common integer polymatroid bases | — | — | — | — | yes | — |
@@ -59,6 +60,7 @@ Prose counts: 85 capitalized occurrences, 78 of them mid-sentence, 12 lowercase.
 | [`De-Giorgis-conjecture-in-dimension-eight-September-26-2026`](../../../../preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/) | [375](../partial-differential-equations/375-de-giorgis-conjecture-in-dimension-eight.md) | prose | [article.pdf](../../../../preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf) |
 | [`Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026`](../../../../preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/) | [337](../differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md) | prose | [paper.pdf](../../../../preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf) |
 | [`Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026`](../../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/) | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | prose | [paper.pdf](../../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Marked-polygon-correlations-and-one-arc-bounds-September-26-2026`](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf) |
 | [`Parabolic-intersections-in-Artin-groups-September-23-2026`](../../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/) | [254](../group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) | prose | [paper.pdf](../../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/paper.pdf) |
 | [`Polynomial-vacuum-representations-and-bridge-mass-for-honeycomb-walks-September-26-2026`](../../../../preprints/Polynomial-vacuum-representations-and-bridge-mass-for-honeycomb-walks-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Polynomial-vacuum-representations-and-bridge-mass-for-honeycomb-walks-September-26-2026/main.pdf) |

@@ -1,5 +1,5 @@
 library	repo_url	pinned_commit	lakefile_declared	yaml_relationship	direct_imports	patch_file	patch_lines
-mathlib	https://github.com/leanprover-community/mathlib4.git	d13f23b723b8a846827a245b89c10fc7d3f11612	y	builds-on	56416	none	0
+mathlib	https://github.com/leanprover-community/mathlib4.git	d13f23b723b8a846827a245b89c10fc7d3f11612	y	builds-on	68589	none	0
 PrimeNumberTheoremAnd	https://github.com/AlexKontorovich/PrimeNumberTheoremAnd.git	c39a751132c88b6e8080b74c74023fd95b3d8be0	y	builds-on	244	PrimeNumberTheoremAnd-lean4341.patch	39904
 StrongPNT	https://github.com/math-inc/strongpnt.git	2f5835c322314f55f1026ec2f139d704b7c45c69	y	builds-on	12	StrongPNT-lean4341.patch	26284
 rellich-kondrachov	https://github.com/abenenson/rellich-kondrachov.git	70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23	y	builds-on	9	rellich-kondrachov-lean4341.patch	2697
@@ -20,6 +20,7 @@ carleson	https://github.com/fpvandoorn/carleson.git	306ae5b29300771aece1aa39f0a9
 checkdecls	https://github.com/PatrickMassot/checkdecls.git	3d425859e73fcfbef85b9638c2a91708ef4a22d4	y	builds-on	0	none	0
 doc-gen4	https://github.com/leanprover/doc-gen4.git	953c8992d174b4e56955e01e101d46668c68f2bb	y	builds-on	0	none	0
 elliptic-curves	https://github.com/lana-agents/elliptic-curves.git	bebec3fc9f2602e81c83e5236789572a541c85fb	y	builds-on	0	elliptic-curves-lean4341.patch	668
+formal-conjectures	https://github.com/google-deepmind/formal-conjectures	none	n	builds-on	0	none	0
 formal-schemes	https://github.com/lana-agents/formal-schemes.git	51aa935079537bf4dc580751a6e70727fb23ca93	y	builds-on	0	formal-schemes-lean4341.patch	193
 genl	https://github.com/lana-agents/genl.git	ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf	y	builds-on	0	genl-lean4341.patch	189
 heights	https://github.com/lana-agents/heights.git	721496ca4c158e511d25d8ccf6bfe8503eda73c1	y	builds-on	0	heights-lean4341.patch	494

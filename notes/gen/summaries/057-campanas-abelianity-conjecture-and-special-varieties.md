@@ -204,7 +204,7 @@ ship 7, 9, and 9 `.tex` files respectively.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 057 at line 1481. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 057 at line 1481. |
 | S2 | [`preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/build/paper.tex`](../../../preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/build/paper.tex) | 59 | Manuscript 1 main file: abstract and section inputs. |
 | S3 | [`preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/build/sections/introduction.tex) | 420 | The specialness definition, the theorem, consequences, and Campana's program context. |
 | S4 | [`preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/build/sections/preliminaries.tex) | 257 | Preliminaries on compact Kähler geometry. |

@@ -1,10 +1,10 @@
 # Name: schauder
 
-19 families · subject name · 2 carried by a title or a declaration · 19 by prose · 1 by bibliography author
+20 families · subject name · 2 carried by a title or a declaration · 20 by prose · 1 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 187 capitalized occurrences, 150 of them mid-sentence, 24 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 189 capitalized occurrences, 151 of them mid-sentence, 24 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 187 capitalized occurrences, 150 of them mid-sentence, 24 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 19 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 20 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 1 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -23,6 +23,7 @@ Prose counts: 187 capitalized occurrences, 150 of them mid-sentence, 24 lowercas
 |---|---|---|---|---|---|---|---|
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | — |
 | [057](../algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) | Campana's abelianity conjecture and special varieties | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | The logarithmic Brunn--Minkowski conjecture | — | — | — | — | yes | — |
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | — | — | — | — | yes | — |
 | [107](../theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md) | Matrix multiplication with exponent at most $9/4$ | — | — | — | — | yes | — |
@@ -59,6 +60,7 @@ Prose counts: 187 capitalized occurrences, 150 of them mid-sentence, 24 lowercas
 | [`De-Giorgis-conjecture-in-dimension-eight-September-26-2026`](../../../../preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/) | [375](../partial-differential-equations/375-de-giorgis-conjecture-in-dimension-eight.md) | prose | [article.pdf](../../../../preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf) |
 | [`Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026`](../../../../preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../../preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/paper.pdf) |
 | [`Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026`](../../../../preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/) | [331](../functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) | prose | [manuscript.pdf](../../../../preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/manuscript.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Matrix-Multiplication-Nine-Fourths-October-2-2026`](../../../../preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/) | [107](../theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md) | prose | [paper.pdf](../../../../preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf) |
 | [`Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026`](../../../../preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/) | [331](../functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) | prose | [manuscript.pdf](../../../../preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/manuscript.pdf) |
 | [`Positive-scalar-curvature-and-uniform-codimension-two-width-September-23-2026`](../../../../preprints/Positive-scalar-curvature-and-uniform-codimension-two-width-September-23-2026/) | [336](../differential-geometry/336-spectral-scalar-curvature-and-codimension-two-width.md) | prose | [paper.pdf](../../../../preprints/Positive-scalar-curvature-and-uniform-codimension-two-width-September-23-2026/paper.pdf) |

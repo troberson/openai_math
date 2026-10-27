@@ -1,10 +1,10 @@
 # Name: laplacian
 
-61 families · subject name · 4 carried by a title or a declaration · 61 by prose · 0 by bibliography author
+62 families · subject name · 4 carried by a title or a declaration · 62 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 577 capitalized occurrences, 535 of them mid-sentence, 86 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 587 capitalized occurrences, 545 of them mid-sentence, 86 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 577 capitalized occurrences, 535 of them mid-sentence, 86 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 4 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 61 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 62 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -32,6 +32,7 @@ Prose counts: 577 capitalized occurrences, 535 of them mid-sentence, 86 lowercas
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | — | — | yes | — | yes | — |
 | [072](../real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md) | Brennan's conjecture and a counterexample to Kraetzer's prediction | — | — | — | — | yes | — |
 | [073](../real-and-complex-analysis/073-falconer-distance-conjecture.md) | The Falconer distance conjecture | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | Universal optimality of the triangular lattice | — | — | — | — | yes | — |
 | [131](../theoretical-computer-science/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md) | Polynomial mixing of graph switches with prescribed degrees | — | — | — | — | yes | — |
 | [147](../dynamical-systems-and-ergodic-theory/147-near-boundary-birkhoff-conjecture.md) | The near-boundary Birkhoff conjecture | — | — | — | — | yes | — |
@@ -140,6 +141,7 @@ Prose counts: 577 capitalized occurrences, 535 of them mid-sentence, 86 lowercas
 | [`Incompressible-Box-Transport-and-Finite-Computation-October-6-2026`](../../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/) | [376](../partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md) | prose | [manuscript.pdf](../../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf) |
 | [`Incompressible-Box-Transport-and-Finite-Computation-September-27-2026`](../../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/) | — | prose | — |
 | [`Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026`](../../../../preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/) | [366](../partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md) | prose | [Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf](../../../../preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026`](../../../../preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/) | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | prose | [paper.pdf](../../../../preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf) |
 | [`Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026`](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf) |
 | [`Minimal-metrics-and-interior-injectivity-for-nef-adjoints-September-27-2026`](../../../../preprints/Minimal-metrics-and-interior-injectivity-for-nef-adjoints-September-27-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../../preprints/Minimal-metrics-and-interior-injectivity-for-nef-adjoints-September-27-2026/paper.pdf) |

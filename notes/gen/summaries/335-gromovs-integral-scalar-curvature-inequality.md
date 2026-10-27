@@ -173,8 +173,8 @@ bibliography. No non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 335 at line 8152. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 768. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 335 at line 8152. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 768. |
 | S3 | [`preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/build/main.tex`](../../../preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/build/main.tex) | 73 | Manuscript 1 main file: title and abstract. |
 | S4 | [`preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/build/sections/01-introduction.tex) | 203 | Manuscript 1 introduction: the simplicial volume setup, Gromov's 1986 conjecture, the main theorem, and the route to the estimate. |
 | S5 | [`preprints/Positive-scalar-curvature-forces-rational-inessentiality-September-23-2026/build/main.tex`](../../../preprints/Positive-scalar-curvature-forces-rational-inessentiality-September-23-2026/build/main.tex) | 146 | Manuscript 2 main file: title and abstract. |

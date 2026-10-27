@@ -152,8 +152,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 193 at line 4434. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 467. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 193 at line 4434. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 467. |
 | S3 | [`preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/build/paper.tex`](../../../preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/build/paper.tex) | 53 | Main file: title and abstract. |
 | S4 | [`preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/build/sections/introduction.tex`](../../../preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/build/sections/introduction.tex) | 261 | The main theorem, the background and significance, the proof strategy with its two comparisons, the finite strict-transform corollary, and the conventions. |
 | S5 | [`preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/build/references.tex`](../../../preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/build/references.tex) | 227 | The manuscript's bibliography. |

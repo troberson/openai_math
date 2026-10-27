@@ -134,7 +134,7 @@ claim exists and names its declaration; the two comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 573 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 573 |
 | S2 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md) | 18 | Manuscript title, date, citation |
 | S3 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex) | 67 | Abstract, lines 49–54 |
 | S4 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex) | 213 | Principle, theorems, framing |

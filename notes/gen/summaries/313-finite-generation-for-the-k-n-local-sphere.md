@@ -153,8 +153,8 @@ non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 313 at line 7699. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 720. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 313 at line 7699. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 720. |
 | S3 | [`preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/build/main.tex`](../../../preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/build/main.tex) | 48 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/build/sections/01-introduction.tex) | 213 | Introduction: the setup, the main theorem, the coefficient theorem, the open-stratum argument, and the conventions. |
 | S5 | [`preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/build/sources/references.bib`](../../../preprints/Finite-generation-for-the-Kn-local-sphere-September-24-2026/build/sources/references.bib) | 464 | Manuscript bibliography. |

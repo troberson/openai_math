@@ -30,7 +30,7 @@ No `main_results` declaration reaches this family: its scope note links 2 compar
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `KServer` | [.json](../../../../lean/ComparatorChallenges/KServer.json) | [.lean](../../../../lean/ComparatorChallenges/KServer.lean) | 1 | 9 | no | no |
+| `KServer` | [.json](../../../../lean/ComparatorChallenges/KServer.json) | [.lean](../../../../lean/ComparatorChallenges/KServer.lean) | 1 | 0 | no | no |
 | `UniformKServer` | [.json](../../../../lean/ComparatorChallenges/UniformKServer.json) | [.lean](../../../../lean/ComparatorChallenges/UniformKServer.lean) | 1 | 0 | no | no |
 
 ## Verification bundles

@@ -194,9 +194,9 @@ in the Lean library reaches it, and no certificate ships with it.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 147 at line 3516. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 373. |
-| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 147 at line 3516. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 373. |
+| S3 | [`README.md`](../../../README.md) | 53 | The repo readme, which attributes no reasoning trace to this family. |
 | S4 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/README.md`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/README.md) | 18 | Citation-only manuscript readme: the title, the date, the BibTeX block, no provenance. |
 | S5 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/main.tex`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/main.tex) | 63 | The main file: the abstract and the section order. |
 | S6 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex) | 205 | The phase-foliation theorem, the regularity reduction, the context, the prior results, and the graphness step. |

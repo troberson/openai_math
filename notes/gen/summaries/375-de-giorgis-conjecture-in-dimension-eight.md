@@ -120,7 +120,7 @@ non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 375 at line 9025. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 852. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 375 at line 9025. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 852. |
 | S3 | [`preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/main.tex`](../../../preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/main.tex) | 147 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/sections/00-introduction.tex`](../../../preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/build/sections/00-introduction.tex) | 249 | Introduction: the Allen–Cahn equation, the monotone and stable theorems, and the proof strategy. |

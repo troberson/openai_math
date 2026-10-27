@@ -357,7 +357,7 @@ What has not been checked: nothing here is a machine-checked verification of the
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, abstract |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, manuscript link, abstract |
 | S2 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md) | 18 | Manuscript README and bibtex key |
 | S3 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex) | 61 | Title, abstract, section include list |
 | S4 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex) | 227 | Model, theorem, history, strategy |
@@ -376,8 +376,8 @@ What has not been checked: nothing here is a machine-checked verification of the
 | S17 | [`lean/ComparatorChallenges/VlasovMaxwell.json`](../../../lean/ComparatorChallenges/VlasovMaxwell.json) | 14 | Comparator configuration |
 | S18 | [`lean/OAI/Analysis/VlasovMaxwell/Main.lean`](../../../lean/OAI/Analysis/VlasovMaxwell/Main.lean) | 54 | Formalized main theorem |
 | S19 | [`lean/OAI/Analysis/VlasovMaxwell/Model.lean`](../../../lean/OAI/Analysis/VlasovMaxwell/Model.lean) | 109 | Formalized model scaffolding |
-| S20 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release index of papers and results |
-| S21 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 362 |
+| S20 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Release index of papers and results |
+| S21 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 362 |
 | S22 | [`reasoning_traces/relativistic-vlasov-maxwell.pdf`](../../../reasoning_traces/relativistic-vlasov-maxwell.pdf) | 1908 | Published reasoning trace |
 | S23 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf) | 17129 | Manuscript PDF |
 

@@ -158,11 +158,11 @@ named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2963], manuscript link [S1:2963] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 121 at [S2:320] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2963], manuscript link [S1:2963] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 121 at [S2:320] |
 | S3 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex) | 31 | document root; abstract [S3:8–16]; eleven `\input` directives [S3:2–28]; 31 lines |
 | S4 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex) | 203 | `thm:main` [S4:13–26]; context [S4:40–55]; 203 lines |
 | S5 | [`lean/docs/121.md`](../../../lean/docs/121.md) | 17 | scope note — Scope at [S5:7], comparator link at [S5:17] |
 | S6 | [`lean/ComparatorChallenges/EditApproximation.lean`](../../../lean/ComparatorChallenges/EditApproximation.lean) | 19169 | the comparator — `theorem almostLinearEditDistanceRawBand` [S6:19146], `sorry` at [S6:19166]; 19,169 lines |
 | S7 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf) | 16524 | the manuscript as shipped |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=121`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=121`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

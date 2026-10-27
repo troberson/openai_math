@@ -1,10 +1,10 @@
 # Name: boolean
 
-65 families · subject name · 10 carried by a title or a declaration · 65 by prose · 0 by bibliography author
+66 families · subject name · 11 carried by a title or a declaration · 66 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 678 capitalized occurrences, 596 of them mid-sentence, 28 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 757 capitalized occurrences, 655 of them mid-sentence, 35 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -12,9 +12,9 @@ Prose counts: 678 capitalized occurrences, 596 of them mid-sentence, 28 lowercas
 |---|---|---|---|
 | `F` — Family title | title | 1 | The release named the family after it — the strongest subject evidence there is. |
 | `M` — Manuscript title | title | 3 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
-| `E` — Theorem title | title | 8 | A statement environment carries it in its optional title, so a theorem is named for it. |
+| `E` — Theorem title | title | 9 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 65 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 66 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -86,6 +86,7 @@ Prose counts: 678 capitalized occurrences, 596 of them mid-sentence, 28 lowercas
 | [323](../functional-analysis/323-relative-independence-of-the-separable-quotient-problem.md) | Relative independence of the separable quotient problem | — | — | — | — | yes | — |
 | [351](../differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) | Scalar curvature detects four-dimensional Ricci-flow singularities | — | — | — | — | yes | — |
 | [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | Kinetic limits and fluctuations over the Boltzmann lifespan | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | yes | — | yes | — |
 
 ## Manuscripts
 
@@ -169,6 +170,7 @@ Prose counts: 678 capitalized occurrences, 596 of them mid-sentence, 28 lowercas
 | [`Talagrands-discrete-convexity-conjecture-September-23-2026`](../../../../preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/) | [175](../combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md) | prose | [paper.pdf](../../../../preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf) |
 | [`The-Abelian-Zilber-Pink-Conjecture-September-24-2026`](../../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/) | [016](../number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md) | prose | [paper.pdf](../../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf) |
 | [`The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026`](../../../../preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/) | [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | prose | [paper.pdf](../../../../preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026`](../../../../preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/) | [102](../theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md) | prose | [paper.pdf](../../../../preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/paper.pdf) |
 | [`The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026`](../../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/) | [136](../theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md) | prose | [paper.pdf](../../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/paper.pdf) |
 | [`The-Partition-Principle-does-not-imply-Choice-September-24-2026`](../../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/) | [244](../mathematical-logic/244-partition-principle-does-not-imply-choice.md) | prose | [partition-principle-without-choice.pdf](../../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/partition-principle-without-choice.pdf) |
@@ -198,12 +200,12 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 |---|---|
 | [092](../convex-and-metric-geometry/092-optimal-order-of-convex-body-covering-density.md) | Uniform Boolean sampling |
 | [119](../theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md) | The Boolean bound with output bias |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Boolean tensor contraction |
 | [206](../algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md) | The Boolean extension configuration |
 | [127](../theoretical-computer-science/127-asymptotic-gotsman-linial-conjecture.md) | Boolean noise sensitivity |
 | [134](../theoretical-computer-science/134-generalized-star-height-at-most-three.md) | Boolean affine recovery |
 | [119](../theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md) | Boolean spectral bounds |
 | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | The ideal of an affine Boolean cube |
-| [136](../theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md) | Source data, original indices, and Boolean degree |
 
 ## Spelling variants
 

@@ -1,10 +1,10 @@
 # Name: hadamard
 
-34 families · subject name · 5 carried by a title or a declaration · 34 by prose · 0 by bibliography author
+35 families · subject name · 5 carried by a title or a declaration · 35 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 221 capitalized occurrences, 176 of them mid-sentence, 21 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 222 capitalized occurrences, 177 of them mid-sentence, 21 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 221 capitalized occurrences, 176 of them mid-sentence, 21 lowercas
 | `M` — Manuscript title | title | 3 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 1 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 34 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 35 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -55,6 +55,7 @@ Prose counts: 221 capitalized occurrences, 176 of them mid-sentence, 21 lowercas
 | [337](../differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md) | Cartan--Hadamard isoperimetry and CAT$(0)$ fillings | yes | yes | — | — | yes | — |
 | [358](../differential-geometry/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md) | A three-manifold with no conjugate points and no nonpositively curved metric | — | — | — | — | yes | — |
 | [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -91,6 +92,7 @@ Prose counts: 221 capitalized occurrences, 176 of them mid-sentence, 21 lowercas
 | [`Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026`](../../../../preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/) | [029](../number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md) | prose | [simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf](../../../../preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf) |
 | [`Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026`](../../../../preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/) | — | prose | — |
 | [`Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026`](../../../../preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/) | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | prose | [termination-generalized-lc-kahler-fourfolds.pdf](../../../../preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026`](../../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/paper.pdf) |
 | [`The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026`](../../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/) | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | prose | [margulis-platonov-global-function-fields.pdf](../../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf) |
 | [`The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026`](../../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/) | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | prose | [paper.pdf](../../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf) |

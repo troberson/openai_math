@@ -169,8 +169,8 @@ resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3127], manuscript link [S1:3127] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 130 at [S2:337] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3127], manuscript link [S1:3127] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 130 at [S2:337] |
 | S3 | [`preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/main.tex`](../../../preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/main.tex) | 57 | MS1 document root; abstract [S3:41–43]; five section `\input` directives plus a synthesis appendix [S3:44–50]; 57 lines |
 | S4 | [`preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/sections/introduction.tex`](../../../preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/sections/introduction.tex) | 160 | MS1 `thm:main` [S4:85–91], `cor:decimal` [S4:93–99]; 160 lines |
 | S5 | [`preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf`](../../../preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf) | 12925 | MS1 as shipped |
@@ -180,4 +180,4 @@ resolution of a named conjecture; `counterex_broad=0`.
 | S9 | [`preprints/Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026/main.pdf`](../../../preprints/Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026/main.pdf) | 17794 | MS2 as shipped |
 | S10 | [`lean/ComparatorChallenges/ExactFourier.lean`](../../../lean/ComparatorChallenges/ExactFourier.lean) | 62 | comparator — `MainStatement` [S10:52–55], `main_theorem` [S10:57–58], `sorry` at [S10:58]; 62 lines |
 | S11 | [`lean/ComparatorChallenges/UniformFourier.lean`](../../../lean/ComparatorChallenges/UniformFourier.lean) | 336 | comparator — `transform_main` [S11:326–327], `convolution_main` [S11:330–331], `sorry` at [S11:327] and [S11:331]; 336 lines |
-| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=130`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=130`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

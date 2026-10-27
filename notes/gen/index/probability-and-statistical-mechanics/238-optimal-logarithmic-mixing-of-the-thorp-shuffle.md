@@ -51,10 +51,10 @@ The release ships no manuscript→Lean edge (`notes/development/index-design.md`
 | `CoordinateSweeps` | [.json](../../../../lean/ComparatorChallenges/CoordinateSweeps.json) | [.lean](../../../../lean/ComparatorChallenges/CoordinateSweeps.lean) | 2 | 0 | no | yes |
 | `CoordinateTrace` | [.json](../../../../lean/ComparatorChallenges/CoordinateTrace.json) | [.lean](../../../../lean/ComparatorChallenges/CoordinateTrace.lean) | 1 | 0 | no | no |
 | `FourRowPermanent` | [.json](../../../../lean/ComparatorChallenges/FourRowPermanent.json) | [.lean](../../../../lean/ComparatorChallenges/FourRowPermanent.lean) | 1 | 0 | no | no |
-| `OccupiedOverlap` | [.json](../../../../lean/ComparatorChallenges/OccupiedOverlap.json) | [.lean](../../../../lean/ComparatorChallenges/OccupiedOverlap.lean) | 2 | 5 | no | no |
+| `OccupiedOverlap` | [.json](../../../../lean/ComparatorChallenges/OccupiedOverlap.json) | [.lean](../../../../lean/ComparatorChallenges/OccupiedOverlap.lean) | 2 | 0 | no | no |
 | `PartialPermutation` | [.json](../../../../lean/ComparatorChallenges/PartialPermutation.json) | [.lean](../../../../lean/ComparatorChallenges/PartialPermutation.lean) | 1 | 0 | no | no |
 | `SignedSweepMoment` | [.json](../../../../lean/ComparatorChallenges/SignedSweepMoment.json) | [.lean](../../../../lean/ComparatorChallenges/SignedSweepMoment.lean) | 1 | 0 | no | no |
-| `SpinAngle` | [.json](../../../../lean/ComparatorChallenges/SpinAngle.json) | [.lean](../../../../lean/ComparatorChallenges/SpinAngle.lean) | 1 | 3 | no | no |
+| `SpinAngle` | [.json](../../../../lean/ComparatorChallenges/SpinAngle.json) | [.lean](../../../../lean/ComparatorChallenges/SpinAngle.lean) | 1 | 0 | no | no |
 | `ThorpFirstReciprocal` | [.json](../../../../lean/ComparatorChallenges/ThorpFirstReciprocal.json) | [.lean](../../../../lean/ComparatorChallenges/ThorpFirstReciprocal.lean) | 1 | 0 | no | no |
 | `ThorpRemaining` | [.json](../../../../lean/ComparatorChallenges/ThorpRemaining.json) | [.lean](../../../../lean/ComparatorChallenges/ThorpRemaining.lean) | 1 | 0 | no | no |
 | `ThorpRouting` | [.json](../../../../lean/ComparatorChallenges/ThorpRouting.json) | [.lean](../../../../lean/ComparatorChallenges/ThorpRouting.lean) | 1 | 0 | no | yes |

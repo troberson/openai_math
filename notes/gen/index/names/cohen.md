@@ -1,10 +1,10 @@
 # Name: cohen
 
-37 families · subject name · 1 carried by a title or a declaration · 32 by prose · 10 by bibliography author
+38 families · subject name · 1 carried by a title or a declaration · 33 by prose · 10 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 303 capitalized occurrences, 272 of them mid-sentence, 6 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 304 capitalized occurrences, 273 of them mid-sentence, 6 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 303 capitalized occurrences, 272 of them mid-sentence, 6 lowercase
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 0 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 32 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 33 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 10 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -58,6 +58,7 @@ Prose counts: 303 capitalized occurrences, 272 of them mid-sentence, 6 lowercase
 | [318](../topology/318-chromatic-splitting-counterexamples-and-filtrations.md) | Chromatic splitting: counterexamples and filtrations | — | — | — | — | yes | — |
 | [321](../topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md) | A counterexample to Wall's finite D(2) conjecture | — | — | — | — | yes | yes |
 | [345](../differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md) | Infinitely many closed geodesics on spheres and three-manifolds | — | — | — | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -102,6 +103,7 @@ Prose counts: 303 capitalized occurrences, 272 of them mid-sentence, 6 lowercase
 | [`Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026`](../../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/) | [125](../theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md) | prose | [paper.pdf](../../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf) |
 | [`Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026`](../../../../preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/) | [020](../number-theory/020-squarefree-quartics-and-power-free-polynomial-values.md) | prose | [manuscript.pdf](../../../../preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf) |
 | [`The-Approximation-Threshold-for-Metric-k-Median-September-24-2026`](../../../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/) | [125](../theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md) | prose | [main.pdf](../../../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/main.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Partition-Principle-does-not-imply-Choice-September-24-2026`](../../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/) | [244](../mathematical-logic/244-partition-principle-does-not-imply-choice.md) | prose | [partition-principle-without-choice.pdf](../../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/partition-principle-without-choice.pdf) |
 | [`The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026`](../../../../preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/) | [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | prose | [paper.pdf](../../../../preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf) |
 | [`The-normalized-volume-gap-in-dimension-four-September-24-2026`](../../../../preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/) | [037](../algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) | prose | [paper.pdf](../../../../preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/paper.pdf) |

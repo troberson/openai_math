@@ -77,8 +77,9 @@ alekseevskii	citation	1					1	1	1	1	0	Alekseevskii
 alekseyev	citation	1					1	1	3	2	2	Alekseyev	
 aleliunas	citation	1					1	1	1	0	0	Aleliunas	
 aleman	citation	1					1	1	1	0	0	Aleman	
+alesker	citation	1					1	1	6	1	0	Alesker	
 alessandrini	citation	1					1	1	2	1	0	Alessandrini	
-alexander	citation	29					28	3	63	32	0	Alexander	
+alexander	citation	30					29	3	64	32	0	Alexander	
 alexandrov	subject	5	356	Giglis-distributional-curvature-characterization-of-Alexandrov-spaces-September-24-2026	356|360		5	0	39	33	2	Alexandrov|Alexandrov's	names/alexandrov.md
 alexeev	citation	2					2	2	11	0	0	Alexeev	
 alford	citation	1					1	1	2	2	0	Alford	
@@ -88,13 +89,13 @@ alishahi	citation	1					1	1	1	1	0	Alishahi
 allamigeon	citation	1					0	1	0	0	0		
 allard	citation	5					5	4	28	14	2	Allard|Allard's	
 allegretto	citation	1					1	1	2	2	0	Allegretto	
-allen	citation	9					9	3	23	9	3	Allen	
+allen	citation	10					10	3	24	9	3	Allen	
 allender	citation	1					1	1	2	1	0	Allender	
 allouche	citation	1					0	1	0	0	0		
-alman	citation	2					2	2	12	4	3	Alman	
+alman	citation	3					3	2	15	4	3	Alman	
 almeida	citation	1					0	1	0	0	0		
 almgren	citation	3					3	2	18	13	0	Almgren|Almgren's	
-alon	citation	18					15	13	52	27	2	Alon|Alon's	
+alon	citation	19					16	13	53	27	2	Alon|Alon's	
 aloni	citation	1					1	1	2	2	0	Aloni	
 alonso	citation	1					1	1	1	1	0	Alonso	
 alpeev	citation	1					1	1	6	1	0	Alpeev	
@@ -117,7 +118,7 @@ amico	citation	2					2	1	5	5	0	Amico
 amini	citation	1					1	1	2	2	0	Amini	
 amireddy	citation	2					2	2	4	3	0	Amireddy	
 amitsur	subject	8			318		7	3	43	34	16	Amitsur	names/amitsur.md
-ampere	subject	10			051		10	0	29	26	0	Ampere	names/ampere.md
+ampere	subject	11			051		11	0	34	31	0	Ampere	names/ampere.md
 anand	citation	4					3	3	3	1	0	Anand	
 anantharaman	citation	3					2	1	4	0	1	Anantharaman	
 anantharaman-delaroche	citation	1					0	1	0	0	0		
@@ -185,7 +186,7 @@ aronszajn	citation	4					4	3	12	3	0	Aronszajn|Aronszajn's
 arora	citation	6					4	6	15	11	0	Arora|Arora's	
 arratia	citation	2					1	2	2	1	0	Arratia	
 artebani	citation	1					0	1	0	0	0		
-arthur	subject	8	014	Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026|Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026|Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026	014		5	5	77	53	12	Arthur|Arthur's	names/arthur.md
+arthur	subject	9	014	Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026|Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026|Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026	014		6	5	79	55	12	Arthur|Arthur's	names/arthur.md
 artin	subject	34	029|254	An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026|Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026|Parabolic-intersections-in-Artin-groups-September-23-2026	004|006|254|318	OAI.ArtinCAT0.main|OAI.HarmonicArtin.salvetti_cover_contractible	32	6	404	319	36	Artin|Artin's	names/artin.md
 artinian	subject	16		Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026|The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026	200		16	0	81	71	2	Artinian	names/artinian.md
 artstein	citation	4					4	1	9	4	0	Artstein	
@@ -217,7 +218,7 @@ atobe	citation	1					0	1	0	0	0
 atserias	citation	1					1	1	1	1	0	Atserias	
 atzmon	citation	1					1	1	1	0	0	Atzmon	
 aubert	citation	1					0	1	0	0	0		
-aubin	citation	6					6	3	20	17	0	Aubin	
+aubin	citation	7					7	4	25	21	0	Aubin|Aubin's	
 auel	citation	1					1	1	1	0	0	Auel	
 auffinger	citation	6					6	4	30	16	0	Auffinger	
 auinger	citation	1					1	1	5	4	0	Auinger	
@@ -227,7 +228,7 @@ auroux	citation	1					0	1	0	0	0
 auslander	subject	4	199	An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026			4	1	26	24	0	Auslander|Auslander's	names/auslander.md
 austin	citation	7					5	7	31	12	0	Austin|Austin's	
 austrin	citation	2					2	2	8	4	0	Austrin	
-authors	citation	54					18	41	29	16	13	Authors	
+authors	citation	55					19	41	30	17	13	Authors	
 avila	citation	1					1	1	4	3	0	Avila	
 avizienis	citation	1					1	1	1	1	0	Avizienis	
 avramidi	citation	1					1	1	1	0	0	Avramidi	
@@ -242,7 +243,7 @@ baccari	citation	1					0	1	0	0	0
 bacharach	subject	1			200		1	0	7	5	1	Bacharach	names/bacharach.md
 bacher	citation	1					0	1	0	0	0		
 backhausz	citation	2					2	2	10	8	0	Backhausz	
-backurs	citation	1					1	1	1	1	0	Backurs	
+backurs	citation	2					2	1	3	1	0	Backurs	
 baddeley	citation	1					1	1	6	4	0	Baddeley	
 bafna	citation	1					1	1	1	0	0	Bafna	
 bahri	citation	1					0	1	0	0	0		
@@ -283,9 +284,10 @@ banica	citation	1					1	1	4	2	0	Banica
 banihashem	citation	1					1	1	2	1	0	Banihashem	
 bansal	citation	8					5	6	8	6	0	Bansal	
 banuelos	citation	1					1	1	2	1	0	Banuelos	
+baouendi	citation	1					0	1	0	0	0		
 bar-yossef	citation	2					0	2	0	0	0		
 barahona	citation	1					1	1	1	0	0	Barahona	
-barak	citation	4					4	2	15	10	0	Barak	
+barak	citation	5					5	2	16	10	0	Barak	
 baraniuk	citation	1					0	1	0	0	0		
 baranovsky	citation	1					0	1	0	0	0		
 barany	citation	2					2	2	6	4	0	Barany|Barany's	
@@ -349,10 +351,10 @@ bazzi	citation	1					1	1	2	2	0	Bazzi's|Bazzi
 beals	citation	1					1	1	1	0	0	Beals	
 beaudry	citation	2					2	2	18	8	1	Beaudry	
 beauville	citation	11					11	5	71	30	0	Beauville|Beauville's	
-beck	citation	4					4	2	7	4	4	Beck|Beck's	
+beck	citation	5					5	2	8	4	4	Beck|Beck's	
 beckenbach	citation	1					1	1	2	2	0	Beckenbach	
 becker	citation	1					1	1	1	1	0	Becker	
-beckner	citation	2					2	1	9	5	0	Beckner	
+beckner	citation	3					3	2	10	6	0	Beckner	
 beelen	citation	1					0	1	0	0	0		
 beffara	citation	4					4	3	15	6	1	Beffara	
 behague	citation	1					1	1	1	1	0	Behague	
@@ -362,7 +364,7 @@ behrend	citation	11					9	7	22	13	2	Behrend|Behrend's
 behrens	citation	3					2	2	7	2	0	Behrens	
 behzad	citation	1					1	1	1	1	0	Behzad	
 beig	citation	1					1	1	1	1	0	Beig	
-beigel	citation	2					2	2	3	2	0	Beigel	
+beigel	citation	3					3	2	6	4	0	Beigel	
 beigi	citation	2					2	1	5	0	0	Beigi	
 beikmohammadi	citation	1					1	1	2	2	0	Beikmohammadi	
 beilinson	citation	9					7	4	33	18	0	Beilinson|Beilinson's	
@@ -378,7 +380,7 @@ bellazzini	citation	1					0	1	0	0	0
 bellido	citation	1					1	1	1	0	0	Bellido	
 bellman	citation	4					4	1	20	15	5	Bellman|Bellman's	
 belovs	citation	1					1	1	1	1	0	Belovs	
-beltran	citation	2					2	2	5	4	0	Beltran	
+beltran	citation	2					2	2	7	5	0	Beltran	
 ben-david	citation	2					0	2	0	0	0		
 ben-dov	citation	1					0	1	0	0	0		
 ben-eliezer	citation	2					0	2	0	0	0		
@@ -413,7 +415,7 @@ bergstrom	subject	1	097	The-Euclidean-Steinitz-Bergstrom-theorem-September-24-20
 berkholz	citation	1					1	1	4	1	0	Berkholz|Berkholz's	
 berlekamp	citation	3					3	1	17	10	3	Berlekamp|Berlekamp's	
 berline	citation	2					0	2	0	0	0		
-berman	citation	6					5	5	7	2	0	Berman	
+berman	citation	7					5	6	7	2	0	Berman	
 bernal	citation	1					1	1	1	1	0	Bernal	
 bernard	citation	4					4	1	6	3	0	Bernard	
 bernardara	citation	2					1	2	1	0	0	Bernardara	
@@ -452,7 +454,7 @@ bezdek	citation	1					1	1	23	7	0	Bezdek|Bezdek's
 bezrukavnikov	citation	2					2	2	35	11	8	Bezrukavnikov|Bezrukavnikov's	
 bharadwaj	citation	1					1	1	2	1	0	Bharadwaj	
 bhargav	citation	1					1	1	1	0	0	Bhargav	
-bhargava	citation	4					4	2	12	5	0	Bhargava|Bhargava's	
+bhargava	citation	5					5	2	14	5	0	Bhargava|Bhargava's	
 bhatia	citation	2					0	2	0	0	0		
 bhatnagar	citation	3					3	3	7	5	0	Bhatnagar	
 bhatt	citation	6					3	4	11	4	0	Bhatt	
@@ -486,7 +488,7 @@ biskup	citation	1					0	1	0	0	0
 bisognano	citation	1					1	1	2	1	0	Bisognano	
 biswas	citation	2					2	1	4	1	0	Biswas	
 bizeul	citation	1					1	1	6	0	0	Bizeul|Bizeul's	
-bjorklund	citation	2					1	2	3	1	0	Bjorklund	
+bjorklund	citation	3					2	2	7	1	0	Bjorklund	
 bjorn	citation	1					0	1	0	0	0		
 bjornberg	citation	1					1	1	2	0	0	Bjornberg	
 bjorner	citation	3					3	1	3	1	0	Bjorner	
@@ -520,7 +522,7 @@ bobkova	citation	1					1	1	1	1	1	Bobkova
 boccato	citation	1					1	1	2	1	0	Boccato	
 bochev	citation	1					0	1	0	0	0		
 bochnak	citation	2					1	1	1	0	0	Bochnak	
-bochner	subject	25	078	Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026	078|079|357|367		25	2	126	105	64	Bochner|Bochner's	names/bochner.md
+bochner	subject	25	078	Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026	078|079|357|367		25	2	134	110	67	Bochner|Bochner's	names/bochner.md
 bockle	citation	2					2	2	5	3	0	Bockle	
 bockstein	subject	6			002|059		6	0	85	74	14	Bockstein	names/bockstein.md
 bodineau	citation	2					2	2	9	6	0	Bodineau	
@@ -547,7 +549,7 @@ boltzmann	subject	8	363|364	Hard-sphere-fluctuations-on-the-regular-Boltzmann-li
 bombelli	citation	1					1	1	1	0	0	Bombelli	
 bombieri	citation	9					8	7	31	21	1	Bombieri|Bombieri's	
 bonahon	citation	1					1	1	2	0	0	Bonahon	
-bonami	citation	5					5	4	20	10	0	Bonami|Bonami's	
+bonami	citation	6					5	5	20	10	0	Bonami|Bonami's	
 bonatti	citation	1					0	1	0	0	0		
 bonavero	citation	1					1	1	4	1	0	Bonavero	
 bondarenko	citation	1					1	1	3	1	0	Bondarenko	
@@ -559,13 +561,13 @@ bonnafe	citation	1					1	1	7	3	0	Bonnafe
 bonnet	citation	12					12	1	25	22	5	Bonnet	
 bonsma	citation	1					0	1	0	0	0		
 bony	citation	1					1	1	3	2	0	Bony	
-boolean	subject	65	283	Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026|Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026|Polynomial-Time-Unitary-Synthesis-from-a-Boolean-Oracle-October-5-2026	092|119|127|134|136|159|192|206		65	0	678	596	28	Boolean	names/boolean.md
+boolean	subject	66	283	Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026|Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026|Polynomial-Time-Unitary-Synthesis-from-a-Boolean-Oracle-October-5-2026	092|119|127|134|136|159|192|206|378		66	0	757	655	35	Boolean	names/boolean.md
 boone	subject	1	250	Finite-algebraic-envelopes-and-the-Boone-Higman-conjecture-September-23-2026			1	1	13	11	0	Boone	names/boone.md
 borade	citation	2					0	2	0	0	0		
 borcea	citation	3					3	2	8	6	0	Borcea	
 borchers	citation	1					1	1	6	3	0	Borchers	
 bordenave	citation	2					1	1	4	1	0	Bordenave	
-borel	subject	140	320		071|072|140|308		137	10	1978	1795	62	Borel|Borel's	names/borel.md
+borel	subject	140	320		071|072|140|308		137	10	1979	1796	62	Borel|Borel's	names/borel.md
 borell	citation	7					6	4	21	7	0	Borell|Borell's	
 borga	citation	1					0	1	0	0	0		
 borges	citation	2					2	2	2	0	0	Borges	
@@ -593,12 +595,12 @@ boucher	citation	1					1	1	1	0	0	Boucher
 boucheron	citation	4					3	2	3	0	0	Boucheron	
 bouchet	citation	1					1	1	2	0	0	Bouchet	
 bouchut	citation	1					1	1	1	1	0	Bouchut	
-boucksom	citation	8					7	7	52	14	0	Boucksom|Boucksom's	
+boucksom	citation	9					7	8	52	14	0	Boucksom|Boucksom's	
 boue	citation	2					2	2	4	3	0	Boue	
 boulton	citation	1					0	1	0	0	0		
 bourbaki	citation	9					9	1	30	22	0	Bourbaki	
 bourgade	citation	1					1	1	3	2	0	Bourgade	
-bourgain	subject	24			077|331		23	17	141	84	4	Bourgain|Bourgain's|BOURGAIN	names/bourgain.md
+bourgain	subject	24			077|331		23	17	147	87	4	Bourgain|Bourgain's|BOURGAIN	names/bourgain.md
 bourgeat	citation	1					0	1	0	0	0		
 bourke	citation	1					1	1	4	0	0	Bourke|Bourke's	
 bourne	citation	2					2	2	7	2	0	Bourne	
@@ -655,7 +657,7 @@ brierley	citation	1					1	1	5	2	0	Brierley
 brieskorn	citation	2					2	1	10	6	0	Brieskorn|Brieskorn's	
 brim	citation	1					0	1	0	0	0		
 brin	citation	3					3	1	10	7	0	Brin|Brin's	
-bringmann	citation	2					1	2	2	2	0	Bringmann	
+bringmann	citation	3					2	2	5	3	0	Bringmann	
 brinkmann	citation	1					1	1	7	3	0	Brinkmann's|Brinkmann	
 brinon	citation	2					0	2	0	0	0		
 brion	citation	6					4	4	21	3	0	Brion|Brion's	
@@ -677,7 +679,7 @@ brouwer	citation	20					19	6	31	17	2	Brouwer|Brouwer's
 browder	citation	4					4	3	13	4	0	Browder|Browder's	
 brown	subject	30			291		30	11	153	97	3	Brown|Brown's	names/brown.md
 brown-cohen	citation	1					0	1	0	0	0		
-brownian	subject	24		Brownian-continuum-random-tree-limits-of-finite-Fortuin-Kasteleyn-maps-above-four-September-24-2026|Random-Walks-on-Critical-FK-Ising-Maps-and-Liouville-Brownian-Motion-October-5-2026	097|211|231|232		24	0	892	783	70	Brownian	names/brownian.md
+brownian	subject	25		Brownian-continuum-random-tree-limits-of-finite-Fortuin-Kasteleyn-maps-above-four-September-24-2026|Random-Walks-on-Critical-FK-Ising-Maps-and-Liouville-Brownian-Motion-October-5-2026	097|211|231|232		25	0	893	784	70	Brownian	names/brownian.md
 browning	citation	1					1	1	6	6	0	Browning's|Browning	
 bruck	citation	1					1	1	8	5	0	Bruck's|Bruck	
 brue	citation	3					1	3	1	1	0	Brue	
@@ -751,8 +753,8 @@ cadilhac	citation	1					0	1	0	0	0
 cadman	citation	1					0	1	0	0	0		
 cadorel	citation	3					2	3	10	8	0	Cadorel|Cadorel's	
 cadoret	citation	1					1	1	2	0	0	Cadoret	
-caffarelli	citation	5					5	4	23	15	0	Caffarelli|Caffarelli's	
-cai	citation	12					9	6	32	12	0	Cai	
+caffarelli	citation	6					6	5	24	16	0	Caffarelli|Caffarelli's	
+cai	citation	13					10	6	34	14	0	Cai	
 caicedo	citation	1					1	1	2	0	0	Caicedo	
 cairns	citation	3					3	2	6	2	0	Cairns	
 cais	citation	1					1	1	2	0	2	Cais	
@@ -788,7 +790,7 @@ caraiani	citation	2			030		1	2	5	2	0	Caraiani
 caramanis	citation	1					1	1	2	1	0	Caramanis	
 carayol	citation	4					3	4	7	0	0	Carayol	
 carballeira	citation	1					1	1	1	1	0	Carballeira	
-carbery	citation	4					4	4	5	3	0	Carbery	
+carbery	citation	4					4	4	9	5	0	Carbery	
 cardona	citation	1					1	1	32	7	0	Cardona	
 cardy	citation	4			223|224		4	2	119	84	43	Cardy|Cardy's	
 carella	citation	2					2	2	4	1	1	Carella|Carella's	
@@ -827,17 +829,18 @@ castillejos	subject	3			291		3	3	15	7	0	Castillejos	names/castillejos.md
 catalan	subject	9	005		211		9	0	36	33	7	Catalan|Catalan's	names/catalan.md
 catanese	citation	2					2	1	3	2	0	Catanese	
 cattani	citation	5					3	4	9	3	0	Cattani	
-cauchy	subject	232			102|122|143|232|233|261|264		232	0	3040	2209	111	Cauchy|Cauchy's	names/cauchy.md
+cauchy	subject	233			102|122|143|232|233|261|264		233	0	3044	2212	113	Cauchy|Cauchy's	names/cauchy.md
 causey	citation	1					1	1	3	3	0	Causey	
 cava	citation	1					1	1	4	0	0	Cava	
 cavalletti	citation	2					0	2	0	0	0		
 cavallin	citation	1					1	1	1	1	0	Cavallin	
-cayley	subject	41			166|200|214|252|344		41	0	236	200	30	Cayley	names/cayley.md
+cayley	subject	42			166|200|214|252|344		42	0	238	202	30	Cayley	names/cayley.md
 cazelles	citation	1					0	1	0	0	0		
 cazenave	citation	1					0	1	0	0	0		
 ceccherini-silberstein	citation	1					0	1	0	0	0		
 cecchini	citation	3					2	3	5	4	2	Cecchini	
 cederbaum	citation	1					1	1	2	2	0	Cederbaum	
+cegrell	citation	1					0	1	0	0	0		
 cekic	citation	2					2	2	11	5	0	Cekic|Cekic's	
 celentano	citation	1					1	1	7	4	0	Celentano	
 cenatiempo	citation	1					1	1	12	7	0	Cenatiempo	
@@ -854,8 +857,8 @@ chakrabarti	citation	4					3	3	9	6	0	Chakrabarti
 chakraborty	citation	1					1	1	1	0	0	Chakraborty	
 chalopin	citation	1					1	1	1	0	0	Chalopin	
 chaloupka	citation	1					0	1	0	0	0		
-chan	citation	8					8	7	15	9	2	Chan	
-chandra	citation	9					9	1	77	73	3	Chandra	
+chan	citation	9					9	7	17	9	2	Chan	
+chandra	citation	10					10	1	78	74	3	Chandra	
 chang	citation	7					6	4	11	6	0	Chang|Chang's	
 chansangiam	citation	1					1	1	1	0	0	Chansangiam	
 chaperon	citation	1					1	1	2	2	0	Chaperon	
@@ -880,7 +883,7 @@ checcoli	citation	1					1	1	1	1	0	Checcoli
 cheeger	citation	15					14	9	36	31	4	Cheeger|Cheeger's	
 chekuri	citation	2					2	2	3	1	0	Chekuri	
 chelkak	citation	4					3	3	38	12	0	Chelkak	
-chen	citation	64					61	50	309	141	9	Chen|Chen's	
+chen	citation	65					62	50	311	141	9	Chen|Chen's	
 chenevier	citation	2					2	2	16	7	0	Chenevier|Chenevier's	
 cheng	citation	14					11	10	37	13	0	Cheng|Cheng's	
 chepoi	citation	2					2	1	4	1	0	Chepoi	
@@ -936,6 +939,7 @@ clarkson	citation	3					3	3	8	6	0	Clarkson
 claudon	citation	6					5	6	19	12	0	Claudon	
 clausen	citation	3					1	3	3	2	0	Clausen	
 clemens	citation	4					2	2	2	0	0	Clemens	
+clerc	citation	1					0	1	0	0	0		
 cleve	citation	7					5	5	7	5	0	Cleve	
 clifford	subject	15			032		15	1	234	200	14	Clifford	names/clifford.md
 climenhaga	citation	1					1	1	2	0	0	Climenhaga	
@@ -950,7 +954,7 @@ codenotti	citation	1					1	1	2	2	0	Codenotti
 coester	citation	1					0	1	0	0	0		
 coffman	citation	1					1	1	1	1	0	Coffman	
 cogo	citation	1					1	1	2	2	0	Cogo	
-cohen	subject	37	195	A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026			32	10	303	272	6	Cohen	names/cohen.md
+cohen	subject	38	195	A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026			33	10	304	273	6	Cohen	names/cohen.md
 cohen-addad	citation	1					0	1	0	0	0		
 cohn	citation	5					5	3	48	33	0	Cohn	
 coifman	citation	1					1	1	1	1	0	Coifman	
@@ -964,9 +968,11 @@ collins	citation	6					4	6	16	4	0	Collins|Collins's
 colmenarejo	citation	1					0	1	0	0	0		
 colmez	subject	6			318		6	4	29	20	0	Colmez	names/colmez.md
 colombo	citation	1					1	1	4	2	0	Colombo	
+colzani	citation	1					1	1	1	0	0	Colzani	
 coman	citation	1					0	1	0	0	0		
 combes	citation	1					1	1	4	3	0	Combes	
 comets	citation	2					2	1	16	8	4	Comets	
+cominardi	citation	1					1	1	1	1	0	Cominardi	
 concetti	citation	1					1	1	2	1	0	Concetti	
 condon	citation	1					0	1	0	0	0		
 conley	citation	1					1	1	9	1	0	Conley	
@@ -978,7 +984,7 @@ contreras	citation	2					1	2	1	1	0	Contreras
 contucci	citation	1					1	1	1	1	0	Contucci	
 conway	citation	3					3	2	5	0	0	Conway	
 conze	citation	1					0	1	0	0	0		
-cook	citation	6					5	2	13	6	0	Cook|Cook's	
+cook	citation	7					6	2	17	8	0	Cook|Cook's	
 cooley	citation	3					3	3	6	4	2	Cooley	
 cooper	citation	3					3	1	8	2	0	Cooper	
 coornaert	citation	1					1	1	3	3	0	Coornaert	
@@ -986,7 +992,7 @@ coppersmith	citation	1					1	1	15	9	0	Coppersmith
 coquand	citation	1					1	1	2	2	0	Coquand	
 coquereaux	citation	1					1	1	1	0	0	Coquereaux	
 cordero-erausquin	citation	6					0	6	0	0	0		
-cordoba	citation	3					3	3	7	5	0	Cordoba|Cordoba's	
+cordoba	citation	4					4	4	9	7	0	Cordoba|Cordoba's	
 coregliano	citation	1					1	1	3	0	1	Coregliano|Coregliano's	
 corlette	citation	1					1	1	2	2	0	Corlette	
 corliss	citation	1					0	1	0	0	0		
@@ -1023,7 +1029,7 @@ cox	citation	4					3	3	9	5	0	Cox
 coxeter	subject	14			254|286		14	1	199	175	6	Coxeter	names/coxeter.md
 craciun	citation	1					1	1	13	7	0	Craciun|Craciun's	
 crainic	citation	1					1	1	2	0	0	Crainic	
-cramer	citation	23					23	2	47	23	0	Cramer's|Cramer	
+cramer	citation	24					24	2	48	23	0	Cramer's|Cramer	
 crandall	citation	4					3	2	7	2	1	Crandall	
 crawley-boevey	citation	2					0	2	0	0	0		
 cremona	citation	1					1	1	3	3	0	Cremona	
@@ -1050,10 +1056,11 @@ cummings	citation	1					1	1	8	4	0	Cummings
 cumplido	citation	1					1	1	5	2	0	Cumplido	
 cuntz	subject	7		Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026	291		7	2	178	156	2	Cuntz|Cuntz's	names/cuntz.md
 curtis	subject	3	316				3	2	11	8	5	Curtis|Curtis's	names/curtis.md
+cushman	citation	1					1	1	1	1	0	Cushman	
 cuth	citation	2					1	1	3	0	0	Cuth	
 cutkosky	citation	3					3	2	5	1	0	Cutkosky|Cutkosky's	
 cuzziol	citation	1					1	1	1	1	0	Cuzziol	
-cygan	citation	1					1	1	2	2	0	Cygan	
+cygan	citation	2					2	1	4	3	0	Cygan	
 czimek	citation	1					0	1	0	0	0		
 czumaj	citation	2					2	1	29	5	0	Czumaj|Czumaj's	
 daamouch	citation	1					0	1	0	0	0		
@@ -1093,9 +1100,9 @@ daude	citation	1					1	1	4	1	0	Daude
 daugavet	subject	1		Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026	331		1	0	19	17	2	Daugavet	names/daugavet.md
 davenport	citation	4					3	2	11	5	0	Davenport	
 daviaud	citation	1					1	1	2	0	0	Daviaud	
-david	subject	29	081		081		29	4	69	41	2	David	names/david.md
+david	subject	30	081		081		30	4	70	41	2	David	names/david.md
 davie	citation	1					1	1	3	2	0	Davie	
-davies	citation	7					6	4	20	9	0	Davies	
+davies	citation	8					7	5	22	10	0	Davies	
 davis	citation	13					13	5	77	33	5	Davis|Davis's	
 davison	citation	2					2	2	7	6	0	Davison|Davison's	
 daw	citation	1					1	1	17	6	0	Daw	
@@ -1121,7 +1128,7 @@ delcourt	citation	1					1	1	5	2	0	Delcourt
 delgadino	citation	1					0	1	0	0	0		
 deligkas	citation	1					1	1	1	0	0	Deligkas	
 deligne	subject	35	008	The-Deligne-Drinfeld-conjecture-September-23-2026		OAI.DeligneDrinfeld.main	31	21	377	224	5	Deligne|Deligne's	names/deligne.md
-dell	citation	5					4	2	5	3	2	Dell	
+dell	citation	6					5	2	7	4	2	Dell	
 delorme	citation	1					0	1	0	0	0		
 demailly	citation	23					18	17	139	55	12	Demailly|Demailly's	
 demaine	citation	1					1	1	1	1	0	Demaine	
@@ -1129,7 +1136,7 @@ demarche	citation	1					1	1	1	0	0	Demarche
 demazure	citation	2					2	1	2	1	0	Demazure	
 dembin	citation	1					1	1	3	3	0	Dembin	
 dembo	citation	3					2	2	4	2	0	Dembo	
-demeter	citation	6					5	6	10	7	0	Demeter|Demeter's	
+demeter	citation	6					5	6	12	9	0	Demeter|Demeter's	
 demeyer	citation	1					1	1	4	4	0	Demeyer	
 dencker	citation	1					1	1	1	0	0	Dencker	
 denef	citation	3					1	3	1	1	0	Denef	
@@ -1178,12 +1185,12 @@ dimock	citation	1					1	1	3	1	0	Dimock
 ding	citation	8					8	5	25	15	0	Ding	
 dinh	citation	3					1	2	1	0	0	Dinh	
 dinkins	citation	1					1	1	1	1	0	Dinkins	
-dinur	citation	9					6	7	29	17	0	Dinur|Dinur's	
+dinur	citation	10					7	7	30	17	0	Dinur|Dinur's	
 dionne	citation	1					1	1	1	0	0	Dionne	
 diophantine	subject	9	242	Single-fold-Diophantine-representations-September-24-2026			9	0	64	58	5	Diophantine	names/diophantine.md
 dipierro	citation	1					0	1	0	0	0		
 dirac	citation	14					14	1	106	100	7	Dirac	
-dirichlet	subject	84		The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026	006|011|093|216|232|260|361|366	OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re	84	0	1262	1156	114	Dirichlet|Dirichlet's	names/dirichlet.md
+dirichlet	subject	85		The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026	006|011|079|093|216|232|260|361|366	OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re	85	0	1281	1172	129	Dirichlet|Dirichlet's	names/dirichlet.md
 dirksin	citation	1					0	1	0	0	0		
 disconzi	citation	1					0	1	0	0	0		
 dittmann	citation	1					0	1	0	0	0		
@@ -1288,7 +1295,7 @@ dutt	citation	1					1	1	1	1	0	Dutt
 dutta	subject	7			194		6	4	21	12	4	Dutta	names/dutta.md
 dutting	citation	1					0	1	0	0	0		
 duzaar	citation	1					0	1	0	0	0		
-dvir	citation	1					1	1	4	4	0	Dvir|Dvir's	
+dvir	citation	2					2	1	7	5	0	Dvir|Dvir's	
 dvoretzky	citation	2					2	1	10	8	0	Dvoretzky|Dvoretzky's	
 dyatlov	citation	4					4	3	7	3	1	Dyatlov	
 dybalski	citation	1					1	1	2	2	0	Dybalski	
@@ -1408,10 +1415,10 @@ essen	citation	1					1	1	1	0	0	Essen
 estermann	citation	1					0	1	0	0	0		
 etingof	subject	5	208				4	2	31	11	36	Etingof	names/etingof.md
 etnyre	citation	1					1	1	1	1	0	Etnyre	
-euclidean	subject	193	097|158|172	A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026|Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026|Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026|The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026|The-Euclidean-plane-is-not-five-colorable-September-23-2026	097|117|156|215|227|334|337|357|367|376	OAI.EuclideanFiveColor.no_proper_five_coloring|OAI.EuclideanRamsey.classification|OAI.EuclideanSteinitzBergstrom.main	193	0	2432	2210	55	Euclidean	names/euclidean.md
+euclidean	subject	193	079|097|158|172	A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026|Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026|Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026|Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026|The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026|The-Euclidean-plane-is-not-five-colorable-September-23-2026	079|097|117|156|215|227|334|337|357|367|376	OAI.EuclideanFiveColor.no_proper_five_coloring|OAI.EuclideanRamsey.classification|OAI.EuclideanSteinitzBergstrom.main	193	0	2451	2227	55	Euclidean	names/euclidean.md
 euler	subject	122			003|006|040|060|064|143|254|285|308|309		122	1	1348	1153	317	Euler|Euler's	names/euler.md
 evain	citation	1					1	1	4	3	0	Evain	
-evans	subject	12	368				10	5	28	15	0	Evans	names/evans.md
+evans	subject	13	368				11	6	30	17	0	Evans	names/evans.md
 evertse	citation	1					1	1	5	3	0	Evertse's|Evertse	
 evington	subject	3			291		3	3	17	11	0	Evington|Evington's	names/evington.md
 evra	citation	2					1	1	1	0	0	Evra	
@@ -1466,7 +1473,7 @@ feder	citation	3					3	1	5	0	0	Feder
 federer	citation	7					7	7	31	17	1	Federer|Federer's	
 fedorovskiy	citation	1					0	1	0	0	0		
 feehan	citation	1					1	1	2	2	0	Feehan	
-fefferman	citation	9					8	7	25	13	0	Fefferman|Fefferman's	
+fefferman	citation	10					9	8	27	15	0	Fefferman|Fefferman's	
 fehm	citation	1					0	1	0	0	0		
 fei	citation	4					3	2	11	7	0	Fei	
 feige	citation	2					2	2	6	4	0	Feige|Feige's	
@@ -1484,7 +1491,8 @@ ferleger	citation	1					1	1	1	1	0	Ferleger
 fermat	subject	9			032		9	0	80	62	18	Fermat|Fermat's	names/fermat.md
 fermi	citation	6					6	1	65	57	0	Fermi	
 fernandes	citation	1					1	1	1	0	0	Fernandes	
-fernandez	citation	12					12	1	29	16	0	Fernandez	
+fernandez	citation	13					13	1	31	18	0	Fernandez	
+fernandez-delgado	citation	1					0	1	0	0	0		
 fernandez-merchant	citation	1					0	1	0	0	0		
 fernandez-real	citation	2					0	2	0	0	0		
 fernique	citation	2					2	1	8	4	0	Fernique	
@@ -1562,7 +1570,7 @@ fortuin	subject	8		Brownian-continuum-random-tree-limits-of-finite-Fortuin-Kaste
 foulkes	subject	1	210	Foulkes-Conjecture-for-the-Sixth-Symmetric-Power-September-25-2026|Quadratic-Stabilization-of-the-Canonical-Foulkes-Howe-Map-September-25-2026			1	1	24	20	0	Foulkes	names/foulkes.md
 foulon	citation	1					1	1	3	3	0	Foulon	
 foures-bruhat	citation	1					0	1	0	0	0		
-fourier	subject	160	075|077|130	A-sharp-Fourier-certificate-for-planar-circle-packing-September-23-2026|Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026|An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026|Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026|Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026|Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026|Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026|From-partial-permutation-information-to-Fourier-bounds-September-26-2026	002|003|004|006|007|011|015|023|032|069|073|080|083|090|099|130|147|159|182|186|238|265|266|283|285|286	OAI.ExactFourier.main_theorem|OAI.FourierLLogL.paperMain	160	0	3773	3089	562	Fourier	names/fourier.md
+fourier	subject	161	075|077|130	A-sharp-Fourier-certificate-for-planar-circle-packing-September-23-2026|Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026|An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026|Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026|Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026|Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026|Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026|From-partial-permutation-information-to-Fourier-bounds-September-26-2026	002|003|004|006|007|011|015|023|032|069|073|079|080|083|090|099|130|147|159|182|186|238|265|266|283|285|286	OAI.ExactFourier.main_theorem|OAI.FourierLLogL.paperMain|OAI.Analysis.Fourier.LocalSmoothing.Comparator.bochner_riesz|OAI.Analysis.Fourier.LocalSmoothing.Comparator.euclidean_local_smoothing|OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya|OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya_maximal|OAI.Analysis.Fourier.LocalSmoothing.Comparator.spherical_restriction|OAI.Analysis.Fourier.LocalSmoothing.Comparator.stein_square	161	0	3815	3124	562	Fourier	names/fourier.md
 fournais	citation	2					2	1	22	10	0	Fournais	
 fournier	citation	4					4	2	10	4	0	Fournier|Fournier's	
 fournier-facio	citation	1					0	1	0	0	0		
@@ -1571,7 +1579,7 @@ fradelizi	citation	3					3	3	7	4	0	Fradelizi
 fragkos	citation	1					1	1	1	1	0	Fragkos	
 franceschini	citation	1					1	1	4	4	0	Franceschini	
 francetic	citation	1					1	1	2	1	0	Francetic	
-francis	citation	5					4	2	7	6	0	Francis	
+francis	citation	6					5	2	9	8	0	Francis	
 franco	citation	1					1	1	1	0	0	Franco	
 franjou	citation	1					0	1	0	0	0		
 frank	citation	12					10	6	17	9	0	Frank	
@@ -1584,14 +1592,14 @@ franzel	citation	2					0	2	0	0	0
 franzen	citation	1					0	1	0	0	0		
 frasca	citation	1					0	1	0	0	0		
 frassek	citation	1					1	1	1	1	0	Frassek	
-frechet	citation	17					16	1	47	43	0	Frechet	
+frechet	citation	18					17	1	50	45	0	Frechet	
 fredenhagen	citation	1					1	1	1	1	0	Fredenhagen	
 freedman	citation	4					4	2	27	11	0	Freedman|Freedman's	
 freitag	citation	1					0	1	0	0	0		
 freiwald	citation	1					1	1	2	0	0	Freiwald	
 fremlin	citation	1					0	1	0	0	0		
 frenkel	citation	5					5	1	53	20	3	Frenkel	
-fresnel	citation	1					1	1	2	0	0	Fresnel	
+fresnel	citation	2					2	1	5	3	0	Fresnel	
 fresse	citation	1					1	1	1	0	0	Fresse	
 freund	citation	1					1	1	1	1	0	Freund	
 fribergh	citation	1					1	1	1	0	0	Fribergh	
@@ -1602,6 +1610,7 @@ friedl	citation	2					1	2	1	1	0	Friedl
 friedlander	citation	10					7	7	14	8	0	Friedlander|Friedlander's	
 friedli	citation	1					0	1	0	0	0		
 friedman	citation	3					3	1	12	7	0	Friedman|Friedman's	
+friedrichs	citation	4					4	1	7	7	0	Friedrichs	
 fries	citation	1					0	1	0	0	0		
 friesecke	citation	1					1	1	4	2	0	Friesecke	
 frieze	citation	5					4	4	5	4	1	Frieze	
@@ -1669,13 +1678,13 @@ galois	subject	44	031	Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups
 gamarnik	citation	1					1	1	2	1	0	Gamarnik	
 gamba	citation	1					0	1	0	0	0		
 gamburd	citation	1					0	1	0	0	0		
-gan	subject	3			014		3	2	12	4	0	Gan	names/gan.md
+gan	subject	3			014		3	2	15	5	0	Gan	names/gan.md
 gandhi	citation	2					2	1	3	2	1	Gandhi	
 ganea	subject	1	249	A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026			1	1	5	4	0	Ganea	names/ganea.md
 gangl	citation	1					1	1	1	1	0	Gangl	
 gangolli	citation	1					1	1	2	2	0	Gangolli	
 ganzburg	citation	1					1	1	1	0	0	Ganzburg	
-gao	citation	14					13	11	25	14	0	Gao	
+gao	citation	15					14	11	28	17	0	Gao	
 garban	citation	7					7	6	31	18	0	Garban	
 garbe	citation	1					1	1	2	2	0	Garbe	
 garcia	citation	5					4	1	6	2	3	Garcia	
@@ -1704,7 +1713,7 @@ gaudin	subject	2			225		2	2	26	15	7	Gaudin	names/gaudin.md
 gaudron	citation	2					1	1	3	2	0	Gaudron	
 gauntlett	citation	1					0	1	0	0	0		
 gauss	subject	60	023	An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026	003|006|029|066|260|338		60	0	635	545	136	Gauss|Gauss's	names/gauss.md
-gaussian	subject	130	028|096|140|225|232	Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026|Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026|Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026|Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026|Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026|Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026|Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026|The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026|The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026|The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026	003|029|066|079|080|082|087|090|092|093|096|097|139|140|154|211|215|216|217|219|220|222|227|232|233|234|235|236|239|267|281|291|325|331|346|355|363|364|371	OAI.GaussianMoat.fullMain|OAI.GaussianPropeller.all_partitions	130	0	6116	5223	743	Gaussian	names/gaussian.md
+gaussian	subject	131	028|096|140|225|232	Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026|Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026|Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026|Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026|Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026|Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026|Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026|The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026|The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026|The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026	003|029|066|079|080|082|087|090|092|093|096|097|139|140|154|211|215|216|217|219|220|222|227|232|233|234|235|236|239|267|281|291|325|331|346|355|363|364|371	OAI.GaussianMoat.fullMain|OAI.GaussianPropeller.all_partitions	131	0	6137	5238	746	Gaussian	names/gaussian.md
 gavazzi	citation	1					1	1	1	1	0	Gavazzi	
 gawrychowski	citation	1					0	1	0	0	0		
 gayet	citation	1					1	1	1	1	0	Gayet	
@@ -1751,7 +1760,7 @@ ghlonti	citation	1					0	1	0	0	0
 ghomi	citation	2					2	2	12	8	0	Ghomi|Ghomi's	
 ghorbani	citation	1					1	1	1	1	0	Ghorbani	
 ghorpade	citation	1					0	1	0	0	0		
-ghosh	citation	5					4	4	12	4	0	Ghosh|Ghosh's	
+ghosh	citation	6					5	4	14	5	0	Ghosh|Ghosh's	
 ghouila-houri	citation	1					0	1	0	0	0		
 ghoussoub	citation	3					3	3	5	4	0	Ghoussoub	
 ghrist	citation	1					1	1	1	1	0	Ghrist	
@@ -1762,7 +1771,7 @@ gibbs	subject	26			227|273		26	0	609	576	35	Gibbs	names/gibbs.md
 gicquaud	citation	1					1	1	2	2	0	Gicquaud	
 gidas	citation	1					1	1	1	1	0	Gidas	
 gigli	subject	5	356		356		3	5	35	27	0	Gigli|Gigli's	names/gigli.md
-gilbarg	citation	8					5	5	6	1	0	Gilbarg	
+gilbarg	citation	9					5	6	6	1	0	Gilbarg	
 gilbert	citation	3					3	1	18	6	0	Gilbert|Gilbert's	
 gill	citation	2					2	2	4	3	0	Gill	
 gille	citation	3					2	2	9	1	0	Gille|Gille's	
@@ -1826,7 +1835,7 @@ goldenberg	citation	2					2	1	8	8	0	Goldenberg
 goldfeld	subject	3	006		006		3	1	46	23	0	Goldfeld's|Goldfeld	names/goldfeld.md
 golding	citation	1					1	1	2	2	0	Golding	
 goldman	citation	4					3	3	6	3	0	Goldman	
-goldreich	citation	4					3	4	8	8	0	Goldreich	
+goldreich	citation	5					4	4	11	9	0	Goldreich|Goldreich's	
 goldston	citation	2					2	1	3	0	0	Goldston	
 goldsztejn	citation	1					0	1	0	0	0		
 goldwasser	citation	1					1	1	3	3	0	Goldwasser	
@@ -1851,7 +1860,7 @@ goodman	citation	2					2	2	2	2	0	Goodman
 goos	citation	2					2	2	2	1	0	Goos	
 gopalan	subject	4	192				4	3	6	3	0	Gopalan	names/gopalan.md
 gopalkrishnan	citation	1					1	1	3	1	0	Gopalkrishnan	
-gordon	citation	10					10	2	17	8	0	Gordon	
+gordon	citation	11					11	2	18	9	0	Gordon	
 goren	citation	1					0	1	0	0	0		
 gorenstein	citation	19					17	2	161	148	0	Gorenstein	
 goresky	citation	3					3	2	20	8	0	Goresky|Goresky's	
@@ -1881,9 +1890,9 @@ grable	citation	1					1	1	6	1	0	Grable
 grabowski	citation	1					1	1	2	1	0	Grabowski's|Grabowski	
 gradel	citation	1					1	1	6	6	0	Gradel	
 graf	citation	3					2	1	9	4	1	Graf|Graf's	
-grafakos	citation	2					1	1	4	1	3	Grafakos	
+grafakos	citation	3					2	2	6	1	3	Grafakos	
 graham	subject	15				OAI.GrahamSpherical.full_main	11	10	19	10	1	Graham	names/graham.md
-gram	subject	108			003|023|082|095|122|140|157|266|269|281|286|357		108	0	1132	1003	221	Gram	names/gram.md
+gram	subject	108			003|023|082|095|122|140|157|266|269|281|286|357		108	0	1137	1008	221	Gram	names/gram.md
 gramain	citation	1					1	1	1	0	0	Gramain	
 grand-clement	citation	1					0	1	0	0	0		
 grandoni	citation	1					1	1	3	3	0	Grandoni	
@@ -1897,7 +1906,7 @@ grayevsky	citation	1					1	1	1	0	0	Grayevsky
 greaves	citation	1					1	1	2	1	0	Greaves	
 greb	subject	6			041		4	4	16	5	0	Greb	names/greb.md
 grebik	citation	1					0	1	0	0	0		
-green	subject	64	200	Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026	051|090|200|211|216|223|232|233|260|261|365|375		60	17	646	524	392	Green|Green's	names/green.md
+green	subject	65	200	Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026	051|090|200|211|216|223|232|233|260|261|365|375		61	17	651	527	398	Green|Green's	names/green.md
 greenberg	citation	2					1	1	26	22	0	Greenberg	
 greenblatt	citation	1					1	1	20	8	0	Greenblatt	
 greendlinger	citation	1					1	1	1	1	0	Greendlinger's	
@@ -1946,12 +1955,12 @@ grunewald	citation	1					1	1	1	0	0	Grunewald
 gruson	citation	1					0	1	0	0	0		
 gruter	citation	1					0	1	0	0	0		
 guadagni	citation	1					1	1	1	1	0	Guadagni	
-guan	citation	4					2	4	4	3	0	Guan|Guan's	
+guan	citation	5					3	4	5	4	0	Guan|Guan's	
 guarneri	citation	1					0	1	0	0	0		
 guay-paquet	citation	1					0	1	0	0	0		
 guba	citation	1					1	1	3	2	0	Guba	
 gubler	citation	1					0	1	0	0	0		
-guedj	citation	3					2	3	4	2	1	Guedj	
+guedj	citation	4					2	4	4	2	1	Guedj	
 guenais	citation	1					1	1	2	1	0	Guenais	
 guenancia	citation	4					3	3	14	8	0	Guenancia	
 guentner	citation	1					1	1	2	1	0	Guentner	
@@ -1975,7 +1984,7 @@ gulliver	citation	1					1	1	2	0	0	Gulliver
 gundlach	citation	1					1	1	2	1	0	Gundlach's|Gundlach	
 gundy	citation	1					1	1	1	1	0	Gundy	
 guneysu	citation	1					0	1	0	0	0		
-guo	citation	17					15	12	38	23	0	Guo	
+guo	citation	18					16	13	39	23	0	Guo	
 gupta	citation	13					11	6	58	28	0	Gupta|Gupta's	
 guralnick	citation	2					2	2	4	3	0	Guralnick	
 gurevich	citation	3					2	2	14	11	3	Gurevich	
@@ -1986,11 +1995,11 @@ guruswami	citation	5					3	5	14	9	0	Guruswami
 gurvich	citation	1					0	1	0	0	0		
 gurvits	citation	3					3	2	8	2	0	Gurvits|Gurvits's	
 guterman	citation	1					0	1	0	0	0		
-guth	subject	11			166		11	10	67	44	0	Guth|Guth's	names/guth.md
+guth	subject	11			166		11	10	68	45	0	Guth|Guth's	names/guth.md
 gutierrez	citation	3					3	2	4	2	0	Gutierrez	
 gutman	citation	2					2	2	4	2	0	Gutman	
 gutperle	citation	1					0	1	0	0	0		
-guy	citation	2					2	1	3	2	0	Guy|Guy's	
+guy	citation	3					3	1	4	3	0	Guy|Guy's	
 guysinsky	citation	1					0	1	0	0	0		
 gwyn	citation	1					0	1	0	0	0		
 gwynne	citation	2					1	2	48	28	0	Gwynne|Gwynne's	
@@ -2007,7 +2016,7 @@ habermann	citation	1					1	1	1	1	0	Habermann
 hablicsek	citation	1					1	1	2	2	0	Hablicsek	
 hacking	citation	1					1	1	1	1	0	Hacking	
 hacon	citation	11					8	9	103	52	0	Hacon	
-hadamard	subject	34	179|337	Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026|Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026|The-circulant-Hadamard-conjecture-September-23-2026	005|227	OAI.CirculantHadamard.exists_iff_order_one_or_four	34	0	221	176	21	Hadamard|Hadamard's	names/hadamard.md
+hadamard	subject	35	179|337	Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026|Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026|The-circulant-Hadamard-conjecture-September-23-2026	005|227	OAI.CirculantHadamard.exists_iff_order_one_or_four	35	0	222	177	21	Hadamard|Hadamard's	names/hadamard.md
 hadani	citation	2					1	2	2	2	0	Hadani	
 hadwiger	subject	3	157	A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026		OAI.HadwigerCounterexample.not_hadwiger_conjecture	3	2	37	29	3	Hadwiger|Hadwiger's	names/hadwiger.md
 haefliger	citation	14					7	8	9	3	0	Haefliger	
@@ -2041,7 +2050,7 @@ halpern	citation	1					0	1	0	0	0
 halupczok	citation	1					1	1	3	2	0	Halupczok	
 hambleton	citation	2					1	2	4	0	0	Hambleton	
 hamilton	citation	22					22	5	90	64	4	Hamilton|Hamilton's	
-hamiltonian	subject	43	180	Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026|Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026|Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026|Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026	265|278|343|347		43	0	672	612	62	Hamiltonian|Hamiltonian's	names/hamiltonian.md
+hamiltonian	subject	44	180	Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026|Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026|Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026|Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026	265|278|343|347		44	0	673	613	62	Hamiltonian|Hamiltonian's	names/hamiltonian.md
 hamm	citation	2					2	1	3	1	0	Hamm	
 hammersley	citation	3					3	2	19	10	0	Hammersley	
 han	citation	13					8	12	26	7	2	Han|Han's	
@@ -2053,7 +2062,7 @@ hanke	citation	2					2	2	5	1	0	Hanke
 hanner	subject	2			087		2	2	31	26	3	Hanner|Hanner's	names/hanner.md
 hanners	citation	1					1	1	4	0	0	Hanners	
 hanselman	citation	1					1	1	2	1	0	Hanselman	
-hansen	subject	5			087		3	4	12	7	2	Hansen	names/hansen.md
+hansen	subject	6			087		4	4	14	7	2	Hansen	names/hansen.md
 hanson	citation	5					5	2	19	16	0	Hanson|Hanson's	
 hantoute	citation	1					0	1	0	0	0		
 hao	citation	2					2	1	3	2	0	Hao	
@@ -2069,7 +2078,7 @@ harcos	citation	2					2	1	2	1	0	Harcos
 harder	citation	14					14	2	102	93	27	Harder|Harder's	
 hardin	citation	3					2	3	6	3	0	Hardin	
 hardt	citation	4					3	2	5	2	0	Hardt|Hardt's	
-hardy	subject	27			275|282|336|375		27	3	95	72	33	Hardy|Hardy's	names/hardy.md
+hardy	subject	27			275|282|336|375		27	3	98	75	33	Hardy|Hardy's	names/hardy.md
 hare	citation	1					0	1	0	0	0		
 harel	citation	3					3	3	12	9	0	Harel	
 harish-chandra	citation	4					0	4	0	0	0		
@@ -2090,7 +2099,7 @@ hasenfratz	citation	1					1	1	5	1	0	Hasenfratz
 hashizume	citation	4					4	3	49	15	1	Hashizume|Hashizume's	
 hasler	citation	2					1	1	3	2	0	Hasler	
 haslhofer	citation	2					2	2	4	2	0	Haslhofer's|Haslhofer	
-hasse	subject	12			018|059		12	0	109	92	16	Hasse|Hasse's	names/hasse.md
+hasse	subject	13			018|059		13	0	112	94	19	Hasse|Hasse's	names/hasse.md
 hassell	citation	1					1	1	1	0	0	Hassell	
 hassett	subject	5			054		5	2	31	15	0	Hassett|Hassett's	names/hassett.md
 hastings	citation	4					4	1	19	9	0	Hastings	
@@ -2101,7 +2110,7 @@ hatcliff	citation	1					1	1	1	1	0	Hatcliff
 hattori	citation	2					1	2	13	12	0	Hattori	
 hauke	citation	1					1	1	8	6	0	Hauke	
 hauke-treuer	citation	1					0	1	0	0	0		
-hausdorff	subject	94	230	An-exact-Hausdorff-gauge-for-SLE-September-25-2026|An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026|Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026	022|230		94	1	750	677	14	Hausdorff	names/hausdorff.md
+hausdorff	subject	94	230	An-exact-Hausdorff-gauge-for-SLE-September-25-2026|An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026|Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026	022|230		94	1	764	689	14	Hausdorff	names/hausdorff.md
 hausel	citation	2					2	2	14	10	7	Hausel|Hausel's	
 hauser	citation	1					0	1	0	0	0		
 haussler	citation	1					0	1	0	0	0		
@@ -2158,13 +2167,14 @@ henn	citation	1					1	1	10	10	0	Henn|Henn's
 henniart	citation	2					2	1	5	4	0	Henniart's|Henniart	
 henon	subject	1	370	The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026	370	OAI.HenonLaneEmden.main_nonexistence	1	0	5	3	0	Henon	names/henon.md
 henriet	citation	1					0	1	0	0	0		
-henry	citation	6					6	1	47	15	0	Henry|Henry's	
+henry	citation	7					7	1	48	15	0	Henry|Henry's	
 hensel	citation	16					15	1	44	25	0	Hensel|Hensel's	
 henzinger	citation	1					1	1	2	1	0	Henzinger	
+heo	citation	1					1	1	1	1	0	Heo	
 herke	citation	1					1	1	3	3	0	Herke	
 hermann	citation	3					3	1	4	4	0	Hermann	
-hermite	subject	20			093|227		20	0	98	87	27	Hermite|Hermite's	names/hermite.md
-hermitian	subject	85			059		85	0	936	840	99	Hermitian	names/hermitian.md
+hermite	subject	21			093|227|378		21	0	111	97	36	Hermite|Hermite's	names/hermite.md
+hermitian	subject	86			059		86	0	952	854	99	Hermitian	names/hermitian.md
 hermon	citation	1					1	1	1	0	0	Hermon	
 hernandez	citation	2					2	1	6	3	0	Hernandez|Hernandez's	
 herrero	citation	1					0	1	0	0	0		
@@ -2176,20 +2186,20 @@ herzlich	citation	2					2	1	10	8	0	Herzlich
 hess	citation	21					21	1	489	80	0	Hess	
 hesselholt	citation	2					2	2	7	4	0	Hesselholt	
 hessenberg	subject	1			169		1	0	3	3	1	Hessenberg	names/hessenberg.md
-hessian	subject	86		Weak-Hessian-bounds-along-every-geodesic-in-RCD-spaces-September-24-2026	082|215|216|222|260|348|350|356	OAI.WeakHessian.every_geodesic	86	0	1367	1234	333	Hessian|Hessian's	names/hessian.md
+hessian	subject	87		Weak-Hessian-bounds-along-every-geodesic-in-RCD-spaces-September-24-2026	079|082|215|216|222|260|348|350|356	OAI.WeakHessian.every_geodesic	87	0	1408	1273	349	Hessian|Hessian's	names/hessian.md
 hethelyi	citation	1					0	1	0	0	0		
 heule	citation	1					1	1	1	1	0	Heule	
 heyer	citation	1					1	1	4	1	0	Heyer's|Heyer	
 hezari	citation	2					2	2	9	2	0	Hezari|Hezari's	
 hiai	citation	3					3	2	6	1	0	Hiai|Hiai's	
-hickman	citation	1					1	1	4	3	0	Hickman	
+hickman	citation	1					1	1	5	4	0	Hickman	
 hida	citation	2					2	2	6	3	0	Hida|Hida's	
 higgs	subject	6			033		6	0	101	92	3	Higgs	names/higgs.md
 higham	citation	1					1	1	3	0	0	Higham	
 higman	subject	5	250	Finite-algebraic-envelopes-and-the-Boone-Higman-conjecture-September-23-2026			4	4	40	29	0	Higman|Higman's	names/higman.md
 higson	citation	2					2	2	16	4	0	Higson	
 hikita	subject	2	044	The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026			2	2	15	13	0	Hikita|Hikita's	names/hikita.md
-hilbert	subject	171	004|082|083|086|143|304	A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026|A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026|An-L3-bound-for-the-dyadic-triangular-Hilbert-form-October-5-2026|An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026|Annular-variation-of-the-triangular-Hilbert-transform-at-the-symmetric-point-October-5-2026|The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026|The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026	032|037|040|054|154|194|211|218|225|238|280|282|286|304|331	OAI.DoublingHilbert.main|OAI.TriangularHilbert.main_estimate	171	3	2709	2445	165	Hilbert|Hilbert's	names/hilbert.md
+hilbert	subject	171	004|082|083|086|143|304	A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026|A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026|An-L3-bound-for-the-dyadic-triangular-Hilbert-form-October-5-2026|An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026|Annular-variation-of-the-triangular-Hilbert-transform-at-the-symmetric-point-October-5-2026|The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026|The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026	032|037|040|054|154|194|211|218|225|238|280|282|286|304|331	OAI.DoublingHilbert.main|OAI.TriangularHilbert.main_estimate	171	3	2711	2447	165	Hilbert|Hilbert's	names/hilbert.md
 hilburn	citation	1					1	1	1	0	0	Hilburn	
 hildebrand	citation	1					0	1	0	0	0		
 hill	citation	9					8	4	27	14	8	Hill|Hill's	
@@ -2216,7 +2226,7 @@ hochster	citation	5					5	2	25	9	0	Hochster|Hochster's
 hoda	citation	1					1	1	1	0	0	Hoda	
 hodge	subject	45	032	Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026|Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026|Projective-Hodge-lines-and-ordinary-Iitaka-subadditivity-September-27-2026|The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026|Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026	001|002|032|033|034|056|065		45	1	3137	2845	200	Hodge	names/hodge.md
 hodgson	citation	1					1	1	1	1	0	Hodgson	
-hoeffding	citation	23					22	12	75	34	9	Hoeffding|Hoeffding's	
+hoeffding	citation	24					23	12	78	35	9	Hoeffding|Hoeffding's	
 hoepfner	citation	1					1	1	1	1	0	Hoepfner	
 hoeven	citation	2					2	1	12	11	0	Hoeven|Hoeven's	
 hofbauer	citation	1					1	1	2	2	0	Hofbauer	
@@ -2228,7 +2238,7 @@ hofmann	citation	4					3	3	6	4	0	Hofmann
 hofscheier	citation	1					1	1	1	1	0	Hofscheier	
 hogan	citation	1					0	1	0	0	0		
 holden	citation	4					4	4	14	5	0	Holden	
-holder	subject	115		Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026	182|246|260|360	OAI.WeakMTWTransport.uniform_biHolder_transport	115	0	1148	893	93	Holder|Holder's	names/holder.md
+holder	subject	115		Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026	182|246|260|360	OAI.WeakMTWTransport.uniform_biHolder_transport	115	0	1161	903	93	Holder|Holder's	names/holder.md
 holenstein	citation	5					4	5	13	7	0	Holenstein|Holenstein's	
 hollender	citation	1					1	1	1	1	0	Hollender	
 holley	citation	3					3	3	14	11	1	Holley|Holley's	
@@ -2250,7 +2260,7 @@ hopkins	citation	9					9	6	74	54	4	Hopkins|Hopkins's
 hoppe	citation	1					0	1	0	0	0		
 hori	citation	1					1	1	4	3	0	Hori	
 horing	citation	10					9	9	58	23	0	Horing|Horing's	
-hormander	citation	14					12	10	25	13	0	Hormander|Hormander's	
+hormander	citation	15					13	11	30	14	0	Hormander|Hormander's	
 horn	citation	2			317		2	1	7	5	22	Horn|Horn's	
 hornbostel	citation	1					1	1	2	2	0	Hornbostel	
 hornfeck	citation	1					1	1	3	2	0	Hornfeck|Hornfeck's	
@@ -2273,7 +2283,7 @@ hruska	citation	1					1	1	1	1	0	Hruska
 hsieh	citation	1					0	1	0	0	0		
 hsu	citation	5					4	3	7	3	0	Hsu|HSU	
 hua	citation	3					2	1	2	1	0	Hua	
-huang	subject	35			284		32	27	128	69	0	Huang|Huang's	names/huang.md
+huang	subject	36			284		33	27	129	70	0	Huang|Huang's	names/huang.md
 hubard	citation	1					1	1	1	1	0	Hubard	
 hubbard	subject	2			275		2	0	23	18	9	Hubbard	names/hubbard.md
 huber	citation	4					4	1	14	8	4	Huber	
@@ -2302,7 +2312,8 @@ hurewicz	subject	19		The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25
 hurkens	citation	2					2	2	5	5	0	Hurkens|Hurkens's	
 hurtubise	citation	1					0	1	0	0	0		
 huse	citation	1					1	1	2	1	0	Huse's|Huse	
-husfeldt	citation	2					1	1	1	0	0	Husfeldt	
+husfeldt	citation	3					2	1	4	2	0	Husfeldt	
+husimi	citation	1					1	1	2	2	4	Husimi	
 hutchcroft	subject	2			213		2	2	55	22	0	Hutchcroft|Hutchcroft's	names/hutchcroft.md
 hutchinson	citation	1					1	1	4	2	0	Hutchinson|Hutchinson's	
 hutzenthaler	citation	1					0	1	0	0	0		
@@ -2330,8 +2341,8 @@ imai	citation	3					2	2	3	1	0	Imai
 imanuvilov	citation	1					1	1	2	1	0	Imanuvilov	
 immerman	citation	2					2	2	14	11	2	Immerman	
 immorlica	citation	2					2	2	2	2	0	Immorlica	
-impagliazzo	citation	2					2	1	3	2	0	Impagliazzo	
-indyk	citation	3					3	1	12	7	0	Indyk|Indyk's	
+impagliazzo	citation	3					3	1	9	5	0	Impagliazzo	
+indyk	citation	4					4	1	14	9	0	Indyk|Indyk's	
 innami	citation	1					1	1	2	1	0	Innami's|Innami	
 ino	citation	1					1	1	2	1	0	Ino	
 inoue	citation	4					4	1	7	6	0	Inoue	
@@ -2349,7 +2360,7 @@ isakov	citation	1					1	1	2	2	0	Isakov
 isaksen	citation	1					0	1	0	0	0		
 isaksson	citation	1					0	1	0	0	0		
 ishii	citation	5					4	3	5	3	0	Ishii|Ishii's	
-ising	subject	16	218|234|236	All-temperature-pressure-for-orthogonally-invariant-Ising-spin-glasses-September-25-2026|Buffered-comparison-and-stopping-band-resolution-in-critical-Ising-September-23-2026|Conformal-universality-of-bulk-Ising-correlations-under-weak-interactions-September-23-2026|Logarithmic-Relative-Fluctuations-in-the-Weakly-Disordered-Planar-Ising-Model-October-5-2026|Quenched-SLE-Universality-for-Weakly-Disordered-FK-Ising-Interfaces-October-5-2026|Quenched-SLE3-Universality-for-the-Weak-Random-Bond-Ising-Model-October-5-2026|Quenched-SLE3-limits-for-general-weak-random-bond-Ising-models-October-5-2026|Random-Walks-on-Critical-FK-Ising-Maps-and-Liouville-Brownian-Motion-October-5-2026|SLE3-universality-for-weak-finite-range-Ising-interactions-September-23-2026|Spectral-convergence-for-critical-FK-Ising-planar-maps-October-5-2026|The-free-energy-of-the-Ising-random-perceptron-September-24-2026|The-sharp-factor-of-IID-threshold-for-the-free-Ising-model-on-regular-trees-September-26-2026|Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026	222|227		16	0	372	348	12	Ising	names/ising.md
+ising	subject	17	218|234|236	All-temperature-pressure-for-orthogonally-invariant-Ising-spin-glasses-September-25-2026|Buffered-comparison-and-stopping-band-resolution-in-critical-Ising-September-23-2026|Conformal-universality-of-bulk-Ising-correlations-under-weak-interactions-September-23-2026|Logarithmic-Relative-Fluctuations-in-the-Weakly-Disordered-Planar-Ising-Model-October-5-2026|Quenched-SLE-Universality-for-Weakly-Disordered-FK-Ising-Interfaces-October-5-2026|Quenched-SLE3-Universality-for-the-Weak-Random-Bond-Ising-Model-October-5-2026|Quenched-SLE3-limits-for-general-weak-random-bond-Ising-models-October-5-2026|Random-Walks-on-Critical-FK-Ising-Maps-and-Liouville-Brownian-Motion-October-5-2026|SLE3-universality-for-weak-finite-range-Ising-interactions-September-23-2026|Spectral-convergence-for-critical-FK-Ising-planar-maps-October-5-2026|The-free-energy-of-the-Ising-random-perceptron-September-24-2026|The-sharp-factor-of-IID-threshold-for-the-free-Ising-model-on-regular-trees-September-26-2026|Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026	222|227		17	0	373	349	12	Ising	names/ising.md
 iskovskikh	citation	1					0	1	0	0	0		
 islam	citation	1					1	1	1	1	0	Islam	
 ismailescu	citation	1					0	1	0	0	0		
@@ -2358,7 +2369,7 @@ israel	citation	25					24	7	48	43	0	Israel|Israel's
 issa	citation	1					1	1	8	7	0	Issa	
 isserlis	citation	2					2	2	2	2	0	Isserlis	
 ito	citation	14					14	3	118	71	1	Ito's|Ito	
-ivan	citation	4					4	1	6	4	0	Ivan	
+ivan	citation	5					5	1	7	5	0	Ivan	
 ivanov	citation	4					3	2	6	0	0	Ivanov	
 ivanovic	citation	1					1	1	3	2	0	Ivanovic	
 ivanyos	citation	3					3	1	10	6	0	Ivanyos	
@@ -2378,7 +2389,7 @@ jackiw	citation	1					1	1	1	1	0	Jackiw
 jackson	citation	3					2	3	5	5	0	Jackson|Jackson's	
 jacob	citation	7					5	2	8	5	0	Jacob	
 jacobi	subject	46			260|344|348|360		46	0	370	305	97	Jacobi|Jacobi's	names/jacobi.md
-jacobian	subject	136			072|093|101|215|360		136	0	1013	932	154	Jacobian|Jacobian's	names/jacobian.md
+jacobian	subject	136			072|093|101|215|360		136	0	1031	949	157	Jacobian|Jacobian's	names/jacobian.md
 jacobowitz	citation	1					1	1	2	2	0	Jacobowitz	
 jacobson	citation	10					10	1	41	35	0	Jacobson|Jacobson's	
 jacobsthal	subject	1	021				1	1	8	6	4	Jacobsthal's|Jacobsthal	names/jacobsthal.md
@@ -2428,23 +2439,23 @@ jenrich	citation	1					1	1	1	0	0	Jenrich
 jenssen	citation	2					2	1	8	4	0	Jenssen	
 jentzen	citation	1					0	1	0	0	0		
 jerison	citation	4					3	3	16	7	0	Jerison|Jerison's	
-jerrum	citation	6					4	5	32	17	0	Jerrum	
+jerrum	citation	7					5	5	33	17	0	Jerrum	
 jessen	citation	1					0	1	0	0	0		
 jetchev	citation	3					3	2	14	8	0	Jetchev	
 jewett	citation	3					3	2	21	20	1	Jewett	
 jha	citation	3					3	2	7	2	0	Jha	
 jia	citation	3					2	2	2	2	0	Jia	
-jiang	subject	20	291	Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026|Equivariant-Jiang-Su-Stability-for-Amenable-Actions-in-the-Unital-Stably-Finite-Case-October-5-2026|Nuclear-dimension-and-Jiang-Su-stability-without-elementary-subquotients-September-23-2026	291		14	15	109	77	1	Jiang|Jiang's	names/jiang.md
+jiang	subject	21	291	Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026|Equivariant-Jiang-Su-Stability-for-Amenable-Actions-in-the-Unital-Stably-Finite-Case-October-5-2026|Nuclear-dimension-and-Jiang-Su-stability-without-elementary-subquotients-September-23-2026	291		15	15	111	78	1	Jiang|Jiang's	names/jiang.md
 jin	citation	6					6	3	18	6	0	Jin|Jin's	
 jindal	citation	1					1	1	1	1	0	Jindal	
-jing	citation	2					1	1	2	0	0	Jing	
+jing	citation	3					2	2	3	1	0	Jing	
 jinzenji	citation	1					1	1	3	2	0	Jinzenji	
 jochnowitz	citation	1					1	1	2	2	0	Jochnowitz's|Jochnowitz	
 johanis	citation	1					1	1	1	1	0	Johanis	
 johansson	citation	2					2	1	7	5	0	Johansson|Johansson's	
 john	citation	25					25	3	44	24	1	John|John's	
 johnson	citation	18					17	9	54	27	1	Johnson|Johnson's	
-jones	citation	20					19	12	57	37	2	Jones|Jones's	
+jones	citation	21					20	13	58	37	2	Jones|Jones's	
 jonsson	citation	6					3	5	6	4	0	Jonsson	
 joo	citation	1					1	1	11	5	0	Joo|Joo's	
 joos	citation	1					1	1	5	4	2	Joos	
@@ -2473,14 +2484,14 @@ kadiri	citation	1					0	1	0	0	0
 kadison	subject	14	285|288|289|295	A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026|Universal-strong-Kadison-Kastler-stability-September-23-2026	289		14	8	81	50	3	Kadison|Kadison's	names/kadison.md
 kaenmaki	citation	1					1	1	3	1	0	Kaenmaki	
 kahane	citation	5					4	3	12	10	3	Kahane|Kahane's	
-kahler	subject	37	359	A-negatively-pinched-Kahler-threefold-without-bounded-holomorphic-coordinates-September-25-2026|Abundance-after-nonvanishing-for-compact-Kahler-fourfolds-September-27-2026|B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026|Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026|Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026|Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026|Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026|Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026|Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026|Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026|Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026|The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026|Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026|Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026	033|034|056|057|062|341|343		37	0	3220	2994	14	Kahler	names/kahler.md
+kahler	subject	38	359	A-negatively-pinched-Kahler-threefold-without-bounded-holomorphic-coordinates-September-25-2026|Abundance-after-nonvanishing-for-compact-Kahler-fourfolds-September-27-2026|B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026|Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026|Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026|Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026|Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026|Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026|Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026|Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026|Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026|The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026|Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026|Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026	033|034|056|057|062|341|343		38	0	3221	2995	14	Kahler	names/kahler.md
 kahn	subject	10	176	The-second-Kahn-Kalai-conjecture-September-24-2026		OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds	10	4	49	26	1	Kahn	names/kahn.md
 kailath	citation	1					1	1	2	2	3	Kailath	
 kaimanovich	citation	1					1	1	3	3	0	Kaimanovich	
 kairema	citation	1					0	1	0	0	0		
-kaiser	citation	4					3	4	5	4	0	Kaiser	
+kaiser	citation	5					4	5	7	5	0	Kaiser	
 kajino	citation	1					1	1	1	1	0	Kajino	
-kakeya	subject	7	074	Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026|The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026	074|077|080		7	1	104	85	36	Kakeya	names/kakeya.md
+kakeya	subject	8	074	Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026|The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026	074|077|079|080		8	1	125	103	64	Kakeya	names/kakeya.md
 kalai	subject	9	176|186	The-second-Kahn-Kalai-conjecture-September-24-2026	186	OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds	9	3	49	32	0	Kalai	names/kalai.md
 kalantzopoulos	citation	1					1	1	1	1	0	Kalantzopoulos	
 kaletha	citation	2					1	1	1	1	0	Kaletha	
@@ -2513,7 +2524,7 @@ kaniewski	citation	1					0	1	0	0	0
 kanigowski	citation	2					2	2	2	2	0	Kanigowski	
 kannan	citation	7					5	6	18	14	0	Kannan	
 kantorovich	citation	4					4	1	7	5	0	Kantorovich	
-kaplan	citation	7					5	6	12	9	0	Kaplan	
+kaplan	citation	8					6	6	14	11	0	Kaplan	
 kaplansky	subject	16	196|285|294	A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026		OAI.KaplanskyCounterexample.finitelyPresented_counterexample|OAI.Kaplansky.kaplansky_quasitrace_counterexample|OAI.OddKaplansky.main_theorem	16	4	63	43	3	Kaplansky|Kaplansky's	names/kaplansky.md
 kaporis	citation	1					1	1	1	0	0	Kaporis	
 kapoutsis	citation	1					1	1	9	5	0	Kapoutsis	
@@ -2542,13 +2553,13 @@ karu	citation	4					1	4	2	2	0	Karu
 karzanov	citation	2					1	2	3	3	0	Karzanov	
 kasami	citation	1					1	1	1	1	0	Kasami	
 kashiwara	citation	3					3	1	8	6	0	Kashiwara|Kashiwara's	
-kaski	citation	1					1	1	7	5	0	Kaski	
+kaski	citation	2					2	1	9	7	0	Kaski	
 kasparov	citation	3					3	3	12	9	0	Kasparov	
 kassabov	citation	1					0	1	0	0	0		
 kasteleyn	subject	10		Brownian-continuum-random-tree-limits-of-finite-Fortuin-Kasteleyn-maps-above-four-September-24-2026			8	7	58	43	0	Kasteleyn	names/kasteleyn.md
 kastler	subject	2	289	Universal-strong-Kadison-Kastler-stability-September-23-2026	289		1	2	16	14	0	Kastler	names/kastler.md
 kasue	citation	1					1	1	1	1	0	Kasue	
-kato	citation	26					23	15	235	128	9	Kato|Kato's	
+kato	citation	27					24	16	236	128	9	Kato|Kato's	
 katok	subject	6	339		015		6	5	19	12	0	Katok|Katok's	names/katok.md
 katz	subject	19			166		17	17	77	42	11	Katz|Katz's	names/katz.md
 katzarkov	citation	4					3	4	11	9	0	Katzarkov|Katzarkov's	
@@ -2579,7 +2590,7 @@ keleti	citation	2					2	2	3	2	0	Keleti
 kell	citation	2					1	2	2	2	0	Kell	
 kelland	citation	2					2	1	3	3	0	Kelland	
 kellendonk	citation	1					0	1	0	0	0		
-keller	citation	13					12	7	35	14	6	Keller|Keller's	
+keller	citation	14					12	8	35	14	6	Keller|Keller's	
 kelley	citation	3					2	2	7	5	1	Kelley	
 kelly	citation	2					1	2	1	1	0	Kelly	
 kelner	citation	1					1	1	1	1	0	Kelner	
@@ -2617,7 +2628,7 @@ khaskelberg	citation	1					1	1	1	1	0	Khaskelberg
 khavkine	citation	1					1	1	2	1	0	Khavkine	
 khayutin	citation	1					1	1	8	3	0	Khayutin|Khayutin's	
 khezeli	citation	1					0	1	0	0	0		
-khintchine	citation	7					7	1	13	11	3	Khintchine|Khintchine's	
+khintchine	citation	8					8	1	14	12	3	Khintchine|Khintchine's	
 khot	subject	6			096		5	4	81	56	0	Khot|Khot's	names/khot.md
 khoussainov	citation	1					1	1	1	0	0	Khoussainov	
 khovanov	citation	1					1	1	6	6	0	Khovanov	
@@ -2631,7 +2642,7 @@ kijima	citation	1					1	1	1	0	0	Kijima
 kikuchi	citation	1					1	1	4	0	0	Kikuchi	
 kilian	citation	2					1	1	1	1	0	Kilian	
 killip	citation	1					0	1	0	0	0		
-kim	citation	20					16	15	46	18	0	Kim|Kim's	
+kim	citation	21					17	16	47	18	0	Kim|Kim's	
 kindler	citation	5					4	4	18	13	0	Kindler	
 king	citation	7					7	4	26	13	1	King|King's	
 kingma	citation	1					0	1	0	0	0		
@@ -2671,7 +2682,7 @@ klausen	citation	1					1	1	1	0	0	Klausen
 kleene	citation	3					3	1	10	4	0	Kleene|Kleene's	
 kleidman	citation	2					0	2	0	0	0		
 kleiman	citation	11					6	6	10	5	0	Kleiman|Kleiman's	
-klein	citation	11					9	4	31	25	3	Klein|Klein's	
+klein	citation	12					10	4	32	26	3	Klein|Klein's	
 kleinberg	citation	4					3	4	7	6	0	Kleinberg	
 kleiner	subject	5			246		5	4	23	12	0	Kleiner|Kleiner's	names/kleiner.md
 kleitman	citation	2					2	2	8	5	0	Kleitman	
@@ -2715,7 +2726,7 @@ kohn	subject	3	278	A-Coulomb-Ground-State-Density-without-Kohn-Sham-Ensemble-Rep
 koike	citation	3					3	1	6	2	0	Koike	
 koiliaris	citation	1					1	1	1	0	0	Koiliaris	
 koiran	citation	1					1	1	2	2	0	Koiran	
-koivisto	citation	1					1	1	7	7	0	Koivisto	
+koivisto	citation	2					2	1	9	7	0	Koivisto	
 koivusalo	citation	1					0	1	0	0	0		
 kokainis	citation	1					1	1	1	1	0	Kokainis	
 kokarev	citation	1					1	1	1	1	0	Kokarev	
@@ -2744,7 +2755,7 @@ konyagin	subject	5	011				4	5	13	8	0	Konyagin	names/konyagin.md
 koot	citation	1					1	1	2	0	0	Koot's|Koot	
 kopczynski	citation	1					0	1	0	0	0		
 kopinski	citation	1					1	1	2	2	0	Kopinski	
-kopparty	citation	2					1	2	2	2	0	Kopparty	
+kopparty	citation	3					2	2	4	2	0	Kopparty	
 koppe	citation	1					0	1	0	0	0		
 kopper	citation	1					1	1	2	1	0	Kopper	
 korandi	citation	1					1	1	1	0	0	Korandi	
@@ -2806,7 +2817,7 @@ krivelevich	citation	3					3	2	12	9	0	Krivelevich
 kriz	citation	4					3	4	22	4	1	Kriz|Kriz's	
 krokhin	citation	1					0	1	0	0	0		
 kroncke	citation	1					1	1	1	1	0	Kroncke's	
-kronecker	citation	18					18	2	57	45	0	Kronecker|Kronecker's	
+kronecker	citation	19					19	2	59	47	0	Kronecker|Kronecker's	
 kronenberg	citation	1					1	1	1	1	0	Kronenberg	
 kronheimer	citation	1					1	1	2	2	0	Kronheimer	
 kropholler	citation	3					2	3	2	1	0	Kropholler	
@@ -2815,7 +2826,7 @@ krull	citation	12					12	1	24	19	0	Krull|Krull's
 krummel	citation	1					1	1	1	0	0	Krummel	
 krushkal	citation	1					1	1	7	2	0	Krushkal	
 kruskal	citation	4					4	1	17	14	17	Kruskal|Kruskal's	
-krylov	citation	5					5	1	15	10	3	Krylov	
+krylov	citation	6					6	2	18	13	3	Krylov	
 krzakala	citation	2					2	1	3	2	0	Krzakala	
 kubo	citation	3					3	1	5	4	0	Kubo	
 kubota	citation	4					4	1	18	10	0	Kubota|Kubota's	
@@ -2837,7 +2848,7 @@ kullmann	citation	1					1	1	1	1	0	Kullmann
 kulshammer	citation	2					2	2	12	7	0	Kulshammer|Kulshammer's	
 kulshreshtha	citation	1					1	1	1	1	0	Kulshreshtha	
 kulske	citation	1					1	1	4	3	0	Kulske	
-kumar	subject	17	119		119	OAI.LeanBlast.CourtadeKumar.courtadeKumarAndAttainment	13	14	49	34	2	Kumar|Kumar's	names/kumar.md
+kumar	subject	18	119		119	OAI.LeanBlast.CourtadeKumar.courtadeKumarAndAttainment	14	14	51	35	2	Kumar|Kumar's	names/kumar.md
 kumchev	citation	1					1	1	1	0	0	Kumchev	
 kume	citation	1					0	1	0	0	1		
 kummer	subject	30			002|004|006|029|031|318		30	1	1119	957	103	Kummer|Kummer's	names/kummer.md
@@ -2930,7 +2941,7 @@ languasco	citation	1					1	1	1	1	0	Languasco
 lanzetta	citation	1					0	1	0	0	0		
 lapid	citation	2					1	1	2	0	0	Lapid	
 laplace	subject	39			090|217|232|233|237		39	0	353	321	47	Laplace	names/laplace.md
-laplacian	subject	61			060|223|261|356		61	0	577	535	86	Laplacian	names/laplacian.md
+laplacian	subject	62			060|223|261|356		62	0	587	545	86	Laplacian	names/laplacian.md
 laptev	citation	3					3	1	20	11	0	Laptev	
 larmore	citation	1					1	1	1	0	0	Larmore	
 larotonda	citation	1					1	1	2	1	0	Larotonda	
@@ -2940,6 +2951,7 @@ larusson	citation	2					2	1	4	2	0	Larusson|Larusson's
 lasell	citation	1					1	1	1	0	0	Lasell	
 lashof	subject	1			316		1	0	10	9	0	Lashof	names/lashof.md
 lassas	citation	1					1	1	5	3	0	Lassas	
+lasser	citation	1					0	1	0	0	0		
 lasserre	citation	2					2	1	6	3	2	Lasserre	
 laszlo	citation	3					3	1	6	3	0	Laszlo	
 latka	citation	1					1	1	1	0	0	Latka	
@@ -2977,7 +2989,7 @@ leder	citation	1					1	1	8	1	0	Leder|Leder's
 ledoux	citation	4					3	3	5	3	1	Ledoux	
 ledrappier	citation	1					1	1	2	1	0	Ledrappier's|Ledrappier	
 ledwith	citation	1					0	1	0	0	0		
-lee	subject	50			216		42	36	197	127	29	Lee|Lee's	names/lee.md
+lee	subject	51			216		43	37	199	129	29	Lee|Lee's	names/lee.md
 leeb	citation	4					3	4	8	6	0	Leeb|Leeb's	
 legendre	subject	17			359		17	0	85	83	7	Legendre|Legendre's	names/legendre.md
 leger	citation	1					1	1	1	1	0	Leger	
@@ -3027,8 +3039,8 @@ levenshtein	citation	3					3	2	20	8	0	Levenshtein|Levenshtein's
 levermore	citation	1					0	1	0	0	0		
 levesque	citation	1					1	1	1	1	0	Levesque	
 levey	citation	1					1	1	1	1	0	Levey	
-levi	subject	27			203|286		27	0	487	447	20	Levi|Levi's	names/levi.md
-levin	citation	2					1	2	1	1	0	Levin	
+levi	subject	28			203|286		28	0	488	448	20	Levi|Levi's	names/levi.md
+levin	citation	3					2	2	2	2	0	Levin	
 levina	citation	1					0	1	0	0	0		
 levine	subject	2			059		2	2	10	5	0	Levine|Levine's	names/levine.md
 levitt	citation	2					2	2	3	1	0	Levitt|Levitt's	
@@ -3048,7 +3060,7 @@ lidicky	citation	1					1	1	2	2	0	Lidicky
 lidl	citation	2					1	1	1	0	0	Lidl	
 lidman	citation	1					1	1	3	3	0	Lidman	
 lido	citation	1					0	1	0	0	0		
-lie	citation	62			008|032|033|206		61	3	1358	1051	5177	Lie|Lie's	
+lie	citation	62			008|032|033|206		61	3	1358	1051	5189	Lie|Lie's	
 lieb	subject	34	262	Equality-cases-in-the-sharp-one-dimensional-matrix-Lieb-Thirring-inequality-October-5-2026|Sharp-One-Dimensional-Lieb-Thirring-Constants-September-23-2026|Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026		OAI.SharpLiebThirring.sharp_lieb_thirring	32	24	243	186	5	Lieb|Lieb's|LieB	names/lieb.md
 liebeck	citation	3					2	3	21	15	14	Liebeck	
 lieberman	citation	4					3	3	9	8	0	Lieberman	
@@ -3083,18 +3095,18 @@ lions	citation	6					5	4	9	7	0	Lions
 liouville	subject	25		One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026|Random-Walks-on-Critical-FK-Ising-Maps-and-Liouville-Brownian-Motion-October-5-2026|The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026	007|211|260|359		25	1	154	131	26	Liouville|Liouville's	names/liouville.md
 lipman	subject	2	048				2	1	17	12	2	Lipman|Lipman's	names/lipman.md
 lippman	citation	1					0	1	0	0	0		
-lipschitz	subject	178	083|232|324|330	A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026|A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026|Bi-Lipschitz-Absorption-of-c0-Without-a-Linear-Copy-of-c0-September-26-2026|Bi-Lipschitz-Coordinates-at-Regular-Points-of-Noncollapsed-RCD-Spaces-September-25-2026|Failure-of-Bounded-Approximation-in-a-Lipschitz-Free-Space-over-a-Uniformly-Discrete-Metric-Space-September-26-2026|Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026|Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026|The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026|Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026	078|136|222|255|267|291|324|337|356|368	OAI.LipschitzCounterexample.main	178	0	3297	3099	122	Lipschitz	names/lipschitz.md
+lipschitz	subject	178	083|232|324|330	A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026|A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026|Bi-Lipschitz-Absorption-of-c0-Without-a-Linear-Copy-of-c0-September-26-2026|Bi-Lipschitz-Coordinates-at-Regular-Points-of-Noncollapsed-RCD-Spaces-September-25-2026|Failure-of-Bounded-Approximation-in-a-Lipschitz-Free-Space-over-a-Uniformly-Discrete-Metric-Space-September-26-2026|Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026|Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026|The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026|Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026	078|136|222|255|267|291|324|337|356|368	OAI.LipschitzCounterexample.main	178	0	3298	3100	122	Lipschitz	names/lipschitz.md
 lipton	citation	7					5	7	6	5	0	Lipton	
 lis	citation	5					5	4	41	22	0	Lis	
 lisca	citation	1					0	1	0	0	0		
 liskiewicz	citation	1					0	1	0	0	0		
 litt	citation	2					2	1	12	7	0	Litt|Litt's	
 littelmann	citation	1					1	1	1	0	0	Littelmann's	
-littlewood	subject	21	076	Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026|Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026|Ultraflat-real-Littlewood-polynomials-October-5-2026		OAI.AsymptoticallyMinimalLittlewood.main	21	4	112	94	0	Littlewood|Littlewood's	names/littlewood.md
+littlewood	subject	21	076	Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026|Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026|Ultraflat-real-Littlewood-polynomials-October-5-2026		OAI.AsymptoticallyMinimalLittlewood.main	21	4	124	105	0	Littlewood|Littlewood's	names/littlewood.md
 littman	citation	1					0	1	0	0	0		
 littmann	citation	1					1	1	3	3	0	Littmann	
 litvak	citation	2					2	1	10	9	0	Litvak	
-liu	citation	50					43	42	175	96	0	Liu|Liu's	
+liu	citation	51					44	42	184	99	0	Liu|Liu's	
 livesey	citation	1					1	1	8	7	0	Livesey|Livesey's	
 livne	citation	2					1	2	2	2	0	Livne	
 livshyts	citation	1					1	1	3	3	0	Livshyts	
@@ -3121,7 +3133,7 @@ lopatto	citation	4					4	3	37	15	0	Lopatto|Lopatto's
 lopez	citation	6					5	2	11	8	0	Lopez	
 lopez-abad	citation	1					0	1	0	0	0		
 lopez-pellicer	citation	1					0	1	0	0	0		
-lorentz	subject	11			260|349		11	0	135	116	17	Lorentz	names/lorentz.md
+lorentz	subject	11			260|349		11	0	136	117	17	Lorentz	names/lorentz.md
 lorenz	citation	3					1	2	1	1	0	Lorenz	
 loridant	citation	1					0	1	0	0	0		
 loring	citation	1					1	1	1	1	0	Loring	
@@ -3140,7 +3152,7 @@ lubetzky	citation	2					2	2	2	1	0	Lubetzky
 lubin	citation	5					5	3	48	36	2	Lubin	
 lubotzky	citation	6					5	3	11	3	0	Lubotzky	
 luby	citation	4					1	4	1	1	0	Luby	
-luca	subject	3	011				3	1	5	4	0	Luca	names/luca.md
+luca	subject	4	011				4	1	6	5	0	Luca	names/luca.md
 lucas	citation	3					3	1	5	2	1	Lucas's|Lucas	
 lucchini	citation	1					1	1	2	2	0	Lucchini	
 lucier	citation	1					1	1	6	5	0	Lucier	
@@ -3174,6 +3186,7 @@ lyndon	citation	7					6	1	14	9	0	Lyndon
 lyons	citation	13					11	11	40	24	0	Lyons	
 lytchak	citation	1					0	1	0	0	0		
 lyusternik	citation	1					1	1	1	1	0	Lyusternik	
+mabuchi	citation	1					1	1	5	3	0	Mabuchi|Mabuchi's	
 macaulay	subject	21	195	A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026			21	0	212	211	0	Macaulay	names/macaulay.md
 macdonald	citation	5					5	2	21	3	0	Macdonald|MacDonald	
 machigashira	citation	1					1	1	1	1	0	Machigashira	
@@ -3196,7 +3209,7 @@ maes	citation	1					1	1	1	1	0	Maes
 magen	citation	1					0	1	0	0	0		
 maggi	citation	4					4	2	15	7	0	Maggi	
 maggiore	citation	1					1	1	2	2	0	Maggiore	
-magnus	citation	5					5	2	61	49	8	Magnus|Magnus's	
+magnus	citation	6					6	2	63	50	8	Magnus|Magnus's	
 maharry	citation	1					1	1	1	1	0	Maharry	
 mahboubi	citation	1					0	1	0	0	0		
 mahdavifar	citation	1					1	1	3	2	0	Mahdavifar	
@@ -3256,7 +3269,7 @@ mansfield	citation	1					0	1	0	0	0
 mansour	citation	3					3	2	5	5	0	Mansour	
 mantzakouras	citation	1					1	1	1	1	0	Mantzakouras	
 manuilov	citation	1					1	1	1	1	0	Manuilov	
-manurangsi	citation	3					2	2	4	3	0	Manurangsi	
+manurangsi	citation	4					3	2	6	4	0	Manurangsi	
 mao	citation	5					5	4	12	11	0	Mao	
 marcati	citation	1					1	1	1	1	0	Marcati	
 marchand	citation	1					1	1	2	1	0	Marchand	
@@ -3290,7 +3303,7 @@ marstrand	citation	3					3	3	10	8	0	Marstrand
 martel	citation	1					0	1	0	0	0		
 martell	citation	1					0	1	0	0	0		
 martelli	citation	1					1	1	3	1	0	Martelli	
-martin	subject	27			211		23	12	100	80	0	Martin|Martin's	names/martin.md
+martin	subject	28			211		24	12	101	81	0	Martin|Martin's	names/martin.md
 martineau	citation	2					2	2	4	3	0	Martineau|Martineau's	
 martinelli	citation	1					1	1	3	2	0	Martinelli	
 martinez	citation	3					3	2	5	4	0	Martinez	
@@ -3301,7 +3314,7 @@ martinsson	citation	1					1	1	2	0	0	Martinsson
 martiny	citation	1					0	1	0	0	0		
 maruyama	citation	1					1	1	2	0	0	Maruyama	
 marvizi	citation	1					1	1	4	2	0	Marvizi	
-marx	citation	3					2	2	2	1	0	Marx	
+marx	citation	4					3	2	8	5	0	Marx	
 mas	citation	1			081		1	1	4	2	0	Mas	
 masamura	citation	1					1	1	2	0	0	Masamura	
 masanes	citation	1					1	1	2	1	0	Masanes	
@@ -3337,7 +3350,7 @@ matsumura	subject	6			034		5	5	38	13	0	Matsumura|Matsumura's	names/matsumura.md
 matsushita	citation	2					2	1	7	6	1	Matsushita|Matsushita's	
 matszangosz	citation	1					1	1	1	1	0	Matszangosz	
 mattheus	citation	1					1	1	2	1	0	Mattheus	
-matthews	citation	2					1	1	4	1	0	Matthews	
+matthews	citation	3					2	1	5	2	0	Matthews	
 mattila	citation	5					4	5	22	5	0	Mattila|Mattila's	
 mattis	citation	1					1	1	2	2	0	Mattis	
 matucci	citation	1					1	1	2	2	0	Matucci	
@@ -3420,9 +3433,9 @@ meyniel	citation	1					1	1	1	0	0	Meyniel
 mezard	subject	6	221	The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026			5	5	17	10	0	Mezard	names/mezard.md
 mezzadri	citation	2					2	1	7	3	0	Mezzadri	
 mian	citation	1					1	1	1	0	0	Mian	
-miao	citation	5					4	4	15	11	1	Miao|Miao's	
+miao	citation	5					4	4	16	12	1	Miao|Miao's	
 micali	citation	3					2	2	2	2	0	Micali	
-michael	citation	22					22	2	72	29	0	Michael	
+michael	citation	23					23	2	75	30	0	Michael	
 michel	citation	17					17	3	48	28	3	Michel|Michel's	
 michelsohn	citation	1					0	1	0	0	0		
 midrijanis	citation	1			284		1	1	1	0	0	Midrijanis	
@@ -3451,7 +3464,7 @@ mineyev	citation	4					4	4	8	5	2	Mineyev
 minguez	citation	1					0	1	0	0	0		
 minh	citation	1					1	1	4	4	0	Minh	
 minicozzi	citation	3					3	2	8	3	0	Minicozzi	
-minkowski	subject	78	091	The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026	059|091|239	OAI.LogBrunnMinkowski.main	78	0	307	205	11	Minkowski|Minkowski's	names/minkowski.md
+minkowski	subject	78	091	The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026	059|091|239	OAI.LogBrunnMinkowski.main	78	0	311	209	11	Minkowski|Minkowski's	names/minkowski.md
 minsky	citation	1					1	1	1	1	1	Minsky	
 minter	citation	1					1	1	1	1	0	Minter	
 minwalla	citation	1					1	1	1	0	0	Minwalla	
@@ -3477,15 +3490,15 @@ mitter	citation	2					2	2	3	1	0	Mitter
 mityagin	citation	1					1	1	1	0	0	Mityagin	
 mitzenmacher	citation	1					1	1	3	3	0	Mitzenmacher	
 miura	citation	1					1	1	1	1	0	Miura	
-miyachi	citation	1					1	1	3	3	0	Miyachi	
+miyachi	citation	1					1	1	4	4	0	Miyachi	
 miyagawa	citation	1					1	1	1	1	0	Miyagawa	
 miyamoto	citation	4					2	3	5	2	0	Miyamoto|Miyamoto's	
 miyaoka	citation	7					6	5	38	18	1	Miyaoka|Miyaoka's	
 mkrtchyan	citation	1					1	1	2	1	0	Mkrtchyan|Mkrtchyan's	
 mnich	citation	2					2	1	2	2	0	Mnich	
-mobius	subject	23			211|282		23	0	185	171	24	Mobius	names/mobius.md
+mobius	subject	24			211|282		24	0	186	172	24	Mobius	names/mobius.md
 mochizuki	citation	2					1	2	5	5	0	Mochizuki	
-mockenhaupt	citation	1					1	1	1	0	0	Mockenhaupt	
+mockenhaupt	citation	1					1	1	2	0	0	Mockenhaupt	
 modica	citation	1					1	1	14	8	4	Modica|Modica's	
 mohar	citation	2					2	2	3	3	0	Mohar	
 moise	citation	3					3	3	16	13	0	Moise	
@@ -3504,7 +3517,7 @@ momke	citation	2					1	1	2	2	0	Momke
 mondal	citation	2					1	2	1	1	2	Mondal	
 mondino	citation	4					2	4	4	3	0	Mondino	
 mongardi	citation	1					1	1	2	2	0	Mongardi	
-monge	subject	11		A-counterexample-to-the-Monge-ansatz-for-the-three-marginal-Coulomb-cost-September-25-2026	051		11	0	43	38	0	Monge	names/monge.md
+monge	subject	12		A-counterexample-to-the-Monge-ansatz-for-the-three-marginal-Coulomb-cost-September-25-2026	051		12	0	48	43	0	Monge	names/monge.md
 monneau	citation	1					1	1	1	1	0	Monneau	
 monod	citation	2					2	2	11	9	0	Monod	
 monsky	citation	4					4	2	22	18	0	Monsky|Monsky's	
@@ -3516,7 +3529,7 @@ montgomery-smith	citation	1					0	1	0	0	0
 moody	citation	5					5	1	18	16	0	Moody	
 moonen	citation	3					3	2	29	5	0	Moonen	
 mooney	citation	1					1	1	1	1	0	Mooney	
-moore	subject	30	274				28	12	258	187	10	Moore|Moore's	names/moore.md
+moore	subject	31	274				29	12	262	190	10	Moore|Moore's	names/moore.md
 moorhouse	citation	1					1	1	2	1	0	Moorhouse's|Moorhouse	
 mora	citation	3					3	1	9	4	0	Mora	
 mora-corral	citation	1					0	1	0	0	0		
@@ -3539,6 +3552,7 @@ morris	citation	13					11	9	133	65	15	Morris|Morris's
 morris-wright	citation	1					0	1	0	0	0		
 morrow	citation	4					2	3	3	1	0	Morrow	
 morse	subject	22		A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026|Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026|Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026|Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026	076|336		22	0	298	246	41	Morse	names/morse.md
+morters	citation	1					0	1	0	0	0		
 mortimer	citation	1					0	1	0	0	0		
 mortola	citation	1					1	1	1	1	0	Mortola	
 morvan	citation	1					0	1	0	0	0		
@@ -3576,7 +3590,7 @@ mukherjee	citation	1					1	1	2	2	0	Mukherjee
 mukhopadhyay	citation	1					1	1	5	3	0	Mukhopadhyay	
 mulich	citation	1					1	1	2	2	0	Mulich	
 mull	citation	1					1	1	3	0	0	Mull|Mull's	
-muller	citation	10					8	5	12	8	0	Muller	
+muller	citation	12					10	6	14	9	0	Muller	
 mullin	citation	1					1	1	22	12	0	Mullin|Mullin's	
 mulmuley	citation	2					1	2	2	2	0	Mulmuley	
 mumford	subject	26	366	Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026	034		23	7	119	96	6	Mumford|Mumford's	names/mumford.md
@@ -3606,7 +3620,7 @@ naddef	citation	1					1	1	2	2	0	Naddef
 nadel	citation	4					3	2	11	6	2	Nadel|Nadel's	
 nadimpalli	citation	1					1	1	3	0	0	Nadimpalli	
 nadirashvili	citation	3					3	2	9	7	0	Nadirashvili|Nadirashvili's	
-nadjimzadah	citation	1					1	1	3	1	0	Nadjimzadah's|Nadjimzadah	
+nadjimzadah	citation	2					2	2	6	1	0	Nadjimzadah|Nadjimzadah's	
 nadkarni	citation	1					1	1	1	1	0	Nadkarni	
 nadler	citation	2					2	2	17	10	0	Nadler	
 nagata	subject	8	039			OAI.Nagata.nagata_conjecture	8	1	34	28	0	Nagata|Nagata's	names/nagata.md
@@ -3628,12 +3642,13 @@ nakayama	subject	42	199				42	6	160	126	1	Nakayama|Nakayama's	names/nakayama.md
 nam	citation	9					7	7	20	14	0	Nam	
 namikawa	citation	4					4	3	17	8	0	Namikawa|Namikawa's	
 nandakumar	citation	1					0	1	0	0	0		
-nanongkai	citation	1					0	1	0	0	0		
-naor	subject	13			096|332		12	6	75	46	2	Naor|Naor's	names/naor.md
+nanongkai	citation	2					1	1	1	1	0	Nanongkai	
+naor	subject	14			096|332		13	6	77	46	2	Naor|Naor's	names/naor.md
 napier	citation	1					0	1	0	0	0		
 narang	citation	1					0	1	0	0	0		
 narasimhan	citation	13					12	1	90	84	0	Narasimhan	
 narayanan	citation	6					4	5	6	5	0	Narayanan	
+narcowich	citation	1					0	1	0	0	0		
 nardi	citation	1					0	1	0	0	0		
 nardulli	citation	1					1	1	2	2	0	Nardulli	
 nash	citation	13			136|271		12	6	85	56	29	Nash|Nash's	
@@ -3651,8 +3666,8 @@ nawata	citation	2					2	1	10	1	0	Nawata|Nawata's
 nayar	citation	1					1	1	1	1	0	Nayar	
 nayatani	citation	1					1	1	3	3	0	Nayatani	
 nazaret	citation	1					1	1	2	2	0	Nazaret	
-nazarov	citation	8					5	7	18	12	0	Nazarov	
-nederlof	citation	2					2	2	16	11	0	Nederlof	
+nazarov	citation	9					6	8	19	13	0	Nazarov	
+nederlof	citation	3					3	2	17	12	0	Nederlof	
 nedialkov	citation	1					0	1	0	0	0		
 neeb	citation	2					1	2	2	0	0	Neeb	
 neeman	citation	2					1	1	1	1	0	Neeman	
@@ -3677,11 +3692,12 @@ neves	citation	3					3	3	7	5	0	Neves
 nevins	citation	1					1	1	1	1	0	Nevins's	
 newlander	citation	2					2	1	4	3	0	Newlander	
 newman	subject	18		Electromagnetic-tails-and-the-Kerr-Newman-Penrose-inequality-October-5-2026|The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026			18	14	92	62	0	Newman|Newman's	names/newman.md
-newton	subject	39			002|030|130|147|260|351		39	3	205	152	65	Newton|Newton's	names/newton.md
+newton	subject	41			002|030|130|147|260|351		41	3	207	154	65	Newton|Newton's	names/newton.md
 ngo	citation	3					2	2	9	0	0	Ngo	
 nguyen	citation	6					4	5	15	8	0	Nguyen	
 nica	citation	5					4	3	7	3	0	Nica	
 nicholson	citation	1					1	1	4	4	0	Nicholson	
+nicola	citation	2					2	1	4	0	0	Nicola|Nicola's	
 nicolai	citation	1					1	1	2	1	0	Nicolai	
 nie	citation	2					2	2	4	4	0	Nie	
 niedermaier	citation	1					1	1	1	1	0	Niedermaier	
@@ -3692,7 +3708,7 @@ niese	citation	1					1	1	1	1	3	Niese
 nifa	citation	1					1	1	5	2	0	Nifa|Nifa's	
 nigro	citation	1					1	1	1	1	0	Nigro	
 nikiforov	citation	1					1	1	2	2	0	Nikiforov	
-nikodym	subject	27			074		27	0	64	56	8	Nikodym	names/nikodym.md
+nikodym	subject	28			074		28	0	69	59	11	Nikodym	names/nikodym.md
 nikolaus	citation	2					1	1	2	2	0	Nikolaus	
 nikolov	citation	2					2	1	3	3	0	Nikolov	
 nikshych	citation	1					0	1	0	0	0		
@@ -3701,7 +3717,7 @@ niles-weed	citation	1					0	1	0	0	0
 nilli	citation	2					2	1	5	3	0	Nilli	
 ning	citation	1					1	1	2	2	0	Ning's	
 ninomiya	citation	1					1	1	1	1	0	Ninomiya	
-nirenberg	citation	9					9	6	26	20	3	Nirenberg|Nirenberg's	
+nirenberg	citation	10					10	7	27	21	3	Nirenberg|Nirenberg's	
 nisan	citation	7					7	6	30	17	0	Nisan|Nisan's	
 nitsure	citation	2					1	1	3	0	0	Nitsure	
 nitzan	citation	1					1	1	14	14	0	Nitzan|Nitzan's	
@@ -3755,7 +3771,7 @@ ogus	citation	3					2	2	6	3	0	Ogus|Ogus's
 oh-hashi	citation	1					0	1	0	0	0		
 ohanyan	citation	1					1	1	1	1	0	Ohanyan	
 ohlmann	citation	1					1	1	1	1	0	Ohlmann	
-ohsawa	citation	3					2	1	2	2	0	Ohsawa	
+ohsawa	citation	4					2	2	2	2	0	Ohsawa	
 oinert	citation	1					0	1	0	0	0		
 oka	subject	7	042	Every-complex-K3-surface-is-Oka-September-23-2026	042		7	0	44	41	2	Oka	names/oka.md
 okamura	citation	1					1	1	1	1	0	Okamura	
@@ -3841,7 +3857,7 @@ pak	citation	4					4	2	11	4	1	Pak
 pakusa	citation	1					1	1	9	7	2	Pakusa	
 pal	citation	3					2	2	5	3	3	Pal	
 paladin	citation	1					1	1	2	2	0	Paladin	
-paley	subject	12			282		12	2	32	26	4	Paley	names/paley.md
+paley	subject	13			282		13	2	41	34	4	Paley	names/paley.md
 palfy	citation	1					1	1	7	2	0	Palfy|Palfy's	
 pallara	citation	5					1	5	2	2	0	Pallara	
 pallard	citation	1					1	1	11	7	0	Pallard|Pallard's	
@@ -3914,7 +3930,7 @@ patri	citation	1					1	1	2	2	0	Patri
 pattakos	citation	1					1	1	1	1	0	Pattakos	
 patterson	subject	3	023				3	0	51	24	0	Patterson|Patterson's	names/patterson.md
 patton	citation	1					1	1	2	2	0	Patton	
-paturi	citation	3					3	1	12	6	0	Paturi|Paturi's	
+paturi	citation	4					4	1	19	12	2	Paturi|Paturi's	
 paulsen	citation	5					3	3	14	3	0	Paulsen|Paulsen's	
 pauwels	citation	2					1	1	1	0	0	Pauwels	
 pavlov	citation	1					0	1	0	0	1		
@@ -3940,7 +3956,7 @@ peng	citation	7					6	6	9	6	0	Peng
 penrose	subject	14	260	A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026|A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026|Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026|Boundary-graph-deformations-for-the-spacetime-Penrose-inequality-September-27-2026|Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026|Electromagnetic-tails-and-the-Kerr-Newman-Penrose-inequality-October-5-2026|Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026|Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026|The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026|The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026|The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026|The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026|The-spacetime-Penrose-inequality-with-charge-and-original-data-rigidity-October-5-2026	260		13	7	193	151	28	Penrose|Penrose's	names/penrose.md
 pensyl	citation	1					0	1	0	0	0		
 pepe	citation	1					1	1	2	2	0	Pepe	
-peral	citation	1					1	1	3	3	0	Peral	
+peral	citation	1					1	1	4	4	0	Peral	
 peralta-salas	citation	2					0	2	0	0	0		
 perdomo	citation	1					1	1	6	3	0	Perdomo's|Perdomo	
 pereira	citation	2					1	1	8	5	0	Pereira	
@@ -3948,7 +3964,7 @@ perelli	citation	1					1	1	4	2	0	Perelli
 perelman	citation	6					6	3	22	12	4	Perelman|Perelman's	
 perelomov	citation	2					2	2	6	2	0	Perelomov	
 perera	citation	4					4	2	18	11	0	Perera	
-peres	citation	15					14	12	54	36	0	Peres	
+peres	citation	16					14	13	54	36	0	Peres	
 pereszlenyi	citation	1					1	1	1	1	0	Pereszlenyi	
 perez	citation	5					4	2	10	8	0	Perez	
 perez-garcia	citation	2					0	2	0	0	0		
@@ -3980,6 +3996,7 @@ petridis	citation	4					4	3	7	5	2	Petridis|Petridis's
 petrosyan	citation	1					1	1	1	1	0	Petrosyan	
 petrov	citation	2					2	1	3	2	0	Petrov|Petrov's	
 petrunin	citation	2					1	2	6	4	0	Petrunin	
+petrushev	citation	1					0	1	0	0	0		
 pettie	citation	2					2	1	2	1	0	Pettie	
 petty	subject	1	088			OAI.PettyProjection.petty_projection_volume	1	0	17	12	0	Petty|Petty's	names/petty.md
 petz	citation	4					4	3	5	2	0	Petz|Petz's	
@@ -4037,7 +4054,7 @@ pitts	citation	1					1	1	4	2	0	Pitts
 pixton	subject	1	053	A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026	053		1	0	31	14	6	Pixton|Pixton's	names/pixton.md
 plaisted	citation	1					0	1	0	0	0		
 plamenevsky	citation	1					0	1	0	0	0		
-plancherel	subject	31			069|238|286		31	0	180	118	42	Plancherel|Plancherel's	names/plancherel.md
+plancherel	subject	31			069|238|286		31	0	187	123	42	Plancherel|Plancherel's	names/plancherel.md
 planitzer	citation	1					1	1	2	2	0	Planitzer	
 platonov	subject	3	018	The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026|The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026			2	3	39	32	0	Platonov|Platonov's	names/platonov.md
 platzman	citation	1					1	1	1	1	0	Platzman	
@@ -4111,7 +4128,7 @@ prachar	citation	1					1	1	3	2	0	Prachar
 praeger	citation	1					1	1	1	1	0	Praeger	
 prakash	citation	2					1	1	1	0	0	Prakash	
 pramanik	citation	2					1	2	3	3	0	Pramanik	
-prasad	citation	6					6	3	15	7	0	Prasad|Prasad's	
+prasad	citation	7					7	3	17	7	0	Prasad|Prasad's	
 prasanna	citation	1					1	1	8	6	0	Prasanna	
 pratelli	citation	1					1	1	13	12	0	Pratelli|Pratelli's	
 precup	citation	1					0	1	0	0	0		
@@ -4140,7 +4157,7 @@ proschan	citation	1					0	1	0	0	0
 prosen	citation	1					0	1	0	0	0		
 proudfoot	citation	1					0	1	0	0	0		
 przytycki	citation	3					3	2	3	2	0	Przytycki|Przytycki's	
-pudlak	citation	3					3	2	17	10	0	Pudlak|Pudlak's	
+pudlak	citation	4					4	2	18	11	0	Pudlak|Pudlak's	
 pugh	citation	3					2	1	5	4	0	Pugh|Pugh's	
 pulleyblank	citation	1					1	1	1	1	0	Pulleyblank	
 pulvirenti	citation	1					1	1	5	2	0	Pulvirenti	
@@ -4185,7 +4202,7 @@ radziszowski	citation	1					1	1	1	1	0	Radziszowski
 radziwi	subject	7			007		7	0	38	31	0	Radziwi	names/radziwi.md
 raeburn	citation	1					1	1	3	3	0	Raeburn	
 raggio	citation	1					0	1	0	0	0		
-raghavendra	subject	7			102		4	6	25	15	1	Raghavendra|Raghavendra's	names/raghavendra.md
+raghavendra	subject	8			102		5	6	27	16	1	Raghavendra|Raghavendra's	names/raghavendra.md
 raghunathan	citation	2					2	1	7	5	0	Raghunathan	
 ragognette	citation	1					1	1	1	1	0	Ragognette	
 ragozin	citation	1					1	1	1	1	0	Ragozin	
@@ -4242,17 +4259,17 @@ raussen	citation	1					0	1	0	0	0
 ravenel	citation	7					7	4	74	23	19	Ravenel|Ravenel's	
 ravid	citation	1					0	1	0	0	0		
 ravotti	citation	1					1	1	1	1	0	Ravotti	
-rayleigh	subject	22			223|231		22	0	85	78	12	Rayleigh	names/rayleigh.md
+rayleigh	subject	23			223|231		23	0	86	79	12	Rayleigh	names/rayleigh.md
 raymond	citation	4					4	1	8	7	0	Raymond|Raymond's	
 raynaud	citation	11					6	8	26	12	0	Raynaud|Raynaud's	
 raz	citation	9					7	9	40	19	0	Raz|Raz's	
 razak	subject	1	301	The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026			1	1	6	3	0	Razak|Razak's	names/razak.md
-razborov	citation	3					3	3	7	7	0	Razborov|Razborov's	
+razborov	citation	4					4	3	8	8	0	Razborov|Razborov's	
 reall	citation	1					0	1	0	0	0		
 recht	citation	1					0	1	0	0	0		
 redaelli	citation	1					0	1	0	0	0		
 redondo	citation	1					0	1	0	0	0		
-reed	citation	7					6	4	10	7	0	Reed	
+reed	citation	8					7	4	11	8	0	Reed	
 rees	subject	18			037		18	1	74	64	15	Rees	names/rees.md
 reeves	citation	1					1	1	2	2	0	Reeves	
 regev	citation	8					7	5	37	24	0	Regev|Regev's	
@@ -4309,7 +4326,7 @@ ricard	citation	3					2	3	4	4	2	Ricard
 ricci	subject	26	351	A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026|Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026|Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026	051|335|351		26	2	457	415	103	Ricci	names/ricci.md
 ricci-tersenghi	citation	1					0	1	0	0	0		
 rice	citation	2					2	1	12	5	0	Rice|Rice's	
-richard	citation	12					11	1	17	6	0	Richard	
+richard	citation	13					12	1	20	6	0	Richard	
 richardson	subject	3			212		3	1	51	49	0	Richardson|Richardson's	names/richardson.md
 richarz	citation	1					1	1	2	0	0	Richarz	
 richberg	citation	3					2	1	5	2	0	Richberg|Richberg's	
@@ -4323,8 +4340,8 @@ riedl	citation	1					1	1	2	2	0	Riedl
 rieffel	citation	2					2	2	4	1	0	Rieffel	
 riehm	citation	1					1	1	1	1	0	Riehm	
 riemann	subject	110	003	The-Quasi-Riemann-Hypothesis-October-5-2026|The-Quasi-Riemann-Hypothesis-September-30-2026	065|285		110	0	711	595	19	Riemann|Riemann's	names/riemann.md
-riemannian	subject	51		Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026|Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026	260		51	0	500	456	0	Riemannian	names/riemannian.md
-riesz	subject	43	078|081	Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026|Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026|Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026	078|079|140|286	OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability	43	2	178	156	128	Riesz|Riesz's	names/riesz.md
+riemannian	subject	51		Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026|Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026	260		51	0	501	457	0	Riemannian	names/riemannian.md
+riesz	subject	43	078|081	Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026|Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026|Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026	078|079|140|286	OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability	43	2	187	162	131	Riesz|Riesz's	names/riesz.md
 rifford	citation	2					2	2	8	6	0	Rifford|Rifford's	
 rika	citation	1					1	1	1	1	0	Rika	
 rindler	citation	1					1	1	2	2	0	Rindler	
@@ -4361,7 +4378,7 @@ rodriguez-piazza	citation	1					0	1	0	0	0
 rodriguez-villegas	citation	1					0	1	0	0	0		
 roe	citation	3					2	3	66	54	0	Roe|Roe's	
 rogantin	citation	1					0	1	0	0	0		
-rogers	citation	6					6	3	27	18	2	Rogers|Rogers's	
+rogers	citation	7					7	4	31	22	2	Rogers|Rogers's	
 rognes	citation	1					1	1	6	4	0	Rognes|Rognes's	
 rogov	citation	2					2	2	5	1	0	Rogov|Rogov's	
 rohde	citation	5					4	3	19	9	0	Rohde	
@@ -4376,7 +4393,7 @@ romani	citation	1					1	1	1	1	0	Romani
 romero	citation	1					1	1	1	1	0	Romero	
 rommelse	citation	1					1	1	1	1	0	Rommelse	
 roney-dougal	citation	1					0	1	0	0	0		
-roos	citation	3					3	1	6	5	6	Roos	
+roos	citation	4					4	2	8	7	6	Roos	
 roquejoffre	citation	1					0	1	0	0	0		
 roquette	citation	2					1	1	2	0	0	Roquette	
 rordam	subject	5		The-Kirchberg-Rordam-character-criterion-September-25-2026		OAI.KirchbergRordam.character_criterion	4	0	20	5	1	Rordam	names/rordam.md
@@ -4433,8 +4450,9 @@ rump	citation	1					1	1	1	1	0	Rump
 runborg	citation	1					1	1	1	1	0	Runborg	
 ruotolo	citation	1					0	1	0	0	0		
 ruskai	citation	5					3	2	5	1	0	Ruskai	
-russell	citation	5					5	1	14	7	0	Russell	
+russell	citation	6					6	1	20	8	0	Russell	
 russo	citation	6			214		6	1	23	6	4	Russo|Russo's	
+rutar	citation	1					1	1	1	1	0	Rutar	
 ruzsa	citation	8					7	5	19	12	2	Ruzsa|Ruzsa's	
 ryabogin	citation	2					1	2	1	1	0	Ryabogin	
 ryan-smith	citation	1					0	1	0	0	0		
@@ -4479,10 +4497,10 @@ saito	citation	12					9	9	110	56	0	Saito|Saito's
 sakai	subject	4			297		4	3	10	3	0	Sakai|Sakai's	names/sakai.md
 sakamoto	subject	1			059		1	1	10	6	0	Sakamoto|Sakamoto's	names/sakamoto.md
 sakellaridis	citation	1					1	1	2	2	0	Sakellaridis	
-saket	citation	3					3	2	3	3	0	Saket	
+saket	citation	4					4	2	5	5	0	Saket	
 sakoda	citation	1					1	1	4	1	0	Sakoda	
 sakovich	citation	1					1	1	11	5	0	Sakovich|Sakovich's	
-saks	citation	9					7	5	18	11	0	Saks	
+saks	citation	10					8	5	19	11	0	Saks	
 saksman	citation	1					1	1	3	2	0	Saksman	
 salamon	subject	4	062	Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026			3	2	20	12	0	Salamon	names/salamon.md
 salarian	citation	1					0	1	0	0	0		
@@ -4494,7 +4512,7 @@ saleur	citation	2					2	2	2	2	0	Saleur
 salez	citation	1					1	1	2	1	0	Salez	
 salikhov	citation	1					1	1	1	0	1	Salikhov's	
 salim	citation	1					0	1	0	0	0		
-salle	citation	1					1	1	1	1	0	Salle	
+salle	citation	2					2	1	3	3	0	Salle	
 salmhofer	citation	1					1	1	2	1	0	Salmhofer	
 salo	citation	3					1	3	5	5	0	Salo	
 saloff-coste	citation	2					0	2	0	0	0		
@@ -4527,7 +4545,7 @@ sanyal	citation	1					1	1	4	4	2	Sanyal
 saona	citation	1					0	1	0	0	0		
 saptharishi	citation	2					2	2	3	2	0	Saptharishi	
 saradha	citation	1					1	1	1	1	0	Saradha	
-saraf	citation	1					1	1	2	2	0	Saraf	
+saraf	citation	2					2	1	4	4	0	Saraf	
 saranurak	citation	1					0	1	0	0	0		
 sarason	citation	2					2	1	5	2	0	Sarason	
 sard	citation	23					22	6	62	37	0	Sard's|Sard	
@@ -4545,7 +4563,7 @@ sauer	citation	2					2	2	6	4	0	Sauer
 sauermann	citation	1					1	1	1	1	0	Sauermann	
 sauers	citation	2					2	2	8	4	0	Sauers	
 saunderson	citation	2					0	2	0	0	0		
-saurabh	citation	2					1	1	3	3	0	Saurabh	
+saurabh	citation	3					2	1	5	5	0	Saurabh	
 savare	citation	3					3	2	18	13	0	Savare|Savare's	
 savin	citation	5					4	3	12	5	0	Savin	
 savitch	citation	1					0	1	0	0	0		
@@ -4569,7 +4587,7 @@ schalthofer	citation	1					1	1	4	4	0	Schalthofer
 schapira	citation	3					3	1	6	3	1	Schapira	
 schapire	citation	1					1	1	1	1	0	Schapire	
 schatten	subject	10			238		10	0	122	103	9	Schatten	names/schatten.md
-schauder	subject	19			260|352		19	1	187	150	24	Schauder	names/schauder.md
+schauder	subject	20			260|352		20	1	189	151	24	Schauder	names/schauder.md
 schechtman	citation	5					5	3	14	9	0	Schechtman|Schechtman's	
 schehr	citation	1					1	1	2	2	0	Schehr	
 scheiderer	citation	1					1	1	9	5	1	Scheiderer|Scheiderer's	
@@ -4601,7 +4619,7 @@ schmid	citation	4					4	4	82	45	0	Schmid|Schmid's
 schmidt	subject	71			238		66	16	530	493	5	Schmidt|Schmidt's	names/schmidt.md
 schmuckenschlager	citation	1					1	1	1	1	0	Schmuckenschlager	
 schnaubelt	citation	1					0	1	0	0	0		
-schneider	citation	6					3	5	9	6	0	Schneider	
+schneider	citation	7					4	5	10	7	0	Schneider	
 schnell	subject	5		Schnell-fiber-spaces-and-good-canonical-models-September-24-2026	034		3	4	54	30	12	Schnell|Schnell's	names/schnell.md
 schnieders	citation	1					1	1	2	1	0	Schnieders	
 schnurer	citation	5					3	3	3	1	0	Schnurer	
@@ -4622,7 +4640,7 @@ schreieder	citation	2					2	2	2	1	0	Schreieder
 schreve	citation	2					2	2	4	3	0	Schreve|Schreve's	
 schreyer	citation	3					2	1	4	3	0	Schreyer	
 schrijver	citation	8					6	6	22	11	0	Schrijver|Schrijver's	
-schrodinger	subject	22	080|371	Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026|Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026|Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026	077		22	0	107	96	8	Schrodinger	names/schrodinger.md
+schrodinger	subject	22	080|371	Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026|Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026|Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026	077|079		22	0	120	108	8	Schrodinger	names/schrodinger.md
 schroeppel	citation	1					1	1	7	4	0	Schroeppel	
 schroer	citation	2					1	2	4	3	0	Schroer	
 schuch	citation	3					2	3	4	2	0	Schuch	
@@ -4634,12 +4652,12 @@ schulz	citation	4					4	3	22	12	0	Schulz|Schulz's
 schulze	citation	2					2	2	14	7	0	Schulze	
 schulze-pillot	citation	1					0	1	0	0	0		
 schupp	citation	4					1	3	1	0	2	Schupp	
-schur	subject	88			006|012|219|237|261|265|338|344		88	0	746	585	129	Schur|Schur's	names/schur.md
+schur	subject	88			006|012|219|237|261|265|338|344		88	0	750	589	133	Schur|Schur's	names/schur.md
 schurmann	citation	2					0	2	0	0	0		
 schuster	citation	2					2	1	2	1	1	Schuster	
 schutzenberger	citation	2					2	1	18	11	0	Schutzenberger|Schutzenberger's	
-schwartz	subject	48			285		47	9	428	385	10	Schwartz|Schwartz's	names/schwartz.md
-schwarz	subject	193			102		193	1	1885	1815	9	Schwarz|Schwarz's	names/schwarz.md
+schwartz	subject	48			285		47	9	440	396	10	Schwartz|Schwartz's	names/schwartz.md
+schwarz	subject	194			102		194	1	1888	1818	9	Schwarz|Schwarz's	names/schwarz.md
 schwarzschild	subject	1		A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026	260		1	0	101	89	14	Schwarzschild	names/schwarzschild.md
 schwede	citation	7					6	4	15	8	0	Schwede|Schwede's	
 schweitzer	citation	2					2	2	25	23	0	Schweitzer|Schweitzer's	
@@ -4648,12 +4666,12 @@ schwiegelshohn	citation	1					1	1	4	4	0	Schwiegelshohn
 schwimmer	citation	1					1	1	2	2	0	Schwimmer	
 schwinger	citation	2					2	1	19	19	0	Schwinger|Schwinger's	
 scoppola	citation	1					1	1	3	2	0	Scoppola	
-scott	citation	8					8	4	14	10	1	Scott	
+scott	citation	9					9	4	16	10	1	Scott	
 seacrest	citation	1					1	1	12	9	0	Seacrest's|Seacrest	
 sebastiani	subject	2			059		2	1	7	6	0	Sebastiani	names/sebastiani.md
 seco	citation	1					1	1	6	4	0	Seco	
 sedgewick	citation	1					0	1	0	0	0		
-seeger	citation	4					4	4	7	7	0	Seeger	
+seeger	citation	4					4	4	16	14	0	Seeger|Seeger's	
 seeley	citation	1					0	1	0	0	1		
 segal	citation	7					6	3	23	15	0	Segal|Segal's	
 segev	citation	3					2	3	14	7	0	Segev|Segev's	
@@ -4665,10 +4683,10 @@ seiringer	citation	7					4	5	28	19	0	Seiringer
 seitz	citation	2					2	2	14	11	0	Seitz|Seitz's	
 selberg	citation	13					13	6	36	22	2	Selberg|Selberg's	
 sellke	citation	3					3	1	32	19	0	Sellke	
-selman	citation	2					2	2	3	3	0	Selman	
+selman	citation	3					3	2	4	3	0	Selman	
 selmer	subject	5	002	Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026|The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026|The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026	002|006|019		5	0	918	816	98	Selmer	names/selmer.md
 semerjian	citation	1					1	1	3	2	0	Semerjian	
-semmes	subject	1	081		081		1	1	7	4	0	Semmes	names/semmes.md
+semmes	subject	2	081		081		2	2	8	5	0	Semmes	names/semmes.md
 semola	citation	2					1	2	1	1	0	Semola	
 sen	citation	7					6	4	14	12	0	Sen	
 senger	citation	3					2	2	7	7	0	Senger	
@@ -4685,7 +4703,7 @@ serfozo	citation	1					1	1	1	0	0	Serfozo
 serganova	citation	1					1	1	1	1	0	Serganova	
 sergeev	citation	1					1	1	2	2	0	Sergeev	
 serra	citation	3					2	2	7	6	0	Serra	
-serre	subject	57	193				54	20	538	360	24	Serre|Serre's	names/serre.md
+serre	subject	58	193				55	21	543	361	24	Serre|Serre's	names/serre.md
 serrin	citation	3					3	3	3	1	0	Serrin	
 servedio	subject	7	192				6	3	32	20	0	Servedio	names/servedio.md
 seshadri	subject	7	039	Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026|Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026|Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026	034	OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants	7	1	110	98	29	Seshadri	names/seshadri.md
@@ -4828,7 +4846,7 @@ sinha	citation	4					4	4	9	7	0	Sinha
 sinn	citation	1					1	1	1	1	3	Sinn	
 sinop	citation	1					1	1	1	1	0	Sinop's	
 sion	citation	2					2	1	5	1	0	Sion	
-sipser	citation	2					2	2	11	9	0	Sipser|Sipser's	
+sipser	citation	3					3	2	13	10	0	Sipser|Sipser's	
 sirotkin	citation	1					1	1	2	2	0	Sirotkin	
 sitharam	citation	1					0	1	0	0	0		
 sitter	subject	2		A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026|The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026	260		2	0	32	29	0	Sitter	names/sitter.md
@@ -4876,11 +4894,11 @@ snashall	citation	1					1	1	2	2	0	Snashall
 snell	citation	2					1	1	1	1	0	Snell	
 snively	citation	1					1	1	1	1	0	Snively	
 snowden	citation	1					0	1	0	0	0		
-sobolev	subject	76	080|093	A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026	071|072|085|087|119|211|216|227|232|260|337|348|368		76	0	1114	966	180	Sobolev|Sobolev's	names/sobolev.md
+sobolev	subject	76	080|093	A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026	071|072|079|085|087|119|211|216|227|232|260|337|348|368		76	0	1129	978	185	Sobolev|Sobolev's	names/sobolev.md
 sodin	citation	2					2	1	3	1	0	Sodin	
 soergel	citation	5					4	2	15	10	0	Soergel|Soergel's	
 sofos	citation	2					2	2	4	1	0	Sofos	
-sogge	subject	1	079				1	1	14	9	0	Sogge|Sogge's	names/sogge.md
+sogge	citation	1					1	1	26	12	1	Sogge|Sogge's	
 sohl-dickstein	citation	1					0	1	0	0	0		
 sohn	citation	1					1	1	6	4	0	Sohn	
 sohoni	citation	1					0	1	0	0	0		
@@ -4911,8 +4929,8 @@ sompolinsky	citation	1					1	1	4	3	0	Sompolinsky
 song	subject	11			277		9	7	30	16	7	Song|Song's	names/song.md
 soo	citation	1					1	1	2	2	0	Soo|Soo's	
 sorensen	citation	2					2	1	2	0	0	Sorensen	
-soria	citation	2					2	1	6	5	0	Soria|Soria's	
-sorkin	citation	3					3	3	3	3	0	Sorkin	
+soria	citation	3					3	2	7	6	0	Soria|Soria's	
+sorkin	citation	4					4	3	5	4	0	Sorkin	
 sormani	citation	1					1	1	1	1	0	Sormani	
 sorrentino	citation	1					1	1	3	3	0	Sorrentino	
 sos	citation	1					1	1	1	1	0	Sos	
@@ -4940,7 +4958,7 @@ spekkens	citation	1					0	1	0	0	0
 spencer	subject	29			076		28	14	161	130	5	Spencer|Spencer's	names/spencer.md
 sperner	citation	2					1	1	4	2	0	Sperner|Sperner's	
 spiegel	citation	1					1	1	2	2	0	Spiegel	
-spielman	citation	4					3	2	7	3	0	Spielman	
+spielman	citation	5					4	2	9	4	0	Spielman	
 spiga	citation	1					0	1	0	0	0		
 spindler	citation	1					1	1	3	3	0	Spindler	
 spinka	citation	3					3	3	7	6	0	Spinka	
@@ -4948,7 +4966,7 @@ spohn	citation	2					2	1	7	5	0	Spohn
 spolaor	citation	1					1	1	7	4	0	Spolaor	
 spotti	citation	1					1	1	3	1	0	Spotti	
 sprouse	citation	1					1	1	2	2	0	Sprouse	
-spruck	citation	2					2	2	6	6	0	Spruck	
+spruck	citation	3					3	3	7	7	0	Spruck	
 squier	citation	1					1	1	1	1	0	Squier	
 sra	citation	5					5	1	14	10	0	Sra|SRa|SRA	
 srba	citation	1					0	1	0	0	0		
@@ -4979,7 +4997,7 @@ steenbrink	citation	6					6	4	34	20	0	Steenbrink|Steenbrink's
 steenrod	citation	5					4	2	42	36	0	Steenrod	
 stefanov	citation	1					1	1	2	1	0	Stefanov	
 steiger	citation	2					2	2	3	3	0	Steiger	
-stein	subject	50	083	A-projective-fourfold-with-large-fundamental-group-and-non-Stein-universal-cover-October-5-2026|Arithmetic-Stein-degree-bounds-for-log-Calabi-Yau-pairs-September-25-2026	034|042		47	16	661	594	27	Stein|Stein's	names/stein.md
+stein	subject	51	083	A-projective-fourfold-with-large-fundamental-group-and-non-Stein-universal-cover-October-5-2026|Arithmetic-Stein-degree-bounds-for-log-Calabi-Yau-pairs-September-25-2026	034|042		48	17	672	598	34	Stein|Stein's	names/stein.md
 steinberg	subject	18			002|247		17	4	272	224	29	Steinberg|Steinberg's	names/steinberg.md
 steinberger	citation	1					0	1	0	0	0		
 steiner	citation	7					7	3	34	22	4	Steiner|Steiner's	
@@ -4987,6 +5005,7 @@ steinerberger	citation	2					2	1	4	2	0	Steinerberger
 steinhardt	citation	2					1	2	12	4	0	Steinhardt	
 stellari	citation	2					2	2	4	4	0	Stellari	
 stembridge	citation	1					1	1	3	3	0	Stembridge	
+stempak	citation	1					1	1	1	1	0	Stempak	
 stephan	citation	2					2	1	2	1	0	Stephan	
 stephens-davidowitz	citation	1					0	1	0	0	0		
 sterbenz	citation	1					1	1	3	2	0	Sterbenz's|Sterbenz	
@@ -5026,6 +5045,7 @@ straubing	citation	1					1	1	14	5	0	Straubing
 strauch	citation	3					3	2	6	3	3	Strauch|Strauch's	
 straus	citation	3					3	3	6	6	0	Straus	
 strauss	citation	3					2	2	7	4	1	Strauss	
+streater	citation	1					0	1	0	0	0		
 stredulinsky	citation	1					1	1	1	1	0	Stredulinsky	
 street	subject	2			317		2	2	134	21	0	Street|Street's	names/street.md
 streets	citation	1					1	1	2	1	0	Streets	
@@ -5078,7 +5098,7 @@ swingle	citation	1					1	1	2	1	0	Swingle
 swinnerton	subject	4		Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026|The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026			4	0	84	65	0	Swinnerton	names/swinnerton.md
 swinnerton-dyer	subject	3	002				0	3	0	0	0		names/swinnerton-dyer.md
 sylow	subject	10			202|203|320		10	0	108	84	15	Sylow	names/sylow.md
-sylvester	citation	12			002		11	3	42	35	25	Sylvester|Sylvester's	
+sylvester	citation	13			002		12	3	43	36	25	Sylvester|Sylvester's	
 symonds	citation	1					1	1	1	1	2	Symonds	
 syzdek	citation	1					1	1	1	1	0	Syzdek	
 szabo	subject	7			291		7	7	30	20	1	Szabo|Szabo's	names/szabo.md
@@ -5133,14 +5153,14 @@ tanimoto	citation	3					2	2	6	3	0	Tanimoto
 tanisaki	citation	2					2	1	3	3	0	Tanisaki	
 taniyama	citation	1					0	1	0	0	0		
 tanushev	citation	1					1	1	7	7	0	Tanushev	
-tao	subject	40			007		38	33	171	99	0	Tao|Tao's	names/tao.md
+tao	subject	41			007		39	33	180	103	0	Tao|Tao's	names/tao.md
 tapp	citation	5					4	3	5	4	0	Tapp	
 tardos	citation	10					7	9	17	15	2	Tardos	
 tarjan	citation	5					4	5	5	5	0	Tarjan	
 tarnawski	citation	2					0	2	0	0	0		
 tarski	citation	4					4	3	12	7	0	Tarski|Tarski's	
 tasaki	citation	1					1	1	27	14	0	Tasaki|Tasaki's	
-taslaman	citation	2					1	1	1	1	0	Taslaman	
+taslaman	citation	3					2	1	2	2	0	Taslaman	
 tassion	citation	6					6	6	33	25	0	Tassion|Tassion's	
 tassy	citation	2					1	2	1	1	0	Tassy	
 tataru	citation	1					0	1	0	0	0		
@@ -5151,9 +5171,9 @@ taussky	citation	1					1	1	1	1	0	Taussky
 tautz	citation	1					1	1	1	1	0	Tautz	
 tavasoli	citation	1					0	1	0	0	0		
 tavenas	citation	2					2	2	8	7	0	Tavenas|Tavenas's	
-taylor	subject	165			037|058|066|090|143|164|217|218|266|282|334|355		164	21	1916	1482	184	Taylor|Taylor's	names/taylor.md
+taylor	subject	166			037|058|066|090|143|164|217|218|266|282|334|355		165	21	1946	1504	191	Taylor|Taylor's	names/taylor.md
 technau	citation	1					1	1	4	4	0	Technau|Technau's	
-technology	citation	8					5	3	7	7	1	Technology	
+technology	citation	9					6	3	8	8	1	Technology	
 teicher	citation	1					0	1	0	0	0		
 teichmann	citation	1					1	1	1	1	0	Teichmann	
 teichner	citation	2					1	2	7	6	0	Teichner|Teichner's	
@@ -5196,13 +5216,13 @@ thirring	subject	3	262	Equality-cases-in-the-sharp-one-dimensional-matrix-Lieb-T
 tholozan	citation	1					1	1	1	1	0	Tholozan	
 thom	subject	28			033|059|308		28	7	199	171	29	Thom|Thom's	names/thom.md
 thoma	citation	2					2	2	2	2	0	Thoma	
-thomas	citation	35					30	13	116	86	0	Thomas|Thomas's	
+thomas	citation	36					31	13	117	86	0	Thomas|Thomas's	
 thomason	subject	5	317	Thomason-Model-Structures-in-Every-Strict-Higher-Dimension-September-25-2026			5	2	35	24	0	Thomason|Thomason's	names/thomason.md
 thomasse	citation	1					1	1	2	2	0	Thomasse|Thomasse's	
 thomassen	citation	1					1	1	1	0	0	Thomassen	
 thompson	subject	8	248			OAI.ThompsonNonamenability.thompson_F_nonamenable_composition	8	4	38	30	0	Thompson|Thompson's	names/thompson.md
 thomsen	citation	1					1	1	1	1	0	Thomsen	
-thorin	citation	2					2	1	5	4	0	Thorin|Thorin's	
+thorin	citation	3					3	1	6	5	0	Thorin|Thorin's	
 thorne	citation	2					2	2	19	10	0	Thorne|Thorne's	
 thorner	citation	5					5	2	7	2	0	Thorner	
 thorp	subject	1	238	Compatibility-entropy-and-the-spectrum-of-a-Thorp-sweep-September-26-2026|Optimal-order-mixing-of-the-Thorp-shuffle-September-26-2026|Routing-densities-and-representation-contraction-for-Thorp-sweeps-September-26-2026		OAI.ThorpNine.main|OAI.ThorpCompatibility.weightedCompatibility_main	1	1	131	105	7	Thorp|Thorp's	names/thorp.md
@@ -5283,8 +5303,9 @@ traschen	citation	1					1	1	1	1	0	Traschen
 traub	citation	1					0	1	0	0	0		
 trefethen	citation	2					0	2	0	0	0		
 tregub	citation	1					1	1	2	0	0	Tregub	
+treves	citation	1					0	1	0	0	0		
 trevino	citation	1					1	1	1	1	0	Trevino	
-trevisan	citation	6					4	4	13	7	0	Trevisan	
+trevisan	citation	7					5	4	14	8	0	Trevisan	
 triay	citation	1					1	1	6	4	0	Triay	
 trinh	citation	1					0	1	0	0	0		
 tripp	citation	1					1	1	1	0	0	Tripp	
@@ -5294,7 +5315,7 @@ tropp	citation	8					7	7	17	1	0	Tropp
 troscheit	citation	1					0	1	0	0	0		
 trotter	subject	5			166		4	4	10	7	2	Trotter	names/trotter.md
 troyanov	citation	1					0	1	0	0	0		
-trudinger	subject	11			353		8	7	35	21	0	Trudinger	names/trudinger.md
+trudinger	subject	12			353		8	8	35	21	0	Trudinger	names/trudinger.md
 truffet	citation	1					0	1	0	0	0		
 trugman	citation	1					1	1	3	2	0	Trugman	
 tsai	citation	1					1	1	1	1	0	Tsai	
@@ -5320,10 +5341,10 @@ tura	citation	1					0	1	0	0	0
 turan	citation	8					8	3	13	9	2	Turan|Turan's	
 turchin	citation	2					0	2	0	0	0		
 turett	citation	1					0	1	0	0	0		
-turing	subject	15	241	Rigidity-of-the-Turing-degrees-September-24-2026		OAI.TuringRigidity.ManuscriptMain.rigidity	15	1	152	117	0	Turing|Turing's	names/turing.md
+turing	subject	16	241	Rigidity-of-the-Turing-degrees-September-24-2026		OAI.TuringRigidity.ManuscriptMain.rigidity	16	1	154	119	0	Turing|Turing's	names/turing.md
 turner	citation	1					1	1	1	1	0	Turner	
 turyn	citation	2					2	1	17	6	0	Turyn|Turyn's	
-tutte	citation	9					8	4	61	47	0	Tutte|Tutte's	
+tutte	citation	10					9	4	62	48	0	Tutte|Tutte's	
 tuza	citation	1					1	1	4	4	0	Tuza|Tuza's	
 tweedale	citation	1					1	1	2	2	0	Tweedale	
 tychonoff	citation	3					2	1	4	3	0	Tychonoff	
@@ -5370,7 +5391,7 @@ vajaitu	citation	1					1	1	4	2	0	Vajaitu
 valdimarsson	citation	1					0	1	0	0	0		
 valdinoci	citation	1					0	1	0	0	0		
 valette	citation	7					3	7	3	1	0	Valette	
-valiant	citation	6					5	5	38	25	0	Valiant|Valiant's	
+valiant	citation	7					6	5	42	26	0	Valiant|Valiant's	
 valko	citation	1					1	1	2	1	0	Valko	
 valtorta	citation	2					1	2	1	1	0	Valtorta	
 vanden-eijnden	citation	1					0	1	0	0	0		
@@ -5402,10 +5423,10 @@ vasy	citation	1					1	1	1	1	0	Vasy
 vatan	citation	2					1	1	1	1	0	Vatan	
 vatsal	citation	2					2	1	5	2	0	Vatsal	
 vaughan	citation	9					7	7	24	13	3	Vaughan|Vaughan's	
-vazirani	citation	10					8	8	20	16	0	Vazirani	
+vazirani	citation	11					9	8	21	16	0	Vazirani	
 vazquez	citation	1					1	1	3	3	0	Vazquez	
 vedral	citation	2					2	1	5	4	0	Vedral	
-vega	citation	4					4	2	17	12	0	Vega	
+vega	citation	5					5	3	18	13	0	Vega	
 vegh	citation	1					0	1	0	0	0		
 vejnar	citation	1					1	1	2	2	0	Vejnar	
 velani	citation	1					1	1	4	3	0	Velani	
@@ -5471,7 +5492,7 @@ vinhage	citation	1					0	1	0	0	0
 vinnikov	citation	4					3	3	5	4	2	Vinnikov	
 vinogradov	citation	6					6	1	28	14	0	Vinogradov|Vinogradov's	
 vinzant	citation	3					3	3	13	12	0	Vinzant	
-viola	citation	1					1	1	3	2	0	Viola	
+viola	citation	2					2	1	5	4	0	Viola	
 violo	citation	2					2	2	2	2	0	Violo|Violo's	
 virag	citation	3					3	3	7	6	0	Virag	
 virasoro	subject	3	065	Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026|Virasoro-Constraints-under-Projectivization-October-5-2026			3	0	69	61	4	Virasoro	names/virasoro.md
@@ -5516,7 +5537,7 @@ waerden	subject	3	160	Quantitative-Superexponential-Bounds-for-van-der-Waerden-N
 wager	citation	1					1	1	4	3	0	Wager	
 wagner	citation	11					10	8	26	15	0	Wagner|Wagner's	
 wahl	citation	3					3	3	16	12	0	Wahl|Wahl's	
-wahlen	citation	2					1	1	1	1	0	Wahlen	
+wahlen	citation	3					2	1	2	2	0	Wahlen	
 wainwright	citation	1					0	1	0	0	0		
 wakimoto	subject	2			014		2	0	31	25	0	Wakimoto	names/wakimoto.md
 wakin	citation	1					0	1	0	0	0		
@@ -5530,15 +5551,15 @@ walfisz	subject	4			011		4	0	18	16	3	Walfisz	names/walfisz.md
 walker	citation	2					2	1	14	10	28	Walker	
 walkup	citation	2					1	2	2	1	0	Walkup's|Walkup	
 wallace	citation	1					1	1	1	0	0	Wallace	
-walsh	citation	14			157|238|326		14	3	92	72	56	Walsh|Walsh's	
+walsh	citation	15			157|238|326		15	3	93	73	63	Walsh|Walsh's	
 walter	citation	8					7	2	12	9	0	Walter|Walter's	
 walters	citation	1					1	1	8	7	0	Walters	
 wampler	citation	1					0	1	0	0	0		
-wan	citation	9					8	6	33	19	0	Wan	
-wang	subject	74			078|353		65	53	292	198	8	Wang|Wang's	names/wang.md
+wan	citation	10					9	7	35	20	0	Wan	
+wang	subject	75			078|353		66	53	297	203	8	Wang|Wang's	names/wang.md
 wang-erickson	citation	1					0	1	0	0	0		
 wanless	citation	1					1	1	6	6	0	Wanless	
-ward	subject	5			219|234|282		5	0	160	130	45	Ward|Ward's	names/ward.md
+ward	subject	6			219|234|282		5	1	160	130	45	Ward|Ward's	names/ward.md
 warhurst	citation	1					0	1	0	0	0		
 warmuth	citation	1					1	1	2	2	0	Warmuth	
 warning	citation	6					6	3	18	15	5	Warning	
@@ -5634,7 +5655,7 @@ wilkerson	citation	1					1	1	4	1	0	Wilkerson|Wilkerson's
 wilkie	citation	1					1	1	4	3	0	Wilkie	
 wilking	citation	1					1	1	6	3	0	Wilking	
 willett	citation	2					2	2	9	5	0	Willett	
-williams	citation	12					9	8	30	22	2	Williams|Williams's	
+williams	citation	13					10	8	53	35	2	Williams|Williams's	
 williamson	citation	3					3	1	15	11	0	Williamson|Williamson's	
 willig	citation	1					1	1	4	1	0	Willig's|Willig	
 willms	citation	1					1	1	2	2	0	Willms	
@@ -5664,7 +5685,7 @@ wojtaszczyk	citation	1					1	1	2	2	0	Wojtaszczyk
 wojtczak	citation	1					1	1	1	1	0	Wojtczak	
 wolf	citation	9					7	7	22	11	0	Wolf|Wolf's	
 wolfe	citation	1					1	1	2	2	0	Wolfe	
-wolff	citation	9					8	8	34	27	0	Wolff|Wolff's	
+wolff	citation	9					8	8	39	30	0	Wolff|Wolff's	
 wolke	citation	1					1	1	1	1	0	Wolke	
 wollan	citation	1					1	1	1	1	0	Wollan	
 wollman	citation	1					1	1	2	1	0	Wollman	
@@ -5673,7 +5694,7 @@ wongkew	citation	1					1	1	4	1	0	Wongkew|Wongkew's
 wood	citation	3					3	2	3	3	0	Wood	
 woodall	citation	2					2	2	10	5	0	Woodall|Woodall's	
 woodin	subject	1			241		1	0	9	5	0	Woodin|Woodin's	names/woodin.md
-woodruff	citation	2					2	2	4	3	0	Woodruff	
+woodruff	citation	3					3	2	6	3	0	Woodruff	
 wooley	citation	1					1	1	6	2	0	Wooley	
 woolf	citation	1					1	1	7	2	0	Woolf	
 wootters	citation	3					3	1	9	2	0	Wootters	
@@ -5683,11 +5704,11 @@ worrell	citation	1					1	1	1	1	0	Worrell
 worytkiewicz	citation	1					1	1	1	0	0	Worytkiewicz	
 wotzlaw	citation	4					2	3	2	1	0	Wotzlaw	
 wouters	citation	2			291		1	1	3	0	0	Wouters	
-wright	citation	9					9	6	16	11	0	Wright|Wright's	
+wright	citation	10					10	7	17	12	0	Wright|Wright's	
 wrochna	citation	1					0	1	0	0	0		
 wustholz	citation	1					1	1	6	5	0	Wustholz	
 wyner	citation	1					0	1	0	0	0		
-xia	citation	4					3	4	9	5	1	Xia	
+xia	citation	5					4	4	10	6	1	Xia	
 xiang	citation	2					2	2	2	2	0	Xiang	
 xiao	citation	3					2	2	6	3	0	Xiao|Xiao's	
 xie	citation	10					9	9	38	21	3	Xie|Xie's	
@@ -5711,7 +5732,7 @@ yamashita	citation	2					0	2	0	0	0
 yamaura	citation	1					1	1	3	3	0	Yamaura|Yamaura's	
 yan	citation	2					2	1	5	3	0	Yan|Yan's	
 yanez	citation	3					1	3	1	1	0	Yanez	
-yang	subject	37			216		36	19	163	119	8	Yang|Yang's	names/yang.md
+yang	subject	39			216		37	20	164	120	8	Yang|Yang's	names/yang.md
 yannakakis	citation	3					2	2	3	3	0	Yannakakis	
 yao	citation	9					6	8	32	26	0	Yao|Yao's	
 yarotsky	citation	1					1	1	2	0	0	Yarotsky	
@@ -5722,7 +5743,7 @@ yee	citation	1					0	1	0	0	0
 yehudayoff	citation	1					0	1	0	0	0		
 yeoh	citation	1					0	1	0	0	0		
 yeung	citation	2					2	1	5	2	0	Yeung|Yeung's	
-yin	citation	10					8	8	26	22	0	Yin|Yin's	
+yin	citation	11					9	8	27	23	0	Yin|Yin's	
 yip	citation	2					2	2	3	2	1	Yip	
 yngvason	citation	3					3	3	24	19	0	Yngvason	
 yohananov	citation	1					1	1	1	1	0	Yohananov	
@@ -5737,13 +5758,14 @@ yorke	citation	1					1	1	15	8	0	Yorke|Yorke's
 yoshioka	citation	1					1	1	2	1	0	Yoshioka	
 yost	citation	1					1	1	1	1	0	Yost	
 youcis	citation	2					1	2	1	1	0	Youcis	
-young	subject	62			169|205|262		60	5	340	229	33	Young's|Young	names/young.md
+young	subject	62			169|205|262		60	5	348	235	33	Young's|Young	names/young.md
 younsi	citation	1					1	1	3	1	0	Younsi	
 yuan	citation	10					7	7	18	10	1	Yuan|Yuan's	
 yudovina	citation	3					2	1	6	0	0	Yudovina	
 yue	citation	1					1	1	1	1	0	Yue's	
 yuen	citation	4					4	2	12	8	2	Yuen|Yuen's	
 yun	citation	2					2	1	14	9	0	Yun|Yun's	
+yung	citation	3					3	1	9	5	0	Yung	
 yuster	citation	5					4	4	6	6	0	Yuster	
 zabrocki	citation	2					2	1	5	5	3	Zabrocki	
 zaccagnini	citation	1					1	1	1	1	0	Zaccagnini	
@@ -5752,7 +5774,7 @@ zagier	subject	6			002		5	5	116	93	12	Zagier|Zagier's	names/zagier.md
 zagrebnov	citation	2					2	2	3	2	0	Zagrebnov	
 zaharopol	citation	1					1	1	1	0	0	Zaharopol	
 zahidi	citation	1					1	1	6	6	0	Zahidi	
-zahl	citation	3					3	3	15	14	0	Zahl|Zahl's	
+zahl	citation	3					3	3	16	15	0	Zahl|Zahl's	
 zahradova	citation	1					0	1	0	0	0		
 zaid	citation	1					1	1	3	3	0	Zaid	
 zaidenberg	citation	3					3	1	6	3	0	Zaidenberg	
@@ -5760,7 +5782,7 @@ zakharov	citation	4					3	4	10	7	0	Zakharov|Zakharov's
 zaman	citation	5					5	2	9	4	0	Zaman	
 zamani	citation	1					1	1	1	1	0	Zamani	
 zamolodchikov	citation	3					3	2	9	7	0	Zamolodchikov|Zamolodchikov's	
-zane	citation	2					2	1	5	5	0	Zane	
+zane	citation	3					3	1	7	7	0	Zane	
 zang	citation	1					1	1	2	2	0	Zang	
 zannier	citation	2					2	1	6	3	0	Zannier	
 zanolin	citation	1					0	1	0	0	0		
@@ -5791,11 +5813,11 @@ zeng	citation	5					5	3	12	5	0	Zeng
 zenklusen	citation	1					1	1	7	7	0	Zenklusen	
 zentner	citation	1					0	1	0	0	0		
 zerbes	citation	1					0	1	0	0	0		
-zeriahi	citation	4					3	4	6	5	0	Zeriahi	
+zeriahi	citation	5					3	5	6	5	0	Zeriahi	
 zerner	citation	1					1	1	27	18	0	Zerner|Zerner's	
 zhai	citation	2					1	1	12	6	0	Zhai	
 zhan	citation	5					5	3	27	16	1	Zhan|Zhan's	
-zhang	subject	69			080		55	55	209	141	0	Zhang|Zhang's	names/zhang.md
+zhang	subject	69			080		55	55	210	142	0	Zhang|Zhang's	names/zhang.md
 zhao	citation	10					10	5	26	10	1	Zhao	
 zheng	citation	13					11	7	23	12	0	Zheng	
 zhiboedov	citation	1					0	1	0	0	0		
@@ -5804,7 +5826,7 @@ zhitniaia	citation	1					1	1	2	1	0	Zhitniaia
 zhivkov	citation	1					1	1	7	7	0	Zhivkov	
 zhong	citation	2					2	1	3	1	0	Zhong	
 zhou	citation	27					24	21	102	61	1	Zhou|Zhou's	
-zhu	citation	20					18	12	61	36	1	Zhu|Zhu's	
+zhu	citation	21					19	13	63	36	1	Zhu|Zhu's	
 zhuang	citation	7					7	5	23	18	0	Zhuang	
 zibrowius	citation	1					1	1	1	1	0	Zibrowius	
 ziegler	citation	4					4	2	25	11	0	Ziegler	
@@ -5838,6 +5860,6 @@ zuo	citation	2					2	1	5	5	0	Zuo
 zureick-brown	citation	1					0	1	0	0	0		
 zuzic	citation	1					0	1	0	0	0		
 zvavitch	citation	2					2	1	4	3	0	Zvavitch	
-zwick	citation	3					2	2	3	3	0	Zwick	
+zwick	citation	4					3	2	5	5	0	Zwick	
 zworski	citation	3					2	3	2	1	0	Zworski	
 zygmund	citation	14					14	4	33	32	0	Zygmund|Zygmund's	

@@ -173,7 +173,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -858,7 +859,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -1050,7 +1050,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -1278,7 +1277,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -1628,7 +1626,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -2313,7 +2312,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -2505,7 +2503,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -2733,7 +2730,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -3231,7 +3227,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -3916,7 +3913,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -4108,7 +4104,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -4336,7 +4331,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -4686,7 +4680,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -5371,7 +5366,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -5563,7 +5557,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -5791,7 +5784,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -6141,7 +6133,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -6826,7 +6819,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -7018,7 +7010,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -7246,7 +7237,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -7635,7 +7625,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -8320,7 +8311,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -8512,7 +8502,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -8740,7 +8729,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -9181,7 +9169,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -9866,7 +9855,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -10058,7 +10046,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -10286,7 +10273,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -10642,7 +10628,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -11327,7 +11314,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -11519,7 +11505,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -11747,7 +11732,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -12227,7 +12211,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -12912,7 +12897,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -13104,7 +13088,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -13332,7 +13315,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -13812,7 +13794,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -14497,7 +14480,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -14689,7 +14671,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -14917,7 +14898,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -15267,7 +15247,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -15952,7 +15933,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -16144,7 +16124,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -16372,7 +16351,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -16852,7 +16830,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -17537,7 +17516,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -17729,7 +17707,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -17957,7 +17934,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -18308,7 +18284,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -18993,7 +18970,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -19185,7 +19161,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -19413,7 +19388,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -19811,7 +19785,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -20109,7 +20082,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -20794,7 +20768,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -20986,7 +20959,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -21214,7 +21186,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -21420,9 +21391,6 @@
               1  r        notes/scripts/verify_tsv_quoting.py
 [probe2] target notes/scripts/verify_upstream_history.py
 [probe2] notes/ paths (count  modes  path):
-              1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
-              1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/tables/catalog.tsv
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/verify_upstream_history.py
@@ -21601,7 +21569,8 @@
               1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
               1  r        notes/development/upstream_history/2026-10-07_3014888.md
-              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
@@ -22286,7 +22255,6 @@
               1  r        notes/gen/index/names/smith.md
               1  r        notes/gen/index/names/snaky.md
               1  r        notes/gen/index/names/sobolev.md
-              1  r        notes/gen/index/names/sogge.md
               1  r        notes/gen/index/names/solitar.md
               1  r        notes/gen/index/names/solomon.md
               1  r        notes/gen/index/names/song.md
@@ -22478,7 +22446,6 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -22706,7 +22673,6 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
-              1  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md

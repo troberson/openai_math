@@ -75,8 +75,8 @@ Nothing. The ledger records tier T0 for this family, with no scope note, no comp
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 258 at line 6349, the two manuscript links at 6356 and 6365, and the two manuscript blurbs at 6358 and 6367. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 603. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 258 at line 6349, the two manuscript links at 6356 and 6365, and the two manuscript blurbs at 6358 and 6367. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 603. |
 | S3 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/README.md`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/README.md) | 16 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S4 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/README.md`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/README.md) | 16 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S5 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/paper.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/paper.tex) | 46 | The main file: the abstract and the section order. |

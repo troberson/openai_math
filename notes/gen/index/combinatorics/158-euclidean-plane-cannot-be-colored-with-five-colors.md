@@ -34,7 +34,7 @@ The release ships no manuscript→Lean edge (`notes/development/index-design.md`
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `EuclideanFiveColor` | [.json](../../../../lean/ComparatorChallenges/EuclideanFiveColor.json) | [.lean](../../../../lean/ComparatorChallenges/EuclideanFiveColor.lean) | 1 | 1 | no | yes |
+| `EuclideanFiveColor` | [.json](../../../../lean/ComparatorChallenges/EuclideanFiveColor.json) | [.lean](../../../../lean/ComparatorChallenges/EuclideanFiveColor.lean) | 1 | 0 | no | yes |
 | `PlaneColoring` | [.json](../../../../lean/ComparatorChallenges/PlaneColoring.json) | [.lean](../../../../lean/ComparatorChallenges/PlaneColoring.lean) | 1 | 0 | no | yes |
 
 ## Verification bundles

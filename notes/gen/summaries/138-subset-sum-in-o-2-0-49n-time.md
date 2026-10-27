@@ -154,12 +154,12 @@ result, and the release ships the two manuscripts as proof.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3309], manuscript links [S1:3309] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 138 at [S2:353] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3309], manuscript links [S1:3309] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 138 at [S2:353] |
 | S3 | [`preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/main.tex`](../../../preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/main.tex) | 67 | document root; abstract [S3:45–50]; eight section `\input` directives [S3:52–59]; 67 lines |
 | S4 | [`preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex`](../../../preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex) | 234 | `thm:main` [S4:58–72], word-RAM model [S4:38]; 234 lines |
 | S5 | [`preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/build/main.tex`](../../../preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/build/main.tex) | 60 | document root; abstract [S5:40–48]; ten section `\input` directives [S5:50–59]; 60 lines |
 | S6 | [`preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/build/introduction.tex`](../../../preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/build/introduction.tex) | 227 | `thm:main` [S6:70–84], `cor:target` [S6:86–93]; 227 lines |
 | S7 | [`preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf`](../../../preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf) | 14853 | the first manuscript as shipped |
 | S8 | [`preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf`](../../../preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf) | 14371 | the second manuscript as shipped |
-| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=138`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=138`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

@@ -1,6 +1,6 @@
 # Topic: algorithms
 
-24 families · pattern `algorithm\b|polynomial-time algorithm|almost-linear-time|near-linear-time|randomized algorithm|integer multiplication|exact matching in` · hits by layer: title 2 · abstract 10 · scope 16 · path 0
+25 families · pattern `algorithm\b|polynomial-time algorithm|almost-linear-time|near-linear-time|randomized algorithm|integer multiplication|exact matching in` · hits by layer: title 2 · abstract 11 · scope 16 · path 0
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -30,4 +30,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [178](../combinatorics/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md) | Deterministic nonbipartite Ramanujan graphs in every fixed degree | — | yes | — | — |
 | [206](../algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md) | Finite lattice representation: counterexamples and undecidability | — | yes | — | — |
 | [372](../partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md) | Global uniqueness in smooth isotropic elasticity | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | yes | — | — |
 

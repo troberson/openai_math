@@ -1,10 +1,10 @@
 # Name: jiang
 
-20 families · subject name · 1 carried by a title or a declaration · 14 by prose · 15 by bibliography author
+21 families · subject name · 1 carried by a title or a declaration · 15 by prose · 15 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 109 capitalized occurrences, 77 of them mid-sentence, 1 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 111 capitalized occurrences, 78 of them mid-sentence, 1 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 109 capitalized occurrences, 77 of them mid-sentence, 1 lowercase.
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 14 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 15 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 15 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -41,6 +41,7 @@ Prose counts: 109 capitalized occurrences, 77 of them mid-sentence, 1 lowercase.
 | [365](../partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md) | Joint metric and connection recovery from one boundary patch | — | — | — | — | yes | yes |
 | [369](../partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md) | The hot spots conjecture for simply connected planar domains | — | — | — | — | yes | yes |
 | [372](../partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md) | Global uniqueness in smooth isotropic elasticity | — | — | — | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -60,6 +61,7 @@ Prose counts: 109 capitalized occurrences, 77 of them mid-sentence, 1 lowercase.
 | [`Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026`](../../../../preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/) | [365](../partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md) | prose | [paper.pdf](../../../../preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf) |
 | [`Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026`](../../../../preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/) | [369](../partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md) | prose | [main.pdf](../../../../preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf) |
 | [`The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026`](../../../../preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/) | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | prose | [The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf](../../../../preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Kirchberg-Rordam-character-criterion-September-25-2026`](../../../../preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/) | [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | prose | [paper.pdf](../../../../preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/paper.pdf) |
 | [`The-joint-Dickman-law-for-consecutive-integers-September-24-2026`](../../../../preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/) | [012](../number-theory/012-independent-largest-prime-factors-of-consecutive-integers.md) | prose | [paper.pdf](../../../../preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf) |
 | [`Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026`](../../../../preprints/Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026/) | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | prose | [paper.pdf](../../../../preprints/Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026/paper.pdf) |

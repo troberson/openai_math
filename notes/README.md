@@ -152,15 +152,15 @@ the batch-boundary gates, stop and escalate rules, and the append-only decision-
 
 | Layer | Source | Count |
 |---|---|---|
-| Manuscripts with a formalized main result | `formalization.yaml` → `sources:` | 172 / 719 |
-| Families with a scope note | `lean/docs/<NNN>.md` | 242 / 372 |
-| Statement/solution pairs | `lean/ComparatorChallenges/*.json` | 416 |
-| Catalogued main results | `formalization.yaml` → `status.main_results` | 200 entries / 189 unique configs |
+| Manuscripts with a formalized main result | `formalization.yaml` → `sources:` | 175 / 721 |
+| Families with a scope note | `lean/docs/<NNN>.md` | 245 / 373 |
+| Statement/solution pairs | `lean/ComparatorChallenges/*.json` | 418 |
+| Catalogued main results | `formalization.yaml` → `status.main_results` | 207 entries / 191 unique configs |
 
 Measured agreement worth knowing: **the manuscript layer and the main-results layer nearly agree at
-family level, and the gap is one family.** 135 families have ≥1 formalized manuscript and 136 have
+family level, and the gap is one family.** 138 families have ≥1 formalized manuscript and 138 have
 ≥1 config listed in `main_results`; the difference is family **342**, which has a `main_results`
-entry and no manuscript the overview lists. The yaml's own `sources:` list carries 173 paths, one of
+entry and no manuscript the overview lists. The yaml's own `sources:` list carries 176 paths, one of
 them (`Taming-implies-compatibility-on-four-manifolds-September-23-2026`) named by no family. The
 106 families at T2 have a scope note and comparator links, and zero formalized manuscripts.
 
@@ -171,18 +171,18 @@ Assigned from the scope note's comparator links (`../ComparatorChallenges/X.lean
 
 | Tier | Meaning | Families |
 |---|---|---|
-| T3 | ≥1 linked config listed in `main_results` | 136 |
+| T3 | ≥1 linked config listed in `main_results` | 138 |
 | T2 | linked configs exist, none listed in `main_results` (companion/secondary statements) | 106 |
-| T1 | scope note with no comparator link | 0 |
-| T0 | no scope note, no challenge, no main result | 130 |
+| T1 | scope note with no comparator link | 1 |
+| T0 | no scope note, no challenge, no main result | 128 |
 
-T1 is empty in this catalog: every one of the 242 scope notes links at least one challenge file.
+T1 is empty in this catalog: every one of the 245 scope notes links at least one challenge file.
 T2 is not a failure — those challenges are companion statements, still linked from a family note.
-**All 130 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape: see
+**All 128 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape: see
 `notes/gen/reports/t0-triage.md`, where two reading passes cover all 130 families at abstract level
 (44 families / 134 manuscripts in the first pass, then 93 families / 121 manuscripts in the second —
 the read-set counts of the 2026-10-06 run, recorded there and not re-derived). `resolves_named` is a
-second discriminator there — 86 of the 130 are flagged, including 11 of the 19 families with no shape
+second discriminator there — 84 of the 128 are flagged, including 11 of the 19 families with no shape
 tag at all.
 
 ## Claim shapes (`shapes` column)
@@ -201,9 +201,9 @@ record is `notes/gen/tables/abstracts.tsv`.
 
 | Shape | Pattern gist | Families |
 |---|---|---|
-| uniform | "uniformly", "for every", "arbitrary" | 161 |
-| resolution | resolves / proves the conjecture / answers the question / settles | 144 |
-| bound | bound, sharp, power-saving, improvement, inequality | 139 |
+| uniform | "uniformly", "for every", "arbitrary" | 162 |
+| resolution | resolves / proves the conjecture / answers the question / settles | 143 |
+| bound | bound, sharp, power-saving, improvement, inequality | 141 |
 | counterexample | counterexample, disprove, refute, fails, violation | 44 |
 | partial | at most, restricted, in coranks, for fixed, unramified part | 42 |
 | classification | if and only if, classified, characterization | 34 |
@@ -497,10 +497,10 @@ and `main_results:` (config/declaration/file triples) as two flat lists with not
 the family→Lean reach the index shows is *derived* — family → config (the scope note's comparator
 links) → declaration → file — 200 declarations over 189 configs reaching **136 of 372** families, and
 formalization stays a per-manuscript flag. The 106 T2 families, whose scope notes link configs that no
-`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48158** relative
+`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48433** relative
 links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
-re-derives the check from disk over every rendered page: **66,253** links, **0** broken, **17,700** of
-them resolving to a directory and **48,553** to a file, the 18,095-link difference being registry
+re-derives the check from disk over every rendered page: **66,630** links, **0** broken, **17,795** of
+them resolving to a directory and **48,835** to a file, the 18,197-link difference being registry
 under-coverage rather than a disagreement about existence (`notes/development/index-links.md`); canonical ==
 rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 30) and **not** on
 `formalized`, where canonical reads **173** and the rendered pages **172** — the one-path difference is
@@ -547,25 +547,25 @@ no name-to-name edge is built.
 | `fam` | `overview.tex` `\resultentry{NNN}` | 3-digit family id |
 | `discipline` | `\cataloguesection{…}{n}` order | 17 sections; a family belongs to the section above it |
 | `title` | `\resultentry` arg 2 | |
-| `paps` | `CONTENTS.md` links ∪ `overview.tex` `\href` links | The two mappings agree exactly: 719 links, 0 one-sided |
-| `paps_form` | `formalization.yaml` `sources:` ids | Sums to 172 |
+| `paps` | `CONTENTS.md` links ∪ `overview.tex` `\href` links | The two mappings agree exactly: 721 links, 0 one-sided |
+| `paps_form` | `formalization.yaml` `sources:` ids | Sums to 175 |
 | `tier` | scope-note links × `main_results` | See tiers |
 | `chal` | comparator links in `lean/docs/<NNN>.md` | |
 | `mainres` | of those, count listed in `main_results` | |
-| `scope_note` | file exists | 242 total |
+| `scope_note` | file exists | 245 total |
 | `scope_chars` | length of the `## Scope` section | Rough weight of the exclusions text |
-| `verification` | manuscript dirs with a `verification/` subdir | 30 dirs over 22 families; family 348's 2 are one bundle shipped twice. A **count, not a pointer** — see the entry-point record in `notes/gen/reports/verification-dirs.md` |
+| `verification` | manuscript dirs with a `verification/` subdir | 31 dirs over 22 families; family 348's 2 are one bundle shipped twice. A **count, not a pointer** — see the entry-point record in `notes/gen/reports/verification-dirs.md` |
 | `inputs` | manuscript dirs with `INPUTS.md` | 4 dirs over 4 families (057, 157, 251, 259) |
 | `covmd` | dirs with `verification/COVERAGE.md` | 2 files, both in family 348 — these bound what a check covers |
 | `trace` | `README.md` reasoning-trace table | 10 families; read from the release table, not guessed from filenames |
 | `shapes` | abstract keyword match | Multi-label |
 | `conditional` | 1 if `conditional` ∈ `shapes` | |
-| `resolves_named` | title **or** abstract (lowered together) names a conjecture/question/problem **and** uses a resolution verb | 248 families, the abstract-only scope having read 233; separate from the `resolution` shape (144) so the T0 buckets stay put |
+| `resolves_named` | title **or** abstract (lowered together) names a conjecture/question/problem **and** uses a resolution verb | 248 families, the abstract-only scope having read 233; separate from the `resolution` shape (143) so the T0 buckets stay put |
 | `counterex_broad` | title **or** abstract matches the counterexample phrase rule | 74 families; a strict superset of the `counterexample` shape (44), kept out of `shapes` so the T0 buckets stay put |
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 9 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/gen/summaries/<NNN>-*.md` | Filesystem fact, not a derived claim; 0 of 372 families, 0 manuscripts behind them |
+| `summary` | a page exists at `notes/gen/summaries/<NNN>-*.md` | Filesystem fact, not a derived claim; 0 of 373 families, 0 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 
@@ -573,9 +573,9 @@ Per discipline (fams / scope notes / manuscripts / formalized manuscripts):
 
 | Discipline | fams | notes | paps | form |
 |---|---|---|---|---|
-| Theoretical computer science | 40 | 34 | 73 | 32 |
+| Theoretical computer science | 41 | 35 | 74 | 33 |
 | Combinatorics | 37 | 33 | 50 | 20 |
-| Algebraic and complex geometry | 36 | 8 | 86 | 9 |
+| Algebraic and complex geometry | 36 | 9 | 86 | 10 |
 | Number theory | 31 | 17 | 58 | 8 |
 | Probability and statistical mechanics | 29 | 19 | 105 | 12 |
 | Differential geometry | 29 | 15 | 49 | 10 |
@@ -583,7 +583,7 @@ Per discipline (fams / scope notes / manuscripts / formalized manuscripts):
 | Operator algebras | 19 | 15 | 31 | 7 |
 | Algebra | 18 | 10 | 29 | 11 |
 | Topology | 18 | 3 | 26 | 1 |
-| Real and complex analysis | 16 | 10 | 26 | 8 |
+| Real and complex analysis | 16 | 11 | 27 | 9 |
 | Partial differential equations | 16 | 11 | 29 | 3 |
 | Convex and metric geometry | 15 | 13 | 30 | 13 |
 | Group theory | 14 | 12 | 22 | 8 |
@@ -591,7 +591,7 @@ Per discipline (fams / scope notes / manuscripts / formalized manuscripts):
 | Functional analysis | 11 | 10 | 19 | 16 |
 | Mathematical logic | 6 | 6 | 8 | 5 |
 
-The columns sum to 372 / 242 / 719 / 172. Functional analysis (16/19 manuscripts) and mathematical
+The columns sum to 373 / 245 / 721 / 175. Functional analysis (16/19 manuscripts) and mathematical
 logic (5/8) are nearly covered; topology (1/26) and algebraic geometry (9/86) are nearly not.
 
 The headline families show the same skew: **001, 002, 004, 006, 010, 011, 014, 016, 018, 019 have

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:8904] and the catalog abstract [S2:837] state
+The release's blurb [S1:8904] and the catalog abstract [S2:839] state
 the family's claim: every $W^{1,p}$ homeomorphism between arbitrary
 bounded domains in $\mathbb R^3$, for $1\le p<\infty$, is a strong
 $W^{1,p}$ limit of smooth diffeomorphisms onto the same target.
@@ -128,8 +128,8 @@ manuscripts, each a root `build/main.tex`, sections under
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 368 at line 8904. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 837. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 368 at line 8904. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 837. |
 | S3 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex) | 70 | Manuscript 1 main file ($1\le p\le2$): title and abstract. |
 | S4 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex) | 252 | Manuscript 1 introduction: the theorem, prior work, and proof strategy. |
 | S5 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex) | 73 | Manuscript 2 main file ($p>2$): title and abstract. |

@@ -156,8 +156,8 @@ and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 203 at line 4632. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 487. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 203 at line 4632. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 487. |
 | S3 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/main.tex`](../../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/main.tex) | 29 | Field manuscript main file: title and structure. |
 | S4 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex`](../../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex) | 242 | Field manuscript introduction: abstract, main theorem, prior work, the two uniformity problems, and the proof's new ingredients. |
 | S5 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/main.tex`](../../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/main.tex) | 31 | Integral manuscript main file: title and abstract. |

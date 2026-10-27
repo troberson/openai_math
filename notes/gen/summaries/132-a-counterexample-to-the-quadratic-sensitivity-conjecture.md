@@ -164,11 +164,11 @@ result is a counterexample construction to the quadratic bound.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3168], manuscript link [S1:3168] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 132 at [S2:341] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3168], manuscript link [S1:3168] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 132 at [S2:341] |
 | S3 | [`preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/paper.tex`](../../../preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/paper.tex) | 39 | document root; abstract [S3:26–32]; four section `\input` directives [S3:33–36]; 39 lines |
 | S4 | [`preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/sections/00-introduction.tex`](../../../preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/sections/00-introduction.tex) | 139 | `thm:main` [S4:53–64]; 139 lines |
 | S5 | [`preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf`](../../../preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf) | 10331 | the manuscript as shipped |
 | S6 | [`lean/docs/132.md`](../../../lean/docs/132.md) | 15 | scope note — Scope at [S6:9], comparator link at [S6:15] |
 | S7 | [`lean/ComparatorChallenges/SensitivitySeparation.lean`](../../../lean/ComparatorChallenges/SensitivitySeparation.lean) | 42 | comparator — `quantitative_separation` [S7:30–35], `sorry` at [S7:36]; 42 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=132`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=132`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

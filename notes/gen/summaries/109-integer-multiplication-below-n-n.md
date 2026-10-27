@@ -225,8 +225,8 @@ machine's transition table is finite but astronomically large.
 | S8 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/10-transposition.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/10-transposition.tex) | 48 | the matrix-transposition consequence |
 | S9 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/11-grouped-rectangles.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/11-grouped-rectangles.tex) | 160 | grouped packed rectangles |
 | S10 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib) | 301 | the prior literature cited |
-| S11 | [`overview.tex`](../../../overview.tex) | 859 | the release's own entry |
-| S12 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's own index line |
+| S11 | [`overview.tex`](../../../overview.tex) | 861 | the release's own entry |
+| S12 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's own index line |
 
 ## Bibliography
 

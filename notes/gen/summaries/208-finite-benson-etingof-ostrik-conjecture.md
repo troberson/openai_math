@@ -129,8 +129,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 208 at line 4748. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 497. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 208 at line 4748. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 497. |
 | S3 | [`preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/build/main.tex`](../../../preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/build/main.tex) | 32 | Main file: title and abstract. |
 | S4 | [`preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/build/sections/introduction.tex`](../../../preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/build/sections/introduction.tex) | 169 | The main theorem, the Verlinde tower setup, the structural consequences, the background, and the proof strategy. |
 | S5 | [`preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/build/references.bib`](../../../preprints/Fiber-functors-for-finite-symmetric-tensor-categories-in-positive-characteristic-September-24-2026/build/references.bib) | 160 | The manuscript's bibliography. |

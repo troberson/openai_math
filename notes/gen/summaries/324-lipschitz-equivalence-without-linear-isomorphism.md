@@ -130,7 +130,7 @@ The comparator stubs carry `sorry`. `OAI.LipschitzEquivalence.main` is at `Lipsc
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 744 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 744 |
 | S2 | [`preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/README.md`](../../../preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/README.md) | 18 | Manuscript 1 title, date |
 | S3 | [`preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/build/main.tex`](../../../preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/build/main.tex) | 60 | Abstract, lines 46–48 |
 | S4 | [`preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/build/references.bib`](../../../preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/build/references.bib) | 168 | Bibliography entries |

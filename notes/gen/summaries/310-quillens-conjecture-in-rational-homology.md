@@ -145,8 +145,8 @@ one `glyph-mappings.tex`, one figure under `build/figures/`, and a
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 310 at line 7651. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 714. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 310 at line 7651. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 714. |
 | S3 | [`preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/build/paper.tex`](../../../preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/build/paper.tex) | 94 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/build/sections/01-introduction.tex) | 182 | Introduction: the setup, the main theorem, the background and reductions, the cycle construction, the passage from a coefficient to homology, and the organization. |
 | S5 | [`preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/build/references.bib`](../../../preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/build/references.bib) | 243 | Manuscript bibliography. |

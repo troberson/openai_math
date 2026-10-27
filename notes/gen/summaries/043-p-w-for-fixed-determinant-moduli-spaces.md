@@ -140,8 +140,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 043 at line 1201. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 164. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 043 at line 1201. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 164. |
 | S3 | [`preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/README.md`](../../../preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/README.md) | 18 | Manuscript readme: title, author, date. |
 | S4 | [`preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/build/main.tex`](../../../preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/build/main.tex) | 32 | The main file: abstract and section inputs. |
 | S5 | [`preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/P-equals-W-in-composite-rank-for-fixed-determinant-September-24-2026/build/sections/01-introduction.tex) | 101 | The main theorem, the setup, the operator, and the proof organization. |

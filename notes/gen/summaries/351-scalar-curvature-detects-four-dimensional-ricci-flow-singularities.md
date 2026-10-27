@@ -99,9 +99,9 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, three manuscript links, three manuscript abstracts |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 351's `\resultentry`, at line 800 |
-| S3 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 351 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, three manuscript links, three manuscript abstracts |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 351's `\resultentry`, at line 800 |
+| S3 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 351 |
 | S4 | [`preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/README.md`](../../../preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/README.md) | 17 | Manuscript A README: date, bibtex key |
 | S5 | [`preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/paper.pdf`](../../../preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/paper.pdf) | 6262 | Manuscript A PDF |
 | S6 | [`preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/build/paper.tex`](../../../preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/build/paper.tex) | 47 | Manuscript A preamble, theorem environments, section order |

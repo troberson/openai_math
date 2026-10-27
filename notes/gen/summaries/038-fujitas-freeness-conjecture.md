@@ -160,8 +160,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 038 at line 1085. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 154. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 038 at line 1085. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 154. |
 | S3 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/README.md`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/README.md) | 18 | Manuscript readme: title, author, date. |
 | S4 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/main.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/main.tex) | 216 | The main file: abstract, theorem, history, and method summary. |
 | S5 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/preliminaries.tex) | 211 | Orders, thresholds, and vanishing. |

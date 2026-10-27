@@ -190,8 +190,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 051 at line 1331. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 178. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 051 at line 1331. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 178. |
 | S3 | [`preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/README.md`](../../../preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/README.md) | 17 | Manuscript readme: title, author, date. |
 | S4 | [`preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/build/main.tex`](../../../preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/build/main.tex) | 70 | The main file: abstract and section inputs. |
 | S5 | [`preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/build/sections/introduction.tex`](../../../preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/build/sections/introduction.tex) | 197 | The theorem, the context, the analytic argument, and the ampleness strategy. |

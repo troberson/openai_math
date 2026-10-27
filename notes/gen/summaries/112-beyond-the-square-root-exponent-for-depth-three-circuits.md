@@ -203,8 +203,8 @@ Lean layer [S10] [S11:133–140] [S12:8–14] [S13] are the two evidence surface
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2752], the manuscript link [S1:2759], and the manuscript abstract [S1:2761]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 112 at [S2:302] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2752], the manuscript link [S1:2759], and the manuscript abstract [S1:2761]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 112 at [S2:302] |
 | S3 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex) | 32 | root (`\documentclass`); abstract [S3:15–21]; the include order [S3:23–31] |
 | S4 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex) | 144 | the gate-count definition [S4:13–19]; the main theorem [S4:21–35]; the square-root-exponent paragraph [S4:37–52]; the open-problem positioning [S4:54–61] |
 | S5 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/02_restriction.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/02_restriction.tex) | 342 | the restriction lemma [S5:14–21] |
@@ -215,5 +215,5 @@ Lean layer [S10] [S11:133–140] [S12:8–14] [S13] are the two evidence surface
 | S10 | [`lean/docs/112.md`](../../../lean/docs/112.md) | 15 | scope note — the Scope paragraph at [S10:9] and the comparator link at [S10:15] |
 | S11 | [`lean/ComparatorChallenges/DepthThree.lean`](../../../lean/ComparatorChallenges/DepthThree.lean) | 144 | the comparator stub — the target theorem at [S11:133–140] with its `sorry` |
 | S12 | [`lean/OAI/Computability/DepthThree/Main.lean`](../../../lean/OAI/Computability/DepthThree/Main.lean) | 20 | the formalized file — the proved theorem at [S12:8–16] |
-| S13 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S13:1165–1167] |
-| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=112`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S13 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the `main_results` entry naming the declaration, at [S13:1165–1167] |
+| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=112`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

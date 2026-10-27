@@ -1,10 +1,10 @@
 # Name: evans
 
-12 families · subject name · 1 carried by a title or a declaration · 10 by prose · 5 by bibliography author
+13 families · subject name · 1 carried by a title or a declaration · 11 by prose · 6 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 28 capitalized occurrences, 15 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 30 capitalized occurrences, 17 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,13 +14,14 @@ Prose counts: 28 capitalized occurrences, 15 of them mid-sentence, 0 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 0 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 10 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 5 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `b` — Body prose | body | 11 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 6 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | yes |
 | [085](../real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md) | Endpoint regularity of the planar centered maximal function | — | — | — | — | — | yes |
 | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | The logarithmic Brunn--Minkowski conjecture | — | — | — | — | yes | — |
 | [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
@@ -40,6 +41,7 @@ Prose counts: 28 capitalized occurrences, 15 of them mid-sentence, 0 lowercase. 
 |---|---|---|---|
 | [`A-Capacity-Criterion-for-Four-State-Potts-Reconstruction-on-Trees-October-5-2026`](../../../../preprints/A-Capacity-Criterion-for-Four-State-Potts-Reconstruction-on-Trees-October-5-2026/) | [229](../probability-and-statistical-mechanics/229-sharp-three-and-four-state-reconstruction-thresholds.md) | prose | [four-state-capacity.pdf](../../../../preprints/A-Capacity-Criterion-for-Four-State-Potts-Reconstruction-on-Trees-October-5-2026/four-state-capacity.pdf) |
 | [`Cylinder-loop-weights-and-planar-nesting-September-26-2026`](../../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/main.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Marked-polygon-correlations-and-one-arc-bounds-September-26-2026`](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf) |
 | [`Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026`](../../../../preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/) | [350](../differential-geometry/350-yaus-nodal-conjecture-surfaces-and-counterexamples.md) | prose | [paper.pdf](../../../../preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf) |
 | [`Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026`](../../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/) | [368](../partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md) | prose | [main.pdf](../../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf) |

@@ -219,8 +219,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 345's `\resultentry`, at line 788 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 345's `\resultentry`, at line 788 |
 | S3 | [`preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/README.md`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/README.md) | 18 | Manuscript README, date, bibtex key |
 | S4 | [`preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf) | 17715 | Manuscript PDF |
 | S5 | [`preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/paper.tex`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/paper.tex) | 69 | Preamble, theorem environments, section include list |
@@ -236,7 +236,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 | S15 | [`preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/cover-proof.tex`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/cover-proof.tex) | 36 | The finite-cover proof |
 | S16 | [`preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/equivariant.tex`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/equivariant.tex) | 646 | Global generators and full-group lifts |
 | S17 | [`preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/references.bib`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/references.bib) | 320 | Bibliography |
-| S18 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 345 |
+| S18 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 345 |
 
 ## Bibliography
 

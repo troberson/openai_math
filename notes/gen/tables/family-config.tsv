@@ -45,6 +45,7 @@ fam	config
 075	FourierLLogL
 076	AsymptoticallyMinimalLittlewood
 076	LittlewoodFiniteFlatness
+079	LocalSmoothing
 081	RieszQuantitative
 082	TriangularHilbert
 083	LipschitzHilbert
@@ -415,3 +416,4 @@ fam	config
 376	NavierStokesAlternating
 376	NavierStokesVelocity
 376	SolenoidalSheetPrograms
+378	SubexponentialSAT

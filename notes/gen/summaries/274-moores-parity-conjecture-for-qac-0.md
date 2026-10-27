@@ -237,7 +237,7 @@ elaborates.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 637 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 637 |
 | S2 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md) | 17 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/main.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/main.tex) | 25 | Abstract, lines 10–15 |
 | S4 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/preamble.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/preamble.tex) | 48 | Macro definitions |

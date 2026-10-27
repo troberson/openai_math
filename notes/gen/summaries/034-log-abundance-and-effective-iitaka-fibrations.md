@@ -175,8 +175,8 @@ ship a total of 70+ `.tex` files across their `build/` trees.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 034 at line 859. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 146. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 034 at line 859. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 146. |
 | S3 | [`preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/README.md`](../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/README.md) | 21 | Main manuscript readme: title, author, date. |
 | S4 | [`preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/build/main.tex`](../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/build/main.tex) | 33 | Main manuscript main file. |
 | S5 | [`preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/build/sections/01-introduction.tex) | 238 | The log abundance theorem, the assumption, the proof route, and the consequences. |

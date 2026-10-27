@@ -79,7 +79,7 @@ The formalization's own limits are part of the record: the forest results do not
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 758 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 758 |
 | S2 | [`preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/main.tex`](../../../preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/main.tex) | 27 | Abstract, lines 6--14 |
 | S3 | [`preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/sections/introduction.tex`](../../../preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/sections/introduction.tex) | 144 | Main theorem 99--108, negative answer 110--113, Girardi 93--97 |
 | S4 | [`preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/sections/diamonds.tex`](../../../preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/sections/diamonds.tex) | 102 | Lens lemma, lines 14--24 |

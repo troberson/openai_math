@@ -102,7 +102,7 @@ feedback vertex set manuscripts are absent from the YAML bibliography entirely, 
 with the ledger's count of 3 formalized manuscripts. Each of the five results has its own comparator
 challenge configuration naming the module, the theorem and definition names, and permitting only
 propext, Quot.sound and Classical.choice ([S10], [S11], [S12], [S13], [S14]). Every entry in this
-family is agent-generated and unreviewed: the YAML records "status: unchecked [S9:1778]" ([S9:1777–1778]).
+family is agent-generated and unreviewed: the YAML records "status: unchecked [S9:1778]" ([S9:1777]).
 The manuscript itself ships a short README carrying its title, date, and citation stub ([S4]).
 
 ## History of the conjecture
@@ -196,15 +196,15 @@ semidefinite threshold" ([S3:31], [S20]).
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, family 102 at line 2502 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{102}`, line 282 |
-| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 31 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, family 102 at line 2502 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | LaTeX entry `\resultentry{102}`, line 282 |
+| S3 | [`README.md`](../../../README.md) | 53 | Trace attribution, line 31 |
 | S4 | [`preprints/The-Unique-Games-Theorem-September-23-2026/README.md`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/README.md) | 18 | Manuscript README (title, date, bibtex stub) |
 | S5 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex) | 89 | Main paper: title line 56, abstract 63–66 |
 | S6 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex) | 323 | Theorem statement, prior work, proof strategy |
 | S7 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex) | 331 | Consequences of the proved conjecture |
 | S8 | [`lean/docs/102.md`](../../../lean/docs/102.md) | 31 | Scope note: what is formalized, per result |
-| S9 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | `main_results`, bibliography, automation and review |
+| S9 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | `main_results`, bibliography, automation and review |
 | S10 | [`lean/ComparatorChallenges/UniqueGamesTheorem.json`](../../../lean/ComparatorChallenges/UniqueGamesTheorem.json) | 14 | Comparator config, main theorem |
 | S11 | [`lean/ComparatorChallenges/OptimalMaxCut.json`](../../../lean/ComparatorChallenges/OptimalMaxCut.json) | 14 | Comparator config, Max-Cut |
 | S12 | [`lean/ComparatorChallenges/VertexCover.json`](../../../lean/ComparatorChallenges/VertexCover.json) | 15 | Comparator config, Vertex Cover |

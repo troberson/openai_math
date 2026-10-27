@@ -1,10 +1,10 @@
 # Name: levi
 
-27 families · subject name · 2 carried by a title or a declaration · 27 by prose · 0 by bibliography author
+28 families · subject name · 2 carried by a title or a declaration · 28 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 487 capitalized occurrences, 447 of them mid-sentence, 20 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 488 capitalized occurrences, 448 of them mid-sentence, 20 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 487 capitalized occurrences, 447 of them mid-sentence, 20 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 27 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 28 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -32,6 +32,7 @@ Prose counts: 487 capitalized occurrences, 447 of them mid-sentence, 20 lowercas
 | [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollár--Pardon universal-cover conjecture | — | — | — | — | yes | — |
 | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | — | — | — | — | yes | — |
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [203](../algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md) | Donovan's conjecture over fields and discrete valuation rings | — | — | yes | — | yes | — |
 | [206](../algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md) | Finite lattice representation: counterexamples and undecidability | — | — | — | — | yes | — |
 | [244](../mathematical-logic/244-partition-principle-does-not-imply-choice.md) | The partition principle does not imply choice | — | — | — | — | yes | — |
@@ -80,6 +81,7 @@ Prose counts: 487 capitalized occurrences, 447 of them mid-sentence, 20 lowercas
 | [`Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026`](../../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose | [manuscript.pdf](../../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf) |
 | [`Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026`](../../../../preprints/Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026/) | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | prose | [quantum-langlands.pdf](../../../../preprints/Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026/quantum-langlands.pdf) |
 | [`Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026`](../../../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/) | [203](../algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md) | prose | [main.pdf](../../../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/main.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Positively-curved-Einstein-four-manifolds-September-23-2026`](../../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/) | [348](../differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md) | prose | [paper.pdf](../../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf) |
 | [`Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026`](../../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose | [paper.pdf](../../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/paper.pdf) |
 | [`Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026`](../../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose | [paper.pdf](../../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf) |

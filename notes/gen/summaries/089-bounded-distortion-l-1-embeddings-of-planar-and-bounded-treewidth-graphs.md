@@ -208,7 +208,7 @@ claims exist and names their declarations; the two comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 254 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 254 |
 | S2 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md) | 20 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/main.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/main.tex) | 51 | Abstract, lines 33–35 |
 | S4 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex) | 239 | Conjecture, theorem, history, proof outline |

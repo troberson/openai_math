@@ -222,8 +222,8 @@ generalized star-height problem; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3227], manuscript links [S1:3227] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 134 at [S2:345] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3227], manuscript links [S1:3227] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 134 at [S2:345] |
 | S3 | [`preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/paper.tex`](../../../preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/paper.tex) | 49 | document root; abstract [S3:33–39]; eight section `\input` directives [S3:40–47], bibliography [S3:48]; 49 lines |
 | S4 | [`preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/sections/introduction.tex`](../../../preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/sections/introduction.tex) | 183 | `thm:main` [S4:33–39] ($h_\Sigma(L)\le13$); 183 lines |
 | S5 | [`preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026.pdf`](../../../preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026.pdf) | 15009 | the manuscript as shipped |
@@ -235,4 +235,4 @@ generalized star-height problem; `counterex_broad=0`.
 | S11 | [`preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf`](../../../preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf) | 16976 | the manuscript as shipped |
 | S12 | [`lean/docs/134.md`](../../../lean/docs/134.md) | 22 | scope note — Scope at [S12:9], three scope paragraphs [S12:11,13,15], two comparator links [S12:21–22] |
 | S13 | [`lean/ComparatorChallenges/GeneralizedStarHeight.lean`](../../../lean/ComparatorChallenges/GeneralizedStarHeight.lean) | 48 | comparator — `HasHeightAtMost` [S13:39–40], `main` [S13:42–43], `sorry` at [S13:44]; 48 lines |
-| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=134`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=134`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

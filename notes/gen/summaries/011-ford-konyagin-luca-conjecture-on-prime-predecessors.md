@@ -124,8 +124,8 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 011 `\resultentry` at 98 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 011 `\resultentry` at 98 |
 | S3 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex) | 27 | Title at 3, date at 5, abstract at 9, section inputs at 11–19 |
 | S5 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex) | 245 | `thm:totient` at 10–16, attribution at 18–25, `thm:smooth` at 38–46, literature at 55–94, companion link at 96–99 |
@@ -143,7 +143,7 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 | S17 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex) | 39 | Inline `thebibliography`; release entry `SmoothShifted` at 25–30 |
 | S18 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf) | 16893 | Typeset manuscript, 599,500 bytes |
 | S19 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Family 011 entry at 125–126 |
-| S20 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 011 at 12 |
+| S20 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 011 at 12 |
 
 ## Bibliography
 

@@ -228,8 +228,8 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2822], exact-uniform link [S1:2829] and abstract [S1:2831], cell-bounded link [S1:2838] and abstract [S1:2840] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 115 at [S2:308] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2822], exact-uniform link [S1:2829] and abstract [S1:2831], cell-bounded link [S1:2838] and abstract [S1:2840] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 115 at [S2:308] |
 | S3 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex) | 39 | root (`\documentclass`); abstract [S3:22–27]; six `\input` directives [S3:29–34]; 39 lines |
 | S4 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex) | 158 | `thm:main` [S4:18–32]; history [S4:44–97]; proof strategy [S4:119–158] |
 | S5 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex`](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex) | 58 | root (`\documentclass`); abstract [S5:38–43]; eight `\input` directives [S5:45–52]; 59 lines |
@@ -238,4 +238,4 @@ resolve verb.
 | S8 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf`](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf) | 18570 | the cell-bounded manuscript as shipped |
 | S9 | [`lean/docs/115.md`](../../../lean/docs/115.md) | 23 | scope note — the Scope at [S9:10–16] and two comparator links at [S9:22–23] |
 | S10 | [`lean/ComparatorChallenges/ContingencyTables.lean`](../../../lean/ComparatorChallenges/ContingencyTables.lean) | 221 | the comparator stub — `BoundedSamplingStatement` at [S10:148]; `ExactSamplingStatement` at [S10:170]; `CountingStatement` at [S10:199]; three `sorry` theorems at [S10:211] [S10:214] [S10:217] |
-| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=115`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=115`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

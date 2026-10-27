@@ -128,7 +128,7 @@ The status block carries the release-wide scope, not a per-family one [S17:969�
 > status:
 >   scope: "Partial progress."
 
-The automation and review blocks are the release-wide ones, with the review status unchecked [S17:1773–1778]:
+The automation and review blocks are the release-wide ones, with the review status unchecked [S17:1773–1777]:
 
 > automation:
 >   methods:
@@ -163,7 +163,7 @@ The paper has two editions in the release. The October 6, 2026 edition is the on
 
 > This version characterizes the compatible cone by intersection positivity, restricts the cone-sum equality to $h_J^-=b_2^+-1$, and adds a four-torus example of strict inclusion [S3:21]
 
-The release's update log gives the reason for re-issuing both papers in this pair: "Taming and hypersymplectic deformation (2 manuscripts): corrected the cone-equality claim in Taming implies compatibility, added a strict-inclusion example, and removed an unnecessary cone-comparison dependency from the hypersymplectic paper. [S21:23]" The October edition's corollary is the one that carries the `h_J^- = b₂⁺ − 1` hypothesis, and the strict-inclusion four-torus example is its addition [S6:60–70] [S13:375–418].
+The release's update log gives the reason for re-issuing both papers in this pair: "Taming and hypersymplectic deformation (2 manuscripts): corrected the cone-equality claim in Taming implies compatibility, added a strict-inclusion example, and removed an unnecessary cone-comparison dependency from the hypersymplectic paper. [S21:23]" [S21:24] The October edition's corollary is the one that carries the `h_J^- = b₂⁺ − 1` hypothesis, and the strict-inclusion four-torus example is its addition [S6:60–70] [S13:375–418].
 
 ## Consequences
 
@@ -178,14 +178,14 @@ The companion is family 341, Donaldson's hypersymplectic deformation conjecture,
 
 The cone characterization is the part of the result with content beyond the theorem statement. It gives a criterion for compatibility that is checkable inside cohomology — strict positivity against the closure of the invariant part of the taming cone — and the four-torus example shows the cone-sum equality cannot be stated without the `h_J^- = b₂⁺ − 1` hypothesis [S13:364–366] [S13:415–417]. The corollary for `b₂⁺ = 1` is the case where taming and compatibility cones coincide, so in that case the class does not move [S6:67–69].
 
-The formalization consequence is a gap, not a coverage. The declaration proves the single-class form, which is the shape the scope note describes; the cone theorem, the corollary, the density-splitting theorem, the quadratic mass bound, and the strict-inclusion example are not formalized. The comparator challenge for this family is a stub with one `sorry`, and the release's review status for the whole formalization is unchecked [S19:58–63] [S17:1773–1778]. The manuscript states no open directions: its conclusion section is the proof of the main theorem, and the introduction's closing paragraph points to the companion paper, not to a question [S12:1–70] [S6:207–215].
+The formalization consequence is a gap, not a coverage. The declaration proves the single-class form, which is the shape the scope note describes; the cone theorem, the corollary, the density-splitting theorem, the quadratic mass bound, and the strict-inclusion example are not formalized. The comparator challenge for this family is a stub with one `sorry`, and the release's review status for the whole formalization is unchecked [S19:58–63] [S17:1773–1777]. The manuscript states no open directions: its conclusion section is the proof of the main theorem, and the introduction's closing paragraph points to the companion paper, not to a question [S12:1–70] [S6:207–215].
 
 ## Sources
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family entry in the release's entry list |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, manuscript link, abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family entry in the release's entry list |
 | S3 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md) | 21 | Title, date, bibtex key, version note |
 | S4 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex) | 28 | Abstract and include list |
 | S5 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex) | 54 | Macro preamble |
@@ -200,12 +200,12 @@ The formalization consequence is a gap, not a coverage. The declaration proves t
 | S14 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib) | 295 | Bibliography, Donaldson 2006, intra-corpus entry |
 | S15 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf) | 7145 | Shipped manuscript PDF |
 | S16 | [`lean/docs/342.md`](../../../lean/docs/342.md) | 15 | Scope note |
-| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Source, status, main_results, automation, review |
+| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Source, status, main_results, automation, review |
 | S18 | [`lean/ComparatorChallenges/TamingCompatibility.json`](../../../lean/ComparatorChallenges/TamingCompatibility.json) | 14 | Challenge record |
 | S19 | [`lean/ComparatorChallenges/TamingCompatibility.lean`](../../../lean/ComparatorChallenges/TamingCompatibility.lean) | 68 | Comparator stub, definitions, target, `sorry` |
 | S20 | [`lean/OAI/Geometry/TamingCompatibility/Main.lean`](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean) | 56 | Formalized declaration |
-| S21 | [`history.md`](../../../history.md) | 31 | Release update log |
-| S22 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 342 |
+| S21 | [`history.md`](../../../history.md) | 50 | Release update log |
+| S22 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 342 |
 
 ## Bibliography
 

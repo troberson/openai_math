@@ -189,8 +189,8 @@ conjecture over growing finite alphabets; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3102], manuscript link [S1:3102] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 129 at [S2:335] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3102], manuscript link [S1:3102] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 129 at [S2:335] |
 | S3 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex) | 46 | MS1 document root; abstract [S3:30–36]; five section `\input` directives [S3:37–41]; 46 lines |
 | S4 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex) | 151 | MS1 `main:theorem` [S4:38–48]; 151 lines |
 | S5 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf) | 11050 | MS1 as shipped |
@@ -201,4 +201,4 @@ conjecture over growing finite alphabets; `counterex_broad=0`.
 | S10 | [`lean/ComparatorChallenges/TwoWayComplementation.lean`](../../../lean/ComparatorChallenges/TwoWayComplementation.lean) | 45 | comparator — `complementation_lower_bound_finite` [S10:36–40], `sorry` at [S10:41]; 45 lines |
 | S11 | [`lean/ComparatorChallenges/TwoWayDeterminization.lean`](../../../lean/ComparatorChallenges/TwoWayDeterminization.lean) | 73 | comparator — `explicit_family_main` [S11:58–68], `sorry` at [S11:69]; 73 lines |
 | S12 | [`lean/ComparatorChallenges/OneWayLiveness.lean`](../../../lean/ComparatorChallenges/OneWayLiveness.lean) | 105 | comparator — `main_theorem` [S12:95–100], `sorry` at [S12:101]; 105 lines |
-| S13 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=129`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S13 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=129`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

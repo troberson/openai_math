@@ -124,8 +124,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 204 at line 4657. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 489. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 204 at line 4657. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 489. |
 | S3 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/main.tex`](../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/main.tex) | 62 | Main file: title and abstract. |
 | S4 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/sections/01-introduction.tex) | 142 | The main theorem, the saturation setup, prior work, and the proof's constructions. |
 | S5 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/references.bib`](../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/references.bib) | 414 | The manuscript's bibliography. |

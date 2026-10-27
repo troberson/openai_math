@@ -208,8 +208,8 @@ ships 7 `.tex` files under `build/`; the companion ships 12 under
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 041 at line 1160. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 160. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 041 at line 1160. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 160. |
 | S3 | [`preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/README.md`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/README.md) | 17 | Main manuscript readme: title, author, date. |
 | S4 | [`preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/build/main.tex`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/build/main.tex) | 23 | Main manuscript main file: abstract and section inputs. |
 | S5 | [`preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/build/sections/introduction.tex) | 259 | The strong SYZ theorem, the finiteness corollary, the projective corollary, and the context. |

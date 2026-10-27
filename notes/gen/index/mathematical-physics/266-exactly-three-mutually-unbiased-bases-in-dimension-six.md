@@ -8,7 +8,7 @@
 | Scope note | [`lean/docs/266.md`](../../../../lean/docs/266.md) |
 | Comparator configs | 2 (0 with a `main_results` declaration) |
 | Reasoning trace | — |
-| Verification bundles | 1 |
+| Verification bundles | 2 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution |
 | Topics | [quantum-theory](../topics/quantum-theory.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
@@ -20,7 +20,7 @@
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
 | [`Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026`](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/) | [Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026.pdf](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026.pdf) | [build/](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/build/) | [README.md](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/README.md) | no | [paper.tex](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/build/paper.tex) | [verification/](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/verification/) |
-| [`The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026`](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/) | [The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf) | [build/](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/) | [README.md](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/README.md) | no | [paper.tex](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/paper.tex) | — |
+| [`The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026`](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/) | [The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf) | [build/](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/) | [README.md](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/README.md) | no | [paper.tex](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/paper.tex) | [verification/](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/verification/) |
 
 ## Lean
 
@@ -38,6 +38,7 @@ No `main_results` declaration reaches this family: its scope note links 2 compar
 | Dir | Bundle | INPUTS.md | COVERAGE.md |
 |---|---|---|---|
 | `Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026` | [verification/](../../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/verification/) | no | no |
+| `The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026` | [verification/](../../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/verification/) | no | no |
 
 ## Abstract (`overview.tex`, verbatim)
 

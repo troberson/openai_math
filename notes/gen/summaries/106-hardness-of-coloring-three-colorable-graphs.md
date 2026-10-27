@@ -224,8 +224,8 @@ two evidence surfaces.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2629], the manuscript link [S1:2636], and the manuscript abstract [S1:2638]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 106 at [S2:290] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2629], the manuscript link [S1:2636], and the manuscript abstract [S1:2638]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 106 at [S2:290] |
 | S3 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex) | 57 | root (`\documentclass`); abstract [S3:40–46]; the eight-section include order [S3:47–54] |
 | S4 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex) | 212 | the coloring and independent-set definitions [S4:3–10]; the main theorem [S4:12–30]; the coloring corollary [S4:48–58]; the history [S4:62–137]; the proof overview [S4:141–212] |
 | S5 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/parameters.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/parameters.tex) | 87 | the parameter choice order [S5:4–8]; the fixed constants [S5:10–17]; the closing density bound [S5:70–87] |
@@ -233,5 +233,5 @@ two evidence surfaces.
 | S7 | [`lean/docs/106.md`](../../../lean/docs/106.md) | 15 | scope note — the formalization's Scope at [S7:9] and its comparator link |
 | S8 | [`lean/ComparatorChallenges/IndependentSets.lean`](../../../lean/ComparatorChallenges/IndependentSets.lean) | 84 | the comparator stub — `RealGraphReduction` at [S8:64–73] and `mainTheoremReal` at [S8:76–78] with its `sorry` |
 | S9 | [`lean/OAI/Combinatorics/IndependentSets/Main.lean`](../../../lean/OAI/Combinatorics/IndependentSets/Main.lean) | 152 | the formalized file — `mainTheoremReal` proved at [S9:124–135] |
-| S10 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S10:1317–1319] |
-| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=106`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S10 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the `main_results` entry naming the declaration, at [S10:1317–1319] |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=106`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

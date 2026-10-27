@@ -9,7 +9,7 @@
 | Comparator configs | 0 (0 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
-| Cited by / cites | 3 in · 2 out |
+| Cited by / cites | 5 in · 2 out |
 | Claim shapes | resolution, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |

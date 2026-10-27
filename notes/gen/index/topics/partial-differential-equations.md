@@ -1,13 +1,13 @@
 # Topic: partial-differential-equations
 
-18 families · pattern `partial differential|navier--stokes|euler equation|wave equation|heat equation|stokes equation|elliptic regularity|weak solution|vlasov--maxwell|boltzmann|mumford--shah|ball--evans|hot spots|lane--emden|de giorgi|infinity-harmonic|elastici|blowup|global smoothness|one-phase bernoulli|defocusing|schr[oö]dinger|stationary integral varifold` · hits by layer: title 15 · abstract 12 · scope 8 · path 0
+18 families · pattern `partial differential|navier--stokes|euler equation|wave equation|heat equation|stokes equation|elliptic regularity|weak solution|vlasov--maxwell|boltzmann|mumford--shah|ball--evans|hot spots|lane--emden|de giorgi|infinity-harmonic|elastici|blowup|global smoothness|one-phase bernoulli|defocusing|schr[oö]dinger|stationary integral varifold` · hits by layer: title 16 · abstract 12 · scope 9 · path 0
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [039](../algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) | Nagata's conjecture and maximal Seshadri constants | — | — | yes | — |
-| [079](../real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md) | Sogge's local smoothing conjecture in dimension three | — | yes | — | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | yes | yes | yes | — |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | yes | — | — | — |
 | [346](../differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md) | Sharp singular-set bounds for stationary integral varifolds | yes | — | — | — |
 | [362](../partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md) | Global smoothness for relativistic Vlasov--Maxwell | yes | yes | yes | — |

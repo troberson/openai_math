@@ -163,7 +163,7 @@ bibliography — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 339 at line 8256. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 776. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 339 at line 8256. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 776. |
 | S3 | [`preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/build/main.tex`](../../../preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/build/main.tex) | 375 | Manuscript main file: title, abstract, introduction, and the completion proof. |
 | S4 | [`preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/build/sections/03-hulls.tex`](../../../preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/build/sections/03-hulls.tex) | 994 | The algebraic hull construction: formal affine fields with coherent full ambient Taylor coefficients. |

@@ -135,8 +135,8 @@ and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 321 at line 7856. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 736. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 321 at line 7856. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 736. |
 | S3 | [`preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/build/main.tex`](../../../preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/build/main.tex) | 20 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/build/sections/01-introduction.tex) | 131 | Introduction: the D(2) condition, the main theorem, background on positive results and prior candidates, and the proof structure. |
 | S5 | [`preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/build/references.bib`](../../../preprints/A-Counterexample-to-Walls-D2-Problem-October-6-2026/build/references.bib) | 148 | Manuscript bibliography. |

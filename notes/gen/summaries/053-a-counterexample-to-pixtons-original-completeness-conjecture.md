@@ -181,8 +181,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 053 at line 1372. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 182. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 053 at line 1372. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 182. |
 | S3 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/README.md`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/README.md) | 17 | Manuscript readme: title, date. |
 | S4 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/main.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/main.tex) | 78 | The main file: abstract and section inputs. |
 | S5 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/01-introduction.tex) | 313 | The relation problem, the theorem, the corollary, and the proof method. |

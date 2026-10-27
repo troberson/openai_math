@@ -206,8 +206,8 @@ the ledger verb rule has nothing to fire on.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2645], the three manuscript entries [S1:2652], [S1:2661], [S1:2670], and their abstracts [S1:2654], [S1:2663], [S1:2672]. The release's inline code spans stay as backticked markdown, and the release's italic markup and HTML entities are folded to the plain word |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 107 at [S2:292] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2645], the three manuscript entries [S1:2652], [S1:2661], [S1:2670], and their abstracts [S1:2654], [S1:2663], [S1:2672]. The release's inline code spans stay as backticked markdown, and the release's italic markup and HTML entities are folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 107 at [S2:292] |
 | S3 | [`preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex`](../../../preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex) | 1022 | root (`\documentclass`); abstract [S3:32–35]; the exponent definition [S3:39–43]; the main theorem [S3:45–49]; the history paragraph [S3:51–57]; the six section headings at [S3:37], [S3:142], [S3:270], [S3:392], [S3:605], [S3:700] |
 | S4 | [`preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/build/main.tex`](../../../preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/build/main.tex) | 90 | root (`\documentclass`); abstract [S4:63–69]; the fifteen-file include order [S4:72–87] |
 | S5 | [`preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/build/introduction.tex`](../../../preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/build/introduction.tex) | 307 | the three-bound main theorem [S5:72–78]; the characteristic-transfer corollary [S5:80–85] |
@@ -221,10 +221,10 @@ the ledger verb rule has nothing to fire on.
 | S13 | [`lean/ComparatorChallenges/MatrixFields.lean`](../../../lean/ComparatorChallenges/MatrixFields.lean) | 116 | the comparator stub — `omega_lt_source_constant` at [S13:109–112] |
 | S14 | [`lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean`](../../../lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean) | 31 | the formalized file — the three proved theorems at [S14:14–16], [S14:19–21], [S14:25–27] |
 | S15 | [`lean/OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean`](../../../lean/OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean) | 34 | the formalized file — `omega_lt_source_constant` proved at [S15:17–25] |
-| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the four `main_results` entries over two configs, at [S16:1389–1403] |
+| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the four `main_results` entries over two configs, at [S16:1389–1403] |
 | S17 | [`preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/verification/README.md`](../../../preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/verification/README.md) | 23 | the verification bundle — the inventory-check run command at [S17:17–23] |
 | S18 | [`preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/README.md`](../../../preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/README.md) | 29 | the manuscript README — its `## Verification` run command at [S18:19–25] |
-| S19 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=107`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S19 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=107`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 

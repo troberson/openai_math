@@ -74,8 +74,9 @@ fam	topic	layers
 030	elliptic-curves	A
 031	number-fields	A
 031	galois-theory	TA
-032	algebraic-geometry	TA
-032	abelian-varieties	TA
+032	algebraic-geometry	TAS
+032	number-fields	S
+032	abelian-varieties	TAS
 033	algebraic-geometry	TAS
 033	manifolds	A
 033	operator-algebras	A
@@ -183,8 +184,10 @@ fam	topic	layers
 077	harmonic-analysis	T
 077	surfaces	TA
 078	harmonic-analysis	TA
-079	harmonic-analysis	TA
-079	partial-differential-equations	A
+079	harmonic-analysis	TAS
+079	partial-differential-equations	TAS
+079	quantum-theory	A
+079	fractal-geometry	AS
 080	harmonic-analysis	TA
 080	partial-differential-equations	T
 080	quantum-theory	T
@@ -456,6 +459,7 @@ fam	topic	layers
 193	commutative-algebra	TA
 194	algebraic-topology	S
 194	commutative-algebra	TAS
+195	algebraic-topology	S
 195	surfaces	SP
 195	commutative-algebra	TAS
 195	noncommutative-algebra	TAS
@@ -771,6 +775,7 @@ fam	topic	layers
 300	operator-algebras	TA
 301	operator-algebras	TAS
 301	functional-analysis	AS
+301	calculus-of-variations	S
 302	operator-algebras	TA
 303	operator-algebras	TAS
 304	manifolds	A
@@ -979,3 +984,5 @@ fam	topic	layers
 376	fluid-dynamics	TS
 377	partial-differential-equations	TA
 377	potential-theory	TA
+378	complexity-theory	A
+378	algorithms	A

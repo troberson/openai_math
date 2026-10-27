@@ -1,10 +1,10 @@
 # Name: david
 
-29 families · subject name · 1 carried by a title or a declaration · 29 by prose · 4 by bibliography author
+30 families · subject name · 1 carried by a title or a declaration · 30 by prose · 4 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 69 capitalized occurrences, 41 of them mid-sentence, 2 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 70 capitalized occurrences, 41 of them mid-sentence, 2 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 69 capitalized occurrences, 41 of them mid-sentence, 2 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 29 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 30 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 4 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -50,6 +50,7 @@ Prose counts: 69 capitalized occurrences, 41 of them mid-sentence, 2 lowercase. 
 | [330](../functional-analysis/330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md) | A negative answer to Kalton's Lipschitz-free approximation question | — | — | — | — | yes | — |
 | [357](../differential-geometry/357-bi-lipschitz-coordinates-at-every-regular-rcd-point.md) | Bi-Lipschitz coordinates at every regular RCD point | — | — | — | — | yes | yes |
 | [366](../partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md) | The planar Mumford--Shah regularity conjecture | — | — | — | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -82,6 +83,7 @@ Prose counts: 69 capitalized occurrences, 41 of them mid-sentence, 2 lowercase. 
 | [`Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026`](../../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose | [paper.pdf](../../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf) |
 | [`Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026`](../../../../preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/) | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | prose | [paper.pdf](../../../../preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf) |
 | [`Talagrands-discrete-convexity-conjecture-September-23-2026`](../../../../preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/) | [175](../combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md) | prose | [paper.pdf](../../../../preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026`](../../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/) | [309](../topology/309-kervaire-invariant-problem-at-the-prime-three.md) | prose | [paper.pdf](../../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/paper.pdf) |
 | [`The-Quasi-Riemann-Hypothesis-September-30-2026`](../../../../preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/) | [003](../number-theory/003-quasi-riemann-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf) |
 | [`The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026`](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/main.pdf) |

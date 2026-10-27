@@ -120,8 +120,8 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release entry for family 004 (100); manuscript blurbs (109, 118) |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | `\resultentry{004}` — title, abstract, manuscript paths (84) |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release entry for family 004 (100); manuscript blurbs (109, 118) |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | `\resultentry{004}` — title, abstract, manuscript paths (84) |
 | S3 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md) | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
 | S4 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/main.tex`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/main.tex) | 81 | Title (58), date (60), abstract (63–67), section inputs (71–77) |
 | S5 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex) | 250 | Theorem (7–11); history (13–169); proof strategy (171–243) |
@@ -134,7 +134,7 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 | S12 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf) | 20041 | Typeset manuscript, 701,017 bytes |
 | S13 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf) | 25738 | Typeset manuscript, 893,027 bytes |
 | S14 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Bucket entry (117–118); flag-only reading (534) |
-| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row 5 — tier, counts, claim-shape tags |
+| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row 5 — tier, counts, claim-shape tags |
 | S16 | [`notes/gen/reports/counterexample-tag.md`](../../../notes/gen/reports/counterexample-tag.md) | 203 | Phrase rule (39–44); 004 catch (53–55); 004 verdict (65–67); T0 counts (183–184) |
 
 ## Bibliography

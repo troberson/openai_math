@@ -69,7 +69,7 @@ The formalization's record adds what the manuscripts' statements do not: the asp
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 595 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 595 |
 | S2 | [`preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex`](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex) | 67 | Abstract, lines 46–50 |
 | S3 | [`preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex) | 255 | Main theorem, lines 21–30 |
 | S4 | [`preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex`](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex) | 22 | Abstract, lines 8–12 |

@@ -1,10 +1,10 @@
 # Name: ising
 
-16 families · subject name · 7 carried by a title or a declaration · 16 by prose · 0 by bibliography author
+17 families · subject name · 7 carried by a title or a declaration · 17 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 372 capitalized occurrences, 348 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 373 capitalized occurrences, 349 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 372 capitalized occurrences, 348 of them mid-sentence, 12 lowercas
 | `M` — Manuscript title | title | 6 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 16 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 17 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -37,6 +37,7 @@ Prose counts: 372 capitalized occurrences, 348 of them mid-sentence, 12 lowercas
 | [234](../probability-and-statistical-mechanics/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md) | All-temperature pressure for orthogonally invariant Ising spin glasses | yes | yes | — | — | yes | — |
 | [236](../probability-and-statistical-mechanics/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md) | The factor-of-IID threshold for free Ising states on trees | yes | yes | — | — | yes | — |
 | [281](../mathematical-physics/281-qaoa-optimality-for-the-sk-model.md) | QAOA optimality for the SK model | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -75,6 +76,7 @@ Prose counts: 372 capitalized occurrences, 348 of them mid-sentence, 12 lowercas
 | [`Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026`](../../../../preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/) | [223](../probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) | prose | [paper.pdf](../../../../preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf) |
 | [`Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026`](../../../../preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/) | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | prose | [paper.pdf](../../../../preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/paper.pdf) |
 | [`The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026`](../../../../preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/) | [216](../probability-and-statistical-mechanics/216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md) | prose | [paper.pdf](../../../../preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026`](../../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/) | [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | prose | [paper.pdf](../../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf) |
 | [`The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026`](../../../../preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/) | [229](../probability-and-statistical-mechanics/229-sharp-three-and-four-state-reconstruction-thresholds.md) | prose | [four-state-potts.pdf](../../../../preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/four-state-potts.pdf) |
 | [`The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026`](../../../../preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/) | [215](../probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md) | prose | [massive-continuum-o3.pdf](../../../../preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf) |

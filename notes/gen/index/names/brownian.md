@@ -1,10 +1,10 @@
 # Name: brownian
 
-24 families · subject name · 4 carried by a title or a declaration · 24 by prose · 0 by bibliography author
+25 families · subject name · 4 carried by a title or a declaration · 25 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 892 capitalized occurrences, 783 of them mid-sentence, 70 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 893 capitalized occurrences, 784 of them mid-sentence, 70 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,13 +14,14 @@ Prose counts: 892 capitalized occurrences, 783 of them mid-sentence, 70 lowercas
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 4 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 24 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 25 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | — | — | — | — | yes | — |
 | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | The Euclidean Steinitz--Bergström conjecture | — | — | yes | — | yes | — |
 | [139](../theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md) | Subpolynomial queries for log-concave sampling | — | — | — | — | yes | — |
@@ -74,6 +75,7 @@ Prose counts: 892 capitalized occurrences, 783 of them mid-sentence, 70 lowercas
 | [`Functional-universality-of-critical-SK-autocorrelations-October-5-2026`](../../../../preprints/Functional-universality-of-critical-SK-autocorrelations-October-5-2026/) | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | prose | [critical-sk-autocorrelations.pdf](../../../../preprints/Functional-universality-of-critical-SK-autocorrelations-October-5-2026/critical-sk-autocorrelations.pdf) |
 | [`GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026`](../../../../preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/) | [219](../probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md) | prose | [paper.pdf](../../../../preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/paper.pdf) |
 | [`Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026`](../../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/) | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | prose | [paper.pdf](../../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026`](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf) |
 | [`Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026`](../../../../preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/) | [222](../probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md) | prose | [Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf](../../../../preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf) |
 | [`QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026`](../../../../preprints/QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026/) | [281](../mathematical-physics/281-qaoa-optimality-for-the-sk-model.md) | prose | [QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026.pdf](../../../../preprints/QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026/QAOA-attains-the-SK-ground-state-energy-in-the-thermodynamic-first-limit-September-25-2026.pdf) |

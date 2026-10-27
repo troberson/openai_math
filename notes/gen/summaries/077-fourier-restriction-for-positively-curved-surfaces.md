@@ -178,8 +178,8 @@ do not record as consequence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 077 at line 1922. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 228. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 077 at line 1922. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 228. |
 | S3 | [`preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/build/paper.tex`](../../../preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/build/paper.tex) | 61 | Main file: title and section inputs (general positively curved surface). |
 | S4 | [`preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/build/sections/00-introduction.tex) | 186 | The diagonal extension theorem, its background, the two theorem inputs, the argument, and the dependence on the exponent. |
 | S5 | [`preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/build/paper.tex`](../../../preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/build/paper.tex) | 20 | Main file: title and section inputs (bounded-data sphere restriction and the packet theorem). |

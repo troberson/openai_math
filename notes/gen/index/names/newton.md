@@ -1,10 +1,10 @@
 # Name: newton
 
-39 families · subject name · 6 carried by a title or a declaration · 39 by prose · 3 by bibliography author
+41 families · subject name · 6 carried by a title or a declaration · 41 by prose · 3 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 205 capitalized occurrences, 152 of them mid-sentence, 65 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 207 capitalized occurrences, 154 of them mid-sentence, 65 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 205 capitalized occurrences, 152 of them mid-sentence, 65 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 6 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 39 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 41 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 3 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -38,6 +38,7 @@ Prose counts: 205 capitalized occurrences, 152 of them mid-sentence, 65 lowercas
 | [042](../algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) | Oka classification for K3 surfaces and other compact complex surfaces | — | — | — | — | yes | — |
 | [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | — | — | — | — | yes | — |
 | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | The Campana--Peternell conjecture in dimension six | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | The Mahler conjectures and symplectic width | — | — | — | — | yes | — |
 | [109](../theoretical-computer-science/109-integer-multiplication-below-n-n.md) | Integer multiplication below $n\log n$ | — | — | — | — | yes | — |
 | [130](../theoretical-computer-science/130-fourier-transforms-below-n-n.md) | Fourier transforms below $n\log n$ | — | — | yes | — | yes | — |
@@ -60,6 +61,7 @@ Prose counts: 205 capitalized occurrences, 152 of them mid-sentence, 65 lowercas
 | [351](../differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) | Scalar curvature detects four-dimensional Ricci-flow singularities | — | — | yes | — | yes | — |
 | [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | Kinetic limits and fluctuations over the Boltzmann lifespan | — | — | — | — | yes | — |
 | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | The subcritical Lane--Emden and Hénon--Lane--Emden conjectures | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -88,6 +90,7 @@ Prose counts: 205 capitalized occurrences, 152 of them mid-sentence, 65 lowercas
 | [`Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026`](../../../../preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/) | [263](../mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md) | prose | [paper.pdf](../../../../preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf) |
 | [`Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026`](../../../../preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/) | [263](../mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md) | prose | [paper.pdf](../../../../preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/paper.pdf) |
 | [`Integer-multiplication-below-n-log-n-September-23-2026`](../../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/) | [109](../theoretical-computer-science/109-integer-multiplication-below-n-n.md) | prose | [paper.pdf](../../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026`](../../../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/) | [039](../algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) | prose | [main.pdf](../../../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/main.pdf) |
 | [`Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026`](../../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/) | [001](../number-theory/001-milnes-rationality-conjecture.md) | prose | [paper.pdf](../../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf) |
 | [`Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026`](../../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/) | — | prose | — |
@@ -106,6 +109,7 @@ Prose counts: 205 capitalized occurrences, 152 of them mid-sentence, 65 lowercas
 | [`The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026`](../../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/) | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | prose | [main.pdf](../../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/main.pdf) |
 | [`The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026`](../../../../preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/) | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | prose | [two-adic-hecke.pdf](../../../../preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf) |
 | [`The-Euclidean-plane-is-not-five-colorable-September-23-2026`](../../../../preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/) | [158](../combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md) | prose | [paper.pdf](../../../../preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026`](../../../../preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/) | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | prose | [The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf](../../../../preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf) |
 | [`The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026`](../../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/paper.pdf) |
 | [`The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026`](../../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/) | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | prose | [paper.pdf](../../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/paper.pdf) |

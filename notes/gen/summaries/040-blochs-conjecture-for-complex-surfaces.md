@@ -152,8 +152,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 040 at line 1144. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 158. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 040 at line 1144. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 158. |
 | S3 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/README.md`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/README.md) | 18 | Manuscript readme: title, author, date. |
 | S4 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/paper.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/paper.tex) | 87 | The main file: abstract and section inputs. |
 | S5 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/introduction.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/introduction.tex) | 298 | The main theorem, the corollary, the historical context, and the proof mechanism. |

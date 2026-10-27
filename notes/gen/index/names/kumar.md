@@ -1,10 +1,10 @@
 # Name: kumar
 
-17 families · subject name · 1 carried by a title or a declaration · 13 by prose · 14 by bibliography author
+18 families · subject name · 1 carried by a title or a declaration · 14 by prose · 14 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 49 capitalized occurrences, 34 of them mid-sentence, 2 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 51 capitalized occurrences, 35 of them mid-sentence, 2 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 49 capitalized occurrences, 34 of them mid-sentence, 2 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 1 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 13 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 14 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 14 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -38,6 +38,7 @@ Prose counts: 49 capitalized occurrences, 34 of them mid-sentence, 2 lowercase. 
 | [272](../mathematical-physics/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md) | Entanglement without secret key and the PPT-square conjecture | — | — | — | — | yes | — |
 | [278](../mathematical-physics/278-failure-of-kohn-sham-ensemble-representation.md) | Failure of Kohn--Sham ensemble representation | — | — | — | — | yes | — |
 | [336](../differential-geometry/336-spectral-scalar-curvature-and-codimension-two-width.md) | Spectral scalar curvature and codimension-two width | — | — | — | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -59,6 +60,7 @@ Prose counts: 49 capitalized occurrences, 34 of them mid-sentence, 2 lowercase. 
 | [`Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026`](../../../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/) | [119](../theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md) | prose | [main.pdf](../../../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf) |
 | [`Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026`](../../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/) | [125](../theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md) | prose | [paper.pdf](../../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf) |
 | [`Tensor-Saturation-for-Even-Spin-Groups-September-24-2026`](../../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/) | [204](../algebra/204-tensor-saturation-for-even-spin-groups.md) | prose | [Tensor-Saturation-for-Even-Spin-Groups-September-24-2026.pdf](../../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Unique-Games-Theorem-September-23-2026`](../../../../preprints/The-Unique-Games-Theorem-September-23-2026/) | [102](../theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md) | prose | [paper.pdf](../../../../preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf) |
 | [`Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026`](../../../../preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/) | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | prose | [paper.pdf](../../../../preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf) |
 | [`Universal-optimality-of-the-triangular-lattice-September-23-2026`](../../../../preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/) | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | prose | [paper.pdf](../../../../preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/paper.pdf) |

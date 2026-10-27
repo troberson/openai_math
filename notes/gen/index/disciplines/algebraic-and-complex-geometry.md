@@ -1,12 +1,12 @@
 # Algebraic and complex geometry
 
-36 families · 86 manuscripts · 9 formalized at source level · 8 scope notes · 12 comparator configs · 0 reasoning traces · 2 verification bundles
+36 families · 86 manuscripts · 10 formalized at source level · 9 scope notes · 12 comparator configs · 0 reasoning traces · 2 verification bundles
 
-Tier: T3 7 · T2 1 · T1 0 · T0 28
+Tier: T3 7 · T2 1 · T1 1 · T0 27
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | T0 | 5 | 0 | — | 0 | — |
+| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | T1 | 5 | 1 | yes | 0 | — |
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | T2 | 5 | 0 | yes | 1 | — |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | T0 | 14 | 0 | — | 0 | — |
 | [035](../algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) | Threefold log abundance in numerical dimension one in characteristic $p>3$ | T0 | 2 | 0 | — | 0 | — |

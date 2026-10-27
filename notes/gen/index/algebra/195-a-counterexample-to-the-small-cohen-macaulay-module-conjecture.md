@@ -11,7 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | — |
-| Topics | [surfaces](../topics/surfaces.md) · [commutative-algebra](../topics/commutative-algebra.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [surfaces](../topics/surfaces.md) · [commutative-algebra](../topics/commutative-algebra.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
 | Summary page | [195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md](../../../../notes/gen/summaries/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) |
 

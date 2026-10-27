@@ -192,11 +192,11 @@ formalized (`paps_form=1`). The shape flags are `bound|uniform`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3334], manuscript link [S1:3341] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 139 at [S2:355] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3334], manuscript link [S1:3341] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 139 at [S2:355] |
 | S3 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex) | 74 | document root; abstract [S3:47–56]; nine section `\input` directives [S3:57–65]; 74 lines |
 | S4 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex) | 269 | `thm:main` [S4:51–65]; 269 lines |
 | S5 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf) | 20166 | the manuscript as shipped |
 | S6 | [`lean/docs/139.md`](../../../lean/docs/139.md) | 15 | scope note — Scope at [S6:9], comparator link at [S6:15] |
 | S7 | [`lean/ComparatorChallenges/LogConcaveQuery.lean`](../../../lean/ComparatorChallenges/LogConcaveQuery.lean) | 93 | comparator — `exact_source_main` [S7:81–87] `sorry` [S7:87]; 93 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=139`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=139`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

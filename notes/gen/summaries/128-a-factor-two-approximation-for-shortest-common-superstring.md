@@ -161,11 +161,11 @@ resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3086], manuscript link [S1:3086] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 128 at [S2:333] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3086], manuscript link [S1:3086] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 128 at [S2:333] |
 | S3 | [`preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/paper.tex`](../../../preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/paper.tex) | 56 | document root; abstract [S3:41–47]; seven section `\input` directives [S3:48–54]; 56 lines |
 | S4 | [`preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/sections/01-introduction.tex) | 31 | `thm:main` [S4:5–10]; 31 lines |
 | S5 | [`preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf`](../../../preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf) | 10588 | the manuscript as shipped |
 | S6 | [`lean/docs/128.md`](../../../lean/docs/128.md) | 15 | scope note — Scope at [S6:9], comparator link at [S6:15] |
 | S7 | [`lean/ComparatorChallenges/Superstring.lean`](../../../lean/ComparatorChallenges/Superstring.lean) | 43 | comparator — `main` [S7:36–38], `sorry` at [S7:39]; 43 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=128`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=128`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

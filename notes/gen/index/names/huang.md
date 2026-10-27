@@ -1,10 +1,10 @@
 # Name: huang
 
-35 families · subject name · 1 carried by a title or a declaration · 32 by prose · 27 by bibliography author
+36 families · subject name · 1 carried by a title or a declaration · 33 by prose · 27 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 128 capitalized occurrences, 69 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 129 capitalized occurrences, 70 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 128 capitalized occurrences, 69 of them mid-sentence, 0 lowercase.
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 32 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 33 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 27 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -56,6 +56,7 @@ Prose counts: 128 capitalized occurrences, 69 of them mid-sentence, 0 lowercase.
 | [361](../differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md) | Counterexamples to Yau's harmonic dimension bound | — | — | — | — | yes | — |
 | [363](../partial-differential-equations/363-boltzmann-nonuniqueness-with-exact-local-conservation.md) | Boltzmann nonuniqueness with exact local conservation | — | — | — | — | yes | yes |
 | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | The subcritical Lane--Emden and Hénon--Lane--Emden conjectures | — | — | — | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -98,6 +99,7 @@ Prose counts: 128 capitalized occurrences, 69 of them mid-sentence, 0 lowercase.
 | [`Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026`](../../../../preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../../preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/paper.pdf) |
 | [`Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026`](../../../../preprints/Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026/) | [280](../mathematical-physics/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md) | prose | [paper.pdf](../../../../preprints/Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026/paper.pdf) |
 | [`The-Blockwise-Alperin-Weight-Conjecture-September-23-2026`](../../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/) | [202](../algebra/202-blockwise-alperin-weight-conjecture.md) | prose | [paper.pdf](../../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026`](../../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | prose | [paper.pdf](../../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) |
 | [`The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026`](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/main.pdf) |
 | [`The-free-energy-of-the-Ising-random-perceptron-September-24-2026`](../../../../preprints/The-free-energy-of-the-Ising-random-perceptron-September-24-2026/) | [222](../probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md) | prose | [The-free-energy-of-the-Ising-random-perceptron-September-24-2026.pdf](../../../../preprints/The-free-energy-of-the-Ising-random-perceptron-September-24-2026/The-free-energy-of-the-Ising-random-perceptron-September-24-2026.pdf) |

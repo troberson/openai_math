@@ -239,7 +239,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 055 at line 1404. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 055 at line 1404. |
 | S2 | [`preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/README.md`](../../../preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/README.md) | 16 | Manuscript readme: title, date. |
 | S3 | [`preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/build/paper.tex`](../../../preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/build/paper.tex) | 61 | The main file: abstract and section inputs. |
 | S4 | [`preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/build/sections/introduction.tex`](../../../preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/build/sections/introduction.tex) | 147 | The Gepner functor, the theorem, the prior work, and the four-stage proof roadmap. |

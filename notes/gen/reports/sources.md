@@ -1,7 +1,7 @@
 # The manuscript source surface
 
 Measured 2026-10-08 by `python3 notes/scripts/build_sources.py`, which writes `notes/gen/tables/sources.tsv` —
-**719 rows, 14 columns**, one row per manuscript the release lists. The script reads the manuscript
+**721 rows, 14 columns**, one row per manuscript the release lists. The script reads the manuscript
 trees as text: no `lake`, `lean`, `lake exe cache get`, or comparator run, no PDF parsing, no `.lean`
 file opened. Run it twice and diff: the TSV is byte-identical and the report is identical. Every
 count below comes from that report, so quote a number with the rule that yields it.
@@ -15,20 +15,20 @@ describe the listed corpus only.
 
 | Column | Rule | Corpus total |
 |---|---|---|
-| `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` | 719 distinct |
-| `fam` | Family id, from the manuscript rows of `notes/gen/tables/subfindings.tsv` | 372 distinct |
+| `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` | 721 distinct |
+| `fam` | Family id, from the manuscript rows of `notes/gen/tables/subfindings.tsv` | 373 distinct |
 | `pdf` | Manuscript PDF path, reconciled against `overview.tex` | 719, all on disk, all non-empty |
-| `main_tex` | Resolved main file, rule below | 719 filled, **0** empty |
-| `roots` | `.tex` files declaring `\documentclass` **at line start** | **724** over 719 dirs: 715 with 1, 3 with 2, 1 with 3 |
-| `tex` | All `.tex` files under the dir | **7,705** (max 201, mean 10.72 per dir) |
-| `bib` | `.bib` files under the dir | **500**; **225** dirs carry none |
-| `sections` | `\section*?{` | **6,019** |
-| `subsections` | `\subsection*?{` | **16,297** |
-| `subsubsections` | `\subsubsection*?{` | **316** |
-| `proofs` | `\begin{proof}` | **20,341**; **1** dir carries none |
-| `thms` | Statement environments, rule below | **21,288** |
-| `abstract` | Line-start `\begin{abstract}` anywhere in the dir | **719 of 719** |
-| `tex_bytes` | Sum of `.tex` file sizes | **127,456,942** (mean 177,270 per dir) |
+| `main_tex` | Resolved main file, rule below | 721 filled, **0** empty |
+| `roots` | `.tex` files declaring `\documentclass` **at line start** | **726** over 721 dirs: 717 with 1, 3 with 2, 1 with 3 |
+| `tex` | All `.tex` files under the dir | **7,731** (max 201, mean 10.72 per dir) |
+| `bib` | `.bib` files under the dir | **501**; **226** dirs carry none |
+| `sections` | `\section*?{` | **6,047** |
+| `subsections` | `\subsection*?{` | **16,370** |
+| `subsubsections` | `\subsubsection*?{` | **329** |
+| `proofs` | `\begin{proof}` | **20,403**; **1** dir carries none |
+| `thms` | Statement environments, rule below | **21,353** |
+| `abstract` | Line-start `\begin{abstract}` anywhere in the dir | **721 of 721** |
+| `tex_bytes` | Sum of `.tex` file sizes | **127,933,852** (mean 177,439 per dir) |
 
 `abstract` does not discriminate — every manuscript ships one — and is kept because the bead asked
 for it. `proofs` and `thms` do: the one zero-`\begin{proof}` dir
@@ -40,21 +40,21 @@ carries 3 `.tex` files and 1 statement environment, which is the shape `math-hqd
 A **root** is a `.tex` file with `\documentclass` at the start of a line. Resolution prefers a root
 named `main.tex`, then a root named `paper.tex`, then the single root; a dir with several roots and
 no `main.tex`/`paper.tex` is flagged with an empty `main_tex`, never guessed. Outcomes:
-**main.tex 494, paper.tex 209, single-root 16, flagged 0.**
+**main.tex 494, paper.tex 210, single-root 17, flagged 0.**
 
 The name test is applied to roots, not to files, because **12** `main.tex` files in the corpus
 declare no `\documentclass` — companion and build copies — so a bare-name preference would pick a
 non-root file.
 
 The 16 single-root dirs resolve to: `preamble.tex` **7**, `manuscript.tex` **2**, `common.tex` **2**,
-and **5** singletons (`invariant-sk.tex`, `critical-percolation-z3.tex`,
+and **6** singletons (`invariant-sk.tex`, `critical-percolation-z3.tex`,
 `positive-eigenvalues-relative-su2-bfss.tex`, `strong-ulam-stability.tex`, `paper2.tex`). The bead's
 spec records 17 with `preamble.tex` 8 and 4 singletons; the split never reproduced — one singleton is
 counted as a `preamble.tex` there — and the 17 is now 16, because the withdrawn
 `Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026` was the dir that
 resolved to `build/manuscript.tex`, and its notice ships no `.tex` file at all.
 
-**Every one of the 719 resolved main files sits under a `build/` directory.** The release ships the
+**Every one of the 721 resolved main files sits under a `build/` directory.** The release ships the
 manuscript source as a build tree; there is no top-level `.tex` root anywhere in `preprints/`.
 
 The 4 multi-root dirs, with the file each resolves to:
@@ -71,7 +71,7 @@ The 4 multi-root dirs, with the file each resolves to:
 The bead's spec measures 717 dirs with exactly one `\documentclass` file and **5** with two or
 three. That is a substring count of the command name, over the 722-dir corpus it measured; over the
 719 dirs the release lists today the same substring rule reads 714 and 5. Requiring the command at
-line start reads **715** and **4**. The rules differ in exactly one directory,
+line start reads **717** and **4**. The rules differ in exactly one directory,
 `Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026`, whose second "root" is a bundled
 PGF documentation macro file that defines a macro *mentioning* the command — `preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026/build/tools/tex/latex/pgf/doc/pgfmanual-en-macros.tex:1177`:
 
@@ -97,9 +97,9 @@ the root count matters.
 that state nothing (`definition`, `remark`, `example`, `notation`, `convention`, `procedure`,
 `construction`, `scope`, `abstract`). Every theorem-like environment used in the corpus is locally
 declared, so this agrees with the union of declared names and a fixed standard list to the
-occurrence — 21,288 both ways.
+occurrence — 21,353 both ways.
 
-The epic quotes **21,203** for "theorem/lemma/proposition/corollary/claim/conjecture environments".
+The epic quotes **21,268** for "theorem/lemma/proposition/corollary/claim/conjecture environments".
 That is the six-name list, and it reproduces exactly, corpus-wide and restricted to declared names.
 The 85 gap is names the declared rule counts that the six omit: `assumption` 22, `foundation` 13,
 `auxproposition` 8, `hypothesis` 8, `auxlemma` 7, `standinginput` 5, `externalinput` 4,
@@ -110,12 +110,12 @@ The 85 gap is names the declared rule counts that the six omit: `assumption` 22,
 
 The report's reconciliation lines, from the run that wrote the shipped TSV:
 
-- rows written **719**, listed manuscript dirs **719**, preprint dirs on disk **749**;
+- rows written **721**, listed manuscript dirs **721**, preprint dirs on disk **751**;
 - overview manuscript slugs not on disk **0**;
 - empty or missing PDF files **0**;
 - families outside `notes/gen/tables/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
-- `overview.tex` manuscript paths (the paren-aware `PAP` regex) **719** distinct vs `sources.tsv`
-  `pdf` **719** distinct; paths in one and not the other **0** and **0**; families whose path set
+- `overview.tex` manuscript paths (the paren-aware `PAP` regex) **721** distinct vs `sources.tsv`
+  `pdf` **721** distinct; paths in one and not the other **0** and **0**; families whose path set
   differs from `overview.tex` **0**.
 
 The `pdf` column is derived from `notes/gen/tables/subfindings.tsv`, so the last three lines are the
@@ -140,5 +140,5 @@ re-measure a manuscript that stayed put.
 - The manuscript abstract text was not compared with the `overview.tex` abstract — that is
   `math-hqd.2`.
 - Nothing here says a manuscript is formalized, correct, or read. The formalized flag lives in
-  `notes/gen/tables/catalog.tsv` at **172** of 719 manuscripts, at source level under
+  `notes/gen/tables/catalog.tsv` at **175** of 721 manuscripts, at source level under
   `lean/formalization.yaml` `review: status: unchecked`.

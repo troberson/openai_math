@@ -57,11 +57,11 @@ manuscript	029	1	Primitive roots for every admissible integer base	preprints/Pri
 manuscript	029	2	Simultaneous primitive roots: a conditional lower bound for prime bases	preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf	0	T0		
 manuscript	030	1	Modularity of elliptic curves over imaginary quadratic fields	preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf	0	T0		
 manuscript	031	1	Open Homomorphisms of Global Solvably Closed Galois Groups	preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/open-homomorphisms-solvably-closed-galois-groups.pdf	0	T0		
-manuscript	032	1	The rational Hodge conjecture for CM abelian varieties	preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf	0	T0		
-manuscript	032	2	Algebraic Kuga–Satake correspondences and Hodge conjectures on a K3 quadratic locus	preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf	0	T0		
-manuscript	032	3	Weil classes and Hodge classes on abelian powers	preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf	0	T0		
-manuscript	032	4	Abelian covers, Gale correspondences, and the Hodge conjecture for powers	preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf	0	T0		
-manuscript	032	5	A Conditional Reduction for Algebraic Kuga–Satake Correspondences	preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf	0	T0		
+manuscript	032	1	The rational Hodge conjecture for CM abelian varieties	preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf	1	T1		
+manuscript	032	2	Algebraic Kuga–Satake correspondences and Hodge conjectures on a K3 quadratic locus	preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf	0	T1		
+manuscript	032	3	Weil classes and Hodge classes on abelian powers	preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf	0	T1		
+manuscript	032	4	Abelian covers, Gale correspondences, and the Hodge conjecture for powers	preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf	0	T1		
+manuscript	032	5	A Conditional Reduction for Algebraic Kuga–Satake Correspondences	preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf	0	T1		
 manuscript	033	1	Orbifold and logarithmic subadditivity	preprints/Orbifold-and-logarithmic-Iitaka-subadditivity-September-26-2026/paper.pdf	0	T2		
 manuscript	033	2	Whole-fiber variation	preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf	0	T2		
 manuscript	033	3	Reverse inequality and additivity	preprints/The-reverse-logarithmic-Kodaira-inequality-and-additivity-September-26-2026/paper.pdf	0	T2		
@@ -157,7 +157,8 @@ manuscript	076	3	Asymptotically minimal maxima of real Littlewood polynomials	pr
 manuscript	077	1	Sphere restriction	preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf	0	T0		
 manuscript	077	2	Diagonal Fourier extension	preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026.pdf	0	T0		
 manuscript	078	1	Bochner–Riesz multipliers in three dimensions	preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf	0	T0		
-manuscript	079	1	Critical local smoothing for the three-dimensional wave equation	preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf	0	T0		
+manuscript	079	1	Local smoothing for the Euclidean wave equation	preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf	1	T3		
+manuscript	079	2	Critical local smoothing for the three-dimensional wave equation	preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf	0	T3		
 manuscript	080	1	Planar endpoint convergence	preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/paper.pdf	0	T0		
 manuscript	080	2	Higher-dimensional endpoint convergence	preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/paper.pdf	0	T0		
 manuscript	081	1	Riesz transforms and uniform rectifiability in higher codimension	preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf	1	T3		
@@ -718,6 +719,7 @@ manuscript	376	7	Velocity-field detection	preprints/Velocity-Field-Detection-of-
 manuscript	376	8	Scalar potentials and slow clocks	preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/manuscript.pdf	0	T2		
 manuscript	376	9	Incompressible box transport	preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf	0	T2		
 manuscript	377	1	Uniform Interior $C^{1,\alpha}$ Estimates for Infinity-Harmonic Functions	preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf	0	T0		
+manuscript	378	1	The Exponential Time Hypothesis is False	preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf	1	T3		
 comparator-link	003	1					Riemann zeta $7/8$ bound	QuasiRiemannHypothesis.lean
 comparator-link	003	2					Dirichlet $L$-function $7/8$ bound	DirichletSevenEighths.lean
 comparator-link	003	3					Finite-order Hecke $L$-function $7/8$ bound	HeckeSevenEighths.lean
@@ -743,6 +745,7 @@ comparator-link	025	2					Optimal order of the shortest Egyptian-fraction expans
 comparator-link	026	1					Positive lower density of prime-ratio increases	PrimeGaps.lean
 comparator-link	027	1					Compatibility of the produced marked solution with every seam equation	CharacterVarietiesAllSeamsSupport.lean
 comparator-link	028	1					Uniform bounds for bounded-step Gaussian-prime walks	GaussianMoat.lean
+comparator-link	032	1					Rational Hodge classes on CM abelian varieties are algebraic	HodgeConjectureCMAbelianVarieties/Challenge.lean
 comparator-link	033	1					Logarithmic Kodaira additivity in the negative-fiber branch	LogKodairaFiberNegative.lean
 comparator-link	039	1					Nagata's conjecture	Nagata.lean
 comparator-link	039	2					Eventual maximal Seshadri constants	MaximalSeshadriConstants.lean
@@ -1144,3 +1147,4 @@ comparator-link	376	3					Pointwise and integral velocity-field detection of hal
 comparator-link	376	4					Incompressible transport of solid boxes	BalancedBoxRouting.lean
 comparator-link	376	5					Finite computation in a balanced zero-data fluid flow	BalancedThreeStack.lean
 comparator-link	376	6					Effective finite computation detected by a fixed particle	ForcedNavierStokesComputation.lean
+comparator-link	378	1					Exact counting and SAT on canonical inputs in subexponential time and polynomial space	SubexponentialSAT.lean

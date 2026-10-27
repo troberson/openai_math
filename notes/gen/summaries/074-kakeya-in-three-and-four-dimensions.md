@@ -181,8 +181,8 @@ trees — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 074 at line 1847. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 222. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 074 at line 1847. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 222. |
 | S3 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/paper.tex`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/paper.tex) | 28 | Main file: title, abstract, and section inputs (three dimensions). |
 | S4 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex) | 247 | The three-dimensional maximal theorem, the density feature, the set-vs-maximal distinction, and the proof geometry. |
 | S5 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/paper.tex`](../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/paper.tex) | 78 | Main file: title, abstract, and section inputs (four dimensions). |

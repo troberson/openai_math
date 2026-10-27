@@ -33,7 +33,7 @@ The release ships no manuscript→Lean edge (`notes/development/index-design.md`
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `LogspaceEquality` | [.json](../../../../lean/ComparatorChallenges/LogspaceEquality.json) | [.lean](../../../../lean/ComparatorChallenges/LogspaceEquality.lean) | 1 | 20 | no | yes |
+| `LogspaceEquality` | [.json](../../../../lean/ComparatorChallenges/LogspaceEquality.json) | [.lean](../../../../lean/ComparatorChallenges/LogspaceEquality.lean) | 1 | 0 | no | yes |
 
 ## Verification bundles
 

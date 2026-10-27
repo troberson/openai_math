@@ -134,8 +134,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 031 at line 739. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 138. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 031 at line 739. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 138. |
 | S3 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/README.md`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S4 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/main.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/main.tex) | 50 | The main file: the abstract, packages, and section inputs. |
 | S5 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/introduction.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/introduction.tex) | 39 | The main theorem, the historical context, the two main ideas, and the proof route. |

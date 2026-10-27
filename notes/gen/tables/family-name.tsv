@@ -70,6 +70,7 @@ fam	name	layers
 051	ampere	Eb
 057	ampere	b
 062	ampere	b
+079	ampere	b
 334	ampere	b
 338	ampere	b
 341	ampere	b
@@ -106,6 +107,7 @@ fam	name	layers
 262	arthur	b
 294	arthur	b
 305	arthur	b
+378	arthur	b
 002	artin	b
 003	artin	b
 004	artin	Eb
@@ -684,6 +686,7 @@ fam	name	layers
 323	boolean	b
 351	boolean	b
 364	boolean	b
+378	boolean	Eb
 250	boone	FMbB
 001	borel	b
 002	borel	B
@@ -915,6 +918,7 @@ fam	name	layers
 318	brown	b
 319	brown	b
 368	brown	bB
+079	brownian	b
 093	brownian	b
 097	brownian	Eb
 139	brownian	b
@@ -1410,6 +1414,7 @@ fam	name	layers
 372	cauchy	b
 375	cauchy	b
 376	cauchy	b
+378	cauchy	b
 002	cayley	b
 010	cayley	b
 014	cayley	b
@@ -1451,6 +1456,7 @@ fam	name	layers
 339	cayley	b
 344	cayley	Eb
 359	cayley	b
+378	cayley	b
 002	chai	b
 016	chai	bB
 032	chai	b
@@ -1600,6 +1606,7 @@ fam	name	layers
 318	cohen	b
 321	cohen	bB
 345	cohen	bB
+378	cohen	b
 157	colin	FMb
 361	colin	b
 001	colmez	b
@@ -1697,6 +1704,7 @@ fam	name	layers
 330	david	b
 357	david	bB
 366	david	bB
+378	david	b
 001	deligne	b
 002	deligne	bB
 004	deligne	bB
@@ -1763,6 +1771,7 @@ fam	name	layers
 037	dirichlet	b
 066	dirichlet	b
 071	dirichlet	b
+079	dirichlet	Eb
 087	dirichlet	b
 090	dirichlet	b
 093	dirichlet	Eb
@@ -2040,7 +2049,7 @@ fam	name	layers
 074	euclidean	b
 076	euclidean	b
 077	euclidean	b
-079	euclidean	b
+079	euclidean	FMEb
 080	euclidean	b
 081	euclidean	b
 082	euclidean	b
@@ -2323,6 +2332,7 @@ fam	name	layers
 371	euler	b
 375	euler	b
 376	euler	b
+079	evans	bB
 085	evans	B
 091	evans	b
 166	evans	b
@@ -2482,7 +2492,7 @@ fam	name	layers
 076	fourier	b
 077	fourier	FMb
 078	fourier	b
-079	fourier	b
+079	fourier	EDb
 080	fourier	Eb
 081	fourier	b
 082	fourier	b
@@ -2594,6 +2604,7 @@ fam	name	layers
 371	fourier	b
 372	fourier	b
 376	fourier	b
+378	fourier	b
 002	fricke	Eb
 006	fricke	b
 102	friedgut	EbB
@@ -2965,6 +2976,7 @@ fam	name	layers
 365	gaussian	b
 371	gaussian	Eb
 376	gaussian	b
+378	gaussian	b
 055	gepner	FMb
 193	gepner	b
 209	gersten	FMbB
@@ -3211,6 +3223,7 @@ fam	name	layers
 060	green	b
 067	green	B
 072	green	b
+079	green	b
 086	green	B
 090	green	Eb
 125	green	b
@@ -3523,6 +3536,7 @@ fam	name	layers
 337	hadamard	FMb
 358	hadamard	b
 359	hadamard	b
+378	hadamard	b
 157	hadwiger	FMDbB
 158	hadwiger	bB
 354	hadwiger	b
@@ -3619,6 +3633,7 @@ fam	name	layers
 364	hamiltonian	b
 370	hamiltonian	b
 376	hamiltonian	b
+378	hamiltonian	b
 087	hanner	EbB
 315	hanner	bB
 014	hansen	bB
@@ -3626,6 +3641,7 @@ fam	name	layers
 104	hansen	B
 272	hansen	b
 318	hansen	B
+378	hansen	b
 005	hardy	b
 026	hardy	b
 051	hardy	b
@@ -3700,6 +3716,7 @@ fam	name	layers
 309	hasse	b
 313	hasse	b
 318	hasse	b
+378	hasse	b
 032	hassett	b
 041	hassett	bB
 053	hassett	b
@@ -3865,6 +3882,7 @@ fam	name	layers
 270	hermite	b
 298	hermite	b
 351	hermite	b
+378	hermite	Eb
 001	hermitian	b
 002	hermitian	b
 014	hermitian	b
@@ -3892,6 +3910,7 @@ fam	name	layers
 067	hermitian	b
 076	hermitian	b
 077	hermitian	b
+079	hermitian	b
 082	hermitian	b
 087	hermitian	b
 095	hermitian	b
@@ -3966,6 +3985,7 @@ fam	name	layers
 074	hessian	b
 077	hessian	b
 078	hessian	b
+079	hessian	Eb
 080	hessian	b
 082	hessian	Eb
 083	hessian	b
@@ -4498,6 +4518,7 @@ fam	name	layers
 361	huang	b
 363	huang	bB
 370	huang	bB
+378	huang	b
 237	hubbard	b
 275	hubbard	Eb
 114	huh	EbB
@@ -4552,6 +4573,7 @@ fam	name	layers
 234	ising	FMb
 236	ising	FMb
 281	ising	b
+378	ising	b
 291	jacelon	bB
 301	jacelon	FMbB
 002	jacobi	b
@@ -4757,6 +4779,7 @@ fam	name	layers
 365	jiang	bB
 369	jiang	bB
 372	jiang	bB
+378	jiang	b
 002	jordan	b
 010	jordan	b
 014	jordan	EbB
@@ -4869,6 +4892,7 @@ fam	name	layers
 063	kahler	b
 065	kahler	b
 067	kahler	b
+079	kahler	b
 087	kahler	b
 202	kahler	b
 305	kahler	b
@@ -4897,10 +4921,11 @@ fam	name	layers
 074	kakeya	FMEbB
 077	kakeya	Eb
 078	kakeya	b
-079	kakeya	b
+079	kakeya	Eb
 080	kakeya	Eb
 083	kakeya	b
 170	kakeya	b
+378	kakeya	b
 127	kalai	b
 156	kalai	bB
 175	kalai	bB
@@ -5156,6 +5181,7 @@ fam	name	layers
 272	kumar	b
 278	kumar	b
 336	kumar	bB
+378	kumar	b
 002	kummer	Eb
 003	kummer	b
 004	kummer	Eb
@@ -5313,6 +5339,7 @@ fam	name	layers
 060	laplacian	Eb
 072	laplacian	b
 073	laplacian	b
+079	laplacian	b
 090	laplacian	b
 131	laplacian	b
 147	laplacian	b
@@ -5598,6 +5625,7 @@ fam	name	layers
 075	lee	bB
 077	lee	bB
 078	lee	bB
+079	lee	bB
 080	lee	bB
 089	lee	bB
 094	lee	b
@@ -5692,6 +5720,7 @@ fam	name	layers
 058	levi	b
 062	levi	b
 069	levi	b
+079	levi	b
 203	levi	Eb
 206	levi	b
 244	levi	b
@@ -6044,6 +6073,7 @@ fam	name	layers
 011	luca	FbB
 032	luca	b
 038	luca	b
+378	luca	b
 060	luck	b
 197	luck	bB
 207	luck	B
@@ -6250,6 +6280,7 @@ fam	name	layers
 304	martin	bB
 305	martin	b
 323	martin	b
+378	martin	b
 047	mason	Eb
 238	mason	bB
 280	mason	b
@@ -6481,6 +6512,7 @@ fam	name	layers
 280	mobius	b
 282	mobius	Eb
 298	mobius	b
+378	mobius	b
 033	moishezon	b
 034	moishezon	Eb
 036	moishezon	b
@@ -6496,6 +6528,7 @@ fam	name	layers
 051	monge	Eb
 057	monge	b
 062	monge	b
+079	monge	b
 334	monge	b
 338	monge	b
 341	monge	b
@@ -6509,6 +6542,7 @@ fam	name	layers
 044	moore	b
 056	moore	b
 071	moore	bB
+079	moore	b
 095	moore	b
 172	moore	bB
 209	moore	b
@@ -6681,6 +6715,7 @@ fam	name	layers
 330	naor	b
 331	naor	bB
 332	naor	EbB
+378	naor	b
 376	navier	FMb
 058	neumann	b
 059	neumann	bB
@@ -6796,6 +6831,7 @@ fam	name	layers
 042	newton	b
 066	newton	b
 067	newton	b
+079	newton	b
 087	newton	b
 109	newton	b
 130	newton	Eb
@@ -6818,11 +6854,13 @@ fam	name	layers
 351	newton	Eb
 364	newton	b
 370	newton	b
+378	newton	b
 012	nikodym	b
 018	nikodym	b
 034	nikodym	b
 074	nikodym	Eb
 078	nikodym	b
+079	nikodym	b
 085	nikodym	b
 140	nikodym	b
 170	nikodym	b
@@ -6889,6 +6927,7 @@ fam	name	layers
 322	ozawa	b
 330	ozawa	b
 077	paley	b
+079	paley	b
 080	paley	b
 083	paley	b
 175	paley	b
@@ -7350,6 +7389,7 @@ fam	name	layers
 126	raghavendra	B
 127	raghavendra	b
 170	raghavendra	B
+378	raghavendra	b
 002	ramanujan	b
 003	ramanujan	b
 004	ramanujan	b
@@ -7379,6 +7419,7 @@ fam	name	layers
 248	ramsey	b
 323	ramsey	b
 327	ramsey	b
+079	rayleigh	b
 093	rayleigh	b
 097	rayleigh	b
 114	rayleigh	b
@@ -7802,6 +7843,7 @@ fam	name	layers
 322	schatten	b
 034	schauder	b
 057	schauder	b
+079	schauder	b
 091	schauder	b
 093	schauder	b
 107	schauder	b
@@ -7921,7 +7963,7 @@ fam	name	layers
 002	schrodinger	b
 032	schrodinger	b
 077	schrodinger	Eb
-079	schrodinger	b
+079	schrodinger	Eb
 080	schrodinger	FMb
 157	schrodinger	b
 219	schrodinger	b
@@ -8269,6 +8311,7 @@ fam	name	layers
 371	schwarz	b
 375	schwarz	b
 376	schwarz	b
+378	schwarz	b
 260	schwarzschild	MEb
 059	sebastiani	EbB
 200	sebastiani	b
@@ -8281,6 +8324,7 @@ fam	name	layers
 006	selmer	Eb
 010	selmer	b
 019	selmer	Eb
+079	semmes	bB
 081	semmes	FEbB
 001	serre	b
 002	serre	bB
@@ -8317,6 +8361,7 @@ fam	name	layers
 066	serre	B
 067	serre	bB
 069	serre	b
+079	serre	bB
 193	serre	Fb
 194	serre	b
 195	serre	b
@@ -8504,7 +8549,7 @@ fam	name	layers
 071	sobolev	Eb
 072	sobolev	Eb
 077	sobolev	b
-079	sobolev	b
+079	sobolev	Eb
 080	sobolev	Fb
 083	sobolev	b
 085	sobolev	Eb
@@ -8568,7 +8613,6 @@ fam	name	layers
 372	sobolev	b
 375	sobolev	b
 376	sobolev	b
-079	sogge	FbB
 250	solitar	b
 258	solitar	Mb
 116	solomon	bB
@@ -8645,6 +8689,7 @@ fam	name	layers
 075	stein	bB
 077	stein	bB
 078	stein	bB
+079	stein	bB
 080	stein	b
 081	stein	B
 083	stein	FbB
@@ -8840,6 +8885,7 @@ fam	name	layers
 371	tao	bB
 372	tao	bB
 376	tao	B
+378	tao	b
 001	tate	b
 002	tate	b
 004	tate	bB
@@ -9041,6 +9087,7 @@ fam	name	layers
 371	taylor	b
 372	taylor	b
 375	taylor	b
+378	taylor	b
 113	teller	b
 233	teller	FMbB
 238	thirring	b
@@ -9117,6 +9164,7 @@ fam	name	layers
 271	trotter	bB
 057	trudinger	B
 060	trudinger	b
+079	trudinger	B
 260	trudinger	B
 335	trudinger	bB
 336	trudinger	bB
@@ -9141,6 +9189,7 @@ fam	name	layers
 275	turing	b
 279	turing	b
 376	turing	bB
+378	turing	b
 055	uhlenbeck	B
 087	uhlenbeck	b
 093	uhlenbeck	Eb
@@ -9322,6 +9371,8 @@ fam	name	layers
 365	wang	bB
 367	wang	b
 375	wang	bB
+378	wang	b
+079	ward	B
 215	ward	b
 219	ward	Eb
 234	ward	Eb
@@ -9550,6 +9601,7 @@ fam	name	layers
 051	yang	bB
 054	yang	bB
 060	yang	b
+079	yang	B
 088	yang	b
 091	yang	bB
 113	yang	b
@@ -9580,6 +9632,7 @@ fam	name	layers
 365	yang	b
 369	yang	bB
 372	yang	b
+378	yang	b
 032	yau	b
 033	yau	b
 034	yau	MEbB

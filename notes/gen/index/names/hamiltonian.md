@@ -1,10 +1,10 @@
 # Name: hamiltonian
 
-43 families · subject name · 6 carried by a title or a declaration · 43 by prose · 0 by bibliography author
+44 families · subject name · 6 carried by a title or a declaration · 44 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 672 capitalized occurrences, 612 of them mid-sentence, 62 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 673 capitalized occurrences, 613 of them mid-sentence, 62 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 672 capitalized occurrences, 612 of them mid-sentence, 62 lowercas
 | `M` — Manuscript title | title | 3 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 4 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 43 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 44 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -64,6 +64,7 @@ Prose counts: 672 capitalized occurrences, 612 of them mid-sentence, 62 lowercas
 | [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | Kinetic limits and fluctuations over the Boltzmann lifespan | — | — | — | — | yes | — |
 | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | The subcritical Lane--Emden and Hénon--Lane--Emden conjectures | — | — | — | — | yes | — |
 | [376](../partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md) | Universal computation in forced Navier--Stokes flows | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -133,6 +134,7 @@ Prose counts: 672 capitalized occurrences, 612 of them mid-sentence, 62 lowercas
 | [`Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026`](../../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/) | [139](../theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md) | prose | [article.pdf](../../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf) |
 | [`Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026`](../../../../preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/) | [343](../differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md) | prose | [paper.pdf](../../../../preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/paper.pdf) |
 | [`The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026`](../../../../preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/) | [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | prose | [paper.pdf](../../../../preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026`](../../../../preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/) | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | prose | [The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf](../../../../preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf) |
 | [`The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026`](../../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/) | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | prose | [paper.pdf](../../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf) |
 | [`The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026`](../../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | prose | [paper.pdf](../../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) |

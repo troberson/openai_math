@@ -127,8 +127,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 201 at line 4600. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 483. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 201 at line 4600. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 483. |
 | S3 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/main.tex`](../../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/main.tex) | 34 | Main file: title and abstract. |
 | S4 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/sections/introduction.tex`](../../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/sections/introduction.tex) | 139 | The main theorem, the historical context, and the construction strategy. |
 | S5 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/references.bib`](../../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/references.bib) | 182 | The manuscript's bibliography. |

@@ -8,15 +8,15 @@ texts per family and records what the comparison shows.
 **The rule that yields every count here:** `python3 notes/scripts/compare_abstracts.py` [S33] — it
 parses the 372 `\resultentry` abstracts out of `overview.tex` [S1], extracts every
 `\begin{abstract}` block from every manuscript's LaTeX, normalizes both, and compares them. It
-writes nothing; `--tsv` writes `notes/gen/tables/abstracts.tsv` [S31] (one row per family, 372 rows) after its
+writes nothing; `--tsv` writes `notes/gen/tables/abstracts.tsv` [S31] (one row per family, 373 rows) after its
 reconciliation gates pass, and `--mutant` proves the gates discriminate. All counts below are from a
 fresh run of that report.
 
 ## The headline
 
-**No manuscript abstract is the overview abstract.** Over all 719 manuscript comparisons:
-**0 identical, 0 abridged, 719 divergent.** Over the 372 family best matches: **0 identical,
-0 abridged, 372 divergent.**
+**No manuscript abstract is the overview abstract.** Over all 721 manuscript comparisons:
+**0 identical, 0 abridged, 721 divergent.** Over the 373 family best matches: **0 identical,
+0 abridged, 373 divergent.**
 
 The overview abstract is a rewritten third-person paraphrase in every case. The dominant transform
 is `We prove X` → `Proves X`, plus sentence-level re-combination. Family 198 is the closest the
@@ -35,11 +35,11 @@ the error is systematic, and the `conditional` tag is where it bites.
 
 ## What was compared
 
-- **Units.** Manuscript-level: 719 comparisons (one per manuscript, against its family's overview
-  abstract). Family-level: 372 comparisons (the best-matching manuscript per family). Tag-level:
+- **Units.** Manuscript-level: 721 comparisons (one per manuscript, against its family's overview
+  abstract). Family-level: 373 comparisons (the best-matching manuscript per family). Tag-level:
   the ledger's shape rules [S32] run over the overview abstract, and re-run over the union of the
   family's manuscript abstracts.
-- **Abstract environments: 722 over 719 directories.** Every one of the 719 manuscript directories
+- **Abstract environments: 724 over 721 directories.** Every one of the 721 manuscript directories
   contains at least one abstract; three ship two — family 057
   (`A-conditional-abelianity-theorem-for-special-fourfold-pairs-with-a-half-weight-divisor-October-5-2026`,
   `build/source/main.tex` and `build/source/inertia.tex`), family 039
@@ -48,7 +48,7 @@ the error is systematic, and the `conditional` tag is where it bites.
   (`Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026`,
   `build/main.tex` and `build/termination-generalized-lc-kahler-fourfolds.tex`). The `abstract`
   column in `notes/gen/tables/sources.tsv` is a 0/1 **flag** per directory, not an occurrence count, so it
-  reads 719 and cannot show this.
+  reads 721 and cannot show this.
 - **Normalization is lossy, deliberately.** Comments, the abstract environment markers,
   `\label`/`\ref`/`\cite`-family macros, generic `\newcommand`-family macros, math delimiters,
   braces, `~` and `\\` are stripped and whitespace collapsed. This is why the relation classes are
@@ -64,17 +64,17 @@ strings — character-level similarity, not meaning.
 
 | unit | n | min | p10 | median | p90 | max |
 |---|---|---|---|---|---|---|
-| manuscript-level | 719 | 0.006 | 0.029 | **0.126** | 0.448 | 0.989 |
-| family-level best match | 372 | 0.011 | 0.074 | **0.236** | 0.610 | 0.989 |
+| manuscript-level | 721 | 0.006 | 0.029 | **0.126** | 0.448 | 0.989 |
+| family-level best match | 373 | 0.011 | 0.074 | **0.236** | 0.610 | 0.989 |
 
 | bucket (<0.30 / 0.30–0.50 / 0.50–0.70 / 0.70–0.90 / ≥0.90) | manuscript-level | family-level |
 |---|---|---|
-| count | 566 / 97 / 32 / 20 / 4 | 227 / 90 / 32 / 19 / 4 |
+| count | 568 / 97 / 32 / 20 / 4 | 228 / 90 / 32 / 19 / 4 |
 
 Four families have a best match at ≥0.90: **005** (0.972), **098** (0.901), **198** (0.989),
 **368** (0.929). Eighteen families have a best match below 0.05: 021, 027, 053, 081, 093, 124, 126,
 128, 174, 206, 214, 231, 234, 261, 264, 275, 361, 373. Label the unit when quoting the floor:
-counting per manuscript instead of per family, **149 of the 719** comparisons fall below 0.05,
+counting per manuscript instead of per family, **150 of the 721** comparisons fall below 0.05,
 spread over **88** families. The manuscript-level minimum 0.006 is family 032's surviving
 `A-Conditional-Reduction-for-Algebraic-Kuga-Satake-…` manuscript.
 
@@ -107,22 +107,22 @@ shape, so `msfam` ≥ `man719` by construction and the comparison to `ovfam` mus
 
 | shape | ovfam | msfam | man719 | ov-only | ms-only |
 |---|---|---|---|---|---|
-| bound | 139 | 162 | 290 | 26 | 49 |
+| bound | 141 | 163 | 291 | 27 | 49 |
 | classification | 34 | 44 | 72 | 4 | 14 |
 | conditional | 5 | 10 | 15 | 3 | 8 |
-| counterexample | 44 | 52 | 69 | 13 | 21 |
+| counterexample | 44 | 53 | 70 | 13 | 22 |
 | density | 20 | 32 | 44 | 1 | 13 |
 | partial | 42 | 73 | 102 | 7 | 38 |
-| resolution | 144 | 127 | 153 | 78 | 61 |
+| resolution | 143 | 127 | 153 | 78 | 62 |
 | undecidability | 4 | 21 | 24 | 2 | 19 |
-| uniform | 161 | 209 | 340 | 24 | 72 |
+| uniform | 162 | 210 | 341 | 24 | 72 |
 
-**283 of 372 families have at least one shape disagreement between the two texts; 89 have none.**
-Of the 283, 148 are single-manuscript families and 135 are multi-manuscript families.
+**285 of 373 families have at least one shape disagreement between the two texts; 88 have none.**
+Of the 285, 149 are single-manuscript families and 136 are multi-manuscript families.
 
 The direction is not "the union flags more". Per manuscript, the overview under-flags every shape
-except `resolution`, which it **over**-flags: 144 of 372 families (39%) call a resolution in the
-overview, against 153 of 719 manuscripts (21%). The overview is written to name a solved problem —
+except `resolution`, which it **over**-flags: 143 of 373 families (38%) call a resolution in the
+overview, against 153 of 721 manuscripts (21%). The overview is written to name a solved problem —
 it uses `resolves`, `answers`, `settles`, `proves the … conjecture` at roughly twice the manuscript
 rate, and `undecidability` language at a fifth of it (4 families vs 24 manuscripts). The
 `resolution` tag and the `resolves_named` column are keyed to the paraphrase's rhetoric, not to the
@@ -303,10 +303,10 @@ shorter statement of the same result, written for a reader choosing which family
 - The claim-shape tags read the overview paraphrase. For a family whose overview drops a manuscript
   (034, 218), the tags cannot see the shapes in the dropped manuscript at all.
 - `resolution` and `resolves_named` are keyed to the paraphrase's rhetoric and over-flag relative to
-  the manuscripts (144 of 372 families vs 153 of 719 manuscripts).
+  the manuscripts (143 of 373 families vs 153 of 721 manuscripts).
 - `conditional` is the tag where paraphrase and rule interact worst: 11 families disagree, and only
   5 of them are real conditionals the overview presents unconditionally.
-- `notes/gen/tables/abstracts.tsv` [S31] is the per-family record — 372 rows with the best-match ratio,
+- `notes/gen/tables/abstracts.tsv` [S31] is the per-family record — 373 rows with the best-match ratio,
   relation, matched file, both shape sets, the disagreement sets, and the two conditional flags.
   Prose entries above cover the informative subset (4 near-identical, 8 largest divergences, 2
   syntheses, 11 conditional disagreements); the other divergent families are in the TSV, not in

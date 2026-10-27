@@ -1,10 +1,10 @@
 # Name: dirichlet
 
-84 families · subject name · 9 carried by a title or a declaration · 84 by prose · 0 by bibliography author
+85 families · subject name · 10 carried by a title or a declaration · 85 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 1262 capitalized occurrences, 1156 of them mid-sentence, 114 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 1281 capitalized occurrences, 1172 of them mid-sentence, 129 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -12,9 +12,9 @@ Prose counts: 1262 capitalized occurrences, 1156 of them mid-sentence, 114 lower
 |---|---|---|---|
 | `F` — Family title | title | 0 | The release named the family after it — the strongest subject evidence there is. |
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
-| `E` — Theorem title | title | 8 | A statement environment carries it in its optional title, so a theorem is named for it. |
+| `E` — Theorem title | title | 9 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 1 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 84 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 85 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -43,6 +43,7 @@ Prose counts: 1262 capitalized occurrences, 1156 of them mid-sentence, 114 lower
 | [037](../algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) | The sharp ordinary-double-point volume gap | — | — | — | — | yes | — |
 | [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | — | — | — | — | yes | — |
 | [071](../real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) | Koebe's circle-domain conjecture and circle-domain rigidity | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | yes | — | yes | — |
 | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | The Mahler conjectures and symplectic width | — | — | — | — | yes | — |
 | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | Universal optimality of the triangular lattice | — | — | — | — | yes | — |
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | — | — | yes | — | yes | — |
@@ -184,6 +185,7 @@ Prose counts: 1262 capitalized occurrences, 1156 of them mid-sentence, 114 lower
 | [`Integral-points-on-character-varieties-of-curves-September-25-2026`](../../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/) | [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | prose | [paper.pdf](../../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf) |
 | [`Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026`](../../../../preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/) | [366](../partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md) | prose | [Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf](../../../../preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf) |
 | [`Koebes-Circle-Domain-Conjecture-September-23-2026`](../../../../preprints/Koebes-Circle-Domain-Conjecture-September-23-2026/) | [071](../real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) | prose | [paper.pdf](../../../../preprints/Koebes-Circle-Domain-Conjecture-September-23-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Marked-polygon-correlations-and-one-arc-bounds-September-26-2026`](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf) |
 | [`Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026`](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf) |
 | [`Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026`](../../../../preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/) | [365](../partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md) | prose | [paper.pdf](../../../../preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf) |
@@ -282,10 +284,10 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Dirichlet operator and stationary diffusion |
 | [216](../probability-and-statistical-mechanics/216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md) | Dirichlet and torus transfer |
 | [366](../partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md) | The smooth-data Dirichlet input |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Periodic Dirichlet problem |
 | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | The scalar Dirichlet solve without a floor |
 | [011](../number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md) | Divisor moments and Dirichlet mean squares |
 | [006](../number-theory/006-goldfelds-conjecture.md) | Dirichlet-polynomial second moments |
-| — | Dirichlet-polynomial second moments |
 
 ## Spelling variants
 

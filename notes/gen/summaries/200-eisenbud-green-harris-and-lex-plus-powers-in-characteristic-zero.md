@@ -191,8 +191,8 @@ no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 200 at line 4575. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 481. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 200 at line 4575. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 481. |
 | S3 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/main.tex`](../../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/main.tex) | 64 | Manuscript 1 root: title and abstract. |
 | S4 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/sections/01-introduction.tex) | 227 | Manuscript 1: the Betti theorem over $\C$, the characteristic-zero corollary, the context, and the division-coefficient reduction that carries the Betti numbers. |
 | S5 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/paper.tex`](../../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/paper.tex) | 84 | Manuscript 2 root: title and abstract. |

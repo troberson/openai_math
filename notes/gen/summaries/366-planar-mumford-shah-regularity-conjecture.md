@@ -121,7 +121,7 @@ manuscript — a root `build/main.tex`, 6 `.tex` files under
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 366 at line 8872. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 832. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 366 at line 8872. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 832. |
 | S3 | [`preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/build/main.tex`](../../../preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/build/main.tex) | 46 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/build/sections/introduction.tex`](../../../preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/build/sections/introduction.tex) | 185 | Introduction: the variational problem, the main theorem, history, and proof strategy. |

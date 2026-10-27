@@ -58,7 +58,7 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | The release's family entry and manuscript entry, line 162 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | The release's family entry and manuscript entry, line 162 |
 | S2 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex) | 68 | Manuscript abstract, lines 47–50 |
 | S3 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex) | 229 | Main theorem 20–29, dense corollary 43–52, CAP 11–18, organization 54–58 |
 | S4 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/dense.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/dense.tex) | 164 | Surface classification 108–114, Enriques cover and minimality restriction 116–128 |

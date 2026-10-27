@@ -8,7 +8,7 @@ formalization excludes is what the release asserts, not what a build has confirm
 
 ## How this was read
 
-All 242 scope notes on disk were read in full, section by section — the 235 of the original pass
+All 245 scope notes on disk were read in full, section by section — the 235 of the original pass
 plus the 7 that the 2026-10-07 upstream merge added (027, 066, 075, 103, 137, 195, 301), read
 2026-10-08. Each note has exactly two `## `
 sections — `## Scope` and `## Comparator links` — so the section boundaries are unambiguous, and every
@@ -34,24 +34,24 @@ with the rule that yields it.
 
 | Measure | Value |
 | --- | --- |
-| Scope notes | 242 |
-| Docs with both `## Scope` and `## Comparator links` | 242 |
-| `## Scope` section lines | 1512 |
-| Scope-note lines, all files | 4457 |
+| Scope notes | 245 |
+| Docs with both `## Scope` and `## Comparator links` | 245 |
+| `## Scope` section lines | 1546 |
+| Scope-note lines, all files | 4530 |
 | Lines per section (min / median / max) | 4 / 6 / 32 |
 | Docs hit by the 5-phrase narrow list | 5 |
-| Docs hit by the 24-phrase broad list | 44 |
+| Docs hit by the 24-phrase broad list | 45 |
 
 The narrow list is the five phrases an earlier reading pass recorded: `not formalized`, `excluded`,
-`out of scope`, `does not cover`, `not covered`. It hits 5 of 242 — families 003, 020, 049, 173, 360,
+`out of scope`, `does not cover`, `not covered`. It hits 5 of 245 — families 003, 020, 049, 173, 360,
 with per-phrase hits 0 / 3 / 0 / 1 / 1. The broad list adds `not included`, `not part of`,
 `no explicit`, `omitted`, `not asserted`, `excludes`, `excluded`, `exclusion`, `exclude`,
 `not supplied`, `not treated`, `not addressed`, `not proved`, `not established`, `not discussed`,
 `not modelled`, `not modeled`, `not formalised`, `not formalized`, `not included in the scope`,
-`not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 44 of 242.
+`not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 45 of 245.
 
 So 5 is a floor under a narrow rule, not a census. A keyword filter finds 5 sections; the reading pass
-finds exclusions in 121 of the 242. The gap is the reason this page is a reading record and not a tag.
+finds exclusions in 121 of the 245. The gap is the reason this page is a reading record and not a tag.
 
 ## Entries
 
@@ -308,9 +308,9 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
   the note names is genuinely absent from the source; the notes are prose written by the release's
   agent-generated pipeline with `review: status: unchecked`.
 - Whether a section states an exclusion using none of the measured vocabulary. The reading pass is
-  the only guard against that, and it is a human read of 1512 lines, not a rule.
+  the only guard against that, and it is a human read of 1546 lines, not a rule.
 - The `## Comparator links` sections. They name configs, not exclusions; the config inventory lives
   in `notes/gen/tables/links.tsv`.
-- The 130 families with no scope note at all (372 families, 242 notes): absence of a note is not
+- The 128 families with no scope note at all (373 families, 245 notes): absence of a note is not
   recorded here, because there is no `## Scope` section to read for them.
 

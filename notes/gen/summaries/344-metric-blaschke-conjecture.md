@@ -283,8 +283,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 344's `\resultentry`, at line 786 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 344's `\resultentry`, at line 786 |
 | S3 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/README.md`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/README.md) | 16 | Manuscript README and bibtex key |
 | S4 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf) | 16839 | Manuscript PDF |
 | S5 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex) | 68 | Preamble, theorem environments, section include list |
@@ -299,7 +299,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 | S14 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex) | 442 | Complete-intersection calculation, sharp upper bound |
 | S15 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex) | 94 | The three rigidity corollaries |
 | S16 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib) | 369 | Bibliography |
-| S17 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 344 |
+| S17 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 344 |
 
 ## Bibliography
 

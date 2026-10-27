@@ -93,7 +93,7 @@ The declaration is `OAI.QuadricCounterexample.main_theorem` [S12:10]. The compar
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 176 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 176 |
 | S2 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/README.md`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/README.md) | 17 | Manuscript title, date |
 | S3 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/paper.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/paper.tex) | 62 | Abstract, lines 43–47 |
 | S4 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/references.bib`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/references.bib) | 239 | Bibliography entries |

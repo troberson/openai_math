@@ -97,6 +97,12 @@ Laughlin	269	OAI.Laughlin.mainTarget_proved	OAI/Analysis/Laughlin/Main.lean	OAI/
 LiebThirring	262	OAI.SharpLiebThirring.sharp_lieb_thirring	OAI/Analysis/LiebThirring/Main.lean	OAI/Analysis/LiebThirring
 LipschitzEquivalence	324	OAI.LipschitzCounterexample.main	OAI/Analysis/LipschitzEquivalence/Main.lean	OAI/Analysis/LipschitzEquivalence
 LittleFinitistic	198	OAI.LittleFinitistic.Main.exists_counterexample	OAI/Algebra/Finitistic/Main.lean	OAI/Algebra/Finitistic
+LocalSmoothing	079	OAI.Analysis.Fourier.LocalSmoothing.Comparator.bochner_riesz	OAI/Analysis/Fourier/LocalSmoothing/Comparator.lean	OAI/Analysis/Fourier/LocalSmoothing
+LocalSmoothing	079	OAI.Analysis.Fourier.LocalSmoothing.Comparator.euclidean_local_smoothing	OAI/Analysis/Fourier/LocalSmoothing/Comparator.lean	OAI/Analysis/Fourier/LocalSmoothing
+LocalSmoothing	079	OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya	OAI/Analysis/Fourier/LocalSmoothing/Comparator.lean	OAI/Analysis/Fourier/LocalSmoothing
+LocalSmoothing	079	OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya_maximal	OAI/Analysis/Fourier/LocalSmoothing/Comparator.lean	OAI/Analysis/Fourier/LocalSmoothing
+LocalSmoothing	079	OAI.Analysis.Fourier.LocalSmoothing.Comparator.spherical_restriction	OAI/Analysis/Fourier/LocalSmoothing/Comparator.lean	OAI/Analysis/Fourier/LocalSmoothing
+LocalSmoothing	079	OAI.Analysis.Fourier.LocalSmoothing.Comparator.stein_square	OAI/Analysis/Fourier/LocalSmoothing/Comparator.lean	OAI/Analysis/Fourier/LocalSmoothing
 LogBrunnMinkowski	091	OAI.LogBrunnMinkowski.main	OAI/Geometry/LogVolume/BrunnMinkowski.lean	OAI/Geometry/LogVolume
 LogConcaveQuery	139	OAI.LogConcaveSampling.exact_source_main	OAI/Probability/LogConcave/Main.lean	OAI/Probability/LogConcave
 LogspaceEquality	103	OAI.ExactDerandomization.exact_logarithmic_space_derandomization	OAI/Computability/Logspace/Equality.lean	OAI/Computability/Logspace
@@ -165,6 +171,7 @@ SteinitzBergstrom	097	OAI.EuclideanSteinitzBergstrom.main	OAI/Analysis/Steinitz/
 StrictMeans	072	OAI.StrictInverseFirstPower.main	OAI/Analysis/StrictMeans/Main.lean	OAI/Analysis/StrictMeans
 StrongThinTree	174	OAI.StrongThinTree.strongThinTree	OAI/Combinatorics/ThinTrees/Main.lean	OAI/Combinatorics/ThinTrees
 StructuralCrouzeix	325	OAI.StructuralCrouzeixReference.challenge	OAI/Analysis/StructuralCrouzeix/Endpoint.lean	OAI/Analysis/StructuralCrouzeix
+SubexponentialSAT	378	OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_and_sat	OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean	OAI/Algorithms/SubexponentialSAT/SqrtLogSpace
 SubpolynomialLp	094	OAI.SubpolynomialLp.source_main	OAI/Analysis/LpDimension/Main.lean	OAI/Analysis/LpDimension
 SubsphereCurrent	140	OAI.SubsphereCurrent.full_current_main_scope	OAI/Probability/Subsphere/Main.lean	OAI/Probability/Subsphere
 Superstring	128	OAI.Superstring.main	OAI/Computability/Superstring/Main.lean	OAI/Computability/Superstring

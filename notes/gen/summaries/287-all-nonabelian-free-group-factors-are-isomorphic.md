@@ -159,7 +159,7 @@ The published reasoning trace for this family is `reasoning_traces/free-group-fa
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Catalog entry: blurb, manuscript link, abstract |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Catalog entry: blurb, manuscript link, abstract |
 | S2 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md) | 18 | Manuscript README: date and bibtex key |
 | S3 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex) | 118 | Manuscript: abstract, introduction, theorems |
 | S4 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex) | 115 | Free-sum estimate, constant K = 3π |
@@ -174,8 +174,8 @@ The published reasoning trace for this family is `reasoning_traces/free-group-fa
 | S13 | [`lean/docs/287.md`](../../../lean/docs/287.md) | 15 | Scope note and comparator links |
 | S14 | [`lean/ComparatorChallenges/InterpolatedFactors.lean`](../../../lean/ComparatorChallenges/InterpolatedFactors.lean) | 225 | Challenge model and statement |
 | S15 | [`lean/ComparatorChallenges/InterpolatedFactors.json`](../../../lean/ComparatorChallenges/InterpolatedFactors.json) | 14 | Challenge metadata: solution module, axioms |
-| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | No entry naming this manuscript |
-| S17 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 287 |
+| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | No entry naming this manuscript |
+| S17 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 287 |
 | S18 | [`reasoning_traces/free-group-factor-isomorphism.pdf`](../../../reasoning_traces/free-group-factor-isomorphism.pdf) | 3337 | Published reasoning trace, 11 pages |
 | S19 | [`lean/OAI/Analysis/FreeGroupFactor/Main.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/Main.lean) | 64 | Rank three to the countable free group |
 | S20 | [`lean/OAI/Analysis/FreeGroupFactor/FiniteRank.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/FiniteRank.lean) | 157 | Rank step at n ≥ 2, rankTwo, rankStep |

@@ -191,8 +191,8 @@ empty. The manuscript ships 17 `.tex` files under `build/`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 064 at line 1613 (inline HTML normalized to markdown). |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 202. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 064 at line 1613 (inline HTML normalized to markdown). |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 202. |
 | S3 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/main.tex`](../../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/main.tex) | 57 | Main file: title, abstract, and section inputs. |
 | S4 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/01-introduction.tex) | 260 | The theorem, the problem history, the resolution invariant, and the proof strategy. |
 | S5 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/03-invariant.tex`](../../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/03-invariant.tex) | 106 | Wahl's logarithmic surface invariant and its resolution independence. |

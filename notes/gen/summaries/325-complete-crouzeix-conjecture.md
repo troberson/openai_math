@@ -168,7 +168,7 @@ claims exist and names their declarations; the five comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 746 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 746 |
 | S2 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md) | 18 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex) | 623 | Abstract, theorem, introduction, history |
 | S4 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex) | 105 | Bibliography entries |

@@ -257,8 +257,8 @@ conjecture with a resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2881], hardness link [S1:2888] and abstract [S1:2890], gaps link [S1:2897] and abstract [S1:2899] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 117 at [S2:312] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2881], hardness link [S1:2888] and abstract [S1:2890], gaps link [S1:2897] and abstract [S1:2899] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 117 at [S2:312] |
 | S3 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 83 | root (`\documentclass`); abstract [S3:69–71]; `\tableofcontents` [S3:72]; eight `\input` directives [S3:73–80]; 83 lines |
 | S4 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex) | 217 | `thm:main` [S4:14–31]; context [S4:34–112]; proof structure [S4:128–205] |
 | S5 | [`preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 339 | root (`\documentclass`); abstract [S5:46–52]; `thm:main` [S5:152–161]; context [S5:163–195]; proof strategy [S5:198–283]; six section inputs [S5:327–332]; appendix [S5:334–335]; 340 lines |
@@ -266,4 +266,4 @@ conjecture with a resolve verb.
 | S7 | [`preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf`](../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf) | 14288 | the gaps manuscript as shipped |
 | S8 | [`lean/docs/117.md`](../../../lean/docs/117.md) | 15 | scope note — the Scope at [S8:9] and one comparator link at [S8:15] |
 | S9 | [`lean/ComparatorChallenges/UniformSparsestCut.lean`](../../../lean/ComparatorChallenges/UniformSparsestCut.lean) | 55 | the comparator stub — `mainGap` at [S9:40–49] |
-| S10 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=117`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S10 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=117`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

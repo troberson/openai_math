@@ -10,8 +10,8 @@ drift. Pages are rendered by `python3 notes/scripts/build_index.py` into `notes/
 `lake`, `lean`, `lake exe cache get`, or comparator run.
 
 Headline, with the rule that yields it: **92 patterns matched case-insensitively against the title,
-abstract, scope-note text, and derived Lean file paths of the 372 catalogued families → 980
-family-topic assignments over 372 families, 0 families uncovered, 4 terms with no hit.**
+abstract, scope-note text, and derived Lean file paths of the 373 catalogued families → 987
+family-topic assignments over 373 families, 0 families uncovered, 4 terms with no hit.**
 
 ## What a topic is, and what it is not
 
@@ -19,10 +19,10 @@ A family has four searchable texts, and a term hits a family when its pattern ma
 
 | Layer | Text | Families with the text |
 |---|---|---|
-| title | the 2nd argument of the family's `\resultentry` in `overview.tex` | 372 |
-| abstract | the 3rd argument of the same entry | 372 |
-| scope | the text of `lean/docs/<NNN>.md` | 242 |
-| path | Lean file paths reached from the family's comparator configs through `formalization.yaml` `main_results`, plus the Lean module dir names | 136 |
+| title | the 2nd argument of the family's `\resultentry` in `overview.tex` | 373 |
+| abstract | the 3rd argument of the same entry | 373 |
+| scope | the text of `lean/docs/<NNN>.md` | 245 |
+| path | Lean file paths reached from the family's comparator configs through `formalization.yaml` `main_results`, plus the Lean module dir names | 138 |
 
 - **A term's yield is the number of families with at least one hit**, counted once per family
   however many layers hit. Per-layer counts are reported separately because they are not the same
@@ -40,8 +40,8 @@ A family has four searchable texts, and a term hits a family when its pattern ma
 ## Why the vocabulary is curated, not derived
 
 The release ships no topic vocabulary to derive from and nothing to validate a derived term
-against: **0 MSC codes over 8,206 files, 0 `keywords` fields over 12,876 bibliography entries,
-`\keywords` defined in 12 of 719 manuscript directories** (all three measured by
+against: **0 MSC codes over 8,233 files, 0 `keywords` fields over 12,957 bibliography entries,
+`\keywords` defined in 12 of 721 manuscript directories** (all three measured by
 `python3 notes/scripts/extract_links.py`). Word-frequency probing is useless here for a second
 reason: the corpus names results by conjecture and by model, not by generic subject words. Its PDE
 families are "Boltzmann nonuniqueness", "the hot spots conjecture", "De Giorgi's conjecture in
@@ -60,14 +60,14 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | Term | fams | T | A | S | P |
 |---|---|---|---|---|---|
 | graph-theory | 43 | 14 | 37 | 34 | 3 |
-| algebraic-topology | 42 | 10 | 29 | 21 | 0 |
-| algebraic-geometry | 35 | 30 | 34 | 7 | 1 |
+| algebraic-topology | 43 | 10 | 29 | 22 | 0 |
+| algebraic-geometry | 35 | 30 | 34 | 8 | 1 |
 | manifolds | 31 | 4 | 31 | 8 | 1 |
 | riemannian-geometry | 29 | 10 | 26 | 17 | 0 |
-| complexity-theory | 28 | 17 | 21 | 20 | 3 |
+| complexity-theory | 29 | 17 | 22 | 20 | 3 |
 | group-theory | 27 | 15 | 26 | 16 | 1 |
 | metric-geometry | 25 | 10 | 19 | 21 | 3 |
-| algorithms | 24 | 2 | 10 | 16 | 0 |
+| algorithms | 25 | 2 | 11 | 16 | 0 |
 | operator-algebras | 24 | 20 | 21 | 19 | 1 |
 | computability | 23 | 3 | 13 | 11 | 12 |
 | complex-geometry | 21 | 7 | 19 | 5 | 3 |
@@ -75,9 +75,9 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | statistical-mechanics | 21 | 15 | 19 | 9 | 2 |
 | convex-geometry | 20 | 12 | 12 | 16 | 3 |
 | curves | 17 | 2 | 17 | 3 | 1 |
-| harmonic-analysis | 17 | 13 | 13 | 11 | 1 |
+| harmonic-analysis | 17 | 13 | 13 | 12 | 1 |
 | measure-theory | 17 | 2 | 10 | 10 | 0 |
-| partial-differential-equations | 18 | 15 | 12 | 8 | 0 |
+| partial-differential-equations | 18 | 16 | 12 | 9 | 0 |
 | disordered-systems | 16 | 10 | 11 | 12 | 1 |
 | functional-analysis | 16 | 5 | 11 | 13 | 1 |
 | surfaces | 16 | 8 | 13 | 7 | 1 |
@@ -86,7 +86,7 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | discrete-geometry | 13 | 11 | 10 | 11 | 2 |
 | logic | 13 | 7 | 13 | 10 | 2 |
 | planar-maps-and-lattice-models | 13 | 9 | 13 | 4 | 1 |
-| quantum-theory | 14 | 8 | 12 | 8 | 1 |
+| quantum-theory | 15 | 8 | 13 | 8 | 1 |
 | symplectic-geometry | 12 | 8 | 10 | 6 | 1 |
 | condensed-matter | 11 | 9 | 10 | 6 | 1 |
 | conformal-universality | 11 | 11 | 9 | 3 | 0 |
@@ -99,10 +99,10 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | arithmetic-geometry | 9 | 5 | 8 | 3 | 0 |
 | commutative-algebra | 9 | 6 | 6 | 6 | 1 |
 | expanders-and-spectral-graphs | 9 | 5 | 5 | 5 | 0 |
-| fractal-geometry | 9 | 2 | 6 | 6 | 0 |
-| number-fields | 9 | 1 | 8 | 3 | 0 |
+| fractal-geometry | 10 | 2 | 7 | 7 | 0 |
+| number-fields | 10 | 1 | 8 | 4 | 0 |
 | representation-theory | 9 | 4 | 6 | 5 | 2 |
-| abelian-varieties | 8 | 3 | 7 | 1 | 0 |
+| abelian-varieties | 8 | 3 | 7 | 2 | 0 |
 | analytic-number-theory | 8 | 4 | 8 | 4 | 0 |
 | ergodic-theory | 8 | 2 | 6 | 5 | 0 |
 | information-theory | 8 | 6 | 4 | 8 | 0 |
@@ -125,7 +125,7 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | general-relativity | 5 | 3 | 4 | 2 | 0 |
 | modularity | 5 | 5 | 5 | 0 | 0 |
 | spin-glasses | 5 | 5 | 4 | 3 | 0 |
-| calculus-of-variations | 4 | 2 | 3 | 3 | 0 |
+| calculus-of-variations | 5 | 2 | 3 | 4 | 0 |
 | convex-optimization | 4 | 3 | 4 | 3 | 0 |
 | elliptic-curves | 4 | 1 | 4 | 0 | 0 |
 | galois-theory | 4 | 1 | 3 | 2 | 0 |
@@ -154,7 +154,7 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 
 ## Coverage
 
-- **families covered 372 of 372, uncovered 0.** Coverage grew by adding pattern *alternatives* to
+- **families covered 373 of 373, uncovered 0.** Coverage grew by adding pattern *alternatives* to
   existing terms, never by adding terms. Three alternatives are load-bearing for coverage, measured
   by ablating each one from its pattern and re-measuring: `irrationalit` in `diophantine-equations`
   is the only reason **017** ("The irrationality exponent of $\pi$ is $2$") has a topic; `sensitivit`
@@ -169,14 +169,14 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
   covering 113 and 115; that is false. 113 ("Approximate counting and the perfect-matching entropy
   conjecture") carries 7 topics and 115 ("Sampling and counting contingency tables with arbitrary
   margins") carries 2, none of them `algebraic-geometry`.
-- **topics per family 1:92 2:103 3:88 4:51 5:21 6:13 7:2 8:1 9:1** — median **2**, mean 2.63, so a
+- **topics per family 1:92 2:101 3:89 4:53 5:21 6:13 7:2 8:1 9:1** — median **2**, mean 2.65, so a
   family typically sits on the boundary of two of these terms. 92 families carry exactly one topic.
   The 9-topic family is **211** ("Geometry, diffusion, and spectra of random planar maps":
   graph-theory, metric-geometry, statistical-mechanics, spectral-theory, surfaces,
   planar-maps-and-lattice-models, quantum-theory, probability, fractal-geometry) and the 8-topic
   family is **281** ("QAOA optimality for the SK model").
-- **yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:6 9:6 10:2 11:6 12:1 13:4 14:1 15:1 16:3
-  17:3 18:1 20:1 21:3 23:1 24:2 25:1 27:1 28:1 29:1 31:1 35:1 42:1 43:1.** **17** terms have a yield of 3 or less
+- **yield histogram 0:4 1:5 2:3 3:5 4:8 5:5 6:5 7:8 8:6 9:4 10:4 11:6 12:1 13:4 15:2 16:3 17:3
+  18:1 20:1 21:3 23:1 24:1 25:2 27:1 29:2 31:1 35:1 43:2.** **17** terms have a yield of 3 or less
   and 9 have a yield of 1 or less; those are thin topics, kept and labelled as thin, not merged
   away.
 
@@ -253,7 +253,7 @@ them.
    analytic-number-theory, graph-coloring, commutative-algebra, extremal-combinatorics. The narrowings
    have now been applied for real, and the notes rewritten to match the code.
 3. **`overview.tex` apostrophes are inconsistent, and ASCII-apostrophe patterns miss titles
-   silently.** Over the 372 titles, **73 use ASCII `'` and 8 use U+2019** — 023 Patterson’s, 025
+   silently.** Over the 372 titles, **72 use ASCII `'` and 8 use U+2019** — 023 Patterson’s, 025
    `Erd\H{o}s’s`, 151 Shub’s, 209 Gersten’s, 210 Foulkes’, 298 Voiculescu’s, 316 Curtis’s, 360
    Villani’s. **16 patterns contain an ASCII apostrophe**, so 209 "Integral counterexamples to
    Gersten’s conjecture" was uncovered while `gersten's conjecture` sat in the pattern. Fixed by
@@ -313,7 +313,7 @@ python3 notes/scripts/build_index.py               # renders notes/gen/index/top
   reading pass read the *flagged families of the terms being narrowed*, not all 978 pairs, so a
   listing is a keyword floor.
 - **The path layer is derived.** It exists for 136 families, through scope-note config links into
-  `formalization.yaml` `main_results`. For the other 236 families the path layer is empty, so a
+  `formalization.yaml` `main_results`. For the other 235 families the path layer is empty, so a
   family can only be reached through prose.
 - **Topic coverage is not topic quality.** 372 of 372 families carry a topic because three pattern
   alternatives (`irrationalit`, `sensitivit`, `anticanonical`) each close coverage for exactly one

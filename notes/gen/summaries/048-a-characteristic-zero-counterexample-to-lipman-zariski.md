@@ -200,8 +200,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 048 at line 1274. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 172. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 048 at line 1274. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 172. |
 | S3 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/README.md`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/README.md) | 18 | Manuscript readme: title, author, date. |
 | S4 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/paper.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/paper.tex) | 80 | The main file: inputs and bibliography. |
 | S5 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/01-introduction.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/01-introduction.tex) | 238 | The abstract, the theorem, the context, and the proof structure. |

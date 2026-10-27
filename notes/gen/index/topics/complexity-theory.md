@@ -1,6 +1,6 @@
 # Topic: complexity-theory
 
-28 families · pattern `complexity theor|unique games|2-to-1 games|p vs np|hardness of approximation|inapproxurab|\bpcp\b|ppad|circuit|quasipolynomial|matrix multiplication|permanent|subset sum|weisfeiler--leman|star height|state costs|derandomization|mean-payoff|parity games|exponential semidefinite|depth-three|depth-five|space simulation|sensitivit` · hits by layer: title 17 · abstract 21 · scope 20 · path 3
+29 families · pattern `complexity theor|unique games|2-to-1 games|p vs np|hardness of approximation|inapproxurab|\bpcp\b|ppad|circuit|quasipolynomial|matrix multiplication|permanent|subset sum|weisfeiler--leman|star height|state costs|derandomization|mean-payoff|parity games|exponential semidefinite|depth-three|depth-five|space simulation|sensitivit` · hits by layer: title 17 · abstract 22 · scope 20 · path 3
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -34,4 +34,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [279](../mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md) | Exact quantum factoring over a fixed finite gate set | — | yes | yes | — |
 | [281](../mathematical-physics/281-qaoa-optimality-for-the-sk-model.md) | QAOA optimality for the SK model | — | yes | yes | — |
 | [283](../mathematical-physics/283-polynomial-time-constant-error-unitary-synthesis-from-a-boolean-oracle.md) | Polynomial-time, constant-error unitary synthesis from a Boolean oracle | — | yes | — | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | yes | — | — |
 

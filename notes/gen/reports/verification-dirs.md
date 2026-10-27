@@ -3,7 +3,7 @@
 Measured 2026-10-06 by reading the files each bundle ships. No `lake`, `lean`, or comparator run, and
 **no verification program was executed** — see "Not checked".
 
-The ledger's `verification` column counts `preprints/<slug>/verification/` directories: **30 dirs over
+The ledger's `verification` column counts `preprints/<slug>/verification/` directories: **31 dirs over
 22 families** (059, 067, 087, 090, 101, 107, 119, 153, 187, 189, 205, 210, 229, 266, 268, 269, 272,
 348, 352, 361, 367, 371). `inputs` counts 4 `INPUTS.md` (057, 157, 251, 259); `covmd` counts 2
 `verification/COVERAGE.md`, both in family 348.
@@ -29,11 +29,11 @@ evidence that the theorem was checked.
 
 ## How documented the bundles are
 
-- **12 of 30** ship a `README.md` with a run command and success criteria: 087, 090 (×4), 107, 119,
-  229, 268, 348 (×2), 361. **18 ship no README** — a command is not recoverable from the bundle.
-- **2 of 30** ship `manifest.json` (both 348 dirs) with `scope`, `main_command`, `network_required`,
+- **12 of 31** ship a `README.md` with a run command and success criteria: 087, 090 (×4), 107, 119,
+  229, 268, 348 (×2), 361. **19 ship no README** — a command is not recoverable from the bundle.
+- **2 of 31** ship `manifest.json` (both 348 dirs) with `scope`, `main_command`, `network_required`,
   `third_party_dependencies`, and per-file sha256. The other 28 have no manifest.
-- **2 of 30** ship `COVERAGE.md` (both 348 dirs).
+- **2 of 31** ship `COVERAGE.md` (both 348 dirs).
 - Success criteria are bundle-specific and deliberately narrow: exit status 0 **plus** a printed
   marker (`PASS`, `"all_passed": true`, `"status": "pass"`, `passed: true` with a stated record
   count). Two READMEs warn that files on disk prove nothing: "A failed run may leave older or partial
@@ -52,7 +52,7 @@ text, runs nothing, and writes nothing. `python3 notes/scripts/verify_verificati
 resolves every anchor in this section, checks every quotation against the line it cites, and re-derives
 every count here from the bundles on disk.
 
-A README section names **28** of the **30** bundles: **27** carry `## Verification` and **1** carries
+A README section names **29** of the **31** bundles: **28** carry `## Verification` and **1** carries
 `## Run the verification code` (family 059,
 `preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/README.md:18`).
 **2** bundles ship a `verification/` tree their README never mentions, and both are family 269:
@@ -83,10 +83,10 @@ Applied in order per bundle; the first rule that fires is the entry point:
 6. none
 
 Over the 30 bundles: **12** top-level `README.md`, **6** a subdirectory `README.md`, **5** a top-level
-script by name, **1** a subdirectory `README.txt`, **6** with **no entry point**.
+script by name, **1** a subdirectory `README.txt`, **7** with **no entry point**.
 
 Rule 4 fires for **0** bundles — the two family-348 dirs that declare `main_command` are claimed by
-rule 1 first. The 6 with no entry point are the two 269 dirs above plus 352, 059, 189 and 272; those
+rule 1 first. The 7 with no entry point are the two 269 dirs above plus 352, 059, 189, 272 and 266; those
 four **are** named by a README section, which supplies the command itself, so for them the run command
 lives in the manuscript README and not in the bundle.
 
@@ -123,7 +123,7 @@ lives in the manuscript README and not in the bundle.
 | 090 | `Universal-optimality-of-the-triangular-lattice` | `verification/README.md` | *"These commands check finite arithmetic, not the manuscript's analytic reductions."* (`preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/verification/README.md:44`) |
 | 348 | `Zero-Plane-Rigidity-for-Einstein-Four-Manifolds` | `verification/README.md` | *"Exact arithmetic verification"* (`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md:1`); the bundle's scope is in the 348 section below. |
 
-**Reading the column against the ledger.** The ledger's `verification` column sums to 30 dirs over 22 families,
+**Reading the column against the ledger.** The ledger's `verification` column sums to 31 dirs over 22 families,
 and the set of families with `verification` > 0 is exactly the set of families carrying a
 `verification/` directory — the join is clean, so the column is a correct *count*. What it is not is a
 pointer: for the 6 bundles with no entry point, and for the 2 family-269 bundles in particular, nothing

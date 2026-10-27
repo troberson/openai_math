@@ -200,8 +200,8 @@ named Garey–Johnson problem OPEN8; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3013], manuscript link [S1:3013] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 124 at [S2:325] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3013], manuscript link [S1:3013] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 124 at [S2:325] |
 | S3 | [`preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/paper.tex`](../../../preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/paper.tex) | 541 | document root; abstract [S3:69–77]; `thm:main` [S3:120–130]; `prop:algorithm` [S3:374–379]; `thm:structure` [S3:456–460]; six `\input` directives [S3:475–479, 537]; 541 lines |
 | S4 | [`preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/separators.tex`](../../../preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/separators.tex) | 162 | shared-cutoff separators; 5 environments; 162 lines |
 | S5 | [`preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/construction.tex`](../../../preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/construction.tex) | 239 | child-interval construction; 1 environment; 239 lines |
@@ -212,4 +212,4 @@ named Garey–Johnson problem OPEN8; `counterex_broad=0`.
 | S10 | [`preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf`](../../../preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf) | 6939 | the manuscript as shipped |
 | S11 | [`lean/docs/124.md`](../../../lean/docs/124.md) | 15 | scope note — Scope at [S11:9], comparator link at [S11:15] |
 | S12 | [`lean/ComparatorChallenges/ThreeMachine.lean`](../../../lean/ComparatorChallenges/ThreeMachine.lean) | 100 | the comparator — `main_theorem` [S12:95–96]; 100 lines |
-| S13 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=124`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S13 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=124`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

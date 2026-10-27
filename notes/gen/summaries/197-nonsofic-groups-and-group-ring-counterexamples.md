@@ -80,7 +80,7 @@ Two caveats for anyone citing this family. The construction is specified, not ex
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb and the four manuscript sub-entries |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb and the four manuscript sub-entries |
 | S2 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md) | 17 | Manuscript tree 1 build notes and release date |
 | S3 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/paper.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/paper.tex) | 55 | Tree 1 title, date, abstract, section order |
 | S4 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections/introduction.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections/introduction.tex) | 109 | Tree 1 main theorem, history, construction and estimates |
@@ -114,7 +114,7 @@ Two caveats for anyone citing this family. The construction is specified, not ex
 | S32 | [`lean/OAI/RingTheory/DirectFiniteness/PrescribedSearch.lean`](../../../lean/OAI/RingTheory/DirectFiniteness/PrescribedSearch.lean) | 73 | Formal termination certificate for the prescribed search |
 | S33 | [`lean/OAI/Analysis/GroupDeterminants/Main.lean`](../../../lean/OAI/Analysis/GroupDeterminants/Main.lean) | 17 | Lean tree 2 entry point: derives the determinant result from tree 1 |
 | S34 | [`lean/OAI/Algebra/OddKaplansky/Main.lean`](../../../lean/OAI/Algebra/OddKaplansky/Main.lean) | 110 | Lean tree 3 entry point: main claim with cellular automaton, fixed-field transfer |
-| S35 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release bibliography and `main_results` config links |
+| S35 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Release bibliography and `main_results` config links |
 | S36 | [`reasoning_traces/kaplansky-direct-finiteness-characteristic-two.pdf`](../../../reasoning_traces/kaplansky-direct-finiteness-characteristic-two.pdf) | 5166 | Published reasoning trace for the characteristic-two line |
 
 ## Bibliography

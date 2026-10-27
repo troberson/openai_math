@@ -1,6 +1,6 @@
 # Topic: algebraic-topology
 
-42 families · pattern `homotopy|homology|cohomology|fundamental group|cobordism|model structure|obstruction|fixed-point problem|smith--toda|quillen|eilenberg--ganea|d\(2\)|wall's|classifying space` · hits by layer: title 10 · abstract 29 · scope 21 · path 0
+43 families · pattern `homotopy|homology|cohomology|fundamental group|cobordism|model structure|obstruction|fixed-point problem|smith--toda|quillen|eilenberg--ganea|d\(2\)|wall's|classifying space` · hits by layer: title 10 · abstract 29 · scope 22 · path 0
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -20,6 +20,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [152](../dynamical-systems-and-ergodic-theory/152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md) | Zero entropy does not guarantee a smooth positive-volume model | — | — | yes | — |
 | [172](../combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md) | Classification of finite Euclidean Ramsey configurations | — | — | yes | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | yes | — |
+| [195](../algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) | A counterexample to the small Cohen--Macaulay module conjecture | — | — | yes | — |
 | [196](../algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md) | A counterexample to Kaplansky's zero-divisor conjecture | — | yes | yes | — |
 | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | The dynamical phase transition in the Sherrington--Kirkpatrick model | — | — | yes | — |
 | [240](../mathematical-logic/240-shelahs-eventual-categoricity-conjecture.md) | Shelah's eventual categoricity conjecture | — | — | yes | — |

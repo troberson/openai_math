@@ -1,6 +1,6 @@
 # Name: ward
 
-5 families · subject name · 3 carried by a title or a declaration · 5 by prose · 0 by bibliography author
+6 families · subject name · 3 carried by a title or a declaration · 5 by prose · 1 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
@@ -15,12 +15,13 @@ Prose counts: 160 capitalized occurrences, 130 of them mid-sentence, 45 lowercas
 | `E` — Theorem title | title | 3 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
 | `b` — Body prose | body | 5 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `B` — Bib author | body | 1 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | — | yes |
 | [215](../probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md) | Massive continuum limits and exact mass asymptotics for planar $O(n)$ models | — | — | — | — | yes | — |
 | [219](../probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md) | GOE universality for random regular graphs with weak disorder | — | — | yes | — | yes | — |
 | [234](../probability-and-statistical-mechanics/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md) | All-temperature pressure for orthogonally invariant Ising spin glasses | — | — | yes | — | yes | — |

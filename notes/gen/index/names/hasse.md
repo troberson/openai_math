@@ -1,10 +1,10 @@
 # Name: hasse
 
-12 families · subject name · 2 carried by a title or a declaration · 12 by prose · 0 by bibliography author
+13 families · subject name · 2 carried by a title or a declaration · 13 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 109 capitalized occurrences, 92 of them mid-sentence, 16 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 112 capitalized occurrences, 94 of them mid-sentence, 19 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 109 capitalized occurrences, 92 of them mid-sentence, 16 lowercase
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 12 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 13 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -33,6 +33,7 @@ Prose counts: 109 capitalized occurrences, 92 of them mid-sentence, 16 lowercase
 | [309](../topology/309-kervaire-invariant-problem-at-the-prime-three.md) | The Kervaire invariant problem at the prime three | — | — | — | — | yes | — |
 | [313](../topology/313-finite-generation-for-the-k-n-local-sphere.md) | Finite generation for the $K(n)$-local sphere | — | — | — | — | yes | — |
 | [318](../topology/318-chromatic-splitting-counterexamples-and-filtrations.md) | Chromatic splitting: counterexamples and filtrations | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -50,6 +51,7 @@ Prose counts: 109 capitalized occurrences, 92 of them mid-sentence, 16 lowercase
 | [`Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026`](../../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/) | — | prose | — |
 | [`Primitive-roots-for-every-admissible-integer-base-October-4-2026`](../../../../preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/) | [029](../number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md) | prose | [primitive-roots-all-integer-bases.pdf](../../../../preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf) |
 | [`Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026`](../../../../preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/) | [029](../number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md) | prose | [simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf](../../../../preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026`](../../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/) | [309](../topology/309-kervaire-invariant-problem-at-the-prime-three.md) | prose | [paper.pdf](../../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/paper.pdf) |
 | [`The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026`](../../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/) | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | prose | [margulis-platonov-global-function-fields.pdf](../../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf) |
 | [`The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026`](../../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/) | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | prose | [paper.pdf](../../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf) |

@@ -1,10 +1,10 @@
 # Name: semmes
 
-1 families · subject name · 1 carried by a title or a declaration · 1 by prose · 1 by bibliography author
+2 families · subject name · 1 carried by a title or a declaration · 2 by prose · 2 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 7 capitalized occurrences, 4 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 8 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,19 +14,21 @@ Prose counts: 7 capitalized occurrences, 4 of them mid-sentence, 0 lowercase. Th
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 1 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 1 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `b` — Body prose | body | 2 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 2 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | yes |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | yes | — | yes | — | yes | yes |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026`](../../../../preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/) | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | prose | [paper.pdf](../../../../preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.

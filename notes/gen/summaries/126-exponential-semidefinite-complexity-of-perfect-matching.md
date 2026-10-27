@@ -162,12 +162,12 @@ claim.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3054], manuscript link [S1:3054] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 126 at [S2:329] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3054], manuscript link [S1:3054] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 126 at [S2:329] |
 | S3 | [`preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/main.tex`](../../../preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/main.tex) | 59 | document root; abstract [S3:42–47]; seven `\input` directives [S3:49–57]; 59 lines |
 | S4 | [`preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/introduction.tex`](../../../preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/introduction.tex) | 231 | `thm:main` [S4:37–44]; `cor:exact-lift` [S4:74–80]; 231 lines |
 | S5 | [`preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/shifted-matching-psd.pdf`](../../../preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/shifted-matching-psd.pdf) | 13817 | the manuscript as shipped |
 | S6 | [`lean/docs/126.md`](../../../lean/docs/126.md) | 18 | scope note — Scope at [S6:9–11], comparator links at [S6:17–18] |
 | S7 | [`lean/ComparatorChallenges/MatchingAffineLift.lean`](../../../lean/ComparatorChallenges/MatchingAffineLift.lean) | 35 | comparator — `affine_lift_lower_bound` [S7:27–31]; 35 lines |
 | S8 | [`lean/ComparatorChallenges/MatchingPSD.lean`](../../../lean/ComparatorChallenges/MatchingPSD.lean) | 55 | comparator — `MainClaim` [S8:46–48], `main` [S8:50–51]; 55 lines |
-| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=126`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=126`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

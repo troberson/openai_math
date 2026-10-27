@@ -242,8 +242,8 @@ question, not a resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2979], manuscript link [S1:2979] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 122 at [S2:322] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2979], manuscript link [S1:2979] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 122 at [S2:322] |
 | S3 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex) | 25 | document root; abstract [S3:8–10]; eight `\input` directives [S3:11–18]; 25 lines |
 | S4 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex) | 76 | `thm:main` [S4:7–13]; `thm:tv` [S4:20–29]; history [S4:35]; 76 lines |
 | S5 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/main.tex`](../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/main.tex) | 184 | document root; abstract [S5:33–44]; `thm:main` [S5:78–99]; six `\input` directives [S5:178–183]; 184 lines |
@@ -256,7 +256,7 @@ question, not a resolution of a named conjecture; `counterex_broad=0`.
 | S12 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf) | 10796 | the manuscript as shipped |
 | S13 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf`](../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf) | 13622 | the manuscript as shipped |
 | S14 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf`](../../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf) | 10882 | the manuscript as shipped |
-| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=122`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=122`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 

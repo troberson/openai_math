@@ -207,8 +207,8 @@ ships 9 `.tex` files under `build/`; the companion ships 1.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 037 at line 1060. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 152. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 037 at line 1060. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 152. |
 | S3 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/README.md`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/README.md) | 18 | Main manuscript readme: title, author, date. |
 | S4 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/paper.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/paper.tex) | 32 | Main manuscript main file. |
 | S5 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/01-introduction.tex) | 291 | The main theorem, the global corollary, the historical context, and the proof strategy. |

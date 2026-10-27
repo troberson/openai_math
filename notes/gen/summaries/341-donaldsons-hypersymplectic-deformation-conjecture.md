@@ -140,7 +140,7 @@ files under `build/sections/`, one figure `.tex`, and a
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 341 at line 8288. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 780. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 341 at line 8288. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 780. |
 | S3 | [`preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/main.tex`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/main.tex) | 28 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/sections/01-introduction.tex`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/sections/01-introduction.tex) | 335 | Introduction: the main theorem, corollaries, history, and proof strategy. |

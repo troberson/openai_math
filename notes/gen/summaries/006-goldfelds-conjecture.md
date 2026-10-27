@@ -68,8 +68,8 @@ What is not a consequence: BSD for a fixed curve, BSD for a positive proportion 
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family entry at 141; manuscript blurbs at 150 and 159; family 002's entry at 32, which names 006 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry` at 88: the release's own abstract and its two display titles, “Analytic density and 2-converse” [S2:88] and Mean analytic rank |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family entry at 141; manuscript blurbs at 150 and 159; family 002's entry at 32, which names 006 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The `\resultentry` at 88: the release's own abstract and its two display titles, “Analytic density and 2-converse” [S2:88] and Mean analytic rank |
 | S3 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md) | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
 | S4 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex) | 108 | Title at 76, date at 78, abstract at 82–89 |
 | S5 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex) | 336 | The 2-converse at 14–19; scope at 21–23; density theorem at 35–46; finite-descent corollary at 61–67; companion paragraphs at 75–99; Smith history at 150–160; converse history at 165–232; proof strategy at 234–265 |
@@ -82,7 +82,7 @@ What is not a consequence: BSD for a fixed curve, BSD for a positive proportion 
 | S12 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf) | 31185 | The compiled density manuscript, 1,087,540 bytes |
 | S13 | [`preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf) | 15380 | The compiled mean manuscript, 549,633 bytes |
 | S14 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Bucket legend at 17–25; the 006 entry at 119–120; the cross-family chain list at 858–859 |
-| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Row 7 is family 006: tier, manuscript count, claim-shape tags, and the zero evidence columns |
+| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Row 7 is family 006: tier, manuscript count, claim-shape tags, and the zero evidence columns |
 
 ## Bibliography
 

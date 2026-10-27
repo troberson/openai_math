@@ -1,10 +1,10 @@
 # Name: yang
 
-37 families · subject name · 1 carried by a title or a declaration · 36 by prose · 19 by bibliography author
+39 families · subject name · 1 carried by a title or a declaration · 37 by prose · 20 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 163 capitalized occurrences, 119 of them mid-sentence, 8 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 164 capitalized occurrences, 120 of them mid-sentence, 8 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,8 +14,8 @@ Prose counts: 163 capitalized occurrences, 119 of them mid-sentence, 8 lowercase
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 36 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 19 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `b` — Body prose | body | 37 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 20 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
@@ -28,6 +28,7 @@ Prose counts: 163 capitalized occurrences, 119 of them mid-sentence, 8 lowercase
 | [051](../algebraic-and-complex-geometry/051-kobayashis-canonical-ampleness-conjecture.md) | Kobayashi's canonical-ampleness conjecture | — | — | — | — | yes | yes |
 | [054](../algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) | Counterexamples to Kuznetsov's rationality conjecture | — | — | — | — | yes | yes |
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | — | yes |
 | [088](../convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md) | Petty's projection-volume conjecture and simplex counterexamples | — | — | — | — | yes | — |
 | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | The logarithmic Brunn--Minkowski conjecture | — | — | — | — | yes | yes |
 | [113](../theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md) | Approximate counting and the perfect-matching entropy conjecture | — | — | — | — | yes | — |
@@ -58,6 +59,7 @@ Prose counts: 163 capitalized occurrences, 119 of them mid-sentence, 8 lowercase
 | [365](../partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md) | Joint metric and connection recovery from one boundary patch | — | — | — | — | yes | — |
 | [369](../partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md) | The hot spots conjecture for simply connected planar domains | — | — | — | — | yes | yes |
 | [372](../partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md) | Global uniqueness in smooth isotropic elasticity | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -108,6 +110,7 @@ Prose counts: 163 capitalized occurrences, 119 of them mid-sentence, 8 lowercase
 | [`Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026`](../../../../preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/) | [369](../partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md) | prose | [main.pdf](../../../../preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/main.pdf) |
 | [`The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026`](../../../../preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/) | [216](../probability-and-statistical-mechanics/216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md) | prose | [paper.pdf](../../../../preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/paper.pdf) |
 | [`The-Deligne-Drinfeld-conjecture-September-23-2026`](../../../../preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/) | [008](../number-theory/008-deligne-drinfeld-conjecture.md) | prose | [paper.pdf](../../../../preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026`](../../../../preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/) | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | prose | [The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf](../../../../preprints/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026/The-Gaussian-free-field-limit-of-the-balanced-six-vertex-model-with-variance-multiplier-1-over-arcsin-c-over-2-September-23-2026.pdf) |
 | [`The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026`](../../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/) | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | prose | [paper.pdf](../../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf) |
 | [`The-joint-Dickman-law-for-consecutive-integers-September-24-2026`](../../../../preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/) | [012](../number-theory/012-independent-largest-prime-factors-of-consecutive-integers.md) | prose | [paper.pdf](../../../../preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf) |

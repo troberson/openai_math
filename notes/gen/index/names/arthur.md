@@ -1,10 +1,10 @@
 # Name: arthur
 
-8 families · subject name · 1 carried by a title or a declaration · 5 by prose · 5 by bibliography author
+9 families · subject name · 1 carried by a title or a declaration · 6 by prose · 5 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 77 capitalized occurrences, 53 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 79 capitalized occurrences, 55 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 77 capitalized occurrences, 53 of them mid-sentence, 12 lowercase.
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 5 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 6 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 5 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -29,6 +29,7 @@ Prose counts: 77 capitalized occurrences, 53 of them mid-sentence, 12 lowercase.
 | [262](../mathematical-physics/262-sharp-one-dimensional-lieb-thirring-inequalities.md) | Sharp one-dimensional Lieb--Thirring inequalities | — | — | — | — | yes | — |
 | [294](../operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) | A counterexample to Kaplansky's quasitrace conjecture | — | — | — | — | yes | — |
 | [305](../topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) | Counterexamples to disk embedding and Wall's manifold conjecture | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -44,6 +45,7 @@ Prose counts: 77 capitalized occurrences, 53 of them mid-sentence, 12 lowercase.
 | [`Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026`](../../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose + title | [paper.pdf](../../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf) |
 | [`Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026`](../../../../preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/) | [262](../mathematical-physics/262-sharp-one-dimensional-lieb-thirring-inequalities.md) | prose | [sharp-matrix-lieb-thirring.pdf](../../../../preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/sharp-matrix-lieb-thirring.pdf) |
 | [`Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026`](../../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose | [ramified-ramanujan.pdf](../../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/ramified-ramanujan.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026`](../../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/) | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | prose | [paper.pdf](../../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/paper.pdf) |
 | [`The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026`](../../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose | [main.pdf](../../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf) |
 | [`The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026`](../../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/) | — | prose | — |

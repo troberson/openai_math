@@ -1,10 +1,10 @@
 # Name: mobius
 
-23 families · subject name · 2 carried by a title or a declaration · 23 by prose · 0 by bibliography author
+24 families · subject name · 2 carried by a title or a declaration · 24 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 185 capitalized occurrences, 171 of them mid-sentence, 24 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 186 capitalized occurrences, 172 of them mid-sentence, 24 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 185 capitalized occurrences, 171 of them mid-sentence, 24 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 23 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 24 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -44,6 +44,7 @@ Prose counts: 185 capitalized occurrences, 171 of them mid-sentence, 24 lowercas
 | [280](../mathematical-physics/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md) | Strong locality for strongly rational unitary vertex operator algebras | — | — | — | — | yes | — |
 | [282](../mathematical-physics/282-scale-to-conformal-enhancement-in-four-dimensional-qft.md) | Scale-to-conformal enhancement in four-dimensional QFT | — | — | yes | — | yes | — |
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -75,6 +76,7 @@ Prose counts: 185 capitalized occurrences, 171 of them mid-sentence, 24 lowercas
 | [`Self-dual-random-cluster-interfaces-below-one-September-23-2026`](../../../../preprints/Self-dual-random-cluster-interfaces-below-one-September-23-2026/) | [223](../probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) | prose | [paper.pdf](../../../../preprints/Self-dual-random-cluster-interfaces-below-one-September-23-2026/paper.pdf) |
 | [`Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026`](../../../../preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/) | [223](../probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) | prose | [paper.pdf](../../../../preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf) |
 | [`Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026`](../../../../preprints/Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026/) | [280](../mathematical-physics/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md) | prose | [paper.pdf](../../../../preprints/Strongly-rational-unitary-vertex-operator-algebras-and-conformal-nets-September-25-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Quasi-Riemann-Hypothesis-October-5-2026`](../../../../preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/) | [003](../number-theory/003-quasi-riemann-hypothesis.md) | prose | [paper2.pdf](../../../../preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf) |
 | [`The-Quasi-Riemann-Hypothesis-September-30-2026`](../../../../preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/) | [003](../number-theory/003-quasi-riemann-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf) |
 | [`The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026`](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/main.pdf) |

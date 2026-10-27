@@ -145,7 +145,7 @@ The comparator stubs carry `sorry` at `lean/ComparatorChallenges/DoublingHilbert
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 272 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 272 |
 | S2 | [`preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/README.md`](../../../preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/README.md) | 20 | Title, date |
 | S3 | [`preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/build/main.tex`](../../../preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/build/main.tex) | 560 | Abstract, theorem, construction, proof, consequences |
 | S4 | [`lean/docs/098.md`](../../../lean/docs/098.md) | 16 | Scope |

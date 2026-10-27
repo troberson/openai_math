@@ -105,8 +105,8 @@ T0: no Lean, no scope note, no comparator challenge, no reasoning trace. Nothing
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 300 at line 7430, the two manuscript links at 7437 and 7446, and the two manuscript blurbs at 7439 and 7448. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 692. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 300 at line 7430, the two manuscript links at 7437 and 7446, and the two manuscript blurbs at 7439 and 7448. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 692. |
 | S3 | [`preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/README.md`](../../../preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S4 | [`preprints/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/README.md`](../../../preprints/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S5 | [`preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/build/source/main.tex`](../../../preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/build/source/main.tex) | 66 | The main file: the abstract and the section order. |

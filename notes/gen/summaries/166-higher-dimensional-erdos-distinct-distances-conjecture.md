@@ -134,8 +134,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 166 at line 3906. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 411. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 166 at line 3906. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 411. |
 | S3 | [`preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/paper.tex`](../../../preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/paper.tex) | 28 | Main file: title and abstract. |
 | S4 | [`preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/sections/introduction.tex) | 298 | The main theorem, the optimality argument, the history, why the constant factor matters, and the four-step proof overview. |
 | S5 | [`preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/references.bib`](../../../preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/references.bib) | 326 | The manuscript's bibliography. |

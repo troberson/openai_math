@@ -1,10 +1,10 @@
 # Name: turing
 
-15 families · subject name · 1 carried by a title or a declaration · 15 by prose · 1 by bibliography author
+16 families · subject name · 1 carried by a title or a declaration · 16 by prose · 1 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 152 capitalized occurrences, 117 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 154 capitalized occurrences, 119 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 152 capitalized occurrences, 117 of them mid-sentence, 0 lowercase
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 0 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 1 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 15 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 16 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 1 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -36,6 +36,7 @@ Prose counts: 152 capitalized occurrences, 117 of them mid-sentence, 0 lowercase
 | [275](../mathematical-physics/275-qma-hardness-of-continuum-coulomb-energy.md) | QMA-hardness of continuum Coulomb energy | — | — | — | — | yes | — |
 | [279](../mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md) | Exact quantum factoring over a fixed finite gate set | — | — | — | — | yes | — |
 | [376](../partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md) | Universal computation in forced Navier--Stokes flows | — | — | — | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -63,6 +64,7 @@ Prose counts: 152 capitalized occurrences, 117 of them mid-sentence, 0 lowercase
 | [`Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026`](../../../../preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/) | [376](../partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md) | prose | [manuscript.pdf](../../../../preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/manuscript.pdf) |
 | [`Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026`](../../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/) | [137](../theoretical-computer-science/137-one-tape-time-simulation-in-two-fifths-power-space.md) | prose | [article.pdf](../../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf) |
 | [`Single-fold-Diophantine-representations-September-24-2026`](../../../../preprints/Single-fold-Diophantine-representations-September-24-2026/) | [242](../mathematical-logic/242-single-fold-diophantine-representations.md) | prose | [paper.pdf](../../../../preprints/Single-fold-Diophantine-representations-September-24-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026`](../../../../preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/) | [133](../theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md) | prose | [paper.pdf](../../../../preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf) |
 | [`Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026`](../../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/) | [116](../theoretical-computer-science/116-uniform-identity-testing-for-noncommutative-formulas.md) | prose | [uniform-matrix-hitting-points-positive-characteristic.pdf](../../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf) |
 | [`Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026`](../../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/) | [122](../theoretical-computer-science/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md) | prose | [uniform-trace-reconstruction.pdf](../../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf) |

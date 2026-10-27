@@ -1,10 +1,10 @@
 # Name: lee
 
-50 families · subject name · 1 carried by a title or a declaration · 42 by prose · 36 by bibliography author
+51 families · subject name · 1 carried by a title or a declaration · 43 by prose · 37 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 197 capitalized occurrences, 127 of them mid-sentence, 29 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 199 capitalized occurrences, 129 of them mid-sentence, 29 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,8 +14,8 @@ Prose counts: 197 capitalized occurrences, 127 of them mid-sentence, 29 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 42 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 36 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `b` — Body prose | body | 43 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 37 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
@@ -29,6 +29,7 @@ Prose counts: 197 capitalized occurrences, 127 of them mid-sentence, 29 lowercas
 | [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | — | — | — | — | yes | yes |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | — | — | — | — | yes | yes |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | — | — | — | — | yes | yes |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | yes |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | — | — | — | — | yes | yes |
 | [089](../convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md) | Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs | — | — | — | — | yes | yes |
 | [094](../convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md) | Subpolynomial dimension reduction in $L_p$ | — | — | — | — | yes | — |
@@ -118,6 +119,7 @@ Prose counts: 197 capitalized occurrences, 127 of them mid-sentence, 29 lowercas
 | [`Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026`](../../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/) | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | prose | [paper.pdf](../../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf) |
 | [`L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026`](../../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/) | [089](../convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md) | prose | [paper.pdf](../../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/paper.pdf) |
 | [`Lechs-multiplicity-conjecture-September-23-2026`](../../../../preprints/Lechs-multiplicity-conjecture-September-23-2026/) | [194](../algebra/194-lechs-multiplicity-conjecture.md) | prose | [paper.pdf](../../../../preprints/Lechs-multiplicity-conjecture-September-23-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026`](../../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/) | [117](../theoretical-computer-science/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md) | prose | [Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf](../../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf) |
 | [`Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026`](../../../../preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/) | [327](../functional-analysis/327-markov-type-characterizes-superreflexivity.md) | prose | [paper.pdf](../../../../preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/paper.pdf) |
 | [`Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026`](../../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/) | [089](../convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md) | prose | [paper.pdf](../../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf) |

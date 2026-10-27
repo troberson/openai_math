@@ -104,7 +104,7 @@ The declaration is `OAI.TorsionFreeZeroDivisors.main` at `lean/OAI/Algebra/Group
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 473 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 473 |
 | S2 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/README.md`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/README.md) | 18 | Title, date |
 | S3 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/paper.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/paper.tex) | 108 | Abstract, theorem, introduction, proof structure |
 | S4 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/types.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/types.tex) | 170 | Vertex types |

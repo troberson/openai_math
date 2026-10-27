@@ -204,8 +204,8 @@ formalized targets.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2570] and the four manuscript entries [S1:2577], [S1:2586], [S1:2595], [S1:2604]. The release's inline code spans stay as backticked markdown, and the release's italic L is rendered as $L$ |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 104 at [S2:286] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2570] and the four manuscript entries [S1:2577], [S1:2586], [S1:2595], [S1:2604]. The release's inline code spans stay as backticked markdown, and the release's italic L is rendered as $L$ |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 104 at [S2:286] |
 | S3 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 31 | root (`\documentclass`); abstract [S3:8–15]; the nine-section include order [S3:20–28] |
 | S4 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex) | 251 | the deterministic main theorem [S4:34–50]; the mean-payoff definition [S4:24–26] |
 | S5 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 35 | root (`\documentclass`); abstract [S5:8–17]; the section include order [S5:22–32] |
@@ -221,4 +221,4 @@ formalized targets.
 | S15 | [`lean/docs/104.md`](../../../lean/docs/104.md) | 19 | scope note — the formalization's Scope (the Truffet counterexample and the randomized winning-set algorithm) and its two comparator links |
 | S16 | [`lean/ComparatorChallenges/TruffetCounterexample.lean`](../../../lean/ComparatorChallenges/TruffetCounterexample.lean) | 134 | the comparator stub — the two-step Truffet execution with its `sorry` |
 | S17 | [`lean/ComparatorChallenges/RandomizedMeanPayoff.lean`](../../../lean/ComparatorChallenges/RandomizedMeanPayoff.lean) | 126 | the comparator stub — the randomized quasipolynomial claim with its `sorry` |
-| S18 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=104`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S18 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=104`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

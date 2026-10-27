@@ -1,8 +1,8 @@
 # Theoretical computer science
 
-40 families · 73 manuscripts · 32 formalized at source level · 34 scope notes · 67 comparator configs · 1 reasoning traces · 3 verification bundles
+41 families · 74 manuscripts · 33 formalized at source level · 35 scope notes · 68 comparator configs · 1 reasoning traces · 3 verification bundles
 
-Tier: T3 22 · T2 12 · T1 0 · T0 6
+Tier: T3 23 · T2 12 · T1 0 · T0 6
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
@@ -46,4 +46,5 @@ Tier: T3 22 · T2 12 · T1 0 · T0 6
 | [140](../theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md) | Memory--sample lower bounds for noiseless Gaussian regression | T3 | 6 | 5 | yes | 8 | — |
 | [141](../theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md) | The existential theory of the reals and existential--universal sentences in the counting hierarchy | T0 | 1 | 0 | — | 0 | — |
 | [142](../theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md) | Deterministic polynomial factorization over prime fields | T0 | 1 | 0 | — | 0 | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | T3 | 1 | 1 | yes | 1 | — |
 

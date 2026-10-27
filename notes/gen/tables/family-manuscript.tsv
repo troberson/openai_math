@@ -60,7 +60,7 @@ fam	dir	pdf	formalized
 032	A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026	preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf	0
 032	Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026	preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf	0
 032	Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026	preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf	0
-032	The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026	preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf	0
+032	The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026	preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf	1
 032	Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026	preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf	0
 033	B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026	preprints/B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026/paper.pdf	0
 033	Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026	preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf	0
@@ -158,6 +158,7 @@ fam	dir	pdf	formalized
 077	Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026	preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf	0
 078	Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026	preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf	0
 079	Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026	preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf	0
+079	Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026	preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf	1
 080	Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026	preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/paper.pdf	0
 080	Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026	preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/paper.pdf	0
 081	Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026	preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf	1
@@ -718,3 +719,4 @@ fam	dir	pdf	formalized
 376	Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026	preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf	0
 376	Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026	preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/manuscript.pdf	0
 377	Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026	preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf	0
+378	The-Exponential-Time-Hypothesis-is-False-October-25-2026	preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf	1

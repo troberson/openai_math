@@ -155,8 +155,8 @@ bibliography — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 340 at line 8272. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 778. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 340 at line 8272. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 778. |
 | S3 | [`preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/build/main.tex`](../../../preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/build/main.tex) | 26 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/build/sections/introduction.tex) | 173 | Introduction: the main theorem, context, and the proof strategy in generating-family language. |
 | S5 | [`preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/build/sections/tubes.tex`](../../../preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/build/sections/tubes.tex) | 258 | Stable tube spaces: the nonzero kernel class whose fibration is trivial. |

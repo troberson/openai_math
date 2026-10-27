@@ -258,8 +258,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, five manuscript links, five manuscript abstracts |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 347's `\resultentry`, at line 792 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, five manuscript links, five manuscript abstracts |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 347's `\resultentry`, at line 792 |
 | S3 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/README.md`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/README.md) | 18 | Degenerate manuscript README, date, bibtex key |
 | S4 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf) | 9626 | Degenerate manuscript PDF |
 | S5 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex) | 46 | Degenerate manuscript preamble, theorem environments, abstract |
@@ -288,7 +288,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 | S28 | [`lean/docs/347.md`](../../../lean/docs/347.md) | 15 | Scope note: what the formalization covers, the comparator, the status |
 | S29 | [`lean/ComparatorChallenges/ArnoldCounterexample.lean`](../../../lean/ComparatorChallenges/ArnoldCounterexample.lean) | 120 | Comparator stub: the target the release set, with `sorry` |
 | S30 | [`lean/OAI/Geometry/Arnold/Main.lean`](../../../lean/OAI/Geometry/Arnold/Main.lean) | 25 | The proved declaration: the five-fact conjunction |
-| S31 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 347 |
+| S31 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 347 |
 
 ## Bibliography
 

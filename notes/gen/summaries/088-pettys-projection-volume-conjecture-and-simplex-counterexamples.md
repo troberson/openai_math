@@ -183,7 +183,7 @@ claims exist and names their declarations; the three comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 252 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 252 |
 | S2 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md) | 18 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/main.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/main.tex) | 60 | Abstract, lines 48–50 |
 | S4 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/01_introduction.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/01_introduction.tex) | 183 | Definition, conjecture, theorem, proof outline |

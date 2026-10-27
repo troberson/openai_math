@@ -1,10 +1,10 @@
 # Name: stein
 
-50 families · subject name · 4 carried by a title or a declaration · 47 by prose · 16 by bibliography author
+51 families · subject name · 4 carried by a title or a declaration · 48 by prose · 17 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 661 capitalized occurrences, 594 of them mid-sentence, 27 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 672 capitalized occurrences, 598 of them mid-sentence, 34 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,8 +14,8 @@ Prose counts: 661 capitalized occurrences, 594 of them mid-sentence, 27 lowercas
 | `M` — Manuscript title | title | 2 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 47 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 16 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `b` — Body prose | body | 48 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 17 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
@@ -43,6 +43,7 @@ Prose counts: 661 capitalized occurrences, 594 of them mid-sentence, 27 lowercas
 | [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | — | — | — | — | yes | yes |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | — | — | — | — | yes | yes |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | — | — | — | — | yes | yes |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | yes |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | — | — | — | — | yes | — |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | — | — | — | — | — | yes |
 | [083](../real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md) | Stein's conjecture for Hilbert transforms along Lipschitz directions | yes | — | — | — | yes | yes |
@@ -111,6 +112,7 @@ Prose counts: 661 capitalized occurrences, 594 of them mid-sentence, 27 lowercas
 | [`Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026`](../../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/) | [054](../algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) | prose | [Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026.pdf](../../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026.pdf) |
 | [`Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026`](../../../../preprints/Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../../preprints/Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026/paper.pdf) |
 | [`Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026`](../../../../preprints/Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026/) | [235](../probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md) | prose | [linear-variance-of-the-random-3-sat-hitting-time.pdf](../../../../preprints/Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026/linear-variance-of-the-random-3-sat-hitting-time.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026`](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/) | — | prose | — |
 | [`Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026`](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [main.pdf](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf) |
 | [`Log-abundance-in-characteristic-zero-September-24-2026`](../../../../preprints/Log-abundance-in-characteristic-zero-September-24-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../../preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf) |

@@ -174,8 +174,8 @@ section `.tex` alone.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 022 at line 586. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 120. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 022 at line 586. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 120. |
 | S3 | [`preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/README.md`](../../../preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S4 | [`preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex`](../../../preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex) | 64 | The main file: the abstract and the section order. |
 | S5 | [`preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/sections/introduction.tex`](../../../preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/sections/introduction.tex) | 241 | The theorem, the Hausdorff corollary, the background, the weak/strong distinction, and the proof strategy. |

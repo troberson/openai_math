@@ -170,11 +170,11 @@ not a resolution of the exact extremizer conjecture (which is false);
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3070], manuscript link [S1:3070] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 127 at [S2:331] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3070], manuscript link [S1:3070] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 127 at [S2:331] |
 | S3 | [`preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/main.tex`](../../../preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/main.tex) | 76 | document root; abstract [S3:62–66]; six section `\input` directives [S3:69–74]; 76 lines |
 | S4 | [`preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/sections/01-introduction.tex) | 172 | `thm:main` [S4:20–28]; 172 lines |
 | S5 | [`preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf`](../../../preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf) | 9822 | the manuscript as shipped |
 | S6 | [`lean/docs/127.md`](../../../lean/docs/127.md) | 15 | scope note — Scope at [S6:9], comparator link at [S6:15] |
 | S7 | [`lean/ComparatorChallenges/GotsmanLinial.lean`](../../../lean/ComparatorChallenges/GotsmanLinial.lean) | 54 | comparator — `GotsmanLinialStatement` [S7:43–47], `gotsmanLinialStatement` [S7:49–50]; 54 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=127`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=127`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

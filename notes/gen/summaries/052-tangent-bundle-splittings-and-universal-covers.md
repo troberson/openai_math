@@ -181,7 +181,7 @@ The declaration is `OAI.UniversalCoverSplitting.main` at `lean/OAI/Geometry/Kahl
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 180 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 180 |
 | S2 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/README.md`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/README.md) | 18 | Manuscript 1 title, date |
 | S3 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/main.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/main.tex) | 69 | Abstract, lines 48–52 |
 | S4 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/intro.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/intro.tex) | 257 | Introduction: theorem, history, proof strategy |

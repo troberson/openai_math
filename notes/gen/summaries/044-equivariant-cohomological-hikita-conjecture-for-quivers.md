@@ -236,8 +236,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 044 at line 1217. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 166. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 044 at line 1217. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 166. |
 | S3 | [`preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/README.md`](../../../preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/README.md) | 18 | Manuscript readme: title, author, date. |
 | S4 | [`preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/main.tex`](../../../preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/main.tex) | 83 | The main file: abstract and section inputs. |
 | S5 | [`preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/sections/introduction.tex) | 290 | The statement, the coefficient maps, the theorem, the history, and the proof strategy. |

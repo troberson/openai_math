@@ -1,6 +1,6 @@
 # Name: trudinger
 
-11 families · subject name · 1 carried by a title or a declaration · 8 by prose · 7 by bibliography author
+12 families · subject name · 1 carried by a title or a declaration · 8 by prose · 8 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
@@ -15,7 +15,7 @@ Prose counts: 35 capitalized occurrences, 21 of them mid-sentence, 0 lowercase. 
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
 | `b` — Body prose | body | 8 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 7 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `B` — Bib author | body | 8 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
@@ -23,6 +23,7 @@ Prose counts: 35 capitalized occurrences, 21 of them mid-sentence, 0 lowercase. 
 |---|---|---|---|---|---|---|---|
 | [057](../algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) | Campana's abelianity conjecture and special varieties | — | — | — | — | — | yes |
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | — | yes |
 | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequalities and rigidity | — | — | — | — | — | yes |
 | [335](../differential-geometry/335-gromovs-integral-scalar-curvature-inequality.md) | Gromov's integral scalar-curvature inequality | — | — | — | — | yes | yes |
 | [336](../differential-geometry/336-spectral-scalar-curvature-and-codimension-two-width.md) | Spectral scalar curvature and codimension-two width | — | — | — | — | yes | yes |

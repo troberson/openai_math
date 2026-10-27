@@ -225,8 +225,8 @@ a resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2711], ms1 link [S1:2718] and abstract [S1:2720], ms2 link [S1:2727] and abstract [S1:2729] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 110 at [S2:298] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2711], ms1 link [S1:2718] and abstract [S1:2720], ms2 link [S1:2727] and abstract [S1:2729] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 110 at [S2:298] |
 | S3 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/main.tex`](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/main.tex) | 29 | document body; abstract [S3:9–16]; `\tableofcontents` [S3:17]; ten `\input` directives [S3:18–27]; 29 lines |
 | S4 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/latex/sections/01_introduction.tex`](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/latex/sections/01_introduction.tex) | 211 | `thm:main` [S4:21–35]; context [S4:41–123]; main ingredients [S4:126–195]; 211 lines |
 | S5 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/main.tex`](../../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/main.tex) | 51 | document body; abstract [S5:35–43]; five `\input` directives [S5:44–48]; 51 lines |
@@ -236,4 +236,4 @@ a resolve verb.
 | S9 | [`lean/docs/110.md`](../../../lean/docs/110.md) | 23 | scope note — Scope [S9:10], additive constant [S9:12], uniform algorithm [S9:14], preprocessing [S9:16], comparator links [S9:22–23] |
 | S10 | [`lean/ComparatorChallenges/KServer.lean`](../../../lean/ComparatorChallenges/KServer.lean) | 69 | the existence comparator — `MainStatement` at [S10:51–62], theorem and `sorry` at [S10:62–63] |
 | S11 | [`lean/ComparatorChallenges/UniformKServer.lean`](../../../lean/ComparatorChallenges/UniformKServer.lean) | 205 | the uniform comparator — `UniformAlgorithmClaim` at [S11:184–196], theorem and `sorry` at [S11:200–201] |
-| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=110`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=110`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

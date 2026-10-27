@@ -194,7 +194,7 @@ claims exist and names their declarations; the three comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 218 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 218 |
 | S2 | [`preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/README.md`](../../../preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/README.md) | 17 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/main.tex`](../../../preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/main.tex) | 62 | Abstract, lines 46–50 |
 | S4 | [`preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/sections/00-introduction.tex) | 175 | Conjecture, theorem, corollary, history, proof outline |

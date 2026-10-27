@@ -1,10 +1,10 @@
 # Name: naor
 
-13 families · subject name · 2 carried by a title or a declaration · 12 by prose · 6 by bibliography author
+14 families · subject name · 2 carried by a title or a declaration · 13 by prose · 6 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 75 capitalized occurrences, 46 of them mid-sentence, 2 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 77 capitalized occurrences, 46 of them mid-sentence, 2 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 75 capitalized occurrences, 46 of them mid-sentence, 2 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 12 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 13 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 6 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -34,6 +34,7 @@ Prose counts: 75 capitalized occurrences, 46 of them mid-sentence, 2 lowercase. 
 | [330](../functional-analysis/330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md) | A negative answer to Kalton's Lipschitz-free approximation question | — | — | — | — | yes | — |
 | [331](../functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) | Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming | — | — | — | — | yes | yes |
 | [332](../functional-analysis/332-metric-markov-cotype-two-for-1.md) | Metric Markov cotype two for $\ell_1$ | — | — | yes | — | yes | yes |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -52,6 +53,7 @@ Prose counts: 75 capitalized occurrences, 46 of them mid-sentence, 2 lowercase. 
 | [`Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026`](../../../../preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/) | [327](../functional-analysis/327-markov-type-characterizes-superreflexivity.md) | prose | [paper.pdf](../../../../preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/paper.pdf) |
 | [`Perfect-completeness-for-2-to-1-games-September-23-2026`](../../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/) | [105](../theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md) | prose | [paper.pdf](../../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf) |
 | [`Subpolynomial-dimension-reduction-in-Lp-September-23-2026`](../../../../preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/) | [094](../convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md) | prose | [paper.pdf](../../../../preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/paper.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026`](../../../../preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/) | [096](../convex-and-metric-geometry/096-gaussian-propeller-conjecture.md) | prose | [main.pdf](../../../../preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/main.pdf) |
 | [`Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026`](../../../../preprints/Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026/) | [099](../convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md) | prose | [paper.pdf](../../../../preprints/Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026/paper.pdf) |
 

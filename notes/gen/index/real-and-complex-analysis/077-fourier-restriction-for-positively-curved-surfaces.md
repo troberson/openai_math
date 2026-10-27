@@ -9,7 +9,7 @@
 | Comparator configs | 0 (0 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
-| Cited by / cites | 5 in · 5 out |
+| Cited by / cites | 6 in · 5 out |
 | Claim shapes | resolution, bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [surfaces](../topics/surfaces.md) |
 | Companion families | — |

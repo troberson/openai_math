@@ -126,8 +126,8 @@ What is left open is stated by the manuscripts themselves. Manuscript 1 does not
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family entry at 332; manuscript blurbs at 341, 350, 359, 368, 377, 386, 395, 404 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family `\resultentry` at 104 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family entry at 332; manuscript blurbs at 341, 350, 359, 368, 377, 386, 395, 404 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family `\resultentry` at 104 |
 | S3 | [`preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/README.md`](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex`](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex) | 5465 | Title at 63, abstract at 69–76, `thm:parent` at 155–156, history section at 224–283, `Parent` bibitem at 5420–5424 |
 | S5 | [`preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf`](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf) | 23046 | Typeset manuscript, 793,468 bytes |
@@ -168,7 +168,7 @@ What is left open is stated by the manuscripts themselves. Manuscript 1 does not
 | S40 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/references.tex`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/references.tex) | 112 | Release link to manuscript 6 at 105 |
 | S41 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf) | 14342 | Typeset manuscript, 503,521 bytes |
 | S42 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Family 014 entry at 127–132 |
-| S43 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Family row at 15 |
+| S43 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Family row at 15 |
 | S44 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/08-consequences.tex`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/08-consequences.tex) | 267 | Component categories at 20–39, arithmetic formula at 67–95, coherent eigenobjects at 124–223 |
 
 ## Bibliography

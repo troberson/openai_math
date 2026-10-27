@@ -1,10 +1,10 @@
 # Name: green
 
-64 families · subject name · 12 carried by a title or a declaration · 60 by prose · 17 by bibliography author
+65 families · subject name · 12 carried by a title or a declaration · 61 by prose · 17 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 646 capitalized occurrences, 524 of them mid-sentence, 392 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 651 capitalized occurrences, 527 of them mid-sentence, 398 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 646 capitalized occurrences, 524 of them mid-sentence, 392 lowerca
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 12 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 60 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 61 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 17 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -34,6 +34,7 @@ Prose counts: 646 capitalized occurrences, 524 of them mid-sentence, 392 lowerca
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | — | — | — | — | yes | — |
 | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | The Campana--Peternell conjecture in dimension six | — | — | — | — | — | yes |
 | [072](../real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md) | Brennan's conjecture and a counterexample to Kraetzer's prediction | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [086](../real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md) | An $L^3$ bound for the trilinear Hilbert transform | — | — | — | — | — | yes |
 | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | Universal optimality of the triangular lattice | — | — | yes | — | yes | — |
 | [125](../theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md) | The approximation threshold for metric $k$-median | — | — | — | — | yes | — |
@@ -133,6 +134,7 @@ Prose counts: 646 capitalized occurrences, 524 of them mid-sentence, 392 lowerca
 | [`Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026`](../../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/) | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | prose | [paper.pdf](../../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/paper.pdf) |
 | [`Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026`](../../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/) | [004](../number-theory/004-hilberts-tenth-problem-over-q.md) | prose | [main.pdf](../../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf) |
 | [`Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026`](../../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/) | — | prose | — |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Marked-polygon-correlations-and-one-arc-bounds-September-26-2026`](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf) |
 | [`Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026`](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf) |
 | [`Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026`](../../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/) | [164](../combinatorics/164-hindmans-finite-sums-and-products-conjecture.md) | prose | [paper.pdf](../../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf) |

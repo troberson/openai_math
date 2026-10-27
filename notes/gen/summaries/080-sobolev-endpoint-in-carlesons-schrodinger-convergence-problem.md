@@ -182,8 +182,8 @@ the higher-dimensional `build/` — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 080 at line 1979. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 234. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 080 at line 1979. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 234. |
 | S3 | [`preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/build/main.tex`](../../../preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/build/main.tex) | 60 | Planar main file: title and abstract. |
 | S4 | [`preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/build/sections/01-introduction.tex) | 148 | Planar main theorem, history, and the three ingredients of the proof. |
 | S5 | [`preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/build/paper.tex`](../../../preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/build/paper.tex) | 30 | Higher-dimensional main file: title and abstract. |

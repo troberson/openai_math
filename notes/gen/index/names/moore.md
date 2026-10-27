@@ -1,10 +1,10 @@
 # Name: moore
 
-30 families · subject name · 1 carried by a title or a declaration · 28 by prose · 12 by bibliography author
+31 families · subject name · 1 carried by a title or a declaration · 29 by prose · 12 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 258 capitalized occurrences, 187 of them mid-sentence, 10 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 262 capitalized occurrences, 190 of them mid-sentence, 10 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 258 capitalized occurrences, 187 of them mid-sentence, 10 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 0 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 28 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 29 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 12 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -28,6 +28,7 @@ Prose counts: 258 capitalized occurrences, 187 of them mid-sentence, 10 lowercas
 | [044](../algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md) | The equivariant cohomological Hikita conjecture for quivers | — | — | — | — | yes | — |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | yes | — |
 | [071](../real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) | Koebe's circle-domain conjecture and circle-domain rigidity | — | — | — | — | yes | yes |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | — |
 | [095](../convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md) | Hyperbolicity cones without semidefinite lifts | — | — | — | — | yes | — |
 | [172](../combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md) | Classification of finite Euclidean Ramsey configurations | — | — | — | — | yes | yes |
 | [209](../algebra/209-integral-counterexamples-to-gerstens-conjecture.md) | Integral counterexamples to Gersten’s conjecture | — | — | — | — | yes | — |
@@ -81,6 +82,7 @@ Prose counts: 258 capitalized occurrences, 187 of them mid-sentence, 10 lowercas
 | [`Incompressible-Box-Transport-and-Finite-Computation-October-6-2026`](../../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/) | [376](../partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md) | prose | [manuscript.pdf](../../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf) |
 | [`Incompressible-Box-Transport-and-Finite-Computation-September-27-2026`](../../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/) | — | prose | — |
 | [`Koebes-Circle-Domain-Conjecture-September-23-2026`](../../../../preprints/Koebes-Circle-Domain-Conjecture-September-23-2026/) | [071](../real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) | prose | [paper.pdf](../../../../preprints/Koebes-Circle-Domain-Conjecture-September-23-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026`](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/) | — | prose | — |
 | [`Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026`](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [main.pdf](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf) |
 | [`Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026`](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/Metric-measure-limits-of-subcritical-FK-and-spanning-tree-planar-maps-September-24-2026/main.pdf) |

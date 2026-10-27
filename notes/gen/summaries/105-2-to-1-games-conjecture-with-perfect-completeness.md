@@ -213,8 +213,8 @@ Lean layer [S8] [S9:179–180] [S10] [S11] are the two evidence surfaces.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2613], the manuscript link [S1:2620], and the manuscript abstract [S1:2622]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 105 at [S2:288] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2613], the manuscript link [S1:2620], and the manuscript abstract [S1:2622]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 105 at [S2:288] |
 | S3 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/main.tex`](../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/main.tex) | 64 | root (`\documentclass`); abstract [S3:48–53]; the eight-section include order [S3:54–61] |
 | S4 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/00-introduction.tex`](../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/00-introduction.tex) | 254 | the projection-game definition [S4:3–9]; the 2-to-1 definition [S4:12–17]; the main theorem [S4:32–45]; the $k$-colorable corollary [S4:189–200]; the Not-Two corollary [S4:222–232]; the historical paragraphs [S4:54–73] |
 | S5 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/01-preliminaries.tex`](../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/01-preliminaries.tex) | 529 | the PCP gap theorem [S5:47–57]; weighted projection-game repetition [S5:125–132]; the Grassmann expansion consequence [S5:235–241]; the inverse theorem [S5:406–412] |
@@ -223,5 +223,5 @@ Lean layer [S8] [S9:179–180] [S10] [S11] are the two evidence surfaces.
 | S8 | [`lean/docs/105.md`](../../../lean/docs/105.md) | 15 | scope note — the formalization's Scope at [S8:9] and its comparator link |
 | S9 | [`lean/ComparatorChallenges/PerfectCompleteness.lean`](../../../lean/ComparatorChallenges/PerfectCompleteness.lean) | 185 | the comparator stub — `exists_reduction` at [S9:179–181] with its `sorry` |
 | S10 | [`lean/OAI/Computability/PerfectCompleteness/Theorem11.lean`](../../../lean/OAI/Computability/PerfectCompleteness/Theorem11.lean) | 32 | the formalized file — `exists_reduction` proved at [S10:21–25] |
-| S11 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S11:1453–1455] |
-| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=105`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S11 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the `main_results` entry naming the declaration, at [S11:1453–1455] |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=105`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

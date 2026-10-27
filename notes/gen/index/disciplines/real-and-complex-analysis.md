@@ -1,8 +1,8 @@
 # Real and complex analysis
 
-16 families · 26 manuscripts · 8 formalized at source level · 10 scope notes · 15 comparator configs · 0 reasoning traces · 0 verification bundles
+16 families · 27 manuscripts · 9 formalized at source level · 11 scope notes · 16 comparator configs · 0 reasoning traces · 0 verification bundles
 
-Tier: T3 7 · T2 3 · T1 0 · T0 6
+Tier: T3 8 · T2 3 · T1 0 · T0 5
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@ Tier: T3 7 · T2 3 · T1 0 · T0 6
 | [076](../real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md) | Ultraflat real Littlewood polynomials | T3 | 3 | 1 | yes | 2 | — |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | T0 | 2 | 0 | — | 0 | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | T0 | 1 | 0 | — | 0 | — |
-| [079](../real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md) | Sogge's local smoothing conjecture in dimension three | T0 | 1 | 0 | — | 0 | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | T3 | 2 | 1 | yes | 1 | — |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | T0 | 2 | 0 | — | 0 | — |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | T3 | 1 | 1 | yes | 1 | — |
 | [082](../real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md) | Maximal and variational bounds for the triangular Hilbert transform | T3 | 3 | 1 | yes | 1 | — |

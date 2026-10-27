@@ -194,12 +194,12 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2679], manuscript link [S1:2686] and abstract [S1:2688] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 108 at [S2:294] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2679], manuscript link [S1:2686] and abstract [S1:2688] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 108 at [S2:294] |
 | S3 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex) | 98 | root (`\documentclass`); abstract [S3:78–85]; `\tableofcontents` [S3:86]; nine `\input` directives [S3:87–95]; 98 lines |
 | S4 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex) | 257 | `thm:main` [S4:41–49]; context [S4:66–152]; proof strategy [S4:154–257]; 257 lines |
 | S5 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf) | 15687 | the manuscript as shipped |
 | S6 | [`lean/docs/108.md`](../../../lean/docs/108.md) | 18 | scope note — the Scope at [S6:9], supporting theorem at [S6:11], two comparator links at [S6:17–18] |
 | S7 | [`lean/ComparatorChallenges/PermanentCubic.lean`](../../../lean/ComparatorChallenges/PermanentCubic.lean) | 42 | the comparator stub — `permanent_cubic_lower_bounds` at [S7:33–38] |
 | S8 | [`lean/ComparatorChallenges/SmoothInitialForm.lean`](../../../lean/ComparatorChallenges/SmoothInitialForm.lean) | 56 | the comparator stub — `smooth_initial_form_lower_bound` at [S8:35–52] |
-| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=108`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=108`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

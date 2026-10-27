@@ -180,12 +180,12 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2736], manuscript link [S1:2743] and abstract [S1:2745] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 111 at [S2:300] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2736], manuscript link [S1:2743] and abstract [S1:2745] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 111 at [S2:300] |
 | S3 | [`preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/main.tex`](../../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/main.tex) | 50 | root (`\documentclass`); abstract [S3:38–40]; seven `\input` directives [S3:41–47]; bibliography [S3:48–49]; 50 lines |
 | S4 | [`preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/sections/introduction.tex`](../../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/build/sections/introduction.tex) | 198 | `thm:main` [S4:24–40]; constant and secretary [S4:42–55]; history [S4:68–198]; 198 lines |
 | S5 | [`preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf`](../../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf) | 13081 | the manuscript as shipped |
 | S6 | [`lean/docs/111.md`](../../../lean/docs/111.md) | 18 | scope note — Scope at [S6:9], hidden-vector result at [S6:11], two comparator links at [S6:17–18] |
 | S7 | [`lean/ComparatorChallenges/MatroidProphet.lean`](../../../lean/ComparatorChallenges/MatroidProphet.lean) | 94 | the prophet comparator — `OneSampleChallenge` at [S7:70], theorem and `sorry` at [S7:89–90] |
 | S8 | [`lean/ComparatorChallenges/MatroidSecretary.lean`](../../../lean/ComparatorChallenges/MatroidSecretary.lean) | 246 | the secretary comparator — three theorems and `sorry` at [S8:235–242] |
-| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=111`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=111`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

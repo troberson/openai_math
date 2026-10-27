@@ -6,7 +6,7 @@ The ledger's `resolves_named` column is a title-and-abstract heuristic: `notes/s
 returns 1 when a family's **overview title + abstract**, lowered, matches both `TARGET_NOUN`
 (`conjectur|\bquestion|\bproblem`) and `RESOLVE_VERB`
 (`\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis|\bconfirm|\bfail|\bviolat|\bcounterexample`).
-It reads **248** of **372** families; the abstract-only scope it replaced read **233**. This page
+It reads **248** of **373** families; the abstract-only scope it replaced read **233**. This page
 measures the manuscript side of the same claim and compares the two.
 
 Regenerate with `python3 notes/scripts/extract_named_results.py` — report-only, it writes nothing and
@@ -14,12 +14,12 @@ runs nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never i
 on this page means "a proof was checked". Run it twice and diff: the report must be identical. Check
 this page with `python3 notes/scripts/verify_named_results.py` before quoting any of its
 counts — it imports the extractor's own `population()`, re-derives every count from the ledger and the
-7,679 `.tex` files on disk, resolves every `file:line` anchor, matches every quotation against the
+7,705 `.tex` files on disk, resolves every `file:line` anchor, matches every quotation against the
 anchored file, and the thirteen injected mutations live in
 `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` gate row. It writes nothing.
 
-Population, from the report's POPULATION section: **372** ledger rows, **372** families in
-`overview.tex`, **719** manuscript directories, **7,679** `.tex` files at glob depths 1–4 under
+Population, from the report's POPULATION section: **373** ledger rows, **373** families in
+`overview.tex`, **721** manuscript directories, **7,705** `.tex` files at glob depths 1–4 under
 `preprints/`, and `resolves_named = 1` on **248** families.
 
 Manuscript ownership is the path component after `preprints`, never `parts[-2]` — every resolved main
@@ -36,28 +36,28 @@ conjecture environment.
 
 | Measure | Count | Rule |
 |---|---|---|
-| headline begins | 2,410 | `\begin{theorem}` 2,405 `\begin{maintheorem}` 4 `\begin{thm}` 1 |
-| titled headline begins | 1,609 | `\begin{X}[title]`, scanned **per line** |
-| titled headline begins, whole-text scan | 1,619 | same pattern over the whole file |
+| headline begins | 2,420 | `\begin{theorem}` 2,415 `\begin{maintheorem}` 4 `\begin{thm}` 1 |
+| titled headline begins | 1,616 | `\begin{X}[title]`, scanned **per line** |
+| titled headline begins, whole-text scan | 1,626 | same pattern over the whole file |
 | of those, titles whose match spans a newline | 10 | the 1,609 / 1,619 gap |
-| families with ≥1 headline begin | 372 | every family |
-| families with ≥1 titled headline | 271 | |
+| families with ≥1 headline begin | 373 | every family |
+| families with ≥1 titled headline | 272 | |
 | families with no titled headline | 101 | |
 | titles matching `Main…` (content-free) | 0 | no generic headline titles exist |
 
-Quote the titled count with the per-line rule: **1,609** is the per-line scan, **1,619** is the
+Quote the titled count with the per-line rule: **1,616** is the per-line scan, **1,626** is the
 whole-text scan, and the 10-title gap is titles written across a line break. A page that quotes 1,619
 with the per-line rule is quoting the wrong number.
 
-## Target-named headline statements: 17 over 17 families
+## Target-named headline statements: 18 over 18 families
 
 Rule: a titled headline statement whose **title** matches the target noun, case-insensitively. The
 case-insensitivity is stated because it changes the count: the ledger rule sees lowercase abstracts,
 while titles, directory names, and prose capitalize the same words, so a case-sensitive match on them
 undercounts.
 
-Over **1,609** titled headline statements, **17** titles name a conjecture, question, or problem, in
-**17** families:
+Over **1,616** titled headline statements, **18** titles name a conjecture, question, or problem, in
+**18** families:
 
 | Fam | Tier | `rn` | Statement | Title |
 |---|---|---|---|---|
@@ -79,21 +79,21 @@ Over **1,609** titled headline statements, **17** titles name a conjecture, ques
 | 304 | T0 | 1 | `preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex:9` | *"The Hilbert--Smith conjecture"* |
 | 311 | T0 | 1 | `preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/sections/01-introduction.tex:74` | *"Hovey--Strickland conjecture"* |
 
-**The load-bearing negative: 0 of these 17 titles pairs a target noun with a resolve verb.** A
+**The load-bearing negative: 0 of these 18 titles pairs a target noun with a resolve verb.** A
 theorem title names *content* — "General Mahler conjecture", "Source problem" — never the act of
 resolving it. So the statement layer cannot, by itself, back a column whose rule is
-target-noun **and** resolve-verb. One of the 17 (275) sits in a family the column reads 0; the
-other 16 sit in families it reads 1.
+target-noun **and** resolve-verb. One of the 18 (275) sits in a family the column reads 0; the
+other 17 sit in families it reads 1.
 
-## Subject-named headline statements: 207 over 112 families
+## Subject-named headline statements: 211 over 113 families
 
-Rule: a titled headline statement whose title contains a **name-layer subject** — one of the 551
+Rule: a titled headline statement whose title contains a **name-layer subject** — one of the 550
 subject names measured by `notes/scripts/measure_names.py` (subjects, not citations; the rule and the
 subject/citation split are in `notes/gen/reports/names.md`).
 
-**207** statements over **112** families. **74** of those families are `rn = 1`; **38** are not:
+**211** statements over **113** families. **74** of those families are `rn = 1`; **39** are not:
 002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238
-239 260 261 271 275 282 286 318 331 337 353 376 377.
+239 260 261 271 275 282 286 318 331 337 353 376 377 378.
 
 This is the layer that shows the column is not a *name* detector: 38 families name a person, theorem,
 or object in a headline theorem title while the column reads 0, and it names them in the theorem's own
@@ -103,11 +103,11 @@ name, not as a resolved conjecture.
 
 | Comparison | Count |
 |---|---|
-| headline-target ∩ `rn` | 16 |
+| headline-target ∩ `rn` | 17 |
 | headline-target, `rn = 0` | 1 → 275 |
-| `rn = 1`, no target-named headline statement | 232 |
+| `rn = 1`, no target-named headline statement | 231 |
 | `rn = 1` with **no titled headline theorem at all** | 76 (T3 37, T2 25, T1 0, T0 14) |
-| `rn = 0` with titled headline theorems | 99 |
+| `rn = 0` with titled headline theorems | 100 |
 
 The 76 is the number that decides the bead's framing: **76 of the 248 flagged families ship no titled
 headline theorem**, so for those families there is no statement-level text in which a named-result
@@ -125,7 +125,7 @@ Rule: the directory name after `preprints` matches the target noun, case-insensi
 Rule: inside the manuscript's own `\begin{abstract}`…`\end{abstract}` (bibliography and `\cite` braces
 stripped), one sentence matching the target noun **and** the column's resolve verb.
 
-**275** families over **397** sentences. **227** are `rn = 1`. **48** are not, and **21** `rn = 1`
+**275** families over **399** sentences. **227** are `rn = 1`. **48** are not, and **21** `rn = 1`
 families have no such sentence: 020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299
 309 322 323 342.
 
@@ -139,8 +139,8 @@ Rule: prose text with bibliography and `\cite`/`\xref` braces stripped, two scop
 
 | Scope | Hits | Families | ∩`rn` | prose-not-`rn` | `rn`-not-prose |
 |---|---|---|---|---|---|
-| window ±80 characters | 1,665 | 337 | 240 | 97 | 8 → 085 094 126 144 187 299 323 333 |
-| one sentence | 1,283 | 332 | 238 | 94 | 10 → 020 085 094 144 158 187 280 299 322 323 |
+| window ±80 characters | 1,675 | 338 | 240 | 98 | 8 → 085 094 126 144 187 299 323 333 |
+| one sentence | 1,289 | 333 | 238 | 95 | 10 → 020 085 094 144 158 187 280 299 322 323 |
 
 **6** families are `rn = 1` and name no target anywhere in their manuscript prose under **both** rules:
 085 094 144 187 299 323.
@@ -183,7 +183,7 @@ documented at `notes/scripts/catlib/ledger.py:125` as
 
 **15** additions: 022 039 044 096 097 151 156 192 209 263 289 293 297 347 367. **Removals 0** — a union
 keeps every flag the abstract-only scope had, so the column reads **248**. A strict title+abstract
-*replacement* would read 149 (99 removals against the applied 248 column), which is why the applied rule is a union and not a
+*replacement* would read 148 (100 removals against the applied 248 column), which is why the applied rule is a union and not a
 replacement.
 
 All **15** are corroborated by a manuscript-abstract naming sentence (layer 2, count ≥ 1). **9** of the
@@ -309,8 +309,8 @@ alone**:
 
 ## What the check shows
 
-**The manuscript statement layer is not where the release names conjectures.** Over 1,609 titled
-headline statements, 17 titles name a target and **0** of them pair a target noun with a resolve verb.
+**The manuscript statement layer is not where the release names conjectures.** Over 1,616 titled
+headline statements, 18 titles name a target and **0** of them pair a target noun with a resolve verb.
 The naming sits in the manuscript's **name, abstract, and prose**, and in the overview **title** —
 which the column now reads, having read the abstract only when this measurement began.
 
@@ -328,17 +328,17 @@ So `resolves_named` becomes evidence-backed by the record, not by theorem titles
 
 - The 48-family layer-2 set is **unadjudicated**. It is the widest candidate (296) and includes
   manuscripts using "problem" for their own sub-problems; no family in it has been read.
-- The 97-family `prose-not-rn` set (window scope) has not been read, so the 97 are counts, not
+- The 98-family `prose-not-rn` set (window scope) has not been read, so the 97 are counts, not
   verdicts.
-- The 38 subject-named-not-`rn` families were not read; the name layer is a measured layer, and a
+- The 39 subject-named-not-`rn` families were not read; the name layer is a measured layer, and a
   subject in a theorem title is not a resolved conjecture.
 - Headline statements were read as **titles only**. The body of a theorem statement — where a paper
   says "we prove Conjecture X" inside the statement — was not parsed.
 - The 101 families with no titled headline theorem have no title-level statement text; nothing here
   says what their `.tex` files state in prose.
 - Nothing here is a proof check. `lake`, `lean`, `lake exe cache get`, and `comparator` were never
-  invoked, and zero of the 122,458 files under `lean/OAI/**/*.lean` contain `sorry` while the 416
-  comparator files carry 539 `sorry` occurrences — a comparator file states a target, it does not
+  invoked, and zero of the 162,417 files under `lean/OAI/**/*.lean` contain `sorry` while the 418
+  comparator files carry 547 `sorry` occurrences — a comparator file states a target, it does not
   prove it.
 - The swap's 15 additions were corroborated at the **manuscript-abstract layer only** — a sentence
   naming a target with a resolve verb. No Direction-B-style read was done on them, so none was checked

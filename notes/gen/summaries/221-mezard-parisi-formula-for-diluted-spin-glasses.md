@@ -71,7 +71,7 @@ Two gaps are worth recording. The ledger reports `paps_form 0` and `mainres 0` f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release contents listing: blurb and abstract |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release contents listing: blurb and abstract |
 | S2 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md) | 18 | Manuscript README: date and citation key |
 | S3 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex) | 75 | Manuscript main file: abstract and section order |
 | S4 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex) | 40 | Build support: PDF glyph mappings |
@@ -96,7 +96,7 @@ Two gaps are worth recording. The ledger reports `paps_form 0` and `mainres 0` f
 | S23 | [`lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean`](../../../lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean) | 37 | Lower-bound interface |
 | S24 | [`lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean`](../../../lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean) | 76 | Upper-bound interface |
 | S25 | [`lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean`](../../../lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean) | 1125 | Largest module in the formalized tree |
-| S26 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release formalization index |
+| S26 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Release formalization index |
 | S27 | [`lean/OAI/Probability/SATComputability/InterpolationUpper.lean`](../../../lean/OAI/Probability/SATComputability/InterpolationUpper.lean) | 1211 | Family 235 module importing DilutedSpin |
 | S28 | [`lean/docs/235.md`](../../../lean/docs/235.md) | 26 | Companion scope note |
 | S29 | [`reasoning_traces/mezard-parisi-formula.pdf`](../../../reasoning_traces/mezard-parisi-formula.pdf) | 1629 | Published reasoning trace |

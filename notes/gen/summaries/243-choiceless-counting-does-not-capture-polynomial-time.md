@@ -158,7 +158,7 @@ claims exist and names their declarations; the two comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 571 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 571 |
 | S2 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md) | 17 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex) | 55 | Abstract, lines 35–41 |
 | S4 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib) | 324 | Bibliography entries |

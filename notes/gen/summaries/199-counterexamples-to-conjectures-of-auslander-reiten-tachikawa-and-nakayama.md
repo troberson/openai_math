@@ -244,7 +244,7 @@ elaborates.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 479 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 479 |
 | S2 | [`preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/README.md`](../../../preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/README.md) | 17 | Manuscript 1 title, date, citation |
 | S3 | [`preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/build/main.tex`](../../../preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/build/main.tex) | 72 | Abstract, lines 48–54 |
 | S4 | [`preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/build/01-introduction.tex`](../../../preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/build/01-introduction.tex) | 268 | Theorem, history, construction outline |

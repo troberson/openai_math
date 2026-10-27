@@ -185,8 +185,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 030 at line 723. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 136. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 030 at line 723. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 136. |
 | S3 | [`preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/README.md`](../../../preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
 | S4 | [`preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/build/main.tex`](../../../preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/build/main.tex) | 89 | The main file: the abstract, packages, and section inputs. |
 | S5 | [`preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/build/sections/introduction.tex`](../../../preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/build/sections/introduction.tex) | 199 | The main theorem, the historical context, the geometric prime switch, and the proof organization. |

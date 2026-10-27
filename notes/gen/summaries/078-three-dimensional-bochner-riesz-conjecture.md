@@ -158,8 +158,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 078 at line 1947. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 230. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 078 at line 1947. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 230. |
 | S3 | [`preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/paper.tex`](../../../preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/paper.tex) | 71 | Main file: title, abstract, and section inputs. |
 | S4 | [`preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/01-introduction.tex) | 273 | The main L3 theorem, the full-range consequence, the development, and the two-stage argument. |
 | S5 | [`preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/12-multiplier.tex`](../../../preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/build/sections/12-multiplier.tex) | 511 | The oscillatory-integral setup, the beta-integral complex-order lemma, and the full strict-range corollary. |

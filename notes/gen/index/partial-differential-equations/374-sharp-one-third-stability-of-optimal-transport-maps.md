@@ -29,7 +29,7 @@ No `main_results` declaration reaches this family: its scope note links 1 compar
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `Brenier` | [.json](../../../../lean/ComparatorChallenges/Brenier.json) | [.lean](../../../../lean/ComparatorChallenges/Brenier.lean) | 2 | 12 | no | no |
+| `Brenier` | [.json](../../../../lean/ComparatorChallenges/Brenier.json) | [.lean](../../../../lean/ComparatorChallenges/Brenier.lean) | 2 | 0 | no | no |
 
 ## Verification bundles
 

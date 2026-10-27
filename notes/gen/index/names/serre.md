@@ -1,10 +1,10 @@
 # Name: serre
 
-57 families · subject name · 1 carried by a title or a declaration · 54 by prose · 20 by bibliography author
+58 families · subject name · 1 carried by a title or a declaration · 55 by prose · 21 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 538 capitalized occurrences, 360 of them mid-sentence, 24 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 543 capitalized occurrences, 361 of them mid-sentence, 24 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,8 +14,8 @@ Prose counts: 538 capitalized occurrences, 360 of them mid-sentence, 24 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 0 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 54 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 20 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `b` — Body prose | body | 55 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 21 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
@@ -56,6 +56,7 @@ Prose counts: 538 capitalized occurrences, 360 of them mid-sentence, 24 lowercas
 | [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | — | — | — | — | — | yes |
 | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | The Campana--Peternell conjecture in dimension six | — | — | — | — | yes | yes |
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | — | — | — | — | yes | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | — | — | — | — | yes | yes |
 | [193](../algebra/193-serres-intersection-multiplicity-conjecture.md) | Serre's intersection-multiplicity conjecture | yes | — | — | — | yes | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | — | — | yes | — |
 | [195](../algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) | A counterexample to the small Cohen--Macaulay module conjecture | — | — | — | — | yes | — |
@@ -129,6 +130,7 @@ Prose counts: 538 capitalized occurrences, 360 of them mid-sentence, 24 lowercas
 | [`Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026`](../../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/) | — | prose | — |
 | [`Lechs-multiplicity-conjecture-September-23-2026`](../../../../preprints/Lechs-multiplicity-conjecture-September-23-2026/) | [194](../algebra/194-lechs-multiplicity-conjecture.md) | prose | [paper.pdf](../../../../preprints/Lechs-multiplicity-conjecture-September-23-2026/paper.pdf) |
 | [`Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026`](../../../../preprints/Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../../preprints/Lifting-sections-from-the-reduced-support-of-an-adjoint-September-27-2026/paper.pdf) |
+| [`Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026`](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/) | [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | prose | [paper.pdf](../../../../preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) |
 | [`Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026`](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/) | — | prose | — |
 | [`Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026`](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [main.pdf](../../../../preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf) |
 | [`Log-abundance-in-characteristic-zero-September-24-2026`](../../../../preprints/Log-abundance-in-characteristic-zero-September-24-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../../preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf) |

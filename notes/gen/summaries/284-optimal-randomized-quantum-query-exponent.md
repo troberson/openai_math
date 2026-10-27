@@ -136,8 +136,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 284 at line 7084. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 658. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 284 at line 7084. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 658. |
 | S3 | [`preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/build/main.tex`](../../../preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/build/main.tex) | 27 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/build/sections/01-introduction.tex) | 157 | Introduction: the setup, the main theorem, the historical context, the construction, and the conventions. |
 | S5 | [`preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/build/references.bib`](../../../preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/build/references.bib) | 329 | Manuscript bibliography. |

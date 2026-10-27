@@ -94,9 +94,9 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family entry at 32; manuscript blurbs at 41, 50 and 59; family 006's entry at 141, which does not name 002 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry` at 80: the release's abstract for 002 and its three display titles |
-| S3 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Row 3 is family 002: tier, manuscript count, claim-shape tags, companion, and the zero evidence columns |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family entry at 32; manuscript blurbs at 41, 50 and 59; family 006's entry at 141, which does not name 002 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The `\resultentry` at 80: the release's abstract for 002 and its three display titles |
+| S3 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Row 3 is family 002: tier, manuscript count, claim-shape tags, companion, and the zero evidence columns |
 | S4 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Bucket legend at 17–25; the 002 entry at 114–116; the cross-family chain list at 858–859 |
 | S5 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md) | 21 | Author line at 3, date line at 5, the release's own bibtex entry at 9–17, the version note at 19–21 naming the October-3 directory |
 | S6 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/main.tex`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/main.tex) | 82 | Title at 56, date at 58, abstract at 62–68; the ten section inputs |

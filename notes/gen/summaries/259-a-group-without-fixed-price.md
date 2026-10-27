@@ -64,9 +64,9 @@ Nothing. The ledger records tier T0 for this family, with no scope note, no comp
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 605. |
-| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 605. |
+| S3 | [`README.md`](../../../README.md) | 53 | The repo readme, which attributes no reasoning trace to this family. |
 | S4 | [`preprints/A-group-without-fixed-price-October-5-2026/README.md`](../../../preprints/A-group-without-fixed-price-October-5-2026/README.md) | 18 | Citation-only manuscript readme: the title, the author, the date, the BibTeX block, no provenance. |
 | S5 | [`preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md`](../../../preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md) | 10 | The scope note: the problem addressed, the distinction from property (T), and the provenance caveat. |
 | S6 | [`preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex) | 44 | The main file: the abstract and the section order. |

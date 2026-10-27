@@ -292,8 +292,8 @@ yaml. The shape flags are `bound` and `classification`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2847], uniform link [S1:2854] and abstract [S1:2856], one-rational link [S1:2863] and abstract [S1:2865], hitting-lists link [S1:2872] and abstract [S1:2874] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 116 at [S2:310] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2847], uniform link [S1:2854] and abstract [S1:2856], one-rational link [S1:2863] and abstract [S1:2865], hitting-lists link [S1:2872] and abstract [S1:2874] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 116 at [S2:310] |
 | S3 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex) | 54 | root (`\documentclass`); abstract [S3:38–45]; five `\input` directives [S3:47–51]; 54 lines |
 | S4 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex) | 153 | `thm:main` [S4:17–35]; context [S4:63–114]; proof strategy [S4:117–153] |
 | S5 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/paper.tex`](../../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/paper.tex) | 47 | root (`\documentclass`); abstract [S5:31–35]; five `\input` directives [S5:38–42]; 47 lines |
@@ -306,4 +306,4 @@ yaml. The shape flags are `bound` and `classification`;
 | S12 | [`lean/docs/116.md`](../../../lean/docs/116.md) | 21 | scope note — the Scope at [S12:10] [S12:12] [S12:14] and two comparator links at [S12:20–21] |
 | S13 | [`lean/ComparatorChallenges/FormulaHitting.lean`](../../../lean/ComparatorChallenges/FormulaHitting.lean) | 66 | the comparator stub — `universal_hitting` at [S13:53–59] |
 | S14 | [`lean/ComparatorChallenges/RationalHitting.lean`](../../../lean/ComparatorChallenges/RationalHitting.lean) | 113 | the comparator stub — `MainStatement` at [S14:97–103]; `main` at [S14:105–106] |
-| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=116`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=116`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

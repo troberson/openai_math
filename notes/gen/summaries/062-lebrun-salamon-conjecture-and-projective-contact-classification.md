@@ -211,7 +211,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 062 at line 1581. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 062 at line 1581. |
 | S2 | [`preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/build/main.tex`](../../../preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/build/main.tex) | 78 | Main file: title, abstract, and section inputs. |
 | S3 | [`preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/build/sections/introduction.tex) | 335 | The contact Fano setup, the main theorem, the projective and quaternionic corollaries, and prior work. |
 | S4 | [`preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/build/sections/reduction.tex`](../../../preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/build/sections/reduction.tex) | 176 | The Picard alternatives and the simply-connectedness lemma. |

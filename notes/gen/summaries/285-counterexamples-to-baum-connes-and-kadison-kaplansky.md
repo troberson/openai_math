@@ -171,8 +171,8 @@ non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 285 at line 7100. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 662. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 285 at line 7100. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 662. |
 | S3 | [`preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/main.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/main.tex) | 77 | Baum--Connes injectivity manuscript: title and abstract. |
 | S4 | [`preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/sections/00_introduction.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/sections/00_introduction.tex) | 248 | Baum--Connes injectivity introduction: the setup, the main theorem, the distinction from earlier counterexamples, and the construction. |
 | S5 | [`preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/paper.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/paper.tex) | 30 | Kadison--Kaplansky manuscript: title and abstract. |

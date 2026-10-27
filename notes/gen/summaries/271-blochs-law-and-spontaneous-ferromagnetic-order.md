@@ -170,7 +170,7 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release contents: family 271 blurb and the four manuscript links |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release contents: family 271 blurb and the four manuscript links |
 | S2 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/README.md`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/README.md) | 18 | Manuscript A README and bibtex entry |
 | S3 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/main.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/main.tex) | 61 | Manuscript A title, date, abstract, section list |
 | S4 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/01-introduction.tex) | 210 | Manuscript A model, theorem, history, inputs |
@@ -231,7 +231,7 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 | S59 | [`lean/OAI/MathematicalPhysics/Heisenberg/Main.lean`](../../../lean/OAI/MathematicalPhysics/Heisenberg/Main.lean) | 75 | Formal headline theorem |
 | S60 | [`lean/OAI/MathematicalPhysics/Heisenberg/Model.lean`](../../../lean/OAI/MathematicalPhysics/Heisenberg/Model.lean) | 261 | Slot model: site, level, configuration, operators |
 | S61 | [`lean/OAI/MathematicalPhysics/Heisenberg/SpinAveragedKMS.lean`](../../../lean/OAI/MathematicalPhysics/Heisenberg/SpinAveragedKMS.lean) | 88 | KMS layer imported by the headline theorem |
-| S62 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release results index: no entry naming Heisenberg |
+| S62 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Release results index: no entry naming Heisenberg |
 | S63 | [`reasoning_traces/spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf`](../../../reasoning_traces/spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf) | 2407 | Published reasoning trace for manuscript D |
 
 ## Bibliography

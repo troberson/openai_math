@@ -1,10 +1,10 @@
 # Name: martin
 
-27 families · subject name · 1 carried by a title or a declaration · 23 by prose · 12 by bibliography author
+28 families · subject name · 1 carried by a title or a declaration · 24 by prose · 12 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
-Prose counts: 100 capitalized occurrences, 80 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
+Prose counts: 101 capitalized occurrences, 81 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 100 capitalized occurrences, 80 of them mid-sentence, 0 lowercase.
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 23 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 24 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 12 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -48,6 +48,7 @@ Prose counts: 100 capitalized occurrences, 80 of them mid-sentence, 0 lowercase.
 | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | The Hilbert--Smith conjecture in every dimension | — | — | — | — | yes | yes |
 | [305](../topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) | Counterexamples to disk embedding and Wall's manifold conjecture | — | — | — | — | yes | — |
 | [323](../functional-analysis/323-relative-independence-of-the-separable-quotient-problem.md) | Relative independence of the separable quotient problem | — | — | — | — | yes | — |
+| [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | Disproof of the Exponential Time Hypothesis | — | — | — | — | yes | — |
 
 ## Manuscripts
 
@@ -76,6 +77,7 @@ Prose counts: 100 capitalized occurrences, 80 of them mid-sentence, 0 lowercase.
 | [`Short-Egyptian-fractions-September-25-2026`](../../../../preprints/Short-Egyptian-fractions-September-25-2026/) | [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | prose | [Short-Egyptian-fractions-September-25-2026.pdf](../../../../preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf) |
 | [`Snaky-in-21-Maker-moves-September-25-2026`](../../../../preprints/Snaky-in-21-Maker-moves-September-25-2026/) | [187](../combinatorics/187-snaky-in-21-maker-moves.md) | prose | [article.pdf](../../../../preprints/Snaky-in-21-Maker-moves-September-25-2026/article.pdf) |
 | [`Spectral-convergence-for-critical-FK-Ising-planar-maps-October-5-2026`](../../../../preprints/Spectral-convergence-for-critical-FK-Ising-planar-maps-October-5-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [spectral-convergence-critical-fk-ising-planar-maps.pdf](../../../../preprints/Spectral-convergence-for-critical-FK-Ising-planar-maps-October-5-2026/spectral-convergence-critical-fk-ising-planar-maps.pdf) |
+| [`The-Exponential-Time-Hypothesis-is-False-October-25-2026`](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/) | [378](../theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md) | prose | [paper.pdf](../../../../preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) |
 | [`The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026`](../../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/) | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | prose | [paper.pdf](../../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf) |
 | [`The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026`](../../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/) | [133](../theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md) | prose | [paper.pdf](../../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/paper.pdf) |
 | [`The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026`](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/) | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | prose | [main.pdf](../../../../preprints/The-critical-Liouville-quantum-sphere-and-geometric-limits-of-FK-maps-at-q-equals-4-September-24-2026/main.pdf) |

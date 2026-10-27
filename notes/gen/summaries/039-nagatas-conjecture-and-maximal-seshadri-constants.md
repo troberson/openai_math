@@ -69,7 +69,7 @@ The two October manuscripts are the part of the family with no formalization and
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 156 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 156 |
 | S2 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex`](../../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex) | 50 | Abstract, lines 35–41 |
 | S3 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex`](../../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex) | 143 | Main theorem, lines 31–40 |
 | S4 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex`](../../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex) | 26 | Abstract, lines 7–13 |

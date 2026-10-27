@@ -3,15 +3,15 @@
 |  |  |
 |---|---|
 | Discipline | [Algebraic and complex geometry](../disciplines/algebraic-and-complex-geometry.md) |
-| Tier | T0 |
-| Manuscripts | 5 (0 formalized at source level) |
-| Scope note | — |
+| Tier | T1 |
+| Manuscripts | 5 (1 formalized at source level) |
+| Scope note | [`lean/docs/032.md`](../../../../lean/docs/032.md) |
 | Comparator configs | 0 (0 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | resolution, classification, uniform |
-| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [abelian-varieties](../topics/abelian-varieties.md) |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [number-fields](../topics/number-fields.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
 | Summary page | [032-rational-hodge-conjecture-for-cm-abelian-varieties.md](../../../../notes/gen/summaries/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) |
 
@@ -22,7 +22,7 @@
 | [`A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026`](../../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/) | [paper.pdf](../../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf) | [build/](../../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/) | [README.md](../../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/README.md) | no | [paper.tex](../../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/paper.tex) | — |
 | [`Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026`](../../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/) | [paper.pdf](../../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf) | [build/](../../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/build/) | [README.md](../../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/README.md) | no | [paper.tex](../../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/build/paper.tex) | — |
 | [`Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026`](../../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/) | [paper.pdf](../../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf) | [build/](../../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/build/) | [README.md](../../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/README.md) | no | [paper.tex](../../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/build/paper.tex) | — |
-| [`The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026`](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/) | [paper.pdf](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf) | [build/](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/) | [README.md](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md) | no | [main.tex](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/main.tex) | — |
+| [`The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026`](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/) | [paper.pdf](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf) | [build/](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/) | [README.md](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md) | yes | [main.tex](../../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/main.tex) | — |
 | [`Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026`](../../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/) | [paper.pdf](../../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf) | [build/](../../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/build/) | [README.md](../../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/README.md) | no | [paper.tex](../../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/build/paper.tex) | — |
 
 ## Lean

@@ -73,8 +73,8 @@ The release presents the two as one family, and in the first edition both were d
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 019 entry at 529; manuscript blurbs at 538 and 547 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 019 `\resultentry` at 114 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family 019 entry at 529; manuscript blurbs at 538 and 547 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 019 `\resultentry` at 114 |
 | S3 | [`preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/README.md`](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/main.tex`](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/main.tex) | 46 | Title at 19, date at 21, abstract at 28–32, section inputs at 37–40 |
 | S5 | [`preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/sections/01-statement.tex`](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/sections/01-statement.tex) | 83 | Setup at 5–27, `thm:exterior` at 29–41, lineage at 48–60, method at 62–83 |
@@ -96,7 +96,7 @@ The release presents the two as one family, and in the first edition both were d
 | S21 | [`preprints/The-p-adic-section-conjecture-October-6-2026/build/references.bib`](../../../preprints/The-p-adic-section-conjecture-October-6-2026/build/references.bib) | 343 | Thirty-two entries; the release entry `OpenAISelmerConverse2026` at 337–343 |
 | S22 | [`preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf`](../../../preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf) | 14167 | Typeset manuscript, 491,950 bytes |
 | S23 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | Family 019 entry at 136–138 |
-| S24 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 019 at 20 |
+| S24 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 019 at 20 |
 
 ## Bibliography
 

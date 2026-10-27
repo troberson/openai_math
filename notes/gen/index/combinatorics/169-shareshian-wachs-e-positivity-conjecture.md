@@ -29,7 +29,7 @@ No `main_results` declaration reaches this family: its scope note links 1 compar
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `ElementaryPositivity` | [.json](../../../../lean/ComparatorChallenges/ElementaryPositivity.json) | [.lean](../../../../lean/ComparatorChallenges/ElementaryPositivity.lean) | 0 | 1 | no | no |
+| `ElementaryPositivity` | [.json](../../../../lean/ComparatorChallenges/ElementaryPositivity.json) | [.lean](../../../../lean/ComparatorChallenges/ElementaryPositivity.lean) | 1 | 1 | no | no |
 
 ## Verification bundles
 

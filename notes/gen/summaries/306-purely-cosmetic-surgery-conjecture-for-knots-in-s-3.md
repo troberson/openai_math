@@ -134,8 +134,8 @@ non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 306 at line 7562. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 706. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 306 at line 7562. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 706. |
 | S3 | [`preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/build/main.tex`](../../../preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/build/main.tex) | 26 | Manuscript main file: title and abstract. |
 | S4 | [`preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/build/sections/01-introduction.tex) | 261 | Introduction: the setup, the main theorem, the remaining case, the argument, and the organization. |
 | S5 | [`preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/build/references.bib`](../../../preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/build/references.bib) | 657 | Manuscript bibliography. |

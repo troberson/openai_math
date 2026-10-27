@@ -12,7 +12,7 @@ identical report.
 Ledger sums over the 28: **28** `main_results` declarations, **52** comparator configs, **24**
 formalized manuscripts out of **50**. Every one of the 28 has a scope note.
 
-`lean/formalization.yaml` carries **200** `main_results` entries over **189** unique configs (one
+`lean/formalization.yaml` carries **207** `main_results` entries over **191** unique configs (one
 block, `lean/formalization.yaml:972`). Of the 28 families, **19** have at least one entry and **9**
 have none, and the no-entry tier counter reads `{'T2': 9}`: the absence is structural, not a reading
 gap — T2 is the tier the release assigns to a family whose scope note links configs that no
@@ -1024,8 +1024,8 @@ Family 100 is the only one whose scope note repeats a config: 6 link occurrences
 ## Challenge stubs behind the population
 
 The 28 scope notes link **52** distinct configs, and each has a stub file under
-`lean/ComparatorChallenges/` carrying **55** `sorry` occurrences. Counted per scope-note link
-occurrence instead of per distinct config the same files carry 58, the 3-gap being family 100's four
+`lean/ComparatorChallenges/` carrying **56** `sorry` occurrences. Counted per scope-note link
+occurrence instead of per distinct config the same files carry 59, the 3-gap being family 100's four
 links to `CylinderCovering`. A stub is the target the release
 set itself, not a proof: it states the claim the release asked a comparator to close. The proved
 version, where one exists, is the `main_results` declaration read above — which is why 28 entries
@@ -1055,7 +1055,7 @@ against each other, because they count different things — a keyword tag versus
   a recorded edge.
 - The 16 T0 families with the shape tag were not cross-checked here; the T0 reading record is
   `notes/gen/reports/t0-triage.md`.
-- Configs linked by scope notes outside this population, and the 189 − 28 = 161 configs named by
+- Configs linked by scope notes outside this population, and the 191 − 28 = 163 configs named by
   `main_results` that no population scope note links, were not examined.
 - Whether a `main_results` declaration's statement is the manuscript's own theorem, a specialization,
   or a companion result is judged from the statement text only; the manuscripts' theorem environments

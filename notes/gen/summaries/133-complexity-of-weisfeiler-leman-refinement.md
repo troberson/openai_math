@@ -265,8 +265,8 @@ is `bound`; `resolves_named=0`; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3184], manuscript links [S1:3184] |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 133 at [S2:343] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3184], manuscript links [S1:3184] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 133 at [S2:343] |
 | S3 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex`](../../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex) | 54 | document root; abstract [S3:34–44]; five section `\input` directives [S3:46–50]; 54 lines |
 | S4 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex) | 255 | `thm:choice-reduction` [S4:76–96]; 255 lines |
 | S5 | [`preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/paper.tex`](../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/paper.tex) | 55 | document root; abstract [S5:34–40]; seven section `\input` directives [S5:44–50], bibliography [S5:53]; 55 lines |
@@ -280,4 +280,4 @@ is `bound`; `resolves_named=0`; `counterex_broad=0`.
 | S13 | [`lean/ComparatorChallenges/WLIdentification.lean`](../../../lean/ComparatorChallenges/WLIdentification.lean) | 146 | comparator — `main` [S13:140], `sorry` at [S13:142]; 146 lines |
 | S14 | [`lean/ComparatorChallenges/WeisfeilerLeman.lean`](../../../lean/ComparatorChallenges/WeisfeilerLeman.lean) | 270 | comparator — `MainClaim` [S14:259], `unconditional_time_lower_bound` [S14:267], `sorry` at [S14:268]; 270 lines |
 | S15 | [`lean/ComparatorChallenges/VariableWL.lean`](../../../lean/ComparatorChallenges/VariableWL.lean) | 130 | comparator — `main` [S15:125], `sorry` at [S15:126]; 130 lines |
-| S16 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=133`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S16 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=133`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

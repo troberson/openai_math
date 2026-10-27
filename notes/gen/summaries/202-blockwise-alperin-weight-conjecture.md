@@ -147,8 +147,8 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 202 at line 4616. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 485. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 202 at line 4616. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 485. |
 | S3 | [`preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/build/paper.tex`](../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/build/paper.tex) | 103 | Main file: title and abstract. |
 | S4 | [`preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/build/sections/intro.tex`](../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/build/sections/intro.tex) | 310 | The main theorem, the weight and block-assignment conventions, the local-global consequences corollary, the prior work, the proof mechanism, and the conventions. |
 | S5 | [`preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/build/references.bib`](../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/build/references.bib) | 448 | The manuscript's bibliography. |

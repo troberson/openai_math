@@ -7,7 +7,7 @@ family id appears in the second-pass reading sections of `notes/gen/reports/t0-t
 the remaining 93 families` heading through the line before `## What the triage shows`). That is
 **27** families carrying **54** manuscripts.
 
-Repo-wide there are **96** families with exactly 2 manuscripts, split `T0:35`, `T2:20`, `T3:41`. Of the
+Repo-wide there are **97** families with exactly 2 manuscripts, split `T0:35`, `T2:20`, `T3:42`. Of the
 **35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, 059, 209), so **27**
 remain. The bead's "no coverage signal" framing holds for **26** of the 27 and fails for **1**: 268 carries a verification bundle.
 
@@ -25,7 +25,7 @@ cells, which the tolerant row pattern reads and a single-space pattern does not.
 ## The chains the release records
 
 The release records a cross-family link in exactly one form: a `result (NNN)` clause inside the
-`overview.tex` abstract, which is what the ledger's `companions` column parses. Over **372** families
+`overview.tex` abstract, which is what the ledger's `companions` column parses. Over **373** families
 that yields **2** edges — 001 → 032 and 002 → 006 — and both point between T0 families.
 
 **001 + 032.** The chain sentence sits in 001's abstract, not in 032's:
@@ -54,7 +54,7 @@ strong as its weakest unformalized link" reads here as *every* link:
 | Fam | Tier | Manuscripts | Formalized | Challenges | `main_results` | Scope note | Verification | Trace | Shapes |
 |---|---|---|---|---|---|---|---|---|---|
 | 001 | T0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | classification, uniform |
-| 032 | T0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | resolution, classification, uniform |
+| 032 | T1 | 5 | 1 | 0 | 0 | 1 | 0 | 0 | resolution, classification, uniform |
 | 002 | T0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | density, uniform |
 | 006 | T0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | density |
 | 311 | T0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | resolution |
@@ -118,7 +118,7 @@ ledger's `companion_word` column (`\bcompanion` in the same overview abstract) f
 families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry a `companions`
 edge. Of the 27 families here, **3** use the word (268, 270, 364).
 
-So the release's own machine-readable cross-reference layer is 2 edges over 372 families, while the
+So the release's own machine-readable cross-reference layer is 2 edges over 373 families, while the
 companion relation it describes in prose is at least 9 families wide, and the manuscript-level
 citation layer below measures 15 of 27. The `companions` column is not a census of how these results
 relate; it is a record of how many abstracts spell a dependency as `result (NNN)`.
@@ -141,24 +141,24 @@ line in `overview.tex`.
 | 077 | real&complex | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
 | 080 | real&complex | bound, uniform | 1 | 1 | 0 | `overview.tex:234` |
 | 138 | TCS | bound, uniform | 1 | 0 | 0 | `overview.tex:353` |
-| 147 | dyn sys | resolution, bound | 2 | 1 | 0 | `overview.tex:373` |
-| 200 | algebra | resolution, classification, uniform | 0 | 0 | 0 | `overview.tex:481` |
-| 203 | algebra | bound, classification, uniform | 1 | 1 | 0 | `overview.tex:487` |
-| 217 | prob | classification, uniform | 2 | 2 | 1 | `overview.tex:517` |
-| 219 | prob | uniform | 1 | 0 | 0 | `overview.tex:521` |
-| 239 | prob | bound, partial, uniform | 0 | 0 | 0 | `overview.tex:561` |
-| 258 | group theory | - | 1 | 1 | 0 | `overview.tex:603` |
-| 265 | mathphys | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:619` |
-| 268 | mathphys | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:625` |
-| 270 | mathphys | resolution, bound, uniform | 1 | 0 | 0 | `overview.tex:629` |
-| 286 | opalg | classification, uniform | 2 | 2 | 1 | `overview.tex:664` |
-| 300 | opalg | resolution, bound | 0 | 0 | 0 | `overview.tex:692` |
-| 302 | opalg | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:696` |
-| 308 | topology | uniform | 2 | 0 | 0 | `overview.tex:710` |
-| 335 | diffgeom | resolution, uniform | 1 | 0 | 0 | `overview.tex:768` |
-| 346 | diffgeom | bound, partial | 2 | 1 | 0 | `overview.tex:790` |
-| 364 | PDE | bound, density, uniform | 2 | 0 | 0 | `overview.tex:828` |
-| 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:837` |
+| 147 | dyn sys | resolution, bound | 2 | 1 | 0 | `overview.tex:375` |
+| 200 | algebra | resolution, classification, uniform | 0 | 0 | 0 | `overview.tex:483` |
+| 203 | algebra | bound, classification, uniform | 1 | 1 | 0 | `overview.tex:489` |
+| 217 | prob | classification, uniform | 2 | 2 | 1 | `overview.tex:519` |
+| 219 | prob | uniform | 1 | 0 | 0 | `overview.tex:523` |
+| 239 | prob | bound, partial, uniform | 0 | 0 | 0 | `overview.tex:563` |
+| 258 | group theory | - | 1 | 1 | 0 | `overview.tex:605` |
+| 265 | mathphys | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:621` |
+| 268 | mathphys | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:627` |
+| 270 | mathphys | resolution, bound, uniform | 1 | 0 | 0 | `overview.tex:631` |
+| 286 | opalg | classification, uniform | 2 | 2 | 1 | `overview.tex:666` |
+| 300 | opalg | resolution, bound | 0 | 0 | 0 | `overview.tex:694` |
+| 302 | opalg | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:698` |
+| 308 | topology | uniform | 2 | 0 | 0 | `overview.tex:712` |
+| 335 | diffgeom | resolution, uniform | 1 | 0 | 0 | `overview.tex:770` |
+| 346 | diffgeom | bound, partial | 2 | 1 | 0 | `overview.tex:792` |
+| 364 | PDE | bound, density, uniform | 2 | 0 | 0 | `overview.tex:830` |
+| 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:839` |
 
 All 27 are T0, all 54 manuscripts carry `formalized = 0`, and 26 of 27 carry no coverage signal at all.
 

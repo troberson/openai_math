@@ -29,7 +29,7 @@ No `main_results` declaration reaches this family: its scope note links 1 compar
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `Rokhlin` | [.json](../../../../lean/ComparatorChallenges/Rokhlin.json) | [.lean](../../../../lean/ComparatorChallenges/Rokhlin.lean) | 1 | 4 | no | no |
+| `Rokhlin` | [.json](../../../../lean/ComparatorChallenges/Rokhlin.json) | [.lean](../../../../lean/ComparatorChallenges/Rokhlin.lean) | 1 | 0 | no | no |
 
 ## Verification bundles
 

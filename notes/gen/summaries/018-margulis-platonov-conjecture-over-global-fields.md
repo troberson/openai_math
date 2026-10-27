@@ -82,8 +82,8 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family entry at 504; the function-field blurb at 513; the number-field blurb at 522 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry{018}` at 112: the release's own abstract and its two display titles |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Family entry at 504; the function-field blurb at 513; the number-field blurb at 522 |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The `\resultentry{018}` at 112: the release's own abstract and its two display titles |
 | S3 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/README.md`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/README.md) | 18 | Author line at 3, date line at 5; the release's own bibtex key at 10–16 |
 | S4 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/main.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/main.tex) | 30 | Title at 3, date at 5, abstract at 9–13; the ten section inputs and appendix at 16–27 |
 | S5 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex) | 211 | Setup at 3–16; theorem at 18–27; empty-product and finite-index paragraphs at 29–36; history at 38–91; relation to the number-field proof at 92–126; characteristic-two changes at 128–143; the argument at 145–211 |
@@ -97,7 +97,7 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 | S13 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/references.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/references.tex) | 293 | The number-field manuscript's bibliography; no entry for the function-field manuscript and no OpenAI-preprint entry |
 | S14 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf) | 22049 | The compiled number-field manuscript, 773,917 bytes |
 | S15 | [`notes/gen/reports/t0-triage.md`](../../../notes/gen/reports/t0-triage.md) | 897 | The 018 entry at 135 |
-| S16 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Row 19 is family 018: tier, manuscript count, claim-shape tags, and the zero evidence columns |
+| S16 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Row 19 is family 018: tier, manuscript count, claim-shape tags, and the zero evidence columns |
 
 ## Bibliography
 

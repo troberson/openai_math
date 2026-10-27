@@ -1,6 +1,6 @@
 # Topic: harmonic-analysis
 
-17 families · pattern `fourier transform|fourier restriction|fourier coefficien|fourier convergen|fourier-convergence|calder[oö]n|singular integral|restriction for|hardy space|oscillatory integral|kakeya|bochner--riesz|local smoothing|littlewood polynomial|maximal function|hilbert transform|riesz transform|carleson|sogge|decoupling|square function|sparsest|l\+log l|convergence problem` · hits by layer: title 13 · abstract 13 · scope 11 · path 1
+17 families · pattern `fourier transform|fourier restriction|fourier coefficien|fourier convergen|fourier-convergence|calder[oö]n|singular integral|restriction for|hardy space|oscillatory integral|kakeya|bochner--riesz|local smoothing|littlewood polynomial|maximal function|hilbert transform|riesz transform|carleson|sogge|decoupling|square function|sparsest|l\+log l|convergence problem` · hits by layer: title 13 · abstract 13 · scope 12 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -11,7 +11,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [076](../real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md) | Ultraflat real Littlewood polynomials | yes | yes | yes | — |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | yes | — | — | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | yes | yes | — | — |
-| [079](../real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md) | Sogge's local smoothing conjecture in dimension three | yes | yes | — | — |
+| [079](../real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md) | Local smoothing for the Euclidean wave equation | yes | yes | yes | — |
 | [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | yes | yes | — | — |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | — | yes | yes | — |
 | [082](../real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md) | Maximal and variational bounds for the triangular Hilbert transform | yes | yes | yes | — |

@@ -29,7 +29,7 @@ No `main_results` declaration reaches this family: its scope note links 1 compar
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
-| `DefocusingNLS` | [.json](../../../../lean/ComparatorChallenges/DefocusingNLS.json) | [.lean](../../../../lean/ComparatorChallenges/DefocusingNLS.lean) | 3 | 3 | no | no |
+| `DefocusingNLS` | [.json](../../../../lean/ComparatorChallenges/DefocusingNLS.json) | [.lean](../../../../lean/ComparatorChallenges/DefocusingNLS.lean) | 3 | 0 | no | no |
 
 ## Verification bundles
 

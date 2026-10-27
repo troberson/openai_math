@@ -134,7 +134,7 @@ The comparator stubs carry `sorry` at `lean/ComparatorChallenges/LittleFinitisti
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 477 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 477 |
 | S2 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/README.md`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/README.md) | 18 | Title, date |
 | S3 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/paper.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/paper.tex) | 21 | Abstract, section inputs |
 | S4 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/01-introduction.tex) | 230 | Conjecture, theorem, corollaries, three stages |

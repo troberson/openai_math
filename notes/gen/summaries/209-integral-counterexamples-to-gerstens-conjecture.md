@@ -146,8 +146,8 @@ manuscripts — 8 `.tex` files in the degree-five `build/source/` and
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 209 at line 4764. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 499. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 209 at line 4764. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 499. |
 | S3 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/main.tex`](../../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/main.tex) | 63 | Degree-five manuscript main file: title and abstract. |
 | S4 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/sections/introduction.tex`](../../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/sections/introduction.tex) | 157 | Degree-five manuscript introduction: main theorem, history, and the construction guide. |
 | S5 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex`](../../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex) | 43 | Degree-three manuscript main file: title and abstract. |

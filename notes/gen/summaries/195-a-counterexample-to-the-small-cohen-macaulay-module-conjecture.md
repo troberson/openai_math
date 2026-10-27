@@ -158,12 +158,12 @@ The declaration is `OAI.SmallCM.candidate_ring_properties` at `lean/OAI/Algebrai
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 471 |
+| S1 | [`overview.tex`](../../../overview.tex) | 861 | Family entry, line 471 |
 | S2 | [`preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/README.md`](../../../preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/README.md) | 18 | Title, date |
 | S3 | [`preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/paper.tex`](../../../preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/paper.tex) | 698 | Abstract, theorems, proof overview, sections |
 | S4 | [`preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/surface.tex`](../../../preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/surface.tex) | 337 | Surface construction |
 | S5 | [`preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/references.bib`](../../../preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/references.bib) | 213 | Bibliography entries |
-| S6 | [`lean/docs/195.md`](../../../lean/docs/195.md) | 17 | Scope |
+| S6 | [`lean/docs/195.md`](../../../lean/docs/195.md) | 19 | Scope |
 | S7 | [`lean/OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean`](../../../lean/OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean) | 29 | Declaration |
 | S8 | [`lean/ComparatorChallenges/SurfaceConeCandidateSupport.lean`](../../../lean/ComparatorChallenges/SurfaceConeCandidateSupport.lean) | 18 | Comparator stub |
 

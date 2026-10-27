@@ -181,8 +181,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, three manuscript links, three manuscript abstracts |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 348's `\resultentry`, at line 794 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb, three manuscript links, three manuscript abstracts |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | Family 348's `\resultentry`, at line 794 |
 | S3 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md) | 33 | Zero-plane README: date, bibtex key, verification command and record |
 | S4 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf) | 16656 | Zero-plane manuscript PDF |
 | S5 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex) | 54 | Zero-plane preamble, theorem environments, abstract |
@@ -203,7 +203,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 | S20 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md) | 8 | Scope of the finite arithmetic checks, byte-identical to S9 |
 | S21 | [`lean/docs/348.md`](../../../lean/docs/348.md) | 15 | Scope note: what the formalization covers, the comparator, the status |
 | S22 | [`lean/ComparatorChallenges/EinsteinFour.lean`](../../../lean/ComparatorChallenges/EinsteinFour.lean) | 222 | Comparator stub: the classification targets, with three `sorry` |
-| S23 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 348 |
+| S23 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Reading ledger row for family 348 |
 
 ## Bibliography
 

@@ -157,8 +157,8 @@ files under their `build/` trees.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 065 at line 1629. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 204. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 065 at line 1629. |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 204. |
 | S3 | [`preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/build/main.tex`](../../../preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/build/main.tex) | 111 | Complete-intersections main file: title, abstract, and section inputs. |
 | S4 | [`preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/build/sections/introduction.tex`](../../../preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/build/sections/introduction.tex) | 65 | The main theorem, the historical context, the degeneration reduction, and the transport argument. |
 | S5 | [`preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/build/sections/conventions.tex`](../../../preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/build/sections/conventions.tex) | 101 | The Virasoro operators, the first-Hodge grading, and the quantization conventions. |
