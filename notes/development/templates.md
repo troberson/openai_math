@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **21** templates, **9,297** lines, **596,414** bytes, **1,792** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,506** lines, **611,395** bytes, **1,895** slots.
+**Headline, with the rule that yields it:** report tree: **21** templates, **9,297** lines, **596,442** bytes, **1,792** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **26** templates: **9,506** lines, **611,438** bytes, **1,895** slots.
 
 ## The report tree
 
@@ -20,7 +20,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `abstracts.md.j2` | 406 | 32,557 | 42 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,875 | 87 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,578 | 95 | `notes/gen/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
-| `findings.md.j2` | 282 | 21,539 | 4 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
+| `findings.md.j2` | 282 | 21,564 | 4 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
 | `fleet-design.md.j2` | 485 | 42,056 | 32 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
 | `formalization-faithfulness.md.j2` | 265 | 11,826 | 65 | `notes/gen/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
 | `index-design.md.j2` | 245 | 14,349 | 111 | `notes/development/index-design.md` | `verify_index_design.py` | 83 |
@@ -30,14 +30,14 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `names.md.j2` | 277 | 13,905 | 130 | `notes/gen/reports/names.md` | `measure_names.py` | NOT DERIVED |
 | `proof-density.md.j2` | 122 | 8,681 | 66 | `notes/gen/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,796 | 19 | `notes/gen/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
-| `scripts-README.md.j2` | 733 | 67,067 | 65 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `scripts-README.md.j2` | 733 | 67,070 | 65 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `sources.md.j2` | 156 | 9,424 | 29 | `notes/gen/reports/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 1,634 | 60,268 | 422 | `notes/gen/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 571 | 34,287 | 61 | `notes/gen/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 109 | 5,123 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,956 | 44 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **21** | **9,297** | **596,414** | **1,792** | | |
+| **report tree** | **21** | **9,297** | **596,442** | **1,792** | | |
 
 ## The index tree
 
@@ -48,10 +48,10 @@ the count of pages on disk that the template produced, read from the tree it wri
 |---|---|---|---|---|
 | `discipline.md.j2` | 12 | 876 | 13 | 17 discipline pages |
 | `family.md.j2` | 60 | 3,699 | 28 | 372 family pages |
-| `index-readme.md.j2` | 61 | 5,701 | 24 | 1 entry point |
+| `index-readme.md.j2` | 61 | 5,716 | 24 | 1 entry point |
 | `name.md.j2` | 62 | 3,586 | 27 | 551 name pages |
 | `topic.md.j2` | 14 | 1,119 | 11 | 92 topic pages |
-| **index tree** | **5** | **209** | **14,981** | **103** | |
+| **index tree** | **5** | **209** | **14,996** | **103** | |
 
 ## The slot rule
 

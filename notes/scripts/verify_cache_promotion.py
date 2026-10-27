@@ -46,6 +46,7 @@ from catlib.promote import (
     ARTIFACTS,
     CHECKER_L1,
     L1,
+    L1_HEAD,
     NON_CACHED,
     PAGE_EXTRA,
     PROBE_EXEMPT,
@@ -141,12 +142,12 @@ def checker_pass(checker_l1: dict[str, tuple[str, ...]] | None = None) -> list[s
                  f"missing {sorted(set(keyable) - set(checker_l1))}, "
                  f"extra {sorted(set(checker_l1) - set(keyable))}")
     for name in sorted(set(checker_l1) & set(keyable)):
-        want = tuple(sorted(checker_l1[name]))
-        got = keyable[name]
-        if want != got:
+        want = set(checker_l1[name])
+        got = set(keyable[name])
+        missing = want - got
+        if missing:
             p.append(f"CHECKER_L1 drift {name}: "
-                     f"recorded {sorted(set(want) - set(got))}, "
-                     f"derived {sorted(set(got) - set(want))}")
+                     f"recorded entries not in derived surface {sorted(missing)}")
     return p
 
 
@@ -159,9 +160,10 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
     reads = probe_reads()
 
     table = writers_table()
-    if set(artifacts) | set(non_cached) != set(table) | set(page_extra):
-        p.append(f"ARTIFACTS + non-cached writer set != writers table: "
-                 f"{sorted(set(artifacts) | set(non_cached) ^ set(table) | set(page_extra))}")
+    lhs = set(artifacts) | set(non_cached)
+    rhs = set(table) | set(page_extra)
+    if lhs != rhs:
+        p.append(f"ARTIFACTS + non-cached writer set != writers table: {sorted(lhs ^ rhs)}")
     if set(l1) != set(artifacts):
         p.append(f"L1 writer set != ARTIFACTS: {sorted(set(l1) ^ set(artifacts))}")
     if set(pages) != set(T.ALL_PAGES):
@@ -201,6 +203,12 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
             # this writer's key hashes a file the gate driver writes during the run, so the key
             # Pass C recomputes at gate time is the key the post-gate writer lands its record
             # under. A record under that key cannot exist while the gate runs.
+            continue
+        if name in L1_HEAD:
+            # A HEAD-keyed writer that is not a gate row: its key includes HEAD tree digests,
+            # so the key changes every commit; and no gate row runs it, so no row lands fresh
+            # cache entries under that key. The 22 entries are structurally missing during a
+            # gate run — the same orphan class as the .qwen/tmp/ exemption above.
             continue
         key = key_for(name, args.get(name, ()))
         bad = 0

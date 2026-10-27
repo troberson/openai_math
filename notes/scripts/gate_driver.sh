@@ -23,10 +23,9 @@ cd "$(dirname "$0")/../.." || exit 1
 R=.qwen/tmp/reports
 G=notes/scripts/gate.py
 snap() {
-  { md5sum notes/tables/catalog.tsv notes/tables/sources.tsv notes/tables/links.tsv notes/tables/subfindings.tsv \
-      notes/tables/abstracts.tsv notes/tables/formalization-deps.tsv notes/tables/conjecture-standing.tsv \
-      notes/tables/topics.tsv;
-    find notes/index -type f -print0 | xargs -0 md5sum | sort; } | sort -k2
+  { md5sum notes/gen/tables/catalog.tsv notes/gen/tables/sources.tsv notes/gen/tables/links.tsv notes/gen/tables/subfindings.tsv \
+      notes/gen/tables/abstracts.tsv notes/gen/tables/formalization-deps.tsv;
+    find notes/gen/index -type f -print0 | xargs -0 md5sum | sort; } | sort -k2
 }
 step() {
   local label="$1"
@@ -64,13 +63,13 @@ printf '%s\n' "Land the measured figures the gate run produced" "" \
   "cells from it, so the census page, the fleet page, the index-design page, and the row-times" \
   "table are the writer's bytes for this run, not the previous run's." > "$R/msg_pages.txt"
 step "commit the swept pages" git commit -F "$R/msg_pages.txt" notes/scripts/README.md \
-  notes/development/fleet-design.md notes/development/index-design.md notes/tables/gate-rows.tsv
+  notes/development/fleet-design.md notes/development/index-design.md notes/gen/tables/gate-rows.tsv
 step "re-land the check() probe (the render moved the tree key)" python3 notes/scripts/measure_check_calls.py
 step "rebuild the templates from the committed pages" python3 notes/scripts/build_report_templates.py
 printf '%s\n' "Rebuild the templates from the committed swept pages" "" \
   "The builder reads git show HEAD:<page>, so the templates carry the Cost cells the render swept" \
   "for this run, and the templates page is the builder's own measurement of the new files." > "$R/msg_templates.txt"
-step "commit the templates" git commit -F "$R/msg_templates.txt" notes/templates/report \
+step "commit the templates" git commit -F "$R/msg_templates.txt" notes/gen/templates/report \
   notes/development/templates.md
 step "re-land the check() probe (the builder moved the tree key)" python3 notes/scripts/measure_check_calls.py
 step "verify script ownership (post-render, so the page is swept)" python3 notes/scripts/verify_script_ownership.py

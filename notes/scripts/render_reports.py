@@ -1215,9 +1215,22 @@ def _run_child(name: str) -> str:
     The single place the child's env is built: the fleet census counts `RENDER_REPORTS_CHILD` env
     literals as sites, so a second caller spelling the env inline would read two against one prefix.
     """
-    return subprocess.run(CHILDREN[name], capture_output=True, text=True,
-                          check=True, cwd=ROOT,
-                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"}).stdout
+    proc = subprocess.run(CHILDREN[name], capture_output=True, text=True,
+                          check=False, cwd=ROOT,
+                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
+    if proc.returncode != 0:
+        # A bare check=True swallows the child's stderr, so a failed child exits 1 with only its
+        # command line visible in the parent's traceback. A CalledProcessError carries the stderr
+        # as an attribute, but Python's default handler prints only the traceback — the attribute
+        # is never shown. Print the child's stderr to the parent's stderr stream so the gate's
+        # per-row .txt capture carries the child's real failure.
+        import sys
+        print(f"[render child {name} failed, exit {proc.returncode}]", file=sys.stderr)
+        if proc.stderr:
+            print(proc.stderr, file=sys.stderr)
+        raise subprocess.CalledProcessError(
+            proc.returncode, CHILDREN[name], output=proc.stdout, stderr=proc.stderr)
+    return proc.stdout
 
 
 def prewarm() -> None:
@@ -2553,7 +2566,9 @@ def ownership_population() -> dict[str, Any]:
         "tsv_count": len(tsvs),
         "tsv_ledger": len(OWN_LEDGER_TSV),
         "tsv_gen": len(OWN_LEDGER_TSV) + index_tables,
-        "tsv_hand": len(OWN_HAND_TSV),
+        # The hand-authored pair moved to notes/data/ in the math-v5s reorg, so the gen/tables
+        # census row carries 0 hand-authored; the count is measured, not the pair's size.
+        "tsv_hand": len([n for n in tsvs if n in OWN_HAND_TSV]),
         "reports_md": len(reports_md),
         "reports_gen": reports_gen,
         "reports_hand": len(reports_md) - reports_gen,

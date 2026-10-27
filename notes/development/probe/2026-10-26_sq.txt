@@ -1,0 +1,196 @@
+quotes in the pages: 3506
+  pair-line specs (notes/gen/reports/subfinding-pairs.md): 754
+  summaries specs (163 pages): 2752
+  specs seeded: 1372   measured negatives (start 0): 2134
+  single-line spec: 949   range spec: 423
+  class: raw 1326  folded 44  normalizer-gap 2
+  locators resolve: 1372 of 1372
+  unresolved locators: 0
+[probe] target exit code: 0
+[probe2] target notes/scripts/seed_quotes.py 
+[probe2] wall 29.67  opens 1607  distinct 967  repeats 640
+[probe2] rchar MB 129.3  read_bytes MB 0.0
+[probe2] buckets:
+          preprints/                 843
+          notes/gen/summaries/       328
+          other                      227
+          lean/docs/                 89
+          lean/ComparatorChallenges/ 29
+          lean/OAI/                  26
+          notes/                     23
+          abs/other                  15
+          notes/scripts/             13
+          top-level                  11
+          reasoning_traces/          3
+[probe2] notes/ paths (count  modes  path):
+              2  r        notes/gen/reports/counterexample-tag.md
+              2  r        notes/gen/reports/subfinding-pairs.md
+              8  r        notes/gen/reports/t0-triage.md
+              2  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
+              2  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
+              2  r        notes/gen/summaries/004-hilberts-tenth-problem-over-q.md
+              2  r        notes/gen/summaries/006-goldfelds-conjecture.md
+              2  r        notes/gen/summaries/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              2  r        notes/gen/summaries/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md
+              2  r        notes/gen/summaries/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              2  r        notes/gen/summaries/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              2  r        notes/gen/summaries/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              2  r        notes/gen/summaries/017-irrationality-exponent-of-is-2.md
+              2  r        notes/gen/summaries/018-margulis-platonov-conjecture-over-global-fields.md
+              2  r        notes/gen/summaries/019-p-adic-section-conjecture.md
+              2  r        notes/gen/summaries/022-weak-inhomogeneous-duffin-schaeffer-conjecture.md
+              2  r        notes/gen/summaries/029-artins-primitive-root-conjecture-infinitude-for-every-base.md
+              2  r        notes/gen/summaries/030-modularity-over-imaginary-quadratic-fields.md
+              2  r        notes/gen/summaries/031-uchidas-conjecture-for-open-galois-homomorphisms.md
+              2  r        notes/gen/summaries/032-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              2  r        notes/gen/summaries/034-log-abundance-and-effective-iitaka-fibrations.md
+              2  r        notes/gen/summaries/037-sharp-ordinary-double-point-volume-gap.md
+              2  r        notes/gen/summaries/038-fujitas-freeness-conjecture.md
+              2  r        notes/gen/summaries/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+              2  r        notes/gen/summaries/040-blochs-conjecture-for-complex-surfaces.md
+              2  r        notes/gen/summaries/041-hyperkahler-syz-and-projective-space-bases.md
+              2  r        notes/gen/summaries/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md
+              2  r        notes/gen/summaries/043-p-w-for-fixed-determinant-moduli-spaces.md
+              2  r        notes/gen/summaries/044-equivariant-cohomological-hikita-conjecture-for-quivers.md
+              2  r        notes/gen/summaries/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md
+              2  r        notes/gen/summaries/048-a-characteristic-zero-counterexample-to-lipman-zariski.md
+              2  r        notes/gen/summaries/049-a-stable-coordinate-counterexample-in-four-variables.md
+              2  r        notes/gen/summaries/050-a-counterexample-to-griffiths-positivity-conjecture.md
+              2  r        notes/gen/summaries/051-kobayashis-canonical-ampleness-conjecture.md
+              2  r        notes/gen/summaries/052-tangent-bundle-splittings-and-universal-covers.md
+              2  r        notes/gen/summaries/053-a-counterexample-to-pixtons-original-completeness-conjecture.md
+              2  r        notes/gen/summaries/054-counterexamples-to-kuznetsovs-rationality-conjecture.md
+              2  r        notes/gen/summaries/055-todas-gepner-conjecture-and-large-volume-stability.md
+              2  r        notes/gen/summaries/057-campanas-abelianity-conjecture-and-special-varieties.md
+              2  r        notes/gen/summaries/059-counterexamples-to-zariskis-multiplicity-conjecture.md
+              2  r        notes/gen/summaries/060-global-spherical-shell-conjecture.md
+              2  r        notes/gen/summaries/062-lebrun-salamon-conjecture-and-projective-contact-classification.md
+              2  r        notes/gen/summaries/063-generalized-mukai-conjecture.md
+              2  r        notes/gen/summaries/064-constant-problem-for-surface-singularities.md
+              2  r        notes/gen/summaries/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md
+              2  r        notes/gen/summaries/067-campana-peternell-conjecture-in-dimension-six.md
+              2  r        notes/gen/summaries/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+              2  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
+              2  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
+              2  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              2  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
+              2  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
+              2  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
+              2  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
+              2  r        notes/gen/summaries/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+              2  r        notes/gen/summaries/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md
+              2  r        notes/gen/summaries/098-a-negative-answer-to-the-lang-plaut-problem.md
+              2  r        notes/gen/summaries/101-sharp-simplex-conjecture-for-isotropic-constants.md
+              2  r        notes/gen/summaries/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              2  r        notes/gen/summaries/103-derandomization-of-logarithmic-space-l-rl-bpl.md
+              2  r        notes/gen/summaries/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md
+              2  r        notes/gen/summaries/105-2-to-1-games-conjecture-with-perfect-completeness.md
+              2  r        notes/gen/summaries/106-hardness-of-coloring-three-colorable-graphs.md
+              2  r        notes/gen/summaries/107-matrix-multiplication-with-exponent-at-most-9-4.md
+              2  r        notes/gen/summaries/108-a-cubic-permanent-determinant-lower-bound.md
+              2  r        notes/gen/summaries/109-integer-multiplication-below-n-n.md
+              2  r        notes/gen/summaries/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md
+              2  r        notes/gen/summaries/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md
+              2  r        notes/gen/summaries/112-beyond-the-square-root-exponent-for-depth-three-circuits.md
+              2  r        notes/gen/summaries/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+              2  r        notes/gen/summaries/114-approximate-counting-of-common-integer-polymatroid-bases.md
+              2  r        notes/gen/summaries/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md
+              2  r        notes/gen/summaries/116-uniform-identity-testing-for-noncommutative-formulas.md
+              2  r        notes/gen/summaries/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md
+              2  r        notes/gen/summaries/118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md
+              2  r        notes/gen/summaries/119-courtade-kumar-and-hellinger-conjectures.md
+              2  r        notes/gen/summaries/120-almost-linear-time-exact-matching-in-general-graphs.md
+              2  r        notes/gen/summaries/121-almost-linear-expected-time-approximation-of-edit-distance.md
+              2  r        notes/gen/summaries/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md
+              2  r        notes/gen/summaries/124-polynomial-time-scheduling-on-three-identical-machines.md
+              2  r        notes/gen/summaries/125-approximation-threshold-for-metric-k-median.md
+              2  r        notes/gen/summaries/126-exponential-semidefinite-complexity-of-perfect-matching.md
+              2  r        notes/gen/summaries/127-asymptotic-gotsman-linial-conjecture.md
+              2  r        notes/gen/summaries/128-a-factor-two-approximation-for-shortest-common-superstring.md
+              2  r        notes/gen/summaries/129-exponential-state-costs-for-two-way-automata.md
+              2  r        notes/gen/summaries/130-fourier-transforms-below-n-n.md
+              2  r        notes/gen/summaries/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md
+              2  r        notes/gen/summaries/132-a-counterexample-to-the-quadratic-sensitivity-conjecture.md
+              2  r        notes/gen/summaries/133-complexity-of-weisfeiler-leman-refinement.md
+              2  r        notes/gen/summaries/134-generalized-star-height-at-most-three.md
+              2  r        notes/gen/summaries/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md
+              2  r        notes/gen/summaries/136-quasilinear-pcp-for-ppad-conjecture.md
+              2  r        notes/gen/summaries/137-one-tape-time-simulation-in-two-fifths-power-space.md
+              2  r        notes/gen/summaries/138-subset-sum-in-o-2-0-49n-time.md
+              2  r        notes/gen/summaries/139-subpolynomial-queries-for-log-concave-sampling.md
+              2  r        notes/gen/summaries/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+              2  r        notes/gen/summaries/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
+              2  r        notes/gen/summaries/142-deterministic-polynomial-factorization-over-prime-fields.md
+              2  r        notes/gen/summaries/147-near-boundary-birkhoff-conjecture.md
+              2  r        notes/gen/summaries/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md
+              2  r        notes/gen/summaries/164-hindmans-finite-sums-and-products-conjecture.md
+              2  r        notes/gen/summaries/166-higher-dimensional-erdos-distinct-distances-conjecture.md
+              2  r        notes/gen/summaries/171-hypercube-ramsey-conjecture.md
+              2  r        notes/gen/summaries/193-serres-intersection-multiplicity-conjecture.md
+              2  r        notes/gen/summaries/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md
+              2  r        notes/gen/summaries/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md
+              2  r        notes/gen/summaries/197-nonsofic-groups-and-group-ring-counterexamples.md
+              2  r        notes/gen/summaries/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+              2  r        notes/gen/summaries/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md
+              2  r        notes/gen/summaries/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md
+              2  r        notes/gen/summaries/201-a-counterexample-to-kuroshs-division-ring-problem.md
+              2  r        notes/gen/summaries/202-blockwise-alperin-weight-conjecture.md
+              2  r        notes/gen/summaries/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md
+              2  r        notes/gen/summaries/204-tensor-saturation-for-even-spin-groups.md
+              2  r        notes/gen/summaries/208-finite-benson-etingof-ostrik-conjecture.md
+              2  r        notes/gen/summaries/209-integral-counterexamples-to-gerstens-conjecture.md
+              2  r        notes/gen/summaries/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              2  r        notes/gen/summaries/226-double-dimer-cle-4-conjecture-in-the-half-plane.md
+              2  r        notes/gen/summaries/243-choiceless-counting-does-not-capture-polynomial-time.md
+              2  r        notes/gen/summaries/244-partition-principle-does-not-imply-choice.md
+              2  r        notes/gen/summaries/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+              2  r        notes/gen/summaries/258-gerstens-conjecture-for-one-relator-groups.md
+              2  r        notes/gen/summaries/259-a-group-without-fixed-price.md
+              2  r        notes/gen/summaries/268-spin-one-haldane-gap.md
+              2  r        notes/gen/summaries/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md
+              2  r        notes/gen/summaries/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              2  r        notes/gen/summaries/274-moores-parity-conjecture-for-qac-0.md
+              2  r        notes/gen/summaries/284-optimal-randomized-quantum-query-exponent.md
+              2  r        notes/gen/summaries/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md
+              2  r        notes/gen/summaries/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              2  r        notes/gen/summaries/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md
+              2  r        notes/gen/summaries/304-hilbert-smith-conjecture-in-every-dimension.md
+              2  r        notes/gen/summaries/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md
+              2  r        notes/gen/summaries/306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md
+              2  r        notes/gen/summaries/309-kervaire-invariant-problem-at-the-prime-three.md
+              2  r        notes/gen/summaries/310-quillens-conjecture-in-rational-homology.md
+              2  r        notes/gen/summaries/311-chais-invariant-ideal-conjecture.md
+              2  r        notes/gen/summaries/313-finite-generation-for-the-k-n-local-sphere.md
+              2  r        notes/gen/summaries/315-four-dimensional-singer-conjecture.md
+              2  r        notes/gen/summaries/316-curtiss-conjecture.md
+              2  r        notes/gen/summaries/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
+              2  r        notes/gen/summaries/320-a-four-dimensional-counterexample-to-borel-rigidity.md
+              2  r        notes/gen/summaries/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              2  r        notes/gen/summaries/324-lipschitz-equivalence-without-linear-isomorphism.md
+              2  r        notes/gen/summaries/325-complete-crouzeix-conjecture.md
+              2  r        notes/gen/summaries/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+              2  r        notes/gen/summaries/332-metric-markov-cotype-two-for-1.md
+              2  r        notes/gen/summaries/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+              2  r        notes/gen/summaries/335-gromovs-integral-scalar-curvature-inequality.md
+              2  r        notes/gen/summaries/338-yaus-uniformization-conjecture.md
+              2  r        notes/gen/summaries/339-katoks-entropy-rigidity-conjecture.md
+              2  r        notes/gen/summaries/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md
+              2  r        notes/gen/summaries/341-donaldsons-hypersymplectic-deformation-conjecture.md
+              2  r        notes/gen/summaries/342-donaldsons-tamed-to-compatible-conjecture.md
+              2  r        notes/gen/summaries/344-metric-blaschke-conjecture.md
+              2  r        notes/gen/summaries/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md
+              2  r        notes/gen/summaries/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md
+              2  r        notes/gen/summaries/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md
+              2  r        notes/gen/summaries/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md
+              2  r        notes/gen/summaries/349-solomon-yau-least-volume-conjecture.md
+              2  r        notes/gen/summaries/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md
+              2  r        notes/gen/summaries/352-finite-time-singularity-of-calabi-flow.md
+              2  r        notes/gen/summaries/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              2  r        notes/gen/summaries/366-planar-mumford-shah-regularity-conjecture.md
+              2  r        notes/gen/summaries/368-three-dimensional-ball-evans-approximation-problem.md
+              2  r        notes/gen/summaries/375-de-giorgis-conjecture-in-dimension-eight.md
+              2  r        notes/gen/summaries/README.md
+              1  ?        notes/gen/tables/.quotes.tsv.odjcbd9d
+             10  r        notes/gen/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              4  r,w 3

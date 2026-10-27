@@ -1,0 +1,45 @@
+rows written                     719
+listed manuscript dirs           719
+preprint dirs on disk            749  unlisted 30 = 27 superseded + 3 withdrawal notices
+overview manuscript slugs not on disk    0 []
+empty/missing PDF files          0
+fams outside the ledger          0 []
+per-family row count vs ledger paps, differences  0 []
+overview.tex PAP paths 719 (719 distinct)  sources.tsv pdf 719 (719 distinct)
+paths in overview.tex not in sources.tsv  0 []
+paths in sources.tsv not in overview.tex  0 []
+families whose path set differs from overview.tex  0 []
+main-file rule: main.tex 494  paper.tex 209  single-root 16  flagged 0
+single-root file names  preamble.tex 7, common.tex 2, manuscript.tex 2, critical-percolation-z3.tex 1, invariant-sk.tex 1, paper2.tex 1, positive-eigenvalues-relative-su2-bfss.tex 1, strong-ulam-stability.tex 1
+multi-root dirs (line-start rule) 4: ['A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026', 'Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026', 'Quantum-Depletion-and-Momentum-Distribution-in-the-Dilute-Hard-Sphere-Bose-Gas-October-5-2026', 'Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026']
+multi-root dirs (substring rule)  5
+main.tex files with no \documentclass  12
+top-level PDFs per dir (set of counts) [1]
+sum tex              7705
+sum bib              500
+sum sections         6019
+sum subsections      16297
+sum subsubsections   316
+sum proofs           20341
+sum thms             21288
+sum abstract         719
+sum tex_bytes        127456942
+thms rule (declared minus non-statement) 21288  = sum of thms column 21288
+six-name list (theorem/lemma/proposition/corollary/claim/conjecture) 21203  gap 85
+names the declared rule adds: assumption 22, foundation 13, auxproposition 8, hypothesis 8, auxlemma 7, standinginput 5, externalinput 4, maintheorem 4, companionresults 3, unnumberedproposition 3, maincorollary 2, principle 2, verification 2, question 1, thm 1
+dirs with main_tex empty         0
+dirs with an abstract            719 of 719
+[probe2] target notes/scripts/build_sources.py 
+[probe2] wall 2.19  opens 8078  distinct 8068  repeats 10
+[probe2] rchar MB 141.7  read_bytes MB 0.0
+[probe2] buckets:
+          preprints/                 8037
+          abs/other                  15
+          other                      12
+          notes/scripts/             11
+          notes/                     3
+[probe2] notes/ paths (count  modes  path):
+              1  ?        notes/gen/tables/.sources.tsv.teutl155
+              2  r        notes/gen/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              5  r,w 3

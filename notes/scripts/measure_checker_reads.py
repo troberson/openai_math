@@ -11,10 +11,12 @@ wall time is not a path read at all. So the first clause is measured from the ho
 a source scan for the forms the hook cannot see.
 
 The subprocess half of the second clause is classified by what the call reads, not by its presence, and
-two forms are covered by the definition of the key:
+three forms are covered by the definition of the key:
 
 - `git rev-parse` over `catlib.records.DIGEST_PATHS` is the key's own basis: the key is defined as a
   function of those digests, so that read is covered by construction;
+- `git ls-files` over a tree L1 entry is the key's own basis at file level: `expand()` runs it to
+  discover the tracked files under a tree, and the key is a function of those files' contents;
 - a subprocess that runs a fleet script is a **delegation**: the child's reads are covered by the
   child's own key, so the parent's result is still a function of tracked bytes.
 
@@ -305,6 +307,8 @@ def classify_event(event: str, name: str, l1: list[str]) -> tuple[str, str]:
     if prog in ("python3", "python", sys.executable):
         return prog, "delegation"
     if prog == "git" and "rev-parse" in parts and any(d in parts for d in RC.DIGEST_PATHS):
+        return prog, "key basis"
+    if prog == "git" and "ls-files" in parts:
         return prog, "key basis"
     if prog == "bd" and name in PR.RUN_ARGS:
         return prog, "key basis"

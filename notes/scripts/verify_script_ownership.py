@@ -45,7 +45,9 @@ SELF = "verify_script_ownership.py"
 README = NOTES / "README.md"
 TEMPLATES_PAGE = NOTES / "development" / "templates.md"
 TPL_DIR = NOTES / "templates"
-REPORT_TPL_DIR = TPL_DIR / "report"
+# The report templates moved out of notes/templates/report/ into the generated tree in the
+# math-v5s reorg; the hand-written index skeletons stayed at top-level notes/templates/.
+REPORT_TPL_DIR = NOTES / "gen" / "templates" / "report"
 INDEX_DIR = NOTES / "gen" / "index"
 PROBE_DIR = NOTES / "development" / "probe"
 DEV_DIR = NOTES / "development"
@@ -537,11 +539,12 @@ def check(text):
     # B/C. census
     files = population()
     index = [f for f in files if "index" in f.parts]
-    # `summaries` keys on the notes/-relative first part, not a substring over all parts: the
-    # data files under notes/data/summaries/ carry the name in a deeper part, and the template
-    # under notes/templates/summaries/ is owned by `templates`, so a substring rule over-matches
-    # both. `data` is the renderer's hand-maintained input tree, a rule of its own.
-    summaries = [f for f in files if f.relative_to(NOTES).parts[:1] == ("summaries",)]
+    # `summaries` keys on the notes/-relative `gen/summaries` prefix, not a substring over all
+    # parts: after the math-v5s reorg the pages sit flat under notes/gen/summaries/, the data
+    # files under notes/data/summaries/ carry the name in a deeper part, and the template under
+    # notes/templates/summaries/ is owned by `templates`, so a substring rule over-matches both.
+    # `data` is the renderer's hand-maintained input tree, a rule of its own.
+    summaries = [f for f in files if f.relative_to(NOTES).parts[:2] == ("gen", "summaries")]
     data = [f for f in files if f.relative_to(NOTES).parts[:1] == ("data",)]
     templates = [f for f in files if "templates" in f.parts]
     uphist = [f for f in files if "upstream_history" in f.parts]
@@ -556,20 +559,15 @@ def check(text):
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
     tables_tsv = sorted(f.name for f in tables if f.suffix == ".tsv")
-    derived_paths = {t for v in wr.values() for t in v}
-    # `build_index.py` stages the 16 generated tables as `TABLES / basename`, so the target the rule
-    # resolves is the directory, not a file. A TSV under a derived directory is generated; the
-    # hand-authored pair is the rule that names which tables the writer set does not write.
-    gen = {n for n in tables_tsv if f"notes/gen/tables/{n}" in derived_paths}
-    if "notes/gen/tables" in derived_paths:
-        gen |= set(tables_tsv) - {n.split("/")[-1] for n in HAND_AUTHORED_TSVS}
-    gen_tsv = sorted(gen)
-    hand_tsv = sorted(set(tables_tsv) - gen)
-    if hand_tsv != sorted(n.split("/")[-1] for n in HAND_AUTHORED_TSVS):
-        p.append(
-            f"hand-authored tables TSVs: {hand_tsv}, page lists "
-            f"{sorted(n.split('/')[-1] for n in HAND_AUTHORED_TSVS)}"
-        )
+    # `build_index.py` stages the 16 generated tables as `TABLES / basename`, so every TSV under
+    # notes/gen/tables/ is generated. The hand-authored pair moved to notes/data/ in the math-v5s
+    # reorg, so the gen/tables row reads 0 hand-authored and the pair's presence is proved under
+    # notes/data/ on disk, not in this population, which no longer carries it.
+    gen_tsv = sorted(set(tables_tsv))
+    hand_tsv: list[str] = []
+    for n in HAND_AUTHORED_TSVS:
+        if not (ROOT / n).is_file():
+            p.append(f"hand-authored table absent on disk: {n}")
     if f"**{len(gen_tsv)}** generated, **{len(hand_tsv)}** hand-authored" not in text:
         p.append(f"tsv census cell does not read '**{len(gen_tsv)}** generated, **{len(hand_tsv)}** hand-authored'")
 

@@ -1,0 +1,1647 @@
+POPULATION
+  ledger rows 372  families in overview.tex 372  manuscript dirs 719
+  .tex files at depths 1-4 under preprints/ 7679
+  headline begins 2410  titled (whole-text scan) 1619  of which the match spans a newline 10
+  resolves_named = 1: 248 families  (abstract-only scope: 233)
+
+HEADLINE INVENTORY (rule: theorem/maintheorem/thm begins and titled begins)
+  headline begins 2410  titled headline begins (per-line scan) 1609
+  per-env begins: maintheorem=4 theorem=2405 thm=1
+  families with >=1 headline begin 372  with >=1 titled headline 271  with none 101
+  titled headline titles matching 'Main...' (generic, no content named): 0
+
+TARGET-NAMED HEADLINE STATEMENTS (rule: titled headline title matching TARGET)
+  statements 17  families 17
+  with a resolve verb in the same title: 0 statements over 0 families; target+verb in one title: 0
+  006 rn=1 tier=T0 preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex:35 "Goldfeld's analytic density conjecture"
+  013 rn=1 tier=T2 preprints/the-additive-indecomposability-of-the-primes-September-24-2026/build/sections/01-introduction.tex:15 "Ostmann's conjecture"
+  060 rn=1 tier=T0 preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex:102 'Global Spherical Shell conjecture'
+  072 rn=1 tier=T3 preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/sections/00-introduction.tex:52 "Brennan's conjecture and inverse-square means"
+  074 rn=1 tier=T0 preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/02-framework.tex:1160 'Reduction to a bad weighted problem'
+  087 rn=1 tier=T3 preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex:26 'General Mahler conjecture'
+  119 rn=1 tier=T3 preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex:54 'Hellinger conjecture'
+  186 rn=1 tier=T2 preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/build/sections/introduction.tex:12 'Friedgut--Kalai sharp-threshold conjecture'
+  194 rn=1 tier=T2 preprints/Lechs-multiplicity-conjecture-September-23-2026/build/main.tex:80 "Lech's conjecture"
+  203 rn=1 tier=T0 preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex:27 "Donovan's conjecture"
+  205 rn=1 tier=T3 preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/build/sections/introduction.tex:18 "Saxl's conjecture"
+  245 rn=1 tier=T2 preprints/Weak-and-strong-normalization-in-pure-type-systems-September-25-2026/build/sections/introduction.tex:116 'The $\\beta$-Barendregt--Geuvers--Klop conjecture'
+  246 rn=1 tier=T2 preprints/A-Modulus-Proof-of-Cannons-Conjecture-September-23-2026/build/main.tex:94 "Cannon's conjecture"
+  263 rn=1 tier=T3 preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex:38 'Generalized ionization conjecture: radii'
+  275 rn=0 tier=T2 preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/01-finite-models.tex:19 'Source problem'
+  304 rn=1 tier=T0 preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex:9 'The Hilbert--Smith conjecture'
+  311 rn=1 tier=T0 preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/sections/01-introduction.tex:74 'Hovey--Strickland conjecture'
+
+SUBJECT-NAMED HEADLINE STATEMENTS (rule: titled headline title containing a name-layer subject)
+  statements 207  families 112  (subjects in the name layer: 551)
+  subject-named ∩ rn 74  subject-named-not-rn 38
+  subject-named-not-rn: 002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238 239 260 261 271 275 282 286 318 331 337 353 376 377
+
+CROSS-TABS vs resolves_named
+  headline-target ∩ rn 16  headline-target-not-rn 1 -> 275
+  rn-not-headline-target 232
+  rn families with no titled headline theorem: 76  tiers T3=37 T2=25 T1=0 T0=14
+  non-rn families with titled headline theorems: 99
+
+LAYER 1 - manuscript directory name names a target
+  families 76  dirs 88  ∩rn 73  dir-not-rn 3 -> 354 365 372  rn-not-dir 175
+
+LAYER 2 - the manuscript's own abstract names a target with a resolve verb
+  families 275  sentences 397  ∩rn 227  abstract-not-rn 48  rn-not-abstract 21
+  abstract-not-rn: 009 010 014 015 017 023 026 036 042 046 082 093 103 122 137 182 190 211 212 215 219 221 224 231 232 233 261 262 271 273 281 283 302 312 318 336 337 345 346 348 353 354 357 359 361 362 365 372
+  rn-not-abstract: 020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299 309 322 323 342
+
+LAYER 3 - manuscript prose (bibliography and cite braces stripped)
+  window ±80: hits 1665 over 337 families  ∩rn 240  prose-not-rn 97  rn-not-prose 8 -> 085 094 126 144 187 299 323 333
+  sentence scope: hits 1283 over 332 families  ∩rn 238  prose-not-rn 94  rn-not-prose 10 -> 020 085 094 144 158 187 280 299 322 323
+  rn-not-prose under BOTH rules: 6 -> 085 094 144 187 299 323
+
+VERB VOCABULARY GAP (target noun with an EXTRA verb, no column verb, in prose)
+  families 5 -> 085 138 144 234 358  of these rn=1: 2
+
+TITLE-SCOPE SWAP (applied: target noun in the overview title, verb in its abstract)
+  additions 15 -> 022 039 044 096 097 151 156 192 209 263 289 293 297 347 367
+  column reads 248; abstract-only scope reads 233; removals 0 - the union keeps every flag the abstract-only scope had
+  scope alternates: both regexes on the raw title+abstract read 149 (removals 94, additions 10); target noun case-sensitive in the title with the verb in the lowered pair read 148 (removals 100, additions 15)
+
+DIRECTION A - manuscript names a target the abstract-only scope missed
+  (reading material, anchored)
+--- 022 tier=T0 rn=1 paps=1 shapes=uniform
+  overview.tex:120 TITLE: The weak inhomogeneous Duffin--Schaeffer conjecture
+  overview.tex:120 ABSTRACT: Proves that for every real shift $\gamma$ and finite-valued $\psi:\mathbb N\to[0,\infty)$, divergence of $\sum_q\phi(q)\psi(q)/q$ implies $\|qx-\gamma\|<\psi(q)$ for infinitely many $q$, for almost every $x$. Here $\phi$ is Euler's totient and the norm is distance to the nearest integer. Numerators are unrestricted; no monotonicity or Diophantine condition on $\gamma$ is needed.
+  DIRS: The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026
+  MS-ABSTRACT preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex:37 'We prove the weak inhomogeneous Duffin--Schaeffer conjecture.'
+  MS-PROSE preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex:38 ...begindocument \maketitle \beginabstract We prove the weak inhomogeneous Duffin--Schaeffer conjecture. For every fixed $\gamma\in\mathbb R$ and finite-valued $\psi:\mathbb N\to[0,\infty)$, d...
+--- 039 tier=T3 rn=1 paps=4 shapes=bound|classification|uniform
+  overview.tex:156 TITLE: Nagata's conjecture and maximal Seshadri constants
+  overview.tex:156 ABSTRACT: Proves Nagata's strict inequality $\sum_i m_i<d\sqrt r$ for every nonzero effective plane curve of degree $d$ through $r\ge10$ very general complex points, with arbitrary multiplicities $m_i$. It also proves maximal multipoint Seshadri constants $(L^n/r)^{1/n}$ for every smooth polarized projective variety of dimension $n\ge2$ and all sufficiently large $r$: at very general points over $\mathbb C$, and at the geometric generic tuple over any algebraically closed field of positive characteristic.
+  DIRS: Nagatas-Conjecture-for-Plane-Curves-September-23-2026 | Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026 | Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026 | Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026
+  MS-ABSTRACT preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex:11 'This resolves positively the qualitative Nagata--Biran conjecture for surfaces.'
+  MS-PROSE preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex:12 ...ry sufficiently large integer $r$. This resolves positively the qualitative Nagata--Biran conjecture for surfaces. \endabstract \tableofcontents \inputsections/introduction \inputsections/j...
+--- 044 tier=T0 rn=1 paps=1 shapes=uniform
+  overview.tex:166 TITLE: The equivariant cohomological Hikita conjecture for quivers
+  overview.tex:166 ABSTRACT: Proves the equivariant cohomological Hikita correspondence for every finite quiver, including loops and multiple arrows, with arbitrary dimension and framing vectors and commuting flavor torus. When every semistable point is stable and the gauge action is free, the equivariant cohomology of the Nakajima variety is canonically the coordinate ring of the scheme-theoretic cocharacter-fixed locus of its flavor-deformed Coulomb branch.
+  DIRS: The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026
+  MS-ABSTRACT preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/main.tex:48 'We prove the equivariant cohomological Hikita conjecture for arbitrary finite quivers, including loops and multiple arrows.'
+  MS-PROSE preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/main.tex:49 ...26 \begindocument \maketitle \beginabstract We prove the equivariant cohomological Hikita conjecture for arbitrary finite quivers, including loops and multiple arrows. For any dimension and...
+--- 151 tier=T2 rn=1 paps=1 shapes=counterexample|bound
+  overview.tex:381 TITLE: A $C^1$ counterexample to Shub’s entropy conjecture
+  overview.tex:381 ABSTRACT: Constructs a noninvertible $C^1$ self-map of a compact smooth manifold with zero topological entropy but eigenvalue $2$ on second homology. This disproves the homological entropy lower bound for general $C^1$ self-maps: homological growth need not force positive orbit complexity.
+  DIRS: A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026
+  MS-ABSTRACT preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/build/source/main.tex:39 "We disprove the general \\(C^1\\) self-map formulation of Shub's entropy conjecture."
+  MS-PROSE preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/build/source/main.tex:13 ...s=true,allcolors=linkblue]hyperref \hypersetuppdftitle=A C1 Counterexample to the Entropy Conjecture, pdfauthor=OpenAI \usepackage[nameinlink,noabbrev,capitalise]cleveref \pdftr...
+--- 209 tier=T0 rn=1 paps=2 shapes=counterexample|classification
+  overview.tex:499 TITLE: Integral counterexamples to Gersten’s conjecture
+  overview.tex:499 ABSTRACT: Disproves unrestricted integral Gersten injectivity in degrees $3$ and $5$. Two explicit two-dimensional ramified regular local rings of mixed characteristic $(0,5)$ have nonzero integral $K$-theory classes that vanish over their fraction fields.
+  DIRS: An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026 | An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026
+  MS-ABSTRACT preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex:33 'This gives a negative answer to the unrestricted integral Gersten conjecture.'
+  MS-PROSE preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex:34 ...A)$ has nonzero kernel. This gives a negative answer to the unrestricted integral Gersten conjecture. \endabstract \inputsections/introduction \inputsections/model \inputsections/integral-c...
+--- 297 tier=T2 rn=1 paps=1 shapes=counterexample|classification
+  overview.tex:686 TITLE: A ZFC counterexample to Naimark's problem
+  overview.tex:686 ABSTRACT: Gives an alternative to \href{https://arxiv.org/abs/2609.26930v1}{Tanaka's ZFC construction} of a unital infinite-dimensional simple complex $C^*$-algebra with a faithful tracial state and exactly one nonzero irreducible representation up to unitary equivalence. Thus the unrestricted compact-operator characterization fails without additional set-theoretic assumptions; the counterexample is nonseparable.
+  DIRS: A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026
+  MS-ABSTRACT preprints/A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026/build/main.tex:34 "This gives a negative answer to Naimark's problem without additional set-theoretic assumptions."
+  MS-PROSE preprints/A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026/build/main.tex:14 ...nameinlink,capitalize,noabbrev]cleveref \hypersetuppdftitle=A counterexample to Naimark's problem in ZFC,pdfauthor=OpenAI \allowdisplaybreaks[1] \numberwithinequationsection \newtheoremth...
+--- 354 tier=T2 rn=0 paps=1 shapes=
+  overview.tex:806 TITLE: Isoperimetric regions in the cubic three-torus
+  overview.tex:806 ABSTRACT: Determines the isoperimetric profile of the unit cubic flat three-torus and classifies every finite-perimeter minimizer: balls, circular tubes around shortest closed geodesics, coordinate slabs, and their complements. The transition volumes are $4\pi/81$ and $1/\pi$, with exactly the adjacent two types minimizing at each transition.
+  DIRS: The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026
+  MS-ABSTRACT preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/build/paper.tex:36 'We prove the isoperimetric conjecture for the cubic flat three-torus and classify all minimizers, including the equality cases at the transition volumes $4\\pi/81$ and $1/\\pi$.'
+  MS-PROSE preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/build/paper.tex:37 ...24, 2026 \begindocument \maketitle \vspace-2em \beginabstract We prove the isoperimetric conjecture for the cubic flat three-torus and classify all minimizers, including the equality cases...
+--- 365 tier=T3 rn=0 paps=3 shapes=bound|uniform
+  overview.tex:830 TITLE: Joint metric and connection recovery from one boundary patch
+  overview.tex:830 ABSTRACT: Zero-frequency measurements on any nonempty open boundary patch determine a smooth metric and smooth unitary connection on a trivial Hermitian rank-two bundle over a compact connected manifold of dimension at least three, up to diffeomorphism and gauge fixed on that patch. Inputs and observations use the same patch. In contrast, distinct uniformly positive bounded measurable scalar conductivities on a three-dimensional ball can have identical full-boundary data.
+  DIRS: Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026 | Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026 | Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026
+  MS-ABSTRACT preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex:8 'We resolve the smooth anisotropic Calderon uniqueness problem with arbitrary same-patch measurements.'
+  MS-PROSE preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/build/paper.tex:126 ...ectivity of its linearization at constant conductivities~\citeCalderon. For the nonlinear problem in dimensions at least three, Sylvester and Uhlmann established full-boundary uniqueness...
+--- 372 tier=T2 rn=0 paps=1 shapes=bound
+  overview.tex:846 TITLE: Global uniqueness in smooth isotropic elasticity
+  overview.tex:846 ABSTRACT: Proves that full static boundary displacement-to-traction data determine both smooth real Lam\'e moduli on every bounded connected smooth domain in $\mathbb R^3$, provided $\mu>0$ and $3\lambda+2\mu>0$ on the closure. Neither analyticity, proximity to constant coefficients nor prior knowledge near the boundary is required.
+  DIRS: Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026
+  MS-ABSTRACT preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/main.tex:46 'This resolves the smooth three-dimensional isotropic elastic Calderon uniqueness problem under these positivity assumptions.'
+  MS-PROSE preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/main.tex:41 ...4, 2026 \hypersetuppdftitle=Global Uniqueness for the Smooth Isotropic Elasticity Inverse Problem,pdfauthor=OpenAI \begindocument \maketitle \beginabstract We prove that the full static...
+--- 263 tier=T3 rn=1 paps=3 shapes=bound|partial
+  overview.tex:615 TITLE: The ionization and generalized ionization conjectures
+  overview.tex:615 ABSTRACT: For the full nonrelativistic Coulomb model with two electron spin states, proves that a molecule with $M$ fixed nuclei of charges at least one and total charge $Z$ strictly binds at most $Z+CM$ electrons. Neutral-atom first ionization energies and radii containing all but an expected half-electron have universal positive upper and lower bounds. The energy cost of removing $m$ electrons has Thomas--Fermi asymptotics as $m\to\infty$ and $Z/m\to\infty$; neutral-atom outer radii have the corresponding iterated-limit asymptotics, taking $Z\to\infty$ first.
+  DIRS: Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026 | Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026 | Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026
+  HEAD preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex:38 'Generalized ionization conjecture: radii'
+  MS-ABSTRACT preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/paper.tex:51 'We prove the energy part of the generalized ionization conjecture for full nonrelativistic Coulomb atoms with two electron spin states.'
+  MS-PROSE preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/paper.tex:52 ...document \maketitle \beginabstract We prove the energy part of the generalized ionization conjecture for full nonrelativistic Coulomb atoms with two electron spin states. The energy needed...
+--- 275 tier=T2 rn=0 paps=2 shapes=
+  overview.tex:639 TITLE: QMA-hardness of continuum Coulomb energy
+  overview.tex:639 ABSTRACT: Proves QMA-hardness of approximating the electronic Coulomb energy infimum in three dimensions, minimizing over the full spinful fermionic continuum space. Deterministic polynomial-time reductions work even with only unit-charge nuclei at distinct rational positions, polynomially many electrons and an energy-threshold separation of at least one.
+  DIRS: Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026 | QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026
+  HEAD preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/01-finite-models.tex:19 'Source problem'
+  MS-ABSTRACT: no sentence naming a target with a resolve verb
+  MS-PROSE preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/00-introduction.tex:63 ...andl, and Verstraete established QMA-completeness of the finite-mode $N$-representability problem under polynomial-time Turing reductions, using general two-body fermionic Hamiltonians in...
+
+DIRECTION B - column reads 1, manuscript naming is thin (reading material, anchored)
+--- 085 tier=T3 rn=1 paps=1 shapes=resolution|uniform
+  overview.tex:244 TITLE: Endpoint regularity of the planar centered maximal function
+  overview.tex:244 ABSTRACT: Resolves the planar centered-disk case of the Haj{\l}asz--Onninen maximal-function regularity problem. For every real $f\in W^{1,1}(\mathbb R^2)$, the centered disk maximal function satisfies $\|\nabla Mf\|_1\le C\|\nabla f\|_1$ with an absolute constant. It belongs locally to $W^{1,1}$ and has a globally integrable weak gradient.
+  DIRS: An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 2
+  EVID preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/build/main.tex:51 'This gives a positive resolution of the planar centered-disk case of the endpoint question of Haj\\lasz and Onninen.'
+  EVID preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/build/sections/introduction.tex:15 'We give a positive resolution of the planar centered-disk case of their endpoint question.'
+--- 094 tier=T3 rn=1 paps=1 shapes=partial|uniform
+  overview.tex:264 TITLE: Subpolynomial dimension reduction in $L_p$
+  overview.tex:264 ABSTRACT: For every fixed $1<p<\infty$ and distortion $D>1$, every $n$-point subset of real $L_p$ embeds into $\ell_p^d$ with distortion at most $D$ and dimension $d=n^{o(1)}$, answering Naor's sublinear-dimension question for $p\ne2$. In contrast, exact embeddings require worst-case dimension $\Theta(n^2)$ when $p\ne2$.
+  DIRS: Subpolynomial-dimension-reduction-in-Lp-September-23-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+--- 126 tier=T2 rn=1 paps=1 shapes=bound|uniform
+  overview.tex:329 TITLE: Exponential semidefinite complexity of perfect matching
+  overview.tex:329 ABSTRACT: Proves that every exact semidefinite lift of the perfect matching polytope has exponential size, answering Rothvoss's polynomial-size lift question negatively. The bound holds even for the positive semidefinite rank of its odd-cut slack matrix after any fixed shift $0<\rho<1$, allowing arbitrary real positive semidefinite factors.
+  DIRS: Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026
+  titled headline statements 2  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 1  extra-only 0
+  EVID preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/introduction.tex:7 'We prove an exponential lower bound for perfect matching by studying an exact factorization problem that also allows a fixed positive shift of every odd-cut slack.'
+  EVID preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/fourier-smoothing.tex:42 'Fourier smoothing of matrix squares'
+  EVID preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/matching-smoothing.tex:42 'Uniform smoothing'
+--- 144 tier=T2 rn=1 paps=1 shapes=resolution
+  overview.tex:367 TITLE: Banach's simple Lebesgue-spectrum problem
+  overview.tex:367 ABSTRACT: Resolves the probability-preserving form of Banach's simple Lebesgue-spectrum problem within smooth dynamics. A smooth volume-preserving diffeomorphism of the standard-volume three-torus has simple Lebesgue spectrum on its entire complex mean-zero $L^2$ space: the bilateral iterates of one real observable form an orthonormal basis of that space.
+  DIRS: A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 1
+  EVID preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/build/main.tex:11 "black,pdftitle=A smooth three-torus diffeomorphism with simple Lebesgue spectrum,pdfauthor=OpenAI \\newcommand\\T\\mathbb T \\newcommand\\R\\mathbb R \\newcommand\\Z\\mathbb Z \\newcommand\\N\\mathbb N \\newcommand\\C\\mathbb C \\newcommand\\eps\\varepsilon \\newcommand\\1\\mathbf 1 \\newcommand\\dd\\,\\mathrm d \\DeclareMathOperator\\eee \\DeclareMathOperator\\ReaRe \\DeclareMathOperator\\ImaIm \\DeclareMathOperator\\suppsupp \\DeclareMathOperator\\distdist \\DeclareMathOperator\\LebLeb \\newcommand\\calH\\mathcal H \\newcommand\\calC\\mathcal C \\newtheoremtheoremTheorem[section] \\newtheoremlemma[theorem]Lemma \\newtheoremproposition[theorem]Proposition \\newtheoremcorollary[theorem]Corollary \\theoremstyledefinition \\newtheoremdefinition[theorem]Definition \\theoremstyleremark \\newtheoremremark[theorem]Remark \\numberwithinequationsection \\setlistitemsep=2pt,topsep=5pt \\setlength\\emergencystretch1em \\titleA smooth three-torus diffeomorphism with simple Lebesgue spectrum \\authorOpenAI \\dateSeptember 23, 2026 \\begindocument \\maketitle \\beginabstract We solve the probability-preserving form of Banach's simple Lebesgue-spectrum problem in smooth dynamics."
+--- 187 tier=T2 rn=1 paps=1 shapes=resolution
+  overview.tex:453 TITLE: Snaky in 21 Maker moves
+  overview.tex:453 ABSTRACT: Settles the Snaky achievement problem: Maker can force the six-cell Snaky shape within 21 of its own moves on the initially empty infinite square board. Maker moves first, each player claims one free cell per turn, and translations, rotations and reflections count as wins.
+  DIRS: Snaky-in-21-Maker-moves-September-25-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+--- 299 tier=T3 rn=1 paps=1 shapes=uniform
+  overview.tex:690 TITLE: The Kirchberg--Rø rdam character criterion
+  overview.tex:690 ABSTRACT: A nonzero unital separable complex $C^*$-algebra is Jiang--Su stable exactly when its norm central-sequence algebra has no characters, for every free ultrafilter. This answers the Kirchberg--R\o rdam character question. Also, the infinite minimal tensor power of every such algebra without characters is Jiang--Su stable, answering the Dadarlat--Toms question.
+  DIRS: The-Kirchberg-Rordam-character-criterion-September-25-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+--- 323 tier=T2 rn=1 paps=1 shapes=counterexample
+  overview.tex:742 TITLE: Relative independence of the separable quotient problem
+  overview.tex:742 ABSTRACT: Establishes, relative to the consistency of a measurable cardinal, that the separable quotient problem is independent of ZFC. The assertion that every infinite-dimensional Banach space has a separable infinite-dimensional quotient can hold for all real and complex Banach spaces, whereas the continuum hypothesis yields counterexamples over both fields.
+  DIRS: Relative-independence-of-the-separable-quotient-problem-September-23-2026
+  titled headline statements 1  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+  EVID preprints/Relative-independence-of-the-separable-quotient-problem-September-23-2026/build/sections/models.tex:15 'Solovay'
+--- 333 tier=T2 rn=1 paps=1 shapes=resolution|uniform
+  overview.tex:764 TITLE: Smooth isometric immersions of surfaces into $\mathbb R^4$
+  overview.tex:764 ABSTRACT: Every closed smooth Riemannian surface admits a smooth isometric immersion into $\mathbb R^4$, resolving the closed-surface form of the four-dimensional isometric-immersion problem. This includes nonorientable surfaces and metrics of arbitrary Gaussian curvature.
+  DIRS: Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 1  prose window 0  prose sentence 1  extra-only 0
+  EVID preprints/Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026/build/main.tex:38 'This resolves the closed-surface form of the classical four-dimensional isometric-immersion problem.'
+  EVID preprints/Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026/build/main.tex:38 'This resolves the closed-surface form of the classical four-dimensional isometric-immersion problem.'
+[probe] target exit code: 0
+[probe2] target notes/scripts/extract_named_results.py 
+[probe2] wall 0.61  opens 6429  distinct 1695  repeats 4734
+[probe2] rchar MB 216.2  read_bytes MB 0.1
+[probe2] buckets:
+          notes/gen/index/           4132
+          notes/                     1045
+          notes/gen/summaries/       656
+          notes/scripts/             393
+          other                      164
+          notes/templates/           24
+          abs/other                  15
+[probe2] notes/ paths (count  modes  path):
+              1  r        notes/README.md
+              5  r        notes/data/conjecture-standing.tsv
+              4  r        notes/data/summaries/001.md
+              4  r        notes/data/summaries/002.md
+              4  r        notes/data/summaries/004.md
+              4  r        notes/data/summaries/006.md
+              4  r        notes/data/summaries/007.md
+              4  r        notes/data/summaries/010.md
+              4  r        notes/data/summaries/011.md
+              4  r        notes/data/summaries/014.md
+              4  r        notes/data/summaries/016.md
+              4  r        notes/data/summaries/017.md
+              4  r        notes/data/summaries/018.md
+              4  r        notes/data/summaries/019.md
+              4  r        notes/data/summaries/022.md
+              4  r        notes/data/summaries/029.md
+              4  r        notes/data/summaries/030.md
+              4  r        notes/data/summaries/031.md
+              4  r        notes/data/summaries/032.md
+              4  r        notes/data/summaries/034.md
+              4  r        notes/data/summaries/037.md
+              4  r        notes/data/summaries/038.md
+              4  r        notes/data/summaries/039.md
+              4  r        notes/data/summaries/040.md
+              4  r        notes/data/summaries/041.md
+              4  r        notes/data/summaries/042.md
+              4  r        notes/data/summaries/043.md
+              4  r        notes/data/summaries/044.md
+              4  r        notes/data/summaries/047.md
+              4  r        notes/data/summaries/048.md
+              4  r        notes/data/summaries/049.md
+              4  r        notes/data/summaries/050.md
+              4  r        notes/data/summaries/051.md
+              4  r        notes/data/summaries/052.md
+              4  r        notes/data/summaries/053.md
+              4  r        notes/data/summaries/054.md
+              4  r        notes/data/summaries/055.md
+              4  r        notes/data/summaries/057.md
+              4  r        notes/data/summaries/059.md
+              4  r        notes/data/summaries/060.md
+              4  r        notes/data/summaries/062.md
+              4  r        notes/data/summaries/063.md
+              4  r        notes/data/summaries/064.md
+              4  r        notes/data/summaries/065.md
+              4  r        notes/data/summaries/067.md
+              4  r        notes/data/summaries/072.md
+              4  r        notes/data/summaries/074.md
+              4  r        notes/data/summaries/077.md
+              4  r        notes/data/summaries/078.md
+              4  r        notes/data/summaries/079.md
+              4  r        notes/data/summaries/080.md
+              4  r        notes/data/summaries/086.md
+              4  r        notes/data/summaries/087.md
+              4  r        notes/data/summaries/088.md
+              4  r        notes/data/summaries/089.md
+              4  r        notes/data/summaries/098.md
+              4  r        notes/data/summaries/101.md
+              4  r        notes/data/summaries/102.md
+              4  r        notes/data/summaries/103.md
+              4  r        notes/data/summaries/104.md
+              4  r        notes/data/summaries/105.md
+              4  r        notes/data/summaries/106.md
+              4  r        notes/data/summaries/107.md
+              4  r        notes/data/summaries/108.md
+              4  r        notes/data/summaries/109.md
+              4  r        notes/data/summaries/110.md
+              4  r        notes/data/summaries/111.md
+              4  r        notes/data/summaries/112.md
+              4  r        notes/data/summaries/113.md
+              4  r        notes/data/summaries/114.md
+              4  r        notes/data/summaries/115.md
+              4  r        notes/data/summaries/116.md
+              4  r        notes/data/summaries/117.md
+              4  r        notes/data/summaries/118.md
+              4  r        notes/data/summaries/119.md
+              4  r        notes/data/summaries/120.md
+              4  r        notes/data/summaries/121.md
+              4  r        notes/data/summaries/122.md
+              4  r        notes/data/summaries/124.md
+              4  r        notes/data/summaries/125.md
+              4  r        notes/data/summaries/126.md
+              4  r        notes/data/summaries/127.md
+              4  r        notes/data/summaries/128.md
+              4  r        notes/data/summaries/129.md
+              4  r        notes/data/summaries/130.md
+              4  r        notes/data/summaries/131.md
+              4  r        notes/data/summaries/132.md
+              4  r        notes/data/summaries/133.md
+              4  r        notes/data/summaries/134.md
+              4  r        notes/data/summaries/135.md
+              4  r        notes/data/summaries/136.md
+              4  r        notes/data/summaries/137.md
+              4  r        notes/data/summaries/138.md
+              4  r        notes/data/summaries/139.md
+              4  r        notes/data/summaries/140.md
+              4  r        notes/data/summaries/141.md
+              4  r        notes/data/summaries/142.md
+              4  r        notes/data/summaries/147.md
+              4  r        notes/data/summaries/159.md
+              4  r        notes/data/summaries/164.md
+              4  r        notes/data/summaries/166.md
+              4  r        notes/data/summaries/171.md
+              4  r        notes/data/summaries/193.md
+              4  r        notes/data/summaries/195.md
+              4  r        notes/data/summaries/196.md
+              4  r        notes/data/summaries/197.md
+              4  r        notes/data/summaries/198.md
+              4  r        notes/data/summaries/199.md
+              4  r        notes/data/summaries/200.md
+              4  r        notes/data/summaries/201.md
+              4  r        notes/data/summaries/202.md
+              4  r        notes/data/summaries/203.md
+              4  r        notes/data/summaries/204.md
+              4  r        notes/data/summaries/208.md
+              4  r        notes/data/summaries/209.md
+              4  r        notes/data/summaries/221.md
+              4  r        notes/data/summaries/226.md
+              4  r        notes/data/summaries/243.md
+              4  r        notes/data/summaries/244.md
+              4  r        notes/data/summaries/254.md
+              4  r        notes/data/summaries/258.md
+              4  r        notes/data/summaries/259.md
+              4  r        notes/data/summaries/268.md
+              4  r        notes/data/summaries/270.md
+              4  r        notes/data/summaries/271.md
+              4  r        notes/data/summaries/274.md
+              4  r        notes/data/summaries/284.md
+              4  r        notes/data/summaries/285.md
+              4  r        notes/data/summaries/287.md
+              4  r        notes/data/summaries/300.md
+              4  r        notes/data/summaries/304.md
+              4  r        notes/data/summaries/305.md
+              4  r        notes/data/summaries/306.md
+              4  r        notes/data/summaries/309.md
+              4  r        notes/data/summaries/310.md
+              4  r        notes/data/summaries/311.md
+              4  r        notes/data/summaries/313.md
+              4  r        notes/data/summaries/315.md
+              4  r        notes/data/summaries/316.md
+              4  r        notes/data/summaries/319.md
+              4  r        notes/data/summaries/320.md
+              4  r        notes/data/summaries/321.md
+              4  r        notes/data/summaries/324.md
+              4  r        notes/data/summaries/325.md
+              4  r        notes/data/summaries/331.md
+              4  r        notes/data/summaries/332.md
+              4  r        notes/data/summaries/334.md
+              4  r        notes/data/summaries/335.md
+              4  r        notes/data/summaries/338.md
+              4  r        notes/data/summaries/339.md
+              4  r        notes/data/summaries/340.md
+              4  r        notes/data/summaries/341.md
+              4  r        notes/data/summaries/342.md
+              4  r        notes/data/summaries/344.md
+              4  r        notes/data/summaries/345.md
+              4  r        notes/data/summaries/346.md
+              4  r        notes/data/summaries/347.md
+              4  r        notes/data/summaries/348.md
+              4  r        notes/data/summaries/349.md
+              4  r        notes/data/summaries/351.md
+              4  r        notes/data/summaries/352.md
+              4  r        notes/data/summaries/362.md
+              4  r        notes/data/summaries/366.md
+              4  r        notes/data/summaries/368.md
+              4  r        notes/data/summaries/375.md
+             15  r        notes/data/topics.tsv
+              1  r        notes/development/fleet-design.md
+              2  r        notes/development/index-design.md
+              2  r        notes/development/index-links.md
+              2  r        notes/development/lean-fidelity.md
+              2  r        notes/development/summaries-workflow.md
+              1  r        notes/development/templates.md
+              2  r        notes/development/upstream_history/2026-10-07_3014888.md
+              2  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              2  r        notes/development/upstream_history/README.md
+              4  r        notes/gen/index/README.md
+              4  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
+              4  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
+              4  r        notes/gen/index/algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md
+              4  r        notes/gen/index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md
+              4  r        notes/gen/index/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              4  r        notes/gen/index/algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+              4  r        notes/gen/index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md
+              4  r        notes/gen/index/algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md
+              4  r        notes/gen/index/algebra/201-a-counterexample-to-kuroshs-division-ring-problem.md
+              4  r        notes/gen/index/algebra/202-blockwise-alperin-weight-conjecture.md
+              4  r        notes/gen/index/algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md
+              4  r        notes/gen/index/algebra/204-tensor-saturation-for-even-spin-groups.md
+              4  r        notes/gen/index/algebra/205-saxls-conjecture-and-universal-tensor-squares.md
+              4  r        notes/gen/index/algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md
+              4  r        notes/gen/index/algebra/207-1-bass-and-complex-bass-trace-conjectures.md
+              4  r        notes/gen/index/algebra/208-finite-benson-etingof-ostrik-conjecture.md
+              4  r        notes/gen/index/algebra/209-integral-counterexamples-to-gerstens-conjecture.md
+              4  r        notes/gen/index/algebra/210-foulkes-conjecture-for-sixth-powers-and-quadratic-stabilization.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/051-kobayashis-canonical-ampleness-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/055-todas-gepner-conjecture-and-large-volume-stability.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/068-anticanonical-nonvanishing-under-smooth-semipositivity.md
+              4  r        notes/gen/index/algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md
+              4  r        notes/gen/index/combinatorics/155-a-counterexample-to-periodic-tiling-in-dimension-three.md
+              4  r        notes/gen/index/combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md
+              4  r        notes/gen/index/combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md
+              4  r        notes/gen/index/combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md
+              4  r        notes/gen/index/combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md
+              4  r        notes/gen/index/combinatorics/160-superexponential-van-der-waerden-numbers.md
+              4  r        notes/gen/index/combinatorics/161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md
+              4  r        notes/gen/index/combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md
+              4  r        notes/gen/index/combinatorics/164-hindmans-finite-sums-and-products-conjecture.md
+              4  r        notes/gen/index/combinatorics/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md
+              4  r        notes/gen/index/combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md
+              4  r        notes/gen/index/combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md
+              4  r        notes/gen/index/combinatorics/168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md
+              4  r        notes/gen/index/combinatorics/169-shareshian-wachs-e-positivity-conjecture.md
+              4  r        notes/gen/index/combinatorics/170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md
+              4  r        notes/gen/index/combinatorics/171-hypercube-ramsey-conjecture.md
+              4  r        notes/gen/index/combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+              4  r        notes/gen/index/combinatorics/173-seymours-second-neighborhood-conjecture.md
+              4  r        notes/gen/index/combinatorics/174-deterministic-construction-of-strong-thin-spanning-trees.md
+              4  r        notes/gen/index/combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md
+              4  r        notes/gen/index/combinatorics/176-second-kahn-kalai-conjecture.md
+              4  r        notes/gen/index/combinatorics/177-bounded-degree-coboundary-expanders-in-every-dimension.md
+              4  r        notes/gen/index/combinatorics/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md
+              4  r        notes/gen/index/combinatorics/179-circulant-hadamard-conjecture.md
+              4  r        notes/gen/index/combinatorics/180-barnettes-hamiltonian-cycle-conjecture.md
+              4  r        notes/gen/index/combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md
+              4  r        notes/gen/index/combinatorics/182-power-savings-for-polynomial-difference-free-sets.md
+              4  r        notes/gen/index/combinatorics/183-power-savings-for-planar-halving-lines-and-k-sets.md
+              4  r        notes/gen/index/combinatorics/184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md
+              4  r        notes/gen/index/combinatorics/185-counterexamples-to-infinite-matroid-intersection-and-packing-covering.md
+              4  r        notes/gen/index/combinatorics/186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md
+              4  r        notes/gen/index/combinatorics/187-snaky-in-21-maker-moves.md
+              4  r        notes/gen/index/combinatorics/188-sharp-constant-in-random-triangle-removal.md
+              4  r        notes/gen/index/combinatorics/189-exact-cycle-clique-ramsey-numbers.md
+              4  r        notes/gen/index/combinatorics/190-polynomial-removal-fails-for-ordered-binary-matrices.md
+              4  r        notes/gen/index/combinatorics/191-a-power-improvement-in-the-heilbronn-triangle-problem.md
+              4  r        notes/gen/index/combinatorics/192-a-counterexample-to-the-gopalan-servedio-conjecture.md
+              4  r        notes/gen/index/convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md
+              4  r        notes/gen/index/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+              4  r        notes/gen/index/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md
+              4  r        notes/gen/index/convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md
+              4  r        notes/gen/index/convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md
+              4  r        notes/gen/index/convex-and-metric-geometry/092-optimal-order-of-convex-body-covering-density.md
+              4  r        notes/gen/index/convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md
+              4  r        notes/gen/index/convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md
+              4  r        notes/gen/index/convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md
+              4  r        notes/gen/index/convex-and-metric-geometry/096-gaussian-propeller-conjecture.md
+              4  r        notes/gen/index/convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md
+              4  r        notes/gen/index/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md
+              4  r        notes/gen/index/convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md
+              4  r        notes/gen/index/convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md
+              4  r        notes/gen/index/convex-and-metric-geometry/101-sharp-simplex-conjecture-for-isotropic-constants.md
+              4  r        notes/gen/index/differential-geometry/333-smooth-isometric-immersions-of-surfaces-into-r-4.md
+              4  r        notes/gen/index/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+              4  r        notes/gen/index/differential-geometry/335-gromovs-integral-scalar-curvature-inequality.md
+              4  r        notes/gen/index/differential-geometry/336-spectral-scalar-curvature-and-codimension-two-width.md
+              4  r        notes/gen/index/differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md
+              4  r        notes/gen/index/differential-geometry/338-yaus-uniformization-conjecture.md
+              4  r        notes/gen/index/differential-geometry/339-katoks-entropy-rigidity-conjecture.md
+              4  r        notes/gen/index/differential-geometry/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md
+              4  r        notes/gen/index/differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md
+              4  r        notes/gen/index/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md
+              4  r        notes/gen/index/differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md
+              4  r        notes/gen/index/differential-geometry/344-metric-blaschke-conjecture.md
+              4  r        notes/gen/index/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md
+              4  r        notes/gen/index/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md
+              4  r        notes/gen/index/differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md
+              4  r        notes/gen/index/differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md
+              4  r        notes/gen/index/differential-geometry/349-solomon-yau-least-volume-conjecture.md
+              4  r        notes/gen/index/differential-geometry/350-yaus-nodal-conjecture-surfaces-and-counterexamples.md
+              4  r        notes/gen/index/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md
+              4  r        notes/gen/index/differential-geometry/352-finite-time-singularity-of-calabi-flow.md
+              4  r        notes/gen/index/differential-geometry/353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md
+              4  r        notes/gen/index/differential-geometry/354-isoperimetric-regions-in-the-cubic-three-torus.md
+              4  r        notes/gen/index/differential-geometry/355-unique-tangent-flows-at-the-first-surface-singularity.md
+              4  r        notes/gen/index/differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md
+              4  r        notes/gen/index/differential-geometry/357-bi-lipschitz-coordinates-at-every-regular-rcd-point.md
+              4  r        notes/gen/index/differential-geometry/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md
+              4  r        notes/gen/index/differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md
+              4  r        notes/gen/index/differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md
+              4  r        notes/gen/index/differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md
+              4  r        notes/gen/index/disciplines/algebra.md
+              4  r        notes/gen/index/disciplines/algebraic-and-complex-geometry.md
+              4  r        notes/gen/index/disciplines/combinatorics.md
+              4  r        notes/gen/index/disciplines/convex-and-metric-geometry.md
+              4  r        notes/gen/index/disciplines/differential-geometry.md
+              4  r        notes/gen/index/disciplines/dynamical-systems-and-ergodic-theory.md
+              4  r        notes/gen/index/disciplines/functional-analysis.md
+              4  r        notes/gen/index/disciplines/group-theory.md
+              4  r        notes/gen/index/disciplines/mathematical-logic.md
+              4  r        notes/gen/index/disciplines/mathematical-physics.md
+              4  r        notes/gen/index/disciplines/number-theory.md
+              4  r        notes/gen/index/disciplines/operator-algebras.md
+              4  r        notes/gen/index/disciplines/partial-differential-equations.md
+              4  r        notes/gen/index/disciplines/probability-and-statistical-mechanics.md
+              4  r        notes/gen/index/disciplines/real-and-complex-analysis.md
+              4  r        notes/gen/index/disciplines/theoretical-computer-science.md
+              4  r        notes/gen/index/disciplines/topology.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/144-banachs-simple-lebesgue-spectrum-problem.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/145-rokhlins-multiple-mixing-problem.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/146-sinais-positive-entropy-conjecture-for-the-standard-map.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/147-near-boundary-birkhoff-conjecture.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/148-dimension-formula-for-self-similar-measures-on-the-line.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/149-permanence-for-weakly-reversible-reaction-networks.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/150-weak-mixing-of-irrational-triangular-billiards.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/151-a-c-1-counterexample-to-shubs-entropy-conjecture.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/153-arithmetic-classification-of-bernoulli-convolutions.md
+              4  r        notes/gen/index/dynamical-systems-and-ergodic-theory/154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md
+              4  r        notes/gen/index/functional-analysis/322-tingleys-sphere-isometry-problem.md
+              4  r        notes/gen/index/functional-analysis/323-relative-independence-of-the-separable-quotient-problem.md
+              4  r        notes/gen/index/functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md
+              4  r        notes/gen/index/functional-analysis/325-complete-crouzeix-conjecture.md
+              4  r        notes/gen/index/functional-analysis/326-cotype-cotype-conjecture-under-the-approximation-property.md
+              4  r        notes/gen/index/functional-analysis/327-markov-type-characterizes-superreflexivity.md
+              4  r        notes/gen/index/functional-analysis/328-fixed-points-of-nonexpansive-maps-in-reflexive-banach-spaces.md
+              4  r        notes/gen/index/functional-analysis/329-a-counterexample-to-pietschs-metric-entropy-duality-conjecture.md
+              4  r        notes/gen/index/functional-analysis/330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md
+              4  r        notes/gen/index/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+              4  r        notes/gen/index/functional-analysis/332-metric-markov-cotype-two-for-1.md
+              4  r        notes/gen/index/group-theory/246-cannons-conjecture.md
+              4  r        notes/gen/index/group-theory/247-an-infinite-finitely-presented-residually-finite-2-group.md
+              4  r        notes/gen/index/group-theory/248-thompsons-group-f-is-nonamenable.md
+              4  r        notes/gen/index/group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md
+              4  r        notes/gen/index/group-theory/250-boone-higman-conjecture-and-higher-finiteness.md
+              4  r        notes/gen/index/group-theory/251-amenability-unitarizability-and-ulam-stability.md
+              4  r        notes/gen/index/group-theory/252-a-non-residually-finite-torsion-free-hyperbolic-group.md
+              4  r        notes/gen/index/group-theory/253-an-infinite-finitely-presented-simple-amenable-group.md
+              4  r        notes/gen/index/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+              4  r        notes/gen/index/group-theory/255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md
+              4  r        notes/gen/index/group-theory/256-howies-conjecture-on-equations-over-groups.md
+              4  r        notes/gen/index/group-theory/257-a-hyperbolic-group-with-no-geometric-cat-0-action.md
+              4  r        notes/gen/index/group-theory/258-gerstens-conjecture-for-one-relator-groups.md
+              4  r        notes/gen/index/group-theory/259-a-group-without-fixed-price.md
+              4  r        notes/gen/index/mathematical-logic/240-shelahs-eventual-categoricity-conjecture.md
+              4  r        notes/gen/index/mathematical-logic/241-rigidity-of-the-turing-degrees.md
+              4  r        notes/gen/index/mathematical-logic/242-single-fold-diophantine-representations.md
+              4  r        notes/gen/index/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md
+              4  r        notes/gen/index/mathematical-logic/244-partition-principle-does-not-imply-choice.md
+              4  r        notes/gen/index/mathematical-logic/245-barendregt-geuvers-klop-conjecture.md
+              4  r        notes/gen/index/mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md
+              4  r        notes/gen/index/mathematical-physics/261-localization-and-delocalization-in-the-anderson-model.md
+              4  r        notes/gen/index/mathematical-physics/262-sharp-one-dimensional-lieb-thirring-inequalities.md
+              4  r        notes/gen/index/mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md
+              4  r        notes/gen/index/mathematical-physics/264-strong-cosmic-censorship-near-two-ended-kerr-data.md
+              4  r        notes/gen/index/mathematical-physics/265-two-dimensional-gapped-area-law.md
+              4  r        notes/gen/index/mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md
+              4  r        notes/gen/index/mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md
+              4  r        notes/gen/index/mathematical-physics/268-spin-one-haldane-gap.md
+              4  r        notes/gen/index/mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md
+              4  r        notes/gen/index/mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md
+              4  r        notes/gen/index/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              4  r        notes/gen/index/mathematical-physics/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md
+              4  r        notes/gen/index/mathematical-physics/273-entropy-photon-number-inequality.md
+              4  r        notes/gen/index/mathematical-physics/274-moores-parity-conjecture-for-qac-0.md
+              4  r        notes/gen/index/mathematical-physics/275-qma-hardness-of-continuum-coulomb-energy.md
+              4  r        notes/gen/index/mathematical-physics/276-classical-capacity-of-generalized-amplitude-damping.md
+              4  r        notes/gen/index/mathematical-physics/277-threshold-repetition-for-entangled-games.md
+              4  r        notes/gen/index/mathematical-physics/278-failure-of-kohn-sham-ensemble-representation.md
+              4  r        notes/gen/index/mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md
+              4  r        notes/gen/index/mathematical-physics/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md
+              4  r        notes/gen/index/mathematical-physics/281-qaoa-optimality-for-the-sk-model.md
+              4  r        notes/gen/index/mathematical-physics/282-scale-to-conformal-enhancement-in-four-dimensional-qft.md
+              4  r        notes/gen/index/mathematical-physics/283-polynomial-time-constant-error-unitary-synthesis-from-a-boolean-oracle.md
+              4  r        notes/gen/index/mathematical-physics/284-optimal-randomized-quantum-query-exponent.md
+              4  r        notes/gen/index/names/abhyankar.md
+              4  r        notes/gen/index/names/adams.md
+              4  r        notes/gen/index/names/aharoni.md
+              4  r        notes/gen/index/names/ahlberg.md
+              4  r        notes/gen/index/names/ahlfors.md
+              4  r        notes/gen/index/names/albanese.md
+              4  r        notes/gen/index/names/alexandrov.md
+              4  r        notes/gen/index/names/alperin.md
+              4  r        notes/gen/index/names/amitsur.md
+              4  r        notes/gen/index/names/ampere.md
+              4  r        notes/gen/index/names/anderson.md
+              4  r        notes/gen/index/names/anosov.md
+              4  r        notes/gen/index/names/arnold.md
+              4  r        notes/gen/index/names/arthur.md
+              4  r        notes/gen/index/names/artin.md
+              4  r        notes/gen/index/names/artinian.md
+              4  r        notes/gen/index/names/ashkin.md
+              4  r        notes/gen/index/names/atiyah.md
+              4  r        notes/gen/index/names/auslander.md
+              4  r        notes/gen/index/names/bacharach.md
+              4  r        notes/gen/index/names/baire.md
+              4  r        notes/gen/index/names/banach.md
+              4  r        notes/gen/index/names/bang.md
+              4  r        notes/gen/index/names/barker.md
+              4  r        notes/gen/index/names/barnette.md
+              4  r        notes/gen/index/names/barthel.md
+              4  r        notes/gen/index/names/bass.md
+              4  r        notes/gen/index/names/baum.md
+              4  r        notes/gen/index/names/baumslag.md
+              4  r        notes/gen/index/names/bayes.md
+              4  r        notes/gen/index/names/belk.md
+              4  r        notes/gen/index/names/benjamini.md
+              4  r        notes/gen/index/names/benson.md
+              4  r        notes/gen/index/names/bergman.md
+              4  r        notes/gen/index/names/bergstrom.md
+              4  r        notes/gen/index/names/bernoulli.md
+              4  r        notes/gen/index/names/bernstein.md
+              4  r        notes/gen/index/names/bessel.md
+              4  r        notes/gen/index/names/betti.md
+              4  r        notes/gen/index/names/bianchi.md
+              4  r        notes/gen/index/names/birch.md
+              4  r        notes/gen/index/names/birkhoff.md
+              4  r        notes/gen/index/names/blaschke.md
+              4  r        notes/gen/index/names/bloch.md
+              4  r        notes/gen/index/names/bochner.md
+              4  r        notes/gen/index/names/bockstein.md
+              4  r        notes/gen/index/names/bogomolov.md
+              4  r        notes/gen/index/names/boltzmann.md
+              4  r        notes/gen/index/names/bondi.md
+              4  r        notes/gen/index/names/boolean.md
+              4  r        notes/gen/index/names/boone.md
+              4  r        notes/gen/index/names/borel.md
+              4  r        notes/gen/index/names/borsuk.md
+              4  r        notes/gen/index/names/bose.md
+              4  r        notes/gen/index/names/bott.md
+              4  r        notes/gen/index/names/bourgain.md
+              4  r        notes/gen/index/names/bowditch.md
+              4  r        notes/gen/index/names/brakke.md
+              4  r        notes/gen/index/names/branden.md
+              4  r        notes/gen/index/names/bray.md
+              4  r        notes/gen/index/names/brenier.md
+              4  r        notes/gen/index/names/brennan.md
+              4  r        notes/gen/index/names/brown.md
+              4  r        notes/gen/index/names/brownian.md
+              4  r        notes/gen/index/names/brunn.md
+              4  r        notes/gen/index/names/busemann.md
+              4  r        notes/gen/index/names/calabi.md
+              4  r        notes/gen/index/names/calderon.md
+              4  r        notes/gen/index/names/cameron.md
+              4  r        notes/gen/index/names/campana.md
+              4  r        notes/gen/index/names/cannon.md
+              4  r        notes/gen/index/names/carleson.md
+              4  r        notes/gen/index/names/carrion.md
+              4  r        notes/gen/index/names/cartan.md
+              4  r        notes/gen/index/names/cartesian.md
+              4  r        notes/gen/index/names/cartier.md
+              4  r        notes/gen/index/names/casimir.md
+              4  r        notes/gen/index/names/castillejos.md
+              4  r        notes/gen/index/names/catalan.md
+              4  r        notes/gen/index/names/cauchy.md
+              4  r        notes/gen/index/names/cayley.md
+              4  r        notes/gen/index/names/chai.md
+              4  r        notes/gen/index/names/chatterji.md
+              4  r        notes/gen/index/names/chebotarev.md
+              4  r        notes/gen/index/names/chern.md
+              4  r        notes/gen/index/names/chow.md
+              4  r        notes/gen/index/names/chowla.md
+              4  r        notes/gen/index/names/clifford.md
+              4  r        notes/gen/index/names/cohen.md
+              4  r        notes/gen/index/names/colin.md
+              4  r        notes/gen/index/names/colmez.md
+              4  r        notes/gen/index/names/connes.md
+              4  r        notes/gen/index/names/corput.md
+              4  r        notes/gen/index/names/coulomb.md
+              4  r        notes/gen/index/names/courtade.md
+              4  r        notes/gen/index/names/coxeter.md
+              4  r        notes/gen/index/names/crouzeix.md
+              4  r        notes/gen/index/names/cuntz.md
+              4  r        notes/gen/index/names/curtis.md
+              4  r        notes/gen/index/names/daugavet.md
+              4  r        notes/gen/index/names/david.md
+              4  r        notes/gen/index/names/deligne.md
+              4  r        notes/gen/index/names/diophantine.md
+              4  r        notes/gen/index/names/dirichlet.md
+              4  r        notes/gen/index/names/dixmier.md
+              4  r        notes/gen/index/names/dobrushin.md
+              4  r        notes/gen/index/names/donaldson.md
+              4  r        notes/gen/index/names/donovan.md
+              4  r        notes/gen/index/names/dospinescu.md
+              4  r        notes/gen/index/names/drinfeld.md
+              4  r        notes/gen/index/names/duffin.md
+              4  r        notes/gen/index/names/dutta.md
+              4  r        notes/gen/index/names/dyer.md
+              4  r        notes/gen/index/names/eccles.md
+              4  r        notes/gen/index/names/eilenberg.md
+              4  r        notes/gen/index/names/einsiedler.md
+              4  r        notes/gen/index/names/einstein.md
+              4  r        notes/gen/index/names/eisenbud.md
+              4  r        notes/gen/index/names/eisenstein.md
+              4  r        notes/gen/index/names/elliott.md
+              4  r        notes/gen/index/names/emden.md
+              4  r        notes/gen/index/names/emerton.md
+              4  r        notes/gen/index/names/erdos.md
+              4  r        notes/gen/index/names/etingof.md
+              4  r        notes/gen/index/names/euclidean.md
+              4  r        notes/gen/index/names/euler.md
+              4  r        notes/gen/index/names/evans.md
+              4  r        notes/gen/index/names/evington.md
+              4  r        notes/gen/index/names/falconer.md
+              4  r        notes/gen/index/names/fano.md
+              4  r        notes/gen/index/names/fargues.md
+              4  r        notes/gen/index/names/fenchel.md
+              4  r        notes/gen/index/names/fermat.md
+              4  r        notes/gen/index/names/feynman.md
+              4  r        notes/gen/index/names/flint.md
+              4  r        notes/gen/index/names/floer.md
+              4  r        notes/gen/index/names/fock.md
+              4  r        notes/gen/index/names/fontaine.md
+              4  r        notes/gen/index/names/ford.md
+              4  r        notes/gen/index/names/fortuin.md
+              4  r        notes/gen/index/names/foulkes.md
+              4  r        notes/gen/index/names/fourier.md
+              4  r        notes/gen/index/names/fricke.md
+              4  r        notes/gen/index/names/friedgut.md
+              4  r        notes/gen/index/names/frobenius.md
+              4  r        notes/gen/index/names/frostman.md
+              4  r        notes/gen/index/names/fujita.md
+              4  r        notes/gen/index/names/furstenberg.md
+              4  r        notes/gen/index/names/gabe.md
+              4  r        notes/gen/index/names/gale.md
+              4  r        notes/gen/index/names/gallai.md
+              4  r        notes/gen/index/names/galois.md
+              4  r        notes/gen/index/names/gan.md
+              4  r        notes/gen/index/names/ganea.md
+              4  r        notes/gen/index/names/garsia.md
+              4  r        notes/gen/index/names/gaudin.md
+              4  r        notes/gen/index/names/gauss.md
+              4  r        notes/gen/index/names/gaussian.md
+              4  r        notes/gen/index/names/gepner.md
+              4  r        notes/gen/index/names/gersten.md
+              4  r        notes/gen/index/names/geuvers.md
+              4  r        notes/gen/index/names/gevrey.md
+              4  r        notes/gen/index/names/ghirlanda.md
+              4  r        notes/gen/index/names/gibbs.md
+              4  r        notes/gen/index/names/gigli.md
+              4  r        notes/gen/index/names/giorgi.md
+              4  r        notes/gen/index/names/glauber.md
+              4  r        notes/gen/index/names/glazman.md
+              4  r        notes/gen/index/names/goldbach.md
+              4  r        notes/gen/index/names/goldfeld.md
+              4  r        notes/gen/index/names/gongyo.md
+              4  r        notes/gen/index/names/gopalan.md
+              4  r        notes/gen/index/names/gotsman.md
+              4  r        notes/gen/index/names/gowers.md
+              4  r        notes/gen/index/names/graham.md
+              4  r        notes/gen/index/names/gram.md
+              4  r        notes/gen/index/names/grassmann.md
+              4  r        notes/gen/index/names/greb.md
+              4  r        notes/gen/index/names/green.md
+              4  r        notes/gen/index/names/griffiths.md
+              4  r        notes/gen/index/names/gromov.md
+              4  r        notes/gen/index/names/gross.md
+              4  r        notes/gen/index/names/grothendieck.md
+              4  r        notes/gen/index/names/guerra.md
+              4  r        notes/gen/index/names/guth.md
+              4  r        notes/gen/index/names/gyarfas.md
+              4  r        notes/gen/index/names/gysin.md
+              4  r        notes/gen/index/names/haar.md
+              4  r        notes/gen/index/names/hadamard.md
+              4  r        notes/gen/index/names/hadwiger.md
+              4  r        notes/gen/index/names/hahn.md
+              4  r        notes/gen/index/names/haldane.md
+              4  r        notes/gen/index/names/hall.md
+              4  r        notes/gen/index/names/hamiltonian.md
+              4  r        notes/gen/index/names/hanner.md
+              4  r        notes/gen/index/names/hansen.md
+              4  r        notes/gen/index/names/hardy.md
+              4  r        notes/gen/index/names/harris.md
+              4  r        notes/gen/index/names/hartogs.md
+              4  r        notes/gen/index/names/hasse.md
+              4  r        notes/gen/index/names/hassett.md
+              4  r        notes/gen/index/names/hausdorff.md
+              4  r        notes/gen/index/names/haxell.md
+              4  r        notes/gen/index/names/hecke.md
+              4  r        notes/gen/index/names/heegner.md
+              4  r        notes/gen/index/names/heilbronn.md
+              4  r        notes/gen/index/names/heintze.md
+              4  r        notes/gen/index/names/heisenberg.md
+              4  r        notes/gen/index/names/henon.md
+              4  r        notes/gen/index/names/hermite.md
+              4  r        notes/gen/index/names/hermitian.md
+              4  r        notes/gen/index/names/hessenberg.md
+              4  r        notes/gen/index/names/hessian.md
+              4  r        notes/gen/index/names/higgs.md
+              4  r        notes/gen/index/names/higman.md
+              4  r        notes/gen/index/names/hikita.md
+              4  r        notes/gen/index/names/hilbert.md
+              4  r        notes/gen/index/names/hindman.md
+              4  r        notes/gen/index/names/hirshberg.md
+              4  r        notes/gen/index/names/hochschild.md
+              4  r        notes/gen/index/names/hodge.md
+              4  r        notes/gen/index/names/hoffman.md
+              4  r        notes/gen/index/names/holder.md
+              4  r        notes/gen/index/names/honda.md
+              4  r        notes/gen/index/names/hopf.md
+              4  r        notes/gen/index/names/hovey.md
+              4  r        notes/gen/index/names/howe.md
+              4  r        notes/gen/index/names/howie.md
+              4  r        notes/gen/index/names/huang.md
+              4  r        notes/gen/index/names/hubbard.md
+              4  r        notes/gen/index/names/huh.md
+              4  r        notes/gen/index/names/hurewicz.md
+              4  r        notes/gen/index/names/hutchcroft.md
+              4  r        notes/gen/index/names/iitaka.md
+              4  r        notes/gen/index/names/ising.md
+              4  r        notes/gen/index/names/jacelon.md
+              4  r        notes/gen/index/names/jacobi.md
+              4  r        notes/gen/index/names/jacobian.md
+              4  r        notes/gen/index/names/jacobsthal.md
+              4  r        notes/gen/index/names/jiang.md
+              4  r        notes/gen/index/names/jordan.md
+              4  r        notes/gen/index/names/kac.md
+              4  r        notes/gen/index/names/kadets.md
+              4  r        notes/gen/index/names/kadison.md
+              4  r        notes/gen/index/names/kahler.md
+              4  r        notes/gen/index/names/kahn.md
+              4  r        notes/gen/index/names/kakeya.md
+              4  r        notes/gen/index/names/kalai.md
+              4  r        notes/gen/index/names/kalton.md
+              4  r        notes/gen/index/names/kaplansky.md
+              4  r        notes/gen/index/names/karcher.md
+              4  r        notes/gen/index/names/kasteleyn.md
+              4  r        notes/gen/index/names/kastler.md
+              4  r        notes/gen/index/names/katok.md
+              4  r        notes/gen/index/names/katz.md
+              4  r        notes/gen/index/names/kawamata.md
+              4  r        notes/gen/index/names/kazhdan.md
+              4  r        notes/gen/index/names/kerr.md
+              4  r        notes/gen/index/names/kervaire.md
+              4  r        notes/gen/index/names/khot.md
+              4  r        notes/gen/index/names/kirchberg.md
+              4  r        notes/gen/index/names/kirkpatrick.md
+              4  r        notes/gen/index/names/kleiner.md
+              4  r        notes/gen/index/names/klop.md
+              4  r        notes/gen/index/names/kobayashi.md
+              4  r        notes/gen/index/names/kodaira.md
+              4  r        notes/gen/index/names/koebe.md
+              4  r        notes/gen/index/names/kohn.md
+              4  r        notes/gen/index/names/kollar.md
+              4  r        notes/gen/index/names/konyagin.md
+              4  r        notes/gen/index/names/koszul.md
+              4  r        notes/gen/index/names/kraetzer.md
+              4  r        notes/gen/index/names/kuga.md
+              4  r        notes/gen/index/names/kumar.md
+              4  r        notes/gen/index/names/kummer.md
+              4  r        notes/gen/index/names/kunz.md
+              4  r        notes/gen/index/names/kurosh.md
+              4  r        notes/gen/index/names/kuznetsov.md
+              4  r        notes/gen/index/names/lafforgue.md
+              4  r        notes/gen/index/names/lagrangian.md
+              4  r        notes/gen/index/names/laguerre.md
+              4  r        notes/gen/index/names/lammers.md
+              4  r        notes/gen/index/names/landau.md
+              4  r        notes/gen/index/names/lang.md
+              4  r        notes/gen/index/names/langlands.md
+              4  r        notes/gen/index/names/laplace.md
+              4  r        notes/gen/index/names/laplacian.md
+              4  r        notes/gen/index/names/lashof.md
+              4  r        notes/gen/index/names/laughlin.md
+              4  r        notes/gen/index/names/laurent.md
+              4  r        notes/gen/index/names/lawson.md
+              4  r        notes/gen/index/names/lazic.md
+              4  r        notes/gen/index/names/lebesgue.md
+              4  r        notes/gen/index/names/lech.md
+              4  r        notes/gen/index/names/lee.md
+              4  r        notes/gen/index/names/legendre.md
+              4  r        notes/gen/index/names/lehn.md
+              4  r        notes/gen/index/names/lelong.md
+              4  r        notes/gen/index/names/leman.md
+              4  r        notes/gen/index/names/leng.md
+              4  r        notes/gen/index/names/levi.md
+              4  r        notes/gen/index/names/levine.md
+              4  r        notes/gen/index/names/lieb.md
+              4  r        notes/gen/index/names/lienard.md
+              4  r        notes/gen/index/names/lima.md
+              4  r        notes/gen/index/names/lindenstrauss.md
+              4  r        notes/gen/index/names/linial.md
+              4  r        notes/gen/index/names/liouville.md
+              4  r        notes/gen/index/names/lipman.md
+              4  r        notes/gen/index/names/lipschitz.md
+              4  r        notes/gen/index/names/littlewood.md
+              4  r        notes/gen/index/names/loewner.md
+              4  r        notes/gen/index/names/lorentz.md
+              4  r        notes/gen/index/names/lovasz.md
+              4  r        notes/gen/index/names/luca.md
+              4  r        notes/gen/index/names/luck.md
+              4  r        notes/gen/index/names/lusztig.md
+              4  r        notes/gen/index/names/macaulay.md
+              4  r        notes/gen/index/names/mahler.md
+              4  r        notes/gen/index/names/maker.md
+              4  r        notes/gen/index/names/margulis.md
+              4  r        notes/gen/index/names/markov.md
+              4  r        notes/gen/index/names/martin.md
+              4  r        notes/gen/index/names/mason.md
+              4  r        notes/gen/index/names/matomaki.md
+              4  r        notes/gen/index/names/matsumura.md
+              4  r        notes/gen/index/names/maxwell.md
+              4  r        notes/gen/index/names/mayer.md
+              4  r        notes/gen/index/names/mazur.md
+              4  r        notes/gen/index/names/mellin.md
+              4  r        notes/gen/index/names/mendel.md
+              4  r        notes/gen/index/names/mezard.md
+              4  r        notes/gen/index/names/milne.md
+              4  r        notes/gen/index/names/milnor.md
+              4  r        notes/gen/index/names/minkowski.md
+              4  r        notes/gen/index/names/mislin.md
+              4  r        notes/gen/index/names/mobius.md
+              4  r        notes/gen/index/names/moishezon.md
+              4  r        notes/gen/index/names/monge.md
+              4  r        notes/gen/index/names/moore.md
+              4  r        notes/gen/index/names/morava.md
+              4  r        notes/gen/index/names/mori.md
+              4  r        notes/gen/index/names/morse.md
+              4  r        notes/gen/index/names/moura.md
+              4  r        notes/gen/index/names/mukai.md
+              4  r        notes/gen/index/names/mumford.md
+              4  r        notes/gen/index/names/nagata.md
+              4  r        notes/gen/index/names/naimark.md
+              4  r        notes/gen/index/names/nakayama.md
+              4  r        notes/gen/index/names/naor.md
+              4  r        notes/gen/index/names/navier.md
+              4  r        notes/gen/index/names/neumann.md
+              4  r        notes/gen/index/names/newman.md
+              4  r        notes/gen/index/names/newton.md
+              4  r        notes/gen/index/names/nikodym.md
+              4  r        notes/gen/index/names/novikov.md
+              4  r        notes/gen/index/names/oka.md
+              4  r        notes/gen/index/names/ornstein.md
+              4  r        notes/gen/index/names/ostmann.md
+              4  r        notes/gen/index/names/ostrik.md
+              4  r        notes/gen/index/names/ostrovsky.md
+              4  r        notes/gen/index/names/ozawa.md
+              4  r        notes/gen/index/names/paley.md
+              4  r        notes/gen/index/names/pardon.md
+              4  r        notes/gen/index/names/parisi.md
+              4  r        notes/gen/index/names/patterson.md
+              4  r        notes/gen/index/names/penrose.md
+              4  r        notes/gen/index/names/perron.md
+              4  r        notes/gen/index/names/peternell.md
+              4  r        notes/gen/index/names/petty.md
+              4  r        notes/gen/index/names/pfaffian.md
+              4  r        notes/gen/index/names/phan.md
+              4  r        notes/gen/index/names/phillips.md
+              4  r        notes/gen/index/names/picard.md
+              4  r        notes/gen/index/names/pieri.md
+              4  r        notes/gen/index/names/pietsch.md
+              4  r        notes/gen/index/names/pink.md
+              4  r        notes/gen/index/names/pippenger.md
+              4  r        notes/gen/index/names/pisot.md
+              4  r        notes/gen/index/names/pixton.md
+              4  r        notes/gen/index/names/plancherel.md
+              4  r        notes/gen/index/names/platonov.md
+              4  r        notes/gen/index/names/plaut.md
+              4  r        notes/gen/index/names/poincare.md
+              4  r        notes/gen/index/names/poisson.md
+              4  r        notes/gen/index/names/pop.md
+              4  r        notes/gen/index/names/popa.md
+              4  r        notes/gen/index/names/potts.md
+              4  r        notes/gen/index/names/quillen.md
+              4  r        notes/gen/index/names/rabani.md
+              4  r        notes/gen/index/names/rademacher.md
+              4  r        notes/gen/index/names/radon.md
+              4  r        notes/gen/index/names/radziwi.md
+              4  r        notes/gen/index/names/raghavendra.md
+              4  r        notes/gen/index/names/ramanujan.md
+              4  r        notes/gen/index/names/ramsey.md
+              4  r        notes/gen/index/names/rayleigh.md
+              4  r        notes/gen/index/names/razak.md
+              4  r        notes/gen/index/names/rees.md
+              4  r        notes/gen/index/names/reiten.md
+              4  r        notes/gen/index/names/remmert.md
+              4  r        notes/gen/index/names/ren.md
+              4  r        notes/gen/index/names/ricci.md
+              4  r        notes/gen/index/names/richardson.md
+              4  r        notes/gen/index/names/riemann.md
+              4  r        notes/gen/index/names/riemannian.md
+              4  r        notes/gen/index/names/riesz.md
+              4  r        notes/gen/index/names/ringrose.md
+              4  r        notes/gen/index/names/robert.md
+              4  r        notes/gen/index/names/roch.md
+              4  r        notes/gen/index/names/rokhlin.md
+              4  r        notes/gen/index/names/rordam.md
+              4  r        notes/gen/index/names/ryser.md
+              4  r        notes/gen/index/names/sah.md
+              4  r        notes/gen/index/names/saint.md
+              4  r        notes/gen/index/names/sakai.md
+              4  r        notes/gen/index/names/sakamoto.md
+              4  r        notes/gen/index/names/salamon.md
+              4  r        notes/gen/index/names/salvetti.md
+              4  r        notes/gen/index/names/satake.md
+              4  r        notes/gen/index/names/sathaye.md
+              4  r        notes/gen/index/names/sawhney.md
+              4  r        notes/gen/index/names/sawin.md
+              4  r        notes/gen/index/names/saxl.md
+              4  r        notes/gen/index/names/schaeffer.md
+              4  r        notes/gen/index/names/schatten.md
+              4  r        notes/gen/index/names/schauder.md
+              4  r        notes/gen/index/names/schlank.md
+              4  r        notes/gen/index/names/schmidt.md
+              4  r        notes/gen/index/names/schnell.md
+              4  r        notes/gen/index/names/schramm.md
+              4  r        notes/gen/index/names/schrodinger.md
+              4  r        notes/gen/index/names/schur.md
+              4  r        notes/gen/index/names/schwartz.md
+              4  r        notes/gen/index/names/schwarz.md
+              4  r        notes/gen/index/names/schwarzschild.md
+              4  r        notes/gen/index/names/sebastiani.md
+              4  r        notes/gen/index/names/seifert.md
+              4  r        notes/gen/index/names/selmer.md
+              4  r        notes/gen/index/names/semmes.md
+              4  r        notes/gen/index/names/serre.md
+              4  r        notes/gen/index/names/servedio.md
+              4  r        notes/gen/index/names/seshadri.md
+              4  r        notes/gen/index/names/seymour.md
+              4  r        notes/gen/index/names/shafarevich.md
+              4  r        notes/gen/index/names/shah.md
+              4  r        notes/gen/index/names/sham.md
+              4  r        notes/gen/index/names/shapiro.md
+              4  r        notes/gen/index/names/shareshian.md
+              4  r        notes/gen/index/names/shelah.md
+              4  r        notes/gen/index/names/sherrington.md
+              4  r        notes/gen/index/names/shub.md
+              4  r        notes/gen/index/names/sidorenko.md
+              4  r        notes/gen/index/names/siegel.md
+              4  r        notes/gen/index/names/simons.md
+              4  r        notes/gen/index/names/sinai.md
+              4  r        notes/gen/index/names/singer.md
+              4  r        notes/gen/index/names/sitter.md
+              4  r        notes/gen/index/names/smale.md
+              4  r        notes/gen/index/names/smith.md
+              4  r        notes/gen/index/names/snaky.md
+              4  r        notes/gen/index/names/sobolev.md
+              4  r        notes/gen/index/names/sogge.md
+              4  r        notes/gen/index/names/solitar.md
+              4  r        notes/gen/index/names/solomon.md
+              4  r        notes/gen/index/names/song.md
+              4  r        notes/gen/index/names/spencer.md
+              4  r        notes/gen/index/names/stapleton.md
+              4  r        notes/gen/index/names/stein.md
+              4  r        notes/gen/index/names/steinberg.md
+              4  r        notes/gen/index/names/stiefel.md
+              4  r        notes/gen/index/names/stokes.md
+              4  r        notes/gen/index/names/stothers.md
+              4  r        notes/gen/index/names/street.md
+              4  r        notes/gen/index/names/strickland.md
+              4  r        notes/gen/index/names/svensson.md
+              4  r        notes/gen/index/names/swinnerton-dyer.md
+              4  r        notes/gen/index/names/swinnerton.md
+              4  r        notes/gen/index/names/sylow.md
+              4  r        notes/gen/index/names/szabo.md
+              4  r        notes/gen/index/names/szemeredi.md
+              4  r        notes/gen/index/names/tachikawa.md
+              4  r        notes/gen/index/names/talagrand.md
+              4  r        notes/gen/index/names/tangherlini.md
+              4  r        notes/gen/index/names/tao.md
+              4  r        notes/gen/index/names/tate.md
+              4  r        notes/gen/index/names/taylor.md
+              4  r        notes/gen/index/names/teller.md
+              4  r        notes/gen/index/names/thirring.md
+              4  r        notes/gen/index/names/thom.md
+              4  r        notes/gen/index/names/thomason.md
+              4  r        notes/gen/index/names/thompson.md
+              4  r        notes/gen/index/names/thorp.md
+              4  r        notes/gen/index/names/tikuisis.md
+              4  r        notes/gen/index/names/tingley.md
+              4  r        notes/gen/index/names/toda.md
+              4  r        notes/gen/index/names/toeplitz.md
+              4  r        notes/gen/index/names/tolsa.md
+              4  r        notes/gen/index/names/toms.md
+              4  r        notes/gen/index/names/trotter.md
+              4  r        notes/gen/index/names/trudinger.md
+              4  r        notes/gen/index/names/turing.md
+              4  r        notes/gen/index/names/uhlenbeck.md
+              4  r        notes/gen/index/names/ulam.md
+              4  r        notes/gen/index/names/urysohn.md
+              4  r        notes/gen/index/names/vaes.md
+              4  r        notes/gen/index/names/verbitsky.md
+              4  r        notes/gen/index/names/verdiere.md
+              4  r        notes/gen/index/names/verlinde.md
+              4  r        notes/gen/index/names/veronese.md
+              4  r        notes/gen/index/names/vey.md
+              4  r        notes/gen/index/names/viana.md
+              4  r        notes/gen/index/names/viehweg.md
+              4  r        notes/gen/index/names/vietoris.md
+              4  r        notes/gen/index/names/villain.md
+              4  r        notes/gen/index/names/villani.md
+              4  r        notes/gen/index/names/vinberg.md
+              4  r        notes/gen/index/names/virasoro.md
+              4  r        notes/gen/index/names/vlasov.md
+              4  r        notes/gen/index/names/voiculescu.md
+              4  r        notes/gen/index/names/voronoi.md
+              4  r        notes/gen/index/names/wachs.md
+              4  r        notes/gen/index/names/waerden.md
+              4  r        notes/gen/index/names/wakimoto.md
+              4  r        notes/gen/index/names/waldhausen.md
+              4  r        notes/gen/index/names/walfisz.md
+              4  r        notes/gen/index/names/wang.md
+              4  r        notes/gen/index/names/ward.md
+              4  r        notes/gen/index/names/weil.md
+              4  r        notes/gen/index/names/weinstein.md
+              4  r        notes/gen/index/names/weisfeiler.md
+              4  r        notes/gen/index/names/weiss.md
+              4  r        notes/gen/index/names/werner.md
+              4  r        notes/gen/index/names/weyl.md
+              4  r        notes/gen/index/names/whitney.md
+              4  r        notes/gen/index/names/whittaker.md
+              4  r        notes/gen/index/names/wick.md
+              4  r        notes/gen/index/names/wilson.md
+              4  r        notes/gen/index/names/winter.md
+              4  r        notes/gen/index/names/witt.md
+              4  r        notes/gen/index/names/woodin.md
+              4  r        notes/gen/index/names/yang.md
+              4  r        notes/gen/index/names/yau.md
+              4  r        notes/gen/index/names/young.md
+              4  r        notes/gen/index/names/zacharias.md
+              4  r        notes/gen/index/names/zagier.md
+              4  r        notes/gen/index/names/zarankiewicz.md
+              4  r        notes/gen/index/names/zaremsky.md
+              4  r        notes/gen/index/names/zariski.md
+              4  r        notes/gen/index/names/zhang.md
+              4  r        notes/gen/index/names/zilber.md
+              4  r        notes/gen/index/number-theory/001-milnes-rationality-conjecture.md
+              4  r        notes/gen/index/number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
+              4  r        notes/gen/index/number-theory/003-quasi-riemann-hypothesis.md
+              4  r        notes/gen/index/number-theory/004-hilberts-tenth-problem-over-q.md
+              4  r        notes/gen/index/number-theory/005-irrationality-of-catalans-constant.md
+              4  r        notes/gen/index/number-theory/006-goldfelds-conjecture.md
+              4  r        notes/gen/index/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              4  r        notes/gen/index/number-theory/008-deligne-drinfeld-conjecture.md
+              4  r        notes/gen/index/number-theory/009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md
+              4  r        notes/gen/index/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md
+              4  r        notes/gen/index/number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              4  r        notes/gen/index/number-theory/012-independent-largest-prime-factors-of-consecutive-integers.md
+              4  r        notes/gen/index/number-theory/013-ostmanns-inverse-goldbach-conjecture.md
+              4  r        notes/gen/index/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              4  r        notes/gen/index/number-theory/015-torus-packet-equidistribution-in-prime-quartic-and-sextic-degrees.md
+              4  r        notes/gen/index/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              4  r        notes/gen/index/number-theory/017-irrationality-exponent-of-is-2.md
+              4  r        notes/gen/index/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              4  r        notes/gen/index/number-theory/019-p-adic-section-conjecture.md
+              4  r        notes/gen/index/number-theory/020-squarefree-quartics-and-power-free-polynomial-values.md
+              4  r        notes/gen/index/number-theory/021-a-quadratic-bound-for-jacobsthals-function.md
+              4  r        notes/gen/index/number-theory/022-weak-inhomogeneous-duffin-schaeffer-conjecture.md
+              4  r        notes/gen/index/number-theory/023-pattersons-first-moment-for-cubic-gauss-sums.md
+              4  r        notes/gen/index/number-theory/024-an-asymptotic-formula-for-the-number-of-totients.md
+              4  r        notes/gen/index/number-theory/025-erdoss-short-egyptian-fraction-conjecture.md
+              4  r        notes/gen/index/number-theory/026-positive-lower-density-of-large-prime-gaps.md
+              4  r        notes/gen/index/number-theory/027-integral-density-on-curve-character-varieties.md
+              4  r        notes/gen/index/number-theory/028-gaussian-moat-conjecture.md
+              4  r        notes/gen/index/number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md
+              4  r        notes/gen/index/number-theory/030-modularity-over-imaginary-quadratic-fields.md
+              4  r        notes/gen/index/number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md
+              4  r        notes/gen/index/operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md
+              4  r        notes/gen/index/operator-algebras/286-arithmetic-rigidity-of-lattice-von-neumann-algebras.md
+              4  r        notes/gen/index/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              4  r        notes/gen/index/operator-algebras/288-kadisons-similarity-conjecture.md
+              4  r        notes/gen/index/operator-algebras/289-strong-kadison-kastler-conjecture.md
+              4  r        notes/gen/index/operator-algebras/290-connes-bicentralizer-conjecture-and-relative-bicentralizers.md
+              4  r        notes/gen/index/operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md
+              4  r        notes/gen/index/operator-algebras/292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md
+              4  r        notes/gen/index/operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+              4  r        notes/gen/index/operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md
+              4  r        notes/gen/index/operator-algebras/295-kadison-ringrose-cohomology-conjecture.md
+              4  r        notes/gen/index/operator-algebras/296-generator-problem-for-finite-factors.md
+              4  r        notes/gen/index/operator-algebras/297-a-zfc-counterexample-to-naimarks-problem.md
+              4  r        notes/gen/index/operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md
+              4  r        notes/gen/index/operator-algebras/299-kirchberg-r-rdam-character-criterion.md
+              4  r        notes/gen/index/operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md
+              4  r        notes/gen/index/operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md
+              4  r        notes/gen/index/operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md
+              4  r        notes/gen/index/operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md
+              4  r        notes/gen/index/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              4  r        notes/gen/index/partial-differential-equations/363-boltzmann-nonuniqueness-with-exact-local-conservation.md
+              4  r        notes/gen/index/partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md
+              4  r        notes/gen/index/partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md
+              4  r        notes/gen/index/partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md
+              4  r        notes/gen/index/partial-differential-equations/367-critical-dimension-for-the-one-phase-bernoulli-problem.md
+              4  r        notes/gen/index/partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md
+              4  r        notes/gen/index/partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md
+              4  r        notes/gen/index/partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md
+              4  r        notes/gen/index/partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md
+              4  r        notes/gen/index/partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md
+              4  r        notes/gen/index/partial-differential-equations/373-nonattainment-in-three-marginal-coulomb-transport.md
+              4  r        notes/gen/index/partial-differential-equations/374-sharp-one-third-stability-of-optimal-transport-maps.md
+              4  r        notes/gen/index/partial-differential-equations/375-de-giorgis-conjecture-in-dimension-eight.md
+              4  r        notes/gen/index/partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+              4  r        notes/gen/index/partial-differential-equations/377-interior-c-1-regularity-for-infinity-harmonic-functions.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/214-benjamini-schramm-nonuniqueness-conjecture.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/217-low-temperature-sherrington-kirkpatrick-fluctuation-law.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/224-critical-and-near-critical-universality-for-voronoi-percolation.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/229-sharp-three-and-four-state-reconstruction-thresholds.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/230-exact-hausdorff-measure-for-sle.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/231-free-uniform-spanning-forest-is-a-factor-of-iid.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/233-joint-critical-ashkin-teller-scaling-limit.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+              4  r        notes/gen/index/probability-and-statistical-mechanics/239-sharp-singularity-rates-for-symmetric-sign-matrices.md
+              4  r        notes/gen/index/real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md
+              4  r        notes/gen/index/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+              4  r        notes/gen/index/real-and-complex-analysis/073-falconer-distance-conjecture.md
+              4  r        notes/gen/index/real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md
+              4  r        notes/gen/index/real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md
+              4  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
+              4  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
+              4  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              4  r        notes/gen/index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
+              4  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
+              4  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
+              4  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
+              4  r        notes/gen/index/real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md
+              4  r        notes/gen/index/real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md
+              4  r        notes/gen/index/real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md
+              4  r        notes/gen/index/real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
+              4  r        notes/gen/index/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              4  r        notes/gen/index/theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md
+              4  r        notes/gen/index/theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md
+              4  r        notes/gen/index/theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md
+              4  r        notes/gen/index/theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md
+              4  r        notes/gen/index/theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md
+              4  r        notes/gen/index/theoretical-computer-science/108-a-cubic-permanent-determinant-lower-bound.md
+              4  r        notes/gen/index/theoretical-computer-science/109-integer-multiplication-below-n-n.md
+              4  r        notes/gen/index/theoretical-computer-science/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md
+              4  r        notes/gen/index/theoretical-computer-science/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md
+              4  r        notes/gen/index/theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md
+              4  r        notes/gen/index/theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+              4  r        notes/gen/index/theoretical-computer-science/114-approximate-counting-of-common-integer-polymatroid-bases.md
+              4  r        notes/gen/index/theoretical-computer-science/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md
+              4  r        notes/gen/index/theoretical-computer-science/116-uniform-identity-testing-for-noncommutative-formulas.md
+              4  r        notes/gen/index/theoretical-computer-science/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md
+              4  r        notes/gen/index/theoretical-computer-science/118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md
+              4  r        notes/gen/index/theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md
+              4  r        notes/gen/index/theoretical-computer-science/120-almost-linear-time-exact-matching-in-general-graphs.md
+              4  r        notes/gen/index/theoretical-computer-science/121-almost-linear-expected-time-approximation-of-edit-distance.md
+              4  r        notes/gen/index/theoretical-computer-science/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md
+              4  r        notes/gen/index/theoretical-computer-science/124-polynomial-time-scheduling-on-three-identical-machines.md
+              4  r        notes/gen/index/theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md
+              4  r        notes/gen/index/theoretical-computer-science/126-exponential-semidefinite-complexity-of-perfect-matching.md
+              4  r        notes/gen/index/theoretical-computer-science/127-asymptotic-gotsman-linial-conjecture.md
+              4  r        notes/gen/index/theoretical-computer-science/128-a-factor-two-approximation-for-shortest-common-superstring.md
+              4  r        notes/gen/index/theoretical-computer-science/129-exponential-state-costs-for-two-way-automata.md
+              4  r        notes/gen/index/theoretical-computer-science/130-fourier-transforms-below-n-n.md
+              4  r        notes/gen/index/theoretical-computer-science/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md
+              4  r        notes/gen/index/theoretical-computer-science/132-a-counterexample-to-the-quadratic-sensitivity-conjecture.md
+              4  r        notes/gen/index/theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md
+              4  r        notes/gen/index/theoretical-computer-science/134-generalized-star-height-at-most-three.md
+              4  r        notes/gen/index/theoretical-computer-science/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md
+              4  r        notes/gen/index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md
+              4  r        notes/gen/index/theoretical-computer-science/137-one-tape-time-simulation-in-two-fifths-power-space.md
+              4  r        notes/gen/index/theoretical-computer-science/138-subset-sum-in-o-2-0-49n-time.md
+              4  r        notes/gen/index/theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md
+              4  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+              4  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
+              4  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              4  r        notes/gen/index/topics/abelian-varieties.md
+              4  r        notes/gen/index/topics/additive-combinatorics.md
+              4  r        notes/gen/index/topics/algebraic-geometry.md
+              4  r        notes/gen/index/topics/algebraic-topology.md
+              4  r        notes/gen/index/topics/algorithms.md
+              4  r        notes/gen/index/topics/analytic-number-theory.md
+              4  r        notes/gen/index/topics/arithmetic-geometry.md
+              4  r        notes/gen/index/topics/automorphic-forms.md
+              4  r        notes/gen/index/topics/banach-spaces.md
+              4  r        notes/gen/index/topics/calculus-of-variations.md
+              4  r        notes/gen/index/topics/category-theory.md
+              4  r        notes/gen/index/topics/cluster-algebras.md
+              4  r        notes/gen/index/topics/coding-theory.md
+              4  r        notes/gen/index/topics/combinatorial-games.md
+              4  r        notes/gen/index/topics/combinatorial-optimization.md
+              4  r        notes/gen/index/topics/commutative-algebra.md
+              4  r        notes/gen/index/topics/complex-analysis.md
+              4  r        notes/gen/index/topics/complex-geometry.md
+              4  r        notes/gen/index/topics/complexity-theory.md
+              4  r        notes/gen/index/topics/computability.md
+              4  r        notes/gen/index/topics/condensed-matter.md
+              4  r        notes/gen/index/topics/conformal-universality.md
+              4  r        notes/gen/index/topics/convex-geometry.md
+              4  r        notes/gen/index/topics/convex-optimization.md
+              4  r        notes/gen/index/topics/curves.md
+              4  r        notes/gen/index/topics/differential-geometry.md
+              4  r        notes/gen/index/topics/diophantine-equations.md
+              4  r        notes/gen/index/topics/discrete-geometry.md
+              4  r        notes/gen/index/topics/disordered-systems.md
+              4  r        notes/gen/index/topics/dynamical-systems.md
+              4  r        notes/gen/index/topics/elliptic-curves.md
+              4  r        notes/gen/index/topics/enumerative-combinatorics.md
+              4  r        notes/gen/index/topics/ergodic-theory.md
+              4  r        notes/gen/index/topics/expanders-and-spectral-graphs.md
+              4  r        notes/gen/index/topics/extremal-combinatorics.md
+              4  r        notes/gen/index/topics/fluid-dynamics.md
+              4  r        notes/gen/index/topics/formal-languages.md
+              4  r        notes/gen/index/topics/fractal-geometry.md
+              4  r        notes/gen/index/topics/functional-analysis.md
+              4  r        notes/gen/index/topics/galois-theory.md
+              4  r        notes/gen/index/topics/game-theory.md
+              4  r        notes/gen/index/topics/general-relativity.md
+              4  r        notes/gen/index/topics/geometric-measure-theory.md
+              4  r        notes/gen/index/topics/geometric-topology.md
+              4  r        notes/gen/index/topics/graph-coloring.md
+              4  r        notes/gen/index/topics/graph-theory.md
+              4  r        notes/gen/index/topics/group-theory.md
+              4  r        notes/gen/index/topics/harmonic-analysis.md
+              4  r        notes/gen/index/topics/hilbert-problems.md
+              4  r        notes/gen/index/topics/hypergraphs.md
+              4  r        notes/gen/index/topics/information-theory.md
+              4  r        notes/gen/index/topics/kinetic-theory.md
+              4  r        notes/gen/index/topics/knot-theory.md
+              4  r        notes/gen/index/topics/lie-theory.md
+              4  r        notes/gen/index/topics/logic.md
+              4  r        notes/gen/index/topics/machine-learning.md
+              4  r        notes/gen/index/topics/manifolds.md
+              4  r        notes/gen/index/topics/mathematical-physics.md
+              4  r        notes/gen/index/topics/matroids.md
+              4  r        notes/gen/index/topics/measure-theory.md
+              4  r        notes/gen/index/topics/metric-geometry.md
+              4  r        notes/gen/index/topics/minimal-surfaces.md
+              4  r        notes/gen/index/topics/modular-representation.md
+              4  r        notes/gen/index/topics/modularity.md
+              4  r        notes/gen/index/topics/noncommutative-algebra.md
+              4  r        notes/gen/index/topics/number-fields.md
+              4  r        notes/gen/index/topics/operator-algebras.md
+              4  r        notes/gen/index/topics/optimal-transport.md
+              4  r        notes/gen/index/topics/partial-differential-equations.md
+              4  r        notes/gen/index/topics/percolation.md
+              4  r        notes/gen/index/topics/planar-maps-and-lattice-models.md
+              4  r        notes/gen/index/topics/potential-theory.md
+              4  r        notes/gen/index/topics/primes.md
+              4  r        notes/gen/index/topics/probabilistic-combinatorics.md
+              4  r        notes/gen/index/topics/probability.md
+              4  r        notes/gen/index/topics/quantum-computing.md
+              4  r        notes/gen/index/topics/quantum-information.md
+              4  r        notes/gen/index/topics/quantum-theory.md
+              4  r        notes/gen/index/topics/ramsey-theory.md
+              4  r        notes/gen/index/topics/random-graphs.md
+              4  r        notes/gen/index/topics/random-matrices.md
+              4  r        notes/gen/index/topics/representation-theory.md
+              4  r        notes/gen/index/topics/ricci-flow.md
+              4  r        notes/gen/index/topics/riemannian-geometry.md
+              4  r        notes/gen/index/topics/sampling-and-counting.md
+              4  r        notes/gen/index/topics/spectral-theory.md
+              4  r        notes/gen/index/topics/spin-glasses.md
+              4  r        notes/gen/index/topics/stable-homotopy.md
+              4  r        notes/gen/index/topics/statistical-mechanics.md
+              4  r        notes/gen/index/topics/surfaces.md
+              4  r        notes/gen/index/topics/symplectic-geometry.md
+              4  r        notes/gen/index/topics/tropical-geometry.md
+              4  r        notes/gen/index/topology/304-hilbert-smith-conjecture-in-every-dimension.md
+              4  r        notes/gen/index/topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md
+              4  r        notes/gen/index/topology/306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md
+              4  r        notes/gen/index/topology/307-failure-of-rational-injectivity-for-maximal-coarse-assembly.md
+              4  r        notes/gen/index/topology/308-smith-toda-complexes-at-every-height-with-varying-primes.md
+              4  r        notes/gen/index/topology/309-kervaire-invariant-problem-at-the-prime-three.md
+              4  r        notes/gen/index/topology/310-quillens-conjecture-in-rational-homology.md
+              4  r        notes/gen/index/topology/311-chais-invariant-ideal-conjecture.md
+              4  r        notes/gen/index/topology/312-grothendieck-homotopy-hypothesis.md
+              4  r        notes/gen/index/topology/313-finite-generation-for-the-k-n-local-sphere.md
+              4  r        notes/gen/index/topology/314-chromatic-smith-fixed-point-problem-for-finite-p-groups.md
+              4  r        notes/gen/index/topology/315-four-dimensional-singer-conjecture.md
+              4  r        notes/gen/index/topology/316-curtiss-conjecture.md
+              4  r        notes/gen/index/topology/317-thomason-model-structures-in-every-strict-higher-dimension.md
+              4  r        notes/gen/index/topology/318-chromatic-splitting-counterexamples-and-filtrations.md
+              4  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
+              4  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
+              4  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              3  r        notes/gen/reports/abstracts.md
+              4  r        notes/gen/reports/citations.md
+              4  r        notes/gen/reports/conditional.md
+              3  r        notes/gen/reports/conjecture-standing.md
+              3  r        notes/gen/reports/counterexample-crosscheck.md
+              5  r        notes/gen/reports/counterexample-tag.md
+              3  r        notes/gen/reports/dependency-drift.md
+              2  r        notes/gen/reports/findings.md
+              4  r        notes/gen/reports/formalization-deps.md
+              2  r        notes/gen/reports/formalization-faithfulness.md
+              2  r        notes/gen/reports/links.md
+              3  r        notes/gen/reports/named-conjectures.md
+              2  r        notes/gen/reports/named-results.md
+              2  r        notes/gen/reports/names.md
+              2  r        notes/gen/reports/proof-density.md
+              3  r        notes/gen/reports/resolution-tag.md
+              3  r        notes/gen/reports/scope-exclusions.md
+              4  r        notes/gen/reports/sources.md
+              4  r        notes/gen/reports/subfinding-pairs.md
+              3  r        notes/gen/reports/t0-chains.md
+              6  r        notes/gen/reports/t0-triage.md
+              2  r        notes/gen/reports/topics.md
+              3  r        notes/gen/reports/verification-dirs.md
+              4  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
+              4  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
+              4  r        notes/gen/summaries/004-hilberts-tenth-problem-over-q.md
+              4  r        notes/gen/summaries/006-goldfelds-conjecture.md
+              4  r        notes/gen/summaries/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              4  r        notes/gen/summaries/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md
+              4  r        notes/gen/summaries/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              4  r        notes/gen/summaries/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              4  r        notes/gen/summaries/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              4  r        notes/gen/summaries/017-irrationality-exponent-of-is-2.md
+              4  r        notes/gen/summaries/018-margulis-platonov-conjecture-over-global-fields.md
+              4  r        notes/gen/summaries/019-p-adic-section-conjecture.md
+              4  r        notes/gen/summaries/022-weak-inhomogeneous-duffin-schaeffer-conjecture.md
+              4  r        notes/gen/summaries/029-artins-primitive-root-conjecture-infinitude-for-every-base.md
+              4  r        notes/gen/summaries/030-modularity-over-imaginary-quadratic-fields.md
+              4  r        notes/gen/summaries/031-uchidas-conjecture-for-open-galois-homomorphisms.md
+              4  r        notes/gen/summaries/032-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              4  r        notes/gen/summaries/034-log-abundance-and-effective-iitaka-fibrations.md
+              4  r        notes/gen/summaries/037-sharp-ordinary-double-point-volume-gap.md
+              4  r        notes/gen/summaries/038-fujitas-freeness-conjecture.md
+              4  r        notes/gen/summaries/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+              4  r        notes/gen/summaries/040-blochs-conjecture-for-complex-surfaces.md
+              4  r        notes/gen/summaries/041-hyperkahler-syz-and-projective-space-bases.md
+              4  r        notes/gen/summaries/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md
+              4  r        notes/gen/summaries/043-p-w-for-fixed-determinant-moduli-spaces.md
+              4  r        notes/gen/summaries/044-equivariant-cohomological-hikita-conjecture-for-quivers.md
+              4  r        notes/gen/summaries/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md
+              4  r        notes/gen/summaries/048-a-characteristic-zero-counterexample-to-lipman-zariski.md
+              4  r        notes/gen/summaries/049-a-stable-coordinate-counterexample-in-four-variables.md
+              4  r        notes/gen/summaries/050-a-counterexample-to-griffiths-positivity-conjecture.md
+              4  r        notes/gen/summaries/051-kobayashis-canonical-ampleness-conjecture.md
+              4  r        notes/gen/summaries/052-tangent-bundle-splittings-and-universal-covers.md
+              4  r        notes/gen/summaries/053-a-counterexample-to-pixtons-original-completeness-conjecture.md
+              4  r        notes/gen/summaries/054-counterexamples-to-kuznetsovs-rationality-conjecture.md
+              4  r        notes/gen/summaries/055-todas-gepner-conjecture-and-large-volume-stability.md
+              4  r        notes/gen/summaries/057-campanas-abelianity-conjecture-and-special-varieties.md
+              4  r        notes/gen/summaries/059-counterexamples-to-zariskis-multiplicity-conjecture.md
+              4  r        notes/gen/summaries/060-global-spherical-shell-conjecture.md
+              4  r        notes/gen/summaries/062-lebrun-salamon-conjecture-and-projective-contact-classification.md
+              4  r        notes/gen/summaries/063-generalized-mukai-conjecture.md
+              4  r        notes/gen/summaries/064-constant-problem-for-surface-singularities.md
+              4  r        notes/gen/summaries/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md
+              4  r        notes/gen/summaries/067-campana-peternell-conjecture-in-dimension-six.md
+              4  r        notes/gen/summaries/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+              4  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
+              4  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
+              4  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              4  r        notes/gen/summaries/079-sogges-local-smoothing-conjecture-in-dimension-three.md
+              4  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
+              4  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
+              4  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
+              4  r        notes/gen/summaries/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+              4  r        notes/gen/summaries/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md
+              4  r        notes/gen/summaries/098-a-negative-answer-to-the-lang-plaut-problem.md
+              4  r        notes/gen/summaries/101-sharp-simplex-conjecture-for-isotropic-constants.md
+              4  r        notes/gen/summaries/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              4  r        notes/gen/summaries/103-derandomization-of-logarithmic-space-l-rl-bpl.md
+              4  r        notes/gen/summaries/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md
+              4  r        notes/gen/summaries/105-2-to-1-games-conjecture-with-perfect-completeness.md
+              4  r        notes/gen/summaries/106-hardness-of-coloring-three-colorable-graphs.md
+              4  r        notes/gen/summaries/107-matrix-multiplication-with-exponent-at-most-9-4.md
+              4  r        notes/gen/summaries/108-a-cubic-permanent-determinant-lower-bound.md
+              4  r        notes/gen/summaries/109-integer-multiplication-below-n-n.md
+              4  r        notes/gen/summaries/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md
+              4  r        notes/gen/summaries/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md
+              4  r        notes/gen/summaries/112-beyond-the-square-root-exponent-for-depth-three-circuits.md
+              4  r        notes/gen/summaries/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+              4  r        notes/gen/summaries/114-approximate-counting-of-common-integer-polymatroid-bases.md
+              4  r        notes/gen/summaries/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md
+              4  r        notes/gen/summaries/116-uniform-identity-testing-for-noncommutative-formulas.md
+              4  r        notes/gen/summaries/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md
+              4  r        notes/gen/summaries/118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md
+              4  r        notes/gen/summaries/119-courtade-kumar-and-hellinger-conjectures.md
+              4  r        notes/gen/summaries/120-almost-linear-time-exact-matching-in-general-graphs.md
+              4  r        notes/gen/summaries/121-almost-linear-expected-time-approximation-of-edit-distance.md
+              4  r        notes/gen/summaries/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md
+              4  r        notes/gen/summaries/124-polynomial-time-scheduling-on-three-identical-machines.md
+              4  r        notes/gen/summaries/125-approximation-threshold-for-metric-k-median.md
+              4  r        notes/gen/summaries/126-exponential-semidefinite-complexity-of-perfect-matching.md
+              4  r        notes/gen/summaries/127-asymptotic-gotsman-linial-conjecture.md
+              4  r        notes/gen/summaries/128-a-factor-two-approximation-for-shortest-common-superstring.md
+              4  r        notes/gen/summaries/129-exponential-state-costs-for-two-way-automata.md
+              4  r        notes/gen/summaries/130-fourier-transforms-below-n-n.md
+              4  r        notes/gen/summaries/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md
+              4  r        notes/gen/summaries/132-a-counterexample-to-the-quadratic-sensitivity-conjecture.md
+              4  r        notes/gen/summaries/133-complexity-of-weisfeiler-leman-refinement.md
+              4  r        notes/gen/summaries/134-generalized-star-height-at-most-three.md
+              4  r        notes/gen/summaries/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md
+              4  r        notes/gen/summaries/136-quasilinear-pcp-for-ppad-conjecture.md
+              4  r        notes/gen/summaries/137-one-tape-time-simulation-in-two-fifths-power-space.md
+              4  r        notes/gen/summaries/138-subset-sum-in-o-2-0-49n-time.md
+              4  r        notes/gen/summaries/139-subpolynomial-queries-for-log-concave-sampling.md
+              4  r        notes/gen/summaries/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+              4  r        notes/gen/summaries/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
+              4  r        notes/gen/summaries/142-deterministic-polynomial-factorization-over-prime-fields.md
+              4  r        notes/gen/summaries/147-near-boundary-birkhoff-conjecture.md
+              4  r        notes/gen/summaries/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md
+              4  r        notes/gen/summaries/164-hindmans-finite-sums-and-products-conjecture.md
+              4  r        notes/gen/summaries/166-higher-dimensional-erdos-distinct-distances-conjecture.md
+              4  r        notes/gen/summaries/171-hypercube-ramsey-conjecture.md
+              4  r        notes/gen/summaries/193-serres-intersection-multiplicity-conjecture.md
+              4  r        notes/gen/summaries/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md
+              4  r        notes/gen/summaries/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md
+              4  r        notes/gen/summaries/197-nonsofic-groups-and-group-ring-counterexamples.md
+              4  r        notes/gen/summaries/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+              4  r        notes/gen/summaries/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md
+              4  r        notes/gen/summaries/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md
+              4  r        notes/gen/summaries/201-a-counterexample-to-kuroshs-division-ring-problem.md
+              4  r        notes/gen/summaries/202-blockwise-alperin-weight-conjecture.md
+              4  r        notes/gen/summaries/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md
+              4  r        notes/gen/summaries/204-tensor-saturation-for-even-spin-groups.md
+              4  r        notes/gen/summaries/208-finite-benson-etingof-ostrik-conjecture.md
+              4  r        notes/gen/summaries/209-integral-counterexamples-to-gerstens-conjecture.md
+              4  r        notes/gen/summaries/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              4  r        notes/gen/summaries/226-double-dimer-cle-4-conjecture-in-the-half-plane.md
+              4  r        notes/gen/summaries/243-choiceless-counting-does-not-capture-polynomial-time.md
+              4  r        notes/gen/summaries/244-partition-principle-does-not-imply-choice.md
+              4  r        notes/gen/summaries/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+              4  r        notes/gen/summaries/258-gerstens-conjecture-for-one-relator-groups.md
+              4  r        notes/gen/summaries/259-a-group-without-fixed-price.md
+              4  r        notes/gen/summaries/268-spin-one-haldane-gap.md
+              4  r        notes/gen/summaries/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md
+              4  r        notes/gen/summaries/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              4  r        notes/gen/summaries/274-moores-parity-conjecture-for-qac-0.md
+              4  r        notes/gen/summaries/284-optimal-randomized-quantum-query-exponent.md
+              4  r        notes/gen/summaries/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md
+              4  r        notes/gen/summaries/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              4  r        notes/gen/summaries/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md
+              4  r        notes/gen/summaries/304-hilbert-smith-conjecture-in-every-dimension.md
+              4  r        notes/gen/summaries/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md
+              4  r        notes/gen/summaries/306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md
+              4  r        notes/gen/summaries/309-kervaire-invariant-problem-at-the-prime-three.md
+              4  r        notes/gen/summaries/310-quillens-conjecture-in-rational-homology.md
+              4  r        notes/gen/summaries/311-chais-invariant-ideal-conjecture.md
+              4  r        notes/gen/summaries/313-finite-generation-for-the-k-n-local-sphere.md
+              4  r        notes/gen/summaries/315-four-dimensional-singer-conjecture.md
+              4  r        notes/gen/summaries/316-curtiss-conjecture.md
+              4  r        notes/gen/summaries/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
+              4  r        notes/gen/summaries/320-a-four-dimensional-counterexample-to-borel-rigidity.md
+              4  r        notes/gen/summaries/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              4  r        notes/gen/summaries/324-lipschitz-equivalence-without-linear-isomorphism.md
+              4  r        notes/gen/summaries/325-complete-crouzeix-conjecture.md
+              4  r        notes/gen/summaries/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+              4  r        notes/gen/summaries/332-metric-markov-cotype-two-for-1.md
+              4  r        notes/gen/summaries/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+              4  r        notes/gen/summaries/335-gromovs-integral-scalar-curvature-inequality.md
+              4  r        notes/gen/summaries/338-yaus-uniformization-conjecture.md
+              4  r        notes/gen/summaries/339-katoks-entropy-rigidity-conjecture.md
+              4  r        notes/gen/summaries/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md
+              4  r        notes/gen/summaries/341-donaldsons-hypersymplectic-deformation-conjecture.md
+              4  r        notes/gen/summaries/342-donaldsons-tamed-to-compatible-conjecture.md
+              4  r        notes/gen/summaries/344-metric-blaschke-conjecture.md
+              4  r        notes/gen/summaries/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md
+              4  r        notes/gen/summaries/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md
+              4  r        notes/gen/summaries/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md
+              4  r        notes/gen/summaries/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md
+              4  r        notes/gen/summaries/349-solomon-yau-least-volume-conjecture.md
+              4  r        notes/gen/summaries/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md
+              4  r        notes/gen/summaries/352-finite-time-singularity-of-calabi-flow.md
+              4  r        notes/gen/summaries/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              4  r        notes/gen/summaries/366-planar-mumford-shah-regularity-conjecture.md
+              4  r        notes/gen/summaries/368-three-dimensional-ball-evans-approximation-problem.md
+              4  r        notes/gen/summaries/375-de-giorgis-conjecture-in-dimension-eight.md
+              4  r        notes/gen/summaries/README.md
+              4  r        notes/gen/tables/abstracts.tsv
+             30  r        notes/gen/tables/catalog.tsv
+              4  r        notes/gen/tables/citation.tsv
+              4  r        notes/gen/tables/config-declaration.tsv
+              4  r        notes/gen/tables/configs.tsv
+              4  r        notes/gen/tables/families.tsv
+              4  r        notes/gen/tables/family-config.tsv
+              4  r        notes/gen/tables/family-lean.tsv
+              4  r        notes/gen/tables/family-manuscript.tsv
+              4  r        notes/gen/tables/family-name.tsv
+              5  r        notes/gen/tables/family-topic.tsv
+              4  r        notes/gen/tables/family-trace.tsv
+              6  r        notes/gen/tables/formalization-deps.tsv
+              4  r        notes/gen/tables/gate-rows.tsv
+              4  r        notes/gen/tables/lean-dirs.tsv
+              5  r        notes/gen/tables/links.tsv
+              4  r        notes/gen/tables/manuscripts.tsv
+              4  r        notes/gen/tables/names.tsv
+              5  r        notes/gen/tables/quotes.tsv
+              4  r        notes/gen/tables/scope-notes.tsv
+             16  r        notes/gen/tables/sources.tsv
+              4  r        notes/gen/tables/splits.tsv
+             10  r        notes/gen/tables/subfindings.tsv
+              4  r        notes/gen/tables/topics-rendered.tsv
+              4  r        notes/gen/tables/traces.tsv
+              2  r        notes/gen/templates/report/README.md.j2
+              3  r        notes/gen/templates/report/abstracts.md.j2
+              3  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
+              3  r        notes/gen/templates/report/dependency-drift.md.j2
+              2  r        notes/gen/templates/report/findings.md.j2
+              2  r        notes/gen/templates/report/fleet-design.md.j2
+              3  r        notes/gen/templates/report/formalization-faithfulness.md.j2
+              3  r        notes/gen/templates/report/index-design.md.j2
+              2  r        notes/gen/templates/report/index-links.md.j2
+              2  r        notes/gen/templates/report/links.md.j2
+              2  r        notes/gen/templates/report/named-results.md.j2
+              2  r        notes/gen/templates/report/names.md.j2
+              2  r        notes/gen/templates/report/proof-density.md.j2
+              3  r        notes/gen/templates/report/scope-exclusions.md.j2
+              2  r        notes/gen/templates/report/scripts-README.md.j2
+              3  r        notes/gen/templates/report/sources.md.j2
+              3  r        notes/gen/templates/report/subfinding-pairs.md.j2
+              3  r        notes/gen/templates/report/t0-chains.md.j2
+              2  r        notes/gen/templates/report/templates.md.j2
+              2  r        notes/gen/templates/report/topics.md.j2
+              3  r        notes/gen/templates/report/verification-dirs.md.j2
+              4  r        notes/templates/discipline.md.j2
+              4  r        notes/templates/family.md.j2
+              4  r        notes/templates/index-readme.md.j2
+              4  r        notes/templates/name.md.j2
+              4  r        notes/templates/summaries/summary.md.j2
+              4  r        notes/templates/topic.md.j2
+[probe2] write-mode paths outside notes/:

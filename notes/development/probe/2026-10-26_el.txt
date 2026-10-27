@@ -1,0 +1,59 @@
+family->manuscript: 719  372 families; overview.tex-only links 0; CONTENTS.md-only links 0
+manuscript->formalized: 172  of 719 manuscripts; 135 families
+family->scope note: 242  of 372 families
+scope note->comparator statement: 426  416 distinct configs; 10 duplicate links inside 7 docs (071, 100, 115, 134, 274, 275, 293); 0 configs linked by >1 family; 242 of 242 docs
+comparator config->statement+solution: 416  416 .lean files; 0 never linked from a doc
+family->main_results declaration: 200  189 unique configs (11 repeated entries); 136 families
+formalization->declared library: 30  each pinned to a 40-char commit; see notes/gen/tables/formalization-deps.tsv
+formalization->observed import root: 12  56702 statements; 11 reached by a declared URL (1 by name-alias, e.g. Mathlib for mathlib), 1 declared nowhere (BernoulliRegular)
+manuscript->bibliography entry: 12876  500 .bib files in 494 of 719 manuscript dirs
+manuscript->corpus manuscript (bib href): 393  391 resolved edges; 268 target dirs over 156 of 372 families; 259 citing dirs; 287 same-family; 104 cross-family; 0 unresolved; 0 hrefs point at 0 superseded editions
+manuscript->corpus manuscript (body href): 211  147 target dirs over 84 families; 128 citing dirs
+abstract->companion family: 2  2 families: 001->032, 002->006
+abstract->'companion' wording: 9  families; 0 of them carry a `result NNN` edge
+family->reasoning trace: 10  10 distinct stems; 11 files on disk (mezard-parisi-formula) ships .pdf and .tex
+named-in-title: 153  of 372 families
+cited-in-bib: 11  of 372 families; 21 families when the family's own .bib files are included
+mentioned-in-body: 10  of 372 families; 107 families including own-family text
+family->MSC code: 0  files scanned: 8206
+bibliography entry->keywords field: 0  12876 entries scanned
+manuscript->\keywords macro: 12  of 719 manuscript dirs (1.7%)
+manuscript->verification bundle: 30  30 dirs over 22 families; INPUTS.md 4; COVERAGE.md 2
+family->notes summary page: 0  of 372 families; 0 manuscripts behind them
+rows: 22  fields: 7
+bib entries: 12876  bib files: 500  tex files: 7705
+preprint dirs on disk: 749  listed manuscripts: 719  unlisted: 30 = 27 superseded editions + 3 withdrawal notices
+whole-tree .bib: 521  whole-tree .tex: 8007  (listed-scope: 500 / 7705)
+bib hrefs pointing at superseded editions: listed-scope 0 over 0 dirs; whole-tree 22 over 16 of 432 tree hrefs (report only; not counted in the TSV)
+cited-in-bib families: 11  named-in-title: 153  mentioned-in-body: 10
+cited list: ['001', '003', '006', '038', '066', '086', '109', '145', '202', '231', '312']
+mentioned list: ['003', '006', '032', '086', '094', '109', '145', '176', '194', '202']
+cited∩mentioned: ['003', '006', '086', '109', '145', '202']  mentioned-only: ['032', '094', '176', '194']  cited-only: ['001', '038', '066', '231', '312']
+named list: ['001', '003', '004', '006', '007', '008', '011', '013', '018', '019', '022', '025', '028', '029', '031', '032', '033', '038', '039', '040', '044', '050', '051', '053', '054', '055', '057', '058', '059', '060', '062', '063', '064', '067', '071', '072', '073', '075', '078', '079', '080', '081', '083', '084', '087', '088', '091', '096', '097', '098', '101', '102', '105', '113', '118', '119', '127', '132', '136', '143', '144', '145', '146', '147', '151', '156', '157', '159', '161', '162', '164', '166', '169', '171', '173', '175', '176', '179', '180', '181', '186', '191', '192', '193', '194', '195', '196', '198', '199', '201', '202', '203', '205', '207', '208', '209', '210', '214', '226', '240', '245', '246', '250', '256', '258', '263', '272', '274', '288', '289', '290', '292', '293', '294', '295', '296', '297', '298', '300', '304', '305', '306', '309', '310', '311', '312', '314', '315', '316', '319', '321', '322', '323', '325', '326', '329', '330', '338', '339', '340', '341', '342', '344', '347', '349', '350', '360', '366', '367', '368', '369', '370', '375']
+legacy title proxy (6-token prefix, lowercased corpus, .bib at depth<=3): files=417 any=13 cross=9  <- the recorded '14 of 372'
+legacy proxy list: ['001', '003', '024', '038', '066', '090', '109', '125', '134', '145', '202', '275', '312']
+same title rule over all .bib: files=500 any=16 cross=11
+corpus citation edges: 391  target families: 156  citing dirs: 259
+top bib target families: [('034', 19), ('260', 18), ('068', 14), ('033', 12), ('227', 11), ('238', 10), ('376', 9), ('331', 7), ('215', 6), ('090', 6)]
+mainres families: 136  formalized families: 135  mainres-only: 1  formalized-only: 0
+body href edges: 211  target dirs: 147
+MSC hits: 0  bib keywords fields: 0  \keywords dirs: 12
+written: notes/gen/tables/links.tsv
+[probe] target exit code: 0
+[probe2] target notes/scripts/extract_links.py 
+[probe2] wall 15.03  opens 157537  distinct 130994  repeats 26543
+[probe2] rchar MB 2123.5  read_bytes MB 0.0
+[probe2] buckets:
+          lean/OAI/                  122458
+          preprints/                 34788
+          lean/docs/                 242
+          abs/other                  16
+          notes/scripts/             15
+          other                      13
+          notes/                     3
+          top-level                  2
+[probe2] notes/ paths (count  modes  path):
+              1  ?        notes/gen/tables/.links.tsv._bslymek
+              2  r        notes/gen/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              4  r,w 3

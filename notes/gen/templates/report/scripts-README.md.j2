@@ -45,8 +45,8 @@ finds **21** writers over **74** scripts.
 |---|---|---|---|
 | `build_catalog.py` | `notes/gen/tables/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/gen/reports/findings.md` |
 | `build_sources.py` | `notes/gen/tables/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/gen/reports/sources.md` |
-| `build_index.py` | `notes/gen/index/` | single run; cached bytes == promoted bytes for all 1,049 files | `notes/development/index-links.md` |
-| `build_summaries.py` | `notes/summaries` | a gate row; single run, cached bytes == promoted bytes for the 61 pages it renders — before `seed_quotes.py` (which re-seeds the quote specs from the pages) so the render chain stays acyclic | `notes/gen/summaries/` — the per-family pages `verify_summaries.py` checks and `seed_quotes.py` re-seeds from |
+| `build_index.py` | `notes/gen/index` | single run; cached bytes == promoted bytes for all 1,049 files | `notes/development/index-links.md` |
+| `build_summaries.py` | `notes/gen/summaries` | a gate row; single run, cached bytes == promoted bytes for the 61 pages it renders — before `seed_quotes.py` (which re-seeds the quote specs from the pages) so the render chain stays acyclic | `notes/gen/summaries/` — the per-family pages `verify_summaries.py` checks and `seed_quotes.py` re-seeds from |
 | `compare_abstracts.py` | `notes/gen/tables/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/gen/reports/abstracts.md` |
 | `extract_formalization_deps.py` | `notes/gen/tables/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/gen/reports/dependency-drift.md` |
 | `extract_links.py` | `notes/gen/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/gen/reports/links.md` |

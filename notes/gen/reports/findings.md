@@ -173,7 +173,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,253** links with **3** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,253** links with **0** broken [S27].
 
 ## The dependency record
 
@@ -220,35 +220,35 @@ not survive a re-run.
 | ID | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`notes/gen/tables/catalog.tsv`](../tables/catalog.tsv) | 373 | The generated ledger: 372 rows, 22 columns |
-| S2 | [`notes/scripts/build_catalog.py`](../scripts/build_catalog.py) | 185 | The generator whose report is the test for every ledger count |
-| S3 | [`overview.tex`](../../overview.tex) | 859 | The release's own 372 `\resultentry` entries and abstracts |
-| S4 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | Tiers, `main_results`, automation and review statements |
+| S2 | [`notes/scripts/build_catalog.py`](../../scripts/build_catalog.py) | 185 | The generator whose report is the test for every ledger count |
+| S3 | [`overview.tex`](../../../overview.tex) | 859 | The release's own 372 `\resultentry` entries and abstracts |
+| S4 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Tiers, `main_results`, automation and review statements |
 | S5 | [`notes/gen/reports/scope-exclusions.md`](scope-exclusions.md) | 316 | The 242 scope notes read for exclusions |
 | S6 | [`notes/gen/reports/resolution-tag.md`](resolution-tag.md) | 262 | The `resolves_named` rule and the 94-flag reading pass |
 | S7 | [`notes/gen/reports/counterexample-tag.md`](counterexample-tag.md) | 203 | The `counterex_broad` phrase rule and the 30 flag-only readings |
 | S8 | [`notes/gen/reports/conditional.md`](conditional.md) | 261 | The conditional-tag reading pass and the comparator-`sorry` reading |
 | S9 | [`notes/gen/reports/abstracts.md`](abstracts.md) | 381 | The overview-abstract vs manuscript-abstract comparison |
-| S10 | [`notes/scripts/compare_abstracts.py`](../scripts/compare_abstracts.py) | 462 | The generator of that comparison |
+| S10 | [`notes/scripts/compare_abstracts.py`](../../scripts/compare_abstracts.py) | 462 | The generator of that comparison |
 | S11 | [`notes/gen/reports/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
 | S12 | [`notes/gen/reports/t0-chains.md`](t0-chains.md) | 544 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/gen/reports/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
 | S14 | [`notes/gen/reports/verification-dirs.md`](verification-dirs.md) | 400 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../../README.md) | 51 | The release's own trace attributions |
 | S16 | [`notes/gen/reports/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
-| S17 | [`notes/scripts/extract_scope_notes.py`](../scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
+| S17 | [`notes/scripts/extract_scope_notes.py`](../../scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/gen/reports/proof-density.md`](proof-density.md) | 115 | The proof-density test, its bar, and its nulls |
-| S19 | [`notes/scripts/measure_proof_density.py`](../scripts/measure_proof_density.py) | 317 | The AUC and p re-derivation for every density figure |
+| S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 317 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/gen/reports/named-results.md`](named-results.md) | 347 | Headline environments read for named targets |
 | S21 | [`notes/gen/reports/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
-| S22 | [`notes/scripts/extract_citations.py`](../scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
+| S22 | [`notes/scripts/extract_citations.py`](../../scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
 | S23 | [`notes/gen/reports/names.md`](names.md) | 269 | The six-layer name measurement and the subject/citation split |
 | S24 | [`notes/gen/reports/topics.md`](topics.md) | 327 | The curated topic vocabulary and its per-layer counts |
 | S25 | [`notes/gen/reports/subfinding-pairs.md`](subfinding-pairs.md) | 1619 | The abstract-clause to display-title pairing, 167 families |
 | S26 | [`notes/gen/reports/sources.md`](sources.md) | 144 | The per-manuscript LaTeX surface: roots, main files, environments |
-| S27 | [`notes/development/index-links.md`](../development/index-links.md) | 235 | The rendered index link check |
+| S27 | [`notes/development/index-links.md`](../../development/index-links.md) | 235 | The rendered index link check |
 | S28 | [`notes/gen/reports/dependency-drift.md`](dependency-drift.md) | 221 | Pinned commits, patches, toolchain normalisation |
 | S29 | [`notes/gen/reports/formalization-deps.md`](formalization-deps.md) | 179 | The upstream library graph and import counts |
-| S30 | [`notes/data/conjecture-standing.tsv`](../tables/conjecture-standing.tsv) | 140 | The 139-row prior as data |
+| S30 | [`notes/data/conjecture-standing.tsv`](../../data/conjecture-standing.tsv) | 140 | The 139-row prior as data |
 | S31 | [`notes/gen/reports/conjecture-standing.md`](conjecture-standing.md) | 130 | The prior table, its limits, and the row-145 contradiction |
 
 ## Not checked

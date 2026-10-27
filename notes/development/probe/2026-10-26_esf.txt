@@ -1,0 +1,29 @@
+wrote notes/gen/tables/subfindings.tsv: 1145 rows
+manuscript rows       719 over 372 families
+comparator rows       426 over 242 families, 416 distinct .lean files
+paps vs href count    0 mismatches over 372 families
+formalized flag       172 manuscripts
+tiers of manuscript rows  T3=274  T2=201  T1=0  T0=244
+display titles        719 distinct over 719 rows; 0 titles used by >1 row
+multi-manuscript families 167, carrying 514 rows
+families repeating a .lean file in their table: 7 071 100 115 134 274 275 293
+
+Not checked: whether a display title matches a clause of the family abstract, and whether
+a named statement names a theorem that exists in the .lean file. Both are reading calls;
+this file extracts what the release writes, nothing more.
+[probe] target exit code: None
+[probe2] target notes/scripts/extract_subfindings.py 
+[probe2] wall 0.09  opens 528  distinct 277  repeats 251
+[probe2] rchar MB 2.4  read_bytes MB 0.0
+[probe2] buckets:
+          lean/docs/                 484
+          abs/other                  15
+          notes/scripts/             15
+          other                      10
+          notes/                     3
+          top-level                  1
+[probe2] notes/ paths (count  modes  path):
+              1  ?        notes/gen/tables/.subfindings.tsv.s64w61z0
+              2  r        notes/gen/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              4  r,w 3

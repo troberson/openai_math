@@ -610,7 +610,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     src_rows: list[str] = []
     for sid, path, role in sources:
         lc = lines_of(path)
-        href = f"../../{path}"
+        href = f"../../../{path}"
         if "(" in path or ")" in path:
             href = f"<{href}>"
         src_rows.append(f"| {sid} | [`{path}`]({href}) | {lc} | {role} |")
