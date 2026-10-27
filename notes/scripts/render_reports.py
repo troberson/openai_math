@@ -76,8 +76,8 @@ from catlib.paths import (
     GATE_ROWS_TSV,
     LAKE_MANIFEST,
     LAKEFILE,
-    LEDGER_TSV,
     LEAN,
+    LEDGER_TSV,
     OAI_DIR,
     PREPRINTS,
     QUOTES_TSV,
@@ -2274,8 +2274,7 @@ def deps_full(p: dict[str, Any]) -> dict[str, str]:
 
 DEPS_SPLIT: dict[str, list[str]] = {
     "xm": ["The 30 lakefile declarations and the 31 yaml entries cross-match: 30 declared in both",
-           "layers, 0 declared in the lakefile only, 1 declared in the yaml only (`formal-conjectures`). "
-           "The row",
+           "layers, 0 declared in the lakefile only, 1 declared in the yaml only (`formal-conjectures`). The row",
            "set is the union of the declared libraries, the yaml-only entry, and the import roots that are"],
     "man_intro": ["and lists **42 resolved git packages**, every `rev`"],
     "man_decl": ["**30 of 42** are the declared libraries, and **all 30 manifest revs equal the lakefile pins** — 0"],
@@ -4302,6 +4301,21 @@ def render_page(page: pathlib.Path) -> str:
     return PAGE_RENDERERS[page]()
 
 
+def outdir_of(argv: list[str]) -> pathlib.Path | None:
+    """The `--outdir <dir>` target: the out-of-tree render root, None for the tracked tree.
+
+    An out-of-tree render is a root override on `Staging.promote`, not a per-file fork: the pages
+    land under `outdir / <path relative to the repo root>` and the tracked tree and the record
+    store are never touched, so the outdir can be `diff -r`'d against `notes/gen/` to prove every
+    generated file is current.
+    """
+    if "--outdir" not in argv:
+        return None
+    p = pathlib.Path(argv[argv.index("--outdir") + 1]).resolve()
+    p.mkdir(parents=True, exist_ok=True)
+    return p
+
+
 def main() -> None:
     # A cross-produced record the render reads (measure_check_calls.py's check_calls.json) is
     # checked here, before the children launch and the populations run: a commit moves HEAD and
@@ -4335,7 +4349,8 @@ def main() -> None:
     tplp = population_of("templates")
     lk = population_of("links")
     tp = population_of("topics")
-    ST = Staging("render_reports", key_for("render_reports.py", tuple(sys.argv[1:])))
+    out_root = outdir_of(sys.argv[1:])
+    ST = Staging("render_reports", key_for("render_reports.py", tuple(sys.argv[1:])), out_root)
     ST.stage(SOURCES_MD, render_page(SOURCES_MD))
     ST.stage(ABSTRACTS_MD, render_page(ABSTRACTS_MD))
     ST.stage(NAMED_RESULTS_MD, render_page(NAMED_RESULTS_MD))

@@ -84,7 +84,10 @@ LEDGER = ROOT / "notes" / "gen" / "tables" / "catalog.tsv"
 SRC = ROOT / "notes" / "gen" / "tables" / "sources.tsv"
 # The builder's L1, read from the audit-hook open record: the three ledger TSVs and the page
 # skeletons, all outside the five hashed trees. The pages it writes are its own output, not L1.
-KEY = key_for("build_index.py", tuple(sys.argv[1:]))
+# A --check-only run measures and prints only, so it must land no record: a record dir under the
+# non-canonical check-only key is exactly what prune_stale() rmtree's mid-write in the gate's pooled
+# block (it reads the canonical key the gate's writer row owns, so the check-only dir is "stale").
+KEY = None if "--check-only" in sys.argv[1:] else key_for("build_index.py", tuple(sys.argv[1:]))
 
 UP = "../../../../"  # notes/gen/index/<discipline>/<page>.md -> repo root
 

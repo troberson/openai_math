@@ -1050,6 +1050,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -1097,6 +1098,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -1277,6 +1279,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -1424,6 +1427,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -2503,6 +2507,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -2550,6 +2555,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -2730,6 +2736,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -2877,6 +2884,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -4104,6 +4112,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -4151,6 +4160,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -4331,6 +4341,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -4478,6 +4489,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -5557,6 +5569,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -5604,6 +5617,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -5784,6 +5798,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -5931,6 +5946,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -7010,6 +7026,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -7057,6 +7074,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -7237,6 +7255,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -7384,6 +7403,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -8502,6 +8522,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -8549,6 +8570,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -8729,6 +8751,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -8876,6 +8899,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -10046,6 +10070,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -10093,6 +10118,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -10273,6 +10299,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -10420,6 +10447,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -11505,6 +11533,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -11552,6 +11581,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -11732,6 +11762,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -11879,6 +11910,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -13088,6 +13120,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -13135,6 +13168,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -13315,6 +13349,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -13462,6 +13497,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -14671,6 +14707,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -14718,6 +14755,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -14898,6 +14936,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -15045,6 +15084,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -16124,6 +16164,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -16171,6 +16212,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -16351,6 +16393,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -16498,6 +16541,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -17707,6 +17751,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -17754,6 +17799,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -17934,6 +17980,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -18081,6 +18128,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -19161,6 +19209,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -19208,6 +19257,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -19388,6 +19438,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -19535,6 +19586,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -19785,6 +19837,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -20959,6 +21012,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -21006,6 +21060,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -21186,6 +21241,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -21333,6 +21389,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
@@ -21391,6 +21448,10 @@
               1  r        notes/scripts/verify_tsv_quoting.py
 [probe2] target notes/scripts/verify_upstream_history.py
 [probe2] notes/ paths (count  modes  path):
+              1  r        notes/development/upstream_history/2026-10-07_3014888.md
+              1  r        notes/development/upstream_history/2026-10-12_1581d4c.md
+              1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
+              1  r        notes/development/upstream_history/README.md
               1  r        notes/gen/tables/catalog.tsv
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/verify_upstream_history.py
@@ -22446,6 +22507,7 @@
               1  r        notes/gen/index/real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
               1  r        notes/gen/index/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/index/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/index/real-and-complex-analysis/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/index/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/index/real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
               1  r        notes/gen/index/real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
@@ -22493,6 +22555,7 @@
               1  r        notes/gen/index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
               1  r        notes/gen/index/theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md
               1  r        notes/gen/index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md
+              1  r        notes/gen/index/theoretical-computer-science/378-disproof-of-the-exponential-time-hypothesis.md
               1  r        notes/gen/index/topics/abelian-varieties.md
               1  r        notes/gen/index/topics/additive-combinatorics.md
               1  r        notes/gen/index/topics/algebraic-geometry.md
@@ -22673,6 +22736,7 @@
               1  r        notes/gen/summaries/074-kakeya-in-three-and-four-dimensions.md
               1  r        notes/gen/summaries/077-fourier-restriction-for-positively-curved-surfaces.md
               1  r        notes/gen/summaries/078-three-dimensional-bochner-riesz-conjecture.md
+              1  r        notes/gen/summaries/079-local-smoothing-for-the-euclidean-wave-equation.md
               1  r        notes/gen/summaries/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
               1  r        notes/gen/summaries/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
               1  r        notes/gen/summaries/087-mahler-conjectures-and-symplectic-width.md
@@ -22820,6 +22884,7 @@
               1  r        notes/gen/templates/report/dependency-drift.md.j2
               1  r        notes/gen/templates/report/findings.md.j2
               1  r        notes/gen/templates/report/fleet-design.md.j2
+              1  r        notes/gen/templates/report/formalization-deps.md.j2
               1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
               1  r        notes/gen/templates/report/index-design.md.j2
               1  r        notes/gen/templates/report/index-links.md.j2
