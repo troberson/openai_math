@@ -384,15 +384,17 @@ def check(text):
     if singletons:
         want("singleton from-versions", "and one each of")
     for name, needle in [("largest patch", "PrimeNumberTheoremAnd at 39,904 lines"),
-                         ("mathlib imports", "mathlib at 56,416"),
+                         ("mathlib imports", f"mathlib at {n(m['by_name']['mathlib']['imports'])}"),
                          ("largest unused patch", "AINTLIB at 23,288 lines"),
-                         ("source files", "122,458-file"),
-                         ("patch lines per source file", "1.3 lines of patch")]:
+                         ("source files", "162,417-file"),
+                         ("patch lines per source file", "1.0 lines of patch")]:
         want(name, needle)
 
-    # 4b. figures the page takes from the deps record, not from these files
+    # 4b. figures the page takes from the deps record, not from these files. The Mathlib import
+    # count is measured from the TSV; the OAI source-file count is the page's own defining value
+    # (read back at 4c for the ratio), so it stays a page-carried needle.
     depsmd = norm(read(DEPSMD))
-    for needle in ["122,458", "56,416"]:
+    for needle in ["162,417", n(m["by_name"]["mathlib"]["imports"])]:
         if needle not in depsmd:
             problems.append(f"deps record does not record {needle}")
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render the report-fed notes pages from the templates at notes/gen/templates/report/.
 
-Writer: the 16 report-fed pages under notes/ — sources.md, abstracts.md, named-results.md,
+Writer: the 22 report-fed pages under notes/ — sources.md, abstracts.md, named-results.md,
 index-design.md, names.md, proof-density.md, index-links.md, links.md, dependency-drift.md,
 formalization-deps.md, verification-dirs.md, scope-exclusions.md, topics.md, t0-chains.md,
 subfinding-pairs.md and README.md — each from its template at notes/gen/templates/report/. Every
@@ -42,6 +42,7 @@ import re
 import statistics
 import subprocess
 import sys
+from collections import Counter
 from collections.abc import Callable
 from concurrent.futures import Future, ThreadPoolExecutor
 from functools import cache
@@ -76,6 +77,8 @@ from catlib.paths import (
     LAKE_MANIFEST,
     LAKEFILE,
     LEDGER_TSV,
+    LEAN,
+    OAI_DIR,
     PREPRINTS,
     QUOTES_TSV,
     ROOT,
@@ -399,12 +402,12 @@ NUMWORDS = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six"}
 # render instead of reflowing the page.
 NR_SPLIT = {
     "tex files (intro)": "re-derives every count from the ledger and the",
-    "overview families": "**372** families in",
-    "per-line warning": "rule: **1,609** is the per-line scan, **1,619** is the",
-    "target counts": "Over **1,609** titled headline statements, **17** titles name a conjecture, "
+    "overview families": "**373** families in",
+    "per-line warning": "rule: **1,616** is the per-line scan, **1,626** is the",
+    "target counts": "Over **1,616** titled headline statements, **18** titles name a conjecture, "
                      "question, or problem, in",
-    "target split": "One of the 17 (275) sits in a family the column reads 0; the",
-    "subject vocabulary": "one of the 551",
+    "target split": "One of the 18 (275) sits in a family the column reads 0; the",
+    "subject vocabulary": "one of the 550",
     "subject-not-rn list": "002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 "
                            "218 222 223 224 227 231 232 238",
     "no-headline claim": "**76 of the 248 flagged families ship no titled",
@@ -415,11 +418,11 @@ NR_SPLIT = {
     "additions not dir-named": "**9** of the",
     "abstract layer reach": "The manuscript-abstract",
     "direction B split": "the 8 split **3 corroborated / 5 resting on the overview paraphrase",
-    "load-bearing negative": "Over 1,609 titled",
+    "load-bearing negative": "Over 1,616 titled",
     "overlap": "**10 real misses** (Direction A) and **15 title-scope additions**, overlapping in "
                "022 039 044 151 209",
-    "corpus sorry facts": "zero of the 122,458 files under `lean/OAI/**/*.lean` contain `sorry` "
-                          "while the 416",
+    "corpus sorry facts": "zero of the 162,417 files under `lean/OAI/**/*.lean` contain `sorry` "
+                          "while the 418",
 }
 
 
@@ -1908,10 +1911,7 @@ def drift_population() -> dict[str, Any]:
     imports_by_key = {drift_key(v["repo_url"]): v["imports"] for v in by_name.values()}
     manifest = json.loads(LAKE_MANIFEST.read_text(encoding="utf-8"))
     pkg_names = {drift_strip(q["name"]) for q in manifest["packages"]}
-    src = re.search(r'OAI/\*\*/\*\.lean` \((\d[\d,]*) files\)', DEPS_MD.read_text(encoding="utf-8"))
-    if src is None:
-        msg = "notes/gen/reports/formalization-deps.md names no OAI source-file count"
-        raise ValueError(msg)
+    src_files = len(list(OAI_DIR.glob("**/*.lean")))
     return {
         "rows": rows, "fields": fields, "declared": declared, "reqs": reqs,
         "patches": patches, "by_name": by_name, "zero": zero, "patched": patched,
@@ -1941,7 +1941,7 @@ def drift_population() -> dict[str, Any]:
         "manifest_pkgs": len(pkg_names),
         "transitive": sorted(pkg_names - set(by_name)),
         "toolchain": TOOLCHAIN_FILE.read_text(encoding="utf-8").splitlines()[0].strip(),
-        "src_files": int(src.group(1).replace(",", "")),
+        "src_files": src_files,
     }
 
 
@@ -2099,6 +2099,227 @@ def drift_phrases(p: dict[str, Any]) -> dict[str, str]:
 
 def drift_page(p: dict[str, str]) -> str:
     return ENV.get_template("dependency-drift.md.j2").render(p=p)
+
+
+def deps_population() -> dict[str, Any]:
+    """The fresh measurement of every figure on formalization-deps.md."""
+    rows = tsv.read_rows(DEPS_TSV)
+    fields = len(DEPS_TSV.read_text(encoding="utf-8").splitlines()[0].split("\t"))
+    declared = [r for r in rows if r["lakefile_declared"] == "y"]
+    undeclared = [r for r in rows if r["lakefile_declared"] == "n"]
+    builds = sum(1 for r in rows if r["yaml_relationship"] == "builds-on")
+
+    imp = re.compile(r"^\s*import\s+(all|[A-Z][A-Za-z0-9_.]*)", re.MULTILINE)
+    oai_counts: Counter[str] = Counter()
+    for p in OAI_DIR.glob("**/*.lean"):
+        for root in imp.findall(p.read_text(encoding="utf-8", errors="replace")):
+            oai_counts[root.split(".")[0]] += 1
+    oai_files = len(list(OAI_DIR.glob("**/*.lean")))
+
+    all_paths = [p for p in LEAN.glob("**/*.lean") if ".lake" not in p.parts]
+    all_counts: Counter[str] = Counter()
+    cc_counts: Counter[str] = Counter()
+    cc_n = 0
+    for p in all_paths:
+        top = p.relative_to(LEAN).parts[0]
+        roots = imp.findall(p.read_text(encoding="utf-8", errors="replace"))
+        for r in roots:
+            all_counts[r.split(".")[0]] += 1
+            if top == "ComparatorChallenges":
+                cc_counts[r.split(".")[0]] += 1
+        if top == "ComparatorChallenges":
+            cc_n += 1
+    cc_oai_files = [p.name for p in all_paths
+                    if p.relative_to(LEAN).parts[0] == "ComparatorChallenges"
+                    and any(r.startswith("OAI.") for r in
+                            imp.findall(p.read_text(encoding="utf-8", errors="replace")))]
+
+    oai_lean_cnt = sum(1 for r in
+                       imp.findall((LEAN / "OAI.lean").read_text(encoding="utf-8"))
+                       if r.startswith("OAI."))
+    lake_cnt = sum(1 for r in
+                   imp.findall(LAKEFILE.read_text(encoding="utf-8"))
+                   if r.startswith("Lake"))
+
+    zero = sorted(r["library"] for r in declared if r["direct_imports"] == "0")
+    nopatch_order = [r["library"] for r in rows
+                     if r["lakefile_declared"] == "y" and r["patch_file"] == "none"]
+    patch_n = len([r for r in rows if r["patch_file"] != "none"])
+    total_plines = sum(int(r["patch_lines"]) for r in rows)
+    with_imp = sorted((r for r in rows if int(r["direct_imports"]) > 0),
+                      key=lambda r: (-int(r["direct_imports"]), r["library"]))
+    ext_roots = len(with_imp)
+    ext_stmts = sum(int(r["direct_imports"]) for r in rows)
+
+    manifest = json.loads(LAKE_MANIFEST.read_text(encoding="utf-8"))
+    pkgs = [p["name"].strip("«»") for p in manifest["packages"]]
+    decl_names = {r["library"] for r in declared}
+    transitive = sorted(set(pkgs) - decl_names)
+    rev_match = sum(1 for r in declared for p in manifest["packages"]
+                    if p["name"].strip("«»") == r["library"] and p["rev"] == r["pinned_commit"])
+    man_lines = len(LAKE_MANIFEST.read_text(encoding="utf-8").splitlines())
+    man_pkgs = len(pkgs)
+
+    imports_by_key = {drift_key(r["repo_url"]): int(r["direct_imports"]) for r in declared}
+    lines_v = Y.yaml_lines(tolerant=True)
+    start_v = lines_v.index("related_formalizations:")
+    urls_v: list[str] = []
+    for ln in lines_v[start_v + 1:]:
+        if ln and not ln.startswith(" "):
+            break
+        m = re.match(r"\s+-\s+id:\s*(\S+)", ln)
+        if m:
+            urls_v.append(m.group(1))
+    violations: list[tuple[int, str, int, str, int]] = []
+    prev: tuple[int, int, str] | None = None
+    for i, url in enumerate(urls_v, start=1):
+        c = imports_by_key.get(drift_key(url), 0)
+        last = url.rstrip("/").split("/")[-1].removesuffix(".git")
+        if prev is not None and c > prev[1]:
+            violations.append((i, last, c, prev[2], prev[1]))
+        prev = (i, c, last)
+
+    return {
+        "rows": rows, "fields": fields, "declared": declared, "undeclared": undeclared,
+        "builds": builds, "oai_files": oai_files, "oai_counts": oai_counts,
+        "all_files": len(all_paths), "all_counts": all_counts,
+        "cc_n": cc_n, "cc_counts": cc_counts, "cc_oai_files": cc_oai_files,
+        "oai_lean_cnt": oai_lean_cnt, "lake_cnt": lake_cnt,
+        "zero": zero, "nopatch_order": nopatch_order, "patch_n": patch_n,
+        "total_plines": total_plines, "with_imp": with_imp,
+        "ext_roots": ext_roots, "ext_stmts": ext_stmts,
+        "man_lines": man_lines, "man_pkgs": man_pkgs, "transitive": transitive,
+        "rev_match": rev_match, "violations": violations,
+    }
+
+
+def deps_full(p: dict[str, Any]) -> dict[str, str]:
+    out: dict[str, str] = {}
+    n_decl = len(p["declared"])
+    n_undecl = len(p["undeclared"])
+    o = p["oai_counts"]
+    a = p["all_counts"]
+    cc = p["cc_counts"]
+    out["hdr_rows"] = f"**{len(p['rows'])} rows, {p['fields']} fields**"
+    out["t_row_lake"] = f"**{n_decl}** declarations, every one pinned to a **40-char** commit"
+    out["t_row_yaml"] = f"**{p['builds']}** entries, all `relationship: builds-on`"
+    out["t_row_oai"] = (f"**{f(o['OAI'])}** OAI-rooted, **{f(o['Mathlib'])}** Mathlib-rooted, "
+                        f"**{o['all']}** `all`-prefixed")
+    out["t_row_patch"] = f"**{p['patch_n']}** patches, **{f(p['total_plines'])}** lines (plus `README.md`)"
+    out["xm"] = (f"The {n_decl} lakefile declarations and the {p['builds']} yaml entries "
+                 f"cross-match: {n_decl} declared in both layers, 0 declared in the lakefile only, "
+                 f"1 declared in the yaml only (`formal-conjectures`). The row set is the union "
+                 f"of the declared libraries, the yaml-only entry, and the import roots that are "
+                 f"imported but undeclared, so **{len(p['rows'])} rows = {n_decl} declared + "
+                 f"{n_undecl} undeclared**.")
+    out["man_intro"] = f"and lists **{p['man_pkgs']} resolved git packages**, every `rev` 40 chars"
+    out["man_decl"] = (f"**{p['rev_match']} of {p['man_pkgs']}** are the declared libraries, "
+                       f"and **all {p['rev_match']} manifest revs equal the lakefile pins** — 0 "
+                       f"mismatches, and 0 declared libraries absent from the manifest.")
+    trans = ", ".join(f"`{n}`" for n in p["transitive"])
+    out["man_trans"] = (f"**{len(p['transitive'])} of {p['man_pkgs']}** are transitive-only: "
+                        f"{trans}. These are the Mathlib-ecosystem closure; none is declared in "
+                        f"`lakefile.lean` and none is an import root in `lean/OAI/`.")
+    out["scope_oai"] = (f"The counts above are over **`lean/OAI/**/*.lean` "
+                        f"({f(p['oai_files'])} files)**, which is what the acceptance line "
+                        f"reproduces.")
+    out["scope_tree"] = (f"Over the whole tree `lean/**/*.lean` ({f(p['all_files'])} files) "
+                         f"the same rule yields **OAI {f(a['OAI'])} / Mathlib {f(a['Mathlib'])}** "
+                         f"— the additions are `lean/OAI.lean`, the top-level module file whose "
+                         f"{p['oai_lean_cnt']} `import OAI.…` statements sit outside the `OAI/` "
+                         f"glob, and `lean/ComparatorChallenges/`, whose {p['cc_n']} files import "
+                         f"Mathlib **{cc['Mathlib']}** times and import OAI **{cc['OAI']}** times, "
+                         f"those {cc['OAI']} statements sitting in {len(p['cc_oai_files'])} files "
+                         f"(`CartierChartCompactnessSupport.lean:1-2`, "
+                         f"`CharacterVarietiesAllSeamsSupport.lean:1`, "
+                         f"`HodgeConjectureCMAbelianVarieties/Solution.lean:1`).")
+    gap = p["all_files"] - p["oai_files"]
+    out["scope_gap"] = (f"The {f(gap)}-file gap between the two scopes is those two trees plus "
+                        f"`lean/OAI.lean` and `lean/lakefile.lean`, the latter importing `Lake` "
+                        f"twice. Quote the scope with the number.")
+    out["scope_ext"] = (f"There are **{p['ext_roots']} external import roots** carrying "
+                        f"**{f(p['ext_stmts'])}** import statements; "
+                        f"{p['ext_roots'] - 1} are aliased to a declared URL, 1 is not.")
+    out["vi_5"] = (f"Measured against the import counts, **{len(p['violations'])} entries are "
+                   f"out of order** — each has a measured count *greater* than the entry directly "
+                   f"above it:")
+    for i, (pos, name, cnt, above, above_c) in enumerate(p["violations"], start=1):
+        out[f"vi_r{i}"] = f"| {pos} | `{name}` | {cnt} | `{above}` | {above_c} |"
+    out["h_19"] = f"## {len(p['zero'])} declared libraries import nothing directly"
+    zlist = ", ".join(f"`{n}`" for n in p["zero"])
+    out["zlist"] = f"{zlist} — recorded with `direct_imports=0`, not dropped."
+    mathlib_row = p["with_imp"][0]
+    mathlib_imp = int(mathlib_row["direct_imports"])
+    rest = ", ".join(f"{r['library']} {r['direct_imports']}" for r in p["with_imp"][1:])
+    pct = round(mathlib_imp / p["ext_stmts"] * 100, 1) if p["ext_stmts"] else 0
+    out["imp_rows"] = (f"Only **{p['ext_roots']} of {len(p['rows'])}** rows have any direct "
+                       f"import: {mathlib_row['library']} {f(mathlib_imp)}, then {rest}. "
+                       f"Mathlib is {f(mathlib_imp)} of the {f(p['ext_stmts'])} external "
+                       f"statements — **{pct}%** — so the OAI tree is a Mathlib project with a "
+                       f"thin layer of specialist libraries on top.")
+    by_lib = {r["library"]: int(r["patch_lines"]) for r in p["rows"]}
+    nopatch_list = ", ".join(p["nopatch_order"])
+    tau_imp = next(int(r["direct_imports"]) for r in p["rows"] if r["library"] == "TauCeti")
+    out["n_7"] = (f"**{len(p['nopatch_order'])} declared libraries ship no patch**: "
+                  f"{nopatch_list}. The last four are tooling, not mathematics. Patch size "
+                  f"tracks how much upstream surgery was needed, not how much a library is "
+                  f"used: PrimeNumberTheoremAnd {f(by_lib['PrimeNumberTheoremAnd'])} lines, "
+                  f"ClassFieldTheory {f(by_lib['ClassFieldTheory'])}, "
+                  f"StrongPNT {f(by_lib['StrongPNT'])}, "
+                  f"AINTLIB {f(by_lib['AINTLIB'])}, "
+                  f"gromov {f(by_lib['gromov'])} — while TauCeti, with {tau_imp} "
+                  f"direct imports, needs no patch at all.")
+    return out
+
+
+DEPS_SPLIT: dict[str, list[str]] = {
+    "xm": ["The 30 lakefile declarations and the 31 yaml entries cross-match: 30 declared in both",
+           "layers, 0 declared in the lakefile only, 1 declared in the yaml only (`formal-conjectures`). "
+           "The row",
+           "set is the union of the declared libraries, the yaml-only entry, and the import roots that are"],
+    "man_intro": ["and lists **42 resolved git packages**, every `rev`"],
+    "man_decl": ["**30 of 42** are the declared libraries, and **all 30 manifest revs equal the lakefile pins** — 0"],
+    "man_trans": ["**12 of 42** are transitive-only: `BibtexQuery`, `Cli`, `LeanSearchClient`, `MD4Lean`, `Qq`,",
+                  "`UnicodeBasic`, `aesop`, `batteries`, `importGraph`, `leansqlite`, `plausible`, `proofwidgets`.",
+                  "These are the Mathlib-ecosystem closure; none is declared in `lakefile.lean` and none is an import"],
+    "scope_oai": ["The counts above are over **`lean/OAI/**/*.lean` (162,417 files)**, which is what the acceptance line"],
+    "scope_tree": ["Over the whole tree `lean/**/*.lean` (163,097 files) the same rule yields **OAI 370,312 /",
+                   "Mathlib 69,231** — the additions are `lean/OAI.lean`, the top-level module file whose 928",
+                   "`import OAI.…` statements sit outside the `OAI/` glob, and `lean/ComparatorChallenges/`, whose 678",
+                   "files import Mathlib **642** times and import OAI **4** times, those 4 statements sitting in 3 files",
+                   "(`CartierChartCompactnessSupport.lean:1-2`, `CharacterVarietiesAllSeamsSupport.lean:1`,"],
+    "scope_gap": ["The 680-file",
+                  "gap between the two scopes is those two trees plus `lean/OAI.lean` and `lean/lakefile.lean`, the"],
+    "scope_ext": ["There are **12 external import roots** carrying **68,875**"],
+    "vi_5": ["Measured against the import counts, **5 entries are out of order** — each has a measured count"],
+    "zlist": ["`AINTLIB`, `LeanArchitect`, `PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`,",
+              "`doc-gen4`, `elliptic-curves`, `formal-schemes`, `genl`, `heights`, `iut`, `leancert`, `oka`,",
+              "`orbicurve-cores`, `pi1`, `tate-curves-theta`, `tempered-fundamental-groups` — recorded with"],
+    "imp_rows": ["Only **12 of 32** rows have any direct import: mathlib 68,589, then PrimeNumberTheoremAnd 244,",
+                 "StrongPNT 12, rellich-kondrachov 9, TauCeti 5, ClassFieldTheory 4, fixed-point-theorems 4,",
+                 "SphereEversion 2, gromov 2, schoenflies-lean 2, AbsorptionCutoff 1, BernoulliRegular 1. Mathlib is",
+                 "68,589 of the 68,875 external statements — **99.6%** — so the OAI tree is a Mathlib project with a"],
+    "n_7": ["**7 declared libraries ship no patch**: mathlib, TauCeti, LeanArchitect, PrimeCert, checkdecls,",
+            "doc-gen4, leancert. The last four are tooling, not mathematics. Patch size tracks how much upstream",
+            "surgery was needed, not how much a library is used: PrimeNumberTheoremAnd 39,904 lines,",
+            "ClassFieldTheory 31,757, StrongPNT 26,284, AINTLIB 23,288, gromov 18,638 — while TauCeti, with 5"],
+}
+
+
+def deps_phrases(p: dict[str, Any]) -> dict[str, str]:
+    full = deps_full(p)
+    out: dict[str, str] = {}
+    for label, val in full.items():
+        prefixes = DEPS_SPLIT.get(label)
+        if not prefixes:
+            out[label] = val
+            continue
+        out.update(TX.apply_split(label, val, prefixes))
+    return out
+
+
+def deps_page(p: dict[str, str]) -> str:
+    return ENV.get_template("formalization-deps.md.j2").render(p=p)
 
 
 def verif_sha(p: pathlib.Path) -> str:
@@ -4025,6 +4246,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "index-links": index_links_population,
     "links": links_population,
     "dependency-drift": drift_population,
+    "formalization-deps": deps_population,
     "verification-dirs": verification_dirs_population,
     "scope-exclusions": scope_exclusions_population,
     "topics": lambda: topics_population(links_full(population_of("links"))),
@@ -4059,6 +4281,7 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     INDEX_LINKS_MD: lambda: index_links_page(index_links_phrases(population_of("index-links"))),
     LINKS_MD: lambda: links_page(links_phrases(population_of("links"))),
     DRIFT_MD: lambda: drift_page(drift_phrases(population_of("dependency-drift"))),
+    DEPS_MD: lambda: deps_page(deps_phrases(population_of("formalization-deps"))),
     VERIF_MD: lambda: verification_dirs_page(verification_dirs_phrases(population_of("verification-dirs"))),
     EX_MD: lambda: scope_exclusions_page(scope_exclusions_phrases(population_of("scope-exclusions"))),
     TOPICS_MD: lambda: topics_page(topics_phrases(population_of("topics"))),
@@ -4100,6 +4323,7 @@ def main() -> None:
     pdp = population_of("proof-density")
     ilk = population_of("index-links")
     dp = population_of("dependency-drift")
+    dep = population_of("formalization-deps")
     xp = population_of("scope-exclusions")
     vp = population_of("verification-dirs")
     tcp = population_of("t0-chains")
@@ -4121,6 +4345,7 @@ def main() -> None:
     ST.stage(INDEX_LINKS_MD, render_page(INDEX_LINKS_MD))
     ST.stage(LINKS_MD, render_page(LINKS_MD))
     ST.stage(DRIFT_MD, render_page(DRIFT_MD))
+    ST.stage(DEPS_MD, render_page(DEPS_MD))
     ST.stage(VERIF_MD, render_page(VERIF_MD))
     ST.stage(EX_MD, render_page(EX_MD))
     ST.stage(TOPICS_MD, render_page(TOPICS_MD))
@@ -4148,6 +4373,7 @@ def main() -> None:
           f"  proof-density {len(proof_density_phrases(pdp))}"
           f"  index-links {len(index_links_phrases(ilk))}  links {len(links_phrases(lk))}"
           f"  dependency-drift {len(drift_phrases(dp))}"
+          f"  formalization-deps {len(deps_phrases(dep))}"
           f"  verification-dirs {len(verification_dirs_phrases(vp))}"
           f"  scope-exclusions {len(scope_exclusions_phrases(xp))}"
           f"  topics {len(topics_phrases(tp))}"

@@ -53,6 +53,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # links in one builder process.
     "notes/gen/reports/links.md": lambda: R.population_of("links"),
     "notes/gen/reports/dependency-drift.md": R.drift_population,
+    "notes/gen/reports/formalization-deps.md": R.deps_population,
     "notes/gen/reports/verification-dirs.md": R.verification_dirs_population,
     "notes/gen/reports/scope-exclusions.md": R.scope_exclusions_population,
     # topics.md needs the links labels too: its MSC/keywords figures are measured by extract_links.py
@@ -105,6 +106,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/gen/reports/links.md": lambda: {k: v for k, v in R.links_phrases(POPULATIONS["notes/gen/reports/links.md"]()).items()
                                if not k.startswith("raw_")},
     "notes/gen/reports/dependency-drift.md": lambda: R.drift_phrases(POPULATIONS["notes/gen/reports/dependency-drift.md"]()),
+    "notes/gen/reports/formalization-deps.md": lambda: R.deps_phrases(POPULATIONS["notes/gen/reports/formalization-deps.md"]()),
     "notes/gen/reports/verification-dirs.md": lambda: R.verification_dirs_phrases(
         POPULATIONS["notes/gen/reports/verification-dirs.md"]()),
     "notes/gen/reports/scope-exclusions.md": lambda: R.scope_exclusions_phrases(
@@ -137,6 +139,9 @@ ALL_PAGES = {
     # dependency-drift.md's checker takes no count_phrases/size_phrases: its needles are inline
     # want() calls inside check(), so the builder reports this coverage as NOT DERIVED.
     "notes/gen/reports/dependency-drift.md": "verify_dependency_drift.py",
+    # formalization-deps.md's checker is verify_dependency_drift.py (same checker, second page);
+    # its needles for the deps page are the pass-4b/4c inline reads, so NOT DERIVED.
+    "notes/gen/reports/formalization-deps.md": "verify_dependency_drift.py",
     "notes/gen/reports/named-results.md": "verify_named_results.py",
     "notes/gen/reports/names.md": "measure_names.py",
     "notes/gen/reports/proof-density.md": "measure_proof_density.py",
