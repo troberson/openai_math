@@ -1,7 +1,7 @@
 # The upstream library graph
 
 Measured 2026-10-07 by `python3 notes/scripts/extract_formalization_deps.py`, which writes
-`notes/tables/formalization-deps.tsv` — **31 rows, 8 fields**. No `lake`, `lean`, `lake exe cache get`, or
+`notes/gen/tables/formalization-deps.tsv` — **32 rows, 8 fields**. No `lake`, `lean`, `lake exe cache get`, or
 comparator run, and **no build was attempted**, so every pin below is a declared pin, not a verified
 buildable pin. The generator report is the test; quote a number below with the rule that yields it.
 
@@ -10,13 +10,14 @@ buildable pin. The generator report is the test; quote a number below with the r
 | Layer | What it declares | Measured |
 |---|---|---|
 | `lean/lakefile.lean` | `require … from git "url" @ "commit"` | **30** declarations, every one pinned to a **40-char** commit |
-| `lean/formalization.yaml` | `related_formalizations:` → `id:` + `relationship:` | **30** entries, all `relationship: builds-on` |
-| `lean/OAI/**/*.lean` | `import` statements | **277,607** OAI-rooted, **56,416** Mathlib-rooted, **3** `all`-prefixed |
+| `lean/formalization.yaml` | `related_formalizations:` → `id:` + `relationship:` | **31** entries, all `relationship: builds-on` |
+| `lean/OAI/**/*.lean` | `import` statements | **369,380** OAI-rooted, **68,589** Mathlib-rooted, **3** `all`-prefixed |
 | `lean/patches/` | `*-lean4341.patch` | **23** patches, **160,187** lines (plus `README.md`) |
 
-The 30 lakefile declarations and the 30 yaml entries cross-match exactly — 30 declared in both
-layers, 0 declared in the lakefile only. The row set is the union of the declared libraries and the
-import roots that are imported but undeclared, so **31 rows = 30 declared + 1 undeclared**.
+The 30 lakefile declarations and the 31 yaml entries cross-match: 30 declared in both
+layers, 0 declared in the lakefile only, 1 declared in the yaml only (`formal-conjectures`). The row
+set is the union of the declared libraries, the yaml-only entry, and the import roots that are
+imported but undeclared, so **32 rows = 30 declared + 2 undeclared**.
 
 ## A fifth layer the spec does not name: `lean/lake-manifest.json`
 
@@ -52,17 +53,18 @@ Root = the first dotted token after `^\s*import\s+`. `import all Mathlib` is roo
 Mathlib, so it contributes 3 to `all` and 0 to Mathlib. Comments are not stripped; stripping `--` and
 `/- -/` changes no count, because no import statement is commented out.
 
-The counts above are over **`lean/OAI/**/*.lean` (122,458 files)**, which is what the acceptance line
-reproduces. Over the whole tree `lean/**/*.lean` (122,876 files) the same rule yields **OAI 278,523 /
-Mathlib 56,944** — the additions are `lean/OAI.lean`, the top-level module file whose 913
-`import OAI.…` statements sit outside the `OAI/` glob, and `lean/ComparatorChallenges/`, whose 416
-files import Mathlib **528** times and import OAI **3** times, those 3 statements sitting in 2 files
-(`CartierChartCompactnessSupport.lean:1-2`, `CharacterVarietiesAllSeamsSupport.lean:1`). The 418-file
+The counts above are over **`lean/OAI/**/*.lean` (162,417 files)**, which is what the acceptance line
+reproduces. Over the whole tree `lean/**/*.lean` (163,097 files) the same rule yields **OAI 370,312 /
+Mathlib 69,231** — the additions are `lean/OAI.lean`, the top-level module file whose 928
+`import OAI.…` statements sit outside the `OAI/` glob, and `lean/ComparatorChallenges/`, whose 678
+files import Mathlib **642** times and import OAI **4** times, those 4 statements sitting in 3 files
+(`CartierChartCompactnessSupport.lean:1-2`, `CharacterVarietiesAllSeamsSupport.lean:1`,
+`HodgeConjectureCMAbelianVarieties/Solution.lean:1`). The 680-file
 gap between the two scopes is those two trees plus `lean/OAI.lean` and `lean/lakefile.lean`, the
-latter importing `Lake` once. Quote the scope with the number.
+latter importing `Lake` twice. Quote the scope with the number.
 
 Upstream sources are **not vendored** (there is no `lean/.lake`), so import roots are the only
-in-repo evidence that a library is used. There are **12 external import roots** carrying **56,702**
+in-repo evidence that a library is used. There are **12 external import roots** carrying **68,875**
 import statements; 11 are aliased to a declared URL, 1 is not.
 
 ## The join key is a trap
@@ -89,11 +91,11 @@ Measured against the import counts, **5 entries are out of order** — each has 
 
 | Position | Entry | Imports | Above it | Imports |
 |---|---|---|---|---|
-| 5 | `strongpnt` | 12 | `AINTLIB` | 0 |
-| 8 | `TauCeti` | 5 | `fixed-point-theorems-lean4` | 4 |
-| 11 | `gromov` | 2 | `heights` | 0 |
-| 13 | `schoenflies-lean` | 2 | `iut` | 0 |
-| 16 | `AbsorptionCutoff` | 1 | `zeta_3_irrational` | 0 |
+| 6 | `strongpnt` | 12 | `formal-conjectures` | 0 |
+| 9 | `TauCeti` | 5 | `fixed-point-theorems-lean4` | 4 |
+| 12 | `gromov` | 2 | `heights` | 0 |
+| 14 | `schoenflies-lean` | 2 | `iut` | 0 |
+| 17 | `AbsorptionCutoff` | 1 | `zeta_3_irrational` | 0 |
 
 The extractor prints these five lines in the report, so the count is reproducible.
 
@@ -111,10 +113,10 @@ that OAI pins and never imports.
 `orbicurve-cores`, `pi1`, `tate-curves-theta`, `tempered-fundamental-groups` — recorded with
 `direct_imports=0`, not dropped.
 
-Only **12 of 31** rows have any direct import: mathlib 56,416, then PrimeNumberTheoremAnd 244,
+Only **12 of 32** rows have any direct import: mathlib 68,589, then PrimeNumberTheoremAnd 244,
 StrongPNT 12, rellich-kondrachov 9, TauCeti 5, ClassFieldTheory 4, fixed-point-theorems 4,
 SphereEversion 2, gromov 2, schoenflies-lean 2, AbsorptionCutoff 1, BernoulliRegular 1. Mathlib is
-56,416 of the 56,702 external statements — **99.5%** — so the OAI tree is a Mathlib project with a
+68,589 of the 68,875 external statements — **99.6%** — so the OAI tree is a Mathlib project with a
 thin layer of specialist libraries on top.
 
 **7 declared libraries ship no patch**: mathlib, TauCeti, LeanArchitect, PrimeCert, checkdecls,
