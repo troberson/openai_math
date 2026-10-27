@@ -24,7 +24,7 @@ Quote each number with the rule that yields it.
 
 {{ p['p1_23names'] }} `-lean4341.patch`, and the name is built by code, not chosen by hand:
 
-{% raw %}> `lean/lakefile.lean:193:  let patch := root / "patches" / s!"{label}-lean4341.patch"`
+{% raw %}> `lean/lakefile.lean:220:  let patch := root / "patches" / s!"{label}-lean4341.patch"`
 {% endraw %}
 
 so a library's compatibility patch is keyed to the toolchain version in its filename. {{ p['p1_tc_move a'] }}
@@ -59,7 +59,7 @@ that has drifted — a moved HEAD, a different remote, a hand-edit in the workin
 silently absorbed. `post_update` re-runs the same plan after resolution and fails if the patch is no
 longer applied:
 
-{% raw %}> `lean/lakefile.lean:291:    | _ => error s!"{label}: compatibility patch was lost during dependency resolution."`
+{% raw %}> `lean/lakefile.lean:318:    | _ => error s!"{label}: compatibility patch was lost during dependency resolution."`
 {% endraw %}
 
 **What that implies.** The release treats its upstream tree as a reproducible artifact, not as a cache.
@@ -82,8 +82,8 @@ tracking a branch.
 
 Both phases are two-pass: plan everything, then change anything.
 
-> `lean/lakefile.lean:226:  -- Check all existing checkouts before changing any of them.`
-> `lean/lakefile.lean:293:  -- Preflight every dependency before changing any of them.`
+> `lean/lakefile.lean:253:  -- Check all existing checkouts before changing any of them.`
+> `lean/lakefile.lean:320:  -- Preflight every dependency before changing any of them.`
 
 **What that implies.** No partial-patch state is reachable: a dependency is patched and verified
 (`applyDependencyPatch` applies, then re-checks `--reverse`: `:215`–`:221`), or the build stops. That
@@ -187,7 +187,7 @@ toolchain, not of how much mathematics the release takes from it. {{ p['p6_tau a
 `lean/formalization.yaml` claims the list is ordered by use — the comment above
 `related_formalizations:` reads, verbatim:
 
-> `lean/formalization.yaml:878:  # Imported libraries, ordered by direct import count in project Lean sources.`
+> `lean/formalization.yaml:893:  # Imported libraries, ordered by direct import count in project Lean sources.`
 
 {{ p['p7_viol'] }}
 `notes/gen/reports/formalization-deps.md`: {{ p['p7_violist a'] }}

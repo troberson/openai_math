@@ -20,7 +20,7 @@ Quote each number with the rule that yields it.
 
 The 23 patch filenames all end `-lean4341.patch`, and the name is built by code, not chosen by hand:
 
-> `lean/lakefile.lean:193:  let patch := root / "patches" / s!"{label}-lean4341.patch"`
+> `lean/lakefile.lean:220:  let patch := root / "patches" / s!"{label}-lean4341.patch"`
 
 so a library's compatibility patch is keyed to the toolchain version in its filename. The 22 toolchain
 hunks move 8 distinct upstream versions onto the release's own: `v4.32.0` ×13, `v4.34.0` ×3, and one
@@ -53,7 +53,7 @@ that has drifted — a moved HEAD, a different remote, a hand-edit in the workin
 silently absorbed. `post_update` re-runs the same plan after resolution and fails if the patch is no
 longer applied:
 
-> `lean/lakefile.lean:291:    | _ => error s!"{label}: compatibility patch was lost during dependency resolution."`
+> `lean/lakefile.lean:318:    | _ => error s!"{label}: compatibility patch was lost during dependency resolution."`
 
 **What that implies.** The release treats its upstream tree as a reproducible artifact, not as a cache.
 For an agent-generated formalization program, the binding constraint is not only "does the proof
@@ -74,8 +74,8 @@ tracking a branch.
 
 Both phases are two-pass: plan everything, then change anything.
 
-> `lean/lakefile.lean:226:  -- Check all existing checkouts before changing any of them.`
-> `lean/lakefile.lean:293:  -- Preflight every dependency before changing any of them.`
+> `lean/lakefile.lean:253:  -- Check all existing checkouts before changing any of them.`
+> `lean/lakefile.lean:320:  -- Preflight every dependency before changing any of them.`
 
 **What that implies.** No partial-patch state is reachable: a dependency is patched and verified
 (`applyDependencyPatch` applies, then re-checks `--reverse`: `:215`–`:221`), or the build stops. That
@@ -179,7 +179,7 @@ libraries are in the zero-import set, and 3 of the 12 `post_update` libraries ar
 `lean/formalization.yaml` claims the list is ordered by use — the comment above
 `related_formalizations:` reads, verbatim:
 
-> `lean/formalization.yaml:878:  # Imported libraries, ordered by direct import count in project Lean sources.`
+> `lean/formalization.yaml:893:  # Imported libraries, ordered by direct import count in project Lean sources.`
 
 **That claim is recorded, not asserted true, and 5 entries violate it** (measured in
 `notes/gen/reports/formalization-deps.md`: strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;
