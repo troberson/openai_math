@@ -150,12 +150,16 @@ def measure():
     p["tier"] = (Counter(r["tier"] for r in pre), Counter(r["tier"] for r in post))
     p["fam_form"] = (sum(1 for r in pre if int(r["paps_form"]) > 0),
                      sum(1 for r in post if int(r["paps_form"]) > 0))
-    p["tier_moves"] = {r["fam"]: (pre[i]["tier"], r["tier"]) for i, r in enumerate(post)
-                       if r["tier"] != pre[i]["tier"]}
-    p["paps_moves"] = {r["fam"]: (int(pre[i]["paps"]), int(r["paps"])) for i, r in enumerate(post)
-                       if int(pre[i]["paps"]) != int(r["paps"])}
-    p["form_moves"] = {r["fam"]: (int(pre[i]["paps_form"]), int(r["paps_form"])) for i, r in enumerate(post)
-                       if int(pre[i]["paps_form"]) != int(r["paps_form"])}
+    # Align pre/post by family id, not by row position: a merge that adds a family makes `post`
+    # longer than `pre`, so `pre[i]` for the appended rows runs out of range.
+    pre_by_fam = {r["fam"]: r for r in pre}
+    p["tier_moves"] = {r["fam"]: (pre_by_fam[r["fam"]]["tier"], r["tier"]) for r in post
+                       if r["fam"] in pre_by_fam and pre_by_fam[r["fam"]]["tier"] != r["tier"]}
+    p["paps_moves"] = {r["fam"]: (int(pre_by_fam[r["fam"]]["paps"]), int(r["paps"])) for r in post
+                       if r["fam"] in pre_by_fam and int(pre_by_fam[r["fam"]]["paps"]) != int(r["paps"])}
+    p["form_moves"] = {r["fam"]: (int(pre_by_fam[r["fam"]]["paps_form"]), int(r["paps_form"]))
+                       for r in post
+                       if r["fam"] in pre_by_fam and int(pre_by_fam[r["fam"]]["paps_form"]) != int(r["paps_form"])}
     p["companion_pre"] = sum(1 for r in pre if r["companion_word"] == "1")
     p["companion_post"] = sum(1 for r in post if r["companion_word"] == "1")
 

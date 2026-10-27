@@ -271,7 +271,7 @@ def passes(text, inputs, population, probe, probe_all, multi):
     if "## Not checked" not in text:
         problems.append("page has no '## Not checked' section")
 
-    measured["probe hits over all 372"] = len(probe_all)
+    measured["probe hits over all 373"] = len(probe_all)
     measured["probe hits over the multi set"] = len(probe)
     measured["multi-manuscript families"] = len(multi)
     return problems, measured

@@ -221,8 +221,8 @@ def check(text):
     header, body = rows()
     if header != S.COLUMNS:
         problems.append(f"tsv header {header} != shipped COLUMNS {S.COLUMNS}")
-    if len(body) != 719:
-        problems.append(f"tsv has {len(body)} rows, expected 719")
+    if len(body) != 721:
+        problems.append(f"tsv has {len(body)} rows, expected 721")
 
     for m in ANCHOR_SHAPE.finditer(text):
         rel, at = m.group(1), int(m.group(2))

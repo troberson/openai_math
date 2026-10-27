@@ -125,9 +125,11 @@ def import_counts():
     """Import statements in lean/OAI/**/*.lean, keyed by import root.
 
     The root is the first token after `import`, so `import all Mathlib` is rooted
-    at `all` and is not counted as a Mathlib import.
+    at `all` and is not counted as a Mathlib import. A root is a Lean namespace
+    (PascalCase) or the `all` keyword: a prose line that happens to start with a
+    lower-case word after `import` (two merged files do) is not an import.
     """
-    pat = re.compile(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", re.MULTILINE)
+    pat = re.compile(r"^\s*import\s+(all|[A-Z][A-Za-z0-9_.]*)", re.MULTILINE)
     counts: collections.Counter[str] = collections.Counter()
     files = 0
     for p in sorted(SOURCE.glob("**/*.lean")):
@@ -201,10 +203,12 @@ def main():
         key = url_key(r["url"])
         if key not in yaml_by_norm_url:
             problems.append(f"lakefile {r['label']}: no yaml entry for {r['url']}")
-    for r in yaml:
-        key = url_key(r["url"])
-        if key not in by_norm_url:
-            problems.append(f"yaml {r['url']}: no lakefile require")
+    # A yaml entry with no lakefile require is a yaml-only related formalization, not a
+    # contradiction: the release may reference work it does not build against. It gets a
+    # lakefile_declared "n" row, so the TSV measures the full reference set. The Oct 26
+    # release added google-deepmind/formal-conjectures this way (relationship: builds-on,
+    # no require, no import root in the OAI source).
+    yaml_only = [r for r in yaml if url_key(r["url"]) not in by_norm_url]
 
     # Every alias must resolve to a declared library.
     for alias_root, url in ALIAS.items():
@@ -235,6 +239,19 @@ def main():
                 "direct_imports": imports.get(root, 0) if root else 0,
                 "patch_file": patch_name,
                 "patch_lines": patch_lines,
+            }
+        )
+    for y in yaml_only:
+        rows.append(
+            {
+                "library": y["url"].rsplit("/", 1)[-1],
+                "repo_url": y["url"],
+                "pinned_commit": "none",
+                "lakefile_declared": "n",
+                "yaml_relationship": y["relationship"] or "none",
+                "direct_imports": 0,
+                "patch_file": "none",
+                "patch_lines": 0,
             }
         )
     for ext_root in undeclared_roots:

@@ -262,8 +262,8 @@ def measure():
 def check(m):
     """Canonical gates. A failure means the comparison is not measuring what it claims to."""
     problems = []
-    if m["families"] != 372:
-        problems.append(f"families {m['families']} != 372")
+    if m["families"] != m["ledger_counts"]["rows"]:
+        problems.append(f"families {m['families']} != ledger rows {m['ledger_counts']['rows']}")
     if m["manuscripts"] != m["sources_rows"]:
         problems.append(f"manuscripts {m['manuscripts']} != notes/gen/tables/sources.tsv rows {m['sources_rows']}")
     if m["dirs_with_abstract"] != m["manuscripts"]:
