@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [algorithms](../topics/algorithms.md) · [convex-geometry](../topics/convex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [097-euclidean-steinitz-bergstrom-conjecture.md](../../../../notes/gen/summaries/097-euclidean-steinitz-bergstrom-conjecture.md) |
 
 ## Manuscripts
 
