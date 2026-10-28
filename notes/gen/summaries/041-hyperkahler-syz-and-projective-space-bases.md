@@ -35,18 +35,14 @@ such line bundle is semiample. The theorem
 Let $X$ be a compact irreducible holomorphic symplectic Kähler
 manifold of complex dimension $2n$, where $n\ge1$. If a holomorphic
 line bundle $L$ satisfies
-\[
- c_1(L)\ne0,\qquad c_1(L)\in\overline{\mathcal K_X},
-                  \qquad q_X(c_1(L))=0,
-\]
+$$c_1(L)\ne0,\qquad c_1(L)\in\overline{\mathcal K_X},
+                  \qquad q_X(c_1(L))=0,$$
 then $L$ is semiample.
 
 More precisely, there exist a positive integer $m$, a normal
 projective variety $B$, an ample line bundle $A$ on $B$, and a
 surjective holomorphic map with connected fibers
-\[
-                 f:X\longrightarrow B,\qquad L^m\simeq f^*A,
-\]
+$$f:X\longrightarrow B,\qquad L^m\simeq f^*A,$$
 such that $\dim_{\mathbb C}B=n$. Every irreducible component of every
 fiber has complex dimension $n$, and $\sigma$ vanishes on its
 smooth locus. [S5:25–44]
@@ -69,16 +65,16 @@ deformation types of compact irreducible holomorphic symplectic
 Kähler manifolds of complex dimension $2n$ with $b_2\ge5$.
 \endcorollary
 
-This follows by combining Theorem   with the boundedness
+This follows by combining Theorem with the boundedness
 of Lagrangian-fibered symplectic varieties proved by
-Engel–Filipazzi–Greer–Mauri–Svaldi  . [S5:57–65]
+Engel–Filipazzi–Greer–Mauri–Svaldi . [S5:57–65]
 
 **The projective corollary.** When $X$ is projective, the base must
 be projective space, with no codimension-one multiple
 fibers 
 
 > **corollary**
-In Theorem  , assume additionally that $X$ is projective,
+In Theorem , assume additionally that $X$ is projective,
 and let $f:X\to B$ be the associated connected-fiber map furnished there.
 Then $B\simeq\mathbb P^n_{\mathbb C}$. Moreover, there do not exist a prime
 divisor $D\subset B$, an effective divisor $E$ on $X$, and an integer
@@ -91,9 +87,7 @@ theorem
 Let \(n\geq1\), and let \(X\) be a compact irreducible holomorphic symplectic
 Kähler manifold of dimension \(2n\), with symplectic form \(\sigma\).
 Suppose that
-\[
-                       f:X\longrightarrow B
-\]
+$$f:X\longrightarrow B$$
 is a projective surjective holomorphic morphism with connected fibers,
 where \(B\) is a normal projective variety of dimension \(n\).
 Assume that every irreducible component of every fiber has dimension

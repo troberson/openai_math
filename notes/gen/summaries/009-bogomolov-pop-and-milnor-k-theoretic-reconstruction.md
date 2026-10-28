@@ -52,12 +52,10 @@ The headline statement
 > **theorem**
 Let $k$ and $l$ be arbitrary algebraically closed fields of characteristics
 different from $\ell$, and let $K/k$ and $L/l$ be function fields with
-$\mathrm{trdeg}(K/k),\mathrm{trdeg}(L/l)\ge2$.  Then
-\[
- \Phi_K,L:\mathrmIsom_F^i(K,L)\longrightarrow
- \mathrmIsom^c(\Pi_L^a,\Pi_K^a)/\mathbb Z_\ell^\times,
- \qquad [\alpha]\longmapsto[\alpha^*],
-\]
+$\mathrm{trdeg}(K/k),\mathrm{trdeg}(L/l)\ge2$. Then
+$$\Phi_{K,L}:\mathrm{Isom}_F^i(K,L)\longrightarrow
+ \mathrm{Isom}^c(\Pi_L^a,\Pi_K^a)/\mathbb Z_\ell^\times,
+ \qquad [\alpha]\longmapsto[\alpha^*],$$
 is a bijection. [S3:55–65]
 
 ## Graduate summary
@@ -70,12 +68,10 @@ of transcendence degree at least two over algebraically closed fields.
 > **theorem**
 Let $k$ and $l$ be arbitrary algebraically closed fields of characteristics
 different from $\ell$, and let $K/k$ and $L/l$ be function fields with
-$\mathrm{trdeg}(K/k),\mathrm{trdeg}(L/l)\ge2$.  Then
-\[
- \Phi_K,L:\mathrmIsom_F^i(K,L)\longrightarrow
- \mathrmIsom^c(\Pi_L^a,\Pi_K^a)/\mathbb Z_\ell^\times,
- \qquad [\alpha]\longmapsto[\alpha^*],
-\]
+$\mathrm{trdeg}(K/k),\mathrm{trdeg}(L/l)\ge2$. Then
+$$\Phi_{K,L}:\mathrm{Isom}_F^i(K,L)\longrightarrow
+ \mathrm{Isom}^c(\Pi_L^a,\Pi_K^a)/\mathbb Z_\ell^\times,
+ \qquad [\alpha]\longmapsto[\alpha^*],$$
 is a bijection. [S3:55–65]
 
 The map $\Phi_{K,L}$ sends a Frobenius-compatible field isomorphism to
@@ -91,7 +87,7 @@ transcendence degrees is *forced* by the data [S3:67–71].
 Let $\ell$ be any prime. Let $K/k$ and $L/l$ be finitely generated
 extensions of arbitrary algebraically closed fields, with
 $\mathrm{char} k,\mathrm{char} l\ne\ell$ and
-$\mathrm{trdeg}(K/k),\mathrm{trdeg}(L/l)\ge2$. Then   is bijective.
+$\mathrm{trdeg}(K/k),\mathrm{trdeg}(L/l)\ge2$. Then is bijective.
 In particular, a compatible isomorphism $V_K\to V_L$ forces equality
 of the characteristics and of the relative transcendence degrees. [S5:64–71]
 
@@ -106,15 +102,11 @@ the only ambiguity is a single global $\mathbb F_\ell^\times$ scalar
 > **theorem**
 Let $K/k$ and $L/l$ be finitely generated extensions of algebraically
 closed fields of characteristic $p$, with
-\[
-              \mathrmtrdeg(K/k)\ge2,\qquad \mathrmtrdeg(L/l)\ge2.
-\]
+$$\mathrm{trdeg}(K/k)\ge2,\qquad \mathrm{trdeg}(L/l)\ge2.$$
 The canonical map
-\[
- \mathrmIsom(K,k;L,l)\longrightarrow
- \mathrmIsom_{\mathrm M}(V_K,V_L)/\Lambda^\times,
- \qquad \alpha\longmapsto[\alpha_*],
-\]
+$$\mathrm{Isom}(K,k;L,l)\longrightarrow
+ \mathrm{Isom}_{\mathrm M}(V_K,V_L)/\Lambda^\times,
+ \qquad \alpha\longmapsto[\alpha_*],$$
 is bijective. [S7:41–54]
 
 In equal characteristic $p$, the first Milnor $K$-group modulo $p$
@@ -171,15 +163,18 @@ theorem is in sections/01-introduction [S7:41].
 ## Comparison with the formalized statement
 
 The scope note [S8:9] covers only the Bogomolov–Pop manuscript and
-states a uniqueness (injectivity) result: "theorem main_graph_injective (ell : ℕ) [Fact ell.Prime]
-    (k K l L : Type*) [Field k] [Field K] [Field l] [Field L]
-    [IsAlgClosed k] [IsAlgClosed l] [Algebra k K] [Algebra l L]
-    [Algebra.EssFiniteType k K] [Algebra.EssFiniteType l L]
-    (hk : (ell : k) ≠ 0) (hl : (ell : l) ≠ 0)
-    (hK : 2 ≤ Algebra.trdeg k K) (hL : 2 ≤ Algebra.trdeg l L) :
-    ∀ (a a' : IsomF k K l L) (b : IsomCUnits ell K L),
-      PhiGraph a b → PhiGraph a' b → a = a'  := by
-  sorry [S9:117–125]" If two
+states a uniqueness (injectivity) result: "```lean
+theorem main_graph_injective (ell : ℕ) [Fact ell.Prime]
+ (k K l L : Type*) [Field k] [Field K] [Field l] [Field L]
+ [IsAlgClosed k] [IsAlgClosed l] [Algebra k K] [Algebra l L]
+ [Algebra.EssFiniteType k K] [Algebra.EssFiniteType l L]
+ (hk : (ell : k) ≠ 0) (hl : (ell : l) ≠ 0)
+ (hK : 2 ≤ Algebra.trdeg k K) (hL : 2 ≤ Algebra.trdeg l L) :
+ ∀ (a a' : IsomF k K l L) (b : IsomCUnits ell K L),
+ PhiGraph a b → PhiGraph a' b → a = a' := by
+ sorry
+```
+[S9:117–125]" If two
 isomorphisms of perfect closures preserving the constant fields
 induce the same Galois-data isomorphism modulo $\ell$-adic unit
 scaling, they agree modulo Frobenius. Existence of a field

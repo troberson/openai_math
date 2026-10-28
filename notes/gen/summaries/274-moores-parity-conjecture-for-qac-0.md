@@ -288,7 +288,7 @@ elaborates.
 - Cristopher Moore. _Quantum Circuits: Fanout, Parity, and Counting_. 1999. arXiv:quant-ph/9903046v3, 17 March 1999.
 - Stephen Fenner, Daniel Grier, Daniel Padé, and Thomas Thierauf. _Tight Bounds on Depth-2 QAC-Circuits Computing Parity_. 2025. arXiv:2504.06433v1, 8 April 2025.
 - Fenner, Stephen, Grier, Daniel, Padé, Daniel, Thierauf, Thomas, Tight bounds on depth-2 QAC-circuits computing parity (2025)
-- Merrick Furst, James B. Saxe, and Michael Sipser. Parity, circuits, and the polynomial-time hierarchy. _Mathematical Systems Theory_, 17:13–27, 1984.  .
+- Merrick Furst, James B. Saxe, and Michael Sipser. Parity, circuits, and the polynomial-time hierarchy. _Mathematical Systems Theory_, 17:13–27, 1984. .
 - Furst, Merrick, Saxe, James B., Sipser, Michael, Parity, circuits, and the polynomial-time hierarchy (1984)
 - Frederic Green, Steven Homer, Cristopher Moore, and Christopher Pollett. Counting, fanout and the complexity of quantum ACC. _Quantum Information and Computation_, 2(1):35–65, 2002. doi:10.26421/QIC2.1-3.
 - Green, Frederic, Homer, Steven, Moore, Cristopher, Pollett, Christopher, Counting, fanout and the complexity of quantum ACC (2002)
@@ -310,11 +310,11 @@ elaborates.
 - Nadimpalli, Shivam, Parham, Natalie, Vasconcelos, Francisca, Yuen, Henry, On the Pauli Spectrum of $\mathsf{QAC}^{0}$ (2024)
 - OpenAI, {Product-projection localization and the $\mathrm{QAC}^0$ parity lower bound} (2026)
 - Daniel Padé, Stephen Fenner, Daniel Grier, and Thomas Thierauf. _Depth-2 QAC Circuits Cannot Simulate Quantum Parity_. 2020. arXiv:2005.12169v1, 25 May 2020.
-- Shiva Kintali. _Parity in Shallow QAC Circuits: Correlation Decay and Exact Lower Bounds_. Preprint, September 5, 2026.  .
+- Shiva Kintali. _Parity in Shallow QAC Circuits: Correlation Decay and Exact Lower Bounds_. Preprint, September 5, 2026. .
 - Anurag Anshu and Tony Metger. Concentration bounds for quantum states and limitations on the QAOA from polynomial approximations. _Quantum_, 7:999, 2023. doi:10.22331/q-2023-05-11-999.
 - Rosenthal, Gregory, Bounds on the $\mathsf{QAC}^{0}$ Complexity of Approximating Parity (2021)
 - Sherstov, Alexander A., Approximate Inclusion-Exclusion for Arbitrary Symmetric Functions (2009)
-- Ryan O'Donnell. _Computational Applications of Noise Sensitivity_. Ph.D. thesis, Massachusetts Institute of Technology, 2003.  .
+- Ryan O'Donnell. _Computational Applications of Noise Sensitivity_. Ph.D. thesis, Massachusetts Institute of Technology, 2003. .
 - OpenAI. _Regular trajectories, pruning and quantum parity_. OpenAI Math Release preprint OAI:Regular-trajectories-pruning-and-quantum-parity-September-24-2026, 2026.
 - Xu, Boyan, Li, Lvzhou, Fanout Complexity of Symmetric Boolean Functions in $\mathsf{QAC}^0$ (2026)
 - Padé, Daniel, Fenner, Stephen, Grier, Daniel, Thierauf, Thomas, Depth-2 QAC circuits cannot simulate quantum parity (2020)

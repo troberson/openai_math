@@ -43,9 +43,7 @@ The main statement
 > **Theorem 1.1**
 There are absolute constants $c_1,c_2>0$ and $b_0$ such that, for every
 integer $b\ge b_0$,
-\[
- c_1\log\log b\le N(b)\le c_2\log\log b.
-\]
+$$c_1\log\log b\le N(b)\le c_2\log\log b.$$
 In particular, the upper bound holds for every integer numerator
 $1\le a<b$. [S3:16–24]
 
@@ -59,9 +57,7 @@ doubly logarithmic order in the denominator.
 > **Theorem 1.1**
 There are absolute constants $c_1,c_2>0$ and $b_0$ such that, for every
 integer $b\ge b_0$,
-\[
- c_1\log\log b\le N(b)\le c_2\log\log b.
-\]
+$$c_1\log\log b\le N(b)\le c_2\log\log b.$$
 In particular, the upper bound holds for every integer numerator
 $1\le a<b$. [S3:16–24]
 
@@ -130,23 +126,29 @@ and the prescribed-denominator bound.
 The two comparator stubs state the targets. `EgyptianFractions.lean`
  is the double-log worst-case order:
 
-> theorem main_double_log_order :
-    ∃ c1 c2 : ℝ, 0 < c1 ∧ 0 < c2 ∧ ∃ b0 : ℕ,
-  ∀ b : ℕ, b0 ≤ b →
-    c1 * Real.log (Real.log (b : ℝ)) ≤ (maxEgyptianLength b : ℝ) ∧
-    (maxEgyptianLength b : ℝ) ≤ c2 * Real.log (Real.log (b : ℝ)) := by
-  sorry [S5:57–62]
+```lean
+theorem main_double_log_order :
+ ∃ c1 c2 : ℝ, 0 < c1 ∧ 0 < c2 ∧ ∃ b0 : ℕ,
+ ∀ b : ℕ, b0 ≤ b →
+ c1 * Real.log (Real.log (b : ℝ)) ≤ (maxEgyptianLength b : ℝ) ∧
+ (maxEgyptianLength b : ℝ) ≤ c2 * Real.log (Real.log (b : ℝ)) := by
+ sorry
+```
+[S5:57–62]
 
 `ShortEgyptianFractions.lean` [S6:17–23] is the existence-plus-order
 statement:
 
-> theorem main :
-    (∀ a b : ℕ, 1 ≤ a → a < b → ∃ ns : List ℕ, IsExpansion a b ns) ∧
-    ∃ c₁ c₂ : ℝ, 0 < c₁ ∧ 0 < c₂ ∧ ∃ b₀ : ℕ, 2 ≤ b₀ ∧
-      ∀ b : ℕ, b₀ ≤ b →
-        c₁ * Real.log (Real.log (b : ℝ)) ≤ (maxMinLength b : ℝ) ∧
-        (maxMinLength b : ℝ) ≤ c₂ * Real.log (Real.log (b : ℝ)) := by
-  sorry [S6:17–23]
+```lean
+theorem main :
+ (∀ a b : ℕ, 1 ≤ a → a < b → ∃ ns : List ℕ, IsExpansion a b ns) ∧
+ ∃ c₁ c₂ : ℝ, 0 < c₁ ∧ 0 < c₂ ∧ ∃ b₀ : ℕ, 2 ≤ b₀ ∧
+ ∀ b : ℕ, b₀ ≤ b →
+ c₁ * Real.log (Real.log (b : ℝ)) ≤ (maxMinLength b : ℝ) ∧
+ (maxMinLength b : ℝ) ≤ c₂ * Real.log (Real.log (b : ℝ)) := by
+ sorry
+```
+[S6:17–23]
 
 Both end in `sorry`. The proofs land in
 `OAI/NumberTheory/EgyptianFractions/Main.lean` [S7], which carries

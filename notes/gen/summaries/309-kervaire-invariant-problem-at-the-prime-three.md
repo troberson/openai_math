@@ -30,9 +30,7 @@ manuscript resolves this at $p=3$ [S4:7–22]:
 
 > **theorem**
 At the prime three,
-\[
-                       K=K_3=\{0,2,3\}.
-\]
+$$K=K_3=\{0,2,3\}.$$
 Thus the surviving classes occur in stems $10$, $106$, and $322$, and each admits an additive-order-three representative. The class $b_1$ and every $b_j$ with $j\geq4$ fail to survive. [S4:24–30]
 
 The answer is that at the prime three the surviving indices are

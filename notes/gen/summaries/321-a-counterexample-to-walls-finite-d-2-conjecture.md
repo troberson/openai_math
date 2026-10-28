@@ -31,10 +31,8 @@ hypothesis imposed [S4:3–17]:
 
 > **theorem**
 There is a finite connected three-dimensional CW complex $X$ such that
-\[
- H_i(\widetilde X;\mathbb Z)=0\quad(i>2),\qquad
- H^3(X;M)=0\quadfor every \mathbb Z[\pi_1(X)]-module M,
-\]
+$$H_i(\widetilde X;\mathbb Z)=0\quad(i>2),\qquad
+ H^3(X;M)=0\quad\text{for every }\mathbb Z[\pi_1(X)]\text{-module }M,$$
 but $X$ is not homotopy equivalent to any finite CW complex of
 dimension at most two. [S4:19–27]
 

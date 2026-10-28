@@ -34,8 +34,8 @@ rotate the central charge and translate every semistable phase by a fixed
 amount . "Stability conditions organize the objects of a derived category by a complex
 central charge and a real phase, with finite filtrations into semistable
 objects. Their physical antecedent is Douglas's proposal of $\Pi$-stability
-for D-branes  ; Bridgeland gave the mathematical framework
-used here  . At a Gepner point, one seeks a stability
+for D-branes ; Bridgeland gave the mathematical framework
+used here . At a Gepner point, one seeks a stability
 condition compatible with a distinguished autoequivalence: the functor should
 rotate the central charge and translate every semistable phase by a fixed
 amount. We construct such a condition for every smooth quintic threefold. [S4:3–10]"
@@ -46,11 +46,9 @@ The theorem
 Every smooth complex quintic threefold admits a numerical Bridgeland stability
 condition $\sigma=(Z,\mathcal P)$ with the support property on $K_{\mathrm{num}}(X)_{\mathbb R}$
 such that, for every $E\in\mathcal D$ and $\varphi\in\mathbb R$,
-\[
- Z(\Phi E)=e^{2\pi i/5}Z(E),\qquad
+$$Z(\Phi E)=e^{2\pi i/5}Z(E),\qquad
  \Phi\bigl(\mathcal P(\varphi)\bigr)=\mathcal P(\varphi+2/5),\qquad
- Z(\mathcal O_x)=-1
-\]
+ Z(\mathcal O_x)=-1$$
 for every closed point $x\in X$. [S4:52–62]
 
 The autoequivalence $\Phi$ is the composition of tensoring by the
@@ -131,12 +129,10 @@ $B\in V$, $H\in W$ and $t\geq T$, the following hold.
 stability condition with support on $K_{\mathrm{num}}(X)_{\mathbb R}$.
 \item There is a geometric numerical stability condition, with support
 on the same full numerical space, whose charge is exactly
-\[
- Z^{\mathrmLV}_B,tH(E)
- =-\int_Xe^-B-itH\mathrmch(E)\sqrt{\mathrmtd(X)},
- \qquad \sqrt{\mathrmtd(X)}=1+\fracc_2(X)24.
-\]
-Its heart is the one constructed in Section  .
+$$Z^{\mathrm{LV}}_{B,tH}(E)
+ =-\int_Xe^{-B-itH}\mathrm{ch}(E)\sqrt{\mathrm{td}(X)},
+ \qquad \sqrt{\mathrm{td}(X)}=1+\frac{c_2(X)}{24}.$$
+Its heart is the one constructed in Section .
 \endenumerate [S10:103–122]
 
 Only triviality of $K_X$ is assumed; the additional vanishings in the

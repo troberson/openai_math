@@ -53,15 +53,11 @@ The manuscript states the result
 > **theorem**
 For each fixed $k\geqslant2$, there exists a deterministic algorithm that,
 given a $k$-CNF $F$ on $n\geqslant20$ declared variables with $m$ clauses,
-computes $\\\#F$ as defined in   in
-\[
- (n+m)^O_k(1)2^{O_k(n\log\log n/\sqrt{\log n})}
-\]
+computes $\\\#F$ as defined in in
+$$(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}$$
 bit operations and $(n+m)^{O_k(1)}$ bits of space.
 For each fixed $D>0$, its running time on inputs with $m\leqslant Dn$ is
-\[
- (n+m)^{O_k,D(1)}2^{O_k,D(n/\sqrt{\log n})}.
-\] [S2:73–85]
+$$(n+m)^{O_{k,D}(1)}2^{O_{k,D}(n/\sqrt{\log n})}.$$ [S2:73–85]
 
 The fixed-density case $m\leqslant Dn$ gives the sharper
 $2^{O_{k,D}(n/\sqrt{\log n})}$ bound, which is what the circuit lower
@@ -74,15 +70,11 @@ The main result is Theorem `thm:main`
 > **theorem**
 For each fixed $k\geqslant2$, there exists a deterministic algorithm that,
 given a $k$-CNF $F$ on $n\geqslant20$ declared variables with $m$ clauses,
-computes $\\\#F$ as defined in   in
-\[
- (n+m)^O_k(1)2^{O_k(n\log\log n/\sqrt{\log n})}
-\]
+computes $\\\#F$ as defined in in
+$$(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}$$
 bit operations and $(n+m)^{O_k(1)}$ bits of space.
 For each fixed $D>0$, its running time on inputs with $m\leqslant Dn$ is
-\[
- (n+m)^{O_k,D(1)}2^{O_k,D(n/\sqrt{\log n})}.
-\] [S2:73–85]
+$$(n+m)^{O_{k,D}(1)}2^{O_{k,D}(n/\sqrt{\log n})}.$$ [S2:73–85]
 
 The technique overview [S2:541–548] summarizes the three-stage argument
 and notes that taking $k=3$ already refutes ETH. The bounded-occurrence
@@ -92,27 +84,23 @@ full theorem comes from a Boolean tensor-contraction argument in the
 appendices. The tensor-contraction theorem is the workhorse:
 
 > **theorem**
-Fix positive constants $C,A,b$.  Let $s\geqslant2$ be an integer, and let
+Fix positive constants $C,A,b$. Let $s\geqslant2$ be an integer, and let
 $\mathcal L$ be the total length of the graph and tensor descriptions
 of a bipartite tensor network with at most $Cs$ edges and maximum
-degree at most $\lceil s^{9/10}\rceil$.  Suppose that the number of
+degree at most $\lceil s^{9/10}\rceil$. Suppose that the number of
 vertices is bounded by a fixed polynomial in $s$, and that the entries
 belong to
-\[
- \mathcal B_{P_0,\ell}
-   =(\mathbb Z/2^P_0\mathbb Z)[V]/(V^\ell),
- \qquad 1\leqslant P_0,\ell\leqslant Cs.
-\]
+$$\mathcal B_{P_0,\ell}
+   =(\mathbb Z/2^{P_0}\mathbb Z)[V]/(V^\ell),
+ \qquad 1\leqslant P_0,\ell\leqslant Cs.$$
 Suppose, uniformly for every vertex and Boolean choice of its ports,
 that its entry can be computed from the description in time
 $(s+\mathcal L)^b2^{A s^{9/10}}$ and space $(s+\mathcal L)^b$.
 Then the contraction can be computed deterministically in
-\[
- (s+\mathcal L)^O(1)
-  2^{O(s/\sqrt{\log s})}
-\]
-bit operations and $(s+\mathcal L)^{O(1)}$ bits of space.  Constants
-depend only on the fixed bounds in the hypotheses.  In particular,
+$$(s+\mathcal L)^{O(1)}
+  2^{O(s/\sqrt{\log s})}$$
+bit operations and $(s+\mathcal L)^{O(1)}$ bits of space. Constants
+depend only on the fixed bounds in the hypotheses. In particular,
 $\ell=1$ is permitted. [S4:26–49]
 
 It computes the contraction of a Boolean tensor network with $s$ edges
@@ -157,7 +145,7 @@ group separation work with subexponential cost.
 
 The manuscript's related-work section (lines 197–459) surveys the
 landscape. It notes that the deterministic algorithm refutes not just
-ETH but SETH, Gap-ETH, and NSETH "Theorem   refutes ETH, SETH, Gap-ETH, and NSETH.
+ETH but SETH, Gap-ETH, and NSETH "Theorem refutes ETH, SETH, Gap-ETH, and NSETH.
 Indeed, testing whether the exact count is positive or zero decides
 both satisfiability and unsatisfiability in deterministic
 $2^{o(n)}(n+m)^{O_k(1)}$ time for every fixed $k$; deciding
@@ -225,59 +213,65 @@ factor of $\log\log n$ in the exponent.
 The comparator stub [S8:194–218] states the target and ends in
 `sorry`:
 
-> theorem exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :
-    ∃ (machine : Computation.PrimitiveMachine)
-      (countTape answerTape : Fin machine.tapeCount)
-      (C A S : ℝ) (d e : ℕ),
-      0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧
-      ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →
-        ∃ (time : ℕ) (final : LocatedCfg machine),
-          Computation.Trace (locatedStep machine) time
-            (locatedInit machine (Encoding.encodeCNF F)) final ∧
-          final.config.tapes countTape =
-            Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧
-          final.config.tapes answerTape =
-            Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧
-          final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧
-          BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧
-          (countWord (SAT.count F)).length ≤ n + 1 ∧
-          (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d
-            (Encoding.formulaBitLength F) n ∧
-          ∀ (prefixSteps : ℕ) (intermediate : LocatedCfg machine),
-            prefixSteps ≤ time →
-            Computation.Trace (locatedStep machine) prefixSteps
-              (locatedInit machine (Encoding.encodeCNF F)) intermediate →
-            (visitedSpace intermediate : ℝ) ≤
-              S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e := by
-  sorry [S8:194–218]
+```lean
+theorem exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :
+ ∃ (machine : Computation.PrimitiveMachine)
+ (countTape answerTape : Fin machine.tapeCount)
+ (C A S : ℝ) (d e : ℕ),
+ 0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧
+ ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →
+ ∃ (time : ℕ) (final : LocatedCfg machine),
+ Computation.Trace (locatedStep machine) time
+ (locatedInit machine (Encoding.encodeCNF F)) final ∧
+ final.config.tapes countTape =
+ Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧
+ final.config.tapes answerTape =
+ Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧
+ final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧
+ BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧
+ (countWord (SAT.count F)).length ≤ n + 1 ∧
+ (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d
+ (Encoding.formulaBitLength F) n ∧
+ ∀ (prefixSteps : ℕ) (intermediate : LocatedCfg machine),
+ prefixSteps ≤ time →
+ Computation.Trace (locatedStep machine) prefixSteps
+ (locatedInit machine (Encoding.encodeCNF F)) intermediate →
+ (visitedSpace intermediate : ℝ) ≤
+ S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e := by
+ sorry
+```
+[S8:194–218]
 
 The proved version [S9:74–97] has the identical statement, with the
 proof delegating to a `compiled_exact_count_and_sat` helper:
 
-> theorem exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :
-    ∃ (machine : Computation.PrimitiveMachine)
-      (countTape answerTape : Fin machine.tapeCount)
-      (C A S : ℝ) (d e : ℕ),
-      0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧
-      ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →
-        ∃ (time : ℕ) (final : LocatedCfg machine),
-          Computation.Trace (locatedStep machine) time
-            (locatedInit machine (Encoding.encodeCNF F)) final ∧
-          final.config.tapes countTape =
-            Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧
-          final.config.tapes answerTape =
-            Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧
-          final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧
-          BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧
-          (countWord (SAT.count F)).length ≤ n + 1 ∧
-          (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d
-            (Encoding.formulaBitLength F) n ∧
-          ∀ (prefixSteps : ℕ) (intermediate : LocatedCfg machine),
-            prefixSteps ≤ time →
-            Computation.Trace (locatedStep machine) prefixSteps
-              (locatedInit machine (Encoding.encodeCNF F)) intermediate →
-            (visitedSpace intermediate : ℝ) ≤
-              S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e := by [S9:74–97]
+```lean
+theorem exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :
+ ∃ (machine : Computation.PrimitiveMachine)
+ (countTape answerTape : Fin machine.tapeCount)
+ (C A S : ℝ) (d e : ℕ),
+ 0 < C ∧ 0 < A ∧ 0 < S ∧ 0 < d ∧ 0 < e ∧
+ ∀ (n : ℕ) (F : SAT.CNF (Fin n)), SAT.WidthAtMost k F →
+ ∃ (time : ℕ) (final : LocatedCfg machine),
+ Computation.Trace (locatedStep machine) time
+ (locatedInit machine (Encoding.encodeCNF F)) final ∧
+ final.config.tapes countTape =
+ Turing.Tape.mk₁ ((countWord (SAT.count F)).map some) ∧
+ final.config.tapes answerTape =
+ Turing.Tape.mk₁ [some (decide (0 < SAT.count F))] ∧
+ final.config.state = Sum.inl (decide (0 < SAT.count F)) ∧
+ BinaryArithmetic.toNat (countWord (SAT.count F)) = SAT.count F ∧
+ (countWord (SAT.count F)).length ≤ n + 1 ∧
+ (time : ℝ) ≤ OAI.Algorithms.SubexponentialSAT.SqrtLog.Statement.runtimeBound C A d
+ (Encoding.formulaBitLength F) n ∧
+ ∀ (prefixSteps : ℕ) (intermediate : LocatedCfg machine),
+ prefixSteps ≤ time →
+ Computation.Trace (locatedStep machine) prefixSteps
+ (locatedInit machine (Encoding.encodeCNF F)) intermediate →
+ (visitedSpace intermediate : ℝ) ≤
+ S * ((Encoding.formulaBitLength F : ℝ) + 1) ^ e := by
+```
+[S9:74–97]
 
 The gap is the $(\log\log n)$ vs $(\log\log n)^2$ factor in the
 exponent. Both are subexponential, so the formalization proves the

@@ -34,11 +34,9 @@ direction. The theorem bounds this operator on $L^3$:
 For every \(\varepsilon>0\) there exists a finite constant
 \(C_\varepsilon\) such that, for every \(0<\delta<1\) and every
 \(f\in L^3(\mathbb R^3)\),
-\[
-\|K_\delta f\|_L^3(S^2)
+$$\|K_\delta f\|_{L^3(S^2)}
 \le C_\varepsilon\delta^{-\varepsilon}
-     \|f\|_{L^3(\mathbb R^3)}.
-\] [S4:17–26]
+     \|f\|_{L^3(\mathbb R^3)}.$$ [S4:17–26]
 
 In four dimensions the paper states the dimension conjecture
 directly, with no regularity hypothesis on the set or its witnessing
@@ -47,9 +45,7 @@ segments
 > **theorem**
 Let \(K\subset\mathbb R^4\). Suppose that for every \(e\in S^3\) there is a point
 \(a_e\in\mathbb R^4\) such that
-\[
-  \{a_e+te:0\leq t\leq1\}\subset K.
-\]
+$$\{a_e+te:0\leq t\leq1\}\subset K.$$
 Then \(\dim_H K=4\). [S6:8–15]
 
 ## Graduate summary

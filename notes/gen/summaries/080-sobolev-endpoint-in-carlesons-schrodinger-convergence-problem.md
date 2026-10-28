@@ -40,13 +40,9 @@ continuous at $t=0$:
 > **Theorem 1.1**
 For every $f\in H^{1/3}(\mathbb R^2)$ there is a set $E_f\subset\mathbb R^2$ of full
 Lebesgue measure such that, for each $x\in E_f$, the finite limit
-\[
- u_f(x,t)=\lim_{a\downarrow0}U_af(x,t)
-\]
+$$u_f(x,t)=\lim_{a\downarrow0}U_af(x,t)$$
 exists for every real $0<t<1$, and
-\[
- \lim_{t\downarrow0}u_f(x,t)=f^*(x).
-\]
+$$\lim_{t\downarrow0}u_f(x,t)=f^*(x).$$
 In fact $u_f(x,\cdot)$ extends continuously to $[0,1)$ with value $f^*(x)$
 at zero, and the Gaussian limit is uniform over $0<t<1$. [S4:23–35]
 
@@ -62,9 +58,7 @@ $$\label{m:eq-uniform-Gaussian}
  \lim_{a\downarrow0}\sup_{0<t<1}|U_af(x,t)-v(x,t)|=0
  \qquad(x\in E_f).$$
 In particular the finite Gaussian limit
-\[
- u_f(x,t)=\lim_{a\downarrow0}U_af(x,t)
-\]
+$$u_f(x,t)=\lim_{a\downarrow0}U_af(x,t)$$
 exists for every real $0<t<1$ on this one set, and
 $\lim_{t\downarrow0}u_f(x,t)=f^*(x)$. [S6:34–49]
 

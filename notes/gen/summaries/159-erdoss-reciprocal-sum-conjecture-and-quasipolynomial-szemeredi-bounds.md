@@ -44,7 +44,7 @@ The scheme is a triangular density increment, and the constraint that makes it h
 
 The dependency figure says the same thing geometrically 
 
-> The allowed dependence is triangular. There is no arrow from the current width or its cold outputs back to its relative width loss. The full dependency schedule is proved in Section  .} [S5:305–307]
+> The allowed dependence is triangular. There is no arrow from the current width or its cold outputs back to its relative width loss. The full dependency schedule is proved in Section .} [S5:305–307]
 
 The setup section is explicit about why the natural constructions fail 
 
@@ -60,7 +60,7 @@ and the absolute starting rule bounds that count by data that excludes the ambie
 
 The absolute rule then feeds a constant old region into the lifting theorem 
 
-> The comparison and counting arguments first give the absolute rule in a fixed dimension. A relative lifting theorem extends it with only an additive number of new determining coordinates. Applied with the constant old region, this yields the dimension-independent fresh-coordinate bound in Lemma  . This foundational lifting argument supplies the absolute rule; preservation of the old width budgets requires the separate return argument. [S4:263–270]
+> The comparison and counting arguments first give the absolute rule in a fixed dimension. A relative lifting theorem extends it with only an additive number of new determining coordinates. Applied with the constant old region, this yields the dimension-independent fresh-coordinate bound in Lemma . This foundational lifting argument supplies the absolute rule; preservation of the old width budgets requires the separate return argument. [S4:263–270]
 
 The forward-mass step advances the density target [S6:169–175]:
 
@@ -74,11 +74,11 @@ and it is deliberately stated so that it cannot import a higher-layer budget dow
 
 The iteration closes because the targets grow geometrically and a certificate at target 1 is impossible 
 
-> If no impossibility occurs, the targets satisfy $a_t\ge(\alpha/2)(1+\eta_k)^t$, and hence $a_T\ge1$. But a certificate at any target $a\ge1$ is impossible, since \[ fB^-\le B^+ \] pointwise. [S8:391–397]
+> If no impossibility occurs, the targets satisfy $a_t\ge(\alpha/2)(1+\eta_k)^t$, and hence $a_T\ge1$. But a certificate at any target $a\ge1$ is impossible, since $$fB^-\le B^+$$ pointwise. [S8:391–397]
 
 The appendices carry the analytic interface with degree parameters fixed and dimensions inside the stated budgets 
 
-> Throughout the appendices, degree parameters are fixed, while dimensions are included in the stated logarithmic budgets. The polynomial notation of Section   is repeated where needed. The refined width estimates required for the triangular increment are proved in the main text; they are not hypotheses of these analytic results. [S12:33–37]
+> Throughout the appendices, degree parameters are fixed, while dimensions are included in the stated logarithmic budgets. The polynomial notation of Section is repeated where needed. The refined width estimates required for the triangular increment are proved in the main text; they are not hypotheses of these analytic results. [S12:33–37]
 
 What the paper does not say. Its saving is not, by itself, what the earlier five-term argument needed 
 
@@ -86,7 +86,7 @@ What the paper does not say. Its saving is not, by itself, what the earlier five
 
 and its contribution is the all-length summable bound, not a sharper exponent 
 
-> Theorem   gives a stretched-exponential saving in $\log N$ for every fixed length. Its contribution to Erdős's conjecture is this all-length, summable bound; no improvement of the three-term exponent is claimed. [S4:155–158]
+> Theorem gives a stretched-exponential saving in $\log N$ for every fixed length. Its contribution to Erdős's conjecture is this all-length, summable bound; no improvement of the three-term exponent is claimed. [S4:155–158]
 
 Formalization status. The scope note states what the formalization proves 
 
@@ -98,7 +98,10 @@ and what it excludes
 
 That exclusion is about the selected statement, not about the tree. The challenge is 36 lines asking for one term 
 
-> theorem manuscriptReciprocalProgressionTheorem : ReciprocalProgressionTheorem := by sorry [S15:31–32]
+```lean
+theorem manuscriptReciprocalProgressionTheorem : ReciprocalProgressionTheorem := by sorry
+```
+[S15:31–32]
 
 with metadata naming the solution module [S16:3]:
 
@@ -121,19 +124,31 @@ It is the largest formalization measured here: 4,774 files and 1,122,983 Lean li
 
 The content is in `Results/Basic.lean`, whose coloring consequence is 
 
-> theorem monochromatic_hasAP_of_extremalNumber k N r : ℕ (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c k := by [S18:84–86]
+```lean
+theorem monochromatic_hasAP_of_extremalNumber k N r : ℕ (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c k := by
+```
+[S18:84–86]
 
 The quantitative side is formalized, in a weaker form than the manuscript's. `Model.lean` defines the density bound as 
 
-> def QuantitativeDensityBound (k : ℕ) : Prop := ∃ C c η : ℝ, 0 < C ∧ 0 < c ∧ 0 < η ∧ ∀ N : ℕ, 3 ≤ N → (extremalNumber k N : ℝ) ≤ C * N * Real.exp (-c * (Real.log (Real.log N)) ^ (1 + η)) [S20:31–35]
+```lean
+def QuantitativeDensityBound (k : ℕ) : Prop := ∃ C c η : ℝ, 0 < C ∧ 0 < c ∧ 0 < η ∧ ∀ N : ℕ, 3 ≤ N → (extremalNumber k N : ℝ) ≤ C * N * Real.exp (-c * (Real.log (Real.log N)) ^ (1 + η))
+```
+[S20:31–35]
 
 That is a saving in log log *N*; the manuscript's Theorem `ap:main` is a saving in (log *N*)^*ε_k*. The bridge from the weaker form to the reciprocal conclusion is proved in `Estimates/UniformRelativePatchSource.lean` 
 
-> ∃ C : ℝ, 0 < C ∧ ∀ᶠ N : ℕ in atTop, (extremalNumber k N : ℝ) ≤ C * N / (Real.log N) ^ B := by [S23:42–43]
+```lean
+∃ C : ℝ, 0 < C ∧ ∀ᶠ N : ℕ in atTop, (extremalNumber k N : ℝ) ≤ C * N / (Real.log N) ^ B := by
+```
+[S23:42–43]
 
 for every fixed *B*, which is summable on dyadic scales once *B* > 1; `Results/Reciprocal.lean` then converts dyadic summability into the progression conclusion 
 
-> theorem hasAP_of_not_summable_reciprocal k : ℕ (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) A : Set ℕ (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by [S22:86–88]
+```lean
+theorem hasAP_of_not_summable_reciprocal k : ℕ (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) A : Set ℕ (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by
+```
+[S22:86–88]
 
 and `Results/Conclusions.lean` proves the pair as a conjunction [S21:26–27]:
 
@@ -155,7 +170,7 @@ The manuscript's own account is the citation trail. The dyadic threshold is the 
 
 Kelley and Meka obtained the stronger bound 
 
-> Kelley and Meka obtained the stronger bound \[ r_3(N)\ll N\exp\bigl(-c(\log N)^1/12\bigr) \] [S4:118–121]
+> Kelley and Meka obtained the stronger bound $$r_3(N)\ll N\exp\bigl(-c(\log N)^{1/12}\bigr)$$ [S4:118–121]
 
 Bloom and Sisask then simplified it and Raghavan extended it "Bloom and Sisask simplified the argument and then improved the exponent to $1/9$. [S4:124–126]" and "$r_3(N)\le N\exp\bigl(-(\log N)^{1/6-o(1)}\bigr)$ [S4:128]". The ceiling on what any such bound can be is Behrend's construction "Behrend's construction already gives $r_3(N)\ge N\exp(-C\sqrt{\log N})$, so a fixed power saving in $N$ is impossible even in this case [S4:130–132]".
 
@@ -183,7 +198,7 @@ The headline consequence is the uniform harmonic bound
 
 So divergence of the reciprocal sum forces progressions of every length "Consequently, whenever $S_k(w)<\infty$, divergence of the weighted sum forces a nonconstant $k$-term progression. [S9:32–33]" The bound is stable under arbitrary logarithmic losses 
 
-> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with \[ r_k(N)\le C_k,BN(\log N)^-B\qquad(N\ge3). \] [S9:131–135]
+> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with $$r_k(N)\le C_{k,B}N(\log N)^{-B}\qquad(N\ge3).$$ [S9:131–135]
 
 The paper recovers a known theorem rather than replacing it "Theorem also recovers the established dense-primes theorem of Green and Tao [S9:138–139]" and the tail estimate that makes the weighted sums converge is "In particular, for every $0<a<c_k$, this tail is at most $C_{k,a}e^{-a(\log x)^{\varepsilon_k}}$. [S9:163–164]"
 
@@ -193,7 +208,7 @@ Two structural pieces are reusable beyond this theorem. The extraction step pres
 
 and the route diagram records the shape of the argument 
 
-> The main proof route.  Preparation and extraction preserve the triangular dependence of the width losses; the absolute increment controls the number of fresh determining coordinates. [S11:31–33]
+> The main proof route. Preparation and extraction preserve the triangular dependence of the width losses; the absolute increment controls the number of fresh determining coordinates. [S11:31–33]
 
 The same iteration yields the van der Waerden lower bound 
 
@@ -235,51 +250,51 @@ Its README gives the release date "Date: September 23, 2026 [S3:5]".
 
 ## Bibliography
 
-- F. A. Behrend, _On sets of integers which contain no three terms in arithmetical progression_, Proc. Nat. Acad. Sci. U.S.A. **32** (1946), 331–332.  .
+- F. A. Behrend, _On sets of integers which contain no three terms in arithmetical progression_, Proc. Nat. Acad. Sci. U.S.A. **32** (1946), 331–332. .
 - V. Bergelson, B. Host and B. Kra, _Multiple recurrence and nilsequences_, with an appendix by I. Z. Ruzsa, Invent. Math. **160** (2005), no. 2, 261–303. doi:10.1007/s00222-004-0428-6.
-- T. F. Bloom, _A quantitative improvement for Roth's theorem on arithmetic progressions_, J. London Math. Soc. (2) **93** (2016), no. 3, 643–663.  .
-- J. Bourgain, _On triples in arithmetic progression_, Geom. Funct. Anal. **9** (1999), no. 5, 968–984.  .
-- J. Bourgain, _Roth's theorem on progressions revisited_, J. Anal. Math. **104** (2008), 155–192.  .
-- D. Conlon, J. Fox and Y. Zhao, _A relative Szemerédi theorem_, Geom. Funct. Anal. **25** (2015), no. 3, 733–762.  .
+- T. F. Bloom, _A quantitative improvement for Roth's theorem on arithmetic progressions_, J. London Math. Soc. (2) **93** (2016), no. 3, 643–663. .
+- J. Bourgain, _On triples in arithmetic progression_, Geom. Funct. Anal. **9** (1999), no. 5, 968–984. .
+- J. Bourgain, _Roth's theorem on progressions revisited_, J. Anal. Math. **104** (2008), 155–192. .
+- D. Conlon, J. Fox and Y. Zhao, _A relative Szemerédi theorem_, Geom. Funct. Anal. **25** (2015), no. 3, 733–762. .
 - P. Erdős, _Some unsolved problems_, Magyar Tud. Akad. Mat. Kutató Int. Közl. **6** (1961), 221–254.
-- P. Erdős, _Problems_, Math. Balkanica **4** (1974), 203–204, Problem 4.33.6.  .
-- H. Furstenberg, _Ergodic behavior of diagonal measures and a theorem of Szemerédi on arithmetic progressions_, J. Analyse Math. **31** (1977), 204–256.  .
-- W. T. Gowers, _A new proof of Szemerédi's theorem for arithmetic progressions of length four_, Geom. Funct. Anal. **8** (1998), 529–551.  .
-- W. T. Gowers, _A new proof of Szemerédi's theorem_, Geom. Funct. Anal. **11** (2001), 465–588.  .
-- W. T. Gowers, _Decompositions, approximate structure, transference, and the Hahn–Banach theorem_, Bull. London Math. Soc. **42** (2010), no. 4, 573–606.  .
+- P. Erdős, _Problems_, Math. Balkanica **4** (1974), 203–204, Problem 4.33.6. .
+- H. Furstenberg, _Ergodic behavior of diagonal measures and a theorem of Szemerédi on arithmetic progressions_, J. Analyse Math. **31** (1977), 204–256. .
+- W. T. Gowers, _A new proof of Szemerédi's theorem for arithmetic progressions of length four_, Geom. Funct. Anal. **8** (1998), 529–551. .
+- W. T. Gowers, _A new proof of Szemerédi's theorem_, Geom. Funct. Anal. **11** (2001), 465–588. .
+- W. T. Gowers, _Decompositions, approximate structure, transference, and the Hahn–Banach theorem_, Bull. London Math. Soc. **42** (2010), no. 4, 573–606. .
 - B. Green, T. Tao and T. Ziegler, _An inverse theorem for the Gowers $U^{s+1}[N]$-norm_, Ann. of Math. (2) **176** (2012), no. 2, 1231–1372. doi:10.4007/annals.2012.176.2.11.
-- D. R. Heath-Brown, _Integer sets containing no arithmetic progressions_, J. London Math. Soc. (2) **35** (1987), 385–394.  .
-- P. Keevash, N. Lifshitz, E. Long and D. Minzer, _Global hypercontractivity and its applications_, arXiv:2103.04604 (2021).  .
-- N. Keller, N. Lifshitz and O. Marcus, _Sharp hypercontractivity for global functions_, J. Eur. Math. Soc., published online January 9, 2026.  ; arXiv:2307.01356v2.
+- D. R. Heath-Brown, _Integer sets containing no arithmetic progressions_, J. London Math. Soc. (2) **35** (1987), 385–394. .
+- P. Keevash, N. Lifshitz, E. Long and D. Minzer, _Global hypercontractivity and its applications_, arXiv:2103.04604 (2021). .
+- N. Keller, N. Lifshitz and O. Marcus, _Sharp hypercontractivity for global functions_, J. Eur. Math. Soc., published online January 9, 2026. ; arXiv:2307.01356v2.
 - B. Host and B. Kra, _Nonconventional ergodic averages and nilmanifolds_, Ann. of Math. (2) **161** (2005), no. 1, 397–488. doi:10.4007/annals.2005.161.397.
 - V. Bergelson and A. Leibman, _Distribution of values of bounded generalized polynomials_, Acta Math. **198** (2007), 155–230.
 - A. Leibman, _Pointwise convergence of ergodic averages for polynomial sequences of translations on a nilmanifold_, Ergodic Theory Dynam. Systems **25** (2005), no. 1, 201–213. doi:10.1017/S0143385704000215.
 - J. Leng, _Efficient equidistribution of nilsequences_, arXiv:2312.10772v5, 2023, revised 2024.
-- J. Leng, A. Sah and M. Sawhney, _Improved bounds for five-term arithmetic progressions_, Math. Proc. Cambridge Philos. Soc. **177** (2024), no. 3, 371–413.  .
-- J. Leng, A. Sah and M. Sawhney, _Improved Bounds for Szemerédi's Theorem_, arXiv:2402.17995 (2024).  .
+- J. Leng, A. Sah and M. Sawhney, _Improved bounds for five-term arithmetic progressions_, Math. Proc. Cambridge Philos. Soc. **177** (2024), no. 3, 371–413. .
+- J. Leng, A. Sah and M. Sawhney, _Improved Bounds for Szemerédi's Theorem_, arXiv:2402.17995 (2024). .
 - J. Leng, A. Sah, and M. Sawhney, _Quasipolynomial bounds on the inverse theorem for the Gowers $U^{s+1}[N]$-norm_, arXiv:2402.17994v3, 2024.
 - F. Manners, _Quantitative bounds in the inverse theorem for the Gowers $U^{s+1}$-norms over cyclic groups_, arXiv:1811.00718v2, 2018, revised 2024.
 - Z. Kelley and R. Meka, _Strong bounds for 3-progressions_, in _2023 IEEE 64th Annual Symposium on Foundations of Computer Science (FOCS)_, IEEE, 2023, 933–973. doi:10.1109/FOCS57990.2023.00059; revised version arXiv:2302.05537v6 (2024).
 - OpenAI, _Quantitative Superexponential Bounds for van der Waerden Numbers_, OpenAI Math Release preprint OAI:Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026, 2026.
-- R. Raghavan, _Improved Bounds for 3-Progressions_, arXiv:2603.27045v3 (May 15, 2026).  .
-- K. F. Roth, _On certain sets of integers_, J. London Math. Soc. **28** (1953), 104–109.  .
+- R. Raghavan, _Improved Bounds for 3-Progressions_, arXiv:2603.27045v3 (May 15, 2026). .
+- K. F. Roth, _On certain sets of integers_, J. London Math. Soc. **28** (1953), 104–109. .
 - T. Sanders, _Additive structures in sumsets_, Math. Proc. Cambridge Philos. Soc. **144** (2008), no. 2, 289–316. doi:10.1017/S030500410700093X.
-- T. Sanders, _On Roth's theorem on progressions_, Ann. of Math. (2) **174** (2011), no. 1, 619–636.  .
+- T. Sanders, _On Roth's theorem on progressions_, Ann. of Math. (2) **174** (2011), no. 1, 619–636. .
 - T. Sanders, _On the Bogolyubov–Ruzsa lemma_, Anal. PDE **5** (2012), no. 3, 627–655. doi:10.2140/apde.2012.5.627.
-- T. F. Bloom and O. Sisask, _Logarithmic bounds for Roth's theorem via almost-periodicity_, Discrete Anal. **2019**, Paper No. 4, 20 pp.  .
-- T. F. Bloom and O. Sisask, _Breaking the logarithmic barrier in Roth's theorem on arithmetic progressions_, arXiv:2007.03528 (2020), revised 2021.  .
-- T. F. Bloom and O. Sisask, _An improvement to the Kelley–Meka bounds on three-term arithmetic progressions_, arXiv:2309.02353 (2023).  .
-- T. F. Bloom and O. Sisask, _The Kelley–Meka bounds for sets free of three-term arithmetic progressions_, Essential Number Theory **2** (2023), no. 1, 15–44.  ; revised version arXiv:2302.07211v3 (May 13, 2025).
+- T. F. Bloom and O. Sisask, _Logarithmic bounds for Roth's theorem via almost-periodicity_, Discrete Anal. **2019**, Paper No. 4, 20 pp. .
+- T. F. Bloom and O. Sisask, _Breaking the logarithmic barrier in Roth's theorem on arithmetic progressions_, arXiv:2007.03528 (2020), revised 2021. .
+- T. F. Bloom and O. Sisask, _An improvement to the Kelley–Meka bounds on three-term arithmetic progressions_, arXiv:2309.02353 (2023). .
+- T. F. Bloom and O. Sisask, _The Kelley–Meka bounds for sets free of three-term arithmetic progressions_, Essential Number Theory **2** (2023), no. 1, 15–44. ; revised version arXiv:2302.07211v3 (May 13, 2025).
 - E. Croot and O. Sisask, _A probabilistic technique for finding almost-periods of convolutions_, Geom. Funct. Anal. **20** (2010), no. 6, 1367–1396. doi:10.1007/s00039-010-0101-8.
 - T. Schoen and O. Sisask, _Roth's theorem for four variables and additive structures in sums of sparse sets_, Forum Math. Sigma **4** (2016), e5. doi:10.1017/fms.2016.2; arXiv:1408.2568.
-- E. Szemerédi, _On sets of integers containing no four elements in arithmetic progression_, Acta Math. Acad. Sci. Hungar. **20** (1969), 89–104.  .
+- E. Szemerédi, _On sets of integers containing no four elements in arithmetic progression_, Acta Math. Acad. Sci. Hungar. **20** (1969), 89–104. .
 - E. Szemerédi, _On sets of integers containing no $k$ elements in arithmetic progression_, Acta Arith. **27** (1975), 199–245. doi:10.4064/aa-27-1-199-245.
-- E. Szemerédi, _Integer sets containing no arithmetic progressions_, Acta Math. Hungar. **56** (1990), 155–158.  .
+- E. Szemerédi, _Integer sets containing no arithmetic progressions_, Acta Math. Hungar. **56** (1990), 155–158. .
 - B. Green and T. Tao, _An inverse theorem for the Gowers $U^3(G)$ norm_, Proc. Edinb. Math. Soc. (2) **51** (2008), no. 1, 73–153. doi:10.1017/S0013091505000325.
-- B. Green and T. Tao, _The primes contain arbitrarily long arithmetic progressions_, Ann. of Math. (2) **167** (2008), no. 2, 481–547.  .
+- B. Green and T. Tao, _The primes contain arbitrarily long arithmetic progressions_, Ann. of Math. (2) **167** (2008), no. 2, 481–547. .
 - B. Green and T. Tao, _Yet another proof of Szemerédi's theorem_, in _An Irregular Mind: Szemerédi is 70_, Bolyai Soc. Math. Stud. **21**, Springer, 2010, 335–342. doi:10.1007/978-3-642-14444-8\_8.
 - B. Green and T. Tao, _The quantitative behaviour of polynomial orbits on nilmanifolds_, Ann. of Math. (2) **175** (2012), no. 2, 465–540. doi:10.4007/annals.2012.175.2.2.
-- B. Green and T. Tao, _New bounds for Szemerédi's theorem, III: A polylogarithmic bound for $r_4(N)$_, Mathematika **63** (2017), no. 3, 944–1040.  .
-- P. Erdős and P. Turán, _On some sequences of integers_, J. London Math. Soc. **11** (1936), 261–264.  .
+- B. Green and T. Tao, _New bounds for Szemerédi's theorem, III: A polylogarithmic bound for $r_4(N)$_, Mathematika **63** (2017), no. 3, 944–1040. .
+- P. Erdős and P. Turán, _On some sequences of integers_, J. London Math. Soc. **11** (1936), 261–264. .
 - B. L. van der Waerden, _Beweis einer Baudetschen Vermutung_, Nieuw Arch. Wisk. (2) **15** (1927), 212–216.
 - T. Ziegler, _Universal characteristic factors and Furstenberg averages_, J. Amer. Math. Soc. **20** (2007), no. 1, 53–97. doi:10.1090/S0894-0347-06-00532-7.

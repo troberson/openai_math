@@ -36,9 +36,7 @@ Let $(R,\mathfrak{m})$ be a commutative Noetherian regular local ring of dimensi
 $d$, and let $M,N$ be nonzero finitely generated $R$-modules. If
 $\mathrm{length}_R(M\otimes_R N)<\infty$ and
 $\dim_R M+\dim_R N=d$, then
-\[
-  \chi^R(M,N)>0.
-\] [S4:16–24]
+$$\chi^R(M,N)>0.$$ [S4:16–24]
 
 Complementary dimensions means $\dim M+\dim N=d$, so the two supports
 meet in dimension zero — the closed point — and the finite-length
@@ -120,14 +118,10 @@ Let $(A,\mathfrak{m})$ be a commutative Noetherian regular local ring with resid
 field $k$, and let $P,Q$ be prime ideals such that $A/(P+Q)$ has finite
 length and $\dim(A/P)+\dim(A/Q)=\dim A$. Write $e_\mathfrak{m}$ for Hilbert–Samuel
 multiplicity and put
-\[
- T=\operatornamegr(A/P)\otimes_{\operatornamegrA}\operatornamegr(A/Q),
-\]
+$$T=\mathrm{gr}(A/P)\otimes_{\mathrm{gr}A}\mathrm{gr}(A/Q),$$
 where all associated graded rings use the maximal-ideal filtrations.
 If $\dim T\leq1$, then
-\[
- \chi^A(A/P,A/Q)\geq e_\mathfrakm(A/P)e_\mathfrakm(A/Q),
-\]
+$$\chi^A(A/P,A/Q)\geq e_\mathfrak{m}(A/P)e_\mathfrak{m}(A/Q),$$
 with equality if and only if $\dim T=0$. [S4:200–214]
 
 ## Section skeleton
@@ -161,7 +155,7 @@ evidence.
 ## Bibliography
 
 - The Stacks Project Authors, _The Stacks Project_, Tag 0815, Tag 03QH, Tag 0BRI, and Tag 0BRJ, accessed September 23, 2026.
-- P. Berthelot, Altérations de variétés algébriques [d'apr\`es A. J. de Jong], _Astérisque_ **241** (1997), Exp. 815, 273–311; Section 6.1, Theorem 6.1.1 (Gabber).  .
+- P. Berthelot, Altérations de variétés algébriques [d'apr\`es A. J. de Jong], _Astérisque_ **241** (1997), Exp. 815, 273–311; Section 6.1, Theorem 6.1.1 (Gabber). .
 - B. Bhatt, M. Hochster, and L. Ma, Lim Cohen–Macaulay sequences of modules, _J. Reine Angew. Math._ **835** (2026), 111–169. Numbered references follow arXiv:2410.18372v2, August 25, 2026.
 - A. J. Blumberg, D. Gepner, and G. Tabuada, A universal characterization of higher algebraic $K$-theory, _Geom. Topol._ **17** (2013), 733–838. doi:10.2140/gt.2013.17.733. Numbered references follow arXiv:1001.2282v4, February 5, 2013.
 - H. Cai, S. Lee, L. Ma, K. Schwede, and K. Tucker, Perfectoid signature, perfectoid Hilbert–Kunz multiplicity, and an application to local fundamental groups, _Invent. Math._ **244** (2026), 357–454. doi:10.1007/s00222-025-01399-w. Numbered references follow arXiv:2209.04046v4, July 3, 2025.
@@ -169,7 +163,7 @@ evidence.
 - S. P. Dutta, A special case of positivity (II), _Proc. Amer. Math. Soc._ **133** (2005), no. 7, 1891–1896. doi:10.1090/S0002-9939-05-07929-3.
 - G. Faltings, Almost étale extensions, _Astérisque_ **279** (2002), 185–270. Numdam: AST\_2002\_\_279\_\_185\_0.
 - T. G. Goodwillie, Relative algebraic $K$-theory and cyclic homology, _Ann. of Math. (2)_ **124** (1986), no. 2, 347–402. doi:10.2307/1971283.
-- U. Jannsen, Resolution of singularities for embedded curves, Appendix A to S. Saito and K. Sato, A finiteness theorem for zero-cycles over $p$-adic fields, _Ann. of Math. (2)_ **172** (2010), no. 3, 1593–1639, Proposition A.4(1).  .
+- U. Jannsen, Resolution of singularities for embedded curves, Appendix A to S. Saito and K. Sato, A finiteness theorem for zero-cycles over $p$-adic fields, _Ann. of Math. (2)_ **172** (2010), no. 3, 1593–1639, Proposition A.4(1). .
 - N. KC and A. J. Soto Levins, On liftings of modules of finite projective dimension, _Int. Math. Res. Not. IMRN_ **2024**, no. 24, 14729–14736. doi:10.1093/imrn/rnae257. Numbered references follow arXiv:2404.17572v2, November 5, 2024.
 - L. Ma, Lech's conjecture in dimension three, _Adv. Math._ **322** (2017), 940–970. doi:10.1016/j.aim.2017.10.032. Numbered references follow arXiv:1609.00095v3, February 13, 2018.
 - P. Monsky, The Hilbert–Kunz function, _Math. Ann._ **263** (1983), no. 1, 43–49. doi:10.1007/BF01457082.
@@ -177,7 +171,7 @@ evidence.
 - O. Gabber and L. Ramero, _Foundations for almost ring theory—Release 7.5_, arXiv:math/0409584v13, September 29, 2018.
 - K. Kurano and P. C. Roberts, The positivity of intersection multiplicities and symbolic powers of prime ideals, _Compositio Math._ **122** (2000), no. 2, 165–182. doi:10.1023/A:1001741230307.
 - P. Roberts, The vanishing of intersection multiplicities of perfect complexes, _Bull. Amer. Math. Soc. (N.S.)_ **13** (1985), no. 2, 127–130. doi:10.1090/S0273-0979-1985-15394-7.
-- P. Roberts, Intersection multiplicities in commutative algebra, _Publications de l'Institut de recherche mathématiques de Rennes_ (1985), fasc. 4, 25–39.  .
+- P. Roberts, Intersection multiplicities in commutative algebra, _Publications de l'Institut de recherche mathématiques de Rennes_ (1985), fasc. 4, 25–39. .
 - P. Roberts, Intersection theorems, in _Commutative Algebra_ (Berkeley, CA, 1987), M. Hochster, C. Huneke, and J. D. Sally (eds.), Mathematical Sciences Research Institute Publications **15**, Springer, New York, 1989, 417–436. doi:10.1007/978-1-4612-3660-3\_23.
 - P. Balmer and M. Schlichting, Idempotent completion of triangulated categories, _J. Algebra_ **236** (2001), 819–834. doi:10.1006/jabr.2000.8529.
 - B. Bhatt and P. Scholze, Prisms and prismatic cohomology, _Ann. of Math. (2)_ **196** (2022), no. 3, 1135–1275. doi:10.4007/annals.2022.196.3.5. Numbered references follow arXiv:1905.08229v4, January 12, 2022.

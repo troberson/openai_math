@@ -172,12 +172,18 @@ unrestricted depth" [S10:9].
 The `main_results` entry [S13:1165–1167] names
 `OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound`
 in `lean/OAI/Computability/DepthThree/Main.lean`. In the source the theorem
-is stated and closed: "theorem exists_polynomial_time_language_depth_three_lower_bound : ∃ (L : List Bool → Bool) (M : FiniteMultiTapeMachine) (C a : ℕ), 0 < C ∧ 0 < a ∧ (∀ w : List Bool, MultiTapeHaltsIn M w (L w) (C * (w.length + 1) ^ a)) ∧ ∀ A : ℝ, 0 < A → ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ∀ D : Circuit3 (Fin n), D.Computes (fun x => L (List.ofFn x)) → (2 : ℝ) ^ (A * Real.sqrt (n : ℝ)) < (D.gateCount : ℝ) := by [S12:8–14]" , proved by pairing
+is stated and closed: "```lean
+theorem exists_polynomial_time_language_depth_three_lower_bound : ∃ (L : List Bool → Bool) (M : FiniteMultiTapeMachine) (C a : ℕ), 0 < C ∧ 0 < a ∧ (∀ w : List Bool, MultiTapeHaltsIn M w (L w) (C * (w.length + 1) ^ a)) ∧ ∀ A : ℝ, 0 < A → ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ∀ D : Circuit3 (Fin n), D.Computes (fun x => L (List.ofFn x)) → (2 : ℝ) ^ (A * Real.sqrt (n : ℝ)) < (D.gateCount : ℝ) := by
+```
+[S12:8–14]" , proved by pairing
 `language_polynomial_time` with `language_depth_three_gate_lower_bound`
 [S12:15–16]. `grep` finds **zero** `sorry` in the whole
 `lean/OAI/Computability/DepthThree/` tree (179 files).
 
-The comparator stub [S11:133–140] carries the same target statement "theorem exists_polynomial_time_language_depth_three_lower_bound : ∃ (L : List Bool → Bool) (M : FiniteMultiTapeMachine) (C a : ℕ), 0 < C ∧ 0 < a ∧ (∀ w : List Bool, MultiTapeHaltsIn M w (L w) (C * (w.length + 1) ^ a)) ∧ ∀ A : ℝ, 0 < A → ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ∀ D : Circuit3 (Fin n), D.Computes (fun x => L (List.ofFn x)) → (2 : ℝ) ^ (A * Real.sqrt (n : ℝ)) < (D.gateCount : ℝ) := by sorry [S11:133–140]"
+The comparator stub [S11:133–140] carries the same target statement "```lean
+theorem exists_polynomial_time_language_depth_three_lower_bound : ∃ (L : List Bool → Bool) (M : FiniteMultiTapeMachine) (C a : ℕ), 0 < C ∧ 0 < a ∧ (∀ w : List Bool, MultiTapeHaltsIn M w (L w) (C * (w.length + 1) ^ a)) ∧ ∀ A : ℝ, 0 < A → ∃ N : ℕ, ∀ n : ℕ, N ≤ n → ∀ D : Circuit3 (Fin n), D.Computes (fun x => L (List.ofFn x)) → (2 : ℝ) ^ (A * Real.sqrt (n : ℝ)) < (D.gateCount : ℝ) := by sorry
+```
+[S11:133–140]"
 [S11:133–140] over the config `ComparatorChallenges/DepthThree.json`; the
 stub ends in `sorry` at [S11:140], and the proved copy is the one the
 `main_results` entry names [S12:8–16]. The scope note's comparator link

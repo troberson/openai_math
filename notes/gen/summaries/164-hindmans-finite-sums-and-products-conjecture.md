@@ -31,11 +31,9 @@ Let $r,m\ge1$ be integers, and fix real numbers $R\ge2$ and $D\ge1$.
 For every coloring $\chi:\mathbb N\to[r]$,
 there are distinct positive integers $a_1<\cdots<a_m$ and a color
 $c\in[r]$ such that
-\[
- \chi\left(\sum_{j\in J}a_j\right)
+$$\chi\left(\sum_{j\in J}a_j\right)
  =\chi\left(\prod_{j\in J}a_j\right)=c
- \quadfor every \varnothing\ne J\subseteq[m].
-\]
+ \quad\text{for every }\varnothing\ne J\subseteq[m].$$
 Equivalently, $\mathrm{FS}(A)\cup\mathrm{FP}(A)$ is monochromatic for a set
 $A\subset\mathbb N$ of cardinality $m$.
 The elements can additionally be chosen to satisfy
@@ -52,9 +50,7 @@ $2(2^m-1)-m$ distinct values
 For every finite coloring of $\mathbb N$ and every $m\ge1$, there is an
 $m$-element set $A\subset\mathbb N$ for which $\mathrm{FS}(A)\cup\mathrm{FP}(A)$ is
 monochromatic and
-\[
- |\mathrmFS(A)|=|\mathrmFP(A)|=2^m-1,\qquad \mathrmFS(A)\cap\mathrmFP(A)=A.
-\]
+$$|\mathrm{FS}(A)|=|\mathrm{FP}(A)|=2^m-1,\qquad \mathrm{FS}(A)\cap\mathrm{FP}(A)=A.$$
 In particular, the union has $2(2^m-1)-m$ distinct elements. [S4:39–47]
 
 ## Graduate summary
@@ -149,40 +145,40 @@ evidence.
 
 ## Bibliography
 
-- R. Alweiss, _Monochromatic sums and products over $\mathbb{Q}$_, arXiv:2307.08901v6, 12 July 2026; accepted for publication in Duke Mathematical Journal.  .
-- R. Alweiss, _Monochromatic sums and products of polynomials_, Discrete Anal. **2024**, Paper No. 5, 7 pp.  .
-- R. Alweiss, M. Bowen and M. Sabok, _Sums, products, and exponents in two-colorings of the naturals_, arXiv:2512.09598v1, 10 December 2025.  .
-- M. Bowen, _Monochromatic products and sums in $2$-colorings of $\mathbb{N}$_, Adv. Math. **462** (2025), 110095.  .
-- W. T. Gowers, _Decompositions, approximate structure, transference, and the Hahn–Banach theorem_, Bull. Lond. Math. Soc. **42** (2010), no. 4, 573–606.  .
-- B. Green, T. Tao and T. Ziegler, _An inverse theorem for the Gowers $U^{s+1}[N]$-norm_, Ann. of Math. (2) **176** (2012), no. 2, 1231–1372.  . Further revision: arXiv:1009.3998v5, 23 April 2026,  .
-- B. Green, T. Tao and T. Ziegler, _Erratum for ``An inverse theorem for the Gowers $U^{s+1}[N]$-norm''_, author-hosted erratum, April 2024, 6 pp.  .
-- N. Hindman, _Finite sums from sequences within cells of a partition of $N$_, J. Combin. Theory Ser. A **17** (1974), no. 1, 1–11.  .
-- N. Hindman, _Partitions and sums and products of integers_, Trans. Amer. Math. Soc. **247** (1979), 227–245.  .
-- N. Hindman, _Partitions and sums and products—Two counterexamples_, J. Combin. Theory Ser. A **29** (1980), no. 1, 113–120.  .
-- B. Host and B. Kra, _Nonconventional ergodic averages and nilmanifolds_, Ann. of Math. (2) **161** (2005), no. 1, 397–488.  .
-- V. Bergelson and A. Leibman, _Set-polynomials and polynomial extension of the Hales–Jewett theorem_, Ann. of Math. (2) **150** (1999), no. 1, 33–75.  .
-- V. Bergelson and A. Leibman, _Topological multiple recurrence for polynomial configurations in nilpotent groups_, Adv. Math. **175** (2003), no. 2, 271–296.  .
-- A. Leibman, _Multiple recurrence theorem for nilpotent group actions_, Geom. Funct. Anal. **4** (1994), no. 6, 648–659.  .
-- A. Leibman, _Pointwise convergence of ergodic averages for polynomial sequences of translations on a nilmanifold_, Ergodic Theory Dynam. Systems **25** (2005), no. 1, 201–213.  .
-- V. Bergelson and J. Moreira, _Measure preserving actions of affine semigroups and $\{x+y,xy\}$ patterns_, Ergodic Theory Dynam. Systems **38** (2018), no. 2, 473–498.  .
-- V. Bergelson and J. Moreira, _Ergodic theorem involving additive and multiplicative groups of a field and $\{x+y,xy\}$ patterns_, Ergodic Theory Dynam. Systems **37** (2017), no. 3, 673–692.  .
-- J. Moreira, _Monochromatic sums and products in $\mathbb{N}$_, Ann. of Math. (2) **185** (2017), no. 3, 1069–1090.  .
+- R. Alweiss, _Monochromatic sums and products over $\mathbb{Q}$_, arXiv:2307.08901v6, 12 July 2026; accepted for publication in Duke Mathematical Journal. .
+- R. Alweiss, _Monochromatic sums and products of polynomials_, Discrete Anal. **2024**, Paper No. 5, 7 pp. .
+- R. Alweiss, M. Bowen and M. Sabok, _Sums, products, and exponents in two-colorings of the naturals_, arXiv:2512.09598v1, 10 December 2025. .
+- M. Bowen, _Monochromatic products and sums in $2$-colorings of $\mathbb{N}$_, Adv. Math. **462** (2025), 110095. .
+- W. T. Gowers, _Decompositions, approximate structure, transference, and the Hahn–Banach theorem_, Bull. Lond. Math. Soc. **42** (2010), no. 4, 573–606. .
+- B. Green, T. Tao and T. Ziegler, _An inverse theorem for the Gowers $U^{s+1}[N]$-norm_, Ann. of Math. (2) **176** (2012), no. 2, 1231–1372. . Further revision: arXiv:1009.3998v5, 23 April 2026, .
+- B. Green, T. Tao and T. Ziegler, _Erratum for ``An inverse theorem for the Gowers $U^{s+1}[N]$-norm''_, author-hosted erratum, April 2024, 6 pp. .
+- N. Hindman, _Finite sums from sequences within cells of a partition of $N$_, J. Combin. Theory Ser. A **17** (1974), no. 1, 1–11. .
+- N. Hindman, _Partitions and sums and products of integers_, Trans. Amer. Math. Soc. **247** (1979), 227–245. .
+- N. Hindman, _Partitions and sums and products—Two counterexamples_, J. Combin. Theory Ser. A **29** (1980), no. 1, 113–120. .
+- B. Host and B. Kra, _Nonconventional ergodic averages and nilmanifolds_, Ann. of Math. (2) **161** (2005), no. 1, 397–488. .
+- V. Bergelson and A. Leibman, _Set-polynomials and polynomial extension of the Hales–Jewett theorem_, Ann. of Math. (2) **150** (1999), no. 1, 33–75. .
+- V. Bergelson and A. Leibman, _Topological multiple recurrence for polynomial configurations in nilpotent groups_, Adv. Math. **175** (2003), no. 2, 271–296. .
+- A. Leibman, _Multiple recurrence theorem for nilpotent group actions_, Geom. Funct. Anal. **4** (1994), no. 6, 648–659. .
+- A. Leibman, _Pointwise convergence of ergodic averages for polynomial sequences of translations on a nilmanifold_, Ergodic Theory Dynam. Systems **25** (2005), no. 1, 201–213. .
+- V. Bergelson and J. Moreira, _Measure preserving actions of affine semigroups and $\{x+y,xy\}$ patterns_, Ergodic Theory Dynam. Systems **38** (2018), no. 2, 473–498. .
+- V. Bergelson and J. Moreira, _Ergodic theorem involving additive and multiplicative groups of a field and $\{x+y,xy\}$ patterns_, Ergodic Theory Dynam. Systems **37** (2017), no. 3, 673–692. .
+- J. Moreira, _Monochromatic sums and products in $\mathbb{N}$_, Ann. of Math. (2) **185** (2017), no. 3, 1069–1090. .
 - N. Hindman and D. Phulara, _Some new additive and multiplicative Ramsey numbers_, J. Combin. **4** (2013), no. 1, 81–93.
-- O. Reingold, L. Trevisan, M. Tulsiani and S. Vadhan, _New proofs of the Green–Tao–Ziegler dense model theorem: An exposition_, arXiv:0806.0381v1, 2 June 2008.  .
-- F. K. Richter, _Sums and products in sets of positive density_, arXiv:2507.00515v2, 7 February 2026.  .
-- M. Bowen and M. Sabok, _Monochromatic products and sums in the rationals_, Forum Math. Pi **12** (2024), e17.  .
-- B. Green and T. Sanders, _Monochromatic sums and products_, Discrete Anal. **2016**, Paper No. 5, 48 pp.  .
-- J. H. Sanders, _A Generalization of Schur's Theorem_, author-posted excerpt from the author's Ph.D. dissertation, Yale University, 1968; arXiv:1712.03620v1 (2017).  .
+- O. Reingold, L. Trevisan, M. Tulsiani and S. Vadhan, _New proofs of the Green–Tao–Ziegler dense model theorem: An exposition_, arXiv:0806.0381v1, 2 June 2008. .
+- F. K. Richter, _Sums and products in sets of positive density_, arXiv:2507.00515v2, 7 February 2026. .
+- M. Bowen and M. Sabok, _Monochromatic products and sums in the rationals_, Forum Math. Pi **12** (2024), e17. .
+- B. Green and T. Sanders, _Monochromatic sums and products_, Discrete Anal. **2016**, Paper No. 5, 48 pp. .
+- J. H. Sanders, _A Generalization of Schur's Theorem_, author-posted excerpt from the author's Ph.D. dissertation, Yale University, 1968; arXiv:1712.03620v1 (2017). .
 - I. Schur, _Über die Kongruenz $x^m+y^m\equiv z^m\pmod p$_, Jahresber. Dtsch. Math.-Ver. **25** (1916), 114–117.
-- A. Selberg, _An elementary proof of the prime-number theorem for arithmetic progressions_, Canad. J. Math. **2** (1950), 66–78.  .
-- N. Hindman and D. Strauss, _Algebra in the Stone–Čech compactification: Theory and applications_, 2nd revised and extended ed., De Gruyter Textbook, Walter de Gruyter, Berlin–Boston, 2012.  .
-- E. Szemerédi, _On sets of integers containing no $k$ elements in arithmetic progression_, Acta Arith. **27** (1975), 199–245.  .
-- B. Green and T. Tao, _The quantitative behaviour of polynomial orbits on nilmanifolds_, Ann. of Math. (2) **175** (2012), no. 2, 465–540.  .
-- B. Green and T. Tao, _On the quantitative distribution of polynomial nilsequences—erratum_, Ann. of Math. (2) **179** (2014), no. 3, 1175–1183.  . Further revision: arXiv:1311.6170v3, 14 August 2015,  .
-- B. Green and T. Tao, _Linear equations in primes_, Ann. of Math. (2) **171** (2010), no. 3, 1753–1850.  .
-- B. Green and T. Tao, _The primes contain arbitrarily long arithmetic progressions_, Ann. of Math. (2) **167** (2008), no. 2, 481–547.  .
-- B. Green and T. Tao, _An arithmetic regularity lemma, an associated counting lemma, and applications_, in _An Irregular Mind: Szemerédi is 70_, Bolyai Society Mathematical Studies, Springer, 2010, pp. 261–334. Corrected version: arXiv:1002.2028v3, 24 November 2020,  .
+- A. Selberg, _An elementary proof of the prime-number theorem for arithmetic progressions_, Canad. J. Math. **2** (1950), 66–78. .
+- N. Hindman and D. Strauss, _Algebra in the Stone–Čech compactification: Theory and applications_, 2nd revised and extended ed., De Gruyter Textbook, Walter de Gruyter, Berlin–Boston, 2012. .
+- E. Szemerédi, _On sets of integers containing no $k$ elements in arithmetic progression_, Acta Arith. **27** (1975), 199–245. .
+- B. Green and T. Tao, _The quantitative behaviour of polynomial orbits on nilmanifolds_, Ann. of Math. (2) **175** (2012), no. 2, 465–540. .
+- B. Green and T. Tao, _On the quantitative distribution of polynomial nilsequences—erratum_, Ann. of Math. (2) **179** (2014), no. 3, 1175–1183. . Further revision: arXiv:1311.6170v3, 14 August 2015, .
+- B. Green and T. Tao, _Linear equations in primes_, Ann. of Math. (2) **171** (2010), no. 3, 1753–1850. .
+- B. Green and T. Tao, _The primes contain arbitrarily long arithmetic progressions_, Ann. of Math. (2) **167** (2008), no. 2, 481–547. .
+- B. Green and T. Tao, _An arithmetic regularity lemma, an associated counting lemma, and applications_, in _An Irregular Mind: Szemerédi is 70_, Bolyai Society Mathematical Studies, Springer, 2010, pp. 261–334. Corrected version: arXiv:1002.2028v3, 24 November 2020, .
 - B. L. van der Waerden, _Beweis einer Baudetschen Vermutung_, Nieuw Arch. Wiskd. (2) **15** (1927), 212–216.
-- T. Yamada, _Explicit improvements of the Brun–Titchmarsh theorem for arbitrary intervals_, arXiv:2312.16090v1, 26 December 2023.  .
-- T. Tao and T. Ziegler, _Concatenation theorems for anti-Gowers-uniform functions and Host-Kra characteristic factors_, Discrete Anal. **2016**, Paper No. 13, 61 pp.  . Revised version: arXiv:1603.07815v4, 17 January 2017,  .
-- P. Zorin-Kranich, _A nilpotent IP polynomial multiple recurrence theorem_, J. Anal. Math. **123** (2014), 183–225.  . Revised version: arXiv:1206.0287v4, 4 June 2018,  .
+- T. Yamada, _Explicit improvements of the Brun–Titchmarsh theorem for arbitrary intervals_, arXiv:2312.16090v1, 26 December 2023. .
+- T. Tao and T. Ziegler, _Concatenation theorems for anti-Gowers-uniform functions and Host-Kra characteristic factors_, Discrete Anal. **2016**, Paper No. 13, 61 pp. . Revised version: arXiv:1603.07815v4, 17 January 2017, .
+- P. Zorin-Kranich, _A nilpotent IP polynomial multiple recurrence theorem_, J. Anal. Math. **123** (2014), 183–225. . Revised version: arXiv:1206.0287v4, 4 June 2018, .

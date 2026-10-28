@@ -78,7 +78,7 @@ module categories including their lattice structure [S6:9–17]:
 
 > **theorem**
 Let $p$ be a prime, let $\mathcal O=W(\overline{\mathbb F}_p)$, and let
-$M\geq1$ be an integer.  As $G$ ranges over all
+$M\geq1$ be an integer. As $G$ ranges over all
 finite groups and $b$ ranges over all blocks of $\mathcal O G$ whose defect
 groups have order at most $M$, the algebras $\mathcal O G b$ belong to only
 finitely many $\mathcal O$-linear Morita equivalence classes. [S6:19–25]

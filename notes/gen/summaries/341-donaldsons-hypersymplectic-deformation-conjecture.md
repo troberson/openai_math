@@ -35,10 +35,8 @@ $$\label{eq:intro-normalization}
  \int_X\omega_i\wedge\omega_j=\delta_{ij}.$$
 There is a smooth family of hypersymplectic structures $\omega(t)$,
 $0\le t\le1$, such that
-\[
- \omega(0)=\omega,\qquad [\omega_i(t)]=[\omega_i]
- \quad (i=1,2,3),
-\]
+$$\omega(0)=\omega,\qquad [\omega_i(t)]=[\omega_i]
+ \quad (i=1,2,3),$$
 and a positive volume form $\mu_1$ with
 $$\label{eq:intro-endpoint}
  \omega_i(1)\wedge\omega_j(1)=2\delta_{ij}\mu_1.$$

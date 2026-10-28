@@ -14,9 +14,7 @@ companion manuscripts. The first proves the integral bound
  "We prove the integral scalar-curvature inequality proposed by Gromov.
 For every dimension \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that
-\[
-  \int_M(\mathrmScal_g^-)^n/2\,dV_g\ge a_n\|M\|
-\]
+$$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|$$
 for every closed connected oriented smooth \(n\)-manifold \(M\) and every
 smooth Riemannian metric \(g\). Here
 \(\mathrmScal_g^-:=\max\{0,-\mathrmScal_g\}\), and \(\|M\|\) is real simplicial volume.

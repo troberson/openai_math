@@ -40,12 +40,10 @@ The main statement
 
 > **theorem**
 For every fixed $a,b\in(0,1)$,
-\[
- \lim_{X\to\infty}\frac1X
- #\{2\leq n\leq X:P^+(n)\leq n^a,
+$$\lim_{X\to\infty}\frac1X
+ \\\#\{2\leq n\leq X:P^+(n)\leq n^a,
                          \ P^+(n+1)\leq n^b\}
- =\rho(1/a)\rho(1/b).
-\]
+ =\rho(1/a)\rho(1/b).$$
 Here the limit is taken over all real $X$, with ordinary, unweighted
 counting. [S3:19–29]
 
@@ -58,12 +56,10 @@ $(P^+(n), P^+(n+1))$.
 
 > **theorem**
 For every fixed $a,b\in(0,1)$,
-\[
- \lim_{X\to\infty}\frac1X
- #\{2\leq n\leq X:P^+(n)\leq n^a,
+$$\lim_{X\to\infty}\frac1X
+ \\\#\{2\leq n\leq X:P^+(n)\leq n^a,
                          \ P^+(n+1)\leq n^b\}
- =\rho(1/a)\rho(1/b).
-\]
+ =\rho(1/a)\rho(1/b).$$
 Here the limit is taken over all real $X$, with ordinary, unweighted
 counting. [S3:19–29]
 
@@ -80,10 +76,8 @@ density" form the conjecture asks for.
 
 > **corollary**
 One has
-\[
- \lim_{X\to\infty}\frac1X
- #\{2\leq n\leq X:P^+(n)<P^+(n+1)\}=\frac12.
-\]
+$$\lim_{X\to\infty}\frac1X
+ \\\#\{2\leq n\leq X:P^+(n)<P^+(n+1)\}=\frac12.$$
 The reverse ordering has the same natural density. [S3:43–50]
 
 Setting $b$ just above $a$ (or vice versa) and letting the threshold
@@ -142,12 +136,15 @@ reasoning trace.
 The comparator stub [S5:44–49] states the target and ends in
 `sorry`:
 
-> theorem joint_law (a b : ℝ) (ha : 0 < a) (ha1 : a < 1) (hb : 0 < b) (hb1 : b < 1) :
-    Tendsto (realDensity (fun n =>
-      (n.maxPrimeFac : ℝ) ≤ (n : ℝ) ^ a ∧ ((n + 1).maxPrimeFac : ℝ) ≤ (n : ℝ) ^ b))
-      atTop (𝓝 (Erdos970.NumberTheoryLean.Dickman.rho (1 / a) *
-        Erdos970.NumberTheoryLean.Dickman.rho (1 / b))) := by
-  sorry [S5:44–49]
+```lean
+theorem joint_law (a b : ℝ) (ha : 0 < a) (ha1 : a < 1) (hb : 0 < b) (hb1 : b < 1) :
+ Tendsto (realDensity (fun n =>
+ (n.maxPrimeFac : ℝ) ≤ (n : ℝ) ^ a ∧ ((n + 1).maxPrimeFac : ℝ) ≤ (n : ℝ) ^ b))
+ atTop (𝓝 (Erdos970.NumberTheoryLean.Dickman.rho (1 / a) *
+ Erdos970.NumberTheoryLean.Dickman.rho (1 / b))) := by
+ sorry
+```
+[S5:44–49]
 
 The scope note confirms the formalization's reach: "Let $P^+(n)$ be the largest prime factor of $n$. The formalization proves the joint Dickman law in ordinary natural density: for every $0<a,b<1$, the density of integers satisfying $P^+(n)\le n^a$ and $P^+(n+1)\le n^b$ tends to $\rho(1/a)\rho(1/b)$, where $\rho$ is the Dickman function. [S4:9]" and
 [S4:11] states the ordering result ("It also proves that each of the

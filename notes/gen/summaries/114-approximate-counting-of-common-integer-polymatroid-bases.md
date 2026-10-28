@@ -225,24 +225,24 @@ and the Lean layer [S8–S11] are the evidence surfaces.
 
 ## Bibliography
 
-- Peter G. Doyle and J. Laurie Snell.  Random Walks and Electric Networks. Web edition dated July 5, 2006, derived from the 1984 MAA book.  .
-- Yeganeh Alimohammadi, Nima Anari, Kirankumar Shiragur, and Thuy-Duong Vuong. Fractionally log-concave and sector-stable polynomials: Counting planar matchings and more. arXiv:2102.02708, version 3, April 3, 2023; first posted 2021.  .
-- Nima Anari, Kuikui Liu, Shayan Oveis Gharan, and Cynthia Vinzant. Log-concave polynomials II: High-dimensional walks and an FPRAS for counting bases of a matroid.  Annals of Mathematics, 199(1):259–299, 2024.  . Preprint locators refer to arXiv version 3, January 18, 2019:  .
-- Nima Anari, Shayan Oveis Gharan, and Alireza Rezaei. Monte Carlo Markov chain algorithms for sampling strongly Rayleigh distributions and determinantal point processes. In  29th Annual Conference on Learning Theory, volume 49 of  Proceedings of Machine Learning Research, pages 103–115. PMLR, 2016.  .
-- Nima Anari, Shayan Oveis Gharan, and Cynthia Vinzant. Log-concave polynomials, I: Entropy and a deterministic approximation algorithm for counting bases of matroids.  Duke Mathematical Journal, 170(16):3459–3504, 2021.  . Preprint locators refer to arXiv version 2, November 5, 2018:  .
-- Damian Straszak and Nisheeth K. Vishnoi. Real stable polynomials and matroids: Optimization and counting. arXiv:1611.04548, version 1, November 14, 2016.  .
-- Nima Anari and Shayan Oveis Gharan. A generalization of permanent inequalities and applications in counting and optimization. arXiv:1702.02937, version 1, February 9, 2017.  .
-- Petter Brändén and June Huh. Hodge–Riemann relations for Potts model partition functions. arXiv:1811.01696, version 2, February 11, 2019; first posted 2018.  .
-- Xiaoyu Chen, Weiming Feng, Zhe Ju, Tianshun Miao, Yitong Yin, and Xinyuan Zhang. Faster mixing of the Jerrum–Sinclair chain. arXiv:2504.02740, version 1, April 3, 2025.  .
-- Xiaoyu Chen, Eric Vigoda, and Xiongxin Yang. Faster FPRAS for the permanent via restricted Poincaré inequalities and coupled flows. arXiv:2608.26599, version 1, August 27, 2026.  .
-- Tomás Feder and Milena Mihail. Balanced matroids. In  Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing, pages 26–38. Association for Computing Machinery, 1992.  .
-- Mary Cryan, Heng Guo, and Giorgos Mousa. Modified log-Sobolev inequalities for strongly log-concave distributions.  Annals of Probability, 49(1):506–525, 2021.  . Preprint locators refer to arXiv version 4, August 8, 2020:  .
-- Alexander Schrijver.  Combinatorial Optimization: Polyhedra and Efficiency, volume 24 of  Algorithms and Combinatorics. Springer, Berlin, 2003.  .
-- Jack Edmonds. Matroid intersection. In  Discrete Optimization I, volume 4 of  Annals of Discrete Mathematics, pages 39–49. North-Holland, 1979.  .
-- Mark Jerrum, Alistair Sinclair, and Eric Vigoda. A polynomial-time approximation algorithm for the permanent of a matrix with nonnegative entries.  Journal of the ACM, 51(4):671–697, 2004.  .
-- Mark R. Jerrum, Leslie G. Valiant, and Vijay V. Vazirani. Random generation of combinatorial structures from a uniform distribution.  Theoretical Computer Science, 43(2–3):169–188, 1986.  .
-- Petter Brändén and June Huh. Lorentzian polynomials.  Annals of Mathematics, 192(3):821–891, 2020.  .
-- David Aldous and James Allen Fill.  Reversible Markov Chains and Random Walks on Graphs. Unfinished monograph, 2002, recompiled 2014.  .
-- Claude Kipnis and S. R. S. Varadhan. Central limit theorems for additive functionals of reversible Markov chains and applications. { Astérisque}, 132:65–70, 1985.  .
-- Kuikui Liu.  Spectral Independence: A New Tool to Analyze Markov Chains. PhD thesis, University of Washington, 2023. Section 13.2, Problem 1, p. 197.  .
-- Alexander Barvinok and Alex Samorodnitsky. Random weighting, asymptotic counting, and inverse isoperimetry.  Israel Journal of Mathematics, 158:159–191, 2007.  . Preprint version 2, June 4, 2003:  .
+- Peter G. Doyle and J. Laurie Snell.  Random Walks and Electric Networks. Web edition dated July 5, 2006, derived from the 1984 MAA book. .
+- Yeganeh Alimohammadi, Nima Anari, Kirankumar Shiragur, and Thuy-Duong Vuong. Fractionally log-concave and sector-stable polynomials: Counting planar matchings and more. arXiv:2102.02708, version 3, April 3, 2023; first posted 2021. .
+- Nima Anari, Kuikui Liu, Shayan Oveis Gharan, and Cynthia Vinzant. Log-concave polynomials II: High-dimensional walks and an FPRAS for counting bases of a matroid.  Annals of Mathematics, 199(1):259–299, 2024. . Preprint locators refer to arXiv version 3, January 18, 2019: .
+- Nima Anari, Shayan Oveis Gharan, and Alireza Rezaei. Monte Carlo Markov chain algorithms for sampling strongly Rayleigh distributions and determinantal point processes. In  29th Annual Conference on Learning Theory, volume 49 of  Proceedings of Machine Learning Research, pages 103–115. PMLR, 2016. .
+- Nima Anari, Shayan Oveis Gharan, and Cynthia Vinzant. Log-concave polynomials, I: Entropy and a deterministic approximation algorithm for counting bases of matroids.  Duke Mathematical Journal, 170(16):3459–3504, 2021. . Preprint locators refer to arXiv version 2, November 5, 2018: .
+- Damian Straszak and Nisheeth K. Vishnoi. Real stable polynomials and matroids: Optimization and counting. arXiv:1611.04548, version 1, November 14, 2016. .
+- Nima Anari and Shayan Oveis Gharan. A generalization of permanent inequalities and applications in counting and optimization. arXiv:1702.02937, version 1, February 9, 2017. .
+- Petter Brändén and June Huh. Hodge–Riemann relations for Potts model partition functions. arXiv:1811.01696, version 2, February 11, 2019; first posted 2018. .
+- Xiaoyu Chen, Weiming Feng, Zhe Ju, Tianshun Miao, Yitong Yin, and Xinyuan Zhang. Faster mixing of the Jerrum–Sinclair chain. arXiv:2504.02740, version 1, April 3, 2025. .
+- Xiaoyu Chen, Eric Vigoda, and Xiongxin Yang. Faster FPRAS for the permanent via restricted Poincaré inequalities and coupled flows. arXiv:2608.26599, version 1, August 27, 2026. .
+- Tomás Feder and Milena Mihail. Balanced matroids. In  Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing, pages 26–38. Association for Computing Machinery, 1992. .
+- Mary Cryan, Heng Guo, and Giorgos Mousa. Modified log-Sobolev inequalities for strongly log-concave distributions.  Annals of Probability, 49(1):506–525, 2021. . Preprint locators refer to arXiv version 4, August 8, 2020: .
+- Alexander Schrijver.  Combinatorial Optimization: Polyhedra and Efficiency, volume 24 of  Algorithms and Combinatorics. Springer, Berlin, 2003. .
+- Jack Edmonds. Matroid intersection. In  Discrete Optimization I, volume 4 of  Annals of Discrete Mathematics, pages 39–49. North-Holland, 1979. .
+- Mark Jerrum, Alistair Sinclair, and Eric Vigoda. A polynomial-time approximation algorithm for the permanent of a matrix with nonnegative entries.  Journal of the ACM, 51(4):671–697, 2004. .
+- Mark R. Jerrum, Leslie G. Valiant, and Vijay V. Vazirani. Random generation of combinatorial structures from a uniform distribution.  Theoretical Computer Science, 43(2–3):169–188, 1986. .
+- Petter Brändén and June Huh. Lorentzian polynomials.  Annals of Mathematics, 192(3):821–891, 2020. .
+- David Aldous and James Allen Fill.  Reversible Markov Chains and Random Walks on Graphs. Unfinished monograph, 2002, recompiled 2014. .
+- Claude Kipnis and S. R. S. Varadhan. Central limit theorems for additive functionals of reversible Markov chains and applications. { Astérisque}, 132:65–70, 1985. .
+- Kuikui Liu.  Spectral Independence: A New Tool to Analyze Markov Chains. PhD thesis, University of Washington, 2023. Section 13.2, Problem 1, p. 197. .
+- Alexander Barvinok and Alex Samorodnitsky. Random weighting, asymptotic counting, and inverse isoperimetry.  Israel Journal of Mathematics, 158:159–191, 2007. . Preprint version 2, June 4, 2003: .

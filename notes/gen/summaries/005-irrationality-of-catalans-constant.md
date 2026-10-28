@@ -80,16 +80,14 @@ gives an upper bound via two interpolation estimates (Hadamard-type).
 
 **The contradiction.** The conclusion 
 
-> Suppose that $G$ is rational. Proposition   then
+> Suppose that $G$ is rational. Proposition then
 makes $\Delta_N$ rational for every $N$.
-By Proposition  , $\Delta_p\ne0$ for every
+By Proposition , $\Delta_p\ne0$ for every
 sufficiently large prime $p$. Apply the product-formula lower bound of
-Proposition   along this sequence:
-\[
-\liminf_{\substack{p\to\infty\\p\ {\rm prime}}}
-\left(\frac{\log|\Delta_p|}(48p)^2-\frac12\log 2\right)>-2.29084.
-\]
-Proposition   gives, along the same sequence, an
+Proposition along this sequence:
+$$\liminf_{\substack{p\to\infty\\p\ {\rm prime}}}
+\left(\frac{\log|\Delta_p|}{(48p)^2}-\frac12\log 2\right)>-2.29084.$$
+Proposition gives, along the same sequence, an
 upper limit strictly smaller than $-2.2909$. Since
 $-2.29084>-2.2909$, this is a contradiction. Therefore $G$ is irrational. [S4:3–16]
 
@@ -153,9 +151,12 @@ eight sections plus one `.bib`), a compiled `paper.pdf` [S7], and a
 `README.md`. No `verification/` bundle, no reasoning trace. The catalog entry [S9:86]
 lists the single PDF. The comparator stub states the target:
 
-> theorem catalan_irrational :
-    Irrational (∑' j : ℕ, (-1 : ℝ) ^ j / ((2 * j + 1 : ℕ) : ℝ) ^ 2) := by
-  sorry [S6:7–9]
+```lean
+theorem catalan_irrational :
+ Irrational (∑' j : ℕ, (-1 : ℝ) ^ j / ((2 * j + 1 : ℕ) : ℝ) ^ 2) := by
+ sorry
+```
+[S6:7–9]
 
 The scope note confirms the formalization's reach: "The formalization proves that Catalan's constant $G=\sum_{j=0}^{\infty}(-1)^j/(2j+1)^2$ is irrational. This is the mathematical assertion in the paper's title. [S5:9]"
 Note the ledger reads `paps_form 0` (no `main_results` entry), so

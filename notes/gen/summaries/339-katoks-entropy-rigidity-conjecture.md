@@ -37,11 +37,9 @@ conjecture for all $n\ge3$
 > **theorem**
 Suppose $n\ge3$ and every sectional curvature of $g$ is strictly
 negative. Then
-\[
- h_m_L(\phi_1)=h_{\mathrmtop}(\phi_1)
+$$h_{m_L}(\phi_1)=h_{\mathrm{top}}(\phi_1)
  \quad\Longleftrightarrow\quad
- \nabla^gR_g=0.
-\]
+ \nabla^gR_g=0.$$
 Equivalently, equality holds precisely when the universal Riemannian
 cover is a rank-one symmetric space of noncompact type, at an arbitrary
 overall scale. [S3:90–100]

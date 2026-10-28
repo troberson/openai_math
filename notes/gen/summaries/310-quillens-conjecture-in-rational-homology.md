@@ -33,9 +33,7 @@ of the same dichotomy [S4:3–8]:
 
 > **theorem**
 For every finite group $G$ and every prime $p$, if $O_p(G)=1$, then
-\[
-\widetilde H_*(\mathcal A_p(G);\mathbb Q)\ne0.
-\]
+$$\widetilde H_*(\mathcal A_p(G);\mathbb Q)\ne0.$$
 Here reduced homology is augmented, so that the empty poset has
 $\widetilde H_{-1}(\varnothing;\mathbb Q)=\mathbb Q$. [S4:15–22]
 

@@ -200,7 +200,10 @@ theorem is stated and closed: "theorem mainTheoremReal : ∀ δ : ℝ, 0 < δ �
 
 The comparator stub [S8:76–77] defines `RealGraphReduction` — the graph, the
 machine, the output-size bound, the completeness and soundness fields
-[S8:64–73] — and the target statement "$theorem mainTheoremReal : ∀ δ : ℝ, 0 < δ → δ < 1 / 3 → Nonempty (RealGraphReduction δ) := by [S8:76–77]$" ends in
+[S8:64–73] — and the target statement "$```lean
+theorem mainTheoremReal : ∀ δ : ℝ, 0 < δ → δ < 1 / 3 → Nonempty (RealGraphReduction δ) := by
+```
+[S8:76–77]$" ends in
 `sorry` at [S8:78]. The proved copy is the one the `main_results` entry
 names [S9:124–135]. The reading is of source text only — no `lake` or `lean`
 run elaborates the proof, so the claim here is that the proof body exists

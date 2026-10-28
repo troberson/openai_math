@@ -66,9 +66,7 @@ equivalent:
 of a projective variety.
 \item There are an integer \(m\geq0\), a bounded symmetric domain \(D\),
 and a simply connected normal projective variety \(F\) such that
-\[
-                 \widetilde X\simeq D\times\mathbb C^m\times F.
-\]
+$$\widetilde X\simeq D\times\mathbb C^m\times F.$$
 \endenumerate
 A point is allowed as either \(D\) or \(F\). No algebraicity of the
 deck transformations is assumed. [S3:92–107]

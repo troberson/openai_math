@@ -38,9 +38,7 @@ symmetric tensor category lands in some level of this tower
 For every prime $p$, every algebraically closed field $k$ of
 characteristic $p$, and every finite symmetric tensor category
 $\mathcal C$ over $k$, there are an integer $n\geq1$ and a fiber functor
-\[
- \mathcal C\longrightarrow\operatornameVer_p^n(k).
-\] [S4:35–42]
+$$\mathcal C\longrightarrow\mathrm{Ver}_{p^n}(k).$$ [S4:35–42]
 
 The level $n$ may depend on the category; the theorem makes no assertion
 about the growth of $n$ or about nonfinite categories of moderate growth.

@@ -39,14 +39,10 @@ $\mathrm{BP}\langle2\rangle$ [S3:67–102]:
 For every sufficiently large prime $p$, there is a connective
 $p$-complete spectrum $X$ of exact fp-type two such that, for a
 standard form of $\mathrm{BP}\langle2\rangle_p^\wedge$,
-\[
- X\notin\mathrmThick(\mathrmBP\langle2\rangle_p^\wedge).
-\]
+$$X\notin\mathrm{Thick}(\mathrm{BP}\langle2\rangle_p^\wedge).$$
 The same spectrum satisfies
-\[
- L_2^fX\simeq L_2X,
- \qquad L_T(2)X\simeq L_K(2)X.
-\] [S3:114–126]
+$$L_2^fX\simeq L_2X,
+ \qquad L_{T(2)}X\simeq L_{K(2)}X.$$ [S3:114–126]
 
 The counterexample shows the prediction is false: the spectrum is of
 the right type and has the right cohomological finiteness, so the

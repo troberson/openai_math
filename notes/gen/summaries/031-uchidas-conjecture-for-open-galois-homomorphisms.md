@@ -22,9 +22,7 @@ from a field embedding? The theorem
 
 > **Theorem 1.1**
 Let $F_1,F_2$ be number fields, and let $E_i/F_i$ be possibly infinite solvably closed Galois extensions. Every continuous open homomorphism
-\[
- \alpha:\mathrmGal(E_1/F_1)\longrightarrow\mathrmGal(E_2/F_2)
-\]
+$$\alpha:\mathrm{Gal}(E_1/F_1)\longrightarrow\mathrm{Gal}(E_2/F_2)$$
 is induced by a unique field embedding $j:E_2\hookrightarrow E_1$. [S5:11–17]
 
 The setup [S5:5–9] makes the contravariance explicit: a field embedding
@@ -33,9 +31,7 @@ $\mathrm{Gal}(E_1/F_1) \to \mathrm{Gal}(E_2/F_2)$ by conjugation, and the theore
 every open homomorphism arises this way, uniquely.
 
 > Let $E_i/F_i$ be Galois extensions of number fields, with each $E_i$ solvably closed, and write $G_i=\mathrm{Gal}(E_i/F_i)$. A field embedding $j:E_2\hookrightarrow E_1$ _induces_ a homomorphism $\alpha:G_1\to G_2$ if
-\[
- g\circ j=j\circ\alpha(g)\qquad(g\in G_1).
-\]
+$$g\circ j=j\circ\alpha(g)\qquad(g\in G_1).$$
 In particular, such an embedding sends $F_2$ into $F_1$. Uchida conjectured that every continuous homomorphism with open image arises in this way \cite[p. 595]uchida1981. We prove the conjecture in its full form. [S5:5–9]
 
 The kernel is unrestricted [S5:19]. No cyclotomic-compatibility
@@ -46,7 +42,7 @@ assumption is needed; the proof derives it from openness itself.
 **Two main ingredients.** The proof uses two arguments that are stated
 as useful beyond the final reduction 
 
-> Two arguments used below are useful beyond the final reduction. First, an additive $\ell$-adic character of the absolute Galois group of a number field is determined by its values on any infinite set of primes of absolute residue degree one. More precisely, a character vanishing at all those primes is zero. The logarithmic-rank input is a special case of the $\ell$-adic Waldschmidt–Masser theorem  . We give a complete proof using Laurent's interpolation-determinant method   and a translate-and-degree zero estimate on a torus. Its variants for Frobenius averages and corestriction permit us to treat primes of arbitrary residue degree as well. These statements concern the actual unit-logarithm image and require no hypothesis on its rank. [S5:29]
+> Two arguments used below are useful beyond the final reduction. First, an additive $\ell$-adic character of the absolute Galois group of a number field is determined by its values on any infinite set of primes of absolute residue degree one. More precisely, a character vanishing at all those primes is zero. The logarithmic-rank input is a special case of the $\ell$-adic Waldschmidt–Masser theorem . We give a complete proof using Laurent's interpolation-determinant method and a translate-and-degree zero estimate on a torus. Its variants for Frobenius averages and corestriction permit us to treat primes of arbitrary residue degree as well. These statements concern the actual unit-logarithm image and require no hypothesis on its rank. [S5:29]
 
 The second refines Uchida's own Kummer argument 
 
@@ -76,7 +72,7 @@ prime $\ell$.
 
 The reconstruction of number fields from their Galois groups begins with
 Neukirch's work on normal number fields and decomposition groups,
-continued by Uchida, Iwasawa, and Ikeda . "The reconstruction of number fields from their Galois groups begins with Neukirch's work on normal number fields and decomposition groups  . The passage to arbitrary number fields and prescribed group isomorphisms involved Uchida, Iwasawa, and Ikeda; their contributions are recorded in the contemporary accounts  . Uchida subsequently established the isomorphism theorem for arbitrary solvably closed Galois extensions of number fields  . [S5:22]" Uchida
+continued by Uchida, Iwasawa, and Ikeda . "The reconstruction of number fields from their Galois groups begins with Neukirch's work on normal number fields and decomposition groups . The passage to arbitrary number fields and prescribed group isomorphisms involved Uchida, Iwasawa, and Ikeda; their contributions are recorded in the contemporary accounts . Uchida subsequently established the isomorphism theorem for arbitrary solvably closed Galois extensions of number fields . [S5:22]" Uchida
 established the isomorphism theorem for arbitrary solvably closed
 extensions [S5:22].
 
@@ -88,7 +84,7 @@ primes for each fixed auxiliary prime $\ell$, but the exceptional set
 depends on $\ell$.
 
 Hoshi's 2025 reduction identifies the exact arithmetic condition:
-cyclotomic-character preservation . "A later reduction of Hoshi identifies an exact arithmetic condition for existence: an open homomorphism is induced by a field embedding if and only if it preserves the full cyclotomic character \cite[Theorem 3.4]hoshi2025. Hoshi's subsequent work reformulates the unrestricted conjecture in terms of radicals and normality of the field fixed by a kernel \cite[Theorem B]hoshi2026. Related work on finite solvable quotients includes the isomorphism theorem of Saïdi and Tamagawa   and the cyclotomic-compatible homomorphism theorem of Mao and Saïdi  . Our proof uses the cyclotomic criterion at its endpoint. The main task is to derive that criterion from the partial local correspondences, even though their domains and exceptional sets initially depend on $\ell$. [S5:26]" The present proof
+cyclotomic-character preservation . "A later reduction of Hoshi identifies an exact arithmetic condition for existence: an open homomorphism is induced by a field embedding if and only if it preserves the full cyclotomic character \cite[Theorem 3.4]hoshi2025. Hoshi's subsequent work reformulates the unrestricted conjecture in terms of radicals and normality of the field fixed by a kernel \cite[Theorem B]hoshi2026. Related work on finite solvable quotients includes the isomorphism theorem of Saïdi and Tamagawa and the cyclotomic-compatible homomorphism theorem of Mao and Saïdi . Our proof uses the cyclotomic criterion at its endpoint. The main task is to derive that criterion from the partial local correspondences, even though their domains and exceptional sets initially depend on $\ell$. [S5:26]" The present proof
 derives that criterion from the partial correspondences without assuming
 it.
 
@@ -156,7 +152,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - D. W. Masser, _On polynomials and exponential polynomials in several complex variables_, Invent. Math. **63** (1981), no. 1, 81–95. doi:10.1007/BF01389194.
 - Jürgen Neukirch, _Kennzeichnung der $p$-adischen und der endlichen algebraischen Zahlkörper_, Invent. Math. **6** (1969), 296–314. doi:10.1007/BF01425420.
 - Jürgen Neukirch, _Kennzeichnung der endlich-algebraischen Zahlkörper durch die Galoisgruppe der maximal auflösbaren Erweiterungen_, J. reine angew. Math. **238** (1969), 135–147. doi:10.1515/crll.1969.238.135.
-- Jürgen Neukirch, _Über die absoluten Galoisgruppen algebraischer Zahlkörper_, Astérisque **41–42** (1977), 67–79.  .
+- Jürgen Neukirch, _Über die absoluten Galoisgruppen algebraischer Zahlkörper_, Astérisque **41–42** (1977), 67–79. .
 - Jürgen Neukirch, _Algebraic Number Theory_, translated by Norbert Schappacher, Grundlehren der mathematischen Wissenschaften, vol. 322, Springer-Verlag, Berlin, 1999. doi:10.1007/978-3-662-03983-0.
 - Yu Mao and Mohamed Saïdi, _Open homomorphisms between $m$-step solvable Galois groups compatible with the cyclotomic characters_, preprint, 2025. arXiv:2512.13312.
 - Mohamed Saïdi and Akio Tamagawa, _The $m$-step solvable anabelian geometry of number fields_, J. reine angew. Math. **789** (2022), 153–186. doi:10.1515/crelle-2022-0025.

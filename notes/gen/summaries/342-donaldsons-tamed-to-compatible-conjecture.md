@@ -28,7 +28,7 @@ The answer the manuscript gives is yes. Its main theorem is stated at the top of
 
 The blurb's second sentence is the manuscript's own caveat, stated immediately after the theorem 
 
-> The almost complex structure in Theorem   is the given one. The conclusion imposes no condition on the cohomology class of the compatible form. In particular, it does not assert that an arbitrary taming class contains a compatible representative. [S6:29–32]
+> The almost complex structure in Theorem is the given one. The conclusion imposes no condition on the cohomology class of the compatible form. In particular, it does not assert that an arbitrary taming class contains a compatible representative. [S6:29–32]
 
 So the form found need not live in the taming form's class. The cone machinery says how much room the class has to move, and the corollary gives the case where there is no room at all: when the positive index of the intersection form is 1, "every taming class has a smooth compatible symplectic representative. [S6:68–69]" 
 
@@ -53,7 +53,7 @@ The proof runs through positive currents, not through forms. The introduction se
 
 The quadratic mass bound `μ(B_r(x)) ≤ C r²` is the estimate the paragraph names, and the angular estimate is `O(r⁴)` for pairs of complex lines whose base points are less than `r` apart [S6:143–147]. The principal step is the density-splitting theorem, and the manuscript is explicit that it does not need the annihilation property 
 
-> Existence of the limit is part of the argument. The principal step, Theorem  , proves that the restriction \(P_E=\mathbf 1_E P\) is closed. It applies to any closed current \(P+Q\) with an anti-invariant \(L^2\) correction and the stated mass and angular bounds; annihilation of all closed forms is not needed for this step. [S6:157–162]
+> Existence of the limit is part of the argument. The principal step, Theorem , proves that the restriction \(P_E=\mathbf 1_E P\) is closed. It applies to any closed current \(P+Q\) with an anti-invariant \(L^2\) correction and the stated mass and angular bounds; annihilation of all closed forms is not needed for this step. [S6:157–162]
 
 The closing estimate is a balance between two errors, and the manuscript writes the balance out 
 
@@ -61,7 +61,7 @@ The closing estimate is a balance between two errors, and the manuscript writes 
 
 The dimensionality is stated as a fact about the estimates, not as a limitation of the theorem: "The regularized pairing estimates use the four-dimensional fact that anti-invariant two-forms are self-dual. [S6:194–195]" The roadmap the introduction gives for the sections is 
 
-> Sections   and   construct the separating current and prove its mass bound. Section   establishes the regularization and angular estimates. Section   proves density existence and the planar tangent description; Section   uses them to control cutoff boundaries and prove closedness of \(P_E\). Section   completes the existence argument. Section   develops the prescribed-class separation and proves the cone description. [S6:196–205]
+> Sections and construct the separating current and prove its mass bound. Section establishes the regularization and angular estimates. Section proves density existence and the planar tangent description; Section uses them to control cutoff boundaries and prove closedness of \(P_E\). Section completes the existence argument. Section develops the prescribed-class separation and proves the cone description. [S6:196–205]
 
 The sections carry that roadmap: separation at `02-currents.tex:88`, quadratic mass growth at `03-mass.tex:7`, the energy proposition at `04-energy.tex:219`, the density-splitting theorem at `05-density.tex:8`, its proof in `06-splitting.tex`, the proof of the main theorem at `07-conclusion.tex:3`, and the cone theory in `08-cones.tex`. The density-splitting theorem is the single most referenced label in the manuscript: it is defined at `05-density.tex:8` and used at `05-density.tex:40`, `05-density.tex:149`, `06-splitting.tex:4`, `07-conclusion.tex:9`, `08-cones.tex:222`, `01-introduction.tex:158` and `01-introduction.tex:193`. The introduction contains exactly three statement environments — the main theorem, the cone theorem, and the corollary — and no named analytic theorem; the analytic estimates are stated in the sections.
 
@@ -73,7 +73,7 @@ The strict-inclusion example is proved in the cone section, and the corollary's 
 
 > of its positive-square cone. Every element of that component pairs strictly positively with every nonzero element of its closure, by Cauchy–Schwarz in coordinates of signature [S13:364–366]
 
-The example itself is the four-torus at [S13:375–418], and the example's closing sentence says which test fails: "In Theorem  , the class \([U+V_0]\) fails the strict positivity test against \([U-V_0]\in\mathcal C\), and conversely. [S13:415–417]" 
+The example itself is the four-torus at [S13:375–418], and the example's closing sentence says which test fails: "In Theorem , the class \([U+V_0]\) fails the strict positivity test against \([U-V_0]\in\mathcal C\), and conversely. [S13:415–417]" 
 
 The formalization is the single-class statement, not the cone characterization. The scope note states the shape 
 
@@ -87,7 +87,10 @@ The declaration is `OAI/Geometry/TamingCompatibility/Main.lean`, 56 lines, with 
 >     (h : ∃ α : TwoForm X, IsSymplectic α ∧ Tames α J) :
 >     ∃ η : TwoForm X, IsSymplectic η ∧ Compatible η J := by
 
-The proof body runs from line 35 to line 50 and ends with `norm_num at hnormal`; there is no final `exact`, so the body's shape is a chain of obtained lemmas. The comparator stub defines the predicates itself, and its definition of compatibility matches the manuscript's: "def Compatible (α : TwoForm X) (J : AlmostComplexStructure X) : Prop := Tames α J ∧ IsInvariant α J [S19:55–56]" . The stub restates the same theorem under its own definitions and ends in `sorry` 
+The proof body runs from line 35 to line 50 and ends with `norm_num at hnormal`; there is no final `exact`, so the body's shape is a chain of obtained lemmas. The comparator stub defines the predicates itself, and its definition of compatibility matches the manuscript's: "```lean
+def Compatible (α : TwoForm X) (J : AlmostComplexStructure X) : Prop := Tames α J ∧ IsInvariant α J
+```
+[S19:55–56]" . The stub restates the same theorem under its own definitions and ends in `sorry` 
 
 > theorem taming_implies_compatibility
 >     [T2Space X] [SecondCountableTopology X] [CompactSpace X] [ConnectedSpace X]

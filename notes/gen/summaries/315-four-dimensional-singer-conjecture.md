@@ -38,9 +38,7 @@ Poincaré complexes of formal dimension four [S4:3–34]:
 > **theorem**
 Let $Q$ be a finite connected aspherical integral Poincaré complex of
 formal dimension four, with arbitrary orientation character. Then
-\[
- b_p^(2)(\widetilde Q)=0\qquad(p\ge0,\ p\ne2).
-\] [S4:36–42]
+$$b_p^{(2)}(\widetilde Q)=0\qquad(p\ge0,\ p\ne2).$$ [S4:36–42]
 
 The corollary recovers the manifold statement from this wider
 complex-theoretic one: a finite aspherical integral Poincaré-complex

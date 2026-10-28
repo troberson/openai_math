@@ -34,7 +34,7 @@ and by "Both the target dimension $k$ and the distortion $D$ are required to be 
 
 The question is placed. places it: "Every subset of a finite-dimensional Euclidean space is doubling. Lang and Plaut asked whether every doubling subset of Hilbert space admits a bi-Lipschitz embedding into some finite-dimensional Euclidean space [S3:40]"
 
-The positive snowflake result is recorded. records it: "Assouad's theorem gives a positive result after changing the metric: every doubling metric space admits such an embedding for the distance $d^\alpha$, where $0<\alpha<1$  . This operation is called _snowflaking_. [S3:42]"
+The positive snowflake result is recorded. records it: "Assouad's theorem gives a positive result after changing the metric: every doubling metric space admits such an embedding for the distance $d^\alpha$, where $0<\alpha<1$ . This operation is called _snowflaking_. [S3:42]"
 
 The dimension-independent snowflake bound is recorded. records it: "Naor and Neiman proved that, when $\alpha$ is close to $1$, the target dimension can be bounded in terms of the doubling constant alone, independently of $\alpha$ [S3:42]"
 
@@ -46,13 +46,13 @@ and by "The Lang–Plaut question concerns the original distance $d$, even when 
 
 The exponents above two are recorded. records them: "For exponents $p>2$, Lafforgue and Naor constructed doubling subsets of $L_p$ admitting no bi-Lipschitz embedding into any finite-dimensional Euclidean space [S3:44]"
 
-and by "Independently, Bartal, Gottlieb, and Neiman obtained dimension-reduction obstructions for doubling subsets of $\ell_p$ using thin Laakso configurations  . [S3:44]"
+and by "Independently, Bartal, Gottlieb, and Neiman obtained dimension-reduction obstructions for doubling subsets of $\ell_p$ using thin Laakso configurations . [S3:44]"
 
 and by "Baudier, Święcicki, and Swift later gave an elementary proof of the corresponding fixed-set theorem for $\ell_q$, $q>2$ [S3:44]"
 
 and by "These results concern ambient exponents strictly greater than two and do not settle the Hilbert case. [S3:44]"
 
-The withdrawn preprint is recorded. records it: "Schioppa announced a negative answer in  , but withdrew the preprint after reporting a possible issue with its duality argument. [S3:44]"
+The withdrawn preprint is recorded. records it: "Schioppa announced a negative answer in , but withdrew the preprint after reporting a possible issue with its duality argument. [S3:44]"
 
 The method is named. names it: "The proof couples a covering argument with a derivative obstruction. [S3:55]"
 
@@ -82,33 +82,33 @@ Rademacher's theorem is cited for the derivative. cites it: "Rademacher's theore
 
 The lexicographic maximum is fixed. fixes it: "Thus $(A,B)\in K$. This single compact set and these two numbers remain fixed throughout the argument. The next lemma explains the benefit of maximizing the coordinates in this order: if the mean deficit from $A$ tends to zero, then the mean second coordinate cannot exceed $B$ in the limit. [S3:175]"
 
-The compactness lemma is stated. states it: "Let $D>0$, let $K\subseteq[0,D^2]^2$ be nonempty and compact, and define $A=\max\{s:(s,t)\in K\}$ and $B=\max\{t:(A,t)\in K\}$. For every $\varepsilon>0$ there is $\delta>0$ such that \[ (s,t)\in K,\quad s>A-\delta\quad\Longrightarrow\quad t\le B+\varepsilon. \] Consequently, if measurable pairs $(s_n,t_n)$ take values in $K$ on probability spaces and $\mathbb E(A-s_n)\to0$, then $\limsup_n\mathbb E t_n\le B$. [S3:178–185]"
+The compactness lemma is stated. states it: "Let $D>0$, let $K\subseteq[0,D^2]^2$ be nonempty and compact, and define $A=\max\{s:(s,t)\in K\}$ and $B=\max\{t:(A,t)\in K\}$. For every $\varepsilon>0$ there is $\delta>0$ such that $$(s,t)\in K,\quad s>A-\delta\quad\Longrightarrow\quad t\le B+\varepsilon.$$ Consequently, if measurable pairs $(s_n,t_n)$ take values in $K$ on probability spaces and $\mathbb E(A-s_n)\to0$, then $\limsup_n\mathbb E t_n\le B$. [S3:178–185]"
 
 The energy estimates are stated. states them: "The output of this section is small variation of the added-sheet offsets: a horizontal estimate strong enough for increasingly long rows, and a vertical estimate for columns of fixed normalized height. The compact set $K$ and the embedding are already fixed. [S3:208]"
 
-The vertical selection is explained. explains it: "For the vertical selection, we first average the horizontal derivative over strips of width $nr$. Dividing the same endpoint error $2Dr$ by this wider strip width makes the selected horizontal mean approach $u$. The selected derivative has squared norm at most $A$ almost everywhere, so its mean squared norm must then approach $A$. Lemma   will control the mean vertical squared norm without requiring a rate. [S3:278]"
+The vertical selection is explained. explains it: "For the vertical selection, we first average the horizontal derivative over strips of width $nr$. Dividing the same endpoint error $2Dr$ by this wider strip width makes the selected horizontal mean approach $u$. The selected derivative has squared norm at most $A$ almost everywhere, so its mean squared norm must then approach $A$. Lemma will control the mean vertical squared norm without requiring a rate. [S3:278]"
 
-The variance limit is closed. closes it: "The upper bound has limsup at most zero, so the nonnegative variance tends to zero. In particular, convergence of the vectors $v$ themselves is unnecessary. Combining this with   proves  . [S3:309]"
+The variance limit is closed. closes it: "The upper bound has limsup at most zero, so the nonnegative variance tends to zero. In particular, convergence of the vectors $v$ themselves is unnecessary. Combining this with proves . [S3:309]"
 
 The crossing section states its plan. states it: "We use the two energy estimates to find one line of every color in each direction on a common period block. Their intersections will supply the separated vectors needed for the Euclidean packing bound. [S3:314]"
 
-The period block is chosen. chooses it: "is no greater than its mean on $Q$. Denote its mean on $P$ by $\varepsilon_n$. Proposition   gives $\varepsilon_n\to0$. The block has width $Nnr$ and height $Nr$, and contains exactly one row and one column of each color. [S3:320]"
+The period block is chosen. chooses it: "is no greater than its mean on $Q$. Denote its mean on $P$ by $\varepsilon_n$. Proposition gives $\varepsilon_n\to0$. The block has width $Nnr$ and height $Nr$, and contains exactly one row and one column of each color. [S3:320]"
 
-The crossing separation is obtained. obtains it: "For $i\ne m$, both added labels $re_{j,i}$ and $re_{j,m}$ are permitted at $(x_m,y_i)$: the first by row $i$, the second by column $m$. The corresponding source points have distance exactly $\sqrt2\,r$, so   gives [S3:369]"
+The crossing separation is obtained. obtains it: "For $i\ne m$, both added labels $re_{j,i}$ and $re_{j,m}$ are permitted at $(x_m,y_i)$: the first by row $i$, the second by column $m$. The corresponding source points have distance exactly $\sqrt2\,r$, so gives [S3:369]"
 
 The packing bound closes the proof. closes it: "We have obtained $N$ points in the radius-$D$ ball of $\mathbb R^k$ with pairwise distances greater than one. Their open radius-$1/2$ balls are disjoint and contained in the radius-$(D+1/2)$ ball. Comparing Euclidean volumes gives [S3:379]"
 
-and by "contrary to  . No map satisfying   exists. Together with Proposition  , this proves Theorem  . [S3:383]"
+and by "contrary to . No map satisfying exists. Together with Proposition , this proves Theorem . [S3:383]"
 
-The $L_p$ consequence is stated. states it: "For every real $1\le p<\infty$, the fixed metric space $S$ of Theorem   is isometric to a subset $S_p$ of $L_p([0,1];\mathbb R)$, where $[0,1]$ carries Lebesgue measure. With its induced $L_p$ metric, $S_p$ has doubling constant at most $76800$ and admits no bi-Lipschitz embedding into any finite-dimensional real normed space at any finite distortion. [S3:390]"
+The $L_p$ consequence is stated. states it: "For every real $1\le p<\infty$, the fixed metric space $S$ of Theorem is isometric to a subset $S_p$ of $L_p([0,1];\mathbb R)$, where $[0,1]$ carries Lebesgue measure. With its induced $L_p$ metric, $S_p$ has doubling constant at most $76800$ and admits no bi-Lipschitz embedding into any finite-dimensional real normed space at any finite distortion. [S3:390]"
 
-The relation to the earlier $L_p$ work is recorded. records it: "Lafforgue and Naor proved the qualitative fixed-set obstruction with Euclidean targets for $p>2$ and, in the paragraph following their Theorem 1.1, recorded the corresponding question for $1<p\le2$ as open at that time, while noting stronger known results for $p=1$ \cite[Theorem 1.1 and the following paragraph]LN. Theorem   treats $p=2$, and Corollary   answers that qualitative fixed-set question with finite-dimensional Euclidean targets when $1<p<2$. This transfer adds no new metric construction. [S3:408]"
+The relation to the earlier $L_p$ work is recorded. records it: "Lafforgue and Naor proved the qualitative fixed-set obstruction with Euclidean targets for $p>2$ and, in the paragraph following their Theorem 1.1, recorded the corresponding question for $1<p\le2$ as open at that time, while noting stronger known results for $p=1$ \cite[Theorem 1.1 and the following paragraph]LN. Theorem treats $p=2$, and Corollary answers that qualitative fixed-set question with finite-dimensional Euclidean targets when $1<p<2$. This transfer adds no new metric construction. [S3:408]"
 
 The finite-set contrast is recorded. records it: "Finite-set dimension reduction in $L_p$, for $1<p<\infty$ and $p\ne2$, allows the target dimension to depend on cardinality [S3:410–411]"
 
-and by "unlike the fixed infinite-set obstruction of Corollary  . [S3:412]"
+and by "unlike the fixed infinite-set obstruction of Corollary . [S3:412]"
 
-The Banach reduction is described. describes it: "Finite witnesses to Theorem   can be placed in any infinite-dimensional real Banach space by the classical Dvoretzky theorem. A geometrically shrinking union of these finite clusters, with its limit point adjoined, is compact and retains a uniform doubling bound. [S3:416]"
+The Banach reduction is described. describes it: "Finite witnesses to Theorem can be placed in any infinite-dimensional real Banach space by the classical Dvoretzky theorem. A geometrically shrinking union of these finite clusters, with its limit point adjoined, is compact and retains a uniform doubling bound. [S3:416]"
 
 The compact Banach consequence is stated. states it: "There is a universal constant $\Lambda$ such that every infinite-dimensional real Banach space $B$ contains a compact subset $K_B$ whose doubling constant is at most $\Lambda$ and which admits no bi-Lipschitz embedding into any finite-dimensional real normed space at any finite distortion. The subset $K_B$ may depend on $B$, but is chosen independently of the target dimension and distortion. [S3:419]"
 
@@ -171,4 +171,4 @@ The comparator stubs carry `sorry` at `lean/ComparatorChallenges/DoublingHilbert
 - OpenAI, _Subpolynomial dimension reduction in $L_p$_, OpenAI Math Release preprint OAI:Subpolynomial-dimension-reduction-in-Lp-September-23-2026, 2026.
 - U. Lang and C. Plaut, _Bilipschitz embeddings of metric spaces into space forms_, Geometriae Dedicata **87** (2001), 285–307. doi:10.1023/A:1012093209450.
 - A. Schioppa, _An example of a doubling ``inherently'' infinite-dimensional subset of $l_2$_, withdrawn preprint, 2017; withdrawal posted April 22, 2017. arXiv:1703.10265.
-- T. Tao, _245A, Notes 5: Differentiation theorems_, 16 October 2010,  .
+- T. Tao, _245A, Notes 5: Differentiation theorems_, 16 October 2010, .

@@ -97,8 +97,8 @@ gives almost-everywhere convergence for $3\le p<\infty$ and
 $\delta>1-3/p$, while the nonmaximal result gives uniform bounds for
 the individual means throughout the strict range
 $\delta>\max\{3|1/p-1/2|-1/2,0\}$ "We apply the established local-smoothing implications of
-Beltran–Hickman–Sogge to Corollary  . The maximal
-result concerns the family in  ; the subsequent
+Beltran–Hickman–Sogge to Corollary . The maximal
+result concerns the family in ; the subsequent
 nonmaximal result concerns the individual linear means.
 These means recover a function by gradually admitting higher
 frequencies, with order $\delta$ smoothing the boundary of the Fourier [S5:3–8]"

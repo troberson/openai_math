@@ -154,17 +154,17 @@ manuscript — a root `build/main.tex`, 9 `.tex` files under
 
 - A. D. Aleksandrov, _Almost everywhere existence of the second differential of a convex function and some properties of convex surfaces connected with it_, Uchenye Zapiski Leningradskogo Gosudarstvennogo Universiteta, no. 37, Seriya Matematicheskikh Nauk **6** (1939), 3–35 (Russian).
 - E. Andersén, _Volume-preserving automorphisms of $\mathbb C^n$_, Complex Variables Theory Appl. **14** (1990), nos. 1–4, 223–235. doi:10.1080/17476939008814422.
-- The Stacks Project Authors, _The Stacks Project_, Lemma 10.51.4, ``Krull's intersection theorem,'' Tag 00IP.   (accessed September 23, 2026).
+- The Stacks Project Authors, _The Stacks Project_, Lemma 10.51.4, ``Krull's intersection theorem,'' Tag 00IP. (accessed September 23, 2026).
 - M. Braverman, O. Milatovic, and M. A. Shubin, _Essential self-adjointness of Schrödinger-type operators on manifolds_, Russian Math. Surveys **57** (2002), no. 4, 641–692. doi:10.1070/RM2002v057n04ABEH000532; arXiv:math/0201231v3.
 - H.-D. Cao, _On Harnack's inequalities for the Kähler–Ricci flow_, Invent. Math. **109** (1992), 247–263. doi:10.1007/BF01232027.
 - J. Chu, _$C^{2,\alpha}$ regularities and estimates for nonlinear elliptic and parabolic equations in geometry_, Calc. Var. Partial Differential Equations **55** (2016), article 8. doi:10.1007/s00526-015-0948-5; arXiv:1410.3354v3.
-- S. Cohn-Vossen, _Kürzeste Wege und Totalkrümmung auf Flächen_, Compositio Math. **2** (1935), 69–133.  .
+- S. Cohn-Vossen, _Kürzeste Wege und Totalkrümmung auf Flächen_, Compositio Math. **2** (1935), 69–133. .
 - M. G. Crandall, H. Ishii, and P.-L. Lions, _User's guide to viscosity solutions of second order partial differential equations_, Bull. Amer. Math. Soc. (N.S.) **27** (1992), no. 1, 1–67. doi:10.1090/S0273-0979-1992-00266-5; arXiv:math/9207212v1.
 - Truong Dinh Dat, _An $m$-Hessian approach to Yau uniformization conjecture_, preprint (2026), arXiv:2609.18171v1.
 - Ved Datar, Vamsi Pritham Pingali, and Harish Seshadri, _Uniformisation of complete Kähler surfaces with positive sectional curvature_, preprint (2026), arXiv:2604.11220v1.
 - Ved V. Datar, Vamsi Pritham Pingali, and Harish Seshadri, _The top Yau–Yang conjecture for Kähler manifolds with positive sectional curvature_, preprint (2026), arXiv:2606.19806v1.
 - J.-P. Demailly, _Estimations $L^2$ pour l'opérateur $\bar\partial$ d'un fibré vectoriel holomorphe semi-positif au-dessus d'une variété kählérienne compl\`ete_, Ann. Sci. École Norm. Sup. (4) **15** (1982), no. 3, 457–511. doi:10.24033/asens.1434.
-- J.-P. Demailly, _Complex Analytic and Differential Geometry_, Open Content Book, version of June 21, 2012.  .
+- J.-P. Demailly, _Complex Analytic and Differential Geometry_, Open Content Book, version of June 21, 2012. .
 - L. C. Evans, _Partial Differential Equations_, second edition, Graduate Studies in Mathematics, vol. 19, American Mathematical Society, Providence, RI, 2010.
 - M. Gromov, _Curvature, diameter and Betti numbers_, Comment. Math. Helv. **56** (1981), 179–195. doi:10.1007/BF02566208.
 - A. Huber, _On subharmonic functions and differential geometry in the large_, Comment. Math. Helv. **32** (1957/58), 13–72. doi:10.1007/BF02564570.

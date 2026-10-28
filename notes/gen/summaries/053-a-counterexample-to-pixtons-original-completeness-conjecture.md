@@ -33,9 +33,7 @@ for every stable pair
 
 > Writing \(R^*(\overline{\mathcal M}_g,n)=\mathrmim q_g,n\), the Chow completeness question is
 whether
-\[
-\ker q_g,n=\mathcal P_g,n
-\]
+$$\ker q_{g,n}=\mathcal P_{g,n}$$
 for every stable pair. The known validity theorem gives the inclusion
 \(\mathcal P_g,n\subseteq\ker q_g,n\). Our example makes it strict. [S5:25–30]
 
@@ -44,14 +42,10 @@ it strict. The theorem
 
 > **Theorem 1.1**
 Set
-\[
-g=10^60,\qquad D_*=\binom g3,\qquad n=3D_*.
-\]
+$$g=10^{60},\qquad D_*=\binom g3,\qquad n=3D_*.$$
 The explicitly defined class \(Y\in S_g,n^2D_*\) of
-Definition   satisfies
-\[
-q_g,n(Y)=0,\qquad Y\notin\mathcal P_g,n.
-\]
+Definition satisfies
+$$q_{g,n}(Y)=0,\qquad Y\notin\mathcal P_{g,n}.$$
 Consequently Pixton's original relation span does not exhaust the
 tautological Chow relations: the equality
 \(\ker q_g,n=\mathcal P_g,n\) fails for this stable pair. [S5:76–89]
@@ -70,7 +64,7 @@ while satisfying the identities needed to annihilate the original
 Pixton span. The actual Chow correspondences of a curve satisfy an
 additional nilpotence identity obtained from a surface Quot scheme.
 The first algebra proves nonmembership; the second proves vanishing.
-Figure   separates these two assertions about \(Y\). [S5:166–172]
+Figure separates these two assertions about \(Y\). [S5:166–172]
 
 The first algebra proves nonmembership; the second proves vanishing.
 
@@ -99,7 +93,7 @@ correction of coefficient $-1/2$, which cancels the remaining
 triple-exceptional contribution. The errors then lower the dimension
 of the supporting cycle 
 
-> Section   uses these errors to lower the dimension of
+> Section uses these errors to lower the dimension of
 the image of the supporting cycle in the base. Chow-localization
 support methods occur in Graber–Vakil's filtration by rational
 components \cite[Theorem 1.1 and Section 4.2]GraberVakil; the induction
@@ -199,7 +193,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 - L. Abrams, _Two-dimensional topological quantum field theories and Frobenius algebras_, J. Knot Theory Ramifications **5** (1996), no. 5, 569–587. doi:10.1142/S0218216596000333.
 - A. Asok, A. Dubouloz, and P. A. Østvær, _Geometric models for algebraic suspensions_, Int.\ Math.\ Res.\ Not.\ **2023** (2023), no. 20, 17788–17821. doi:10.1093/imrn/rnad094. arXiv:2112.08241v2.
-- The Stacks Project Authors, _The Stacks Project_, 2026.  . Specific results are cited by their stable tags.
+- The Stacks Project Authors, _The Stacks Project_, 2026. . Specific results are cited by their stable tags.
 - A. Beauville, _Quelques remarques sur la transformation de Fourier dans l'anneau de Chow d'une variété abélienne_, in _Algebraic Geometry (Tokyo/Kyoto, 1982)_, Lecture Notes in Math. **1016**, Springer, 1983, 238–260. doi:10.1007/BFb0099965.
 - S. Bosch, W. Lütkebohmert, and M. Raynaud, _Néron Models_, Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 21, Springer-Verlag, Berlin, 1990.
 - S. Canning, _The tautological ring of $\overline{\mathcal M}_{g,n}$ is rarely Gorenstein_, Geom.\ Topol.\ **29** (2025), no. 7, 3905–3919. doi:10.2140/gt.2025.29.3905. Numbered statements refer to arXiv:2406.10516v1.

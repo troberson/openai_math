@@ -37,7 +37,7 @@ $$\label{intro:equivalence}
   D_{-1/(rc)}(\mathrm{Bun}_{G^\vee}(X)).$$
 The construction uses the given global forms and all connected components.
 It is characterized by the localization–Whittaker comparison of
-Section  , including its compatibility with families of
+Section , including its compatibility with families of
 marked points and their collisions. It also intertwines central torsor actions
 with the corresponding transgression local systems. [S3:28–41]
 
@@ -78,7 +78,7 @@ $$\label{intro:equivalence}
   D_{-1/(rc)}(\mathrm{Bun}_{G^\vee}(X)).$$
 The construction uses the given global forms and all connected components.
 It is characterized by the localization–Whittaker comparison of
-Section  , including its compatibility with families of
+Section , including its compatibility with families of
 marked points and their collisions. It also intertwines central torsor actions
 with the corresponding transgression local systems. [S3:28–41]
 

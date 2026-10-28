@@ -66,7 +66,7 @@ The proof of that corollary runs in both directions: $\mathrm{H10}(\mathbb Z)\le
 
 **The companion theorem.** The second manuscript's headline is a pointwise 2-converse 
 
-> Let $E/\mathbb Q$ be an elliptic curve with $E(\mathbb Q)[2]\ne0$ and $s_2(E)\in\{0,1\}$. Then \[ \mathrmord_s=1L(E,s)=\mathrmrank_{\mathbb Z}E(\mathbb Q)=s_2(E), \qquad \operatornameSha(E/\mathbb Q) is finite. \] [S10:23–29]
+> Let $E/\mathbb Q$ be an elliptic curve with $E(\mathbb Q)[2]\ne0$ and $s_2(E)\in\{0,1\}$. Then $$\mathrm{ord}_{s=1}L(E,s)=\mathrm{rank}_{\mathbb Z}E(\mathbb Q)=s_2(E), \qquad \mathrm{Sha}(E/\mathbb Q)\text{ is finite}.$$ [S10:23–29]
 
 Its abstract states the same claim in prose 
 

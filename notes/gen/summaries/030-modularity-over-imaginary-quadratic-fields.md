@@ -25,23 +25,17 @@ curve. There is an isobaric automorphic representation $\pi_E$ of
 $\mathrm{GL}_2(\mathbb A_K)$ with trivial central character and weight zero such that,
 for every prime $l$ and every isomorphism
 $\iota:\overline\mathbb Q_l\xrightarrow{\sim}\mathbb C$,
-\[
- r_\iota(\pi_E)\simeq
- H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l).
-\]
+$$r_\iota(\pi_E)\simeq
+ H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l).$$
 At every finite place $v\nmid l$ one has
-\[
- \iota\mathrmWD\bigl(H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l)
-                     |_{G_K_v}\bigr)^{\mathrmF-ss}
+$$\iota\mathrm{WD}\bigl(H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l)
+                     |_{G_{K_v}}\bigr)^{\mathrm{F\text{-}ss}}
  \simeq
- \mathrmrec_K_v\bigl(\pi_E,v\otimes|\det|_v^-1/2\bigr).
-\]
+ \mathrm{rec}_{K_v}\bigl(\pi_{E,v}\otimes|\det|_v^{-1/2}\bigr).$$
 The unitary parameter at the complex place is
 $z\mapsto\mathrm{diag}(z/|z|,\overline z/|z|)$.
 In particular every local factor agrees, and
-\[
- L(E/K,s)=L(\pi_E,s-1/2).
-\]
+$$L(E/K,s)=L(\pi_E,s-1/2).$$
 If $E$ has no complex multiplication, $\pi_E$ is cuspidal. In the CM
 case it is given by automorphic induction of a Hecke character, or by
 an isobaric sum when the CM field is already $K$. [S5:15–38]
@@ -54,9 +48,9 @@ case it is given by automorphic induction of a Hecke character.
 **The method: a geometric prime switch.** Over $\mathbb Q$, modularity was
 proved by lifting automorphy from a residual Galois representation,
 using Wiles's $3$--$5$ switch . "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable
-elliptic curves  , and
+elliptic curves , and
 Breuil–Conrad–Diamond–Taylor proved modularity of every elliptic
-curve  . A central method is to lift automorphy from a residual
+curve . A central method is to lift automorphy from a residual
 Galois representation. [S5:60–64]" Over imaginary
 quadratic fields, the potential automorphy theorem of ACC gives
 potential modularity (after extending the ground field) [S5:82–86].
@@ -115,9 +109,9 @@ and automorphic forms over these fields [S5:53–55].
 
 Over $\mathbb Q$, the modularity theorem was proved by Wiles,
 Taylor–Wiles, and Breuil–Conrad–Diamond–Taylor . "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable
-elliptic curves  , and
+elliptic curves , and
 Breuil–Conrad–Diamond–Taylor proved modularity of every elliptic
-curve  . A central method is to lift automorphy from a residual
+curve . A central method is to lift automorphy from a residual
 Galois representation. [S5:60–64]"
 The central method is lifting from a residual representation, with
 Wiles's $3$--$5$ switch providing the geometric mechanism.

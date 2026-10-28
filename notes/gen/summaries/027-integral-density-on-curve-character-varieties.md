@@ -46,9 +46,7 @@ The main statement
 For prescribed quasi-unipotent conjugacy classes $C_1,\ldots,C_s$ as above,
 let $K\subset\mathbb C$ be a number field containing their eigenvalues. There is
 a finite extension $L/K$ such that
-\[
- M_r(X)(\mathcal O_L)\cap Y(\mathbb C)
-\]
+$$M_r(X)(\mathcal O_L)\cap Y(\mathbb C)$$
 is Zariski dense in $Y$, and hence in every irreducible component of $Y$.
 The same conclusion holds when only the characteristic polynomial of
 each boundary monodromy is prescribed, with all its roots roots of unity.
@@ -67,9 +65,7 @@ curve.
 For prescribed quasi-unipotent conjugacy classes $C_1,\ldots,C_s$ as above,
 let $K\subset\mathbb C$ be a number field containing their eigenvalues. There is
 a finite extension $L/K$ such that
-\[
- M_r(X)(\mathcal O_L)\cap Y(\mathbb C)
-\]
+$$M_r(X)(\mathcal O_L)\cap Y(\mathbb C)$$
 is Zariski dense in $Y$, and hence in every irreducible component of $Y$.
 The same conclusion holds when only the characteristic polynomial of
 each boundary monodromy is prescribed, with all its roots roots of unity.
@@ -143,9 +139,12 @@ seam equation), not the headline theorem.
 The comparator stub [S5:17–19] states the same seam-equation target and
 ends in `sorry`:
 
-> theorem producedMarkedValues_allSeams :
-    D.ProducedMarkedSeamEquations q hproper hmax hg P x b0 i0 := by
-  sorry [S5:17–19]
+```lean
+theorem producedMarkedValues_allSeams :
+ D.ProducedMarkedSeamEquations q hproper hmax hg P x b0 i0 := by
+ sorry
+```
+[S5:17–19]
 
 The proof lands in
 `OAI/AlgebraicGeometry/CharacterVarieties/Seams/ProducedSolution.lean`

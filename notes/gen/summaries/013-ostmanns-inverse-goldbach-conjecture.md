@@ -123,18 +123,24 @@ No `verification/` bundle, no reasoning trace.
 The comparator stubs state the two linked targets. `OstmannPrimes.lean`
  states the prime-indecomposability target:
 
-> theorem main : ∀ A B : Set ℕ, A.Nontrivial → B.Nontrivial →
-    Set.Infinite ((A + B) ∆ n : ℕ | Nat.Prime n) := by
-  sorry [S6:9–11]
+```lean
+theorem main : ∀ A B : Set ℕ, A.Nontrivial → B.Nontrivial →
+ Set.Infinite ((A + B) ∆ n : ℕ | Nat.Prime n) := by
+ sorry
+```
+[S6:9–11]
 
 `OstmannComplete.lean` [S5:30–34] states the full result and the
 two-infinite-summands case, both ending in `sorry`:
 
-> theorem inverseGoldbach : InverseGoldbach := by
-  sorry
+```lean
+theorem inverseGoldbach : InverseGoldbach := by
+ sorry
 
 theorem twoInfiniteSummandsImpossible : TwoInfiniteSummandsImpossible := by
-  sorry [S5:30–34]
+ sorry
+```
+[S5:30–34]
 
 The scope note confirms the formalization's reach: "The formalization proves Ostmann's inverse Goldbach conjecture. For any two sets $A,B$ of nonnegative integers, each containing at least two elements, the symmetric difference between their sumset $A+B$ and the set of primes is infinite. Thus no set differing from the primes by only finitely many elements can be decomposed as such a sumset. The linked statements include the full result and its two-infinite-summands case. [S4:9]" Note
 the ledger reads `paps_form 0` (no `main_results` entry), so the scope

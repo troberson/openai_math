@@ -73,11 +73,11 @@ The corollary carries no length count in the finite case
 
 The setting is the loop space. The energy is the integral of the squared speed, its square root is the $L^2$-norm of the velocity, and the length is the integral of the speed; the two sublevels are the loops with energy below a cut and the loops with length below the same cut 
 
-> The energy, its square root, and length are \[ E(\gamma)=\int_0^1|\dot\gamma(t)|_g^2\mathop{}\!\mathrm d t, \qquad F(\gamma)=\sqrt{E(\gamma)}, \qquad \ell(\gamma)=\int_0^1|\dot\gamma(t)|_g\mathop{}\!\mathrm d t. \] Then $\ell\le F$, with equality for constant-speed loops. Write \[ X_a=\{F<a\},\qquad \mathcal A_a=\{\ell<a\}\qquad(a\in\mathbb R). \] Both spaces are empty for $a\le0$; pairs relative to $M$ are used only for $a>0$. [S7:10–21]
+> The energy, its square root, and length are $$E(\gamma)=\int_0^1|\dot\gamma(t)|_g^2\mathop{}\!\mathrm d t, \qquad F(\gamma)=\sqrt{E(\gamma)}, \qquad \ell(\gamma)=\int_0^1|\dot\gamma(t)|_g\mathop{}\!\mathrm d t.$$ Then $\ell\le F$, with equality for constant-speed loops. Write $$X_a=\{F<a\},\qquad \mathcal A_a=\{\ell<a\}\qquad(a\in\mathbb R).$$ Both spaces are empty for $a\le0$; pairs relative to $M$ are used only for $a>0$. [S7:10–21]
 
 The symmetry groups are the reflection and the half-translation, generating the Klein four-group 
 
-> The orthogonal group $G=O(2)$ acts by changing the loop parameter. We single out reflection $r$ and half-translation $\tau$: \[ (r\gamma)(t)=\gamma(-t),\qquad (\tau\gamma)(t)=\gamma(t+\tfrac12),\qquad R=\langle r\rangle,\quad K=\langle r,\tau\rangle. \] Thus $K\cong C_2\times C_2$. The fixed locus of $\tau$ consists of double loops. The map [S7:28–36]
+> The orthogonal group $G=O(2)$ acts by changing the loop parameter. We single out reflection $r$ and half-translation $\tau$: $$(r\gamma)(t)=\gamma(-t),\qquad (\tau\gamma)(t)=\gamma(t+\tfrac12),\qquad R=\langle r\rangle,\quad K=\langle r,\tau\rangle.$$ Thus $K\cong C_2\times C_2$. The fixed locus of $\tau$ consists of double loops. The map [S7:28–36]
 
 The analytic foundation is the Palais–Smale theory of the energy on the loop space [S9:14–20]:
 
@@ -120,7 +120,7 @@ The ordinary death theorem is the uniform filling statement: a cycle below squar
 
 The introduction states the same input in prose 
 
-> The ordinary homological input is a uniform filling statement for every metric, independent of the finite-prime assumption. Square-root energy is the $L^2$-norm of the velocity of a period-one loop. There is a constant $D$ such that a cycle below square-root energy $a$ which bounds in the full loop space already bounds below $a+D$, in every degree (Theorem  ). [S6:123–128]
+> The ordinary homological input is a uniform filling statement for every metric, independent of the finite-prime assumption. Square-root energy is the $L^2$-norm of the velocity of a period-one loop. There is a constant $D$ such that a cycle below square-root energy $a$ which bounds in the full loop space already bounds below $a+D$, in every degree (Theorem ). [S6:123–128]
 
 The fixed-degree filling proposition is the degree-dependent version that the cut operation lowers into a fixed range [S14:351–356]:
 
@@ -142,14 +142,13 @@ The filtered cut–join identity is the essential comparison [S12:303–310] [S6
 > Let $T$ be a normalized cocycle of degree $p\ge1$ vanishing on
 > $\mathcal A_L$, where $L>0$, and put $q=n+p-1$.  Let $x$ and $y$ be
 > arbitrary absolute cycles of respective degrees $j,N$ with
-> \[
->  j>n+p,\qquad N>n+p,
-> \]
+> $$>  j>n+p,\qquad N>n+p,
+>$$
 > supported in $\mathcal A_a$ and $\mathcal A_b$.
 
 The introduction names the same comparison as the essential step 
 
-> The essential comparison is the filtered cut–join identity of Theorem  . Its chain constructions build on the string-topology models of Hingston and Wahl  . The comparison uses an absolute cut with a diagonal-relative Thom cocycle; its value on a suitable power is the constant-loop fundamental class, the unit for the loop product (Proposition  ). We prove both the identity and this unit statement, including their filtration bounds. [S6:151–158]
+> The essential comparison is the filtered cut–join identity of Theorem . Its chain constructions build on the string-topology models of Hingston and Wahl . The comparison uses an absolute cut with a diagonal-relative Thom cocycle; its value on a suitable power is the constant-loop fundamental class, the unit for the loop product (Proposition ). We prove both the identity and this unit statement, including their filtration bounds. [S6:151–158]
 
 The absolute unit proposition says the cut of the power is the constant-loop fundamental class 
 
@@ -158,7 +157,7 @@ The absolute unit proposition says the cut of the power is the constant-loop fun
 
 The transient count $T(a)$ is the number of extra reflection classes at a sublevel, and it is uniformly bounded under the finite-prime assumption 
 
-> The remaining argument uses reflection of loops and translation by half a period. With coefficients in $\mathbb F_2$, let $B_a$ denote reflection-equivariant cohomology below square-root energy $a$, relative to constant loops, and let $B_\infty$ denote the corresponding global group. Define \[ T(a)=\dim\mathrmcoker(B_\infty\longrightarrow B_a), \] where the dimension is summed over all degrees. Thus $T(a)$ counts the extra reflection classes at that sublevel. Theorem   shows that $T(a)$ is uniformly bounded under the finite-prime assumption. The proof compares two filtrations on the half-translation fixed locus: the actual equivariant degree and the degree of its half-length root. An exact-sequence calculation bounds their total discrepancy by $O(a)$ (Theorem  ). A long string of extra classes would give $\Omega(a^2)$ discrepancy. The ordinary filling estimate excludes the remaining possibilities. [S6:160–176]
+> The remaining argument uses reflection of loops and translation by half a period. With coefficients in $\mathbb F_2$, let $B_a$ denote reflection-equivariant cohomology below square-root energy $a$, relative to constant loops, and let $B_\infty$ denote the corresponding global group. Define $$T(a)=\dim\mathrm{coker}(B_\infty\longrightarrow B_a),$$ where the dimension is summed over all degrees. Thus $T(a)$ counts the extra reflection classes at that sublevel. Theorem shows that $T(a)$ is uniformly bounded under the finite-prime assumption. The proof compares two filtrations on the half-translation fixed locus: the actual equivariant degree and the degree of its half-length root. An exact-sequence calculation bounds their total discrepancy by $O(a)$ (Theorem ). A long string of extra classes would give $\Omega(a^2)$ discrepancy. The ordinary filling estimate excludes the remaining possibilities. [S6:160–176]
 
 The transient bound is the theorem that closes the count [S13:29–35]:
 
@@ -186,7 +185,7 @@ The doubling inequality and its equality condition close the argument
 
 The doubling inequality closes the argument 
 
-> Finally, the full orthogonal-group action gives \[ T(2a)\ge T(a). \] At each stage of the round-metric filtration, the global basis has a lower-degree family, called the bottoms, and a second family obtained by cup product with the sphere class pulled back by evaluation at time zero. The equality case requires every nonzero bottom restriction from an odd round-filtration stage to have a partner whose restriction is independent modulo all bottom restrictions in its degree (Theorem  ). Because $T$ is a bounded integer, an interval where it attains its maximum propagates to arbitrarily large intervals under doubling. A bottom generator must first appear at some crossing in such an interval. Evaluation cup vanishes on that local crossing, so its partner is still zero. This contradicts the equality case. [S6:178–192]
+> Finally, the full orthogonal-group action gives $$T(2a)\ge T(a).$$ At each stage of the round-metric filtration, the global basis has a lower-degree family, called the bottoms, and a second family obtained by cup product with the sphere class pulled back by evaluation at time zero. The equality case requires every nonzero bottom restriction from an odd round-filtration stage to have a partner whose restriction is independent modulo all bottom restrictions in its degree (Theorem ). Because $T$ is a bounded integer, an interval where it attains its maximum propagates to arbitrarily large intervals under doubling. A bottom generator must first appear at some crossing in such an interval. Evaluation cup vanishes on that local crossing, so its partner is still zero. This contradicts the equality case. [S6:178–192]
 
 The global generators are the classes the filtration leaves behind 
 
@@ -195,7 +194,7 @@ The global generators are the classes the filtration leaves behind
 
 The manuscript names the prior proofs it objects to, and says the objections are to the proofs, not to the conclusions 
 
-> Earlier infinitude claims also require care. Asselle and Mazzucchelli \cite[Introduction]AsselleMazzucchelli2018 identify the proof in Klingenberg's monograph   as erroneous. Charles \cite[Theorem 6.14]Charles2019 later claimed infinitude on every closed Riemannian manifold. We identify two unsupported steps in that argument: the boundary-rank equality in Equation (53) requires maximal ranks not established there, and the constant-ball modification in Equation (54) does not provide the nondegenerate Morse critical points used in the conclusion. These are objections to the proofs, not counterexamples to their conclusions. [S6:56–65]
+> Earlier infinitude claims also require care. Asselle and Mazzucchelli \cite[Introduction]AsselleMazzucchelli2018 identify the proof in Klingenberg's monograph as erroneous. Charles \cite[Theorem 6.14]Charles2019 later claimed infinitude on every closed Riemannian manifold. We identify two unsupported steps in that argument: the boundary-rank equality in Equation (53) requires maximal ranks not established there, and the constant-ball modification in Equation (54) does not provide the nondegenerate Morse critical points used in the conclusion. These are objections to the proofs, not counterexamples to their conclusions. [S6:56–65]
 
 ## History of the conjecture
 

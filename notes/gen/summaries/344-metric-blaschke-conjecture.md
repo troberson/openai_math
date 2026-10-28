@@ -29,7 +29,7 @@ The conjecture starts from a property the round sphere has, and that the standar
 
 The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal 
 
-> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \mathrminj(M,g)=\inf_{p\in M}\mathrminj_p(M,g), \qquad \mathrmdiam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\mathrm{inj}_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\mathrm{inj}(M,g)=\mathrm{diam}(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma  . [S6:18–29]
+> For a connected closed smooth Riemannian manifold $(M,g)$, write $$\mathrm{inj}(M,g)=\inf_{p\in M}\mathrm{inj}_p(M,g), \qquad \mathrm{diam}(M,g)=\sup_{p,q\in M}d_g(p,q).$$ Here $\mathrm{inj}_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\mathrm{inj}(M,g)=\mathrm{diam}(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma . [S6:18–29]
 
 The main theorem is the classification 
 
@@ -40,9 +40,8 @@ The proof is a volume argument in two directions. Every Blaschke manifold has vo
 
 > \begin{theorem}[Sharp volume comparison]\label{thm:comparison}
 > Every Blaschke manifold and its model at the same diameter satisfy
-> \[
->  \Vol(M,g)\ge\Vol(M_0,g_0).
-> \]
+> $$>  \mathrm{Vol}(M,g)\ge\mathrm{Vol}(M_0,g_0).
+>$$
 > Equality holds if and only if $(M,g)$ is isometric to $(M_0,g_0)$.
 > \end{theorem}
 >
@@ -80,14 +79,12 @@ The analytic comparison begins on one closed geodesic. The Lagrangian planes $L_
 >
 > Use the same orthonormal basis of $\dot\gamma(0)^\perp$ for the
 > coordinates
-> \[
->  (q,p)=(J(0),J'(0))\in\R^d\oplus\R^d,
-> \]
+> $$>  (q,p)=(J(0),J'(0))\in\mathbb R^d\oplus\mathbb R^d,
+>$$
 > choosing its first $k$ vectors to be the initial derivatives of a basis
 > of $L_0\cap L_D$.  On
-> \[
->  \mathcal I=(0,D)\cup(D,T)
-> \]
+> $$>  \mathcal I=(0,D)\cup(D,T)
+>$$
 > there is a smooth symmetric matrix $A(t)$ such that
 > $L_t=\{(q,A(t)q):q\in\mathbb R^d\}$, and $A'(t)>0$.  For $x,y\in\mathcal I$,
 > \begin{equation}
@@ -135,17 +132,15 @@ The scalar estimate is a weighted integral inequality against the model density.
 
 > \begin{lemma}[Weighted scalar identity]\label{weighted:scalar}
 > Let $b>0$, $\lambda=\pi/b$, and
-> \[
->  p_0(t)=\frac{\lambda^2}{\sin^2(\lambda t)},\qquad 0<t<b.
-> \]
+> $$>  p_0(t)=\frac{\lambda^2}{\sin^2(\lambda t)},\qquad 0<t<b.
+>$$
 > Let $p:(0,b)\to(0,\infty)$ be continuous and suppose that
 > $g=\log(p/p_0)$ is bounded.  Let $W$ be nonnegative and measurable on
 > $(0,b)$, with $W(b-z)=W(z)$ almost everywhere and
 > $W(z)/\sin(\lambda z)$ essentially bounded.  Write
-> \[
->  \Delta_b=\{(x,y):0<x<y<b\},\qquad
+> $$>  \Delta_b=\{(x,y):0<x<y<b\},\qquad
 >  d\nu_{xy}(t)=\frac{p_0(t)\,dt}{\int_x^y p_0},\quad x<t<y.
-> \]
+>$$
 > Then all the following integrals are finite, and
 > \begin{align}
 >  &\int_{\Delta_b}W(y-x)
@@ -247,7 +242,7 @@ The manuscript states the route through the proof
 
 The arithmetic step is where the integral structure matters 
 
-> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of   and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following  . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound. [S6:160–179]
+> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound. [S6:160–179]
 
 ## History of the conjecture
 
@@ -257,7 +252,7 @@ The sphere and real-projective metric cases came through Berger, Kazdan, Weinste
 
 The manuscript names the hypotheses it does not use 
 
-> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition 2.1]ShankarSpatzierWilking2005, and Su, Sun and Wang prove the corresponding normalized lower-curvature result  . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set  . [S6:192–198]
+> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition 2.1]ShankarSpatzierWilking2005, and Su, Sun and Wang prove the corresponding normalized lower-curvature result . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set . [S6:192–198]
 
 It also names the nearest concurrent result 
 

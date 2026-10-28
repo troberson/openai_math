@@ -32,7 +32,7 @@ junctions. The manuscript proves this
 
 > **Theorem 1.1**
 Let $(u,K)$ be a reduced absolute minimizer of
-  in a bounded Lipschitz domain
+ in a bounded Lipschitz domain
 $\Omega\subset\mathbb R^2$, with $g\in L^\infty(\Omega)$.
 Every $x\in K$ has an interior neighborhood in which $K$ has one of the
 following forms, with $C^{1,\alpha}$ arcs for some $\alpha>0$:
@@ -40,7 +40,7 @@ following forms, with $C^{1,\alpha}$ arcs for some $\alpha>0$:
  \item a single embedded arc with $x$ in its interior;
  \item a single embedded arc ending at $x$;
  \item three embedded arcs meeting only at $x$, with pairwise angles
-       $120$ degrees.
+ $120$ degrees.
 \endenumerate
 Moreover, for every open $U\Subset\Omega$,
 $$\label{eq:component-finiteness}

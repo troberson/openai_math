@@ -23,10 +23,8 @@ whose anticanonical divisor $-K_X$ is ample. Its Picard number
 $\rho_X$ is the rank of its Néron–Severi group, or equivalently the
 dimension of the space of numerical divisor classes. If $X$ has positive
 dimension, its _pseudoindex_ is
-\[
- \iota_X=\min\{-K_X\cdot C:C\subset X
-                    is an irreducible rational curve\}.
-\]
+$$\iota_X=\min\{-K_X\cdot C:C\subset X
+                   \text{ is an irreducible rational curve}\}.$$
 The existence of rational curves on a Fano manifold makes this minimum
 well defined. The pseudoindex records the smallest anticanonical curve
 degree; it need not equal the largest integer dividing $-K_X$ in
@@ -38,13 +36,9 @@ The theorem
 Let $X$ be a smooth connected complex projective Fano manifold of
 positive dimension $n$, Picard number $\rho_X$ and pseudoindex $\iota_X$.
 Then
-\[
- \rho_X(\iota_X-1)\le n.
-\]
+$$\rho_X(\iota_X-1)\le n.$$
 Equality holds if and only if
-\[
- X\cong(\mathbb P^{\iota_X-1})^{\rho_X}.
-\] [S3:22–33]
+$$X\cong(\mathbb P^{\iota_X-1})^{\rho_X}.$$ [S3:22–33]
 
 The bound says the Picard number times the pseudoindex minus one
 cannot exceed the dimension. Equality forces the manifold to be a
@@ -68,9 +62,7 @@ two-point curve correspondences. A correspondence of anticanonical
 degree $d$ lowers cohomological codimension by $d-1$.
 Consequently, a nonzero product in $r$ independent curve degrees would
 give
-\[
- r(\iota-1)\le\sum_j=1^r(d_j-1)\le n.
-\]
+$$r(\iota-1)\le\sum_{j=1}^r(d_j-1)\le n.$$
 The main task is to produce that product without assuming that quantum
 cohomology is semisimple. [S3:76–91]
 
@@ -97,9 +89,9 @@ force decay of order $\exp(-c d\log d)$ along a suitable free curve
 degree. After the same factorial normalization, the descendant lower
 bound permits only exponential decay and rules this out. Thus one joint
 tuple has $r$ algebraically independent coordinates
-(Section  ).
+(Section ).
 
-Section   converts this algebraic independence into the
+Section converts this algebraic independence into the
 required curve correspondences. An alternating trace of matrix-valued
 differentials is invariant even under changes of basis depending on
 $q$. Computing it in a common triangular basis detects the independent
@@ -108,15 +100,13 @@ nonzero product in independent curve degrees. This argument also
 applies to nonsemisimple commuting matrices.
 7.inline	S8	25	36	\begintheorem[The ordered-chain bound]
  
-Let $Y$ be a smooth complex projective variety.  Let
+Let $Y$ be a smooth complex projective variety. Let
 $V^1,\ldots,V^k$ be proper irreducible components of
 $\mathrm{RatCurves}^{\mathrm n}(Y)$ whose numerical classes are
-linearly independent.  For every $y\in Y$, the ordered endpoint locus
+linearly independent. For every $y\in Y$, the ordered endpoint locus
 is either empty or satisfies
-\[
- \dim\operatornameLocus(V^1,\ldots,V^k)_y
- \ge\sum_j=1^k(-K_Y\cdot V^j-1).
-\]
+$$\dim\mathrm{Locus}(V^1,\ldots,V^k)_y
+ \ge\sum_{j=1}^k(-K_Y\cdot V^j-1).$$
 \endtheorem [S3:110–127]
 
 The alternating trace of matrix-valued differentials, computed in
@@ -138,7 +128,7 @@ And Occhetta's product characterization identifies the manifold
 Let $Y$ be a smooth complex projective variety of dimension $n$.
 Suppose $Y$ has numerically independent unsplit covering families
 $V^1,\ldots,V^k$ with anticanonical degrees $n_1+1,\ldots,n_k+1$,
-where each $n_j$ is positive and $\sum_jn_j=n$.  Then
+where each $n_j$ is positive and $\sum_jn_j=n$. Then
 $Y\cong\mathbb P^{n_1}\times\cdots\times\mathbb P^{n_k}$. [S8:43–50]
 
 The numerically independent unsplit covering families with

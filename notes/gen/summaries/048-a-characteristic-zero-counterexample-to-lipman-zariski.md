@@ -19,9 +19,7 @@ algebraic vector fields on $\mathrm{Spec} A$. On a smooth variety of dimension
 $d$ it is locally free of rank $d$. The Lipman–Zariski conjecture asks
 for the converse: a complex algebraic variety with locally free tangent
 sheaf should be nonsingular . "For a finitely generated integral $\mathbb C$-algebra $A$, write
-\[
-\mathrmDer_{\mathbb C}(A)=\mathrmHom_A(\Omega^1_{A/\mathbb C},A).
-\]
+$$\mathrm{Der}_{\mathbb C}(A)=\mathrm{Hom}_A(\Omega^1_{A/\mathbb C},A).$$
 The module $\mathrm{Der}_{\mathbb C}(A)$ consists of the algebraic vector fields on
 $\mathrm{Spec} A$. On a smooth variety of dimension $d$, the tangent sheaf is
 locally free of rank $d$. The Lipman–Zariski conjecture asks for the
@@ -31,10 +29,8 @@ of $\mathrm{Der}_{\mathbb C}(A)$ forces $A$ to be regular. We prove the followin
 
 > **theorem**
 There exist a finitely generated normal integral $\mathbb C$-algebra $A$ of Krull dimension two and a maximal ideal $\mathfrak m\subset A$ such that
-\[
-\mathrmDer_{\mathbb C}(A)\simeq A^{\oplus2},
-\qquad A_{\mathfrak m} is not regular.
-\] [S5:20–26]
+$$\mathrm{Der}_{\mathbb C}(A)\simeq A^{\oplus2},
+\qquad A_{\mathfrak m}\text{ is not regular}.$$ [S5:20–26]
 
 Freeness holds on the entire affine surface, which is smooth away from
 the marked point [S5:28–31]. The construction first produces an
@@ -50,7 +46,7 @@ canonical discrepancy $-5$ and $p_g\ge33$, so $p_g-g-b\ge12$
 
 > The analytic singularity constructed here has one exceptional curve of genus $21$
 and self-intersection $-10$. Its canonical discrepancy is $-5$, and
-$p_g\ge33$, so $p_g-g-b\ge12$. Remark  
+$p_g\ge33$, so $p_g-g-b\ge12$. Remark 
 proves these calculations. They place the analytic example beyond the
 log-canonical and geometric-genus criteria just described. [S5:83–87]
 
@@ -65,14 +61,10 @@ $\sigma=t^{-5}\,dt\wedge dz$ . "Let $C$ be a smooth curve and $L$ a positive lin
 $L^{\otimes4}\simeq K_C$. Its dual bundle $L^{-1}$ provides the initial
 neighborhood of $C$. In compatible base and fiber coordinates $(z,t)$,
 that neighborhood carries the meromorphic two-form
-\[
-\sigma=t^-5\,dt\wedge dz.
-\]
+$$\sigma=t^{-5}\,dt\wedge dz.$$
 We seek two vector fields of the form
-\[
-v_i=t\bigl(A_i(t,z)t\partial_t+B_i(t,z)\partial_z\bigr),
-\qquad i=1,2,
-\] [S5:131–142]" Two vector fields
+$$v_i=t\bigl(A_i(t,z)t\partial_t+B_i(t,z)\partial_z\bigr),
+\qquad i=1,2,$$ [S5:131–142]" Two vector fields
 are sought with $\sigma(v_1,v_2)=1+O(t)$. The leading vertical
 coefficients are a pair of sections of $L$ with six simple common
 zeros, whose corrections must satisfy global residue constraints.
@@ -82,7 +74,7 @@ $\mathbb P^1\times\mathbb P^1$ with fourth-order contact at the marked divisor $
 with an auxiliary elliptic curve $\Gamma$; a two-torsion relation
 controls the section dimensions and supplies six vectors, giving
 genus $21$ and $\deg L=10$ . "\paragraphA curve and normalized residues.
-Section   constructs $C$ on $\mathbb P^1\times\mathbb P^1$, with
+Section constructs $C$ on $\mathbb P^1\times\mathbb P^1$, with
 fourth-order contact at $Z$ with an auxiliary elliptic curve $\Gamma$.
 A two-torsion relation on $\Gamma$ controls the section dimensions on $C$ and supplies
 six vectors in a two-dimensional quadratic space. The resulting curve
@@ -96,13 +88,13 @@ Hausdorff neighborhood $Y$ of $C$; Grauert's criterion contracts $C$
 to a point $x$ of a normal surface $X$ 
 
 > \paragraphHolomorphic lifting and contraction.
-Section   realizes the finite transition maps as
+Section realizes the finite transition maps as
 a Hausdorff surface neighborhood $Y$ of $C$. Set
 $\mathcal I=\mathcal O_Y(-C)$ and $\mathcal F=\mathcal T_Y(-\log C)$, the sheaf of vector fields
 tangent to $C$. Grauert's criterion contracts the curve to a point
-$x$ of a normal surface $X$  . Cohomology of the
+$x$ of a normal surface $X$ . Cohomology of the
 successive ideal quotients and the theorem on formal
-functions   give the cohomological vanishing needed to
+functions give the cohomological vanishing needed to
 lift these jets to holomorphic fields after shrinking, without requiring
 an infinite sequence of neighborhood
 changes to converge. Their determinant gives a frame on
@@ -119,7 +111,7 @@ relation matrix produces an algebraic local ring with the same
 completion as $\mathcal O_{X,x}$ 
 
 > \paragraphThe affine algebraic endpoint.
-Section   combines approximation with the finite
+Section combines approximation with the finite
 determinacy of equations together with their relations. The latter
 method appears in Hironaka's equivalence theorem
 \cite[\S3, Theorem 3.3]Hironaka1969 and in Artin's algebraization
@@ -131,7 +123,7 @@ $\mathcal O_{X,x}$. A finite Jacobian presentation identifies its completed
 derivation module with the continuous derivations of that completion.
 Faithful flatness descends freeness and the local ring properties.
 Finally, shrinking to one affine neighborhood gives the globally free
-module in Theorem  , while preserving the singular point. [S5:193–206]
+module in Theorem , while preserving the singular point. [S5:193–206]
 
 Faithful flatness descends freeness, and shrinking to one affine
 neighborhood gives the globally free module while preserving the

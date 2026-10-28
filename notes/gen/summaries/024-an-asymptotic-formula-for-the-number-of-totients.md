@@ -34,21 +34,15 @@ The main statement
 > **theorem**
 For sufficiently large positive integers $H$, there are nonnegative
 functions $A_H(1;\cdot):[0,1)\to\mathbb R$, given by the finite
-arithmetic formula   below,
+arithmetic formula below,
 which converge uniformly as $H\to\infty$ to a function $A(1;\cdot)$
 satisfying
-\[
- 0<\inf_{0\le s<1}A(1;s)
-   \le\sup_{0\le s<1}A(1;s)<\infty.
-\]
-With the parameters  – ,
-\[
- V(x)\sim\fracx{\log x}\,G_m A(1;\theta).
-\]
+$$0<\inf_{0\le s<1}A(1;s)
+   \le\sup_{0\le s<1}A(1;s)<\infty.$$
+With the parameters – ,
+$$V(x)\sim\frac{x}{\log x}\,G_m A(1;\theta).$$
 Moreover, for every fixed real $c>0$,
-\[
- \fracV(cx)V(x)\longrightarrow c.
-\] [S3:45–63]
+$$\frac{V(cx)}{V(x)}\longrightarrow c.$$ [S3:45–63]
 
 ## Graduate summary
 
@@ -60,21 +54,15 @@ function of totient values, with a bounded oscillating coefficient.
 > **theorem**
 For sufficiently large positive integers $H$, there are nonnegative
 functions $A_H(1;\cdot):[0,1)\to\mathbb R$, given by the finite
-arithmetic formula   below,
+arithmetic formula below,
 which converge uniformly as $H\to\infty$ to a function $A(1;\cdot)$
 satisfying
-\[
- 0<\inf_{0\le s<1}A(1;s)
-   \le\sup_{0\le s<1}A(1;s)<\infty.
-\]
-With the parameters  – ,
-\[
- V(x)\sim\fracx{\log x}\,G_m A(1;\theta).
-\]
+$$0<\inf_{0\le s<1}A(1;s)
+   \le\sup_{0\le s<1}A(1;s)<\infty.$$
+With the parameters – ,
+$$V(x)\sim\frac{x}{\log x}\,G_m A(1;\theta).$$
 Moreover, for every fixed real $c>0$,
-\[
- \fracV(cx)V(x)\longrightarrow c.
-\] [S3:45–63]
+$$\frac{V(cx)}{V(x)}\longrightarrow c.$$ [S3:45–63]
 
 For large $H$ there are nonnegative functions $A_H(1;\cdot)$ of the
 phase variable $s \in [0,1)$, defined by a finite arithmetic formula,
@@ -154,24 +142,30 @@ The comparator stubs state the two linked targets.
 `TotientAsymptotic.lean` [S5:118–126] is the main asymptotic formula
 and the regular-variation statement:
 
-> theorem totient_asymptotic_formula
-    :
-    TendstoUniformlyOn (fun H => AH H (fun _ => 1)) (A (fun _ => 1))
-      atTop (Set.Ico (0 : ℝ) 1) ∧
-    (∃ cMinus cPlus : ℝ, 0 < cMinus ∧ ∀ s ∈ Set.Ico (0 : ℝ) 1,
-      cMinus ≤ A (fun _ => 1) s ∧ A (fun _ => 1) s ≤ cPlus) ∧
-    Tendsto (fun x => V x/mainTerm x) atTop (nhds 1) ∧
-    ∀ c : ℝ, 0 < c → Tendsto (fun x => V (c*x)/V x) atTop (nhds c) := by
-  sorry [S5:118–126]
+```lean
+theorem totient_asymptotic_formula
+ :
+ TendstoUniformlyOn (fun H => AH H (fun _ => 1)) (A (fun _ => 1))
+ atTop (Set.Ico (0 : ℝ) 1) ∧
+ (∃ cMinus cPlus : ℝ, 0 < cMinus ∧ ∀ s ∈ Set.Ico (0 : ℝ) 1,
+ cMinus ≤ A (fun _ => 1) s ∧ A (fun _ => 1) s ≤ cPlus) ∧
+ Tendsto (fun x => V x/mainTerm x) atTop (nhds 1) ∧
+ ∀ c : ℝ, 0 < c → Tendsto (fun x => V (c*x)/V x) atTop (nhds c) := by
+ sorry
+```
+[S5:118–126]
 
 `TotientCompanionZero.lean` [S6:95–99] is the companion's exact-zero
 case:
 
-> theorem companion_zero_case (k : ℕ) (_hk : 0 < k)
-    (hno : ¬ ∃ d : ℕ, IsTotient d ∧ k*d < ell d) :
-    (∀ x : ℝ, 0 < x → N k x = 0) ∧
-    (∀ s ∈ Set.Ico (0 : ℝ) 1, A (fk k) s = 0) := by
-  sorry [S6:95–99]
+```lean
+theorem companion_zero_case (k : ℕ) (_hk : 0 < k)
+ (hno : ¬ ∃ d : ℕ, IsTotient d ∧ k*d < ell d) :
+ (∀ x : ℝ, 0 < x → N k x = 0) ∧
+ (∀ s ∈ Set.Ico (0 : ℝ) 1, A (fk k) s = 0) := by
+ sorry
+```
+[S6:95–99]
 
 Both end in `sorry`. The scope note [S4:9] confirms the
 formalization's reach: "Let $V(x)$ count the distinct values of Euler's totient function up to $x$. The formalization constructs the paper's explicit positive main term from finite arithmetic approximants and proves that their ratio tends to one. In particular, $V(cx)/V(x)\to c$ for every fixed $c>0$, answering the Erdős–Hall regular-variation question. [S4:9]" Note the ledger reads `paps_form 0`

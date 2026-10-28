@@ -70,9 +70,7 @@ $\mathbb Q$-Cartier, $X$ is $\epsilon$-lc, and $-K_X$ is ample over $Z$.
 For every closed point $z\in Z$ there are an effective $\mathbb Q$-divisor $B$ on
 $X$ and a Zariski open neighbourhood $U$ of $z$ such that $(X,B)$ is klt over
 $U$ and
-\[
- N(K_X+B)|_{f^-1(U)}\sim 0
-\]
+$$N(K_X+B)|_{f^{-1}(U)}\sim 0$$
 is an integral Cartier divisor. [S3:22–36]
 
 For every positive integer $d$ and positive rational $\epsilon$, there is
@@ -88,10 +86,8 @@ $N$ depends only on $d$ and $\epsilon$.
 
 > **Theorem 1**
 For every integer $d>0$ and every real number $\epsilon>0$, there is a real number $\tau=\tau(d,\epsilon)>0$ with the following property. Let $(X,B)$ be an $\epsilon$-lc rational pair of dimension $d$, and let $f:X\to Z$ be a Fano type contraction of normal integral quasi-projective varieties with $\dim Z>0$. Suppose that $-(K_X+B)$ is nef over $Z$. For every closed point $z\in Z$, there are an open neighbourhood $U$ of $z$ and a nonzero effective Cartier divisor $D$ on $U$, with $z\in\mathrm{Supp} D$, such that
-\[
-\bigl(f^-1(U),B|_{f^-1(U)}+\tau f^*D\bigr)
-\quadis log canonical.
-\] [S5:21–27]
+$$\bigl(f^{-1}(U),B|_{f^{-1}(U)}+\tau f^*D\bigr)
+\quad\text{is log canonical.}$$ [S5:21–27]
 
 For every $d > 0$ and real $\epsilon > 0$, there is a real $\tau =
 \tau(d, \epsilon) > 0$ such that for every $\epsilon$-lc rational pair

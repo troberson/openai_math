@@ -37,10 +37,9 @@ The system and its charge and current, stated once and used throughout [S4:10–
 > \end{aligned}
 > \end{equation}
 > where
-> \[
->  \rho_f(t,x)=\int_{\R^3}f(t,x,v)\,dv,
->  \qquad j_f(t,x)=\int_{\R^3}u(v)f(t,x,v)\,dv.
-> \]
+> $$>  \rho_f(t,x)=\int_{\mathbb R^3}f(t,x,v)\,dv,
+>  \qquad j_f(t,x)=\int_{\mathbb R^3}u(v)f(t,x,v)\,dv.
+>$$
 > There is no background charge.
 
 The field class is the load-bearing choice. `C_b^∞` bounds every spatial derivative but does not require square-integrable derivatives, which is what allows a nonzero total charge and its Coulomb tail.
@@ -55,17 +54,16 @@ The theorem, stated in full [S4:42–52]:
 > Every smooth admissible datum \eqref{eq:data} generates a unique global
 > classical solution of \eqref{eq:rvm}. For every finite $T$, this solution
 > satisfies
-> \[
->  f\in C^\infty([0,T]\times\R^3_x\times\R^3_v),\qquad
->  E,B\in C^\infty([0,T]\times\R^3_x;\R^3),
-> \]
+> $$>  f\in C^\infty([0,T]\times\mathbb R^3_x\times\mathbb R^3_v),\qquad
+>  E,B\in C^\infty([0,T]\times\mathbb R^3_x;\mathbb R^3),
+>$$
 > and $f$ has compact phase-space support on $[0,T]$.
 > The two divergence constraints hold for all time.
 > \end{theorem}
 
 What the theorem does not assume, from the paragraph immediately after it 
 
-> Theorem   resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field [S4:54–56]
+> Theorem resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field [S4:54–56]
 
 The proof is split into a kinetic half and a PDE half. The kinetic half is a single bootstrap on signed momentum increments, uniform over all compact classical time intervals.
 
@@ -108,12 +106,11 @@ The retarded representation and its kernel [S6:155–162]:
 
 > \begin{proposition}[Retarded field representation]\label{ret:representation}
 > Let $E^{\rm fr},B^{\rm fr}$ be the homogeneous wave solutions with data
-> \[
->  (E^{\rm fr},\partial_tE^{\rm fr})|_{t=0}
+> $$>  (E^{\rm fr},\partial_tE^{\rm fr})|_{t=0}
 >        =(E_0,\nabla\times B_0),\qquad
 >  (B^{\rm fr},\partial_tB^{\rm fr})|_{t=0}
 >        =(B_0,-\nabla\times E_0).
-> \]
+>$$
 
 The kernel, whose denominator degenerates when the source moves along the light ray [S6:183–186]:
 
@@ -166,9 +163,8 @@ The direction-change lemma [S10:22–37]:
 > Let $w$ be a dyad with $w\ge P^{3/5}$, and let $J\subset[0,\tau]$ be a closed
 > interval of length at most $(w/P)^2$ on which a supported characteristic
 > satisfies $w/8\le q_X\le8w$. Suppose
-> \[
->  w^{-3/5}\le\delta\le w^{-1/10}.
-> \]
+> $$>  w^{-3/5}\le\delta\le w^{-1/10}.
+>$$
 > Starting at the left endpoint of $J$, stop whenever the direction
 > $\xi=V_X/|V_X|$ first has chordal distance $\delta$ from its direction at
 > the preceding stopping time. Include the last, possibly incomplete,
@@ -200,7 +196,7 @@ The weighted signed estimate, with no `sqrt(w)` [S11:447–454]:
 
 The coefficient bound that pays for the loss 
 
-> For the receiver terms, Lemmas   and   give, at every receiver time, \[ \sum_{\mathrmselected}CU\le Cw^-1/2. \] [S11:478–482]
+> For the receiver terms, Lemmas and give, at every receiver time, $$\sum_{\mathrm{selected}}CU\le Cw^{-1/2}.$$ [S11:478–482]
 
 The strategy section says exactly what that factor buys 
 
@@ -214,17 +210,17 @@ The uniform improvement, and the continuity argument that closes the bootstrap
 
 The end of the continuity argument 
 
-> This proves relative openness. Hence $\mathcal T=[0,t_*]$ and Proposition   follows. [S12:81–82]
+> This proves relative openness. Hence $\mathcal T=[0,t_*]$ and Proposition follows. [S12:81–82]
 
 The bookkeeping that keeps the bootstrap usable in the doubling argument 
 
-> The compact-time force bound $C_*$ was used only to propagate the bootstrap for a fixed $P$. It does not enter $M,A$ or $P_0$. This distinction preserves the uniformity needed in the momentum-doubling argument of Section  . [S12:84–87]
+> The compact-time force bound $C_*$ was used only to propagate the bootstrap for a fixed $P$. It does not enter $M,A$ or $P_0$. This distinction preserves the uniformity needed in the momentum-doubling argument of Section . [S12:84–87]
 
 With the bootstrap in hand, the conclusion is a divergent series. Doubling momentum from `2^(n-1)` to `2ⁿ` takes time at least `c / log(2 + 1024·2ⁿ)`, and the sum over `n` diverges, so the doubling times cannot accumulate below a finite `T_max`.
 
 The momentum-doubling step, verbatim 
 
-> At least one term on the right is at least $2^{n-2}$. Consequently \[ t_n-t_n-1\ge\Delta_n \ge \fracc{\log(2+1024\cdot2^n)} \] for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$. [S5:95–102]
+> At least one term on the right is at least $2^{n-2}$. Consequently $$t_n-t_{n-1}\ge\Delta_n \ge \frac{c}{\log(2+1024\cdot2^n)}$$ for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$. [S5:95–102]
 
 Smoothness is then propagated by restarting a Sobolev construction near an alleged first loss and identifying the restart with the classical solution by uniqueness; persistence at every Sobolev order follows on the same lifespan, and the equations give all time derivatives.
 
@@ -232,11 +228,11 @@ Smoothness is then propagated by restarting a Sobolev construction near an alleg
 
 The paper's own account of the problem starts from the gap between weak existence and classical regularity 
 
-> The distinction between weak existence and classical regularity has shaped the Cauchy problem for Vlasov–Maxwell. Wollman established local existence and uniqueness for classical solutions  . DiPerna and Lions developed global weak existence for large data  ; a direct formulation for the relativistic one-species system is given by Rein  . These weak existence results do not furnish the regularity and uniqueness asserted in Theorem  . [S4:63–70]
+> The distinction between weak existence and classical regularity has shaped the Cauchy problem for Vlasov–Maxwell. Wollman established local existence and uniqueness for classical solutions . DiPerna and Lions developed global weak existence for large data ; a direct formulation for the relativistic one-species system is given by Rein . These weak existence results do not furnish the regularity and uniqueness asserted in Theorem . [S4:63–70]
 
 The continuation criterion and the pre-existing global classical results, with the restrictions they used 
 
-> For classical solutions, Glassey and Strauss identified bounded momentum support as a continuation condition   and proved global existence for initially dilute plasmas  . Global classical existence was also established by Glassey and Schaeffer in dimensional reductions: one and one-half dimensions, two and one-half dimensions, and the planar problem  . For the spherically symmetric electrostatic reduction, Glassey and Schaeffer proved global classical existence for the repulsive relativistic Vlasov–Poisson system  . Rein proved persistence of global existence under small perturbations of suitably decaying global reference solutions, including nearly symmetric configurations  . These results use restrictions on size, dimension, or the reference configuration. [S4:72–88]
+> For classical solutions, Glassey and Strauss identified bounded momentum support as a continuation condition and proved global existence for initially dilute plasmas . Global classical existence was also established by Glassey and Schaeffer in dimensional reductions: one and one-half dimensions, two and one-half dimensions, and the planar problem . For the spherically symmetric electrostatic reduction, Glassey and Schaeffer proved global classical existence for the repulsive relativistic Vlasov–Poisson system . Rein proved persistence of global existence under small perturbations of suitably decaying global reference solutions, including nearly symmetric configurations . These results use restrictions on size, dimension, or the reference configuration. [S4:72–88]
 
 The criterion's title in the literature it comes from [S14:30–41]:
 
@@ -252,15 +248,15 @@ The criterion's title in the literature it comes from [S14:30–41]:
 
 The continuation theory then generated its own methods, and the version used here is Luk–Strain's Theorem 1.1 
 
-> The continuation theory also led to new methods. Klainerman and Staffilani gave a Fourier-based proof of the bounded-momentum criterion  , while Bouchut, Golse and Pallard gave a physical-space proof using a division lemma for wave kernels  . Luk and Strain showed that it suffices to control the momentum support after projection onto a fixed two-dimensional plane \cite[Theorem 1.2]LukStrain2014Continuation. Moment and spatial-density conditions for continuation were developed by Pallard  , Sospedra–Alfonso and Illner  , and Luk and Strain  . We use the Glassey–Strauss criterion as stated in Luk and Strain \cite[Theorem 1.1]LukStrain2014Continuation; Section   verifies its hypotheses for the normalization and initial field class considered here. [S4:90–104]
+> The continuation theory also led to new methods. Klainerman and Staffilani gave a Fourier-based proof of the bounded-momentum criterion , while Bouchut, Golse and Pallard gave a physical-space proof using a division lemma for wave kernels . Luk and Strain showed that it suffices to control the momentum support after projection onto a fixed two-dimensional plane \cite[Theorem 1.2]LukStrain2014Continuation. Moment and spatial-density conditions for continuation were developed by Pallard , Sospedra–Alfonso and Illner , and Luk and Strain . We use the Glassey–Strauss criterion as stated in Luk and Strain \cite[Theorem 1.1]LukStrain2014Continuation; Section verifies its hypotheses for the normalization and initial field class considered here. [S4:90–104]
 
 The small-data line, which relaxes compact momentum support but keeps a particle-smallness hypothesis 
 
-> Small-data theory also developed beyond compact momentum support. Schaeffer allowed a rapidly decaying momentum tail, retaining compact spatial support and a suitable smallness condition  . Using a vector-field method with modified commutators, Bigorgne obtained global existence and sharp asymptotic estimates under weighted smallness assumptions  . His result permits nonzero charge and noncompact particle data. Wang proved a small-data result without compact support using vector-field and Fourier methods  . Wei and Yang allow arbitrarily large Maxwell fields with suitable spatial decay while requiring a sufficiently small weighted particle density  . Bigorgne subsequently proved global existence and modified scattering with a small distribution function and a large Maxwell field  . These theorems preserve a particle-smallness hypothesis. By prescribing asymptotic data and choosing a sufficiently late starting time, Bigorgne also constructs particular global solutions with large particle and field norms  . This construction does not prescribe arbitrary Cauchy data. [S4:106–125]
+> Small-data theory also developed beyond compact momentum support. Schaeffer allowed a rapidly decaying momentum tail, retaining compact spatial support and a suitable smallness condition . Using a vector-field method with modified commutators, Bigorgne obtained global existence and sharp asymptotic estimates under weighted smallness assumptions . His result permits nonzero charge and noncompact particle data. Wang proved a small-data result without compact support using vector-field and Fourier methods . Wei and Yang allow arbitrarily large Maxwell fields with suitable spatial decay while requiring a sufficiently small weighted particle density . Bigorgne subsequently proved global existence and modified scattering with a small distribution function and a large Maxwell field . These theorems preserve a particle-smallness hypothesis. By prescribing asymptotic data and choosing a sufficiently late starting time, Bigorgne also constructs particular global solutions with large particle and field norms . This construction does not prescribe arbitrary Cauchy data. [S4:106–125]
 
 The nearest concurrent work is a July 2026 pair of papers by Wang on cylindrically symmetric large data. The paper states the difference in data classes explicitly, and declines to identify the two results 
 
-> Wang's July 2026 two-paper treatment establishes global existence for large cylindrically symmetric data  . The first paper develops an iterative smoothing construction and the second supplies pointwise estimates. Their Theorem 1.1 assumes $H^s$ fields, $s\ge6$, a weighted $H^s$ particle density, and covariance of the data under rotations about a fixed axis. It allows localized noncompact particle data and has no smallness requirement. The theorem here instead concerns arbitrary compatible compactly supported particle data, without symmetry, and fields in the class  . Thus the two data classes should not be identified. [S4:127–136]
+> Wang's July 2026 two-paper treatment establishes global existence for large cylindrically symmetric data . The first paper develops an iterative smoothing construction and the second supplies pointwise estimates. Their Theorem 1.1 assumes $H^s$ fields, $s\ge6$, a weighted $H^s$ particle density, and covariance of the data under rotations about a fixed axis. It allows localized noncompact particle data and has no smallness requirement. The theorem here instead concerns arbitrary compatible compactly supported particle data, without symmetry, and fields in the class . Thus the two data classes should not be identified. [S4:127–136]
 
 The two concurrent papers as the bibliography records them [S14:85–107]:
 
@@ -290,7 +286,7 @@ The two concurrent papers as the bibliography records them [S14:85–107]:
 
 The antecedents of the formulas themselves, which are classical 
 
-> The formulas used below have several classical antecedents. The retarded-field representation goes back to Glassey and Strauss  . Luk and Strain organize its most singular terms using electromagnetic components controlled by energy flux through light cones \cite[Proposition 2.2 and Section 3]LukStrain2014Continuation; Pallard also uses the orthogonality of the acceleration kernel to the cone's spatial normal \cite[Lemma 2.1 and Section 2.3]Pallard2015Refined. The change from retarded phase points to initial particle labels appears in Lazarovici \cite[Lemma 9.2]Lazarovici2016. The moving-characteristic cone change of variables is used by Pallard  ; its proof is also given by Luk and Strain \cite[Proposition 5.2]LukStrain2014Continuation. We derive the required formulas in the normalization  . [S4:138–150]
+> The formulas used below have several classical antecedents. The retarded-field representation goes back to Glassey and Strauss . Luk and Strain organize its most singular terms using electromagnetic components controlled by energy flux through light cones \cite[Proposition 2.2 and Section 3]LukStrain2014Continuation; Pallard also uses the orthogonality of the acceleration kernel to the cone's spatial normal \cite[Lemma 2.1 and Section 2.3]Pallard2015Refined. The change from retarded phase points to initial particle labels appears in Lazarovici \cite[Lemma 9.2]Lazarovici2016. The moving-characteristic cone change of variables is used by Pallard ; its proof is also given by Luk and Strain \cite[Proposition 5.2]LukStrain2014Continuation. We derive the required formulas in the normalization . [S4:138–150]
 
 Prior (my training data, not repo text): as of my cutoff the open problem was stated as global classical solvability for the full three-dimensional relativistic Vlasov–Maxwell system with arbitrary smooth data of the standard class; Glassey–Strauss 1986 is the standard continuation criterion, Luk–Strain 2014 the standard modern formulation, and the known unconditional global classical results were restricted to symmetry reductions (notably the spherically symmetric Vlasov–Poisson case) plus small-data regimes. A full large-data, no-symmetry, no-smallness global classical theorem for the one-species Maxwell system would have been, at my cutoff, the headline open problem in kinetic PDE, so the claim as stated is a maximal-strength resolution of a long-standing problem rather than a refinement of an existing theorem.
 
@@ -302,7 +298,7 @@ The stated consequence is closure of the problem in the form the literature pose
 
 The paper's own framing of the same claim, with the dimensional specification 
 
-> Theorem   resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field assumptions allow a nonzero total charge and its Coulomb tail; they do not require square-integrability of all field derivatives. The momentum support bound is on each finite time interval and may grow with that interval. [S4:54–60]
+> Theorem resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field assumptions allow a nonzero total charge and its Coulomb tail; they do not require square-integrability of all field derivatives. The momentum support bound is on each finite time interval and may grow with that interval. [S4:54–60]
 
 Two consequences are visible inside the release, and one is a caution.
 
@@ -310,11 +306,17 @@ The formalization is unusually large for this release and unusually thin at the 
 
 The formalized main theorem, in full 
 
-> theorem global_classical_solution (d : Datum) (hd : Admissible d) : ∃ s : Solution, Classical d s ∧ SmoothOnFiniteHorizons s ∧ ∀ s' : Solution, Classical d s' → SameNonnegativeTime s s' := by sorry [S16:103–106]
+```lean
+theorem global_classical_solution (d : Datum) (hd : Admissible d) : ∃ s : Solution, Classical d s ∧ SmoothOnFiniteHorizons s ∧ ∀ s' : Solution, Classical d s' → SameNonnegativeTime s s' := by sorry
+```
+[S16:103–106]
 
 The comparator file states the same theorem with a placeholder proof 
 
-> theorem global_classical_solution (d : Datum) (hd : Admissible d) : ∃ s : Solution, Classical d s ∧ SmoothOnFiniteHorizons s ∧ ∀ s' : Solution, Classical d s' → SameNonnegativeTime s s' := by exact global_classical_of_uniform_physical_increment hd (fun H _ => hd.uniform_physical_population_increment H) [S18:44–48]
+```lean
+theorem global_classical_solution (d : Datum) (hd : Admissible d) : ∃ s : Solution, Classical d s ∧ SmoothOnFiniteHorizons s ∧ ∀ s' : Solution, Classical d s' → SameNonnegativeTime s s' := by exact global_classical_of_uniform_physical_increment hd (fun H _ => hd.uniform_physical_population_increment H)
+```
+[S18:44–48]
 
 The 102 lines of scaffolding above that placeholder are a verbatim copy of the formalization's own model file: comparator lines 10–101 [S16:10–101] match `Model.lean` lines 13–104 [S19:13–104] line for line, so the challenge is stated in the same vocabulary the solution uses. The scope note states what the formalization covers 
 

@@ -55,12 +55,10 @@ The companion's PNT corollary
 Let $\pi(x;q,a)$ count the primes $p\le x$ with $p\equiv a\pmod q$.
 Write $\varphi$ for Euler's totient function.
 For $x\ge2$,
-\[
- \sup_{\substack{1\le q\le x\\(a,q)=1}}
+$$\sup_{\substack{1\le q\le x\\(a,q)=1}}
  \biggl|\pi(x;q,a)-\frac1{\varphi(q)}
                   \int_2^x\frac{\,d t}{\log t}\biggr|
- \ll x^11/12\log x,
-\]
+ \ll x^{11/12}\log x,$$
 where the implied constant is absolute and effective. [S3:84–95]
 
 ## Graduate summary
@@ -256,17 +254,17 @@ bundle, no reasoning trace.
 - E. Hecke, _Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen. Erste Mitteilung_, Mathematische Zeitschrift **1** (1918), 357–376; _Zweite Mitteilung_, Mathematische Zeitschrift **6** (1920), 11–51. doi:10.1007/BF01465095 (first paper).
 - E. Hecke, Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen, I, II, _Math. Z._ **1** (1918), 357–376; **6** (1920), 11–51.
 - M. N. Huxley, _The large sieve inequality for algebraic number fields_, Mathematika **15** (1968), no. 2, 178–187. doi:10.1112/S0025579300002540.
-- Clay Mathematics Institute, _Riemann Hypothesis_, Millennium Prize Problems,  .
+- Clay Mathematics Institute, _Riemann Hypothesis_, Millennium Prize Problems, .
 - J. B. Friedlander and H. Iwaniec, _A note on Dirichlet $L$-functions_, Expo. Math. **36** (2018), nos. 3–4, 343–350. doi:10.1016/j.exmath.2018.06.003.
 - E. Kani, Idoneal numbers and some generalizations, _Ann. Sci. Math. Québec_ **35** (2011), no. 2, 197–227.
 - N. M. Korobov, Estimates of trigonometric sums and their applications, _Uspekhi Mat. Nauk_ **13** (1958), no. 4(82), 185–192 (Russian). Math-Net.Ru: rm7458.
 - H. Iwaniec and E. Kowalski, _Analytic Number Theory_, American Mathematical Society Colloquium Publications **53**, American Mathematical Society, Providence, RI, 2004. doi:10.1090/coll/053.
 - E. Kowalski, Y. Lin, Ph. Michel, and W. Sawin, Periodic twists of $\mathrm{GL}_3$-automorphic forms, _Forum Math. Sigma_ **8** (2020), e15. doi:10.1017/fms.2020.7. Author version.
-- T. Kubota, _On automorphic functions and the reciprocity law in a number field_, Lectures in Mathematics, Department of Mathematics, Kyoto University, no. 2, Kinokuniya Book-Store, Tokyo, 1969.  .
+- T. Kubota, _On automorphic functions and the reciprocity law in a number field_, Lectures in Mathematics, Department of Mathematics, Kyoto University, no. 2, Kinokuniya Book-Store, Tokyo, 1969. .
 - T. Kubota, _On automorphic functions and the reciprocity law in a number field_, Lectures in Mathematics, Department of Mathematics, Kyoto University, No. 2, Kinokuniya Book-Store, Tokyo, 1969. Kyoto University repository.
 - E. Landau, Neuer Beweis des Primzahlsatzes und Beweis des Primidealsatzes, _Math. Ann._ **56** (1903), 645–670. doi:10.1007/BF01444310.
-- M. Laurent, _Sur quelques résultats récents de transcendance_, Astérisque **198–199–200** (1991), 209–230.  .
-- U. V. Linnik, _On the least prime in an arithmetic progression. II. The Deuring–Heilbronn phenomenon_, Rec. Math. [Mat. Sbornik] N.S. **15(57)** (1944), no. 3, 347–368.  .
+- M. Laurent, _Sur quelques résultats récents de transcendance_, Astérisque **198–199–200** (1991), 209–230. .
+- U. V. Linnik, _On the least prime in an arithmetic progression. II. The Deuring–Heilbronn phenomenon_, Rec. Math. [Mat. Sbornik] N.S. **15(57)** (1944), no. 3, 347–368. .
 - J. E. Littlewood, Quelques conséquences de l'hypoth\`ese que la fonction $\zeta(s)$ de Riemann n'a pas de zéros dans le demi-plan $\mathrm{R}(s)>1/2$, _C. R. Acad. Sci. Paris_ **154** (1912), 263–266.
 - J. E. Littlewood, On the class-number of the corpus $P(\sqrt{-k})$, _Proc. London Math. Soc._ (2) **27** (1928), no. 1, 358–372.
 - L. Goldmakher and B. Louvel, _A quadratic large sieve inequality over number fields_, Mathematical Proceedings of the Cambridge Philosophical Society **154** (2013), no. 2, 193–212. doi:10.1017/S0305004112000370; arXiv:1112.1642.
@@ -274,7 +272,7 @@ bundle, no reasoning trace.
 - R. F. Lu, A. Zaman, and H. Zhao, Numerical computations concerning Landau–Siegel zeros, preprint, 2026. arXiv:2602.03626.
 - L. Guth and J. Maynard, _New large value estimates for Dirichlet polynomials_, Annals of Mathematics **203** (2026), no. 2, 623–675. doi:10.4007/annals.2026.203.2.6; arXiv:2405.20552.
 - G. L. Miller, Riemann's hypothesis and tests for primality, _J. Comput. System Sci._ **13** (1976), no. 3, 300–317.
-- J. S. Milne, _Class Field Theory_, course notes, version 4.03, 6 August 2020.  .
+- J. S. Milne, _Class Field Theory_, course notes, version 4.03, 6 August 2020. .
 - H. Maier and H. L. Montgomery, The sum of the Möbius function, _Bull. London Math. Soc._ **41** (2009), no. 2, 213–226. doi:10.1112/blms/bdn119.
 - OpenAI, _An unconditional first moment for cubic Gauss sums_, OpenAI Math Release preprint OAI:An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026, 2026.
 - OpenAI, The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $\mathrm{Re}(s)>7/8$, OpenAI Math Release preprint OAI:The-Quasi-Riemann-Hypothesis-September-30-2026, 2026.
@@ -284,13 +282,13 @@ bundle, no reasoning trace.
 - D. R. Heath-Brown and S. J. Patterson, The distribution of Kummer sums at prime arguments, _J. Reine Angew. Math._ **310** (1979), 111–130. doi:10.1515/crll.1979.310.111.
 - S. J. Patterson, A cubic analogue of the theta series, _J. Reine Angew. Math._ **296** (1977), 125–161. doi:10.1515/crll.1977.296.125.
 - P. Philippon, _Lemmes de zéros dans les groupes algébriques commutatifs_, Bull. Soc. Math. France **114** (1986), 355–383; errata et addenda, **115** (1987), 397–398. doi:10.24033/bsmf.2060; doi:10.24033/bsmf.2084.
-- C.-J. de la Vallée Poussin, _Recherches analytiques sur la théorie des nombres premiers. Premi\`ere partie: La fonction $\zeta(s)$ de Riemann et les nombres premiers en général_, Annales de la Société scientifique de Bruxelles **20**, deuxi\`eme partie (1896), 183–256. Reprinted in _Recherches analytiques sur la théorie des nombres premiers_, Hayez, Brussels, 1897,  .
+- C.-J. de la Vallée Poussin, _Recherches analytiques sur la théorie des nombres premiers. Premi\`ere partie: La fonction $\zeta(s)$ de Riemann et les nombres premiers en général_, Annales de la Société scientifique de Bruxelles **20**, deuxi\`eme partie (1896), 183–256. Reprinted in _Recherches analytiques sur la théorie des nombres premiers_, Hayez, Brussels, 1897, .
 - C.-J. de la Vallée Poussin, Recherches analytiques sur la théorie des nombres premiers. Premi\`ere partie: La fonction $\zeta(s)$ de Riemann et les nombres premiers en général, _Ann. Soc. Sci. Bruxelles_, deuxi\`eme partie, **20** (1896), 183–256.
 - C.-J. de la Vallée Poussin, Sur la fonction $\zeta(s)$ de Riemann et le nombre des nombres premiers inférieurs \`a une limite donnée, _Mém. Couronnés Autres Mém. Acad. Roy. Sci. Lettres Beaux-Arts Belgique_, collection in-$8^\circ$, **59** (1899), 1–74. doi:10.3406/marb.1899.2449.
 - J. Maynard and K. Pratt, _Half-isolated zeros and zero-density estimates_, International Mathematics Research Notices **2024** (2024), no. 19, 12978–13014. doi:10.1093/imrn/rnae191; arXiv:2206.11729.
 - A. Dunn and M. Radziwiłł, _Bias in cubic Gauss sums: Patterson's conjecture_, Annals of Mathematics **200** (2024), no. 3, 967–1057. doi:10.4007/annals.2024.200.3.3; arXiv:2109.07463.
 - A. Dunn and M. Radziwiłł, Bias in cubic Gauss sums: Patterson's conjecture, _Ann. of Math._ (2) **200** (2024), no. 3, 967–1057. doi:10.4007/annals.2024.200.3.3.
-- B. Riemann, _Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse_, Monatsberichte der Königlichen Preussischen Akademie der Wissenschaften zu Berlin (1859), 671–680. Manuscript, transcription, and translation at  .
+- B. Riemann, _Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse_, Monatsberichte der Königlichen Preussischen Akademie der Wissenschaften zu Berlin (1859), 671–680. Manuscript, transcription, and translation at .
 - B. Riemann, Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse, _Monatsber. Königl. Preuss. Akad. Wiss. Berlin_ (1859), 671–680. Original text and English translation.
 - G. Bhowmik and I. Z. Ruzsa, Average Goldbach and the quasi-Riemann hypothesis, _Anal. Math._ **44** (2018), no. 1, 51–56.
 - M. Ram Murty and A. Sankaranarayanan, Averages of exponential twists of the Liouville function, _Forum Math._ **14** (2002), no. 2, 273–291.

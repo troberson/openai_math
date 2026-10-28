@@ -69,7 +69,7 @@ obtained by following one of its finite approximations.
 
 > **Theorem 1.1**
 Every circle domain with conformally removable boundary is conformally
-rigid.  More explicitly, if $\Omega,\Omega'\subset\widehat{\mathbb C}$ are circle
+rigid. More explicitly, if $\Omega,\Omega'\subset\widehat{\mathbb C}$ are circle
 domains, $\partial\Omega$ is conformally removable, and
 $f\colon\Omega\to\Omega'$ is a conformal equivalence, then there is a
 Möbius transformation $M$ such that $f=M|_\Omega$. [S3:22–28]

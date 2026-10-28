@@ -36,13 +36,9 @@ explicit counterexample
 > **theorem**
 Let $V$ be the ring of integers in the unramified extension of $\mathbb Q_5$ of
 degree eight, and put
-\[
- A=\bigl(V[x,y]/(5+x^4+y^4)\bigr)_(5,x,y).
-\]
+$$A=\bigl(V[x,y]/(5+x^4+y^4)\bigr)_{(5,x,y)}.$$
 Then $A$ is a Noetherian regular local domain of dimension two and
-\[
- \ker\bigl(K_5(A)\longrightarrow K_5(\mathrmFrac A)\bigr)\ne0.
-\]
+$$\ker\bigl(K_5(A)\longrightarrow K_5(\mathrm{Frac} A)\bigr)\ne0.$$
 Consequently the unrestricted integral Gersten conjecture has a negative
 answer. [S4:18–30]
 
@@ -57,12 +53,10 @@ in $K_3(\mathrm{Frac} A)$
 The ring $A$ is a two-dimensional Noetherian regular local domain
 of mixed characteristic $(0,5)$, with $\pi\in\mathfrak m_A^2$.
 There is an integral class $c\in K_3(A)$ such that
-\[
- c|_{\mathrmFrac A}=0,
+$$c|_{\mathrm{Frac} A}=0,
  \qquad
  c|_{A[1/\pi]}\bmod5\ne0
- \quadin G_3(A[1/\pi];\mathbb Z/5).
-\]
+ \quad\text{in }G_3(A[1/\pi];\mathbb Z/5).$$
 In particular, $K_3(A)\to K_3(\mathrm{Frac} A)$ is not injective. [S6:29–40]
 
 ## Graduate summary

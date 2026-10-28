@@ -14,18 +14,16 @@ are "The ordinary-double-point gap in every dimension [S3:1]" and the fourfold c
 Normalized volume measures the size of a klt singularity: for an
 $n$-dimensional klt germ $(X,x)$ with zero boundary,
 $\widehat{\mathrm{vol}}(x,X)=\inf_v A_X(v)^n \mathrm{vol}(v)$, where the infimum runs over
-centered valuations . "Normalized volume, introduced by Chi Li  , measures the
+centered valuations . "Normalized volume, introduced by Chi Li , measures the
 size of a klt singularity by balancing
 the discrepancy of a valuation against the asymptotic colength of its
 valuation ideals. For a closed point \(x\) of an \(n\)-dimensional
 normal complex variety that is klt near \(x\), with zero boundary,
 it is
-\[
- \widehat{\operatornamevol}(x,X)=\inf_v centered at x A_X(v)^n\mathrmvol(v).
-\]
+$$\widehat{\mathrm{vol}}(x,X)=\inf_{v\text{ centered at }x} A_X(v)^n\mathrm{vol}(v).$$
 Here \(A_X(v)\) is log discrepancy, and \(\mathrmvol(v)\) is the
 leading colength of the ideals \(\{f:v(f)\ge t\}\), multiplied by
-\(n!\). Section   gives the precise conventions for
+\(n!\). Section gives the precise conventions for
 real valuations, including infinite discrepancy. In dimension \(n\),
 the largest normalized volume is \(n^n\),
 attained exactly at smooth points \cite[Theorem 1.6]LX19.
@@ -45,14 +43,10 @@ Let \(n\ge2\), and let \(x\) be a
 singular closed point of a normal complex algebraic \(n\)-fold \(X\).
 Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\),
 with zero boundary. Then
-\[
-                    \widehat{\operatornamevol}(x,X)\le2(n-1)^n.
-\]
+$$\widehat{\mathrm{vol}}(x,X)\le2(n-1)^n.$$
 Equality holds if and only if
-\[
- (X,x)_{\mathrman}\cong
- \left(\{z_0^2+\cdots+z_n^2=0\}\subset\mathbb C^n+1,0\right).
-\] [S5:33–46]
+$$(X,x)_{\mathrm{an}}\cong
+ \left(\{z_0^2+\cdots+z_n^2=0\}\subset\mathbb C^{n+1},0\right).$$ [S5:33–46]
 
 The point need not be isolated in the singular locus, and no
 structural assumption is implicit [S5:48–53].
@@ -65,13 +59,9 @@ proves $\widehat{\mathrm{vol}}\le162$ in dimension four
 
 > **theorem**
 Let \(x\in X\) be a singular closed point of a normal complex algebraic variety of dimension four. Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\), with boundary zero. Then
-\[
-\widehat{\operatornamevol}(x,X)\le 162.
-\]
+$$\widehat{\mathrm{vol}}(x,X)\le 162.$$
 Equality holds if and only if the analytic germ \((X,x)\) is isomorphic to
-\[
-\left(\left\{z_0^2+z_1^2+z_2^2+z_3^2+z_4^2=0\right\}\subset\mathbb C^5,0\right).
-\] [S7:74–83]
+$$\left(\left\{z_0^2+z_1^2+z_2^2+z_3^2+z_4^2=0\right\}\subset\mathbb C^5,0\right).$$ [S7:74–83]
 
 The induction from $n=4$ to all $n\ge5$ proceeds by cone
 reduction, small-stabilizer analysis, jet interiority, adjoint
@@ -89,10 +79,8 @@ K-semistable $\mathbb{Q}$-Fano varieties
 Let \(V\) be an \(n\)-dimensional
 K-semistable \(\mathbb Q\)-Fano variety, where \(n\ge2\).
 If \(V\) is singular, then
-\[
-       (-K_V)^n\le
-       2\left(\fracn^2-1n\right)^n<2n^n.
-\]
+$$(-K_V)^n\le
+       2\left(\frac{n^2-1}{n}\right)^n<2n^n.$$
 If \(V\not\cong\mathbb P^n\), then \((-K_V)^n\le2n^n\), with equality
 precisely when \(V\) is a smooth quadric \(Q^n\subset\mathbb P^n+1\) or
 \(\mathbb P^1\times\mathbb P^n-1\). These two descriptions coincide for \(n=2\). [S5:64–75]
@@ -151,7 +139,7 @@ Li–Xu, Blum, Xu, Xu–Zhuang, and Li–Wang–Xu [S5:136–151].
 "The passage from metric cones to arbitrary klt singularities rests
 on the variational theory of normalized volume. Martelli–Sparks–Yau
 proved volume minimization among Reeb fields with fixed canonical
-weight  ; Li–Liu and Li–Xu related cone metrics and
+weight ; Li–Liu and Li–Xu related cone metrics and
 K-stability to minimization over all centered valuations
 \cite[Theorem 1.9]LL19\cite[Theorem 1.3]LiXu18.
 For general klt germs, existence of a minimizer, its

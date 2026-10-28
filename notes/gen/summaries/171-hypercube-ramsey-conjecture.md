@@ -27,10 +27,8 @@ manuscript answers yes
 
 > **theorem**
 There is an absolute constant $C>0$ such that
-\[
-R(Q_n)\le C2^n
-\qquadfor every integer n\ge0.
-\] [S4:10–16]
+$$R(Q_n)\le C2^n
+\qquad\text{for every integer }n\ge0.$$ [S4:10–16]
 
 The lower bound is the standard two-block construction: color the edges
 of two large sets red and the crossing edges blue, forcing
@@ -159,37 +157,37 @@ evidence.
 
 ## Bibliography
 
-- K. Azuma, Weighted sums of certain dependent random variables, _Tohoku Mathematical Journal_ (2) **19** (1967), no. 3, 357–367.  .
+- K. Azuma, Weighted sums of certain dependent random variables, _Tohoku Mathematical Journal_ (2) **19** (1967), no. 3, 357–367. .
 - J. Beck, An upper bound for diagonal Ramsey numbers, _Studia Scientiarum Mathematicarum Hungarica_ **18** (1983), no. 2–4, 401–406.
-- V. Chvátal, V. Rödl, E. Szemerédi and W. T. Trotter, Jr., The Ramsey number of a graph with bounded maximum degree, _Journal of Combinatorial Theory, Series B_ **34** (1983), no. 3, 239–243.  .
-- D. Conlon, Hypergraph packing and sparse bipartite Ramsey numbers, _Combinatorics, Probability and Computing_ **18** (2009), no. 6, 913–923.  .
-- D. Conlon, J. Fox, C. Lee and B. Sudakov, Ramsey numbers of cubes versus cliques, _Combinatorica_ **36** (2016), 37–70.  .
-- D. Conlon, J. Fox and B. Sudakov, Short proofs of some extremal results II, _Journal of Combinatorial Theory, Series B_ **121** (2016), 173–196.  .
-- N. Dirr, P. W. Dondl, G. R. Grimmett, A. E. Holroyd and M. Scheutzow, Lipschitz percolation, _Electronic Communications in Probability_ **15** (2010), 14–21.  .
-- S. A. Burr and P. Erdős, On the magnitude of generalized Ramsey numbers for graphs, in _Infinite and Finite Sets_, Vol. I (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10**, North-Holland, Amsterdam, 1975, pp. 215–240.  .
-- H. Finner, A generalization of Hölder's inequality and some probability inequalities, _The Annals of Probability_ **20** (1992), no. 4, 1893–1901.  .
-- D. A. Freedman, On tail probabilities for martingales, _The Annals of Probability_ **3** (1975), no. 1, 100–118.  .
-- R. Gandhi, S. Khuller, S. Parthasarathy and A. Srinivasan, Dependent rounding and its applications to approximation algorithms, _Journal of the ACM_ **53** (2006), no. 3, 324–360.  .
-- W. T. Gowers, A new proof of Szemerédi's theorem for arithmetic progressions of length four, _Geometric and Functional Analysis_ **8** (1998), no. 3, 529–551.  .
-- R. L. Graham, V. Rödl and A. Ruciński, On bipartite graphs with linear Ramsey numbers, _Combinatorica_ **21** (2001), no. 2, 199–209.  .
-- B. Haeupler, B. Saha and A. Srinivasan, New constructive aspects of the Lovász Local Lemma, _Journal of the ACM_ **58** (2011), no. 6, Article 28, 1–28.  .
-- P. Hall, On representatives of subsets, _Journal of the London Mathematical Society_ (1) **10** (1935), no. 1, 26–30.  .
-- R. W. Hamming, Error detecting and error correcting codes, _Bell System Technical Journal_ **29** (1950), no. 2, 147–160.  .
-- W. Hoeffding, Probability inequalities for sums of bounded random variables, _Journal of the American Statistical Association_ **58** (1963), no. 301, 13–30.  .
-- S. Kakutani, A generalization of Brouwer's fixed point theorem, _Duke Mathematical Journal_ **8** (1941), no. 3, 457–459.  .
-- C. Lee, Ramsey numbers of degenerate graphs, _Annals of Mathematics_ (2) **185** (2017), no. 3, 791–829.  .
-- P. Erdős and L. Lovász, Problems and results on $3$-chromatic hypergraphs and some related questions, in _Infinite and Finite Sets_ (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10** (1975), 609–627.  .
-- G. O. Mota, G. N. Sárközy, M. Schacht and A. Taraz, Ramsey numbers for bipartite graphs with small bandwidth, _European Journal of Combinatorics_ **48** (2015), 165–176.  .
-- G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, The Ramsey number of the clique and the hypercube, _Journal of the London Mathematical Society_ **89** (2014), no. 3, 680–702.  .
-- G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, On the Ramsey number of the triangle and the cube, _Combinatorica_ **36** (2016), 71–89.  .
-- F. P. Ramsey, On a problem of formal logic, _Proceedings of the London Mathematical Society_ (2) **30** (1930), 264–286.  .
-- A. V. Kostochka and V. Rödl, On graphs with small Ramsey numbers, _Journal of Graph Theory_ **37** (2001), no. 4, 198–204.  .
-- L. Shi, Cube Ramsey numbers are polynomial, _Random Structures & Algorithms_ **19** (2001), no. 2, 99–101.  .
-- L. Shi, The tail is cut for Ramsey numbers of cubes, _Discrete Mathematics_ **307** (2007), no. 2, 290–292.  .
-- P. Erdős and J. Spencer, Lopsided Lovász Local Lemma and Latin transversals, _Discrete Applied Mathematics_ **30** (1991), nos. 2–3, 151–154.  .
-- D. G. Harris and A. Srinivasan, Algorithmic and enumerative aspects of the Moser–Tardos distribution, _ACM Transactions on Algorithms_ **13** (2017), no. 3, Article 33, 1–40.  .
-- J. Fox and B. Sudakov, Density theorems for bipartite graphs and related Ramsey-type results, _Combinatorica_ **29** (2009), no. 2, 153–196.  .
-- B. Sudakov, A few remarks on Ramsey–Turán-type problems, _Journal of Combinatorial Theory, Series B_ **88** (2003), no. 1, 99–106.  .
-- L. Lu and L. A. Székely, Using Lovász local lemma in the space of random injections, _The Electronic Journal of Combinatorics_ **14** (2007), no. 1, Research Paper 63.  .
-- R. A. Moser and G. Tardos, A constructive proof of the general Lovász Local Lemma, _Journal of the ACM_ **57** (2010), no. 2, Article 11, 1–15.  .
-- K. Tikhomirov, A remark on the Ramsey number of the hypercube, _European Journal of Combinatorics_ **120** (2024), article 103954.  . Preprint:  .
+- V. Chvátal, V. Rödl, E. Szemerédi and W. T. Trotter, Jr., The Ramsey number of a graph with bounded maximum degree, _Journal of Combinatorial Theory, Series B_ **34** (1983), no. 3, 239–243. .
+- D. Conlon, Hypergraph packing and sparse bipartite Ramsey numbers, _Combinatorics, Probability and Computing_ **18** (2009), no. 6, 913–923. .
+- D. Conlon, J. Fox, C. Lee and B. Sudakov, Ramsey numbers of cubes versus cliques, _Combinatorica_ **36** (2016), 37–70. .
+- D. Conlon, J. Fox and B. Sudakov, Short proofs of some extremal results II, _Journal of Combinatorial Theory, Series B_ **121** (2016), 173–196. .
+- N. Dirr, P. W. Dondl, G. R. Grimmett, A. E. Holroyd and M. Scheutzow, Lipschitz percolation, _Electronic Communications in Probability_ **15** (2010), 14–21. .
+- S. A. Burr and P. Erdős, On the magnitude of generalized Ramsey numbers for graphs, in _Infinite and Finite Sets_, Vol. I (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10**, North-Holland, Amsterdam, 1975, pp. 215–240. .
+- H. Finner, A generalization of Hölder's inequality and some probability inequalities, _The Annals of Probability_ **20** (1992), no. 4, 1893–1901. .
+- D. A. Freedman, On tail probabilities for martingales, _The Annals of Probability_ **3** (1975), no. 1, 100–118. .
+- R. Gandhi, S. Khuller, S. Parthasarathy and A. Srinivasan, Dependent rounding and its applications to approximation algorithms, _Journal of the ACM_ **53** (2006), no. 3, 324–360. .
+- W. T. Gowers, A new proof of Szemerédi's theorem for arithmetic progressions of length four, _Geometric and Functional Analysis_ **8** (1998), no. 3, 529–551. .
+- R. L. Graham, V. Rödl and A. Ruciński, On bipartite graphs with linear Ramsey numbers, _Combinatorica_ **21** (2001), no. 2, 199–209. .
+- B. Haeupler, B. Saha and A. Srinivasan, New constructive aspects of the Lovász Local Lemma, _Journal of the ACM_ **58** (2011), no. 6, Article 28, 1–28. .
+- P. Hall, On representatives of subsets, _Journal of the London Mathematical Society_ (1) **10** (1935), no. 1, 26–30. .
+- R. W. Hamming, Error detecting and error correcting codes, _Bell System Technical Journal_ **29** (1950), no. 2, 147–160. .
+- W. Hoeffding, Probability inequalities for sums of bounded random variables, _Journal of the American Statistical Association_ **58** (1963), no. 301, 13–30. .
+- S. Kakutani, A generalization of Brouwer's fixed point theorem, _Duke Mathematical Journal_ **8** (1941), no. 3, 457–459. .
+- C. Lee, Ramsey numbers of degenerate graphs, _Annals of Mathematics_ (2) **185** (2017), no. 3, 791–829. .
+- P. Erdős and L. Lovász, Problems and results on $3$-chromatic hypergraphs and some related questions, in _Infinite and Finite Sets_ (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10** (1975), 609–627. .
+- G. O. Mota, G. N. Sárközy, M. Schacht and A. Taraz, Ramsey numbers for bipartite graphs with small bandwidth, _European Journal of Combinatorics_ **48** (2015), 165–176. .
+- G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, The Ramsey number of the clique and the hypercube, _Journal of the London Mathematical Society_ **89** (2014), no. 3, 680–702. .
+- G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, On the Ramsey number of the triangle and the cube, _Combinatorica_ **36** (2016), 71–89. .
+- F. P. Ramsey, On a problem of formal logic, _Proceedings of the London Mathematical Society_ (2) **30** (1930), 264–286. .
+- A. V. Kostochka and V. Rödl, On graphs with small Ramsey numbers, _Journal of Graph Theory_ **37** (2001), no. 4, 198–204. .
+- L. Shi, Cube Ramsey numbers are polynomial, _Random Structures & Algorithms_ **19** (2001), no. 2, 99–101. .
+- L. Shi, The tail is cut for Ramsey numbers of cubes, _Discrete Mathematics_ **307** (2007), no. 2, 290–292. .
+- P. Erdős and J. Spencer, Lopsided Lovász Local Lemma and Latin transversals, _Discrete Applied Mathematics_ **30** (1991), nos. 2–3, 151–154. .
+- D. G. Harris and A. Srinivasan, Algorithmic and enumerative aspects of the Moser–Tardos distribution, _ACM Transactions on Algorithms_ **13** (2017), no. 3, Article 33, 1–40. .
+- J. Fox and B. Sudakov, Density theorems for bipartite graphs and related Ramsey-type results, _Combinatorica_ **29** (2009), no. 2, 153–196. .
+- B. Sudakov, A few remarks on Ramsey–Turán-type problems, _Journal of Combinatorial Theory, Series B_ **88** (2003), no. 1, 99–106. .
+- L. Lu and L. A. Székely, Using Lovász local lemma in the space of random injections, _The Electronic Journal of Combinatorics_ **14** (2007), no. 1, Research Paper 63. .
+- R. A. Moser and G. Tardos, A constructive proof of the general Lovász Local Lemma, _Journal of the ACM_ **57** (2010), no. 2, Article 11, 1–15. .
+- K. Tikhomirov, A remark on the Ramsey number of the hypercube, _European Journal of Combinatorics_ **120** (2024), article 103954. . Preprint: .

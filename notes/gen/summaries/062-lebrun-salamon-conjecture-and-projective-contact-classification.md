@@ -23,10 +23,8 @@ $$\label{intro:contact-sequence}
  0\longrightarrow F\longrightarrow T_X
  \xrightarrow{\ \theta\ }L\longrightarrow0,$$
 with $L$ a line bundle, such that the Levi pairing
-\[
- F\otimes F\longrightarrow L,
- \qquad (v,w)\longmapsto\theta([v,w])
-\]
+$$F\otimes F\longrightarrow L,
+ \qquad (v,w)\longmapsto\theta([v,w])$$
 is everywhere nondegenerate. In a local frame of $L$, write $\alpha$
 for the scalar one-form representing $\theta$. The condition is
 equivalent to $\alpha\wedge(d\alpha)^n$ being nowhere zero. We call
@@ -46,14 +44,10 @@ Let $(X,F)$ be a smooth connected complex projective contact Fano
 manifold of dimension $2n+1$, with $n\geq1$, and let $L=T_X/F$.
 There exist a finite-dimensional simple complex Lie algebra
 $\mathfrak g$ and an algebraic isomorphism
-\[
- \varphi:X\xrightarrow{\ \sim\ }Y_{\mathfrak g}
-\]
+$$\varphi:X\xrightarrow{\ \sim\ }Y_{\mathfrak g}$$
 whose differential carries the given distribution $F$ to the canonical
 contact distribution on $Y_{\mathfrak g}$. Moreover,
-\[
- L\simeq\varphi^*\bigl(\mathcal O_{\mathbb P(\mathfrak g)}(1)|_{Y_{\mathfrak g}}\bigr).
-\] [S3:30–43]
+$$L\simeq\varphi^*\bigl(\mathcal O_{\mathbb P(\mathfrak g)}(1)|_{Y_{\mathfrak g}}\bigr).$$ [S3:30–43]
 
 Every contact Fano manifold is the adjoint variety of a simple
 complex Lie algebra, with its canonical contact structure.
@@ -73,9 +67,7 @@ variety $Y_{\mathfrak g}$, with its canonical contact distribution, for
 a simple complex Lie algebra $\mathfrak g$.
 \item If $b_2(X)\geq2$, then there is a smooth connected complex
 projective manifold $Z$ of dimension $n+1$ and a biholomorphism
-\[
- X\simeq\mathbb P(T^*Z).
-\]
+$$X\simeq\mathbb P(T^*Z).$$
 Here $\mathbb P(T^*Z)$ parametrizes lines in cotangent spaces, equivalently
 hyperplanes in tangent spaces. This assertion identifies the underlying
 manifolds, without imposing compatibility with the given distribution $F$.
@@ -98,9 +90,7 @@ follows from the twistor construction
 Let $(M^{4m},g)$ be a closed connected smooth Riemannian manifold,
 where $m\geq2$, with holonomy contained in $\mathrm{Sp}(m)\mathrm{Sp}(1)$ in the
 standard representation and with positive scalar curvature. Then
-\[
- \nabla\mathrmRm_g=0.
-\]
+$$\nabla\mathrm{Rm}_g=0.$$
 Moreover, $(M,g)$ is homothetic to a compact symmetric positive
 quaternionic-Kähler Wolf space. [S3:105–114]
 
@@ -137,26 +127,26 @@ homogeneity conjecture
 
 > Wolf's work
 relates compact quaternionic symmetric spaces to homogeneous complex contact
-spaces  ; the adjoint-variety description of their twistor
+spaces ; the adjoint-variety description of their twistor
 fibration is recalled in \cite[Section 3.9, pp. 105–106]LandsbergManivel2004.
 The twistor construction of Salamon, independently due to Bérard-Bergery,
 associates a contact Fano manifold to a closed connected positive
-quaternionic-Kähler manifold  .  LeBrun's converse characterizes the
+quaternionic-Kähler manifold . LeBrun's converse characterizes the
 contact Fano manifolds arising in this way by the existence of a
-Kähler–Einstein metric \cite[Theorem A]LeBrun1995.  The finiteness and
-rigidity program of LeBrun and Salamon  
-provides the historical setting for the homogeneity conjecture.  The general
+Kähler–Einstein metric \cite[Theorem A]LeBrun1995. The finiteness and
+rigidity program of LeBrun and Salamon 
+provides the historical setting for the homogeneity conjecture. The general
 algebraic formulation, stated for example in
 \cite[Conjecture 1.1]Buczynski2010, concerns every contact Fano manifold.
-8.inline	S11	4	12	To prove Corollary  , we apply
-Theorem   to the twistor space of a positive quaternionic
+8.inline	S11	4	12	To prove Corollary , we apply
+Theorem to the twistor space of a positive quaternionic
 Kähler manifold. The complex classification then determines
 the Riemannian metric after its scale has been fixed.
 
 \subsectionThe normalized metric and its twistor space
 
 For $m\geq2$, the holonomy containment in the corollary makes $g$
-Einstein  ; see also \cite[Definition 1.1 and the
+Einstein ; see also \cite[Definition 1.1 and the
 following discussion]LeBrun1995. Thus, writing $s>0$ for its constant
 scalar curvature, we have $\mathrm{Ric}_g=(s/4m)g$. [S3:128–140]
 

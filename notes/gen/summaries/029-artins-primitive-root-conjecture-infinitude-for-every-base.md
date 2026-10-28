@@ -20,10 +20,8 @@ many primes. The theorem
 > **Theorem 1.1**
 For every admissible integer $a$, there are constants $c_a>0$ and
 $x_a\ge2$ such that, for every real $x\ge x_a$,
-\[
- #\{p prime:x<p<2x,\ p\nmid a,\ \mathrmord_p(a)=p-1\}
-       \ge c_a\fracx{(\log x)^2}.
-\] [S6:17–24]
+$$\\\#\{p\text{ prime}:x<p<2x,\ p\nmid a,\ \mathrm{ord}_p(a)=p-1\}
+       \ge c_a\frac{x}{(\log x)^2}.$$ [S6:17–24]
 
 The predicted scale is $x/\log x$; the theorem gives $x/(\log x)^2$ in
 every dyadic interval — a square-root loss in the log, but unconditional
@@ -42,9 +40,7 @@ for Hecke $L$-functions
 Let $F$ be a cyclotomic number field containing $\mu_{12}$.
 For every finite-order Hecke character $\eta$ of $F$, the meromorphic
 continuation of $L_F(s,\eta)$ has no zeros in
-\[
- \operatornameRe s>1-10^-6.
-\] [S6:38–45]
+$$\mathrm{Re} s>1-10^{-6}.$$ [S6:38–45]
 
 The width $10^{-6}$ is common to all cyclotomic fields containing
 $\mu_{12}$ and all finite-order Hecke characters, with no conductor
@@ -62,29 +58,25 @@ control the remaining bilinear sums [S15].
 construction to simultaneous primitive roots for a fixed finite set of
 prime bases. It is an implication from four inputs taken from the first
 manuscript "Our result is an implication from four statements taken from the companion
-manuscript  : a uniform Hecke zero-free assertion
-(Input  ), a marked Type II estimate
-(Input  ), a block sieve (Input  ), and a
-rough-number density estimate (Input  ).  We reproduce
-these statements in the precise forms used here.  They are hypotheses of
-the following theorem; their proofs in   and its cited
+manuscript : a uniform Hecke zero-free assertion
+(Input ), a marked Type II estimate
+(Input ), a block sieve (Input ), and a
+rough-number density estimate (Input ). We reproduce
+these statements in the precise forms used here. They are hypotheses of
+the following theorem; their proofs in and its cited
 companion manuscripts are outside the scope of this paper. [S21:23–30]" The conditional theorem 
 
 > **theorem**
-Assume Inputs  ,  ,
- , and  .  Let \(k\ge1\) and let
-\(q_1,\ldots,q_k\) be distinct positive primes.  There are constants
+Assume Inputs , ,
+ , and . Let \(k\ge1\) and let
+\(q_1,\ldots,q_k\) be distinct positive primes. There are constants
 \(c_{\mathbf q}>0\) and \(x_{\mathbf q}>1\) such that, for every real
 \(x\ge x_{\mathbf q}\), at least
-\[
-        c_{\mathbf q}\fracx{(\log x)^2}
-\]
+$$c_{\mathbf q}\frac{x}{(\log x)^2}$$
 primes \(p\in(x,2x)\) satisfy
-\[
-        p\nmid q_1\cdots q_k,
+$$p\nmid q_1\cdots q_k,
         \qquad
-        \mathrmord_p(q_i)=p-1\quad(1\le i\le k).
-\] [S21:32–47]
+        \mathrm{ord}_p(q_i)=p-1\quad(1\le i\le k).$$ [S21:32–47]
 
 The reduction [S22] shows the four inputs suffice; the marked family
 construction [S24] and the prime-reservoir extraction [S25] complete
@@ -96,12 +88,10 @@ Hooley proved Artin's asymptotic under the Riemann hypothesis for the
 Dedekind zeta functions of the Kummer fields
 $\mathbb{Q}(\mu_n,a^{1/n})$ . "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
 for the Dedekind zeta functions of the Kummer fields
-$\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree  .
+$\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree .
 These fields encode the obstructions to maximal order. For a prime
 $q$ and $p\nmid aq$, the conditions
-\[
- p\equiv1\pmod q,\qquad a^(p-1)/q\equiv1\pmod p
-\]
+$$p\equiv1\pmod q,\qquad a^{(p-1)/q}\equiv1\pmod p$$
 say that $p$ splits completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
 They hold precisely when $q$ divides the index
 $(p-1)/\mathrm{ord}_p(a)$. Hooley's method counts and sums such splitting
@@ -114,9 +104,9 @@ Unconditional results allow only a finite choice of bases [S6:71–76].
 "Classical unconditional results allow a finite choice of bases.
 Gupta and Murty constructed a set of thirteen integers from three
 distinct primes, at least one of which is a primitive root modulo
-infinitely many primes  . Heath-Brown proved that
+infinitely many primes . Heath-Brown proved that
 at most two prime bases fail the infinitude assertion, so at least
-one of $2,3,5$ satisfies it  . [S6:71–76]" Averaging over the base gives asymptotics for almost all
+one of $2,3,5$ satisfies it . [S6:71–76]" Averaging over the base gives asymptotics for almost all
 integers in a short range, but the exceptional set may depend on $x$
 [S6:77–82].
 

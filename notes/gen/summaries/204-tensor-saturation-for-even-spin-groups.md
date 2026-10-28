@@ -36,11 +36,9 @@ its type-$D$ case
 Let $G=\mathrm{Spin}(2n)$, $n\ge2$, and let $\lambda,\mu,\nu$ be dominant
 integral weights such that $\lambda+\mu+\nu\in Q(D_n)$. Then, for every
 positive integer $N$,
-\[
- \bigl(V(\lambda)\otimes V(\mu)\otimes V(\nu)\bigr)^G\ne0
+$$\bigl(V(\lambda)\otimes V(\mu)\otimes V(\nu)\bigr)^G\ne0
  \quad\Longleftrightarrow\quad
- \bigl(V(N\lambda)\otimes V(N\mu)\otimes V(N\nu)\bigr)^G\ne0.
-\] [S4:33–42]
+ \bigl(V(N\lambda)\otimes V(N\mu)\otimes V(N\nu)\bigr)^G\ne0.$$ [S4:33–42]
 
 The theorem covers all three classical even-spin ranks $n\ge2$ and
 includes the half-integral spin weights.

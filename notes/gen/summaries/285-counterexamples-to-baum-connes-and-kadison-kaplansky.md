@@ -50,9 +50,7 @@ wants any projection $e$ with $0<\tau(e)<1$
 > **theorem**
 There exist a finitely generated torsion-free discrete group \(G_{\mathrmproj}\)
 and a projection \(e\in C_r^*(G_{\mathrmproj})\) such that
-\[
- 0<\tau_{G_{\mathrmproj}}(e)<\frac12.
-\]
+$$0<\tau_{G_{\mathrm{proj}}}(e)<\frac12.$$
 In particular, \(e\) is neither zero nor the identity. [S6:13–21]
 
 The third wants a projection whose trace is *irrational*, a stronger
@@ -63,9 +61,7 @@ disproves the coefficient-free Baum--Connes conjecture directly
 > **theorem**
 There exist a finitely generated discrete group \(G_{\mathrmsur}\) and a projection
 \(b_0\in C_r^*(G_{\mathrmsur})\) with irrational canonical trace. Moreover,
-\[
-[b_0]\notin\mu_0^{G_{\mathrmsur}}\bigl(K_0^{G_{\mathrmsur}}(\underline EG_{\mathrmsur})\bigr).
-\]
+$$[b_0]\notin\mu_0^{G_{\mathrm{sur}}}\bigl(K_0^{G_{\mathrm{sur}}}(\underline EG_{\mathrm{sur}})\bigr).$$
 In particular, the coefficient-free reduced Baum–Connes conjecture for
 countable discrete groups is false. [S8:57–65]
 

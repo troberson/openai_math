@@ -25,15 +25,13 @@ continuously. The theorem
 
 > **Theorem 1.1**
 Let $F:(\mathbb C^3\times\Delta,\{0\}\times\Delta)\to(\mathbb C,0)$
-be holomorphic.  Suppose that, for every $t\in\Delta$, $f_t(0)=0$,
+be holomorphic. Suppose that, for every $t\in\Delta$, $f_t(0)=0$,
 $f_t$ has an isolated critical point at $0$, and
-$\mu(f_t,0)=\mu(f_0,0)$.  After shrinking the disk and the germ
+$\mu(f_t,0)=\mu(f_0,0)$. After shrinking the disk and the germ
 representatives, there is a homeomorphism germ
-\[
- \Phi(x,t)=(\phi_t(x),t),\qquad
- \phi_t(0)=0,\quad \phi_0=\mathrmid,\qquad
- f_t\bigl(\phi_t(x)\bigr)=f_0(x).
-\]
+$$\Phi(x,t)=(\phi_t(x),t),\qquad
+ \phi_t(0)=0,\quad \phi_0=\mathrm{id},\qquad
+ f_t\bigl(\phi_t(x)\bigr)=f_0(x).$$
 Both $\Phi$ and $\Phi^{-1}$ are jointly continuous on neighborhoods
 of the origin section over the original disk. [S4:32–45]
 
@@ -51,14 +49,14 @@ $h$-cobordism theorem gives in higher dimensions [S4:57–69].
 "L\^e and Ramanujam proved that a $\mu$-constant family of isolated
 hypersurface singularities has constant embedded topological type when
 the hypersurface dimension is different from two
-\cite[Theorem 2.1]LeRamanujam1976.  Their argument compares Milnor
-fibers through a homologically trivial cobordism.  In higher dimensions
+\cite[Theorem 2.1]LeRamanujam1976. Their argument compares Milnor
+fibers through a homologically trivial cobordism. In higher dimensions
 the $h$-cobordism theorem turns this comparison into a product; the
-curve case follows from surface topology.  Complex dimension two is
+curve case follows from surface topology. Complex dimension two is
 the dimension in which this argument leaves the product structure
-unresolved.  Outside complex dimension two, Timourian and King established local
+unresolved. Outside complex dimension two, Timourian and King established local
 triviality of families of function germs
- .  This additional passage matters here:
+ . This additional passage matters here:
 constancy of the individual topological types and a jointly continuous
 choice of ambient coordinate changes are different conclusions. [S4:57–69]" In complex dimension two the cobordism argument
 leaves the product structure unresolved: the Milnor fiber of a
@@ -70,26 +68,24 @@ cobordism with a projective model. A semistable log minimal model
 introduces extra vertical surfaces $S_a$ with reduced boundaries
 $B_S$, and the nearby Euler comparison gives
 $\sum_a \chi_c(S_a^\circ)+\delta=0$ [S4:155–163] and
- "The proof rests on a cancellation of Euler characteristics.  To explain
+ "The proof rests on a cancellation of Euler characteristics. To explain
 it, first consider a projective family with just the prescribed surface
-singularity in each fiber.  A semistable log minimal model replaces its
+singularity in each fiber. A semistable log minimal model replaces its
 special fiber by a component $S_0$ dominating $X_0$ and additional
-projective surfaces $S_a$ over the singular point.  Each component $S$
+projective surfaces $S_a$ over the singular point. Each component $S$
 has a reduced boundary $B_S$, consisting of its intersections with the
 other vertical components and the horizontal exceptional divisors.
-Write $S^\circ=S\setminus B_S$.  The construction gives
+Write $S^\circ=S\setminus B_S$. The construction gives
 $S_0^\circ\simeq X_0\setminus\{0\}$ and makes every
 $K_{S_a}+B_{S_a}$ nef. [S4:155–163]" "Constancy of $\mu$ keeps the Euler characteristic of the punctured
-projective fibers constant.  Their nearby Euler comparison, after the
+projective fibers constant. Their nearby Euler comparison, after the
 contribution of $S_0^\circ$ cancels, is
-\[
- 0=\sum_a\chi_c(S_a^\circ)+\delta,\qquad \delta\ge0.
-\]
+$$0=\sum_a\chi_c(S_a^\circ)+\delta,\qquad \delta\ge0.$$
 Here $\chi_c$ denotes Euler characteristic with compact supports, and
 $\delta$ is the sum of the excess Euler characteristics of the local
 smoothings at interior singular points of the extra surfaces.
 Greuel–Steenbrink's first-Betti-number theorem makes these excesses
-nonnegative  . [S4:166–172]"
+nonnegative . [S4:166–172]"
 
 Two sign arguments force every extra surface to be
 topologically trivial. Greuel–Steenbrink's first-Betti-number
@@ -97,12 +93,10 @@ theorem makes the smoothing excess $\delta$ nonnegative; Langer's
 orbifold Bogomolov–Miyaoka–Yau inequality gives
 $0\le(K_{S_a}+B_{S_a})^2\le 3\chi_c(S_a^\circ)$, so every extra
 logarithmic square vanishes . "Langer's orbifold Bogomolov–Miyaoka–Yau inequality supplies the other
-sign  :
-\[
- 0\le (K_S_a+B_S_a)^2\le3\chi_c(S_a^\circ)
- \qquadfor every a.
-\]
-Thus every extra logarithmic square vanishes.  Specialization of
+sign :
+$$0\le (K_{S_a}+B_{S_a})^2\le3\chi_c(S_a^\circ)
+ \qquad\text{for every }a.$$
+Thus every extra logarithmic square vanishes. Specialization of
 projective intersections then gives constancy of $\beta$. [S4:173–178]"
 
 **From invariants to homeomorphisms.** Constancy of the logarithmic

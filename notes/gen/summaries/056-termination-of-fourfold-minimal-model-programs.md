@@ -81,19 +81,15 @@ different categories and with different boundary/nef-b-data hypotheses.
 Let \(X_0\) be a normal irreducible globally Weil \(\mathbbQ\)-factorial compact Kähler fourfold. Let \(B_0\) be an effective rational Weil divisor of finite support with coefficients in \([0,1]\). Let \(\mathbfM\) be represented by an analytically nef \(\mathbbQ\)-Cartier divisor on a projective bimeromorphic normal compact Kähler model of \(X_0\). Fix compatible actual canonical divisor representatives on all birational models under consideration. Suppose that \(D_0=K_X_0+B_0+M_X_0\) is \(\mathbbQ\)-Cartier and that \((X_0,B_0+\mathbfM)\) is generalized log canonical.
 
 Consider a sequence of normal irreducible globally Weil \(\mathbbQ\)-factorial compact Kähler fourfolds
-\[
- X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots.
-\]
+$$X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots.$$
 On \(X_i\), let \(B_i\) be the strict transform of \(B_0\), let \(M_i=M_X_i\) be the trace of the same b-divisor, and assume that \(D_i=K_X_i+B_i+M_i\) is \(\mathbbQ\)-Cartier. Transport the canonical representatives under the induced identifications of prime divisors. Suppose that every step is given by a diagram
 $$\label{eq:flip-diagram}
 \begin{tikzcd}[column sep=large]
  X_i \arrow[r,"f_i"] & Z_i & X_{i+1}\arrow[l,"f_i^+"']
 \end{tikzcd}$$
 where \(Z_i\) is normal compact Kähler, both maps are projective small bimeromorphic morphisms with connected fibers, neither is an isomorphism, and
-\[
- -D_i is f_i-ample,\qquad
- D_i+1 is f_i^+-ample.
-\]
+$$-D_i\text{ is }f_i\text{-ample},\qquad
+ D_{i+1}\text{ is }f_i^+\text{-ample}.$$
 Here _small_ means that the exceptional locus contains no prime divisor. Then the sequence is finite. [S4:25–44]
 
 On a normal irreducible globally Weil $\mathbb Q$-factorial compact Kähler
@@ -113,17 +109,13 @@ the birational models. Let $\mathbf M$ be the rational b-divisor represented
 by an analytically nef $\mathbb Q$-Cartier divisor $M'$ on a projective
 birational morphism $X'\to X_0$ of normal compact Kähler spaces.
 Assume
-\[
- \beginaligned
+$$\begin{aligned}
  a(E;X_0,B_0+\mathbf M)&>0&&\text{for every prime over $X_0$},\\
- a(E;X_0,B_0+\mathbf M)&\geq1&&for every exceptional prime.
- \endaligned
-\]
+ a(E;X_0,B_0+\mathbf M)&\geq1&&\text{for every exceptional prime}.
+ \end{aligned}$$
 Consider a sequence of normal globally Weil $\mathbb Q$-factorial compact
 Kähler fourfolds
-\[
- X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots .
-\]
+$$X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots .$$
 On $X_i$, let $B_i$ be the strict transform of $B_0$, let $M_i$ be
 the trace of this same $\mathbf M$, and suppose
 $D_i=K_{X_i}+B_i+M_i$ is $\mathbb Q$-Cartier. Suppose that every step is
@@ -146,8 +138,8 @@ b-divisor terminates.
 > **theorem**
 Let $k$ be an algebraically closed field of characteristic zero, and let $(X,B)$ be a projective lc pair of dimension four with rational boundary. No $\mathbb Q$-factoriality or pseudo-effectivity is assumed.
 \beginenumerate[label=\textup{(\roman*)}]
-\item Every negative extremal ray at every stage has the contraction and, when birational, a positive model required by Definition  .
-\item Every program of Definition   starting from $(X,B)$ has finitely many birational steps, for every sequence of permitted choices.
+\item Every negative extremal ray at every stage has the contraction and, when birational, a positive model required by Definition .
+\item Every program of Definition starting from $(X,B)$ has finitely many birational steps, for every sequence of permitted choices.
 \item Every maximal program ends either at a projective lc pair with nef adjoint, or at a Mori fibre space: a projective contraction with connected fibres, relative Picard number one, lower-dimensional normal base, and relatively ample negative adjoint.
 \endenumerate
 An already nef input has a zero-step completed program. [S8:97–105]
@@ -167,10 +159,8 @@ fourfold, with a canonical Weil divisor $K_X$, and let $\Delta\geq0$
 be a rational divisor such that $(X,\Delta)$ is klt. Then every maximal
 ordinary negative-ray program starting on $(X,\Delta)$ terminates.
 Its birational steps form a finite sequence
-\[
- (X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
- \dashrightarrow(X_n,\Delta_n).
-\]
+$$(X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
+ \dashrightarrow(X_n,\Delta_n).$$
 Every $X_i$ is normal, compact Kähler and globally Weil
 $\mathbb Q$-factorial; every $(X_i,\Delta_i)$ is klt, and
 $D_i=K_{X_i}+\Delta_i$ is $\mathbb Q$-Cartier. The canonical divisors are
@@ -179,9 +169,7 @@ the transforms of the specified datum. The following alternatives hold.
 \item If $D=K_X+\Delta$ is pseudo-effective, then $D_n$ is nef.
 The composite $\phi:X\dashrightarrow X_n$ extracts no prime divisor,
 and
-\[
- a(E;X,\Delta)\leq a(E;X_n,\Delta_n)
-\]
+$$a(E;X,\Delta)\leq a(E;X_n,\Delta_n)$$
 for every prime divisor over the two models, with strict inequality
 for every prime on $X$ contracted by $\phi$.
 \item If $D$ is not pseudo-effective, there is a projective surjective
@@ -211,10 +199,8 @@ Let $X$ be a normal globally Weil $\mathbb Q$-factorial compact Kähler
 fourfold, with a canonical Weil divisor $K_X$, and let $\Delta\geq0$
 be a rational divisor such that $(X,\Delta)$ is klt. Then there is a
 finite sequence of ordinary negative steps
-\[
- (X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
- \dashrightarrow(X_n,\Delta_n).
-\]
+$$(X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
+ \dashrightarrow(X_n,\Delta_n).$$
 Every $X_i$ is normal, compact Kähler and globally Weil
 $\mathbb Q$-factorial; every $(X_i,\Delta_i)$ is klt, and
 $D_i=K_{X_i}+\Delta_i$ is $\mathbb Q$-Cartier. The canonical divisors are
@@ -223,9 +209,7 @@ the transforms of the specified datum. The following alternatives hold.
 \item If $D=K_X+\Delta$ is pseudo-effective, then $D_n$ is nef.
 The composite $\phi:X\dashrightarrow X_n$ extracts no prime divisor,
 and
-\[
- a(E;X,\Delta)\leq a(E;X_n,\Delta_n)
-\]
+$$a(E;X,\Delta)\leq a(E;X_n,\Delta_n)$$
 for every prime divisor over the two models, with strict inequality
 for every prime on $X$ contracted by $\phi$.
 \item If $D$ is not pseudo-effective, there is a projective surjective

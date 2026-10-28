@@ -29,9 +29,7 @@ example
 > **theorem**
 There is a countable division ring $D$ of characteristic zero, with
 center $F=Z(D)$, and elements $x,y\in D$ such that
-\[
- D=F[x,y]=F(x,y),\qquad [D:F]=\infty,
-\]
+$$D=F[x,y]=F(x,y),\qquad [D:F]=\infty,$$
 while every element of $D$ is algebraic over $F$. [S4:19–26]
 
 The pair $\{x,y\}$ generates all of $D$ as an $F$-algebra, $D$ is

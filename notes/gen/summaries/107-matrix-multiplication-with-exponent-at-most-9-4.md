@@ -163,15 +163,30 @@ The `main_results` entries [S16:1389–1403] name:
 `OAI.MatrixAllFields.MatrixMultiplication.AllFieldMain.omega_lt_source_constant`
 in `AllFieldsBound.lean`, and `OAI.MatrixMultiplication.{complex_omega_le_nine_quarters,
 complex_alpha_gt_93_div_200, complex_rectangular_omega_lt_523_div_250}` in
-`Main.lean`. In the source all four are stated and closed: "theorem complex_omega_le_nine_quarters : Arithmetic.omega ℂ ≤ (9 : ℝ) / 4 := AuxiliarySeparation.omega_le_nine_quarters [S14:14–16]"
-, "theorem complex_alpha_gt_93_div_200 : (93 : ℝ) / 200 < Arithmetic.complexAlpha := DualExponentBound.alpha_gt [S14:19–21]" , "theorem complex_rectangular_omega_lt_523_div_250 : Arithmetic.rectangularOmega ℂ ((709 : ℝ) / 1000) < (523 : ℝ) / 250 := CW75ReorderedRectangular.rectangularOmega_lt_target [S14:25–27]" , and "theorem omega_lt_source_constant (F : Type u) [Field F] : Arithmetic.omega F < (2371054886006746 : ℝ) / 10 ^ 15 ∧ (2371054886006746 : ℝ) / 10 ^ 15 < (2371056 : ℝ) / 10 ^ 6 := by [S15:17–19]"
+`Main.lean`. In the source all four are stated and closed: "```lean
+theorem complex_omega_le_nine_quarters : Arithmetic.omega ℂ ≤ (9 : ℝ) / 4 := AuxiliarySeparation.omega_le_nine_quarters
+```
+[S14:14–16]"
+, "```lean
+theorem complex_alpha_gt_93_div_200 : (93 : ℝ) / 200 < Arithmetic.complexAlpha := DualExponentBound.alpha_gt
+```
+[S14:19–21]" , "```lean
+theorem complex_rectangular_omega_lt_523_div_250 : Arithmetic.rectangularOmega ℂ ((709 : ℝ) / 1000) < (523 : ℝ) / 250 := CW75ReorderedRectangular.rectangularOmega_lt_target
+```
+[S14:25–27]" , and "```lean
+theorem omega_lt_source_constant (F : Type u) [Field F] : Arithmetic.omega F < (2371054886006746 : ℝ) / 10 ^ 15 ∧ (2371054886006746 : ℝ) / 10 ^ 15 < (2371056 : ℝ) / 10 ^ 6 := by
+```
+[S15:17–19]"
 [S15:17–19] — each an `Arithmetic.omega` / `Arithmetic.complexAlpha` /
 `Arithmetic.rectangularOmega` inequality proved by named lemmas
 (`AuxiliarySeparation`, `DualExponentBound`, `CW75ReorderedRectangular`,
 `AllFieldOrderedLimits` plus the stage lemmas [S15:20–25]). `grep` finds
 **zero** `sorry` in both formalized files.
 
-The two comparator stubs carry the same targets: "theorem complex_omega_le_nine_quarters : Arithmetic.omega ℂ ≤ (9 : ℝ) / 4 := by sorry [S12:118–120]" (the
+The two comparator stubs carry the same targets: "```lean
+theorem complex_omega_le_nine_quarters : Arithmetic.omega ℂ ≤ (9 : ℝ) / 4 := by sorry
+```
+[S12:118–120]" (the
 stub's `complex_omega_le_nine_quarters` ends in `sorry`), its two siblings at
 [S12:122–128], and `omega_lt_source_constant` with `sorry` at [S13:109–112].
 A comparator stub is a target the release set itself; the proved versions are

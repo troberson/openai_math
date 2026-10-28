@@ -22,9 +22,9 @@ A holomorphic vector bundle is **ample** when its tautological quotient line bun
 
 The manuscript's abstract states the answer. says: "We give counterexamples to Griffiths' conjecture in rank two on the quadric surface $\mathbb P^1\times\mathbb P^1$. We construct an explicit bundle $G$ whose coordinatewise power pullbacks, tensored with $\mathcal O(1,1)$, are ample for every positive power, but admit no smooth strictly Griffiths-positive Hermitian metric for all sufficiently large powers. [S3:43–47]"
 
-The main theorem names the family. gives it: "There is an algebraic vector bundle $G$ of rank two on $S$ such that, for every positive integer $m$, the bundle \[ E_m=f_m^*G\otimes P \] is ample. There is an integer $m_0$ such that $E_m$ admits no smooth Hermitian metric with strictly Griffiths-positive Chern curvature for every $m\ge m_0$. [S5:24–31]"
+The main theorem names the family. gives it: "There is an algebraic vector bundle $G$ of rank two on $S$ such that, for every positive integer $m$, the bundle $$E_m=f_m^*G\otimes P$$ is ample. There is an integer $m_0$ such that $E_m$ admits no smooth Hermitian metric with strictly Griffiths-positive Chern curvature for every $m\ge m_0$. [S5:24–31]"
 
-The bundle is given explicitly and the ampleness has a quantitative certificate. states it: "The bundle $G$ is given explicitly in Section  . The ampleness assertion has a quantitative certificate: Proposition   proves that $\mathcal O_{\mathbb P(E_m)}(n)$ is very ample for every even $n$ with $n-1\geq3m$. The threshold $m_0$ is obtained by compactness and is ineffective. Thus Griffiths' conjecture fails in rank two on the quadric surface. [S5:34–39]"
+The bundle is given explicitly and the ampleness has a quantitative certificate. states it: "The bundle $G$ is given explicitly in Section . The ampleness assertion has a quantitative certificate: Proposition proves that $\mathcal O_{\mathbb P(E_m)}(n)$ is very ample for every even $n$ with $n-1\geq3m$. The threshold $m_0$ is obtained by compactness and is ineffective. Thus Griffiths' conjecture fails in rank two on the quadric surface. [S5:34–39]"
 
 ## Graduate summary
 
@@ -54,7 +54,7 @@ Lempert's failure is recorded. [S5:95–98] records it: "More recently, Lempert 
 
 The closest prior result is recorded. records it: "In a preprint posted on September 22, 2026, Du–Xie state the existence of a rank-two ample bundle on the abelian surface $C\times C$, where $C$ is the elliptic curve $y^2=x^3-x$, without a smooth Griffiths-semipositive metric [S5:104–107]"
 
-The relation to that result is stated. states it: "The construction here is on the rational quadric and supplies a specified power-map family, an all-$m$ ampleness certificate, and the general limiting statement of Proposition  . Its metric conclusion is the absence of smooth _strictly_ Griffiths-positive metrics for all sufficiently large $m$. [S5:112–116]"
+The relation to that result is stated. states it: "The construction here is on the rational quadric and supplies a specified power-map family, an all-$m$ ampleness certificate, and the general limiting statement of Proposition . Its metric conclusion is the absence of smooth _strictly_ Griffiths-positive metrics for all sufficiently large $m$. [S5:112–116]"
 
 The construction begins with two projective transformations. begins it: "Choose two projective transformations $A,B$ of $\mathbb P^1$ with order three and no common fixed point, such that $AB$ is conjugate to $z\mapsto\lambda z$ with $|\lambda|>1$. Their chosen linear lifts, and the relative lift $A^{-1}B$, have finite order. The two properties serve different purposes: finite relative orders allow line maps to agree at graph intersections, whereas the expanding product will prevent a common invariant measure. [S5:132–138]"
 

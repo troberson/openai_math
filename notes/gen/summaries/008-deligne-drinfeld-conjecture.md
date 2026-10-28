@@ -36,14 +36,12 @@ pentagon equation, with the Ihara bracket. The main statement
 > **theorem**
 There are homogeneous elements
 \(\sigma_2k+1\in W_2k+1\), one for each \(k\ge1\), for which
-\[
- \operatornameLie_{\mathbb Q}\langle e_3,e_5,e_7,\ldots\rangle
+$$\mathrm{Lie}_{\mathbb Q}\langle e_3,e_5,e_7,\ldots\rangle
  \longrightarrow (W,\{\, ,\,\}),\qquad
- e_2k+1\longmapsto\sigma_2k+1,
-\]
+ e_{2k+1}\longmapsto\sigma_{2k+1},$$
 is an isomorphism of graded Lie algebras.
 In particular, \(W\) is closed under the bracket
- .  The induced map on completions by weight is a
+ . The induced map on completions by weight is a
 continuous graded isomorphism. [S3:50–62]
 
 ## Graduate summary
@@ -58,14 +56,12 @@ Lie algebra they generate, and exhaustion of the equation space
 > **theorem**
 There are homogeneous elements
 \(\sigma_2k+1\in W_2k+1\), one for each \(k\ge1\), for which
-\[
- \operatornameLie_{\mathbb Q}\langle e_3,e_5,e_7,\ldots\rangle
+$$\mathrm{Lie}_{\mathbb Q}\langle e_3,e_5,e_7,\ldots\rangle
  \longrightarrow (W,\{\, ,\,\}),\qquad
- e_2k+1\longmapsto\sigma_2k+1,
-\]
+ e_{2k+1}\longmapsto\sigma_{2k+1},$$
 is an isomorphism of graded Lie algebras.
 In particular, \(W\) is closed under the bracket
- .  The induced map on completions by weight is a
+ . The induced map on completions by weight is a
 continuous graded isomorphism. [S3:50–62]
 
 The generators $\sigma_{2k+1}$ are not canonical; the assertion is
@@ -141,19 +137,22 @@ The comparator stub [S5:178–190] states the target as a `MainStatement`
 prop (a graded Lie isomorphism `OddFree ≃ₗ[ℚ] W` compatible with the
 Ihara bracket and continuous after completion) and ends in `sorry`:
 
-> def MainStatement : Prop :=
-  ∃ (e : OddFree ≃ₗ[ℚ] W) (h : Graded e),
-    (∀ a b, (e ⁅a,b⁆ : L) = ihara (e a) (e b)) ∧
-    Function.LeftInverse (completedInv e h) (completed e h) ∧
-    Function.RightInverse (completedInv e h) (completed e h) ∧
-    Continuous (completed e h) ∧ Continuous (completedInv e h) ∧
-    (∀ (a b : OddCompletion) n,
-      (e (∑ i ∈ Finset.range (n+1), ⁅(a i : OddFree), (b (n-i) : OddFree)⁆) : L) =
-      ∑ i ∈ Finset.range (n+1),
-        ihara (completed e h a i) (completed e h b (n-i)))
+```lean
+def MainStatement : Prop :=
+ ∃ (e : OddFree ≃ₗ[ℚ] W) (h : Graded e),
+ (∀ a b, (e ⁅a,b⁆ : L) = ihara (e a) (e b)) ∧
+ Function.LeftInverse (completedInv e h) (completed e h) ∧
+ Function.RightInverse (completedInv e h) (completed e h) ∧
+ Continuous (completed e h) ∧ Continuous (completedInv e h) ∧
+ (∀ (a b : OddCompletion) n,
+ (e (∑ i ∈ Finset.range (n+1), ⁅(a i : OddFree), (b (n-i) : OddFree)⁆) : L) =
+ ∑ i ∈ Finset.range (n+1),
+ ihara (completed e h a i) (completed e h b (n-i)))
 
 theorem main : MainStatement := by
-  sorry [S5:178–190]
+ sorry
+```
+[S5:178–190]
 
 The proved version lives in `Completion.lean` [S6], where
 `theorem main : MainStatement` is discharged by an odd-solution

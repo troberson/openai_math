@@ -32,14 +32,10 @@ critical endpoint dimension eight
 
 > **Theorem 1.1**
 Let $u\in C^2(\mathbb R^8,(-1,1))$ satisfy
-\[
- \Delta u=u^3-u,\qquad \partial_8u>0\quadin \mathbb R^8.
-\]
+$$\Delta u=u^3-u,\qquad \partial_8u>0\quad\text{in }\mathbb R^8.$$
 Then there are $e\in\mathbb S^7$ with $e_8>0$ and $c\in\mathbb R$ such that
-\[
- u(x)=\tanh\!\left(\frac{e\cdot x-c}{\sqrt2}\right)
- \qquadfor every x\in\mathbb R^8.
-\] [S4:59–70]
+$$u(x)=\tanh\!\left(\frac{e\cdot x-c}{\sqrt2}\right)
+ \qquad\text{for every }x\in\mathbb R^8.$$ [S4:59–70]
 
 No energy growth, minimization, or well-limit assumption is required
 [S4:72–73].

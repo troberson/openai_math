@@ -40,10 +40,8 @@ The main statement
 
 > **Theorem 1.1**
 There is an absolute constant $C>0$ such that
-\[
- h(k)\le C\frack^2{(\log\log(3k))^2}
- \qquadfor every integer k\ge1.
-\] [S3:24–30]
+$$h(k)\le C\frac{k^2}{(\log\log(3k))^2}
+ \qquad\text{for every integer }k\ge1.$$ [S3:24–30]
 
 ## Graduate summary
 
@@ -54,10 +52,8 @@ iterated-logarithmic saving over the classical quadratic order.
 
 > **Theorem 1.1**
 There is an absolute constant $C>0$ such that
-\[
- h(k)\le C\frack^2{(\log\log(3k))^2}
- \qquadfor every integer k\ge1.
-\] [S3:24–30]
+$$h(k)\le C\frac{k^2}{(\log\log(3k))^2}
+ \qquad\text{for every integer }k\ge1.$$ [S3:24–30]
 
 There is an absolute $C > 0$ with
 $h(k) \le C k^2 / (\log\log(3k))^2$ for every $k \ge 1$. The content is
@@ -122,13 +118,19 @@ bound, with unrestricted interval start.
 The two comparator stubs state the two targets. `Jacobsthal.lean`
  is the quadratic bound:
 
-> theorem erdos_970_quadratic : NumberTheoryLean.Targets.JacobsthalQuadratic := by
-  sorry [S5:24–25]
+```lean
+theorem erdos_970_quadratic : NumberTheoryLean.Targets.JacobsthalQuadratic := by
+ sorry
+```
+[S5:24–25]
 
 `JacobsthalImproved.lean` is the iterated-log bound:
 
-> theorem erdos_970_iterated_log : NumberTheoryLean.Targets.JacobsthalIteratedLog := by
-  sorry [S6:22–23]
+```lean
+theorem erdos_970_iterated_log : NumberTheoryLean.Targets.JacobsthalIteratedLog := by
+ sorry
+```
+[S6:22–23]
 
 Both end in `sorry`. The quadratic bound is the one *landed* in the
 Lean tree: `OAI/NumberTheory/Jacobsthal/Conclusions/QuadraticBound.lean`

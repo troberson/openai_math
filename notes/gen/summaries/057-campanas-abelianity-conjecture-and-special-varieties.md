@@ -82,7 +82,7 @@ completion
 images: the identity component of their Zariski closure is a direct
 product of a unipotent group and a torus
 \cite[Theorem A/4.1]CDY2025. Cao–Deng–Hacon–Păun subsequently
-announced the sharp class-two conclusion of Theorem  
+announced the sharp class-two conclusion of Theorem 
 \cite[Theorem A, equivalently Theorem 6.2]CDHP2026. Priority for that
 conclusion belongs to their work. We give a different proof from the
 independent CDY inputs and a structural theorem about unipotent
@@ -97,7 +97,7 @@ manifold abelianity theorem to order-two root orbifolds of fourfolds
 
 
 > **theorem**
-Assume Assumption  . Let $X$ be a connected smooth projective complex fourfold and let $D\subset X$ be a nonempty smooth connected reduced divisor. If $\sqrt[2]{(X,D)}$ is special, then
+Assume Assumption . Let $X$ be a connected smooth projective complex fourfold and let $D\subset X$ be a nonempty smooth connected reduced divisor. If $\sqrt[2]{(X,D)}$ is special, then
 $$\label{eq:target-group}
  G=\pi_1(X\setminus D,x)\big/\langle\!\langle\gamma^2\rangle\!\rangle$$
 contains an abelian subgroup of finite index. Here $\gamma$ is a positively oriented meridian about $D$, transported to $x\in X\setminus D$. [S14:39–45]
@@ -108,7 +108,7 @@ Specialness of the base orbifold forces specialness of $Y$, while
 pullback multiplicities give the epimorphism
 $\pi_1(Y)\twoheadrightarrow G$ 
 
-> The main construction is independent of specialness. It produces a smooth projective eightfold $Y$ over $\mathcal X$ with general fibre a product of four genus-one curves. It also supplies a submersive lift at some point over the general point of _every_ base divisor. These points detect all poles in the descent of differential tensors. A direct argument then proves that specialness of $\mathcal X$ forces specialness of $Y$, while even pullback multiplicities give an epimorphism $\pi_1(Y)\twoheadrightarrow G$. These two conclusions permit the application of Assumption  . [S14:49–51]
+> The main construction is independent of specialness. It produces a smooth projective eightfold $Y$ over $\mathcal X$ with general fibre a product of four genus-one curves. It also supplies a submersive lift at some point over the general point of _every_ base divisor. These points detect all poles in the descent of differential tensors. A direct argument then proves that specialness of $\mathcal X$ forces specialness of $Y$, while even pullback multiplicities give an epimorphism $\pi_1(Y)\twoheadrightarrow G$. These two conclusions permit the application of Assumption . [S14:49–51]
 
 The four independent genus-one factors eliminate stabilizers over the
 three-dimensional divisor. An alternative construction using branched

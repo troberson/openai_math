@@ -26,7 +26,7 @@ number is one and its Kodaira dimension is $-\infty$. The classification
 of these non-Kähler surfaces divides according to the second Betti
 number. In the minimal case with $b_2=0$, work of Bogomolov,
 Li–Yau–Zheng, and Teleman leads to the classification by Hopf and
-Inoue surfaces  .
+Inoue surfaces .
 The positive-$b_2$ case is the setting of the Global Spherical Shell
 conjecture.
 
@@ -43,15 +43,11 @@ The theorem
 
 > **theorem**
 Let $X$ be a connected compact complex surface with
-\[
- b_1(X)=1,\qquad b_2(X)>0,\qquad \kappa(X)=-\infty.
-\]
+$$b_1(X)=1,\qquad b_2(X)>0,\qquad \kappa(X)=-\infty.$$
 Assume that $X$ is minimal: it contains no smooth rational curve of
 self-intersection $-1$. Then there are an open neighborhood $U$ of
-\[
- S^3=\{z\in\mathbb C^2:|z|=1\}
- \quadin \mathbb C^2\setminus\{0\},
-\]
+$$S^3=\{z\in\mathbb C^2:|z|=1\}
+ \quad\text{in }\mathbb C^2\setminus\{0\},$$
 an open subset $\Sigma\subset X$, and a biholomorphism
 $\phi:U\longrightarrow\Sigma$ such that $X\setminus\Sigma$ is connected. [S2:102–115]
 
@@ -61,13 +57,13 @@ $\phi:U\longrightarrow\Sigma$ such that $X\setminus\Sigma$ is connected. [S2:102
 identities of Kodaira give $h^{0,1}=1$, $h^{1,0}=h^{2,0}=0$,
 $b_2^+=0$, $\chi(\mathcal O_X)=0$, and $K_X^2=-b_2(X)$, so the intersection
 form is negative definite "The compact-surface identities of Kodaira give, under the hypotheses of
-Theorem  ,
+Theorem ,
 $$\label{surface:invariants}
  h^{0,1}(X)=1,\qquad h^{1,0}(X)=h^{2,0}(X)=0,\qquad
  b_2^+(X)=0,\qquad \chi(\mathcal O_X)=0,
  \qquad K_X^2=-b_2(X).$$
 These are the numerical identities for class VII surfaces
-\cite[Theorem 3]Kodaira1964; see also  .
+\cite[Theorem 3]Kodaira1964; see also .
 In particular the intersection form on $H^2(X;\mathbb R)$ is negative definite.
 Our two surface-theoretic reductions are the following established results. [S3:11–21]"
 
@@ -96,7 +92,7 @@ and constructs holomorphic sections with controlled decay. An area
 bound with a common exponent constrains the normalizations of the
 resulting divisor components 
 
-> Proposition   constructs a section with end limits
+> Proposition constructs a section with end limits
 $(1,0)$ for any prescribed finite decay rate of the holomorphic
 structure. Before choosing that rate, we prove an area bound with an
 exponent $A$ depending only on the lifted geometry. We then choose the
@@ -108,7 +104,7 @@ closed current on $Y$. We place currents with exponential mass bounds
 in fixed weighted cohomology spaces and prove that currents carried by
 distinct curves have independent classes. The scalar degree-one group vanishes,
 so scalar differentials satisfying the mass bound cannot occur. This
-will force genus zero here; Section   will exclude the
+will force genus zero here; Section will exclude the
 remaining noncompact normalizations, using the same scalar obstruction
 and the finite-dimensional cohomology for a fixed bundle $E$. [S4:3–17]
 
@@ -120,16 +116,14 @@ and applying the Dloussky–Oeljeklaus–Toma criterion.
 identifies every such surface 
 
 > **corollary**
-Let $X$ satisfy the hypotheses of Theorem  , and put
+Let $X$ satisfy the hypotheses of Theorem , and put
 $b=b_2(X)$. There is a small one-parameter deformation
 $\mathcal X\to\Delta$ over a disk about $0$, with $\mathcal X_0\simeq X$,
 such that every nonzero fiber is obtained from a primary Hopf surface by
 exactly $b$ successive point blowups. The centers may be infinitely near.
 Moreover,
-\[
- \pi_1(X)\cong\mathbb Z,\qquad
- X\cong_{\mathrmor}(S^1\times S^3)#\,b\,\overline{\mathbbCP}^{\,2},
-\]
+$$\pi_1(X)\cong\mathbb Z,\qquad
+ X\cong_{\mathrm{or}}(S^1\times S^3)\\\#\,b\,\overline{\mathbb{CP}}^{\,2},$$
 where the second is an orientation-preserving diffeomorphism for the
 complex orientation of $X$. [S2:122–135]
 

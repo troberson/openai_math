@@ -222,13 +222,16 @@ statement [S9:11].
 The comparator stub [S10:233–239] states that negative-fiber branch and
 ends in `sorry`:
 
-> theorem veryGenerally_fiber_negative_branch
-    X Y : SmoothProjectiveVariety E : X.ReducedSNCBoundary D : Y.ReducedSNCBoundary
-    (f : StratumSmoothFibration X Y E D) :
-    VeryGenerally Y fun y => y.point ∈ D.complement ∧
-      ∀ F : FiberModel f.toBoundaryFibration y, F.boundary.kodaira = ⊥ →
-        E.kodaira = D.kodaira + F.boundary.kodaira ∧
-        ∀ (m : ℕ), 0 < m → ∀ s : X.RationalPluriform m, s ∈ E.sections m → s = 0 := by sorry [S10:233–239]
+```lean
+theorem veryGenerally_fiber_negative_branch
+ X Y : SmoothProjectiveVariety E : X.ReducedSNCBoundary D : Y.ReducedSNCBoundary
+ (f : StratumSmoothFibration X Y E D) :
+ VeryGenerally Y fun y => y.point ∈ D.complement ∧
+ ∀ F : FiberModel f.toBoundaryFibration y, F.boundary.kodaira = ⊥ →
+ E.kodaira = D.kodaira + F.boundary.kodaira ∧
+ ∀ (m : ℕ), 0 < m → ∀ s : X.RationalPluriform m, s ∈ E.sections m → s = 0 := by sorry
+```
+[S10:233–239]
 
 Note the ledger reads `paps_form 0` (no `main_results` entry), so the
 scope note describes an intended target, not a landed formalization.

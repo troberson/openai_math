@@ -35,16 +35,14 @@ phase of matter. The periodic manuscript proves the conjecture for
 even-periodic rings 
 
 > **Theorem 1.1**
-For the Hamiltonians  , the ground state is unique for
+For the Hamiltonians , the ground state is unique for
 every even $L\ge60$, and
 $$\gamma_L&>\frac4{105}\log\frac{80}{79}
      &&\text{for every even }L\ge60,\label{eq:gap60}\\
  \gamma_L&>\frac{\log20}{784}
      &&\text{for every even }L\ge2304.\label{eq:gap2304}$$
 Consequently
-\[
- \Delta_1\ge\frac{\log20}784>0.
-\]
+$$\Delta_1\ge\frac{\log20}{784}>0.$$
 The spectral conclusions also hold for any simultaneously similar
 spin-one realization satisfying the same commutator and Casimir
 normalizations. [S4:37–53]
@@ -55,11 +53,9 @@ gap is bounded below by a positive constant for all chains of
 $2L+1$ sites with $L \ge 960$ 
 
 > **theorem**
-For the Hamiltonian  , with the spin normalization above,
-\[
- E_1(L,3/5)-E_0(L,3/5)>\frac{\log 10}392
- \qquadfor every integer L\ge960.
-\] [S5:77–83]
+For the Hamiltonian , with the spin normalization above,
+$$E_1(L,3/5)-E_0(L,3/5)>\frac{\log 10}{392}
+ \qquad\text{for every integer }L\ge960.$$ [S5:77–83]
 
 ## Graduate summary
 

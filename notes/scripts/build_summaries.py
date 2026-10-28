@@ -416,9 +416,16 @@ def resolve_token(token: str, quotes: dict[int, dict], main_tex_map: dict[str, s
         if mt:
             number = compute_number(mt, row["path"], int(row["start"]))
     text = normalizer.normalize_window(span, preamble, number)
+    # A Lean source line is code, not prose: normalize_window flattens it into
+    # one long line (and runs the prose transforms over it). Fence it in a
+    # `lean` block so the page keeps the source's own indentation.
+    fenced = row["path"].endswith(".lean")
+    if fenced:
+        text = "```lean\n" + text + "\n```"
     if row["start"] != "0":
         a, b = int(row["start"]), int(row["end"])
-        text += " " + _label(row["sid"], a, b)
+        label = _label(row["sid"], a, b)
+        text += ("\n" if fenced else " ") + label
     return text
 
 
@@ -582,8 +589,16 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         stripped = strip_own_markers(body, quotes)
 
         def _replace(m: re.Match[str]) -> str:
-            return resolve_token(m.group(1), quotes, main_tex_map)
-        text = re.sub(r"\{\{(\d+)\}\}", _replace, stripped)
+            prefix = m.group(1) or ""
+            resolved = resolve_token(m.group(2), quotes, main_tex_map)
+            # A code fence cannot sit inside a blockquote: the `> ` prefix the
+            # author wrote lands on the fence opener only, leaving the body and
+            # closing fence outside the quote and breaking the block. A fenced
+            # quote is a code block, not a blockquote, so drop the prefix.
+            if prefix and resolved.startswith("```"):
+                return resolved
+            return prefix + resolved
+        text = re.sub(r"(?:(> ))?\{\{(\d+)\}\}", _replace, stripped)
         resolved[key] = expand_bare_markers(text, quotes)
 
     # Expand manuscript macros in the body's own math regions. The quote path

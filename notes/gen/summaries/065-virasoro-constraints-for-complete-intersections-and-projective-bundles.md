@@ -31,7 +31,7 @@ Let \(X\subset\mathbb P^N_\mathbb C\) be a smooth complete intersection. Its ord
 That resolves the Virasoro conjecture positively for
 projective-space complete intersections, including primitive and
 odd insertions, with no semisimplicity hypothesis [S4:19].
-"Thus   resolves the Virasoro conjecture positively for projective-space complete intersections. Primitive and odd insertions are included, with no semisimplicity hypothesis. [S4:19]"
+"Thus resolves the Virasoro conjecture positively for projective-space complete intersections. Primitive and odd insertions are included, with no semisimplicity hypothesis. [S4:19]"
 
 The second manuscript proves a structural transfer: the
 constraints pass from a base to the projectivization of any
@@ -42,9 +42,7 @@ Let $B$ be a smooth connected projective variety over $\mathbb C$, and
 let $E$ be an algebraic vector bundle of rank $r\geq2$ on $B$.
 Let $X=\mathbb P_B(E)$ parametrize one-dimensional subspaces of
 the fibers of $E$. Then
-\[
-                           \mathsf V(B)\ \Longrightarrow\ \mathsf V(X).
-\] [S12:36–45]
+$$\mathsf V(B)\ \Longrightarrow\ \mathsf V(X).$$ [S12:36–45]
 
 The bundle need not split and satisfies no positivity condition;
 the base may have nonsemisimple quantum cohomology [S12:47–53].
@@ -64,10 +62,8 @@ giving a degeneration $X\rightsquigarrow U\cup_D\widetilde M$
 where $U$ and $M$ have smaller defining degree and the seam $D$
 and blowup center $S$ have smaller dimension . "The reduction has two stages. Factoring one defining equation and resolving
 the resulting family gives a degeneration
-\[
- X\rightsquigarrow U\cup_D\widetilde M,
- \qquad \widetilde M=\mathrmBl_S M.
-\]
+$$X\rightsquigarrow U\cup_D\widetilde M,
+ \qquad \widetilde M=\mathrm{Bl}_S M.$$
 Here $U$ and $M$ are complete intersections of smaller defining degree,
 while the seam $D$ and blowup center $S$ have smaller dimension. We first prove the constraints for $\widetilde M$ from those for $M$ and projective-bundle towers over $S$. [S4:32–38]"
 The constraints are then proved for $\widetilde M$ from those

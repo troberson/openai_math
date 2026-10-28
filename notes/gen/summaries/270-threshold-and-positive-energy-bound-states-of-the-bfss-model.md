@@ -39,9 +39,7 @@ threshold manuscript answers: exactly one, for every $N\ge2$
 
 > **theorem**
 For every integer \(N\ge2\),
-\[
-\dim\mathrmker H_N=1.
-\]
+$$\dim\mathrm{ker} H_N=1.$$
 The kernel consists of \(\mathrmSpin(9)\)-invariant states and is even in the
 fermion grading just specified. [S4:74–81]
 
@@ -54,9 +52,7 @@ sequence of normalizable eigenvectors with energies tending to infinity
 > **theorem**
 There are an orthonormal sequence
 $\Psi_j\in\mathrm{Dom}(H)$ and real numbers $E_j>0$ tending to infinity such that
-\[
- H\Psi_j=E_j\Psi_j.
-\]
+$$H\Psi_j=E_j\Psi_j.$$
 In particular, $\sigma_{\mathrm p}(H)\cap(0,\infty)$ is infinite. [S5:135–143]
 
 ## Graduate summary
@@ -147,14 +143,14 @@ non-LaTeX evidence.
 
 ## Bibliography
 
-- Tom Banks, Willy Fischler, Stephen H. Shenker, and Leonard Susskind, _M theory as a matrix model: A conjecture_, Physical Review D **55** (1997), 5112–5128.  .
+- Tom Banks, Willy Fischler, Stephen H. Shenker, and Leonard Susskind, _M theory as a matrix model: A conjecture_, Physical Review D **55** (1997), 5112–5128. .
 - Banks, T., Fischler, W., Shenker, S. H., Susskind, L., M theory as a matrix model: A conjecture (1997)
 - Berenstein, David, Maldacena, Juan, Nastase, Horatiu, Strings in flat space and pp waves from $\mathcal{N}=4$ Super Yang Mills (2002)
 - Boulton, Lyonell, {García del Moral}, María Pilar, Restuccia, Alvaro, Existence of a supersymmetric massless ground state of the $SU(N)$ matrix model globally on its valleys (2021)
 - Chang, Chi-Ming, Witten index of BMN matrix quantum mechanics (2025)
-- Ulf H. Danielsson, Gabriele Ferretti, and Bo Sundborg, _D-particle dynamics and bound states_, International Journal of Modern Physics A **11** (1996), 5463–5478.  .
+- Ulf H. Danielsson, Gabriele Ferretti, and Bo Sundborg, _D-particle dynamics and bound states_, International Journal of Modern Physics A **11** (1996), 5463–5478. .
 - Dasgupta, Keshav, Sheikh-Jabbari, Mohammad M., Van Raamsdonk, Mark, Matrix Perturbation Theory for M-theory on a PP-Wave (2002)
-- I. Ya. Aref'eva, A. S. Koshelev, and P. B. Medvedev, _On stable sector in supermembrane matrix model_, Nuclear Physics B **579** (2000), 411–436.  .
+- I. Ya. Aref'eva, A. S. Koshelev, and P. B. Medvedev, _On stable sector in supermembrane matrix model_, Nuclear Physics B **579** (2000), 411–436. .
 - Frank, Rupert L., Seiringer, Robert, Non-linear ground state representations and sharp Hardy inequalities (2008)
 - Graf, Gian Michele, Hoppe, Jens, Asymptotic Ground State for 10 Dimensional Reduced Supersymmetric $SU(2)$ Yang–Mills Theory (1998)
 - Green, Michael B., Gutperle, Michael, D-particle bound states and the D-instanton measure (1998)
@@ -170,20 +166,20 @@ non-LaTeX evidence.
 - Lin, Henry W., TASI lectures on Matrix Theory from a modern viewpoint (2026)
 - Lin, Ying-Hsuan, Yin, Xi, On the Ground State Wave Function of Matrix Theory (2015)
 - Lundholm, Douglas, Zero-energy states in supersymmetric matrix models (2010)
-- Martin Lüscher, _Some analytic results concerning the mass spectrum of Yang–Mills gauge theories on a torus_, Nuclear Physics B **219** (1983), 233–261.  .
+- Martin Lüscher, _Some analytic results concerning the mass spectrum of Yang–Mills gauge theories on a torus_, Nuclear Physics B **219** (1983), 233–261. .
 - Moore, G., Nekrasov, N., Shatashvili, S., D-particle bound states and generalized instantons (2000)
 - Porrati, Massimo, Rozenberg, Alexander, Bound States at Threshold in Supersymmetric Quantum Mechanics (1998)
 - Sethi, Savdeep, Stern, Mark, D-brane bound states redux (1998)
 - Sethi, Savdeep, Stern, Mark, Invariance theorems for supersymmetric Yang–Mills theories (2000)
-- E. B. Davies and Barry Simon, _Spectral properties of Neumann Laplacian of horns_, Geometric and Functional Analysis **2** (1992), 105–117.  .
-- Barry Simon, _Some quantum operators with discrete spectrum but classically continuous spectrum_, Annals of Physics **146** (1983), 209–220.  .
+- E. B. Davies and Barry Simon, _Spectral properties of Neumann Laplacian of horns_, Geometric and Functional Analysis **2** (1992), 105–117. .
+- Barry Simon, _Some quantum operators with discrete spectrum but classically continuous spectrum_, Annals of Physics **146** (1983), 209–220. .
 - Simon, Barry, Semiclassical analysis of low lying eigenvalues. I. Non-degenerate minima: asymptotic expansions (1983)
-- A. V. Smilga, _Comments on thermodynamics of supersymmetric matrix models_, Nuclear Physics B **818** (2009), 101–114.  .
-- Savdeep Sethi and Mark Stern, _Invariance theorems for supersymmetric Yang–Mills theories_, Advances in Theoretical and Mathematical Physics **4** (2000), 487–501.  .
-- B. de Wit, M. Lüscher, and H. Nicolai, _The supermembrane is unstable_, Nuclear Physics B **320** (1989), 135–159.  .
+- A. V. Smilga, _Comments on thermodynamics of supersymmetric matrix models_, Nuclear Physics B **818** (2009), 101–114. .
+- Savdeep Sethi and Mark Stern, _Invariance theorems for supersymmetric Yang–Mills theories_, Advances in Theoretical and Mathematical Physics **4** (2000), 487–501. .
+- B. de Wit, M. Lüscher, and H. Nicolai, _The supermembrane is unstable_, Nuclear Physics B **320** (1989), 135–159. .
 - de Wit, Bernard, Lüscher, Martin, Nicolai, Hermann, The supermembrane is unstable (1989)
 - de Wit, Bernard, Hoppe, Jens, Nicolai, Hermann, On the quantum mechanics of supermembranes (1988)
 - Witten, Edward, Constraints on supersymmetry breaking (1982)
 - Witten, Edward, Bound States of Strings and $p$-Branes (1996)
 - Yi, Piljin, Witten index and threshold bound states of D-branes (1997)
-- Elia Bisi and Nikos Zygouras, _Transition between characters of classical groups, decomposition of Gelfand–Tsetlin patterns and last passage percolation_, arXiv:1905.09756, version 5, 2022.  .
+- Elia Bisi and Nikos Zygouras, _Transition between characters of classical groups, decomposition of Gelfand–Tsetlin patterns and last passage percolation_, arXiv:1905.09756, version 5, 2022. .

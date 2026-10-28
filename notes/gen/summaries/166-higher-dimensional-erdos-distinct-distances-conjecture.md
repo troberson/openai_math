@@ -30,9 +30,7 @@ manuscript proves this
 For every integer \(d\ge3\), there is a constant \(c_d>0\) such that
 every finite set \(P\subset\mathbb R^d\) of \(n\ge2\) distinct points
 satisfies
-\[
- |\Delta(P)|\ge c_d n^2/d.
-\] [S4:19–26]
+$$|\Delta(P)|\ge c_d n^{2/d}.$$ [S4:19–26]
 
 The power of $n$ is optimal: the integer grid $\{1,\ldots,t\}^d$ has
 $t^d$ points and its squared distances are integers between $1$ and

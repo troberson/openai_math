@@ -85,9 +85,7 @@ coefficients are strictly less than one, and let
 Assume that \(K_X+B\) is pseudo-effective, \(M\) is nef, and
 \(D=K_X+B+M\) is nef. Then there is a semiample rational line bundle
 \(L\) on \(X\) such that
-\[
- c_1(L)=c_1(D)\quadin H^1,1_{\mathrmBC}(X,\mathbb R).
-\] [S3:19–30]
+$$c_1(L)=c_1(D)\quad\text{in }H^{1,1}_{\mathrm{BC}}(X,\mathbb R).$$ [S3:19–30]
 
 For a smooth connected compact Kähler manifold $X$, an effective
 rational SNC boundary $B$ with coefficients below one, and a nef rational
@@ -103,9 +101,7 @@ semiampleness of the original adjoint $D$ itself.
 Let $(X,B)$ be a projective klt $\mathbb Q$-pair over an algebraically closed
 field of characteristic zero. Suppose that $K_X+B$ is pseudo-effective,
 and let $M$ be a nef $\mathbb Q$-Cartier divisor on $X$. If
-\[
-                         D=K_X+B+M
-\]
+$$D=K_X+B+M$$
 is nef, then there is a semiample $\mathbb Q$-Cartier divisor $L$ on $X$ such
 that $D\equiv L$. [S5:18–30]
 
@@ -128,9 +124,7 @@ There are a normal integral projective variety $Y$ and a birational map
 $\phi\colon X\dashrightarrow Y$ whose inverse contracts no divisors such
 that, writing $B_Y=\phi_*B$ and taking $M_Y$ to be the trace of the same
 nef b-divisor, the generalized pair $(Y,B_Y+M_Y)$ is log canonical and
-\[
- A_X,B+M(E)\le A_Y,B_Y+M_Y(E)
-\]
+$$A_{X,B+M}(E)\le A_{Y,B_Y+M_Y}(E)$$
 for every prime divisor $E$ over $Y$. [S7:16–42]
 
 For a projective generalized log canonical $\mathbb Q$-pair $(X, B + M)$

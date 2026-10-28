@@ -41,12 +41,10 @@ The main statement
 
 > **Theorem 1.1**
 Let $f\in\mathbb Z[x]$ be irreducible over $\mathbb Q$, of degree $d$ with
-$4\le d\le8$, and put $k=d-2$. If   holds,
+$4\le d\le8$, and put $k=d-2$. If holds,
 then
-\[
- S_f,k(X)=c_f,kX+o_f(X),\qquad
- c_f,k=\prod_p\left(1-\frac{\rho_f(p^k)}p^k\right)>0.
-\]
+$$S_{f,k}(X)=c_{f,k}X+o_f(X),\qquad
+ c_{f,k}=\prod_p\left(1-\frac{\rho_f(p^k)}{p^k}\right)>0.$$
 No primitivity or sign condition on the leading coefficient is required. [S3:20–29]
 
 ## Graduate summary
@@ -58,12 +56,10 @@ irreducible integer polynomials.
 
 > **Theorem 1.1**
 Let $f\in\mathbb Z[x]$ be irreducible over $\mathbb Q$, of degree $d$ with
-$4\le d\le8$, and put $k=d-2$. If   holds,
+$4\le d\le8$, and put $k=d-2$. If holds,
 then
-\[
- S_f,k(X)=c_f,kX+o_f(X),\qquad
- c_f,k=\prod_p\left(1-\frac{\rho_f(p^k)}p^k\right)>0.
-\]
+$$S_{f,k}(X)=c_{f,k}X+o_f(X),\qquad
+ c_{f,k}=\prod_p\left(1-\frac{\rho_f(p^k)}{p^k}\right)>0.$$
 No primitivity or sign condition on the leading coefficient is required. [S3:20–29]
 
 For an irreducible integer polynomial $f$ of degree $d \in [4,8]$, set
@@ -133,12 +129,15 @@ restriction.
 The comparator stub [S5:37–42] states the same target and ends in
 `sorry`:
 
-> theorem allDegrees (f : Polynomial ℤ)
-    (hirr : Irreducible (f.map (Int.castRingHom ℚ)))
-    (hdeglo : 4 ≤ f.natDegree)
-    (hlocal : LocallyAdmissible f (f.natDegree - 2)) :
-    DensityStatement f (f.natDegree - 2) := by
-  sorry [S5:37–42]
+```lean
+theorem allDegrees (f : Polynomial ℤ)
+ (hirr : Irreducible (f.map (Int.castRingHom ℚ)))
+ (hdeglo : 4 ≤ f.natDegree)
+ (hlocal : LocallyAdmissible f (f.natDegree - 2)) :
+ DensityStatement f (f.natDegree - 2) := by
+ sorry
+```
+[S5:37–42]
 
 The proved version lives in `OAI/NumberTheory/PowerFree/Main.lean`
 [S6], where `theorem allDegrees` (line 144) is discharged — the file

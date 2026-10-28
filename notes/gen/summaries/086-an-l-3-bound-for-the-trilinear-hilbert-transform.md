@@ -20,11 +20,9 @@ the trilinear Hilbert transform conjecture. [S3:10–12]"
 The operator multiplies three shifted copies of its inputs and
 integrates against the principal value of $1/t$:
 
-\[
-T(f_1,f_2,f_3)(x)
- =\operatorname{p.v.}\int_{\R}
- f_1(x-t)f_2(x-2t)f_3(x-3t)\,\frac{dt}{t}.
-\]
+$$T(f_1,f_2,f_3)(x)
+ =\mathrm{p.v.}\int_{\mathbb R}
+ f_1(x-t)f_2(x-2t)f_3(x-3t)\,\frac{dt}{t}.$$
 
 The question is which input exponents make $T$ bounded. The family
 proves the symmetric $L^3$ case — each input in $L^3(\mathbb R)$,
@@ -32,11 +30,9 @@ output in $L^1(\mathbb R)$ [S4:1–9]:
 
 > **theorem**
 There is a finite constant $C$ such that
-\[
- \lVert T(f_1,f_2,f_3)\rVert_{L^1(\mathbb R)}
- \le C\prod_j=1^3\lVert f_j\rVert_{L^3(\mathbb R)}
- \qquad(f_1,f_2,f_3\in\mathcal S(\mathbb R)).
-\]
+$$\lVert T(f_1,f_2,f_3)\rVert_{L^1(\mathbb R)}
+ \le C\prod_{j=1}^3\lVert f_j\rVert_{L^3(\mathbb R)}
+ \qquad(f_1,f_2,f_3\in\mathcal S(\mathbb R)).$$
 Consequently $T$ has a unique bounded trilinear extension from
 $L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)$ to $L^1(\mathbb R)$. [S4:11–20]
 

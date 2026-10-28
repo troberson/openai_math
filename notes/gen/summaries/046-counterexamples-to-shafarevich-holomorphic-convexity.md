@@ -78,10 +78,8 @@ piece of the cover.
 
 > **Theorem 1.1**
 There is a smooth connected projective complex surface $X$ containing a connected nodal curve $Z_0$ with smooth rational irreducible components such that
-\[
- \mathrmim\bigl(\pi_1(Z_0)\longrightarrow\pi_1(X)\bigr)
- \quadis infinite.
-\]
+$$\mathrm{im}\bigl(\pi_1(Z_0)\longrightarrow\pi_1(X)\bigr)
+ \quad\text{is infinite}.$$
 In the simply connected universal cover of $X$, a connected component above $Z_0$ is a closed, connected, noncompact, locally finite union of compact rational curves. The holomorphic hull of any one of its points is noncompact. In particular, this universal cover is not holomorphically convex. [S5:19–26]
 
 There is a smooth connected projective complex surface $X$ containing a

@@ -35,9 +35,7 @@ surface. The theorem
 There is an integer \(d_0\) such that, for every admissible \(d>d_0\), a very
 general cubic fourfold \(X\) in \(\mathcal C_d\) is irrational
 and admits an exact \(\mathbb C\)-linear equivalence
-\[
- \mathrmKu(X)\simeq D^b(\operatornameCohS)
-\]
+$$\mathrm{Ku}(X)\simeq D^b(\mathrm{Coh}S)$$
 for a smooth projective K3 surface \(S\). [S5:77–85]
 
 The threshold $d_0$ is ineffective. Some Hassett divisors
@@ -55,7 +53,7 @@ birational map, each weighted by the MRC-quotient test
 
 > For an integral variety \(E\), let \(u(E)\) be one if the MRC quotient
 of a smooth projective model of its function field is birational to a
-member of \(\mathcal S\), and zero otherwise. Section   defines \(c_u(f)\) by counting the
+member of \(\mathcal S\), and zero otherwise. Section defines \(c_u(f)\) by counting the
 prime divisors acquired by the target with positive sign and those
 lost from the source with negative sign, each weighted by \(u\).
 The count is finite and additive under composition. We evaluate this
@@ -73,7 +71,7 @@ along smooth centers. Only surface centers can have nonzero test.
 Classically, a surface blowup adds its whole transcendental lattice,
 shifted to weight four with reversed pairing, as an integral orthogonal
 summand. The difficulty is to recognize that same summand on blowdown.
-Section   uses genus-zero Gromov–Witten pairings with
+Section uses genus-zero Gromov–Witten pairings with
 two variable transcendental inputs and all remaining insertions rational
 of diagonal Hodge type. For an intermediate fourfold \(M\),
 define \(T_M\) as for \(X\). Each such pairing \(B(a,b)\) determines an
@@ -89,7 +87,7 @@ class. Every nonzero block has a nonzero \((3,1)\) part, so
 Rank \(21\) makes its surface center birational to a
 Picard-number-one K3 surface, and its discriminant fixes the degree
 \(d\). Thus one more member of the class \(\mathcal S\) is added than
-removed, and Proposition   gives \(c_u(f)=1\). [S5:129–150]
+removed, and Proposition gives \(c_u(f)=1\). [S5:129–150]
 
 **Evaluation via Sarkisov factorization.** The Mori-factorization
 pass through conic-bundle nodes gives integer-valued functions $v,s$
@@ -105,11 +103,9 @@ corrections telescope to $c_u(f)=0$
 \(-K_V\). These are the nodes of the factorization. An elementary
 birational transformation between nodes is a link; its endpoint bases
 map to a common base \(Q\). The bases can change along the path.
-Sections  –  construct integer-valued
+Sections – construct integer-valued
 functions \(v,s\) on the nodes and prove, for sufficiently large \(d\),
-\[
- c_u(link)=(v+s)(V'/B')-(v+s)(V/B).
-\]
+$$c_u(\text{link})=(v+s)(V'/B')-(v+s)(V/B).$$
 The value \(v(V/B)\) is the finite cancelled difference between the
 tests of vertical divisors on \(V\) and divisors on \(B\).
 The value \(s\) comes from the remaining generic-surface calculation.
@@ -128,7 +124,7 @@ give genus bounds incompatible with pencils on Picard-number-one K3
 surfaces of sufficiently large degree. This proves independence with
 one bound for all test subcollections and factorizations. At nodes over
 a point both corrections vanish; the displayed differences therefore
-telescope to \(c_u(f)=0\) by Theorem  . [S5:152–181]
+telescope to \(c_u(f)=0\) by Theorem . [S5:152–181]
 
 The contradiction $c_u(f)=1$ and $c_u(f)=0$ proves irrationality.
 

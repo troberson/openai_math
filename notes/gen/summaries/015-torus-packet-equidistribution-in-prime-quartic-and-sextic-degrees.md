@@ -52,9 +52,7 @@ The headline statement
 > **theorem**
 For every fixed prime $n\ge5$ and every sequence
 $(K_i,M_i,\sigma_i)$ as above with \mbox$D(M_i)\to\infty$,
-\[
- \mu_{K_i,M_i,\sigma_i}\longrightarrow m_n.
-\]
+$$\mu_{K_i,M_i,\sigma_i}\longrightarrow m_n.$$
 The convergence is weak convergence of probability measures. In
 particular, it holds against every continuous compactly supported
 function, and no mass escapes into the cusp. [S2:103–112]
@@ -78,9 +76,7 @@ The main theorem
 > **theorem**
 For every fixed prime $n\ge5$ and every sequence
 $(K_i,M_i,\sigma_i)$ as above with \mbox$D(M_i)\to\infty$,
-\[
- \mu_{K_i,M_i,\sigma_i}\longrightarrow m_n.
-\]
+$$\mu_{K_i,M_i,\sigma_i}\longrightarrow m_n.$$
 The convergence is weak convergence of probability measures. In
 particular, it holds against every continuous compactly supported
 function, and no mass escapes into the cusp. [S2:103–112]
@@ -177,18 +173,21 @@ The comparator stub [S6:200–211] states that target — weak convergence
 of the complete packet measures to a Haar probability measure with a
 tightness clause — and ends in `sorry`:
 
-> theorem prime_degree_packet_measure_equidistribution_unconditional
-    (d : ℕ) (hprime : Nat.Prime (d+1)) (hfive : 5 ≤ d+1)
-    (K : ℕ → Type u) [∀ i, Field (K i)] [∀ i, NumberField (K i)]
-    [∀ i, NumberField.IsTotallyReal (K i)]
-    (M : ∀ i, PrimeDegreePackets.FullLattice (d+1) (K i))
-    (σ : ∀ i, OrderedEmbeddings (d+1) (K i))
-    (hn : ∀ i, Module.finrank ℚ (K i)=d+1)
-    (hD : Tendsto (fun i => PrimeDegreePackets.multiplierDiscriminant (M i)) atTop atTop) :
-    ∃ ν : Measure (X (d+1)), IsHaarProbability ν ∧
-      WeakProbabilityConvergence (fun i => packetMeasure (M i) (σ i)) ν ∧
-      IsTightMeasureSet (Set.range (fun i => packetMeasure (M i) (σ i))) := by
-  sorry [S6:200–211]
+```lean
+theorem prime_degree_packet_measure_equidistribution_unconditional
+ (d : ℕ) (hprime : Nat.Prime (d+1)) (hfive : 5 ≤ d+1)
+ (K : ℕ → Type u) [∀ i, Field (K i)] [∀ i, NumberField (K i)]
+ [∀ i, NumberField.IsTotallyReal (K i)]
+ (M : ∀ i, PrimeDegreePackets.FullLattice (d+1) (K i))
+ (σ : ∀ i, OrderedEmbeddings (d+1) (K i))
+ (hn : ∀ i, Module.finrank ℚ (K i)=d+1)
+ (hD : Tendsto (fun i => PrimeDegreePackets.multiplierDiscriminant (M i)) atTop atTop) :
+ ∃ ν : Measure (X (d+1)), IsHaarProbability ν ∧
+ WeakProbabilityConvergence (fun i => packetMeasure (M i) (σ i)) ν ∧
+ IsTightMeasureSet (Set.range (fun i => packetMeasure (M i) (σ i))) := by
+ sorry
+```
+[S6:200–211]
 
 Note the ledger reads `paps_form 0` (no `main_results` entry), so the
 scope note describes an intended target, not a landed

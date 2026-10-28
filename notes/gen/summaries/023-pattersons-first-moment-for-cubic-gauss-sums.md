@@ -133,16 +133,19 @@ The comparator stub [S5:84–93] states three targets — the first
 moment, the angular comparison, and the angular cancellation — all
 ending in `sorry`:
 
-> theorem patterson_firstMoment : FirstMomentStatement := by
-  sorry
+```lean
+theorem patterson_firstMoment : FirstMomentStatement := by
+ sorry
 
 /– Model comparison in every fixed integer angular mode. -/
 theorem patterson_angularComparison : AngularComparisonStatement := by
-  sorry
+ sorry
 
 /– Cancellation at the first-moment scale for each nonzero angular mode. -/
 theorem patterson_angularCancellation : AngularCancellationStatement := by
-  sorry [S5:84–93]
+ sorry
+```
+[S5:84–93]
 
 The scope note confirms the formalization's reach: "Patterson's first-moment conjecture concerns the average of normalized cubic Gauss sums over primary Eisenstein primes. The formalization proves the sharp-cutoff asymptotic with main term $\frac65c_*X^{5/6}/\log X$, where $c_*=(2\pi)^{2/3}/(3\Gamma(2/3))$. It also proves the corresponding angular comparison for every integer Fourier mode and cancellation of order $o(X^{5/6}/\log X)$ for each fixed nonzero mode. All primary Eisenstein primes are included, without an extra conjectural premise. [S4:9]"
 Note the ledger reads `paps_form 0` (no `main_results` entry), so
@@ -163,21 +166,21 @@ formalization.
 
 ## Bibliography
 
-- E. Chen, P. S. Park and A. A. Swaminathan, _Linnik's theorem for Sato–Tate laws on elliptic curves with complex multiplication_, Research in Number Theory **1** (2015), article 28.  . Numbered references use arXiv:1506.09170v3,  .
-- G. Harcos, _The Bombieri–Halász–Montgomery inequality_, undated note, Theorem 1, equation (1).  .
-- D. R. Heath-Brown, _Kummer's conjecture for cubic Gauss sums_, Israel Journal of Mathematics **120** (2000), 97–124.  . Numbered references use the author's manuscript.
-- M. N. Huxley, _The large sieve inequality for algebraic number fields_, Mathematika **15** (1968), no. 2, 178–187.  .
-- H. Iwaniec and E. Kowalski, _Analytic Number Theory_, American Mathematical Society Colloquium Publications, vol. 53, American Mathematical Society, Providence, RI, 2004.  .
-- E. E. Kummer, _De residuis cubicis disquisitiones nonnullae analyticae_, Journal für die reine und angewandte Mathematik **32** (1846), 341–359.  .
-- D. R. Heath-Brown and S. J. Patterson, _The distribution of Kummer sums at prime arguments_, Journal für die reine und angewandte Mathematik **310** (1979), 111–130.  .
-- S. J. Patterson, _A cubic analogue of the theta series_, Journal für die reine und angewandte Mathematik **296** (1977), 125–161.  .
-- S. J. Patterson, _On the distribution of Kummer sums_, Journal für die reine und angewandte Mathematik **303/304** (1978), 126–143.  .
-- A. Dunn and M. Radziwiłł, _Bias in cubic Gauss sums: Patterson's conjecture_, Annals of Mathematics **200** (2024), no. 3, 967–1057.  . All numbered references to this paper use arXiv:2109.07463v3, May 14, 2024,  .
-- C. S. Rajan, _Distribution of values of Hecke characters of infinite order_, Acta Arithmetica **85** (1998), no. 3, 279–291.  .
-- I. Kaneko and J. Thorner, _Highly uniform prime number theorems_, Annales de l'Institut Fourier **75** (2025), no. 5, 1901–1923.  .
-- H. L. Montgomery and R. C. Vaughan, _Hilbert's inequality_, Journal of the London Mathematical Society (2) **8** (1974), 73–82.  .
-- D. Wan, _Exponential sums over finite fields_, Journal of Systems Science and Complexity **34** (2021), 1225–1278.  .
-- M. Watkins, _Computing with Hecke Grössencharacters_, Publications mathématiques de Besançon. Alg\`ebre et théorie des nombres (2011), 119–135.  .
-- A. Yoshimoto, _On the cubic theta function_, Nagoya Mathematical Journal **105** (1987), 153–167.  .
-- J. Thorner and A. Zaman, _A unified and improved Chebotarev density theorem_, Algebra & Number Theory **13** (2019), no. 5, 1039–1068.  .
-- P. Gao and L. Zhao, _The large sieve with power moduli in imaginary quadratic number fields_, International Journal of Number Theory **18** (2022), no. 8, 1713–1733.  . The equation (1.2) locator refers to arXiv:2101.00811v2,  .
+- E. Chen, P. S. Park and A. A. Swaminathan, _Linnik's theorem for Sato–Tate laws on elliptic curves with complex multiplication_, Research in Number Theory **1** (2015), article 28. . Numbered references use arXiv:1506.09170v3, .
+- G. Harcos, _The Bombieri–Halász–Montgomery inequality_, undated note, Theorem 1, equation (1). .
+- D. R. Heath-Brown, _Kummer's conjecture for cubic Gauss sums_, Israel Journal of Mathematics **120** (2000), 97–124. . Numbered references use the author's manuscript.
+- M. N. Huxley, _The large sieve inequality for algebraic number fields_, Mathematika **15** (1968), no. 2, 178–187. .
+- H. Iwaniec and E. Kowalski, _Analytic Number Theory_, American Mathematical Society Colloquium Publications, vol. 53, American Mathematical Society, Providence, RI, 2004. .
+- E. E. Kummer, _De residuis cubicis disquisitiones nonnullae analyticae_, Journal für die reine und angewandte Mathematik **32** (1846), 341–359. .
+- D. R. Heath-Brown and S. J. Patterson, _The distribution of Kummer sums at prime arguments_, Journal für die reine und angewandte Mathematik **310** (1979), 111–130. .
+- S. J. Patterson, _A cubic analogue of the theta series_, Journal für die reine und angewandte Mathematik **296** (1977), 125–161. .
+- S. J. Patterson, _On the distribution of Kummer sums_, Journal für die reine und angewandte Mathematik **303/304** (1978), 126–143. .
+- A. Dunn and M. Radziwiłł, _Bias in cubic Gauss sums: Patterson's conjecture_, Annals of Mathematics **200** (2024), no. 3, 967–1057. . All numbered references to this paper use arXiv:2109.07463v3, May 14, 2024, .
+- C. S. Rajan, _Distribution of values of Hecke characters of infinite order_, Acta Arithmetica **85** (1998), no. 3, 279–291. .
+- I. Kaneko and J. Thorner, _Highly uniform prime number theorems_, Annales de l'Institut Fourier **75** (2025), no. 5, 1901–1923. .
+- H. L. Montgomery and R. C. Vaughan, _Hilbert's inequality_, Journal of the London Mathematical Society (2) **8** (1974), 73–82. .
+- D. Wan, _Exponential sums over finite fields_, Journal of Systems Science and Complexity **34** (2021), 1225–1278. .
+- M. Watkins, _Computing with Hecke Grössencharacters_, Publications mathématiques de Besançon. Alg\`ebre et théorie des nombres (2011), 119–135. .
+- A. Yoshimoto, _On the cubic theta function_, Nagoya Mathematical Journal **105** (1987), 153–167. .
+- J. Thorner and A. Zaman, _A unified and improved Chebotarev density theorem_, Algebra & Number Theory **13** (2019), no. 5, 1039–1068. .
+- P. Gao and L. Zhao, _The large sieve with power moduli in imaginary quadratic number fields_, International Journal of Number Theory **18** (2022), no. 8, 1713–1733. . The equation (1.2) locator refers to arXiv:2101.00811v2, .

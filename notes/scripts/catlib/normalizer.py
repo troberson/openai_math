@@ -253,6 +253,9 @@ def _prose_markup(s: str) -> str:
     s = re.sub(r"\\text\s*\{([^{}]*)\}", r"\1", s)
     s = s.replace("\\%", "%").replace("\\&", "&").replace("\\#", "#")
     s = s.replace("~", " ")
+    # Stripping \eqref{...} to a space can leave a double space when the
+    # source already had one on each side (`in \eqref{x} in` → `in  in`).
+    s = re.sub(r"  +", " ", s)
     s = fold_dashes(s)
     s = _strip_plain_braces(s)
     # Fold ASCII quotes to typographic so no bare `"` survives in prose; a bare ASCII double quote
@@ -352,6 +355,17 @@ def split_regions(text: str) -> list[tuple[bool, str, bool]]:
                 flush()
                 regions.append((True, text[j:close], display))
                 i = close + len(delim)
+            continue
+        # LaTeX display delimiters: \[ ... \]
+        if text[i] == "\\" and i + 1 < n and text[i + 1] == "[":
+            close = text.find("\\]", i + 2)
+            if close == -1:
+                buf.append(text[i:])
+                i = n
+            else:
+                flush()
+                regions.append((True, text[i + 2:close], True))
+                i = close + 2
             continue
         buf.append(text[i])
         i += 1

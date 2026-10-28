@@ -23,15 +23,15 @@ to the functions on a fixed subscheme of a Coulomb branch. The scheme
 structure is essential: nilpotent functions on the fixed locus encode
 positive-degree cohomology . "Hikita's conjecture relates two different kinds of algebra: the cohomology
 of a symplectic resolution and the functions on a fixed subscheme of a
-corresponding Coulomb branch.  The scheme structure is essential.  Even
+corresponding Coulomb branch. The scheme structure is essential. Even
 when the underlying fixed-point set is small, its nilpotent functions can
-encode positive-degree cohomology.  For quiver gauge theories, the
+encode positive-degree cohomology. For quiver gauge theories, the
 tautological classes on the Higgs side and the equivariant parameters on
-the Coulomb side give a common coefficient ring.  The question is whether
+the Coulomb side give a common coefficient ring. The question is whether
 the relations among those coefficients agree. [S5:4–11]" For a finite quiver $Q$
 with vector spaces $V_i, W_i$, the gauge group is
 $G=\prod\mathrm{GL}(V_i)$ and the representation includes both arrow maps and
-framing maps . "allowed.  Fix complex vector spaces $V_i,W_i$ of dimensions $v_i,w_i$, and put
+framing maps . "allowed. Fix complex vector spaces $V_i,W_i$ of dimensions $v_i,w_i$, and put
 $$\label{eq:gauge-data}
  G=\prod_{i\in Q_0}\mathrm{GL}(V_i),\qquad
  N=\bigoplus_{a:i\to j}\mathrm{Hom}(V_i,V_j)
@@ -40,16 +40,14 @@ makes the semistable locus stable with free gauge action, producing a
 smooth Nakajima variety $X$. The theorem 
 
 > **Theorem 1.1**
-For every datum  , every commuting flavor torus $F$, and
+For every datum , every commuting flavor torus $F$, and
 every regular stability character $\nu$, both coefficient maps are
-surjective and have the same kernel.  They therefore induce a canonical
+surjective and have the same kernel. They therefore induce a canonical
 isomorphism of graded
 $R$-algebras
-\[
- H_F^*(X;\mathbb C)\ \cong\ \mathbb C[Y_{\mathfrak f}^{\nu}].
-\]
+$$H_F^*(X;\mathbb C)\ \cong\ \mathbb C[Y_{\mathfrak f}^{\nu}].$$
 The gradings are ordinary cohomological degree and BFN homological degree,
-respectively.  The assertion includes the empty case, whose ring is zero. [S5:78–89]
+respectively. The assertion includes the empty case, whose ring is zero. [S5:78–89]
 
 The gradings are cohomological degree on the Higgs side and BFN
 homological degree on the Coulomb side. No finite-type, Dynkin,
@@ -71,12 +69,12 @@ $$\label{eq:intro-two-ideals}
  I_H=\ker(R\xrightarrow{\phi_H}H_F^*(X)),
  \end{split}$$
 where $A_F^{(d)}$ is the subspace of topological charge
-$d\in\pi_1(G)$; its cocharacter weight is $\nu\cdot d$.  Neither of
+$d\in\pi_1(G)$; its cocharacter weight is $\nu\cdot d$. Neither of
 these is the cohomological degree used in Hilbert series.
-Section   explains why the
+Section explains why the
 coefficient maps to $B_F$ and to $H_F^*(X)$ are surjective.
 Thus the first task is precisely the equality
-$I_{\mathrm{top}}=I_H$.  The second task is the equality of the
+$I_{\mathrm{top}}=I_H$. The second task is the equality of the
 cocharacter and full-torus defining ideals inside $A_F$. [S5:188–205]
 
 **Stable pairs give a quotient map.** Minuscule convolution words of
@@ -86,26 +84,26 @@ reordering, the first modification has nonpositive character-line
 degree, which stability excludes 
 
 > \paragraph1. Stable pairs give a quotient map.
-Sections   and   prove
+Sections and prove
 $I_{\mathrm{top}}\subseteq I_H$ for all the data of the theorem.
 The nontrivial minuscule generators used here are dressed lattice
 modifications whose coweight entries are all in $\{0,1\}$ or all in
 $\{0,-1\}$, with nonzero topological charge; a subset may involve several
-vertices.  A convolution word is a finite product of these classes.
+vertices. A convolution word is a finite product of these classes.
 By minuscule generation, a coefficient in $I_{\mathrm{top}}$ is a finite
 sum of positive-length convolution words, each of total topological charge zero.
-Section   realizes each such word by
+Section realizes each such word by
 finite-dimensional lattice correspondences, keeping all degree shifts.
-The test in Section   evaluates them on stable
-cotangent pairs.  The stability character assigns an additive degree to
+The test in Section evaluates them on stable
+cotangent pairs. The stability character assigns an additive degree to
 each modification, so the degrees in a neutral word sum to zero.
 After reordering each word, its first modification is nontrivial and has
-nonpositive character-line degree; stability excludes it.  On the identity
+nonpositive character-line degree; stability excludes it. On the identity
 correspondence, the same test gives a split restriction onto $H_F^*(X)$,
-which detects the coefficient class itself.  The tested relation therefore vanishes
+which detects the coefficient class itself. The tested relation therefore vanishes
 in cohomology, yielding the graded coefficient-compatible surjection
 $B_F\twoheadrightarrow H_F^*(X)$ of
-Proposition  . [S5:210–230]
+Proposition . [S5:210–230]
 
 This yields the graded surjection $B_F\twoheadrightarrow H_F^*(X)$.
 
@@ -123,22 +121,22 @@ equality to the original ideals
 
 > \paragraph3. Deformation returns to the original data.
 For an arbitrary quiver $Q$, let $Q^+$ be obtained by adding one loop at
-each vertex of positive gauge dimension.  Give the new loops the common
+each vertex of positive gauge dimension. Give the new loops the common
 weight one of an auxiliary flavor torus $H=\mathbb C^\times$, with parameter
 $z\in H_H^2(\mathrm{pt})$.
-The comparison in Section   uses a lift of the
-no-flavor isomorphism for $Q^+$ to this flavor.  Near zero gauge parameters and nonzero mass
+The comparison in Section uses a lift of the
+no-flavor isomorphism for $Q^+$ to this flavor. Near zero gauge parameters and nonzero mass
 $z=1$, the new minuscule Euler factors are invertible on the Coulomb
-side.  Subgroup localization on the stable prequotient gives the
-corresponding comparison on the Higgs side.  The resulting equality of
+side. Subgroup localization on the stable prequotient gives the
+corresponding comparison on the Higgs side. The resulting equality of
 localized coefficient ideals descends to the original homogeneous ideals
 in $R_0$: their equality at the graded origin determines them globally.
 This homogeneity argument, not specialization of an unspecified generic
-isomorphism, is the content of Proposition  .
+isomorphism, is the content of Proposition .
 Local constancy of regular stability, quaternionic rotation, and generic
 constancy of compactly supported Betti numbers then compare all regular
-characters.  A final flavor lift proves
-$B_F\simeq H_F^*(X)$ in Theorem  . [S5:249–266]
+characters. A final flavor lift proves
+$B_F\simeq H_F^*(X)$ in Theorem . [S5:249–266]
 
 **Complementary monopoles.** The cocharacter-fixed quotient is
 identified with the full-torus quotient independently. Adjoining a
@@ -148,24 +146,24 @@ and the resulting semistable direct sum has positive-dimensional
 stabilizer, contradicting freeness 
 
 > \paragraph4. Complementary monopoles identify the cocharacter quotient.
-Section   proves, independently of the preceding
+Section proves, independently of the preceding
 cohomology comparison, that the natural map
 $\mathbb C[Y_{\mathfrak f}^{\nu}]\to B_F$ is an isomorphism.
 It combines polynomial-form Hall-algebra generation
-  with the monopole maps of
-Lemma  , derived from
+ with the monopole maps of
+Lemma , derived from
 \cite[Theorem 5.7]Tsymbaliuk23Difference with explicit product signs.
 The resulting finite identities can be specialized without dividing by
 rotation or arrow parameters.
 After adjoining a rank-one framing vertex, any surviving nontrivial minuscule
-monopole has a surviving complementary monopole.  Hall generation would
+monopole has a surviving complementary monopole. Hall generation would
 then decompose both charges into indecomposable charges of the enlarged
 quiver, all of weight zero for the extended character.
-Lemma   realizes these charges by moment-level blocks.
+Lemma realizes these charges by moment-level blocks.
 Their semistable direct sum has a stabilizer that remains
 positive-dimensional even after removing the ineffective diagonal
-scalar.  This contradicts the freeness in regularity, including when
-the semistable locus is empty.  Proposition  
+scalar. This contradicts the freeness in regularity, including when
+the semistable locus is empty. Proposition 
 therefore identifies the two defining ideals, completing the
 scheme-theoretic comparison. [S5:268–288]
 
@@ -178,11 +176,11 @@ realization and proved it for the Hilbert scheme of points in the
 plane . "A classical model is the description of type-$A$ Springer-fiber
 cohomology through scheme-theoretic intersections of nilpotent orbit
 closures with a Cartan subalgebra, developed by de Concini–Procesi and
-Tanisaki  .  In the setting of
-symplectic duality  , Hikita formulated a fixed-scheme
+Tanisaki . In the setting of
+symplectic duality , Hikita formulated a fixed-scheme
 realization of cohomology and established it for the Hilbert scheme of
 points in the plane, with related type-$A$ Spaltenstein and smooth
-hypertoric examples  .  These examples explain why the
+hypertoric examples . These examples explain why the
 infinitesimal structure of the fixed locus, rather than its set of
 points, is central to the question. [S5:98–107]"
 

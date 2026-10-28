@@ -166,7 +166,10 @@ The scope note states that the formalization "checks that a specified two-step
 execution of Truffet's elimination procedure terminates with a feasible but
 nonoptimal output. It is a finite counterexample to that proposed optimization
 step." The stub [S16:118] carries exactly that: the selected statement
-"$theorem finite_execution_not_optimal : [S16:118]$" proves a two-step execution (`ForcedSingletonStep initial middle` then
+"$```lean
+theorem finite_execution_not_optimal :
+```
+[S16:118]$" proves a two-step execution (`ForcedSingletonStep initial middle` then
 `ForcedSingletonStep middle final`) reaches a feasible, stopped state whose
 output cost is not minimal, and it ends in a `sorry`.
 
@@ -175,7 +178,10 @@ states that it "gives one randomized algorithm for the complete zero-threshold
 winning set of every finite mean-payoff game with signed binary weights",
 succeeding with probability at least $7/8$ in quasipolynomial bit time on every
 random tape, allowing self-loops, parallel edges, and history-dependent
-strategies. The stub [S17:113] carries the selected statement `"noncomputable def MainClaim : Prop := by [S17:113]"`, which
+strategies. The stub [S17:113] carries the selected statement `"```lean
+noncomputable def MainClaim : Prop := by
+```
+[S17:113]"`, which
 exists a machine and a constant $C$ with an $O((\log(\text{input length}))^2)$
 runtime and a $7/8$ correctness mass, and its `theorem randomized_quasipolynomial_mean_payoff`
 ends in a `sorry`.

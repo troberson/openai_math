@@ -15,8 +15,8 @@ dualizable $K(n)$-local category has exactly $n+2$ thick tensor ideals,
 and its Balmer spectrum is a chain of $n+1$ points. The manuscript's
 abstract "We classify the prime and radical ideals of the Lubin–Tate deformation
 ring invariant under an open Morava stabilizer subgroup, at every prime
-and positive height.  This proves Chai's invariant-ideal conjecture in
-the standard finite-residue-field formulation.  It also proves the
+and positive height. This proves Chai's invariant-ideal conjecture in
+the standard finite-residue-field formulation. It also proves the
 Hovey–Strickland conjecture: the dualizable \(K(n)\)-local category has
 exactly \(n+2\) thick tensor ideals, and its Balmer spectrum is a chain
 of \(n+1\) points. [S3:53–61]"
@@ -38,11 +38,9 @@ toward the spectral one [S4:3–24]:
 > **theorem**
 For every prime \(p\) and every \(n\geq 1\), the thick tensor ideals of
 \(\mathcal D_(n,p)\) are exactly
-\[
- \mathcal D_(n,p)=\mathcal D_0
+$$\mathcal D_{(n,p)}=\mathcal D_0
  \supsetneq\mathcal D_1\supsetneq\cdots
- \supsetneq\mathcal D_n\supsetneq\mathcal D_n+1=0.
-\]
+ \supsetneq\mathcal D_n\supsetneq\mathcal D_{n+1}=0.$$
 In particular, there are \(n+2\) such ideals, and each \(\mathcal D_k\)
 is independent of the chosen finite type-\(k\) spectrum. [S4:74–84]
 

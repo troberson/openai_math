@@ -52,9 +52,7 @@ flat disks exist
 
 > **theorem**
 There exist a compact connected oriented smooth four-manifold $M$ with nonempty boundary, an integer $k\geq1$, proper generically immersed discs
-\[
- f_i\colon(D^2,S^1)\longrightarrow(M,\partial M),\qquad 1\leq i\leq k,
-\]
+$$f_i\colon(D^2,S^1)\longrightarrow(M,\partial M),\qquad 1\leq i\leq k,$$
 whose boundary restrictions form an embedding of $\coprod_iS^1$, and framed sphere maps $g_i\colon S^2\to M$ such that
 $$\label{eq:input-invariants}
  \lambda(f_i,g_j)=\delta_{ij}\,1,\qquad
@@ -78,9 +76,7 @@ the fundamental group of any such manifold
 > **theorem**
 There is a finitely presented group $G$ with a finite, oriented,
 four-dimensional aspherical Poincaré complex $Q$ such that
-\[
- H^i(G;\mathbb Z G)=0\quad(i\ne4),\qquad H^4(G;\mathbb Z G)\cong\mathbb Z
-\]
+$$H^i(G;\mathbb Z G)=0\quad(i\ne4),\qquad H^4(G;\mathbb Z G)\cong\mathbb Z$$
 with trivial right $G$-action on the last group, but no closed aspherical
 topological four-manifold has fundamental group $G$.
 In particular the trivial left $\mathbb Z G$-module $\mathbb Z$ has a finite resolution

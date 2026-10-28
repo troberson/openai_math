@@ -188,7 +188,10 @@ less_than_one" and `exact` over `FixedBinaryGapReduction.ofPreliminarySoundness`
 `lean/OAI/Computability/PerfectCompleteness/` tree (12 files).
 
 The comparator stub [S9:179–180] carries the same target statement
-"$theorem exists_reduction (δ : ℚ) (positive : 0 < δ) (less_than_one : δ < 1) : Nonempty (PerfectCompleteness.BinaryGapReduction δ) := by [S9:179–180]$" over the config `ComparatorChallenges/PerfectCompleteness.json`;
+"$```lean
+theorem exists_reduction (δ : ℚ) (positive : 0 < δ) (less_than_one : δ < 1) : Nonempty (PerfectCompleteness.BinaryGapReduction δ) := by
+```
+[S9:179–180]$" over the config `ComparatorChallenges/PerfectCompleteness.json`;
 the stub's copy ends in `sorry` at [S9:181], and the proved copy lives under
 `lean/OAI/` [S10:21–25]. A comparator stub is a target the release set
 itself; the proved version is the one the `main_results` entry names. The

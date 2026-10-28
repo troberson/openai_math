@@ -21,7 +21,7 @@ $V(f)=\{f=0\}$. Two such germs are _ambiently homeomorphic_ if a
 homeomorphism between neighborhoods of the origin in $\mathbb C^N$ fixes the
 origin and carries one hypersurface to the other. Zariski's multiplicity
 question asks whether this embedded topological equivalence determines
-multiplicity  . It asks, in particular, whether topology
+multiplicity . It asks, in particular, whether topology
 can distinguish a hypersurface with a nonzero quadratic term from one
 whose first nonzero terms are cubic.
 4.inline	S3	39	51	\begintheorem 
@@ -32,9 +32,7 @@ positive rational weights, such that:
 \item each $f_j$ has an isolated critical point at the origin;
 \item $\mathrm{ord}_0f_1=2$ and $\mathrm{ord}_0f_2=3$;
 \item there is a homeomorphism germ of ambient pairs
-\[
- (\C^N,V(f_1),0)\ \cong\ (\C^N,V(f_2),0).
-\]
+$$(\mathbb C^N,V(f_1),0)\ \cong\ (\mathbb C^N,V(f_2),0).$$
 \endenumerate
 \endtheorem
 5.inline	S3	152	167	The main difficulty is to preserve different ordinary orders while
@@ -61,16 +59,12 @@ five whose zero-set germs are ambiently homeomorphic.
 There are reduced convergent holomorphic function germs
 \(f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)\), each with an isolated
 critical point at the origin, such that
-\[
-    \operatornameord_0f_4=4,\qquad
-    \operatornameord_0f_5=5,
-\]
+$$\mathrm{ord}_0f_4=4,\qquad
+    \mathrm{ord}_0f_5=5,$$
 and a homeomorphism germ of ambient pairs
-\[
-    (\mathbb C^4,V(f_4),0)
+$$(\mathbb C^4,V(f_4),0)
        \;\cong\;
-    (\mathbb C^4,V(f_5),0).
-\]
+    (\mathbb C^4,V(f_5),0).$$
 \endtheorem
 8.inline	S9	47	54	The Milnor open book has a compact page whose middle-dimensional
 cycles carry an integral Seifert form: it records the linking of a

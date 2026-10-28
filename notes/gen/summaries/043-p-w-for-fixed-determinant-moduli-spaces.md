@@ -24,10 +24,8 @@ The theorem
 
 > **theorem**
 For every smooth projective complex curve $C$ of genus $g\ge2$, every composite integer $n\ge4$, every integer $d$ with $\gcd(n,d)=1$, and every $L\in\mathrm{Pic}^d(C)$, one has
-\[
-P_kH^m(X^B,\mathbb Q)=W_2kH^m(X^B,\mathbb Q)
-=W_2k+1H^m(X^B,\mathbb Q)
-\]
+$$P_kH^m(X^B,\mathbb Q)=W_{2k}H^m(X^B,\mathbb Q)
+=W_{2k+1}H^m(X^B,\mathbb Q)$$
 for all $m,k\ge0$. [S5:39–46]
 
 The assertion covers the full rational cohomology, including the
@@ -56,12 +54,10 @@ pole moved over a finite cover, with a flag at the pole. The
 logarithmic $\lambda$-connection parameter interpolates between
 Higgs bundles and connections 
 
-> To construct $f$, allow one logarithmic pole, move it over a finite cover $S\to C$, and choose a full flag at the pole. The logarithmic $\lambda$-connection parameter interpolates between Higgs bundles at $\lambda=0$ and connections at $\lambda=1$. The underlying moduli constructions and semistable reduction come from  ; the restriction argument uses the semiprojective geometry of  . We verify the fixed determinant, residue, and flag conditions, as well as compatibility with the full nonabelian-Hodge identification. Write $X_\lambda$ for the fixed-pole scalar-residue moduli space, with $X_0=X$. At scalar residue, the flag space fits into a correspondence
-\[
-X_\lambda\xleftarrow{\ \mathrmpr\ }S\times X_\lambda
+> To construct $f$, allow one logarithmic pole, move it over a finite cover $S\to C$, and choose a full flag at the pole. The logarithmic $\lambda$-connection parameter interpolates between Higgs bundles at $\lambda=0$ and connections at $\lambda=1$. The underlying moduli constructions and semistable reduction come from ; the restriction argument uses the semiprojective geometry of . We verify the fixed determinant, residue, and flag conditions, as well as compatibility with the full nonabelian-Hodge identification. Write $X_\lambda$ for the fixed-pole scalar-residue moduli space, with $X_0=X$. At scalar residue, the flag space fits into a correspondence
+$$X_\lambda\xleftarrow{\ \mathrm{pr}\ }S\times X_\lambda
 \xleftarrow{\ \pi\ }Z_\lambda
-\xrightarrow{\ \iota\ }Y_{\lambda,0}.
-\]
+\xrightarrow{\ \iota\ }Y_{\lambda,0}.$$
 Here $Y_{\lambda,0}$ permits a flag-preserving residue with prescribed scalar diagonal, while $Z_\lambda$ requires the residue itself to be scalar. We first deform the ordered residues to distinct values and shift two residue eigenline lattices in opposite directions. Restriction isomorphisms from the total logarithmic Hodge family transport the resulting translation to a degree-zero operator $T$ on $H^*(Y_{\lambda,0})$. On the connection side, $T$ is eigenvalue monodromy. A power has unipotent action, and its logarithm $N$ lowers the diagram weights by two. [S5:86–92]
 
 On the connection side, the translation operator is eigenvalue
@@ -83,15 +79,15 @@ The $P=W$ conjecture arose from Hausel–Rodriguez-Villegas's
 arithmetic study of character varieties, extended to generic
 puncture data. De Cataldo–Hausel–Migliorini formulated the
 filtration comparison and proved it in rank two [S5:58–64].
-"The weight symmetries behind $P=W$ arose from the arithmetic study of character varieties by Hausel and Rodriguez-Villegas  , extended to generic puncture data by Hausel, Letellier, and Rodriguez-Villegas  . De Cataldo, Hausel, and Migliorini formulated the filtration comparison and established it in rank two  . Their theorem relates the topology of an algebraic integrable system to the mixed Hodge theory of an affine character variety: relative hard Lefschetz on the Higgs side explains curious hard Lefschetz on the Betti side. [S5:58–64]"
+"The weight symmetries behind $P=W$ arose from the arithmetic study of character varieties by Hausel and Rodriguez-Villegas , extended to generic puncture data by Hausel, Letellier, and Rodriguez-Villegas . De Cataldo, Hausel, and Migliorini formulated the filtration comparison and established it in rank two . Their theorem relates the topology of an algebraic integrable system to the mixed Hodge theory of an affine character variety: relative hard Lefschetz on the Higgs side explains curious hard Lefschetz on the Betti side. [S5:58–64]"
 
 For $\mathrm{GL}_n$, tautological class generation was established by
 Hausel–Thaddeus (rank 2) and Markman (all ranks); Shende
 determined their weights. De Cataldo–Maulik–Shen proved
 $P=W$ in genus two. Maulik–Shen proved the coprime $\mathrm{GL}_n$
-conjecture in all ranks . "Tautological classes have been central to the higher-rank problem. For $\mathrm{GL}_n$, generation by these classes was established in rank two by Hausel and Thaddeus   and in arbitrary rank by Markman \cite[Theorem 7]Markman2002; Shende determined their Betti weights  . De Cataldo, Maulik, and Shen proved $P=W$ for $\mathrm{GL}_n$ in genus two and obtained the required perversity bounds for tautological classes in arbitrary genus \cite[Theorems 0.2 and 0.4–0.6]dCMSJAMS2022. [S5:60–62]" Additional proofs
+conjecture in all ranks . "Tautological classes have been central to the higher-rank problem. For $\mathrm{GL}_n$, generation by these classes was established in rank two by Hausel and Thaddeus and in arbitrary rank by Markman \cite[Theorem 7]Markman2002; Shende determined their Betti weights . De Cataldo, Maulik, and Shen proved $P=W$ for $\mathrm{GL}_n$ in genus two and obtained the required perversity bounds for tautological classes in arbitrary genus \cite[Theorems 0.2 and 0.4–0.6]dCMSJAMS2022. [S5:60–62]" Additional proofs
 use the Hecke-algebra action and the Fourier-transform method
-. "Maulik and Shen proved the coprime $\mathrm{GL}_n$ conjecture in arbitrary rank and genus  . Further proofs use the Hecke-algebra action of Hausel, Mellit, Minets, and Schiffmann   and the Fourier-transform method of Maulik, Shen, and Yin \cite[Theorem 0.4]MSY2025. [S5:62]"
+. "Maulik and Shen proved the coprime $\mathrm{GL}_n$ conjecture in arbitrary rank and genus . Further proofs use the Hecke-algebra action of Hausel, Mellit, Minets, and Schiffmann and the Fourier-transform method of Maulik, Shen, and Yin \cite[Theorem 0.4]MSY2025. [S5:62]"
 
 For fixed determinant, the quotient by $\Gamma$ detects only
 invariant cohomology; the variant part was handled in prime rank

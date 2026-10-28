@@ -29,7 +29,7 @@ The comparison objects are the minimal Clifford products. The introduction names
 
 The Clifford products are minimal, and the threshold is the minimum over their volumes 
 
-> The two factors have opposite principal curvatures, whose weighted sum vanishes; these products are therefore minimal. For each integer \(m\ge2\), set \[ a_m=\min_{1\le k<m}\mathrmVol_m(\mathcal C_k,m-k). \] The assertion that \(a_m\) is the first volume level above the equator is the least-volume question in Yau's collection \cite[Problem 31]Yau1994. The modern formulation in \cite[Conjecture 1.12(ii)]GeLi2021 calls it the Solomon–Yau conjecture. We prove this formulation with its full immersion scope. [S6:15–25]
+> The two factors have opposite principal curvatures, whose weighted sum vanishes; these products are therefore minimal. For each integer \(m\ge2\), set $$a_m=\min_{1\le k<m}\mathrm{Vol}_m(\mathcal C_{k,m-k}).$$ The assertion that \(a_m\) is the first volume level above the equator is the least-volume question in Yau's collection \cite[Problem 31]Yau1994. The modern formulation in \cite[Conjecture 1.12(ii)]GeLi2021 calls it the Solomon–Yau conjecture. We prove this formulation with its full immersion scope. [S6:15–25]
 
 The theorem is the volume bound [S6:27–34]:
 
@@ -37,9 +37,8 @@ The theorem is the volume bound [S6:27–34]:
 > Let \(m\ge2\), let \(M^m\) be a closed connected smooth manifold, and let
 > \(F:M\to S^{m+1}\) be a smooth minimal immersion into the unit round sphere.
 > If \(F(M)\) is not totally geodesic, then
-> \[
-> \Vol\bigl(M,F^*g_{\mathrm{round}}\bigr)\ge a_m.
-> \]
+> $$> \mathrm{Vol}\bigl(M,F^*g_{\mathrm{round}}\bigr)\ge a_m.
+>$$
 > \end{theorem}
 
 The volume is measured on the domain, which is what makes the covering-multiplicity clause part of the statement [S6:36–38]:
@@ -52,15 +51,15 @@ The volume is measured on the domain, which is what makes the covering-multiplic
 
 The nonembedded case reduces to the embedded one by a counting argument. A point with $q$ preimages forces the domain volume to at least $q|S^m|$, and the Clifford threshold is below twice the sphere volume, so any counterexample must be embedded 
 
-> The nonembedded case has a useful independent reduction. A point with \(q\) preimages forces domain volume at least \(q|S^m|\), as proved by Nguyen \cite[Corollary 4.8 and Remark 4.9]Nguyen2023 and by Ge and Li \cite[Theorem 1.2 and Corollary 1.3]GeLi2022. Since \(a_m<2|S^m|\), any counterexample to Theorem   would be embedded. We give the short cone-monotonicity proof in Proposition  , retaining tangent and coincident sheets. The more recent general embedded-hypersurface bounds of Ge and Li \cite[Theorems 1.4 and 1.6]GeLi2026II remain below the sharp Clifford threshold, which their Conjecture 1.3 still poses as the target. [S6:72–81]
+> The nonembedded case has a useful independent reduction. A point with \(q\) preimages forces domain volume at least \(q|S^m|\), as proved by Nguyen \cite[Corollary 4.8 and Remark 4.9]Nguyen2023 and by Ge and Li \cite[Theorem 1.2 and Corollary 1.3]GeLi2022. Since \(a_m<2|S^m|\), any counterexample to Theorem would be embedded. We give the short cone-monotonicity proof in Proposition , retaining tangent and coincident sheets. The more recent general embedded-hypersurface bounds of Ge and Li \cite[Theorems 1.4 and 1.6]GeLi2026II remain below the sharp Clifford threshold, which their Conjecture 1.3 still poses as the target. [S6:72–81]
 
 The first construction is a curvature inequality. A two-point maximum compares the normal at one point with every other point, and a smooth upper-test comparison gives the integrated bound 
 
-> The first construction controls both signs of the principal curvatures. For a closed embedded non-equatorial minimal hypersurface \(\Sigma^m\), with second fundamental form \(A\), a two-point maximum compares the normal at one point with every other point of \(\Sigma\). The reflection calculation is related to the two-point methods in \cite[Section 2]Brendle2013 and \cite[Section 2]AHLW2015. We prove the required static differential inequality directly, including diagonal contacts and repeated principal curvatures. A smooth upper-test comparison then gives \[ \int_\Sigma |A|^2\ge m|\Sigma|. \] This proves the lower-bound assertion of Perdomo's average-curvature conjecture \cite[Conjecture 1.5]GeLi2021. [S6:93–106]
+> The first construction controls both signs of the principal curvatures. For a closed embedded non-equatorial minimal hypersurface \(\Sigma^m\), with second fundamental form \(A\), a two-point maximum compares the normal at one point with every other point of \(\Sigma\). The reflection calculation is related to the two-point methods in \cite[Section 2]Brendle2013 and \cite[Section 2]AHLW2015. We prove the required static differential inequality directly, including diagonal contacts and repeated principal curvatures. A smooth upper-test comparison then gives $$\int_\Sigma |A|^2\ge m|\Sigma|.$$ This proves the lower-bound assertion of Perdomo's average-curvature conjecture \cite[Conjecture 1.5]GeLi2021. [S6:93–106]
 
 Combined with the conformal and spectral mechanism, index $m+3$ forces a Clifford product, so a counterexample must have a further negative area direction 
 
-> Combining it with the conformal and spectral mechanism of \cite[Theorem 3.1]Perdomo2004, and keeping track of equality in each spectral inequality, shows that index \(m+3\) forces a Clifford product (Proposition  ). A counterexample must therefore have a further negative direction for area. [S6:107–111]
+> Combining it with the conformal and spectral mechanism of \cite[Theorem 3.1]Perdomo2004, and keeping track of equality in each spectral inequality, shows that index \(m+3\) forces a Clifford product (Proposition ). A counterexample must therefore have a further negative direction for area. [S6:107–111]
 
 The manuscript notes that the curvature and index results appear independently in a recent preprint, and states what its own construction does not need 
 
@@ -72,15 +71,15 @@ The second construction is Lorentzian. Form the Euclidean cone over the hypersur
 
 The boost and level parameters give a family on projective space whose cohomology detects the topology 
 
-> The boost parameters and the level parameter give a family on \(\mathbbRP^m+3\). Its boundary cycles have area at most \(|\Sigma|\), and its fillings change to their complements around the projective generator. The associated degree-one cohomology class has nonzero \((m+3)\)-rd power. This is the topological detection used in Section  ; it replaces a topology assumption on \(\Sigma\) itself. The original hypersurface is the unique area maximum, with a uniform gap away from its central parameter. Its extra index direction removes that maximum while preserving the detection and the absence of mass concentration (Proposition  ). [S6:133–143]
+> The boost parameters and the level parameter give a family on \(\mathbbRP^m+3\). Its boundary cycles have area at most \(|\Sigma|\), and its fillings change to their complements around the projective generator. The associated degree-one cohomology class has nonzero \((m+3)\)-rd power. This is the topological detection used in Section ; it replaces a topology assumption on \(\Sigma\) itself. The original hypersurface is the unique area maximum, with a uniform gap away from its central parameter. Its extra index direction removes that maximum while preserving the detection and the absence of mass concentration (Proposition ). [S6:133–143]
 
 Detection forces a uniform area gap above the equator, so the min–max theorem produces varifolds above the equator even after the strict deformation 
 
-> Detection forces every such family to contain a boundary of a half-volume region with zero centroid. Spherical isoperimetry and its hemisphere equality case give a uniform area threshold \(\gamma_m>|S^m|\) for these boundaries (Lemma  ). The min–max theorem therefore produces stationary integral varifolds above the equator, even after the strict deformation. [S6:147–153]
+> Detection forces every such family to contain a boundary of a half-volume region with zero centroid. Spherical isoperimetry and its hemisphere equality case give a uniform area threshold \(\gamma_m>|S^m|\) for these boundaries (Lemma ). The min–max theorem therefore produces stationary integral varifolds above the equator, even after the strict deformation. [S6:147–153]
 
 The volume proof is an induction on $m$ whose regularity step is radial splitting of cone tangents 
 
-> The volume proof proceeds by induction on \(m\). Assuming only the lower-dimensional volume statements, Section   proves regularity for the subthreshold limits arising both from minimizing sequences and from min–max. The mechanism is radial splitting: tangents at nonzero points of a Euclidean cone split off a line, reducing their classification to a smaller cone dimension. This gives smooth connected links of multiplicity one without applying the unknown dimension-\(m\) volume theorem to those links. [S6:155–162]
+> The volume proof proceeds by induction on \(m\). Assuming only the lower-dimensional volume statements, Section proves regularity for the subthreshold limits arising both from minimizing sequences and from min–max. The mechanism is radial splitting: tangents at nonzero points of a Euclidean cone split off a line, reducing their classification to a smaller cone dimension. This gives smooth connected links of multiplicity one without applying the unknown dimension-\(m\) volume theorem to those links. [S6:155–162]
 
 The contradiction is the last step 
 
@@ -88,7 +87,7 @@ The contradiction is the last step
 
 The organization names seven sections 
 
-> Section   establishes the volume normalization and immersion reduction. Section   proves curvature and index rigidity. Section   establishes detection and the precise min–max interface before Section   constructs and deforms the Lorentz-distance family. Section   proves the cone induction and exact attainment, and Section   completes the proof. [S6:173–179]
+> Section establishes the volume normalization and immersion reduction. Section proves curvature and index rigidity. Section establishes detection and the precise min–max interface before Section constructs and deforms the Lorentz-distance family. Section proves the cone induction and exact attainment, and Section completes the proof. [S6:173–179]
 
 **Prior (my training data, not this repo).** As of my early-2025 cutoff, the Solomon–Yau least-volume conjecture is open. I recall the equator as the known least-volume closed minimal hypersurface of the unit sphere, the Clifford torus as the sharp two-dimensional case via the Marques–Neves Willmore theorem, and Cheng–Li–Yau's dimension-dependent volume gap above the equator by heat-kernel comparison. A proof for every hypersurface dimension in the immersion category, using a Lorentzian deformation of the cone and a projective cohomology detection, is not something I recall from the literature. The prior is a training-data recollection, self-rated, and the repo supplies only the manuscript's citations.
 

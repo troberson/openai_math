@@ -249,11 +249,11 @@ no verification bundle and no reasoning trace; the two shipped PDFs
 - Wassily Hoeffding. Probability inequalities for sums of bounded random variables. _Journal of the American Statistical Association_, 58 (301): 13–30, 1963. doi:10.1080/01621459.1963.10500830.
 - Ivona Bezáková, Daniel Štefankovič, Vijay V. Vazirani, and Eric Vigoda. Accelerating simulated annealing for the permanent and combinatorial counting problems. _SIAM Journal on Computing_, 37 (5): 1429–1454, 2008. doi:10.1137/050644033.
 - W. K. Hastings. Monte Carlo sampling methods using Markov chains and their applications. _Biometrika_, 57 (1): 97–109, 1970. doi:10.1093/biomet/57.1.97.
-- Xiaoyu Chen, Heng Guo, Eric Vigoda, and Xiongxin Yang. Fast FPRAS for the permanent. Preprint, arXiv:2609.20717v1, 2026. URL  .
-- Xiaoyu Chen, Eric Vigoda, and Xiongxin Yang. Faster FPRAS for the permanent via restricted Poincaré inequalities and coupled flows. Preprint, arXiv:2608.26599v1, 2026. URL  .
-- Alistair Sinclair. Improved bounds for mixing rates of Markov chains and multicommodity flow. _Combinatorics, Probability and Computing_, 1: 351–370, 1992. URL  .
+- Xiaoyu Chen, Heng Guo, Eric Vigoda, and Xiongxin Yang. Fast FPRAS for the permanent. Preprint, arXiv:2609.20717v1, 2026. URL .
+- Xiaoyu Chen, Eric Vigoda, and Xiongxin Yang. Faster FPRAS for the permanent via restricted Poincaré inequalities and coupled flows. Preprint, arXiv:2608.26599v1, 2026. URL .
+- Alistair Sinclair. Improved bounds for mixing rates of Markov chains and multicommodity flow. _Combinatorics, Probability and Computing_, 1: 351–370, 1992. URL .
 - Mark Jerrum and Alistair Sinclair. Approximating the permanent. _SIAM Journal on Computing_, 18 (6): 1149–1178, 1989. doi:10.1137/0218077.
-- Jin-Yi Cai and Tianyu Liu. Counting perfect matchings and the eight-vertex model. In Artur Czumaj, Anuj Dawar, and Emanuela Merelli, editors, _47th International Colloquium on Automata, Languages, and Programming (ICALP 2020)_, volume 168 of _Leibniz International Proceedings in Informatics_, pages 23:1–23:18. Schloss Dagstuhl–Leibniz-Zentrum für Informatik, 2020. doi:10.4230/LIPIcs.ICALP.2020.23. URL  .
+- Jin-Yi Cai and Tianyu Liu. Counting perfect matchings and the eight-vertex model. In Artur Czumaj, Anuj Dawar, and Emanuela Merelli, editors, _47th International Colloquium on Automata, Languages, and Programming (ICALP 2020)_, volume 168 of _Leibniz International Proceedings in Informatics_, pages 23:1–23:18. Schloss Dagstuhl–Leibniz-Zentrum für Informatik, 2020. doi:10.4230/LIPIcs.ICALP.2020.23. URL .
 - Yumou Fei, Leslie Ann Goldberg, and Pinyan Lu. Two-state spin systems with negative interactions. _Information and Computation_, 307: 105340, 2025. doi:10.1016/j.ic.2025.105340.
 - Mark Jerrum, Alistair Sinclair, and Eric Vigoda. A polynomial-time approximation algorithm for the permanent of a matrix with nonnegative entries. _Journal of the ACM_, 51 (4): 671–697, 2004. doi:10.1145/1008731.1008738.
 - Mark R. Jerrum, Leslie G. Valiant, and Vijay V. Vazirani. Random generation of combinatorial structures from a uniform distribution. _Theoretical Computer Science_, 43: 169–188, 1986. doi:10.1016/0304-3975(86)90174-X.
@@ -262,8 +262,8 @@ no verification bundle and no reasoning trace; the two shipped PDFs
 - Nicholas Metropolis, Arianna W. Rosenbluth, Marshall N. Rosenbluth, Augusta H. Teller, and Edward Teller. Equation of state calculations by fast computing machines. _The Journal of Chemical Physics_, 21 (6): 1087–1092, 1953. doi:10.1063/1.1699114.
 - Jack Edmonds. Paths, trees, and flowers. _Canadian Journal of Mathematics_, 17: 449–467, 1965. doi:10.4153/CJM-1965-045-4.
 - P. W. Kasteleyn. Dimer statistics and phase transitions. _Journal of Mathematical Physics_, 4 (2): 287–293, 1963. doi:10.1063/1.1703953.
-- Zihong Yi. Diffuse Gaussian truncation for deterministic approximate counting. Preprint, arXiv:2609.04079v1, 2026. URL  .
+- Zihong Yi. Diffuse Gaussian truncation for deterministic approximate counting. Preprint, arXiv:2609.04079v1, 2026. URL .
 - Leslie G. Valiant. The complexity of computing the permanent. _Theoretical Computer Science_, 8 (2): 189–201, 1979. doi:10.1016/0304-3975(79)90044-6.
 - Bradley Efron and Charles Stein. The jackknife estimate of variance. _The Annals of Statistics_, 9 (3): 586–596, 1981. doi:10.1214/aos/1176345462.
-- Jian-Sheng Wang and Robert H. Swendsen. Replica Monte Carlo simulation (revisited). _Progress of Theoretical Physics Supplement_, 157: 317–323, 2005. doi:10.1143/PTPS.157.317. Preprint version:  .
-- Daniel Štefankovič, Eric Vigoda, and John Wilmes. On counting perfect matchings in general graphs. In Michael A. Bender, Martín Farach-Colton, and Miguel A. Mosteiro, editors, _LATIN 2018: Theoretical Informatics_, volume 10807 of _Lecture Notes in Computer Science_, pages 873–885. Springer, 2018. doi:10.1007/978-3-319-77404-6_63. Full version: arXiv:1712.07504v1. URL  .
+- Jian-Sheng Wang and Robert H. Swendsen. Replica Monte Carlo simulation (revisited). _Progress of Theoretical Physics Supplement_, 157: 317–323, 2005. doi:10.1143/PTPS.157.317. Preprint version: .
+- Daniel Štefankovič, Eric Vigoda, and John Wilmes. On counting perfect matchings in general graphs. In Michael A. Bender, Martín Farach-Colton, and Miguel A. Mosteiro, editors, _LATIN 2018: Theoretical Informatics_, volume 10807 of _Lecture Notes in Computer Science_, pages 873–885. Springer, 2018. doi:10.1007/978-3-319-77404-6_63. Full version: arXiv:1712.07504v1. URL .

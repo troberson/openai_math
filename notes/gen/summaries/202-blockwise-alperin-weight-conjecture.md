@@ -28,9 +28,7 @@ proves the conjecture
 
 > **theorem**
 For every prime $p$, every finite group $G$, and every $p$-block $B$ of $G$,
-\[
-                  l(B)=|W_p(B)|.
-\] [S4:42–47]
+$$l(B)=|W_p(B)|.$$ [S4:42–47]
 
 The equality is a count of cardinalities; no canonical correspondence
 between the two sets is required. The case $Q=1$ is part of the assertion.
@@ -95,23 +93,17 @@ Hung–Sambale–Tiep
 > **corollary**
 Let $p$ be a prime, $G$ a finite group, $B$ a $p$-block with defect group
 $D$, and $b$ its Brauer correspondent in $N_G(D)$. Then
-\[
- l(B)\geq l(b),\qquad
- D abelian\Longrightarrow l(B)=l(b).
-\]
+$$l(B)\geq l(b),\qquad
+ D\text{ abelian}\Longrightarrow l(B)=l(b).$$
 For $P\in\mathrm{Syl}_p(G)$, one also has
-\[
- |\mathrmIBr_p(G)|\geq|\mathrmIBr_p(N_G(P))|.
-\]
+$$|\mathrm{IBr}_p(G)|\geq|\mathrm{IBr}_p(N_G(P))|.$$
 Let $B_0$ be the principal $p$-block of $G$, and let $k_p(G)$ count the
 conjugacy classes of $p$-power-order elements, including the identity.
 Then
-\[
- \beginaligned
+$$\begin{aligned}
  k_p(G)=3&\Longrightarrow l(B_0)\geq (p-1)/2,\\
- p\mid |G|&\Longrightarrow l(B_0)\geq 2\sqrtp-1+1-k_p(G).
- \endaligned
-\] [S4:61–81]
+ p\mid |G|&\Longrightarrow l(B_0)\geq 2\sqrt{p-1}+1-k_p(G).
+ \end{aligned}$$ [S4:61–81]
 
 The block-free inequality for $p=2$ was previously proved by
 Malle–Navarro–Tiep, and the local inequality for maximal-defect

@@ -26,11 +26,11 @@ The paper states a constructive rank comparison and a headline isomorphism, the 
 
 The rank comparison of Theorem 1.1 
 
-> For every integer $n\geq3$ there is a unital trace-preserving normal $*$-isomorphism \[ L(\mathbb F_n)\cong L(\mathbb F_n+1). \] [S3:66–70]
+> For every integer $n\geq3$ there is a unital trace-preserving normal $*$-isomorphism $$L(\mathbb F_n)\cong L(\mathbb F_{n+1}).$$ [S3:66–70]
 
 The headline conclusion of Theorem 1.2 
 
-> There exists a unital normal trace-preserving $*$-isomorphism \[ \Phi:L(\mathbb F_2)\longrightarrow L(\mathbb F_3). \] [S3:75–78]
+> There exists a unital normal trace-preserving $*$-isomorphism $$\Phi:L(\mathbb F_2)\longrightarrow L(\mathbb F_3).$$ [S3:75–78]
 
 The interpolation input is one unconditional formula, and the paper is explicit that it uses nothing else from the interpolation literature [S8:29–36]:
 
@@ -45,11 +45,11 @@ The interpolation input is one unconditional formula, and the paper is explicit 
 
 The derivation of Theorem 1.2 is short enough to quote in full 
 
-> Apply Theorem   with $n=3$ and $n=4$ to obtain \[ N_3\cong N_4\cong N_5. \] Let $\Theta:N_3\to N_5$ be the composition of these normal trace-preserving isomorphisms. Amplifying by $\sqrt2$ gives a unital normal trace-preserving isomorphism \[ \Theta^{\sqrt2}:N_3^{\sqrt2}\longrightarrow N_5^{\sqrt2}. \] Formula   identifies its domain and range as follows: \[ N_3^{\sqrt2}\cong N_1+(3-1)/2=N_2, \qquad N_5^{\sqrt2}\cong N_1+(5-1)/2=N_3. \] These identifications and the amplified map compose to give $\Phi:L(\mathbb F_2)\to L(\mathbb F_3)$. Every map in the composition is a unital normal trace-preserving $*$-isomorphism. Thus $\Phi$ is bijective and has all the asserted properties. [S8:39–59]
+> Apply Theorem with $n=3$ and $n=4$ to obtain $$N_3\cong N_4\cong N_5.$$ Let $\Theta:N_3\to N_5$ be the composition of these normal trace-preserving isomorphisms. Amplifying by $\sqrt2$ gives a unital normal trace-preserving isomorphism $$\Theta^{\sqrt2}:N_3^{\sqrt2}\longrightarrow N_5^{\sqrt2}.$$ Formula identifies its domain and range as follows: $$N_3^{\sqrt2}\cong N_{1+(3-1)/2}=N_2, \qquad N_5^{\sqrt2}\cong N_{1+(5-1)/2}=N_3.$$ These identifications and the amplified map compose to give $\Phi:L(\mathbb F_2)\to L(\mathbb F_3)$. Every map in the composition is a unital normal trace-preserving $*$-isomorphism. Thus $\Phi$ is bijective and has all the asserted properties. [S8:39–59]
 
 The construction itself is a polynomial flow on the generators, driven by the conjugates of $S$ and controlled by two displacement bounds 
 
-> There is a one-parameter group $(\beta_t)_{t\in\mathbb R}$ of unital trace-preserving normal $*$-automorphisms of $M$ that fixes $S$ and whose restriction to \[ B=C^*(A_1,\ldots,A_n,S) \] is point-norm continuous. Writing $A_j(t)=\beta_t(A_j)$ and evaluating group words at this tuple, the paths satisfy $$\frac{d}{dt}A_j(t)=\mathrm i s_t(h_j)A_j(t),\qquad s_t(k)=\sum_{g\in\Gamma}k(g)A_g(t)SA_g(t)^*,\qquad A_j(0)=A_j. \label{eq:flow-ode}$$ The derivatives here are in operator norm. With $K=3\pi$ as in  , for every $t\in\mathbb R$, $$\left\lVert \beta_t(A_j)-A_j\right\rVert &\leq |t|K\|h_j\|_{\ell^2}, \label{eq:generator-displacement}\\ \left\lVert \beta_t(A_w)-\exp(\mathrm i tS)A_w\right\rVert &\leq |t|K\|D_w-\delta_e\|_{\ell^2} \qquad(w\in\Gamma). \label{eq:word-displacement}$$ In particular, at $t=1$ the target in   is $CA_w$. [S5:43–68]
+> There is a one-parameter group $(\beta_t)_{t\in\mathbb R}$ of unital trace-preserving normal $*$-automorphisms of $M$ that fixes $S$ and whose restriction to $$B=C^*(A_1,\ldots,A_n,S)$$ is point-norm continuous. Writing $A_j(t)=\beta_t(A_j)$ and evaluating group words at this tuple, the paths satisfy $$\frac{d}{dt}A_j(t)=\mathrm i s_t(h_j)A_j(t),\qquad s_t(k)=\sum_{g\in\Gamma}k(g)A_g(t)SA_g(t)^*,\qquad A_j(0)=A_j. \label{eq:flow-ode}$$ The derivatives here are in operator norm. With $K=3\pi$ as in , for every $t\in\mathbb R$, $$\left\lVert \beta_t(A_j)-A_j\right\rVert &\leq |t|K\|h_j\|_{\ell^2}, \label{eq:generator-displacement}\\ \left\lVert \beta_t(A_w)-\exp(\mathrm i tS)A_w\right\rVert &\leq |t|K\|D_w-\delta_e\|_{\ell^2} \qquad(w\in\Gamma). \label{eq:word-displacement}$$ In particular, at $t=1$ the target in is $CA_w$. [S5:43–68]
 
 The constant $K=3\pi$ comes from a support-free Khintchine-type estimate for free sums, proved in the preliminaries against the creation, annihilation, and diagonal decomposition of Ricard–Xu 
 
@@ -57,7 +57,7 @@ The constant $K=3\pi$ comes from a support-free Khintchine-type estimate for fre
 
 The coefficient problem is a cocycle problem: the displacement bounds are useful only if one can find a small coefficient vector whose cocycle value at a chosen word is close to $\delta_e$ 
 
-> Let $n\geq 3$ and $\eta>0$. There exist a word $w\in\Gamma$ and a finitely supported real coefficient vector $h$ such that the cocycle determined by \[ h_1=h,\qquad h_j=0\quad(2\leq j\leq n) \] satisfies $$\label{eq:small-cocycle} \|h\|_{\ell^2}<\eta, \qquad \|D_w-\delta_e\|_{\ell^2}<\eta.$$ [S6:33–45]
+> Let $n\geq 3$ and $\eta>0$. There exist a word $w\in\Gamma$ and a finitely supported real coefficient vector $h$ such that the cocycle determined by $$h_1=h,\qquad h_j=0\quad(2\leq j\leq n)$$ satisfies $$\label{eq:small-cocycle} \|h\|_{\ell^2}<\eta, \qquad \|D_w-\delta_e\|_{\ell^2}<\eta.$$ [S6:33–45]
 
 The witness words and the associated averaging operators are explicit [S6:53–63]:
 
@@ -79,37 +79,37 @@ Their spectral behaviour is a free-probability limit: the prefix sums behave lik
 
 The one-step perturbation is the statement that a small automorphism can absorb a generator 
 
-> Let $n\geq 3$, and let $(A_1,\ldots,A_n,C)$ be a freely generating Haar tuple in a finite von Neumann algebra $(M,\tau)$.  For every $\varepsilon>0$ there are a trace-preserving normal automorphism $\alpha$ of $M$ and a word $w\in\mathbb F_n$ such that, with $A_j'=\alpha(A_j)$, $$\label{eq:perturbation} \max_{1\leq j\leq n}\left\lVert A_j'-A_j\right\rVert<\varepsilon, \qquad \left\lVert A_w'-C\right\rVert<\varepsilon.$$ The tuple $(A_1',\ldots,A_n',C')$, where $C'=\alpha(C)$, is again freely generating Haar.  Here the target in the second estimate is the original $C$; the new completion is \[ C'=C A_w^*, \] where $A_w$ is evaluated on the original $n$-tuple. [S7:15–32]
+> Let $n\geq 3$, and let $(A_1,\ldots,A_n,C)$ be a freely generating Haar tuple in a finite von Neumann algebra $(M,\tau)$. For every $\varepsilon>0$ there are a trace-preserving normal automorphism $\alpha$ of $M$ and a word $w\in\mathbb F_n$ such that, with $A_j'=\alpha(A_j)$, $$\label{eq:perturbation} \max_{1\leq j\leq n}\left\lVert A_j'-A_j\right\rVert<\varepsilon, \qquad \left\lVert A_w'-C\right\rVert<\varepsilon.$$ The tuple $(A_1',\ldots,A_n',C')$, where $C'=\alpha(C)$, is again freely generating Haar. Here the target in the second estimate is the original $C$; the new completion is $$C'=C A_w^*,$$ where $A_w$ is evaluated on the original $n$-tuple. [S7:15–32]
 
 The iteration is deliberately adaptive, and generation is proved separately from convergence 
 
-> A free-group basis change now yields an automorphism moving each $A_j$ arbitrarily little in operator norm while making a word in the moved $A_j$'s approximate the _old_ variable $C$; this is Proposition  . We iterate this step, choosing each future error budget only after the current approximating word has been fixed. The first $n$ coordinates converge in norm, so their joint Haar distribution persists. The complementary coordinate may vary at every stage. Generation is proved separately: the word algebra of the limiting tuple is dense in the ambient tracial $L^2$ space, and the trace-preserving conditional expectation then identifies its von Neumann closure with the entire factor. [S3:101]
+> A free-group basis change now yields an automorphism moving each $A_j$ arbitrarily little in operator norm while making a word in the moved $A_j$'s approximate the _old_ variable $C$; this is Proposition . We iterate this step, choosing each future error budget only after the current approximating word has been fixed. The first $n$ coordinates converge in norm, so their joint Haar distribution persists. The complementary coordinate may vary at every stage. Generation is proved separately: the word algebra of the limiting tuple is dense in the ambient tracial $L^2$ space, and the trace-preserving conditional expectation then identifies its von Neumann closure with the entire factor. [S3:101]
 
 The paper locates its method against four predecessors and disclaims the most recent one 
 
-> The analytic and algebraic ingredients have established predecessors. Voiculescu's cyclomorphy theorem exponentiates trace-preserving polynomial vector fields on algebraically free self-adjoint generators \cite[Theorem 3.8]voiculescu2002cyclomorphy. Our flow uses Haar unitaries and a fixed bounded logarithm, so the descent through their relations is proved directly from moments. Guionnet and Shlyakhtenko's free monotone transport constructs isomorphisms by analytic changes of variables for suitable perturbations of semicircular systems  ; the present argument uses small automorphisms and an iteration that changes the size of a generating tuple. The cocycle product rule is the coefficient form of Fox's free differential calculus \cite[\S1, equation $(1.2)'$]fox1953. The support-independent norm estimate for free sums uses the creation, annihilation, and diagonal decomposition underlying reduced-free-product Khintchine inequalities \cite[\S2]ricard_xu2006. We give the estimates and moment arguments needed here in full. [S3:103]
+> The analytic and algebraic ingredients have established predecessors. Voiculescu's cyclomorphy theorem exponentiates trace-preserving polynomial vector fields on algebraically free self-adjoint generators \cite[Theorem 3.8]voiculescu2002cyclomorphy. Our flow uses Haar unitaries and a fixed bounded logarithm, so the descent through their relations is proved directly from moments. Guionnet and Shlyakhtenko's free monotone transport constructs isomorphisms by analytic changes of variables for suitable perturbations of semicircular systems ; the present argument uses small automorphisms and an iteration that changes the size of a generating tuple. The cocycle product rule is the coefficient form of Fox's free differential calculus \cite[\S1, equation $(1.2)'$]fox1953. The support-independent norm estimate for free sums uses the creation, annihilation, and diagonal decomposition underlying reduced-free-product Khintchine inequalities \cite[\S2]ricard_xu2006. We give the estimates and moment arguments needed here in full. [S3:103]
 
 The disclaimer of the concurrent preprint, the paragraph immediately after 
 
-> A recent preprint of Shlyakhtenko announces identifications of specified Fuchsian group factors with interpolated free group factors  . Its main construction finds a free complement to a commutator inside $L(\mathbb F_2)$, using finite automorphisms and a limiting generation argument. In both constructions the limiting distribution and the generation of the ambient algebra require separate attention. Here the small-cocycle estimate enables absorption of an additional free generator, and the adaptive error budgets preserve the approximations needed for generation. No result from that preprint is used below. [S3:105]
+> A recent preprint of Shlyakhtenko announces identifications of specified Fuchsian group factors with interpolated free group factors . Its main construction finds a free complement to a commutator inside $L(\mathbb F_2)$, using finite automorphisms and a limiting generation argument. In both constructions the limiting distribution and the generation of the ambient algebra require separate attention. Here the small-cocycle estimate enables absorption of an additional free generator, and the adaptive error budgets preserve the approximations needed for generation. No result from that preprint is used below. [S3:105]
 
 The second corollary is the one with independent content: it answers a question Voiculescu posed in his 2002 survey 
 
-> Free entropy offered another approach to distinguishing ranks. A free semicircular $n$-tuple generates $L(\mathbb F_n)$ \cite[Remarks 1.10–1.11]voiculescu1990 and has free entropy dimension $\delta=n$ \cite[Section 2.4(c),(d)]voiculescu2002entropy. Voiculescu asked whether $\delta$ of a finite self-adjoint tuple depends only on the tracial von Neumann algebra it generates \cite[Section 2.6]voiculescu2002entropy. Such invariance would distinguish the finite ranks. Our isomorphisms give the opposite conclusion: Corollary   gives a negative answer and proves the same failure for $\delta_0,\delta^*$, and $\delta^\star$. Each of the four dimensions attains every integer value $n\geq2$ on finite self-adjoint generating tuples of $L(\mathbb F_2)$. The proof transports semicircular tuples for the microstates dimensions $\delta,\delta_0$ and group-algebra tuples for the nonmicrostates dimensions $\delta^*,\delta^\star$; the two tuple families need not coincide. [S3:83]
+> Free entropy offered another approach to distinguishing ranks. A free semicircular $n$-tuple generates $L(\mathbb F_n)$ \cite[Remarks 1.10–1.11]voiculescu1990 and has free entropy dimension $\delta=n$ \cite[Section 2.4(c),(d)]voiculescu2002entropy. Voiculescu asked whether $\delta$ of a finite self-adjoint tuple depends only on the tracial von Neumann algebra it generates \cite[Section 2.6]voiculescu2002entropy. Such invariance would distinguish the finite ranks. Our isomorphisms give the opposite conclusion: Corollary gives a negative answer and proves the same failure for $\delta_0,\delta^*$, and $\delta^\star$. Each of the four dimensions attains every integer value $n\geq2$ on finite self-adjoint generating tuples of $L(\mathbb F_2)$. The proof transports semicircular tuples for the microstates dimensions $\delta,\delta_0$ and group-algebra tuples for the nonmicrostates dimensions $\delta^*,\delta^\star$; the two tuple families need not coincide. [S3:83]
 
 The corollary is stated for the single factor $L(\mathbb F_2)$, with the four dimensions defined in the standard conventions 
 
-> Let $M=L(\mathbb F_2)$ with its canonical trace. For every integer $n\geq2$ there are a self-adjoint $n$-tuple $X^{(n)}$ and a self-adjoint $2n$-tuple $Y^{(n)}$ such that \[ W^*(X^(n))=W^*(Y^(n))=M \] and \[ \delta(X^(n))=\delta_0(X^(n))=n, \qquad \delta^*(Y^(n))=\delta^\star(Y^(n))=n. \] Consequently, none of $\delta,\delta_0,\delta^*,\delta^\star$ is invariant under changing a finite self-adjoint $W^*$-generating tuple of a tracial von Neumann algebra. Each takes unbounded values on such generating tuples of the single factor $L(\mathbb F_2)$. [S9:23–38]
+> Let $M=L(\mathbb F_2)$ with its canonical trace. For every integer $n\geq2$ there are a self-adjoint $n$-tuple $X^{(n)}$ and a self-adjoint $2n$-tuple $Y^{(n)}$ such that $$W^*(X^{(n)})=W^*(Y^{(n)})=M$$ and $$\delta(X^{(n)})=\delta_0(X^{(n)})=n, \qquad \delta^*(Y^{(n)})=\delta^\star(Y^{(n)})=n.$$ Consequently, none of $\delta,\delta_0,\delta^*,\delta^\star$ is invariant under changing a finite self-adjoint $W^*$-generating tuple of a tracial von Neumann algebra. Each takes unbounded values on such generating tuples of the single factor $L(\mathbb F_2)$. [S9:23–38]
 
 ## History of the conjecture
 
 The manuscript's own account of the problem's origin, including the attribution of the rank-isomorphism question to Kadison 
 
-> Write $\mathbb F_n$ for the free group on $n$ generators and $\mathbb F_\infty$ for the free group on countably infinitely many generators. The free group factors arose in Murray and von Neumann's foundational work  . Their nonhyperfiniteness distinguished them from the hyperfinite factor, but did not distinguish their ranks; see the historical account in \cite[p. 518]radulescu1992. The question whether $L(\mathbb F_m)$ and $L(\mathbb F_n)$ are isomorphic for distinct $m,n\geq2$ became a central problem in the classification of finite factors. Dykema's introduction \cite[p. 123]dykema1994 records the early history and credits Kadison with raising the rank-isomorphism question. [S3:59]
+> Write $\mathbb F_n$ for the free group on $n$ generators and $\mathbb F_\infty$ for the free group on countably infinitely many generators. The free group factors arose in Murray and von Neumann's foundational work . Their nonhyperfiniteness distinguished them from the hyperfinite factor, but did not distinguish their ranks; see the historical account in \cite[p. 518]radulescu1992. The question whether $L(\mathbb F_m)$ and $L(\mathbb F_n)$ are isomorphic for distinct $m,n\geq2$ became a central problem in the classification of finite factors. Dykema's introduction \cite[p. 123]dykema1994 records the early history and credits Kadison with raising the rank-isomorphism question. [S3:59]
 
 The free-probability route and the dichotomy that the paper then resolves 
 
-> Free probability supplied a way to study these factors through their generating distributions. Voiculescu developed the reduced-free-product framework   and its semicircular and circular models  . His compression results showed that the fundamental group of $L(\mathbb F_\infty)$ contains every positive rational, and Rădulescu extended this to every positive real number  . Dykema and Rădulescu independently constructed the interpolated factors $L(\mathbb F_r)$ for real $r>1$ and established their amplification calculus  . These results relate changes of rank to normalized corners. They also give a dichotomy: the interpolated free group factors are either all isomorphic or pairwise nonisomorphic. The version including the infinite parameter is due to Rădulescu \cite[Corollary 4.7]radulescu1994; see also the precise restatement in \cite[Theorem 1.1]goldbring_pi2025. [S3:61]
+> Free probability supplied a way to study these factors through their generating distributions. Voiculescu developed the reduced-free-product framework and its semicircular and circular models . His compression results showed that the fundamental group of $L(\mathbb F_\infty)$ contains every positive rational, and Rădulescu extended this to every positive real number . Dykema and Rădulescu independently constructed the interpolated factors $L(\mathbb F_r)$ for real $r>1$ and established their amplification calculus . These results relate changes of rank to normalized corners. They also give a dichotomy: the interpolated free group factors are either all isomorphic or pairwise nonisomorphic. The version including the infinite parameter is due to Rădulescu \cite[Corollary 4.7]radulescu1994; see also the precise restatement in \cite[Theorem 1.1]goldbring_pi2025. [S3:61]
 
 The cited entries are in the manuscript's own bibliography: Murray–von Neumann, *On rings of operators. IV* (Annals of Mathematics 44, 1943) [S10:25–35]; Fox, *Free differential calculus. I* (Annals of Mathematics 57, 1953) [S10:36–46]; Voiculescu's reduced free product (LNM 1132, 1985) and circular and semicircular systems (Progress in Mathematics 92, 1990) [S10:47–71]; Rădulescu, *The fundamental group of the von Neumann algebra of a free group with infinitely many generators is* $\mathbb R_+\setminus\{0\}$ (JAMS 5, 1992) [S10:72–82]; Dykema, *Interpolated free group factors* (Pacific Journal of Mathematics 163, 1994) [S10:1–12]; Rădulescu, *Random matrices, amalgamated free products and subfactors* (Inventiones Mathematicae 115, 1994) [S10:13–24]. The dichotomy's modern restatement is Goldbring–Pi, *On the first-order free group factor elementary equivalence* (Journal of Operator Theory 94, 2025) [S10:134–146], and the disclaimed concurrent work is Shlyakhtenko, *On the II₁ factors of Fuchsian groups*, arXiv:2609.11074v1, 10 September 2026 [S10:147–155]. The free-entropy question is Voiculescu's survey *Free entropy* (Bulletin of the London Mathematical Society 34, 2002) [S10:156–166], with the nonmicrostates dimensions from Connes–Shlyakhtenko (Journal für die reine und angewandte Mathematik 586, 2005) and Mineyev–Shlyakhtenko (Geometric and Functional Analysis 15, 2005) [S10:178–198].
 
@@ -119,7 +119,7 @@ The manuscript is dated September 23, 2026 [S2:5] and cites no entry from this r
 
 The stated consequences are the collapse of the interpolated family and the computation of the fundamental group, and the paper proves them from the dichotomy rather than from the construction 
 
-> For all $1<r,s\leq\infty$ there is a unital normal trace-preserving $*$-isomorphism $L(\mathbb F_r)\cong L(\mathbb F_s)$. Moreover, \[ \mathcal F\bigl(L(\mathbb F_r)\bigr)=\mathbb R_>0 \qquad(1<r\leq\infty). \] \endcorollary \beginproof Theorem   rules out the pairwise-nonisomorphic alternative, so all parameters, including $\infty$, give the same isomorphism class. For finite $r>1$ and every $t>0$, formula   then gives \[ N_r^t\cong N_{1+(r-1)t^-2}\cong N_r. \] Thus $\mathcal F(N_r)=\mathbb R_{>0}$. Finally, $N_\infty\cong N_2$ and functoriality of amplification give $N_\infty^t\cong N_2^t\cong N_2\cong N_\infty$ for every $t>0$. [S8:79–96]
+> For all $1<r,s\leq\infty$ there is a unital normal trace-preserving $*$-isomorphism $L(\mathbb F_r)\cong L(\mathbb F_s)$. Moreover, $$\mathcal F\bigl(L(\mathbb F_r)\bigr)=\mathbb R_{>0} \qquad(1<r\leq\infty).$$ \endcorollary \beginproof Theorem rules out the pairwise-nonisomorphic alternative, so all parameters, including $\infty$, give the same isomorphism class. For finite $r>1$ and every $t>0$, formula then gives $$N_r^t\cong N_{1+(r-1)t^{-2}}\cong N_r.$$ Thus $\mathcal F(N_r)=\mathbb R_{>0}$. Finally, $N_\infty\cong N_2$ and functoriality of amplification give $N_\infty^t\cong N_2^t\cong N_2\cong N_\infty$ for every $t>0$. [S8:79–96]
 
 The free-entropy consequence is the sharper one for the field: invariance of $\delta$ under a change of generating tuple would have separated the ranks, and the isomorphism destroys that program for all four dimensions at once 
 
@@ -127,27 +127,45 @@ The free-entropy consequence is the sharper one for the field: invariance of $\d
 
 The formalization is 77 files and 26,804 lines across two trees, `lean/OAI/Analysis/FreeGroupFactor/` (27 files, 9,218 lines) and `lean/OAI/Analysis/InterpolatedFactors/` (50 files, 17,586 lines), carrying 1,196 top-level `theorem` and `lemma` declarations and no `sorry`. It proves the rank step at a strictly weaker hypothesis than the manuscript does, which removes the amplification detour from the headline 
 
-> theorem rank_step_ge_two (n : ℕ) (hn : 2 ≤ n) : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank (n+1)) := (rank_step_option_ge_two n hn).trans (normalTracialIso_of_groupEquiv (optionRankEquiv n))  theorem rankTwo : HasNormalTracialIso (FreeGroupRank 2) (FreeGroupRank 3) := rank_step_ge_two 2 le_rfl [S20:143–148]
+```lean
+theorem rank_step_ge_two (n : ℕ) (hn : 2 ≤ n) : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank (n+1)) := (rank_step_option_ge_two n hn).trans (normalTracialIso_of_groupEquiv (optionRankEquiv n)) theorem rankTwo : HasNormalTracialIso (FreeGroupRank 2) (FreeGroupRank 3) := rank_step_ge_two 2 le_rfl
+```
+[S20:143–148]
 
 The manuscript's Theorem 1.1 is stated for $n\geq3$ [S3:64–71] and reaches rank two only through amplification [S8:38–60]; the formalization's generation machinery starts at $n\geq2$ [S20:122–131], so `rankTwo` is a direct instance of the rank step. The interpolated statement then follows from the finite-rank collapse and the rank-three-to-infinite identification 
 
-> theorem finiteRank_to_two (n : ℕ) (hn : 2≤n) : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank 2) := by induction n, hn using Nat.le_induction with | base => exact groupIso_refl _ | succ n hn ih => have he : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank (n+1)) := by rcases eq_or_lt_of_le hn with h | h · subst n exact rankTwo · exact rankStep n (by omega) exact he.symm.trans ih [S35:39–48]
+```lean
+theorem finiteRank_to_two (n : ℕ) (hn : 2≤n) : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank 2) := by induction n, hn using Nat.le_induction with | base => exact groupIso_refl _ | succ n hn ih => have he : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank (n+1)) := by rcases eq_or_lt_of_le hn with h | h · subst n exact rankTwo · exact rankStep n (by omega) exact he.symm.trans ih
+```
+[S35:39–48]
 
 The rank-three-to-infinite identification, from the formalization's own main file 
 
-> theorem rankThreeInfinite : HasNormalTracialIso (FreeGroupRank 3) (FreeGroup ℕ) := InfiniteGeneration.rank_three_to_index.trans (normalTracialIso_of_groupEquiv (FreeGroup.freeGroupCongr InfiniteGeneration.indexEquivNat)) [S19:56–58]
+```lean
+theorem rankThreeInfinite : HasNormalTracialIso (FreeGroupRank 3) (FreeGroup ℕ) := InfiniteGeneration.rank_three_to_index.trans (normalTracialIso_of_groupEquiv (FreeGroup.freeGroupCongr InfiniteGeneration.indexEquivNat))
+```
+[S19:56–58]
 
 The selected statement is the interpolated isomorphism over all parameters, formalized over the extended nonnegative reals so that the infinite parameter is in scope 
 
-> theorem allInterpolatedIsomorphic (r s : ℝ≥0∞) (hr : 1<r) (hs : 1<s) : Nonempty (NormalTracialEquiv (interpolatedTrace r) (interpolatedTrace s) (interpolatedTopology r) (interpolatedTopology s)) := by sorry [S14:216–219]
+```lean
+theorem allInterpolatedIsomorphic (r s : ℝ≥0∞) (hr : 1<r) (hs : 1<s) : Nonempty (NormalTracialEquiv (interpolatedTrace r) (interpolatedTrace s) (interpolatedTopology r) (interpolatedTopology s)) := by sorry
+```
+[S14:216–219]
 
 The scope note excludes the fundamental-group conclusion from the selected statement, calling it a further consequence [S13:9]. That is a statement-selection exclusion, not a coverage gap: the formalization proves it two lines below the selected theorem 
 
-> theorem allInterpolatedFundamentalGroups (r : ℝ≥0∞) (hr : 1<r) : fundamentalGroup r=Set.Ioi (0:ℝ) := Model.fundamentalGroup_eq _ (parameterModel_valid r hr) [S34:114–115]
+```lean
+theorem allInterpolatedFundamentalGroups (r : ℝ≥0∞) (hr : 1<r) : fundamentalGroup r=Set.Ioi (0:ℝ) := Model.fundamentalGroup_eq _ (parameterModel_valid r hr)
+```
+[S34:114–115]
 
 The comparator poses the same statement as a challenge with its own model scaffolding — an `interpolatedFactor` modelled as a group factor at integer parameters, a normalized corner at continuous parameters, and the group factor of the countable free group at infinity [S14:207–214] — and its challenge statement is unproved in the challenge file itself 
 
-> theorem allInterpolatedIsomorphic (r s : ℝ≥0∞) (hr : 1<r) (hs : 1<s) : Nonempty (NormalTracialEquiv (interpolatedTrace r) (interpolatedTrace s) (interpolatedTopology r) (interpolatedTopology s)) := Model.allIsomorphic _ _ (parameterModel_valid r hr) (parameterModel_valid s hs) [S34:101–104]
+```lean
+theorem allInterpolatedIsomorphic (r s : ℝ≥0∞) (hr : 1<r) (hs : 1<s) : Nonempty (NormalTracialEquiv (interpolatedTrace r) (interpolatedTrace s) (interpolatedTopology r) (interpolatedTopology s)) := Model.allIsomorphic _ _ (parameterModel_valid r hr) (parameterModel_valid s hs)
+```
+[S34:101–104]
 
 The solution module named by the challenge metadata is `OAI.Analysis.InterpolatedFactors.Interpolation`, and the permitted axioms are `propext`, `Quot.sound`, and `Classical.choice`, with Nanoda disabled [S15:1–14].
 

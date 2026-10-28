@@ -30,9 +30,7 @@ oriented manifold it produces [S4:3–11]:
 > **theorem**
 Let $K\subset S^3$ be a smooth nontrivial knot. For any
 $r,s\in\mathbb Q\cup\{\infty\}$, an orientation-preserving homeomorphism
-\[
- S^3_r(K)\cong S^3_s(K)
-\]
+$$S^3_r(K)\cong S^3_s(K)$$
 implies $r=s$. [S4:13–20]
 
 The orientation hypothesis is essential: orientation-reversing, or

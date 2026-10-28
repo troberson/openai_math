@@ -35,7 +35,7 @@ Consequently $T_\delta$ has a unique bounded extension to $L^3(\mathbb R^3)$. [S
 
 Interpolating this with the $L^2$ bound and applying duality gives
 the full conjugate range, the conjectured strict order [S4:33–40]:
-"Theorem   gives
+"Theorem gives
 $$\norm{T_\delta f}_{L^p(\mathbb R^3)}
  \lesssim_{p,\delta}\norm f_{L^p(\mathbb R^3)},\qquad
  \delta>\max\left\{3\left|\frac1p-\frac12\right|-\frac12,0\right\},
@@ -115,9 +115,9 @@ Let $1\le p\le\infty$ and
 $$\label{eq:full-br-range}
  \delta>\max\left\{0,\,3\left|\frac1p-\frac12\right|-\frac12\right\}.$$
 Then the multiplier $(1-|\xi|^2)_+^\delta$ is bounded on
-$L^p(\mathbb R^3)$.  The same bounds hold uniformly for every positive
-radius after dilation.  This assertion concerns the strict
-inequality  . [S5:437–447]
+$L^p(\mathbb R^3)$. The same bounds hold uniformly for every positive
+radius after dilation. This assertion concerns the strict
+inequality . [S5:437–447]
 
 Its proof applies the positive-order theorem at arbitrarily small,
 fixed orders, combines it with the beta-integral complex-order lemma,

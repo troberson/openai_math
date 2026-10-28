@@ -44,9 +44,7 @@ The main statement
 > **Theorem 1.1**
 For every fixed real $C>0$, there are constants $c(C)>0$ and $N_0(C)$
 such that, for every integer $N\ge N_0(C)$,
-\[
- #\{1\le n\le N:p_n+1-p_n>C\log p_n\}\ge c(C)N.
-\] [S3:22–28]
+$$\\\#\{1\le n\le N:p_{n+1}-p_n>C\log p_n\}\ge c(C)N.$$ [S3:22–28]
 
 ## Graduate summary
 
@@ -58,9 +56,7 @@ primes whose next gap exceeds a fixed multiple of the log scale.
 > **Theorem 1.1**
 For every fixed real $C>0$, there are constants $c(C)>0$ and $N_0(C)$
 such that, for every integer $N\ge N_0(C)$,
-\[
- #\{1\le n\le N:p_n+1-p_n>C\log p_n\}\ge c(C)N.
-\] [S3:22–28]
+$$\\\#\{1\le n\le N:p_{n+1}-p_n>C\log p_n\}\ge c(C)N.$$ [S3:22–28]
 
 For every fixed real $C > 0$ there are constants $c(C) > 0$ and
 $N_0(C)$ such that, for every integer $N \ge N_0(C)$, at least $c(C)N$
@@ -128,12 +124,15 @@ top level. The catalog entry [S8:128] names the single PDF. No
 The comparator stub [S5:36–41] states both the large-gap density and
 the prime-ratio density as one combined target, ending in `sorry`:
 
-> theorem large_gaps_and_ratio_density :
-    (∀ C : ℝ, 0 < C →
-      ∃ c : ℝ, 0 < c ∧ ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
-        c * (N : ℝ) ≤ ((LargePrimeGaps.largeGapIndices C N).card : ℝ)) ∧
-    0 < lowerAsymptoticDensity ratioIncreaseIndices := by
-  sorry [S5:36–41]
+```lean
+theorem large_gaps_and_ratio_density :
+ (∀ C : ℝ, 0 < C →
+ ∃ c : ℝ, 0 < c ∧ ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
+ c * (N : ℝ) ≤ ((LargePrimeGaps.largeGapIndices C N).card : ℝ)) ∧
+ 0 < lowerAsymptoticDensity ratioIncreaseIndices := by
+ sorry
+```
+[S5:36–41]
 
 The scope note [S4:9] confirms which half the formalization reaches:
 "The formalized supplement proves that the indices $n$ for which $p_n/n<p_{n+1}/(n+1)$ have positive lower asymptotic density, where $p_n$ is the $n$th prime. Thus the normalized prime sequence has a positive-density set of increases. This is the prime-ratio corollary associated with the paper's theorem on a positive lower density of large prime gaps. [S4:9]" Note the ledger reads `paps_form 0` (no `main_results` entry),

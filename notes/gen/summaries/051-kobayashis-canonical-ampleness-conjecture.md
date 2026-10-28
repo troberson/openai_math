@@ -20,7 +20,7 @@ Kobayashi hyperbolicity . "A complex manifold is _Brody hyperbolic_ if every hol
 $\mathbb C\to X$ is constant. On a compact complex manifold, Brody's theorem
 identifies this condition with Kobayashi hyperbolicity, the
 nondegeneracy of the intrinsic pseudodistance defined by holomorphic
-disc chains  . We use ``hyperbolic'' in
+disc chains . We use ``hyperbolic'' in
 this sense throughout. [S5:3–8]" The canonical bundle
 $K_X$ is the line bundle of holomorphic $n$-forms. Kobayashi's
 conjecture predicts that the absence of nonconstant entire curves
@@ -45,15 +45,11 @@ $k$-norm of the central derivative of every holomorphic disc by a
 constant $D$. For a closed
 real $(1,1)$-form $q$, evaluated through its associated Hermitian
 tensor, use the area and Poisson integrals
-\[
- A_q(f)=\frac1\pi\int_\mathbb D q(f',f')\,\mathrm d S,
+$$A_q(f)=\frac1\pi\int_\mathbb D q(f',f')\,\mathrm d S,
  \qquad
- P_q(f)=\frac2\pi\int_\mathbb D\log\frac1|z|\,q(f',f')\,\mathrm d S,
-\]
+ P_q(f)=\frac2\pi\int_\mathbb D\log\frac1{|z|}\,q(f',f')\,\mathrm d S,$$
 where $\mathrm d S$ is Euclidean area. We maximize
-\[
- k(f'(0),f'(0))+P_q(f)-\delta A_h(f)
-\]
+$$k(f'(0),f'(0))+P_q(f)-\delta A_h(f)$$
 over finite-area discs with a fixed center, where $h$ is a Kähler
 metric and $\delta>0$. The negative area term gives compactness. Comparing
 a maximizing disc with its dilations then gives a linear boundary-area
@@ -69,11 +65,9 @@ area functional satisfies the identity
 > the complex second derivatives in these $n$ parameter directions,
 evaluated at $t=0$. The trace of the
 complex Hessian of the area functional is then
-\[
- \mathcal L A_h(F_t)=n-A_R_h(f),
+$$\mathcal L A_h(F_t)=n-A_{R_h}(f),
  \qquad R_h=-i\partial\bar\partial\log\det h,
- \qquad dd^c=i\partial\bar\partial.
-\] [S5:121–128]
+ \qquad dd^c=i\partial\bar\partial.$$ [S5:121–128]
 
 **Two parameter choices.** $h=k$, $q=R_k$, $\delta\to 0$ gives a
 uniform upper bound for the Poisson integral $P_{R_k}$, yielding
@@ -95,7 +89,7 @@ volumes, so $\int_X c_1(K_X)^n>0$
 > Following the Monge–Amp\`ere and volume strategy used by Wu and Yau
  , the negative-sign Aubin–Yau equation produces Kähler metrics $h_t$, for $t>0$,
 in the classes $2\pi c_1(K_X)+t[k]$ with $R_{h_t}=-h_t+t k$.
-Equation   gives a positive lower bound for their
+Equation gives a positive lower bound for their
 volumes. Passing to the limit in cohomology as $t\downarrow0$ proves
 $\int_X c_1(K_X)^n>0$.
 
@@ -123,7 +117,7 @@ The metric-curvature line: Wu–Yau proved canonical ampleness from
 negative holomorphic sectional curvature on projective manifolds;
 Tosatti–Yang extended to compact Kähler; Diverio–Trapani to
 quasi-negative curvature; Broder–Stanfield allow Hermitian
-pluriclosed metrics . "Theorem   gives a positive resolution in the smooth
+pluriclosed metrics . "Theorem gives a positive resolution in the smooth
 compact Kähler category. A major preceding advance is the theorem
 of Wu and Yau: negative holomorphic sectional curvature of a Kähler metric forces
 canonical ampleness on a smooth projective manifold

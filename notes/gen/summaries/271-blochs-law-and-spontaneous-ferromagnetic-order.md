@@ -55,22 +55,20 @@ Manuscript B is the lattice correction: it compares the true deficit with the fu
 
 > \begin{theorem}\label{thm:main}
 > For every fixed $S\in\{\tfrac12,1,\tfrac32,\ldots\}$,
-> \[
->  \lim_{\beta\to\infty}(\beta S)^{5/2}
+> $$>  \lim_{\beta\to\infty}(\beta S)^{5/2}
 >        \bigl[S-m_S(\beta)-n_S^{\mathrm{sw}}(\beta)\bigr]=0.
-> \]
+>$$
 > \end{theorem}
 >
 > Expanding the lattice heat kernel gives the following explicit form.
 > Here $\zeta$ denotes the Riemann zeta function.
 > \begin{corollary}\label{cor:expansion}
 > For every fixed positive half-integer $S$,
-> \[
->  S-m_S(\beta)
+> $$>  S-m_S(\beta)
 >  =\frac{\zeta(3/2)}{8\pi^{3/2}}(\beta S)^{-3/2}
 >   +\frac{3\zeta(5/2)}{128\pi^{3/2}}(\beta S)^{-5/2}
 >   +o\bigl((\beta S)^{-5/2}\bigr).
-> \]
+>$$
 > \end{corollary}
 
 The mechanism that keeps the subleading term is a capacity criterion stated in finite dimensions: "It applies to nonselfadjoint contraction kernels, so no reversibility of the exposed environment is needed. [S15:138–139]" and, because the trial potential sums returns over all positive periods, "the capacity comparison therefore retains the full Bose sum. [S15:140–141]" [S15:138–141] Its magnetization definition is the same one-sided derivative, and it says so: "Thus the volume limit precedes the zero-field limit in the definition of $m_S$. [S15:33–34]" 
@@ -108,16 +106,14 @@ The root paper's claim is the ordering statement itself [S44:64–73]:
 > $\beta_0(d,S)>0$ such that, for every finite $\beta\geq\beta_0(d,S)$,
 > the dynamics associated with \eqref{eq:hamiltonian} has a
 > translation-invariant $\beta$-KMS state $\omega$ satisfying
-> \[
->                          \omega(S_0^z)\ge S/4.
-> \]
+> $$>                          \omega(S_0^z)\ge S/4.
+>$$
 > \end{theorem}
 
 The bound is a property of the selected state, not of the model: "This magnetization is a property of the chosen state and need not be retained by a rotation-invariant average. [S44:77–78]" The proof is a pin induction. Slots are created by "Replace a spin $S$ by $\ell=2S$ spin-$\frac12$ slots at its site and project onto their symmetric subspace. [S44:160–162]" and the core estimate is proved "by downward induction on the number of grid pins [S44:171]" on sparse test sets. Adding the test set *T* to the existing pins *E* gives an avoidance probability of at most (2*r*)^m, where *r* is the mean fraction of test points whose lines return to *T* before reaching *E*, so "It therefore suffices to use the larger-pin induction hypothesis to prove $r\le p/2$. [S44:185–186]" Identifying *r* requires exposing exactly the cycles that miss the enlarged pin set, and the paper is explicit that this step buys a Markov comparison without claiming independence: "The exposure itself is still averaged under its original $P$-law; no independence of the conditioned cycles is required. [S44:195–196]" The comparison is a quadratic loss for a one-period kernel *U* 
 
-> \[
->                  m(1-r)\ge\mathbb E_P\langle f,(I-U)f\rangle.
-> \]
+> $$>                  m(1-r)\ge\mathbb E_P\langle f,(I-U)f\rangle.
+>$$
 
 Bounding that loss is where the geometry enters: a local Nash inequality spreads the mass initially on *T*, routed decaying finite-energy flows control its pairing with the propagated part, and short portions at both ends of a period absorb the pairing into the dissipated energy, giving a loss of at least *m*(1 − ε(*p*)) with "with $\varepsilon(p)=o(p)$. Choose $p$ small enough that $2\varepsilon(p)\le p$ [S44:225–226]" , which closes the induction. The state is then produced from the resulting surface-order tail; the field is the explicit volume-dependent sequence *h*_*N* = *N*^(-1/2), translations are averaged, and every subsequential limit satisfies 
 
@@ -129,7 +125,10 @@ The selection step is described as follows: the pin estimate yields a macroscopi
 
 The formalization covers this root paper and nothing else in the family. Its headline theorem is 
 
-> theorem spontaneous_magnetization (d ℓ : ℕ) (hd : 3≤d) (hℓ : 1≤ℓ) : DynamicsConverges d ℓ ∧ ∃ β₀ : ℝ,0<β₀ ∧ ∀ β : ℝ,β₀≤β → ∃ ω : State d ℓ,TranslationInvariant ω ∧ IsKMS β ω ∧ (ω.functional (spinZ d ℓ 0)).im=0 ∧ (ℓ:ℝ)/8≤(ω.functional (spinZ d ℓ 0)).re := by [S59:60–65]
+```lean
+theorem spontaneous_magnetization (d ℓ : ℕ) (hd : 3≤d) (hℓ : 1≤ℓ) : DynamicsConverges d ℓ ∧ ∃ β₀ : ℝ,0<β₀ ∧ ∀ β : ℝ,β₀≤β → ∃ ω : State d ℓ,TranslationInvariant ω ∧ IsKMS β ω ∧ (ω.functional (spinZ d ℓ 0)).im=0 ∧ (ℓ:ℝ)/8≤(ω.functional (spinZ d ℓ 0)).re := by
+```
+[S59:60–65]
 
 The formalized statement is the manuscript's statement in the slot parameter: the site Hilbert space is built as `abbrev Level (ℓ: ℕ):= Fin (ℓ + 1)` [S60:55], so a spin-*S* system is ℓ = 2*S*, and the formal bound ℓ/8 is exactly the manuscript's *S*/4 rather than a weaker encoding of it. The formalized version adds that the selected observable has zero imaginary part, and it conjoins convergence of the finite-volume dynamics to the infinite-volume dynamics. The scope note states both 
 
@@ -149,12 +148,11 @@ The spherical law has named antecedents. Ueltschi's survey of three-dimensional 
 
 The family's own stated consequence is a hard-core boson statement. The Matsubara–Matsuda correspondence "turns the ordered state into a state with averaged off-diagonal long-range order. [S44:242–243]" For *S* = ½, writing *b*_*x* = *S*_*x*^− and *n*_*x* = *b*_*x*^†*b*_*x* = *S*_*x*^z + ½ makes the Hamiltonian "This is the particle–hole-symmetric attractive hard-core hopping model. [S44:254]" Rotating the mean spin vector to the *x* direction commutes with the zero-field dynamics and with translations, so the rotated state ν is again translation-invariant and β-KMS, and "It satisfies $\nu(b_x)=r\ge1/8$ and $\nu(n_x)=1/2$, where $r$ is the length of the original mean-spin vector. [S44:260–262]" Positivity then gives 
 
-> \[
->  \frac1{|\Lambda|^2}\sum_{x,y\in\Lambda}\nu(b_x^\dagger b_y)
+> $$>  \frac1{|\Lambda|^2}\sum_{x,y\in\Lambda}\nu(b_x^\dagger b_y)
 >        \ge\frac1{64},
 >  \qquad
 >  \nu(a_\Lambda^\dagger a_\Lambda)\ge\frac{|\Lambda|}{64}.
-> \]
+>$$
 
 so "The first bound gives averaged off-diagonal long-range order [S44:277]" and "the uniform-mode occupation is at least $1/32$ of the expected particle number. [S44:279–280]" The paper marks the boundary of that claim: "These bounds concern restrictions of the chosen infinite-volume state, not finite-volume Gibbs states. [S44:281–282]" 
 

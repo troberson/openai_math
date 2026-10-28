@@ -78,10 +78,10 @@ required of $X$.
 
 > **theorem**
 Let $X$ be a normal projective $\mathbb Q$-factorial threefold over an
-algebraically closed field $k$ of characteristic $p>3$.  Suppose that
+algebraically closed field $k$ of characteristic $p>3$. Suppose that
 $X$ has terminal singularities and that $K_X$ is nef with
-$\nu(K_X)=1$.  Then some positive Cartier multiple of $K_X$ has at
-least two independent global sections.  In particular,
+$\nu(K_X)=1$. Then some positive Cartier multiple of $K_X$ has at
+least two independent global sections. In particular,
 $\kappa(X,K_X)=1$ and $K_X$ is semiample. [S5:14–21]
 
 For a normal projective $\mathbb Q$-factorial terminal threefold $X$ over an

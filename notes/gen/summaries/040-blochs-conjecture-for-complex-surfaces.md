@@ -23,9 +23,7 @@ $p_g(S)=h^0(S,\omega_S)=0$. The main theorem
 > **theorem**
 Let \(S\) be a smooth connected projective surface over \(\mathbbC\)
 with \(p_g(S)=q(S)=0\). Then
-\[
-\deg:\mathrmCH_0(S)\longrightarrow\mathbbZ
-\]
+$$\deg:\mathrm{CH}_0(S)\longrightarrow\mathbb{Z}$$
 is an isomorphism, where \(\mathrmCH_0(S)\) has integral coefficients. [S5:18–25]
 
 The corollary [S5:31–39] combines this with the classical
@@ -34,9 +32,7 @@ Bloch–Kas–Lieberman theorem to give the full statement:
 > **corollary**
 Let \(S\) be a smooth connected projective surface over \(\mathbbC\)
 with \(p_g(S)=0\). Then the Albanese homomorphism
-\[
-\operatornamealb_S:\mathrmCH_0(S)^0\longrightarrow\mathrmAlb(S)(\mathbbC)
-\]
+$$\mathrm{alb}_S:\mathrm{CH}_0(S)^0\longrightarrow\mathrm{Alb}(S)(\mathbb{C})$$
 is an isomorphism of abelian groups, where \(\mathrmCH_0(S)\) has integral
 coefficients. [S5:31–39]
 
@@ -71,7 +67,7 @@ $L_1\oplus L_2$ whose determinant has Picard class $D$.
 Opposite torus weights on the summands give a localization formula.
 We construct its obstruction theory and the compatible fixed theory
 using a derived determinant fiber normalized at a point of $X$
-(Sections   and  ). A fixed quotient
+(Sections and ). A fixed quotient
 splits into a quotient of each line bundle, each described by an effective
 divisor and a zero-dimensional subscheme. The divisor line bundles
 $T,H$ satisfy $T+H=D$; on an irregular surface this determinant
@@ -93,10 +89,10 @@ conjecture predicts the converse. Bloch–Kas–Lieberman proved
 the integral assertion for $\kappa(S)<2$, leaving the
 general-type $p_g=q=0$ case . "Mumford showed that a nonzero holomorphic two-form prevents the
 zero-cycles on a surface from admitting a finite-dimensional
-parametrization modulo rational equivalence  .
+parametrization modulo rational equivalence .
 Bloch's conjecture predicts the converse at the level of the Albanese
 kernel: if $p_g=0$, degree and the Albanese image should account for
-all rational-equivalence classes of zero-cycles  .
+all rational-equivalence classes of zero-cycles .
 Bloch, Kas, and Lieberman proved this integral assertion for every
 surface of Kodaira dimension less than two \cite[pp. 135–136]BKL.
 Thus the remaining general-type problem concerns $p_g=q=0$, where

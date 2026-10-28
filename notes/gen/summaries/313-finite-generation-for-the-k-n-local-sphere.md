@@ -34,9 +34,7 @@ the degreewise version for the sphere [S4:3–11]:
 > **theorem**
 For every prime $p$, every integer $n\geq 1$, and every integer $t$,
 the $\mathbb Z_p$-module
-\[
-                 \pi_t L_K(n)S_p^\wedge
-\]
+$$\pi_t L_{K(n)}S_p^\wedge$$
 is finitely generated. Equivalently, for every finite $p$-local
 spectrum $F$, the module $\pi_t L_{K(n)}F$ is finitely generated
 over $\mathbb Z_p$ in every integer degree $t$. [S4:13–22]

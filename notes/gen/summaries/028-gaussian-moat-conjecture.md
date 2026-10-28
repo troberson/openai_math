@@ -127,8 +127,11 @@ component-size bound, axis primes and all associates included.
 The comparator stub [S5:36–37] states the combined moat-plus-uniform
 target and ends in `sorry`:
 
-> theorem fullMain : MainEndpoint ∧ UniformEndpoint := by
-  sorry [S5:36–37]
+```lean
+theorem fullMain : MainEndpoint ∧ UniformEndpoint := by
+ sorry
+```
+[S5:36–37]
 
 The proof lands in `OAI/NumberTheory/GaussianMoat/Main.lean` [S6], which
 carries **zero** `sorry` occurrences; the `main_results` entry
@@ -164,17 +167,17 @@ PDF. No `.bib` file, no `verification/` bundle, no reasoning trace.
 
 ## Bibliography
 
-- S. Boucheron, G. Lugosi, and P. Massart, _Concentration Inequalities: A Nonasymptotic Theory of Independence_, Oxford University Press, Oxford, 2013.  .
-- K. Conrad, _The Gaussian Integers_, expository notes.   (accessed 27 September 2026).
-- P. Erdős, Problems and results on combinatorial number theory III, in _Number Theory Day_ (Rockefeller University, New York, 1976), Lecture Notes in Mathematics, vol. 626, Springer, Berlin, 1977, pp. 43–72.  .
-- E. Gethner, S. Wagon, and B. Wick, A stroll through the Gaussian primes, _American Mathematical Monthly_ **105** (1998), no. 4, 327–337.  .
-- L. H. Harper, Optimal assignments of numbers to vertices, _Journal of the Society for Industrial and Applied Mathematics_ **12** (1964), no. 1, 131–135.  .
-- A. Hatcher, _Algebraic Topology_, Cambridge University Press, Cambridge, 2002.  .
-- W. Hoeffding, Probability inequalities for sums of bounded random variables, _Journal of the American Statistical Association_ **58** (1963), no. 301, 13–30.  .
+- S. Boucheron, G. Lugosi, and P. Massart, _Concentration Inequalities: A Nonasymptotic Theory of Independence_, Oxford University Press, Oxford, 2013. .
+- K. Conrad, _The Gaussian Integers_, expository notes. (accessed 27 September 2026).
+- P. Erdős, Problems and results on combinatorial number theory III, in _Number Theory Day_ (Rockefeller University, New York, 1976), Lecture Notes in Mathematics, vol. 626, Springer, Berlin, 1977, pp. 43–72. .
+- E. Gethner, S. Wagon, and B. Wick, A stroll through the Gaussian primes, _American Mathematical Monthly_ **105** (1998), no. 4, 327–337. .
+- L. H. Harper, Optimal assignments of numbers to vertices, _Journal of the Society for Industrial and Applied Mathematics_ **12** (1964), no. 1, 131–135. .
+- A. Hatcher, _Algebraic Topology_, Cambridge University Press, Cambridge, 2002. .
+- W. Hoeffding, Probability inequalities for sums of bounded random variables, _Journal of the American Statistical Association_ **58** (1963), no. 301, 13–30. .
 - G. Lugosi, _Concentration-of-measure inequalities_, lecture notes, June 25, 2009. Author-hosted lecture notes.
-- A. Selberg, An elementary proof of the prime-number theorem for arithmetic progressions, _Canadian Journal of Mathematics_ **2** (1950), 66–78.  .
-- E. Gethner and H. M. Stark, Periodic Gaussian moats, _Experimental Mathematics_ **6** (1997), no. 4, 289–292.  .
-- T. Tao, The logarithmically averaged Chowla and Elliott conjectures for two-point correlations, _Forum of Mathematics, Pi_ **4** (2016), e8, 36 pp.  .
-- T. M. Cover and J. A. Thomas, _Elements of Information Theory_, second edition, Wiley-Interscience, Hoboken, NJ, 2006.  .
-- N. Tsuchimura, Computational results for Gaussian moat problem, _IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences_ **E88-A** (2005), no. 5, 1267–1273.  .
-- I. Vardi, Prime percolation, _Experimental Mathematics_ **7** (1998), no. 3, 275–289.  .
+- A. Selberg, An elementary proof of the prime-number theorem for arithmetic progressions, _Canadian Journal of Mathematics_ **2** (1950), 66–78. .
+- E. Gethner and H. M. Stark, Periodic Gaussian moats, _Experimental Mathematics_ **6** (1997), no. 4, 289–292. .
+- T. Tao, The logarithmically averaged Chowla and Elliott conjectures for two-point correlations, _Forum of Mathematics, Pi_ **4** (2016), e8, 36 pp. .
+- T. M. Cover and J. A. Thomas, _Elements of Information Theory_, second edition, Wiley-Interscience, Hoboken, NJ, 2006. .
+- N. Tsuchimura, Computational results for Gaussian moat problem, _IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences_ **E88-A** (2005), no. 5, 1267–1273. .
+- I. Vardi, Prime percolation, _Experimental Mathematics_ **7** (1998), no. 3, 275–289. .
