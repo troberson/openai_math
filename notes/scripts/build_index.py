@@ -56,7 +56,7 @@ import check_index_links as CL  # report-only: the checker runs nothing at impor
 import measure_names as MN
 import measure_topics as MT
 from catlib import yaml as Y
-from catlib.atomic import Staging
+from catlib.atomic import Staging, outdir_of
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
 )
@@ -182,7 +182,7 @@ def citation_edges(dir2fam, report):
 
 
 WRITTEN: set = set()
-ST = Staging("build_index", KEY)
+ST = Staging("build_index", KEY, outdir_of(sys.argv[1:]))
 
 
 def write(relpath, text):

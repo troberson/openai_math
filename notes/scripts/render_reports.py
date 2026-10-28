@@ -68,7 +68,7 @@ import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, records, tsv
 from catlib import text as TX
 from catlib import yaml as Y
-from catlib.atomic import Staging
+from catlib.atomic import Staging, outdir_of
 from catlib.paths import (
     COMPARATOR_DIR,
     DEPS_TSV,
@@ -4299,21 +4299,6 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
 def render_page(page: pathlib.Path) -> str:
     """The writer's bytes for a templated page — the baseline a render-diff compares the page against."""
     return PAGE_RENDERERS[page]()
-
-
-def outdir_of(argv: list[str]) -> pathlib.Path | None:
-    """The `--outdir <dir>` target: the out-of-tree render root, None for the tracked tree.
-
-    An out-of-tree render is a root override on `Staging.promote`, not a per-file fork: the pages
-    land under `outdir / <path relative to the repo root>` and the tracked tree and the record
-    store are never touched, so the outdir can be `diff -r`'d against `notes/gen/` to prove every
-    generated file is current.
-    """
-    if "--outdir" not in argv:
-        return None
-    p = pathlib.Path(argv[argv.index("--outdir") + 1]).resolve()
-    p.mkdir(parents=True, exist_ok=True)
-    return p
 
 
 def main() -> None:

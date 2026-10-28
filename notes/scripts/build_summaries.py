@@ -27,7 +27,7 @@ from catlib import bib as BIB
 from catlib import normalizer
 from catlib import summaries as CSUM
 from catlib import text as CTEXT
-from catlib.atomic import Staging, write_atomic
+from catlib.atomic import Staging, outdir_of, write_atomic
 from catlib.paths import ROOT as REPO
 from catlib.promote import key_for
 from catlib.records import manuscript_store
@@ -648,7 +648,7 @@ def main() -> int:
     check_only = "--check-only" in sys.argv
 
     key = key_for("build_summaries.py", tuple(sys.argv[1:]))
-    st = Staging("build_summaries", key)
+    st = Staging("build_summaries", key, outdir_of(sys.argv[1:]))
 
     _order, fams = B.parse_overview()
 

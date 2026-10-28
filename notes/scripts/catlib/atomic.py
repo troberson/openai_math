@@ -31,6 +31,21 @@ STAGING_ROOT = ROOT / ".qwen" / "cache" / "staging"
 RECORDS_ROOT = ROOT / ".qwen" / "cache" / "records"
 
 
+def outdir_of(argv: list[str]) -> Path | None:
+    """The `--outdir <dir>` target: the out-of-tree render root, None for the tracked tree.
+
+    An out-of-tree render is a root override on `Staging.promote`, not a per-file fork: the
+    pages land under `outdir / <path relative to the repo root>` and the tracked tree and
+    the record store are never touched, so the outdir can be `diff -r`'d against the
+    in-tree paths to prove every generated file is current.
+    """
+    if "--outdir" not in argv:
+        return None
+    p = Path(argv[argv.index("--outdir") + 1]).resolve()
+    p.mkdir(parents=True, exist_ok=True)
+    return p
+
+
 def write_atomic(path: Path, text: str) -> None:
     """Write text to path through a sibling temp name, fsync, then an atomic move onto the target.
 
