@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [measure-theory](../topics/measure-theory.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [081-david-semmes-riesz-transform-problem-in-higher-codimension.md](../../../../notes/gen/summaries/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) |
 
 ## Manuscripts
 
