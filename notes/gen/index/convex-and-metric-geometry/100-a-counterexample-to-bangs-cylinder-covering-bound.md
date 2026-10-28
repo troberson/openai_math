@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound |
 | Topics | [convex-geometry](../topics/convex-geometry.md) · [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [100-a-counterexample-to-bangs-cylinder-covering-bound.md](../../../../notes/gen/summaries/100-a-counterexample-to-bangs-cylinder-covering-bound.md) |
 
 ## Manuscripts
 
