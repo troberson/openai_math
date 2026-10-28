@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [convex-geometry](../topics/convex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md](../../../../notes/gen/summaries/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) |
 
 ## Manuscripts
 
