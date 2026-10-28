@@ -30,14 +30,12 @@ positive loss
 
 > **Theorem 1.1**
 For every $\varepsilon>0$ there exists $C_\varepsilon<\infty$ such that
-$$\label{eq:intro-main}
- \lVert Uf\rVert_{L^3(\mathbb R^3\times[1,2])}
+$$\lVert Uf\rVert_{L^3(\mathbb R^3\times[1,2])}
  \le C_\varepsilon\lVert J^\varepsilon f\rVert_{L^3(\mathbb R^3)}
  \qquad (f\in\mathcal S(\mathbb R^3)).$$ [S4:25–32]
 
 Interpolating with the $L^2$ energy estimate and an $L^\infty$
-kernel bound gives the complete range [S4:34–46]: "$$\label{eq:intro-full}
- \lVert Uf\rVert_{L^p(\mathbb R^3\times[1,2])}
+kernel bound gives the complete range [S4:34–46]: "$$\lVert Uf\rVert_{L^p(\mathbb R^3\times[1,2])}
  \le C_{p,\alpha}\lVert J^\alpha f\rVert_{L^p(\mathbb R^3)},
  \qquad
  2<p<\infty,\quad \alpha>\max\{0,1-3/p\}.$$ [S4:38–43]"

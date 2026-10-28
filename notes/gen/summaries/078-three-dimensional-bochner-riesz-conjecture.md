@@ -29,8 +29,7 @@ boundedness at $L^3$ for every positive order
 For every $\delta>0$, there is a finite constant $C_\delta$ such that
 $$\norm{T_\delta f}_{L^3(\mathbb R^3)}
  \le C_\delta\norm f_{L^3(\mathbb R^3)}
- \qquad(f\in\mathcal S(\mathbb R^3)).
- \label{eq:main-bound}$$
+ \qquad(f\in\mathcal S(\mathbb R^3)).$$
 Consequently $T_\delta$ has a unique bounded extension to $L^3(\mathbb R^3)$. [S4:21–31]
 
 Interpolating this with the $L^2$ bound and applying duality gives
@@ -39,8 +38,7 @@ the full conjugate range, the conjectured strict order [S4:33–40]:
 $$\norm{T_\delta f}_{L^p(\mathbb R^3)}
  \lesssim_{p,\delta}\norm f_{L^p(\mathbb R^3)},\qquad
  \delta>\max\left\{3\left|\frac1p-\frac12\right|-\frac12,0\right\},
- \quad 1\le p\le\infty .
- \label{eq:intro-full-range}$$ [S4:33–40]"
+ \quad 1\le p\le\infty .$$ [S4:33–40]"
 
 ## Graduate summary
 
@@ -112,8 +110,7 @@ strict-order range for $1\le p\le\infty$
 
 > **corollary**
 Let $1\le p\le\infty$ and
-$$\label{eq:full-br-range}
- \delta>\max\left\{0,\,3\left|\frac1p-\frac12\right|-\frac12\right\}.$$
+$$\delta>\max\left\{0,\,3\left|\frac1p-\frac12\right|-\frac12\right\}.$$
 Then the multiplier $(1-|\xi|^2)_+^\delta$ is bounded on
 $L^p(\mathbb R^3)$. The same bounds hold uniformly for every positive
 radius after dilation. This assertion concerns the strict

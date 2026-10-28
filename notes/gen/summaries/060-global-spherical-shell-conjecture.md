@@ -58,8 +58,7 @@ identities of Kodaira give $h^{0,1}=1$, $h^{1,0}=h^{2,0}=0$,
 $b_2^+=0$, $\chi(\mathcal O_X)=0$, and $K_X^2=-b_2(X)$, so the intersection
 form is negative definite "The compact-surface identities of Kodaira give, under the hypotheses of
 Theorem ,
-$$\label{surface:invariants}
- h^{0,1}(X)=1,\qquad h^{1,0}(X)=h^{2,0}(X)=0,\qquad
+$$h^{0,1}(X)=1,\qquad h^{1,0}(X)=h^{2,0}(X)=0,\qquad
  b_2^+(X)=0,\qquad \chi(\mathcal O_X)=0,
  \qquad K_X^2=-b_2(X).$$
 These are the numerical identities for class VII surfaces

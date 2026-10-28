@@ -43,8 +43,7 @@ following forms, with $C^{1,\alpha}$ arcs for some $\alpha>0$:
  $120$ degrees.
 \endenumerate
 Moreover, for every open $U\Subset\Omega$,
-$$\label{eq:component-finiteness}
- \\\#\{C\in\pi_0(K):C\cap U\ne\varnothing\}<\infty,$$
+$$\\\#\{C\in\pi_0(K):C\cap U\ne\varnothing\}<\infty,$$
 where $\pi_0(K)$ denotes the set of global connected components of $K$. [S4:46–63]
 
 The geometric conclusion gives an endpoint integrability estimate:

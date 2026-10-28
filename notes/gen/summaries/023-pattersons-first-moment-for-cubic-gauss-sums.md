@@ -42,8 +42,7 @@ The main statement
 
 > **theorem**
 As $X\longrightarrow\infty$,
-$$\label{eq:main}
- \sum_{\substack{N\pi\le X\\\pi\equiv1\pmod3\ \mathrm{prime}}}G(\pi)
+$$\sum_{\substack{N\pi\le X\\\pi\equiv1\pmod3\ \mathrm{prime}}}G(\pi)
  =\frac65c_*\frac{X^{5/6}}{\log X}
    +o\!\left(\frac{X^{5/6}}{\log X}\right).$$
 The sum is over all primary primes in $\mathcal O$. [S2:64–72]
@@ -57,8 +56,7 @@ normalized cubic Gauss sums over primary Eisenstein primes.
 
 > **theorem**
 As $X\longrightarrow\infty$,
-$$\label{eq:main}
- \sum_{\substack{N\pi\le X\\\pi\equiv1\pmod3\ \mathrm{prime}}}G(\pi)
+$$\sum_{\substack{N\pi\le X\\\pi\equiv1\pmod3\ \mathrm{prime}}}G(\pi)
  =\frac65c_*\frac{X^{5/6}}{\log X}
    +o\!\left(\frac{X^{5/6}}{\log X}\right).$$
 The sum is over all primary primes in $\mathcal O$. [S2:64–72]

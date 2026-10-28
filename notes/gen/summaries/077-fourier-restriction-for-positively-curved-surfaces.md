@@ -36,8 +36,7 @@ $p>3$:
 Let \(\Sigma\subset\mathbb R^3\) be a compact smooth positively curved
 surface, possibly with smooth boundary. For every \(3<p<\infty\),
 there is a finite constant \(C_{\Sigma,p}\) such that
-$$\label{eq:main}
- \|E_\Sigma f\|_{L^p(\mathbb R^3)}
+$$\|E_\Sigma f\|_{L^p(\mathbb R^3)}
  \le C_{\Sigma,p}\|f\|_{L^p(\Sigma)}$$
 for every complex-valued \(f\in L^p(\Sigma)\). [S4:18–27]
 
@@ -118,8 +117,7 @@ transfer with both exponents equal to $p$ [S7:70–108]:
 For every \(3<p<\infty\) and \(s>2-6/p\), the free Schrödinger
 propagator, initially defined on Schwartz functions, extends boundedly
 from \(W^s,p(\mathbb R^2)\) to \(L^p(\mathbb R^2\times[0,1])\):
-$$\label{eq:schrodinger-smoothing}
- \|e^{it\Delta}f\|_{L^p(\mathbb R^2\times[0,1])}
+$$\|e^{it\Delta}f\|_{L^p(\mathbb R^2\times[0,1])}
  \le C_{p,s}\|f\|_{W^{s,p}(\mathbb R^2)}.$$ [S4:73–81]
 
 Rogers's necessary condition shows the Sobolev threshold

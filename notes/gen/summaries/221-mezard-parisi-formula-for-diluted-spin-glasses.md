@@ -37,7 +37,7 @@ The trial functional is defined at [S8:112–117]
 
 Here V_{\rm s} and V_{\rm e} are the site and edge messages built from one cavity insertion [S8:84–89], T_0 is the last of the power-mean operators T_dV=\left(\E[(T_{d+1}V)^{m_{d+1}}\mid\mathscr F_d]\right)^{1/m_{d+1}} running down the hierarchy from T_rV=V [S8:92–96], and at r=0 the operators are omitted so that the messages are independent [S8:118–120]. The main theorem is 
 
-> Under – , the thermodynamic limit exists and $$\label{main:formula} \lim_{N\to\infty}F_N=\inf_{r\ge0}\Phi_r.$$ [S8:131–135]
+> Under – , the thermodynamic limit exists and $$\lim_{N\to\infty}F_N=\inf_{r\ge0}\Phi_r.$$ [S8:131–135]
 
 "The right side is an infimum over finite hierarchies. The theorem does not assume that a trial law attains it or that a limiting infinite-depth Gibbs state has been constructed. [S8:138–140]" The hierarchy is an artifact of the proof, not a claim about the physical Gibbs states: "Their branching is part of the construction; no ultrametric organization of the physical Gibbs states is assumed. [S7:76–77]" [S7:75–77]
 

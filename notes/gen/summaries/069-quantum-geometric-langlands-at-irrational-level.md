@@ -31,8 +31,7 @@ The headline theorem
 > **theorem**
 For every $c\in\mathbb C\setminus\mathbb Q$ there is an equivalence of
 presentable $\mathbb C$-linear DG categories
-$$\label{intro:equivalence}
-  D_c(\mathrm{Bun}_G(X))
+$$D_c(\mathrm{Bun}_G(X))
     \simeq
   D_{-1/(rc)}(\mathrm{Bun}_{G^\vee}(X)).$$
 The construction uses the given global forms and all connected components.
@@ -72,8 +71,7 @@ otherwise) is what appears in the dual level $-1/(rc)$.
 > **theorem**
 For every $c\in\mathbb C\setminus\mathbb Q$ there is an equivalence of
 presentable $\mathbb C$-linear DG categories
-$$\label{intro:equivalence}
-  D_c(\mathrm{Bun}_G(X))
+$$D_c(\mathrm{Bun}_G(X))
     \simeq
   D_{-1/(rc)}(\mathrm{Bun}_{G^\vee}(X)).$$
 The construction uses the given global forms and all connected components.

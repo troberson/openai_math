@@ -37,8 +37,7 @@ $$\chi\left(\sum_{j\in J}a_j\right)
 Equivalently, $\mathrm{FS}(A)\cup\mathrm{FP}(A)$ is monochromatic for a set
 $A\subset\mathbb N$ of cardinality $m$.
 The elements can additionally be chosen to satisfy
-$$\label{eq:separated-elements}
- a_1>R,\qquad
+$$a_1>R,\qquad
  a_d>R\left(\sum_{k<d}a_k+\prod_{k<d}a_k\right)^D
  \quad(2\le d\le m).$$ [S4:13–31]
 

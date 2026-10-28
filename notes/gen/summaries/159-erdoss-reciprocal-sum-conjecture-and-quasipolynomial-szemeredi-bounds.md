@@ -32,7 +32,7 @@ The saving is the interesting part. It beats every fixed power of log *N*, which
 
 The main theorem (label `ap:main`) is [S4:13–18]:
 
-> For each fixed integer $k\ge3$ there are constants $C_k,c_k,\varepsilon_k>0$ such that, for every $N\ge2$, $$\label{ap:density-bound} r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr).$$ [S4:14–18]
+> For each fixed integer $k\ge3$ there are constants $C_k,c_k,\varepsilon_k>0$ such that, for every $N\ge2$, $$r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr).$$ [S4:14–18]
 
 The introduction states the sharp edges 
 

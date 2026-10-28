@@ -42,8 +42,7 @@ More precisely, $\mathrm R(f)=O((1+\mathrm Q(f))^4)$ for every total Boolean fun
 For each fixed integer $k\ge2$, there are positive constants $c_k,C_k,b_k$
 and total Boolean functions $F_{k,m}$, for all sufficiently large powers
 of four $m$, such that
-$$\label{eq:main-family}
- \mathrm Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k},
+$$\mathrm Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k},
  \qquad
  \mathrm R(F_{k,m})\ge c_k\frac{m^{2-1/k}}{(\log m)^2}.$$ [S4:29–40]
 

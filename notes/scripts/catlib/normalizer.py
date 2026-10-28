@@ -198,6 +198,11 @@ def normalize_math(span: str, table: dict[str, tuple[int, str]], display: bool =
     """One math span, expanded and wrapped, or fenced when it carries an un-mappable banned macro."""
     s = expand_macros(span.strip(), table)
     s = _OP_PATTERN.sub(r"\\mathrm", s)
+    # A display env converted to $$...$$ carries its \label / \ref inside the fence
+    # (see _convert_display_envs); the prose path strips these via _prose_markup, but
+    # a math region that opens a \begin{equation} never touches the prose path. Drop
+    # them here too, so no live LaTeX cross-reference reaches the page.
+    s = _CITE_REF.sub(" ", s)
     # GitHub markdown treats \# as an escape (→ #) before MathJax sees it;
     # double the backslash so the renderer collapses \\# → \`# for MathJax.
     s = s.replace("\\#", "\\\\#")

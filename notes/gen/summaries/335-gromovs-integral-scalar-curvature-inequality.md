@@ -38,8 +38,7 @@ For every integer \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that every closed connected oriented smooth
 \(n\)-manifold \(M\) and every smooth Riemannian metric \(g\) on \(M\)
 satisfy
-$$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|.
-  \label{eq:main}$$ [S4:67–77]
+$$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|.$$ [S4:67–77]
 
 The constant $a_n$ is uniform over the topology of $M$ and over all its
 metrics, so the negative scalar curvature is permitted to be

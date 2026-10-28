@@ -48,8 +48,7 @@ classes, but cohomological identities alone do not settle rational
 equivalence. After the classical and birational reductions, we work on
 a minimal surface of general type or a point blowup $X$ of that surface.
 The objective is a relation
-$$\label{eq:intro-diagonal}
- 0=c[\Delta_X]+\Gamma\quad\text{in }\mathrm{CH}^2(X\times X)_{\mathbb{Q}},$$
+$$0=c[\Delta_X]+\Gamma\quad\text{in }\mathrm{CH}^2(X\times X)_{\mathbb{Q}},$$
 where $c\ne0$ and $\Gamma$ is a sum of external products of cycles.
 The diagonal acts as the identity on zero-cycles, whereas every external
 product of total codimension two kills degree-zero zero-cycles.

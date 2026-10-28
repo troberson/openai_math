@@ -54,8 +54,7 @@ For every fixed integer $n\geq3$ and every complex-valued
 $f\in H^{s_n}(\mathbb R^n)$, there is a full-measure set $E_f$ of Lebesgue
 points of $f$ and a function $v(x,t)$, $x\in E_f$, $0\leq t<1$, such
 that $v(x,\cdot)$ is continuous, $v(x,0)=f^*(x)$, and
-$$\label{m:eq-uniform-Gaussian}
- \lim_{a\downarrow0}\sup_{0<t<1}|U_af(x,t)-v(x,t)|=0
+$$\lim_{a\downarrow0}\sup_{0<t<1}|U_af(x,t)-v(x,t)|=0
  \qquad(x\in E_f).$$
 In particular the finite Gaussian limit
 $$u_f(x,t)=\lim_{a\downarrow0}U_af(x,t)$$

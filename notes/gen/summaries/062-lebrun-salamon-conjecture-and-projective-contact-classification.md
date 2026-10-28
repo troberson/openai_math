@@ -19,8 +19,7 @@ dimension $4m\geq8$ is homothetic to a compact symmetric Wolf space.
 3.inline	S3	3	18	Let $X$ be a smooth connected complex projective variety of dimension
 $2n+1$, where $n\geq1$. A _contact structure_ on $X$ is an exact
 sequence of algebraic vector bundles
-$$\label{intro:contact-sequence}
- 0\longrightarrow F\longrightarrow T_X
+$$0\longrightarrow F\longrightarrow T_X
  \xrightarrow{\ \theta\ }L\longrightarrow0,$$
 with $L$ a line bundle, such that the Levi pairing
 $$F\otimes F\longrightarrow L,

@@ -49,15 +49,15 @@ The derivation of Theorem 1.2 is short enough to quote in full
 
 The construction itself is a polynomial flow on the generators, driven by the conjugates of $S$ and controlled by two displacement bounds 
 
-> There is a one-parameter group $(\beta_t)_{t\in\mathbb R}$ of unital trace-preserving normal $*$-automorphisms of $M$ that fixes $S$ and whose restriction to $$B=C^*(A_1,\ldots,A_n,S)$$ is point-norm continuous. Writing $A_j(t)=\beta_t(A_j)$ and evaluating group words at this tuple, the paths satisfy $$\frac{d}{dt}A_j(t)=\mathrm i s_t(h_j)A_j(t),\qquad s_t(k)=\sum_{g\in\Gamma}k(g)A_g(t)SA_g(t)^*,\qquad A_j(0)=A_j. \label{eq:flow-ode}$$ The derivatives here are in operator norm. With $K=3\pi$ as in , for every $t\in\mathbb R$, $$\left\lVert \beta_t(A_j)-A_j\right\rVert &\leq |t|K\|h_j\|_{\ell^2}, \label{eq:generator-displacement}\\ \left\lVert \beta_t(A_w)-\exp(\mathrm i tS)A_w\right\rVert &\leq |t|K\|D_w-\delta_e\|_{\ell^2} \qquad(w\in\Gamma). \label{eq:word-displacement}$$ In particular, at $t=1$ the target in is $CA_w$. [S5:43–68]
+> There is a one-parameter group $(\beta_t)_{t\in\mathbb R}$ of unital trace-preserving normal $*$-automorphisms of $M$ that fixes $S$ and whose restriction to $$B=C^*(A_1,\ldots,A_n,S)$$ is point-norm continuous. Writing $A_j(t)=\beta_t(A_j)$ and evaluating group words at this tuple, the paths satisfy $$\frac{d}{dt}A_j(t)=\mathrm i s_t(h_j)A_j(t),\qquad s_t(k)=\sum_{g\in\Gamma}k(g)A_g(t)SA_g(t)^*,\qquad A_j(0)=A_j.$$ The derivatives here are in operator norm. With $K=3\pi$ as in , for every $t\in\mathbb R$, $$\left\lVert \beta_t(A_j)-A_j\right\rVert &\leq |t|K\|h_j\|_{\ell^2},  \\ \left\lVert \beta_t(A_w)-\exp(\mathrm i tS)A_w\right\rVert &\leq |t|K\|D_w-\delta_e\|_{\ell^2} \qquad(w\in\Gamma).$$ In particular, at $t=1$ the target in is $CA_w$. [S5:43–68]
 
 The constant $K=3\pi$ comes from a support-free Khintchine-type estimate for free sums, proved in the preliminaries against the creation, annihilation, and diagonal decomposition of Ricard–Xu 
 
-> For every such $k$, $$\label{eq:free-sum} \left\lVert s(k)\right\rVert\leq K\left\lVert k\right\rVert_{\ell^2},\qquad K=3\pi.$$ [S4:86–89]
+> For every such $k$, $$\left\lVert s(k)\right\rVert\leq K\left\lVert k\right\rVert_{\ell^2},\qquad K=3\pi.$$ [S4:86–89]
 
 The coefficient problem is a cocycle problem: the displacement bounds are useful only if one can find a small coefficient vector whose cocycle value at a chosen word is close to $\delta_e$ 
 
-> Let $n\geq 3$ and $\eta>0$. There exist a word $w\in\Gamma$ and a finitely supported real coefficient vector $h$ such that the cocycle determined by $$h_1=h,\qquad h_j=0\quad(2\leq j\leq n)$$ satisfies $$\label{eq:small-cocycle} \|h\|_{\ell^2}<\eta, \qquad \|D_w-\delta_e\|_{\ell^2}<\eta.$$ [S6:33–45]
+> Let $n\geq 3$ and $\eta>0$. There exist a word $w\in\Gamma$ and a finitely supported real coefficient vector $h$ such that the cocycle determined by $$h_1=h,\qquad h_j=0\quad(2\leq j\leq n)$$ satisfies $$\|h\|_{\ell^2}<\eta, \qquad \|D_w-\delta_e\|_{\ell^2}<\eta.$$ [S6:33–45]
 
 The witness words and the associated averaging operators are explicit [S6:53–63]:
 
@@ -75,11 +75,11 @@ The witness words and the associated averaging operators are explicit [S6:53–6
 
 Their spectral behaviour is a free-probability limit: the prefix sums behave like a free circular system, and the limiting density has no atom at zero, which is what makes a truncated inverse available 
 
-> The measures $\mu_m$ converge weakly to the probability measure $$\label{eq:cocycle-limit-density} d\nu(x)=\frac{1}{2\pi}\sqrt{\frac{4-x}{x}} \,1_{(0,4)}(x)\,dx.$$ In particular, $\nu(\{0\})=0$. [S6:172–178]
+> The measures $\mu_m$ converge weakly to the probability measure $$d\nu(x)=\frac{1}{2\pi}\sqrt{\frac{4-x}{x}} \,1_{(0,4)}(x)\,dx.$$ In particular, $\nu(\{0\})=0$. [S6:172–178]
 
 The one-step perturbation is the statement that a small automorphism can absorb a generator 
 
-> Let $n\geq 3$, and let $(A_1,\ldots,A_n,C)$ be a freely generating Haar tuple in a finite von Neumann algebra $(M,\tau)$. For every $\varepsilon>0$ there are a trace-preserving normal automorphism $\alpha$ of $M$ and a word $w\in\mathbb F_n$ such that, with $A_j'=\alpha(A_j)$, $$\label{eq:perturbation} \max_{1\leq j\leq n}\left\lVert A_j'-A_j\right\rVert<\varepsilon, \qquad \left\lVert A_w'-C\right\rVert<\varepsilon.$$ The tuple $(A_1',\ldots,A_n',C')$, where $C'=\alpha(C)$, is again freely generating Haar. Here the target in the second estimate is the original $C$; the new completion is $$C'=C A_w^*,$$ where $A_w$ is evaluated on the original $n$-tuple. [S7:15–32]
+> Let $n\geq 3$, and let $(A_1,\ldots,A_n,C)$ be a freely generating Haar tuple in a finite von Neumann algebra $(M,\tau)$. For every $\varepsilon>0$ there are a trace-preserving normal automorphism $\alpha$ of $M$ and a word $w\in\mathbb F_n$ such that, with $A_j'=\alpha(A_j)$, $$\max_{1\leq j\leq n}\left\lVert A_j'-A_j\right\rVert<\varepsilon, \qquad \left\lVert A_w'-C\right\rVert<\varepsilon.$$ The tuple $(A_1',\ldots,A_n',C')$, where $C'=\alpha(C)$, is again freely generating Haar. Here the target in the second estimate is the original $C$; the new completion is $$C'=C A_w^*,$$ where $A_w$ is evaluated on the original $n$-tuple. [S7:15–32]
 
 The iteration is deliberately adaptive, and generation is proved separately from convergence 
 

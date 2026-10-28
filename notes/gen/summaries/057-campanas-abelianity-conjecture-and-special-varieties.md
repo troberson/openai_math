@@ -98,8 +98,7 @@ manifold abelianity theorem to order-two root orbifolds of fourfolds
 
 > **theorem**
 Assume Assumption . Let $X$ be a connected smooth projective complex fourfold and let $D\subset X$ be a nonempty smooth connected reduced divisor. If $\sqrt[2]{(X,D)}$ is special, then
-$$\label{eq:target-group}
- G=\pi_1(X\setminus D,x)\big/\langle\!\langle\gamma^2\rangle\!\rangle$$
+$$G=\pi_1(X\setminus D,x)\big/\langle\!\langle\gamma^2\rangle\!\rangle$$
 contains an abelian subgroup of finite index. Here $\gamma$ is a positively oriented meridian about $D$, transported to $x\in X\setminus D$. [S14:39–45]
 
 The proof constructs a smooth projective eightfold $Y$ over the root

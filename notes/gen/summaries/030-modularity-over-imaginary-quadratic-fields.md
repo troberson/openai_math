@@ -78,8 +78,7 @@ rank-two character pieces $V_\theta$ that form a congruence chain
 and set $\chi=\eta\psi$. The order-three system $V_\eta$ comes from an
 elliptic curve $A/F$, while $V_1=H^1(B_t)$. An integral description of the
 cohomology gives the chain
-$$\label{intro:chain}
- \underbrace{V_\eta}_{H^1(A)}
+$$\underbrace{V_\eta}_{H^1(A)}
  \ \equiv\!\!\pmod p\ \ V_\chi
  \ \equiv\!\!\pmod 3\ \ V_\psi
  \ \equiv\!\!\pmod p\ \ \underbrace{V_1}_{H^1(B_t)}.$$ [S5:116–126]

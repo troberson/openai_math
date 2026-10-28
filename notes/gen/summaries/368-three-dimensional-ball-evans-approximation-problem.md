@@ -32,8 +32,7 @@ manuscript states the theorem
 
 > **Theorem 1.1**
 Let $\Omega,\Lambda\subset\mathbb R^3$ be nonempty bounded connected open sets, let $1\le p\le2$, and let $f:\Omega\to\Lambda$ be a homeomorphism in $W^{1,p}(\Omega;\mathbb R^3)$. There exist $C^\infty$ diffeomorphisms $f_j:\Omega\to\Lambda$, each belonging to $W^{1,p}(\Omega;\mathbb R^3)$, such that
-$$\label{main:convergence}
-\int_\Omega\bigl( |f_j-f|^p+|Df_j-Df|^p\bigr)\,dx\longrightarrow0.$$ [S4:29–34]
+$$\int_\Omega\bigl( |f_j-f|^p+|Df_j-Df|^p\bigr)\,dx\longrightarrow0.$$ [S4:29–34]
 
 The $p>2$ manuscript states its counterpart 
 
@@ -43,8 +42,7 @@ and let $f:\Omega\to\Lambda$ be a homeomorphism in
 $W^{1,p}(\Omega;\mathbb R^3)$. There exist $C^\infty$ diffeomorphisms
 $f_j:\Omega\to\Lambda$, each belonging to
 $W^{1,p}(\Omega;\mathbb R^3)$, such that
-$$\label{main:convergence}
-\int_\Omega\bigl( |f_j-f|^p+|Df_j-Df|^p\bigr)\,dx\longrightarrow0.$$ [S6:25–34]
+$$\int_\Omega\bigl( |f_j-f|^p+|Df_j-Df|^p\bigr)\,dx\longrightarrow0.$$ [S6:25–34]
 
 No boundary regularity, boundary extension, inverse Sobolev
 regularity, or nonvanishing Jacobian is assumed [S4:36].

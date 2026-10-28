@@ -46,7 +46,7 @@ The field class is the load-bearing choice. `C_b^∞` bounds every spatial deriv
 
 The admissible datum, and the meaning of the field class 
 
-> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying $$\label{eq:data} \begin{gathered} f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered}$$ Here $C_b^\infty$ means that every spatial derivative is bounded. [S4:27–35]
+> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying $$\begin{gathered} f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered}$$ Here $C_b^\infty$ means that every spatial derivative is bounded. [S4:27–35]
 
 The theorem, stated in full [S4:42–52]:
 
@@ -206,7 +206,7 @@ The weighted estimate vanishes at interval endpoints, so short endpoint interval
 
 The uniform improvement, and the continuity argument that closes the bootstrap 
 
-> Thus every bootstrap interval satisfies the uniform improvement $$\label{eq:strict-improvement} |V_X(t_2)-V_X(t_1)|\le\tfrac12\mathcal B_w(t_2-t_1).$$ [S12:56–59]
+> Thus every bootstrap interval satisfies the uniform improvement $$|V_X(t_2)-V_X(t_1)|\le\tfrac12\mathcal B_w(t_2-t_1).$$ [S12:56–59]
 
 The end of the continuity argument 
 

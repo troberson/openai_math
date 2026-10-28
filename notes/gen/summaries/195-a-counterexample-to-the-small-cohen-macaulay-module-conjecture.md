@@ -58,7 +58,7 @@ The geometric input is defined. defines it: "The geometric input is a smooth int
 
 The completed ring and the affine-local corollary are stated. states them: "Here the hat denotes completion at the maximal ideal. We write $K_X$ for the canonical divisor and $c_2(X)$ for the second Chern number. For the specific pair $(X,H)$ used for Theorem , the uncompleted vertex localization $T(X,H)_{T(X,H)_{>0}}$ also has no small Cohen–Macaulay module (Corollary ). It is a three-dimensional local domain essentially of finite type over $\mathbb C$, so this supplies a counterexample in the affine-local class just described. The deduction uses faithful flatness of completion. [S3:109–116]"
 
-The obstruction theorem is the load-bearing statement. gives it: "Let $X$ be a smooth integral projective surface over $\mathbb C$, and let $H$ be an ample globally generated divisor. If $R(X,H)$ admits a small Cohen–Macaulay module, then $$\label{eq:obstruction} K_X^2-2c_2(X)\leq 6H^2.$$ [S3:120–125]"
+The obstruction theorem is the load-bearing statement. gives it: "Let $X$ be a smooth integral projective surface over $\mathbb C$, and let $H$ be an ample globally generated divisor. If $R(X,H)$ admits a small Cohen–Macaulay module, then $$K_X^2-2c_2(X)\leq 6H^2.$$ [S3:120–125]"
 
 The Ulrich route is recorded. records it: "A numerical obstruction for Ulrich sheaves on surfaces follows from Bogomolov's inequality and the Hodge index theorem. Beauville presented this route for surfaces of Néron–Severi rank one [S3:128–130]"
 
@@ -98,7 +98,7 @@ The regular model is defined. defines it: "Let $V_0=\mathrm{Tot}(\mathcal O_D(-1
 
 The module is made free. states it: "Suppose that $M$ is a small Cohen–Macaulay $R$-module. The parameters $x_0,x_1,x_2$ form an $M$-regular sequence, so $M$ has depth three over $A$. [S3:332–334]"
 
-The Auslander--Buchsbaum conclusion is stated. states it: "shows that $$\label{eq:A-free} M\simeq A^N\quad\text{as an $A$-module},\qquad N>0.$$ [S3:336–339]"
+The Auslander--Buchsbaum conclusion is stated. states it: "shows that $$M\simeq A^N\quad\text{as an $A$-module},\qquad N>0.$$ [S3:336–339]"
 
 The support is stated. states it: "The localization $R\otimes_A\mathrm{Frac}(A)$ is a finite-dimensional domain over a field, hence a field. Thus $M$ has positive generic rank over $R$ and full support. [S3:340–342]"
 

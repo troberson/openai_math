@@ -126,8 +126,7 @@ Let $C_L(n)$ be the minimum number of noninput gates in a circuit
 computing $L$ on $\{0,1\}^n$, allowing arbitrary Boolean gates of
 fan-in at most two and unrestricted fan-out. There exist a language
 $L\in\mathrm E^{\mathrm{NP}}$ and a constant $c>0$ such that
-$$\label{eq:quantitative-circuit-lower-bound}
- C_L(n)>c\,n\sqrt{\log n}\qquad\text{for infinitely many }n.$$ [S2:183–191]
+$$C_L(n)>c\,n\sqrt{\log n}\qquad\text{for infinitely many }n.$$ [S2:183–191]
 
 The proof [S3] combines Williams's witness-circuit argument with the
 local reduction of Jahanjou–Miles–Viola: a subexponential SAT solver

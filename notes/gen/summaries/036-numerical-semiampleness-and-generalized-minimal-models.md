@@ -149,8 +149,7 @@ a finite sequence
 and flips. The inverse of \(\phi\) contracts no prime divisor. On a
 common smooth projective resolution \(p:W\to X\), \(q:W\to Y\),
 compatible canonical divisors satisfy
-$$\label{main:comparison}
- q^*K_Y-p^*K_X\sim_{\mathbb Q,\mathrm{num}}0.$$ [S9:51–68]
+$$q^*K_Y-p^*K_X\sim_{\mathbb Q,\mathrm{num}}0.$$ [S9:51–68]
 
 For a smooth connected complex projective variety $X$ of dimension
 $n \ge 3$ with $K_X$ pseudo-effective and $\kappa_\sigma(X, K_X) = 1$

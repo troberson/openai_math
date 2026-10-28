@@ -22,8 +22,7 @@ The theorem
 > **Theorem 1.1**
 Let $\gamma\in\mathbb R$ be fixed, and let
 $\psi:\mathbb N\to[0,\infty)$ be finite-valued. If
-$$\label{eq:main-divergence}
-  \sum_{q=1}^{\infty}\frac{\phi(q)}q\,\psi(q)=\infty,$$
+$$\sum_{q=1}^{\infty}\frac{\phi(q)}q\,\psi(q)=\infty,$$
 then, for Lebesgue-almost every $x\in\mathbb R$, the inequality
 $$\|qx-\gamma\|<\psi(q)$$
 holds for infinitely many positive integers $q$. [S5:9–21]

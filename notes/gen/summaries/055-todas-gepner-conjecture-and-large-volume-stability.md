@@ -149,13 +149,11 @@ divisor, and $B_0\in N^1(X)_{\mathbb Q}$.
 There are constants $k\in\mathbb Q_{\geq0}$ and $R_*>0$, depending only on
 $(X,H,B_0)$, such that every finite-slope $\nu_{a,b}$-semistable
 $E\in\mathcal B_{H,B_0+bH}$ with $\nu_{a,b}(E)=0$ satisfies
-$$\label{eq:intro-corrected}
- \mathrm{ch}_3^{B_0+bH}(E)
+$$\mathrm{ch}_3^{B_0+bH}(E)
  \leq \left(\frac{a^2}{6}+k\right)H^2\mathrm{ch}_1^{B_0+bH}(E)
  \qquad(a>0,\ b\in\mathbb R).$$
 For the same fixed data, the stronger bound
-$$\label{eq:intro-tail}
- \mathrm{ch}_3^{B_0+bH}(E)
+$$\mathrm{ch}_3^{B_0+bH}(E)
  \leq \frac{a^2}{6}H^2\mathrm{ch}_1^{B_0+bH}(E)$$
 holds whenever $a>R_*$, for every $b\in\mathbb R$. [S10:167–184]
 

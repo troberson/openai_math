@@ -83,8 +83,7 @@ Let \(X_0\) be a normal irreducible globally Weil \(\mathbbQ\)-factorial compact
 Consider a sequence of normal irreducible globally Weil \(\mathbbQ\)-factorial compact Kähler fourfolds
 $$X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots.$$
 On \(X_i\), let \(B_i\) be the strict transform of \(B_0\), let \(M_i=M_X_i\) be the trace of the same b-divisor, and assume that \(D_i=K_X_i+B_i+M_i\) is \(\mathbbQ\)-Cartier. Transport the canonical representatives under the induced identifications of prime divisors. Suppose that every step is given by a diagram
-$$\label{eq:flip-diagram}
-\begin{tikzcd}[column sep=large]
+$$\begin{tikzcd}[column sep=large]
  X_i \arrow[r,"f_i"] & Z_i & X_{i+1}\arrow[l,"f_i^+"']
 \end{tikzcd}$$
 where \(Z_i\) is normal compact Kähler, both maps are projective small bimeromorphic morphisms with connected fibers, neither is an isomorphism, and
@@ -120,8 +119,7 @@ On $X_i$, let $B_i$ be the strict transform of $B_0$, let $M_i$ be
 the trace of this same $\mathbf M$, and suppose
 $D_i=K_{X_i}+B_i+M_i$ is $\mathbb Q$-Cartier. Suppose that every step is
 given by a diagram
-$$\label{eq:step-diagram}
- X_i\xrightarrow{\ f_i\ }Z_i
+$$X_i\xrightarrow{\ f_i\ }Z_i
        \xleftarrow{\ f_i^+\ }X_{i+1}$$
 of projective small bimeromorphic morphisms with connected fibres,
 where $Z_i$ is normal compact Kähler, both morphisms are

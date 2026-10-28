@@ -78,7 +78,7 @@ The Arnold fixed-point problem asks how many fixed points a Hamiltonian diffeomo
 
 The proposed bound is that a Hamiltonian whose fixed points are all nondegenerate must have at least that many fixed points 
 
-> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether $$\label{eq:proposed-bound} \\\#\mathrm{Fix}_0(\phi_H^1;H)\geq\mathrm{SM}(M)$$ holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion. [S16:20–24]
+> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether $$\\\#\mathrm{Fix}_0(\phi_H^1;H)\geq\mathrm{SM}(M)$$ holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion. [S16:20–24]
 
 The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 
@@ -187,11 +187,11 @@ The nondegenerate manuscript's mechanism is algebraic: generation of a group ver
 
 The construction places the same small-time return map in sixteen caps of a product of four spheres, and the two counts separate 
 
-> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies $$\label{eq:overview-fixed-count} \\\#\mathrm{Fix}(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128.$$ [S11:149–159]
+> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies $$\\\#\mathrm{Fix}(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128.$$ [S11:149–159]
 
 On the other side of the inequality, the fundamental group bounds every Morse function 
 
-> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives $$\label{eq:overview-morse-bound} \mathrm{Morse}(M)\ge\chi(M)+4d(G).$$ Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure separates the two roles of the fundamental group. [S11:161–169]
+> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives $$\mathrm{Morse}(M)\ge\chi(M)+4d(G).$$ Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure separates the two roles of the fundamental group. [S11:161–169]
 
 The manuscript names the claim it contradicts: Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number 
 

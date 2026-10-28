@@ -100,8 +100,7 @@ let $f:X\to Y$ be a surjective holomorphic map with connected
 fibers onto a normal compact irreducible complex space.
 For a very general smooth fiber $F$, put $\Delta_F=\Delta|_F$.
 Then
-$$\label{main:inequality}
- \kappa(X,K_X+\Delta)
+$$\kappa(X,K_X+\Delta)
  \geq\kappa(F,K_F+\Delta_F)+\kappa(f\mid\Delta).$$ [S3:135–146]
 
 For a smooth compact complex manifold $X$ in Fujiki class $\mathcal C$
@@ -119,8 +118,7 @@ Let $f:U\to V$ be a projective surjective morphism with connected fibers
 between smooth connected quasi-projective complex varieties.
 Assume $\bar\kappa(V)\geq0$, and let $F$ be its geometric generic fiber.
 Then
-$$\label{eq:main}
- \bar\kappa(U)\geq\kappa(F)+\max\{\bar\kappa(V),\mathrm{Var}(f)\}.$$ [S5:38–46]
+$$\bar\kappa(U)\geq\kappa(F)+\max\{\bar\kappa(V),\mathrm{Var}(f)\}.$$ [S5:38–46]
 
 For a projective connected-fiber morphism $f : U \to V$ between smooth
 quasi-projective varieties with $\bar\kappa(V) \ge 0$ and geometric

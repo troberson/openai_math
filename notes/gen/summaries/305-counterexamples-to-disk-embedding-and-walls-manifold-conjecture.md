@@ -54,8 +54,7 @@ flat disks exist
 There exist a compact connected oriented smooth four-manifold $M$ with nonempty boundary, an integer $k\geq1$, proper generically immersed discs
 $$f_i\colon(D^2,S^1)\longrightarrow(M,\partial M),\qquad 1\leq i\leq k,$$
 whose boundary restrictions form an embedding of $\coprod_iS^1$, and framed sphere maps $g_i\colon S^2\to M$ such that
-$$\label{eq:input-invariants}
- \lambda(f_i,g_j)=\delta_{ij}\,1,\qquad
+$$\lambda(f_i,g_j)=\delta_{ij}\,1,\qquad
  \lambda(g_i,g_j)=0,\qquad
  \widetilde\mu(g_i)=0
  \quad(1\leq i,j\leq k),$$

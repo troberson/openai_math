@@ -38,9 +38,9 @@ even-periodic rings
 For the Hamiltonians , the ground state is unique for
 every even $L\ge60$, and
 $$\gamma_L&>\frac4{105}\log\frac{80}{79}
-     &&\text{for every even }L\ge60,\label{eq:gap60}\\
+     &&\text{for every even }L\ge60, \\
  \gamma_L&>\frac{\log20}{784}
-     &&\text{for every even }L\ge2304.\label{eq:gap2304}$$
+     &&\text{for every even }L\ge2304.$$
 Consequently
 $$\Delta_1\ge\frac{\log20}{784}>0.$$
 The spectral conclusions also hold for any simultaneously similar

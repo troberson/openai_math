@@ -54,11 +54,11 @@ The construction separates two scales. With `δ = T − t`, the parabolic scale 
 
 The cap proposition is what decouples the two curvatures 
 
-> For every flow with the choices made above, and \(q\) sufficiently large, there is a constant \(C\), allowed to depend on that flow, such that $$\label{eq:full-curvature} (r^2+\theta^2)|\mathrm{Rm}|\le C$$ on \(M\times[0,T)\). [S10:4–9]
+> For every flow with the choices made above, and \(q\) sufficiently large, there is a constant \(C\), allowed to depend on that flow, such that $$(r^2+\theta^2)|\mathrm{Rm}|\le C$$ on \(M\times[0,T)\). [S10:4–9]
 
 The reaction proposition bounds the reaction quotient at the pole and at the cap 
 
-> At late times on \(0<r\le\frac18\sqrt\delta\), the reaction quotient $$c(x,t)=\frac{2\langle\mathrm{Rm}(\mathrm{Ric}),\mathrm{Ric}\rangle}{|\mathrm{Ric}|^2} \quad\text{where }|\mathrm{Ric}|>0$$ satisfies both bounds $$\label{eq:reaction-two} c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}.$$ [S11:210–219]
+> At late times on \(0<r\le\frac18\sqrt\delta\), the reaction quotient $$c(x,t)=\frac{2\langle\mathrm{Rm}(\mathrm{Ric}),\mathrm{Ric}\rangle}{|\mathrm{Ric}|^2} \quad\text{where }|\mathrm{Ric}|>0$$ satisfies both bounds $$c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}.$$ [S11:210–219]
 
 The three barrier propositions fix the parameters in order and control the pole, the interior, and the geometric exterior [S12:71–73] [S12:158–159] [S12:225–226].
 
@@ -70,7 +70,7 @@ The four-dimensional paper runs the other way. It models the spatial geometry ne
 
 The companion paper is the static half. It fixes a tree of Ricci-flat ALE model spaces, selects a path through the tree, and proves the tree inequality 
 
-> Fix a finite rooted tree with the end identifications and order-$20$ metric bounds of Section . Let $(g_j,L^{(j)},M_j)$ satisfy the compact vertex convergence, the same uniform half-end and root-end bounds, and Equation through order $10$, with every $L_e^{(j)}\to\infty$ and $M_j\to0$. Then, in physical root units, $$E(g_j)=o(M_j). \label{ell:little-oh}$$ For an index with $M_j=0$, the assertion means $E(g_j)=0$. The little-oh is taken for this fixed tree; it does not assert a power exponent uniform over different trees. [S34:136–141]
+> Fix a finite rooted tree with the end identifications and order-$20$ metric bounds of Section . Let $(g_j,L^{(j)},M_j)$ satisfy the compact vertex convergence, the same uniform half-end and root-end bounds, and Equation through order $10$, with every $L_e^{(j)}\to\infty$ and $M_j\to0$. Then, in physical root units, $$E(g_j)=o(M_j).$$ For an index with $M_j=0$, the assertion means $E(g_j)=0$. The little-oh is taken for this fixed tree; it does not assert a power exponent uniform over different trees. [S34:136–141]
 
 Its path-selection theorem realizes finite sign conditions and finite prescribed limits along a real analytic path, with every actual coordinate eventually monotone or constant [S35:67–79], and its corollary gives the finite variation the elliptic argument consumes [S35:90–97].
 

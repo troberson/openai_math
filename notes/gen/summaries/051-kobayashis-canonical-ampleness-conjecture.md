@@ -75,8 +75,7 @@ bounded canonical plurisubharmonic weights and nefness. The choice
 $q=-h$, $\delta=1$ with $R_h\ge-h$ gives the pointwise volume
 estimate 
 
-> $$\label{eq:intro-volume}
- h^n\ge e^{-D}\left(\frac{n}{2n+D}\right)^n k^n
+> $$h^n\ge e^{-D}\left(\frac{n}{2n+D}\right)^n k^n
  \quad\text{whenever }R_h\ge-h.$$
 This estimate is uniform over the indicated metrics, even though the
 auxiliary maximizing discs and their regularity constants need not be. [S5:147–157]

@@ -31,15 +31,13 @@ manuscript resolves this deformation conjecture
 Let $X$ be a closed connected oriented smooth four-manifold, and let
 $\omega=(\omega_1,\omega_2,\omega_3)$ be a smooth hypersymplectic structure
 normalized by
-$$\label{eq:intro-normalization}
- \int_X\omega_i\wedge\omega_j=\delta_{ij}.$$
+$$\int_X\omega_i\wedge\omega_j=\delta_{ij}.$$
 There is a smooth family of hypersymplectic structures $\omega(t)$,
 $0\le t\le1$, such that
 $$\omega(0)=\omega,\qquad [\omega_i(t)]=[\omega_i]
  \quad (i=1,2,3),$$
 and a positive volume form $\mu_1$ with
-$$\label{eq:intro-endpoint}
- \omega_i(1)\wedge\omega_j(1)=2\delta_{ij}\mu_1.$$
+$$\omega_i(1)\wedge\omega_j(1)=2\delta_{ij}\mu_1.$$
 The endpoint forms are parallel and self-dual for a hyperkähler metric. [S4:11–29]
 
 A corollary identifies the smooth type: any closed connected

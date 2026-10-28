@@ -41,8 +41,7 @@ lowers $W$ by 4, and satisfies the double commutator
 $[[f,e],e]=-2e$ 
 
 > It remains to construct one degree-$-2$ operator $f$ such that
-$$\label{intro:operator-goal}
-fP_k\subset P_{k-2},\qquad
+$$fP_k\subset P_{k-2},\qquad
 fW_j\subset W_{j-4},\qquad [[f,e],e]=-2e.$$
 An elementary Lefschetz-module argument then identifies both filtrations as sums of eigenspaces of the same operator $[e,f]$. It also handles extensions between filtration grades. [S5:79–84]
 

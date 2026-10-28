@@ -32,8 +32,7 @@ the relations among those coefficients agree. [S5:4–11]" For a finite quiver $
 with vector spaces $V_i, W_i$, the gauge group is
 $G=\prod\mathrm{GL}(V_i)$ and the representation includes both arrow maps and
 framing maps . "allowed. Fix complex vector spaces $V_i,W_i$ of dimensions $v_i,w_i$, and put
-$$\label{eq:gauge-data}
- G=\prod_{i\in Q_0}\mathrm{GL}(V_i),\qquad
+$$G=\prod_{i\in Q_0}\mathrm{GL}(V_i),\qquad
  N=\bigoplus_{a:i\to j}\mathrm{Hom}(V_i,V_j)
        \oplus\bigoplus_{i\in Q_0}\mathrm{Hom}(V_i,W_i).$$ [S5:24–29]" A regular stability character $\nu$
 makes the semistable locus stable with free gauge action, producing a
@@ -61,8 +60,7 @@ the cocharacter and full-torus defining ideals inside $A_F$
 
 > Define the intermediate coefficient algebra and the two ideals to be
 compared by
-$$\label{eq:intro-two-ideals}
- \begin{split}
+$$\begin{split}
  B_F&=\mathbb C[Y_{\mathfrak f}^{T_{\mathrm{top}}}]
       =A_F/\langle A_F^{(d)}:d\ne0\rangle,\\
  I_{\mathrm{top}}&=\ker(R\longrightarrow B_F),\qquad
