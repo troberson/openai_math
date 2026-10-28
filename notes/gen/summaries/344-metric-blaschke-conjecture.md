@@ -8,9 +8,9 @@
 
 The release's blurb for family 344 
 
-> **344. The metric Blaschke conjecture.** Proves the metric Blaschke conjecture: every closed connected Riemannian manifold of positive dimension whose injectivity radius equals its diameter is, up to scaling, a standard compact rank-one symmetric space. [S1:8340]
+> **344. The metric Blaschke conjecture.** Proves the metric Blaschke conjecture: every closed connected Riemannian manifold of positive dimension whose injectivity radius equals its diameter is, up to scaling, a standard compact rank-one symmetric space. [S1:8349]
 
-The catalog abstract in `overview.tex` [S2:786] is the same sentence. The manuscript's own abstract 
+The catalog abstract in `overview.tex` [S2:788] is the same sentence. The manuscript's own abstract 
 
 > We prove the metric Blaschke conjecture: every connected closed smooth Riemannian manifold of positive dimension whose global injectivity radius equals its diameter is, up to scale, a standard compact rank-one symmetric space. [S6:2–5]
 
@@ -264,7 +264,7 @@ The entries are Shankar–Spatzier–Wilking 2005 [S16:309–319], Su–Sun–Wa
 
 ## Consequences
 
-The direct consequence is the classification the release states: the Blaschke condition characterizes the round sphere, the standard real, complex and quaternionic projective spaces, and the Cayley plane, up to scaling [S1:8340] [S2:786]. The manuscript's own statement covers every quaternionic dimension [S6:39–46], which is the part the earlier projective results did not reach.
+The direct consequence is the classification the release states: the Blaschke condition characterizes the round sphere, the standard real, complex and quaternionic projective spaces, and the Cayley plane, up to scaling [S1:8349] [S2:788]. The manuscript's own statement covers every quaternionic dimension [S6:39–46], which is the part the earlier projective results did not reach.
 
 The method has a consequence of its own. The quaternionic upper bound is proved from the manuscript's own incidence geometry, Pontryagin-class calculation, and integral Gysin sequences, not from a homeomorphism or homotopy-type hypothesis [S6:95–97] [S11:175–183] [S13:265–300]. The manuscript states that rational cohomology alone would not retain the arithmetic that normalizes the bound [S6:178–179].
 

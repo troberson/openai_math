@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3184] (family entry):
+[S1:3193] (family entry):
 
 > **133. The computational complexity of Weisfeiler–Leman refinement.** Proves unconditional $`n^{\Omega(k)}`$ deterministic time lower bounds for joint and separate k-dimensional Weisfeiler–Leman equivalence, for sufficiently large fixed k in the specified sequential adjacency-matrix models. With dimension as input, joint equivalence is EXPTIME-complete even on subcubic graphs; deciding whether refinement identifies a graph is also EXPTIME-complete. (Lean)
 
@@ -265,7 +265,7 @@ is `bound`; `resolves_named=0`; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3184], manuscript links [S1:3184] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3193], manuscript links [S1:3193] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 133 at [S2:343] |
 | S3 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex`](../../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex) | 54 | document root; abstract [S3:34–44]; five section `\input` directives [S3:46–50]; 54 lines |
 | S4 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex) | 255 | `thm:choice-reduction` [S4:76–96]; 255 lines |

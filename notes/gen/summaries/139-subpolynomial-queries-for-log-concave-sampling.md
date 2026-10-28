@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3334] (family entry):
+[S1:3343] (family entry):
 
 > **139. Subpolynomial query complexity for log-concave sampling.** For C2 potentials with a supplied minimizer and $`I\preceq\nabla^2V\preceq2I`$, proves that sampling within total variation 1/10 requires only $`C_\varepsilon d^\varepsilon`$ exact value-and-gradient queries for every fixed ε > 0. The bound holds on every run, with unrestricted computation between queries. A logarithmic lower bound also holds, so the optimal power-law exponent in this oracle model is zero. (Lean)
 
@@ -103,11 +103,11 @@ release ships the manuscript as proof.
 - **The dimension exponent is zero.** For every $\varepsilon>0$,
   $C_\varepsilon d^\varepsilon$ exact first-order queries suffice for
   TV-accuracy $1/10$ on every execution
-  [S4:51–65][S1:3334].
+  [S4:51–65][S1:3343].
 - **A logarithmic lower bound matches.** $Q(d)\ge c\log d$ eventually,
   for arbitrary randomized adaptive first-order algorithms, so the
   infimal polynomial exponent is exactly zero
-  [S4:58–64][S1:3334].
+  [S4:58–64][S1:3343].
 - **The bound is worst-case, not expected.** The query budget is a
   deterministic cap on every execution; no averaging over random seeds
   is taken [S4:40–45].
@@ -192,7 +192,7 @@ formalized (`paps_form=1`). The shape flags are `bound|uniform`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3334], manuscript link [S1:3341] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3343], manuscript link [S1:3350] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 139 at [S2:355] |
 | S3 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex) | 74 | document root; abstract [S3:47–56]; nine section `\input` directives [S3:57–65]; 74 lines |
 | S4 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex) | 269 | `thm:main` [S4:51–65]; 269 lines |

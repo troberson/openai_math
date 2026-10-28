@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3350] (family entry):
+[S1:3359] (family entry):
 
 > **140. Memory–sample lower bounds for noiseless Gaussian regression.** For fixed A > 0, a one-pass learner with $`Ad^2`$ persistent bits needs $`\Omega_A(d\log(1/\epsilon))`$ noiseless Gaussian samples to recover a unit vector to angular error $`0\lt \epsilon\le1/10`$ with probability 2/3, uniformly in accuracy for large d. Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness. (Lean)
 
@@ -113,7 +113,7 @@ result, and the release ships the six manuscripts as proof.
   finite-memory learner in the noiseless Gaussian regression model
   needs at least $c_A\,d\log(1/\epsilon)$ observations to achieve
   angular error $\epsilon$ with probability $2/3$ under the uniform
-  sphere prior, for every $M\le Ad^2$ [S4:59–73][S1:3350].
+  sphere prior, for every $M\le Ad^2$ [S4:59–73][S1:3359].
 - **The constant is universal for subquadratic memory.** When
   $M(d)=o(d^2)$, the bound $T\ge c\,d\log(1/\epsilon)$ holds with an
   absolute $c>0$ [S4:81–91].
@@ -207,7 +207,7 @@ formalized (`paps_form=5`). The shape flags are `partial|uniform`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3350], manuscript links [S1:3350] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3359], manuscript links [S1:3359] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 140 at [S2:357] |
 | S3 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex`](../../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex) | 32 | document root; abstract [S3:9–14]; 12 section `\input` directives [S3:15–26]; 32 lines |
 | S4 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex`](../../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex) | 294 | `h:main` [S4:59–73], `h:subquadratic` [S4:81–91], `h:worst-signal` [S4:93–102]; 294 lines |

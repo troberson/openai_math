@@ -97,12 +97,12 @@ polynomial-time decision algorithm for 3SAT." ([S8:17]) Min-UnCut is recorded as
 hardness for every fixed approximation factor greater than one." ([S8:19]) and directed feedback
 vertex set as "The formalization proves hardness of approximating the minimum such set within any
 fixed constant factor." ([S8:21]) The `main_results` entries name the declarations, e.g.
-"declaration: OAI.UniqueGamesTheorem.theorem11 [S9:1746]" ([S9:1745–1747]); the Min-UnCut and directed
+"declaration: OAI.UniqueGamesTheorem.theorem11 [S9:1796]" ([S9:1795–1797]); the Min-UnCut and directed
 feedback vertex set manuscripts are absent from the YAML bibliography entirely, which is consistent
 with the ledger's count of 3 formalized manuscripts. Each of the five results has its own comparator
 challenge configuration naming the module, the theorem and definition names, and permitting only
 propext, Quot.sound and Classical.choice ([S10], [S11], [S12], [S13], [S14]). Every entry in this
-family is agent-generated and unreviewed: the YAML records "status: unchecked [S9:1778]" ([S9:1777]).
+family is agent-generated and unreviewed: the YAML records "status: unchecked [S9:1828]" ().
 The manuscript itself ships a short README carrying its title, date, and citation stub ([S4]).
 
 ## History of the conjecture

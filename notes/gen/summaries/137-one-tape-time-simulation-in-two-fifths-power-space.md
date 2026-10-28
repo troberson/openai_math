@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3293] (family entry):
+[S1:3302] (family entry):
 
 > **137. One-tape time simulation in two-fifths-power space.** Determines the halting and finite-control outcome of a fixed deterministic one-writable-tape machine up to time T using $`O(T^{2/5}\log^C(T+2))`$ space, improving the square-root exponent. Heads move at most one cell per step; finitely many read-only input heads are allowed. Initial contents are independent of $`T`$, and contents and input symbols have polylogarithmic-space access. Simulation time is unrestricted. (Lean)
 
@@ -211,7 +211,7 @@ two `main_results` declarations, `OAI.Fifths.Single.capped` and
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3293], manuscript link [S1:3293] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3302], manuscript link [S1:3302] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 137 at [S2:351] |
 | S3 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/main.tex`](../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/main.tex) | 51 | document root; abstract [S3:34–43]; five section `\input` directives [S3:44–48]; 51 lines |
 | S4 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/sections/introduction.tex`](../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/sections/introduction.tex) | 136 | `thm:main` [S4:64–79]; 136 lines |

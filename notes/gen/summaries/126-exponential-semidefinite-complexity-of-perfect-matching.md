@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3054] (family entry):
+[S1:3063] (family entry):
 
 > **126. Exponential semidefinite complexity of perfect matching.** Proves that every exact semidefinite lift of the perfect matching polytope has exponential size, answering Rothvoss's polynomial-size lift question negatively. The bound holds even for the positive semidefinite rank of its odd-cut slack matrix after any fixed shift $`0\lt \rho\lt 1`$, allowing arbitrary real positive semidefinite factors. (Lean)
 
@@ -162,7 +162,7 @@ claim.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3054], manuscript link [S1:3054] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3063], manuscript link [S1:3063] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 126 at [S2:329] |
 | S3 | [`preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/main.tex`](../../../preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/main.tex) | 59 | document root; abstract [S3:42–47]; seven `\input` directives [S3:49–57]; 59 lines |
 | S4 | [`preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/introduction.tex`](../../../preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/introduction.tex) | 231 | `thm:main` [S4:37–44]; `cor:exact-lift` [S4:74–80]; 231 lines |

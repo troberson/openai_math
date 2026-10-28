@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3309] (family entry):
+[S1:3318] (family entry):
 
 > **138. Subset Sum in $`O(2^{0.49n})`$ time.** Gives a uniform randomized classical algorithm for worst-case Subset Sum in ordinary $`O(2^{0.49n})`$ word-RAM time on polynomial-bit inputs, where n counts the integers. The time bound holds on every execution and success probability is at least 2/3 on every input. Inputs may repeat positive integers; words have $`O(n+b)`$ bits for maximum input bit length b.
 
@@ -132,7 +132,7 @@ result, and the release ships the two manuscripts as proof.
 - **The exponential rate is below $1/2$.** A uniform randomized
   algorithm decides worst-case Subset Sum in ordinary
   $O(2^{0.49n})$ word-RAM time on polynomial-bit inputs, with the
-  bound holding on every execution [S4:58–72][S1:3309].
+  bound holding on every execution [S4:58–72][S1:3318].
 - **The bound is uniformly valid.** The algorithm does not depend on
   the polynomial-bit parameter $c$; the same program works for every
   fixed $c$ [S4:70–71].
@@ -154,7 +154,7 @@ result, and the release ships the two manuscripts as proof.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3309], manuscript links [S1:3309] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3318], manuscript links [S1:3318] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 138 at [S2:353] |
 | S3 | [`preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/main.tex`](../../../preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/main.tex) | 67 | document root; abstract [S3:45–50]; eight section `\input` directives [S3:52–59]; 67 lines |
 | S4 | [`preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex`](../../../preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex) | 234 | `thm:main` [S4:58–72], word-RAM model [S4:38]; 234 lines |

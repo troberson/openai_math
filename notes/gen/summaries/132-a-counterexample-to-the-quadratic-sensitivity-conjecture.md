@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3168] (family entry):
+[S1:3177] (family entry):
 
 > **132. A superquadratic separation of sensitivity and block sensitivity.** Constructs total Boolean functions with block sensitivity $`\mathop{\mathrm{bs}}\nolimits (f)\ge s(f)^\alpha`$ for a fixed α > 2, disproving the quadratic strengthening of the Sensitivity Conjecture. Here $`s(f)`` counts influential individual-bit flips, while block sensitivity allows disjoint groups of bits to change together. (Lean)
 
@@ -164,7 +164,7 @@ result is a counterexample construction to the quadratic bound.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3168], manuscript link [S1:3168] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3177], manuscript link [S1:3177] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 132 at [S2:341] |
 | S3 | [`preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/paper.tex`](../../../preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/paper.tex) | 39 | document root; abstract [S3:26–32]; four section `\input` directives [S3:33–36]; 39 lines |
 | S4 | [`preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/sections/00-introduction.tex`](../../../preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/build/sections/00-introduction.tex) | 139 | `thm:main` [S4:53–64]; 139 lines |

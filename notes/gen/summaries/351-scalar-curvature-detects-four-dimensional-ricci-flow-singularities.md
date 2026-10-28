@@ -92,7 +92,7 @@ Inside the release, the family is at tier T0 with no formalized manuscript, no s
 
 ## Coverage
 
-The release records 3 manuscripts for this family and 0 formalized paths, 0 comparator challenges, 0 `main_results` entries, 0 scope notes, 0 verification bundles, 0 inputs, and no reasoning trace [S3:347]. The overview entry is the family's only release-level statement [S2:800]. The three manuscript abstracts are the release's own claims [S1:8542] [S1:8551] [S1:8560].
+The release records 3 manuscripts for this family and 0 formalized paths, 0 comparator challenges, 0 `main_results` entries, 0 scope notes, 0 verification bundles, 0 inputs, and no reasoning trace [S3:347]. The overview entry is the family's only release-level statement [S2:802]. The three manuscript abstracts are the release's own claims [S1:8542] [S1:8551] [S1:8560].
 
 ## Sources
 

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3127] (family entry):
+[S1:3136] (family entry):
 
 > **130. Exact Fourier transforms below $`n\log n`$.** Gives a deterministic length-n discrete Fourier transform algorithm using $`O(n(\log n)^{1-\delta})`$ operations for every n, with explicit $`\delta=10^{-13}`$. The model uses exact complex arithmetic, unrestricted coefficients and a supplied root of unity, and counts scalar preparation and logarithmic-word indexing. (Lean)
 
@@ -169,7 +169,7 @@ resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3127], manuscript link [S1:3127] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3136], manuscript link [S1:3136] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 130 at [S2:337] |
 | S3 | [`preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/main.tex`](../../../preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/main.tex) | 57 | MS1 document root; abstract [S3:41–43]; five section `\input` directives plus a synthesis appendix [S3:44–50]; 57 lines |
 | S4 | [`preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/sections/introduction.tex`](../../../preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/sections/introduction.tex) | 160 | MS1 `thm:main` [S4:85–91], `cor:decimal` [S4:93–99]; 160 lines |

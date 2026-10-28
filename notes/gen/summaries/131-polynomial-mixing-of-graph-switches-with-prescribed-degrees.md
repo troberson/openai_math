@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3152] (family entry):
+[S1:3161] (family entry):
 
 > **131. Rapid mixing of graph switches for every degree sequence.** Resolves the simple-undirected Kannan–Tetali–Vempala conjecture: the lazy edge-switch chain mixes in $`O(n^8)`$ time for every graphical labeled degree sequence. The same degree-constrained graphs can also be sampled exactly uniformly by an almost-surely terminating algorithm with expected polynomial bit running time. (Lean)
 
@@ -186,7 +186,7 @@ simple-undirected Kannan–Tetali–Vempala conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3152], manuscript link [S1:3152] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3161], manuscript link [S1:3161] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 131 at [S2:339] |
 | S3 | [`preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/main.tex`](../../../preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/main.tex) | 44 | document root; abstract [S3:25–34]; eight section `\input` directives [S3:35–42]; 44 lines |
 | S4 | [`preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex`](../../../preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex) | 180 | `thm:main` [S4:32–39], `cor:exact-sampling` [S4:42–44]; 180 lines |

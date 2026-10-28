@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb for family 334 [S1:8136]:
+The release's blurb for family 334 [S1:8145]:
 
 > **334. A smooth surface metric with no local isometric immersion in ℝ3.** Constructs a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into ℝ3. This answers the unrestricted smooth local isometric realization problem for surfaces negatively, even after shrinking the neighborhood. (Lean)
 
-The catalog abstract in `overview.tex` [S2:766] is the same sentence, and the manuscript's own abstract says the same in the first person 
+The catalog abstract in `overview.tex` [S2:768] is the same sentence, and the manuscript's own abstract says the same in the first person 
 
 > We construct a smooth positive-definite Riemannian metric on $(-1,1)^2$ that agrees with the Euclidean metric to every order at the origin, yet no neighborhood of the origin admits a smooth isometric immersion into Euclidean three-space. This gives a negative answer to the unrestricted smooth local isometric realization problem for surfaces. [S5:45–50]
 
@@ -238,7 +238,7 @@ The Khuri entries are the 2007 counterexamples paper [S10:55–64] and the 2009 
 
 ## Consequences
 
-The direct consequence is the one the release states: the unrestricted smooth local realization problem for surfaces has a negative answer, and shrinking the neighborhood does not rescue it [S1:8136] [S2:766]. The manuscript's own framing names the two sources it answers [S5:65–67].
+The direct consequence is the one the release states: the unrestricted smooth local realization problem for surfaces has a negative answer, and shrinking the neighborhood does not rescue it [S1:8145] [S2:768]. The manuscript's own framing names the two sources it answers [S5:65–67].
 
 The second consequence is about what smooth data determine. The constructed metric has the Euclidean Taylor jet at the origin, so the full jet at a point does not decide local smooth realizability [S9:250–261]. A negative answer at that level is stronger than a singularity example: the metric is flat to every order at the point where the obstruction is located.
 

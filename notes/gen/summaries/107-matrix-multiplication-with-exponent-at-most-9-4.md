@@ -6,21 +6,21 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2645] (family entry):
+[S1:2654] (family entry):
 
 > **107. Matrix multiplication with exponent at most 9/4.** Proves $`\omega\le9/4`$ over ℂ, giving $`O_\varepsilon(n^{9/4+\varepsilon})`$ arithmetic operations for square matrix multiplication. In characteristic zero, some inner dimension na with a > 0.465 permits $`n^{2+o(1)}`$ rectangular multiplication. Further square bounds give ω < 2.258 outside finitely many positive characteristics and ω < 2.371054886006746 over every fixed field. (Lean)
 
 The three manuscripts under that family:
 
-[S1:2652] (manuscript 1, abstract at [S1:2654]):
+[S1:2661] (manuscript 1, abstract at [S1:2663]):
 
 > We prove that the exponent of matrix multiplication over the complex numbers is at most 9/4.
 
-[S1:2661] (manuscript 2, labeled *secondary writeup* by the release; abstract at [S1:2663]):
+[S1:2670] (manuscript 2, labeled *secondary writeup* by the release; abstract at [S1:2672]):
 
 > Over every field of characteristic zero, we prove that the square matrix-multiplication exponent satisfies ω < 2.258, the dual exponent satisfies α > 0.465, and $`\omega(1,0.709,1)\lt 2.092`$. The strict square and k = 0.709 rectangular bounds also hold over every field except possibly in one finite set of positive characteristics, in the arithmetic-operation model.
 
-[S1:2670] (manuscript 3, abstract at [S1:2672]):
+[S1:2679] (manuscript 3, abstract at [S1:2681]):
 
 > We prove that the arithmetic exponent of square matrix multiplication over every fixed field satisfies ω < 2.371054886006746. This includes every positive characteristic.
 
@@ -221,7 +221,7 @@ the ledger verb rule has nothing to fire on.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2645], the three manuscript entries [S1:2652], [S1:2661], [S1:2670], and their abstracts [S1:2654], [S1:2663], [S1:2672]. The release's inline code spans stay as backticked markdown, and the release's italic markup and HTML entities are folded to the plain word |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2654], the three manuscript entries [S1:2661], [S1:2670], [S1:2679], and their abstracts [S1:2663], [S1:2672], [S1:2681]. The release's inline code spans stay as backticked markdown, and the release's italic markup and HTML entities are folded to the plain word |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 107 at [S2:292] |
 | S3 | [`preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex`](../../../preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex) | 1022 | root (`\documentclass`); abstract [S3:32–35]; the exponent definition [S3:39–43]; the main theorem [S3:45–49]; the history paragraph [S3:51–57]; the six section headings at [S3:37], [S3:142], [S3:270], [S3:392], [S3:605], [S3:700] |
 | S4 | [`preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/build/main.tex`](../../../preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/build/main.tex) | 90 | root (`\documentclass`); abstract [S4:63–69]; the fifteen-file include order [S4:72–87] |

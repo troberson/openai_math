@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3070] (family entry):
+[S1:3079] (family entry):
 
 > **127. Average sensitivity of polynomial threshold functions.** Proves that a degree-at-most-d polynomial threshold function on the uniform n-dimensional Boolean cube has average sensitivity at most $`8d\sqrt n`$, uniformly for $`1\le d\le n`$. Average sensitivity counts expected output changes under single-bit flips. This establishes the asymptotic Gotsman–Linial conjecture, allowing polynomial zeros with $`\mathop{\mathrm{sign}}\nolimits (0)=1`$. (Lean)
 
@@ -170,7 +170,7 @@ not a resolution of the exact extremizer conjecture (which is false);
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3070], manuscript link [S1:3070] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3079], manuscript link [S1:3079] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 127 at [S2:331] |
 | S3 | [`preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/main.tex`](../../../preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/main.tex) | 76 | document root; abstract [S3:62–66]; six section `\input` directives [S3:69–74]; 76 lines |
 | S4 | [`preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/build/sections/01-introduction.tex) | 172 | `thm:main` [S4:20–28]; 172 lines |

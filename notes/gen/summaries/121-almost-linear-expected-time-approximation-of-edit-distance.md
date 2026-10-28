@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2963] (family entry):
+[S1:2972] (family entry):
 
 > **121. Almost-linear approximation of edit distance.** For every fixed rational $`\varepsilon\in(0,1)`$, gives a randomized $`(1+\varepsilon)`$ approximation to unit-cost edit distance in worst-case expected time $`N^{1+o(1)}`$, with success probability at least 2/3. The strings have total length N and polynomially bounded integer symbols. This is an asymptotic guarantee at fixed accuracy. (Lean)
 
@@ -158,7 +158,7 @@ named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2963], manuscript link [S1:2963] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2972], manuscript link [S1:2972] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 121 at [S2:320] |
 | S3 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex) | 31 | document root; abstract [S3:8–16]; eleven `\input` directives [S3:2–28]; 31 lines |
 | S4 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex) | 203 | `thm:main` [S4:13–26]; context [S4:40–55]; 203 lines |

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2979] (family entry):
+[S1:2988] (family entry):
 
 > **122. Quantitative trace-reconstruction bounds with a uniform decoder.** At every fixed deletion probability in $`(0,1)`$, reconstructing an arbitrary length-n binary string requires $`n^{\Omega(\log\log n)}`$ independent traces, ruling out polynomial-sample reconstruction. A uniform decoder achieves quasipolynomial sample and running-time bounds for known fixed rational retention probabilities. When the deletion probability is at most $`n^{-\varepsilon}`$ for fixed ε > 0, both bounds become polynomial in the input and parameter encoding. (Lean)
 
@@ -242,7 +242,7 @@ question, not a resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2979], manuscript link [S1:2979] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2988], manuscript link [S1:2988] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 122 at [S2:322] |
 | S3 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex) | 25 | document root; abstract [S3:8–10]; eight `\input` directives [S3:11–18]; 25 lines |
 | S4 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex) | 76 | `thm:main` [S4:7–13]; `thm:tv` [S4:20–29]; history [S4:35]; 76 lines |

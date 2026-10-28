@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3102] (family entry):
+[S1:3111] (family entry):
 
 > **129. Exponential state costs for two-way automata.** Proves exponential lower bounds both for complementing two-way nondeterministic finite automata and for simulating one-way nondeterministic automata by two-way deterministic ones. The latter resolves the Sakoda–Sipser state-succinctness conjecture over growing finite alphabets; both results rule out polynomial state bounds independent of alphabet size. (Lean)
 
@@ -189,7 +189,7 @@ conjecture over growing finite alphabets; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3102], manuscript link [S1:3102] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3111], manuscript link [S1:3111] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 129 at [S2:335] |
 | S3 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex) | 46 | MS1 document root; abstract [S3:30–36]; five section `\input` directives [S3:37–41]; 46 lines |
 | S4 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex) | 151 | MS1 `main:theorem` [S4:38–48]; 151 lines |

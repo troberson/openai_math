@@ -6,16 +6,16 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2554] (family entry):
+[S1:2563] (family entry):
 
 > **103. Exact derandomization of logarithmic space: $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$.** Proves $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$, resolving derandomization for bounded-error logarithmic-space computation. An effective compiler converts each randomized polynomial-time logarithmic-space machine deciding a language with one-sided or two-sided error into a deterministic logarithmic-space decider with explicit polynomial running-time bounds. (Lean)
 
-[S1:2561] (the manuscript entry under that family):
+[S1:2570] (the manuscript entry under that family):
 
 > Exact derandomization of logarithmic space: L = RL = BPL
 
 [S3:11–14] carries the manuscript's own abstract, and [S2:284] carries the
-[S1:2554] text, so the release blurb and the `\resultentry` agree to the word.
+[S1:2563] text, so the release blurb and the `\resultentry` agree to the word.
 
 ## Undergraduate summary
 
@@ -280,7 +280,7 @@ scope note, and no verification bundle or reasoning trace [S12].
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2554] and its manuscript entry [S1:2561]. Quoted word-for-word; the release's inline code spans stay as backticked markdown |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2563] and its manuscript entry [S1:2570]. Quoted word-for-word; the release's inline code spans stay as backticked markdown |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 103 at [S2:284] |
 | S3 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/main.tex`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/main.tex) | 34 | root (`\documentclass`); abstract at [S3:11–14]; the section include order [S3:16–28] |
 | S4 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex) | 366 | class definitions [S4:19–26]; the two theorems [S4:28–32], [S4:40–49]; proof strategy [S4:197–250]; historical context [S4:66–189] |

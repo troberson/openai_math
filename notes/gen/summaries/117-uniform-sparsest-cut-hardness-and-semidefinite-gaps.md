@@ -6,17 +6,17 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2881] (family entry):
+[S1:2890] (family entry):
 
 > **117. Uniform sparsest cut: hardness and semidefinite gaps.** Proves that approximating Uniform Sparsest Cut within any fixed constant factor is NP-hard, even with nonnegative rational capacities and unit demands. The Goemans–Linial semidefinite relaxation also has integrality gaps of order at least $`\sqrt{\log n}/(\log\log n)^3`$, approaching the square-root-logarithmic upper bound. (Lean)
 
-[S1:2888] (the hardness manuscript entry, with its abstract at [S1:2890]):
+[S1:2897] (the hardness manuscript entry, with its abstract at [S1:2899]):
 
 > Constant-factor hardness of uniform sparsest cut
 
 > We prove that, for every fixed C > 1, approximating Uniform Sparsest Cut within factor C is NP-hard. The output graphs have nonnegative rational capacities and unit demand between every pair of distinct vertices.
 
-[S1:2897] (the gaps manuscript entry, with its abstract at [S1:2899]):
+[S1:2906] (the gaps manuscript entry, with its abstract at [S1:2908]):
 
 > Near-square-root logarithmic integrality gaps for uniform sparsest cut
 
@@ -257,7 +257,7 @@ conjecture with a resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2881], hardness link [S1:2888] and abstract [S1:2890], gaps link [S1:2897] and abstract [S1:2899] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2890], hardness link [S1:2897] and abstract [S1:2899], gaps link [S1:2906] and abstract [S1:2908] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 117 at [S2:312] |
 | S3 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 83 | root (`\documentclass`); abstract [S3:69–71]; `\tableofcontents` [S3:72]; eight `\input` directives [S3:73–80]; 83 lines |
 | S4 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex) | 217 | `thm:main` [S4:14–31]; context [S4:34–112]; proof structure [S4:128–205] |

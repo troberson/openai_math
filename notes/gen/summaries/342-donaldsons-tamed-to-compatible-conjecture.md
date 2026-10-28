@@ -166,7 +166,7 @@ The paper has two editions in the release. The October 6, 2026 edition is the on
 
 > This version characterizes the compatible cone by intersection positivity, restricts the cone-sum equality to $h_J^-=b_2^+-1$, and adds a four-torus example of strict inclusion [S3:21]
 
-The release's update log gives the reason for re-issuing both papers in this pair: "Taming and hypersymplectic deformation (2 manuscripts): corrected the cone-equality claim in Taming implies compatibility, added a strict-inclusion example, and removed an unnecessary cone-comparison dependency from the hypersymplectic paper. [S21:23]" [S21:24] The October edition's corollary is the one that carries the `h_J^- = b₂⁺ − 1` hypothesis, and the strict-inclusion four-torus example is its addition [S6:60–70] [S13:375–418].
+The release's update log gives the reason for re-issuing both papers in this pair: "Taming and hypersymplectic deformation (2 manuscripts): corrected the cone-equality claim in Taming implies compatibility, added a strict-inclusion example, and removed an unnecessary cone-comparison dependency from the hypersymplectic paper. [S21:42]" The October edition's corollary is the one that carries the `h_J^- = b₂⁺ − 1` hypothesis, and the strict-inclusion four-torus example is its addition [S6:60–70] [S13:375–418].
 
 ## Consequences
 

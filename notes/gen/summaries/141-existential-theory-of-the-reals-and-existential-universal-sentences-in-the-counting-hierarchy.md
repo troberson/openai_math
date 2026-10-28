@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3411] (family entry):
+[S1:3420] (family entry):
 
 > **141. Existential–universal real sentences in the counting hierarchy.** Proves that the existential theory of the reals lies in the counting hierarchy. More generally, truth of existential–universal real sentences can be decided at one fixed level of that hierarchy, even when their integer polynomials are specified by arithmetic circuits.
 
@@ -123,7 +123,7 @@ training data, and the release ships the manuscript as proof.
 
 - **ETR is in the counting hierarchy.** The existential theory of the
   reals lies in $\mathsf{CH}$; more specifically $\mathsf{ETR}\in\mathsf{CH}_{26}$
-  [S4:37–45][S1:3411].
+  [S4:37–45][S1:3420].
 - **The two-block language is at a fixed level.** The
   existential–universal language $\exists\forall\mathbb R_{\mathrm{circ}}$ with circuit-encoded
   polynomials lies at a fixed level $\mathsf{CH}_j$ for an absolute $j$
@@ -133,7 +133,7 @@ training data, and the release ships the manuscript as proof.
   [S4:35–36].
 - **Circuit encoding is covered.** The result applies to polynomials
   specified by arithmetic circuits, not just explicit coefficient
-  lists [S1:3411][S4:15–19].
+  lists [S1:3420][S4:15–19].
 - **Every fixed $\mathsf{CH}$ level is in PSPACE.** A depth-first simulation
   enumerates random choices in polynomial space, so the counting
   hierarchy bound is weaker than the known PSPACE bound for $\mathsf{ETR}$
@@ -143,7 +143,7 @@ training data, and the release ships the manuscript as proof.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3411], manuscript link [S1:3418] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3420], manuscript link [S1:3427] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 141 at [S2:359] |
 | S3 | [`preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/main.tex`](../../../preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/main.tex) | 30 | document root; abstract [S3:9–13]; seven section `\input` directives [S3:17–23]; 30 lines |
 | S4 | [`preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/sections/01-introduction.tex`](../../../preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/sections/01-introduction.tex) | 178 | `thm:main` [S4:30–37]; 178 lines |

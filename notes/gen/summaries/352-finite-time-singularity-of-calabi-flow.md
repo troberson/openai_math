@@ -90,7 +90,7 @@ Inside the release, the family is at tier T0 with no formalized manuscript, no s
 
 ## Coverage
 
-The release records 1 manuscript for this family and 0 formalized paths, 0 comparator challenges, 0 `main_results` entries, 0 scope notes, 1 verification bundle, 0 inputs, and no reasoning trace [S3:348]. The overview entry is the family's only release-level statement [S2:802]. The manuscript abstract is the release's own claim [S1:8576]. The verification bundle's run command is named by the README's `## Verification` section [S4:19]. The bundle's three programs were read as documents, not executed, so no run output is recorded here.
+The release records 1 manuscript for this family and 0 formalized paths, 0 comparator challenges, 0 `main_results` entries, 0 scope notes, 1 verification bundle, 0 inputs, and no reasoning trace [S3:348]. The overview entry is the family's only release-level statement [S2:804]. The manuscript abstract is the release's own claim [S1:8576]. The verification bundle's run command is named by the README's `## Verification` section [S4:19]. The bundle's three programs were read as documents, not executed, so no run output is recorded here.
 
 ## Sources
 

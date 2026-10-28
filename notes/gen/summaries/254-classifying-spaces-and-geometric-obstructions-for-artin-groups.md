@@ -8,9 +8,9 @@
 
  carries the family entry:
 
-> The Salvetti complex of every finite-rank Artin group is aspherical [S1:595]
+> The Salvetti complex of every finite-rank Artin group is aspherical [S1:597]
 
-[S1:595] carries the first manuscript entry as link text:
+[S1:597] carries the first manuscript entry as link text:
 
 > Artin $K(\pi,1)$
 
@@ -53,7 +53,7 @@ For the parabolic result, "The formalization proves that the intersection of any
 
 ## History of the conjecture
 
-The Artin $K(\pi,1)$ conjecture is the standard statement that the Salvetti complex is aspherical, posed for the class of Artin groups of finite type and extended to arbitrary Coxeter labels. The Parabolic Intersection Conjecture is the statement that parabolic subgroups are closed under intersection, posed for Artin groups of finite type. The release's blurb states both as conjectures the manuscripts prove, and the scope note records the formalized versions as covering every Coxeter matrix on a finite generating set. [S1:595]
+The Artin $K(\pi,1)$ conjecture is the standard statement that the Salvetti complex is aspherical, posed for the class of Artin groups of finite type and extended to arbitrary Coxeter labels. The Parabolic Intersection Conjecture is the statement that parabolic subgroups are closed under intersection, posed for Artin groups of finite type. The release's blurb states both as conjectures the manuscripts prove, and the scope note records the formalized versions as covering every Coxeter matrix on a finite generating set. [S1:597]
 
 The CAT(0) side sits in the geometric-action literature: the manuscript's README records the citation key `ArtinNoCAT0`, and the theorem is stated as a nonexistence over all nonempty proper CAT(0) spaces, in any dimension. [S9:11–12]
 

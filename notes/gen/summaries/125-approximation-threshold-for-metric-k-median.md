@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3029] (family entry):
+[S1:3038] (family entry):
 
 > **125. The metric k-median approximation threshold and recovery.** Gives a deterministic polynomial-time $`(1+2/e+\varepsilon)`$-approximation for finite rational metric k-median with specified candidate facilities, for every fixed ε > 0. Assuming $`P\ne NP`$, the optimal infimum approximation factor is $`1+2/e`$. (Lean)
 
@@ -200,7 +200,7 @@ named $1+2/e$ threshold; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3029], manuscript link [S1:3029] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3038], manuscript link [S1:3038] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 125 at [S2:327] |
 | S3 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/paper.tex`](../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/paper.tex) | 39 | document root; abstract [S3:9–20]; ten `\input` directives [S3:24–33]; 39 lines |
 | S4 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex`](../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex) | 276 | `ref:recovery` [S4:47–75]; `main:theorem` [S4:142–155]; 276 lines |

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3427] (family entry):
+[S1:3436] (family entry):
 
 > **142. Deterministic polynomial factorization over prime fields.** Gives a uniform deterministic algorithm that completely factors every nonzero dense degree-n polynomial over a prime field 𝔽p, including multiplicities, in bit complexity polynomial in $`(n+1)\log p`$. The prime is supplied in binary. No randomness, integer-factorization or primitive-root oracle, or GRH assumption is required.
 
@@ -128,7 +128,7 @@ such a result in my training data; the release ships the manuscript
   degree-$n$ polynomial over $\mathbf F_p$ is completely factored, with
   multiplicities, in bit complexity polynomial in $(n+1)\log p$,
   uniformly, with no randomness, no GRH, and no oracle
-  [S4:28–38][S1:3427].
+  [S4:28–38][S1:3436].
 - **The bound is uniform.** The same algorithm works for every prime
   $p$ and every degree $n$; the constant is absolute
   [S4:28–38].
@@ -149,7 +149,7 @@ such a result in my training data; the release ships the manuscript
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3427], manuscript link [S1:3434] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3436], manuscript link [S1:3443] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 142 at [S2:361] |
 | S3 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex`](../../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex) | 72 | document root; 73 lines |
 | S4 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/sections/00-introduction.tex`](../../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/sections/00-introduction.tex) | 278 | `thm:factorization` [S4:28–38], `thm:reduction` [S4:54–69]; 278 lines |

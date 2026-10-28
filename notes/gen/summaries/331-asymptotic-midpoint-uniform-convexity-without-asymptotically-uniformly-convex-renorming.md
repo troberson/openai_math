@@ -8,11 +8,11 @@
 
  carries the family entry:
 
-> Constructs a real reflexive Banach space with an asymptotically midpoint uniformly convex norm but no equivalent asymptotically uniformly convex norm, extending Baudier's separation to reflexive spaces. [S1:758]
+> Constructs a real reflexive Banach space with an asymptotically midpoint uniformly convex norm but no equivalent asymptotically uniformly convex norm, extending Baudier's separation to reflexive spaces. [S1:760]
 
  carries the first manuscript entry as link text:
 
-> Reflexive tree-space example [S1:758]
+> Reflexive tree-space example [S1:760]
 
 ## Undergraduate summary
 
@@ -63,7 +63,7 @@ The last scope paragraph is explicit that assumptions are part of the statements
 
 The separation sits on the James-tree literature. The manuscript records that for the classical binary James tree space, Girardi proved AUC of both the coordinate predual and the full dual, and that the countable branching and finite, unbounded component heights used here lead to a different behavior. [S3:93–97]
 
-The diamond-graph side comes from the countably branching diamond and the tree-space embedding literature; the manuscript's citation record names the Baudier--Lancien manuscript as the source of the problem it answers, and the release's own blurb describes the result as extending Baudier's separation to reflexive spaces. [S1:758]
+The diamond-graph side comes from the countably branching diamond and the tree-space embedding literature; the manuscript's citation record names the Baudier--Lancien manuscript as the source of the problem it answers, and the release's own blurb describes the result as extending Baudier's separation to reflexive spaces. [S1:760]
 
 The Daugavet companion sits in the Daugavet-property literature: the manuscript states its exact modulus formulas for the class of closed infinite-dimensional subspaces of $L_1[0,1]$ with precompact unit ball in measure, and the citation record in the manuscript's README names the citation key `DaugavetExactModuli`. [S11:37–45]
 

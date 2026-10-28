@@ -6,13 +6,13 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:3784]:
+The release's blurb [S1:3793]:
 
 > **159. Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds.** Proves Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. Quantitatively, for each fixed *k* ≥ 3, every subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term progression has size at most $`C_kN\exp[-c_k(\log N)^{\varepsilon_k}]`$, with positive constants depending only on *k*. (Lean)
 
 The manuscript's own abstract entry in the same table 
 
-> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed *k* ≥ 3, we show $`\displaystyle r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr)`$ with $`C_k,c_k,\varepsilon_k\gt 0`$, where $`r_k(N)`$ is the largest size of a subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term arithmetic progression. [S1:3793–3797]
+> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed *k* ≥ 3, we show $`\displaystyle r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr)`$ with $`C_k,c_k,\varepsilon_k\gt 0`$, where $`r_k(N)`$ is the largest size of a subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term arithmetic progression. [S1:3802–3806]
 
 The same abstract as typeset in the manuscript source 
 

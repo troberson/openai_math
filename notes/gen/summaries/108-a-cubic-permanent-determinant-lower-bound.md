@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2679] (family entry):
+[S1:2688] (family entry):
 
 > **108. A cubic permanent–determinant lower bound.** Proves an $\Omega(n^3)$ lower bound for the border determinantal complexity of the $n\times n$ permanent over ℂ. Even coefficientwise limits of determinants of affine-linear matrices require matrix size at least $cn^3$, for an absolute c > 0 and all sufficiently large n; the same bound therefore holds for exact representations. (Lean)
 
-[S1:2686] (the manuscript entry, with its abstract at [S1:2688]):
+[S1:2695] (the manuscript entry, with its abstract at [S1:2697]):
 
 > A cubic lower bound for border determinantal complexity of the permanent
 
@@ -194,7 +194,7 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2679], manuscript link [S1:2686] and abstract [S1:2688] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2688], manuscript link [S1:2695] and abstract [S1:2697] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 108 at [S2:294] |
 | S3 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex) | 98 | root (`\documentclass`); abstract [S3:78–85]; `\tableofcontents` [S3:86]; nine `\input` directives [S3:87–95]; 98 lines |
 | S4 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex) | 257 | `thm:main` [S4:41–49]; context [S4:66–152]; proof strategy [S4:154–257]; 257 lines |

@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2629] (family entry):
+[S1:2638] (family entry):
 
 > **106. Hardness of coloring three-colorable graphs.** It is NP-hard to color a three-colorable graph using any fixed number c ≥ 3 of colors. More strongly, for every fixed $`0\lt \delta\lt 1/3`$, a deterministic polynomial-time reduction from 3SAT produces simple unweighted graphs that are three-colorable in the satisfiable case and have no independent set of size $`\delta n`$ otherwise, where n is the number of vertices. (Lean)
 
-[S1:2636] (the manuscript entry, with its abstract at [S1:2638]):
+[S1:2645] (the manuscript entry, with its abstract at [S1:2647]):
 
 > Hardness of finding large independent sets in three-colorable graphs
 
@@ -227,7 +227,7 @@ two evidence surfaces.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2629], the manuscript link [S1:2636], and the manuscript abstract [S1:2638]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2638], the manuscript link [S1:2645], and the manuscript abstract [S1:2647]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 106 at [S2:290] |
 | S3 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex) | 57 | root (`\documentclass`); abstract [S3:40–46]; the eight-section include order [S3:47–54] |
 | S4 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex) | 212 | the coloring and independent-set definitions [S4:3–10]; the main theorem [S4:12–30]; the coloring corollary [S4:48–58]; the history [S4:62–137]; the proof overview [S4:141–212] |

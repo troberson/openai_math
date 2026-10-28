@@ -6,17 +6,17 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2768] (family entry):
+[S1:2777] (family entry):
 
 > **113. Approximate counting and entropy of perfect matchings.** Gives a fully polynomial randomized approximation scheme for counting perfect matchings in arbitrary finite simple graphs, with exact detection of zero counts. Also proves the perfect-matching entropy conjecture of Anari, Oveis Gharan, and Vinzant, bounding the maximum entropy of a matching law at every feasible edge-marginal vector in a loopless labelled multigraph, including boundary points. (Lean)
 
-[S1:2775] (the FPRAS manuscript entry, with its abstract at [S1:2777]):
+[S1:2784] (the FPRAS manuscript entry, with its abstract at [S1:2786]):
 
 > A Fully Polynomial Randomized Approximation Scheme for Perfect Matchings in General Graphs
 
 > We give a fully polynomial randomized approximation scheme (FPRAS) for counting perfect matchings in arbitrary finite simple undirected graphs, resolving the general-graph perfect-matching approximation problem. The algorithm returns zero with certainty when no perfect matching exists. Otherwise, it achieves relative error ε with failure probability at most δ in worst-case bit time polynomial in the input length, $`\varepsilon ^{-1}`$, and $`\log\delta^{-1}`$.
 
-[S1:2784] (the Entropy manuscript entry, with its abstract at [S1:2786–2790]):
+[S1:2793] (the Entropy manuscript entry, with its abstract at [S1:2795–2799]):
 
 > Entropy and Face Dimension of the Perfect-Matching Polytope
 
@@ -224,7 +224,7 @@ no verification bundle and no reasoning trace; the two shipped PDFs
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2768], the FPRAS manuscript link [S1:2775] and abstract [S1:2777], the Entropy manuscript link [S1:2784] and abstract [S1:2786–2790]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2777], the FPRAS manuscript link [S1:2784] and abstract [S1:2786], the Entropy manuscript link [S1:2793] and abstract [S1:2795–2799]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 113 at [S2:304] |
 | S3 | [`preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex`](../../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex) | 3471 | root (`\documentclass`); `\newcommand{\eps}{\varepsilon}` at [S3:91]; abstract [S3:109–115]; `thm:main` [S3:132–143]; history [S3:151–241]; proof architecture [S3:243+] |
 | S4 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex`](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex) | 77 | root (`\documentclass`); `\DeclareMathOperator{\supp}{supp}` at [S4:23]; abstract [S4:48–59]; include order [S4:61–70] |

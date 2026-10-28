@@ -8,11 +8,11 @@
 
 The release's blurb for family 345 
 
-> **345. Infinitely many closed geodesics on Riemannian spheres and closed three-manifolds.** Proves that every smooth Riemannian metric on Sn, n ≥ 2, has infinitely many prime closed geodesics with pairwise distinct images. The same conclusion holds on every closed manifold admitting a finite smooth spherical cover and on every closed three-manifold, without orientability or nondegeneracy restrictions. [S1:8356]
+> **345. Infinitely many closed geodesics on Riemannian spheres and closed three-manifolds.** Proves that every smooth Riemannian metric on Sn, n ≥ 2, has infinitely many prime closed geodesics with pairwise distinct images. The same conclusion holds on every closed manifold admitting a finite smooth spherical cover and on every closed three-manifold, without orientability or nondegeneracy restrictions. [S1:8365]
 
-The catalog abstract in `overview.tex` [S2:788] is the same sentence. The release's abstract for the manuscript 
+The catalog abstract in `overview.tex` [S2:790] is the same sentence. The release's abstract for the manuscript 
 
-> We resolve the sphere case of the closed-geodesic infinitude problem: every smooth Riemannian metric on the standard sphere Sn, n ≥ 2, has infinitely many prime closed geodesics with pairwise distinct images. The two-sphere case is classical; the result in higher dimensions includes degenerate metrics. Using finite covers and theorems of Perelman and Rademacher–Taimanov, we also obtain the same conclusion for every smooth Riemannian metric on a nonempty closed smooth three-manifold. [S1:8365]
+> We resolve the sphere case of the closed-geodesic infinitude problem: every smooth Riemannian metric on the standard sphere Sn, n ≥ 2, has infinitely many prime closed geodesics with pairwise distinct images. The two-sphere case is classical; the result in higher dimensions includes degenerate metrics. Using finite covers and theorems of Perelman and Rademacher–Taimanov, we also obtain the same conclusion for every smooth Riemannian metric on a nonempty closed smooth three-manifold. [S1:8374]
 
 The bibtex key the release ships [S3:10–13]:
 
@@ -206,7 +206,7 @@ The two-sphere case is classical, through Bangert with Franks or Hingston, exten
 
 ## Consequences
 
-The direct consequence is the release's statement: every smooth metric on every sphere of dimension at least two has infinitely many prime closed geodesics with distinct images, and the same holds on every closed manifold with a finite smooth spherical cover and on every closed three-manifold, with no orientability or nondegeneracy restriction [S1:8356] [S2:788]. The corollary covers real projective spaces and smooth spherical space forms [S6:73], and the three-manifold case reaches outside the spherical-cover class through geometrization [S6:100–106].
+The direct consequence is the release's statement: every smooth metric on every sphere of dimension at least two has infinitely many prime closed geodesics with distinct images, and the same holds on every closed manifold with a finite smooth spherical cover and on every closed three-manifold, with no orientability or nondegeneracy restriction [S1:8365] [S2:790]. The corollary covers real projective spaces and smooth spherical space forms [S6:73], and the three-manifold case reaches outside the spherical-cover class through geometrization [S6:100–106].
 
 The method's consequence is the treatment of degenerate metrics. The manuscript states that a limiting argument from generic metrics need not preserve distinct prime images [S6:49–50], and its uniform filling statement is independent of the finite-prime assumption [S6:123–124].
 

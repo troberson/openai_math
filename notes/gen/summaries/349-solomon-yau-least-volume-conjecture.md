@@ -14,7 +14,7 @@ The manuscript's abstract
 
 > Volume is measured on the domain, including covering multiplicities. The theorem resolves the stated least-volume conjecture positively. The threshold is attained by a Clifford product minimizing $a_m$. [S6:36–38]
 
-The catalog abstract in `overview.tex` is the blurb quoted above [S2:796]. The bibtex key the release ships [S3:10–13]:
+The catalog abstract in `overview.tex` is the blurb quoted above [S2:798]. The bibtex key the release ships [S3:10–13]:
 
 > @misc{OAI:The-Solomon-Yau-least-volume-theorem-September-23-2026,
 >   author = {{OpenAI}},

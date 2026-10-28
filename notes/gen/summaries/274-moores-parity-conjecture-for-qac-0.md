@@ -8,10 +8,10 @@
 
  carries the family entry:
 
-> Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu–Li's reductions give the same bounded-error obstruction for strict majority. [S1:637]
+> Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu–Li's reductions give the same bounded-error obstruction for strict majority. [S1:639]
 
-The entry links the two manuscripts as "Product-projection localization [S1:637]"
-and "Regular trajectories and pruning [S1:637]" .
+The entry links the two manuscripts as "Product-projection localization [S1:639]"
+and "Regular trajectories and pruning [S1:639]" .
 
 The first manuscript's title is `Product-projection localization and the QAC⁰ parity lower bound` [S2:1].
 
@@ -217,7 +217,7 @@ own reading. The claim in the entry is the record.
 Moore's conjecture is settled in the measured-output model, and the two
 manuscripts give independent proofs of the same theorem [S3:10–15] and
 [S14:49–55]. The entry records that Xu--Li's reductions give the same
-bounded-error obstruction for strict majority [S1:637].
+bounded-error obstruction for strict majority [S1:639].
 
 The scope note records the same reach for the formalized result, including
 the polynomial-size specialization at the $2/3$ threshold [S24:12], and

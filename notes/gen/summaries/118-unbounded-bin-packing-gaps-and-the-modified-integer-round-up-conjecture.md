@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2906] (family entry):
+[S1:2915] (family entry):
 
 > **118. Bin packing and unbounded configuration-LP gaps.** Disproves the modified integer round-up conjecture of Scheithauer and Terno: the integral bin-packing optimum can exceed its configuration linear-programming value by an arbitrarily large additive constant. Approximating the optimum within any fixed additive constant is also NP-hard, even when every item exceeds 1/6 and each bin holds at most five items. (Lean)
 
@@ -191,7 +191,7 @@ Conjecture with a resolve verb; `counterex_broad=1`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2906], manuscript link [S1:2906] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2915], manuscript link [S1:2915] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 118 at [S2:314] |
 | S3 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/main.tex`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/main.tex) | 27 | document body; abstract [S3:9–16]; eight `\input` directives [S3:17–24]; 27 lines |
 | S4 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex) | 276 | `thm:unbounded-gap` [S4:87–95]; `thm:additive-hardness` [S4:106–112]; `cor:complexity-equiv` [S4:114–117]; history [S4:3–85]; construction overview [S4:181–276]; 277 lines |

@@ -6,17 +6,17 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2797] (family entry):
+[S1:2806] (family entry):
 
 > **114. Approximate counting of common integer polymatroid bases.** Gives a fully polynomial randomized approximation scheme for counting common integer bases of two integral polymatroids of equal total rank, supplied by exact rank-value oracles. Capacities are binary-encoded, each integer vector counts once, and oracle calls and bit operations outside the oracles are polynomial on every execution. For matroids presented by independence oracles, the results also cover common independent sets of prescribed, unrestricted, or maximum cardinality, even when the ranks differ. (Lean)
 
-[S1:2804] (the polymatroid manuscript entry, with its abstract at [S1:2806]):
+[S1:2813] (the polymatroid manuscript entry, with its abstract at [S1:2815]):
 
 > An FPRAS for Common Integer Polymatroid Bases with Binary Capacities
 
 > We give a fully polynomial randomized approximation scheme for counting common integer bases of two polymatroids with the same total rank, supplied by exact rank-value oracles. The total rank and capacities are encoded in binary, and each integer vector is counted once. On every execution, the number of oracle calls and the bit work outside the oracles are bounded by a fixed polynomial in the ground-set size, the binary input length, the inverse relative-error tolerance, and the logarithm of the inverse failure probability. The algorithm handles binary capacities directly, without expanding them into labelled copies.
 
-[S1:2813] (the matroid manuscript entry, with its abstract at [S1:2815]):
+[S1:2822] (the matroid manuscript entry, with its abstract at [S1:2824]):
 
 > Approximate counting of common bases of two matroids
 
@@ -210,7 +210,7 @@ and the Lean layer [S8–S11] are the evidence surfaces.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2797], polymatroid link [S1:2804] and abstract [S1:2806], matroid link [S1:2813] and abstract [S1:2815] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2806], polymatroid link [S1:2813] and abstract [S1:2815], matroid link [S1:2822] and abstract [S1:2824] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 114 at [S2:306] |
 | S3 | [`preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/build/main.tex`](../../../preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/build/main.tex) | 1831 | root (`\documentclass`); abstract [S3:50–54]; `thm:main` [S3:86–104]; history [S3:116–174]; reduction [S3:244+]; corollary [S3:1471+]; 1831 lines |
 | S4 | [`preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/build/main.tex`](../../../preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/build/main.tex) | 89 | root (`\documentclass`); abstract [S4:63–72]; seven `\input` directives [S4:75–81]; 89 lines |

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2947] (family entry):
+[S1:2956] (family entry):
 
 > **120. Almost-linear-time exact matching and prescribed-degree factors in general graphs.** Gives a randomized algorithm finding an exact maximum-cardinality matching in any simple undirected graph in $`(n+m)^{1+o(1)}`$ word time, with success probability at least 2/3. The time bound holds on every computation path. The same guarantees apply to finding a spanning subgraph with prescribed admissible vertex degrees, or deciding that none exists.
 
@@ -174,7 +174,7 @@ of the manuscript's own LaTeX and the shipped PDF [S6] only.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2947], manuscript link [S1:2947] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2956], manuscript link [S1:2956] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 120 at [S2:318] |
 | S3 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/main.tex`](../../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/main.tex) | 35 | document root; abstract [S3:8–17]; ten `\input` directives [S3:20–29]; 35 lines |
 | S4 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex) | 289 | `thm:main` [S4:34–46]; prior work [S4:73–126]; main ideas [S4:179–215]; 289 lines |

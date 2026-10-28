@@ -6,25 +6,25 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2570] (family entry):
+[S1:2579] (family entry):
 
 > **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $L$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. (Lean)
 
 The four manuscripts under that family:
 
-[S1:2577] (turn-based stochastic):
+[S1:2586] (turn-based stochastic):
 
 > Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time
 
-[S1:2586] (mean-payoff parity):
+[S1:2595] (mean-payoff parity):
 
 > Mean-payoff parity games in quasipolynomial time
 
-[S1:2595] (deterministic):
+[S1:2604] (deterministic):
 
 > Deterministic quasipolynomial-time mean-payoff games
 
-[S1:2604] (randomized):
+[S1:2613] (randomized):
 
 > Randomized quasipolynomial-time mean-payoff games
 
@@ -210,7 +210,7 @@ formalized targets.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2570] and the four manuscript entries [S1:2577], [S1:2586], [S1:2595], [S1:2604]. The release's inline code spans stay as backticked markdown, and the release's italic L is rendered as $L$ |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2579] and the four manuscript entries [S1:2586], [S1:2595], [S1:2604], [S1:2613]. The release's inline code spans stay as backticked markdown, and the release's italic L is rendered as $L$ |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 104 at [S2:286] |
 | S3 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 31 | root (`\documentclass`); abstract [S3:8–15]; the nine-section include order [S3:20–28] |
 | S4 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex) | 251 | the deterministic main theorem [S4:34–50]; the mean-payoff definition [S4:24–26] |

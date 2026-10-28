@@ -6,17 +6,17 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2822] (family entry):
+[S1:2831] (family entry):
 
 > **115. Sampling and counting contingency tables with arbitrary margins.** For nonnegative integer matrices with prescribed row and column sums, gives exact uniform sampling in expected polynomial bit time and almost-uniform sampling in worst-case polynomial bit time. The dimensions and binary-encoded margins are unrestricted. Also gives a fully polynomial randomized approximation scheme for counting such tables with arbitrary individual cell bounds, including structural zeros, with polynomial cost on every execution. (Lean)
 
-[S1:2829] (the exact-uniform manuscript entry, with its abstract at [S1:2831]):
+[S1:2838] (the exact-uniform manuscript entry, with its abstract at [S1:2840]):
 
 > Exact Uniform Sampling of Contingency Tables with Arbitrary Margins
 
 > We give an exact uniform sampler for nonnegative integer contingency tables with arbitrary prescribed margins. It terminates almost surely and has expected bit complexity polynomial in both dimensions and the binary length of the margins. No positivity, balance, sparsity, or fixed-dimension assumption is required.
 
-[S1:2838] (the cell-bounded manuscript entry, with its abstract at [S1:2840]):
+[S1:2847] (the cell-bounded manuscript entry, with its abstract at [S1:2849]):
 
 > An FPRAS for Cell-Bounded Contingency Tables
 
@@ -228,7 +228,7 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2822], exact-uniform link [S1:2829] and abstract [S1:2831], cell-bounded link [S1:2838] and abstract [S1:2840] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2831], exact-uniform link [S1:2838] and abstract [S1:2840], cell-bounded link [S1:2847] and abstract [S1:2849] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 115 at [S2:308] |
 | S3 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex) | 39 | root (`\documentclass`); abstract [S3:22–27]; six `\input` directives [S3:29–34]; 39 lines |
 | S4 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex) | 158 | `thm:main` [S4:18–32]; history [S4:44–97]; proof strategy [S4:119–158] |

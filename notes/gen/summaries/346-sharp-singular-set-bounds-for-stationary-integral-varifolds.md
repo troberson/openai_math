@@ -18,7 +18,7 @@ The second manuscript's abstract
 
 > We resolve the almost-everywhere regularity conjecture of Brena, Decio, and De Lellis for stationary integral varifolds of arbitrary positive dimension and codimension in Euclidean open sets. The singular set has zero measure in the dimension of the varifold: near almost every support point, the varifold is a constant positive integer multiple of a smooth embedded minimal submanifold. The corresponding statement also holds on round spheres. [S1:8390]
 
-The catalog abstract in `overview.tex` [S2:790] is the blurb. The bibtex keys the release ships [S3:10–13]:
+The catalog abstract in `overview.tex` [S2:792] is the blurb. The bibtex keys the release ships [S3:10–13]:
 
 > @misc{OAI:A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026,
 >   author = {{OpenAI}},

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3086] (family entry):
+[S1:3095] (family entry):
 
 > **128. A factor-two approximation for shortest common superstring.** Gives a deterministic polynomial-time algorithm constructing a common superstring of length at most twice the optimum for every finite family of explicitly represented strings. The running time is polynomial in the full encoded input length, including symbol labels. (Lean)
 
@@ -161,7 +161,7 @@ resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3086], manuscript link [S1:3086] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3095], manuscript link [S1:3095] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 128 at [S2:333] |
 | S3 | [`preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/paper.tex`](../../../preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/paper.tex) | 56 | document root; abstract [S3:41–47]; seven section `\input` directives [S3:48–54]; 56 lines |
 | S4 | [`preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/build/sections/01-introduction.tex) | 31 | `thm:main` [S4:5–10]; 31 lines |

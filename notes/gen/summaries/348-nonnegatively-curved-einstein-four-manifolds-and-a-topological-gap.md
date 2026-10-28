@@ -22,7 +22,7 @@ The positively-curved manuscript's abstract
 
 > We prove the classification conjecture for connected smooth closed Einstein four-manifolds with strictly positive sectional curvature. Up to positive scaling and isometry, every such manifold is the round four-sphere, the complex projective plane with its Fubini–Study metric, or real projective four-space with its round metric. No orientability assumption is needed. [S1:8476]
 
-The three abstracts state three different results: a product-of-spheres rigidity under one zero-curvature plane, a diffeomorphism classification under a small L2 energy, and the classification conjecture under strict positivity. The catalog abstract in `overview.tex` is the blurb quoted above [S2:794]. The bibtex key the zero-plane manuscript ships [S3:10–13]:
+The three abstracts state three different results: a product-of-spheres rigidity under one zero-curvature plane, a diffeomorphism classification under a small L2 energy, and the classification conjecture under strict positivity. The catalog abstract in `overview.tex` is the blurb quoted above [S2:796]. The bibtex key the zero-plane manuscript ships [S3:10–13]:
 
 > @misc{OAI:Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026,
 >   author = {{OpenAI}},

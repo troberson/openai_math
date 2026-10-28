@@ -6,23 +6,23 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2847] (family entry):
+[S1:2856] (family entry):
 
 > **116. Uniform black-box noncommutative identity testing across characteristics.** For each characteristic, constructs in deterministic polynomial bit time a polynomial-dimensional matrix tuple detecting every nonzero division-free noncommutative formula of bounded size over any field of that characteristic. Rational formulas over ℚ also admit polynomial-size hitting lists whenever they have a defined rational-matrix evaluation. (Lean)
 
-[S1:2854] (the positive-characteristic manuscript entry, with its abstract at [S1:2856]):
+[S1:2863] (the positive-characteristic manuscript entry, with its abstract at [S1:2865]):
 
 > Uniform Matrix Hitting Points in Every Positive Characteristic
 
 > We construct a single matrix substitution that detects every nonzero size-s division-free noncommutative formula in n variables over every field of a given positive characteristic. One deterministic machine, given a promised prime p in binary and n, s in unary, outputs matrices over 𝔽p of dimension $`O(n^3s^6)`$ in polynomial bit time. The same tuple works with arbitrary extension-field coefficients, including in characteristic two. The construction also applies to the stated acyclic algebraic path programs.
 
-[S1:2863] (the one-rational manuscript entry, with its abstract at [S1:2865]):
+[S1:2872] (the one-rational manuscript entry, with its abstract at [S1:2874]):
 
 > One Rational Matrix Hitting Point for Noncommutative Formulas
 
 > We construct, in deterministic polynomial bit time, one tuple of rational matrices that detects every nonzero polynomial computed by a noncommutative division-free formula of a prescribed size. The matrices have dimension $`O(ns^2)`$ for n variables and formula size s, and the same tuple works over every field of characteristic zero.
 
-[S1:2872] (the hitting-lists manuscript entry, with its abstract at [S1:2874]):
+[S1:2881] (the hitting-lists manuscript entry, with its abstract at [S1:2883]):
 
 > Polynomial Hitting Lists for Noncommutative Rational Formulas
 
@@ -292,7 +292,7 @@ yaml. The shape flags are `bound` and `classification`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2847], uniform link [S1:2854] and abstract [S1:2856], one-rational link [S1:2863] and abstract [S1:2865], hitting-lists link [S1:2872] and abstract [S1:2874] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2856], uniform link [S1:2863] and abstract [S1:2865], one-rational link [S1:2872] and abstract [S1:2874], hitting-lists link [S1:2881] and abstract [S1:2883] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 116 at [S2:310] |
 | S3 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex) | 54 | root (`\documentclass`); abstract [S3:38–45]; five `\input` directives [S3:47–51]; 54 lines |
 | S4 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex) | 153 | `thm:main` [S4:17–35]; context [S4:63–114]; proof strategy [S4:117–153] |

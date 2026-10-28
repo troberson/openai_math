@@ -8,13 +8,13 @@
 
 **221. The Mézard–Parisi formula for diluted spin glasses.** Proves the Mézard–Parisi hierarchical cavity formula for Poisson-diluted even-arity Ising models satisfying the Panchenko–Talagrand factorization and positivity assumptions, with only first-moment integrability. The limiting free energy equals the infimum over finite-depth hierarchical trial laws. This includes the Viana–Bray model, symmetric diluted even-spin models, and weighted soft even-*K* satisfiability. ([Lean](../../../lean/docs/221.md))
 
-The blurb above is reproduced from [S1:5220]; the release sets the clause size in italic markup and this page writes it as *K*.
+The blurb above is reproduced from [S1:5229]; the release sets the clause size in italic markup and this page writes it as *K*.
 
 ## Undergraduate summary
 
 The release abstract states the result in one paragraph 
 
-> We prove the Mézard–Parisi hierarchical cavity formula for diluted even-arity Ising models in the Panchenko–Talagrand class. This resolves the variational equality conjecture for that class: the limiting pressure equals the infimum of the trial functional over all finite hierarchy depths and trial laws. Only first moments of the interaction and external field are required. [S1:5229]
+> We prove the Mézard–Parisi hierarchical cavity formula for diluted even-arity Ising models in the Panchenko–Talagrand class. This resolves the variational equality conjecture for that class: the limiting pressure equals the infimum of the trial functional over all finite hierarchy depths and trial laws. Only first moments of the interaction and external field are required. [S1:5238]
 
 A spin glass is a magnet whose couplings are frozen randomness. Take N spins, each equal to +1 or −1. Instead of connecting every pair of spins, constraints arrive at random: their number is Poisson with mean αN, and each constraint draws p spins uniformly at random, with replacement, and attaches a random coupling law to them [S8:12–20]. What the paper computes is the pressure F_N = (1/N) E log Z_N, the averaged logarithm of the partition function per spin; the physical free energy per spin is its negative divided by the inverse temperature β [S7:9–11]. Because the number of constraints is itself random, the interaction graph is sparse and looks locally like a tree with a random number of branches — the geometry the cavity method was built for.
 

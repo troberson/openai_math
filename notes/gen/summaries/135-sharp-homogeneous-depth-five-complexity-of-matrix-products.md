@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3261] (family entry):
+[S1:3270] (family entry):
 
 > **135. Homogeneous depth-five lower bounds for iterated matrix multiplication.** Over every characteristic-zero field, the $`(1,1)`$ entry of a product of n independent $`n\times n`$ variable matrices requires $`n^{\Theta(\sqrt n)}`$ gates in homogeneous depth-five sum–product circuits. This sharp bound allows shared gates and bottom linear forms involving all variables. (Lean)
 
@@ -141,7 +141,7 @@ manuscript as proof.
   computes $\mathrm{IMM}_{n,n}$ with at most $n^{\sqrt n+4}$ gates for
   $n\ge2$ [S6:11].
 - **Sharp gate complexity.** The two-sided bound pins the homogeneous
-  depth-five gate complexity to $n^{\Theta(\sqrt n)}$ [S1:3261].
+  depth-five gate complexity to $n^{\Theta(\sqrt n)}$ [S1:3270].
 - **The model is fully permissive.** Shared gates, constants, and
   bottom linear forms of arbitrary support are all allowed, so the
   hardness is not an artifact of an artificial restriction [S4:65–66].
@@ -223,7 +223,7 @@ flags are `bound|classification`; `resolves_named=0`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3261], manuscript link [S1:3261] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3270], manuscript link [S1:3270] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 135 at [S2:347] |
 | S3 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/paper.tex`](../../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/paper.tex) | 42 | document root; `macros` import [S3:14], abstract [S3:21–32]; six section `\input` directives [S3:34–39]; 42 lines |
 | S4 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/sections/01-introduction.tex) | 243 | `thm:main` [S4:53–63], circuit model [S4:20–51]; 243 lines |

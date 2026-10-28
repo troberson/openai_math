@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2922] (family entry):
+[S1:2931] (family entry):
 
 > **119. The Courtade–Kumar and Hellinger conjectures.** Proves the Courtade–Kumar conjecture: among Boolean functions of independent uniform bits, a single coordinate retains the most mutual information after independent bit-flip noise. A stronger theorem treats randomized binary summaries at fixed initial information. The Hellinger conjecture is also proved for every Boolean output bias and noise correlation. (Lean)
 
@@ -247,7 +247,7 @@ inequalities, not a theorem check.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2922], manuscript link [S1:2922] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2931], manuscript link [S1:2931] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 119 at [S2:316] |
 | S3 | [`preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/build/main.tex`](../../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/build/main.tex) | 334 | document body; abstract [S3:29–39]; `main:soft` [S3:72–84]; `main:ck` [S3:92–104]; `upgrade:production` [S3:307–317]; seven `\input` directives [S3:325–331]; 334 lines |
 | S4 | [`preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex`](../../../preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex) | 195 | document body; abstract [S4:35–41]; `thm:main` [S4:54–61]; ten section `\input` directives [S4:184–194]; 195 lines |

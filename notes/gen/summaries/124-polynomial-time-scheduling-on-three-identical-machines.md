@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3013] (family entry):
+[S1:3022] (family entry):
 
 > **124. Polynomial-time scheduling on three identical machines.** Resolves the three-processor unit-job scheduling problem of Garey and Johnson: a deterministic polynomial-time algorithm minimizes makespan for nonpreemptive unit-length jobs with arbitrary precedence constraints on three identical parallel machines. For an explicitly given precedence graph, it decides deadline feasibility exactly and constructs a feasible schedule. (Lean)
 
@@ -200,7 +200,7 @@ named Garey–Johnson problem OPEN8; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3013], manuscript link [S1:3013] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3022], manuscript link [S1:3022] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 124 at [S2:325] |
 | S3 | [`preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/paper.tex`](../../../preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/paper.tex) | 541 | document root; abstract [S3:69–77]; `thm:main` [S3:120–130]; `prop:algorithm` [S3:374–379]; `thm:structure` [S3:456–460]; six `\input` directives [S3:475–479, 537]; 541 lines |
 | S4 | [`preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/separators.tex`](../../../preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/build/separators.tex) | 162 | shared-cutoff separators; 5 environments; 162 lines |

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:3227] (family entry):
+[S1:3236] (family entry):
 
 > 1
 
@@ -117,7 +117,7 @@ proof.
   computing that minimum is a separate question [S4:43–45][S10:37–40].
 - **The uniform-boundedness problem is resolved.** The family answers
   the absolute-boundedness version of the generalized star-height
-  problem affirmatively [S1:3227].
+  problem affirmatively [S1:3236].
 
 ## Section skeleton
 
@@ -222,7 +222,7 @@ generalized star-height problem; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3227], manuscript links [S1:3227] |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:3236], manuscript links [S1:3236] |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 134 at [S2:345] |
 | S3 | [`preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/paper.tex`](../../../preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/paper.tex) | 49 | document root; abstract [S3:33–39]; eight section `\input` directives [S3:40–47], bibliography [S3:48]; 49 lines |
 | S4 | [`preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/sections/introduction.tex`](../../../preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/build/sections/introduction.tex) | 183 | `thm:main` [S4:33–39] ($h_\Sigma(L)\le13$); 183 lines |

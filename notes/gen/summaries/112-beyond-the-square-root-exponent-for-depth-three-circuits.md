@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2752] (family entry):
+[S1:2761] (family entry):
 
 > **112. Beyond the square-root exponent for depth-three circuits.** Constructs a single language in deterministic polynomial time whose n-bit membership function requires $`2^{\omega(\sqrt n)}`$ total gates in unbounded-fan-in OR–AND–OR circuits, at every sufficiently large input length. This crosses the square-root-exponent threshold for explicit depth-three Boolean circuit lower bounds. (Lean)
 
-[S1:2759] (the manuscript entry, with its abstract at [S1:2761]):
+[S1:2768] (the manuscript entry, with its abstract at [S1:2770]):
 
 > We construct a language in deterministic polynomial time whose n-bit membership function requires $`2^{\omega(\sqrt n)}`$ gates in an unbounded-fan-in OR–AND–OR circuit. The bound holds at every sufficiently large input length and counts all gates, including the bottom layer.
 
@@ -18,7 +18,7 @@
 agree. The family title names the crossing ("Beyond the square-root
 exponent"); the manuscript title names the same threshold, and the abstract
 adds the gate-counting convention — all gates, including the bottom layer
-[S1:2761].
+[S1:2770].
 
 ## Undergraduate summary
 
@@ -209,7 +209,7 @@ Lean layer [S10] [S11:133–140] [S12:8–14] [S13] are the two evidence surface
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2752], the manuscript link [S1:2759], and the manuscript abstract [S1:2761]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2761], the manuscript link [S1:2768], and the manuscript abstract [S1:2770]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 112 at [S2:302] |
 | S3 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex) | 32 | root (`\documentclass`); abstract [S3:15–21]; the include order [S3:23–31] |
 | S4 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex) | 144 | the gate-count definition [S4:13–19]; the main theorem [S4:21–35]; the square-root-exponent paragraph [S4:37–52]; the open-problem positioning [S4:54–61] |

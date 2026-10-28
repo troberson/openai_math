@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2613] (family entry):
+[S1:2622] (family entry):
 
 > **105. Perfect completeness for 2-to-1 games.** Proves Khot's 2-to-1 Games Conjecture with perfect completeness: for every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable games from games whose optimum is at most δ, on explicit unweighted instances. The alphabet depends only on δ, and every right-hand label has exactly two preimages under each constraint map. (Lean)
 
-[S1:2620] (the manuscript entry, with its abstract at [S1:2622]):
+[S1:2629] (the manuscript entry, with its abstract at [S1:2631]):
 
 > Perfect completeness for 2-to-1 games
 
@@ -216,7 +216,7 @@ Lean layer [S8] [S9:179–180] [S10] [S11] are the two evidence surfaces.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2613], the manuscript link [S1:2620], and the manuscript abstract [S1:2622]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:2622], the manuscript link [S1:2629], and the manuscript abstract [S1:2631]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
 | S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 105 at [S2:288] |
 | S3 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/main.tex`](../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/main.tex) | 64 | root (`\documentclass`); abstract [S3:48–53]; the eight-section include order [S3:54–61] |
 | S4 | [`preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/00-introduction.tex`](../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/build/00-introduction.tex) | 254 | the projection-game definition [S4:3–9]; the 2-to-1 definition [S4:12–17]; the main theorem [S4:32–45]; the $k$-colorable corollary [S4:189–200]; the Not-Two corollary [S4:222–232]; the historical paragraphs [S4:54–73] |

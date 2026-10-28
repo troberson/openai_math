@@ -30,7 +30,7 @@ The degenerate manuscript's abstract
 
 > We construct a smooth one-periodic Hamiltonian on a closed symplectic twelve-manifold whose time-one map has fewer fixed points than the manifold's ordinary Morse number. Every fixed point is nondegenerate and has a contractible Hamiltonian trajectory. This disproves the Morse-number form of the Arnold conjecture. The deficit can be arbitrarily large among twelve-dimensional examples. [S1:8433]
 
-The catalog abstract in `overview.tex` is the blurb quoted above [S2:792]. The bibtex key the degenerate manuscript ships [S3:10–13]:
+The catalog abstract in `overview.tex` is the blurb quoted above [S2:794]. The bibtex key the degenerate manuscript ships [S3:10–13]:
 
 > @misc{OAI:A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026,
 >   author = {{OpenAI}},
