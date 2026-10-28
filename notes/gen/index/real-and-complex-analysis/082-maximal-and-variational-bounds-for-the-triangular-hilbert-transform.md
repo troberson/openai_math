@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md](../../../../notes/gen/summaries/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md) |
 
 ## Manuscripts
 
