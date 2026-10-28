@@ -13,10 +13,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **74** scripts: **21** writers, **30** report-only, **23** checkers,
+file. The classes partition the **75** scripts: **21** writers, **31** report-only, **23** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 21 write, 53 write nothing
+## The split: 21 write, 54 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -37,7 +37,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **21** writers over **74** scripts.
+finds **21** writers over **75** scripts.
 
 ### Writers
 
@@ -129,7 +129,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **53** scripts write nothing. **30** of them print a report: **19** print the report a page's
+The other **54** scripts write nothing. **31** of them print a report: **19** print the report a page's
 counts come from, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
 after it, **7** print a wall, a candidate comparison, or a fleet census that no page's counts come from
@@ -212,6 +212,7 @@ had to wait for the serial chain to finish.
 | `check_gate_budget.py` | none — the budget assertion `wall < 300 s`, the row-time sum, and the three heaviest rows | **not gated** — the driver runs it post-gate, because the wall it reads is landed by the run itself |
 | `check_index_links.py` | `notes/development/index-links.md` | plain; the self-tests are in `notes/scripts/tests/test_index_links.py`, run by the `run_tests.py` row |
 | `check_summary_manuscripts.py` | `notes/gen/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
+| `diff_outdir.py` | none — the out-of-tree render diff: walks a `render_reports.py --outdir` tree, maps each file to its in-tree path, and reports `ok` / `stale` / `missing`, the proof the generated tree is produced correctly | **not gated** — run by hand against a render's outdir |
 | `dump_template_slots.py` | `notes/development/templates.md` — the writer's slot labels with their values | plain |
 | `extract_citations.py` | `notes/gen/reports/citations.md` | plain |
 | `extract_counterexample_crosscheck.py` | `notes/gen/reports/counterexample-crosscheck.md` | plain |
@@ -465,7 +466,7 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-{% raw %}**66** of the **74** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+{% raw %}**66** of the **75** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
 {% endraw %}
 each script's own source: **12** `extract_` (all of them), **6** `build_` (all), **14** `measure_`
 (all 20 but `measure_needles.py`, `measure_proof_density.py`, `measure_topics.py` and the three render
@@ -473,8 +474,9 @@ probes, which reach `render_reports` directly), **2** `check_` (`check_index_lin
 `check_summary_manuscripts.py`),
 **23** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
 `read_manuscript.py`, `compare_abstracts.py`, `locate_summary_quotes.py`, `run_tests.py` and `gate.py`.
-The eight scripts that do not are `check_gate_budget.py`, which reads the gate wall log and the gate row TSV
-directly; `dump_template_slots.py`, which reaches the slot dict through
+The nine scripts that do not are `check_gate_budget.py`, which reads the gate wall log and the gate row TSV
+directly; `diff_outdir.py`, which walks a render's outdir against the in-tree with plain `pathlib` and
+reads no corpus; `dump_template_slots.py`, which reaches the slot dict through
 `render_reports.py` and never touches the registry; `measure_needles.py`, which parses the test files
 with `ast` and reads no corpus; `measure_proof_density.py` and `measure_topics.py`, which read the
 Sources table and the vocabulary directly; and `measure_render_phases.py`, `measure_render_pool.py`
@@ -590,10 +592,10 @@ carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 74 scripts before this pass. 40 are named
+`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 75 scripts before this pass. 41 are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
 `verify_tsv_quoting.py`,
-`check_summary_manuscripts.py`, `check_gate_budget.py`,
+`check_summary_manuscripts.py`, `diff_outdir.py`, `check_gate_budget.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
 `measure_checker_needles.py`, `measure_checker_reads.py``, `measure_faithfulness.py`, `measure_import_layout.py`,
 `measure_links_phases.py`, `measure_move_surface.py`, `measure_needles.py`, `measure_open_probe.py`,
