@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [085-endpoint-regularity-of-the-planar-centered-maximal-function.md](../../../../notes/gen/summaries/085-endpoint-regularity-of-the-planar-centered-maximal-function.md) |
 
 ## Manuscripts
 
