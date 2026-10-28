@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [computability](../topics/computability.md) · [convex-geometry](../topics/convex-geometry.md) · [measure-theory](../topics/measure-theory.md) · [convex-optimization](../topics/convex-optimization.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [096-gaussian-propeller-conjecture.md](../../../../notes/gen/summaries/096-gaussian-propeller-conjecture.md) |
 
 ## Manuscripts
 
