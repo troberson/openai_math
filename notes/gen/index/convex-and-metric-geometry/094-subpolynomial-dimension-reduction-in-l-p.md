@@ -13,7 +13,7 @@
 | Claim shapes | partial, uniform |
 | Topics | [metric-geometry](../topics/metric-geometry.md) · [convex-geometry](../topics/convex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [094-subpolynomial-dimension-reduction-in-l-p.md](../../../../notes/gen/summaries/094-subpolynomial-dimension-reduction-in-l-p.md) |
 
 ## Manuscripts
 
