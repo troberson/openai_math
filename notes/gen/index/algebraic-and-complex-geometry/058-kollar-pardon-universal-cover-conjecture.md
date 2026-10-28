@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [058-kollar-pardon-universal-cover-conjecture.md](../../../../notes/gen/summaries/058-kollar-pardon-universal-cover-conjecture.md) |
 
 ## Manuscripts
 

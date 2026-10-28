@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [algorithms](../topics/algorithms.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [378-disproof-of-the-exponential-time-hypothesis.md](../../../../notes/gen/summaries/378-disproof-of-the-exponential-time-hypothesis.md) |
 
 ## Manuscripts
 

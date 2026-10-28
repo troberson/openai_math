@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [number-fields](../topics/number-fields.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [015-torus-packet-equidistribution-in-prime-quartic-and-sextic-degrees.md](../../../../notes/gen/summaries/015-torus-packet-equidistribution-in-prime-quartic-and-sextic-degrees.md) |
 
 ## Manuscripts
 

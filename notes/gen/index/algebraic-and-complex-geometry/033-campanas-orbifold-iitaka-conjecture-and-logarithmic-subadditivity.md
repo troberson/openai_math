@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [operator-algebras](../topics/operator-algebras.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md](../../../../notes/gen/summaries/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) |
 
 ## Manuscripts
 

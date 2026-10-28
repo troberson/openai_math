@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, density, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [surfaces](../topics/surfaces.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [027-integral-density-on-curve-character-varieties.md](../../../../notes/gen/summaries/027-integral-density-on-curve-character-varieties.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | partial |
 | Topics | [primes](../topics/primes.md) · [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [023-pattersons-first-moment-for-cubic-gauss-sums.md](../../../../notes/gen/summaries/023-pattersons-first-moment-for-cubic-gauss-sums.md) |
 
 ## Manuscripts
 

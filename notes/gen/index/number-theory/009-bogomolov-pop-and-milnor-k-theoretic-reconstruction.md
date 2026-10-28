@@ -13,7 +13,7 @@
 | Claim shapes | classification |
 | Topics | [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) · [galois-theory](../topics/galois-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md](../../../../notes/gen/summaries/009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md) |
 
 ## Manuscripts
 

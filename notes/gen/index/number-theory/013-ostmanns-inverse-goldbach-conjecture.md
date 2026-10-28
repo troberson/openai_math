@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [primes](../topics/primes.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [013-ostmanns-inverse-goldbach-conjecture.md](../../../../notes/gen/summaries/013-ostmanns-inverse-goldbach-conjecture.md) |
 
 ## Manuscripts
 

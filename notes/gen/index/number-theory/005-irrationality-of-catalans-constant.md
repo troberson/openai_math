@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [005-irrationality-of-catalans-constant.md](../../../../notes/gen/summaries/005-irrationality-of-catalans-constant.md) |
 
 ## Manuscripts
 

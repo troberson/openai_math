@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [curves](../topics/curves.md) · [quantum-theory](../topics/quantum-theory.md) · [lie-theory](../topics/lie-theory.md) · [modularity](../topics/modularity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [069-quantum-geometric-langlands-at-irrational-level.md](../../../../notes/gen/summaries/069-quantum-geometric-langlands-at-irrational-level.md) |
 
 ## Manuscripts
 

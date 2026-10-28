@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [complex-analysis](../topics/complex-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md](../../../../notes/gen/summaries/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) |
 
 ## Manuscripts
 

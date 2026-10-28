@@ -13,7 +13,7 @@
 | Claim shapes | resolution, density |
 | Topics | [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [020-squarefree-quartics-and-power-free-polynomial-values.md](../../../../notes/gen/summaries/020-squarefree-quartics-and-power-free-polynomial-values.md) |
 
 ## Manuscripts
 

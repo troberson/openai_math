@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [representation-theory](../topics/representation-theory.md) · [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [003-quasi-riemann-hypothesis.md](../../../../notes/gen/summaries/003-quasi-riemann-hypothesis.md) |
 
 ## Manuscripts
 

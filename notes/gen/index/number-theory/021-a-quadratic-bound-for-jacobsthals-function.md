@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, partial, uniform |
 | Topics | [primes](../topics/primes.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [021-a-quadratic-bound-for-jacobsthals-function.md](../../../../notes/gen/summaries/021-a-quadratic-bound-for-jacobsthals-function.md) |
 
 ## Manuscripts
 

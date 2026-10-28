@@ -13,7 +13,7 @@
 | Claim shapes | density, uniform |
 | Topics | [primes](../topics/primes.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [026-positive-lower-density-of-large-prime-gaps.md](../../../../notes/gen/summaries/026-positive-lower-density-of-large-prime-gaps.md) |
 
 ## Manuscripts
 

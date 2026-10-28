@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [068-anticanonical-nonvanishing-under-smooth-semipositivity.md](../../../../notes/gen/summaries/068-anticanonical-nonvanishing-under-smooth-semipositivity.md) |
 
 ## Manuscripts
 

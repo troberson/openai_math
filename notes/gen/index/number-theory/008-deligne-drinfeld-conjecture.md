@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [graph-theory](../topics/graph-theory.md) · [dynamical-systems](../topics/dynamical-systems.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [008-deligne-drinfeld-conjecture.md](../../../../notes/gen/summaries/008-deligne-drinfeld-conjecture.md) |
 
 ## Manuscripts
 

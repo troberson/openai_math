@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [024-an-asymptotic-formula-for-the-number-of-totients.md](../../../../notes/gen/summaries/024-an-asymptotic-formula-for-the-number-of-totients.md) |
 
 ## Manuscripts
 

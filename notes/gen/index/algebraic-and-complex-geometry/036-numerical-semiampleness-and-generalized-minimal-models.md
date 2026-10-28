@@ -13,7 +13,7 @@
 | Claim shapes | classification |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [036-numerical-semiampleness-and-generalized-minimal-models.md](../../../../notes/gen/summaries/036-numerical-semiampleness-and-generalized-minimal-models.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, partial, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [discrete-geometry](../topics/discrete-geometry.md) · [primes](../topics/primes.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [028-gaussian-moat-conjecture.md](../../../../notes/gen/summaries/028-gaussian-moat-conjecture.md) |
 
 ## Manuscripts
 

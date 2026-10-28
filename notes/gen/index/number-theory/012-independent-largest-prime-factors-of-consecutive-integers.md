@@ -13,7 +13,7 @@
 | Claim shapes | resolution, density |
 | Topics | [primes](../topics/primes.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [012-independent-largest-prime-factors-of-consecutive-integers.md](../../../../notes/gen/summaries/012-independent-largest-prime-factors-of-consecutive-integers.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [056-termination-of-fourfold-minimal-model-programs.md](../../../../notes/gen/summaries/056-termination-of-fourfold-minimal-model-programs.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [disordered-systems](../topics/disordered-systems.md) · [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [066-bounded-klt-complements-for-fano-contractions.md](../../../../notes/gen/summaries/066-bounded-klt-complements-for-fano-contractions.md) |
 
 ## Manuscripts
 

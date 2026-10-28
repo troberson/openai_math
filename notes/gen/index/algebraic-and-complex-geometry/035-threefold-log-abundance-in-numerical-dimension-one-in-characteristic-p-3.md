@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md](../../../../notes/gen/summaries/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) |
 
 ## Manuscripts
 

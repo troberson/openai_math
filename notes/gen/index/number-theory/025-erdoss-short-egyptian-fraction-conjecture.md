@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [025-erdoss-short-egyptian-fraction-conjecture.md](../../../../notes/gen/summaries/025-erdoss-short-egyptian-fraction-conjecture.md) |
 
 ## Manuscripts
 
