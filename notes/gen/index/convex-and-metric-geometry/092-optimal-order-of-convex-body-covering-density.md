@@ -13,7 +13,7 @@
 | Claim shapes | density, partial |
 | Topics | [convex-geometry](../topics/convex-geometry.md) · [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [092-optimal-order-of-convex-body-covering-density.md](../../../../notes/gen/summaries/092-optimal-order-of-convex-body-covering-density.md) |
 
 ## Manuscripts
 
