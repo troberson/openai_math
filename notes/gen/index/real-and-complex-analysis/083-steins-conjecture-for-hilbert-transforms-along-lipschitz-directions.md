@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md](../../../../notes/gen/summaries/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md) |
 
 ## Manuscripts
 
