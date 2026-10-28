@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample |
 | Topics | [convex-optimization](../topics/convex-optimization.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [095-hyperbolicity-cones-without-semidefinite-lifts.md](../../../../notes/gen/summaries/095-hyperbolicity-cones-without-semidefinite-lifts.md) |
 
 ## Manuscripts
 

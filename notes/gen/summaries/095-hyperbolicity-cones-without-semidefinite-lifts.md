@@ -1,0 +1,185 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Convex and metric geometry](../index/disciplines/convex-and-metric-geometry.md) / [Family 095](../index/convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md)
+
+# 095 — Hyperbolicity cones without semidefinite lifts
+
+[Index page](../index/convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:2336] and the catalog abstract [S2:266] state
+the family's claim: some hyperbolicity cones are not spectrahedral
+shadows. The examples admit no exact finite affine semidefinite lift,
+regardless of the number of auxiliary variables or the real
+coefficients used. This disproves both the Projected Lax conjecture
+and the generalized Lax conjecture that every hyperbolicity cone is
+spectrahedral. The headline manuscript's abstract 
+
+> We prove that not every hyperbolicity cone is a spectrahedral shadow:
+some closed hyperbolicity cones admit no finite affine semidefinite lift,
+even with arbitrary real coefficients and any finite number of auxiliary
+variables. This disproves the Projected Lax Conjecture and hence the
+generalized Lax conjecture. [S3:40–44]
+
+The family ships three manuscripts.
+
+## Undergraduate summary
+
+A *hyperbolicity cone* is the set of directions in which a real
+polynomial has only real roots along a line. Such cones are convex and,
+for decades, it was an open question (the Lax conjecture) whether
+every one is *spectrahedral*—the positive-semidefinite region of a
+linear symmetric matrix pencil—and, more weakly, a *spectrahedral
+shadow*—the projection of such a region.
+
+These manuscripts answer both questions in the negative. They
+construct an explicit homogeneous polynomial in 23 real variables
+whose hyperbolicity cone cannot be written as the semidefinite region
+of any finite symmetric pencil, in any matrix size
+[S3:40–44]. This is stronger than a shadow-exclusion: adding
+arbitrary real-coefficient auxiliary variables does not lift the cone
+[S6:9].
+
+## Graduate summary
+
+**The headline no-lift result** [S3:40–44]. There exists a
+closed hyperbolicity cone admitting no finite affine semidefinite
+lift, with arbitrary real coefficients and any finite number of
+auxiliary variables. This disproves the Projected Lax conjecture and
+hence the generalized Lax conjecture.
+
+**The concrete counterexample.** The companion manuscript constructs
+a homogeneous polynomial of degree 16 in 23 real variables whose
+hyperbolicity cone has no representation by a finite homogeneous real
+symmetric linear matrix inequality [S4:35–38].
+
+**The exact lift that coexists.** A third manuscript constructs an
+exact semidefinite lift of an explicit nonspectrahedral cone in 23
+variables, as a homogeneous real symmetric pencil of size 100 with 307
+auxiliary variables representing the entire closed cone including
+singular points; the stated sizes are not claimed to be minimal
+[S5:28–35]. The lift uses auxiliary variables, which the headline
+no-lift result forbids as an *affine* representation of the original
+cone.
+
+## History of the conjecture
+
+The Lax conjecture asserted that every hyperbolicity cone is
+spectrahedral; it is classical that spectrahedral cones are the
+projections (shadows) of semidefinite sets, so the projected form is
+a priori weaker. The family's counterexample shows both forms fail,
+closing the question negatively [S3:40–44, S4:35–38].
+
+**Prior (my training data, not this repo).** I know the Lax
+conjecture and the spectrahedral-versus-shadow distinction, and that
+it was a long-open question in convex and hyperbolicity theory.
+Explicit constructions of hyperbolicity cones with no semidefinite
+lift, disproving the (projected) Lax conjecture, are, to my
+knowledge, not established in the literature I was trained on. I
+cannot independently verify these 2026 manuscripts' arguments.
+
+## Consequences
+
+**Negative answer to the (projected) Lax conjecture.** Not every
+hyperbolicity cone is spectrahedral, nor a spectrahedral shadow
+[S3:40–44, S4:35–38].
+
+**No-lift is robust.** The counterexample admits no finite affine
+semidefinite lift under any real-coefficient auxiliary variables
+[S3:40–44, S6:9].
+
+**A lift can exist with auxiliaries.** The same 23-variable cone
+admits an exact semidefinite representation once 307 auxiliary
+variables are permitted, so non-spectrahedrality is a property of the
+original coordinate representation, not of the underlying set
+[S5:28–35].
+
+## Section skeleton
+
+Three manuscripts:
+
+- **headline** [S3:40–44] (title [S3:34], date [S3:36]) — seven `source/`
+  files (introduction, cone, hankel, separation, obstruction,
+  main, appendix-certificate); a `references.bib`.
+- **companion cone** [S4] (title [S4:29], date [S4:31]) — `main.tex`
+  plus ten `sections/` files (history, introduction, form,
+  hyperbolic, pencil, norm, tangent, comparison, reduced-polynomial);
+  one figure (`figures/tangent-variation.tex`); a `references.bib`.
+- **exact lift** [S5] (title [S5:22], date [S5:24]) — `main.tex`
+  plus five `sections/` files (angular, introduction, lift,
+  matching, slices); a `references.bib`.
+
+No manuscript ships a `verification/` bundle.
+
+## Comparison with the formalized statement
+
+**Scope note** [S6:9]. The formalized counterexample is an explicit
+homogeneous polynomial of **degree 20** in 23 real variables that is
+hyperbolic, whose closed hyperbolicity cone is not the
+positive-semidefinite region of any finite real symmetric linear
+matrix pencil, in any positive matrix size. The scope note links the
+companion-cone manuscript and names one comparator [S6:13–15].
+The release records `scope: "Partial progress."` and `review: status:
+unchecked`; zero `sorry` in the Lean source is not a comparator pass,
+and the library has not been built here. Note the degree: the scope
+note and comparator state degree 20, while the companion
+manuscript's abstract states its own construction as degree 16 in the
+same 23 variables [S4:35–38]; both are read as shipped, with no
+attempted reconciliation.
+
+**The comparator stub** carries one `sorry`:
+
+```lean
+theorem main_result :
+    Module.finrank ℝ Ambient = 23 ∧
+    polynomial.IsHomogeneous 20 ∧
+    polynomial.totalDegree = 20 ∧
+    MvPolynomial.eval (coordinates basePoint) polynomial = 1 ∧
+    (∀ (x : Ambient) (z : ℂ), (linePolynomial x).aeval z = 0 → z.im = 0) ∧
+    ∀ (N : ℕ) (_hN : 0 < N) (L : Ambient →ₗ[ℝ] Sym N),
+      cone ≠ {x | (L x : Mat N ℝ).PosSemidef} := by
+  sorry
+```
+[S7:67–75]
+
+**The registered entry point.** The `main_results` entry names
+`OAI.Paper256.main_result` in `OAI/Analysis/HyperbolicCones/Main.lean`,
+proved at line 13 
+
+```lean
+open scoped Matrix.Norms.L2Operator
+```
+[S8:13]
+
+The `main_results` entry links the config
+`ComparatorChallenges/HyperbolicCones.json` to the declaration, so
+this is the family's headline counterexample, registered and proven.
+The OAI `HyperbolicCones` tree is 101 files over 6,612 lines with
+zero `sorry`.
+
+## Coverage
+
+T3: the family is formalized. The ledger row `fam=095` records
+`paps 3`, `paps_form 1`, `tier T3`, `chal 1`, `mainres 1`,
+`scope_note 1`, `verification 0`, `trace` empty,
+`shapes resolution|counterexample`, `resolves_named 1`,
+`counterex_broad 1`, `summary 1`. The family ships three LaTeX
+manuscripts, a scope note linking the companion-cone manuscript, one
+comparator challenge carrying one `sorry` theorem, and the registered
+`main_results` declaration `OAI.Paper256.main_result`, the
+degree-20 / 23-variable no-lift counterexample, proven in the
+101-file `HyperbolicCones` OAI tree. Only one of the three
+manuscripts is in the release's `sources:` listing. The family ships
+no verification bundle and no reasoning trace.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 095 at [S1:2336] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{095} at [S2:266] |
+| S3 | [`preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/build/source/main.tex`](../../../preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/build/source/main.tex) | 55 | headline manuscript root; title [S3:34], date [S3:36], abstract [S3:40–44] |
+| S4 | [`preprints/A-Nonspectrahedral-Hyperbolicity-Cone-September-24-2026/build/main.tex`](../../../preprints/A-Nonspectrahedral-Hyperbolicity-Cone-September-24-2026/build/main.tex) | 52 | companion manuscript root; title [S4:29], date [S4:31], abstract [S4:35–38] |
+| S5 | [`preprints/An-Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone-October-5-2026/build/main.tex`](../../../preprints/An-Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone-October-5-2026/build/main.tex) | 43 | companion manuscript root; title [S5:22], date [S5:24], abstract [S5:28–35] |
+| S6 | [`lean/docs/095.md`](../../../lean/docs/095.md) | 15 | the formalization scope note: the scope paragraph [S6:9] and the comparator table [S6:13–15] |
+| S7 | [`lean/ComparatorChallenges/HyperbolicCones.lean`](../../../lean/ComparatorChallenges/HyperbolicCones.lean) | 81 | comparator stub: the `polynomial` def [S7:46], the `cone` def [S7:64–65], the `main_result` theorem [S7:67–74], and the `sorry` [S7:75] |
+| S8 | [`lean/OAI/Analysis/HyperbolicCones/Main.lean`](../../../lean/OAI/Analysis/HyperbolicCones/Main.lean) | 40 | the OAI proven `main_result` theorem [S8:13] |
