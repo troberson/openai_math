@@ -19,17 +19,14 @@ Usage: python3 notes/scripts/extract_summary_data.py [--check-only]
 """
 from __future__ import annotations
 
-import csv
 import pathlib
 import re
 import sys
 
+from catlib.quotes import seed_page
+from catlib.summaries import CELL, ROW, Page
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-
-from catlib.quotes import seed_page  # noqa: E402
-from catlib.summaries import CELL, ROW, Page  # noqa: E402
-
 DATA_DIR = ROOT / "notes" / "data" / "summaries"
 SUMM = ROOT / "notes" / "gen" / "summaries"
 
@@ -125,7 +122,7 @@ def extract_page(page_path: pathlib.Path) -> str | None:
 
     text = "\n".join(lines)
     for i in range(len(specs) - 1, -1, -1):
-        sid, which, span, start, end, head, tail, mode = specs[i]
+        sid, which, span, start, end, _, _, _ = specs[i]
         if not span:
             continue
         seq = i + 1
@@ -184,7 +181,7 @@ def main() -> int:
     check_only = "--check-only" in sys.argv
     pages = sorted(
         p for p in SUMM.glob("*/*.md")
-        if not p.name == "README.md" and re.match(r"^\d{3}-", p.name)
+        if p.name != "README.md" and re.match(r"^\d{3}-", p.name)
     )
     print(f"family pages: {len(pages)}")
 
@@ -193,7 +190,12 @@ def main() -> int:
 
     problems = 0
     for p in pages:
-        fam = re.match(r"^(\d{3})-", p.name).group(1)
+        m = re.match(r"^(\d{3})-", p.name)
+        if m is None:
+            print(f"  {p.name}: NO FAMILY NUMBER")
+            problems += 1
+            continue
+        fam = m.group(1)
         data_text = extract_page(p)
         if data_text is None:
             print(f"  {p.name}: NO FAMILY NUMBER")

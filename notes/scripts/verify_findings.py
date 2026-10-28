@@ -84,8 +84,8 @@ def s12_figures():
     """
     v = t0c.population()
     return [f"**{len(v['zero_signal'])}** of the {len(v['pop'])}", "`verification = 2`",
-            f"**{len(v['pop'])}** families carrying "
-            f"**{sum(int(r['paps']) for r in v['rows'].values() if r['fam'] in v['pop'])}** manuscripts"]
+            (f"**{len(v['pop'])}** families carrying "
+             f"**{sum(int(r['paps']) for r in v['rows'].values() if r['fam'] in v['pop'])}** manuscripts")]
 
 
 @cache

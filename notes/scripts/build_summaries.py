@@ -21,21 +21,19 @@ import pathlib
 import re
 import sys
 
+import build_catalog as B
+import fix_blank_cites as FBC
+from catlib import bib as BIB
+from catlib import normalizer
+from catlib import summaries as CSUM
+from catlib import text as CTEXT
+from catlib.atomic import Staging, write_atomic
+from catlib.paths import ROOT as REPO
+from catlib.promote import key_for
+from catlib.records import manuscript_store
+from jinja2 import Environment, FileSystemLoader
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-
-import build_catalog as B  # noqa: E402
-import fix_blank_cites as FBC  # noqa: E402
-from catlib import bib as BIB  # noqa: E402
-from catlib import normalizer  # noqa: E402
-from catlib import summaries as CSUM  # noqa: E402
-from catlib import text as CTEXT  # noqa: E402
-from catlib.atomic import Staging, write_atomic  # noqa: E402
-from catlib.paths import ROOT as REPO  # noqa: E402
-from catlib.promote import key_for  # noqa: E402
-from catlib.records import manuscript_store  # noqa: E402
-from jinja2 import Environment, FileSystemLoader  # noqa: E402
-
 TPL_DIR = ROOT / "notes" / "templates" / "summaries"
 DATA_DIR = ROOT / "notes" / "data" / "summaries"
 SUMM_DIR = ROOT / "notes" / "gen" / "summaries"
@@ -328,9 +326,9 @@ def _compute_number_uncached(main_path: str, quote_path: str, quote_line: int) -
         if not (REPO / fp).is_file():
             base = inp.rsplit("/", 1)[-1]
             cands = list((REPO / build_dir).rglob(f"*{base}*.tex"))
-            fp = str(cands[0]) if len(cands) == 1 else None
-            if fp is None:
+            if len(cands) != 1:
                 continue
+            fp = str(cands[0])
         is_target = (REPO / fp).resolve() == quote_resolved
         for ln, line in enumerate((REPO / fp).read_text(encoding="utf-8").splitlines(), 1):
             s = line.strip()

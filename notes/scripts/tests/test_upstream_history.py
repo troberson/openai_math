@@ -24,7 +24,6 @@ The checker measures; this file injects. Run:
 """
 
 import pytest
-import verify_upstream_history as chk
 
 pytestmark = pytest.mark.mutant
 

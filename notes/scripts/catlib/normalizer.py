@@ -493,6 +493,6 @@ def normalize_window(window: str, preamble: str = "", number: str = "") -> str:
              for is_math, chunk, display in split_regions(body)]
     text = "".join(parts).strip()
     if lead:
-        label = number if number else lead
+        label = number or lead
         text = f"**{label}**\n{text}"
     return text

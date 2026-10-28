@@ -1227,7 +1227,6 @@ def _run_child(name: str) -> str:
         # as an attribute, but Python's default handler prints only the traceback — the attribute
         # is never shown. Print the child's stderr to the parent's stderr stream so the gate's
         # per-row .txt capture carries the child's real failure.
-        import sys
         print(f"[render child {name} failed, exit {proc.returncode}]", file=sys.stderr)
         if proc.stderr:
             print(proc.stderr, file=sys.stderr)
@@ -2175,8 +2174,9 @@ def deps_population() -> dict[str, Any]:
     for i, url in enumerate(urls_v, start=1):
         c = imports_by_key.get(drift_key(url), 0)
         last = url.rstrip("/").split("/")[-1].removesuffix(".git")
-        if prev is not None and c > prev[1]:
-            violations.append((i, last, c, prev[2], prev[1]))
+        if prev is not None:
+            if c > prev[1]:
+                violations.append((i, last, c, prev[2], prev[1]))
         prev = (i, c, last)
 
     return {

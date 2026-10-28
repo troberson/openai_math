@@ -431,7 +431,7 @@ NON_CACHED = frozenset({"measure_open_probe.py", "measure_checker_reads.py",
 # `refresh_summary_line_counts.py`, which rewrote the `Lines` cell of the summaries pages and ran
 # first among the checkers — is retired by the summary renderer, which renders the whole page
 # (Line cells included) from the data files.
-PAGE_EXTRA = frozenset()
+PAGE_EXTRA: frozenset[str] = frozenset()
 
 # Three writers' L1 cannot be proved against the audit-hook record. `build_report_templates.py` reads
 # each page with `git show HEAD:<page>`, a subprocess read the `open` audit event never sees, so the
