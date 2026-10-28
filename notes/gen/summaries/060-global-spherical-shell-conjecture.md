@@ -156,7 +156,7 @@ surface by exactly $b_2$ successive point blowups
 
 **The smooth topology is determined.**
 $\pi_1(X)\cong\Z$ and
-$X\cong_{\text{or}}(S^1\times S^3)\# b\,\overline{\CP^2}$
+$X\cong_{\text{or}}(S^1\times S^3)\\# b\,\overline{\CP^2}$
 [S2:122–135].
 
 **The class VII exception in aspherical surface geography is removed.**

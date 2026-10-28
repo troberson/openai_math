@@ -198,6 +198,9 @@ def normalize_math(span: str, table: dict[str, tuple[int, str]], display: bool =
     """One math span, expanded and wrapped, or fenced when it carries an un-mappable banned macro."""
     s = expand_macros(span.strip(), table)
     s = _OP_PATTERN.sub(r"\\mathrm", s)
+    # GitHub markdown treats \# as an escape (→ #) before MathJax sees it;
+    # double the backslash so the renderer collapses \\# → \`# for MathJax.
+    s = s.replace("\\#", "\\\\#")
     if _contains_hard_banned(s):
         fence = "```"
         return f"{fence}latex\n$${s.strip()}$${fence}"

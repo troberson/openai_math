@@ -44,6 +44,9 @@ def strip_markup(s: str) -> str:
     # the fold runs first — the command strip cannot match `\"`, the quote is not in its class.
     s = fold_accents(s)
     s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
+    # The normalizer doubles a backslash before # in math (\\#) so GitHub markdown
+    # does not eat it; collapse back to the source form for the comparison.
+    s = s.replace("\\\\", "\\")
     s = s.replace("**", "").replace("`", "").replace("*", "")
     s = s.replace("&emsp;", " ").replace("&thinsp;", " ").replace("&mdash;", "-")
     # Markup, not words: the release writes <i>p</i> in its blurbs and the page renders *p*. Strip

@@ -53,7 +53,7 @@ The manuscript states the result
 > **theorem**
 For each fixed $k\geqslant2$, there exists a deterministic algorithm that,
 given a $k$-CNF $F$ on $n\geqslant20$ declared variables with $m$ clauses,
-computes $\#F$ as defined in   in
+computes $\\\#F$ as defined in   in
 \[
  (n+m)^O_k(1)2^{O_k(n\log\log n/\sqrt{\log n})}
 \]
@@ -74,7 +74,7 @@ The main result is Theorem `thm:main`
 > **theorem**
 For each fixed $k\geqslant2$, there exists a deterministic algorithm that,
 given a $k$-CNF $F$ on $n\geqslant20$ declared variables with $m$ clauses,
-computes $\#F$ as defined in   in
+computes $\\\#F$ as defined in   in
 \[
  (n+m)^O_k(1)2^{O_k(n\log\log n/\sqrt{\log n})}
 \]
@@ -202,7 +202,7 @@ work (197) covering SAT algorithms, exact counting, fine-grained
 implications, algebraic prior work, and sparsification; Notation (500);
 Technique overview (540) with subsubsections from the bounded-occurrence
 setting through the low-degree replacement construction and the general
-$\#k$-SAT reduction via sparse polynomial equations; then the three
+$\\#k$-SAT reduction via sparse polynomial equations; then the three
 appendices and the bibliography (line 4329).
 
 **Appendices** (input at lines 4269–4327): `quantitative-circuits.tex`

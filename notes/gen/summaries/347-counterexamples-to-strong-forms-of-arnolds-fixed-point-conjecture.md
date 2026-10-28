@@ -70,7 +70,7 @@ and [S23:10–13]:
 The Arnold fixed-point problem asks how many fixed points a Hamiltonian diffeomorphism must have. A proposed integral answer is the **stable Morse number**: the fewest critical points a Morse function on the manifold can have once you are allowed to add auxiliary quadratic variables [S16:6–12]:
 
 > \begin{definition}
-> Let $W$ be a connected closed smooth manifold. Its \emph{stable Morse number} $\mathrm{SM}(W)$ is the minimum of $\#\mathrm{Crit}(F)$ over all integers $k\geq0$ and smooth Morse functions
+> Let $W$ be a connected closed smooth manifold. Its \emph{stable Morse number} $\mathrm{SM}(W)$ is the minimum of $\\#\mathrm{Crit}(F)$ over all integers $k\geq0$ and smooth Morse functions
 > \[
 >  F:W\times\R^k\longrightarrow\R
 > \]
@@ -79,7 +79,7 @@ The Arnold fixed-point problem asks how many fixed points a Hamiltonian diffeomo
 
 The proposed bound is that a Hamiltonian whose fixed points are all nondegenerate must have at least that many fixed points 
 
-> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether $$\label{eq:proposed-bound} \#\mathrm{Fix}_0(\phi_H^1;H)\geq\mathrm{SM}(M)$$ holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion. [S16:20–24]
+> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether $$\label{eq:proposed-bound} \\\#\mathrm{Fix}_0(\phi_H^1;H)\geq\mathrm{SM}(M)$$ holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion. [S16:20–24]
 
 The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 
@@ -88,7 +88,7 @@ The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 > \[
 >  \#\Fix_0(\phi_H^1;H)=\#\Fix(\phi_H^1)=\SM(M)-16.
 > \]
-> One may take $\dim_{\mathbb R}M=1412$, with $\mathrm{SM}(M)=318968$ and $\#\mathrm{Fix}(\phi_H^1)=318952$.
+> One may take $\dim_{\mathbb R}M=1412$, with $\mathrm{SM}(M)=318968$ and $\\#\mathrm{Fix}(\phi_H^1)=318952$.
 > \end{theorem}
 
 The dimension-twenty-two manuscript makes the deficit a fixed proportion in a fixed dimension [S21:37–53]:
@@ -192,7 +192,7 @@ The nondegenerate manuscript's mechanism is algebraic: generation of a group ver
 
 The construction places the same small-time return map in sixteen caps of a product of four spheres, and the two counts separate 
 
-> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies $$\label{eq:overview-fixed-count} \#\mathrm{Fix}(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128.$$ [S11:149–159]
+> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies $$\label{eq:overview-fixed-count} \\\#\mathrm{Fix}(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128.$$ [S11:149–159]
 
 On the other side of the inequality, the fundamental group bounds every Morse function 
 

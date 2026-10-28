@@ -31,7 +31,7 @@ A **perfect matching** in a finite undirected graph $G=(V,E)$ is a set of
 edges that touches every vertex exactly once. Writing $Z(G)$ for the number
 of such matchings, the finding is easy — Edmonds gave a polynomial-time
 algorithm for a maximum matching [S3:153–154] — but the counting is hard:
-Valiant showed exact counting is $\#$P-complete even for bipartite graphs
+Valiant showed exact counting is $\\#$P-complete even for bipartite graphs
 [S3:155–156]. The **FPRAS** is the middle ground: a randomized algorithm
 that approximates $Z(G)$ within a prescribed relative error, with a
 prescribed success probability, in time polynomial in the input length and

@@ -139,7 +139,7 @@ comparison, proved without a spin hypothesis [S6:243–248].
 **An oriented target-map obstruction.** If a continuous map
 $f:M\to N$ of degree $d\ne0$ maps into a closed aspherical target $N$,
 then $M$ admits no positive-scalar-curvature metric; in particular the
-oriented connected sum $N\#P$ admits no such metric [S6:215–225].
+oriented connected sum $N\\#P$ admits no such metric [S6:215–225].
 
 ## Section skeleton
 
