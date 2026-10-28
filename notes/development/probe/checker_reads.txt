@@ -2940,6 +2940,7 @@
               1  r        notes/scripts/check_index_links.py
               1  r        notes/scripts/check_summary_manuscripts.py
               1  r        notes/scripts/compare_abstracts.py
+              1  r        notes/scripts/diff_outdir.py
               1  r        notes/scripts/dump_template_slots.py
               1  r        notes/scripts/extract_citations.py
               1  r        notes/scripts/extract_counterexample_crosscheck.py
@@ -8953,6 +8954,7 @@
               1  r        notes/scripts/check_index_links.py
               1  r        notes/scripts/check_summary_manuscripts.py
               1  r        notes/scripts/compare_abstracts.py
+              1  r        notes/scripts/diff_outdir.py
               1  r        notes/scripts/dump_template_slots.py
               1  r        notes/scripts/extract_citations.py
               1  r        notes/scripts/extract_counterexample_crosscheck.py
@@ -11966,6 +11968,7 @@
               1  r        notes/scripts/check_index_links.py
               1  r        notes/scripts/check_summary_manuscripts.py
               1  r        notes/scripts/compare_abstracts.py
+              1  r        notes/scripts/diff_outdir.py
               1  r        notes/scripts/dump_template_slots.py
               1  r        notes/scripts/extract_citations.py
               1  r        notes/scripts/extract_counterexample_crosscheck.py
@@ -13553,6 +13556,7 @@
               1  r        notes/scripts/check_index_links.py
               1  r        notes/scripts/check_summary_manuscripts.py
               1  r        notes/scripts/compare_abstracts.py
+              1  r        notes/scripts/diff_outdir.py
               1  r        notes/scripts/dump_template_slots.py
               1  r        notes/scripts/extract_citations.py
               1  r        notes/scripts/extract_counterexample_crosscheck.py
@@ -16597,6 +16601,7 @@
               1  r        notes/scripts/check_index_links.py
               1  r        notes/scripts/check_summary_manuscripts.py
               1  r        notes/scripts/compare_abstracts.py
+              1  r        notes/scripts/diff_outdir.py
               1  r        notes/scripts/dump_template_slots.py
               1  r        notes/scripts/extract_citations.py
               1  r        notes/scripts/extract_counterexample_crosscheck.py
@@ -19958,6 +19963,7 @@
               1  r        notes/templates/summaries/summary.md.j2
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/build_catalog.py
+              1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/verify_summaries.py
 [probe2] target notes/scripts/verify_t0_chains.py
