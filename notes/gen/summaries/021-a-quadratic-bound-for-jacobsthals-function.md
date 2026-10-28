@@ -120,7 +120,7 @@ The two comparator stubs state the two targets. `Jacobsthal.lean`
 
 ```lean
 theorem erdos_970_quadratic : NumberTheoryLean.Targets.JacobsthalQuadratic := by
- sorry
+  sorry
 ```
 [S5:24–25]
 
@@ -128,7 +128,7 @@ theorem erdos_970_quadratic : NumberTheoryLean.Targets.JacobsthalQuadratic := by
 
 ```lean
 theorem erdos_970_iterated_log : NumberTheoryLean.Targets.JacobsthalIteratedLog := by
- sorry
+  sorry
 ```
 [S6:22–23]
 

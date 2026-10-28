@@ -139,18 +139,18 @@ Ihara bracket and continuous after completion) and ends in `sorry`:
 
 ```lean
 def MainStatement : Prop :=
- ∃ (e : OddFree ≃ₗ[ℚ] W) (h : Graded e),
- (∀ a b, (e ⁅a,b⁆ : L) = ihara (e a) (e b)) ∧
- Function.LeftInverse (completedInv e h) (completed e h) ∧
- Function.RightInverse (completedInv e h) (completed e h) ∧
- Continuous (completed e h) ∧ Continuous (completedInv e h) ∧
- (∀ (a b : OddCompletion) n,
- (e (∑ i ∈ Finset.range (n+1), ⁅(a i : OddFree), (b (n-i) : OddFree)⁆) : L) =
- ∑ i ∈ Finset.range (n+1),
- ihara (completed e h a i) (completed e h b (n-i)))
+  ∃ (e : OddFree ≃ₗ[ℚ] W) (h : Graded e),
+    (∀ a b, (e ⁅a,b⁆ : L) = ihara (e a) (e b)) ∧
+    Function.LeftInverse (completedInv e h) (completed e h) ∧
+    Function.RightInverse (completedInv e h) (completed e h) ∧
+    Continuous (completed e h) ∧ Continuous (completedInv e h) ∧
+    (∀ (a b : OddCompletion) n,
+      (e (∑ i ∈ Finset.range (n+1), ⁅(a i : OddFree), (b (n-i) : OddFree)⁆) : L) =
+      ∑ i ∈ Finset.range (n+1),
+        ihara (completed e h a i) (completed e h b (n-i)))
 
 theorem main : MainStatement := by
- sorry
+  sorry
 ```
 [S5:178–190]
 

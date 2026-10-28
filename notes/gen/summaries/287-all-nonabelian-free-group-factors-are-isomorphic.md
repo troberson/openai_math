@@ -128,7 +128,7 @@ The free-entropy consequence is the sharper one for the field: invariance of $\d
 The formalization is 77 files and 26,804 lines across two trees, `lean/OAI/Analysis/FreeGroupFactor/` (27 files, 9,218 lines) and `lean/OAI/Analysis/InterpolatedFactors/` (50 files, 17,586 lines), carrying 1,196 top-level `theorem` and `lemma` declarations and no `sorry`. It proves the rank step at a strictly weaker hypothesis than the manuscript does, which removes the amplification detour from the headline 
 
 ```lean
-theorem rank_step_ge_two (n : ℕ) (hn : 2 ≤ n) : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank (n+1)) := (rank_step_option_ge_two n hn).trans (normalTracialIso_of_groupEquiv (optionRankEquiv n)) theorem rankTwo : HasNormalTracialIso (FreeGroupRank 2) (FreeGroupRank 3) := rank_step_ge_two 2 le_rfl
+theorem rank_step_ge_two (n : ℕ) (hn : 2 ≤ n) : HasNormalTracialIso (FreeGroupRank n) (FreeGroupRank (n+1)) := (rank_step_option_ge_two n hn).trans (normalTracialIso_of_groupEquiv (optionRankEquiv n))  theorem rankTwo : HasNormalTracialIso (FreeGroupRank 2) (FreeGroupRank 3) := rank_step_ge_two 2 le_rfl
 ```
 [S20:143–148]
 

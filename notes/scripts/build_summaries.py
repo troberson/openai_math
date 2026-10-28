@@ -415,13 +415,13 @@ def resolve_token(token: str, quotes: dict[int, dict], main_tex_map: dict[str, s
         mt = main_tex_map.get(row["path"], "")
         if mt:
             number = compute_number(mt, row["path"], int(row["start"]))
-    text = normalizer.normalize_window(span, preamble, number)
-    # A Lean source line is code, not prose: normalize_window flattens it into
-    # one long line (and runs the prose transforms over it). Fence it in a
-    # `lean` block so the page keeps the source's own indentation.
     fenced = row["path"].endswith(".lean")
     if fenced:
-        text = "```lean\n" + text + "\n```"
+        # Lean source is code, not prose: the normalizer's space-collapse and
+        # brace-strip corrupt it. Fence the raw span verbatim.
+        text = "```lean\n" + span + "\n```"
+    else:
+        text = normalizer.normalize_window(span, preamble, number)
     if row["start"] != "0":
         a, b = int(row["start"]), int(row["end"])
         label = _label(row["sid"], a, b)

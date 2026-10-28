@@ -138,11 +138,11 @@ The comparator stub [S5:44–49] states the target and ends in
 
 ```lean
 theorem joint_law (a b : ℝ) (ha : 0 < a) (ha1 : a < 1) (hb : 0 < b) (hb1 : b < 1) :
- Tendsto (realDensity (fun n =>
- (n.maxPrimeFac : ℝ) ≤ (n : ℝ) ^ a ∧ ((n + 1).maxPrimeFac : ℝ) ≤ (n : ℝ) ^ b))
- atTop (𝓝 (Erdos970.NumberTheoryLean.Dickman.rho (1 / a) *
- Erdos970.NumberTheoryLean.Dickman.rho (1 / b))) := by
- sorry
+    Tendsto (realDensity (fun n =>
+      (n.maxPrimeFac : ℝ) ≤ (n : ℝ) ^ a ∧ ((n + 1).maxPrimeFac : ℝ) ≤ (n : ℝ) ^ b))
+      atTop (𝓝 (Erdos970.NumberTheoryLean.Dickman.rho (1 / a) *
+        Erdos970.NumberTheoryLean.Dickman.rho (1 / b))) := by
+  sorry
 ```
 [S5:44–49]
 

@@ -153,8 +153,8 @@ lists the single PDF. The comparator stub states the target:
 
 ```lean
 theorem catalan_irrational :
- Irrational (∑' j : ℕ, (-1 : ℝ) ^ j / ((2 * j + 1 : ℕ) : ℝ) ^ 2) := by
- sorry
+    Irrational (∑' j : ℕ, (-1 : ℝ) ^ j / ((2 * j + 1 : ℕ) : ℝ) ^ 2) := by
+  sorry
 ```
 [S6:7–9]
 

@@ -144,14 +144,14 @@ and the regular-variation statement:
 
 ```lean
 theorem totient_asymptotic_formula
- :
- TendstoUniformlyOn (fun H => AH H (fun _ => 1)) (A (fun _ => 1))
- atTop (Set.Ico (0 : ℝ) 1) ∧
- (∃ cMinus cPlus : ℝ, 0 < cMinus ∧ ∀ s ∈ Set.Ico (0 : ℝ) 1,
- cMinus ≤ A (fun _ => 1) s ∧ A (fun _ => 1) s ≤ cPlus) ∧
- Tendsto (fun x => V x/mainTerm x) atTop (nhds 1) ∧
- ∀ c : ℝ, 0 < c → Tendsto (fun x => V (c*x)/V x) atTop (nhds c) := by
- sorry
+    :
+    TendstoUniformlyOn (fun H => AH H (fun _ => 1)) (A (fun _ => 1))
+      atTop (Set.Ico (0 : ℝ) 1) ∧
+    (∃ cMinus cPlus : ℝ, 0 < cMinus ∧ ∀ s ∈ Set.Ico (0 : ℝ) 1,
+      cMinus ≤ A (fun _ => 1) s ∧ A (fun _ => 1) s ≤ cPlus) ∧
+    Tendsto (fun x => V x/mainTerm x) atTop (nhds 1) ∧
+    ∀ c : ℝ, 0 < c → Tendsto (fun x => V (c*x)/V x) atTop (nhds c) := by
+  sorry
 ```
 [S5:118–126]
 
@@ -160,10 +160,10 @@ case:
 
 ```lean
 theorem companion_zero_case (k : ℕ) (_hk : 0 < k)
- (hno : ¬ ∃ d : ℕ, IsTotient d ∧ k*d < ell d) :
- (∀ x : ℝ, 0 < x → N k x = 0) ∧
- (∀ s ∈ Set.Ico (0 : ℝ) 1, A (fk k) s = 0) := by
- sorry
+    (hno : ¬ ∃ d : ℕ, IsTotient d ∧ k*d < ell d) :
+    (∀ x : ℝ, 0 < x → N k x = 0) ∧
+    (∀ s ∈ Set.Ico (0 : ℝ) 1, A (fk k) s = 0) := by
+  sorry
 ```
 [S6:95–99]
 

@@ -125,7 +125,7 @@ It is the largest formalization measured here: 4,774 files and 1,122,983 Lean li
 The content is in `Results/Basic.lean`, whose coloring consequence is 
 
 ```lean
-theorem monochromatic_hasAP_of_extremalNumber k N r : ℕ (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c k := by
+theorem monochromatic_hasAP_of_extremalNumber {k N r : ℕ} (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP {n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c} k := by
 ```
 [S18:84–86]
 
@@ -146,7 +146,7 @@ That is a saving in log log *N*; the manuscript's Theorem `ap:main` is a saving 
 for every fixed *B*, which is summable on dyadic scales once *B* > 1; `Results/Reciprocal.lean` then converts dyadic summability into the progression conclusion 
 
 ```lean
-theorem hasAP_of_not_summable_reciprocal k : ℕ (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) A : Set ℕ (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by
+theorem hasAP_of_not_summable_reciprocal {k : ℕ} (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) {A : Set ℕ} (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by
 ```
 [S22:86–88]
 

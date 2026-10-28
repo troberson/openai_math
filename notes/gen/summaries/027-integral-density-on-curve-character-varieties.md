@@ -141,8 +141,8 @@ ends in `sorry`:
 
 ```lean
 theorem producedMarkedValues_allSeams :
- D.ProducedMarkedSeamEquations q hproper hmax hg P x b0 i0 := by
- sorry
+    D.ProducedMarkedSeamEquations q hproper hmax hg P x b0 i0 := by
+  sorry
 ```
 [S5:17–19]
 

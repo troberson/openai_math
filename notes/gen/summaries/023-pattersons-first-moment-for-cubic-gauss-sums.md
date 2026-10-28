@@ -135,15 +135,15 @@ ending in `sorry`:
 
 ```lean
 theorem patterson_firstMoment : FirstMomentStatement := by
- sorry
+  sorry
 
-/– Model comparison in every fixed integer angular mode. -/
+/-- Model comparison in every fixed integer angular mode. -/
 theorem patterson_angularComparison : AngularComparisonStatement := by
- sorry
+  sorry
 
-/– Cancellation at the first-moment scale for each nonzero angular mode. -/
+/-- Cancellation at the first-moment scale for each nonzero angular mode. -/
 theorem patterson_angularCancellation : AngularCancellationStatement := by
- sorry
+  sorry
 ```
 [S5:84–93]
 

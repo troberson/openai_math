@@ -125,8 +125,8 @@ The comparator stubs state the two linked targets. `OstmannPrimes.lean`
 
 ```lean
 theorem main : ∀ A B : Set ℕ, A.Nontrivial → B.Nontrivial →
- Set.Infinite ((A + B) ∆ n : ℕ | Nat.Prime n) := by
- sorry
+    Set.Infinite ((A + B) ∆ {n : ℕ | Nat.Prime n}) := by
+  sorry
 ```
 [S6:9–11]
 
@@ -135,10 +135,10 @@ two-infinite-summands case, both ending in `sorry`:
 
 ```lean
 theorem inverseGoldbach : InverseGoldbach := by
- sorry
+  sorry
 
 theorem twoInfiniteSummandsImpossible : TwoInfiniteSummandsImpossible := by
- sorry
+  sorry
 ```
 [S5:30–34]
 

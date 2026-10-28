@@ -129,7 +129,7 @@ target and ends in `sorry`:
 
 ```lean
 theorem fullMain : MainEndpoint ∧ UniformEndpoint := by
- sorry
+  sorry
 ```
 [S5:36–37]
 

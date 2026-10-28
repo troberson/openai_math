@@ -126,11 +126,11 @@ the prime-ratio density as one combined target, ending in `sorry`:
 
 ```lean
 theorem large_gaps_and_ratio_density :
- (∀ C : ℝ, 0 < C →
- ∃ c : ℝ, 0 < c ∧ ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
- c * (N : ℝ) ≤ ((LargePrimeGaps.largeGapIndices C N).card : ℝ)) ∧
- 0 < lowerAsymptoticDensity ratioIncreaseIndices := by
- sorry
+    (∀ C : ℝ, 0 < C →
+      ∃ c : ℝ, 0 < c ∧ ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
+        c * (N : ℝ) ≤ ((LargePrimeGaps.largeGapIndices C N).card : ℝ)) ∧
+    0 < lowerAsymptoticDensity ratioIncreaseIndices := by
+  sorry
 ```
 [S5:36–41]
 

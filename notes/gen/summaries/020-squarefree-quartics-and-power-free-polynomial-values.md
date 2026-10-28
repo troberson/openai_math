@@ -131,11 +131,11 @@ The comparator stub [S5:37–42] states the same target and ends in
 
 ```lean
 theorem allDegrees (f : Polynomial ℤ)
- (hirr : Irreducible (f.map (Int.castRingHom ℚ)))
- (hdeglo : 4 ≤ f.natDegree)
- (hlocal : LocallyAdmissible f (f.natDegree - 2)) :
- DensityStatement f (f.natDegree - 2) := by
- sorry
+    (hirr : Irreducible (f.map (Int.castRingHom ℚ)))
+    (hdeglo : 4 ≤ f.natDegree)
+    (hlocal : LocallyAdmissible f (f.natDegree - 2)) :
+    DensityStatement f (f.natDegree - 2) := by
+  sorry
 ```
 [S5:37–42]
 

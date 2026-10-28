@@ -165,14 +165,14 @@ theorem is in sections/01-introduction [S7:41].
 The scope note [S8:9] covers only the Bogomolov–Pop manuscript and
 states a uniqueness (injectivity) result: "```lean
 theorem main_graph_injective (ell : ℕ) [Fact ell.Prime]
- (k K l L : Type*) [Field k] [Field K] [Field l] [Field L]
- [IsAlgClosed k] [IsAlgClosed l] [Algebra k K] [Algebra l L]
- [Algebra.EssFiniteType k K] [Algebra.EssFiniteType l L]
- (hk : (ell : k) ≠ 0) (hl : (ell : l) ≠ 0)
- (hK : 2 ≤ Algebra.trdeg k K) (hL : 2 ≤ Algebra.trdeg l L) :
- ∀ (a a' : IsomF k K l L) (b : IsomCUnits ell K L),
- PhiGraph a b → PhiGraph a' b → a = a' := by
- sorry
+    (k K l L : Type*) [Field k] [Field K] [Field l] [Field L]
+    [IsAlgClosed k] [IsAlgClosed l] [Algebra k K] [Algebra l L]
+    [Algebra.EssFiniteType k K] [Algebra.EssFiniteType l L]
+    (hk : (ell : k) ≠ 0) (hl : (ell : l) ≠ 0)
+    (hK : 2 ≤ Algebra.trdeg k K) (hL : 2 ≤ Algebra.trdeg l L) :
+    ∀ (a a' : IsomF k K l L) (b : IsomCUnits ell K L),
+      PhiGraph a b → PhiGraph a' b → a = a'  := by
+  sorry
 ```
 [S9:117–125]" If two
 isomorphisms of perfect closures preserving the constant fields

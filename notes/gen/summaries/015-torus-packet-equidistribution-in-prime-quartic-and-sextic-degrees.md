@@ -175,17 +175,17 @@ tightness clause — and ends in `sorry`:
 
 ```lean
 theorem prime_degree_packet_measure_equidistribution_unconditional
- (d : ℕ) (hprime : Nat.Prime (d+1)) (hfive : 5 ≤ d+1)
- (K : ℕ → Type u) [∀ i, Field (K i)] [∀ i, NumberField (K i)]
- [∀ i, NumberField.IsTotallyReal (K i)]
- (M : ∀ i, PrimeDegreePackets.FullLattice (d+1) (K i))
- (σ : ∀ i, OrderedEmbeddings (d+1) (K i))
- (hn : ∀ i, Module.finrank ℚ (K i)=d+1)
- (hD : Tendsto (fun i => PrimeDegreePackets.multiplierDiscriminant (M i)) atTop atTop) :
- ∃ ν : Measure (X (d+1)), IsHaarProbability ν ∧
- WeakProbabilityConvergence (fun i => packetMeasure (M i) (σ i)) ν ∧
- IsTightMeasureSet (Set.range (fun i => packetMeasure (M i) (σ i))) := by
- sorry
+    (d : ℕ) (hprime : Nat.Prime (d+1)) (hfive : 5 ≤ d+1)
+    (K : ℕ → Type u) [∀ i, Field (K i)] [∀ i, NumberField (K i)]
+    [∀ i, NumberField.IsTotallyReal (K i)]
+    (M : ∀ i, PrimeDegreePackets.FullLattice (d+1) (K i))
+    (σ : ∀ i, OrderedEmbeddings (d+1) (K i))
+    (hn : ∀ i, Module.finrank ℚ (K i)=d+1)
+    (hD : Tendsto (fun i => PrimeDegreePackets.multiplierDiscriminant (M i)) atTop atTop) :
+    ∃ ν : Measure (X (d+1)), IsHaarProbability ν ∧
+      WeakProbabilityConvergence (fun i => packetMeasure (M i) (σ i)) ν ∧
+      IsTightMeasureSet (Set.range (fun i => packetMeasure (M i) (σ i))) := by
+  sorry
 ```
 [S6:200–211]
 
