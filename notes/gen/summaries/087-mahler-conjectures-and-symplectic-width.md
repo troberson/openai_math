@@ -12,7 +12,7 @@ The release entry is one paragraph long and names three results at once. Its ope
 
 The entry then states the symplectic claim. The release marks the dimension variable with inline HTML and spells the inequality with an entity, so only its tag-free tail is quoted here 
 
-> every symmetric polar product $`K\times K^\circ`$ in dimension $`2n`$ has Gromov width 4. ([Lean](../../../lean/docs/087.md))
+> every symmetric polar product $`K\times K^\circ`$ in dimension $`2n`$ has Gromov width 4. (Lean)
 
 Three sub-entries follow the three manuscript links. The symmetric one ends 
 

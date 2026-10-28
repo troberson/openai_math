@@ -84,20 +84,20 @@ This is a consequence of the companion's projective-space base
 theorem 
 
 > **theorem**
-Let \(n\geq1\), and let \(X\) be a compact irreducible holomorphic symplectic
-Kähler manifold of dimension \(2n\), with symplectic form \(\sigma\).
+Let $n\geq1$, and let $X$ be a compact irreducible holomorphic symplectic
+Kähler manifold of dimension $2n$, with symplectic form $\sigma$.
 Suppose that
 $$f:X\longrightarrow B$$
 is a projective surjective holomorphic morphism with connected fibers,
-where \(B\) is a normal projective variety of dimension \(n\).
+where $B$ is a normal projective variety of dimension $n$.
 Assume that every irreducible component of every fiber has dimension
-\(n\) and that the restriction of \(\sigma\) to its smooth locus is zero.
-Then \(B\) is isomorphic to \(\mathbb P^n_{\mathbb C}\). [S13:59–70]
+$n$ and that the restriction of $\sigma$ to its smooth locus is zero.
+Then $B$ is isomorphic to $\mathbb P^n_{\mathbb C}$. [S13:59–70]
 
 The companion's proof first establishes smoothness of the base and
 then applies Hwang's smooth-base theorem . "For projective IHS total spaces, the cohomological constraint is already
 that of projective space: Shen–Yin compute the rational intersection
-cohomology of \(B\) as one-dimensional in degrees \(0,2,\ldots,2n\) and
+cohomology of $B$ as one-dimensional in degrees $0,2,\ldots,2n$ and
 zero in odd degrees \cite[Theorem 0.4(a)]ShenYin2022. This does not itself establish
 smoothness. Our proof first establishes smoothness and then applies Hwang's
 theorem. [S13:52–57]"
@@ -136,11 +136,11 @@ established the conjecture for each known deformation type
 
 The projective-space base problem: Hwang proved it for smooth
 bases, Greb–Lehn for compact Kähler total spaces, leaving the
-singular-base case . "Hwang proved the projective-space conclusion when \(X\) is projective and
-\(B\) is smooth \cite[Theorem 1.2]Hwang2008. Greb and Lehn extended the
+singular-base case . "Hwang proved the projective-space conclusion when $X$ is projective and
+$B$ is smooth \cite[Theorem 1.2]Hwang2008. Greb and Lehn extended the
 smooth-base theorem to compact Kähler IHS total spaces
 \cite[Theorem 1.1]GrebLehn2014. These results reduce the base problem to
-the possible singularities of \(B\). [S13:16–20]" Ou reduced the
+the possible singularities of $B$. [S13:16–20]" Ou reduced the
 dimension-four surface base to $\mathbb P^2$ or a specific Fano
 surface; Huybrechts–Xu excluded the second case; Müller–Zheng Xu
 proved a local smoothness theorem [S13:37–50].

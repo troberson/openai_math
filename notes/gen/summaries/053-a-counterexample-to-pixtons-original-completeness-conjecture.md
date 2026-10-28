@@ -10,8 +10,8 @@ The release's blurb "**053. A counterexample to Pixton completeness in Chow.** C
 "A high-arity counterexample to Pixton completeness in Chow [S3:1]" , and its abstract reads: "We disprove the Chow and rational-cohomological forms of Pixton's completeness
 conjecture for his original relation system. We construct a formal tautological
 class outside the original Pixton relation span whose image is zero in the Chow
-ring and in rational cohomology. The example has genus \(10^60\) and
-\(3\binom10^603\) markings. [S4:62–66]"
+ring and in rational cohomology. The example has genus $10^{60}$ and
+$3\binom{10^{60}}{3}$ markings. [S4:62–66]"
 
 ## Undergraduate summary
 
@@ -31,11 +31,11 @@ system of stable-graph relations and conjectured it is complete. The
 Chow completeness question is whether $\ker q_{g,n}=\mathcal P_{g,n}$
 for every stable pair 
 
-> Writing \(R^*(\overline{\mathcal M}_g,n)=\mathrmim q_g,n\), the Chow completeness question is
+> Writing $R^*(\overline{\mathcal M}_{g,n})=\mathrm{im} q_{g,n}$, the Chow completeness question is
 whether
 $$\ker q_{g,n}=\mathcal P_{g,n}$$
 for every stable pair. The known validity theorem gives the inclusion
-\(\mathcal P_g,n\subseteq\ker q_g,n\). Our example makes it strict. [S5:25–30]
+$\mathcal P_{g,n}\subseteq\ker q_{g,n}$. Our example makes it strict. [S5:25–30]
 
 The known validity theorem gives the inclusion; this example makes
 it strict. The theorem 
@@ -43,12 +43,12 @@ it strict. The theorem
 > **Theorem 1.1**
 Set
 $$g=10^{60},\qquad D_*=\binom g3,\qquad n=3D_*.$$
-The explicitly defined class \(Y\in S_g,n^2D_*\) of
+The explicitly defined class $Y\in S_{g,n}^{2D_*}$ of
 Definition satisfies
 $$q_{g,n}(Y)=0,\qquad Y\notin\mathcal P_{g,n}.$$
 Consequently Pixton's original relation span does not exhaust the
 tautological Chow relations: the equality
-\(\ker q_g,n=\mathcal P_g,n\) fails for this stable pair. [S5:76–89]
+$\ker q_{g,n}=\mathcal P_{g,n}$ fails for this stable pair. [S5:76–89]
 
 ## Graduate summary
 
@@ -64,7 +64,7 @@ while satisfying the identities needed to annihilate the original
 Pixton span. The actual Chow correspondences of a curve satisfy an
 additional nilpotence identity obtained from a surface Quot scheme.
 The first algebra proves nonmembership; the second proves vanishing.
-Figure separates these two assertions about \(Y\). [S5:166–172]
+Figure separates these two assertions about $Y$. [S5:166–172]
 
 The first algebra proves nonmembership; the second proves vanishing.
 
@@ -73,9 +73,9 @@ graphs outside the rational-tails locus and evaluates rational
 branches by Frobenius multiplication and coproduct. Every element of
 $\mathcal P_{g,n}$ has zero test, while the test of $Y$ has a
 nonzero coefficient proportional to
-$\prod_{i<j<k}\theta_{ijk}$ . "Every element of \(\mathcal P_g,n\) has zero test,
-while the test of \(Y\) has a nonzero coefficient proportional to
-\(\prod_i<j<k\theta_ijk\). [S5:181–186]"
+$\prod_{i<j<k}\theta_{ijk}$ . "Every element of $\mathcal P_{g,n}$ has zero test,
+while the test of $Y$ has a nonzero coefficient proportional to
+$\prod_{i<j<k}\theta_{ijk}$. [S5:181–186]"
 
 **The smooth-family identity.** The correspondence object of a
 smooth curve splits into two even summands and an odd symplectic

@@ -8,23 +8,23 @@
 
 [S1:2847] (family entry):
 
-> **116. Uniform black-box noncommutative identity testing across characteristics.** For each characteristic, constructs in deterministic polynomial bit time a polynomial-dimensional matrix tuple detecting every nonzero division-free noncommutative formula of bounded size over any field of that characteristic. Rational formulas over ℚ also admit polynomial-size hitting lists whenever they have a defined rational-matrix evaluation. ([Lean](../../../lean/docs/116.md))
+> **116. Uniform black-box noncommutative identity testing across characteristics.** For each characteristic, constructs in deterministic polynomial bit time a polynomial-dimensional matrix tuple detecting every nonzero division-free noncommutative formula of bounded size over any field of that characteristic. Rational formulas over ℚ also admit polynomial-size hitting lists whenever they have a defined rational-matrix evaluation. (Lean)
 
 [S1:2854] (the positive-characteristic manuscript entry, with its abstract at [S1:2856]):
 
-> [Uniform Matrix Hitting Points in Every Positive Characteristic](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf)
+> Uniform Matrix Hitting Points in Every Positive Characteristic
 
 > We construct a single matrix substitution that detects every nonzero size-s division-free noncommutative formula in n variables over every field of a given positive characteristic. One deterministic machine, given a promised prime p in binary and n, s in unary, outputs matrices over 𝔽p of dimension $`O(n^3s^6)`$ in polynomial bit time. The same tuple works with arbitrary extension-field coefficients, including in characteristic two. The construction also applies to the stated acyclic algebraic path programs.
 
 [S1:2863] (the one-rational manuscript entry, with its abstract at [S1:2865]):
 
-> [One Rational Matrix Hitting Point for Noncommutative Formulas](../../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf)
+> One Rational Matrix Hitting Point for Noncommutative Formulas
 
 > We construct, in deterministic polynomial bit time, one tuple of rational matrices that detects every nonzero polynomial computed by a noncommutative division-free formula of a prescribed size. The matrices have dimension $`O(ns^2)`$ for n variables and formula size s, and the same tuple works over every field of characteristic zero.
 
 [S1:2872] (the hitting-lists manuscript entry, with its abstract at [S1:2874]):
 
-> [Polynomial Hitting Lists for Noncommutative Rational Formulas](../../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf)
+> Polynomial Hitting Lists for Noncommutative Rational Formulas
 
 > We construct, in deterministic polynomial bit time, a polynomial-size list of rational matrix tuples for noncommutative rational formulas over ℚ of bounded tree size. Every nonzero admissible formula has a defined, invertible value at one tuple, with no separate bounds on inverse nesting or rational constant heights. Matrix dimensions, entry bit lengths, and total output length are polynomially bounded.
 

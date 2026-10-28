@@ -26,7 +26,7 @@ the complete-intersections manuscript proves it in full. The
 theorem 
 
 > **Theorem 1.1**
-Let \(X\subset\mathbb P^N_\mathbb C\) be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from \(H^*(X;\mathbb C)\). [S4:15–17]
+Let $X\subset\mathbb P^N_\mathbb C$ be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from $H^*(X;\mathbb C)$. [S4:15–17]
 
 That resolves the Virasoro conjecture positively for
 projective-space complete intersections, including primitive and

@@ -13,7 +13,7 @@ $N\ge2$, resolving the threshold-bound-state conjecture; and for
 $\mathrm{SU}(2)$ a companion proves infinitely many normalizable
 positive-energy eigenstates with unbounded energies, contradicting the
 original BFSS paper's exclusion of additional bound states at
-$N=2$. The threshold manuscript's abstract "For every finite \(N\ge2\), we prove that undeformed \(\mathrmSU(N)\) BFSS matrix
+$N=2$. The threshold manuscript's abstract "For every finite $N\ge2$, we prove that undeformed $\mathrm{SU}(N)$ BFSS matrix
 quantum mechanics has exactly one normalizable zero-energy state after
 removing the center of mass. This establishes the threshold-bound-state
 conjecture. [S3:66–71]" The
@@ -38,9 +38,9 @@ threshold manuscript answers: exactly one, for every $N\ge2$
 [S4:23–81]:
 
 > **theorem**
-For every integer \(N\ge2\),
+For every integer $N\ge2$,
 $$\dim\mathrm{ker} H_N=1.$$
-The kernel consists of \(\mathrmSpin(9)\)-invariant states and is even in the
+The kernel consists of $\mathrm{Spin}(9)$-invariant states and is even in the
 fermion grading just specified. [S4:74–81]
 
 That single state is the unique ground state of the relative model.

@@ -8,11 +8,11 @@
 
 [S1:2736] (family entry):
 
-> **111. One-sample matroid prophet inequalities against an almighty adversary.** For every finite matroid known in advance, gives a distribution-independent online rule using one independent sample per element and earning a universal constant fraction of the expected offline optimum. Values are independent and nonnegative, with finite expected optimum. The guarantee holds even when the arrival-order adversary sees all samples, values, and the rule's entire random seed; no polynomial-time implementation is asserted. ([Lean](../../../lean/docs/111.md))
+> **111. One-sample matroid prophet inequalities against an almighty adversary.** For every finite matroid known in advance, gives a distribution-independent online rule using one independent sample per element and earning a universal constant fraction of the expected offline optimum. Values are independent and nonnegative, with finite expected optimum. The guarantee holds even when the arrival-order adversary sees all samples, values, and the rule's entire random seed; no polynomial-time implementation is asserted. (Lean)
 
 [S1:2743] (the manuscript entry, with its abstract at [S1:2745]):
 
-> [One Sample Suffices for Matroid Prophet Inequalities against an Almighty Adversary](../../../preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf)
+> One Sample Suffices for Matroid Prophet Inequalities against an Almighty Adversary
 
 > We prove that one independent sample per element suffices for a constant-competitive prophet inequality on every finite matroid. The guarantee holds even when the arrival-order adversary observes all samples, all online values, and the algorithm's entire random seed. The rule needs no description of the value distributions and achieves the absolute competitive ratio $`2^{-310}`$.
 

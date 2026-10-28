@@ -246,6 +246,10 @@ def _prose_markup(s: str) -> str:
     # which the summaries checker rejects (pass_b) — same reason `\cite`/`\ref` are dropped.
     s = _HREF.sub(r"\2", s)
     s = _URL.sub(" ", s)
+    # The release's catalog blurbs carry markdown links (`([Lean](lean/docs/073.md))`)
+    # alongside the LaTeX ones. Same policy: keep the text label, drop the URL — a raw
+    # markdown link lands on the page page-relative and the checker reads it as dead.
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
     # The release's catalog (CONTENTS.md) uses HTML emphasis and subscript tags in its
     # abstracts (`<i>`, `<sub>`). Strip the tags, keep the content.
     s = re.sub(r"</?(?:i|b|sub|sup|em|strong)>", "", s)
@@ -370,6 +374,17 @@ def split_regions(text: str) -> list[tuple[bool, str, bool]]:
             else:
                 flush()
                 regions.append((True, text[i + 2:close], True))
+                i = close + 2
+            continue
+        # LaTeX inline delimiters: \( ... \)
+        if text[i] == "\\" and i + 1 < n and text[i + 1] == "(":
+            close = text.find("\\)", i + 2)
+            if close == -1:
+                buf.append(text[i:])
+                i = n
+            else:
+                flush()
+                regions.append((True, text[i + 2:close], False))
                 i = close + 2
             continue
         buf.append(text[i])

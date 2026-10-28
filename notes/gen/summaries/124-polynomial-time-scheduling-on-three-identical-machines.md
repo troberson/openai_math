@@ -8,7 +8,7 @@
 
 [S1:3013] (family entry):
 
-> **124. Polynomial-time scheduling on three identical machines.** Resolves the three-processor unit-job scheduling problem of Garey and Johnson: a deterministic polynomial-time algorithm minimizes makespan for nonpreemptive unit-length jobs with arbitrary precedence constraints on three identical parallel machines. For an explicitly given precedence graph, it decides deadline feasibility exactly and constructs a feasible schedule. ([Lean](../../../lean/docs/124.md))
+> **124. Polynomial-time scheduling on three identical machines.** Resolves the three-processor unit-job scheduling problem of Garey and Johnson: a deterministic polynomial-time algorithm minimizes makespan for nonpreemptive unit-length jobs with arbitrary precedence constraints on three identical parallel machines. For an explicitly given precedence graph, it decides deadline feasibility exactly and constructs a feasible schedule. (Lean)
 
 [S2:325] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

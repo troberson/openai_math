@@ -8,11 +8,11 @@
 
 [S1:2629] (family entry):
 
-> **106. Hardness of coloring three-colorable graphs.** It is NP-hard to color a three-colorable graph using any fixed number c ≥ 3 of colors. More strongly, for every fixed $`0\lt \delta\lt 1/3`$, a deterministic polynomial-time reduction from 3SAT produces simple unweighted graphs that are three-colorable in the satisfiable case and have no independent set of size $`\delta n`$ otherwise, where n is the number of vertices. ([Lean](../../../lean/docs/106.md))
+> **106. Hardness of coloring three-colorable graphs.** It is NP-hard to color a three-colorable graph using any fixed number c ≥ 3 of colors. More strongly, for every fixed $`0\lt \delta\lt 1/3`$, a deterministic polynomial-time reduction from 3SAT produces simple unweighted graphs that are three-colorable in the satisfiable case and have no independent set of size $`\delta n`$ otherwise, where n is the number of vertices. (Lean)
 
 [S1:2636] (the manuscript entry, with its abstract at [S1:2638]):
 
-> [Hardness of finding large independent sets in three-colorable graphs](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf)
+> Hardness of finding large independent sets in three-colorable graphs
 
 > We prove that, for every fixed $`0\lt \delta\lt 1/3`$, it is NP-hard to distinguish three-colorable graphs from graphs in which every independent set has fewer than δ times the number of vertices. Consequently, for every fixed integer c ≥ 3, finding a proper c-coloring of a three-colorable graph is NP-hard.
 

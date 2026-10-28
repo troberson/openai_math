@@ -53,14 +53,14 @@ The second manuscript attacks a prediction about the bounded subclass.
 [S15:29–30] names it: "Kraetzer's experiments with conformal maps onto
 bounded domains led to the prediction" — the display that follows is
 $B_b(-1)=1/4$. [S15:45–45] states the theorem's shape: "There exist constants
-\(0<\varepsilon<1/4\) and \(C<\infty\) such that" — the display bounds the
+$0<\varepsilon<1/4$ and $C<\infty$ such that" — the display bounds the
 inverse-first-power mean with exponent $-1/4+\varepsilon$. [S15:50–51] gives
-the consequence: "Consequently \(B_b(-1)<1/4\), and Kraetzer's conjectured
+the consequence: "Consequently $B_b(-1)<1/4$, and Kraetzer's conjectured
 identity \eqref{eq:kraetzer} is false." The abstract gives the same:
 [S14:41–44] says "We prove a uniform upper bound for inverse-first-power
 integral means of normalized univalent disk maps with exponent strictly below
-\(1/4\). Consequently, the bounded universal integral-means spectrum satisfies
-\(B_b(-1)<1/4\), disproving Kraetzer's conjectured spectrum at \(p=-1\)."
+$1/4$. Consequently, the bounded universal integral-means spectrum satisfies
+$B_b(-1)<1/4$, disproving Kraetzer's conjectured spectrum at $p=-1$."
 
 ## Graduate summary
 
@@ -84,14 +84,14 @@ The second manuscript's theorem is stated for the unrestricted normalized
 class and the consequence is drawn for the bounded spectrum. [S15:61–61]
 flags the distinction: "The distinction between bounded and unrestricted disk
 maps matters." The earlier estimates do not reach the target: [S15:75–77]
-says "These estimates remain above the conjectured value \(1/4\);
+says "These estimates remain above the conjectured value $1/4$;
 Theorem~\ref{thm:main} establishes a uniform exponent strictly below it."
 
 The limits of the constants are stated plainly. [S15:54–57] records them:
 "Both constants are independent of the map, including its image size. The
 proof gives existence of a positive gap but does not evaluate it numerically.
 The conclusion concerns the inverse first power; it does not settle the
-proposed value at \(p=1\)."
+proposed value at $p=1$."
 
 The two manuscripts share machinery, and the second says what it does not
 import. [S15:91–93] names the shared construction: "The affine-law and
@@ -178,7 +178,7 @@ inverse fails integrability at $s=4$ and $s=4/3$ [S4:89–89].
 
 The strict gap is proved to exist and is not evaluated. [S15:101–102] names
 the hard part: "The obstacle specific to the present theorem is strictness at
-the candidate exponent \(1/4\)." The scope note records the same limit for the
+the candidate exponent $1/4$." The scope note records the same limit for the
 formalized estimate [S23:16].
 
 The two results sit in one family because they share the integral-means

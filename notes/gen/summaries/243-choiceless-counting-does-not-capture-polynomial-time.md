@@ -51,9 +51,9 @@ occurrence defines a Boolean query on every finite input that is not definable
 in the original counting formalism."
 
 The separation is stated as a strict inclusion. [S13:44] states the half that
-matters: "no \(\mathrmCPT\) sentence over \(\tau\) has the same true-model class. [S13:44]"
+matters: "no $\mathrm{CPT}$ sentence over $\tau$ has the same true-model class. [S13:44]"
 
-The choiceless side keeps its full power. [S13:46–47] says: "The \(\CPT\) sentences in \textup{(ii)} may use counting
+The choiceless side keeps its full power. [S13:46–47] says: "The $\mathrm{CPT}$ sentences in \textup{(ii)} may use counting
 and hereditarily finite sets of unrestricted finite rank."
 
 ## Graduate summary

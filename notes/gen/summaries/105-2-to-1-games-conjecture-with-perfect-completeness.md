@@ -8,11 +8,11 @@
 
 [S1:2613] (family entry):
 
-> **105. Perfect completeness for 2-to-1 games.** Proves Khot's 2-to-1 Games Conjecture with perfect completeness: for every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable games from games whose optimum is at most δ, on explicit unweighted instances. The alphabet depends only on δ, and every right-hand label has exactly two preimages under each constraint map. ([Lean](../../../lean/docs/105.md))
+> **105. Perfect completeness for 2-to-1 games.** Proves Khot's 2-to-1 Games Conjecture with perfect completeness: for every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable games from games whose optimum is at most δ, on explicit unweighted instances. The alphabet depends only on δ, and every right-hand label has exactly two preimages under each constraint map. (Lean)
 
 [S1:2620] (the manuscript entry, with its abstract at [S1:2622]):
 
-> [Perfect completeness for 2-to-1 games](../../../preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf)
+> Perfect completeness for 2-to-1 games
 
 > We prove the 2-to-1 Games Conjecture with perfect completeness. For every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable 2-to-1 games from games of value at most δ, with a fixed alphabet and an explicitly listed unweighted multiset of constraints.
 

@@ -8,7 +8,7 @@
 
 [S1:3168] (family entry):
 
-> **132. A superquadratic separation of sensitivity and block sensitivity.** Constructs total Boolean functions with block sensitivity $`\mathop{\mathrm{bs}}\nolimits (f)\ge s(f)^\alpha`$ for a fixed α > 2, disproving the quadratic strengthening of the Sensitivity Conjecture. Here $`s(f)`` counts influential individual-bit flips, while block sensitivity allows disjoint groups of bits to change together. ([Lean](../../../lean/docs/132.md))
+> **132. A superquadratic separation of sensitivity and block sensitivity.** Constructs total Boolean functions with block sensitivity $`\mathop{\mathrm{bs}}\nolimits (f)\ge s(f)^\alpha`$ for a fixed α > 2, disproving the quadratic strengthening of the Sensitivity Conjecture. Here $`s(f)`` counts influential individual-bit flips, while block sensitivity allows disjoint groups of bits to change together. (Lean)
 
 [S2:341] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

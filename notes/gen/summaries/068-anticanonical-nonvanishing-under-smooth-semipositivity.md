@@ -113,9 +113,9 @@ nonvanishing without any additional projective-genus hypothesis.
 **The headline theorem** (manuscript 1) 
 
 > **theorem**
-Let \(X\) be a smooth connected projective variety over \(\mathbb C\).
-If \(-K_X\) admits a smooth Hermitian metric of semipositive curvature,
-then \(H^0(X,-mK_X)\ne0\) for some integer \(m>0\). [S9:14–18]
+Let $X$ be a smooth connected projective variety over $\mathbb C$.
+If $-K_X$ admits a smooth Hermitian metric of semipositive curvature,
+then $H^0(X,-mK_X)\ne0$ for some integer $m>0$. [S9:14–18]
 
 This is the positive-multiple formulation of Yau's anticanonical
 nonvanishing question. The proof proceeds by induction on dimension,

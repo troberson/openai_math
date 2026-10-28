@@ -93,13 +93,13 @@ structural theorem is used to prove the other."
 ## Graduate summary
 
 The first manuscript's theorem is the parity lower bound. [S6:25–35]
-states it: "Fix a nonnegative integer \(d\), a real number \(c\ge1\), and
-\(0<\varepsilon\le1/2\). For all sufficiently large \(n\), no circuit
-of depth at most \(d\) on \(n\) input qubits and at most \(n^c\) total
+states it: "Fix a nonnegative integer $d$, a real number $c\ge1$, and
+$0<\varepsilon\le1/2$. For all sufficiently large $n$, no circuit
+of depth at most $d$ on $n$ input qubits and at most $n^c$ total
 qubits, using arbitrary one-qubit unitaries and unbounded-arity Toffoli
-gates, computes \(\parity(x)\) with probability at least
-\(1/2+\varepsilon\) for every \(x\in\{0,1\}^n\).
-Gates in each layer have disjoint supports, ancillas start in \(\ket0\),
+gates, computes $\mathrm{PARITY}(x)$ with probability at least
+$1/2+\varepsilon$ for every $x\in\{0,1\}^n$.
+Gates in each layer have disjoint supports, ancillas start in $\ket0$,
 and one output qubit is measured; the other qubits may be discarded."
 
 The machinery runs through the localization section [S7:1], the
@@ -107,9 +107,9 @@ polynomial section [S10:1], the depth reduction [S8:1], the finite-scale
 induction [S9:1], and the parity contradiction [S11:1].
 
 The corollary recovers the classical threshold. [S6:37–40] states it:
-"Taking \(\varepsilon=1/6\) gives the usual success threshold \(2/3\).
+"Taking $\varepsilon=1/6$ gives the usual success threshold $2/3$.
 Thus \Cref{thm:parity} resolves positively the conjecture
-\(\parity\notin\QAC\), with bounded error, polynomially many ancillas,
+$\mathrm{PARITY}\notin\mathsf{QAC}^{0}$, with bounded error, polynomially many ancillas,
 and only a measured output required."
 
 The consequences section develops the reach of the bound [S12:1].

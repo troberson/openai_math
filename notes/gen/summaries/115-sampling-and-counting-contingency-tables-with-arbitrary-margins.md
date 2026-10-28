@@ -8,17 +8,17 @@
 
 [S1:2822] (family entry):
 
-> **115. Sampling and counting contingency tables with arbitrary margins.** For nonnegative integer matrices with prescribed row and column sums, gives exact uniform sampling in expected polynomial bit time and almost-uniform sampling in worst-case polynomial bit time. The dimensions and binary-encoded margins are unrestricted. Also gives a fully polynomial randomized approximation scheme for counting such tables with arbitrary individual cell bounds, including structural zeros, with polynomial cost on every execution. ([Lean](../../../lean/docs/115.md))
+> **115. Sampling and counting contingency tables with arbitrary margins.** For nonnegative integer matrices with prescribed row and column sums, gives exact uniform sampling in expected polynomial bit time and almost-uniform sampling in worst-case polynomial bit time. The dimensions and binary-encoded margins are unrestricted. Also gives a fully polynomial randomized approximation scheme for counting such tables with arbitrary individual cell bounds, including structural zeros, with polynomial cost on every execution. (Lean)
 
 [S1:2829] (the exact-uniform manuscript entry, with its abstract at [S1:2831]):
 
-> [Exact Uniform Sampling of Contingency Tables with Arbitrary Margins](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf)
+> Exact Uniform Sampling of Contingency Tables with Arbitrary Margins
 
 > We give an exact uniform sampler for nonnegative integer contingency tables with arbitrary prescribed margins. It terminates almost surely and has expected bit complexity polynomial in both dimensions and the binary length of the margins. No positivity, balance, sparsity, or fixed-dimension assumption is required.
 
 [S1:2838] (the cell-bounded manuscript entry, with its abstract at [S1:2840]):
 
-> [An FPRAS for Cell-Bounded Contingency Tables](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf)
+> An FPRAS for Cell-Bounded Contingency Tables
 
 > We give a fully polynomial randomized approximation scheme for counting nonnegative integer matrices with prescribed row sums, column sums, and individual entry bounds. Both dimensions vary, all numerical data are encoded in binary, and zero bounds are allowed. The algorithm uses only unbiased random bits and has a polynomial bound on its bit operations on every execution.
 

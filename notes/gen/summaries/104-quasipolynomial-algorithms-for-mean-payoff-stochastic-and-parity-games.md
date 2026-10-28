@@ -8,25 +8,25 @@
 
 [S1:2570] (family entry):
 
-> **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $L$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. ([Lean](../../../lean/docs/104.md))
+> **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $L$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. (Lean)
 
 The four manuscripts under that family:
 
 [S1:2577] (turn-based stochastic):
 
-> [Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time](../../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf)
+> Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time
 
 [S1:2586] (mean-payoff parity):
 
-> [Mean-payoff parity games in quasipolynomial time](../../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf)
+> Mean-payoff parity games in quasipolynomial time
 
 [S1:2595] (deterministic):
 
-> [Deterministic quasipolynomial-time mean-payoff games](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf)
+> Deterministic quasipolynomial-time mean-payoff games
 
 [S1:2604] (randomized):
 
-> [Randomized quasipolynomial-time mean-payoff games](../../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf)
+> Randomized quasipolynomial-time mean-payoff games
 
 [S2:286] carries the `\resultentry`, so the release blurb and the overview agree to
 the word on the $2^{O((\log(L+2))^2)}$ bound.

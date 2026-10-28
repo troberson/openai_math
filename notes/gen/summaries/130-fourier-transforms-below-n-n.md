@@ -8,7 +8,7 @@
 
 [S1:3127] (family entry):
 
-> **130. Exact Fourier transforms below $`n\log n`$.** Gives a deterministic length-n discrete Fourier transform algorithm using $`O(n(\log n)^{1-\delta})`$ operations for every n, with explicit $`\delta=10^{-13}`$. The model uses exact complex arithmetic, unrestricted coefficients and a supplied root of unity, and counts scalar preparation and logarithmic-word indexing. ([Lean](../../../lean/docs/130.md))
+> **130. Exact Fourier transforms below $`n\log n`$.** Gives a deterministic length-n discrete Fourier transform algorithm using $`O(n(\log n)^{1-\delta})`$ operations for every n, with explicit $`\delta=10^{-13}`$. The model uses exact complex arithmetic, unrestricted coefficients and a supplied root of unity, and counts scalar preparation and logarithmic-word indexing. (Lean)
 
 [S2:337] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

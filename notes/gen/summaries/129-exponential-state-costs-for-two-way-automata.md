@@ -8,7 +8,7 @@
 
 [S1:3102] (family entry):
 
-> **129. Exponential state costs for two-way automata.** Proves exponential lower bounds both for complementing two-way nondeterministic finite automata and for simulating one-way nondeterministic automata by two-way deterministic ones. The latter resolves the Sakoda–Sipser state-succinctness conjecture over growing finite alphabets; both results rule out polynomial state bounds independent of alphabet size. ([Lean](../../../lean/docs/129.md))
+> **129. Exponential state costs for two-way automata.** Proves exponential lower bounds both for complementing two-way nondeterministic finite automata and for simulating one-way nondeterministic automata by two-way deterministic ones. The latter resolves the Sakoda–Sipser state-succinctness conjecture over growing finite alphabets; both results rule out polynomial state bounds independent of alphabet size. (Lean)
 
 [S2:335] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

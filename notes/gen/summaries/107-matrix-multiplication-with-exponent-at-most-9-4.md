@@ -8,7 +8,7 @@
 
 [S1:2645] (family entry):
 
-> **107. Matrix multiplication with exponent at most 9/4.** Proves $`\omega\le9/4`$ over ℂ, giving $`O_\varepsilon(n^{9/4+\varepsilon})`$ arithmetic operations for square matrix multiplication. In characteristic zero, some inner dimension na with a > 0.465 permits $`n^{2+o(1)}`$ rectangular multiplication. Further square bounds give ω < 2.258 outside finitely many positive characteristics and ω < 2.371054886006746 over every fixed field. ([Lean](../../../lean/docs/107.md))
+> **107. Matrix multiplication with exponent at most 9/4.** Proves $`\omega\le9/4`$ over ℂ, giving $`O_\varepsilon(n^{9/4+\varepsilon})`$ arithmetic operations for square matrix multiplication. In characteristic zero, some inner dimension na with a > 0.465 permits $`n^{2+o(1)}`$ rectangular multiplication. Further square bounds give ω < 2.258 outside finitely many positive characteristics and ω < 2.371054886006746 over every fixed field. (Lean)
 
 The three manuscripts under that family:
 

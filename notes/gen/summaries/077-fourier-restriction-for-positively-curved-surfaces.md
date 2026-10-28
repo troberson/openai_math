@@ -33,23 +33,23 @@ The general-surface form of the conjecture [S4:18–27] holds for every
 $p>3$:
 
 > **theorem**
-Let \(\Sigma\subset\mathbb R^3\) be a compact smooth positively curved
-surface, possibly with smooth boundary. For every \(3<p<\infty\),
-there is a finite constant \(C_{\Sigma,p}\) such that
+Let $\Sigma\subset\mathbb R^3$ be a compact smooth positively curved
+surface, possibly with smooth boundary. For every $3<p<\infty$,
+there is a finite constant $C_{\Sigma,p}$ such that
 $$\|E_\Sigma f\|_{L^p(\mathbb R^3)}
  \le C_{\Sigma,p}\|f\|_{L^p(\Sigma)}$$
-for every complex-valued \(f\in L^p(\Sigma)\). [S4:18–27]
+for every complex-valued $f\in L^p(\Sigma)$. [S4:18–27]
 
 The companion paper states the bounded-data version for the sphere,
 where the input is only required to be essentially bounded, and this
 is the full conjectured open range 
 
 > **theorem**
-For every real \(p>3\), there is a finite constant \(C_p\), depending
-only on \(p\), such that
+For every real $p>3$, there is a finite constant $C_p$, depending
+only on $p$, such that
 $$\|Eg\|_{L^p(\mathbb R^3)}
   \le C_p\|g\|_{L^\infty(S^2,\sigma)}$$
-for every bounded measurable complex-valued function \(g\) on \(S^2\). [S6:21–29]
+for every bounded measurable complex-valued function $g$ on $S^2$. [S6:21–29]
 
 ## Graduate summary
 
@@ -114,9 +114,9 @@ consequence, obtained from the Lee–Rogers–Seeger compact-frequency
 transfer with both exponents equal to $p$ [S7:70–108]:
 
 > **corollary**
-For every \(3<p<\infty\) and \(s>2-6/p\), the free Schrödinger
+For every $3<p<\infty$ and $s>2-6/p$, the free Schrödinger
 propagator, initially defined on Schwartz functions, extends boundedly
-from \(W^s,p(\mathbb R^2)\) to \(L^p(\mathbb R^2\times[0,1])\):
+from $W^{s,p}(\mathbb R^2)$ to $L^p(\mathbb R^2\times[0,1])$:
 $$\|e^{it\Delta}f\|_{L^p(\mathbb R^2\times[0,1])}
  \le C_{p,s}\|f\|_{W^{s,p}(\mathbb R^2)}.$$ [S4:73–81]
 
@@ -133,8 +133,8 @@ dimensional Kakeya maximal theorem proved in family 074
 [S8:9–101]:
 
 > **corollary**
-For every \(\varepsilon>0\) there is a finite \(C_\varepsilon\) such that,
-for every \(0<\delta<1\) and \(f\in L^3(\mathbb R^3)\),
+For every $\varepsilon>0$ there is a finite $C_\varepsilon$ such that,
+for every $0<\delta<1$ and $f\in L^3(\mathbb R^3)$,
 $$\|K_\delta f\|_{L^3(S^2,\sigma)}
  \le C_\varepsilon\delta^{-\varepsilon}\|f\|_{L^3(\mathbb R^3)}.$$ [S6:337–344]
 

@@ -58,17 +58,17 @@ bounded factor.
 **The Kollár–Pardon classification.** 
 
 > **theorem**
-Let \(X\) be a connected normal projective variety over \(\mathbb C\), and let
-\(\widetilde X\) be its universal cover. The following conditions are
+Let $X$ be a connected normal projective variety over $\mathbb C$, and let
+$\widetilde X$ be its universal cover. The following conditions are
 equivalent:
 \beginenumerate[label=\textup{(\roman*)}]
-\item \(\widetilde X\) is biholomorphic to a semialgebraic open subset
+\item $\widetilde X$ is biholomorphic to a semialgebraic open subset
 of a projective variety.
-\item There are an integer \(m\geq0\), a bounded symmetric domain \(D\),
-and a simply connected normal projective variety \(F\) such that
+\item There are an integer $m\geq0$, a bounded symmetric domain $D$,
+and a simply connected normal projective variety $F$ such that
 $$\widetilde X\simeq D\times\mathbb C^m\times F.$$
 \endenumerate
-A point is allowed as either \(D\) or \(F\). No algebraicity of the
+A point is allowed as either $D$ or $F$. No algebraicity of the
 deck transformations is assumed. [S3:92–107]
 
 For a connected normal projective variety $X$ over $\mathbb C$, its
@@ -86,10 +86,10 @@ connected core.
 **Bounded-domain symmetry.** 
 
 > **theorem**
-Let \(U\) be a nonempty connected semialgebraic bounded open subset of a
-complex affine variety. Suppose that a group \(\Gamma\) of
-biholomorphisms acts properly discontinuously on \(U\) and that
-\(U/\Gamma\) is compact. Then \(U\) is smooth and is biholomorphic to a
+Let $U$ be a nonempty connected semialgebraic bounded open subset of a
+complex affine variety. Suppose that a group $\Gamma$ of
+biholomorphisms acts properly discontinuously on $U$ and that
+$U/\Gamma$ is compact. Then $U$ is smooth and is biholomorphic to a
 bounded symmetric domain. [S5:77–83]
 
 A nonempty connected semialgebraic bounded open subset $U$ of a complex

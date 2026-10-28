@@ -35,12 +35,12 @@ pentagon equation, with the Ihara bracket. The main statement
 
 > **theorem**
 There are homogeneous elements
-\(\sigma_2k+1\in W_2k+1\), one for each \(k\ge1\), for which
+$\sigma_{2k+1}\in W_{2k+1}$, one for each $k\ge1$, for which
 $$\mathrm{Lie}_{\mathbb Q}\langle e_3,e_5,e_7,\ldots\rangle
  \longrightarrow (W,\{\, ,\,\}),\qquad
  e_{2k+1}\longmapsto\sigma_{2k+1},$$
 is an isomorphism of graded Lie algebras.
-In particular, \(W\) is closed under the bracket
+In particular, $W$ is closed under the bracket
  . The induced map on completions by weight is a
 continuous graded isomorphism. [S3:50–62]
 
@@ -55,12 +55,12 @@ Lie algebra they generate, and exhaustion of the equation space
 
 > **theorem**
 There are homogeneous elements
-\(\sigma_2k+1\in W_2k+1\), one for each \(k\ge1\), for which
+$\sigma_{2k+1}\in W_{2k+1}$, one for each $k\ge1$, for which
 $$\mathrm{Lie}_{\mathbb Q}\langle e_3,e_5,e_7,\ldots\rangle
  \longrightarrow (W,\{\, ,\,\}),\qquad
  e_{2k+1}\longmapsto\sigma_{2k+1},$$
 is an isomorphism of graded Lie algebras.
-In particular, \(W\) is closed under the bracket
+In particular, $W$ is closed under the bracket
  . The induced map on completions by weight is a
 continuous graded isomorphism. [S3:50–62]
 

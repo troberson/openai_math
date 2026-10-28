@@ -47,11 +47,11 @@ includes bodies without symmetry or boundary regularity."
 
 The second manuscript attacks a different extremal question, the maximum
 rather than the minimum. [S13:63–65] names the conjecture: "Brannen
-conjectured in 1996 that simplices maximize \(R_d\) among all convex
+conjectured in 1996 that simplices maximize $R_d$ among all convex
 bodies~\cite{Brannen}." [S13:91–93] states the counterexample: "Let
-\(T_{10}=\conv(0,e_1,\ldots,e_{10})\subset\R^{10}\), where the \(e_i\) are the
-coordinate unit vectors, and let \(K=T_{10}\times T_{10}\subset\R^{20}\)."
-[S13:99–99] gives the conclusion: "Thus \(K\) violates \eqref{eq:proposed-bound}
+$T_{10}=\mathrm{conv}(0,e_1,\ldots,e_{10})\subset\mathbb R^{10}$, where the $e_i$ are the
+coordinate unit vectors, and let $K=T_{10}\times T_{10}\subset\mathbb R^{20}$."
+[S13:99–99] gives the conclusion: "Thus $K$ violates \eqref{eq:proposed-bound}
 in dimension twenty." The abstract gives the same: [S13:33–35] says "The
 product of two ten-dimensional simplices has larger normalized projection-body
 volume than a twenty-dimensional simplex. This gives a counterexample to
@@ -87,20 +87,20 @@ lower-dimensional volumes. [S13:121–123] states the reach of the identity:
 benchmark" — the sentence continues into the dimension threshold.
 
 The second manuscript places its result against the known history.
-[S13:72–74] separates the two problems: "For \(d\ge3\), Petty's separate
+[S13:72–74] separates the two problems: "For $d\ge3$, Petty's separate
 minimum problem asks whether ellipsoids are the only minimizers of the same
-functional \(R_d\)" — Petty's conjecture is the minimum, Brannen's the
+functional $R_d$" — Petty's conjecture is the minimum, Brannen's the
 maximum.
 
 The three-dimensional state is recorded next. [S13:76–80] says: "In dimension
 three, Chen, Feng, Li, Xi, and Xu settle the minimum problem and also prove
-the bound \(R_3(K)\le18=c_3\) for all three-dimensional convex bodies, with
+the bound $R_3(K)\le18=c_3$ for all three-dimensional convex bodies, with
 tetrahedra attaining equality" — the citation is to their Theorems 1.1 and
 1.2.
 
 The earlier counterexamples are cited separately. [S13:80–83] records them:
 "Feng, Hu, Liu, and Xu give counterexamples to \eqref{eq:proposed-bound} in
-every dimension \(d\ge9\), using polytopes with at most \(d+2\) facets" — the
+every dimension $d\ge9$, using polytopes with at most $d+2$ facets" — the
 citation is to their Theorem 1.3.
 
 The scope note records what the formalization carries. [S15:14] gives the

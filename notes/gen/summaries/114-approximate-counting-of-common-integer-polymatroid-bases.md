@@ -8,17 +8,17 @@
 
 [S1:2797] (family entry):
 
-> **114. Approximate counting of common integer polymatroid bases.** Gives a fully polynomial randomized approximation scheme for counting common integer bases of two integral polymatroids of equal total rank, supplied by exact rank-value oracles. Capacities are binary-encoded, each integer vector counts once, and oracle calls and bit operations outside the oracles are polynomial on every execution. For matroids presented by independence oracles, the results also cover common independent sets of prescribed, unrestricted, or maximum cardinality, even when the ranks differ. ([Lean](../../../lean/docs/114.md))
+> **114. Approximate counting of common integer polymatroid bases.** Gives a fully polynomial randomized approximation scheme for counting common integer bases of two integral polymatroids of equal total rank, supplied by exact rank-value oracles. Capacities are binary-encoded, each integer vector counts once, and oracle calls and bit operations outside the oracles are polynomial on every execution. For matroids presented by independence oracles, the results also cover common independent sets of prescribed, unrestricted, or maximum cardinality, even when the ranks differ. (Lean)
 
 [S1:2804] (the polymatroid manuscript entry, with its abstract at [S1:2806]):
 
-> [An FPRAS for Common Integer Polymatroid Bases with Binary Capacities](../../../preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/polymatroid-fpras.pdf)
+> An FPRAS for Common Integer Polymatroid Bases with Binary Capacities
 
 > We give a fully polynomial randomized approximation scheme for counting common integer bases of two polymatroids with the same total rank, supplied by exact rank-value oracles. The total rank and capacities are encoded in binary, and each integer vector is counted once. On every execution, the number of oracle calls and the bit work outside the oracles are bounded by a fixed polynomial in the ground-set size, the binary input length, the inverse relative-error tolerance, and the logarithm of the inverse failure probability. The algorithm handles binary capacities directly, without expanding them into labelled copies.
 
 [S1:2813] (the matroid manuscript entry, with its abstract at [S1:2815]):
 
-> [Approximate counting of common bases of two matroids](../../../preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf)
+> Approximate counting of common bases of two matroids
 
 > We give a fully polynomial randomized approximation scheme for counting the common bases of two arbitrary matroids of the same rank, supplied by independence oracles. The algorithm requires no explicit representation of either matroid and has polynomial bounds on both oracle calls and bit operations on every execution.
 

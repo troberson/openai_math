@@ -8,7 +8,7 @@
 
 [S1:2963] (family entry):
 
-> **121. Almost-linear approximation of edit distance.** For every fixed rational $`\varepsilon\in(0,1)`$, gives a randomized $`(1+\varepsilon)`$ approximation to unit-cost edit distance in worst-case expected time $`N^{1+o(1)}`$, with success probability at least 2/3. The strings have total length N and polynomially bounded integer symbols. This is an asymptotic guarantee at fixed accuracy. ([Lean](../../../lean/docs/121.md))
+> **121. Almost-linear approximation of edit distance.** For every fixed rational $`\varepsilon\in(0,1)`$, gives a randomized $`(1+\varepsilon)`$ approximation to unit-cost edit distance in worst-case expected time $`N^{1+o(1)}`$, with success probability at least 2/3. The strings have total length N and polynomially bounded integer symbols. This is an asymptotic guarantee at fixed accuracy. (Lean)
 
 [S2:320] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

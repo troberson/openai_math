@@ -12,12 +12,12 @@ simplicial volume, plus the rational-inessentiality obstruction to
 positive scalar curvature and its consequences. The family ships two
 companion manuscripts. The first proves the integral bound
  "We prove the integral scalar-curvature inequality proposed by Gromov.
-For every dimension \(n\ge3\), there is a constant \(a_n>0\), depending
-only on \(n\), such that
+For every dimension $n\ge3$, there is a constant $a_n>0$, depending
+only on $n$, such that
 $$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|$$
-for every closed connected oriented smooth \(n\)-manifold \(M\) and every
-smooth Riemannian metric \(g\). Here
-\(\mathrmScal_g^-:=\max\{0,-\mathrmScal_g\}\), and \(\|M\|\) is real simplicial volume.
+for every closed connected oriented smooth $n$-manifold $M$ and every
+smooth Riemannian metric $g$. Here
+$\mathrm{Scal}_g^-:=\max\{0,-\mathrm{Scal}_g\}$, and $\|M\|$ is real simplicial volume.
 The proof uses the nonnegative-scalar-curvature vanishing theorem of the
 companion paper on rational inessentiality. [S3:49–61]"
 The second proves the rational-inessentiality theorem on which the
@@ -34,9 +34,9 @@ the $n/2$-power of the negative part of scalar curvature still controls
 simplicial volume, with a dimension-dependent constant [S4:4–65]:
 
 > **Theorem 1.1**
-For every integer \(n\ge3\), there is a constant \(a_n>0\), depending
-only on \(n\), such that every closed connected oriented smooth
-\(n\)-manifold \(M\) and every smooth Riemannian metric \(g\) on \(M\)
+For every integer $n\ge3$, there is a constant $a_n>0$, depending
+only on $n$, such that every closed connected oriented smooth
+$n$-manifold $M$ and every smooth Riemannian metric $g$ on $M$
 satisfy
 $$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|.$$ [S4:67–77]
 

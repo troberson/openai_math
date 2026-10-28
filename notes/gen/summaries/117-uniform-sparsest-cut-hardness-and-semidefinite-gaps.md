@@ -8,17 +8,17 @@
 
 [S1:2881] (family entry):
 
-> **117. Uniform sparsest cut: hardness and semidefinite gaps.** Proves that approximating Uniform Sparsest Cut within any fixed constant factor is NP-hard, even with nonnegative rational capacities and unit demands. The Goemans–Linial semidefinite relaxation also has integrality gaps of order at least $`\sqrt{\log n}/(\log\log n)^3`$, approaching the square-root-logarithmic upper bound. ([Lean](../../../lean/docs/117.md))
+> **117. Uniform sparsest cut: hardness and semidefinite gaps.** Proves that approximating Uniform Sparsest Cut within any fixed constant factor is NP-hard, even with nonnegative rational capacities and unit demands. The Goemans–Linial semidefinite relaxation also has integrality gaps of order at least $`\sqrt{\log n}/(\log\log n)^3`$, approaching the square-root-logarithmic upper bound. (Lean)
 
 [S1:2888] (the hardness manuscript entry, with its abstract at [S1:2890]):
 
-> [Constant-factor hardness of uniform sparsest cut](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf)
+> Constant-factor hardness of uniform sparsest cut
 
 > We prove that, for every fixed C > 1, approximating Uniform Sparsest Cut within factor C is NP-hard. The output graphs have nonnegative rational capacities and unit demand between every pair of distinct vertices.
 
 [S1:2897] (the gaps manuscript entry, with its abstract at [S1:2899]):
 
-> [Near-square-root logarithmic integrality gaps for uniform sparsest cut](../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf)
+> Near-square-root logarithmic integrality gaps for uniform sparsest cut
 
 > We construct uniform sparsest-cut instances whose Goemans–Linial semidefinite integrality gap is at least $`c\sqrt{\log n}/(\log\log n)^3`$ along a sequence $`n\to\infty`$. The demand is one between every pair of distinct vertices, and the capacities are nonnegative real numbers. This matches the Arora–Rao–Vazirani upper bound up to a power of $`\log\log n`$.
 

@@ -15,7 +15,7 @@ halves around it.
 
  (the same entry, second half):
 
-> More generally, proves the binary corrected Elliott conjecture for complex multiplicative functions bounded by one when one factor is uniformly nonpretentious against each fixed Dirichlet character times $`n^{it}`$ for $`|t|\le X`$. ([Lean](../../../lean/docs/007.md))
+> More generally, proves the binary corrected Elliott conjecture for complex multiplicative functions bounded by one when one factor is uniformly nonpretentious against each fixed Dirichlet character times $`n^{it}`$ for $`|t|\le X`$. (Lean)
 
 The release's own LaTeX entry gives the family the shorter title "Two-point Chowla and the corrected
 binary Elliott conjecture" ([S2:90]), and the release attributes a reasoning trace to it: "Ordinary
@@ -95,7 +95,7 @@ The quantitative theorem is stated as "A logarithmic saving for affine Liouville
 
 |Σ_{*n*≤*X*} *λ*(*a*₁*n*+*b*₁)*λ*(*a*₂*n*+*b*₂)| ≤ *C**X*/(log *X*)^*c* for *X* ≥ 3.
 
-Two boundary conditions are part of the statement: "The cutoff \(X\) may be any real number. No
+Two boundary conditions are part of the statement: "The cutoff $X$ may be any real number. No
 coprimality condition is imposed on the coefficients." ([S6:32–33]) The route is stated in the
 introduction — the saving is first obtained for *λ*(*n*)*λ*(*n*+*h*) in each fixed residue class modulo
 each fixed modulus, "including nonunit and zero classes [S6:42]", and "Complete multiplicativity then gives
@@ -133,7 +133,7 @@ self-adjoint edge operators directly, because "distinct edge operators need not 
 ([S10:19–23]).
 
 What the result does **not** say is delimited in the statement paragraphs. The implied constants
-"need not be effective [S6:38–39]", and "no uniformity for coefficients growing with \(X\) is asserted [S6:39–40]"
+"need not be effective [S6:38–39]", and "no uniformity for coefficients growing with $X$ is asserted [S6:39–40]"
 ([S6:38–40]); the exponent is independent of the forms, and only the implied constant depends on
 them ([S11:48–49]). The qualitative theorem carries no rate ([S6:78–79]). The comparison with prior
 work is framed the same way: the logarithmically weighted bounds of Helfgott–Radziwiłł and Pilatte
@@ -166,8 +166,8 @@ does not mean the library elaborates — nothing in this release's metadata reco
 Chowla's conjecture is named for a 1965 book: "Chowla's conjecture predicts vanishing Liouville
 correlations at every fixed collection of distinct shifts" ([S6:102–103]), cited to Chowla's *The
 Riemann Hypothesis and Hilbert's Tenth Problem* ([S23:101–109]). Its binary case "asks whether the
-parities of the numbers of prime factors of \(n\) and \(n+h\) become uncorrelated for each fixed
-\(h\ge1\)." ([S6:103–105]) Elliott's generalization to bounded multiplicative functions is cited to a
+parities of the numbers of prime factors of $n$ and $n+h$ become uncorrelated for each fixed
+$h\ge1$." ([S6:103–105]) Elliott's generalization to bounded multiplicative functions is cited to a
 1992 note, "On the correlation of multiplicative functions [S23:113]" ([S23:111–119]), and the manuscript
 records that "Elliott extended the correlation problem to bounded multiplicative functions [S6:110–111]"
 ([S6:110–111]).

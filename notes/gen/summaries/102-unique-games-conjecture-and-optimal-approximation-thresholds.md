@@ -8,7 +8,7 @@
 
  (the family entry):
 
-> **102. The Unique Games Conjecture and optimal approximation thresholds.** Proves Khot's Unique Games Conjecture. Independent direct reductions also establish NP-hardness, on unweighted graphs, of approximation beyond the Goemans–Williamson ratio for Max-Cut, below factor two for Vertex Cover, and within any fixed constant factor for Min-UnCut and directed feedback vertex set. These direct proofs use established PCP and Label Cover hardness results. ([Lean](../../../lean/docs/102.md))
+> **102. The Unique Games Conjecture and optimal approximation thresholds.** Proves Khot's Unique Games Conjecture. Independent direct reductions also establish NP-hardness, on unweighted graphs, of approximation beyond the Goemans–Williamson ratio for Max-Cut, below factor two for Vertex Cover, and within any fixed constant factor for Min-UnCut and directed feedback vertex set. These direct proofs use established PCP and Label Cover hardness results. (Lean)
 
 The entry names five manuscripts; [S2:282] lists the same five, and the release attributes a
 reasoning trace to this family: "Ordinary NP-hardness at the basic semidefinite threshold [S3:31]"

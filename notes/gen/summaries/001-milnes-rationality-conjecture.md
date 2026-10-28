@@ -12,7 +12,7 @@
 
 [S1:23] (the manuscript entry under that family):
 
-> [Milne's rationality conjecture for abelian varieties](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf)
+> Milne's rationality conjecture for abelian varieties
 
  (its abstract):
 

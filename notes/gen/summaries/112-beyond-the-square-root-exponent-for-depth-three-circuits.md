@@ -8,7 +8,7 @@
 
 [S1:2752] (family entry):
 
-> **112. Beyond the square-root exponent for depth-three circuits.** Constructs a single language in deterministic polynomial time whose n-bit membership function requires $`2^{\omega(\sqrt n)}`$ total gates in unbounded-fan-in OR–AND–OR circuits, at every sufficiently large input length. This crosses the square-root-exponent threshold for explicit depth-three Boolean circuit lower bounds. ([Lean](../../../lean/docs/112.md))
+> **112. Beyond the square-root exponent for depth-three circuits.** Constructs a single language in deterministic polynomial time whose n-bit membership function requires $`2^{\omega(\sqrt n)}`$ total gates in unbounded-fan-in OR–AND–OR circuits, at every sufficiently large input length. This crosses the square-root-exponent threshold for explicit depth-three Boolean circuit lower bounds. (Lean)
 
 [S1:2759] (the manuscript entry, with its abstract at [S1:2761]):
 

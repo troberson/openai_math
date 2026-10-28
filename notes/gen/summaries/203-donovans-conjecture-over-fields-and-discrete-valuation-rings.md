@@ -14,10 +14,10 @@ equivalence classes, for every prime — together with the integral form
 over each fixed complete mixed-characteristic discrete valuation ring
 with algebraically closed residue field. The field manuscript's abstract
  "We prove Donovan's conjecture over every algebraically closed field
-\(K\) of characteristic \(p>0\). For each fixed \(K\) and bound on
+$K$ of characteristic $p>0$. For each fixed $K$ and bound on
 defect-group order, blocks of finite groups represent only finitely
-many \(K\)-linear Morita equivalence classes. The defect groups need
-not be abelian, and the result includes \(p=2\). [S4:2–6]"
+many $K$-linear Morita equivalence classes. The defect groups need
+not be abelian, and the result includes $p=2$. [S4:2–6]"
 
 ## Undergraduate summary
 
@@ -32,13 +32,13 @@ blocks with that defect [S4:12–25]. The field manuscript states the
 conjecture in a bounded-order form and proves it 
 
 > **theorem**
-Fix a prime \(p\), an algebraically closed field \(K\) of
-characteristic \(p\), and a positive integer \(M\).
-As \(G\) ranges over finite groups and \(b\) over block idempotents of
-\(KG\) with defect groups of order at most \(M\), only finitely many
-\(K\)-linear Morita equivalence classes of \(KGb\) occur.
-In particular, over this field \(K\), Donovan's conjecture holds for every finite
-\(p\)-group, including nonabelian groups. [S4:27–36]
+Fix a prime $p$, an algebraically closed field $K$ of
+characteristic $p$, and a positive integer $M$.
+As $G$ ranges over finite groups and $b$ over block idempotents of
+$KG$ with defect groups of order at most $M$, only finitely many
+$K$-linear Morita equivalence classes of $KGb$ occur.
+In particular, over this field $K$, Donovan's conjecture holds for every finite
+$p$-group, including nonabelian groups. [S4:27–36]
 
 The bounded-order form is equivalent to fixing one defect group, since
 there are only finitely many isomorphism types of groups of bounded

@@ -82,11 +82,11 @@ The symmetry groups are the reflection and the half-translation, generating the 
 The analytic foundation is the Palais–Smale theory of the energy on the loop space [S9:14–20]:
 
 > \begin{lemma}[Analytic foundations]\label{lem:local-analytic}
-> The energy \(E\) is smooth on \(\Lambda=H^1(S^1,S^n)\), satisfies the
+> The energy $E$ is smooth on $\Lambda=H^1(S^1,S^n)$, satisfies the
 > Palais--Smale condition, and has precisely the smooth closed geodesics
 > and the constants as critical points.  There is a complete strong
-> Riemannian metric on \(\Lambda\), invariant under \(G=O(2)\), for which
-> a bounded normalized negative gradient of \(E\) has a complete
+> Riemannian metric on $\Lambda$, invariant under $G=O(2)$, for which
+> a bounded normalized negative gradient of $E$ has a complete
 > equivariant flow.  Sufficiently small energy sublevels retract
 
 The counting lemma is what turns a homological statement into a count of images [S9:185–190]:
@@ -102,11 +102,11 @@ The local control theorem is the crossing analysis at a critical level, under th
 
 > \begin{theorem}[Uniform local control]\label{thm:local-control}
 > Assume there are finitely many prime images.  There are constants
-> \(A,B<\infty\) such that every sufficiently tight crossing of a
+> $A,B<\infty$ such that every sufficiently tight crossing of a
 > positive critical level has the following properties.
 > \begin{enumerate}[label=\textup{(\roman*)}]
-> \item It decomposes into unoriented labels \((i,m)\) at that
-> level.  Let \(\mathcal P_{i,m}\) be the ordinary pair for one
+> \item It decomposes into unoriented labels $(i,m)$ at that
+> level.  Let $\mathcal P_{i,m}$ be the ordinary pair for one
 
 The ordinary death theorem is the uniform filling statement: a cycle below square-root energy $a$ that bounds in the full loop space already bounds below $a+D$ [S8:8–14] [S6:123–128]:
 

@@ -8,17 +8,17 @@
 
 [S1:2711] (family entry):
 
-> **110. Optimal-order randomized k-server on arbitrary metrics.** Establishes a randomized competitive ratio $`O(\log^2(k+1))`$ for k-server on every metric space, matching the worst-case lower-bound order. One policy serves every finite oblivious request sequence, including on infinite unbounded metrics. On finite rational metrics, a uniform implementation has polynomial preprocessing and per-request bit cost in the input length and $`\log(t+1)`$ at request t, with a finite instance-dependent additive movement constant. ([Lean](../../../lean/docs/110.md))
+> **110. Optimal-order randomized k-server on arbitrary metrics.** Establishes a randomized competitive ratio $`O(\log^2(k+1))`$ for k-server on every metric space, matching the worst-case lower-bound order. One policy serves every finite oblivious request sequence, including on infinite unbounded metrics. On finite rational metrics, a uniform implementation has polynomial preprocessing and per-request bit cost in the input length and $`\log(t+1)`$ at request t, with a finite instance-dependent additive movement constant. (Lean)
 
 [S1:2718] (the existence manuscript entry, with its abstract at [S1:2720]):
 
-> [Squared-logarithmic randomized k-server on arbitrary metrics](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf)
+> Squared-logarithmic randomized k-server on arbitrary metrics
 
 > We prove that randomized k-server has competitive ratio $`O((\log(k+1))^2)`$ on every metric space against oblivious request sequences, matching the known worst-case lower bound. For each metric and initial configuration, one policy works for all finite request sequences, including on infinite and unbounded spaces. When the initial server positions are distinct, no additive term is needed.
 
 [S1:2727] (the uniform-algorithm manuscript entry, with its abstract at [S1:2729]):
 
-> [Uniform computation of the squared-logarithmic k-server bound](../../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf)
+> Uniform computation of the squared-logarithmic k-server bound
 
 > We construct a uniform randomized k-server algorithm on finite rational metrics with competitive ratio $`O(\log^2(k+1))`$ against oblivious request sequences. Preprocessing is polynomial in the input length, and per-request bit complexity is polynomial in that length and the binary request-counter length. The additive movement constant is finite and instance-dependent, but may be enormous. The construction uses the companion squared-logarithmic existence theorem.
 

@@ -8,7 +8,7 @@
 
 [S1:3029] (family entry):
 
-> **125. The metric k-median approximation threshold and recovery.** Gives a deterministic polynomial-time $`(1+2/e+\varepsilon)`$-approximation for finite rational metric k-median with specified candidate facilities, for every fixed ε > 0. Assuming $`P\ne NP`$, the optimal infimum approximation factor is $`1+2/e`$. ([Lean](../../../lean/docs/125.md))
+> **125. The metric k-median approximation threshold and recovery.** Gives a deterministic polynomial-time $`(1+2/e+\varepsilon)`$-approximation for finite rational metric k-median with specified candidate facilities, for every fixed ε > 0. Assuming $`P\ne NP`$, the optimal infimum approximation factor is $`1+2/e`$. (Lean)
 
 [S2:327] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

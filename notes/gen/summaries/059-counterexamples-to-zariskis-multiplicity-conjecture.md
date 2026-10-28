@@ -57,7 +57,7 @@ function germs with isolated critical points and multiplicities four and
 five whose zero-set germs are ambiently homeomorphic.
 7.inline	S9	31	45	\begintheorem 
 There are reduced convergent holomorphic function germs
-\(f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)\), each with an isolated
+$f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)$, each with an isolated
 critical point at the origin, such that
 $$\mathrm{ord}_0f_4=4,\qquad
     \mathrm{ord}_0f_5=5,$$
@@ -69,7 +69,7 @@ $$(\mathbb C^4,V(f_4),0)
 8.inline	S9	47	54	The Milnor open book has a compact page whose middle-dimensional
 cycles carry an integral Seifert form: it records the linking of a
 cycle on a reference page with a cycle transported to a positive
-neighboring page. For the open books on \(S^7\) used here, a
+neighboring page. For the open books on $S^7$ used here, a
 classification theorem turns a congruence of these integral forms
 into an equivalence of the embedded links. The proof is therefore
 organized around obtaining that integral congruence while retaining

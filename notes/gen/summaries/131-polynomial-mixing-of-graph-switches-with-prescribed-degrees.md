@@ -8,7 +8,7 @@
 
 [S1:3152] (family entry):
 
-> **131. Rapid mixing of graph switches for every degree sequence.** Resolves the simple-undirected Kannan–Tetali–Vempala conjecture: the lazy edge-switch chain mixes in $`O(n^8)`$ time for every graphical labeled degree sequence. The same degree-constrained graphs can also be sampled exactly uniformly by an almost-surely terminating algorithm with expected polynomial bit running time. ([Lean](../../../lean/docs/131.md))
+> **131. Rapid mixing of graph switches for every degree sequence.** Resolves the simple-undirected Kannan–Tetali–Vempala conjecture: the lazy edge-switch chain mixes in $`O(n^8)`$ time for every graphical labeled degree sequence. The same degree-constrained graphs can also be sampled exactly uniformly by an almost-surely terminating algorithm with expected polynomial bit running time. (Lean)
 
 [S2:339] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

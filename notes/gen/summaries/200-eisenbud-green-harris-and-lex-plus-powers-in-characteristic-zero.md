@@ -68,15 +68,15 @@ $\beta^S_{p,j}(S/I)\le\beta^S_{p,j}(S/J)$ for every homological and
 internal degree 
 
 > **Theorem 1.1**
-For every \(n\ge1\), every ordered degree sequence
-\(2\le a_1\le\cdots\le a_n\), and every homogeneous ideal
-\(I\subseteq\mathbb C[x_1,\ldots,x_n]\) containing a regular sequence of these
+For every $n\ge1$, every ordered degree sequence
+$2\le a_1\le\cdots\le a_n$, and every homogeneous ideal
+$I\subseteq\mathbb C[x_1,\ldots,x_n]$ containing a regular sequence of these
 degrees, the spaces in exist and
-\(J=\bigoplus_{d\ge0}J_d\) is a homogeneous ideal. For this single ideal,
+$J=\bigoplus_{d\ge0}J_d$ is a homogeneous ideal. For this single ideal,
 $$\beta^S_{p,j}(S/I)\le\beta^S_{p,j}(S/J)
  \qquad\text{for every \(p\ge0\) and \(j\in\mathbb Z\)}.$$
 There is no restriction on the degrees or number of the additional
-generators of \(I\). [S4:41–53]
+generators of $I$. [S4:41–53]
 
 ## Graduate summary
 

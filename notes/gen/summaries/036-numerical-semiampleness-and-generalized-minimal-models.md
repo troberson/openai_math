@@ -15,10 +15,10 @@ semiampleness pair:
 
 Manuscript 1, Kähler adjoints via Bott–Chern cohomology 
 
-> Let \(X\) be a smooth connected compact Kähler manifold, let \(B\) be an
+> Let $X$ be a smooth connected compact Kähler manifold, let $B$ be an
 effective rational simple normal crossing divisor with coefficients less
-than one, and let \(M\) be a nef rational holomorphic line bundle on \(X\).
-If \(K_X+B\) is pseudo-effective and \(K_X+B+M\) is nef, we prove that its
+than one, and let $M$ be a nef rational holomorphic line bundle on $X$.
+If $K_X+B$ is pseudo-effective and $K_X+B+M$ is nef, we prove that its
 first Chern class in real Bott–Chern cohomology is represented by a semiample
 rational line bundle. This numerical statement allows a flat change of line
 bundle; it does not assert semiampleness of the original adjoint. [S2:8–16]
@@ -78,13 +78,13 @@ fields.
 **Kähler numerical semiampleness.** 
 
 > **theorem**
-Let \(X\) be a smooth connected compact Kähler manifold, let
-\(B\geq0\) be a rational simple normal crossing divisor whose
+Let $X$ be a smooth connected compact Kähler manifold, let
+$B\geq0$ be a rational simple normal crossing divisor whose
 coefficients are strictly less than one, and let
-\(M\in\mathrmPic(X)\otimes_{\mathbb Z}\mathbb Q\).
-Assume that \(K_X+B\) is pseudo-effective, \(M\) is nef, and
-\(D=K_X+B+M\) is nef. Then there is a semiample rational line bundle
-\(L\) on \(X\) such that
+$M\in\mathrm{Pic}(X)\otimes_{\mathbb Z}\mathbb Q$.
+Assume that $K_X+B$ is pseudo-effective, $M$ is nef, and
+$D=K_X+B+M$ is nef. Then there is a semiample rational line bundle
+$L$ on $X$ such that
 $$c_1(L)=c_1(D)\quad\text{in }H^{1,1}_{\mathrm{BC}}(X,\mathbb R).$$ [S3:19–30]
 
 For a smooth connected compact Kähler manifold $X$, an effective
@@ -139,15 +139,15 @@ log-canonical result.
 **Numerical-dimension-one minimal models.** 
 
 > **theorem**
-Let \(X\) be a smooth connected complex projective variety of dimension
-\(n\geq3\). Suppose that \(K_X\) is pseudo-effective and
-\(\kappa_\sigma(X,K_X)=1\), with the convention
+Let $X$ be a smooth connected complex projective variety of dimension
+$n\geq3$. Suppose that $K_X$ is pseudo-effective and
+$\kappa_\sigma(X,K_X)=1$, with the convention
  . Then there are a normal projective
-\(\mathbb Q\)-factorial terminal variety \(Y\) with \(K_Y\) nef and
+$\mathbb Q$-factorial terminal variety $Y$ with $K_Y$ nef and
 a finite sequence
-\(\phi:X\dashrightarrow Y\) of \(K\)-negative divisorial contractions
-and flips. The inverse of \(\phi\) contracts no prime divisor. On a
-common smooth projective resolution \(p:W\to X\), \(q:W\to Y\),
+$\phi:X\dashrightarrow Y$ of $K$-negative divisorial contractions
+and flips. The inverse of $\phi$ contracts no prime divisor. On a
+common smooth projective resolution $p:W\to X$, $q:W\to Y$,
 compatible canonical divisors satisfy
 $$q^*K_Y-p^*K_X\sim_{\mathbb Q,\mathrm{num}}0.$$ [S9:51–68]
 

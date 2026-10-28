@@ -8,21 +8,21 @@
 
 The counterexample manuscript's main theorem is the flow itself [S7:69–78]:
 
-> There are an integer \(q\ge10\), a time \(T>0\), and a smooth Ricci flow \(g(t)\), \(0\le t<T\), on the closed connected manifold \(M=\mathbb S^2\times\mathbb S^q+1\), with smooth initial metric, such that $$\sup_{M\times[0,T)}|R_{g(t)}|<\infty, \qquad \lim_{t\uparrow T}\max_M|\mathrm{Rm}_{g(t)}|=\infty.$$ In particular, \(T\) is the finite maximal existence time of this flow. [S7:69–77]
+> There are an integer $q\ge10$, a time $T>0$, and a smooth Ricci flow $g(t)$, $0\le t<T$, on the closed connected manifold $M=\mathbb S^2\times\mathbb S^{q+1}$, with smooth initial metric, such that $$\sup_{M\times[0,T)}|R_{g(t)}|<\infty, \qquad \lim_{t\uparrow T}\max_M|\mathrm{Rm}_{g(t)}|=\infty.$$ In particular, $T$ is the finite maximal existence time of this flow. [S7:69–77]
 
 The manuscript states what the theorem does not say: it refutes the unrestricted all-dimensions formulation, and it draws no dimension-four conclusion [S7:80–84].
 
 The four-dimensional manuscript's extension theorem is the positive half 
 
-> Let \(M\) be a closed connected smooth four-manifold, let \(0<T<\infty\), and let \(g(t)\), \(0\le t<T\), be a smooth Ricci flow with smooth initial metric. If $$\sup_{M\times[0,T)}|R(g(t))|<\infty,$$ then there are \(\varepsilon>0\) and a smooth Ricci flow \(\widetilde g(t)\) on \(M\), \(0\le t<T+\varepsilon\), such that \(\widetilde g(t)=g(t)\) for every \(t<T\). [S20:12–20]
+> Let $M$ be a closed connected smooth four-manifold, let $0<T<\infty$, and let $g(t)$, $0\le t<T$, be a smooth Ricci flow with smooth initial metric. If $$\sup_{M\times[0,T)}|R(g(t))|<\infty,$$ then there are $\varepsilon>0$ and a smooth Ricci flow $\widetilde g(t)$ on $M$, $0\le t<T+\varepsilon$, such that $\widetilde g(t)=g(t)$ for every $t<T$. [S20:12–20]
 
 Its corollary is the contrapositive, and it is the dimension-four detection statement 
 
-> If a Ricci flow on a closed smooth four-manifold has finite maximal smooth existence time \(T\), then $$\limsup_{t\uparrow T}\max_{x\in M}R(g(t))(x)=+\infty.$$ [S20:32–36]
+> If a Ricci flow on a closed smooth four-manifold has finite maximal smooth existence time $T$, then $$\limsup_{t\uparrow T}\max_{x\in M}R(g(t))(x)=+\infty.$$ [S20:32–36]
 
 The proof of the corollary is short 
 
-> The equation \((\partial_t-\Delta)R=2|\mathrmRic|^2\) and the maximum principle give a scalar lower bound on a finite time interval. A finite upper limit in the assertion would therefore give a uniform absolute bound near \(T\), and smoothness supplies the bound on the remaining compact time interval. The componentwise extension just described contradicts maximality. [S20:40–45]
+> The equation $(\partial_t-\Delta)R=2|\mathrm{Ric}|^2$ and the maximum principle give a scalar lower bound on a finite time interval. A finite upper limit in the assertion would therefore give a uniform absolute bound near $T$, and smoothness supplies the bound on the remaining compact time interval. The componentwise extension just described contradicts maximality. [S20:40–45]
 
 The companion's abstract states its own result 
 
@@ -54,17 +54,17 @@ The construction separates two scales. With `δ = T − t`, the parabolic scale 
 
 The cap proposition is what decouples the two curvatures 
 
-> For every flow with the choices made above, and \(q\) sufficiently large, there is a constant \(C\), allowed to depend on that flow, such that $$(r^2+\theta^2)|\mathrm{Rm}|\le C$$ on \(M\times[0,T)\). [S10:4–9]
+> For every flow with the choices made above, and $q$ sufficiently large, there is a constant $C$, allowed to depend on that flow, such that $$(r^2+\theta^2)|\mathrm{Rm}|\le C$$ on $M\times[0,T)$. [S10:4–9]
 
 The reaction proposition bounds the reaction quotient at the pole and at the cap 
 
-> At late times on \(0<r\le\frac18\sqrt\delta\), the reaction quotient $$c(x,t)=\frac{2\langle\mathrm{Rm}(\mathrm{Ric}),\mathrm{Ric}\rangle}{|\mathrm{Ric}|^2} \quad\text{where }|\mathrm{Ric}|>0$$ satisfies both bounds $$c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}.$$ [S11:210–219]
+> At late times on $0<r\le\frac18\sqrt\delta$, the reaction quotient $$c(x,t)=\frac{2\langle\mathrm{Rm}(\mathrm{Ric}),\mathrm{Ric}\rangle}{|\mathrm{Ric}|^2} \quad\text{where }|\mathrm{Ric}|>0$$ satisfies both bounds $$c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}.$$ [S11:210–219]
 
 The three barrier propositions fix the parameters in order and control the pole, the interior, and the geometric exterior [S12:71–73] [S12:158–159] [S12:225–226].
 
 The rate corollary is the quantitative form, with `d_q = (q + 1 − √((q + 1)(q − 7)))/2` 
 
-> For every sufficiently large integer \(q\), set $$d_q=\frac{q+1-\sqrt{(q+1)(q-7)}}2.$$ For every sufficiently large even integer \(k\), with the threshold allowed to depend on \(q\), there is a smooth Ricci flow on \(\mathbb S^2\times\mathbb S^q+1\) with finite maximal time \(T\), uniformly bounded scalar curvature, and constants \(0<c\le C<\infty\) such that $$c(T-t)^{-2k/d_q}\le\max_M|\mathrm{Rm}|(\cdot,t) \le C(T-t)^{-2k/d_q}$$ for all sufficiently late times. In particular, one fixed dimension admits such flows with an unbounded discrete set of power-law Type-II curvature exponents. The flow, \(T\), and the constants may depend on \(q\) and \(k\). [S12:284–299]
+> For every sufficiently large integer $q$, set $$d_q=\frac{q+1-\sqrt{(q+1)(q-7)}}2.$$ For every sufficiently large even integer $k$, with the threshold allowed to depend on $q$, there is a smooth Ricci flow on $\mathbb S^2\times\mathbb S^{q+1}$ with finite maximal time $T$, uniformly bounded scalar curvature, and constants $0<c\le C<\infty$ such that $$c(T-t)^{-2k/d_q}\le\max_M|\mathrm{Rm}|(\cdot,t) \le C(T-t)^{-2k/d_q}$$ for all sufficiently late times. In particular, one fixed dimension admits such flows with an unbounded discrete set of power-law Type-II curvature exponents. The flow, $T$, and the constants may depend on $q$ and $k$. [S12:284–299]
 
 The four-dimensional paper runs the other way. It models the spatial geometry near `T` as a tree of Ricci-flat ALE pieces with an outermost scale `a(t)` [S20:100–105], and studies a renormalized Einstein–Hilbert functional whose differential is the integral pairing with the Einstein tensor `½ R g − Ric` [S20:109–123]. The degeneration-tree theorem makes the tree precise [S22:31–60], the buffered-interval proposition selects time intervals on which the outermost scale changes by a fixed factor [S22:1270–1282], the exterior Ricci proposition is the parabolic input [S23:334–336], the collar extension theorem extends the flow across the collar [S24:82–108], and the final contradiction shows the energy must vanish [S25:476].
 

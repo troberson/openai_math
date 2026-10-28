@@ -8,7 +8,7 @@
 
 [S1:3054] (family entry):
 
-> **126. Exponential semidefinite complexity of perfect matching.** Proves that every exact semidefinite lift of the perfect matching polytope has exponential size, answering Rothvoss's polynomial-size lift question negatively. The bound holds even for the positive semidefinite rank of its odd-cut slack matrix after any fixed shift $`0\lt \rho\lt 1`$, allowing arbitrary real positive semidefinite factors. ([Lean](../../../lean/docs/126.md))
+> **126. Exponential semidefinite complexity of perfect matching.** Proves that every exact semidefinite lift of the perfect matching polytope has exponential size, answering Rothvoss's polynomial-size lift question negatively. The bound holds even for the positive semidefinite rank of its odd-cut slack matrix after any fixed shift $`0\lt \rho\lt 1`$, allowing arbitrary real positive semidefinite factors. (Lean)
 
 [S2:329] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

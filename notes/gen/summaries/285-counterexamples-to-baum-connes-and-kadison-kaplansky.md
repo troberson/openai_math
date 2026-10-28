@@ -18,11 +18,11 @@ Baum–Connes assembly map for torsion-free groups. Specifically, we construct
 a finitely generated torsion-free discrete group whose degree-zero assembly
 map has a kernel class of infinite order. [S3:57–62]"
 The projection manuscript "We construct a finitely generated torsion-free discrete group whose reduced
-group \(C^*\)-algebra contains a projection other than zero and the identity.
+group $C^*$-algebra contains a projection other than zero and the identity.
 This disproves the Kadison–Kaplansky projection conjecture. [S5:9–13]" The irrational-trace
 manuscript "We construct a finitely generated discrete group whose reduced group
-\(C^*\)-algebra contains a projection of irrational canonical trace. Its
-\(K_0\)-class lies outside the image of the coefficient-free reduced
+$C^*$-algebra contains a projection of irrational canonical trace. Its
+$K_0$-class lies outside the image of the coefficient-free reduced
 Baum–Connes assembly map. This disproves the coefficient-free reduced
 Baum–Connes conjecture for countable discrete groups. [S7:8–14]"
 
@@ -48,10 +48,10 @@ groups whose reduced $C^*$-algebras carry a projection: the second
 wants any projection $e$ with $0<\tau(e)<1$ 
 
 > **theorem**
-There exist a finitely generated torsion-free discrete group \(G_{\mathrmproj}\)
-and a projection \(e\in C_r^*(G_{\mathrmproj})\) such that
+There exist a finitely generated torsion-free discrete group $G_{\mathrm{proj}}$
+and a projection $e\in C_r^*(G_{\mathrm{proj}})$ such that
 $$0<\tau_{G_{\mathrm{proj}}}(e)<\frac12.$$
-In particular, \(e\) is neither zero nor the identity. [S6:13–21]
+In particular, $e$ is neither zero nor the identity. [S6:13–21]
 
 The third wants a projection whose trace is *irrational*, a stronger
 property that places its $K_0$-class outside the assembly image and so
@@ -59,8 +59,8 @@ disproves the coefficient-free Baum--Connes conjecture directly
 
 
 > **theorem**
-There exist a finitely generated discrete group \(G_{\mathrmsur}\) and a projection
-\(b_0\in C_r^*(G_{\mathrmsur})\) with irrational canonical trace. Moreover,
+There exist a finitely generated discrete group $G_{\mathrm{sur}}$ and a projection
+$b_0\in C_r^*(G_{\mathrm{sur}})$ with irrational canonical trace. Moreover,
 $$[b_0]\notin\mu_0^{G_{\mathrm{sur}}}\bigl(K_0^{G_{\mathrm{sur}}}(\underline EG_{\mathrm{sur}})\bigr).$$
 In particular, the coefficient-free reduced Baum–Connes conjecture for
 countable discrete groups is false. [S8:57–65]

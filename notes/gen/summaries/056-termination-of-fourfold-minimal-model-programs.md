@@ -15,7 +15,7 @@ generalized-flip pair. The two generalized-flip termination statements:
 
 Manuscript 1, generalized log canonical flips 
 
-> Every sequence of generalized log canonical flips on a normal irreducible globally Weil \(\mathbbQ\)-factorial compact Kähler fourfold terminates, provided the flips are projective small diagrams with the stated opposite ample signs. The boundary is rational, and the nef b-divisor is fixed and represented by an analytically nef \(\mathbbQ\)-Cartier divisor on a projective modification. No scaling rule or pseudo-effectivity assumption is required. The theorem concerns existing flip sequences; it does not assert the existence of all contractions or flips. [S3:1]
+> Every sequence of generalized log canonical flips on a normal irreducible globally Weil $\mathbb{Q}$-factorial compact Kähler fourfold terminates, provided the flips are projective small diagrams with the stated opposite ample signs. The boundary is rational, and the nef b-divisor is fixed and represented by an analytically nef $\mathbb{Q}$-Cartier divisor on a projective modification. No scaling rule or pseudo-effectivity assumption is required. The theorem concerns existing flip sequences; it does not assert the existence of all contractions or flips. [S3:1]
 
 Manuscript 2, generalized-canonical flips 
 
@@ -78,15 +78,15 @@ different categories and with different boundary/nef-b-data hypotheses.
 **Generalized log canonical flips (Kähler).** 
 
 > **Theorem 1.1**
-Let \(X_0\) be a normal irreducible globally Weil \(\mathbbQ\)-factorial compact Kähler fourfold. Let \(B_0\) be an effective rational Weil divisor of finite support with coefficients in \([0,1]\). Let \(\mathbfM\) be represented by an analytically nef \(\mathbbQ\)-Cartier divisor on a projective bimeromorphic normal compact Kähler model of \(X_0\). Fix compatible actual canonical divisor representatives on all birational models under consideration. Suppose that \(D_0=K_X_0+B_0+M_X_0\) is \(\mathbbQ\)-Cartier and that \((X_0,B_0+\mathbfM)\) is generalized log canonical.
+Let $X_0$ be a normal irreducible globally Weil $\mathbb{Q}$-factorial compact Kähler fourfold. Let $B_0$ be an effective rational Weil divisor of finite support with coefficients in $[0,1]$. Let $\mathbf{M}$ be represented by an analytically nef $\mathbb{Q}$-Cartier divisor on a projective bimeromorphic normal compact Kähler model of $X_0$. Fix compatible actual canonical divisor representatives on all birational models under consideration. Suppose that $D_0=K_{X_0}+B_0+M_{X_0}$ is $\mathbb{Q}$-Cartier and that $(X_0,B_0+\mathbf{M})$ is generalized log canonical.
 
-Consider a sequence of normal irreducible globally Weil \(\mathbbQ\)-factorial compact Kähler fourfolds
+Consider a sequence of normal irreducible globally Weil $\mathbb{Q}$-factorial compact Kähler fourfolds
 $$X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots.$$
-On \(X_i\), let \(B_i\) be the strict transform of \(B_0\), let \(M_i=M_X_i\) be the trace of the same b-divisor, and assume that \(D_i=K_X_i+B_i+M_i\) is \(\mathbbQ\)-Cartier. Transport the canonical representatives under the induced identifications of prime divisors. Suppose that every step is given by a diagram
+On $X_i$, let $B_i$ be the strict transform of $B_0$, let $M_i=M_{X_i}$ be the trace of the same b-divisor, and assume that $D_i=K_{X_i}+B_i+M_i$ is $\mathbb{Q}$-Cartier. Transport the canonical representatives under the induced identifications of prime divisors. Suppose that every step is given by a diagram
 $$\begin{tikzcd}[column sep=large]
  X_i \arrow[r,"f_i"] & Z_i & X_{i+1}\arrow[l,"f_i^+"']
 \end{tikzcd}$$
-where \(Z_i\) is normal compact Kähler, both maps are projective small bimeromorphic morphisms with connected fibers, neither is an isomorphism, and
+where $Z_i$ is normal compact Kähler, both maps are projective small bimeromorphic morphisms with connected fibers, neither is an isomorphism, and
 $$-D_i\text{ is }f_i\text{-ample},\qquad
  D_{i+1}\text{ is }f_i^+\text{-ample}.$$
 Here _small_ means that the exceptional locus contains no prime divisor. Then the sequence is finite. [S4:25–44]

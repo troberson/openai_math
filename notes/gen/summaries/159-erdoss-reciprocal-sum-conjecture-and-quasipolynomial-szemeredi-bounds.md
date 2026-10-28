@@ -8,7 +8,7 @@
 
 The release's blurb [S1:3784]:
 
-> **159. Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds.** Proves Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. Quantitatively, for each fixed *k* ≥ 3, every subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term progression has size at most $`C_kN\exp[-c_k(\log N)^{\varepsilon_k}]`$, with positive constants depending only on *k*. ([Lean](../../../lean/docs/159.md))
+> **159. Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds.** Proves Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. Quantitatively, for each fixed *k* ≥ 3, every subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term progression has size at most $`C_kN\exp[-c_k(\log N)^{\varepsilon_k}]`$, with positive constants depending only on *k*. (Lean)
 
 The manuscript's own abstract entry in the same table 
 

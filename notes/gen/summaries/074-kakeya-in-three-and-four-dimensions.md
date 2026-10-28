@@ -31,9 +31,9 @@ records the largest average of $|f|$ over all such tubes in a fixed
 direction. The theorem bounds this operator on $L^3$:
 
 > **theorem**
-For every \(\varepsilon>0\) there exists a finite constant
-\(C_\varepsilon\) such that, for every \(0<\delta<1\) and every
-\(f\in L^3(\mathbb R^3)\),
+For every $\varepsilon>0$ there exists a finite constant
+$C_\varepsilon$ such that, for every $0<\delta<1$ and every
+$f\in L^3(\mathbb R^3)$,
 $$\|K_\delta f\|_{L^3(S^2)}
 \le C_\varepsilon\delta^{-\varepsilon}
      \|f\|_{L^3(\mathbb R^3)}.$$ [S4:17–26]
@@ -43,10 +43,10 @@ directly, with no regularity hypothesis on the set or its witnessing
 segments 
 
 > **theorem**
-Let \(K\subset\mathbb R^4\). Suppose that for every \(e\in S^3\) there is a point
-\(a_e\in\mathbb R^4\) such that
+Let $K\subset\mathbb R^4$. Suppose that for every $e\in S^3$ there is a point
+$a_e\in\mathbb R^4$ such that
 $$\{a_e+te:0\leq t\leq1\}\subset K.$$
-Then \(\dim_H K=4\). [S6:8–15]
+Then $\dim_H K=4$. [S6:8–15]
 
 ## Graduate summary
 
@@ -55,11 +55,11 @@ papers that meet the Kakeya problem from opposite sides. The
 three-dimensional paper proves a maximal-operator estimate; the
 four-dimensional paper states the Hausdorff-dimension conclusion
 directly. The first abstract "We prove the Kakeya maximal conjecture in three dimensions. For every
-\(\varepsilon>0\), the maximal average over unit tubes of radius \(\delta\)
-maps \(L^3(\mathbb R^3)\) to \(L^3(S^2)\) with norm at most
-\(C_\varepsilon\delta^{-\varepsilon}\). [S3:9–12]" The second 
+$\varepsilon>0$, the maximal average over unit tubes of radius $\delta$
+maps $L^3(\mathbb R^3)$ to $L^3(S^2)$ with norm at most
+$C_\varepsilon\delta^{-\varepsilon}$. [S3:9–12]" The second 
 "We prove the four-dimensional Hausdorff-dimension Kakeya conjecture:
-every subset of \(\mathbb R^4\) containing a unit line segment in every
+every subset of $\mathbb R^4$ containing a unit line segment in every
 direction has Hausdorff dimension four. No compactness or regularity
 assumption is imposed on the set or its witnessing line family. [S5:58–61]"
 
@@ -123,9 +123,9 @@ arbitrary Kakeya sets [S6:26–120].
 **Three dimensions: Nikodym and curved.** The maximal estimate feeds
 the Kakeya-to-Nikodym transfer of Gao, Liu, and Xi, giving Nikodym
 maximal estimates in $\mathbb R^3$ and locally on constant-curvature
-three-manifolds [S7:14–39]. At the critical $p=q=3$ "In particular, at \(p=q=3\) the operator norms are bounded by
-\(C_\varepsilon\delta^{-\varepsilon}\) in Euclidean space and
-\(C_{\varepsilon,U,V,g}\delta^{-\varepsilon}\) in the fixed local
+three-manifolds [S7:14–39]. At the critical $p=q=3$ "In particular, at $p=q=3$ the operator norms are bounded by
+$C_\varepsilon\delta^{-\varepsilon}$ in Euclidean space and
+$C_{\varepsilon,U,V,g}\delta^{-\varepsilon}$ in the fixed local
 geometry. [S7:56–59]"
 The same estimate also supplies a local curved Kakeya estimate for a
 fixed nondegenerate translation-invariant phase satisfying Bourgain's
@@ -141,9 +141,9 @@ direction sets and gives a line-segment extension principle
 four-dimensional Nikodym conclusion 
 
 > **corollary**
-Let \((M^4,g)\) be a Riemannian manifold of constant sectional
+Let $(M^4,g)$ be a Riemannian manifold of constant sectional
 curvature in the preceding normalized setting. Every Nikodym set
-\(\Omega\subset M\) has \(\dim_H\Omega=4\). [S8:105–110]
+$\Omega\subset M$ has $\dim_H\Omega=4$. [S8:105–110]
 
 A fixed-chart curved Kakeya corollary and a three-dimensional
 quadratic curved consequence (via Nadjimzadah's lifting) follow in the

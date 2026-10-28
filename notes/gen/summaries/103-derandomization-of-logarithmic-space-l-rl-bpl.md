@@ -8,11 +8,11 @@
 
 [S1:2554] (family entry):
 
-> **103. Exact derandomization of logarithmic space: $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$.** Proves $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$, resolving derandomization for bounded-error logarithmic-space computation. An effective compiler converts each randomized polynomial-time logarithmic-space machine deciding a language with one-sided or two-sided error into a deterministic logarithmic-space decider with explicit polynomial running-time bounds. ([Lean](../../../lean/docs/103.md))
+> **103. Exact derandomization of logarithmic space: $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$.** Proves $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$, resolving derandomization for bounded-error logarithmic-space computation. An effective compiler converts each randomized polynomial-time logarithmic-space machine deciding a language with one-sided or two-sided error into a deterministic logarithmic-space decider with explicit polynomial running-time bounds. (Lean)
 
 [S1:2561] (the manuscript entry under that family):
 
-> [Exact derandomization of logarithmic space: L = RL = BPL](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf)
+> Exact derandomization of logarithmic space: L = RL = BPL
 
 [S3:11–14] carries the manuscript's own abstract, and [S2:284] carries the
 [S1:2554] text, so the release blurb and the `\resultentry` agree to the word.

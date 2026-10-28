@@ -21,19 +21,19 @@ conjecture predicts it is an isomorphism when
 $p_g(S)=h^0(S,\omega_S)=0$. The main theorem 
 
 > **theorem**
-Let \(S\) be a smooth connected projective surface over \(\mathbbC\)
-with \(p_g(S)=q(S)=0\). Then
+Let $S$ be a smooth connected projective surface over $\mathbb{C}$
+with $p_g(S)=q(S)=0$. Then
 $$\deg:\mathrm{CH}_0(S)\longrightarrow\mathbb{Z}$$
-is an isomorphism, where \(\mathrmCH_0(S)\) has integral coefficients. [S5:18–25]
+is an isomorphism, where $\mathrm{CH}_0(S)$ has integral coefficients. [S5:18–25]
 
 The corollary [S5:31–39] combines this with the classical
 Bloch–Kas–Lieberman theorem to give the full statement:
 
 > **corollary**
-Let \(S\) be a smooth connected projective surface over \(\mathbbC\)
-with \(p_g(S)=0\). Then the Albanese homomorphism
+Let $S$ be a smooth connected projective surface over $\mathbb{C}$
+with $p_g(S)=0$. Then the Albanese homomorphism
 $$\mathrm{alb}_S:\mathrm{CH}_0(S)^0\longrightarrow\mathrm{Alb}(S)(\mathbb{C})$$
-is an isomorphism of abelian groups, where \(\mathrmCH_0(S)\) has integral
+is an isomorphism of abelian groups, where $\mathrm{CH}_0(S)$ has integral
 coefficients. [S5:31–39]
 
 ## Graduate summary

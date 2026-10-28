@@ -68,12 +68,12 @@ companion manuscripts are outside the scope of this paper. [S21:23–30]" The co
 
 > **theorem**
 Assume Inputs , ,
- , and . Let \(k\ge1\) and let
-\(q_1,\ldots,q_k\) be distinct positive primes. There are constants
-\(c_{\mathbf q}>0\) and \(x_{\mathbf q}>1\) such that, for every real
-\(x\ge x_{\mathbf q}\), at least
+ , and . Let $k\ge1$ and let
+$q_1,\ldots,q_k$ be distinct positive primes. There are constants
+$c_{\mathbf q}>0$ and $x_{\mathbf q}>1$ such that, for every real
+$x\ge x_{\mathbf q}$, at least
 $$c_{\mathbf q}\frac{x}{(\log x)^2}$$
-primes \(p\in(x,2x)\) satisfy
+primes $p\in(x,2x)$ satisfy
 $$p\nmid q_1\cdots q_k,
         \qquad
         \mathrm{ord}_p(q_i)=p-1\quad(1\le i\le k).$$ [S21:32–47]

@@ -8,7 +8,7 @@
 
 [S1:2906] (family entry):
 
-> **118. Bin packing and unbounded configuration-LP gaps.** Disproves the modified integer round-up conjecture of Scheithauer and Terno: the integral bin-packing optimum can exceed its configuration linear-programming value by an arbitrarily large additive constant. Approximating the optimum within any fixed additive constant is also NP-hard, even when every item exceeds 1/6 and each bin holds at most five items. ([Lean](../../../lean/docs/118.md))
+> **118. Bin packing and unbounded configuration-LP gaps.** Disproves the modified integer round-up conjecture of Scheithauer and Terno: the integral bin-packing optimum can exceed its configuration linear-programming value by an arbitrarily large additive constant. Approximating the optimum within any fixed additive constant is also NP-hard, even when every item exceeds 1/6 and each bin holds at most five items. (Lean)
 
 [S2:314] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

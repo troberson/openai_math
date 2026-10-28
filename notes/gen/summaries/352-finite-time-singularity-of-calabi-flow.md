@@ -8,11 +8,11 @@
 
 The manuscript's main theorem is the counterexample itself [S8:20–28]:
 
-> There is a smooth \(U(10)\)-invariant Kähler form \(\omega_0\) on \(\mathbbCP^10\), in the class \([\omega_{\mathrmFS}]\), whose maximal smooth Calabi flow has existence interval \([0,T_*)\) with \(0<T_*<\infty\). There are a point \(p\in\mathbbCP^10\) and a constant \(a>0\) such that $$S(\omega(t))(p)\sim a(T_*-t)^{-1/2}\qquad\text{as }t\uparrow T_*.$$ [S8:21–27]
+> There is a smooth $U(10)$-invariant Kähler form $\omega_0$ on $\mathbb{CP}^{10}$, in the class $[\omega_{\mathrm{FS}}]$, whose maximal smooth Calabi flow has existence interval $[0,T_*)$ with $0<T_*<\infty$. There are a point $p\in\mathbb{CP}^{10}$ and a constant $a>0$ such that $$S(\omega(t))(p)\sim a(T_*-t)^{-1/2}\qquad\text{as }t\uparrow T_*.$$ [S8:21–27]
 
 The corollary is the dimension statement [S8:40–57]:
 
-> Let \(\omega(t)\), \(T_*\), \(p\), and \(a\) be as in Theorem , and let \((Y,\eta)\) be a compact connected Kähler manifold with \(\eta\) of constant scalar curvature. With \(\pi_X\) and \(\pi_Y\) the projections from \(\mathbbCP^10\times Y\), the maximal smooth Calabi flow from \(\Omega_0=\pi_X^*\omega_0+\pi_Y^*\eta\) is $$\Omega(t)=\pi_X^*\omega(t)+\pi_Y^*\eta, \qquad 0\leq t<T_*.$$ For every \(y\in Y\), \(S(\Omega(t))(p,y)\sim a(T_*-t)^-1/2\). In particular, finite-time smooth Calabi-flow singularities occur in every complex dimension \(n\geq10\), on \(\mathbbCP^10\times\mathbbCP^n-10\), in a class containing a Kähler–Einstein metric. [S8:41–56]
+> Let $\omega(t)$, $T_*$, $p$, and $a$ be as in Theorem , and let $(Y,\eta)$ be a compact connected Kähler manifold with $\eta$ of constant scalar curvature. With $\pi_X$ and $\pi_Y$ the projections from $\mathbb{CP}^{10}\times Y$, the maximal smooth Calabi flow from $\Omega_0=\pi_X^*\omega_0+\pi_Y^*\eta$ is $$\Omega(t)=\pi_X^*\omega(t)+\pi_Y^*\eta, \qquad 0\leq t<T_*.$$ For every $y\in Y$, $S(\Omega(t))(p,y)\sim a(T_*-t)^{-1/2}$. In particular, finite-time smooth Calabi-flow singularities occur in every complex dimension $n\geq10$, on $\mathbb{CP}^{10}\times\mathbb{CP}^{n-10}$, in a class containing a Kähler–Einstein metric. [S8:41–56]
 
 The manuscript states what the construction does not presuppose: the spectral split that selects finitely many components from future forcing is available because the initial metric is still free, and it requires no stability or nondegeneracy theorem for the profile [S8:168–171].
 
@@ -20,7 +20,7 @@ The manuscript states what the construction does not presuppose: the spectral sp
 
 The Calabi flow evolves a Kähler metric inside one fixed Kähler class. It is driven by “scalar curvature [S8:11]” — a single number at each point — measured against the average scalar curvature that the class itself determines 
 
-> The Calabi flow is $$\omega(t)=\omega_0+i\partial\bar\partial\phi(t)>0, \qquad \phi(0)=0,\qquad \partial_t\phi=S(\omega(t))-\bar S,$$ where \(\bar S\) is the average scalar curvature, determined by the Kähler class. [S8:5–11]
+> The Calabi flow is $$\omega(t)=\omega_0+i\partial\bar\partial\phi(t)>0, \qquad \phi(0)=0,\qquad \partial_t\phi=S(\omega(t))-\bar S,$$ where $\bar S$ is the average scalar curvature, determined by the Kähler class. [S8:5–11]
 
 Chen's smooth long-time existence conjecture asserts that this flow exists for all positive times from arbitrary smooth Kähler initial data; the manuscript cites it as Conjecture 1.1 of He and Zeng [S8:13–15].
 
@@ -34,13 +34,13 @@ The mechanism is one scalar function. Under a radial ansatz, the momentum coordi
 
 The geometric reduction is the momentum formulation of Hwang and Singer, with Abreu's toric scalar-curvature formula inside Guillemin's symplectic-potential framework [S8:109–112]. The reduction proposition turns the Calabi flow into a scalar equation for `H` 
 
-> Let \(I\) be an open time interval, and let \(H\in C^\infty(I\times[0,1])\) satisfy $$b(t,x):=1+v_*(x)H(t,x)>0.$$ Define $$v=v_*+v_*^2H=v_*b,\qquad K(H)=w^{-1}(wv_*^2H)'',\qquad \mathcal A H=\big[w^{-1}(wv_*^2H)''\big]''.$$ At each time these data, together with an affine choice in the Legendre [S9:34–45]
+> Let $I$ be an open time interval, and let $H\in C^\infty(I\times[0,1])$ satisfy $$b(t,x):=1+v_*(x)H(t,x)>0.$$ Define $$v=v_*+v_*^2H=v_*b,\qquad K(H)=w^{-1}(wv_*^2H)'',\qquad \mathcal A H=\big[w^{-1}(wv_*^2H)''\big]''.$$ At each time these data, together with an affine choice in the Legendre [S9:34–45]
 
 The operators lemma is the analytic input: the spatial operator is a bijection between smooth invariant functions on an auxiliary sphere and smooth functions on `[0,1]`, so the endpoint conditions become ordinary smooth invariance, and the flat model is the constant-coefficient operator `P0 = (D^2+9D+10)^2` acting on `L^2(R)` [S9:215–232].
 
 The finite-time obstruction lemma is the geometric conclusion 
 
-> Let \(G\in C^\infty[0,\infty)\) satisfy \(G(0)=1\) and \(G'(0)\ne0\), and define \(F\) by . Suppose that for some \(T>0\) and \(\delta>0\) there is a smooth invariant solution \(H=F+V\) of on \((-T,0)\times\Sigma\) such that \(1+v_*H>0\) and $$V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ Then a smooth \(U(10)\)-invariant metric \(\omega_0\in[\omega_*]\) has maximal smooth Calabi-flow existence interval \([0,T_*)\), where \(T_*=T/2<\infty\). At the fixed affine origin \(p\), the scalar curvature of this flow satisfies $$S(\tau,p)=a(T_*-\tau)^{-1/2} +O\big(1+(T_*-\tau)^{(-1+\delta)/2}\big),\qquad a=-110G'(0)\ne0.$$ In particular \(S(\tau,p)\sim a(T_*-\tau)^-1/2\), and \(a>0\) when \(G'(0)<0\). [S9:406–424]
+> Let $G\in C^\infty[0,\infty)$ satisfy $G(0)=1$ and $G'(0)\ne0$, and define $F$ by . Suppose that for some $T>0$ and $\delta>0$ there is a smooth invariant solution $H=F+V$ of on $(-T,0)\times\Sigma$ such that $1+v_*H>0$ and $$V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ Then a smooth $U(10)$-invariant metric $\omega_0\in[\omega_*]$ has maximal smooth Calabi-flow existence interval $[0,T_*)$, where $T_*=T/2<\infty$. At the fixed affine origin $p$, the scalar curvature of this flow satisfies $$S(\tau,p)=a(T_*-\tau)^{-1/2} +O\big(1+(T_*-\tau)^{(-1+\delta)/2}\big),\qquad a=-110G'(0)\ne0.$$ In particular $S(\tau,p)\sim a(T_*-\tau)^{-1/2}$, and $a>0$ when $G'(0)<0$. [S9:406–424]
 
 The profile theorem builds `G` [S10:15–30]:
 
@@ -66,13 +66,13 @@ The nonlinear step is where the norm choice matters: the linearized operator is 
 
 The appendix is the finite-arithmetic certificate. The shooting proposition bounds the profile parameters [S14:12–25]:
 
-> For every parameter \(z_*\in[-R,R]^2\), where \(R=5\cdot10^-10\), let \((k,d)\) be given by , and let \(p\) be the origin solution of supplied by Lemma . This solution extends to \(0\le s\le S_0=56\) and satisfies $$1+p(s)>0.$$ For the coordinates of its jet relative to \(p_{\rm a}\), defined in , one has $$|q|\le .25R,\qquad \big\|(\Re\xi,\Im\xi)-z_*\big\|_\infty\le .13R.$$ [S14:12–24]
+> For every parameter $z_*\in[-R,R]^2$, where $R=5\cdot10^{-10}$, let $(k,d)$ be given by , and let $p$ be the origin solution of supplied by Lemma . This solution extends to $0\le s\le S_0=56$ and satisfies $$1+p(s)>0.$$ For the coordinates of its jet relative to $p_{\rm a}$, defined in , one has $$|q|\le .25R,\qquad \big\|(\Re\xi,\Im\xi)-z_*\big\|_\infty\le .13R.$$ [S14:12–24]
 
 The method is interval arithmetic: the vector field is decomposed into a linear part `L` and a polynomial part `N`; `L` is applied by exact rational arithmetic, `N` by integer interval arithmetic, and the enclosure uses the scalar majorant `exp(Lt)`. The certificate is a finite computation over integer intervals, and the analytic interpretation is proved in the appendix [S14:27–55].
 
 The provenance statement is explicit 
 
-> The complete source printed in Appendix is \textttverification/certificate.py, comprising \(6594\) UTF-8 bytes. Its SHA-256 digest is \begincenter\small\ttfamily 263389fd7217d84d0e5b66869797fc9f7998\\ 309d524a95f7ad7d3d0f538ea742 \endcenter where the line break is for typesetting only. It uses no imported libraries, floating-point operations, external data, or platform-dependent numerical routines. From the paper directory, the verification command is \beginquote\ttfamily python3 verification/certificate.py \endquote [S14:671–684]
+> The complete source printed in Appendix is \textttverification/certificate.py, comprising $6594$ UTF-8 bytes. Its SHA-256 digest is \begincenter\small\ttfamily 263389fd7217d84d0e5b66869797fc9f7998\\ 309d524a95f7ad7d3d0f538ea742 \endcenter where the line break is for typesetting only. It uses no imported libraries, floating-point operations, external data, or platform-dependent numerical routines. From the paper directory, the verification command is \beginquote\ttfamily python3 verification/certificate.py \endquote [S14:671–684]
 
 ## History of the conjecture
 

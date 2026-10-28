@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [073-falconer-distance-conjecture.md](../../../../notes/gen/summaries/073-falconer-distance-conjecture.md) |
 
 ## Manuscripts
 

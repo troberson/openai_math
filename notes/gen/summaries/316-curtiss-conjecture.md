@@ -13,9 +13,9 @@ the Hopf-invariant-one classes $\eta,\nu,\sigma$ and the
 Kervaire-invariant-one classes that exist. The manuscript's abstract
  "We prove Curtis's conjecture: in every positive degree, the mod-two
 stable Hurewicz image of the sphere is spanned by the images of
-\(\eta,\nu,\sigma\) and the Kervaire-invariant-one classes that exist.
-Consequently, Eccles's conjecture holds for every sphere \(S^n\) with
-\(n>0\). [S3:8–14]"
+$\eta,\nu,\sigma$ and the Kervaire-invariant-one classes that exist.
+Consequently, Eccles's conjecture holds for every sphere $S^n$ with
+$n>0$. [S3:8–14]"
 
 ## Undergraduate summary
 
@@ -33,11 +33,11 @@ has Arf invariant one. The theorem pins down the entire positive image
 [S4:3–22]:
 
 > **theorem**
-The image of \(\bigoplus_d>0h_d\) is spanned over \(\mathbb F_2\) by
+The image of $\bigoplus_{d>0}h_d$ is spanned over $\mathbb F_2$ by
 the Hurewicz images of the Hopf-invariant-one classes
-\(\eta,\nu,\sigma\), in degrees \(1,3,7\), and the
-Kervaire-invariant-one classes \(\theta_j\), in degrees
-\(2^j+1-2\), \(j\ge1\), whenever they exist.
+$\eta,\nu,\sigma$, in degrees $1,3,7$, and the
+Kervaire-invariant-one classes $\theta_j$, in degrees
+$2^{j+1}-2$, $j\ge1$, whenever they exist.
 In particular, Curtis's conjecture is true in all positive degrees. [S4:24–31]
 
 The two corollaries give the concrete payoffs. Eccles's conjecture

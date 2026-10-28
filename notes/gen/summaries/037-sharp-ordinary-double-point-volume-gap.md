@@ -17,19 +17,19 @@ $\widehat{\mathrm{vol}}(x,X)=\inf_v A_X(v)^n \mathrm{vol}(v)$, where the infimum
 centered valuations . "Normalized volume, introduced by Chi Li , measures the
 size of a klt singularity by balancing
 the discrepancy of a valuation against the asymptotic colength of its
-valuation ideals. For a closed point \(x\) of an \(n\)-dimensional
-normal complex variety that is klt near \(x\), with zero boundary,
+valuation ideals. For a closed point $x$ of an $n$-dimensional
+normal complex variety that is klt near $x$, with zero boundary,
 it is
 $$\widehat{\mathrm{vol}}(x,X)=\inf_{v\text{ centered at }x} A_X(v)^n\mathrm{vol}(v).$$
-Here \(A_X(v)\) is log discrepancy, and \(\mathrmvol(v)\) is the
-leading colength of the ideals \(\{f:v(f)\ge t\}\), multiplied by
-\(n!\). Section gives the precise conventions for
-real valuations, including infinite discrepancy. In dimension \(n\),
-the largest normalized volume is \(n^n\),
+Here $A_X(v)$ is log discrepancy, and $\mathrm{vol}(v)$ is the
+leading colength of the ideals $\{f:v(f)\ge t\}$, multiplied by
+$n!$. Section gives the precise conventions for
+real valuations, including infinite discrepancy. In dimension $n$,
+the largest normalized volume is $n^n$,
 attained exactly at smooth points \cite[Theorem 1.6]LX19.
 The ordinary double point gap conjecture predicts the next largest
 value: every singular klt germ should have normalized volume at most
-\(2(n-1)^n\), and this value should characterize the ordinary double
+$2(n-1)^n$, and this value should characterize the ordinary double
 point. Besides distinguishing a basic singularity by a numerical
 invariant, such a gap gives global restrictions on K-semistable Fano
 varieties through the local-to-global volume inequality
@@ -39,9 +39,9 @@ conjecture predicts the next largest: $2(n-1)^n$, characterizing the
 ordinary double point. The theorem 
 
 > **theorem**
-Let \(n\ge2\), and let \(x\) be a
-singular closed point of a normal complex algebraic \(n\)-fold \(X\).
-Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\),
+Let $n\ge2$, and let $x$ be a
+singular closed point of a normal complex algebraic $n$-fold $X$.
+Suppose that $K_X$ is $\mathbb Q$-Cartier and that $X$ is klt near $x$,
 with zero boundary. Then
 $$\widehat{\mathrm{vol}}(x,X)\le2(n-1)^n.$$
 Equality holds if and only if
@@ -58,9 +58,9 @@ companion as its sole external input [S5:55–62]. The companion
 proves $\widehat{\mathrm{vol}}\le162$ in dimension four 
 
 > **theorem**
-Let \(x\in X\) be a singular closed point of a normal complex algebraic variety of dimension four. Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\), with boundary zero. Then
+Let $x\in X$ be a singular closed point of a normal complex algebraic variety of dimension four. Suppose that $K_X$ is $\mathbb Q$-Cartier and that $X$ is klt near $x$, with boundary zero. Then
 $$\widehat{\mathrm{vol}}(x,X)\le 162.$$
-Equality holds if and only if the analytic germ \((X,x)\) is isomorphic to
+Equality holds if and only if the analytic germ $(X,x)$ is isomorphic to
 $$\left(\left\{z_0^2+z_1^2+z_2^2+z_3^2+z_4^2=0\right\}\subset\mathbb C^5,0\right).$$ [S7:74–83]
 
 The induction from $n=4$ to all $n\ge5$ proceeds by cone
@@ -76,14 +76,14 @@ Li–Miao's smooth classification gives global volume bounds for
 K-semistable $\mathbb{Q}$-Fano varieties 
 
 > **corollary**
-Let \(V\) be an \(n\)-dimensional
-K-semistable \(\mathbb Q\)-Fano variety, where \(n\ge2\).
-If \(V\) is singular, then
+Let $V$ be an $n$-dimensional
+K-semistable $\mathbb Q$-Fano variety, where $n\ge2$.
+If $V$ is singular, then
 $$(-K_V)^n\le
        2\left(\frac{n^2-1}{n}\right)^n<2n^n.$$
-If \(V\not\cong\mathbb P^n\), then \((-K_V)^n\le2n^n\), with equality
-precisely when \(V\) is a smooth quadric \(Q^n\subset\mathbb P^n+1\) or
-\(\mathbb P^1\times\mathbb P^n-1\). These two descriptions coincide for \(n=2\). [S5:64–75]
+If $V\not\cong\mathbb P^n$, then $(-K_V)^n\le2n^n$, with equality
+precisely when $V$ is a smooth quadric $Q^n\subset\mathbb P^{n+1}$ or
+$\mathbb P^1\times\mathbb P^{n-1}$. These two descriptions coincide for $n=2$. [S5:64–75]
 
 The singular bound $2((n^2-1)/n)^n$ is strictly below $2n^n$,
 improving the smooth classification for singular Fano varieties.
@@ -104,7 +104,7 @@ point has the largest density among singular Ricci-flat Kähler
 cones with isolated vertex, and formulated the corresponding
 normalized-volume conjecture for arbitrary singular klt germs
 \cite[Conjectures 1.2 and 5.5]SpottiSun17. Their observation that
-density above \(1/2\) forces Gorenstein canonical structure in the
+density above $1/2$ forces Gorenstein canonical structure in the
 metric-limit setting \cite[Proposition 3.7]SpottiSun17 already
 illustrates a central feature of the problem: a sufficiently large
 volume can force algebraic structure that is absent from the
@@ -116,17 +116,17 @@ surfaces, Liu–Xu for threefolds, Liu for local complete
 intersections in all dimensions, and Moragá–Süss for toric
 germs . "The unrestricted low-dimensional cases precede the present induction.
 For surfaces, Li–Liu's calculation
-\(\widehat{\operatornamevol}(0,\mathbb C^2/G)=4/|G|\) for finite groups acting freely in
+$\widehat{\mathrm{vol}}(0,\mathbb C^2/G)=4/|G|$ for finite groups acting freely in
 codimension one, together with the quotient classification, gives
 the bound and its equality case
 \cite[Proposition 4.10]LL19. Liu–Xu proved the threefold theorem
 for arbitrary klt germs \cite[Theorem 1.3]LX19.
 In higher dimensions, Liu proved the conjecture for local complete
-intersections \cite[Theorem 1.3]Liu22. For singular \(\mathbb Q\)-Gorenstein toric germs,
+intersections \cite[Theorem 1.3]Liu22. For singular $\mathbb Q$-Gorenstein toric germs,
 Moraga–Süß\ proved the different sharp bound
-\(\widehat{\operatornamevol}\le(16/27)n^n\) for \(n\ge3\), with equality precisely
+$\widehat{\mathrm{vol}}\le(16/27)n^n$ for $n\ge3$, with equality precisely
 for the product of a three-dimensional ordinary double point and
-\(\mathbb C^n-3\); in dimension two the bound is \(2\), with equality
+$\mathbb C^{n-3}$; in dimension two the bound is $2$, with equality
 at the surface ordinary double point
 \cite[Theorem 2]MoragaSuess24. The fourfold companion supplies
 the remaining base case used here; the higher-dimensional argument

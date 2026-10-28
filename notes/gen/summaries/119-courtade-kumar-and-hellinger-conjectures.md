@@ -8,7 +8,7 @@
 
 [S1:2922] (family entry):
 
-> **119. The Courtade–Kumar and Hellinger conjectures.** Proves the Courtade–Kumar conjecture: among Boolean functions of independent uniform bits, a single coordinate retains the most mutual information after independent bit-flip noise. A stronger theorem treats randomized binary summaries at fixed initial information. The Hellinger conjecture is also proved for every Boolean output bias and noise correlation. ([Lean](../../../lean/docs/119.md))
+> **119. The Courtade–Kumar and Hellinger conjectures.** Proves the Courtade–Kumar conjecture: among Boolean functions of independent uniform bits, a single coordinate retains the most mutual information after independent bit-flip noise. A stronger theorem treats randomized binary summaries at fixed initial information. The Hellinger conjecture is also proved for every Boolean output bias and noise correlation. (Lean)
 
 [S2:316] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

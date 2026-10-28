@@ -8,11 +8,11 @@
 
 [S1:2679] (family entry):
 
-> **108. A cubic permanent–determinant lower bound.** Proves an $\Omega(n^3)$ lower bound for the border determinantal complexity of the $n\times n$ permanent over ℂ. Even coefficientwise limits of determinants of affine-linear matrices require matrix size at least $cn^3$, for an absolute c > 0 and all sufficiently large n; the same bound therefore holds for exact representations. ([Lean](../../../lean/docs/108.md))
+> **108. A cubic permanent–determinant lower bound.** Proves an $\Omega(n^3)$ lower bound for the border determinantal complexity of the $n\times n$ permanent over ℂ. Even coefficientwise limits of determinants of affine-linear matrices require matrix size at least $cn^3$, for an absolute c > 0 and all sufficiently large n; the same bound therefore holds for exact representations. (Lean)
 
 [S1:2686] (the manuscript entry, with its abstract at [S1:2688]):
 
-> [A cubic lower bound for border determinantal complexity of the permanent](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf)
+> A cubic lower bound for border determinantal complexity of the permanent
 
 > We prove that the complex border determinantal complexity of the $m\times m$ permanent is $\Omega(m^3)$, allowing arbitrary affine-linear determinant representations and coefficientwise limits. It also gives cubic lower bounds for exact determinantal complexity and for the numbers of vertices and edges in affine-linear algebraic branching programs, including coefficientwise limits with a fixed vertex or edge budget.
 

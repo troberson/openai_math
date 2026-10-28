@@ -8,7 +8,7 @@
 
 [S1:3261] (family entry):
 
-> **135. Homogeneous depth-five lower bounds for iterated matrix multiplication.** Over every characteristic-zero field, the $`(1,1)`$ entry of a product of n independent $`n\times n`$ variable matrices requires $`n^{\Theta(\sqrt n)}`$ gates in homogeneous depth-five sum–product circuits. This sharp bound allows shared gates and bottom linear forms involving all variables. ([Lean](../../../lean/docs/135.md))
+> **135. Homogeneous depth-five lower bounds for iterated matrix multiplication.** Over every characteristic-zero field, the $`(1,1)`$ entry of a product of n independent $`n\times n`$ variable matrices requires $`n^{\Theta(\sqrt n)}`$ gates in homogeneous depth-five sum–product circuits. This sharp bound allows shared gates and bottom linear forms involving all variables. (Lean)
 
 [S2:347] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

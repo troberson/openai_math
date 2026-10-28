@@ -33,9 +33,9 @@ the manifold may be noncompact, nonorientable, or nontriangulable, and
 actions may have arbitrary stabilizers 
 
 > **Theorem 1.1**
-Let \(n\geq1\). A locally compact second-countable Hausdorff group
+Let $n\geq1$. A locally compact second-countable Hausdorff group
 acting faithfully and jointly continuously on a connected Hausdorff
-second-countable topological \(n\)-manifold without boundary is a Lie
+second-countable topological $n$-manifold without boundary is a Lie
 group. [S4:9–14]
 
 In dimension zero a connected manifold is a point, so a faithful

@@ -8,7 +8,7 @@
 
 [S1:3070] (family entry):
 
-> **127. Average sensitivity of polynomial threshold functions.** Proves that a degree-at-most-d polynomial threshold function on the uniform n-dimensional Boolean cube has average sensitivity at most $`8d\sqrt n`$, uniformly for $`1\le d\le n`$. Average sensitivity counts expected output changes under single-bit flips. This establishes the asymptotic Gotsman–Linial conjecture, allowing polynomial zeros with $`\mathop{\mathrm{sign}}\nolimits (0)=1`$. ([Lean](../../../lean/docs/127.md))
+> **127. Average sensitivity of polynomial threshold functions.** Proves that a degree-at-most-d polynomial threshold function on the uniform n-dimensional Boolean cube has average sensitivity at most $`8d\sqrt n`$, uniformly for $`1\le d\le n`$. Average sensitivity counts expected output changes under single-bit flips. This establishes the asymptotic Gotsman–Linial conjecture, allowing polynomial zeros with $`\mathop{\mathrm{sign}}\nolimits (0)=1`$. (Lean)
 
 [S2:331] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

@@ -46,9 +46,9 @@ after passage to a finite unramified cover
 The theorem 
 
 > **theorem**
-Let \(X\) be a connected smooth compact Kähler manifold of arbitrary
-complex dimension. If \(X\) is special, then \(\pi_1(X)\) has an abelian
-subgroup of finite index. Equivalently, \(X\) has a connected finite
+Let $X$ be a connected smooth compact Kähler manifold of arbitrary
+complex dimension. If $X$ is special, then $\pi_1(X)$ has an abelian
+subgroup of finite index. Equivalently, $X$ has a connected finite
 unramified holomorphic cover with abelian fundamental group. [S3:26–31]
 
 This is a positive resolution of the conjecture in the compact
@@ -59,7 +59,7 @@ finiteness, projectivity, or prescribed Kodaira dimension [S3:33–37].
 Kähler setting. The conclusion concerns the entire discrete
 topological fundamental group. It requires no linearity, residual
 finiteness, projectivity, or prescribed Kodaira dimension. The finite
-index may depend on \(X\), and torsion in \(\pi_1(X)\) is allowed. [S3:33–37]"
+index may depend on $X$, and torsion in $\pi_1(X)$ is allowed. [S3:33–37]"
 
 ## Graduate summary
 

@@ -8,7 +8,7 @@
 
 [S1:3293] (family entry):
 
-> **137. One-tape time simulation in two-fifths-power space.** Determines the halting and finite-control outcome of a fixed deterministic one-writable-tape machine up to time T using $`O(T^{2/5}\log^C(T+2))`$ space, improving the square-root exponent. Heads move at most one cell per step; finitely many read-only input heads are allowed. Initial contents are independent of $`T`$, and contents and input symbols have polylogarithmic-space access. Simulation time is unrestricted. ([Lean](../../../lean/docs/137.md))
+> **137. One-tape time simulation in two-fifths-power space.** Determines the halting and finite-control outcome of a fixed deterministic one-writable-tape machine up to time T using $`O(T^{2/5}\log^C(T+2))`$ space, improving the square-root exponent. Heads move at most one cell per step; finitely many read-only input heads are allowed. Initial contents are independent of $`T`$, and contents and input symbols have polylogarithmic-space access. Simulation time is unrestricted. (Lean)
 
 [S2:351] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

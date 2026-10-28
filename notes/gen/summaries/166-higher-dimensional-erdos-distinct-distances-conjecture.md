@@ -27,8 +27,8 @@ $n^{2/d}$ distances among any $n$ points, for every fixed $d\ge3$. The
 manuscript proves this 
 
 > **theorem**
-For every integer \(d\ge3\), there is a constant \(c_d>0\) such that
-every finite set \(P\subset\mathbb R^d\) of \(n\ge2\) distinct points
+For every integer $d\ge3$, there is a constant $c_d>0$ such that
+every finite set $P\subset\mathbb R^d$ of $n\ge2$ distinct points
 satisfies
 $$|\Delta(P)|\ge c_d n^{2/d}.$$ [S4:19–26]
 

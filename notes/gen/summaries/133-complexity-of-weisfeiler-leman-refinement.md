@@ -8,7 +8,7 @@
 
 [S1:3184] (family entry):
 
-> **133. The computational complexity of Weisfeiler–Leman refinement.** Proves unconditional $`n^{\Omega(k)}`$ deterministic time lower bounds for joint and separate k-dimensional Weisfeiler–Leman equivalence, for sufficiently large fixed k in the specified sequential adjacency-matrix models. With dimension as input, joint equivalence is EXPTIME-complete even on subcubic graphs; deciding whether refinement identifies a graph is also EXPTIME-complete. ([Lean](../../../lean/docs/133.md))
+> **133. The computational complexity of Weisfeiler–Leman refinement.** Proves unconditional $`n^{\Omega(k)}`$ deterministic time lower bounds for joint and separate k-dimensional Weisfeiler–Leman equivalence, for sufficiently large fixed k in the specified sequential adjacency-matrix models. With dimension as input, joint equivalence is EXPTIME-complete even on subcubic graphs; deciding whether refinement identifies a graph is also EXPTIME-complete. (Lean)
 
 [S2:343] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
