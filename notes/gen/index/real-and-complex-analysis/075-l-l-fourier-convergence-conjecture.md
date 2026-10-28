@@ -13,7 +13,7 @@
 | Claim shapes | resolution, partial |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [measure-theory](../topics/measure-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [075-l-l-fourier-convergence-conjecture.md](../../../../notes/gen/summaries/075-l-l-fourier-convergence-conjecture.md) |
 
 ## Manuscripts
 
