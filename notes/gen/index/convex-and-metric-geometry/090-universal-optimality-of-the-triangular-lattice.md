@@ -13,7 +13,7 @@
 | Claim shapes | resolution, density, uniform |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [harmonic-analysis](../topics/harmonic-analysis.md) · [discrete-geometry](../topics/discrete-geometry.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [090-universal-optimality-of-the-triangular-lattice.md](../../../../notes/gen/summaries/090-universal-optimality-of-the-triangular-lattice.md) |
 
 ## Manuscripts
 
