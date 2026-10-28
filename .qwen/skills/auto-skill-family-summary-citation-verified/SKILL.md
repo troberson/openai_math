@@ -136,8 +136,19 @@ The renderer:
   paths from the page directory), and the Bibliography section (from `.bib` files
   and `\begin{thebibliography}` blocks in the declared sources).
 - Renders through the skeleton with `trim_blocks=True, lstrip_blocks=True`.
-- Stages all 60 pages plus the index `README.md`, promotes the tree, and sweeps
+- Stages all pages plus the index `README.md`, promotes the tree, and sweeps
   any stale page a title change orphaned.
+
+### The index tree is a separate generated artifact
+
+`build_index.py` renders the index tree at `notes/gen/index/` and pairs each
+family page with its summary page by family number (never by filename). It does
+**not** run as part of `build_summaries.py`: the index only picks up a new
+summary page when `build_index.py` is re-run, so a summary authored after the
+last index build has no `Summary page` link until then. The per-family cadence
+is therefore render, verify, **then `python3 notes/scripts/build_index.py`**,
+and commit the data file, the rendered page, and the one changed index page
+plus `notes/gen/tables/families.tsv` that the index writer touched.
 
 ## 4. The normalizer contract
 
