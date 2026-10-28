@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [084-geometric-case-of-the-erdos-similarity-conjecture.md](../../../../notes/gen/summaries/084-geometric-case-of-the-erdos-similarity-conjecture.md) |
 
 ## Manuscripts
 
