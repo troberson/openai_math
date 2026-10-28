@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [convex-geometry](../topics/convex-geometry.md) · [measure-theory](../topics/measure-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [091-logarithmic-brunn-minkowski-conjecture.md](../../../../notes/gen/summaries/091-logarithmic-brunn-minkowski-conjecture.md) |
 
 ## Manuscripts
 
