@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [computability](../topics/computability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [241-rigidity-of-the-turing-degrees.md](../../../../notes/gen/summaries/241-rigidity-of-the-turing-degrees.md) |
 
 ## Manuscripts
 
