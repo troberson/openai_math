@@ -6,178 +6,264 @@
 
 ## Original CONTENTS.md summary
 
-**197. A torsion-free group algebra that is not directly finite.** Constructs a finitely presented torsion-free nonsofic group whose group algebra over 𝔽_2 is not directly finite, disproving Kaplansky's conjecture even without torsion. Companion examples give injective nonsurjective cellular automata on all configurations, refuting Gottschalk's surjunctivity conjecture. Another counterexample is an integral group-ring matrix, invertible over the rational group ring, with Fuglede–Kadison determinant strictly between zero and one, disproving the unrestricted Determinant Conjecture. ([Lean](../../../lean/docs/197.md))
+The release's blurb [S1:4500] and the catalog abstract [S2:477]
+state the family's claim: a finitely presented torsion-free
+nonsofic group whose group algebra over
+$\mathbb{F}_2$ is not directly finite, disproving
+Kaplansky's conjecture even without torsion; companion
+examples give injective nonsurjective cellular automata
+(refuting Gottschalk's surjunctivity conjecture); and an
+integral group-ring matrix with Fuglede–Kadison
+determinant strictly between zero and one (disproving the
+unrestricted Determinant Conjecture). The family ships four
+manuscripts [S1:4500]:
 
-The blurb above is reproduced from [S1:4518]; the release renders the two-element field with subscript markup and this page writes it as 𝔽_2.
+- *A Torsion-Free Group Algebra That Is Not Directly Finite*
+  (Oct 4 2026) — outside the scope note
+- *A Counterexample to Kaplansky's Direct-Finiteness
+  Conjecture in Characteristic Two* [S3:37, S3:39]
+- *A Counterexample to the Group-Ring Determinant
+  Conjecture* (Sep 23 2026)
+- *A Counterexample to Kaplansky's Direct-Finiteness
+  Conjecture in Odd Characteristic* (Sep 26 2026)
+
+The char-two abstract 
+
+> We disprove Kaplansky's direct-finiteness conjecture by constructing a finite field $K$ of characteristic two, a finitely presented group $G$, and finite sums $a,b\in K[G]$ with $ab=1$ but $ba\ne1$. The group $G$ is nonsofic. The same elements define a cellular automaton on $K^G$ that is injective but not surjective, disproving Gottschalk's surjunctivity conjecture. [S3:43]
 
 ## Undergraduate summary
 
-A group algebra is built from a field and a group by taking finite formal sums of group elements with coefficients in that field, multiplying the way the group law says to. It is a ring, so it has a multiplicative identity, and one can ask the familiar matrix question: if two elements multiply to 1 in one order, must they also multiply to 1 in the reversed order? A ring with that property is called *directly finite*. For matrices over a field the answer is yes, because finite dimension forces it. Kaplansky conjectured that the finiteness of the support of each group-algebra element — every sum mentions only finitely many group elements — plays the same role for every field and every group, and the release states the question as asking “whether this finite support is enough [S9:4]” .
-
-Family 197 answers that question three times, in three different settings, and each answer is a counterexample. The manuscript the headline names, dated “October 4, 2026 [S2:4]” , produces a group with no element of finite order, given by finitely many generators and relations, whose group algebra over the two-element field contains elements *a*, *b*, *c* with *ab* = 1, *ac* = 0, and *c* nonzero [S4:14–17]. The extra element *c* is the whole point: if *ba* were 1, then *c* = (*ba*)*c* = *b*(*ac*) = 0, contradicting *c* ≠ 0 [S4:23–24]. The other two manuscripts, dated “September 23, 2026 [S7:5]” [S14:5] and “September 26, 2026 [S17:5]” , produce counterexamples in characteristic two using a group that does have torsion [S9:8–16] and in odd characteristic at one specific prime [S19:13–22].
-
-Two consequences travel with the algebra, and both are statements about groups rather than about rings. A group is *sofic* if its multiplication can be approximated by permutations of large finite sets; a theorem of Elek and Szabó says group algebras of sofic groups are directly finite, so the groups constructed here cannot be sofic [S4:39–40]. A group is *surjunctive* if every injective cellular automaton on its full configuration space is surjective, which is Gottschalk's conjecture that every group is. The coefficients that witness *ab* = 1 ≠ *ba* define a cellular automaton that is injective and not surjective, so the groups here are not surjunctive either [S12:134–141].
-
-**Proof sketch.** The October 4 manuscript starts from a bouquet of circles and attaches *cones* on finite labeled graphs: a cone kills every closed path in its graph, so a vertex determines a group element by reading a path from a fixed root [S4:67–71]. The algebra elements are finite sums of these path labels and their inverses. Multiplying two such sums means summing over pairs of paths, and the summands organize into components on which the contribution is constant; a component whose vertices all have odd degree has even size, so its contributions cancel over 𝔽_2, while a single even-degree vertex leaves exactly one contribution standing [S4:73–80]. Seven extra labels, arranged by the complements of lines in the Fano plane, create that one exception in the product *ab* and no exception in the product *ac* [S4:83–86]. The hard part is group-theoretic rather than arithmetic: the cone attachments must be aspherical, and paths from a root to different vertices must stay distinct in the group, which is proved by excluding planar pairings of graph paths [S4:88–101]. The final assembly chooses one finite random graph outcome with the required properties and reads off *a*, *b*, *c* from the parity calculation [S5:4–23].
+A **group algebra** $K[G]$ is the ring you build by taking
+a field $K$ and a group $G$ and letting you form
+"weighted sums" of group elements. Two elements $a, b$ in
+the algebra are **inverses** if $a \cdot b = 1$ (the
+multiplicative identity). **Direct finiteness** says: if
+$a \cdot b = 1$, then automatically $b \cdot a = 1$
+— the two-sided condition you'd expect from ordinary
+matrix algebra. **Kaplansky's conjecture** says this holds
+for every group algebra over every field. The
+counterexamples in this family say **no**: there are groups
+where you can find $a, b$ with $a \cdot b = 1$ but
+$b \cdot a \neq 1$. The same elements also define a
+**cellular automaton** (a rule that updates a grid of
+colors based on neighbors) that can map every state to a
+unique state (injective) but cannot reach every state
+(surjective) — a contradiction to **Gottschalk's
+conjunctivity** conjecture [S3:43, S2:477].
 
 ## Graduate summary
 
-The headline theorem is existential and scalar. It reads “There exist a finitely presented torsion-free group $G$ and elements $a,b,c\in\mathbb F_2[G]$ such that [S4:14–15]” with the displayed identities “ab=1,\qquad ac=0,\qquad c\ne0. [S4:17]” and the closing sentence “Consequently $ba\ne1$. The group $G$ admits a finite two-dimensional classifying complex. [S4:19–20]” [S4:14–20]. The classifying-complex clause is not decoration: a finite two-dimensional complex with fundamental group $G$ and contractible universal cover is a finiteness property strictly stronger than finite presentability [S4:10–11]. The abstract states the same result in one sentence [S3:37–39].
+**The char-two counterexample** [S3:43, S4:11–13].
+There exists a finite field $K$ of characteristic 2, a
+finitely presented group $G$ with an element of odd prime
+order, and elements $a, b \in K[G]$ with $ab = 1$ and
+$ba \neq 1$. The group $G$ is **nonsofic** (does not
+embed into the hyperfinite II$_1$ factor). The same
+elements define a cellular automaton on $K^G$ that is
+injective but not surjective [S3:43].
 
-The characteristic-two manuscript is the one with the full apparatus, and it separates the two requirements — force a one-sided inverse, and certify that the reverse product is not the identity — through finite incidence data. Its criterion takes an odd prime $\ell$, a finite field of characteristic two, and a family $\mathcal F$ of subsets of a finite set $V$ with “every $v\in V$ belongs to exactly $\ell+1$ members of $\mathcal F$ and that the bipartite incidence graph of $V$ and $\mathcal F$ has girth at least $12$ [S10:15–17]” , together with vectors satisfying two matrix identities, and concludes “Then there are a finitely presented group $G$ containing an element of order $\ell$ and finite sums $a_{\mathrm{out}},b_{\mathrm{out}}\in K[G]$ such that [S10:33–34]” the two product assertions . The incidence system is produced from full affine lines with a small set of points removed, and the geometric requirement is stated as “We require that each point lie in $\ell+1$ members, where $\ell$ is an odd prime, and that the bipartite incidence graph have girth at least $12$ [S9:61]” . The group-theoretic half is a planar embedding argument: “a planar balance argument proves that copies of the additive group $\mathbb F_\ell^2$, glued along their one-dimensional subgroups according to the incidence structure, embed in the resulting group [S9:69]” . The detection of the reverse-product defect is a rank argument — “Since $X$ has only $m<|V|$ rows, $X^{\mathsf T}X$ cannot be the identity, so the original defect is nonzero [S9:71]” — and the only external input is a number-theoretic bound: “The only non-elementary existence theorem imported into the direct construction is the uniform least-prime bound [S9:75]” , supplied by Linnik's theorem [S9:73].
+**The determinant counterexample** [S4:21–23]. There
+exists a finitely generated group $G$ and a square matrix
+$A$ over $\mathbb{Z}[G]$ that is invertible over
+$\mathbb{Q}[G]$, whose bounded left-regular operator has
+Fuglede–Kadison determinant strictly between 0 and
+1 — contradicting the Determinant Conjecture's
+nonnegative lower bound.
 
-The prescription section is what makes the counterexample *specified* rather than merely existent, and the manuscript is explicit about the strength of that claim 
+**The odd-characteristic counterexample**
+[S4:25–27]. For the smallest odd prime divisor $p$
+of $\binom{1200}{600}!^2 + 1$, there is a field $K$ of
+order $p^4$, a finitely generated group $G$ with torsion,
+and elements $a, b \in K[G]$ with $ab = 1$ and
+$ba \neq 1$, plus the injective-nonsurjective cellular
+automaton.
 
-> Start with $h=2$. For a fixed $h$, step \textup(4) tests only finite sets and a finite graph. Stop at the first successful pair; if every pair fails, increase $h$ by one and repeat. This selects the least successful $h$ and then the first successful pair in its prescribed order. Theorem guarantees success for every sufficiently large $h$, uniformly in the enumeration of $Q$, so the outer search terminates. The search enumerates the required incidence data directly, not the auxiliary random choices used to prove their existence. The auxiliary extension field in that proof is only a model for a $Q$-vector space; it is not required to embed in $K$. [S11:30]
+**The torsion-free manuscript** (Oct 4 2026). The fourth
+manuscript constructs a finitely presented **torsion-free**
+counterexample over $\mathbb{F}_2$ with a finite 2D
+classifying complex [S2:477]. It is **outside** the scope
+note's three registered statements [S4:5–7].
 
-What the characteristic-two manuscript does *not* claim matters as much. It uses torsion, and it says so: “No assertion about group algebras of torsion-free groups is needed [S11:64]” . Its own summary of the epistemic status is that “its termination is proved, and the two product assertions have algebraic certificates independent of any decision procedure for the group word problem [S9:18]” . Its nonsoficity conclusion is derived, not constructed: “Therefore this same $G$ is nonsofic. In particular, the construction supplies a finitely presented counterexample to the assertion that every group is sofic [S9:40]” . And its Gottschalk counterexample needs nothing beyond the scalar pair: “It gives a negative resolution of Gottschalk's conjecture for the group in Theorem ; it requires no further existence theorem or approximation assumption [S9:51]” , with the corollary that “$T_{b_{\mathrm{out}}}:K^G\to K^G$ is injective and not surjective [S12:138]” and “In particular, $G$ is not surjunctive [S12:140]” [S12:138–140]. The manuscript also notes that the dynamical conclusion is characteristic-independent: “Characteristic two is used to construct the algebraic witnesses, not in Proposition [S12:151–152]” [S12:151–154].
-
-The determinant manuscript is formally downstream of the characteristic-two one, and it states its dependence as a hypothesis it imports verbatim. It opens “We disprove the unrestricted group-ring Determinant Conjecture [S15:38]” , takes the scalar failure of direct finiteness as its input theorem, and is explicit about which companion it needs: “In particular, a result only in odd characteristic would not supply the binary premise used here [S15:120–121]” . Its mechanism converts a binary defect into a real trace gap: from the input it gets matrices with “$XY=I_d$ and a nonzero idempotent $C=I_d-YX$ [S15:158–159]” , enlarges the group, and produces “a rational orthogonal projection $P$ of size $d+1$ with trace $d+\theta$, for a positive rational number $\theta$ [S15:167–168]” ; the trace calculation then gives “\log\det(T_A)=(r-\tau_m(P))\log q [S15:186]” and “the exact value $q^{-\theta}$ [S15:189]” [S15:188–189]. The conclusion is “0<\det_{\mathcal N(G_D)}(T_A)<1 [S15:95]” and “Thus the unrestricted group-ring Determinant Conjecture has a negative resolution [S15:98–99]” [S15:95–99]. Like the others, it flags its own external consequence rather than claiming it: “The cited sofic theorem implies, as a separate consequence, that its resulting group is not sofic [S15:132–133]” .
-
-The odd-characteristic manuscript is deliberately independent of the characteristic-two one: “The characteristic-two theorem is not an input to this odd-prime argument, and the two methods retain distinct coefficient hypotheses [S19:57–58]” . Its theorem fixes the prime explicitly, “m=\binom1200600,\qquad p=\min\{h\in\mathbb Z:h>1,\ h\mid(m!)^2+1\} [S19:16–17]” , and the scope of the claim is narrowed in the next paragraph: “It concerns the displayed prime, not every odd prime [S19:29]” . Its mechanism compares two quantities, a factorization rank ratio $t/m$ below $1/100$ from a threshold-Kneser construction [S19:61–72] and an idempotent rank ratio $d/w$ above $1/96$ [S19:79–85], exploiting an asymmetry: “There is no assertion about the reverse product. The asymmetry is what allows a triangular calculation to combine the two strict bounds [S19:88–89]” . It closes with the dynamical consequence, “Thus the constructed group also gives a negative answer to Gottschalk's surjunctivity conjecture [S20:282–283]” .
-
-The two companion abstracts state their results in the same shape and differ only in the structural hypothesis on the group. The characteristic-two abstract gives “We disprove Kaplansky's direct-finiteness conjecture by constructing a finite field $K$ of characteristic two, a finitely presented group $G$, and finite sums $a,b\in K[G]$ with $ab=1$ but $ba\ne1$. The group $G$ is nonsofic [S8:43]” ; the odd-characteristic abstract gives “We construct a counterexample to Kaplansky's direct-finiteness conjecture in odd characteristic. For one specified odd prime $p$, we obtain a field $K$ of order $p^4$, a finitely generated group $G$ containing torsion, and finite sums $a,b\in K[G]$ with $ab=1$ but $ba\ne1$ [S18:39]” . The headline manuscript's abstract is the one that drops torsion and adds the finiteness property [S3:37–39].
-
-Formalization status is where this family's index-behind is most visible, and the ledger counts are counts of metadata, not of Lean source. The ledger records 4 manuscripts, 3 formalized papers, tier T3, 4 comparator challenges, 3 `main_results` entries, and 1 scope note. The gap has two identifiable causes. The October 4 torsion-free manuscript has no entry in the release bibliography at all — the listed entries point at the characteristic-two and odd-characteristic PDFs [S35:37–45] and the determinant PDF [S35:62–65] — and the scope note lists exactly those three papers [S25:5–7]. And of the four comparator challenges, one is not linked from the results table: the table links the determinant config [S35:1273–1275], the finitely presented config [S35:1341–1343], and the odd-characteristic config [S35:1429–1431], while the plain characteristic-two challenge appears in no results entry. Meanwhile the three Lean trees are large and complete: 126 files and 13,310 lines under `lean/OAI/RingTheory/DirectFiniteness/`, 34 files and 3,327 lines under `lean/OAI/Analysis/GroupDeterminants/`, and 87 files and 13,061 lines under `lean/OAI/Algebra/OddKaplansky/` — 247 files and 29,698 lines with zero `sorry`. The shipped challenge files, by contrast, are posed statements that end in `sorry` [S26:12–13], including the finitely presented variant posed as “```lean
-A finite characteristic-two field and a finitely presented group with odd-prime order torsion give a counterexample to direct finiteness (paper, Theorem 1.1)
-```
-[S27:5–6]” and the determinant variant posed as “```lean
-An integral group-ring matrix with rational and bounded inverses and determinant in (0, 1)
-```
-[S28:44]” .
-
-The formalized characteristic-two result is stronger than the bare existential the comparator poses. The tree's entry point proves the main claim from the prescribed construction [S30:9], and the finitely presented theorem bundles the existential with the search certificates: “```lean
-The existential main result of the characteristic-two paper, separated from the certificates for its prescribed construction
-```
-[S31:33–34]” is the docstring of a theorem discharged as `thm_main.1` [S31:40], where `thm_main` conjoins the termination certificate [S31:19–22]. That certificate is explicit about its own bound: “```lean
-Formal termination certificate for both the outer loop and its finite inner loop
-```
-[S32:63]” , proved as “```lean
-2 ≤ selectedH ∧ selectedH ≤ 217 ∧ Test selectedInput selectedPair ∧
-```
-[S31:19]” [S32:65]. This mirrors the manuscript's terminating prescription [S11:1–4].
-
-The scope note's exclusions are the load-bearing part, and here they are real absences in the source rather than scope statements about a comparator. It records that the formalized characteristic-two statements come in two strengths — “One statement records the counterexample for a finitely generated group; the more detailed construction gives a finitely presented group with an element of odd prime order [S25:11]” — and then excludes the dynamical and sofic conclusions 
-
-> The detailed construction also gives a precise recipe for choosing the data and proves that the required search terminates. The further conclusion that the group is nonsofic is outside these statements. [S25:13]
-
-That exclusion checks out: the strings `sofic`, `surjunct`, and `cellular` do not occur anywhere in `lean/OAI/RingTheory/DirectFiniteness/`. The determinant tree likewise contains no occurrence of `sofic`, matching the manuscript's own framing of nonsoficity as a separate consequence . The determinant exclusion is about the definition used, not the counterexample 
-
-> The formalization uses the trace of $\log(T^*T)$ to define the determinant for the invertible operator $T$. The paper's additional spectral-measure integral conclusion is not included. [S25:23]
-
-The asymmetry between the two Gottschalk counterexamples is the sharpest coverage fact in the family. Only the odd-characteristic one is formalized: the scope note states that for that result “The associated cellular automaton on all configurations $K^G$ is injective but not surjective [S25:25]” , the challenge poses it as “```lean
-Function.Injective (cellular b) ∧ ¬ Function.Surjective (cellular b)
-```
-[S29:24]” , and the tree proves it inside its main claim [S34:79]. The characteristic-two tree proves no cellular-automaton statement at all, even though its manuscript does [S12:134–141]. The scope note also records transfer results kept apart from the linked statement: “The formalization also contains fixed-field transfer results, separate from the statement linked below [S25:27]” , which is what `fixed_field_transfer` is in that tree [S34:92–104].
-
-The dependency direction is formalized, not just asserted. The determinant tree imports the direct-finiteness tree [S33:2], destructures its main theorem into the fields the determinant argument needs, and derives its own conclusion from that input [S33:13] — the Lean analogue of the manuscript's imported input theorem [S15:107–112]. The odd-characteristic tree is the one tree with no such import, matching its stated independence [S19:57–58].
+**The scope of the formalization.** The scope note covers
+three of the four manuscripts: the char-two and
+odd-characteristic direct-finiteness counterexamples, and
+the group-ring determinant counterexample [S4:11–27].
+The torsion-free manuscript is not in the scope note nor
+in the yaml `sources:` listing [S4:5–7]. The scope
+note names four comparators [S4:33–36]:
+`KaplanskyFinitelyPresented.lean`,
+`KaplanskyDirectFiniteness.lean`,
+`GroupRingDeterminant.lean`, and `OddKaplansky.lean`.
 
 ## History of the conjecture
 
-The manuscripts date the conjecture to Kaplansky's own formulation, which the October 4 manuscript cites as a problem in Part II of Kaplansky 1972 [S4:27–29]. The characteristic-zero case is older than the family and is settled: group algebras are directly finite for every group in characteristic zero, by an operator-algebra argument placing $\mathbb C[G]$ in a finite tracial setting, with Montgomery's proof via the operator-norm closure of the regular representation extending it to every finite matrix size [S4:29–31] [S9:21]. The positive-characteristic question is where the family sits, and the manuscripts list the standing partial results as constraints on any counterexample rather than as properties of theirs: Ara, O'Meara, and Perera proved stable finiteness for free-by-amenable groups over division rings [S4:35–37], Elek and Szabó extended the conclusion to sofic groups [S4:37–40], and the characteristic-two manuscript is explicit that “These are restrictions on a possible counterexample's group, not assumptions that the group constructed here satisfies [S9:23]” . Dykema, Heister, and Juschenko organized one-sided-inverse cancellation patterns into universal groups and proved direct finiteness for small support pairs over 𝔽_2 [S4:41–44]; Dykema and Juschenko's reduction, which the characteristic-two manuscript realizes explicitly, turns stable finiteness into direct finiteness after taking the direct product with every finite group [S9:25].
+**Kaplansky's direct-finiteness conjecture** (1950s)
+asserts that $ab = 1 \Rightarrow ba = 1$ in every group
+algebra over a field. It is known for torsion-free abelian
+groups and follows from the Atiyah conjecture in general.
+The **zero-divisor conjecture** (also Kaplansky, 1950s) and
+the **unit conjecture** are related. **Gottschalk's
+surjunctivity conjecture** (2000s) asserts that every
+injective cellular automaton is surjective; it is
+equivalent to direct finiteness for group algebras. The
+**group-ring Determinant Conjecture** (Atiyah, 1976)
+asserts a nonnegative lower bound on the Fuglede
+–Kadison determinant of invertible integral group-
+ring matrices. This family **disproves** all three:
+direct finiteness in char 2 (with a nonsofic finitely
+presented group), the Determinant Conjecture (with an
+explicit matrix), and direct finiteness in odd
+characteristic (with a prescribed prime)
+[S3:43, S4:11–27, S2:477].
 
-The dynamical half has its own lineage. Gottschalk's surjunctivity conjecture dates to 1973 [S9:47]; Gromov's symbolic-algebraic surjunctivity theorem and Weiss's finite-alphabet sofic theorem cover sofic groups, and the linear theory of Ceccherini-Silberstein and Coornaert quantifies the equivalence between stable finiteness and injective-to-surjective behavior of linear cellular automata, with Phung proving stable finiteness over every field for surjunctive groups [S9:49]. The odd-characteristic manuscript gives the same lineage [S19:147–159].
-
-The determinant conjecture's lineage is the $L^2$-invariant theory: Lück's conjecture, Schick's bound for amenable groups, Elek and Szabó's proof for sofic groups using finite graph approximations and integrality of products of nonzero eigenvalues of positive integral matrices, and the Fuglede–Kadison determinant as the operator-theoretic object the conjecture bounds [S15:124–152]. The manuscript positions its method against that lineage: “Our construction instead starts from failure of direct finiteness in characteristic two [S15:131–132]” .
-
-Prior (my training data): Kaplansky's three finiteness conjectures — direct finiteness, the zero-divisor property, and unit conjecture — were the standard open problems in this area, with the characteristic-zero cases long settled and positive characteristic open in general; the soficity and surjunctivity conjectures were open in the same period, and Elek–Szabó and Gromov–Weiss were the known partial results. This is my prior, not a claim sourced from the release.
+**Prior (my training data, not this repo).** I know
+Kaplansky's conjectures, their known positive cases, and
+their relation to the Atiyah conjecture and Gottschalk's
+conjecture. The **specific counterexamples** — the
+nonsofic finitely presented char-2 group, the determinant
+matrix with $\det \in (0,1)$, the odd-prime prescribed
+construction, and the torsion-free variant — are
+results I cannot independently verify from training alone.
 
 ## Consequences
 
-The family settles the unrestricted conjecture negatively, and it does so in a way that removes the standard escape routes. Torsion is not needed: the headline result is torsion-free, so the counterexample survives the strongest structural restriction in the literature. The field is not the escape route either — the headline result uses the prime field 𝔽_2, and the characteristic-two companion uses a finite field of characteristic two that is “not asserted to be $\mathbb F_2$ [S15:118]” [S15:118–119]. What remains open is the odd-characteristic case in general: that manuscript's own scope line is “It concerns the displayed prime, not every odd prime [S19:29]” .
+**Kaplansky's direct-finiteness conjecture is disproved in
+characteristic two.** A finitely presented nonsofic group
+$G$ with an element of odd prime order has
+$\mathbb{F}_2[G]$ with $ab = 1$, $ba \neq 1$
+[S3:43, S4:11–13, S2:477].
 
-Three named conjectures fall. Direct finiteness fails, soficity is not universal — the characteristic-two manuscript supplies “a finitely presented counterexample to the assertion that every group is sofic [S9:40]” — and Gottschalk's surjunctivity conjecture is refuted twice inside the family, once for the characteristic-two group [S12:134–141] and once for the odd-characteristic group . The characteristic-two manuscript also transports its counterexample outward: a separate embedding theorem moves the same scalar pair into an overgroup of type $F_\infty$, whose conclusion is “The group $U$ is nonsofic and nonsurjunctive [S12:171]” , so the counterexamples are not confined to the groups the construction names.
+**Gottschalk's surjunctivity conjecture is disproved.**
+The same elements define an injective-nonsurjective
+cellular automaton on $K^G$ [S3:43].
 
-The determinant consequence is the one with a formal dependency chain inside the release. The determinant counterexample is derived from the characteristic-two scalar pair, in the manuscript [S15:107–112] and in the Lean tree that imports it [S33:2] [S33:13]; the exact determinant value produced is $q^{-\theta}$ [S15:188–189]. The bibliographies make the cross-family web explicit at the manuscript level, which the ledger's companion columns do not record: the October 4 manuscript cites the zero-divisor manuscript of family 196 [S6:127] and the characteristic-two manuscript of this family [S6:135]; the characteristic-two manuscript cites the determinant manuscript [S13:219] and the type-$F_\infty$ manuscript of family 250 [S13:227]; the determinant manuscript cites the characteristic-two paper as its input, noting it uses “Theorem 1.1 and Section 6 [S16:40]” .
+**The unrestricted group-ring Determinant Conjecture is
+disproved.** A matrix over $\mathbb{Z}[G]$, invertible
+over $\mathbb{Q}[G]$, has Fuglede–Kadison
+determinant in $(0, 1)$ [S4:21–23].
 
-The published reasoning trace covers the characteristic-two line. Its Part I prompt asks for the unrestricted positive-characteristic form of the conjecture to be resolved by a complete proof or a rigorous counterexample, and the run delivers a counterexample; its Part II takes Part I's asserted field, group, and sums as its single input and derives the cellular automaton from them, rather than stopping at the statement that the group is nonsurjunctive. The trace ships as a PDF [S36] and is listed for this family in the traces table in `README.md`.
+**The odd-characteristic case is also open no more.** For
+a prescribed odd prime $p$, $K$ of order $p^4$, and a
+finitely generated group with torsion, direct finiteness
+fails [S4:25–27].
 
-Two caveats for anyone citing this family. The construction is specified, not executed: the characteristic-two manuscript says the prescription “has not been executed [S9:18]” and the odd-characteristic manuscript says it “is not claimed to have been evaluated as a practical computation [S19:28–29]” . And the determinant manuscript has a source-level defect: its main file inputs a `glyphtounicode-cmex.tex` file that the tree does not ship, so the LaTeX as published is not self-contained. That is a fact about the published source, recorded here without attempting a build.
+**The torsion-free variant extends the disproof.** The
+fourth manuscript gives a torsion-free counterexample with
+a finite 2D classifying complex [S2:477].
+
+## Section skeleton
+
+Four manuscripts: [S3:43] (title [S3:37], date [S3:39]) —
+`paper.tex` under `build/` with sections including
+`group`, `aut`, `nonsofic`; the determinant manuscript
+— `main.tex` under `build/` with sections
+`introduction` through `matrix`; the odd-characteristic
+manuscript — `paper.tex` under `build/`; the
+torsion-free manuscript (Oct 4) — `paper.tex` under
+`build/`. The family ships no `verification/` bundle. A
+reasoning trace
+(`kaplansky-direct-finiteness-characteristic-two`) is
+attributed.
+
+## Comparison with the formalized statement
+
+**Scope note** [S4:11–27]. The scope note describes
+three formalized results: (1) the char-two and
+odd-characteristic direct-finiteness counterexamples, with
+the finitely presented construction and search-termination
+proof [S4:11–13]; (2) the group-ring determinant
+counterexample, with the trace-of-log determinant
+definition, excluding the spectral-measure integral
+[S4:21–23]; (3) the odd-prime prescribed
+construction with cellular automaton [S4:25–27].
+The torsion-free manuscript is not in the scope note
+[S4:5–7]. The scope note names four comparators
+[S4:33–36]: `KaplanskyFinitelyPresented.lean`,
+`KaplanskyDirectFiniteness.lean`,
+`GroupRingDeterminant.lean`, `OddKaplansky.lean`.
+
+**The registration.** The family is at tier T3: the
+ledger row records `mainres 3` and `paps_form 3`.
+`formalization.yaml` registers three `main_results`
+entries: `OAI.KaplanskyCounterexample.
+finitelyPresented_counterexample` at
+`OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean`,
+`OAI.GroupRingDeterminant.main` at
+`OAI/Analysis/GroupDeterminants/Main.lean`, and
+`OAI.OddKaplansky.main_theorem` at
+`OAI/Algebra/OddKaplansky/Main.lean`. Three of the four
+manuscripts are in the `sources:` listing.
+
+**The comparator stubs.** The
+`KaplanskyFinitelyPresented.lean` comparator states the
+target `theorem finitelyPresented_counterexample` —
+the char-2 finitely-presented group with odd-prime torsion
+and the one-sided-inverses witness — with a bare
+`sorry` body 
+
+```lean
+theorem finitelyPresented_counterexample :
+    ∃ (K : Type) (_ : Field K) (_ : Fintype K) (_ : CharP K 2),
+      ∃ (G : Type) (_ : Group G) (_ : Group.IsFinitelyPresented G),
+        (∃ (ℓ : ℕ) (_ : ℓ.Prime) (_ : Odd ℓ) (g : G), orderOf g = ℓ) ∧
+        ∃ a_out b_out : MonoidAlgebra K G, a_out * b_out = 1 ∧ b_out * a_out ≠ 1 := by
+  sorry
+```
+[S5:7–12]
+
+The other three comparators (`KaplanskyDirectFiniteness.
+lean`, `GroupRingDeterminant.lean`, `OddKaplansky.lean`)
+carry analogous `sorry` theorems for their respective
+claims [S4:33–36].
+
+**What the OAI trees do carry.** Three OAI packages carry
+real non-`sorry` proofs:
+
+- `OAI/RingTheory/DirectFiniteness` (**126 files, zero
+  `sorry`**, shared with family 196): the
+  `finitelyPresented_counterexample` proof
+  [S6:35–40] discharges by `thm_main.1`, assembling
+  the field, group, odd-prime-order element, and
+  prescribed products from the `Output` construction
+ [S6:14–30]:
+
+```lean
+theorem finitelyPresented_counterexample :
+    ∃ (K : Type) (_ : Field K) (_ : Fintype K) (_ : CharP K 2),
+      ∃ (G : Type) (_ : Group G) (_ : Group.IsFinitelyPresented G),
+        (∃ (ℓ : ℕ) (_ : ℓ.Prime) (_ : Odd ℓ) (g : G), orderOf g = ℓ) ∧
+        ∃ a_out b_out : MonoidAlgebra K G, a_out * b_out = 1 ∧ b_out * a_out ≠ 1 :=
+  thm_main.1
+```
+[S6:35–40]
+
+- `OAI/Analysis/GroupDeterminants` (**34 files, 3,327
+  lines, zero `sorry`**): the `main` proof discharges by
+  `main_of_companion_input companion_input`, transferring
+  the char-2 one-sided-inverses witness to the determinant
+  statement.
+- `OAI/Algebra/OddKaplansky` (**87 files, 13,061 lines,
+  zero `sorry`**): the `main_theorem` proof with the
+  prescribed odd-prime construction.
+
+**The unregistered manuscript.** The torsion-free
+manuscript (Oct 4 2026) is the fourth manuscript
+[S2:477]. It is not in the scope note [S4:5–7], not
+in the yaml `sources:` listing, and carries no comparator
+registration. Its result — a finitely presented
+torsion-free nonsofic group with a finite 2D classifying
+complex over $\mathbb{F}_2$ — is the strongest form
+of the direct-finiteness disproof, removing the torsion
+assumption. The release records `scope: "Partial
+progress."` and `review: status: unchecked`.
 
 ## Sources
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | Release blurb and the four manuscript sub-entries |
-| S2 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md) | 17 | Manuscript tree 1 build notes and release date |
-| S3 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/paper.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/paper.tex) | 55 | Tree 1 title, date, abstract, section order |
-| S4 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections/introduction.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections/introduction.tex) | 109 | Tree 1 main theorem, history, construction and estimates |
-| S5 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections/assembly.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections/assembly.tex) | 27 | Tree 1 proof of the main theorem |
-| S6 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/references.bib`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/references.bib) | 151 | Tree 1 bibliography, including two release companions |
-| S7 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/README.md`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/README.md) | 18 | Manuscript tree 2 build notes and release date |
-| S8 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/paper.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/paper.tex) | 53 | Tree 2 title, date, abstract, section order |
-| S9 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/01-introduction.tex) | 80 | Tree 2 main theorem, history, soficity, cellular automata, construction |
-| S10 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/02-criterion.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/02-criterion.tex) | 479 | Tree 2 incidence criterion and embedded local groups |
-| S11 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/05-prescription.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/05-prescription.tex) | 68 | Tree 2 terminating prescription and scope of the construction |
-| S12 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/06-cellular-automata.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/06-cellular-automata.tex) | 192 | Tree 2 cellular automaton, nonsurjunctivity, type-$F_\infty$ transport |
-| S13 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/references.bib`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/references.bib) | 231 | Tree 2 bibliography, including two release companions |
-| S14 | [`preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/README.md`](../../../preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/README.md) | 18 | Manuscript tree 3 build notes and release date |
-| S15 | [`preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/build/main.tex`](../../../preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/build/main.tex) | 615 | Tree 3 conjecture, main theorem, imported input, mechanism |
-| S16 | [`preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/build/references.bib`](../../../preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/build/references.bib) | 108 | Tree 3 bibliography, including the characteristic-two input |
-| S17 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/README.md`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/README.md) | 17 | Manuscript tree 4 build notes and release date |
-| S18 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/build/paper.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/build/paper.tex) | 53 | Tree 4 title, date, abstract, section order |
-| S19 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/build/sections/01-introduction.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/build/sections/01-introduction.tex) | 172 | Tree 4 main theorem, scope, two compared quantities, dynamical consequence |
-| S20 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/build/sections/06-scalar-cellular.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/build/sections/06-scalar-cellular.tex) | 283 | Tree 4 scalar proof, scope, Gottschalk consequence |
-| S21 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf) | 14632 | Compiled manuscript, tree 1 |
-| S22 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf) | 13280 | Compiled manuscript, tree 2 |
-| S23 | [`preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/paper.pdf`](../../../preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/paper.pdf) | 8663 | Compiled manuscript, tree 3 |
-| S24 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf) | 13558 | Compiled manuscript, tree 4 |
-| S25 | [`lean/docs/197.md`](../../../lean/docs/197.md) | 36 | Scope note: formalized statements and exclusions |
-| S26 | [`lean/ComparatorChallenges/KaplanskyDirectFiniteness.lean`](../../../lean/ComparatorChallenges/KaplanskyDirectFiniteness.lean) | 17 | Challenge: finitely generated characteristic-two counterexample |
-| S27 | [`lean/ComparatorChallenges/KaplanskyFinitelyPresented.lean`](../../../lean/ComparatorChallenges/KaplanskyFinitelyPresented.lean) | 14 | Challenge: finitely presented characteristic-two counterexample |
-| S28 | [`lean/ComparatorChallenges/GroupRingDeterminant.lean`](../../../lean/ComparatorChallenges/GroupRingDeterminant.lean) | 59 | Challenge: integral group-ring matrix with determinant in (0, 1) |
-| S29 | [`lean/ComparatorChallenges/OddKaplansky.lean`](../../../lean/ComparatorChallenges/OddKaplansky.lean) | 33 | Challenge: prescribed odd-characteristic counterexample with cellular automaton |
-| S30 | [`lean/OAI/RingTheory/DirectFiniteness/Main.lean`](../../../lean/OAI/RingTheory/DirectFiniteness/Main.lean) | 13 | Lean tree 1 entry point |
-| S31 | [`lean/OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean`](../../../lean/OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean) | 44 | Bundled existence-plus-certificates theorem and the separated existential |
-| S32 | [`lean/OAI/RingTheory/DirectFiniteness/PrescribedSearch.lean`](../../../lean/OAI/RingTheory/DirectFiniteness/PrescribedSearch.lean) | 73 | Formal termination certificate for the prescribed search |
-| S33 | [`lean/OAI/Analysis/GroupDeterminants/Main.lean`](../../../lean/OAI/Analysis/GroupDeterminants/Main.lean) | 17 | Lean tree 2 entry point: derives the determinant result from tree 1 |
-| S34 | [`lean/OAI/Algebra/OddKaplansky/Main.lean`](../../../lean/OAI/Algebra/OddKaplansky/Main.lean) | 110 | Lean tree 3 entry point: main claim with cellular automaton, fixed-field transfer |
-| S35 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | Release bibliography and `main_results` config links |
-| S36 | [`reasoning_traces/kaplansky-direct-finiteness-characteristic-two.pdf`](../../../reasoning_traces/kaplansky-direct-finiteness-characteristic-two.pdf) | 5166 | Published reasoning trace for the characteristic-two line |
-
-## Bibliography
-
-- Ara, Pere, O'Meara, Kevin C., Perera, Francesc, Stable finiteness of group rings in arbitrary characteristic (2002)
-- Ara, Pere, O'Meara, Kevin C., Perera, Francesc, Stable finiteness of group rings in arbitrary characteristic (2002)
-- Bereznyuk, Vadim Yu., Asphericity of groups defined by graphs (2019)
-- Brown, Kenneth S., Cohomology of Groups (1982)
-- Ceccherini-Silberstein, Tullio, Coornaert, Michel , Phung, Xuan Kien, Stable finiteness of monoid algebras and surjunctivity (2025)
-- Ceccherini-Silberstein, Tullio, Coornaert, Michel , Phung, Xuan Kien, First-order model theory and Kaplansky's stable finiteness conjecture for surjunctive groups (2025)
-- Ceccherini-Silberstein, Tullio, Coornaert, Michel, Linear cellular automata: Garden of Eden Theorem, L-surjunctivity and group rings (2006)
-- Wolfgang Lück, {$L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory} (2002)
-- Warren Dicks, Thomas Schick, The spectral measure of certain elements of the complex group ring of a wreath product (2002)
-- Dinur, Irit, Liu, Siqi, Zhang, Rachel Yun, New codes on high dimensional expanders (2025)
-- Dykema, Ken, Heister, Timo, Juschenko, Kate, Finitely presented groups related to Kaplansky's direct finiteness conjecture (2015)
-- Dykema, Ken, Juschenko, Kate, On stable finiteness of group rings (2015)
-- Dykema, Ken, Juschenko, Kate, On stable finiteness of group rings (2015)
-- Dyn, Nira, Floater, Michael S., Multivariate polynomial interpolation on lower sets (2014)
-- Elek, Gábor, Szabó, Endre, Sofic groups and direct finiteness (2004)
-- Elek, Gábor, Szabó, Endre, Sofic groups and direct finiteness (2004)
-- Gábor Elek, Endre Szabó, Hyperlinearity, essentially free actions and $L^2$-invariants. The sofic property (2005)
-- Bent Fuglede, Richard V. Kadison, Determinant theory in finite factors (1952)
-- Golowich, Louis, Lin, Ting-Chun, Quantum LDPC codes with transversal non-Clifford gates via products of algebraic codes (2024)
-- Gottschalk, Walter, Some general dynamical notions (1973)
-- Gromov, Mikhail, Random walk in random groups (2003)
-- Gromov, Mikhail, Endomorphisms of symbolic algebraic varieties (1999)
-- de la Harpe, Pierre, Skandalis, Georges, Déterminant associé \`a une trace sur une alg\`ebre de Banach (1984)
-- Hatcher, Allen, Algebraic Topology (2002)
-- Higman, Graham, Neumann, B. H., Neumann, Hanna, Embedding theorems for groups (1949)
-- Holger Kammeyer, A counterexample to the determinant approximation conjecture (2026)
-- Kaplansky, Irving, Fields and Rings (1972)
-- Franz Lehner, Markus Neuhauser, Wolfgang Woess, On the spectrum of lamplighter groups and percolation clusters (2008)
-- Linnik, U. V., On the least prime in an arithmetic progression. I. The basic theorem (1944)
-- Lipton, Richard J., Tarjan, Robert Endre, A separator theorem for planar graphs (1979)
-- Montgomery, M. Susan, Left and right inverses in group algebras (1969)
-- Montgomery, M. Susan, Left and right inverses in group algebras (1969)
-- Moser, Robin A., Tardos, Gábor, A constructive proof of the general {Lovász Local Lemma} (2009)
-- Ollivier, Yann, On a small cancellation theorem of Gromov (2006)
-- OpenAI, A Torsion-Free Group Algebra with Zero Divisors (2026)
-- OpenAI, A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two (2026)
-- OpenAI, A Counterexample to the Group-Ring Determinant Conjecture (2026)
-- OpenAI, {A universal group of type $F_\infty$} (2026)
-- OpenAI, A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two (2026)
-- Phung, Xuan Kien, A geometric generalization of Kaplansky's direct finiteness conjecture (2023)
-- Erdős, Paul, Lovász, László, Problems and results on 3-chromatic hypergraphs and some related questions (1975)
-- Thomas Schick, $L^2$-determinant class and approximation of $L^2$-Betti numbers (2001)
-- Weiss, Benjamin, Sofic groups and dynamical systems (2000)
-- Xylouris, Triantafyllos, On the least prime in an arithmetic progression and estimates for the zeros of Dirichlet $L$-functions (2011)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 197 at [S1:4500] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{197} at [S2:477] |
+| S3 | [`preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/paper.tex`](../../../preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/paper.tex) | 53 | manuscript 2 of 4 (char two, in the scope note); title [S3:37], date [S3:39], abstract [S3:43] |
+| S4 | [`lean/docs/197.md`](../../../lean/docs/197.md) | 36 | the formalization scope note: the char-two scope [S4:11–13], the determinant scope [S4:21–23], the odd-char scope [S4:25–27], and the comparator table [S4:33–36] |
+| S5 | [`lean/ComparatorChallenges/KaplanskyFinitelyPresented.lean`](../../../lean/ComparatorChallenges/KaplanskyFinitelyPresented.lean) | 14 | the main comparator: the `finitelyPresented_counterexample` theorem [S5:7–11] and the `sorry` [S5:12] |
+| S6 | [`lean/OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean`](../../../lean/OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean) | 44 | the registered declaration in the OAI tree (126 files, 0 sorry): the real `finitelyPresented_counterexample` proof [S6:35–40] via `thm_main` and the `Output` prescribed construction |
