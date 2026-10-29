@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [group-theory](../topics/group-theory.md) · [metric-geometry](../topics/metric-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [257-a-hyperbolic-group-with-no-geometric-cat-0-action.md](../../../../notes/gen/summaries/257-a-hyperbolic-group-with-no-geometric-cat-0-action.md) |
 
 ## Manuscripts
 

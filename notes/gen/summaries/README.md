@@ -1,6 +1,6 @@
 # Family summary pages
 
-297 extended summaries, one per family, each built from the manuscript's own LaTeX and
+298 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **297** of **373** families have a page.
+The summaries are a fifth layer: **298** of **373** families have a page.
 
 ## The pages
 
@@ -271,6 +271,7 @@ The summaries are a fifth layer: **297** of **373** families have a page.
 - [254](254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) — Classifying spaces and geometric obstructions for Artin groups
 - [255](255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md) — Quasi-isometric rigidity of virtually polycyclic groups
 - [256](256-howies-conjecture-on-equations-over-groups.md) — Howie's conjecture on equations over groups
+- [257](257-a-hyperbolic-group-with-no-geometric-cat-0-action.md) — A hyperbolic group with no geometric CAT(0) action
 - [258](258-gerstens-conjecture-for-one-relator-groups.md) — Gersten's conjecture for one-relator groups
 - [259](259-a-group-without-fixed-price.md) — A group without fixed price
 - [268](268-spin-one-haldane-gap.md) — The spin-one Haldane gap
@@ -340,7 +341,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **76 families have no summary page.** The 297 pages cover 297 of 373 families; the rest are recorded
+- **75 families have no summary page.** The 298 pages cover 298 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
