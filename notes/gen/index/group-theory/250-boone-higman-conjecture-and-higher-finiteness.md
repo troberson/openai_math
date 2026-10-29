@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) · [computability](../topics/computability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [250-boone-higman-conjecture-and-higher-finiteness.md](../../../../notes/gen/summaries/250-boone-higman-conjecture-and-higher-finiteness.md) |
 
 ## Manuscripts
 
