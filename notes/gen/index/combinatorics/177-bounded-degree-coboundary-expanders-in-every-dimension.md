@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [177-bounded-degree-coboundary-expanders-in-every-dimension.md](../../../../notes/gen/summaries/177-bounded-degree-coboundary-expanders-in-every-dimension.md) |
 
 ## Manuscripts
 
