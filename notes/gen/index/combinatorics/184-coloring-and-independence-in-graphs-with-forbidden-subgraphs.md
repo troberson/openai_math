@@ -13,7 +13,7 @@
 | Claim shapes | resolution, partial |
 | Topics | [graph-theory](../topics/graph-theory.md) · [graph-coloring](../topics/graph-coloring.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md](../../../../notes/gen/summaries/184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md) |
 
 ## Manuscripts
 
