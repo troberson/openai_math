@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [183-power-savings-for-planar-halving-lines-and-k-sets.md](../../../../notes/gen/summaries/183-power-savings-for-planar-halving-lines-and-k-sets.md) |
 
 ## Manuscripts
 
