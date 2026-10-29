@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [260-spacetime-penrose-inequalities-and-rigidity.md](../../../../notes/gen/summaries/260-spacetime-penrose-inequalities-and-rigidity.md) |
 
 ## Manuscripts
 

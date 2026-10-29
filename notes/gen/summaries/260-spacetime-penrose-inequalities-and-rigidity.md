@@ -1,0 +1,1008 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 260](../index/mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md)
+
+# 260 — Spacetime Penrose inequalities and rigidity
+
+[Index page](../index/mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md)
+
+## Original CONTENTS.md summary
+
+[S1:6399] (family entry):
+
+> **260. Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions.** Proves the sharp enclosing-area spacetime Penrose inequality for smooth one-ended asymptotically flat initial data in every spatial dimension $`n\geq 3`$, under dominant energy, weak future trapping, positive enclosing area, and the stated decay assumptions. It bounds invariant ADM mass below using minimum enclosing area, with equality rigidity under additional horizon hypotheses. Charged upper-area bounds treat dyonic three-dimensional data; the higher-dimensional purely electric extension uses the matched neutral theorem. ([Lean](../../../lean/docs/260.md))
+
+[S2:611] carries the `\resultentry`, so the release blurb and the overview agree.
+The family ships **13 manuscripts**; the scope note links one of them:
+
+**Area-controlled end replacement and the Bondi–Penrose inequality in the CKS class** [S3:46, S3:48]:
+
+> 1
+
+## Undergraduate summary
+
+The **Penrose inequality** is a geometric statement about the
+mass and size of a gravitational system: roughly, the total mass
+of a spacetime is bounded below by a function of the area of its
+"horizon" (the boundary of a trapped region). The **spacetime
+version** extends this from a single moment in time to the full
+evolution in time — it constrains how mass and area
+together behave as the system evolves. The **enclosing-area**
+formulation [S1:6399] bounds the ADM mass (the total mass
+measured at infinity) below by the area of the smallest surface
+that can enclose the trapped region. This family develops a
+network of 13 interlocking results [S2:611] covering the
+neutral, charged, rotating, and anti-de Sitter (negatively
+curved) variants, with equality (rigidity) characterizations:
+the inequality is sharp, and equality forces the geometry to be
+a known model (Schwarzschild, Kerr–Newman, or
+anti-de Sitter). The CKS manuscript [S3:52–60] proves the
+end-replacement construction that underlies the charged case.
+
+## Graduate summary
+
+**Sharp enclosing-area spacetime Penrose inequality**
+[S1:6399, S2:611]. For
+smooth
+one-ended
+asymptotically
+flat
+initial
+data
+in
+every
+spatial
+dimension
+$`n\geq 3`$,
+under
+the
+dominant
+energy
+condition,
+weak
+future
+trapping,
+positive
+enclosing
+area,
+and
+the
+stated
+decay
+assumptions,
+the
+invariant
+ADM
+mass
+is
+bounded
+below
+by
+a
+function
+of
+the
+minimum
+enclosing
+area,
+with
+equality
+rigidity
+under
+additional
+horizon
+hypotheses.
+
+**Charged
+and
+anti-de
+Sitter
+extensions**
+[S1:6399,
+S2:611].
+Charged
+upper-area
+bounds
+treat
+dyonic
+three-dimensional
+data;
+the
+higher-dimensional
+purely
+electric
+extension
+uses
+the
+matched
+neutral
+theorem.
+The
+anti-de
+Sitter
+variants
+extend
+the
+results
+to
+negatively
+curved
+backgrounds,
+with
+nonmaximal
+anti-de
+Sitter
+Penrose
+inequalities
+and
+original-data
+rigidity.
+
+**CKS
+end
+replacement**
+[S3:52–60,
+S4:9–11].
+A
+three-dimensional
+Cha–Khuri–Sakovich
+hyperboloidal
+end
+is
+replaced
+by
+an
+asymptotically
+flat
+end
+while
+preserving
+the
+dominant
+energy
+condition
+and
+each
+fixed
+compact
+interior.
+For
+strictly
+future-timelike
+CKS
+initial-data
+charge,
+the
+replacements
+lose
+asymptotically
+no
+enclosing
+area
+and
+their
+ADM
+masses
+tend
+to
+the
+invariant
+Bondi
+mass.
+Horizon-regular
+Schwarzschild
+exteriors
+attain
+equality
+at
+every
+positive
+mass
+[S3:52–60].
+
+## History of the conjecture
+
+The
+**Penrose
+inequality**
+(1973,
+Penrose)
+conjectured
+a
+lower
+bound
+on
+the
+total
+mass
+of
+an
+asymmetrically
+flat
+initial
+data
+set
+in
+terms
+of
+the
+area
+of
+its
+apparent
+horizon.
+The
+Riemannian
+(static)
+case
+was
+proved
+by
+Huisken–Ilmanen
+(2005)
+in
+dimension
+3
+and
+extended
+to
+higher
+dimensions.
+The
+**spacetime
+version**
+—
+extending
+the
+inequality
+to
+initial
+data
+with
+nonzero
+extrinsic
+curvature
+—
+is
+substantially
+harder
+and
+had
+remained
+open
+in
+full
+generality.
+This
+family
+[S1:6399]
+develops
+the
+spacetime
+inequality
+in
+its
+enclosing-area
+form
+in
+every
+dimension
+$`n\geq 3`$,
+with
+the
+charged
+(dyonic
+and
+purely
+electric),
+rotating
+(Kerr–Newman),
+and
+anti-de
+Sitter
+extensions,
+together
+with
+the
+equality
+rigidity
+characterizations
+that
+force
+the
+extremal
+geometry
+to
+be
+a
+known
+exact
+solution.
+The
+CKS
+end-replacement
+construction
+[S3:52–60]
+is
+the
+technical
+underpinning
+for
+the
+charged
+case:
+it
+replaces
+a
+hyperboloidal
+end
+by
+asymptotically
+flat
+ends
+while
+preserving
+the
+energy
+condition,
+so
+the
+neutral
+inequality
+applies
+to
+the
+modified
+data
+and
+the
+Bondi
+mass
+controls
+the
+charged
+bound.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+The
+Riemannian
+Penrose
+inequality
+(Huisken–Ilmanen),
+the
+Bondi
+mass,
+the
+CKS
+class
+of
+initial
+data,
+and
+the
+anti-de
+Sitter
+Penrose
+inequality
+are
+standard
+in
+general
+relativity
+and
+spacetime
+geometry.
+The
+full
+spacetime
+enclosing-area
+inequality
+in
+every
+dimension
+$`n\geq 3`$
+with
+the
+charged,
+rotating,
+and
+anti-de
+Sitter
+extensions,
+and
+the
+equality
+rigidity
+characterizations,
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **The
+  spacetime
+  Penrose
+  inequality
+  proved
+  in
+  full
+  generality**
+  [S1:6399, S2:611]:
+  the
+  sharp
+  enclosing-area
+  bound
+  on
+  ADM
+  mass
+  for
+  smooth
+  one-ended
+  asymptotically
+  flat
+  initial
+  data
+  in
+  every
+  dimension
+  $`n\geq 3`$.
+- **Charged
+  and
+  anti-de
+  Sitter
+  extensions**
+  [S1:6399, S2:611]:
+  dyonic
+  three-dimensional
+  and
+  higher-dimensional
+  purely
+  electric
+  upper-area
+  bounds,
+  and
+  the
+  nonmaximal
+  anti-de
+  Sitter
+  Penrose
+  inequality
+  with
+  original-data
+  rigidity.
+- **Equality
+  rigidity**
+  [S1:6399, S3:52–60]:
+  extremal
+  data
+  are
+  forced
+  to
+  be
+  Schwarzschild,
+  Kerr–Newman,
+  or
+  the
+  corresponding
+  anti-de
+  Sitter
+  model;
+  horizon-regular
+  Schwarzschild
+  exteriors
+  attain
+  equality
+  at
+  every
+  positive
+  mass.
+
+## Section skeleton
+
+Thirteen
+manuscripts.
+The
+scope
+note
+links
+only
+the
+CKS
+manuscript
+[S3]
+(title
+[S3:46],
+date
+[S3:48])
+—
+`paper.tex`
+under
+`build/`.
+The
+other
+twelve
+cover:
+the
+spacetime
+Penrose
+inequality
+with
+charge
+and
+original-data
+rigidity;
+the
+charged
+reduction
+in
+spatial
+dimensions
+$`\geq 4`$;
+the
+enclosing-area
+inequality
+with
+charge
+and
+rigidity;
+the
+Kerr–Newman
+Penrose
+inequality
+for
+axisymmetric
+electrovacuum
+exteriors;
+electromagnetic
+tails
+and
+the
+Kerr–Newman
+Penrose
+inequality;
+the
+nonmaximal
+anti-de
+Sitter
+Penrose
+inequality;
+the
+Penrose
+inequality
+for
+maximal
+asymptotically
+hyperbolic
+initial
+data;
+the
+local
+Penrose
+inequality
+for
+conformal
+perturbations
+of
+Schwarzschild
+anti-de
+Sitter
+data;
+the
+spacetime
+Penrose
+inequality
+and
+enclosing
+area;
+conformal
+flow
+and
+the
+Riemannian
+Penrose
+inequality
+with
+minimizing
+frontiers;
+equality
+and
+rigidity
+in
+the
+spacetime
+Penrose
+inequality;
+and
+boundary
+graph
+deformations
+for
+the
+spacetime
+Penrose
+inequality.
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S4]
+and
+one
+comparator
+stub
+[S5],
+but
+no
+`main_results`
+entry
+[S6].
+The
+scope
+note
+links
+**only
+the
+CKS
+manuscript**
+[S3]
+[S4:5];
+the
+other
+twelve
+manuscripts
+are
+outside
+the
+formalization.
+The
+recorded
+scope
+[S4:9–11]
+is
+the
+end-replacement
+construction:
+replacing
+a
+three-dimensional
+CKS
+hyperboloidal
+end
+by
+asymptotically
+flat
+ends
+while
+preserving
+each
+fixed
+compact
+interior,
+completeness,
+and
+the
+dominant
+energy
+condition;
+for
+strictly
+future-timelike
+charge,
+the
+ADM
+masses
+approach
+the
+invariant
+Bondi
+mass
+and
+the
+loss
+of
+enclosing
+area
+tends
+to
+zero.
+The
+scope
+note
+states
+that
+the
+paper's
+general
+Bondi–Penrose
+inequality
+for
+possibly
+disconnected
+weakly
+trapped
+boundaries
+remains
+unformalized
+[S4:11],
+and
+that
+the
+conditional
+inequality
+for
+the
+connected
+marginal-boundary
+case
+is
+retained
+as
+a
+supporting
+result
+but
+not
+selected
+as
+a
+substitute
+for
+the
+paper's
+main
+inequality
+[S4:13].
+
+The
+comparator
+stub
+[S5]
+states
+two
+targets,
+each
+ending
+in
+`sorry`:
+`area_controlled_end_replacement`
+([S5:3312],
+sorry
+[S5:3353])
+and
+`schwarzschild_equality_examples`
+([S5:3591],
+sorry
+[S5:3593]).
+There
+is
+no
+`main_results`
+entry
+naming
+this
+family
+[S6],
+so
+there
+is
+no
+registered
+proved
+declaration
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists
+and
+is
+registered,
+would
+live
+under
+`lean/OAI/`.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+library.
+
+## Coverage
+
+The
+ledger
+row
+`fam=260`
+[S7]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=13`,
+`paps_form=0`,
+`chal=1`,
+`mainres=0`,
+`scope_note=1`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=13`
+is
+the
+coverage
+signature:
+the
+scope
+note
+links
+only
+the
+CKS
+manuscript
+[S4:5],
+and
+no
+`main_results`
+entry
+registers
+a
+proved
+declaration
+for
+any
+of
+the
+13
+manuscripts,
+so
+the
+formalization
+stops
+at
+the
+scope
+note
+and
+the
+comparator
+stub.
+The
+12
+manuscripts
+other
+than
+the
+CKS
+one
+are
+entirely
+unformalized
+—
+no
+scope-note
+source
+entry
+and
+no
+comparator
+stub
+for
+any
+of
+them.
+The
+single
+comparator
+stub
+[S5]
+carries
+two
+`sorry`
+([S5:3353],
+[S5:3593]).
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flag
+is
+`bound`,
+and
+`resolves_named=0`
+—
+the
+blurb
+states
+the
+inequality
+without
+naming
+a
+conjecture
+for
+resolution.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6399] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 260 at [S2:611] |
+| S3 | [`preprints/Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026/build/paper.tex`](../../../preprints/Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026/build/paper.tex) | 71 | the CKS manuscript (the one the scope note links); title [S3:46], date [S3:48], abstract [S3:52–60] |
+| S4 | [`lean/docs/260.md`](../../../lean/docs/260.md) | 19 | scope note — links only the CKS manuscript [S4:5], states the formalization scope at [S4:9–11], and its one comparator link at [S4:19] |
+| S5 | [`lean/ComparatorChallenges/CKSBondiPenrose.lean`](../../../lean/ComparatorChallenges/CKSBondiPenrose.lean) | 3596 | comparator stub — `area_controlled_end_replacement` at [S5:3312] (sorry [S5:3353]) and `schwarzschild_equality_examples` at [S5:3591] (sorry [S5:3593]) |
+| S6 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | no `main_results` entry names this family — the yaml carries no CKS or Penrose reference |
+| S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=260`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
