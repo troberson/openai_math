@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [measure-theory](../topics/measure-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [145-rokhlins-multiple-mixing-problem.md](../../../../notes/gen/summaries/145-rokhlins-multiple-mixing-problem.md) |
 
 ## Manuscripts
 
