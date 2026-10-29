@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [252-a-non-residually-finite-torsion-free-hyperbolic-group.md](../../../../notes/gen/summaries/252-a-non-residually-finite-torsion-free-hyperbolic-group.md) |
 
 ## Manuscripts
 
