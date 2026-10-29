@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [graph-theory](../topics/graph-theory.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md](../../../../notes/gen/summaries/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md) |
 
 ## Manuscripts
 
