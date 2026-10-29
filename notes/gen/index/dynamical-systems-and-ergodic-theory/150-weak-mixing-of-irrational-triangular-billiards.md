@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [dynamical-systems](../topics/dynamical-systems.md) · [diophantine-equations](../topics/diophantine-equations.md) · [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [150-weak-mixing-of-irrational-triangular-billiards.md](../../../../notes/gen/summaries/150-weak-mixing-of-irrational-triangular-billiards.md) |
 
 ## Manuscripts
 
