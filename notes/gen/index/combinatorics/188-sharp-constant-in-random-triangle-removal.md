@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) · [random-graphs](../topics/random-graphs.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [188-sharp-constant-in-random-triangle-removal.md](../../../../notes/gen/summaries/188-sharp-constant-in-random-triangle-removal.md) |
 
 ## Manuscripts
 
