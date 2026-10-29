@@ -13,7 +13,7 @@
 | Claim shapes | density |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [measure-theory](../topics/measure-theory.md) · [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md](../../../../notes/gen/summaries/152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md) |
 
 ## Manuscripts
 
