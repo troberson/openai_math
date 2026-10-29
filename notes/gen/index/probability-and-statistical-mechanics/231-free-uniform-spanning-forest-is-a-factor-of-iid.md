@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [measure-theory](../topics/measure-theory.md) · [probability](../topics/probability.md) · [sampling-and-counting](../topics/sampling-and-counting.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [231-free-uniform-spanning-forest-is-a-factor-of-iid.md](../../../../notes/gen/summaries/231-free-uniform-spanning-forest-is-a-factor-of-iid.md) |
 
 ## Manuscripts
 
