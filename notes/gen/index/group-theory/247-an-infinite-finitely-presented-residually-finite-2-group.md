@@ -13,7 +13,7 @@
 | Claim shapes | undecidability |
 | Topics | [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [247-an-infinite-finitely-presented-residually-finite-2-group.md](../../../../notes/gen/summaries/247-an-infinite-finitely-presented-residually-finite-2-group.md) |
 
 ## Manuscripts
 
