@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [223-conformal-limits-of-square-lattice-random-cluster-interfaces.md](../../../../notes/gen/summaries/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) |
 
 ## Manuscripts
 
