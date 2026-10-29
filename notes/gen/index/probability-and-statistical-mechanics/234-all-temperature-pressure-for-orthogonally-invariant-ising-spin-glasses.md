@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [probability](../topics/probability.md) · [spin-glasses](../topics/spin-glasses.md) · [optimal-transport](../topics/optimal-transport.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md](../../../../notes/gen/summaries/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md) |
 
 ## Manuscripts
 
