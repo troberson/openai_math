@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [156-borsuks-conjecture-fails-in-dimension-nine.md](../../../../notes/gen/summaries/156-borsuks-conjecture-fails-in-dimension-nine.md) |
 
 ## Manuscripts
 
