@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [graph-theory](../topics/graph-theory.md) · [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [246-cannons-conjecture.md](../../../../notes/gen/summaries/246-cannons-conjecture.md) |
 
 ## Manuscripts
 
