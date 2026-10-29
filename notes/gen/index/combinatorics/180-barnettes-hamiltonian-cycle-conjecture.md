@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [graph-theory](../topics/graph-theory.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [180-barnettes-hamiltonian-cycle-conjecture.md](../../../../notes/gen/summaries/180-barnettes-hamiltonian-cycle-conjecture.md) |
 
 ## Manuscripts
 
