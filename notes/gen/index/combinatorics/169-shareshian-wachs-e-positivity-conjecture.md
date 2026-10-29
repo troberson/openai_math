@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [graph-theory](../topics/graph-theory.md) · [graph-coloring](../topics/graph-coloring.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [169-shareshian-wachs-e-positivity-conjecture.md](../../../../notes/gen/summaries/169-shareshian-wachs-e-positivity-conjecture.md) |
 
 ## Manuscripts
 
