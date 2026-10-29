@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [dynamical-systems](../topics/dynamical-systems.md) · [ergodic-theory](../topics/ergodic-theory.md) · [information-theory](../topics/information-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [146-sinais-positive-entropy-conjecture-for-the-standard-map.md](../../../../notes/gen/summaries/146-sinais-positive-entropy-conjecture-for-the-standard-map.md) |
 
 ## Manuscripts
 
