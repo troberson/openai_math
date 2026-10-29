@@ -13,7 +13,7 @@
 | Claim shapes | resolution, partial |
 | Topics | [graph-theory](../topics/graph-theory.md) · [algorithms](../topics/algorithms.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [174-deterministic-construction-of-strong-thin-spanning-trees.md](../../../../notes/gen/summaries/174-deterministic-construction-of-strong-thin-spanning-trees.md) |
 
 ## Manuscripts
 
