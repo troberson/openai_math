@@ -1,0 +1,224 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Combinatorics](../index/disciplines/combinatorics.md) / [Family 179](../index/combinatorics/179-circulant-hadamard-conjecture.md)
+
+# 179 — The circulant Hadamard conjecture
+
+[Index page](../index/combinatorics/179-circulant-hadamard-conjecture.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:4172] and the catalog abstract [S2:439]
+state the family's claim: real circulant Hadamard matrices exist
+**exactly in orders 1 and 4**, resolving the circulant Hadamard
+conjecture. As a consequence, together with classical
+Barker-sequence results, binary sequences whose nontrivial
+aperiodic autocorrelations have magnitude at most one exist at
+lengths $n > 1$ exactly when $n \in
+\{2,3,4,5,7,11,13\}$, proving the Barker-sequence conjecture.
+The manuscript is *The circulant Hadamard conjecture*
+[S3:29, S3:31]; its abstract 
+
+> We prove the circulant Hadamard conjecture: a real circulant Hadamard
+matrix has order $1$ or $4$. As a consequence, Barker sequences of
+length greater than one exist exactly at lengths $2,3,4,5,7,11,13$,
+proving the Barker-sequence conjecture. [S3:47–50]
+
+## Undergraduate summary
+
+A **Hadamard matrix** is a square matrix of $\pm 1$ entries whose
+rows are all mutually orthogonal — the dot product of any two
+distinct rows is zero. This is the matrix form of a perfect
+binary code: every pair of rows "agrees" on exactly half the
+positions and "disagrees" on the other half. A **circulant**
+Hadamard matrix has the extra structure that each row is the
+previous row shifted by one position, so the whole matrix is
+determined by a single row (a circulant sequence). The
+**circulant Hadamard conjecture** asked which order such a matrix
+can have. The answer is strikingly small: a real circulant
+Hadamard matrix exists only in order **1** (the $1 \times 1$
+trivial case) and order **4** — no bigger one exists, ever
+[S3:47–50, S2:439].
+
+## Graduate summary
+
+**The circulant Hadamard classification** [S3:47–50,
+S4:9]. A real circulant Hadamard matrix of positive order $n$
+exists exactly when $n = 1$ or $n = 4$: a sign matrix
+$H \in \{\pm1\}^{n \times n}$ that is circulant (each row
+is a cyclic shift of the first) and satisfies
+$HH^{\top} = n I_n$ exists iff $n \in \{1,4\}$. Explicit
+witnesses are supplied for both orders, with no restriction on
+prime factors [S4:9].
+
+**The Barker-sequence consequence.** A Barker sequence is a
+sign sequence whose nonzero **aperiodic autocorrelations** all
+have magnitude at most one. The circulant-Hadamard
+classification, together with the classical even-length
+result, gives that Barker sequences of length $>1$ exist exactly
+at lengths $2,3,4,5,7,11,13$ [S3:47–50, S4:11].
+
+**The scope of the formalization.** The formalization proves the
+circulant-Hadamard classification in exact form (orders 1 and 4)
+and the **even-length** part of the Barker consequence (a
+positive even-length Barker sequence has length 2 or 4). The
+paper's classification of **odd** Barker lengths is outside the
+formalization [S4:9, S4:11]. The scope note names two
+comparators [S4:15–18]: `CirculantHadamard.lean`
+(registered) and `EvenBarker.lean` (unregistered).
+
+## History of the conjecture
+
+Circulant Hadamard matrices tie together Hadamard matrices,
+finite Fourier analysis, and the theory of **Barker sequences**
+(sign sequences with minimal autocorrelation, sought in
+radar/sonar for decades). The circulant-Hadamard question
+— which orders admit a circulant real Hadamard matrix —
+had resisted resolution: small-order examples and sporadic
+nonexistence results existed, but a complete classification was
+open. The Barker-sequence conjecture (that Barker sequences
+exist only at the seven short lengths) is a classical
+autocorrelation problem whose odd-length half had long been
+out of reach. This manuscript closes both: the exact order
+classification $\{1,4\}$ and, with the classical even result,
+the full Barker-length list [S3:47–50, S2:439].
+
+**Prior (my training data, not this repo).** I know Hadamard
+matrices, the circulant structure, and that Barker sequences are
+a longstanding open problem in autocorrelation. A **complete**
+classification of real circulant Hadamard orders as exactly
+$\{1,4\}$, and the consequent **full** Barker-length
+classification down to the odd lengths $5,7,11,13$, go beyond
+the partial results I recall; the reduction argument and the
+odd-Barker classification in [S3:47–50] are not something I can
+independently verify from training alone.
+
+## Consequences
+
+**The circulant Hadamard conjecture is resolved.** Real
+circulant Hadamard matrices exist exactly in orders 1 and 4
+[S3:47–50, S4:9, S2:439].
+
+**The Barker-sequence conjecture is resolved.** Barker sequences
+of length $>1$ exist exactly at $2,3,4,5,7,11,13$
+[S3:47–50, S2:439].
+
+**Both witness orders are explicit.** Orders 1 and 4 are
+supplied by explicit matrices, with no prime-factor condition
+[S4:9].
+
+**The formalization covers the circulant result and the even
+Barker part.** The odd-Barker classification is a manuscript
+theorem outside the formalization's `sources:`, and the
+`EvenBarker.lean` comparator is unregistered
+[S4:9, S4:11, S4:15–18].
+
+## Section skeleton
+
+One manuscript [S3:47–50] (title [S3:29], date [S3:31]) —
+`main.tex` (63 lines) under `build/`, inputs sections
+`introduction`, `local`, `reduction`, `products`, plus a
+`references` bibliography. The family ships no `verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+**Scope note** [S4:9, S4:11]. The first paragraph proves the
+circulant-Hadamard conjecture in exact form: a real circulant
+Hadamard matrix of positive order $n$ exists exactly when
+$n=1$ or $n=4$, with explicit witnesses for both orders and no
+restriction on prime factors [S4:9]. The second paragraph
+proves the **even-length** Barker part: a positive even-length
+sign sequence whose nonzero aperiodic autocorrelations have
+absolute value at most one has length 2 or 4; the paper's
+classification of **odd** Barker lengths is outside this
+statement [S4:11]. The scope note names two comparators
+[S4:15–18]: `CirculantHadamard.lean` and `EvenBarker.lean`.
+
+**The registration.** The family is at tier T3: the ledger row
+records `mainres 1` and `paps_form 1`. `formalization.yaml`
+registers one `main_results` entry — the
+`OAI.CirculantHadamard.exists_iff_order_one_or_four`
+declaration at
+`OAI/LinearAlgebra/CirculantHadamard/Main.lean` — and one
+manuscript is in its `sources:` listing. The `EvenBarker.lean`
+comparator is a scope-note link with **no** `main_results`
+entry [S4:9, S4:11, S4:15–18].
+
+**The comparator stub.** The `CirculantHadamard.lean` comparator
+restates the target `theorem exists_iff_order_one_or_four` with
+a bare `sorry` body 
+
+```lean
+theorem exists_iff_order_one_or_four (n : ℕ) (hn : 0 < n) :
+    ExistsRealCirculantHadamard n ↔ n = 1 ∨ n = 4 := by
+  sorry
+```
+[S5:24–26]
+
+**What the proof does.** The registered
+`exists_iff_order_one_or_four` in the OAI tree is a genuine
+proof, not a `sorry`: it is a constructor. The forward
+direction reduces any order $n>1$ that carried a circulant
+Hadamard matrix, via `order_reduction`, to an odd $u$ with a
+circulant Hadamard matrix, rules out $u=1$ by
+`simp`, and for $u>1$ discharges the case by the
+`not_exists_four_mul_odd_square` lemma; the reverse direction
+is the explicit witness `exists_of_order_one_or_four`
+
+
+```lean
+theorem exists_iff_order_one_or_four (n : ℕ) (hn : 0 < n) :
+    ExistsRealCirculantHadamard n ↔ n = 1 ∨ n = 4 := by
+  constructor
+  · intro hH
+    by_cases hn1 : n = 1
+    · exact Or.inl hn1
+    · have hnlarge : 1 < n := by omega
+      rcases order_reduction hnlarge hH with ⟨u, hu, hodd, rfl⟩
+      by_cases hu1 : u = 1
+      · right
+        simp [hu1]
+      · have hul : 1 < u := by omega
+        exact (not_exists_four_mul_odd_square hul hodd hH).elim
+  · exact exists_of_order_one_or_four
+```
+[S6:21–34]
+
+The proof closes the two nontrivial obligations with
+`not_exists_four_mul_odd_square` and
+`exists_of_order_one_or_four` — a closed classification, no
+`sorry` [S6:21–34].
+
+**What the OAI tree does carry.** The
+`OAI/LinearAlgebra/CirculantHadamard` package (68 files over
+9,496 lines, zero `sorry`) carries the supporting machinery:
+the `IsCirculant` and `IsSignHadamard` predicates, the
+`order_reduction` reduction, the `not_exists_four_mul_odd_square`
+nonexistence lemma, and the `exists_of_order_one_or_four`
+explicit witnesses that `exists_iff_order_one_or_four`
+assembles [S6:21–34].
+
+**The unregistered even-Barker result.** The `EvenBarker.lean`
+comparator restates the even-length Barker classification as
+`theorem even_length_eq_two_or_four : n = 2 ∨ n = 4` with a bare
+`sorry` body and no `main_results` entry [S7:21–23]. The
+**odd-length** Barker classification ($5,7,11,13$) that
+completes the Barker-sequence conjecture is stated and proved
+in the manuscript [S3:47–50] but has no comparator and no
+registration — it is outside the formalization. The
+release records `scope: "Partial progress."` and
+`review: status: unchecked`; the provers' `sorry` bodies are
+the targets the release set, and the proved
+`exists_iff_order_one_or_four` in the OAI tree is the
+registered result.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 179 at [S1:4172] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{179} at [S2:439] |
+| S3 | [`preprints/The-circulant-Hadamard-conjecture-September-23-2026/build/main.tex`](../../../preprints/The-circulant-Hadamard-conjecture-September-23-2026/build/main.tex) | 62 | the single manuscript root; title [S3:29], date [S3:31], abstract [S3:47–50] |
+| S4 | [`lean/docs/179.md`](../../../lean/docs/179.md) | 18 | the formalization scope note: the circulant-Hadamard paragraph [S4:9], the even-Barker paragraph [S4:11], and the comparator table [S4:15–18] |
+| S5 | [`lean/ComparatorChallenges/CirculantHadamard.lean`](../../../lean/ComparatorChallenges/CirculantHadamard.lean) | 30 | registered comparator: the `exists_iff_order_one_or_four` theorem [S5:24–25] and the `sorry` [S5:26] |
+| S6 | [`lean/OAI/LinearAlgebra/CirculantHadamard/Main.lean`](../../../lean/OAI/LinearAlgebra/CirculantHadamard/Main.lean) | 38 | the registered declaration in the OAI tree (68 files, 9496 lines, 0 sorry): the real `exists_iff_order_one_or_four` proof [S6:21–34] via an order-reduction + four-times-odd-square nonexistence argument |
+| S7 | [`lean/ComparatorChallenges/EvenBarker.lean`](../../../lean/ComparatorChallenges/EvenBarker.lean) | 28 | unregistered comparator: the `even_length_eq_two_or_four` theorem [S7:21–22] and the `sorry` [S7:23] |

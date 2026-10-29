@@ -13,7 +13,7 @@
 | Claim shapes | resolution, partial |
 | Topics | [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [179-circulant-hadamard-conjecture.md](../../../../notes/gen/summaries/179-circulant-hadamard-conjecture.md) |
 
 ## Manuscripts
 
