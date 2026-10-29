@@ -1,9 +1,8 @@
 # Family summary pages
 
-Sixty extended summaries, one per family, each built from the manuscript's own LaTeX and
+235 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
-file and the page skeleton, with each quote window resolved from `notes/tables/quotes.tsv`
-through the normalizer; the checker measures the rendered bytes and writes nothing.
+file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
 ## Coverage, as four layers
 
@@ -12,93 +11,250 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 
 | Layer | Count | What the count is |
 | --- | --- | --- |
-| Formalized manuscripts | **172** of **719** listed manuscript directories | The per-manuscript formalized flag, counting only listed manuscripts. `formalization.yaml` names **173** paths; the extra one is the superseded `Taming-implies-compatibility-on-four-manifolds-September-23-2026`, which family 342's overview entry does not list. |
-| Scope notes | **242** of **372** families | `lean/docs/NNN.md`, each with a `## Scope` section. **121** of the 242 sections state no exclusion at all. |
-| Comparator challenges | **416** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub**: 539 `sorry` occurrences, 415 files with at least one, the zero-`sorry` exception being `HarmonicGrowth.lean`. The scope notes link **426** occurrences; the 10-gap is one config linked twice inside each of 7 docs. |
-| `main_results` entries | **200** entries over **189** unique configs, reaching **136** of 372 families | `lean/formalization.yaml`'s `main_results:` list. The yaml carries no family key, so family-to-config comes only from the scope notes' links. |
+| Formalized manuscripts | **175** of **721** listed manuscript directories | The per-manuscript formalized flag, counting only listed manuscripts. |
+| Scope notes | **245** of **373** families | `lean/docs/NNN.md`, each with a `## Scope` section. |
+| Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
+| `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer, and it is the thinnest: **60** of **372** families have a page.
-
-## The summaries layer
-
-**60** family pages, **12,322** lines, over **128** manuscript directories carrying **8.5 MB** of
-the LaTeX the Sources tables name (635 specifically-cited `.tex` files). The checker measures
-**7,587** `[Sn:line]` marker positions and **1,994** quoted spans across the **61** pages it reads
-(the 60 family pages and this link-only index page), and reports **440** problems: **210**
-unresolved markdown links, which the slug-canonicalization pass clears, and **230** quoted spans
-that are not verbatim against their source, which the quote pass clears, with **0** in the
-manuscript-directory and bare-citation passes.
-
-The cost model is the reading pass, not a build. Each page cites the files it read, so the cost per
-page is the manuscript LaTeX its Sources table names: the median page cites **18.5** declared
-sources and the largest cites **63**. The checker walks the cited files and compares each marker and
-each quotation against the bytes the file carries, and it runs nothing.
-
-The pages are not a build target: no Lean, no lake, no comparator runs here. A page states what the
-manuscript says and where it sits, with a `file:line` anchor the checker resolves.
+The summaries are a fifth layer: **235** of **373** families have a page.
 
 ## The pages
 
-- [195 — A counterexample to the small Cohen--Macaulay module conjecture](195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md)
-- [196 — A counterexample to Kaplansky's zero-divisor conjecture](196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
-- [197 — Nonsofic groups and group-ring counterexamples](197-nonsofic-groups-and-group-ring-counterexamples.md)
-- [198 — A counterexample to the little finitistic-dimension conjecture](198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md)
-- [199 — Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama](199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
+- [001 — Milne's rationality conjecture](001-milnes-rationality-conjecture.md)
+- [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md)
+- [003 — The quasi-Riemann hypothesis](003-quasi-riemann-hypothesis.md)
+- [004 — Hilbert's tenth problem over $\mathbb Q$](004-hilberts-tenth-problem-over-q.md)
+- [005 — Irrationality of Catalan's constant](005-irrationality-of-catalans-constant.md)
+- [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md)
+- [007 — Two-point Chowla and the corrected binary Elliott conjecture](007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md)
+- [008 — The Deligne–Drinfeld conjecture](008-deligne-drinfeld-conjecture.md)
+- [009 — Bogomolov–Pop and Milnor $K$-theoretic reconstruction](009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md)
+- [010 — Fontaine–Mazur modularity at the prime $2$ and $2$-adic pro-modularity](010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md)
+- [011 — The Ford–Konyagin–Luca conjecture on prime predecessors](011-ford-konyagin-luca-conjecture-on-prime-predecessors.md)
+- [012 — Independent largest prime factors of consecutive integers](012-independent-largest-prime-factors-of-consecutive-integers.md)
+- [013 — Ostmann's inverse Goldbach conjecture](013-ostmanns-inverse-goldbach-conjecture.md)
+- [014 — Restricted geometric Langlands, generic Ramanujan and Arthur parameters](014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md)
+- [015 — Torus-packet equidistribution in prime, quartic, and sextic degrees](015-torus-packet-equidistribution-in-prime-quartic-and-sextic-degrees.md)
+- [016 — Zilber–Pink in abelian varieties and the Siegel threefold](016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md)
+- [017 — The irrationality exponent of $\pi$ is $2$](017-irrationality-exponent-of-is-2.md)
+- [018 — The Margulis–Platonov conjecture over global fields](018-margulis-platonov-conjecture-over-global-fields.md)
+- [019 — The $p$-adic section conjecture](019-p-adic-section-conjecture.md)
+- [020 — Squarefree quartics and power-free polynomial values](020-squarefree-quartics-and-power-free-polynomial-values.md)
+- [021 — A quadratic bound for Jacobsthal's function](021-a-quadratic-bound-for-jacobsthals-function.md)
+- [022 — The weak inhomogeneous Duffin–Schaeffer conjecture](022-weak-inhomogeneous-duffin-schaeffer-conjecture.md)
+- [023 — Patterson’s first moment for cubic Gauss sums](023-pattersons-first-moment-for-cubic-gauss-sums.md)
+- [024 — An asymptotic formula for the number of totients](024-an-asymptotic-formula-for-the-number-of-totients.md)
+- [025 — Erdős’s short Egyptian-fraction conjecture](025-erdoss-short-egyptian-fraction-conjecture.md)
+- [026 — Positive lower density of large prime gaps](026-positive-lower-density-of-large-prime-gaps.md)
+- [027 — Integral density on curve character varieties](027-integral-density-on-curve-character-varieties.md)
+- [028 — The Gaussian moat conjecture](028-gaussian-moat-conjecture.md)
+- [029 — Artin's primitive root conjecture: infinitude for every base](029-artins-primitive-root-conjecture-infinitude-for-every-base.md)
+- [030 — Modularity over imaginary quadratic fields](030-modularity-over-imaginary-quadratic-fields.md)
+- [031 — Uchida's conjecture for open Galois homomorphisms](031-uchidas-conjecture-for-open-galois-homomorphisms.md)
 - [032 — The rational Hodge conjecture for CM abelian varieties](032-rational-hodge-conjecture-for-cm-abelian-varieties.md)
+- [033 — Campana's orbifold Iitaka conjecture and logarithmic subadditivity](033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md)
+- [034 — Log abundance and effective Iitaka fibrations](034-log-abundance-and-effective-iitaka-fibrations.md)
+- [035 — Threefold log abundance in numerical dimension one in characteristic $p>3$](035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md)
+- [036 — Numerical semiampleness and generalized minimal models](036-numerical-semiampleness-and-generalized-minimal-models.md)
+- [037 — The sharp ordinary-double-point volume gap](037-sharp-ordinary-double-point-volume-gap.md)
+- [038 — Fujita's freeness conjecture](038-fujitas-freeness-conjecture.md)
 - [039 — Nagata's conjecture and maximal Seshadri constants](039-nagatas-conjecture-and-maximal-seshadri-constants.md)
+- [040 — Bloch's conjecture for complex surfaces](040-blochs-conjecture-for-complex-surfaces.md)
+- [041 — Hyperkähler SYZ and projective-space bases](041-hyperkahler-syz-and-projective-space-bases.md)
 - [042 — Oka classification for K3 surfaces and other compact complex surfaces](042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md)
+- [043 — $P=W$ for fixed-determinant moduli spaces](043-p-w-for-fixed-determinant-moduli-spaces.md)
+- [044 — The equivariant cohomological Hikita conjecture for quivers](044-equivariant-cohomological-hikita-conjecture-for-quivers.md)
+- [046 — Counterexamples to Shafarevich holomorphic convexity](046-counterexamples-to-shafarevich-holomorphic-convexity.md)
 - [047 — Complex counterexamples to cancellation and affine fibrations](047-complex-counterexamples-to-cancellation-and-affine-fibrations.md)
+- [048 — A characteristic-zero counterexample to Lipman–Zariski](048-a-characteristic-zero-counterexample-to-lipman-zariski.md)
 - [049 — A stable-coordinate counterexample in four variables](049-a-stable-coordinate-counterexample-in-four-variables.md)
 - [050 — A counterexample to Griffiths' positivity conjecture](050-a-counterexample-to-griffiths-positivity-conjecture.md)
+- [051 — Kobayashi's canonical-ampleness conjecture](051-kobayashis-canonical-ampleness-conjecture.md)
 - [052 — Tangent-bundle splittings and universal covers](052-tangent-bundle-splittings-and-universal-covers.md)
-- [159 — Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds](159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md)
+- [053 — A counterexample to Pixton's original completeness conjecture](053-a-counterexample-to-pixtons-original-completeness-conjecture.md)
+- [054 — Counterexamples to Kuznetsov's rationality conjecture](054-counterexamples-to-kuznetsovs-rationality-conjecture.md)
+- [055 — Toda's Gepner conjecture and large-volume stability](055-todas-gepner-conjecture-and-large-volume-stability.md)
+- [056 — Termination of fourfold minimal model programs](056-termination-of-fourfold-minimal-model-programs.md)
+- [057 — Campana's abelianity conjecture and special varieties](057-campanas-abelianity-conjecture-and-special-varieties.md)
+- [058 — The Kollár–Pardon universal-cover conjecture](058-kollar-pardon-universal-cover-conjecture.md)
+- [059 — Counterexamples to Zariski's multiplicity conjecture](059-counterexamples-to-zariskis-multiplicity-conjecture.md)
+- [060 — The Global Spherical Shell conjecture](060-global-spherical-shell-conjecture.md)
+- [062 — The LeBrun–Salamon conjecture and projective contact classification](062-lebrun-salamon-conjecture-and-projective-contact-classification.md)
+- [063 — The generalized Mukai conjecture](063-generalized-mukai-conjecture.md)
+- [064 — The $\mu$-constant problem for surface singularities](064-constant-problem-for-surface-singularities.md)
+- [065 — Virasoro constraints for complete intersections and projective bundles](065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md)
+- [066 — Bounded klt complements for Fano contractions](066-bounded-klt-complements-for-fano-contractions.md)
+- [067 — The Campana–Peternell conjecture in dimension six](067-campana-peternell-conjecture-in-dimension-six.md)
+- [068 — Anticanonical nonvanishing under smooth semipositivity](068-anticanonical-nonvanishing-under-smooth-semipositivity.md)
+- [069 — Quantum geometric Langlands at irrational level](069-quantum-geometric-langlands-at-irrational-level.md)
+- [071 — Koebe's circle-domain conjecture and circle-domain rigidity](071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md)
+- [072 — Brennan's conjecture and a counterexample to Kraetzer's prediction](072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md)
+- [073 — The Falconer distance conjecture](073-falconer-distance-conjecture.md)
+- [074 — Kakeya in three and four dimensions](074-kakeya-in-three-and-four-dimensions.md)
+- [075 — The $L\log L$ Fourier-convergence conjecture](075-l-l-fourier-convergence-conjecture.md)
+- [076 — Ultraflat real Littlewood polynomials](076-ultraflat-real-littlewood-polynomials.md)
+- [077 — Fourier restriction for positively curved surfaces](077-fourier-restriction-for-positively-curved-surfaces.md)
+- [078 — The three-dimensional Bochner–Riesz conjecture](078-three-dimensional-bochner-riesz-conjecture.md)
+- [079 — Local smoothing for the Euclidean wave equation](079-local-smoothing-for-the-euclidean-wave-equation.md)
+- [080 — The Sobolev endpoint in Carleson's Schrödinger convergence problem](080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md)
+- [081 — The David–Semmes Riesz-transform problem in higher codimension](081-david-semmes-riesz-transform-problem-in-higher-codimension.md)
+- [082 — Maximal and variational bounds for the triangular Hilbert transform](082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md)
+- [083 — Stein's conjecture for Hilbert transforms along Lipschitz directions](083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md)
+- [084 — The geometric case of the Erdős similarity conjecture](084-geometric-case-of-the-erdos-similarity-conjecture.md)
+- [085 — Endpoint regularity of the planar centered maximal function](085-endpoint-regularity-of-the-planar-centered-maximal-function.md)
+- [086 — An $L^3$ bound for the trilinear Hilbert transform](086-an-l-3-bound-for-the-trilinear-hilbert-transform.md)
 - [087 — The Mahler conjectures and symplectic width](087-mahler-conjectures-and-symplectic-width.md)
 - [088 — Petty's projection-volume conjecture and simplex counterexamples](088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md)
 - [089 — Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs](089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md)
-- [098 — A negative answer to the Lang--Plaut problem](098-a-negative-answer-to-the-lang-plaut-problem.md)
+- [090 — Universal optimality of the triangular lattice](090-universal-optimality-of-the-triangular-lattice.md)
+- [091 — The logarithmic Brunn–Minkowski conjecture](091-logarithmic-brunn-minkowski-conjecture.md)
+- [092 — The optimal order of convex-body covering density](092-optimal-order-of-convex-body-covering-density.md)
+- [093 — Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures](093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md)
+- [094 — Subpolynomial dimension reduction in $L_p$](094-subpolynomial-dimension-reduction-in-l-p.md)
+- [095 — Hyperbolicity cones without semidefinite lifts](095-hyperbolicity-cones-without-semidefinite-lifts.md)
+- [096 — The Gaussian propeller conjecture](096-gaussian-propeller-conjecture.md)
+- [097 — The Euclidean Steinitz–Bergström conjecture](097-euclidean-steinitz-bergstrom-conjecture.md)
+- [098 — A negative answer to the Lang–Plaut problem](098-a-negative-answer-to-the-lang-plaut-problem.md)
+- [099 — The sharp distortion of edit distance into $\ell_1$](099-sharp-distortion-of-edit-distance-into-1.md)
+- [100 — A counterexample to Bang's cylinder-covering bound](100-a-counterexample-to-bangs-cylinder-covering-bound.md)
 - [101 — The sharp simplex conjecture for isotropic constants](101-sharp-simplex-conjecture-for-isotropic-constants.md)
+- [102 — The Unique Games Conjecture and optimal approximation thresholds](102-unique-games-conjecture-and-optimal-approximation-thresholds.md)
+- [103 — Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$](103-derandomization-of-logarithmic-space-l-rl-bpl.md)
+- [104 — Quasipolynomial algorithms for mean-payoff, stochastic and parity games](104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md)
+- [105 — The 2-to-1 Games Conjecture with perfect completeness](105-2-to-1-games-conjecture-with-perfect-completeness.md)
+- [106 — Hardness of coloring three-colorable graphs](106-hardness-of-coloring-three-colorable-graphs.md)
+- [107 — Matrix multiplication with exponent at most $9/4$](107-matrix-multiplication-with-exponent-at-most-9-4.md)
+- [108 — A cubic permanent–determinant lower bound](108-a-cubic-permanent-determinant-lower-bound.md)
+- [109 — Integer multiplication below $n\log n$](109-integer-multiplication-below-n-n.md)
+- [110 — Optimal-order randomized $k$-server on arbitrary metrics](110-optimal-order-randomized-k-server-on-arbitrary-metrics.md)
+- [111 — One-sample matroid prophet inequalities against an almighty adversary](111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md)
+- [112 — Beyond the square-root exponent for depth-three circuits](112-beyond-the-square-root-exponent-for-depth-three-circuits.md)
+- [113 — Approximate counting and the perfect-matching entropy conjecture](113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md)
+- [114 — Approximate counting of common integer polymatroid bases](114-approximate-counting-of-common-integer-polymatroid-bases.md)
+- [115 — Sampling and counting contingency tables with arbitrary margins](115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md)
+- [116 — Uniform identity testing for noncommutative formulas](116-uniform-identity-testing-for-noncommutative-formulas.md)
+- [117 — Uniform sparsest cut: hardness and semidefinite gaps](117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md)
+- [118 — Unbounded bin-packing gaps and the modified integer round-up conjecture](118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md)
+- [119 — The Courtade–Kumar and Hellinger conjectures](119-courtade-kumar-and-hellinger-conjectures.md)
+- [120 — Almost-linear-time exact matching in general graphs](120-almost-linear-time-exact-matching-in-general-graphs.md)
+- [121 — Almost-linear expected-time approximation of edit distance](121-almost-linear-expected-time-approximation-of-edit-distance.md)
+- [122 — Superpolynomial lower bounds and quasipolynomial reconstruction from deletion traces](122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md)
+- [124 — Polynomial-time scheduling on three identical machines](124-polynomial-time-scheduling-on-three-identical-machines.md)
+- [125 — The approximation threshold for metric $k$-median](125-approximation-threshold-for-metric-k-median.md)
+- [126 — Exponential semidefinite complexity of perfect matching](126-exponential-semidefinite-complexity-of-perfect-matching.md)
+- [127 — The asymptotic Gotsman–Linial conjecture](127-asymptotic-gotsman-linial-conjecture.md)
+- [128 — A factor-two approximation for shortest common superstring](128-a-factor-two-approximation-for-shortest-common-superstring.md)
+- [129 — Exponential state costs for two-way automata](129-exponential-state-costs-for-two-way-automata.md)
+- [130 — Fourier transforms below $n\log n$](130-fourier-transforms-below-n-n.md)
+- [131 — Polynomial mixing of graph switches with prescribed degrees](131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md)
+- [132 — A counterexample to the quadratic sensitivity conjecture](132-a-counterexample-to-the-quadratic-sensitivity-conjecture.md)
+- [133 — The complexity of Weisfeiler–Leman refinement](133-complexity-of-weisfeiler-leman-refinement.md)
+- [134 — Generalized star height at most three](134-generalized-star-height-at-most-three.md)
+- [135 — Sharp homogeneous depth-five complexity of matrix products](135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md)
+- [136 — The quasilinear PCP-for-PPAD conjecture](136-quasilinear-pcp-for-ppad-conjecture.md)
+- [137 — One-tape time simulation in two-fifths-power space](137-one-tape-time-simulation-in-two-fifths-power-space.md)
+- [138 — Subset Sum in $O(2^{0.49n})$ time](138-subset-sum-in-o-2-0-49n-time.md)
+- [139 — Subpolynomial queries for log-concave sampling](139-subpolynomial-queries-for-log-concave-sampling.md)
+- [140 — Memory–sample lower bounds for noiseless Gaussian regression](140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md)
+- [141 — The existential theory of the reals and existential–universal sentences in the counting hierarchy](141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md)
+- [142 — Deterministic polynomial factorization over prime fields](142-deterministic-polynomial-factorization-over-prime-fields.md)
+- [143 — Uniform limit-cycle bounds in Hilbert's sixteenth problem](143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md)
+- [144 — Banach's simple Lebesgue-spectrum problem](144-banachs-simple-lebesgue-spectrum-problem.md)
+- [145 — Rokhlin's multiple-mixing problem](145-rokhlins-multiple-mixing-problem.md)
+- [146 — Sinai's positive-entropy conjecture for the standard map](146-sinais-positive-entropy-conjecture-for-the-standard-map.md)
+- [147 — The near-boundary Birkhoff conjecture](147-near-boundary-birkhoff-conjecture.md)
+- [148 — The dimension formula for self-similar measures on the line](148-dimension-formula-for-self-similar-measures-on-the-line.md)
+- [149 — Permanence for weakly reversible reaction networks](149-permanence-for-weakly-reversible-reaction-networks.md)
+- [150 — Weak mixing of irrational triangular billiards](150-weak-mixing-of-irrational-triangular-billiards.md)
+- [151 — A $C^1$ counterexample to Shub’s entropy conjecture](151-a-c-1-counterexample-to-shubs-entropy-conjecture.md)
+- [152 — Zero entropy does not guarantee a smooth positive-volume model](152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md)
+- [153 — Arithmetic classification of Bernoulli convolutions](153-arithmetic-classification-of-bernoulli-convolutions.md)
+- [154 — Pointwise multiple ergodic averages for mixing transformations](154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md)
+- [155 — A counterexample to periodic tiling in dimension three](155-a-counterexample-to-periodic-tiling-in-dimension-three.md)
+- [156 — Borsuk's conjecture fails in dimension nine](156-borsuks-conjecture-fails-in-dimension-nine.md)
+- [157 — Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures](157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md)
+- [158 — The Euclidean plane cannot be colored with five colors](158-euclidean-plane-cannot-be-colored-with-five-colors.md)
+- [159 — Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds](159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md)
+- [160 — Superexponential van der Waerden numbers](160-superexponential-van-der-waerden-numbers.md)
+- [161 — Counterexamples to Sidorenko's conjecture and the forcing conjecture](161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md)
+- [162 — Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures](162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md)
+- [164 — Hindman's finite sums and products conjecture](164-hindmans-finite-sums-and-products-conjecture.md)
+- [165 — Exact crossing numbers of complete and complete bipartite graphs](165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md)
+- [166 — The higher-dimensional Erdős distinct-distances conjecture](166-higher-dimensional-erdos-distinct-distances-conjecture.md)
+- [167 — Pinned distances and a power saving for planar unit distances](167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md)
+- [168 — Combinatorial invariance of Kazhdan–Lusztig polynomials](168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md)
+- [169 — The Shareshian–Wachs $e$-positivity conjecture](169-shareshian-wachs-e-positivity-conjecture.md)
+- [170 — Sharp logarithmic exponents for off-diagonal Ramsey numbers](170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md)
+- [171 — The hypercube Ramsey conjecture](171-hypercube-ramsey-conjecture.md)
+- [172 — Classification of finite Euclidean Ramsey configurations](172-classification-of-finite-euclidean-ramsey-configurations.md)
+- [173 — Seymour's second-neighborhood conjecture](173-seymours-second-neighborhood-conjecture.md)
+- [174 — Deterministic construction of strong thin spanning trees](174-deterministic-construction-of-strong-thin-spanning-trees.md)
+- [175 — Talagrand's conjectures and graph decompositions at expectation thresholds](175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md)
+- [176 — The second Kahn–Kalai conjecture](176-second-kahn-kalai-conjecture.md)
+- [193 — Serre's intersection-multiplicity conjecture](193-serres-intersection-multiplicity-conjecture.md)
+- [195 — A counterexample to the small Cohen–Macaulay module conjecture](195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md)
+- [196 — A counterexample to Kaplansky's zero-divisor conjecture](196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
+- [197 — Nonsofic groups and group-ring counterexamples](197-nonsofic-groups-and-group-ring-counterexamples.md)
+- [198 — A counterexample to the little finitistic-dimension conjecture](198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md)
+- [199 — Counterexamples to conjectures of Auslander–Reiten, Tachikawa, and Nakayama](199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
+- [200 — Eisenbud–Green–Harris and lex-plus-powers in characteristic zero](200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md)
+- [201 — A counterexample to Kurosh's division-ring problem](201-a-counterexample-to-kuroshs-division-ring-problem.md)
+- [202 — The blockwise Alperin weight conjecture](202-blockwise-alperin-weight-conjecture.md)
+- [203 — Donovan's conjecture over fields and discrete valuation rings](203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md)
+- [204 — Tensor saturation for even spin groups](204-tensor-saturation-for-even-spin-groups.md)
+- [208 — The finite Benson–Etingof–Ostrik conjecture](208-finite-benson-etingof-ostrik-conjecture.md)
+- [209 — Integral counterexamples to Gersten’s conjecture](209-integral-counterexamples-to-gerstens-conjecture.md)
+- [221 — The Mézard–Parisi formula for diluted spin glasses](221-mezard-parisi-formula-for-diluted-spin-glasses.md)
+- [226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane](226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
+- [243 — Choiceless counting does not capture polynomial time](243-choiceless-counting-does-not-capture-polynomial-time.md)
+- [244 — The partition principle does not imply choice](244-partition-principle-does-not-imply-choice.md)
+- [254 — Classifying spaces and geometric obstructions for Artin groups](254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md)
+- [258 — Gersten's conjecture for one-relator groups](258-gerstens-conjecture-for-one-relator-groups.md)
+- [259 — A group without fixed price](259-a-group-without-fixed-price.md)
+- [268 — The spin-one Haldane gap](268-spin-one-haldane-gap.md)
+- [270 — Threshold and positive-energy bound states of the BFSS model](270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md)
+- [271 — Bloch's law and spontaneous ferromagnetic order](271-blochs-law-and-spontaneous-ferromagnetic-order.md)
+- [274 — Moore's parity conjecture for $\mathrm{QAC}^0$](274-moores-parity-conjecture-for-qac-0.md)
+- [284 — The optimal randomized–quantum query exponent](284-optimal-randomized-quantum-query-exponent.md)
+- [285 — Counterexamples to Baum–Connes and Kadison–Kaplansky](285-counterexamples-to-baum-connes-and-kadison-kaplansky.md)
+- [287 — All nonabelian free group factors are isomorphic](287-all-nonabelian-free-group-factors-are-isomorphic.md)
+- [300 — The Popa–Vaes quadratic strong-operator paving conjecture](300-popa-vaes-quadratic-strong-operator-paving-conjecture.md)
+- [304 — The Hilbert–Smith conjecture in every dimension](304-hilbert-smith-conjecture-in-every-dimension.md)
+- [305 — Counterexamples to disk embedding and Wall's manifold conjecture](305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md)
+- [306 — The purely cosmetic surgery conjecture for knots in $S^3$](306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md)
+- [309 — The Kervaire invariant problem at the prime three](309-kervaire-invariant-problem-at-the-prime-three.md)
+- [310 — Quillen's conjecture in rational homology](310-quillens-conjecture-in-rational-homology.md)
+- [311 — Chai's invariant-ideal conjecture](311-chais-invariant-ideal-conjecture.md)
+- [313 — Finite generation for the $K(n)$-local sphere](313-finite-generation-for-the-k-n-local-sphere.md)
+- [315 — The four-dimensional Singer conjecture](315-four-dimensional-singer-conjecture.md)
+- [316 — Curtis’s conjecture](316-curtiss-conjecture.md)
+- [319 — Counterexamples to the Hahn–Wilson conjecture at height two](319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md)
+- [320 — A four-dimensional counterexample to Borel rigidity](320-a-four-dimensional-counterexample-to-borel-rigidity.md)
+- [321 — A counterexample to Wall's finite D(2) conjecture](321-a-counterexample-to-walls-finite-d-2-conjecture.md)
+- [324 — Lipschitz equivalence without linear isomorphism](324-lipschitz-equivalence-without-linear-isomorphism.md)
+- [325 — The complete Crouzeix conjecture](325-complete-crouzeix-conjecture.md)
+- [331 — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming](331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md)
+- [332 — Metric Markov cotype two for $\ell_1$](332-metric-markov-cotype-two-for-1.md)
 - [334 — A smooth surface metric with no local immersion in $\mathbb R^3$](334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
+- [335 — Gromov's integral scalar-curvature inequality](335-gromovs-integral-scalar-curvature-inequality.md)
+- [338 — Yau's uniformization conjecture](338-yaus-uniformization-conjecture.md)
+- [339 — Katok's entropy rigidity conjecture](339-katoks-entropy-rigidity-conjecture.md)
+- [340 — A counterexample to the nearby Lagrangian conjecture](340-a-counterexample-to-the-nearby-lagrangian-conjecture.md)
+- [341 — Donaldson's hypersymplectic deformation conjecture](341-donaldsons-hypersymplectic-deformation-conjecture.md)
 - [342 — Donaldson's tamed-to-compatible conjecture](342-donaldsons-tamed-to-compatible-conjecture.md)
 - [344 — The metric Blaschke conjecture](344-metric-blaschke-conjecture.md)
 - [345 — Infinitely many closed geodesics on spheres and three-manifolds](345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md)
 - [346 — Sharp singular-set bounds for stationary integral varifolds](346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md)
 - [347 — Counterexamples to strong forms of Arnold's fixed-point conjecture](347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md)
 - [348 — Nonnegatively curved Einstein four-manifolds and a topological gap](348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md)
-- [349 — The Solomon--Yau least-volume conjecture](349-solomon-yau-least-volume-conjecture.md)
+- [349 — The Solomon–Yau least-volume conjecture](349-solomon-yau-least-volume-conjecture.md)
 - [351 — Scalar curvature detects four-dimensional Ricci-flow singularities](351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md)
 - [352 — Finite-time singularity of Calabi flow](352-finite-time-singularity-of-calabi-flow.md)
-- [147 — The near-boundary Birkhoff conjecture](147-near-boundary-birkhoff-conjecture.md)
-- [324 — Lipschitz equivalence without linear isomorphism](324-lipschitz-equivalence-without-linear-isomorphism.md)
-- [325 — The complete Crouzeix conjecture](325-complete-crouzeix-conjecture.md)
-- [331 — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming](331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md)
-- [332 — Metric Markov cotype two for $\ell_1$](332-metric-markov-cotype-two-for-1.md)
-- [254 — Classifying spaces and geometric obstructions for Artin groups](254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md)
-- [258 — Gersten's conjecture for one-relator groups](258-gerstens-conjecture-for-one-relator-groups.md)
-- [259 — A group without fixed price](259-a-group-without-fixed-price.md)
-- [243 — Choiceless counting does not capture polynomial time](243-choiceless-counting-does-not-capture-polynomial-time.md)
-- [244 — The partition principle does not imply choice](244-partition-principle-does-not-imply-choice.md)
-- [271 — Bloch's law and spontaneous ferromagnetic order](271-blochs-law-and-spontaneous-ferromagnetic-order.md)
-- [274 — Moore's parity conjecture for $\mathrm{QAC}^0$](274-moores-parity-conjecture-for-qac-0.md)
-- [001 — Milne's rationality conjecture](001-milnes-rationality-conjecture.md)
-- [002 — The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md)
-- [004 — Hilbert's tenth problem over $\mathbb Q$](004-hilberts-tenth-problem-over-q.md)
-- [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md)
-- [007 — Two-point Chowla and the corrected binary Elliott conjecture](007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md)
-- [010 — Fontaine--Mazur modularity at the prime $2$ and $2$-adic pro-modularity](010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md)
-- [011 — The Ford--Konyagin--Luca conjecture on prime predecessors](011-ford-konyagin-luca-conjecture-on-prime-predecessors.md)
-- [014 — Restricted geometric Langlands, generic Ramanujan and Arthur parameters](014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md)
-- [016 — Zilber--Pink in abelian varieties and the Siegel threefold](016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md)
-- [017 — The irrationality exponent of $\pi$ is $2$](017-irrationality-exponent-of-is-2.md)
-- [018 — The Margulis--Platonov conjecture over global fields](018-margulis-platonov-conjecture-over-global-fields.md)
-- [019 — The $p$-adic section conjecture](019-p-adic-section-conjecture.md)
-- [287 — All nonabelian free group factors are isomorphic](287-all-nonabelian-free-group-factors-are-isomorphic.md)
-- [362 — Global smoothness for relativistic Vlasov--Maxwell](362-global-smoothness-for-relativistic-vlasov-maxwell.md)
-- [221 — The Mézard--Parisi formula for diluted spin glasses](221-mezard-parisi-formula-for-diluted-spin-glasses.md)
-- [226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane](226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
-- [072 — Brennan's conjecture and a counterexample to Kraetzer's prediction](072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md)
-- [102 — The Unique Games Conjecture and optimal approximation thresholds](102-unique-games-conjecture-and-optimal-approximation-thresholds.md)
-- [109 — Integer multiplication below $n\log n$](109-integer-multiplication-below-n-n.md)
-- [136 — The quasilinear PCP-for-PPAD conjecture](136-quasilinear-pcp-for-ppad-conjecture.md)
+- [362 — Global smoothness for relativistic Vlasov–Maxwell](362-global-smoothness-for-relativistic-vlasov-maxwell.md)
+- [366 — The planar Mumford–Shah regularity conjecture](366-planar-mumford-shah-regularity-conjecture.md)
+- [368 — The three-dimensional Ball–Evans approximation problem](368-three-dimensional-ball-evans-approximation-problem.md)
+- [375 — De Giorgi's conjecture in dimension eight](375-de-giorgis-conjecture-in-dimension-eight.md)
+- [378 — Disproof of the Exponential Time Hypothesis](378-disproof-of-the-exponential-time-hypothesis.md)
 
 ## The checker
 
@@ -109,9 +265,7 @@ python3 notes/scripts/verify_summaries.py
 It resolves every `[Sn:line]` marker against the shipped file, checks every quotation against the
 lines it cites, counts a Sources-table `File` cell that resolves under both roots as a problem, and
 writes nothing. Its self-tests are in `notes/scripts/tests/test_summaries.py`, run by
-`python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`: a real quotation
-corrupted in each form the page uses, one fabricated quotation, a manuscript root retargeted to a
-superseded sibling, and a bare locator citation moved above the family's own block.
+`python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`.
 
 Three more tools read the pages: `check_summary_manuscripts.py` reports which manuscripts each page
 reads and whether the release still names them, `locate_summary_quotes.py` (takes a page path)
@@ -124,18 +278,11 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **312 families have no summary page.** The 60 pages cover 60 of 372 families; the rest are recorded
+- **138 families have no summary page.** The 235 pages cover 235 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
-- **The 440 checker problems are owned downstream, not in the 60 rendered pages.** The 210
-  unresolved links clear when the summary-page slug is canonicalized to the index slug; the 230
-  not-verbatim spans clear when the quote pass collapses and the normalizer's rendered output is
-  checked against the source it renders. The renderer produces all 60 pages byte-identical
-  (`build_summaries.py --check-only` reads 0 problems), so neither class is a defect in the render.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
   verified results. Zero `sorry` in a formalized file is not a comparator pass, and it does not mean the
   library elaborates.
 - **No page was checked by running Lean.** Nothing in this repo builds, and a Lean run would prove the
   formalized statement, not the manuscript's theorem.
-- **The cost model is the reading pass, measured as bytes cited.** It is not a build cost, and it is
-  not a per-family estimate of the time a reader spends.

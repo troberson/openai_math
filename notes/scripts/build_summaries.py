@@ -659,6 +659,106 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     return page_text, slug
 
 
+def _ledger_sums() -> dict[str, int]:
+    """Column sums over notes/gen/tables/catalog.tsv."""
+    import csv
+    p = REPO / "notes" / "gen" / "tables" / "catalog.tsv"
+    sums = {"fams": 0, "paps": 0, "paps_form": 0, "scope_notes": 0,
+            "chal": 0, "mainres": 0, "mainres_fams": 0}
+    with open(p, encoding="utf-8") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            sums["fams"] += 1
+            sums["paps"] += int(row["paps"])
+            sums["paps_form"] += int(row["paps_form"])
+            if int(row["scope_note"]) > 0:
+                sums["scope_notes"] += 1
+            sums["chal"] += int(row["chal"])
+            sums["mainres"] += int(row["mainres"])
+            if int(row["mainres"]) > 0:
+                sums["mainres_fams"] += 1
+    return sums
+
+
+def generate_readme(fams: dict[str, dict], page_slugs: dict[str, str]) -> str:
+    """Render the summaries index README from the ledger and the page set.
+
+    ``fams`` is the full family dict from ``parse_overview()`` (the denominator).
+    ``page_slugs`` maps fam → slug for pages this build rendered (the numerator).
+    Every figure is measured at build time; the page list is ordered by family number.
+    """
+    s = _ledger_sums()
+    n_pages = len(page_slugs)
+    n_fams = s["fams"]
+
+    # Ordered page list.
+    page_rows = []
+    for fam in sorted(page_slugs, key=int):
+        slug = page_slugs[fam]
+        title = CTEXT.fold_dashes(fams[fam]["title"])
+        fname = f"{fam}-{slug}.md"
+        page_rows.append(f"- [{fam} — {title}]({fname})")
+    page_list = "\n".join(page_rows)
+
+    n_missing = n_fams - n_pages
+
+    text = f"""# Family summary pages
+
+{n_pages} extended summaries, one per family, each built from the manuscript's own LaTeX and
+verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
+file and the page skeleton; the checker measures the rendered bytes and writes nothing.
+
+## Coverage, as four layers
+
+The release's own formalization surface is four separate counts, and one percentage over them says
+nothing. The numbers are the ledger's, quoted with the rule that yields each:
+
+| Layer | Count | What the count is |
+| --- | --- | --- |
+| Formalized manuscripts | **{s['paps_form']}** of **{s['paps']}** listed manuscript directories | The per-manuscript formalized flag, counting only listed manuscripts. |
+| Scope notes | **{s['scope_notes']}** of **{n_fams}** families | `lean/docs/NNN.md`, each with a `## Scope` section. |
+| Comparator challenges | **{s['chal']}** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
+| `main_results` entries | **{s['mainres']}** entries over reaching **{s['mainres_fams']}** of {n_fams} families | `lean/formalization.yaml`'s `main_results:` list. |
+
+The summaries are a fifth layer: **{n_pages}** of **{n_fams}** families have a page.
+
+## The pages
+
+{page_list}
+
+## The checker
+
+```
+python3 notes/scripts/verify_summaries.py
+```
+
+It resolves every `[Sn:line]` marker against the shipped file, checks every quotation against the
+lines it cites, counts a Sources-table `File` cell that resolves under both roots as a problem, and
+writes nothing. Its self-tests are in `notes/scripts/tests/test_summaries.py`, run by
+`python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`.
+
+Three more tools read the pages: `check_summary_manuscripts.py` reports which manuscripts each page
+reads and whether the release still names them, `locate_summary_quotes.py` (takes a page path)
+reports where a quotation's text actually sits when the checker flags a miss, and
+`read_manuscript.py` takes a `preprints/` directory name and prints the abstract, the section
+skeleton and the titled statement environments with anchors. All three write nothing.
+
+This page is link-only: it names no manuscript directory and cites no family-keyed file, so the
+checker's manuscript-directory pass and its family-citation pass skip it. Its links are checked.
+
+## Not checked
+
+- **{n_missing} families have no summary page.** The {n_pages} pages cover {n_pages} of {n_fams} families; the rest are recorded
+  in the ledger and the index, not summarized.
+- **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
+  state partial progress, the agent method, and an unchecked review — those are the release's claims, not
+  verified results. Zero `sorry` in a formalized file is not a comparator pass, and it does not mean the
+  library elaborates.
+- **No page was checked by running Lean.** Nothing in this repo builds, and a Lean run would prove the
+  formalized statement, not the manuscript's theorem.
+"""
+    return text
+
+
 def main() -> int:
     check_only = "--check-only" in sys.argv
 
@@ -674,6 +774,7 @@ def main() -> int:
     problems = 0
     pages_written = 0
     written: set[pathlib.Path] = set()
+    page_slugs: dict[str, str] = {}
     for df in data_files:
         fam = df.stem  # e.g. "195"
         if fam not in fams:
@@ -701,6 +802,7 @@ def main() -> int:
         if not check_only:
             st.stage(out, page_text)
         written.add(out)
+        page_slugs[fam] = slug
         pages_written += 1
         # Quick sanity: count unresolved tokens.
         unresolved = len(re.findall(r"\{\{\d+\}\}", page_text))
@@ -708,14 +810,13 @@ def main() -> int:
             print(f"  {fam}: {unresolved} UNRESOLVED TOKENS")
             problems += 1
 
-    # The artifact tree is notes/gen/summaries/, which also carries the index README. It is not a
-    # family page, so the renderer passes it through unchanged: a cache entry for it must exist
-    # (verify_cache_promotion.py Pass C) and its bytes must equal the tracked bytes.
+    # The artifact tree is notes/gen/summaries/, which also carries the index README.
+    # It is generated from the ledger and the rendered page set, ordered by family number.
     readme = SUMM_DIR / "README.md"
-    if readme.is_file():
-        if not check_only:
-            st.stage(readme, readme.read_text(encoding="utf-8"))
-        written.add(readme)
+    readme_text = generate_readme(fams, page_slugs)
+    if not check_only:
+        st.stage(readme, readme_text)
+    written.add(readme)
 
     if not check_only:
         st.promote()

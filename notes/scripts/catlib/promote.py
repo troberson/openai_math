@@ -337,10 +337,13 @@ L1: dict[str, tuple[str, ...]] = {
     # The summary renderer reads the data files, the skeleton, and README.md (through
     # build_catalog's trace attribution). The quote spans come from the data file's quotes block,
     # not from quotes.tsv, so the renderer is a root: it reads only hand-maintained data. The
-    # manuscript store reads preprints/ (inside a hashed tree), so no L1 entry for it.
+    # manuscript store reads preprints/ (inside a hashed tree), so no L1 entry for it. The index
+    # README is generated from the ledger (catalog.tsv), which is not in a hashed tree, so it is
+    # named here.
     # Probe record pending: the writer is new and the audit-hook probe has not been re-run over it.
     "build_summaries.py": ("README.md", "notes/data/summaries/",
-                           "notes/templates/summaries/summary.md.j2"),
+                           "notes/templates/summaries/summary.md.j2",
+                           "notes/gen/tables/catalog.tsv"),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
