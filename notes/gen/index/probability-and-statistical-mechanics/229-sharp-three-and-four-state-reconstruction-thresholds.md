@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [condensed-matter](../topics/condensed-matter.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [229-sharp-three-and-four-state-reconstruction-thresholds.md](../../../../notes/gen/summaries/229-sharp-three-and-four-state-reconstruction-thresholds.md) |
 
 ## Manuscripts
 
