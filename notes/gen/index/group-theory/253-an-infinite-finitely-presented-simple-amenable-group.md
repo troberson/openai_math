@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [253-an-infinite-finitely-presented-simple-amenable-group.md](../../../../notes/gen/summaries/253-an-infinite-finitely-presented-simple-amenable-group.md) |
 
 ## Manuscripts
 

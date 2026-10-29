@@ -1,6 +1,6 @@
 # Family summary pages
 
-294 extended summaries, one per family, each built from the manuscript's own LaTeX and
+295 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **294** of **373** families have a page.
+The summaries are a fifth layer: **295** of **373** families have a page.
 
 ## The pages
 
@@ -267,6 +267,7 @@ The summaries are a fifth layer: **294** of **373** families have a page.
 - [250](250-boone-higman-conjecture-and-higher-finiteness.md) — The Boone–Higman conjecture and higher finiteness
 - [251](251-amenability-unitarizability-and-ulam-stability.md) — Amenability, unitarizability, and Ulam stability
 - [252](252-a-non-residually-finite-torsion-free-hyperbolic-group.md) — A non-residually-finite torsion-free hyperbolic group
+- [253](253-an-infinite-finitely-presented-simple-amenable-group.md) — An infinite finitely presented simple amenable group
 - [254](254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) — Classifying spaces and geometric obstructions for Artin groups
 - [258](258-gerstens-conjecture-for-one-relator-groups.md) — Gersten's conjecture for one-relator groups
 - [259](259-a-group-without-fixed-price.md) — A group without fixed price
@@ -337,7 +338,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **79 families have no summary page.** The 294 pages cover 294 of 373 families; the rest are recorded
+- **78 families have no summary page.** The 295 pages cover 295 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
