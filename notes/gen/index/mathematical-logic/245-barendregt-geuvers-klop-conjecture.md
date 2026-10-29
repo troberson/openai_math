@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [logic](../topics/logic.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [245-barendregt-geuvers-klop-conjecture.md](../../../../notes/gen/summaries/245-barendregt-geuvers-klop-conjecture.md) |
 
 ## Manuscripts
 

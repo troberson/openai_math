@@ -1,0 +1,564 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical logic](../index/disciplines/mathematical-logic.md) / [Family 245](../index/mathematical-logic/245-barendregt-geuvers-klop-conjecture.md)
+
+# 245 — The $\beta$-Barendregt–Geuvers–Klop conjecture
+
+[Index page](../index/mathematical-logic/245-barendregt-geuvers-klop-conjecture.md)
+
+## Original CONTENTS.md summary
+
+[S1:6087] (family entry):
+
+> **245. Weak and strong normalization in pure type systems.** Proves that every weakly $`eta`$-normalizing pure type system is strongly $`eta`$-normalizing. Both normalization properties quantify over all closed and all open well-typed expressions, and the conversion rule acts inside annotations. No functionality assumption is imposed, resolving the $`eta`$-Barendregt–Geuvers–Klop conjecture. ([Lean](../../../lean/docs/245.md))
+
+[S2:577] carries the `\resultentry`, so the release blurb and the overview agree. The single manuscript:
+
+**Weak and strong normalization in pure type systems** [S3:25, S3:27]:
+
+> 1
+
+## Undergraduate summary
+
+A **pure type system** (PTS) is a very general framework for
+type theory: you specify a set of **types** (called *types*
+or *sorts*), a set of **variables** (called *terms*), and
+rules for forming **well-typed expressions**. A
+**normalization** property says that every expression can
+be **reduced** (simplified by rewriting rules) to a
+**normal form** (an expression that cannot be reduced
+further). **Weak normalization** says every *closed*
+expression (one with no free variables) normalizes.
+**Strong normalization** says every expression, including
+those with free variables, normalizes. The result proves
+that for PTS, weak normalization **implies** strong
+normalization — a result that resolves the
+$`eta`$-Barendregt–Geuvers–Klop conjecture
+[S3:31–35, S2:577].
+
+## Graduate summary
+
+**Strong normalization from weak**
+[S3:31–35, S2:577]. If
+a
+pure
+type
+system
+is
+weakly
+$`eta`$-normalizing
+—
+every
+closed
+well-typed
+term
+has
+a
+$`eta`$-normal
+form
+—
+then
+it
+is
+strongly
+$`eta`$-normalizing
+—
+every
+well-typed
+term,
+with
+or
+without
+free
+variables,
+has
+a
+$`eta`$-normal
+form.
+Both
+properties
+quantify
+over
+all
+legal
+expressions
+in
+all
+valid
+contexts,
+and
+the
+$`eta`$-reduction
+rule
+acts
+inside
+type
+annotations
+as
+well
+as
+inside
+terms.
+**No
+functionality
+hypothesis**
+is
+required:
+the
+implication
+holds
+for
+the
+full
+general
+PTS,
+not
+only
+for
+functional
+subsystem.
+
+## History of the conjecture
+
+The
+**Barendregt–Geuvers–Klop
+conjecture**
+(1990s)
+predicted
+that
+weak
+normalization
+implies
+strong
+normalization
+for
+pure
+type
+systems
+with
+$`eta`$-reduction.
+The
+conjecture
+was
+long
+open:
+the
+implication
+holds
+for
+$`\lambda`$-calculus
+itself
+(by
+the
+standard
+result
+that
+weak
+$`eta`$-normalization
+implies
+strong
+$`eta`$-normalization
+for
+the
+simply-typed
+$`\lambda`$-calculus),
+but
+the
+extension
+to
+the
+full
+PTS
+framework
+—
+with
+dependent
+types,
+multiple
+type-level
+universe,
+and
+reduction
+inside
+annotations
+—
+was
+unresolved.
+The
+result
+[S3:31–35]
+proves
+the
+general
+implication
+without
+a
+functionality
+assumption,
+resolving
+the
+conjecture.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+Pure
+type
+systems,
+$`eta`$-reduction,
+weak
+and
+strong
+normalization,
+and
+the
+Barendregt–Geuvers–Klop
+conjecture
+are
+standard
+in
+type
+theory.
+The
+proof
+of
+the
+implication
+without
+the
+functionality
+hypothesis,
+for
+the
+full
+PTS
+framework
+with
+reduction
+inside
+annotations,
+is
+the
+novel
+contribution.
+I
+cannot
+confirm
+this
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **Strong
+  normalization
+  from
+  weak**
+  [S3:31–35]:
+  every
+  weakly
+  $`eta`$-normalizing
+  pure
+  type
+  system
+  is
+  strongly
+  $`eta`$-normalizing,
+  with
+  no
+  functionality
+  hypothesis
+  and
+  with
+  reduction
+  acting
+  inside
+  type
+  annotations.
+- **The
+  $`eta`$-Barendregt–Geuvers–Klop
+  conjecture
+  resolved**
+  [S3:31–35]:
+  the
+  1990s
+  conjecture
+  that
+  weak
+  normalization
+  implies
+  strong
+  normalization
+  for
+  PTS
+  is
+  proved
+  in
+  the
+  general
+  case.
+
+## Section skeleton
+
+One
+manuscript:
+[S3]
+(title
+[S3:25],
+date
+[S3:27])
+—
+`paper.tex`
+under
+`build/`
+with
+`sections/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S4]
+and
+one
+comparator
+stub
+[S5].
+The
+scope
+note
+[S4:9–11]
+states
+the
+target:
+for
+the
+selected
+PTS,
+weak
+and
+strong
+normalization
+quantify
+over
+all
+closed
+and
+all
+open
+well-typed
+expressions,
+with
+no
+functionality
+assumption
+and
+reduction
+acting
+inside
+annotations.
+The
+formalized
+PTS
+has
+a
+set-level
+universe
+and
+a
+sort-level
+object
+universe.
+The
+excluded
+statements
+are
+the
+remaining
+PTS
+rules
+[S4:11].
+
+There
+is
+**no**
+`main_results`
+entry
+and
+**no**
+OAI
+tree:
+the
+formalization
+is
+a
+comparator
+stub
+only.
+The
+one
+comparator
+stub
+[S5]
+states
+the
+strong-normalization
+target
+and
+ends
+in
+`sorry`.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists,
+lives
+under
+`lean/OAI/`.
+Here
+no
+proved
+copy
+exists.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+proof.
+
+## Coverage
+
+The
+ledger
+row
+`fam=245`
+[S6]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=1`,
+`paps_form=0`,
+`chal=1`,
+`mainres=0`,
+`scope_note=1`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=1`
+is
+the
+coverage
+signature:
+the
+manuscript
+is
+**not**
+named
+as
+a
+formalization
+source,
+and
+there
+is
+no
+`main_results`
+entry
+—
+the
+formalization
+exists
+only
+as
+a
+scope
+note
+and
+a
+comparator
+stub.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+`resolution`,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+the
+$`eta`$-Barendregt–Geuvers–Klop
+conjecture
+with
+"resolving".
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6087] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 245 at [S2:577] |
+| S3 | [`preprints/Weak-and-strong-normalization-in-pure-type-systems-September-25-2026/build/paper.tex`](../../../preprints/Weak-and-strong-normalization-in-pure-type-systems-September-25-2026/build/paper.tex) | 52 | manuscript 1 of 1; title [S3:25], date [S3:27], abstract [S3:31–35] |
+| S4 | [`lean/docs/245.md`](../../../lean/docs/245.md) | 15 | scope note — the formalization's Scope at [S4:9–11] and its one comparator link at [S4:15] |
+| S5 | [`lean/ComparatorChallenges/TypeSystemNormalization.lean`](../../../lean/ComparatorChallenges/TypeSystemNormalization.lean) | 122 | comparator stub — the strong-normalization target with its `sorry` |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=245`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
