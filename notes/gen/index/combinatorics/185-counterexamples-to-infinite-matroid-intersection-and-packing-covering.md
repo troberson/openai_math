@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [logic](../topics/logic.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [game-theory](../topics/game-theory.md) · [matroids](../topics/matroids.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [185-counterexamples-to-infinite-matroid-intersection-and-packing-covering.md](../../../../notes/gen/summaries/185-counterexamples-to-infinite-matroid-intersection-and-packing-covering.md) |
 
 ## Manuscripts
 
