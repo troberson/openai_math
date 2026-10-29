@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, partial |
 | Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md](../../../../notes/gen/summaries/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md) |
 
 ## Manuscripts
 
