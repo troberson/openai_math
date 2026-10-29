@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [measure-theory](../topics/measure-theory.md) · [dynamical-systems](../topics/dynamical-systems.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [148-dimension-formula-for-self-similar-measures-on-the-line.md](../../../../notes/gen/summaries/148-dimension-formula-for-self-similar-measures-on-the-line.md) |
 
 ## Manuscripts
 
