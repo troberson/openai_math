@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [probability](../topics/probability.md) · [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [220-directional-zero-one-laws-and-ballisticity-in-random-environments.md](../../../../notes/gen/summaries/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md) |
 
 ## Manuscripts
 
