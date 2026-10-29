@@ -13,7 +13,7 @@
 | Claim shapes | partial |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) · [spin-glasses](../topics/spin-glasses.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md](../../../../notes/gen/summaries/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) |
 
 ## Manuscripts
 
