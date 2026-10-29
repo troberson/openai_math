@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, uniform |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [155-a-counterexample-to-periodic-tiling-in-dimension-three.md](../../../../notes/gen/summaries/155-a-counterexample-to-periodic-tiling-in-dimension-three.md) |
 
 ## Manuscripts
 
