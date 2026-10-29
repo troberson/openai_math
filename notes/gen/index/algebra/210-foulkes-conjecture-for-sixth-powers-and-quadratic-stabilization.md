@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [representation-theory](../topics/representation-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [210-foulkes-conjecture-for-sixth-powers-and-quadratic-stabilization.md](../../../../notes/gen/summaries/210-foulkes-conjecture-for-sixth-powers-and-quadratic-stabilization.md) |
 
 ## Manuscripts
 
