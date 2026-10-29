@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [graph-theory](../topics/graph-theory.md) · [metric-geometry](../topics/metric-geometry.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [spectral-theory](../topics/spectral-theory.md) · [surfaces](../topics/surfaces.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [quantum-theory](../topics/quantum-theory.md) · [probability](../topics/probability.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [211-geometry-diffusion-and-spectra-of-random-planar-maps.md](../../../../notes/gen/summaries/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) |
 
 ## Manuscripts
 
