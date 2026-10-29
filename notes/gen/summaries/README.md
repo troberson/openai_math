@@ -1,6 +1,6 @@
 # Family summary pages
 
-253 extended summaries, one per family, each built from the manuscript's own LaTeX and
+254 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **253** of **373** families have a page.
+The summaries are a fifth layer: **254** of **373** families have a page.
 
 ## The pages
 
@@ -220,6 +220,7 @@ The summaries are a fifth layer: **253** of **373** families have a page.
 - [203 — Donovan's conjecture over fields and discrete valuation rings](203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md)
 - [204 — Tensor saturation for even spin groups](204-tensor-saturation-for-even-spin-groups.md)
 - [205 — Saxl's conjecture and universal tensor squares](205-saxls-conjecture-and-universal-tensor-squares.md)
+- [206 — Finite lattice representation: counterexamples and undecidability](206-finite-lattice-representation-counterexamples-and-undecidability.md)
 - [208 — The finite Benson–Etingof–Ostrik conjecture](208-finite-benson-etingof-ostrik-conjecture.md)
 - [209 — Integral counterexamples to Gersten’s conjecture](209-integral-counterexamples-to-gerstens-conjecture.md)
 - [221 — The Mézard–Parisi formula for diluted spin glasses](221-mezard-parisi-formula-for-diluted-spin-glasses.md)
@@ -296,7 +297,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **120 families have no summary page.** The 253 pages cover 253 of 373 families; the rest are recorded
+- **119 families have no summary page.** The 254 pages cover 254 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

@@ -1,0 +1,221 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 206](../index/algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md)
+
+# 206 — Finite lattice representation: counterexamples and undecidability
+
+[Index page](../index/algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:4707] and the catalog abstract [S2:495]
+state the family's claim: some finite lattices are not
+congruence lattices of any finite algebra, answering the
+finite lattice representation problem negatively.
+Moreover, no algorithm decides whether a finite lattice
+has such a representation, or whether it is a full
+subgroup interval of a finite group. The family ships
+two manuscripts [S1:4707]:
+
+- Finite congruence lattices: characterization and
+  undecidability [S3:78, S3:80]
+- A negative solution to the finite lattice
+  representation problem [S4:3, S4:5]
+
+The characterization-and-undecidability abstract 
+
+> We give an explicit colored-graph characterization of the finite nonempty lattices
+that occur as full congruence lattices of finite algebras, and prove that
+deciding this representation property is undecidable. In particular, the
+finite lattice representation problem has a negative answer. We also prove
+that recognition of full subgroup intervals in finite groups is undecidable. [S3:83–88]
+
+The negative-solution abstract 
+
+> We give a negative solution to the finite lattice representation problem.
+We prove that there is a finite nonempty lattice that is not the full
+congruence lattice of any finite nonempty algebra of any finite signature. [S4:8–11]
+
+## Undergraduate summary
+
+A **lattice** is a set with a "less than or equal to"
+relationship where every pair has a smallest
+upper bound and a largest lower bound. Think of the
+divisors of a number: 1, 2, 4, 8, 16 form a lattice
+under divisibility. An **algebra** (think: a set with
+operations, like matrices under addition and
+multiplication) has **congruence relations**
+— equivalence relations that respect the
+operations. The collection of all congruences on an
+algebra always forms a lattice. The **finite lattice
+representation problem** asks: which finite lattices
+can be realized this way — as the exact set of
+congruences on some finite algebra? This manuscript
+pair says: **some cannot**. It constructs explicit
+finite lattices that are not the congruence lattice of
+any finite algebra, and proves that deciding
+representability is **undecidable** (no algorithm can
+solve it in general) [S3:83–88, S4:8–11,
+S2:495].
+
+## Graduate summary
+
+**The colored-graph characterization**
+[S3:83–88, S5:9]. A finite nonempty lattice is
+the full congruence lattice of a finite nonempty
+algebra if and only if it admits a finite nonempty
+**colored-graph witness**: a graph on the lattice
+elements whose edge colors encode the required
+congruence relations, satisfying five structural
+conditions (symmetry, bottom-exclusion, triangle
+inequality, separation, and connectedness)
+[S5:9, S6:25, S6:52].
+
+**The undecidability result** [S3:83–88, S2:495].
+There is no algorithm that, given a finite lattice,
+decides whether it is representable as a congruence
+lattice of a finite algebra. Equivalently, the
+representation problem is
+$\Sigma^0_1$-complete. The same undecidability holds
+for recognizing **full subgroup intervals** in finite
+groups.
+
+**The negative solution** [S4:8–11, S2:495].
+There exists a finite nonempty lattice that is not the
+full congruence lattice of any finite nonempty algebra
+of any finite signature. This is a concrete
+counterexample to the representability question.
+
+**The scope of the formalization.** The scope note
+covers only the colored-graph characterization
+[S5:9]: the equivalence between representability and
+the graph-witness criterion. The paper's
+undecidability and subgroup-interval conclusions are
+explicitly excluded [S5:9]. The scope note names one
+comparator [S5:13–15]:
+`FiniteCongruenceGraph.lean`.
+
+## History of the conjecture
+
+The **finite lattice representation problem** asks
+which finite lattices occur as congruence lattices of
+finite algebras. It was posed in the context of
+**universal algebra** and is related to the
+**congruence lattice problem** in group theory.
+Positive results: every finite lattice with at most
+five elements is representable, and all
+**distributive** lattices are representable. The
+negative direction — constructing non-
+representable lattices — was open until this
+release. The **undecidability** result connects to
+**Church–Turing** undecidability in algebra:
+the representation problem encodes a halting-problem
+instance. The **subgroup interval** result extends
+the undecidability to group theory: recognizing when
+a pair of subgroups forms a full interval in the
+subgroup lattice is undecidable
+[S3:83–88, S4:8–11, S2:495].
+
+**Prior (my training data, not this repo).** I know
+the finite lattice representation problem as a named
+open problem in universal algebra, the positive cases
+for small and distributive lattices, and the
+connection to the congruence lattice problem in group
+theory. The **colored-graph characterization**, the
+**undecidability proof**, and the **explicit
+non-representable lattice** are results I cannot
+independently verify from training alone.
+
+## Consequences
+
+**The finite lattice representation problem has a
+negative answer.** Some finite lattices are not
+congruence lattices of any finite algebra
+[S3:83–88, S4:8–11, S2:495].
+
+**Deciding representability is undecidable.** No
+algorithm can decide, for a finite lattice, whether
+it is representable [S3:83–88, S2:495].
+
+**Full subgroup interval recognition is undecidable.**
+The same undecidability extends to the group-theoretic
+setting [S3:83–88, S2:495].
+
+**A colored-graph criterion characterizes the
+representable lattices.** The five structural
+conditions on edge colors give a decidable
+sufficient-and-necessary test for representability
+[S5:9, S6:25, S6:52].
+
+## Section skeleton
+
+Two manuscripts: [S3:83–88] (title [S3:78], date [S3:80])
+— `paper.tex` under `build/` with 18 sections
+under `build/sections/` (`introduction`, `graph`,
+`forward_a`, `forward_b`, `reverse`, `classical`,
+`affine`, `alternating`, `bounded`, `counting`,
+`diophantine`, `marker_setup`, `minimum`, `patterns`,
+`quantitative`, `small`, `weighted`, `weights`) and a
+`refs.bib`; [S4:8–11] (title [S4:3], date [S4:5]) —
+`main.tex` under `build/` with 10 sections under
+`build/sections/` (`introduction`, `framework`,
+`classification`, `growth`, `lifts`, `packets`,
+`rigidity`, `lattices`, `extensions`, `gluing`) and a
+`preamble.tex` with `references.bib`. The family ships
+no `verification/` bundle.
+
+## Comparison with the formalized statement
+
+**Scope note** [S5:9]. The scope note covers only the
+colored-graph characterization: a finite nonempty
+lattice is representable exactly when it admits the
+specified finite nonempty graph witness, whose edge
+colors encode the required congruence relations. The
+paper's undecidability and subgroup-interval
+conclusions are outside the formalized scope
+[S5:9]. The scope note names one comparator
+[S5:13–15]: `FiniteCongruenceGraph.lean`.
+
+**The registration.** The family is at tier T2: the
+ledger row records `mainres 0` and `paps_form 0`.
+`formalization.yaml` carries no `main_results` entry
+for this family. The scope note and comparator exist,
+but no OAI tree was built.
+
+**The comparator stub.** The `FiniteCongruenceGraph.
+lean` comparator defines `Algebra` [S6:10–13],
+`Compatible` [S6:15–17], `Congruence`
+[S6:19–19], `Representable` [S6:25–26],
+`Admissible` [S6:28–30], `Marked`
+[S6:33–37], `Connected` [S6:39],
+`IsGraphWitness` [S6:42–50], and `HasGraphWitness`
+[S6:52–56]. The `theorem graph_criterion`
+[S6:57–58] states the equivalence and carries a
+bare `sorry` body [S6:59]:
+
+```lean
+theorem graph_criterion (Lat : Type) [Fintype Lat] [Lattice Lat] [OrderBot Lat] :
+    Representable Lat ↔ HasGraphWitness Lat := by
+  sorry
+```
+[S6:57–59]
+
+**No OAI tree exists.** There is no directory under
+`lean/OAI/` corresponding to this comparator. The
+formalization stops at the comparator stub: the
+release recorded the target statement in
+`FiniteCongruenceGraph.lean` but shipped no proof
+in the OAI tree.
+
+The release records `scope: "Partial progress."` and
+`review: status: unchecked`. The comparator `sorry`
+stub has no OAI tree answer.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 206 at [S1:4707] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{206} at [S2:495] |
+| S3 | [`preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/paper.tex`](../../../preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/paper.tex) | 122 | manuscript 1 of 2 (characterization and undecidability); title [S3:78], date [S3:80], abstract [S3:83–88] |
+| S4 | [`preprints/A-Negative-Solution-to-the-Finite-Lattice-Representation-Problem-September-24-2026/build/main.tex`](../../../preprints/A-Negative-Solution-to-the-Finite-Lattice-Representation-Problem-September-24-2026/build/main.tex) | 29 | manuscript 2 of 2 (negative solution); title [S4:3], date [S4:5], abstract [S4:8–11] |
+| S5 | [`lean/docs/206.md`](../../../lean/docs/206.md) | 15 | the formalization scope note: the scope paragraph [S5:9] and the comparator table [S5:13–15] |
+| S6 | [`lean/ComparatorChallenges/FiniteCongruenceGraph.lean`](../../../lean/ComparatorChallenges/FiniteCongruenceGraph.lean) | 63 | the comparator: the `Representable` definition [S6:25], the `HasGraphWitness` definition [S6:52], the `theorem graph_criterion` [S6:57–58] and the `sorry` [S6:59] |

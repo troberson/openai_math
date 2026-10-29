@@ -13,7 +13,7 @@
 | Claim shapes | undecidability |
 | Topics | [graph-theory](../topics/graph-theory.md) · [group-theory](../topics/group-theory.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [206-finite-lattice-representation-counterexamples-and-undecidability.md](../../../../notes/gen/summaries/206-finite-lattice-representation-counterexamples-and-undecidability.md) |
 
 ## Manuscripts
 
