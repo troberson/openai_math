@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [representation-theory](../topics/representation-theory.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md](../../../../notes/gen/summaries/168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md) |
 
 ## Manuscripts
 
