@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [condensed-matter](../topics/condensed-matter.md) · [probability](../topics/probability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [236-factor-of-iid-threshold-for-free-ising-states-on-trees.md](../../../../notes/gen/summaries/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md) |
 
 ## Manuscripts
 
