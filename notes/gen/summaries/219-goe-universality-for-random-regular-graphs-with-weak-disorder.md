@@ -1,0 +1,169 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Probability and statistical mechanics](../index/disciplines/probability-and-statistical-mechanics.md) / [Family 219](../index/probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md)
+
+# 219 — GOE universality for random regular graphs with weak disorder
+
+[Index page](../index/probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:5170] and the catalog abstract [S2:523]
+state the family's claim: for every fixed degree $`d\ge3`$, the
+bulk adjacency-eigenvalue point process of a uniform simple random
+$`d`$-regular graph converges to the Gaussian orthogonal ensemble
+law, including for cubic graphs. The same fixed-energy universality
+persists under sufficiently weak fixed iid uniform diagonal
+disorder, throughout compact bands strictly inside the clean
+spectral edges. The family ships two
+manuscripts [S1:5170]:
+
+- *GOE bulk universality for fixed-degree random regular
+  graphs* [S3:59, S3:61]
+- *Fixed-energy universality for weak Anderson disorder on
+  random regular graphs* [S4:37, S4:39]
+
+The GOE bulk-universality abstract 
+
+> We prove the fixed-degree bulk-universality conjecture for random regular graphs. For every fixed integer $`d\ge3`$ and every fixed energy in the open Kesten–McKay bulk, the unfolded eigenvalue point process of the adjacency matrix of a uniform simple labelled $`d`$-regular graph converges to the GOE bulk process. The convergence holds along all admissible graph sizes, without additional conditioning. [S3:65]
+
+The Anderson-disorder abstract 
+
+> For every fixed degree $`d\ge3`$, we prove fixed-energy GOE universality for
+the adjacency matrix of a uniformly random simple labelled $`d`$-regular
+graph with independent uniform diagonal disorder. The disorder strength
+is positive, sufficiently small, and fixed as the graph grows. At each
+fixed energy in a compact subinterval of the clean spectral band, the
+full microscopic eigenvalue point process converges to the GOE bulk
+process after rescaling by the positive density of states of the
+corresponding infinite-tree operator. The permitted disorder strength
+depends on the degree and the distance from the clean spectral edges. [S4:43–51]
+
+## Undergraduate summary
+
+**Random regular graphs** are graphs where every vertex has
+exactly $`d`$ neighbors, chosen uniformly at random from all
+such graphs. The **eigenvalues** of the adjacency matrix
+(which encodes the graph's connections) reveal the
+graph's spectral properties. The **Gaussian orthogonal
+ensemble (GOE)** is a random matrix model whose
+eigenvalue statistics describe the "universal" behavior
+of many quantum and graph systems. The **bulk
+universality conjecture** asks: do the eigenvalues of a
+random regular graph, when looked at on the
+microscopic scale, follow the GOE statistics? The
+answer is **yes** for every fixed degree $`d\ge3`$
+[S3:65, S2:523]. Even more: the universality survives
+**weak diagonal disorder** (random small perturbations of
+the diagonal entries), as long as the disorder is
+sufficiently small [S4:43–51].
+
+## Graduate summary
+
+**GOE bulk universality** [S3:65, S2:523]. For every
+fixed integer $`d\ge3`$ and every fixed energy in the open
+Kesten–McKay bulk, the unfolded eigenvalue point
+process of the adjacency matrix of a uniform simple
+labelled $`d`$-regular graph converges to the GOE bulk
+process. The convergence holds along all admissible
+graph sizes, without additional conditioning.
+
+**Fixed-energy universality under Anderson
+disorder** [S4:43–51, S2:523]. For every fixed
+degree $`d\ge3`$, fixed-energy GOE universality holds for
+the adjacency matrix of a uniformly random simple
+labelled $`d`$-regular graph with independent uniform
+diagonal disorder. The disorder strength is positive,
+sufficiently small, and fixed as the graph grows. At
+each fixed energy in a compact subinterval of the clean
+spectral band, the full microscopic eigenvalue point
+process converges to the GOE bulk process after
+rescaling by the density of states of the
+infinite-tree operator. The permitted disorder
+strength depends on the degree and the distance from
+the clean spectral edges.
+
+**The scope of the formalization.** The family is at
+tier T0: the ledger row records `mainres 0`,
+`paps_form 0`, `scope_note 0`, `chal 0`, and
+`verification 0`. There is no scope note, no
+comparator challenge, no `main_results` entry, and no
+verification bundle. The result is entirely
+unformalized.
+
+## History of the conjecture
+
+**The Kesten–McKay law** (1966, 1973) gives the
+spectral distribution of the adjacency matrix of a
+random $`d`$-regular graph: it converges to the
+arcsine-type density supported on
+$`[-2\sqrt{d-1}, 2\sqrt{d-1}]`$. The **GOE universality
+conjecture** for random regular graphs asks whether
+the microscopic eigenvalue statistics in the bulk
+match those of the Gaussian orthogonal ensemble —
+the same "universality" that governs the eigenvalues
+of random Hermitian matrices. The result for
+$`W`$-random matrices (GUE/GOE universality) was
+established by Erd\H{o}s, Yau, and others. For random
+regular graphs, the problem is technically harder
+because the matrix is exactly $`d`$-regular (not
+independent entries) and the graph is simple. The
+**Anderson disorder** extension asks whether the
+universality survives when the diagonal entries are
+perturbed by small independent random variables —
+a model from disordered quantum mechanics where the
+"clean" system is replaced by a disordered one
+[S3:65, S4:43–51, S2:523].
+
+**Prior (my training data, not this repo).** I know
+the Kesten–McKay law, the GOE/GUE random matrix
+universality, and the general framework of Anderson
+localization. The **GOE universality for random
+regular graphs at every fixed degree $`d\ge3`$** and
+the **Anderson-disorder extension** are results I
+cannot independently verify from training alone.
+
+## Consequences
+
+**The fixed-degree bulk-universality conjecture for
+random regular graphs is resolved**: for every
+$`d\ge3`$, the bulk eigenvalue point process converges
+to the GOE law [S3:65, S2:523].
+
+**The universality persists under weak Anderson
+disorder**: the GOE bulk law survives small iid
+uniform diagonal perturbations, on compact
+sub-bands strictly inside the clean spectral edges
+[S4:43–51, S2:523].
+
+## Section skeleton
+
+Two manuscripts: [S3:65] (title [S3:59], date [S3:61])
+— `main.tex` under `build/` with sections under
+`build/sections/` and a `figures/` directory; [S4:43–51]
+(title [S4:37], date [S4:39]) — `paper.tex`
+under `build/` with sections under `build/sections/`.
+The family ships no `verification/` bundle.
+
+## Comparison with the formalized statement
+
+The family is at tier T0: the ledger row records
+`mainres 0`, `paps_form 0`, `scope_note 0`,
+`chal 0`, and `verification 0`. There is no
+scope note under `lean/docs/`, no comparator
+challenge under `lean/ComparatorChallenges/`, no
+`main_results` entry in `formalization.yaml`,
+and no verification bundle under the manuscript
+directories. The result is **entirely
+unformalized**: the release shipped no Lean
+code, no challenge stub, and no checking
+workflow for this family. The proof rests
+solely on the two manuscripts [S3:65,
+S4:43–51].
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 219 at [S1:5170] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{219} at [S2:523] |
+| S3 | [`preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/build/main.tex`](../../../preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/build/main.tex) | 75 | manuscript 1 of 2 (GOE bulk universality); title [S3:59], date [S3:61], abstract [S3:65] |
+| S4 | [`preprints/Fixed-energy-universality-for-weak-Anderson-disorder-on-random-regular-graphs-October-5-2026/build/paper.tex`](../../../preprints/Fixed-energy-universality-for-weak-Anderson-disorder-on-random-regular-graphs-October-5-2026/build/paper.tex) | 64 | manuscript 2 of 2 (Anderson disorder GOE); title [S4:37], date [S4:39], abstract [S4:43–51] |

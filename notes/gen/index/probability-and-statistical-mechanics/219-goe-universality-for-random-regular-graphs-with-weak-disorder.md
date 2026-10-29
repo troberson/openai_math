@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [conformal-universality](../topics/conformal-universality.md) · [random-graphs](../topics/random-graphs.md) · [random-matrices](../topics/random-matrices.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [219-goe-universality-for-random-regular-graphs-with-weak-disorder.md](../../../../notes/gen/summaries/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md) |
 
 ## Manuscripts
 

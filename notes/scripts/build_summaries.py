@@ -696,7 +696,7 @@ def generate_readme(fams: dict[str, dict], page_slugs: dict[str, str]) -> str:
         slug = page_slugs[fam]
         title = normalizer.normalize_body_math(CTEXT.fold_dashes(fams[fam]["title"]), "")
         fname = f"{fam}-{slug}.md"
-        page_rows.append(f"- [{fam} — {title}]({fname})")
+        page_rows.append(f"- [{fam}]({fname}) — {title}")
     page_list = "\n".join(page_rows)
 
     n_missing = n_fams - n_pages
