@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [conformal-universality](../topics/conformal-universality.md) · [probability](../topics/probability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md](../../../../notes/gen/summaries/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) |
 
 ## Manuscripts
 
