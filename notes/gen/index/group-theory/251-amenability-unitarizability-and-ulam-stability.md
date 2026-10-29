@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [251-amenability-unitarizability-and-ulam-stability.md](../../../../notes/gen/summaries/251-amenability-unitarizability-and-ulam-stability.md) |
 
 ## Manuscripts
 
