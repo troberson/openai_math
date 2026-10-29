@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [logic](../topics/logic.md) · [graph-coloring](../topics/graph-coloring.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [160-superexponential-van-der-waerden-numbers.md](../../../../notes/gen/summaries/160-superexponential-van-der-waerden-numbers.md) |
 
 ## Manuscripts
 
