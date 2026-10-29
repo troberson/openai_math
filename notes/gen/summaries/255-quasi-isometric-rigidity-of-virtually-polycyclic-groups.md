@@ -1,0 +1,713 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Group theory](../index/disciplines/group-theory.md) / [Family 255](../index/group-theory/255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md)
+
+# 255 — Quasi-isometric rigidity of virtually polycyclic groups
+
+[Index page](../index/group-theory/255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md)
+
+## Original CONTENTS.md summary
+
+[S1:6301] (family entry):
+
+> **255. Quasi-isometric recognition of virtually polycyclic groups.** Proves that every finitely generated group quasi-isometric to a finitely generated virtually polycyclic group is virtually polycyclic, resolving the Eskin–Fisher–Whyte lattice-recognition conjecture. Equivalently, a group quasi-isometric to a lattice in a connected simply connected solvable Lie group is virtually a uniform lattice in some such Lie group, possibly a different one. ([Lean](../../../lean/docs/255.md))
+
+[S2:599] carries the `\resultentry`, so the release blurb and the overview agree. The single manuscript:
+
+**Quasi-isometric recognition of virtually polycyclic groups** [S3:45, S3:47]:
+
+> 1
+
+## Undergraduate summary
+
+Two groups are **quasi-isometric** if you can map one onto the
+other so that distances are preserved up to a fixed multiplicative
+stretch and an additive fudge — meaning the groups "look
+the same" at large scale, even if they are not the same group.
+A **polycyclic group** is one built by a finite chain of
+cyclic pieces (a generalization of the integers); a
+**virtually polycyclic** group has a polycyclic subgroup of
+bounded index. The **lattice-recognition conjecture** of
+Eskin, Fisher, and Whyte asked: if a group looks the same at
+large scale as a virtually polycyclic group, must it
+**be** virtually polycyclic? The result proves **yes**
+[S3:51–55, S2:599].
+
+## Graduate summary
+
+**Quasi-isometric recognition of virtually polycyclic groups**
+[S3:51–55, S2:599]. Every
+finitely
+generated
+group
+that
+is
+quasi-isometric
+to
+a
+finitely
+generated
+virtually
+polycyclic
+group
+is
+itself
+virtually
+polycyclic.
+Equivalently,
+a
+group
+quasi-isometric
+to
+a
+lattice
+in
+a
+connected
+simply
+connected
+solvable
+Lie
+group
+is
+virtually
+a
+uniform
+lattice
+in
+some
+connected
+simply
+connected
+solvable
+Lie
+group,
+the
+ambient
+Lie
+group
+in
+the
+conclusion
+possibly
+differing
+from
+the
+one
+in
+the
+hypothesis.
+
+## History of the conjecture
+
+The
+**lattice-recognition
+conjecture**
+(Eskin,
+Fisher,
+and
+Whyte)
+asked
+whether
+the
+virtually-polycyclic
+property
+is
+determined
+by
+the
+large-scale
+geometry
+of
+a
+finitely
+generated
+group.
+Virtually
+nilpotent
+recognition
+had
+previously
+been
+established
+by
+Eskin,
+Fisher,
+and
+Whyte
+themselves;
+the
+polycyclic
+case
+is
+the
+harder
+generalization,
+because
+the
+ambient
+Lie
+group
+need
+not
+be
+nilpotent
+and
+the
+conclusion's
+ambient
+group
+is
+only
+asserted
+to
+exist,
+not
+to
+be
+the
+original
+one.
+The
+result
+[S3:51–55]
+resolves
+the
+conjecture
+and,
+in
+the
+scope
+note's
+second
+claim,
+realizes
+a
+finite-index
+subgroup
+of
+the
+recognized
+group
+as
+a
+uniform
+lattice
+in
+a
+simply
+connected
+solvable
+Lie
+group
+[S4:9–11].
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+Quasi-isometries,
+virtually
+polycyclic
+groups,
+and
+the
+study
+of
+lattice
+recognition
+in
+solvable
+Lie
+groups
+are
+standard
+in
+geometric
+group
+theory.
+The
+resolution
+of
+the
+Eskin–Fisher–Whyte
+lattice-recognition
+conjecture
+in
+the
+polycyclic
+case,
+with
+the
+ambient-group-differing
+formulation,
+is
+the
+novel
+contribution.
+I
+cannot
+confirm
+this
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **The
+  lattice-recognition
+  conjecture
+  resolved**
+  [S3:51–55]:
+  a
+  finitely
+  generated
+  group
+  is
+  virtually
+  polycyclic
+  exactly
+  when
+  it
+  is
+  quasi-isometric
+  to
+  a
+  finitely
+  generated
+  virtually
+  polycyclic
+  group.
+- **The
+  ambient
+  group
+  may
+  differ**
+  [S1:6301, S2:599]:
+  the
+  recognized
+  group
+  is
+  a
+  uniform
+  lattice
+  in
+  a
+  simply
+  connected
+  solvable
+  Lie
+  group,
+  not
+  necessarily
+  the
+  original
+  one.
+
+## Section skeleton
+
+One
+manuscript:
+[S3]
+(title
+[S3:45],
+date
+[S3:47])
+—
+`main.tex`
+under
+`build/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S4]
+and
+one
+comparator
+stub
+[S5],
+but
+no
+`main_results`
+entry
+[S7].
+The
+scope
+note
+[S4:9–11]
+states
+the
+target:
+every
+finitely
+generated
+group
+quasi-isometric
+to
+a
+finitely
+generated
+virtually
+polycyclic
+group
+is
+itself
+virtually
+polycyclic,
+and
+it
+realizes
+a
+finite-index
+subgroup
+of
+the
+recognized
+group
+as
+a
+uniform
+lattice
+in
+a
+simply
+connected
+solvable
+Lie
+group
+that
+may
+differ
+from
+the
+original
+ambient
+group.
+The
+scope
+note
+[S4:11]
+adds
+a
+second
+claim
+the
+formalization
+carries:
+a
+structural
+estimate
+controlling
+the
+height-coordinate
+behavior
+of
+self
+quasi-isometries
+of
+the
+stated
+unimodular
+solvable
+Lie
+models,
+up
+to
+bounded
+error
+and
+one
+of
+finitely
+many
+linear
+height
+symmetries.
+
+The
+comparator
+stub
+[S5]
+states
+three
+targets,
+each
+ending
+in
+`sorry`:
+`group_recognition`
+([S5:209]),
+`main_uniform_bounded_height`
+([S5:219]),
+and
+`lattice_recognition`
+([S5:236]).
+There
+is
+no
+`main_results`
+entry
+naming
+this
+family,
+so
+there
+is
+no
+registered
+proved
+declaration
+[S7].
+There
+**is**,
+however,
+a
+large
+OAI
+tree
+at
+`lean/OAI/GroupTheory/PolycyclicRecognition/`
+[S6]:
+3,090
+`.lean`
+files,
+all
+free
+of
+`sorry`,
+with
+no
+`Main.lean`.
+The
+tree
+exists
+in
+the
+library
+but
+is
+not
+registered
+by
+any
+`main_results`
+entry
+and
+has
+no
+named
+main
+declaration
+—
+it
+is
+an
+unregistered
+support
+tree,
+not
+a
+registered
+proved
+statement.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists
+and
+is
+registered,
+would
+live
+under
+`lean/OAI/`.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+library.
+
+## Coverage
+
+The
+ledger
+row
+`fam=255`
+[S8]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=1`,
+`paps_form=0`,
+`chal=1`,
+`mainres=0`,
+`scope_note=1`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=1`
+is
+the
+coverage
+signature:
+the
+scope
+note
+names
+the
+manuscript,
+but
+no
+`main_results`
+entry
+registers
+a
+proved
+declaration
+for
+this
+family,
+so
+the
+formalization
+stops
+at
+the
+scope
+note
+and
+the
+comparator
+stub.
+The
+unregistered
+OAI
+tree
+[S6]
+—
+3,090
+files,
+zero
+`sorry`,
+no
+`Main.lean`
+—
+is
+library
+material
+the
+release
+did
+not
+promote
+to
+a
+`main_results`
+entry,
+so
+it
+does
+not
+count
+as
+a
+registered
+proved
+result.
+The
+one
+comparator
+stub
+[S5]
+carries
+three
+`sorry`.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+`resolution|uniform`,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+the
+Eskin–Fisher–Whyte
+lattice-recognition
+conjecture
+with
+"resolving".
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6301] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 255 at [S2:599] |
+| S3 | [`preprints/quasi-isometric-recognition-of-virtually-polycyclic-groups-September-24-2026/build/main.tex`](../../../preprints/quasi-isometric-recognition-of-virtually-polycyclic-groups-September-24-2026/build/main.tex) | 73 | manuscript 1 of 1; title [S3:45], date [S3:47], abstract [S3:51–55] |
+| S4 | [`lean/docs/255.md`](../../../lean/docs/255.md) | 17 | scope note — the formalization's Scope at [S4:9–11] and its one comparator link at [S4:17] |
+| S5 | [`lean/ComparatorChallenges/PolycyclicRecognition.lean`](../../../lean/ComparatorChallenges/PolycyclicRecognition.lean) | 249 | comparator stub — the recognition target with its three `sorry` (group recognition at [S5:209], the height uniform bound at [S5:219], lattice recognition at [S5:236]) |
+| S6 | [`lean/OAI/GroupTheory/PolycyclicRecognition/Recognition.lean`](../../../lean/OAI/GroupTheory/PolycyclicRecognition/Recognition.lean) | 100 | a file in the unregistered `lean/OAI/GroupTheory/PolycyclicRecognition/` tree — 3,090 `.lean` files, all free of `sorry`, no `Main.lean` |
+| S7 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | no `main_results` entry names this family — the yaml carries no `PolycyclicRecognition` reference |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=255`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

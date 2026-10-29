@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [metric-geometry](../topics/metric-geometry.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md](../../../../notes/gen/summaries/255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md) |
 
 ## Manuscripts
 
