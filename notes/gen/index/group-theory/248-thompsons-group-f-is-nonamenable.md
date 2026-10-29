@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [248-thompsons-group-f-is-nonamenable.md](../../../../notes/gen/summaries/248-thompsons-group-f-is-nonamenable.md) |
 
 ## Manuscripts
 
