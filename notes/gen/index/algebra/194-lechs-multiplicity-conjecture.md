@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [194-lechs-multiplicity-conjecture.md](../../../../notes/gen/summaries/194-lechs-multiplicity-conjecture.md) |
 
 ## Manuscripts
 
