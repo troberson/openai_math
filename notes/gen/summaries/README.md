@@ -1,6 +1,6 @@
 # Family summary pages
 
-268 extended summaries, one per family, each built from the manuscript's own LaTeX and
+269 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **268** of **373** families have a page.
+The summaries are a fifth layer: **269** of **373** families have a page.
 
 ## The pages
 
@@ -238,6 +238,7 @@ The summaries are a fifth layer: **268** of **373** families have a page.
 - [221](221-mezard-parisi-formula-for-diluted-spin-glasses.md) — The Mézard–Parisi formula for diluted spin glasses
 - [222](222-perceptron-free-energies-and-microscopic-jamming.md) — Perceptron free energies and microscopic jamming
 - [223](223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) — Conformal limits of square-lattice random-cluster interfaces
+- [224](224-critical-and-near-critical-universality-for-voronoi-percolation.md) — Critical and near-critical universality for Voronoi percolation
 - [226](226-double-dimer-cle-4-conjecture-in-the-half-plane.md) — The double-dimer $`\mathrm{CLE}_4`$ conjecture in the half-plane
 - [243](243-choiceless-counting-does-not-capture-polynomial-time.md) — Choiceless counting does not capture polynomial time
 - [244](244-partition-principle-does-not-imply-choice.md) — The partition principle does not imply choice
@@ -311,7 +312,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **105 families have no summary page.** The 268 pages cover 268 of 373 families; the rest are recorded
+- **104 families have no summary page.** The 269 pages cover 269 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
