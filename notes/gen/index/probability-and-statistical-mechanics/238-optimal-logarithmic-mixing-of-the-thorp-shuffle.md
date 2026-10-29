@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [harmonic-analysis](../topics/harmonic-analysis.md) · [symplectic-geometry](../topics/symplectic-geometry.md) · [representation-theory](../topics/representation-theory.md) · [combinatorial-optimization](../topics/combinatorial-optimization.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md](../../../../notes/gen/summaries/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md) |
 
 ## Manuscripts
 

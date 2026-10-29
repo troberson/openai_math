@@ -1,6 +1,6 @@
 # Family summary pages
 
-281 extended summaries, one per family, each built from the manuscript's own LaTeX and
+282 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **281** of **373** families have a page.
+The summaries are a fifth layer: **282** of **373** families have a page.
 
 ## The pages
 
@@ -252,6 +252,7 @@ The summaries are a fifth layer: **281** of **373** families have a page.
 - [235](235-random-sat-thresholds-sharp-variance-and-computability.md) — Random-SAT thresholds, sharp variance and computability
 - [236](236-factor-of-iid-threshold-for-free-ising-states-on-trees.md) — The factor-of-IID threshold for free Ising states on trees
 - [237](237-three-quarter-diameter-exponent-for-honeycomb-walks.md) — The three-quarter diameter exponent for honeycomb walks
+- [238](238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md) — Optimal logarithmic mixing of the Thorp shuffle
 - [243](243-choiceless-counting-does-not-capture-polynomial-time.md) — Choiceless counting does not capture polynomial time
 - [244](244-partition-principle-does-not-imply-choice.md) — The partition principle does not imply choice
 - [254](254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) — Classifying spaces and geometric obstructions for Artin groups
@@ -324,7 +325,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **92 families have no summary page.** The 281 pages cover 281 of 373 families; the rest are recorded
+- **91 families have no summary page.** The 282 pages cover 282 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
