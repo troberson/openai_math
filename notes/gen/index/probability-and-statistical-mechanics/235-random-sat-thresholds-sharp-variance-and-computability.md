@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [computability](../topics/computability.md) · [disordered-systems](../topics/disordered-systems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [235-random-sat-thresholds-sharp-variance-and-computability.md](../../../../notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md) |
 
 ## Manuscripts
 
