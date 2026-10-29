@@ -1,6 +1,6 @@
 # Family summary pages
 
-262 extended summaries, one per family, each built from the manuscript's own LaTeX and
+263 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **262** of **373** families have a page.
+The summaries are a fifth layer: **263** of **373** families have a page.
 
 ## The pages
 
@@ -231,6 +231,7 @@ The summaries are a fifth layer: **262** of **373** families have a page.
 - [214 — The Benjamini–Schramm nonuniqueness conjecture](214-benjamini-schramm-nonuniqueness-conjecture.md)
 - [215 — Massive continuum limits and exact mass asymptotics for planar $O(n)$ models](215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md)
 - [216 — Critical logarithmic corrections and BKT scaling for the planar XY model](216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md)
+- [217 — The low-temperature Sherrington–Kirkpatrick fluctuation law](217-low-temperature-sherrington-kirkpatrick-fluctuation-law.md)
 - [221 — The Mézard–Parisi formula for diluted spin glasses](221-mezard-parisi-formula-for-diluted-spin-glasses.md)
 - [226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane](226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
 - [243 — Choiceless counting does not capture polynomial time](243-choiceless-counting-does-not-capture-polynomial-time.md)
@@ -305,7 +306,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **111 families have no summary page.** The 262 pages cover 262 of 373 families; the rest are recorded
+- **110 families have no summary page.** The 263 pages cover 263 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
