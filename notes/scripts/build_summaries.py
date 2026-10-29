@@ -694,7 +694,7 @@ def generate_readme(fams: dict[str, dict], page_slugs: dict[str, str]) -> str:
     page_rows = []
     for fam in sorted(page_slugs, key=int):
         slug = page_slugs[fam]
-        title = CTEXT.fold_dashes(fams[fam]["title"])
+        title = normalizer.normalize_body_math(CTEXT.fold_dashes(fams[fam]["title"]), "")
         fname = f"{fam}-{slug}.md"
         page_rows.append(f"- [{fam} — {title}]({fname})")
     page_list = "\n".join(page_rows)
