@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [probability](../topics/probability.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md](../../../../notes/gen/summaries/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md) |
 
 ## Manuscripts
 
