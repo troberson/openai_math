@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md](../../../../notes/gen/summaries/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md) |
 
 ## Manuscripts
 
