@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [182-power-savings-for-polynomial-difference-free-sets.md](../../../../notes/gen/summaries/182-power-savings-for-polynomial-difference-free-sets.md) |
 
 ## Manuscripts
 
