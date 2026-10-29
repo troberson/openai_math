@@ -13,7 +13,7 @@
 | Claim shapes | resolution, density, partial, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) · [random-graphs](../topics/random-graphs.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [176-second-kahn-kalai-conjecture.md](../../../../notes/gen/summaries/176-second-kahn-kalai-conjecture.md) |
 
 ## Manuscripts
 
