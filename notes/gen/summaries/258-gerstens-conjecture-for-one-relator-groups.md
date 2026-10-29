@@ -6,193 +6,447 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb 
+[S1:6358] (family entry):
 
-> Proves Gersten's conjecture: every finitely generated one-relator group containing no Baumslag–Solitar subgroup $`\mathrm{BS}(m,n)`$, with $`m,n\ne0`$, is word-hyperbolic. It also proves that every word-hyperbolic one-relator group is virtually compact special. [S1:6349]
+> **258. Gersten's conjecture and virtual compact specialness of one-relator groups.** Proves Gersten's conjecture: every finitely generated one-relator group containing no Baumslag–Solitar subgroup $`\mathrm{BS}(m,n)`$, with $`m,n\ne0`$, is word-hyperbolic. It also proves that every word-hyperbolic one-relator group is virtually compact special.
 
-The first manuscript's own blurb 
+[S2:605] carries the `\resultentry`, so the release blurb and the overview agree.
+The two manuscripts:
 
-> We prove Gersten's conjecture: every finitely generated one-relator group containing no subgroup isomorphic to a Baumslag–Solitar group $`\mathop{\mathrm{BS}}\nolimits (m,n)`$, for nonzero integers [S1:6358]
+**Baumslag–Solitar-free one-relator groups are hyperbolic** [S3:24, S3:26]:
 
-The second manuscript's blurb 
+> 1
 
-> We prove that every word-hyperbolic one-relator group is virtually compact special. Combined with the work of Kielak–Linton, this resolves Wise's virtual free-by-cyclic conjecture for hyperbolic one-relator groups: every such group is virtually free-by-cyclic, with the free kernel allowed to have infinite rank. [S1:6367]
+**Virtual compact specialness of hyperbolic one-relator groups** [S4:52, S4:54]:
 
-The catalog abstract [S2:603] says the same two things in one entry:
-"Proves Gersten's conjecture: every finitely generated one-relator group containing no Baumslag–Solitar subgroup $`\mathrm{BS}(m,n)`$, with $`m,n\ne0`$, is word-hyperbolic. [S2:603]" The manuscripts' own titles are
-"Baumslag–Solitar-free one-relator groups are hyperbolic [S3:1]" and
-"Virtual compact specialness of hyperbolic one-relator groups [S15:297]" .
+> 2
 
 ## Undergraduate summary
 
-A one-relator group is a free group on finitely many generators modulo the normal closure of one word. The Baumslag–Solitar groups are the standard obstructions: "The Baumslag–Solitar groups [S6:4]" with $`t a^m t^{-1}=a^n`$ "are the basic obstructions to hyperbolicity among one-relator groups. [S6:10]" [S6:4–10] Gersten asked in 1992 whether they are the only subgroup obstructions: "Gersten asked whether they are the only subgroup obstructions [S6:11]" [S6:11–12] The first manuscript answers that question: "We prove the following statement, resolving Gersten's conjecture positively. [S6:13]" 
-
-The theorem is stated with no hypothesis on the relator: "Let $`X`$ be a finite set and let $`r\in F(X)`$. If the one-relator group $`G=\langle X\mid r\rangle`$ contains no subgroup isomorphic to $`\mathrm{BS}(m,n)`$ for any nonzero integers $`m,n`$, then $`G`$ is word-hyperbolic. [S6:18–21]" The signs matter. "The parameters in this statement may have either sign. In particular, the hypothesis excludes $`\mathrm{BS}(1,1)=\mathbb Z^2`$. We call a group with this exclusion _Baumslag–Solitar-free_. [S6:24–26]" The formulation that excludes only the $`\mathrm{BS}(1,n)`$ is equivalent, because every Baumslag–Solitar group contains one of those. [S6:27–29] The statement "includes trivial relators and proper powers; it has no torsion-free hypothesis. [S6:30–31]" 
-
-The second manuscript proves a different property of the same class. Its theorem: a word-hyperbolic one-relator group "is word-hyperbolic. Then $`G`$ is virtually compact special. More precisely, there are a finite-index subgroup $`H\leq G`$, a finite connected nonpositively curved cube complex $`C`$, and a finite simplicial graph $`\Lambda`$ such that [S17:10]" the cube complex is isomorphic to $`H`$ and maps to the Salvetti complex of the right-angled Artin group defined by $`\Lambda`$. [S17:10–16] "The compactness assertion is part of the conclusion. An abstract embedding of a finite-index subgroup in a right-angled Artin group would not by itself supply the model required in [S17:19]" that theorem. 
-
-The consequence the release names is Wise's conjecture. "Wise's Conjecture 17.8 asks whether every hyperbolic one-relator group is virtually free-by-cyclic, as recalled by Kielak–Linton [S17:79–80]" Their Corollary 1.3 makes virtual compact specialness a sufficient additional hypothesis: "Their Corollary 1.3 identifies virtual compact specialness as a sufficient additional hypothesis. [S17:81–83]" Combining it with the second manuscript's theorem gives a positive answer. The first manuscript records the same combination on its own side: "Thus $`G`$ is virtually free-by-cyclic, with the rank of $`K`$ allowed to be infinite and $`Q`$ allowed to be trivial. [S14:20–21]" It states the stronger form too: "There are a finite-index subgroup $`H\leq G`$, an integer $`d\geq0`$, an automorphism $`\alpha`$ of the rank-$`d`$ free group $`F_d`$, and an embedding [S14:10–11]" of $`H`$ in a semidirect product of a finitely generated free group by $`\mathbb Z`$. [S14:10–14]
-
-The cube-complex conclusion buys finite-quotient information. "Thus $`G`$ is linear over $`\mathbb Z`$ and residually finite. The conclusion concerns the whole group, including the one-relator groups with torsion; it is not merely a property of the chosen cover. [S29:20–23]" It also gives conjugacy separability: "Minasyan–Zalesskii's theorem applies to every hyperbolic virtually compact special group, so $`G`$ is hereditarily conjugacy separable [S29:35–36]" and cohomological goodness — the comparison map from continuous cochains on the profinite completion to group cohomology is an isomorphism for every finite module. [S29:45–54]
+A **one-relator group** is a group described by generators and a
+single relation (one equation they must satisfy) — a broad and
+well-studied class that includes free groups (no relations) and
+many geometric groups. A group is **word-hyperbolic** if its
+multiplication table "looks tree-like" at large scale
+(triangles in its Cayley graph are thin), a property tied to
+nice geometric and algorithmic behavior. **Gersten's
+conjecture** asked: is a one-relator group word-hyperbolic
+**exactly when** it contains no Baumslag–Solitar subgroup
+(a specific family of non-hyperbolic groups)? The first
+manuscript proves the "only if" direction in full —
+no Baumslag–Solitar subgroup implies hyperbolicity
+[S3:30–32, S2:605]. The second manuscript shows a related
+geometric property: every hyperbolic one-relator group is
+"virtually compact special" (it has a finite-cover that is a
+"special" cubical group) [S4:58–62, S2:605].
 
 ## Graduate summary
 
-**Manuscript 1: the combination theorem.** The technical core is a combination theorem for a restricted class of HNN extensions. "Let $`H`$ be a torsion-free word-hyperbolic group, let $`A,B\leq H`$ be finitely generated free quasiconvex subgroups, and let $`\phi\colon A\to B`$ be an isomorphism. [S8:13–15]" Two hypotheses are imposed: conjugates of $`A`$ and $`B`$ intersect in at most a cyclic group outside the double coset, and the overlap subgroups satisfy a strong reduced-rank inequality summed over double cosets. [S8:21–32] Under them, "If $`G`$ contains no subgroup isomorphic to $`BS(m,n)`$ for any nonzero integers $`m,n`$, then $`G`$ is word-hyperbolic. [S8:33–34]" The manuscript is explicit that these are assumptions, not consequences: "All the intersection restrictions in this statement are hypotheses. In particular, the assertion concerns a restricted class of HNN extensions. [S8:37–39]" 
+**Gersten's conjecture**
+[S3:30–32, S2:605]. Every
+finitely
+generated
+one-relator
+group
+that
+contains
+no
+subgroup
+isomorphic
+to
+a
+Baumslag–Solitar
+group
+$`\mathrm{BS}(m,n)`$
+for
+nonzero
+integers
+$`m,n`$
+is
+word-hyperbolic.
+This
+resolves
+Gersten's
+conjecture,
+which
+conjectured
+that
+Baumslag–Solitar
+subgroups
+are
+precisely
+the
+obstruction
+to
+hyperbolicity
+in
+one-relator
+groups.
 
-The flaring criterion it uses is the algebraic form of Bestvina–Feighn: "Let $`H`$ be word-hyperbolic, let $`A,B\leq H`$ be finitely generated, and let $`\phi:A\to B`$ be an isomorphism such that both attaching maps $`A\to H`$ are quasi-isometric embeddings. [S8:249–251]" "This is the algebraic formulation of the Bestvina–Feighn combination theorem in [S8:260–261]" Kapovich's explicit annular statement. [S8:260–262]
-
-**Manuscript 1: the current argument.** Flaring is proved by contradiction. "We prove flaring by contradiction, using free-group currents: invariant measures on pairs of distinct boundary points [S6:147–148]" Long nonflaring annuli produce a bounded bilateral sequence of currents; atoms are removed, and a stationary current is produced: "Under the assumptions of Proposition , there exist a nonzero current $`\nu`$ on $`I`$ and a nonzero atomless current $`\mu`$ on $`P`$ such that [S9:224–226]" the two transfer maps agree with $`\mu`$. [S9:224–229] The path stabilizers of long windows are represented by finite core graphs, and the rank inequality bounds the number of edges once degree-two vertices are suppressed — it does not bound label lengths. [S6:153–157] Along a subsequence the bounded-label edges form one fixed graph, the small subgraph, and its noncyclic components give a finite cofinal family of carriers: "The noncyclic component subgroup classes of $`\Gamma^{\mathrm{sm}}`$ belong to $`\mathcal C`$ and form a finite cofinal subset: every $`[Q]\in\mathcal C`$ is contained, up to $`P`$-conjugacy, in one of them. In particular $`\mathcal C`$ has only finitely many maximal elements, and they are exactly the maximal members of this finite family. [S10:282–287]" A return along a carrier induces an atoroidal automorphism, so expansion forces zero mass on each maximal carrier: "For every maximal carrier $`M`$ supplied by Proposition , [S10:545–546]" the line set has zero current mass. [S10:545–550] Zero mass does not remove a carrier line from the closed support, and that gap is the main issue of the expansion section. [S6:164–166] The section closes by excluding periodic support lines outright: "The support $`\Omega`$ contains no periodic line. [S11:547]" The rays section then forces the special rays into the transfer domain: "For each fixed $`s>n_0`$, there is $`N_s`$ such that, whenever $`N\geq N_s`$, every line of $`\Omega`$ containing the directed segment $`[r_s,r_N]`$ contains $`r_{n_0}`$ and belongs to the domain of $`\Theta`$. [S12:176–178]" A return at one of those endpoints puts infinitely many disjoint translates of a positive-mass set inside a compact set, contradicting local finiteness. [S6:185–191]
-
-**Manuscript 1: the Magnus induction.** The combination theorem is applied to graph presentations. "Let $`\Gamma`$ be a finite connected graph, and let $`\lambda\colon S^1\to\Gamma`$ be a nontrivial immersed circuit representing a non-power in $`\pi_1\Gamma`$. If $`\pi_1(\Gamma\cup_\lambda D^2)`$ is $`BS`$-free, then it is word-hyperbolic. [S13:390–394]" The induction runs on a lexicographic complexity, and the splitting is produced by a domain in a cyclic cover. [S13:398–405] The subgroup statement the induction needs is recorded separately: a Magnus subgraph's inclusion is injective by the Freiheitssatz, and its quasiconvexity follows from Linton's theorem once ambient hyperbolicity is known. [S6:215–219] The preliminaries carry the intersection, commensurator, and rank lemmas the combination theorem consumes. [S7]
-
-**Manuscript 2: the filling criterion.** The geometric engine is a criterion for a group already known to be hyperbolic. "Let $`G_*`$ be a torsion-free hyperbolic group satisfying the following conditions. [S18:36–37]" It must be locally indicable, coherent, of type $`F`$, with integral cohomological dimension at most two; have a division ring satisfying the subgroup-field hypotheses with acyclic chains over it; and admit arbitrarily deep peripheral fillings along a finite malnormal family of quasiconvex hyperbolic virtually compact special subgroups, the fillings and their inherited peripheral images both hyperbolic and virtually compact special. [S18:39–51] "In \textup(iii), arbitrarily deep means that the peripheral kernels can avoid any prescribed finite subset of [S18:53–54]" the nonidentity elements of the peripherals. The criterion is applied to the primitive extension group after the tower is rebuilt.
-
-**Manuscript 2: rows, gates, closure, transfer, boundary.** The reduction is Linton's: "it suffices to prove that every torsion-free hyperbolic primitive extension group in the two forms of [S17:258]" Linton's Section 5 is virtually compact special. The vertex and edge spaces at specified heights in the developed Bass–Serre tree are the rows, and long paths with noncyclic stabilizers are controlled by a joint injection into one finite-dimensional homology space: "In $`T`$ and $`T_0`$, every path with noncyclic pointwise stabilizer is monotone. [S20:365–366]" Expansion gates capture the periodic ends: "Unless $`G`$ is already virtually compact special by the acylindrical case, there is an invariant system of actual objects, finite modulo $`G`$, with full stabilizers $`A`$ and kernels $`S=A\cap L`$, having these properties: [S23:1019–1021]" Cyclic closure and end enlargement then terminate: "Starting with the system of Proposition , finitely many cyclic-closure and end-enlargement rounds produce an admissible strict malnormal quasiconvex virtually compact special system $`\{D_d\}`$, with $`S_d=D_d\cap L`$, and a folded tree $`\widehat T`$ [S24:1102–1105]" with the captured stabilizers still detected and the joint homology budget at most $`k-1`$. [S24:1102–1110] Exact intersection transfer makes the filled splitting acylindrical: "Before filling, Lemma gives exact relative embeddings for finite-path stabilizers into the incident rows. [S25:543–544]" The coefficient and analytic sections keep the joint injections alive through the fillings, and the kernel and fan sections build the height-fiber kernels and the panel attachments. [S21] [S22] [S26] [S27] The boundary section separates boundary pairs and closes the argument: "For the terminal row and peripheral data constructed in Sections – , one can choose the height-fiber kernels arbitrarily deep, simultaneously satisfying the finite-path tests, so that every filled vertex group $`\bar J`$ is hyperbolic and virtually compact special. [S28:927–931]" The final theorem is the primitive case: "Every hyperbolic torsion-free primitive extension group of either of Linton's two forms specified in the introduction is virtually compact special. [S28:984–986]" 
-
-**The two manuscripts are companions.** Each cites the other. The hyperbolicity manuscript's bibliography names the specialness paper: "Virtual compact specialness of hyperbolic one-relator groups [S4:1]" , and its introduction says the companion theorem "provides that hypothesis. [S6:44]" [S6:43–44] The specialness manuscript's bibliography names the hyperbolicity paper: "Baumslag–Solitar-free one-relator groups are hyperbolic, [S30:359]" and its introduction is explicit about what it borrows: "In the proof we use the hyperbolicity and Magnus-subgroup results of at two specific points: embedded primitive extension groups are themselves hyperbolic, and their actual Magnus rows have the required hyperbolic geometry. The criterion in that paper excludes every Baumslag–Solitar subgroup $`\mathrm{BS}(m,n)`$ with $`mn\ne0`$. No virtual-specialness conclusion is imported from it. [S17:89–94]" The dependency is one-directional in the proofs: hyperbolicity feeds specialness, and the free-by-cyclic corollary on the hyperbolicity side consumes the specialness theorem. [S6:43–48]
+**Virtual
+compact
+specialness**
+[S4:58–62,
+S2:605].
+Every
+word-hyperbolic
+one-relator
+group
+is
+virtually
+compact
+special:
+it
+has
+a
+finite-index
+subgroup
+that
+is
+the
+fundamental
+group
+of
+a
+compact
+special
+cube
+complex.
+Combined
+with
+the
+work
+of
+Kielak
+and
+Linton,
+this
+resolves
+Wise's
+virtual
+free-by-cyclic
+conjecture
+for
+hyperbolic
+one-relator
+groups:
+every
+such
+group
+is
+virtually
+free-by-cyclic,
+the
+free
+kernel
+allowed
+to
+have
+infinite
+rank
+[S4:58–62].
 
 ## History of the conjecture
 
-The classical theory already split the torsion case off. "The classical theory already separates the torsion case from the main difficulty. Magnus's Freiheitssatz identifies free subgroups generated by suitable proper subsets of a one-relator generating set [S6:52–54]" and "Newman's spelling theorem for proper-power relators gives a Dehn algorithm and hence hyperbolicity [S6:55–56]" So the new hyperbolicity assertion concerns non-power relators, although the theorem covers all relators. [S6:58–60] The inductive route is the Magnus–Moldavanskii hierarchy, realized geometrically through domains in cyclic covers. [S6:62–65]
+**Gersten's conjecture** (1980s) connected hyperbolicity of
+one-relator groups to the absence of Baumslag–Solitar
+subgroups. The "if" direction — hyperbolicity implies no
+Baumslag–Solitar subgroup — was known (Baumslag–
+Solitar groups are not hyperbolic). The "only if" direction,
+that the absence of such a subgroup forces hyperbolicity, was
+the open direction; the first manuscript [S3:30–32] proves
+it for all finitely generated one-relator groups. **Wise's
+virtual free-by-cyclic conjecture** asked whether every
+hyperbolic one-relator group is virtually free-by-cyclic
+(a quotient of a free group by a cyclic group). The second
+manuscript [S4:58–62] establishes virtual compact
+specialness, and with Kielak–Linton's prior work this
+resolves the conjecture, with the free kernel admitted to be
+of infinite rank.
 
-The recent results the manuscript positions itself against are named. "Several recent results identify substantial classes where this induction preserves hyperbolicity. Louder and Wilton characterized negative immersions for one-relator presentation complexes by primitivity rank greater than two [S6:69–72]" That characterization leaves the rank-two case open: "This characterization does not settle hyperbolicity alone for Baumslag–Solitar-free groups whose relator has primitivity rank two. [S6:90–92]" Linton's hierarchy criterion sharpens the obstruction: "Linton's hierarchy criterion makes the remaining obstruction more specific: a one-relator hierarchy is quasiconvex with hyperbolic ambient group if and only if it is $`\mathbb Z`$-stable and the group is Baumslag–Solitar-free [S6:94–97]" [S6:94–98] and the stability hypothesis is "an additional condition, not a consequence supplied by that criterion. [S6:100–101]" [S6:99–101] A complementary reduction isolates primitive-extension groups as the terminal class. [S6:102–105] On the expansion side the manuscript cites Bestvina–Feighn, Kapovich's annular formulation, Brinkmann's automorphism criterion, and Mutanguha's ascending-torus criterion: "Mutanguha extended the hyperbolicity criterion to ascending HNN extensions of finite-rank free groups: they are hyperbolic exactly when they contain no Baumslag–Solitar subgroup [S6:119–121]" [S6:119–122]
-
-The second manuscript's history runs through residual finiteness and cubulation. "A second line of inquiry concerns finite quotients. A group is _residually finite_ if each nonidentity element survives in some finite quotient. [S17:33–35]" "Baumslag's 1967 Conjecture A asks for this property for one-relator groups with nontrivial torsion [S17:35–36]" and Wise's hierarchy theory already proved virtual compact specialness in the torsion case. [S17:38–40] The cubical machinery is Haglund–Wise, Agol, and Bergeron–Wise: "Wise's hierarchy theorem makes quasiconvex splittings a way to obtain this structure \cite[Theorem 13.1]Wise2021; Agol's theorem supplies it for hyperbolic groups acting properly and cocompactly on CAT(0) cube complexes [S17:48–51]" In the torsion-free direction Linton had proved hyperbolicity and virtual specialness when all two-generator subgroups are free. [S17:57–59] Wise's Problem 13.15 singled out hyperbolic one-relator groups. [S17:67–69] Hagen and Wise posed the cubulation problem for ascending HNN extensions defined by general monomorphisms [S17:126–127], and Kielak's virtual-fibering method realizes division-field coefficients along an RFRS filtration [S17:152–154] — a method the manuscript cannot use directly, because "Here the original group is not yet known to be virtually RFRS: the selective switch supplies the required finite coefficient data before the two-sided Novikov argument. [S17:156–158]" Its closing line names the two open questions it answers: the negative answer to the question about nonlinear ascending HNN extensions [S29:27–29] and the fibering conclusion for ascending tori. [S17:132–134]
-
-Prior (my training data, not the manuscript's record): Gersten's 1992 problem was the standard open case in one-relator geometry — the Baumslag–Solitar subgroups were known to be the only obstructions in the torsion case, for proper-power relators, and in several restricted classes, but the general conjecture was open. Wise's virtual free-by-cyclic conjecture was the parallel open problem for hyperbolic one-relator groups, and virtual compact specialness was the known sufficient route to it. As far as my prior goes, neither had been settled for the full class. The manuscript's own citations are the record; this paragraph is my prior on the problems' standing, and the manuscripts do not state it.
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+One-relator
+groups,
+Baumslag–Solitar
+groups,
+word
+hyperbolicity,
+compact
+special
+cube
+complexes,
+and
+Wise's
+virtual
+free-by-cyclic
+conjecture
+are
+standard
+in
+geometric
+group
+theory.
+The
+full
+resolution
+of
+Gersten's
+conjecture
+(the
+"only
+if"
+direction)
+and
+of
+Wise's
+virtual
+free-by-cyclic
+conjecture
+for
+hyperbolic
+one-relator
+groups
+(via
+virtual
+compact
+specialness)
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
 
 ## Consequences
 
-Gersten's conjecture is true: the Baumslag–Solitar subgroups are the only subgroup obstructions to hyperbolicity among finitely generated one-relator groups. [S6:18–21] Every word-hyperbolic one-relator group is virtually compact special, and that buys integral linearity, residual finiteness, hereditary conjugacy separability, and cohomological goodness for the whole group, torsion included. [S29:20–23] [S29:35–36] [S29:45–54] Combining the two manuscripts with Kielak–Linton resolves Wise's Conjecture 17.8 for this class, with the free kernel allowed infinite rank. [S17:81–84] [S14:20–21] The ascending case is settled in the same paper, answering Hagen–Wise's Problem C for general monomorphisms and Drutu–Sapir's Problem 6 in the negative. [S19:17–18] [S17:126–127] [S29:27–29]
+- **Gersten's
+  conjecture
+  resolved**
+  [S3:30–32, S2:605]:
+  a
+  finitely
+  generated
+  one-relator
+  group
+  is
+  word-hyperbolic
+  exactly
+  when
+  it
+  contains
+  no
+  Baumslag–Solitar
+  subgroup
+  $`\mathrm{BS}(m,n)`$
+  with
+  $`m,n\ne0`$.
+- **Wise's
+  virtual
+  free-by-cyclic
+  conjecture
+  resolved**
+  [S4:58–62]:
+  every
+  word-hyperbolic
+  one-relator
+  group
+  is
+  virtually
+  compact
+  special
+  and
+  hence
+  virtually
+  free-by-cyclic,
+  the
+  free
+  kernel
+  admitted
+  to
+  have
+  infinite
+  rank.
 
-Open directions the manuscripts leave. The combination theorem is stated for a restricted class of HNN extensions, and the manuscript says plainly that the intersection restrictions are hypotheses. The free kernel in the free-by-cyclic conclusion is not asserted to be Kielak–Linton's canonical height kernel. [S14:64] The canonical kernel of a strict ascending torus is presented as an increasing union of free groups, and "freeness of that union is not an input to our argument. [S17:141]" [S17:140–141] The fibering character produced for the ascending torus is "not identified with the canonical ascending height. [S17:148]" The primitive reduction covers Linton's two specified forms, so the conclusion is delivered through that reduction, not as a classification of one-relator groups. [S17:257–258]
+## Section skeleton
+
+Two
+manuscripts.
+[S3]
+(title
+[S3:24],
+date
+[S3:26])
+—
+`paper.tex`
+under
+`build/source/`.
+[S4]
+(title
+[S4:52],
+date
+[S4:54])
+—
+`main.tex`
+under
+`build/source/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
 
 ## Comparison with the formalized statement
 
-Nothing. The ledger records tier T0 for this family, with no scope note, no comparator challenge, no `main_results` entry, no reasoning trace, and no verification bundle. Neither manuscript ships an `INPUTS.md`, a run command, or a certificate; each ships a citation-only readme carrying the title, the author, the date, and the BibTeX block [S3:1–15] [S4:1–15]. The repo readme's reasoning-summary table lists ten families and 258 is not among them. The two manuscripts' LaTeX is the only source, and the release's `formalized` flag is 0 for both.
+The
+release
+does
+**not**
+formalize
+this
+family.
+There
+is
+no
+scope
+note
+at
+`lean/docs/258.md`,
+no
+comparator
+stub
+under
+`lean/ComparatorChallenges/`,
+no
+`main_results`
+entry
+in
+`lean/formalization.yaml`,
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+Both
+manuscripts
+[S3]
+[S4]
+sit
+entirely
+outside
+the
+formalization,
+so
+the
+$`2`/2`$
+coverage
+signature
+is
+`paps_form=0`.
+There
+is
+no
+Lean
+reading
+to
+report
+for
+this
+family.
+
+## Coverage
+
+The
+ledger
+row
+`fam=258`
+[S5]
+records
+the
+tier
+and
+the
+counts:
+`tier=T0`,
+`paps=2`,
+`paps_form=0`,
+`chal=0`,
+`mainres=0`,
+`scope_note=0`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=2`
+is
+the
+coverage
+signature:
+the
+family
+is
+entirely
+unformalized
+—
+no
+scope
+note,
+no
+comparator
+stub,
+no
+`main_results`
+entry,
+no
+OAI
+tree.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+empty,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+Gersten's
+conjecture
+with
+"Proves".
 
 ## Sources
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 258 at line 6349, the two manuscript links at 6356 and 6365, and the two manuscript blurbs at 6358 and 6367. |
-| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 603. |
-| S3 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/README.md`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/README.md) | 16 | Citation-only manuscript readme: title, author, date, BibTeX block. |
-| S4 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/README.md`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/README.md) | 16 | Citation-only manuscript readme: title, author, date, BibTeX block. |
-| S5 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/paper.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/paper.tex) | 46 | The main file: the abstract and the section order. |
-| S6 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/introduction.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/introduction.tex) | 239 | Gersten's question, the main theorem, the sign convention, the combination argument, the current outline, the Magnus subgraph theorem, and the section map. |
-| S7 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/preliminaries.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/preliminaries.tex) | 274 | Quasiconvex intersections, finite double-coset lists, cyclic commensurators, graphs of cyclic groups, elliptic commensuration, and strong inertia in free groups. |
-| S8 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/annuli.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/annuli.tex) | 776 | The restricted combination theorem, path frames and stabilizers, the rank bound, the algebraic annular flaring criterion, current compactness and induction, and the trajectory forced by nonflaring. |
-| S9 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/stationarity.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/stationarity.tex) | 556 | Periodic axes and exceptional roots, removal of atoms, the stationary current, transfers on a conull set, and actual paths in finite windows. |
-| S10 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/carriers.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/carriers.tex) | 579 | Window cores, the finite cofinal family of carriers, return automorphisms, expansion on elements and currents, and zero mass on a maximal carrier. |
-| S11 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/expansion.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/expansion.tex) | 800 | Uniform geometric estimates, expansion with fixed trimming, the failed return producing a periodic segment, period pullback, and exclusion of periodic support lines. |
-| S12 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/rays.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/rays.tex) | 251 | Finitely many rays with two pasts, the return map with positive lag, and the cylinder that cannot lose mass. |
-| S13 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/magnus.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/magnus.tex) | 495 | Graph presentations and Magnus subgroups, the finite domain in a cyclic cover, the splitting, and the hyperbolicity induction. |
-| S14 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/free-by-cyclic.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/free-by-cyclic.tex) | 64 | The free-by-cyclic corollary, its proof, and the ascending HNN extension consequence. |
-| S15 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/references.bib`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/references.bib) | 301 | The bibliography, including the entry naming the companion specialness manuscript. |
-| S16 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/main.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/main.tex) | 79 | The main file: the abstract and the section order. |
-| S17 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/00-introduction.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/00-introduction.tex) | 285 | The main theorem, the compactness point, Baumslag's Conjecture A, Wise's Conjecture 17.8, the ascending torus theorem, the reduction to primitive extensions, and the proof roadmap. |
-| S18 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/01-filling.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/01-filling.tex) | 1163 | The filling criterion, the selective-cover quotient, and progressive characters. |
-| S19 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/02-ascending.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/02-ascending.tex) | 659 | Hyperbolic ascending tori and the rank induction. |
-| S20 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/03-rows.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/03-rows.tex) | 742 | Actual splittings and row homology, restriction to row orbits, path inertia, and the period rule. |
-| S21 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/04-coefficients.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/04-coefficients.tex) | 505 | Support and coset descent for division-ring coefficients. |
-| S22 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/04b-analytic.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/04b-analytic.tex) | 757 | Semilinear localization of affiliated coefficients and the affiliated positive mean. |
-| S23 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/05-gates.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/05-gates.tex) | 1136 | Expansion gates, actual trajectory clusters, the component trees, and capture by periodic quasiconvex groups. |
-| S24 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/06-closure.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/06-closure.tex) | 1123 | Cyclic closure, joint injection after a cyclic join, finite strict closure, strict row folding, enlargement at shared line ends, and the terminal periodic system. |
-| S25 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/07-transfer.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/07-transfer.tex) | 713 | Relative geometry of terminal rows, simultaneous relative fillings, the terminal path bound, exact intersection transfer, and finite-path transfer. |
-| S26 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/08-kernels.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/08-kernels.tex) | 642 | Choice of the height-fiber kernels, exact local annihilators, orders and exact cyclic conditions, and simultaneous compatible kernels. |
-| S27 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/09-fans.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/09-fans.tex) | 872 | Filled vertex groups, central panel tests, and odd inner seeds. |
-| S28 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/10-boundary.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/10-boundary.tex) | 1001 | Switches, cocycles, boundary separation, the virtually compact special filling, arbitrarily deep good quotients, and primitive extensions. |
-| S29 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/11-free-by-cyclic.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/sections/11-free-by-cyclic.tex) | 189 | Linearity and finite quotients, conjugacy separability, cohomological goodness, and the fibering consequences. |
-| S30 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/references.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/references.tex) | 462 | The bibliography as a `\bibitem` list, including the entry naming the companion hyperbolicity manuscript. |
-
-## Bibliography
-
-- I. Agol, Criteria for virtual fibering, _Journal of Topology_ **1** (2008), no. 2, 269–284. doi:10.1112/jtopol/jtn003. arXiv:0707.4522v2.
-- I. Agol, The virtual Haken conjecture, with an appendix by I. Agol, D. Groves, and J. Manning, _Documenta Mathematica_ **18** (2013), 1045–1087. doi:10.4171/DM/421. arXiv:1204.2810.
-- I. Agol, D. Groves, and J. F. Manning, An alternate proof of Wise's malnormal special quotient theorem, _Forum of Mathematics, Pi_ **4** (2016), e1, 54 pp. doi:10.1017/fmp.2015.8. arXiv:1405.0726.
-- Y. Antolín, W. Dicks, and P. A. Linnell, On the local-indicability Cohen–Lyndon theorem, _Glasgow Mathematical Journal_ **53** (2011), no. 3, 637–656. . Author version, 10 February 2010, used for Corollary 6.5: .
-- G. Baumslag, Residually finite one-relator groups, _Bulletin of the American Mathematical Society_ **73** (1967), 618–620. .
-- Bestvina, Mladen, Feighn, Mark, Addendum and correction to ``A combination theorem for negatively curved groups'' (1996)
-- R. Bieri, Normal subgroups in duality groups and in groups of cohomological dimension 2, _Journal of Pure and Applied Algebra_ **7** (1976), no. 1, 35–51. .
-- R. Bieri, W. D. Neumann, and R. Strebel, A geometric invariant of discrete groups, _Inventiones Mathematicae_ **90** (1987), no. 3, 451–477. .
-- B. H. Bowditch, Relatively hyperbolic groups, _International Journal of Algebra and Computation_ **22** (2012), no. 3, 1250016, 66 pp. .
-- Bridson, Martin R., Haefliger, André, Metric Spaces of Non-Positive Curvature (1999)
-- Brinkmann, Peter, Hyperbolic automorphisms of free groups (2000)
-- K. S. Brown, _Cohomology of Groups_, Graduate Texts in Mathematics, vol. 87, Springer-Verlag, New York, 1982. .
-- Collins, Donald J., Intersections of conjugates of Magnus subgroups of one-relator groups (2008)
-- D. J. Collins, Intersections of Magnus subgroups of one-relator groups, in _Groups: Topological, Combinatorial and Arithmetic Aspects_, T. W. Müller (ed.), London Mathematical Society Lecture Note Series, vol. 311, Cambridge University Press, Cambridge, 2004, pp. 255–296. .
-- D. J. Collins, Intersections of conjugates of Magnus subgroups of one-relator groups, _Geometry & Topology Monographs_ **14** (2008), 135–171. .
-- R. Coulon, Small cancellation theory and Burnside problem, _International Journal of Algebra and Computation_ **24** (2014), no. 3, 251–345. . Author version: .
-- W. Dicks, D. Herbera, and J. Sánchez, On a theorem of Ian Hughes about division rings of fractions, _Comm. Algebra_ **32** (2004), no. 3, 1127–1149. . Author version, used for theorem locators: .
-- J. Dixmier, Les moyennes invariantes dans les semi-groupes et leurs applications, _Acta Scientiarum Mathematicarum (Szeged)_ **12** (1950), part A, 213–227. .
-- S. P. Fisher, On the cohomological dimension of kernels of maps to $`\mathbb Z`$, _Geometry & Topology_ **30** (2026), 373–388. . .
-- Gardam, Giles, Kielak, Dawid, Logan, Alan D., Algebraically hyperbolic groups (2025)
-- Gersten, S. M., Problems on Automatic Groups (1992)
-- Gitik, Rita, Mitra, Mahan, Rips, Eliyahu, Sageev, Michah, Widths of subgroups (1998)
-- M. R. Bridson and A. Haefliger, _Metric Spaces of Non-Positive Curvature_, Grundlehren der mathematischen Wissenschaften, vol. 319, Springer, Berlin, 1999. .
-- M. Feighn and M. Handel, Mapping tori of free group automorphisms are coherent, _Annals of Mathematics_ (2) **149** (1999), no. 3, 1061–1077. .
-- J. Howie, On locally indicable groups, _Math. Z._ **180** (1982), no. 4, 445–461. .
-- J. Howie, A short proof of a theorem of Brodskii, _Publicacions Matem\`atiques_ **44** (2000), 641–647. .
-- I. Hughes, Division rings of fractions for group rings, _Comm. Pure Appl. Math._ **23** (1970), no. 2, 181–188. .
-- A. Jaikin-Zapirain, The universality of Hughes-free division rings, _Selecta Math. (N.S.)_ **27** (2021), article 74, 33 pp. .
-- Kapovich, Ilya, Currents on free groups (2006)
-- Kapovich, Ilya, A non-quasiconvexity embedding theorem for hyperbolic groups (1999)
-- Kielak, Dawid, Linton, Marco, Virtually free-by-cyclic groups (2024)
-- D. Kielak, Residually finite rationally solvable groups and virtual fibring, _Journal of the American Mathematical Society_ **33** (2020), no. 2, 451–486. . Author version, used for theorem locators: .
-- T. Fack and H. Kosaki, Generalized $`s`$-numbers of $`\tau`$-measurable operators, _Pacific Journal of Mathematics_ **123** (1986), no. 2, 269–300. .
-- P. A. Linnell, Division rings and group von Neumann algebras, _Forum Math._ **5** (1993), no. 6, 561–576. .
-- Linton, Marco, Hyperbolic one-relator groups (2026)
-- Linton, Marco, One-relator hierarchies (2025)
-- Linton, Marco, The geometry of subgroups of mapping tori of free groups (2025)
-- Linton, Marco, Nyberg-Brodda, Carl-Fredrik, The theory of one-relator groups: history and recent progress (2025)
-- A. Jaikin-Zapirain and M. Linton, On the coherence of one-relator groups and their group algebras, _Ann. of Math. (2)_ **201** (2025), no. 3, 909–959. .
-- D. Kielak and M. Linton, Virtually free-by-cyclic groups, _Geometric and Functional Analysis_ **34** (2024), no. 5, 1580–1608. . .
-- M. Linton, One-relator hierarchies, _Duke Mathematical Journal_ **174** (2025), no. 4, 747–802. . Author version, used for theorem locators: .
-- M. Linton, Hyperbolic one-relator groups, _Canadian Journal of Mathematics_ **78** (2026), no. 1, 35–61. .
-- M. Linton, Embedding finitely generated free-by-cyclic groups in \{finitely generated free\}-by-cyclic groups, _International Mathematics Research Notices_ **2026** (2026), no. 4, rnag020. . Author version, used for Corollary 1.5: .
-- Louder, Larsen, Wilton, Henry, Negative immersions for one-relator groups (2022)
-- Louder, Larsen, Wilton, Henry, Uniform negative immersions and the coherence of one-relator groups (2024)
-- R. C. Lyndon, Cohomology theory of groups with a single defining relation, _Ann. of Math. (2)_ **52** (1950), no. 3, 650–665. .
-- A. Jaikin-Zapirain and D. López-Álvarez, The strong Atiyah and Lück approximation conjectures for one-relator groups, _Math. Ann._ **376** (2020), nos. 3–4, 1741–1793. . Author version, used for theorem locators: .
-- W. Lück, _$`L^2`$-Invariants: Theory and Applications to Geometry and $`K`$-Theory_, Ergebnisse der Mathematik und ihrer Grenzgebiete, vol. 44, Springer, Berlin, 2002. .
-- Magnus, Wilhelm, Über diskontinuierliche Gruppen mit einer definierenden Relation. (Der Freiheitssatz) (1930)
-- W. Magnus, Über diskontinuierliche Gruppen mit einer definierenden Relation (Der Freiheitssatz), _Journal für die reine und angewandte Mathematik_ **163** (1930), 141–165. . English translation by C.-F. Nyberg-Brodda: .
-- W. Magnus, Das Identitätsproblem für Gruppen mit einer definierenden Relation, _Mathematische Annalen_ **106** (1932), 295–307. . English translation by C.-F. Nyberg-Brodda: .
-- D. Groves and J. F. Manning, _Quasiconvexity and Dehn filling_, arXiv:1708.07968v3, 2019. .
-- McCool, James, Schupp, Paul E., On one relator groups and HNN extensions (1973)
-- A. Minasyan, Separable subsets of GFERF negatively curved groups, _Journal of Algebra_ **304** (2006), no. 2, 1090–1100. doi:10.1016/j.jalgebra.2006.03.050. arXiv:math/0502101.
-- M. Mitra, Cannon–Thurston maps for trees of hyperbolic metric spaces, _Journal of Differential Geometry_ **48** (1998), no. 1, 135–164. . Author version, used for Corollary 3.11: .
-- Mutanguha, Jean Pierre, The dynamics and geometry of free group endomorphisms (2021)
-- J. P. Mutanguha, The dynamics and geometry of free group endomorphisms, _Advances in Mathematics_ **384** (2021), 107714. . .
-- Newman, B. B., Some results on one-relator groups (1968)
-- OpenAI, Virtual compact specialness of hyperbolic one-relator groups (2026)
-- OpenAI, Baumslag–Solitar-free one-relator groups are hyperbolic, OpenAI Math Release preprint OAI:Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026, 2026.
-- D. V. Osin, _Relatively hyperbolic groups: intrinsic geometry, algebraic properties, and algorithmic problems_, Memoirs of the American Mathematical Society **179** (2006), no. 843. .
-- D. V. Osin, Elementary subgroups of relatively hyperbolic groups and bounded generation, _International Journal of Algebra and Computation_ **16** (2006), no. 1, 99–118. . .
-- D. V. Osin, Peripheral fillings of relatively hyperbolic groups, _Inventiones Mathematicae_ **167** (2007), no. 2, 295–326. . Author version: .
-- C. Anantharaman and S. Popa, _An introduction to $`\mathrm{II}_1`$ factors_, author-hosted textbook draft, Chapter 9. .
-- V. Gerasimov and L. Potyagailo, Non-finitely generated relatively hyperbolic groups and Floyd quasiconvexity, _Groups, Geometry, and Dynamics_ **9** (2015), no. 2, 369–434. .
-- M. Pálfia, Operator means as unique solutions of operator equations, _RIMS K\^oky\^uroku_ **1839** (2013), 67–80. .
-- M. A. Roller, _Poc sets, median algebras and group actions_, habilitation thesis, 1998, revised 1999. .
-- M. Sageev, CAT(0) cube complexes and groups, in _Geometric Group Theory_, IAS/Park City Mathematics Series, vol. 21, American Mathematical Society, 2014, pp. 7–54. . Lecture and section locators refer to the author lecture text: .
-- A. Borisov and M. Sapir, Polynomial maps over finite fields and residual finiteness of mapping tori of group endomorphisms, _Inventiones Mathematicae_ **160** (2005), no. 2, 341–356. .
-- C. Druţu and M. Sapir, Non-linear residually finite groups, _Journal of Algebra_ **284** (2005), no. 1, 174–178. . Author version, used for Problem 6: .
-- D. Meintrup and T. Schick, A model for the universal space for proper actions of a hyperbolic group, _New York Journal of Mathematics_ **8** (2002), 1–7. .
-- J.-P. Serre, _Trees_, translated from the French by J. Stillwell, Springer-Verlag, Berlin–New York, 1980. .
-- J.-C. Sikorav, Homologie de Novikov associée \`a une classe de cohomologie réelle de degré un, Part IV, pp. 70–93, of _Points fixes de difféomorphismes symplectiques, intersections de sous-variétés lagrangiennes, et singularités de un-formes fermées_, Th\`ese d'État, Université Paris-Sud, 1987. .
-- Stallings, John R., Topology of finite graphs (1983)
-- J. R. Stallings, On torsion-free groups with infinitely many ends, _Annals of Mathematics_ (2) **88** (1968), no. 2, 312–334. .
-- J. R. Stallings, Topology of finite graphs, _Inventiones Mathematicae_ **71** (1983), 551–565. .
-- B. Sun, Cohomology of group theoretic Dehn fillings I: Cohen–Lyndon type theorems, _Journal of Algebra_ **542** (2020), 277–307. . Corrected author version: .
-- R. G. Swan, Groups of cohomological dimension one, _Journal of Algebra_ **12** (1969), no. 4, 585–610. .
-- S. D. Brodski\uı, Equations over groups, and groups with one defining relation, _Siberian Math. J._ **25** (1984), no. 2, 235–251. . Russian original: _Sibirsk. Mat. Zh._ **25** (1984), no. 2, 84–103.
-- N. Bergeron and D. T. Wise, A boundary criterion for cubulation, _American Journal of Mathematics_ **134** (2012), no. 3, 843–859. doi:10.1353/ajm.2012.0020. arXiv:0908.3609.
-- M. F. Hagen and D. T. Wise, Cubulating hyperbolic free-by-cyclic groups: the irreducible case, _Duke Mathematical Journal_ **165** (2016), no. 9, 1753–1813. . Author version: .
-- M. F. Hagen and D. T. Wise, Cubulating hyperbolic free-by-cyclic groups: the general case, _Geometric and Functional Analysis_ **25** (2015), no. 1, 134–179. . Author version: .
-- F. Haglund and D. T. Wise, Special cube complexes, _Geometric and Functional Analysis_ **17** (2008), no. 5, 1551–1620. doi:10.1007/s00039-007-0629-4. Corrected author version, used for theorem locators: .
-- F. Haglund and D. T. Wise, A combination theorem for special cube complexes, _Annals of Mathematics (2)_ **176** (2012), no. 3, 1427–1482. doi:10.4007/annals.2012.176.3.2.
-- D. T. Wise, The cubical route to understanding groups, in _Proceedings of the International Congress of Mathematicians—Seoul 2014_, vol. II, Kyung Moon Sa, Seoul, 2014, pp. 1075–1099. .
-- D. T. Wise, _The Structure of Groups with a Quasiconvex Hierarchy_, Annals of Mathematics Studies, vol. 209, Princeton University Press, Princeton, NJ, 2021. doi:10.1515/9780691213507.
-- A. Minasyan and P. Zalesskii, One-relator groups with torsion are conjugacy separable, _Journal of Algebra_ **382** (2013), 39–45. .
-- A. Minasyan and P. Zalesskii, Virtually compact special hyperbolic groups are conjugacy separable, _Commentarii Mathematici Helvetici_ **91** (2016), no. 4, 609–627. .
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6358] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 258 at [S2:605] |
+| S3 | [`preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/paper.tex`](../../../preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/build/source/paper.tex) | 46 | manuscript 1 of 2 (Gersten's conjecture); title [S3:24], date [S3:26], abstract [S3:30–32] |
+| S4 | [`preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/main.tex`](../../../preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/build/source/main.tex) | 79 | manuscript 2 of 2 (virtual compact specialness); title [S4:52], date [S4:54], abstract [S4:58–62] |
+| S5 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=258`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
