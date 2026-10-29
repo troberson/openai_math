@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [dynamical-systems](../topics/dynamical-systems.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [149-permanence-for-weakly-reversible-reaction-networks.md](../../../../notes/gen/summaries/149-permanence-for-weakly-reversible-reaction-networks.md) |
 
 ## Manuscripts
 
