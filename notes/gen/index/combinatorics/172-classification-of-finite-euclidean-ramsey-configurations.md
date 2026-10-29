@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample, classification |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [graph-coloring](../topics/graph-coloring.md) · [ramsey-theory](../topics/ramsey-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [172-classification-of-finite-euclidean-ramsey-configurations.md](../../../../notes/gen/summaries/172-classification-of-finite-euclidean-ramsey-configurations.md) |
 
 ## Manuscripts
 
