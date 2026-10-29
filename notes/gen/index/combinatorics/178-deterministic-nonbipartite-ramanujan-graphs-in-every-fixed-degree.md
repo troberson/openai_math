@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [algorithms](../topics/algorithms.md) · [spectral-theory](../topics/spectral-theory.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) · [modularity](../topics/modularity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md](../../../../notes/gen/summaries/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md) |
 
 ## Manuscripts
 
