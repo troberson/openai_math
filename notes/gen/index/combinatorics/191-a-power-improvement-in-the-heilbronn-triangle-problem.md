@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample, bound, uniform |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [191-a-power-improvement-in-the-heilbronn-triangle-problem.md](../../../../notes/gen/summaries/191-a-power-improvement-in-the-heilbronn-triangle-problem.md) |
 
 ## Manuscripts
 

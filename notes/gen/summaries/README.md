@@ -1,6 +1,6 @@
 # Family summary pages
 
-249 extended summaries, one per family, each built from the manuscript's own LaTeX and
+250 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **249** of **373** families have a page.
+The summaries are a fifth layer: **250** of **373** families have a page.
 
 ## The pages
 
@@ -205,6 +205,7 @@ The summaries are a fifth layer: **249** of **373** families have a page.
 - [188 — The sharp constant in random triangle removal](188-sharp-constant-in-random-triangle-removal.md)
 - [189 — Exact cycle–clique Ramsey numbers](189-exact-cycle-clique-ramsey-numbers.md)
 - [190 — Polynomial removal fails for ordered binary matrices](190-polynomial-removal-fails-for-ordered-binary-matrices.md)
+- [191 — A power improvement in the Heilbronn triangle problem](191-a-power-improvement-in-the-heilbronn-triangle-problem.md)
 - [193 — Serre's intersection-multiplicity conjecture](193-serres-intersection-multiplicity-conjecture.md)
 - [195 — A counterexample to the small Cohen–Macaulay module conjecture](195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md)
 - [196 — A counterexample to Kaplansky's zero-divisor conjecture](196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
@@ -292,7 +293,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **124 families have no summary page.** The 249 pages cover 249 of 373 families; the rest are recorded
+- **123 families have no summary page.** The 250 pages cover 250 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
