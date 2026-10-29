@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [logic](../topics/logic.md) · [ramsey-theory](../topics/ramsey-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md](../../../../notes/gen/summaries/170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md) |
 
 ## Manuscripts
 
