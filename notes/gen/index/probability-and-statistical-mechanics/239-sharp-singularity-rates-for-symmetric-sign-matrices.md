@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial, uniform |
 | Topics | [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [239-sharp-singularity-rates-for-symmetric-sign-matrices.md](../../../../notes/gen/summaries/239-sharp-singularity-rates-for-symmetric-sign-matrices.md) |
 
 ## Manuscripts
 
