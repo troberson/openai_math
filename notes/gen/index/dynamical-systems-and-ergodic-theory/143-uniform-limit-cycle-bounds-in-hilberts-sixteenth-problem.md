@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [dynamical-systems](../topics/dynamical-systems.md) · [hilbert-problems](../topics/hilbert-problems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md](../../../../notes/gen/summaries/143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md) |
 
 ## Manuscripts
 
