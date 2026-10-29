@@ -1,0 +1,373 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Group theory](../index/disciplines/group-theory.md) / [Family 249](../index/group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md)
+
+# 249 — A finitely generated counterexample to Eilenberg–Ganea
+
+[Index page](../index/group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md)
+
+## Original CONTENTS.md summary
+
+[S1:6160] (family entry):
+
+> **249. A finitely generated Eilenberg–Ganea counterexample.** Constructs a finitely generated residually finite group with integral cohomological dimension two and geometric dimension three, disproving the Eilenberg–Ganea conjecture. It has no two-dimensional classifying space, even with infinitely many cells. ([Lean](../../../lean/docs/249.md))
+
+[S2:587] carries the `\resultentry`, so the release blurb and the overview agree. The single manuscript:
+
+**A finitely generated counterexample to the Eilenberg–Ganea conjecture** [S3:35, S3:37]:
+
+> "We construct a finitely generated residually finite group of integral cohomological dimension two and geometric dimension three, disproving the Eilenberg–Ganea conjecture." [S3:41]
+
+## Undergraduate summary
+
+A **classifying space** for a group is a topological space that
+encodes all the ways the group can act. The **cohomological
+dimension** of a group measures the complexity of its
+algebraic structure — roughly, the highest dimension in
+which the group "sees" cohomology. The **geometric
+dimension** measures the lowest dimension of a classifying
+space the group can have. The **Eilenberg–Ganea
+conjecture** asked: if a group has cohomological dimension
+two, must it have a two-dimensional classifying space? The
+answer is **no** — the result constructs a finitely
+generated group with cohomological dimension two but
+geometric dimension three [S3:41, S2:587].
+
+## Graduate summary
+
+**Eilenberg–Ganea counterexample**
+[S3:41, S2:587]. There
+exists
+a
+finitely
+generated
+residually
+finite
+group
+$`G`$
+with
+integral
+cohomological
+dimension
+$`\mathrm{cd}(G) = 2`$
+and
+geometric
+dimension
+$`\mathrm{gd}(G) = 3`$.
+In
+particular,
+$`G`$
+has
+no
+two-dimensional
+classifying
+space,
+even
+with
+infinitely
+many
+cells,
+disproving
+the
+Eilenberg–Ganea
+conjecture.
+
+## History of the conjecture
+
+The **Eilenberg–Ganea conjecture** (1950s) predicted that
+for any group of integral cohomological dimension $`n`$, the
+geometric dimension equals $`n`$ — the cohomological
+obstruction is the only obstruction to building a low-
+dimensional classifying space. The conjecture was known for
+locally finite groups and for groups acting on trees, but
+remained open in general. The result [S3:41] provides the
+first finitely generated counterexample, showing that the
+geometric dimension can strictly exceed the cohomological
+dimension even for residually finite groups.
+
+**Prior (my training data, not this repo).** The
+Eilenberg–Ganea conjecture, cohomological dimension,
+geometric dimension, and classifying spaces are standard
+in group cohomology and geometric group theory. The
+finitely generated counterexample with residual finiteness
+is the novel contribution. I cannot confirm this
+independently from training alone.
+
+## Consequences
+
+- **The
+  Eilenberg–Ganea
+  conjecture
+  is
+  false**
+  [S3:41]:
+  a
+  finitely
+  generated
+  residually
+  finite
+  group
+  has
+  cohomological
+  dimension
+  two
+  and
+  geometric
+  dimension
+  three.
+- **No
+  two-dimensional
+  classifying
+  space**
+  [S3:41]:
+  the
+  constructed
+  group
+  has
+  no
+  $`K(G,1)`$
+  of
+  dimension
+  two,
+  even
+  with
+  infinitely
+  many
+  cells.
+
+## Section skeleton
+
+One
+manuscript:
+[S3]
+(title
+[S3:35],
+date
+[S3:37])
+—
+`main.tex`
+under
+`build/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S4]
+and
+one
+comparator
+stub
+[S5].
+The
+scope
+note
+[S4:9]
+states
+the
+target:
+a
+finitely
+generated
+residually
+finite
+group
+of
+integral
+cohomological
+dimension
+two
+with
+a
+three-dimensional
+classifying
+space
+but
+no
+two-dimensional
+one,
+so
+its
+geometric
+dimension
+is
+three.
+
+There
+is
+**no**
+`main_results`
+entry
+and
+**no**
+OAI
+tree:
+the
+formalization
+is
+a
+comparator
+stub
+only.
+The
+one
+comparator
+stub
+[S5]
+states
+the
+counterexample
+target
+and
+ends
+in
+`sorry`.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists,
+lives
+under
+`lean/OAI/`.
+Here
+no
+proved
+copy
+exists.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+proof.
+
+## Coverage
+
+The
+ledger
+row
+`fam=249`
+[S6]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=1`,
+`paps_form=0`,
+`chal=1`,
+`mainres=0`,
+`scope_note=1`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=1`
+is
+the
+coverage
+signature:
+the
+manuscript
+is
+**not**
+named
+as
+a
+formalization
+source,
+and
+there
+is
+no
+`main_results`
+entry
+—
+the
+formalization
+exists
+only
+as
+a
+scope
+note
+and
+a
+comparator
+stub.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+empty,
+`counterex_broad=1`,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+the
+Eilenberg–Ganea
+conjecture
+with
+"disproving".
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6160] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 249 at [S2:587] |
+| S3 | [`preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/build/main.tex`](../../../preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/build/main.tex) | 51 | manuscript 1 of 1; title [S3:35], date [S3:37], abstract [S3:41] |
+| S4 | [`lean/docs/249.md`](../../../lean/docs/249.md) | 15 | scope note — the formalization's Scope at [S4:9] and its one comparator link at [S4:15] |
+| S5 | [`lean/ComparatorChallenges/EilenbergGanea.lean`](../../../lean/ComparatorChallenges/EilenbergGanea.lean) | 124 | comparator stub — the counterexample target with its `sorry` |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=249`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

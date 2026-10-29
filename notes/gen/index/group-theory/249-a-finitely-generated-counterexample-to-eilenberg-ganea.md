@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [249-a-finitely-generated-counterexample-to-eilenberg-ganea.md](../../../../notes/gen/summaries/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md) |
 
 ## Manuscripts
 
