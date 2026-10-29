@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md](../../../../notes/gen/summaries/154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md) |
 
 ## Manuscripts
 
