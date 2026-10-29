@@ -1,6 +1,6 @@
 # Family summary pages
 
-260 extended summaries, one per family, each built from the manuscript's own LaTeX and
+261 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **260** of **373** families have a page.
+The summaries are a fifth layer: **261** of **373** families have a page.
 
 ## The pages
 
@@ -229,6 +229,7 @@ The summaries are a fifth layer: **260** of **373** families have a page.
 - [212 — No bigeodesics and smooth limit shapes in planar first-passage percolation](212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md)
 - [213 — No infinite critical clusters on quasi-transitive graphs](213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md)
 - [214 — The Benjamini–Schramm nonuniqueness conjecture](214-benjamini-schramm-nonuniqueness-conjecture.md)
+- [215 — Massive continuum limits and exact mass asymptotics for planar $O(n)$ models](215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md)
 - [221 — The Mézard–Parisi formula for diluted spin glasses](221-mezard-parisi-formula-for-diluted-spin-glasses.md)
 - [226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane](226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
 - [243 — Choiceless counting does not capture polynomial time](243-choiceless-counting-does-not-capture-polynomial-time.md)
@@ -303,7 +304,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **113 families have no summary page.** The 260 pages cover 260 of 373 families; the rest are recorded
+- **112 families have no summary page.** The 261 pages cover 261 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

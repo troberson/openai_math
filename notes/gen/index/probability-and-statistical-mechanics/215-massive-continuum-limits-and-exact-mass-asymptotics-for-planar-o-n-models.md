@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) · [calculus-of-variations](../topics/calculus-of-variations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md](../../../../notes/gen/summaries/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md) |
 
 ## Manuscripts
 
