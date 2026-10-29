@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, uniform |
 | Topics | [hypergraphs](../topics/hypergraphs.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md](../../../../notes/gen/summaries/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) |
 
 ## Manuscripts
 
