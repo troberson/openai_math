@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [group-theory](../topics/group-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [256-howies-conjecture-on-equations-over-groups.md](../../../../notes/gen/summaries/256-howies-conjecture-on-equations-over-groups.md) |
 
 ## Manuscripts
 
