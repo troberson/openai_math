@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [dynamical-systems](../topics/dynamical-systems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [153-arithmetic-classification-of-bernoulli-convolutions.md](../../../../notes/gen/summaries/153-arithmetic-classification-of-bernoulli-convolutions.md) |
 
 ## Manuscripts
 

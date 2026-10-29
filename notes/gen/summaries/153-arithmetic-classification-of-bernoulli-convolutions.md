@@ -1,0 +1,180 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Dynamical systems and ergodic theory](../index/disciplines/dynamical-systems-and-ergodic-theory.md) / [Family 153](../index/dynamical-systems-and-ergodic-theory/153-arithmetic-classification-of-bernoulli-convolutions.md)
+
+# 153 — Arithmetic classification of Bernoulli convolutions
+
+[Index page](../index/dynamical-systems-and-ergodic-theory/153-arithmetic-classification-of-bernoulli-convolutions.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:3648] and the catalog abstract [S2:387] state
+the family's claim: an arithmetic classification of the singular and
+absolutely continuous unbiased Bernoulli convolutions for every
+parameter $\lambda\in(0,1)$, plus singular examples beyond the
+reciprocals of Pisot numbers. The manuscript's title is *Arithmetic
+classification and non-Pisot singularity for Bernoulli convolutions*
+[S3:31], dated October 3, 2026 [S3:33]. Its abstract
+
+
+> We give an arithmetic classification of singular and absolutely continuous unbiased Bernoulli convolutions for every parameter $\lambda\in(0,1)$. The criterion is expressed through one-sided approximation by explicitly defined finite sets of algebraic units; it is an infinite approximation condition, not a finite membership algorithm. We also establish singular examples beyond reciprocals of Pisot numbers: singularity holds at the reciprocal of every quartic Salem number in $(1,2)$ and at the reciprocal of a specified non-Pisot root of an explicit degree-$31$ polynomial. [S3:37]
+
+## Undergraduate summary
+
+An *unbiased Bernoulli convolution* with parameter
+$\lambda\in(0,1)$ is the probability measure $\nu_\lambda$ on
+$\mathbb R$ obtained by the random series
+$\sum_{n\ge0}\pm\lambda^n$ where the $\pm$ signs are independent
+coin flips. The classical question is when this measure is
+*absolutely continuous* (has a density) and when it is *singular*
+(concentrates on a set of Lebesgue measure zero). A *Pisot number* is
+an algebraic integer all of whose conjugates lie inside the unit
+circle; the reciprocal $1/\beta$ of a Pisot number $\beta>1$ is the
+canonical parameter where singularity is known. This manuscript (a)
+gives an arithmetic criterion, valid for **every**
+$\lambda\in(0,1)$, deciding exactly which parameters are singular and
+which are absolutely continuous, and (b) proves that singularity holds
+well outside the Pisot reciprocals — at the reciprocal of every
+quartic Salem number in $(1,2)$ and at the reciprocal of a specified
+non-Pisot root of an explicit degree-$31$ polynomial [S3:37].
+
+## Graduate summary
+
+**The arithmetic criterion.** The classification [S4:48–60]
+defines a parameter set
+$\mathcal C=(0,1/2)\cup\bigl[(1/2,1)\cap\bigcup_{d\ge2}
+\bigcap_{j\ge1}\limsup_{n\to\infty}
+\bigcup_{r\in R_*(n,d,j)}[r-4^{-n},r)\bigr]\bigr)$,
+an infinite one-sided-approximation condition by explicitly defined
+finite sets of algebraic units $R_*(n,d,j)$. For every
+$\lambda\in(0,1)$, $\nu_\lambda$ is singular if and only if
+$\lambda\in\mathcal C$, and absolutely continuous if and only if
+$\lambda\notin\mathcal C$ [S4:48–60]. It is an infinite
+approximation condition, **not** a finite membership algorithm
+[S3:37].
+
+**Salem singularity.** Let $\beta\in(1,2)$ be a Salem number of
+degree four. Then the unbiased Bernoulli convolution
+$\nu_{1/\beta}$ is singular with respect to Lebesgue measure
+
+
+> **Theorem 4.1**
+Let $\beta\in(1,2)$ be a Salem number of degree four. Then the unbiased
+Bernoulli convolution $\nu_{1/\beta}$ is singular with respect to Lebesgue
+measure. [S6:10–14]
+
+**The degree-31 non-Pisot singularity.** The polynomial $p$ in
+\eqref{np:polynomial} has a unique real root
+$\beta\in(1.8392,1.8393)$, which is not a Pisot number, and
+$\nu_{1/\beta}$ is singular with respect to Lebesgue measure
+
+
+> **Theorem 5.1**
+The polynomial $p$ in has a unique real root
+$\beta\in(1.8392,1.8393)$. This root is not a Pisot number, and
+$\nu_{1/\beta}$ is singular with respect to Lebesgue measure. [S5:25–29]
+
+Both results push singularity beyond the reciprocal of a Pisot number.
+
+**The rational certificate.** The degree-31 root bounds and the
+predictor estimates are backed by a rational certificate: the appendix
+proves the root bounds and moment estimates with exact rational
+arithmetic, combining finite rational products with an analytic
+estimate for their infinite tails, specifying the rounding and the order
+of operations so the certificate is reproducible [S7:1–8]. The
+shipped script checks the certificate
+
+
+> Only the Python standard library is used. Every mathematical calculation uses
+integers or fractions.Fraction; no floating-point operation enters the proof.
+The script checks root-center inequalities, coefficient arrays, rounded cosine
+products, predictor sums, and finite products bounding the anisotropy term.
+The accompanying manuscript proves the analytic error bounds that relate these
+finite calculations to the infinite products. [S8:7–12]
+
+## History of the conjecture
+
+The classification of Bernoulli convolutions by parameter
+$\lambda\in(0,1)$ is a long-standing problem connecting harmonic
+analysis, probability, and Diophantine approximation. The Pisot
+reciprocals are the classical singular parameters (the Erdős
+conjecture regime and its resolution); Salem-number singularity and a
+genuine non-Pisot singular example both extend the singular set past
+that boundary. A parameter-by-parameter **criterion** expressed as a
+one-sided approximation condition by algebraic units, together with
+Salem and non-Pisot singular examples, is the family's combination
+[S3:37, S4:48–60].
+
+**Prior (my training data, not this repo).** I know the classical
+Bernoulli-convolution dichotomy (Pisot reciprocals singular, many
+non-Pisot parameters absolutely continuous) and the Erdős
+conjecture on the size of the singular set. A complete
+**arithmetic criterion** valid for every $\lambda\in(0,1)$, plus
+proved singularity at quartic Salem reciprocals and at an explicit
+degree-31 non-Pisot root, goes beyond what I can independently verify;
+I cannot confirm the approximation sets $R_*(n,d,j)$ or the
+certificate's analytic tail bounds from training alone.
+
+## Consequences
+
+**A parameter-by-parameter classification.** For every
+$\lambda\in(0,1)$, $\nu_\lambda$ is singular
+$\iff\lambda\in\mathcal C$ and absolutely continuous
+$\iff\lambda\notin\mathcal C$, an infinite one-sided-approximation
+condition by algebraic units [S4:48–60].
+
+**Salem singularity.** The unbiased Bernoulli convolution at the
+reciprocal of every quartic Salem number in $(1,2)$ is singular
+[S6:10–14].
+
+**Non-Pisot singularity.** Singularity holds at the reciprocal of a
+specified non-Pisot root of an explicit degree-$31$ polynomial,
+$\beta\in(1.8392,1.8393)$ [S5:25–29].
+
+**A reproducible certificate.** The degree-31 root bounds and
+predictor estimates are checked by a finite-arithmetic certificate
+that runs on the Python standard library with integer /
+`fractions.Fraction` arithmetic only [S7:1–8, S8:7–12].
+
+## Section skeleton
+
+One manuscript [S3:37] (title [S3:31], date [S3:33]) — `main.tex`
+under `build/`, 2,579 lines of `.tex` across `main.tex` (80),
+`classification.tex` (704), `nonpisot.tex` (675), `salem.tex` (445),
+`certificate.tex` (675), plus `references.bib`. The family ships one
+`verification/` bundle: `verify_degree31.py` (487 lines).
+
+1. Classification and criterion [S4:48–60]
+2. Non-Pisot singularity [S5:25–29]
+3. Salem singularity [S6:10–14]
+4. Certificate appendix [S7]
+
+## Coverage
+
+T0: no Lean, no scope note, no comparator challenge, no reasoning
+trace. Nothing about this family is machine-checked in Lean. The
+ledger row `fam=153` records `paps 1`, `paps_form 0`, `tier T0`,
+`chal 0`, `mainres 0`, `scope_note 0`, `verification 1`, `inputs 0`,
+`trace` empty, `shapes uniform`, `resolves_named 0`,
+`counterex_broad 0`. The one evidence artifact is the finite-arithmetic
+certificate `verification/verify_degree31.py` (487 lines): it uses only
+the Python standard library, performs every calculation in integers or
+`fractions.Fraction` (no floating point enters the proof), and checks
+root centers, coefficient arrays, rounded cosine products, predictor
+sums, and finite products bounding the anisotropy term
+[S8:7–12]. It is a certificate for the degree-31 example, not a
+proof of the classification, the Salem, or the non-Pisot theorems, and
+not a Lean check; the accompanying manuscript proves the analytic error
+bounds that relate these finite calculations to the infinite products
+[S8:11–12, S7:1–8].
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 153 at [S1:3648] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{153} at [S2:387] |
+| S3 | [`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/main.tex`](../../../preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/main.tex) | 80 | the manuscript root: title [S3:31], date [S3:33], abstract [S3:37] |
+| S4 | [`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/classification.tex`](../../../preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/classification.tex) | 704 | the arithmetic criterion [S4:48–60] |
+| S5 | [`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/nonpisot.tex`](../../../preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/nonpisot.tex) | 675 | the degree-31 non-Pisot theorem [S5:25–29] |
+| S6 | [`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/salem.tex`](../../../preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/salem.tex) | 445 | the Salem-number theorem [S6:10–14] |
+| S7 | [`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/certificate.tex`](../../../preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/certificate.tex) | 675 | the rational-certificate appendix [S7:1–8] |
+| S8 | [`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/verification/verify_degree31.py`](../../../preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/verification/verify_degree31.py) | 487 | the finite-arithmetic certificate: the standard-library and exact-arithmetic clauses [S8:7–12] |
