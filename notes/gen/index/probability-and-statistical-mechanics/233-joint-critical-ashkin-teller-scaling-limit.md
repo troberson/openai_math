@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [233-joint-critical-ashkin-teller-scaling-limit.md](../../../../notes/gen/summaries/233-joint-critical-ashkin-teller-scaling-limit.md) |
 
 ## Manuscripts
 
