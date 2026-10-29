@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform, conditional |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [logic](../topics/logic.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [240-shelahs-eventual-categoricity-conjecture.md](../../../../notes/gen/summaries/240-shelahs-eventual-categoricity-conjecture.md) |
 
 ## Manuscripts
 
