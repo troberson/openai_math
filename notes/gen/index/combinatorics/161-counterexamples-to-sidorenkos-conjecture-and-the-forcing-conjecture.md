@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample, density |
 | Topics | [graph-theory](../topics/graph-theory.md) · [logic](../topics/logic.md) · [random-graphs](../topics/random-graphs.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md](../../../../notes/gen/summaries/161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md) |
 
 ## Manuscripts
 
