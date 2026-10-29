@@ -13,7 +13,7 @@
 | Claim shapes | bound, density |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [measure-theory](../topics/measure-theory.md) · [disordered-systems](../topics/disordered-systems.md) · [condensed-matter](../topics/condensed-matter.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [222-perceptron-free-energies-and-microscopic-jamming.md](../../../../notes/gen/summaries/222-perceptron-free-energies-and-microscopic-jamming.md) |
 
 ## Manuscripts
 
