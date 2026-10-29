@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [spectral-theory](../topics/spectral-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [262-sharp-one-dimensional-lieb-thirring-inequalities.md](../../../../notes/gen/summaries/262-sharp-one-dimensional-lieb-thirring-inequalities.md) |
 
 ## Manuscripts
 
