@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, density |
 | Topics | [metric-geometry](../topics/metric-geometry.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [190-polynomial-removal-fails-for-ordered-binary-matrices.md](../../../../notes/gen/summaries/190-polynomial-removal-fails-for-ordered-binary-matrices.md) |
 
 ## Manuscripts
 
