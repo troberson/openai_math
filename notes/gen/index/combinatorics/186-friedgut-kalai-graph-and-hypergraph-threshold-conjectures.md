@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, partial, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) · [random-graphs](../topics/random-graphs.md) · [hypergraphs](../topics/hypergraphs.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md](../../../../notes/gen/summaries/186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md) |
 
 ## Manuscripts
 
