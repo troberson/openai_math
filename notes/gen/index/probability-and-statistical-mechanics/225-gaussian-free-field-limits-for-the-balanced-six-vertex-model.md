@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md](../../../../notes/gen/summaries/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) |
 
 ## Manuscripts
 
