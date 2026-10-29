@@ -11,15 +11,15 @@ state the family's claim: a family of sharp critical results
 for the nearest-neighbor planar XY model on the square
 lattice. The two-point spin correlation at criticality
 carries a logarithmic correction:
-$C_{b_c}(r) = B_{\mathrm{XY}}
-r^{-1/4}(\log r)^{1/8}(1+o(1))$. The center
-magnetization in a square of side $n$ is
-$A_{\mathrm{XY}} n^{-1/8}(\log n)^{1/16}(1+o(1))$.
+$`C_{b_c}(r) = B_{\mathrm{XY}}
+r^{-1/4}(\log r)^{1/8}(1+o(1))`$. The center
+magnetization in a square of side $`n`$ is
+$`A_{\mathrm{XY}} n^{-1/8}(\log n)^{1/16}(1+o(1))`$.
 The critical spin field converges to the imaginary
 exponential of a Gaussian free field. The
 correlation length has an essential singularity at
 the BKT transition. The critical correlation
-exponent is $1/4$. BKT universality holds for
+exponent is $`1/4`$. BKT universality holds for
 height and planar spin fields. The family ships
 six manuscripts [S1:5015]:
 
@@ -39,21 +39,21 @@ six manuscripts [S1:5015]:
 The logarithmic-correction abstract 
 
 > We prove the critical logarithmic correction for the nearest-neighbor cosine
-XY model on the square lattice. Let $C_{b_c}(r)$ be the two-point correlation
+XY model on the square lattice. Let $`C_{b_c}(r)`$ be the two-point correlation
 at critical inverse temperature, obtained by taking the free-box thermodynamic
-limit while the two sites remain $r$ lattice steps apart along a coordinate
+limit while the two sites remain $`r`$ lattice steps apart along a coordinate
 axis. Then
 $$C_{b_c}(r)=B_{\mathrm{XY}}r^{-1/4}(\log r)^{1/8}(1+o(1)),
 \qquad B_{\mathrm{XY}}\in(0,\infty),$$
-as $r\to\infty$. [S3:52–63]
+as $`r\to\infty`$. [S3:52–63]
 
 The critical-correlation-exponent abstract 
 
 > For the ordinary nearest-neighbor XY model on the square lattice,
 we prove the Berezinskii–Kosterlitz–Thouless prediction that the
-critical spin-correlation exponent is $1/4$. More precisely, at
+critical spin-correlation exponent is $`1/4`$. More precisely, at
 the mass-defined critical inverse temperature, the infinite-volume
-correlation is $n^{-1/4+o(1)}$. The infinite-volume limit through
+correlation is $`n^{-1/4+o(1)}`$. The infinite-volume limit through
 free square boxes is taken before the separation limit. [S7:45–52]
 
 The critical-spin-field abstract 
@@ -63,11 +63,11 @@ prove that at the mass-defined critical inverse temperature of the
 nearest-neighbor XY model on the square lattice, the spin field on a
 square with boundary angles fixed to zero converges along the full
 sequence to the full-variance imaginary exponential of a zero-Dirichlet
-Gaussian free field with stiffness $2/\pi$. The normalization uses
+Gaussian free field with stiffness $`2/\pi`$. The normalization uses
 the exact center magnetization and the lattice Green-function factor.
-Convergence holds in law in $H^{-3}_{\mathrm{loc}}((-1,1)^2)$;
+Convergence holds in law in $`H^{-3}_{\mathrm{loc}}((-1,1)^2)`$;
 all mixed moments and joint laws of fields smeared against smooth
-compactly supported test functions in $(-1,1)^2$ converge as well. [S5:52–63]
+compactly supported test functions in $`(-1,1)^2`$ converge as well. [S5:52–63]
 
 ## Undergraduate summary
 
@@ -82,10 +82,10 @@ transition**: correlations do not decay
 exponentially but as a power law, and the power
 changes discontinuously at the transition point.
 The family proves **exact formulas** for the
-critical correlation: it decays as $r^{-1/4}$
-times a **logarithmic correction** $(\log
-r)^{1/8}$ [S3:52–63]. The magnetization in
-a large box decays as $n^{-1/8}(\log n)^{1/16}$
+critical correlation: it decays as $`r^{-1/4}`$
+times a **logarithmic correction** $`(\log
+r)^{1/8}`$ [S3:52–63]. The magnetization in
+a large box decays as $`n^{-1/8}(\log n)^{1/16}`$
 [S4:34–41]. The correlation length has an
 **essential singularity** at the BKT point
 [S6:47–58]. The critical spin field is the
@@ -99,19 +99,19 @@ nearest-neighbor model on the square lattice
 **The critical logarithmic correction**
 [S3:52–63, S2:517]. The two-point
 correlation at critical inverse temperature
-satisfies $C_{b_c}(r) = B_{\mathrm{XY}}
-r^{-1/4}(\log r)^{1/8}(1+o(1))$ as $r \to
-\infty$, with $B_{\mathrm{XY}} \in (0,
-\infty)$. The free-box thermodynamic limit is
-taken while the two sites remain $r$ lattice
+satisfies $`C_{b_c}(r) = B_{\mathrm{XY}}
+r^{-1/4}(\log r)^{1/8}(1+o(1))`$ as $`r \to
+\infty`$, with $`B_{\mathrm{XY}} \in (0,
+\infty)`$. The free-box thermodynamic limit is
+taken while the two sites remain $`r`$ lattice
 steps apart along a coordinate axis.
 
 **The critical center magnetization** [S4:34–41,
-S2:517]. For a square of side $n$ with aligned
+S2:517]. For a square of side $`n`$ with aligned
 boundary spins at the mass-defined critical
 threshold, the center magnetization is
-$A_{\mathrm{XY}} n^{-1/8}(\log n)^{1/16}(1+o(1))$
-with $A_{\mathrm{XY}} > 0$ finite.
+$`A_{\mathrm{XY}} n^{-1/8}(\log n)^{1/16}(1+o(1))`$
+with $`A_{\mathrm{XY}} > 0`$ finite.
 
 **The critical spin field** [S5:52–63,
 S2:517]. At the mass-defined critical inverse
@@ -119,8 +119,8 @@ temperature, the spin field on a square with
 boundary angles fixed to zero converges along the
 full sequence to the full-variance imaginary
 exponential of a zero-Dirichlet Gaussian free
-field with stiffness $2/\pi$. Convergence is in
-law in $H^{-3}_{\mathrm{loc}}((-1,1)^2)$, and
+field with stiffness $`2/\pi`$. Convergence is in
+law in $`H^{-3}_{\mathrm{loc}}((-1,1)^2)`$, and
 all mixed moments and joint laws of smeared
 fields converge.
 
@@ -132,7 +132,7 @@ non-analytic behavior.
 
 **The critical correlation exponent** [S7:45–52,
 S2:517]. The critical correlation exponent is
-$1/4$: the correlation decays as $r^{-1/4}$ up
+$`1/4`$: the correlation decays as $`r^{-1/4}`$ up
 to the logarithmic correction.
 
 **The BKT universality** [S8:49, S8:51, S2:517].
@@ -157,8 +157,8 @@ antivortex pairs: below the transition, vortices
 are bound and correlations decay as a power law;
 above, vortices are free and correlations decay
 exponentially. At the transition, the power-law
-exponent takes the value $1/4$. The
-**logarithmic correction** $(\log r)^{1/8}$ is a
+exponent takes the value $`1/4`$. The
+**logarithmic correction** $`(\log r)^{1/8}`$ is a
 one-loop correction to the leading power law,
 predicted by conformal field theory. The
 **center magnetization** and the **spin field**
@@ -175,7 +175,7 @@ S6:47–58, S7:45–52, S2:517].
 **Prior (my training data, not this repo).** I
 know the XY model, the BKT transition, the
 vortex-antivortex unbinding picture, and the
-predicted $1/4$ exponent. The **exact
+predicted $`1/4`$ exponent. The **exact
 logarithmic correction**, the **center
 magnetization formula**, the **spin field
 convergence to the imaginary exponential of a
@@ -188,13 +188,13 @@ verify from training alone.
 
 **The critical two-point correlation of the
 planar XY model is determined up to a
-model-specific constant**: $C_{b_c}(r) =
+model-specific constant**: $`C_{b_c}(r) =
 B_{\mathrm{XY}} r^{-1/4}(\log
-r)^{1/8}(1+o(1))$ [S3:52–63, S2:517].
+r)^{1/8}(1+o(1))`$ [S3:52–63, S2:517].
 
 **The critical center magnetization is
-determined**: $A_{\mathrm{XY}} n^{-1/8}(\log
-n)^{1/16}(1+o(1))$ [S4:34–41, S2:517].
+determined**: $`A_{\mathrm{XY}} n^{-1/8}(\log
+n)^{1/16}(1+o(1))`$ [S4:34–41, S2:517].
 
 **The critical spin field converges to the
 imaginary exponential of a GFF** [S5:52–63,
@@ -204,7 +204,7 @@ S2:517].
 singularity at the BKT point** [S6:47–58,
 S2:517].
 
-**The critical correlation exponent is $1/4$**
+**The critical correlation exponent is $`1/4`$**
 [S7:45–52, S2:517].
 
 ## Section skeleton

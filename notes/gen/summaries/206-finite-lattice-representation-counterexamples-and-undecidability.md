@@ -74,7 +74,7 @@ There is no algorithm that, given a finite lattice,
 decides whether it is representable as a congruence
 lattice of a finite algebra. Equivalently, the
 representation problem is
-$\Sigma^0_1$-complete. The same undecidability holds
+$`\Sigma^0_1`$-complete. The same undecidability holds
 for recognizing **full subgroup intervals** in finite
 groups.
 

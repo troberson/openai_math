@@ -10,11 +10,11 @@ The release's blurb "**067. The Campana–Peternell conjecture in dimension six.
  reads: "We prove that every smooth connected complex projective Fano sixfold with nef
 tangent bundle is rational homogeneous, resolving the Campana–Peternell
 conjecture in complex dimension six.
-As a consequence, a connected compact Kähler manifold $X$ with nef
+As a consequence, a connected compact Kähler manifold $`X`$ with nef
 holomorphic tangent bundle and
-$\dim_{\mathbb C}X-\widetilde q(X)\leq6$ has ordinary universal cover
-$F\times\mathbb C^{\widetilde q(X)}$, where $F$ is a rational homogeneous
-manifold and $\widetilde q(X)$ is the maximal irregularity of a connected
+$`\dim_{\mathbb C}X-\widetilde q(X)\leq6`$ has ordinary universal cover
+$`F\times\mathbb C^{\widetilde q(X)}`$, where $`F`$ is a rational homogeneous
+manifold and $`\widetilde q(X)`$ is the maximal irregularity of a connected
 finite étale cover. [S3:36–44]"
 
 ## Undergraduate summary
@@ -22,7 +22,7 @@ finite étale cover. [S3:36–44]"
 A smooth projective variety is *Fano* if its anticanonical bundle
 is ample, and its tangent bundle is *nef* if it has nonnegative
 degree on every curve. Rational homogeneous varieties (quotients
-$G/P$ of a semisimple group by a parabolic) always have nef
+$`G/P`$ of a semisimple group by a parabolic) always have nef
 tangent bundles. The Campana–Peternell conjecture asks whether the
 converse holds among Fano varieties: does nefness of the tangent
 bundle force the variety to be rational homogeneous? The theorem
@@ -33,12 +33,12 @@ Every smooth connected complex projective Fano variety of dimension six
 with nef tangent bundle is rational homogeneous. [S4:23–26]
 
 For a sixfold, the prior work covers every Picard number
-$\rho(X)\ge2$ via Kanemitsu; only Picard number one remains, and
+$`\rho(X)\ge2`$ via Kanemitsu; only Picard number one remains, and
 characterization results reduce that to pseudoindices four and
-five . "Kanemitsu also proved that a smooth complex Fano $n$-fold with nef
-tangent bundle is rational homogeneous whenever $\rho(X)>n-5$
+five . "Kanemitsu also proved that a smooth complex Fano $`n`$-fold with nef
+tangent bundle is rational homogeneous whenever $`\rho(X)>n-5`$
 \cite[Theorem 0.2]Kanemitsu2016. For a sixfold, this covers every
-$\rho(X)\geq2$, leaving only Picard number one. In that range,
+$`\rho(X)\geq2`$, leaving only Picard number one. In that range,
 standard characterization results reduce the problem to pseudoindices
 four and five. Watanabe treated the pseudoindex-four sixfold case
 \cite[Theorem 2.4]Watanabe2021. We include an independent intersection
@@ -59,11 +59,11 @@ and deformation properties of the family of minimal rational
 curves, but those do not by themselves identify the threefold of
 tangent directions. The proof uses the universal family in two
 ways — as a family of curves over its parameter space and as a
-family of threefolds over $X$ — and the compatibility of these two
+family of threefolds over $`X`$ — and the compatibility of these two
 maps gives a characteristic-number identity that determines the
 projective variety of tangent directions . "We extract additional information by
 using the universal family in two ways: as a family of rational curves
-over their parameter space, and as a family of threefolds over $X$.
+over their parameter space, and as a family of threefolds over $`X`$.
 The compatibility of these two maps yields a characteristic-number
 identity strong enough to determine the projective variety of tangent
 directions. [S4:53–60]"
@@ -73,11 +73,11 @@ rational tangents (VMRT) is then constrained by characteristic
 classes and the geometry of minimal curves. The sectional-genus
 formula and a Grothendieck–Riemann–Roch characteristic-number
 calculation force the tangent directions to be the Segre threefold
-$\mathbb P^1\times\mathbb P^2\subset\mathbb P^5$, which is the
-VMRT of the Grassmannian $G(2,5)$ and [S6]. "The sectional-genus
-formula excludes $u=4$ and forces $L^3=3$ when $u=8/3$.
+$`\mathbb P^1\times\mathbb P^2\subset\mathbb P^5`$, which is the
+VMRT of the Grassmannian $`G(2,5)`$ and [S6]. "The sectional-genus
+formula excludes $`u=4`$ and forces $`L^3=3`$ when $`u=8/3`$.
 The variety of minimal rational tangents is consequently the Segre
-threefold $\mathbb P^1\times\mathbb P^2\subset\mathbb P^5$. [S4:129–131]"
+threefold $`\mathbb P^1\times\mathbb P^2\subset\mathbb P^5`$. [S4:129–131]"
 
 ## History of the conjecture
 
@@ -90,7 +90,7 @@ tangent directions of minimal rational curves [S4:20–35].
 
 Watanabe proved the fivefold case of Picard number greater than
 one, and Kanemitsu completed the fivefold classification and the
-$\rho>n-5$ range [S4:37–42]. Hwang removed the fourth-Betti-number
+$`\rho>n-5`$ range [S4:37–42]. Hwang removed the fourth-Betti-number
 hypothesis from Mok's argument, giving the VMRT classification
 used here [S4:70–76].
 
@@ -102,14 +102,14 @@ is rational homogeneous [S4:23–26].
 
 **A Kähler universal-cover consequence.** A connected compact
 Kähler manifold with nef holomorphic tangent bundle and
-$\dim X-\widetilde q(X)\le6$ has universal cover
-$F\times\mathbb C^{\widetilde q(X)}$ with $F$ rational
+$`\dim X-\widetilde q(X)\le6`$ has universal cover
+$`F\times\mathbb C^{\widetilde q(X)}`$ with $`F`$ rational
 homogeneous [S3:36–44].
 
 ## Section skeleton
 
 **Main file** [S3:36–44], 7 sections under `build/sections/`:
-introduction [S4], $p_1$-cohomology, minimal curves,
+introduction [S4], $`p_1`$-cohomology, minimal curves,
 pseudoindex-four [S5], characteristic classes, grassmannian
 [S6], conclusion [S7].
 

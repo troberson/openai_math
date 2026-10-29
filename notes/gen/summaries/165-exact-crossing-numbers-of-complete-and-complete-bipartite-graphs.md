@@ -9,16 +9,16 @@
 The release's blurb [S1:3886] and the catalog abstract [S2:411] state
 the family's claim: a resolution of the **Harary–Hill
 conjecture** (the crossing number of every complete graph
-$K_n$) and of **Turan's brickyard problem** in the
+$`K_n`$) and of **Turan's brickyard problem** in the
 **Zarankiewicz formulation** (the crossing number of every complete
-bipartite graph $K_{m,n}$). Both formulas are exact, and the
+bipartite graph $`K_{m,n}`$). Both formulas are exact, and the
 classical drawings are proven optimal among all plane drawings with
 continuous edge arcs. Two manuscripts carry the family. The first,
 *The crossing number of complete graphs* [S3:32, S3:34], abstract
 
 
-> We prove the Harary–Hill conjecture: for every positive integer $n$,
-the ordinary crossing number of the complete graph $K_n$ is
+> We prove the Harary–Hill conjecture: for every positive integer $`n`$,
+the ordinary crossing number of the complete graph $`K_n`$ is
 $$\frac14\left\lfloor\frac n2\right\rfloor
  \left\lfloor\frac{n-1}{2}\right\rfloor
  \left\lfloor\frac{n-2}{2}\right\rfloor
@@ -28,26 +28,26 @@ The second, *The crossing number of complete bipartite graphs*
 [S4:32, S4:34], abstract [S4:39–47]:
 
 We prove the Zarankiewicz crossing-number conjecture, resolving
-Turan's brickyard problem. For all positive integers $m,n$, the
-ordinary crossing number of the complete bipartite graph $K_{m,n}$
+Turan's brickyard problem. For all positive integers $`m,n`$, the
+ordinary crossing number of the complete bipartite graph $`K_{m,n}`$
 is
-$\lfloor\tfrac{m}{2}\rfloor\lfloor\tfrac{m-1}{2}\rfloor
-\lfloor\tfrac{n}{2}\rfloor\lfloor\tfrac{n-1}{2}\rfloor$
+$`\lfloor\tfrac{m}{2}\rfloor\lfloor\tfrac{m-1}{2}\rfloor
+\lfloor\tfrac{n}{2}\rfloor\lfloor\tfrac{n-1}{2}\rfloor`$
 [S4:39–47].
 
 ## Undergraduate summary
 
-The **crossing number** $\mathrm{cr}(G)$ of a graph $G$ is the
-**fewest** number of times two edges must cross when $G$ is drawn in
+The **crossing number** $`\mathrm{cr}(G)`$ of a graph $`G`$ is the
+**fewest** number of times two edges must cross when $`G`$ is drawn in
 the plane with the edges as continuous arcs. (Edges that meet at a
 vertex do not count; only proper crossings of edge interiors do, and
 if the same pair of edges crosses twice, both crossings count.) For
 decades, the exact value was unknown for the two most basic graph
 families. The **Harary–Hill conjecture** (1960s) proposed a
-closed formula for $\mathrm{cr}(K_n)$, the complete graph on $n$
+closed formula for $`\mathrm{cr}(K_n)`$, the complete graph on $`n`$
 vertices; the **Zarankiewicz conjecture** proposed one for
-$\mathrm{cr}(K_{m,n})$, the complete bipartite graph on parts of
-size $m$ and $n$. Both were known to hold for small graph sizes,
+$`\mathrm{cr}(K_{m,n})`$, the complete bipartite graph on parts of
+size $`m`$ and $`n`$. Both were known to hold for small graph sizes,
 but the general formulas resisted proof. This family closes both:
 it proves each lower bound (no drawing has fewer crossings than the
 formula) and constructs a drawing that attains exactly that many
@@ -56,21 +56,21 @@ formula) and constructs a drawing that attains exactly that many
 ## Graduate summary
 
 **The complete-graph formula** [S3:37–44, S5:10]. For every
-$n\ge3$,
-$\mathrm{cr}(K_n)={\textstyle\frac14}\lfloor
+$`n\ge3`$,
+$`\mathrm{cr}(K_n)={\textstyle\frac14}\lfloor
 n/2\rfloor\lfloor(n-1)/2\rfloor\lfloor(n-2)/2\rfloor
-\lfloor(n-3)/2\rfloor$. The proof has two halves: a **lower bound**
+\lfloor(n-3)/2\rfloor`$. The proof has two halves: a **lower bound**
 showing every drawing has at least this many crossings (via a
 polynomial/intersection test on node structures), and a **matching
 two-page drawing** attaining exactly the bound
 [S3:37–44, S5:10, S9:76–80].
 
 **The bipartite formula** [S4:39–47, S5:12]. For every
-positive $m,n$,
-$\mathrm{cr}(K_{m,n})=\lfloor m/2\rfloor\lfloor(m-1)/2\rfloor
-\lfloor n/2\rfloor\lfloor(n-1)/2\rfloor$. Again two halves: the
+positive $`m,n`$,
+$`\mathrm{cr}(K_{m,n})=\lfloor m/2\rfloor\lfloor(m-1)/2\rfloor
+\lfloor n/2\rfloor\lfloor(n-1)/2\rfloor`$. Again two halves: the
 **lower bound** (every admissible drawing has at least
-$\mathrm{axisPairs}\,m\times\mathrm{axisPairs}\,n$ crossings)
+$`\mathrm{axisPairs}\,m\times\mathrm{axisPairs}\,n`$ crossings)
 and a **balanced-axis drawing** that attains it
 [S4:39–47, S5:12, S8:8–11].
 
@@ -80,8 +80,8 @@ that cross more than once contribute one crossing **per** crossing,
 not per edge pair [S5:10, S5:12].
 
 **The scope of the formalization.** Both formulas are fully
-formalized: the complete-graph equality for every $n\ge3$ and the
-bipartite equality for every positive $m,n$, each with its
+formalized: the complete-graph equality for every $`n\ge3`$ and the
+bipartite equality for every positive $`m,n`$, each with its
 attaining drawing, in the same spatial crossings convention
 [S5:10, S5:12].
 
@@ -89,8 +89,8 @@ attaining drawing, in the same spatial crossings convention
 
 The crossing number is a central invariant of topological graph
 theory, introduced in the 1940s–50s. The Harary–Hill
-formula for $K_n$ was conjectured in the 1960s from the geometry of
-the two-page (antiprism-like) drawing, verified for small $n$ by
+formula for $`K_n`$ was conjectured in the 1960s from the geometry of
+the two-page (antiprism-like) drawing, verified for small $`n`$ by
 case analysis, and long believed true but unproved in general.
 Turán's brickyard problem (1947) asks for the minimum
 crossings of a straight-line drawing of a complete bipartite graph;
@@ -101,10 +101,10 @@ topological combinatorics, now resolved
 
 **Prior (my training data, not this repo).** I know the crossing
 number, the Harary–Hill and Zarankiewicz conjectures, and
-their small-$n$ verifications. **General** proofs of **both**
+their small-$`n`$ verifications. **General** proofs of **both**
 closed formulas — a lower bound plus an exact attaining
 drawing, under the spatial-crossings-counting-repeats convention,
-for all $n$ and all $m,n$ — go beyond the partial results I
+for all $`n`$ and all $`m,n`$ — go beyond the partial results I
 recall; I cannot independently verify the polynomial intersection
 test or the balanced-axis construction in [S3, S4] from training
 alone.
@@ -112,15 +112,15 @@ alone.
 ## Consequences
 
 **The Harary–Hill conjecture is proved.** For every
-$n\ge3$, the crossing number of $K_n$ is exactly
-$\tfrac14\lfloor n/2\rfloor\lfloor(n-1)/2\rfloor
-\lfloor(n-2)/2\rfloor\lfloor(n-3)/2\rfloor$
+$`n\ge3`$, the crossing number of $`K_n`$ is exactly
+$`\tfrac14\lfloor n/2\rfloor\lfloor(n-1)/2\rfloor
+\lfloor(n-2)/2\rfloor\lfloor(n-3)/2\rfloor`$
 [S3:37–44, S5:10].
 
 **The Zarankiewicz crossing-number conjecture is proved.** For
-every positive $m,n$, the crossing number of $K_{m,n}$ is exactly
-$\lfloor m/2\rfloor\lfloor(m-1)/2\rfloor\lfloor n/2\rfloor
-\lfloor(n-1)/2\rfloor$ [S4:39–47, S5:12].
+every positive $`m,n`$, the crossing number of $`K_{m,n}`$ is exactly
+$`\lfloor m/2\rfloor\lfloor(m-1)/2\rfloor\lfloor n/2\rfloor
+\lfloor(n-1)/2\rfloor`$ [S4:39–47, S5:12].
 
 **The classical drawings are optimal.** Both statements come with a
 construction attaining the bound, so no drawing with continuous
@@ -146,16 +146,16 @@ family ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S5:10, S5:12]. The first paragraph formalizes the
-complete-graph formula: for every $n\ge3$,
-$\mathrm{cr}(K_n)={\textstyle\frac14}\lfloor
+complete-graph formula: for every $`n\ge3`$,
+$`\mathrm{cr}(K_n)={\textstyle\frac14}\lfloor
 n/2\rfloor\lfloor(n-1)/2\rfloor\lfloor(n-2)/2\rfloor
-\lfloor(n-3)/2\rfloor$, proving the lower bound and constructing a
+\lfloor(n-3)/2\rfloor`$, proving the lower bound and constructing a
 matching two-page drawing, with crossings as spatial points so
 repeated crossings of one edge pair count separately
 [S5:10]. The second paragraph formalizes the bipartite formula: for
-every positive $m,n$,
-$\mathrm{cr}(K_{m,n})=\lfloor m/2\rfloor\lfloor(m-1)/2\rfloor
-\lfloor n/2\rfloor\lfloor(n-1)/2\rfloor$, with the same spatial
+every positive $`m,n`$,
+$`\mathrm{cr}(K_{m,n})=\lfloor m/2\rfloor\lfloor(m-1)/2\rfloor
+\lfloor n/2\rfloor\lfloor(n-1)/2\rfloor`$, with the same spatial
 crossing convention [S5:12]. The scope note names two comparators
 [S5:16–19]: `CompleteCrossing.lean` and
 `BipartiteCrossing.lean`.
@@ -174,11 +174,11 @@ are registered independently
 [S5:10, S5:12, S5:16–19].
 
 **What the proofs do.** The bipartite declaration
-`mainTarget_proof` states, for every positive $m,n$, that a drawing
-of $K_{m,n}$ attaining $\mathrm{axisPairs}\,m
-\times\mathrm{axisPairs}\,n$ crossings exists **and** that no
+`mainTarget_proof` states, for every positive $`m,n`$, that a drawing
+of $`K_{m,n}`$ attaining $`\mathrm{axisPairs}\,m
+\times\mathrm{axisPairs}\,n`$ crossings exists **and** that no
 admissible drawing has fewer. The OAI tree proves it with a genuine
-Lean proof: it takes a balanced-axis realization $R$ and discharges
+Lean proof: it takes a balanced-axis realization $`R`$ and discharges
 both conjuncts from the drawing witness and the crossing lower bound
 
 
@@ -192,9 +192,9 @@ theorem mainTarget_proof : MainTarget := by
 
 The complete-graph declaration
 `complete_graph_crossing_number` states
-$\mathrm{ordinaryCrossingNumber}(K_n)=\mathrm{hill}(n)$ for
-$n\ge3$, and the OAI tree proves it by antisymmetry: the upper
-bound from a matching drawing $D$ with `crossingCount D = hill n`,
+$`\mathrm{ordinaryCrossingNumber}(K_n)=\mathrm{hill}(n)`$ for
+$`n\ge3`$, and the OAI tree proves it by antisymmetry: the upper
+bound from a matching drawing $`D`$ with `crossingCount D = hill n`,
 and the lower bound from the `hill n \le crossingCount D` lemma
 
 

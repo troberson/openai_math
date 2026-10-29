@@ -8,29 +8,29 @@
 
 The release's blurb [S1:4065] and the catalog abstract [S2:429]
 state the family's claim: the **strong thin-tree conjecture** is
-resolved constructively. Every finite loopless $k$-edge-connected
+resolved constructively. Every finite loopless $`k`$-edge-connected
 multigraph on at least two vertices has a spanning tree that
-contains at most a universal $C/k$ fraction of the edges of every
+contains at most a universal $`C/k`$ fraction of the edges of every
 cut, and such a tree can be found **deterministically in
 polynomial time**, even with binary-encoded parallel-edge
 multiplicities. Two manuscripts carry the family. The first,
 *The strong thin tree conjecture* [S3:121, S3:123], abstract
 
 
-> We prove that every finite loopless $k$-edge-connected multigraph on
-at least two vertices, with $k\ge1$, has a spanning tree meeting each
-cut in at most $C/k$ times the size of the cut,
-where $C$ is a universal constant.
+> We prove that every finite loopless $`k`$-edge-connected multigraph on
+at least two vertices, with $`k\ge1`$, has a spanning tree meeting each
+cut in at most $`C/k`$ times the size of the cut,
+where $`C`$ is a universal constant.
 This resolves the strong thin tree conjecture. [S3:126–130]
 
 The second, *A polynomial-time construction of strong thin trees*
 [S4:6, S4:8], abstract [S4:14–19]:
 
 We give a deterministic polynomial-time construction of strong
-thin trees. Given a finite $k$-edge-connected loopless
+thin trees. Given a finite $`k`$-edge-connected loopless
 multigraph on at least one vertex, the algorithm constructs a
-spanning tree meeting every cut in at most a $C/k$ fraction of its
-edges, for a universal constant $C$. The running time is
+spanning tree meeting every cut in at most a $`C/k`$ fraction of its
+edges, for a universal constant $`C`$. The running time is
 polynomial in the binary input length, including when
 parallel-edge multiplicities are encoded in binary [S4:14
 –19].
@@ -39,33 +39,33 @@ parallel-edge multiplicities are encoded in binary [S4:14
 
 A **cut** of a graph is a set of edges whose removal separates the
 vertices into two groups. An edge is in the cut if it crosses the
-division. A graph is **$k$-edge-connected** if every cut has at
-least $k$ edges — you would need to remove $k$ edges to
+division. A graph is **$`k`$-edge-connected** if every cut has at
+least $`k`$ edges — you would need to remove $`k`$ edges to
 disconnect it. A **spanning tree** is a minimal connected
-subgraph touching every vertex. A spanning tree is **$C/k$-thin**
+subgraph touching every vertex. A spanning tree is **$`C/k`$-thin**
 if, no matter which cut you look at, the tree uses at most a
-$C/k$ fraction of that cut's edges. Intuition: even a highly
+$`C/k`$ fraction of that cut's edges. Intuition: even a highly
 connected graph has a sparse "skeleton" (its spanning tree) that
 is thin in every direction of the cuts. The conjecture asks that
-every $k$-edge-connected graph admits such a thin spanning tree,
-with a **universal** constant $C$ independent of the graph and
-$k$. This family proves it, and gives a deterministic
+every $`k`$-edge-connected graph admits such a thin spanning tree,
+with a **universal** constant $`C`$ independent of the graph and
+$`k`$. This family proves it, and gives a deterministic
 polynomial-time algorithm [S3:126–130, S4:14–19,
 S2:429].
 
 ## Graduate summary
 
 **The strong thin-tree bound** [S3:126–130, S5:10]. There
-exists a universal $C>0$ such that every finite loopless
-$k$-edge-connected multigraph on at least two vertices admissible:
-there is a spanning tree $T$ with
+exists a universal $`C>0`$ such that every finite loopless
+$`k`$-edge-connected multigraph on at least two vertices admissible:
+there is a spanning tree $`T`$ with
 
 $$|\delta_T(S)| \le (C/k)\,|\delta(S)|$$
 
-for every nontrivial cut $S$ (nonempty, not all vertices), where
-$\delta(S)$ is the set of edges crossing the cut in $G$ and
-$\delta_T(S)$ those in $T$. The statement is existential: no
-numerical value of $C$ and no construction algorithm are asserted
+for every nontrivial cut $`S`$ (nonempty, not all vertices), where
+$`\delta(S)`$ is the set of edges crossing the cut in $`G`$ and
+$`\delta_T(S)`$ those in $`T`$. The statement is existential: no
+numerical value of $`C`$ and no construction algorithm are asserted
 by this form [S5:10].
 
 **The polynomial-time construction** [S4:14–19, S5:12]. A
@@ -73,13 +73,13 @@ deterministic algorithm finds such a spanning tree in time
 polynomial in the **binary input length** — the length of
 the edge list with parallel-edge multiplicities encoded in binary,
 not merely the number of edges — with the same universal
-$C/k$ cut bound [S5:12].
+$`C/k`$ cut bound [S5:12].
 
 **The scope of the formalization.** The formalization proves the
 strong thin-tree bound (the existential statement with a universal
-$C$). It does **not** assert the polynomial-time construction:
+$`C`$). It does **not** assert the polynomial-time construction:
 the scope note for the bound paragraph says "No numerical value
-of $C$ or construction algorithm is asserted", and the
+of $`C`$ or construction algorithm is asserted", and the
 construction is carried by the separate `AlgorithmicThinTrees`
 comparator, which has no `main_results` entry [S5:10, S5:12,
 S5:16–19].
@@ -87,21 +87,21 @@ S5:16–19].
 ## History of the conjecture
 
 The strong thin-tree conjecture generalizes the classical
-result that every $2k$-edge-connected graph has a $k$-edge-
+result that every $`2k`$-edge-connected graph has a $`k`$-edge-
 connected spanning subgraph (Nash-Williams 1961, Tutte 1966) to
-the **spanning tree** case with a $1/k$ cut density: a spanning
-tree, being $|V|-1$ edges, is the sparsest connected subgraph,
-so it cannot be $k$-edge-connected, and the natural target is a
-$C/k$ cut-fraction bound. The weak form (a thin spanning subgraph,
+the **spanning tree** case with a $`1/k`$ cut density: a spanning
+tree, being $`|V|-1`$ edges, is the sparsest connected subgraph,
+so it cannot be $`k`$-edge-connected, and the natural target is a
+$`C/k`$ cut-fraction bound. The weak form (a thin spanning subgraph,
 not a tree) was known; the spanning-tree form with a universal
-$C$ and a polynomial-time construction is this family's
+$`C`$ and a polynomial-time construction is this family's
 contribution [S3:126–130, S4:14–19, S2:429].
 
 **Prior (my training data, not this repo).** I know the
-Nash-Williams/Tutte $k$-edge-connected spanning subgraph
+Nash-Williams/Tutte $`k`$-edge-connected spanning subgraph
 theorems and the notion of a thin spanning tree. A
-**universal-constant** $C/k$ cut bound for a spanning tree of an
-arbitrary finite loopless $k$-edge-connected multigraph, together
+**universal-constant** $`C/k`$ cut bound for a spanning tree of an
+arbitrary finite loopless $`k`$-edge-connected multigraph, together
 with a deterministic polynomial-time construction in the binary
 input length, goes beyond what I recall; the packing lemma and
 the binary-complexity argument in [S3:126–130]/[S4] are not something I
@@ -110,9 +110,9 @@ can independently verify from training alone.
 ## Consequences
 
 **The strong thin-tree conjecture is resolved.** A universal
-$C>0$ exists such that every finite loopless $k$-edge-connected
+$`C>0`$ exists such that every finite loopless $`k`$-edge-connected
 multigraph on at least two vertices has a spanning tree meeting
-every nontrivial cut in at most a $C/k$ fraction of its edges
+every nontrivial cut in at most a $`C/k`$ fraction of its edges
 [S3:126–130, S5:10, S2:429].
 
 **Constructive and efficient.** A deterministic polynomial-time
@@ -145,11 +145,11 @@ sections `tree_geometry`, `extraction`, `normalization`,
 ## Comparison with the formalized statement
 
 **Scope note** [S5:10, S5:12]. The first paragraph formalizes the
-strong thin-tree **bound**: an absolute $C>0$ such that every
-finite loopless $k$-edge-connected multigraph on at least two
+strong thin-tree **bound**: an absolute $`C>0`$ such that every
+finite loopless $`k`$-edge-connected multigraph on at least two
 vertices has a spanning tree crossing each nontrivial cut at most
-$(C/k)$ times the original cut size, parallel edges distinct; it
-is explicit that "No numerical value of $C$ or construction
+$`(C/k)`$ times the original cut size, parallel edges distinct; it
+is explicit that "No numerical value of $`C`$ or construction
 algorithm is asserted" [S5:10]. The second paragraph describes
 the **unregistered** polynomial-time construction: a
 deterministic algorithm running in polynomial time in the binary
@@ -182,11 +182,11 @@ theorem strongThinTree : MainStatement := by
 **What the proof does.** The registered `strongThinTree` in the
 OAI tree is a genuine proof, not a `sorry`: it extracts a
 packing lemma `MultiGraph.packing_thinness` yielding a constant
-$C_0$ and a packing witness, sets $C := 3\max(C_0,1)$, and then
-discharges the bound case-by-case on $k$ — for
-$k \ge 2$ it sets $r=k/2$ and uses an edge-connected
+$`C_0`$ and a packing witness, sets $`C := 3\max(C_0,1)`$, and then
+discharges the bound case-by-case on $`k`$ — for
+$`k \ge 2`$ it sets $`r=k/2`$ and uses an edge-connected
 tree-packing lemma to get a thin tree and a cut estimate, and for
-$k=1$ it takes any spanning tree and uses $C \ge 1$ [S8:24
+$`k=1`$ it takes any spanning tree and uses $`C \ge 1`$ [S8:24
 –29]:
 
 ```lean
@@ -199,8 +199,8 @@ theorem strongThinTree : MainStatement := by
 ```
 [S8:24–29]
 
-The proof closes the $k \ge 2$ case with `nlinarith` over the
-packing bound and the $k=1$ case with `simpa ... using
+The proof closes the $`k \ge 2`$ case with `nlinarith` over the
+packing bound and the $`k=1`$ case with `simpa ... using
 hh.trans (le_mul_of_one_le_left ...)`, so there is no `sorry`
 [S8:24–29].
 

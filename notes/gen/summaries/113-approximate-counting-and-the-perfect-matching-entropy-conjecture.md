@@ -27,38 +27,38 @@ agree on the statement.
 
 ## Undergraduate summary
 
-A **perfect matching** in a finite undirected graph $G=(V,E)$ is a set of
-edges that touches every vertex exactly once. Writing $Z(G)$ for the number
+A **perfect matching** in a finite undirected graph $`G=(V,E)`$ is a set of
+edges that touches every vertex exactly once. Writing $`Z(G)`$ for the number
 of such matchings, the finding is easy — Edmonds gave a polynomial-time
 algorithm for a maximum matching [S3:153–154] — but the counting is hard:
-Valiant showed exact counting is $\\#$P-complete even for bipartite graphs
+Valiant showed exact counting is $`\\#`$P-complete even for bipartite graphs
 [S3:155–156]. The **FPRAS** is the middle ground: a randomized algorithm
-that approximates $Z(G)$ within a prescribed relative error, with a
+that approximates $`Z(G)`$ within a prescribed relative error, with a
 prescribed success probability, in time polynomial in the input length and
 the reciprocal error [S3:126–128].
 
 The second manuscript attacks a different question about the same object.
-The **perfect-matching polytope** $P(G)$ is the convex hull of the
-incidence vectors of perfect matchings. A point $x\in P(G)$ is an
-edge-marginal vector: $x_e$ is the probability that edge $e$ is in a
-randomly drawn matching. The **entropy** $H(x)$ is the maximum entropy of a
+The **perfect-matching polytope** $`P(G)`$ is the convex hull of the
+incidence vectors of perfect matchings. A point $`x\in P(G)`$ is an
+edge-marginal vector: $`x_e`$ is the probability that edge $`e`$ is in a
+randomly drawn matching. The **entropy** $`H(x)`$ is the maximum entropy of a
 matching law with those marginals. The conjecture of Anari, Oveis Gharan
-and Vinzant asks how far $H(x)$ can deviate from the naive entropy
-$F(x)=-\sum_e x_e\log x_e$ [S5:70–75].
+and Vinzant asks how far $`H(x)`$ can deviate from the naive entropy
+$`F(x)=-\sum_e x_e\log x_e`$ [S5:70–75].
 
 ## Graduate summary
 
 **FPRAS** ([S3:132–143], `thm:main`). "There is a uniform classical
-randomized algorithm which, given $G$ and rational parameters
-$0<\varepsilon<1$ and $0<\delta<1/2$, returns a nonnegative rational number
-$\widehat Z$ such that $\Pr[(1-\varepsilon)Z(G)\le\widehat
-Z\le(1+\varepsilon)Z(G)]\ge 1-\delta$" [S3:133–139]. "If $Z(G)=0$, the
+randomized algorithm which, given $`G`$ and rational parameters
+$`0<\varepsilon<1`$ and $`0<\delta<1/2`$, returns a nonnegative rational number
+$`\widehat Z`$ such that $`\Pr[(1-\varepsilon)Z(G)\le\widehat
+Z\le(1+\varepsilon)Z(G)]\ge 1-\delta`$" [S3:133–139]. "If $`Z(G)=0`$, the
 output is zero with certainty" [S3:140]. The worst-case bit running time is
-polynomial in the input encoding length, $\varepsilon^{-1}$, and
-$\log\delta^{-1}$ [S3:141–142].
+polynomial in the input encoding length, $`\varepsilon^{-1}`$, and
+$`\log\delta^{-1}`$ [S3:141–142].
 
 The proof starts from the complete graph, where perfect matchings are easy
-to count, and suppresses the nonedges of $G$ by decreasing their positive
+to count, and suppresses the nonedges of $`G`$ by decreasing their positive
 activities [S3:246–248]. It estimates ratios of successive partition
 functions and multiplies them, updating vertex scales from estimates of the
 two-hole partition ratios [S3:248–253]. The sampler uses a product of
@@ -67,28 +67,28 @@ alternating cycles between coordinates [S3:265–268]. The spectral gap
 follows from an ordered orthogonal decomposition into coordinate
 interactions [S3:277–282].
 
-**Entropy bound** ([S5:33–40], `ent:main`). "Let $G$ be a loopless
-multigraph on $2m\ge2$ vertices with at least one perfect matching. For
-every $x\in P(G)$, $F(x)-(2-2/m)B(x)\le H(x)\le F(x)$" [S5:34–39]. The
-upper bound $H\le F$ is a direct instance of Shearer's entropy inequality
+**Entropy bound** ([S5:33–40], `ent:main`). "Let $`G`$ be a loopless
+multigraph on $`2m\ge2`$ vertices with at least one perfect matching. For
+every $`x\in P(G)`$, $`F(x)-(2-2/m)B(x)\le H(x)\le F(x)`$" [S5:34–39]. The
+upper bound $`H\le F`$ is a direct instance of Shearer's entropy inequality
 [S5:48–51]. The lower comparison is the contribution: "obtained from a
 geometric rank estimate followed by a covariance calculation, with no
 assumption that the mean is interior to the full polytope" [S5:51–54].
 
 **Counting consequences** ([S5:76–79]). The theorem gives the explicit
-positive answer: $\log N(G)\le\max_{x\in P(G)}(F(x)+B(x))
-\le\log N(G)+3m-2$ [S5:77–78]. For $k\ge2$ edge-disjoint perfect matchings,
-the uniform mixture gives $N(G)\ge e^{-2(m-1)}k^m$ [S5:86–87].
+positive answer: $`\log N(G)\le\max_{x\in P(G)}(F(x)+B(x))
+\le\log N(G)+3m-2`$ [S5:77–78]. For $`k\ge2`$ edge-disjoint perfect matchings,
+the uniform mixture gives $`N(G)\ge e^{-2(m-1)}k^m`$ [S5:86–87].
 
 **Deterministic counting** ([S5:201–212], `thm:main`). "There is one
-uniform deterministic algorithm which, on a graph on $n$ vertices with
-nonnegative binary integer pair multiplicities, returns an integer $A\ge0$
-satisfying $N(G)/512^n\le A\le N(G)$" [S5:203–207]. "In particular, $A=0$
-exactly when $N(G)=0$" [S5:210].
+uniform deterministic algorithm which, on a graph on $`n`$ vertices with
+nonnegative binary integer pair multiplicities, returns an integer $`A\ge0`$
+satisfying $`N(G)/512^n\le A\le N(G)`$" [S5:203–207]. "In particular, $`A=0`$
+exactly when $`N(G)=0`$" [S5:210].
 
 **Face dimension** ([S4:58–59]). "We also prove the sharp bound
-$|\mathrm{supp}\,x|-\dim F_x\le3m-2$, where $F_x$ is the minimal face of
-the perfect-matching polytope containing $x$" [S4:58–59].
+$`|\mathrm{supp}\,x|-\dim F_x\le3m-2`$, where $`F_x`$ is the minimal face of
+the perfect-matching polytope containing $`x`$" [S4:58–59].
 
 ## History of the conjecture
 
@@ -110,7 +110,7 @@ and Vinzant, who "proposed a convex-optimization framework for approximate
 counting" [S5:70–71]. The bipartite setting admits a coefficient-one
 comparison through Schrijver's inequality and the weighted Bethe inequality
 of Gurvits [S5:56–60]. The manuscript gives "a simple eight-vertex
-nonbipartite graph with a feasible mean for which $H<F-B$" [S5:61–63],
+nonbipartite graph with a feasible mean for which $`H<F-B`$" [S5:61–63],
 showing the odd cuts are load-bearing.
 
 **Prior (my training data, not this repo).** The FPRAS for general-graph
@@ -125,14 +125,14 @@ these independently; the release ships both manuscripts as proofs.
 - **The FPRAS.** A randomized polynomial-time approximation for counting
   perfect matchings in any finite simple undirected graph, with exact zero
   detection [S3:132–143].
-- **The entropy bound.** $F(x)-(2-2/m)B(x)\le H(x)\le F(x)$ for every
+- **The entropy bound.** $`F(x)-(2-2/m)B(x)\le H(x)\le F(x)`$ for every
   feasible marginal in a loopless multigraph, including boundary points
   [S5:33–40].
-- **The log-N bound.** $\log N(G)\le\max_{x\in P(G)}(F(x)+B(x))
-  \le\log N(G)+3m-2$ [S5:76–79].
-- **The deterministic approximation.** $N(G)/512^n\le A\le N(G)$ with
+- **The log-N bound.** $`\log N(G)\le\max_{x\in P(G)}(F(x)+B(x))
+  \le\log N(G)+3m-2`$ [S5:76–79].
+- **The deterministic approximation.** $`N(G)/512^n\le A\le N(G)`$ with
   exact zero detection [S5:201–212].
-- **The face-dimension bound.** $|\mathrm{supp}\,x|-\dim F_x\le3m-2$ for
+- **The face-dimension bound.** $`|\mathrm{supp}\,x|-\dim F_x\le3m-2`$ for
   the minimal face [S4:58–59] — not formalized.
 
 ## Section skeleton
@@ -159,11 +159,11 @@ the FPRAS manuscript is not a formalization source, so `paps_form=1` of 2.
 The scope note's Scope section states: "the formalization gives a fully
 polynomial randomized approximation scheme for counting perfect matchings
 in every finite simple undirected graph" [S8:10], and for the entropy
-bound: "the formalization proves $F(x)-(2-2/m)B(x)\le H(x)\le F(x)$ for
-$m\ge1$, including boundary points of the polytope" [S8:14]. The note is
+bound: "the formalization proves $`F(x)-(2-2/m)B(x)\le H(x)\le F(x)`$ for
+$`m\ge1`$, including boundary points of the polytope" [S8:14]. The note is
 explicit about what it does not carry: "It retains the earlier
 coefficient-eight entropy bound and the deterministic counting
-approximations with factors $512^n$ for loopless graphs and $2^{18n}$ with
+approximations with factors $`512^n`$ for loopless graphs and $`2^{18n}`$ with
 singleton loops" [S8:14], and "the paper's sharp global face-dimension
 bound is not part of that selected statement" [S8:16].
 
@@ -179,9 +179,9 @@ The three `main_results` entries name:
 The formalized `entropy_main` [S15:85–89] proves the **coefficient-8**
 bound: `marginalEntropy y - maxMatchingEntropy G y ≤ 8 * (m : ℝ) *
 (1 - Real.exp (-marginalEntropy y / (m : ℝ)))` — not the paper's
-coefficient-$2-2/m$ bound. The formalized
+coefficient-$`2-2/m`$ bound. The formalized
 `deterministic_approximate_counting` [S16:143–149] proves the
-$2^{9n}$-factor approximation with an existence-and-soundness statement
+$`2^{9n}`$-factor approximation with an existence-and-soundness statement
 citing the raw witness: `Raw.InputData.deterministic_approximate_counting`.
 The formalized `fullEndpoint` [S17:24–26] closes over the singleton-loop
 machine's computational endpoint and correctness witness.
@@ -193,7 +193,7 @@ entries are the ones proved under `lean/OAI/`. The FPRAS stub [S9:105–106] sta
 the full FPRAS as a `MainStatement` over a `RandomMachine` — a
 finite-alphabet Post-Turing machine with a fixed-degree polynomial
 time bound — and its `thm_main` closes in `sorry` [S9:106]. The
-refined-entropy stub [S13:73–78] states the paper's exact coefficient-$2-2/m$
+refined-entropy stub [S13:73–78] states the paper's exact coefficient-$`2-2/m`$
 bound as a conjunction of the lower and upper comparisons, and its
 `Refined.pointwise_entropy` closes in `sorry` [S13:78]. The triangle-face
 stub [S14:169–174] states the face correspondence under triangle expansion with

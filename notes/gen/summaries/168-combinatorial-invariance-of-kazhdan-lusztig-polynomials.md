@@ -40,10 +40,10 @@ Coxeter systems, not just the classical types
 ## Graduate summary
 
 **The main theorem** [S3:51–53, S4:9]. Every order
-isomorphism $\iota: [u,b]^\wedge \simeq_o [u',b']^\wedge$
+isomorphism $`\iota: [u,b]^\wedge \simeq_o [u',b']^\wedge`$
 between Bruhat intervals in (possibly different) Coxeter systems
 preserves the equal-parameter Kazhdan–Lusztig polynomial:
-$P_{u,b} = P_{u',b'}$. The statement is **uniform** — no
+$`P_{u,b} = P_{u',b'}`$. The statement is **uniform** — no
 restriction on the Coxeter systems (finite, affine, complex,
 infinite), and the isomorphism is a bare poset isomorphism
 [S3:51–53, S4:9].
@@ -67,8 +67,8 @@ study of Hecke algebras and intersection cohomology of Schubert
 varieties. The **combinatorial invariance** question —
 whether the polynomial is a function of the interval's order type
 — was conjectured to hold broadly, and verified for the
-classical finite Coxeter groups (symmetric groups, type $B$,
-type $D$) and some affine cases. The **full** conjecture, for
+classical finite Coxeter groups (symmetric groups, type $`B`$,
+type $`D`$) and some affine cases. The **full** conjecture, for
 arbitrary Coxeter systems including infinite and crystallographic
 ones, remained open. This manuscript provides the general proof,
 with a key reduction to dihedral (rank-2) intervals and a

@@ -32,18 +32,18 @@ characteristic zero, and 2.371054886006746 over every fixed field.
 ## Undergraduate summary
 
 The **exponent of matrix multiplication** ω is the infimum of the real
-numbers τ such that, for every ε>0, two $n\times n$ matrices can be
-multiplied in $O_\varepsilon(n^{\tau+\varepsilon})$ scalar arithmetic operations —
-"the algorithm and its constants may depend on $\varepsilon$" [S3:42–43]. The
+numbers τ such that, for every ε>0, two $`n\times n`$ matrices can be
+multiplied in $`O_\varepsilon(n^{\tau+\varepsilon})`$ scalar arithmetic operations —
+"the algorithm and its constants may depend on $`\varepsilon`$" [S3:42–43]. The
 classical algorithm gives ω=3; Strassen's seven-product recursion first
 beat 3 [S3:51–53]. The family's headline: the exponent over ℂ is at most
 **9/4**, so every ε>0 has a complex matrix-multiplication algorithm with
-$O_\varepsilon(n^{9/4+\varepsilon})$ arithmetic operations [S3:45–49].
+$`O_\varepsilon(n^{9/4+\varepsilon})`$ arithmetic operations [S3:45–49].
 
 Two derived exponents ride along. The **dual exponent** α is the supremum of
 rectangular aspect ratios attainable with exponent 2 [S11:10]; the manuscript
 proves α>0.465 [S5:73–77]. The **rectangular exponent** ω(1, k, 1) prices
-multiplying an $n\times n^k$ matrix by an $n^k\times n$ matrix: the
+multiplying an $`n\times n^k`$ matrix by an $`n^k\times n`$ matrix: the
 manuscript gives ω(1, 0.709, 1)<2.092 [S5:73–77].
 
 The count is **arithmetic** — additions, subtractions, and multiplications in
@@ -56,9 +56,9 @@ estimates" [S7:65–69].
 ## Graduate summary
 
 **Manuscript 1** (root [S3], `thm:main` at [S3:45–49]): over ℂ,
-"For every $\varepsilon>0$, two $n\times n$ complex matrices can be multiplied using
-$O_\varepsilon(n^{9/4+\varepsilon})$ arithmetic operations. In particular,
-$\omega\leq9/4$" [S3:46–49]. The paper is a single LaTeX file [S3] with six
+"For every $`\varepsilon>0`$, two $`n\times n`$ complex matrices can be multiplied using
+$`O_\varepsilon(n^{9/4+\varepsilon})`$ arithmetic operations. In particular,
+$`\omega\leq9/4`$" [S3:46–49]. The paper is a single LaTeX file [S3] with six
 sections: tensors and their characters, separating a shared tensor leg, two
 polynomial-multiplication inequalities, discrete growth and the arithmetic
 exponent, and existence of detecting characters (headings at [S3:37],
@@ -77,7 +77,7 @@ asymptotic sum inequality and elementary completion bound in the algebra
 section [S4:74]) drives the numerical bounds.
 
 **Manuscript 3** (root [S6], `thm:main` at [S7:57–63]): over every fixed
-field $\mathbb F$, $\omega_\mathbb F<2.371054886006746<2.371054887$ [S7:58–62], with
+field $`\mathbb F`$, $`\omega_\mathbb F<2.371054886006746<2.371054887`$ [S7:58–62], with
 "exact arithmetic algorithms, including in positive characteristic" and
 finite choices independent of the input matrices [S7:65–66]. The staggered
 joint-extraction theorem (`thm:joint-step` [S6:49]) supplies the
@@ -101,7 +101,7 @@ algorithms; Schönhage's asymptotic sum inequality turns efficient
 simultaneous computations into exponent bounds; Strassen's laser method is
 named next [S3:51–57]. The formalized rectangular bound is built on the
 reordered Coppersmith–Wagner scheme [S14:25–27], and the square
-$2.371054886006746$ constant is the numerical target the staggered
+$`2.371054886006746`$ constant is the numerical target the staggered
 extraction attains over every field [S7:58–62].
 
 **Prior (my training data, not this repo).** The exponent record moved
@@ -117,7 +117,7 @@ formalizes the four named bounds (see the comparison below).
 ## Consequences
 
 - **The headline square bound.** ω(ℂ) ≤ 9/4, i.e.
-  $O_\varepsilon(n^{9/4+\varepsilon})$ arithmetic operations [S3:46–49].
+  $`O_\varepsilon(n^{9/4+\varepsilon})`$ arithmetic operations [S3:46–49].
 - **The record-line bounds.** ω < 2.258 in characteristic zero,
   ω(1, 0.709, 1) < 2.092, α > 0.465, and ω(F) < 2.371054886006746 over every
   fixed field including positive characteristic [S5:73–77, S7:58–62].
@@ -150,12 +150,12 @@ manuscripts in the form the release distributes.
 The release formalises this family at tier T3 with one scope note [S11], two
 comparator stubs [S12:118–120] [S13], and four `main_results` entries over two
 configs [S16:1389–1403]. The first scope paragraph: "the formalized results
-bound the complex matrix-multiplication exponent by $\omega(\mathbb C)\le9/4$,
-the dual exponent by $\alpha>0.465$, and the rectangular exponent at aspect
-ratio $0.709$ by $\omega(\mathbb C;1,0.709,1)<2.092$" [S11:10], and "the
-square bound implies the paper's weaker $2.258$ headline bound" [S11:10]. The
+bound the complex matrix-multiplication exponent by $`\omega(\mathbb C)\le9/4`$,
+the dual exponent by $`\alpha>0.465`$, and the rectangular exponent at aspect
+ratio $`0.709`$ by $`\omega(\mathbb C;1,0.709,1)<2.092`$" [S11:10], and "the
+square bound implies the paper's weaker $`2.258`$ headline bound" [S11:10]. The
 second paragraph: "the formalized result gives the unconditional bound
-$\omega(F)<2.371054886006746$ for every field $F$, including finite fields
+$`\omega(F)<2.371054886006746`$ for every field $`F`$, including finite fields
 and fields of positive characteristic" [S11:12], and "no numerical
 inequalities remain as hypotheses" [S11:12].
 
@@ -259,6 +259,6 @@ the ledger verb rule has nothing to fire on.
 - V. Strassen, The asymptotic spectrum of tensors, _J. Reine Angew. Math._ **384** (1988), 102–152. doi:10.1515/crll.1988.384.102.
 - A. Tychonoff, Ein Fixpunktsatz, _Math. Ann._ **111** (1935), 767–776. doi:10.1007/BF01472256.
 - J. Alman and V. Vassilevska Williams, A refined laser method and faster matrix multiplication, _TheoretiCS_ **3** (2024), Article 21, 1–32. doi:10.46298/theoretics.24.21. Conference version in SODA 2021, 522–539.
-- V. Vassilevska Williams, Multiplying matrices faster than Coppersmith–Winograd, in _Proc. 44th Annual ACM Symposium on Theory of Computing_, ACM, 2012, 887–898. doi:10.1145/2213977.2214056. Expanded corrected author version: _Multiplying matrices in $O(n^{2.373})$ time_, July 1, 2014.
+- V. Vassilevska Williams, Multiplying matrices faster than Coppersmith–Winograd, in _Proc. 44th Annual ACM Symposium on Theory of Computing_, ACM, 2012, 887–898. doi:10.1145/2213977.2214056. Expanded corrected author version: _Multiplying matrices in $`O(n^{2.373})`$ time_, July 1, 2014.
 - V. Vassilevska Williams, Y. Xu, Z. Xu, and R. Zhou, New bounds for matrix multiplication: from alpha to omega, in _Proc. 2024 Annual ACM-SIAM Symposium on Discrete Algorithms_, SIAM, 2024, 3792–3835. doi:10.1137/1.9781611977912.134.
 - D. Coppersmith and S. Winograd, Matrix multiplication via arithmetic progressions, _J. Symbolic Comput._ **9** (1990), 251–280. doi:10.1016/S0747-7171(08)80013-2.

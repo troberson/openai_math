@@ -9,8 +9,8 @@
 The release's blurb [S1:3972] and the catalog abstract [S2:419] state
 the family's claim: the chromatic quasisymmetric function of every
 **natural unit interval graph** has coefficients in the elementary
-symmetric basis in $\mathbb N[q]$ — the **elementary
-positivity** (or $e$-positivity) part of the
+symmetric basis in $`\mathbb N[q]`$ — the **elementary
+positivity** (or $`e`$-positivity) part of the
 Shareshian–Wachs conjecture. The coefficients count explicitly
 described permutations, giving a combinatorial explanation of the
 positivity. The manuscript is *Elementary positivity of chromatic
@@ -18,7 +18,7 @@ quasisymmetric functions* [S3:43, S3:45]; its abstract [S3:49
 –51]:
 
 > We prove that the chromatic quasisymmetric function of every natural unit
-interval graph is elementary-positive over $\mathbb N[q]$. This resolves the
+interval graph is elementary-positive over $`\mathbb N[q]`$. This resolves the
 elementary-positivity part of the Shareshian–Wachs conjecture. [S3:49–51]
 
 ## Undergraduate summary
@@ -28,45 +28,45 @@ different colors. The **chromatic quasisymmetric function** is a
 polynomial that records, in one object, how many colorings there are
 with each pattern of colors, weighted by how the colorings rise in
 value. Such a polynomial can be written in different "bases" of
-symmetric functions; the **elementary basis** $\{e_\lambda\}$ is
-one of the standard choices. To say the function is **$e$-positive**
+symmetric functions; the **elementary basis** $`\{e_\lambda\}`$ is
+one of the standard choices. To say the function is **$`e`$-positive**
 means that, when you expand it in the elementary basis, **every**
 coefficient is a nonnegative power series in a marked variable
-$q$ — no negative terms. The **Shareshian–Wachs
+$`q`$ — no negative terms. The **Shareshian–Wachs
 conjecture** proposed that the chromatic quasisymmetric function of
 a natural unit interval graph (a graph arising from ordered unit
 intervals on the line — the class behind the "Staircase" and
-"peak" examples in the original conjecture) is $e$-positive. This
+"peak" examples in the original conjecture) is $`e`$-positive. This
 manuscript proves that conjecture in its elementary-positivity form
 [S3:49–51, S2:419].
 
 ## Graduate summary
 
 **The main theorem** [S3:49–51, S4:9]. For every natural unit
-interval graph $G$ and every finite number $r$ of color variables,
-the chromatic quasisymmetric function $G_X$ admits an explicit
+interval graph $`G`$ and every finite number $`r`$ of color variables,
+the chromatic quasisymmetric function $`G_X`$ admits an explicit
 expansion in the elementary basis
 
 $$G_X = \sum_{\sigma \in \mathrm{ND}(G)} q^{\mathrm{ginv}(\sigma)}
 \, e_{\lambda(\sigma)},$$
 
 where the sum runs over the graph's **permitted nondescent
-permutations** $\mathrm{ND}(G)$, each term is weighted by a
-nonnegative power of $q$ given by its **graph inversions**
-$\mathrm{ginv}(\sigma)$, and $\lambda(\sigma)$ is the partition
-the witness attaches to $\sigma$. Hence $G_X$ lies in
-$\mathbb N[q]$ in the elementary basis — $e$-positive
+permutations** $`\mathrm{ND}(G)`$, each term is weighted by a
+nonnegative power of $`q`$ given by its **graph inversions**
+$`\mathrm{ginv}(\sigma)`$, and $`\lambda(\sigma)`$ is the partition
+the witness attaches to $`\sigma`$. Hence $`G_X`$ lies in
+$`\mathbb N[q]`$ in the elementary basis — $`e`$-positive
 [S3:49–51, S4:9].
 
 **Permutation counting, not just nonnegativity.** The coefficients
 are not merely nonnegative; they **count** the nondescent
 permutations (weighted by the sign-reversing/inversion statistic
-$\mathrm{ginv}$). The positivity is explained combinatorially: a
+$`\mathrm{ginv}`$). The positivity is explained combinatorially: a
 term is present only when a permitted permutation contributes it
 [S3:49–51, S4:9].
 
 **The scope of the formalization.** The formalization proves the
-elementary-positivity part over $\mathbb N[q]$ for **every** finite
+elementary-positivity part over $`\mathbb N[q]`$ for **every** finite
 number of color variables; the expansion is indexed by the permutation
 witness [S4:9].
 
@@ -76,7 +76,7 @@ Shareshian and Wachs conjectured (in their study of the chromatic
 quasisymmetric function, a refinement of the Stanley
 chromatic-symmetric-function program) that the chromatic
 quasisymmetric function of natural unit interval graphs is
-$e$-positive. The conjecture was verified for small graphs and for
+$`e`$-positive. The conjecture was verified for small graphs and for
 some families by computer search and by hand for special cases,
 because the elementary-basis expansion is not available from the
 usual P–L / peak combinatorics for this class. This manuscript
@@ -87,24 +87,24 @@ unit interval graph, uniformly in the number of color variables
 
 **Prior (my training data, not this repo).** I know the
 Shareshian–Wachs conjecture, the chromatic quasisymmetric
-function, and $e$-positivity as a refinement of Stanley's
+function, and $`e`$-positivity as a refinement of Stanley's
 conjectures on chromatic symmetric functions. A **general** proof of
 elementary positivity for **every** natural unit interval graph, via
 an explicit nondescent-permutation witness, goes beyond the special
 cases I recall; I cannot independently verify the witness
-construction and the $\mathrm{ginv}$ weighting in [S3:49–51] from
+construction and the $`\mathrm{ginv}`$ weighting in [S3:49–51] from
 training alone.
 
 ## Consequences
 
 **The elementary-positivity part of the Shareshian–Wachs
 conjecture is proved.** The chromatic quasisymmetric function of
-every natural unit interval graph lies in $\mathbb N[q]$ in the
+every natural unit interval graph lies in $`\mathbb N[q]`$ in the
 elementary basis [S3:49–51, S4:9, S2:419].
 
 **An explicit permutation expansion.** The function equals a sum over
 the graph's permitted nondescent permutations, each term weighted by
-$q^{\mathrm{ginv}(\sigma)}$ times the elementary symmetric function
+$`q^{\mathrm{ginv}(\sigma)}`$ times the elementary symmetric function
 of the witness's partition [S4:9].
 
 **Positivity is combinatorial.** Nonnegativity is witnessed by
@@ -128,9 +128,9 @@ bibliography. The family ships no `verification/` bundle.
 elementary-positivity part of theShareshian–Wachs conjecture:
 the chromatic quasisymmetric function of every natural unit interval
 graph has nonnegative coefficients in the elementary basis, proved
-over $\mathbb N[q]$; it constructs an explicit elementary-basis
+over $`\mathbb N[q]`$; it constructs an explicit elementary-basis
 expansion indexed by the graph's permitted nondescent permutations,
-each term weighted by a nonnegative power of $q$ given by its graph
+each term weighted by a nonnegative power of $`q`$ given by its graph
 inversions, valid for every finite number of color variables
 [S4:9]. The scope note names one comparator [S4:13–15]:
 `ElementaryPositivity.lean`.

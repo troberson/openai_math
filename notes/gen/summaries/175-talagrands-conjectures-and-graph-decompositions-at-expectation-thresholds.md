@@ -39,24 +39,24 @@ The third, *Talagrand's discrete-convexity conjecture* [S5:28,
 S5:30], abstract 
 
 > We prove Talagrand's discrete-convexity conjecture.
-There is a universal integer $k$ such that, whenever an arbitrary family has
-Bernoulli product measure at least $1-1/k$, the sets not contained
-in a union of $k$ members admit a cover of total cost at most $1/2$
+There is a universal integer $`k`$ such that, whenever an arbitrary family has
+Bernoulli product measure at least $`1-1/k`$, the sets not contained
+in a union of $`k`$ members admit a cover of total cost at most $`1/2`$
 at the same density. [S5:37–41]
 
 ## Undergraduate summary
 
 An **increasing family** is a collection of subsets where adding
 elements keeps you in the family. Given such a family, the
-**expectation threshold** is the critical random density $p$ where
-the family "appears" in a random $p$-subsample — below $p$ you
-almost surely miss it, above $p$ you almost surely hit it. There
+**expectation threshold** is the critical random density $`p`$ where
+the family "appears" in a random $`p`$-subsample — below $`p`$ you
+almost surely miss it, above $`p`$ you almost surely hit it. There
 are two versions: the **integral** threshold (whole sets) and the
 **fractional** threshold (allowing weighted covers). Talagrand
 conjectured they differ only by a universal constant — the
 fractional version is no cheaper than the integral one by more
 than a fixed factor. This family proves it with the explicit
-factor $25 \cdot 512^4$ [S4:38–40, S2:431]. The
+factor $`25 \cdot 512^4`$ [S4:38–40, S2:431]. The
 graph-decomposition application uses this threshold to say: a
 graph's edge set can be broken into a bounded number of
 "pieces", each of which appears in a random subgraph no earlier
@@ -67,21 +67,21 @@ than a constant times the whole graph's threshold [S3:39
 
 **The expectation-threshold equivalence** [S4:38–40,
 S6:10]. For every nonempty proper increasing family
-$\mathcal F$ on a finite nonempty ground set, the fractional and
+$`\mathcal F`$ on a finite nonempty ground set, the fractional and
 integral expectation thresholds satisfy
-$q_f(\mathcal F) \le 25 \cdot 512^4 \, q(\mathcal F)$, where
-both thresholds use cover budget $1/2$ and fractional covers may
+$`q_f(\mathcal F) \le 25 \cdot 512^4 \, q(\mathcal F)`$, where
+both thresholds use cover budget $`1/2`$ and fractional covers may
 assign weights to every subset including the empty set
 [S6:10].
 
 **The discrete-convexity conjecture** [S5:37–41, S6:12].
-There is a universal integer $k$ — the formalization takes
-$k = 2^{75}$ — such that if an arbitrary family
-$\mathcal D$ of subsets of a finite ground set has Bernoulli-$p$
-measure at least $1 - 1/k$, then the sets **not** contained in a
-union of $k$ members of $\mathcal D$ form a $p$-small family:
-they have a containment cover of total $p$-cost at most $1/2$.
-This holds for every $0 < p < 1$, with repeated members allowed
+There is a universal integer $`k`$ — the formalization takes
+$`k = 2^{75}`$ — such that if an arbitrary family
+$`\mathcal D`$ of subsets of a finite ground set has Bernoulli-$`p`$
+measure at least $`1 - 1/k`$, then the sets **not** contained in a
+union of $`k`$ members of $`\mathcal D`$ form a $`p`$-small family:
+they have a containment cover of total $`p`$-cost at most $`1/2`$.
+This holds for every $`0 < p < 1`$, with repeated members allowed
 in the union and no monotonicity assumption [S6:12].
 
 **The graph-decomposition application** [S3:39–45,
@@ -110,8 +110,8 @@ universal constant was a standing open problem in the
 Kahn--Koml\'os--Szab\'o / Frankl--R\'onyi threshold
 program. The **discrete-convexity** conjecture is a companion
 statement about the measure of families near saturation
-($1 - 1/k$), asserting that the "exceptional" sets (not covered
-by $k$ members) are uniformly small in a covering sense. The
+($`1 - 1/k`$), asserting that the "exceptional" sets (not covered
+by $`k`$ members) are uniformly small in a covering sense. The
 **Ascoli–He–Park–Talagrand** graph-
 decomposition conjecture applied these threshold tools to say a
 graph's edges decompose into bounded pieces each with controlled
@@ -123,8 +123,8 @@ two base results formalized
 threshold program and the integral-vs-fractional threshold
 question, and the general shape of the discrete-convexity
 statement. A proof of the threshold equivalence with the explicit
-constant $25 \cdot 512^4$, the discrete-convexity result at
-$k = 2^{75}$, and the Ascoli–He–Park–Talagrand
+constant $`25 \cdot 512^4`$, the discrete-convexity result at
+$`k = 2^{75}`$, and the Ascoli–He–Park–Talagrand
 decomposition go beyond what I can verify from training alone;
 the rounding/fractional-small lemmas in [S4:38–40] and the density
 argument in [S5:37–41] are not something I can independently
@@ -134,11 +134,11 @@ reconstruct.
 
 **The expectation-threshold conjecture is resolved.** Integral
 and fractional expectation thresholds differ by at most
-$25 \cdot 512^4$ for every nonempty proper increasing family
+$`25 \cdot 512^4`$ for every nonempty proper increasing family
 [S4:38–40, S6:10, S2:431].
 
 **The discrete-convexity conjecture is resolved** at the
-universal $k = 2^{75}$, uniformly over $0 < p < 1$ with
+universal $`k = 2^{75}`$, uniformly over $`0 < p < 1`$ with
 repeated members allowed and no monotonicity
 [S5:37–41, S6:12, S2:431].
 
@@ -168,15 +168,15 @@ family ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S6:10, S6:12]. The first paragraph formalizes the
-expectation-threshold equivalence: $q_f(\mathcal F) \le 25
-\cdot 512^4 \, q(\mathcal F)$ for every nonempty proper
-increasing family, both thresholds at cover budget $1/2$ with
+expectation-threshold equivalence: $`q_f(\mathcal F) \le 25
+\cdot 512^4 \, q(\mathcal F)`$ for every nonempty proper
+increasing family, both thresholds at cover budget $`1/2`$ with
 fractional covers weighted over all subsets including the empty
 set [S6:10]. The second paragraph formalizes the
-discrete-convexity result at $k = 2^{75}$: a family of
-Bernoulli-$p$ measure at least $1 - 1/k$ has its exceptional
-sets (not in a union of $k$ members) covered at total $p$-cost
-at most $1/2$, for every $0 < p < 1$ [S6:12]. The scope note
+discrete-convexity result at $`k = 2^{75}`$: a family of
+Bernoulli-$`p`$ measure at least $`1 - 1/k`$ has its exceptional
+sets (not in a union of $`k`$ members) covered at total $`p`$-cost
+at most $`1/2`$, for every $`0 < p < 1`$ [S6:12]. The scope note
 names two comparators [S6:16–19]:
 `TalagrandExpectationThreshold.lean` and
 `TalagrandDiscreteConvexity.lean`.
@@ -221,7 +221,7 @@ theorem talagrand_discrete_convexity (N : ℕ) (_hN : 1 ≤ N)
 **What the proofs do.** Both OAI trees carry **real, non-`sorry`**
 proofs. The `OAI/Combinatorics/ExpectationThreshold` package (47
 files, 4834 lines, zero `sorry`) proves the equivalence with the
-explicit constant $25 \cdot 512^4$ — it rounds a
+explicit constant $`25 \cdot 512^4`$ — it rounds a
 fractional-small certificate into an integral one
 (`fractionalSmall_rounding`), derives an integral-small bound via
 `le_q_of_small`, and clears the algebra with `div_le_iff` and
@@ -252,7 +252,7 @@ theorem talagrand_expectation_threshold_equivalence [Nonempty α]
 
 The `OAI/Combinatorics/DiscreteConvexity` package (36 files,
 4259 lines, zero `sorry`) proves the discrete-convexity result
-at $k = 2^{75}$ by a single density lemma
+at $`k = 2^{75}`$ by a single density lemma
 `original_density_small`, which discharges the exceptional-set
 cover bound 
 

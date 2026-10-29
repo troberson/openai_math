@@ -10,12 +10,12 @@ The release's blurb [S1:3743] and the catalog abstract [S2:397] state
 the family's combined claim. It **disproves Hadwiger's conjecture even
 for fractional coloring**: arbitrarily large finite simple graphs with
 independence number at most two satisfy
-$\chi_f(G)>h(G)$, where $h(G)$ is the largest clique-minor order. It
+$`\chi_f(G)>h(G)`$, where $`h(G)`$ is the largest clique-minor order. It
 **also disproves the fractional Colin de Verdière chromatic
-bound** $\chi_f(G)\le\mu(G)+1$. And in the positive direction it
+bound** $`\chi_f(G)\le\mu(G)+1`$. And in the positive direction it
 proves that every finite nonempty graph satisfies
-$\chi_{\mathrm{list}}(G)\le C h(G)$ for a universal constant
-$C$. Three manuscripts carry the family. The first, *A counterexample
+$`\chi_{\mathrm{list}}(G)\le C h(G)`$ for a universal constant
+$`C`$. Three manuscripts carry the family. The first, *A counterexample
 to Hadwiger's conjecture* [S3:3, S3:5], abstract 
 
 > We disprove Hadwiger's conjecture by constructing arbitrarily large
@@ -37,42 +37,42 @@ by more than one [S4:9–13].
 The third, *A linear list-coloring bound in terms of the Hadwiger
 number* [S5:27, S5:29], abstract [S5:33–36]:
 
-We prove that every finite nonempty graph $G$ satisfies
-$\chi_{\mathrm{list}}(G)\le C h(G)$ for an absolute integer $C$,
-where $h(G)$ is the largest order of a clique minor. This resolves the
+We prove that every finite nonempty graph $`G`$ satisfies
+$`\chi_{\mathrm{list}}(G)\le C h(G)`$ for an absolute integer $`C`$,
+where $`h(G)`$ is the largest order of a clique minor. This resolves the
 Linear List Hadwiger conjecture affirmatively [S5:33–36].
 
 ## Undergraduate summary
 
 Graph coloring asks for the fewest colors so that no two adjacent
 vertices share a color; the minimum is the *chromatic number*
-$\chi(G)$. Hadwiger's conjecture links this to a structural
-obstruction: a graph's *Hadwiger number* $h(G)$ is the size of the
+$`\chi(G)`$. Hadwiger's conjecture links this to a structural
+obstruction: a graph's *Hadwiger number* $`h(G)`$ is the size of the
 largest complete-graph minor it contains (a minor you get by deleting
 edges/vertices and shrinking edges), and the conjecture says
-$\chi(G)\le h(G)$ — a graph can never need more colors than the
+$`\chi(G)\le h(G)`$ — a graph can never need more colors than the
 size of its largest complete minor. A *minor* is a graph obtained by
 deleting things and fusing edges, so it is a coarser shadow of the
-original. The Colin de Verdière invariant $\mu(G)$ is another
+original. The Colin de Verdière invariant $`\mu(G)`$ is another
 graph invariant (defined via the nullity of matrices associated to
-$G$) that is also expected to bound chromatic number. The *fractional
-chromatic number* $\chi_f(G)$ is a relaxed version of $\chi(G)$ that
+$`G`$) that is also expected to bound chromatic number. The *fractional
+chromatic number* $`\chi_f(G)`$ is a relaxed version of $`\chi(G)`$ that
 allows fractional color assignments; it is always at least as large a
 lower bound as the naive one. This family shows **both** conjectures
 fail: it builds graphs where the chromatic (and fractional
-chromatic) number exceeds $h(G)$, and where it exceeds
-$\mu(G)+1$ — all from graphs whose independence number is at
+chromatic) number exceeds $`h(G)`$, and where it exceeds
+$`\mu(G)+1`$ — all from graphs whose independence number is at
 most two (so the graphs are dense, no large set of mutually
 non-adjacent vertices) [S3:9–13, S4:9–13, S5:33–36].
 
 ## Graduate summary
 
 **The Hadwiger counterexample** [S3:9–13]. There are arbitrarily
-large finite simple graphs $G$ with independence number $\alpha(G)
-\le2$ such that the *ordinary fractional* chromatic number
-$\chi_f(G)$ exceeds the Hadwiger number $h(G)$; in particular the
+large finite simple graphs $`G`$ with independence number $`\alpha(G)
+\le2`$ such that the *ordinary fractional* chromatic number
+$`\chi_f(G)`$ exceeds the Hadwiger number $`h(G)`$; in particular the
 ordinary chromatic number
-$\chi(G)\ge\chi_f(G)>h(G)$. This disproves Hadwiger's conjecture in
+$`\chi(G)\ge\chi_f(G)>h(G)`$. This disproves Hadwiger's conjecture in
 its strongest (fractional) form, and hence in the ordinary one, and
 also rules out the fractional-coloring weakening discussed by Reed and
 Seymour [S3:9–13, S6:10–12].
@@ -80,16 +80,16 @@ Seymour [S3:9–13, S6:10–12].
 **The Colin de Verdière counterexample** [S4:9–13]. There
 are finite simple graphs with independence number at most two whose
 chromatic number exceeds the Colin de Verdière invariant
-$\mu(G)$ **by more than one**; in fact their ordinary fractional
-chromatic number also exceeds $\mu(G)+1$. This is a strict disproof
-of the fractional bound $\chi_f(G)\le\mu(G)+1$
+$`\mu(G)`$ **by more than one**; in fact their ordinary fractional
+chromatic number also exceeds $`\mu(G)+1`$. This is a strict disproof
+of the fractional bound $`\chi_f(G)\le\mu(G)+1`$
 [S4:9–13, S2:397].
 
 **The positive list-coloring bound** [S5:33–36]. There is an
-absolute integer $C\ge1$ — independent of the graph — such
-that every finite nonempty simple graph $G$ satisfies
-$\chi_{\mathrm{list}}(G)\le C h(G)$, where
-$\chi_{\mathrm{list}}$ is the list chromatic number (choosability):
+absolute integer $`C\ge1`$ — independent of the graph — such
+that every finite nonempty simple graph $`G`$ satisfies
+$`\chi_{\mathrm{list}}(G)\le C h(G)`$, where
+$`\chi_{\mathrm{list}}`$ is the list chromatic number (choosability):
 the worst case over all assignments of a list of colors to each
 vertex. This resolves the Linear List Hadwiger conjecture
 affirmatively [S5:33–36, S6:14].
@@ -123,24 +123,24 @@ expected chromatic upper bounds proven only in special cases. Concrete
 counterexamples to **both** — in the fractional form, on graphs
 of independence number at most two — together with an
 affirmative universal **linear** list-coloring bound
-$\chi_{\mathrm{list}}(G)\le C h(G)$, go beyond the specific
+$`\chi_{\mathrm{list}}(G)\le C h(G)`$, go beyond the specific
 constructions I recall; I cannot independently verify the graph
-families or the constant $C$ from training alone.
+families or the constant $`C`$ from training alone.
 
 ## Consequences
 
 **Hadwiger's conjecture is false, fractionally.** Arbitrarily large
 finite simple graphs with independence number at most two have
-$\chi_f(G)>h(G)$, and hence $\chi(G)>h(G)$
+$`\chi_f(G)>h(G)`$, and hence $`\chi(G)>h(G)`$
 [S3:9–13, S6:10–12].
 
 **The Colin de Verdière bound is false, fractionally.** Graphs
 with independence number at most two have
-$\chi_f(G)>\mu(G)+1$ [S4:9–13, S2:397].
+$`\chi_f(G)>\mu(G)+1`$ [S4:9–13, S2:397].
 
 **A universal linear list-coloring bound.** Every finite nonempty
-graph satisfies $\chi_{\mathrm{list}}(G)\le C h(G)$ for an
-absolute $C$, resolving the Linear List Hadwiger conjecture
+graph satisfies $`\chi_{\mathrm{list}}(G)\le C h(G)`$ for an
+absolute $`C`$, resolving the Linear List Hadwiger conjecture
 [S5:33–36, S6:14].
 
 **The failures are on dense, low-independence graphs.** Both
@@ -161,14 +161,14 @@ bundle.
 **Scope note** [S6:10–12, S6:14]. The formalization
 constructs arbitrarily large finite simple counterexamples to
 Hadwiger's conjecture with independence number at most two: for a
-graph on $m$ vertices it proves
-$h(G)<26m/75+2/3<m/2\le\chi(G)$, which disproves the **ordinary
+graph on $`m`$ vertices it proves
+$`h(G)<26m/75+2/3<m/2\le\chi(G)`$, which disproves the **ordinary
 chromatic** form. The scope note is explicit that the paper's
 fractional-chromatic strengthening and the Colin de Verdière
 consequence are **outside** this selected statement
 [S6:10–12]. Separately, it proves the positive Linear List
-Hadwiger bound: a single integer $C\ge1$ with
-$\chi_{\mathrm{list}}(G)\le C h(G)$ for every finite nonempty
+Hadwiger bound: a single integer $`C\ge1`$ with
+$`\chi_{\mathrm{list}}(G)\le C h(G)`$ for every finite nonempty
 simple graph, the constant independent of the graph [S6:14]. The
 scope note names two comparators [S6:20–21]:
 `ListHadwiger.lean` and `HadwigerCounterexample.lean`.
@@ -185,8 +185,8 @@ but carries no `main_results` entry of its own.
 
 **What the proof does.** The registered `not_hadwiger_conjecture`
 states
-$\neg\bigl(\forall m\,(\forall G\colon\mathrm{SimpleGraph\
-(Fin\ m)},\ \chi(G)\le h(G))\bigr)$, i.e. no universal
+$`\neg\bigl(\forall m\,(\forall G\colon\mathrm{SimpleGraph\
+(Fin\ m)},\ \chi(G)\le h(G))\bigr)`$, i.e. no universal
 chromatic-above-Hadwiger bound exists. The OAI tree proves it with a
 genuine Lean proof: it invokes the explicit
 `exists_counterexamples` construction to exhibit a concrete
@@ -228,8 +228,8 @@ theorem not_hadwiger_conjecture :
 
 The `ListHadwiger.lean` comparator (the positive bound) restates
 `MainStatement` —
-$\exists C\ge1\ \forall G\,
-\chi_{\mathrm{list}}(G)\le C h(G)$ — with a bare `sorry`
+$`\exists C\ge1\ \forall G\,
+\chi_{\mathrm{list}}(G)\le C h(G)`$ — with a bare `sorry`
 body [S8:26–28, S8:30–31]. The release records
 `scope: "Partial progress."` and `review: status: unchecked`; the
 comparators' `sorry` bodies are the targets the release set itself,

@@ -12,7 +12,7 @@ The release blurb
 
 The manuscript abstract 
 
-> We prove potential Zariski density of integral points on $\mathrm{SL}_r$-character
+> We prove potential Zariski density of integral points on $`\mathrm{SL}_r`$-character
 varieties of smooth complex curves in every rank. The result allows
 prescribed quasi-unipotent boundary monodromy, including exact nonsemisimple
 conjugacy classes, and holds on every component over the full ring of
@@ -22,10 +22,10 @@ on the complex representation. [S2:72–80]
 
 ## Undergraduate summary
 
-A "character variety" of a curve $X$ is the space of representations
+A "character variety" of a curve $`X`$ is the space of representations
 of the curve's fundamental group into a matrix group (here
-$\mathrm{SL}_r$), up to conjugacy — a geometric object whose points encode how
-the curve's loops can be assigned $r \times r$ matrices that multiply
+$`\mathrm{SL}_r`$), up to conjugacy — a geometric object whose points encode how
+the curve's loops can be assigned $`r \times r`$ matrices that multiply
 the right way. The "integral points" of this variety are the
 representations whose matrices have entries in a number field's ring of
 integers, rather than arbitrary complex numbers.
@@ -42,52 +42,52 @@ about integral density on character varieties.
 
 The main statement 
 
-> Let $X$ be a smooth connected complex algebraic curve and let $r\geq1$.
-For prescribed quasi-unipotent conjugacy classes $C_1,\ldots,C_s$ as above,
-let $K\subset\mathbb C$ be a number field containing their eigenvalues. There is
-a finite extension $L/K$ such that
+> Let $`X`$ be a smooth connected complex algebraic curve and let $`r\geq1`$.
+For prescribed quasi-unipotent conjugacy classes $`C_1,\ldots,C_s`$ as above,
+let $`K\subset\mathbb C`$ be a number field containing their eigenvalues. There is
+a finite extension $`L/K`$ such that
 $$M_r(X)(\mathcal O_L)\cap Y(\mathbb C)$$
-is Zariski dense in $Y$, and hence in every irreducible component of $Y$.
+is Zariski dense in $`Y`$, and hence in every irreducible component of $`Y`$.
 The same conclusion holds when only the characteristic polynomial of
 each boundary monodromy is prescribed, with all its roots roots of unity.
 It also holds for the entire character variety without boundary
-conditions; in that case one may take $K=\mathbb Q$. [S3:35–57]
+conditions; in that case one may take $`K=\mathbb Q`$. [S3:35–57]
 
 ## Graduate summary
 
 The theorem is a potential Zariski-density statement for integral
-points on $\mathrm{SL}_r$-character varieties, uniform in rank and in the
+points on $`\mathrm{SL}_r`$-character varieties, uniform in rank and in the
 curve.
 
 **Main theorem.** 
 
-> Let $X$ be a smooth connected complex algebraic curve and let $r\geq1$.
-For prescribed quasi-unipotent conjugacy classes $C_1,\ldots,C_s$ as above,
-let $K\subset\mathbb C$ be a number field containing their eigenvalues. There is
-a finite extension $L/K$ such that
+> Let $`X`$ be a smooth connected complex algebraic curve and let $`r\geq1`$.
+For prescribed quasi-unipotent conjugacy classes $`C_1,\ldots,C_s`$ as above,
+let $`K\subset\mathbb C`$ be a number field containing their eigenvalues. There is
+a finite extension $`L/K`$ such that
 $$M_r(X)(\mathcal O_L)\cap Y(\mathbb C)$$
-is Zariski dense in $Y$, and hence in every irreducible component of $Y$.
+is Zariski dense in $`Y`$, and hence in every irreducible component of $`Y`$.
 The same conclusion holds when only the characteristic polynomial of
 each boundary monodromy is prescribed, with all its roots roots of unity.
 It also holds for the entire character variety without boundary
-conditions; in that case one may take $K=\mathbb Q$. [S3:35–57]
+conditions; in that case one may take $`K=\mathbb Q`$. [S3:35–57]
 
-For a smooth connected complex curve $X$ and rank $r \ge 1$, with
+For a smooth connected complex curve $`X`$ and rank $`r \ge 1`$, with
 prescribed quasi-unipotent boundary conjugacy classes and a number field
-$K$ containing their eigenvalues, there is a *single* finite extension
-$L/K$ (fixed for the whole locus, all components included) such that
-integral points $M_r(X)(\mathcal O_L) \cap Y(\mathbb C)$ are Zariski dense in $Y$ —
+$`K`$ containing their eigenvalues, there is a *single* finite extension
+$`L/K`$ (fixed for the whole locus, all components included) such that
+integral points $`M_r(X)(\mathcal O_L) \cap Y(\mathbb C)`$ are Zariski dense in $`Y`$ —
 hence in every irreducible component. The density is "potential"
-because it holds after one finite extension, not over $K$ itself. The
+because it holds after one finite extension, not over $`K`$ itself. The
 same conclusion holds for characteristic-polynomial boundary data with
 all roots of unity, and for the boundary-free variety where one may
-take $K = \mathbb Q$.
+take $`K = \mathbb Q`$.
 
-**The precise field.** [S3:49–56]: for relative and projective $X$ one
-may take distinct primes $p, q > r$ and the explicit field
-$F = K(\sqrt{2}, \zeta_{pq})$ with
-$L = F(\zeta_r, \{u^{1/r} : u \in \mathcal O_F^\times\})$; the extension is
-finite because the unit group of $\mathcal O_F$ is finitely generated. No
+**The precise field.** [S3:49–56]: for relative and projective $`X`$ one
+may take distinct primes $`p, q > r`$ and the explicit field
+$`F = K(\sqrt{2}, \zeta_{pq})`$ with
+$`L = F(\zeta_r, \{u^{1/r} : u \in \mathcal O_F^\times\})`$; the extension is
+finite because the unit group of $`\mathcal O_F`$ is finitely generated. No
 restriction on the genus or the Jordan forms is imposed.
 
 ## history of the conjecture
@@ -99,7 +99,7 @@ in the orbit of the "integral points on varieties" program
 character-variety density of Lubotzky and collaborators). Litt framed an
 integral-density question for curve character varieties asking whether
 integral points become dense after one finite extension; the
-determinant-one ($\mathrm{SL}_r$) curve case, with prescribed quasi-unipotent
+determinant-one ($`\mathrm{SL}_r`$) curve case, with prescribed quasi-unipotent
 boundary data including exact nonsemisimple classes, is the content
 here. The quasi-unipotent boundary condition and the nonsemisimple
 classes are the difficult part: they force the marked-surface
@@ -108,7 +108,7 @@ is the supporting lemma the formalization lands.
 
 ## Consequences
 
-**Potential integral density on $\mathrm{SL}_r$ curve character varieties.**
+**Potential integral density on $`\mathrm{SL}_r`$ curve character varieties.**
 For every smooth connected complex curve and every rank, integral
 points are Zariski dense in every component after one finite extension
 [S3:35–57].
@@ -155,7 +155,7 @@ is in that file (ledger `paps_form 1`, `mainres 1`, `chal 1`).
 
 The scope note is explicit that the headline is *not* landed [S4:11]:
 "Existence of integral points and Zariski density are not established.
-The paper's main theorem—potential integral density for $\mathrm{SL}_r$
+The paper's main theorem—potential integral density for $`\mathrm{SL}_r`$
 curve character varieties over one finite extension, including
 prescribed quasi-unipotent boundary data and every irreducible
 component—is outside this comparison." So the formalization proves the

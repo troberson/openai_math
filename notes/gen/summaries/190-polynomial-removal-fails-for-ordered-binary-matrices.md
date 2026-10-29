@@ -9,7 +9,7 @@
 The release's blurb [S1:4384] and the catalog abstract [S2:461]
 state the family's claim: a **counterexample** disproving
 polynomial removal for ordered binary matrices, built from one
-fixed $66 \times 66$ zero–one pattern. There are binary
+fixed $`66 \times 66`$ zero–one pattern. There are binary
 matrices that require many entry changes to become
 pattern-free while their ordered-copy density is smaller than
 every proposed polynomial bound in that distance. Copies
@@ -18,7 +18,7 @@ The manuscript is *Polynomial removal fails for ordered
 binary matrices* [S3:29, S3:31]; its abstract
 
 
-> We construct a fixed $66\times66$ binary matrix for which ordered matrix
+> We construct a fixed $`66\times66`$ binary matrix for which ordered matrix
 removal has no polynomial bound. This disproves the polynomial ordered
 binary matrix-removal conjecture. Ordered copies preserve the separate
 row and column orders and match both zeros and ones; removal permits
@@ -36,7 +36,7 @@ entries match the target exactly, zeros and ones alike. A
 pattern, can you delete a small number of entries to destroy
 them all? For **unordered** patterns, a polynomial relationship
 between "few copies" and "few deletions" is known. This
-constructs a specific $66 \times 66$ pattern for which that
+constructs a specific $`66 \times 66`$ pattern for which that
 relationship **breaks**: you can have a matrix with hardly any
 copies of the pattern, yet the number of entries you must flip
 to remove them all is **disproportionately large** —
@@ -46,13 +46,13 @@ larger than any polynomial in the copy density
 ## Graduate summary
 
 **The main theorem** [S3:35–39, S4:9]. For a fixed
-$66 \times 66$ binary pattern $H$, for every
-$c, C > 0$ there exists an $n \times n$ binary matrix $A$
-and $\varepsilon > 0$ such that $A$ is at normalized
-Hamming (edit) distance at least $\varepsilon$ from being
-$H$-free, while its count of **induced ordered** copies of
-$H$ is fewer than
-$c\, \varepsilon^{C}\, n^{132}$:
+$`66 \times 66`$ binary pattern $`H`$, for every
+$`c, C > 0`$ there exists an $`n \times n`$ binary matrix $`A`$
+and $`\varepsilon > 0`$ such that $`A`$ is at normalized
+Hamming (edit) distance at least $`\varepsilon`$ from being
+$`H`$-free, while its count of **induced ordered** copies of
+$`H`$ is fewer than
+$`c\, \varepsilon^{C}\, n^{132}`$:
 
 ```
 ∀ c C : ℝ, 0 < c → 0 < C →
@@ -66,12 +66,12 @@ Row and column indices are independently increasing, every
 zero and one entry must match, and removal permits changing
 entries in **both** directions [S4:9, S5:63–70]. The
 construction supplies an **explicit sequence** of such
-matrices, parameterized by a height $h$
+matrices, parameterized by a height $`h`$
 [S4:9, S6:11–24].
 
 **The scope of the formalization.** The scope note states the
 formalized result disproves the polynomial removal bound for
-one explicit $66 \times 66$ binary pattern, with the
+one explicit $`66 \times 66`$ binary pattern, with the
 edit-distance and copy-density form above
 [S4:9]. The scope note names one comparator [S4:15]:
 `MatrixRemoval.lean`.
@@ -91,7 +91,7 @@ must be increasing), and the counterintuitive behavior is that
 the ordered structure can hide a **large removal cost** behind
 a vanishing copy density. This manuscript provides the first
 counterexample **with a single fixed pattern**: a
-$66 \times 66$ zero–one matrix $H$ for which no
+$`66 \times 66`$ zero–one matrix $`H`$ for which no
 polynomial in the copy density bounds the edit distance
 [S3:35–39, S2:461].
 
@@ -99,10 +99,10 @@ polynomial in the copy density bounds the edit distance
 Removal Lemma paradigm, Roth's theorem, and that polynomial
 removal bounds hold for graph and unordered-matrix settings,
 and that ordered (poset) settings are generally harder.
-A **specific $66 \times 66$ ordered binary pattern** that
+A **specific $`66 \times 66`$ ordered binary pattern** that
 disproves **every** polynomial removal bound, with an explicit
-constructive sequence parameterized by a height $h$ and a
-$386h+2$ dimension, is a concrete counterexample I cannot
+constructive sequence parameterized by a height $`h`$ and a
+$`386h+2`$ dimension, is a concrete counterexample I cannot
 independently verify from training alone; the
 `counterexample_sequence` and
 `no_polynomial_removal_bound_of_sequence` machinery in [S6:26–34]
@@ -111,16 +111,16 @@ is not something I can recall.
 ## Consequences
 
 **Polynomial ordered binary matrix removal is disproved.**
-A single fixed $66 \times 66$ pattern $H$ has no polynomial
-removal bound: for every $c, C > 0$ there is a matrix at
-normalized edit distance $\geq \varepsilon$ from
-$H$-free with fewer than
-$c\,\varepsilon^C n^{132}$ induced ordered copies
+A single fixed $`66 \times 66`$ pattern $`H`$ has no polynomial
+removal bound: for every $`c, C > 0`$ there is a matrix at
+normalized edit distance $`\geq \varepsilon`$ from
+$`H`$-free with fewer than
+$`c\,\varepsilon^C n^{132}`$ induced ordered copies
 [S3:35–39, S4:9, S2:461].
 
 **The counterexample is explicit and constructive.** The
 construction gives a sequence of matrices parameterized by a
-height $h$, with dimension $n = (386h+2) \cdot 2^h$
+height $`h`$, with dimension $`n = (386h+2) \cdot 2^h`$
 [S6:11–24].
 
 **Removal is two-sided.** The edit distance allows changing
@@ -140,10 +140,10 @@ diagram. The family ships no `verification/` bundle.
 
 **Scope note** [S4:9]. The formalized result disproves a
 polynomial removal bound for one explicit
-$66 \times 66$ binary pattern: for every $c, C > 0$ there is
-an $n \times n$ binary matrix at normalized edit distance at
-least $\varepsilon > 0$ from being pattern-free but with
-fewer than $c\,\varepsilon^{C}\, n^{132}$ induced ordered
+$`66 \times 66`$ binary pattern: for every $`c, C > 0`$ there is
+an $`n \times n`$ binary matrix at normalized edit distance at
+least $`\varepsilon > 0`$ from being pattern-free but with
+fewer than $`c\,\varepsilon^{C}\, n^{132}`$ induced ordered
 copies. Row and column indices are independently increasing
 and every zero and one entry must match. The construction
 gives an explicit sequence of such matrices, allowing edits in
@@ -185,8 +185,8 @@ proof, not a `sorry`: it is a one-line body
 `exact no_polynomial_removal_bound_of_sequence
 counterexample_sequence` [S6:26–34]. The work is in the
 `counterexample_sequence` lemma [S6:11–24], which for
-every height $h \geq 1$ sets $d = 386h + 2$ and
-$n = d \cdot 2^h$, witnesses the matrix as
+every height $`h \geq 1`$ sets $`d = 386h + 2`$ and
+$`n = d \cdot 2^h`$, witnesses the matrix as
 `Construction.hostMatrix (OrderedHost.rowIndex h)
 (OrderedHost.columnIndex h)`, proves the edit-distance lower
 bound by `OrderedHost.hammingDistance_ge`, and the copy-count
@@ -194,7 +194,7 @@ upper bound by `OrderedHost.canonical_copyCount_le` via
 `SequenceAssembly.counterexample_sequence_of_integer_bounds`.
 The `no_polynomial_removal_bound_of_sequence` consequence
 lemma then converts the explicit sequence into the
-$\forall\, c\, C$ polynomial-free form [S6:11–34].
+$`\forall\, c\, C`$ polynomial-free form [S6:11–34].
 
 **What the OAI tree does carry.** The
 `OAI/Combinatorics/MatrixRemoval` package (**61 files over

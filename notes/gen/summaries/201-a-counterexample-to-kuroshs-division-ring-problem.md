@@ -49,13 +49,13 @@ over the center, yet the ring as a whole is
 ## Graduate summary
 
 **The main theorem** [S3:12–15, S2:485]. There
-exists a **countable** division ring $D$ of
-**characteristic zero**, with center $Z$, such that:
-(1) $D$ is algebraic over $Z$ (every element of $D$
-satisfies a polynomial over $Z$); (2) $D$ is generated
-by **two** elements as an algebra over $Z$; and
-(3) $D$ has **infinite** dimension as a vector space
-over $Z$. This answers Kurosh's division-ring problem
+exists a **countable** division ring $`D`$ of
+**characteristic zero**, with center $`Z`$, such that:
+(1) $`D`$ is algebraic over $`Z`$ (every element of $`D`$
+satisfies a polynomial over $`Z`$); (2) $`D`$ is generated
+by **two** elements as an algebra over $`Z`$; and
+(3) $`D`$ has **infinite** dimension as a vector space
+over $`Z`$. This answers Kurosh's division-ring problem
 on local finiteness negatively [S3:12–15].
 
 **The scope of the formalization.** The family is at

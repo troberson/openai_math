@@ -7,73 +7,73 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:2013] and the catalog abstract [S2:236] state the
-family's claim: for $d\ge4$ and $2\le n\le d-2$, an $n$-Ahlfors–David
-regular Radon measure on $\mathbb R^d$ is uniformly $n$-rectifiable
-whenever its $n$-dimensional Riesz transform is uniformly $L^2$-bounded over
+family's claim: for $`d\ge4`$ and $`2\le n\le d-2`$, an $`n`$-Ahlfors–David
+regular Radon measure on $`\mathbb R^d`$ is uniformly $`n`$-rectifiable
+whenever its $`n`$-dimensional Riesz transform is uniformly $`L^2`$-bounded over
 all positive hard truncations. This resolves the remaining higher-codimension
 range of the David–Semmes Riesz-transform question. The manuscript's
 abstract 
 
-> We prove that an $n$-Ahlfors–David regular Radon measure on $\mathbb R^d$
-is uniformly $n$-rectifiable if its $n$-dimensional Riesz transform is
-uniformly bounded from scalar $L^2(\mu)$ to vector-valued $L^2(\mu)$
-over all positive hard truncations, for integers $d\ge4$ and
-$2\le n\le d-2$.
+> We prove that an $`n`$-Ahlfors–David regular Radon measure on $`\mathbb R^d`$
+is uniformly $`n`$-rectifiable if its $`n`$-dimensional Riesz transform is
+uniformly bounded from scalar $`L^2(\mu)`$ to vector-valued $`L^2(\mu)`$
+over all positive hard truncations, for integers $`d\ge4`$ and
+$`2\le n\le d-2`$.
 This gives a positive answer to the David–Semmes Riesz-transform question
 in its remaining higher-codimension range. The conclusion gives uniform
 big pieces of Lipschitz images of Euclidean balls. [S3:35–44]
 
 ## Undergraduate summary
 
-A measure $\mu$ on $\mathbb R^d$ is $n$-rectifiable if, in a suitable
-sense, it is concentrated on a countable union of $n$-dimensional planes.
+A measure $`\mu`$ on $`\mathbb R^d`$ is $`n`$-rectifiable if, in a suitable
+sense, it is concentrated on a countable union of $`n`$-dimensional planes.
 "Uniformly rectifiable" strengthens this: the approximation by planes must
 work at *every* scale and *every* point, with quantitative control.
 David and Semmes introduced the uniform version in the early 1990s as the
 right geometric hypothesis for singular integral operators to behave
 well [S4:69–78].
 
-The Riesz transform $R_n$ of a measure $\mu$ is a singular integral
-operator that measures how much $\mu$ fails to look like a flat $n$-plane
-at each scale. The classical result (codimension one, $n=d-1$) is that
-$b$oundedness of $R_n$ on $L^2(\mu)$ forces rectifiability. David and Semmes
-asked whether the same is true in higher codimension $n\le d-2$, and
+The Riesz transform $`R_n`$ of a measure $`\mu`$ is a singular integral
+operator that measures how much $`\mu`$ fails to look like a flat $`n`$-plane
+at each scale. The classical result (codimension one, $`n=d-1`$) is that
+$`b`$oundedness of $`R_n`$ on $`L^2(\mu)`$ forces rectifiability. David and Semmes
+asked whether the same is true in higher codimension $`n\le d-2`$, and
 whether it can be made quantitative — giving explicit Lipschitz constants
 and mass fractions in terms of the operator bound. This paper answers that
-question affirmatively for all $d\ge4$ and $2\le n\le d-2$ [S4:61–67].
+question affirmatively for all $`d\ge4`$ and $`2\le n\le d-2`$ [S4:61–67].
 
 ## Graduate summary
 
-**The theorem** [S4:61–67, `thm:main`]. Let $d\ge4$ and
-$2\le n\le d-2$ be integers. Let $\mu$ be an $n$-Ahlfors–David regular
-Radon measure on $\mathbb R^d$ satisfying the uniform $L^2$ Riesz-transform
+**The theorem** [S4:61–67, `thm:main`]. Let $`d\ge4`$ and
+$`2\le n\le d-2`$ be integers. Let $`\mu`$ be an $`n`$-Ahlfors–David regular
+Radon measure on $`\mathbb R^d`$ satisfying the uniform $`L^2`$ Riesz-transform
 bound 
 
 > $$\|R_{\mu,\varepsilon}f\|_{L^2(\mu;\mathbb R^d)}
  \le C_{\rm R}\|f\|_{L^2(\mu)}.$$
 No pointwise principal-value hypothesis is imposed. For a nontrivial
 regular support, the integrals in are
-absolutely convergent for every $x$ and every $f\in L^2(\mu)$;
+absolutely convergent for every $`x`$ and every $`f\in L^2(\mu)`$;
 this follows from Lemma below. [S4:39–46]
 
-Then $\mu$ is uniformly $n$-rectifiable in the sense of Definition
-[S4:48–59]: there exist constants $\theta>0$ and $M\ge0$, depending
-only on $d$, $n$, the AD constant, and the Riesz bound, such that at every
-support point and every admissible radius, a Lipschitz $n$-disk of
-Lipschitz constant $M$ carries $\theta$-fraction of the ball's mass.
+Then $`\mu`$ is uniformly $`n`$-rectifiable in the sense of Definition
+[S4:48–59]: there exist constants $`\theta>0`$ and $`M\ge0`$, depending
+only on $`d`$, $`n`$, the AD constant, and the Riesz bound, such that at every
+support point and every admissible radius, a Lipschitz $`n`$-disk of
+Lipschitz constant $`M`$ carries $`\theta`$-fraction of the ball's mass.
 
 > **theorem**
-Let $d\ge4$ and $2\le n\le d-2$ be integers. Let $\mu$ be an
-$n$-Ahlfors–David regular Radon measure on $\mathbb R^d$ satisfying
- . Then $\mu$ is uniformly $n$-rectifiable in the
-sense of Definition . Its constants $\theta$ and $M$ can
-be chosen in terms of $d,n,C_{\rm AD}$ and $C_{\rm R}$ alone. [S4:61–67]
+Let $`d\ge4`$ and $`2\le n\le d-2`$ be integers. Let $`\mu`$ be an
+$`n`$-Ahlfors–David regular Radon measure on $`\mathbb R^d`$ satisfying
+ . Then $`\mu`$ is uniformly $`n`$-rectifiable in the
+sense of Definition . Its constants $`\theta`$ and $`M`$ can
+be chosen in terms of $`d,n,C_{\rm AD}`$ and $`C_{\rm R}`$ alone. [S4:61–67]
 
 The proof proceeds through a long geometric-analytic chain: flat-ball
 estimates, planar limit analysis, a compactness principle for the height
 function, fractional rigidity of oscillatory integrals, excess propagation
 across scales, and a packing endpoint argument [S3:46–54]. The
-conclusion is quantitative — the constants $\theta$ and $M$ are
+conclusion is quantitative — the constants $`\theta`$ and $`M`$ are
 explicit functions of the input bounds — and works at unbounded support.
 
 **What is excluded.** The variation estimate and the principal-value
@@ -86,16 +86,16 @@ quantitative form of rectifiability tailored to singular integrals
 [S4:69–78]. Among its equivalent descriptions are big pieces of
 Lipschitz images and a packing condition on balls where the support fails
 to approximate a plane from both sides. The codimension-one case
-($n=d-1$) was settled by the work of David, Journé, and others; the
-higher-codimension case with $2\le n\le d-2$ was the remaining gap.
+($`n=d-1`$) was settled by the work of David, Journé, and others; the
+higher-codimension case with $`2\le n\le d-2`$ was the remaining gap.
 
 In the codimension-one setting, boundedness of the Riesz transform on
-$L^2(\mu)$ for an $(d-1)$-AD regular measure forces uniform
+$`L^2(\mu)`$ for an $`(d-1)`$-AD regular measure forces uniform
 rectifiability. The higher-codimension problem is substantially harder
-because the kernel $R_n(x,y)=|x-y|^{-(n+1)}(x-y)$ couples $n+1$
-coordinates, and the geometric objects are $n$-disks in $d$-space rather
+because the kernel $`R_n(x,y)=|x-y|^{-(n+1)}(x-y)`$ couples $`n+1`$
+coordinates, and the geometric objects are $`n`$-disks in $`d`$-space rather
 than hypersurfaces. The proof here introduces flat-ball estimates, a
-compactness principle for the height function over $n$-planes, and a
+compactness principle for the height function over $`n`$-planes, and a
 fractional rigidity argument for oscillatory integrals to close the gap
 [S3:46–54].
 
@@ -109,8 +109,8 @@ manuscript's argument.
 ## Consequences
 
 **Quantitative uniform rectifiability in higher codimension.** For
-$d\ge4$ and $2\le n\le d-2$, the uniform $L^2$ Riesz-transform bound
-forces big pieces of Lipschitz $n$-images with explicit constants, at
+$`d\ge4`$ and $`2\le n\le d-2`$, the uniform $`L^2`$ Riesz-transform bound
+forces big pieces of Lipschitz $`n`$-images with explicit constants, at
 every support point and admissible radius [S4:61–67].
 
 **A positive answer to the David–Semmes question.** The Riesz
@@ -118,8 +118,8 @@ transform alone — without a variation estimate — suffices to force
 uniform rectifiability in its remaining higher-codimension range
 [S4:69–78].
 
-**Class-uniform Lipschitz constants.** The Lipschitz constant $M$ and
-mass fraction $\theta$ depend only on the ambient dimension, the
+**Class-uniform Lipschitz constants.** The Lipschitz constant $`M`$ and
+mass fraction $`\theta`$ depend only on the ambient dimension, the
 codimension, the AD constant, and the operator bound — not on the
 particular measure [S4:61–67].
 
@@ -138,8 +138,8 @@ The manuscript ships no `verification/` bundle.
 
 **Scope note** [S5]. The formalization proves that bounded Riesz
 transforms force quantitative uniform rectifiability in higher codimension:
-for $d\ge4$ and $2\le n\le d-2$, an $n$-AD regular measure whose positive
-hard truncations have one uniform $L^2$ operator bound has big pieces of
+for $`d\ge4`$ and $`2\le n\le d-2`$, an $`n`$-AD regular measure whose positive
+hard truncations have one uniform $`L^2`$ operator bound has big pieces of
 Lipschitz images, with the mass fraction and Lipschitz constant depending
 only on the dimensions and the stated bounds, at every support point and
 admissible radius including unbounded support. The variation and
@@ -222,11 +222,11 @@ and no reasoning trace.
 
 - Azzam, Jonas, Mourgoglou, Mihalis, Villa, Michele, Quantitative differentiability on uniformly rectifiable sets (2025)
 - Bate, David, Hyde, Matthew, Schul, Raanan, Uniformly rectifiable metric spaces: Lipschitz images, Bi-Lateral Weak Geometric Lemma and corona decompositions (2023)
-- David, Guy, Semmes, Stephen, Singular integrals and rectifiable sets in $\mathbb{R}^n$. {Au-del\`a} des graphes lipschitziens (1991)
+- David, Guy, Semmes, Stephen, Singular integrals and rectifiable sets in $`\mathbb{R}^n`$. {Au-del\`a} des graphes lipschitziens (1991)
 - David, Guy, Semmes, Stephen, Analysis of and on Uniformly Rectifiable Sets (1993)
 - Dipierro, Serena, Savin, Ovidiu, Valdinoci, Enrico, Definition of fractional Laplacian for functions with polynomial growth (2019)
-- Farag, Hany M., Curvatures of the Melnikov type, Hausdorff dimension, rectifiability, and singular integrals on $\mathbb{R}^n$ (2000)
-- Fefferman, Charles, Stein, Elias M., $H^p$ spaces of several variables (1972)
+- Farag, Hany M., Curvatures of the Melnikov type, Hausdorff dimension, rectifiability, and singular integrals on $`\mathbb{R}^n`$ (2000)
+- Fefferman, Charles, Stein, Elias M., $`H^p`$ spaces of several variables (1972)
 - Jaye, Benjamin, Nazarov, Fedor, Reflectionless measures for {Calderón–Zygmund} operators I: general theory (2018)
 - Jaye, Benjamin, Nazarov, Fedor, Reflectionless measures for {Calderón–Zygmund} operators (2013)
 - Mas, Albert, Tolsa, Xavier, Variation for the Riesz transform and uniform rectifiability (2014)

@@ -9,7 +9,7 @@
 The release's blurb [S1:7528] and the catalog abstract [S2:704] state
 the family's claim: the unrestricted four-dimensional disk-embedding
 conjecture fails — framed algebraic dual spheres do not suffice to
-obtain disjoint locally flat spanning disks, so the free group $F_2$
+obtain disjoint locally flat spanning disks, so the free group $`F_2`$
 is not "good" in the sense of Freedman--Quinn — and separately a
 finitely presented integral Poincaré duality group of dimension four
 has a finite classifying space but no realization as the fundamental
@@ -39,7 +39,7 @@ The disk-embedding problem sits at the heart of four-dimensional
 topology, where smooth structure is replaced by a topological one and
 the usual tools weaken. Given a collection of immersed disks in a
 four-manifold, together with "dual" spheres that intersect each disk in
-the expected algebraic way (a disk $f_i$ meets its dual $g_i$ once and
+the expected algebraic way (a disk $`f_i`$ meets its dual $`g_i`$ once and
 every other disk not at all, and the spheres have vanishing
 self-intersection), one wants to find genuine, embedded, pairwise
 disjoint disks spanning the same boundary circles, preserving the
@@ -51,14 +51,14 @@ self-intersection numbers — are satisfied, yet no such disjoint locally
 flat disks exist 
 
 > **theorem**
-There exist a compact connected oriented smooth four-manifold $M$ with nonempty boundary, an integer $k\geq1$, proper generically immersed discs
+There exist a compact connected oriented smooth four-manifold $`M`$ with nonempty boundary, an integer $`k\geq1`$, proper generically immersed discs
 $$f_i\colon(D^2,S^1)\longrightarrow(M,\partial M),\qquad 1\leq i\leq k,$$
-whose boundary restrictions form an embedding of $\coprod_iS^1$, and framed sphere maps $g_i\colon S^2\to M$ such that
+whose boundary restrictions form an embedding of $`\coprod_iS^1`$, and framed sphere maps $`g_i\colon S^2\to M`$ such that
 $$\lambda(f_i,g_j)=\delta_{ij}\,1,\qquad
  \lambda(g_i,g_j)=0,\qquad
  \widetilde\mu(g_i)=0
  \quad(1\leq i,j\leq k),$$
-but the given boundary circles do not bound pairwise disjoint proper locally flat embedded discs in $M$. Each $g_i$ can be chosen to be a smooth embedded sphere; different $g_i$ are allowed to intersect. [S4:40–53]
+but the given boundary circles do not bound pairwise disjoint proper locally flat embedded discs in $`M`$. Each $`g_i`$ can be chosen to be a smooth embedded sphere; different $`g_i`$ are allowed to intersect. [S4:40–53]
 
 The third manuscript attacks a related long-standing question in
 dimension four, Wall's conjecture, which asked whether every
@@ -73,12 +73,12 @@ aspherical Poincaré complex with the correct cohomology — but cannot be
 the fundamental group of any such manifold 
 
 > **theorem**
-There is a finitely presented group $G$ with a finite, oriented,
-four-dimensional aspherical Poincaré complex $Q$ such that
+There is a finitely presented group $`G`$ with a finite, oriented,
+four-dimensional aspherical Poincaré complex $`Q`$ such that
 $$H^i(G;\mathbb Z G)=0\quad(i\ne4),\qquad H^4(G;\mathbb Z G)\cong\mathbb Z$$
-with trivial right $G$-action on the last group, but no closed aspherical
-topological four-manifold has fundamental group $G$.
-In particular the trivial left $\mathbb Z G$-module $\mathbb Z$ has a finite resolution
+with trivial right $`G`$-action on the last group, but no closed aspherical
+topological four-manifold has fundamental group $`G`$.
+In particular the trivial left $`\mathbb Z G`$-module $`\mathbb Z`$ has a finite resolution
 by finitely generated free modules. [S6:94–104]
 
 ## Graduate summary
@@ -106,14 +106,14 @@ not good, and neither is any group containing it as a subgroup
 [S4:137–201].
 
 **The Wall obstruction.** The PD4 manuscript builds a finitely
-presented group $G$ from chamber, reflection, and stable pieces, with a
+presented group $`G`$ from chamber, reflection, and stable pieces, with a
 control argument that forces the vanishing Wall self-intersection
 obstructions. The group admits a finite, oriented, four-dimensional
-aspherical Poincaré complex $Q$ with $H^i(G;\mathbb Z G)=0$ for $i\ne4$ and
-$H^4(G;\mathbb Z G)\cong\mathbb Z$, so the trivial $\mathbb Z$-module has a finite free
+aspherical Poincaré complex $`Q`$ with $`H^i(G;\mathbb Z G)=0`$ for $`i\ne4`$ and
+$`H^4(G;\mathbb Z G)\cong\mathbb Z`$, so the trivial $`\mathbb Z`$-module has a finite free
 resolution — the algebraic signature of a closed aspherical
 four-manifold — yet no closed aspherical topological four-manifold has
-fundamental group $G$ [S6:114–217].
+fundamental group $`G`$ [S6:114–217].
 
 **Formalization status.** Nothing about this family is machine-checked.
 There is no Lean library, no scope note, no comparator challenge, and
@@ -146,7 +146,7 @@ intersection and self-intersection conditions, but with no pairwise
 disjoint locally flat replacements preserving the boundary maps and
 framings [S4:40–53] [S5:75–91].
 
-**The free group $F_2$ is not good.** In the sense of Freedman--Quinn,
+**The free group $`F_2`$ is not good.** In the sense of Freedman--Quinn,
 the free group on two generators — and any group containing it as a
 subgroup — cannot be realized as the fundamental group of a
 four-manifold by the surgery program [S3:47–55].
@@ -219,15 +219,15 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Freedman, Michael H., The topology of four-dimensional manifolds (1982)
 - Freedman, Michael H., Quinn, Frank, Topology of 4-manifolds (1990)
 - Freedman, Michael H., Teichner, Peter, 4-manifold topology. I. Subexponential groups (1995)
-- Freedman, Michael H., Are the Borromean rings {$A$–$B$}-slice? (1986)
-- Freedman, Michael H., Lin, Xiao-Song, On the $(A,B)$-slice problem (1989)
-- Freedman, Michael H., Krushkal, Vyacheslav S., Engel relations in $4$-manifold topology (2016)
+- Freedman, Michael H., Are the Borromean rings {$`A`$–$`B`$}-slice? (1986)
+- Freedman, Michael H., Lin, Xiao-Song, On the $`(A,B)`$-slice problem (1989)
+- Freedman, Michael H., Krushkal, Vyacheslav S., Engel relations in $`4`$-manifold topology (2016)
 - Freedman, Michael, Krushkal, Vyacheslav, Engel relations in 4-manifold topology (2016)
 - Freedman, Michael, Krushkal, Vyacheslav, Engel groups and universal surgery models (2020)
 - Freedman, Michael H., Quinn, Frank, Topology of 4-Manifolds (1990)
 - Freedman, Michael H., The topology of four-dimensional manifolds (1982)
 - Freedman, Michael H., Teichner, Peter, 4-manifold topology. I. Subexponential groups (1995)
-- Getzler, Ezra, Lie theory for nilpotent $L_\infty$-algebras (2009)
+- Getzler, Ezra, Lie theory for nilpotent $`L_\infty`$-algebras (2009)
 - Goldman, William M., Millson, John J., The deformation theory of representations of fundamental groups of compact Kähler manifolds (1988)
 - Goldman, William M., Millson, John J., The deformation theory of representations of fundamental groups of compact Kähler manifolds (1988)
 - Martin R. Bridson and André Haefliger, _Metric Spaces of Non-Positive Curvature_, Grundlehren der mathematischen Wissenschaften, vol. 319, Springer, Berlin, 1999.
@@ -242,7 +242,7 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Koszul, Jean-Louis, Homologie et cohomologie des alg\`ebres de Lie (1950)
 - Krushkal, Vyacheslav S., Quinn, Frank, Subexponential groups in 4-manifold topology (2000)
 - Krushkal, Vyacheslav S., A counterexample to the strong version of Freedman's conjecture (2008)
-- Krushkal, Vyacheslav S., Lee, Ronnie, Surgery on closed $4$-manifolds with free fundamental group (2002)
+- Krushkal, Vyacheslav S., Lee, Ronnie, Surgery on closed $`4`$-manifolds with free fundamental group (2002)
 - Krushkal, Vyacheslav S., Quinn, Frank, Subexponential groups in 4-manifold topology (2000)
 - Daniel Kasprowski and Markus Land, _Topological 4-manifolds with 4-dimensional fundamental group_, Glasgow Mathematical Journal **64** (2022), no. 2, 454–461. doi:10.1017/S0017089521000215. Cited theorem and lemma locators refer to arXiv:2007.03399v3.
 - Arthur Bartels and Wolfgang Lück, _The Borel Conjecture for hyperbolic and CAT(0)-groups_, Annals of Mathematics (2) **175** (2012), no. 2, 631–689. doi:10.4007/annals.2012.175.2.5.
@@ -257,7 +257,7 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Michael H. Freedman and Frank Quinn, _Topology of 4-manifolds_, Princeton Mathematical Series, vol. 39, Princeton University Press, Princeton, NJ, 1990. doi:10.1515/9781400861064. Section and lemma numbers refer to Frank Quinn's January 2013 reformatted, unrevised version.
 - Frank Quinn, _Ends of maps. III: Dimensions 4 and 5_, Journal of Differential Geometry **17** (1982), no. 3, 503–521. doi:10.4310/jdg/1214437139.
 - Frank Quinn, _The stable topology of 4-manifolds_, Topology and its Applications **15** (1983), no. 1, 71–77. doi:10.1016/0166-8641(83)90049-4.
-- De Stefani, Alessandro, Grifo, Eloísa, Jeffries, Jack, A Zariski–Nagata theorem for smooth $\mathbb{Z}$-algebras (2020)
+- De Stefani, Alessandro, Grifo, Eloísa, Jeffries, Jack, A Zariski–Nagata theorem for smooth $`\mathbb{Z}`$-algebras (2020)
 - Jacek Świątkowski, _Hyperbolic Coxeter groups with Sierpiński carpet boundary_, Bulletin of the London Mathematical Society **48** (2016), 708–716. The cited Appendix Proposition A.2 is in arXiv:1502.02044v1.
 - C. T. C. Wall, _List of problems_, in _Homological Group Theory_, C. T. C. Wall, ed., London Mathematical Society Lecture Note Series, vol. 36, Cambridge University Press, 1979, 369–394.
-- Christian Wegner, _The $K$-theoretic Farrell-Jones conjecture for CAT(0)-groups_, Proceedings of the American Mathematical Society **140** (2012), no. 3, 779–793. doi:10.1090/S0002-9939-2011-11150-X. Cited theorem locators refer to arXiv:1012.3349v2.
+- Christian Wegner, _The $`K`$-theoretic Farrell-Jones conjecture for CAT(0)-groups_, Proceedings of the American Mathematical Society **140** (2012), no. 3, 779–793. doi:10.1090/S0002-9939-2011-11150-X. Cited theorem locators refer to arXiv:1012.3349v2.

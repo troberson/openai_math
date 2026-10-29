@@ -7,19 +7,19 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:2418] and the catalog abstract [S2:274] state
-the family's claim: the least $\ell_1$ distortion of unit-cost edit
-distance on words of length at most $d$ is
-$\exp(\Theta(\sqrt{\log d\,\log\log d}))$, uniformly over
+the family's claim: the least $`\ell_1`$ distortion of unit-cost edit
+distance on words of length at most $`d`$ is
+$`\exp(\Theta(\sqrt{\log d\,\log\log d}))`$, uniformly over
 finite alphabets with at least two symbols, with binary words alone
 forcing the lower bound. The headline manuscript's abstract
 
 
-> We determine the exponential scale of the least $\ell_1$ distortion of
-unit-cost edit distance on all strings of length at most $d$. For every
-sufficiently large $d$, uniformly over finite alphabets of size at least
+> We determine the exponential scale of the least $`\ell_1`$ distortion of
+unit-cost edit distance on all strings of length at most $`d`$. For every
+sufficiently large $`d`$, uniformly over finite alphabets of size at least
 two, the distortion lies between
-$\exp(c\sqrt{\log d\,\log\log d})$ and
-$\exp(C\sqrt{\log d\,\log\log d})$ for absolute constants $c,C>0$.
+$`\exp(c\sqrt{\log d\,\log\log d})`$ and
+$`\exp(C\sqrt{\log d\,\log\log d})`$ for absolute constants $`c,C>0`$.
 The lower bound already holds on binary strings of one common length.
 Thus the order of logarithmic distortion is sharp up to absolute constants. [S3:42–49]
 
@@ -30,71 +30,71 @@ The family ships three manuscripts.
 *Edit distance* between two words is the cheapest sequence of
 insertions, deletions, and substitutions (unit cost each) that turns
 one word into the other. A metric *embedding* of words into
-$\ell_1$ is a map $f$ preserving distances up to a factor: distances
-are stretched by at most the *distortion* $D$. The family determines
-how large $D$ must be, as a function of the word-length cap $d$.
+$`\ell_1`$ is a map $`f`$ preserving distances up to a factor: distances
+are stretched by at most the *distortion* $`D`$. The family determines
+how large $`D`$ must be, as a function of the word-length cap $`d`$.
 
-The answer is an exponential in $\sqrt{\log d\,\log\log d}$: the
+The answer is an exponential in $`\sqrt{\log d\,\log\log d}`$: the
 distortion is at least
-$\exp(c\sqrt{\log d\,\log\log d})$ for some absolute $c>0$
+$`\exp(c\sqrt{\log d\,\log\log d})`$ for some absolute $`c>0`$
 [S4:42–50, S5:45–51] and at most
-$\exp(C\sqrt{\log d\,\log\log d})$ for some absolute $C>0$
+$`\exp(C\sqrt{\log d\,\log\log d})`$ for some absolute $`C>0`$
 [S3:42–49]. Both bounds use words of one common length, and the
 lower bound works on binary words alone, so the exponent
-$\Theta(\sqrt{\log d\,\log\log d})$ is sharp up to absolute
+$`\Theta(\sqrt{\log d\,\log\log d})`$ is sharp up to absolute
 constants.
 
 ## Graduate summary
 
 **The headline determination** [S3:42–49]. For every
-sufficiently large $d$, uniformly over finite alphabets of size at
-least two, the least $\ell_1$ distortion $E(d)$ of unit-cost edit
-distance on strings of length at most $d$ satisfies
-$\exp(c\sqrt{\log d\,\log\log d})\le E(d)\le
-\exp(C\sqrt{\log d\,\log\log d})$ for absolute $c,C>0$
+sufficiently large $`d`$, uniformly over finite alphabets of size at
+least two, the least $`\ell_1`$ distortion $`E(d)`$ of unit-cost edit
+distance on strings of length at most $`d`$ satisfies
+$`\exp(c\sqrt{\log d\,\log\log d})\le E(d)\le
+\exp(C\sqrt{\log d\,\log\log d})`$ for absolute $`c,C>0`$
 [S3:42–49]. The lower bound has a witness of binary strings of
 one common length [S3:48].
 
 **The finite-circle obstructions** [S4:42–50]. Two independent
-constructions of binary strings whose least $\ell_1$ distortion is
-$\exp(\Omega(\sqrt{\log d\,\log\log d}))$, plus two direct
+constructions of binary strings whose least $`\ell_1`$ distortion is
+$`\exp(\Omega(\sqrt{\log d\,\log\log d}))`$, plus two direct
 binary coding transfers with absolute distortion and logarithmic block
 width [S4:46–47]. The manuscript also develops the
 Ostrovsky–Rabani overlapping-substring method into a complete
 finite histogram embedding at the same exponential scale, uniformly
-over finite alphabets and all words of length at most $d$, including the
+over finite alphabets and all words of length at most $`d`$, including the
 empty word [S4:47–50].
 
 **The tree constructions** [S5:45–51]. Two independent
-constructions of binary words of one length at most $d$ whose ordinary
+constructions of binary words of one length at most $`d`$ whose ordinary
 edit-distance metrics require
-$\exp(\Omega(\sqrt{\log d\,\log\log d}))$ $\ell_1$
+$`\exp(\Omega(\sqrt{\log d\,\log\log d}))`$ $`\ell_1`$
 distortion [S5:45–47], plus a constant-distortion binary
 conversion for one prescribed input length [S5:48–49].
 
 ## History of the conjecture
 
 Edit distance is the classical string-edit metric. The question of
-how well it embeds into $\ell_1$ was open at the exponential scale:
+how well it embeds into $`\ell_1`$ was open at the exponential scale:
 neither the lower bound (binary obstructions) nor the upper bound
 (histogram embedding) was known to the author at this precision before
 these three manuscripts. The family closes the gap to absolute
 constants in the exponent.
 
 **Prior (my training data, not this repo).** I know edit distance as a
-metric and that its $\ell_1$ distortion grows with word length, and I
+metric and that its $`\ell_1`$ distortion grows with word length, and I
 know the Ostrovsky–Rabani histogram-embedding idea for edit
-distance in $\ell_1$. The sharpness of the exponent
-$\Theta(\sqrt{\log d\,\log\log d})$ — matching lower and
+distance in $`\ell_1`$. The sharpness of the exponent
+$`\Theta(\sqrt{\log d\,\log\log d})`$ — matching lower and
 upper, uniform over alphabets, with the lower bound binary — is,
 to my knowledge, not established in the literature I was trained on. I
 cannot independently verify these three manuscripts' arguments.
 
 ## Consequences
 
-**Sharp exponential scale.** The least $\ell_1$ distortion of
-unit-cost edit distance on words of length at most $d$ is
-$\exp(\Theta(\sqrt{\log d\,\log\log d}))$
+**Sharp exponential scale.** The least $`\ell_1`$ distortion of
+unit-cost edit distance on words of length at most $`d`$ is
+$`\exp(\Theta(\sqrt{\log d\,\log\log d}))`$
 [S3:42–49, S4:42–50, S5:45–51].
 
 **Binary suffices for the lower bound.** The lower exponent is
@@ -103,7 +103,7 @@ does not weaken the obstruction [S3:48, S5:45–47].
 
 **A uniform upper embedding.** A finite histogram embedding achieves
 the matching upper scale for all finite alphabets and all words of
-length at most $d$, including the empty word [S4:47–50].
+length at most $`d`$, including the empty word [S4:47–50].
 
 ## Section skeleton
 
@@ -131,12 +131,12 @@ No manuscript ships a `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S6:11]. The formalized result determines the
-exponential scale of the least $\ell_1$ distortion of unit-cost edit
-distance on strings of length at most $d$: for every sufficiently
-large $d$, uniformly over finite alphabets with at least two symbols,
+exponential scale of the least $`\ell_1`$ distortion of unit-cost edit
+distance on strings of length at most $`d`$: for every sufficiently
+large $`d`$, uniformly over finite alphabets with at least two symbols,
 the distortion lies between
-$\exp(c\sqrt{\log d\,\log\log d})$ and
-$\exp(C\sqrt{\log d\,\log\log d})$ for absolute $c,C>0$. The
+$`\exp(c\sqrt{\log d\,\log\log d})`$ and
+$`\exp(C\sqrt{\log d\,\log\log d})`$ for absolute $`c,C>0`$. The
 lower bound has a witness of binary strings of one common length, and
 the same scale controls the supremum over finite alphabets [S6:11].
 The scope note **excludes** the binary conversion and the companion

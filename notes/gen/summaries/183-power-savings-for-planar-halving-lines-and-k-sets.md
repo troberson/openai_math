@@ -8,61 +8,61 @@
 
 The release's blurb [S1:4254] and the catalog abstract
 [S2:447] state the family's claim: the planar halving-line
-bound improves to $O(n^{4/3-\varepsilon})$ for sets with no
-three collinear, with an absolute $\varepsilon > 0$. More
-generally, an $n$-point set with no three collinear has
-$O(n(k+1)^{1/3-\varepsilon_0})$ strictly separable
-$k$-subsets for $1 \leq k \leq n/2$, with an absolute
-$\varepsilon_0 > 0$. The constants and positive exponents
+bound improves to $`O(n^{4/3-\varepsilon})`$ for sets with no
+three collinear, with an absolute $`\varepsilon > 0`$. More
+generally, an $`n`$-point set with no three collinear has
+$`O(n(k+1)^{1/3-\varepsilon_0})`$ strictly separable
+$`k`$-subsets for $`1 \leq k \leq n/2`$, with an absolute
+$`\varepsilon_0 > 0`$. The constants and positive exponents
 are nonquantitative. The manuscript is *A power saving for
 planar halving lines* [S3:26, S3:28]; its abstract
 
 
-> There are absolute constants $\varepsilon>0$ and $C$ such that every
-sufficiently large even $n$-point set in the plane with no three collinear
-has at most $Cn^{4/3-\varepsilon}$ unordered halving pairs. This gives a
-power saving over the classical $O(n^{4/3})$ bound for planar halving lines.
+> There are absolute constants $`\varepsilon>0`$ and $`C`$ such that every
+sufficiently large even $`n`$-point set in the plane with no three collinear
+has at most $`Cn^{4/3-\varepsilon}`$ unordered halving pairs. This gives a
+power saving over the classical $`O(n^{4/3})`$ bound for planar halving lines.
 The proof is nonquantitative and does not supply explicit constants. [S3:32–36]
 
 ## Undergraduate summary
 
-Place $n$ points in the plane so that no three lie on the
+Place $`n`$ points in the plane so that no three lie on the
 same line. A **halving line** through two of the points is a
 line that leaves exactly half of the remaining points on each
 side. Counting the **halving pairs** — the pairs of
 points that determine a halving line — is a long-standing
 problem in discrete geometry. The classical bound says there
-are at most roughly $n^{4/3}$ such pairs. This manuscript
-sharpens that to $n^{4/3}$ times a factor that is **strictly
+are at most roughly $`n^{4/3}`$ such pairs. This manuscript
+sharpens that to $`n^{4/3}`$ times a factor that is **strictly
 smaller** than 1 — a power saving, where the exponent of
 the saving is some fixed positive number, without telling you
 how big it is [S3:32–36, S2:447]. The same saving
 extends to **level switches**: as a line rotates, the number of
-times the $k$-th point "crosses over" the line is also bounded
+times the $`k`$-th point "crosses over" the line is also bounded
 by the same power-saving expression [S4:9].
 
 ## Graduate summary
 
 **The main theorem** [S3:32–36, S4:9]. There are
-absolute constants $\varepsilon > 0$ and $C$ such that every
-sufficiently large even $n$-point set in the plane with no
-three collinear has at most $C n^{4/3-\varepsilon}$
+absolute constants $`\varepsilon > 0`$ and $`C`$ such that every
+sufficiently large even $`n`$-point set in the plane with no
+three collinear has at most $`C n^{4/3-\varepsilon}`$
 unordered halving pairs. The proof is nonquantitative and
 does not supply explicit constants [S3:32–36].
 
 **The level-switch bound.** The same power-saving form holds
 for **level-switch counts**: for a point set in generic
-position, the number of switches at level $k$ is bounded by
-$C n^{4/3-\varepsilon}$ [S4:9, S2:447].
+position, the number of switches at level $`k`$ is bounded by
+$`C n^{4/3-\varepsilon}`$ [S4:9, S2:447].
 
-**The $k$-set bound.** More generally, an $n$-point set with
-no three collinear has $O(n(k+1)^{1/3-\varepsilon_0})$
-strictly separable $k$-subsets for $1 \leq k \leq n/2$,
-with an absolute $\varepsilon_0 > 0$ [S1:4254, S2:447].
+**The $`k`$-set bound.** More generally, an $`n`$-point set with
+no three collinear has $`O(n(k+1)^{1/3-\varepsilon_0})`$
+strictly separable $`k`$-subsets for $`1 \leq k \leq n/2`$,
+with an absolute $`\varepsilon_0 > 0`$ [S1:4254, S2:447].
 
 **The scope of the formalization.** The scope note states
 the formalization proves the halving-pair bound
-$C n^{4/3-\varepsilon}$ and the level-switch bound of the
+$`C n^{4/3-\varepsilon}`$ and the level-switch bound of the
 same form under the additional generic-position assumptions
 in the statement; the constants are existential [S4:9]. The
 scope note names one comparator [S4:13–15]:
@@ -73,21 +73,21 @@ scope note names one comparator [S4:13–15]:
 The halving-line problem is a central question in discrete
 geometry, asking how many pairs of points in a planar set
 determine a line that bisects the set. The classical
-$O(n^{4/3})$ bound, due to Edelsbrunner, is known to be
+$`O(n^{4/3})`$ bound, due to Edelsbrunner, is known to be
 tight for special constructions and the question of whether
 a **power saving** is possible was open. The level-switch
 problem — counting how often a sweeping line crosses a
 given level — is closely related and the same
-$O(n^{4/3})$ barrier applies. The $k$-set problem generalizes
-both: a $k$-set is a subset of $k$ points separable from the
+$`O(n^{4/3})`$ barrier applies. The $`k`$-set problem generalizes
+both: a $`k`$-set is a subset of $`k`$ points separable from the
 rest by a line, and counting them is a fundamental problem in
 arrangements. This manuscript provides the first power
 saving for halving lines and level switches, and the
-corresponding $k$-set bound, with nonquantitative constants
+corresponding $`k`$-set bound, with nonquantitative constants
 [S3:32–36, S2:447].
 
 **Prior (my training data, not this repo).** I know the
-halving-line problem, the classical $O(n^{4/3})$ bound, and
+halving-line problem, the classical $`O(n^{4/3})`$ bound, and
 that a power saving was a long-standing open question in
 discrete geometry. A **specific proof of a power saving via
 perturbation and level-switch counting** with the
@@ -99,20 +99,20 @@ is not in my recall.
 ## Consequences
 
 **The planar halving-line bound improves to a power saving.**
-Every sufficiently large even $n$-point set with no three
-collinear has $O(n^{4/3-\varepsilon})$ halving pairs for an
-absolute $\varepsilon > 0$ [S3:32–36, S4:9, S2:447].
+Every sufficiently large even $`n`$-point set with no three
+collinear has $`O(n^{4/3-\varepsilon})`$ halving pairs for an
+absolute $`\varepsilon > 0`$ [S3:32–36, S4:9, S2:447].
 
 **The level-switch bound improves to a power saving.**
 Level-switch counts under generic position are bounded by the
 same form [S4:9, S2:447].
 
-**The $k$-set bound carries the saving.** Strictly separable
-$k$-subsets are bounded by
-$O(n(k+1)^{1/3-\varepsilon_0})$ [S1:4254, S2:447].
+**The $`k`$-set bound carries the saving.** Strictly separable
+$`k`$-subsets are bounded by
+$`O(n(k+1)^{1/3-\varepsilon_0})`$ [S1:4254, S2:447].
 
 **The constants are nonquantitative.** The proof does not
-supply explicit values for $C$ or $\varepsilon$
+supply explicit values for $`C`$ or $`\varepsilon`$
 [S3:32–36, S4:9].
 
 ## Section skeleton
@@ -127,9 +127,9 @@ bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization proves that some
-absolute $\varepsilon > 0$ and $C$ bound the number of
-halving pairs by $C n^{4/3-\varepsilon}$ for every
-sufficiently large even $n$ and every $n$-point set with no
+absolute $`\varepsilon > 0`$ and $`C`$ bound the number of
+halving pairs by $`C n^{4/3-\varepsilon}`$ for every
+sufficiently large even $`n`$ and every $`n`$-point set with no
 three collinear. It also proves a bound of the same form for
 all level-switch counts under the additional generic-position
 assumptions in the statement. The constants are existential

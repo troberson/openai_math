@@ -209,9 +209,14 @@ def normalize_math(span: str, table: dict[str, tuple[int, str]], display: bool =
     if _contains_hard_banned(s):
         fence = "```"
         return f"{fence}latex\n$${s.strip()}$${fence}"
-    open_d = "$$" if display else "$"
-    close_d = "$$" if display else "$"
-    return f"{open_d}{s.strip()}{close_d}"
+    if display:
+        return f"$${s.strip()}$$"
+    t = s.strip()
+    # Idempotent: the body pass re-normalizes quote-resolved math; a second
+    # wrap would produce $``X``$`.
+    if t.startswith("`") and t.endswith("`") and len(t) >= 2:
+        return f"${t}$"
+    return f"$`{t}`$"
 
 
 _CITE_REF = re.compile(

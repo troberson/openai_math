@@ -26,12 +26,12 @@ two manuscripts [S1:4559]:
 The Auslander–Reiten abstract 
 
 > We disprove the Auslander–Reiten conjecture for Artin algebras.
-We construct a finite-dimensional algebra $\Lambda$ over
-$k=\mathbb F_2(q,H_1,H_2)$ and a finite-dimensional nonprojective left module
-$Z$ such that $\mathrm{Ext}^i_\Lambda(Z,Z)=\mathrm{Ext}^i_\Lambda(Z,\Lambda)=0$ for every
-$i>0$. The module is Gorenstein-projective, so the same example also
+We construct a finite-dimensional algebra $`\Lambda`$ over
+$`k=\mathbb F_2(q,H_1,H_2)`$ and a finite-dimensional nonprojective left module
+$`Z`$ such that $`\mathrm{Ext}^i_\Lambda(Z,Z)=\mathrm{Ext}^i_\Lambda(Z,\Lambda)=0`$ for every
+$`i>0`$. The module is Gorenstein-projective, so the same example also
 disproves the Gorenstein-projective conjecture. Both counterexamples
-persist after every extension of $k$. [S3:48–54]
+persist after every extension of $`k`$. [S3:48–54]
 
 ## Undergraduate summary
 
@@ -40,8 +40,8 @@ the algebra's elements act on it too. A module is
 **projective** when it has a "nice" structure
 — roughly, it's a direct summand of a free module.
 The **Auslander–Reiten conjecture** says: if a
-module $M$ has "no self-extensions" (all its higher
-extension groups vanish), then $M$ must be projective.
+module $`M`$ has "no self-extensions" (all its higher
+extension groups vanish), then $`M`$ must be projective.
 Think of it this way: if a module doesn't "twist" relative
 to itself, then it should be as simple as possible. This
 manuscript says **no**: it constructs a specific finite-
@@ -57,21 +57,21 @@ counterexample to **Tachikawa's second conjecture**
 
 **The Auslander–Reiten counterexample** [S3:48–54, S5:10–12].
 There exists a finite-dimensional algebra
-$\Lambda$ over $k = \mathbb{F}_2(q, H_1, H_2)$ and a
-finite-dimensional nonprojective left module $Z$ such
-that $\mathrm{Ext}^i_\Lambda(Z, Z) =
-\mathrm{Ext}^i_\Lambda(Z, \Lambda) = 0$ for every
-$i > 0$. The module is **Gorenstein-projective** (the
+$`\Lambda`$ over $`k = \mathbb{F}_2(q, H_1, H_2)`$ and a
+finite-dimensional nonprojective left module $`Z`$ such
+that $`\mathrm{Ext}^i_\Lambda(Z, Z) =
+\mathrm{Ext}^i_\Lambda(Z, \Lambda) = 0`$ for every
+$`i > 0`$. The module is **Gorenstein-projective** (the
 totally acyclic witness exists), so the same example also
 disproves the Gorenstein-projective conjecture. Both
-counterexamples persist after every extension of $k$
+counterexamples persist after every extension of $`k`$
 [S5:10–12].
 
 **The Tachikawa counterexample** [S4:54–61, S5:14–16].
 There exists a finite-dimensional **symmetric** algebra
-$A$ over $k = \mathbb{F}_2(q, H_1, H_2)$ and a finite-
-dimensional nonprojective module $M$ with
-$\mathrm{Ext}^i_A(M, M) = 0$ for every $i > 0$.
+$`A`$ over $`k = \mathbb{F}_2(q, H_1, H_2)`$ and a finite-
+dimensional nonprojective module $`M`$ with
+$`\mathrm{Ext}^i_A(M, M) = 0`$ for every $`i > 0`$.
 Symmetric algebras are self-injective, so this
 contradicts Tachikawa's second conjecture. The associated
 endomorphism algebra also gives counterexamples to the
@@ -83,10 +83,10 @@ conjecture, and the Wakamatsu tilting conjecture
 covers both counterexamples [S5:10–16]. For the
 Auslander–Reiten case: the formalized result is the
 finite-dimensional algebra over
-$k = \mathbb{F}_2(q, H_1, H_2)$ with the nonprojective
+$`k = \mathbb{F}_2(q, H_1, H_2)`$ with the nonprojective
 Gorenstein-projective module and the vanishing, plus
-$A/\mathrm{rad}\, A \cong k^8$,
-$(\mathrm{rad}\, A)^4 \neq 0$, and preservation
+$`A/\mathrm{rad}\, A \cong k^8`$,
+$`(\mathrm{rad}\, A)^4 \neq 0`$, and preservation
 after every field extension [S5:10–12]. For
 Tachikawa: the formalized result is the symmetric algebra
 with the vanishing self-Ext module [S5:14–16].
@@ -99,10 +99,10 @@ related homological consequences are not included
 ## History of the conjecture
 
 The **Auslander–Reiten conjecture** (1974) predicts
-that a finitely generated module $M$ over an Artin
-algebra $A$ is projective if
-$\mathrm{Ext}^i_A(M, M \oplus A) = 0$ for all
-$i > 0$. It is known for hereditary algebras, Gorenstein
+that a finitely generated module $`M`$ over an Artin
+algebra $`A`$ is projective if
+$`\mathrm{Ext}^i_A(M, M \oplus A) = 0`$ for all
+$`i > 0`$. It is known for hereditary algebras, Gorenstein
 algebras of dimension at most one, and several other
 classes. The **Gorenstein-projective conjecture** is a
 related statement: a finitely generated Gorenstein-
@@ -116,8 +116,8 @@ algebras over a characteristic-two rational-function
 field, with the counterexamples persisting under every
 field extension. The construction uses a parameterized
 family of algebras with a specific radical structure
-($A/\mathrm{rad}\, A \cong k^8$,
-$(\mathrm{rad}\, A)^4 \neq 0$) [S3:48–54,
+($`A/\mathrm{rad}\, A \cong k^8`$,
+$`(\mathrm{rad}\, A)^4 \neq 0`$) [S3:48–54,
 S4:54–61, S2:481].
 
 **Prior (my training data, not this repo).** I know the
@@ -126,8 +126,8 @@ open problems in homological algebra, their known
 positive cases, and the Gorenstein-projective framework.
 The **specific counterexamples** — the
 characteristic-two rational-function field
-$k = \mathbb{F}_2(q, H_1, H_2)$, the $k^8$ semisimple
-quotient, the $(\mathrm{rad}\, A)^4 \neq 0$ condition,
+$`k = \mathbb{F}_2(q, H_1, H_2)`$, the $`k^8`$ semisimple
+quotient, the $`(\mathrm{rad}\, A)^4 \neq 0`$ condition,
 and the persistence under field extension — are
 results I cannot independently verify from training alone.
 
@@ -135,7 +135,7 @@ results I cannot independently verify from training alone.
 
 **The Auslander–Reiten conjecture is disproved.** A
 finite-dimensional algebra over
-$\mathbb{F}_2(q, H_1, H_2)$ has a nonprojective module
+$`\mathbb{F}_2(q, H_1, H_2)`$ has a nonprojective module
 with vanishing self-Ext and Ext-against-the-algebra
 groups [S3:48–54, S5:10–12, S2:481].
 
@@ -145,7 +145,7 @@ disproved.** The same module is Gorenstein-projective
 
 **Tachikawa's second conjecture is disproved.** A finite-
 dimensional symmetric algebra over
-$\mathbb{F}_2(q, H_1, H_2)$ has a nonprojective module
+$`\mathbb{F}_2(q, H_1, H_2)`$ has a nonprojective module
 with vanishing self-Ext groups [S4:54–61,
 S5:14–16].
 
@@ -158,7 +158,7 @@ conjecture [S4:54–61, S2:481].
 
 **The counterexamples are stable.** All vanishing
 properties persist after every extension of the base
-field $k$ [S5:10–12].
+field $`k`$ [S5:10–12].
 
 ## Section skeleton
 
@@ -175,17 +175,17 @@ bundle.
 **Scope note** [S5:10–16]. The scope note covers
 both counterexamples. For Auslander–Reiten: the
 formalized counterexample is a finite-dimensional
-algebra over $k = \mathbb{F}_2(q, H_1, H_2)$ and a
+algebra over $`k = \mathbb{F}_2(q, H_1, H_2)`$ and a
 finite-dimensional nonprojective Gorenstein-projective
 module with the vanishing; it also establishes
-$A/\mathrm{rad}\, A \cong k^8$,
-$(\mathrm{rad}\, A)^4 \neq 0$, and preservation
+$`A/\mathrm{rad}\, A \cong k^8`$,
+$`(\mathrm{rad}\, A)^4 \neq 0`$, and preservation
 after every field extension [S5:10–12]. For
 Tachikawa: the formalized counterexample gives a finite-
 dimensional symmetric algebra over
-$\mathbb{F}_2(q, H_1, H_2)$ and a finite-dimensional
-nonprojective module $M$ with
-$\mathrm{Ext}^i(M, M) = 0$ for every $i > 0$
+$`\mathbb{F}_2(q, H_1, H_2)`$ and a finite-dimensional
+nonprojective module $`M`$ with
+$`\mathrm{Ext}^i(M, M) = 0`$ for every $`i > 0`$
 [S5:14–16]. The later field-extension,
 endomorphism-algebra, and related homological
 consequences are not included [S5:16]. The scope note

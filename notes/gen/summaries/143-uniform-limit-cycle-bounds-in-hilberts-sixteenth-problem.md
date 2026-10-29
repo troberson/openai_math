@@ -29,25 +29,25 @@ A *limit cycle* of a planar vector field is a closed orbit that no
 other closed orbit can approach — an isolated periodic orbit.
 Hilbert's sixteenth problem, in its second part, asks for a uniform
 bound on how many such cycles a planar polynomial vector field of
-degree $n$ can have, depending only on $n$. The headline manuscript
-claims that for every degree $n$ such a finite bound exists, proved by
+degree $`n`$ can have, depending only on $`n`$. The headline manuscript
+claims that for every degree $`n`$ such a finite bound exists, proved by
 separating asymptotic expansions on nested complex domains and a
 finite-dimensional counting argument [S3:25–30].
 
 The companion manuscript addresses a specific named case. A
 *Liénard system* is the planar system
-$\dot x=y-F(x)$, $\dot y=-x$ for a polynomial $F$, and the
+$`\dot x=y-F(x)`$, $`\dot y=-x`$ for a polynomial $`F`$, and the
 Lins Neto–de Melo–Pugh conjecture predicts that when
-$\deg F=5$ the number of limit cycles is at most two. The companion
+$`\deg F=5`$ the number of limit cycles is at most two. The companion
 proves that bound and shows it is attained, so the exact maximum is
 two [S4:28–32].
 
 ## Graduate summary
 
-**The uniform bound (headline, unregistered).** For every degree $n$,
+**The uniform bound (headline, unregistered).** For every degree $`n`$,
 the number of isolated periodic orbits of a real planar polynomial
-vector field of degree $n$ is bounded by a finite constant depending
-only on $n$ [S3:25–30]. The proof uses separation of
+vector field of degree $`n`$ is bounded by a finite constant depending
+only on $`n`$ [S3:25–30]. The proof uses separation of
 asymptotic expansions on nested complex domains and a
 finite-dimensional counting argument [S3:28–30]. This is the
 family's headline claim, but it is the manuscript the release did
@@ -56,9 +56,9 @@ family's headline claim, but it is the manuscript the release did
 `formalized` section).
 
 **The quintic Liénard two-cycle bound (registered).** For the
-quintic Liénard system $\dot x=y-F(x)$, $\dot y=-x$, every
-real polynomial $F$ of degree at most five yields at most two limit
-cycles, and some such $F$ yields exactly two [S4:28–32, S5:9].
+quintic Liénard system $`\dot x=y-F(x)`$, $`\dot y=-x`$, every
+real polynomial $`F`$ of degree at most five yields at most two limit
+cycles, and some such $`F`$ yields exactly two [S4:28–32, S5:9].
 This is the degree-five case of the
 Lins Neto–de Melo–Pugh conjecture [S4:31–32], and it
 is the statement the formalization registers.
@@ -111,8 +111,8 @@ No manuscript ships a `verification/` bundle.
 
 **Scope note** [S5:9]. The formalized result is the degree-five
 Liénard statement: for the quintic Liénard system
-$x'=y-F(x)$, $y'=-x$, every real polynomial $F$ of degree at most
-five yields at most two limit cycles, and some such $F$ yields
+$`x'=y-F(x)`$, $`y'=-x`$, every real polynomial $`F`$ of degree at most
+five yields at most two limit cycles, and some such $`F`$ yields
 exactly two. Limit cycles are isolated images of nonconstant periodic
 solutions, and no sign, parity, hyperbolicity, or amplitude
 restriction is imposed [S5:9]. The scope note links only the

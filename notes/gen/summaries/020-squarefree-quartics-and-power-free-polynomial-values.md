@@ -14,34 +14,34 @@ The manuscript abstract
 
 > We prove that every irreducible integer quartic with no fixed prime-square
 divisor takes squarefree values with the predicted positive Euler-product
-density. More generally, we obtain the corresponding $(d-2)$-power-free
-density in degrees $4\le d\le8$. The proof combines number-field factorization,
+density. More generally, we obtain the corresponding $`(d-2)`$-power-free
+density in degrees $`4\le d\le8`$. The proof combines number-field factorization,
 determinant estimates with adaptive auxiliary primes, and explicit
 low-degree geometry. Together with Browning's theorem for higher degrees,
-this gives the $(d-2)$-power-free density for every $d\ge4$. [S2:37–45]
+this gives the $`(d-2)`$-power-free density for every $`d\ge4`$. [S2:37–45]
 
 ## Undergraduate summary
 
-Take an irreducible integer polynomial $f$ and look at the values
-$f(n)$ as $n$ runs through the positive integers. A value is
+Take an irreducible integer polynomial $`f`$ and look at the values
+$`f(n)`$ as $`n`$ runs through the positive integers. A value is
 "squarefree" if no square of a prime divides it. The squarefree-values
-conjecture predicts that, for a "generic" polynomial $f$ — one with no
+conjecture predicts that, for a "generic" polynomial $`f`$ — one with no
 fixed prime-square dividing every value — the squarefree values occur
 with a positive, explicitly computable density, namely a convergent
 Euler product over primes.
 
 This paper proves that prediction for quartics (degree 4) and, more
-generally, gives the $(d-2)$-power-free density for irreducible
-integer polynomials of every degree $4 \le d \le 8$. The $(d-2)$-power
-condition generalizes squarefree (which is the $d=4$, $k=2$ case).
+generally, gives the $`(d-2)`$-power-free density for irreducible
+integer polynomials of every degree $`4 \le d \le 8`$. The $`(d-2)`$-power
+condition generalizes squarefree (which is the $`d=4`$, $`k=2`$ case).
 Together with Browning's theorem for higher degrees, the result
-covers every $d \ge 4$.
+covers every $`d \ge 4`$.
 
 The main statement 
 
 > **Theorem 1.1**
-Let $f\in\mathbb Z[x]$ be irreducible over $\mathbb Q$, of degree $d$ with
-$4\le d\le8$, and put $k=d-2$. If holds,
+Let $`f\in\mathbb Z[x]`$ be irreducible over $`\mathbb Q`$, of degree $`d`$ with
+$`4\le d\le8`$, and put $`k=d-2`$. If holds,
 then
 $$S_{f,k}(X)=c_{f,k}X+o_f(X),\qquad
  c_{f,k}=\prod_p\left(1-\frac{\rho_f(p^k)}{p^k}\right)>0.$$
@@ -55,30 +55,30 @@ irreducible integer polynomials.
 **Power-free density.** 
 
 > **Theorem 1.1**
-Let $f\in\mathbb Z[x]$ be irreducible over $\mathbb Q$, of degree $d$ with
-$4\le d\le8$, and put $k=d-2$. If holds,
+Let $`f\in\mathbb Z[x]`$ be irreducible over $`\mathbb Q`$, of degree $`d`$ with
+$`4\le d\le8`$, and put $`k=d-2`$. If holds,
 then
 $$S_{f,k}(X)=c_{f,k}X+o_f(X),\qquad
  c_{f,k}=\prod_p\left(1-\frac{\rho_f(p^k)}{p^k}\right)>0.$$
 No primitivity or sign condition on the leading coefficient is required. [S3:20–29]
 
-For an irreducible integer polynomial $f$ of degree $d \in [4,8]$, set
-$k = d - 2$. Under the local-admissibility condition (roughly: no
-prime $k$th power divides every value of $f$), the counting function
-$S_{f,k}(X)$ of $n \le X$ with $f(n)$ $k$-free satisfies
-$S_{f,k}(X) = c_{f,k} X + o_f(X)$ with
-$c_{f,k} = \prod_p (1 - \rho_f(p^k)/p^k) > 0$. The content is that the
+For an irreducible integer polynomial $`f`$ of degree $`d \in [4,8]`$, set
+$`k = d - 2`$. Under the local-admissibility condition (roughly: no
+prime $`k`$th power divides every value of $`f`$), the counting function
+$`S_{f,k}(X)`$ of $`n \le X`$ with $`f(n)`$ $`k`$-free satisfies
+$`S_{f,k}(X) = c_{f,k} X + o_f(X)`$ with
+$`c_{f,k} = \prod_p (1 - \rho_f(p^k)/p^k) > 0`$. The content is that the
 Euler product converges to a strictly positive constant and the
-error is $o_f(X)$. No monicity, primitivity, or coefficient-height
+error is $`o_f(X)`$. No monicity, primitivity, or coefficient-height
 assumption is imposed.
 
 **Proof ingredients.** The abstract [S2:37–45] names the three
 machines: number-field factorization (to control which primes can
-divide $f(n)$), determinant estimates with adaptive auxiliary primes
+divide $`f(n)`$), determinant estimates with adaptive auxiliary primes
 (to cut down the lattice of solutions), and explicit low-degree
 geometry (the quartic and curve cases handled by hand). The degree
-range $4 \le d \le 8$ is the range the elementary-geometry input
-covers; Browning's theorem handles $d \ge 9$.
+range $`4 \le d \le 8`$ is the range the elementary-geometry input
+covers; Browning's theorem handles $`d \ge 9`$.
 
 ## history of the conjecture
 
@@ -88,10 +88,10 @@ heuristic, predicts a positive Euler-product density of squarefree
 values for irreducible integer polynomials under a standard local
 obstruction condition. The classical results cover low-degree cases
 and, via sieve methods, a range of degrees; the power-free
-generalization $(d-2)$-free is the form suggested by the arithmetic of
+generalization $`(d-2)`$-free is the form suggested by the arithmetic of
 the polynomial's factorization over its splitting field. Browning has
 a higher-degree theorem, which this paper extends down to degree 4,
-closing the full range $d \ge 4$ between the two.
+closing the full range $`d \ge 4`$ between the two.
 
 ## Consequences
 
@@ -99,10 +99,10 @@ closing the full range $d \ge 4$ between the two.
 with no fixed prime-square divisor.** The squarefree values carry the
 predicted positive Euler-product density [S3:20–29].
 
-**The $(d-2)$-power-free density for degrees $4 \le d \le 8$.** The
+**The $`(d-2)`$-power-free density for degrees $`4 \le d \le 8`$.** The
 generalized power-free statement covers the full elementary-geometry
 range; combined with Browning's higher-degree theorem it gives the
-density for every $d \ge 4$.
+density for every $`d \ge 4`$.
 
 ## section skeleton
 
@@ -120,7 +120,7 @@ certificate (12-certificate.tex); cyclotomic (13-cyclotomic.tex).
 
 ## Comparison with the formalized statement
 
-The scope note states what the formalization proves: "The formalized result proves positive-density power-free values for every integer polynomial $f$ irreducible over $\mathbb Q$ of degree $d\ge4$. Put $k=d-2$ and assume no prime $k$th power divides every value of $f$. Then the number of positive integers $n\le X$ for which $f(n)$ is $k$-free is $c_fX+o_f(X)$, where $c_f>0$ is the convergent product of local factors. Negative values are allowed and zero is excluded. No monicity, primitivity, or coefficient-height restriction is imposed. [S4:9]" —
+The scope note states what the formalization proves: "The formalized result proves positive-density power-free values for every integer polynomial $`f`$ irreducible over $`\mathbb Q`$ of degree $`d\ge4`$. Put $`k=d-2`$ and assume no prime $`k`$th power divides every value of $`f`$. Then the number of positive integers $`n\le X`$ for which $`f(n)`$ is $`k`$-free is $`c_fX+o_f(X)`$, where $`c_f>0`$ is the convergent product of local factors. Negative values are allowed and zero is excluded. No monicity, primitivity, or coefficient-height restriction is imposed. [S4:9]" —
 the positive-density power-free statement for every irreducible
 integer polynomial of degree at least 4 under the local-admissibility
 condition, with no monicity, primitivity, or coefficient-height
@@ -177,16 +177,16 @@ PDF. No `verification/` bundle, no reasoning trace.
 - Browning, T. D., Power-free values of polynomials (2011)
 - Browning, Tim D., Shparlinski, Igor E., Square-free values of random polynomials (2024)
 - Carella, N. A., Squarefree Values Of Polynomials (2023)
-- Zapata Ceballos, Sergio Ricardo, Jalalvand, Fatemeh, On the Squarefree Values of Degree-$2q$ Polynomials (2026)
+- Zapata Ceballos, Sergio Ricardo, Jalalvand, Fatemeh, On the Squarefree Values of Degree-$`2q`$ Polynomials (2026)
 - Eisenbud, David, Green, Mark, Hulek, Klaus, Popescu, Sorin, Small schemes and varieties of minimal degree (2006)
 - Erdős, Paul, Arithmetical properties of polynomials (1953)
 - Erdős, Paul, Some recent advances and current problems in number theory (1965)
 - Granville, Andrew, ABC allows us to count squarefrees (1998)
 - Greaves, George, Power-free values of binary forms (1992)
-- Heath-Brown, D. R., Square-free values of $n^2+1$ (2012)
+- Heath-Brown, D. R., Square-free values of $`n^2+1`$ (2012)
 - Heath-Brown, D. R., Power-free values of polynomials (2013)
 - Heath-Brown, D. R., The density of rational points on curves and surfaces (2002)
-- Heath-Brown, D. R., Sums and differences of three $k$th powers (2009)
+- Heath-Brown, D. R., Sums and differences of three $`k`$th powers (2009)
 - Heath-Brown, D. R., Counting rational points on algebraic varieties (2006)
 - Helfgott, H. A., On the square-free sieve (2004)
 - Hooley, Christopher, On the power free values of polynomials (1967)

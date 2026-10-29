@@ -47,11 +47,11 @@ S2:451].
 ## Graduate summary
 
 **The main counterexample** [S3:76–81, S4:9]. In ZFC
-there is a countable infinite ground set $E$ and two matroids
-$M_0, M_1$ on it, both full-ground and **self-dual**
-($M_i.dual = M_i$), such that no two independent sets
-$I_0, I_1$ (one from each) cover $E$ —
-$I_0 \cup I_1 \neq E$ — and **no** packing/covering
+there is a countable infinite ground set $`E`$ and two matroids
+$`M_0, M_1`$ on it, both full-ground and **self-dual**
+($`M_i.dual = M_i`$), such that no two independent sets
+$`I_0, I_1`$ (one from each) cover $`E`$ —
+$`I_0 \cup I_1 \neq E`$ — and **no** packing/covering
 partition exists. This refutes both the unrestricted
 infinite matroid **intersection** conjecture (no
 intersection witness) and the **packing/covering**
@@ -183,11 +183,11 @@ theorem main :
 
 **What the proof does.** The registered `main` in the OAI tree
 is a genuine construction, not a `sorry`: it obtains a
-concrete rank $R$ and a basis system $S$, forms a self-dual
-matroid $Q$ from $S$, packages $Q$ into the two ray matroids
+concrete rank $`R`$ and a basis system $`S`$, forms a self-dual
+matroid $`Q`$ from $`S`$, packages $`Q`$ into the two ray matroids
 `rayMatroid Q false` and `rayMatroid Q true`, proves they are
 full-ground and self-dual, obtains `no_independent_cover`
-from the antitone rank and the basis property $hb$, and
+from the antitone rank and the basis property $`hb`$, and
 discharges the no-packing/covering clause by
 `independent_cover_of_packing_covering` contra
 

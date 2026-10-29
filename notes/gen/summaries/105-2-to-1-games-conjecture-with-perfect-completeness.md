@@ -21,53 +21,53 @@ on the statement.
 
 ## Undergraduate summary
 
-A **projection game** is a finite bipartite multigraph with left vertices $U$
-and right vertices $V$, each carrying a finite answer set, and each edge
-occurrence $e=(u,v)$ carrying a map $\pi_e$ from the left answer set to the
+A **projection game** is a finite bipartite multigraph with left vertices $`U`$
+and right vertices $`V`$, each carrying a finite answer set, and each edge
+occurrence $`e=(u,v)`$ carrying a map $`\pi_e`$ from the left answer set to the
 right one [S4:3–6]. A labeling picks one answer at each vertex and satisfies
-$e$ when the right answer equals $\pi_e$ applied to the left answer; the
+$`e`$ when the right answer equals $`\pi_e`$ applied to the left answer; the
 **value** of the game is the maximum fraction of satisfied edge occurrences
 [S4:7–9]. Parallel occurrences may have different projection maps [S4:10].
 
-A **2-to-1 game** is a projection game whose left alphabet is $[2q]$ and right
-alphabet is $[q]$ and where every projection map has exactly **two** preimages
+A **2-to-1 game** is a projection game whose left alphabet is $`[2q]`$ and right
+alphabet is $`[q]`$ and where every projection map has exactly **two** preimages
 of every right answer [S4:12–17]. Khot's Games Conjectures ask, in this shape,
 for NP-hardness of distinguishing satisfiable games from games of arbitrarily
 small fixed value [S4:18–22]. "Satisfiable" means the *perfect-completeness*
 endpoint: "the satisfiable case is the perfect-completeness requirement: one
 labeling must satisfy every constraint" [S4:23–24]. A reduction that reaches
-completeness $1-\varepsilon$ for each fixed $\varepsilon>0$ does not give
+completeness $`1-\varepsilon`$ for each fixed $`\varepsilon>0`$ does not give
 that endpoint, because its outputs need not be finite satisfiable games
 [S4:25–26].
 
 The obstacle is the fiber count. "There is also an obstruction to amplifying a
-constant gap by ordinary repetition: repeating an exact-two projection $k$
-times gives $2^k$ preimages" of every right answer [S4:27–28] — ordinary
+constant gap by ordinary repetition: repeating an exact-two projection $`k`$
+times gives $`2^k`$ preimages" of every right answer [S4:27–28] — ordinary
 repetition destroys the 2-to-1 property. The result keeps two-element fibers
 while driving soundness to any fixed target.
 
 ## Graduate summary
 
 **Main theorem** ([S4:32–45], `thm:main`). "For every fixed rational
-$\delta\in(0,1)$ there are an integer $q=q(\delta)\ge2$ and a deterministic
-polynomial-time reduction from $3$-SAT to $2$-to-$1$ games" [S4:33–34] with
-alphabets $[2q]$ and $[q]$ such that "a satisfiable formula produces a game of
-value $1$" [S4:37] and an unsatisfiable formula produces a game of value at
-most $\delta$ [S4:38]. The output is a nonempty explicit list of unweighted
+$`\delta\in(0,1)`$ there are an integer $`q=q(\delta)\ge2`$ and a deterministic
+polynomial-time reduction from $`3`$-SAT to $`2`$-to-$`1`$ games" [S4:33–34] with
+alphabets $`[2q]`$ and $`[q]`$ such that "a satisfiable formula produces a game of
+value $`1`$" [S4:37] and an unsatisfiable formula produces a game of value at
+most $`\delta`$ [S4:38]. The output is a nonempty explicit list of unweighted
 edge occurrences and an explicit table for every projection map; every table
 has exactly two preimages for each right answer, and the running-time bound is
 in the ordinary binary input length, with degree and constants allowed to
-depend on $\delta$ [S4:40–44].
+depend on $`\delta`$ [S4:40–44].
 
 The proof is an assembly of four external inputs stated in the preliminaries.
-A **perfect-completeness PCP gap**: "there is a constant $\gamma_0>0$ and a
-deterministic polynomial-time map taking any Boolean $3$-CNF formula
-$\varphi$ to a nonempty $3$-CNF formula $\Psi$ such that every clause of
-$\Psi$ uses three distinct variables" [S5:49–52], preserving satisfiability
-and forcing a $\gamma_0$ fraction of violated clauses on unsatisfiable inputs
+A **perfect-completeness PCP gap**: "there is a constant $`\gamma_0>0`$ and a
+deterministic polynomial-time map taking any Boolean $`3`$-CNF formula
+$`\varphi`$ to a nonempty $`3`$-CNF formula $`\Psi`$ such that every clause of
+$`\Psi`$ uses three distinct variables" [S5:49–52], preserving satisfiability
+and forcing a $`\gamma_0`$ fraction of violated clauses on unsatisfiable inputs
 [S5:53–54]. **Weighted projection-game repetition**: for any finite projection
-game $G$ and $0<g<1$, $\mathrm{val}(G)\le 1-g$ implies
-$\mathrm{val}(G^{\otimes k})\le (1-g^2/16)^k$ [S5:127–132]. The **Grassmann
+game $`G`$ and $`0<g<1`$, $`\mathrm{val}(G)\le 1-g`$ implies
+$`\mathrm{val}(G^{\otimes k})\le (1-g^2/16)^k`$ [S5:127–132]. The **Grassmann
 expansion consequence** [S5:235–241] and the **inverse theorem for a
 finite-range partial table** [S5:406–412] supply the agreement-to-rank
 estimates the tree construction needs.
@@ -85,25 +85,25 @@ The final section fixes the constants in a strict order: row counts from the
 root downwards, the source repetition power, then branching numbers from the
 leaves upwards, so the upper agreement guarantee is fixed before the lower row
 counts test rank [S6:4–12]. The soundness closes at
-$\varepsilon+\delta/3+\delta/3=\delta$ [S6:255–259], completeness stays one
+$`\varepsilon+\delta/3+\delta/3=\delta`$ [S6:255–259], completeness stays one
 because
 only accepting support edges are retained [S6:257], and degenerate cases are
 handled by fixed games — a single exact-two edge is satisfiable, and a fixed
 unsatisfiable output is enumerated as parallel exact-two maps whose accepting
-fraction is $1/q\le\delta$ [S6:262–268].
+fraction is $`1/q\le\delta`$ [S6:262–268].
 
-**Corollaries** (in the introduction). The $k$-colorable corollary
-([S4:189–200], `cor:max-k-colorable`): "there are absolute constants $C>0$
-and an integer $k_0\ge3$ such that, for every fixed integer $k\ge k_0$, it is
-NP-hard to distinguish" a $k$-colorable graph from one where every coloring
-satisfies at most $1-1/k+C\log k/k^2$ of the edges [S4:190–198]. The Not-Two
+**Corollaries** (in the introduction). The $`k`$-colorable corollary
+([S4:189–200], `cor:max-k-colorable`): "there are absolute constants $`C>0`$
+and an integer $`k_0\ge3`$ such that, for every fixed integer $`k\ge k_0`$, it is
+NP-hard to distinguish" a $`k`$-colorable graph from one where every coloring
+satisfies at most $`1-1/k+C\log k/k^2`$ of the edges [S4:190–198]. The Not-Two
 corollary ([S4:222–232], `cor:not-two-pcp`): for every fixed
-$0<\varepsilon<3/8$, distinguishing a satisfiable Not-Two instance from one
-of value at most $5/8+\varepsilon$ is NP-hard, and every language in NP gets
-a three-query nonadaptive PCP with $O(\log n)$ random bits, perfect
-completeness, and soundness at most $5/8+\varepsilon$ [S4:223–231]. Both
+$`0<\varepsilon<3/8`$, distinguishing a satisfiable Not-Two instance from one
+of value at most $`5/8+\varepsilon`$ is NP-hard, and every language in NP gets
+a three-query nonadaptive PCP with $`O(\log n)`$ random bits, perfect
+completeness, and soundness at most $`5/8+\varepsilon`$ [S4:223–231]. Both
 are applied through O'Donnell and Wu's reduction, whose premise needs only
-projections that are $d$-to-1 at most; taking $d=2$ is exactly the
+projections that are $`d`$-to-1 at most; taking $`d=2`$ is exactly the
 theorem's premise [S4:234–240].
 
 ## History of the conjecture
@@ -112,7 +112,7 @@ The manuscript situates itself on a named line. **Khot** introduced the games
 conjectures in hardness of approximation, with fibers of size at most two; the
 exact-two convention is this paper's [S4:18–20]. **Austrin, O'Donnell, Tan and
 Wright** established perfect-completeness 2-to-1 Label Cover hardness with
-alphabets of sizes 6 and 3 and soundness $23/24+\varepsilon$ [S4:54–56]; the
+alphabets of sizes 6 and 3 and soundness $`23/24+\varepsilon`$ [S4:54–56]; the
 remaining issue was to drive soundness to zero while retaining perfect
 completeness and two-element fibers [S4:57–58]. The Grassmann program runs
 through **Khot, Minzer and Safra**'s candidate reduction [S4:61–62],
@@ -132,7 +132,7 @@ covering framework [S4:89–90].
 the strong form of Khot's conjecture (2002); Khot–Minzer–Safra's 2022 result
 disproved the conjecture in its quasi-polynomial games form, which makes a
 perfect-completeness, 2-to-1-hardness result for *plain* 2-to-1 games the
-remaining positive direction; the $5/8+\varepsilon$ three-query PCP is the classical
+remaining positive direction; the $`5/8+\varepsilon`$ three-query PCP is the classical
 Hastad-level constant. I cannot confirm these results independently; the
 release ships the manuscript as a proof, and the Lean layer formalizes the
 reduction statement itself (see the comparison below).
@@ -140,15 +140,15 @@ reduction statement itself (see the comparison below).
 ## Consequences
 
 - **The conjecture at the perfect-completeness endpoint.** NP-hardness of
-  distinguishing value-$1$ from value-$\le\delta$ 2-to-1 games for every fixed
-  rational $\delta$, with two-element fibers retained [S4:32–45].
-- **The $k$-colorable gap.** For fixed $k\ge k_0$, distinguishing $k$-colorable
+  distinguishing value-$`1`$ from value-$`\le\delta`$ 2-to-1 games for every fixed
+  rational $`\delta`$, with two-element fibers retained [S4:32–45].
+- **The $`k`$-colorable gap.** For fixed $`k\ge k_0`$, distinguishing $`k`$-colorable
   graphs from graphs whose every coloring satisfies at most
-  $1-1/k+C\log k/k^2$ of the edges is NP-hard [S4:189–200].
+  $`1-1/k+C\log k/k^2`$ of the edges is NP-hard [S4:189–200].
 - **Not-Two hardness and a three-query PCP.** Distinguishing satisfiable
-  Not-Two instances from value at most $5/8+\varepsilon$ is NP-hard, and every NP
+  Not-Two instances from value at most $`5/8+\varepsilon`$ is NP-hard, and every NP
   language gets a three-query verifier with perfect completeness and soundness
-  $5/8+\varepsilon$ [S4:222–232].
+  $`5/8+\varepsilon`$ [S4:222–232].
 - **A hypothesis for other reductions.** `thm:main` "supplies the hypothesis
   of several perfect-completeness reductions" [S4:47–48] — its output is the
   premise the O'Donnell–Wu reduction consumes [S4:234–240].
@@ -170,11 +170,11 @@ The release formalises this family at tier T3 with one scope note [S8], one
 comparator stub [S9:179–180], and one `main_results` entry naming the formalized
 declaration [S11]. The scope note's Scope section states: "the formalized
 result establishes perfect-completeness hardness for 2-to-1 games. For every
-fixed rational $0<\delta<1$, a deterministic polynomial-time reduction from
-binary 3SAT produces a nonempty unweighted game of value exactly $1$ on
-satisfiable inputs and at most $\delta$ on unsatisfiable inputs" [S8:9], and
+fixed rational $`0<\delta<1`$, a deterministic polynomial-time reduction from
+binary 3SAT produces a nonempty unweighted game of value exactly $`1`$ on
+satisfiable inputs and at most $`\delta`$ on unsatisfiable inputs" [S8:9], and
 "each constraint projection has exactly two preimages for each output label"
-[S8:9], with the alphabet depending only on $\delta$ [S8:9].
+[S8:9], with the alphabet depending only on $`\delta`$ [S8:9].
 
 The `main_results` entry [S11:1453–1455] names
 `OAI.PerfectCompleteness.Theorem11.exists_reduction` in
@@ -188,10 +188,10 @@ less_than_one" and `exact` over `FixedBinaryGapReduction.ofPreliminarySoundness`
 `lean/OAI/Computability/PerfectCompleteness/` tree (12 files).
 
 The comparator stub [S9:179–180] carries the same target statement
-"$```lean
+````lean
 theorem exists_reduction (δ : ℚ) (positive : 0 < δ) (less_than_one : δ < 1) : Nonempty (PerfectCompleteness.BinaryGapReduction δ) := by
 ```
-[S9:179–180]$" over the config `ComparatorChallenges/PerfectCompleteness.json`;
+[S9:179–180]` over the config `ComparatorChallenges/PerfectCompleteness.json`;
 the stub's copy ends in `sorry` at [S9:181], and the proved copy lives under
 `lean/OAI/` [S10:21–25]. A comparator stub is a target the release set
 itself; the proved version is the one the `main_results` entry names. The

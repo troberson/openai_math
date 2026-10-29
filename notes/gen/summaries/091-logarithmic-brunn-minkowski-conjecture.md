@@ -9,21 +9,21 @@
 The release's blurb [S1:2263] and the catalog abstract [S2:258] state
 the family's claim: the logarithmic Brunn–Minkowski inequality for
 origin-symmetric convex bodies in every dimension, the scalar-dilation
-$B$-conjecture for even log-concave Radon measures, and the symmetric
-$L_p$ Brunn–Minkowski inequality for $0<p<1$. The manuscript's
+$`B`$-conjecture for even log-concave Radon measures, and the symmetric
+$`L_p`$ Brunn–Minkowski inequality for $`0<p<1`$. The manuscript's
 abstract 
 
 > We prove the logarithmic Brunn–Minkowski conjecture for arbitrary
 origin-symmetric convex bodies in every dimension. The theorem also gives
-the symmetric $L_p$ Brunn–Minkowski inequality for every $0<p<1$.
+the symmetric $`L_p`$ Brunn–Minkowski inequality for every $`0<p<1`$.
 Combined with Saroglou's transfer theorem and a support-subspace reduction,
 it yields the logarithmic inequality for every even log-concave Radon
-measure and the scalar-dilation $(B)$-conjecture. [S3:36–43]
+measure and the scalar-dilation $`(B)`$-conjecture. [S3:36–43]
 
 ## Undergraduate summary
 
 The classical Brunn–Minkowski inequality says that the volume of a
-Minkowski average $(1-\lambda)K+\lambda L$ of two convex bodies is at
+Minkowski average $`(1-\lambda)K+\lambda L`$ of two convex bodies is at
 least the volume of the linear interpolation of the individual volumes.
 The logarithmic version replaces the Minkowski sum with a *geometric*
 average of the support functions: instead of averaging the bodies
@@ -41,12 +41,12 @@ Cauchy–Schwarz inequalities [S4:122–168].
 ## Graduate summary
 
 **The main theorem** [S4:21–29, `thm:main`]. For
-$n\ge1$, origin-symmetric convex bodies $K,L\subset\mathbb R^n$, and
-$0\le\lambda\le1$,
+$`n\ge1`$, origin-symmetric convex bodies $`K,L\subset\mathbb R^n`$, and
+$`0\le\lambda\le1`$,
 
 > **Theorem 1.1**
-Let $n\ge1$ and let $K,L\subset\mathbb R^n$ be convex bodies satisfying
-$K=-K$ and $L=-L$. For every $0\le\lambda\le1$,
+Let $`n\ge1`$ and let $`K,L\subset\mathbb R^n`$ be convex bodies satisfying
+$`K=-K`$ and $`L=-L`$. For every $`0\le\lambda\le1`$,
 $$\left|\mathcal W[h_K^{1-\lambda}h_L^\lambda]\right|
  \ge |K|^{1-\lambda}|L|^\lambda.$$ [S4:21–29]
 
@@ -54,14 +54,14 @@ The interpolation takes the geometric mean of the support bounds before
 intersecting the half-spaces; the Wulff-body intersection is essential
 throughout the argument [S4:31–42].
 
-**The $L_p$ corollary** [S4:55–65, `cor:lp`]. For $0<p<1$, the
+**The $`L_p`$ corollary** [S4:55–65, `cor:lp`]. For $`0<p<1`$, the
 logarithmic endpoint implies the full symmetric volume inequality in the
 intermediate range, by the monotone implication of
 B\H{o}r\H{o}czky–Lutwak–Yang–Zhang:
 
 > **Theorem 1.2**
-Let $n\ge1$, let $K,L\subset\mathbb R^n$ be full-dimensional origin-symmetric
-convex bodies, and let $0<p<1$. For every $0\le\lambda\le1$,
+Let $`n\ge1`$, let $`K,L\subset\mathbb R^n`$ be full-dimensional origin-symmetric
+convex bodies, and let $`0<p<1`$. For every $`0\le\lambda\le1`$,
 $$\left|\mathcal W\!\left[
   \bigl((1-\lambda)h_K^p+\lambda h_L^p\bigr)^{1/p}
  \right]\right|^{p/n}
@@ -69,9 +69,9 @@ $$\left|\mathcal W\!\left[
 
 **The measure-theoretic transfer.** Saroglou's transfer theorem
 [saroglou2016] gives the same Wulff inequality for every even log-concave
-density $e^{-V}\,dx$ in the same dimension, and taking two scalar
-dilates of one body yields the $B$-conjecture: $t\mapsto\mu(e^tK)$ is
-log-concave on $\mathbb R$ [S4:71–82].
+density $`e^{-V}\,dx`$ in the same dimension, and taking two scalar
+dilates of one body yields the $`B`$-conjecture: $`t\mapsto\mu(e^tK)`$ is
+log-concave on $`\mathbb R`$ [S4:71–82].
 
 ## History of the conjecture
 
@@ -80,42 +80,42 @@ Brunn–Minkowski conjecture of B\H{o}r\H{o}czky, Lutwak, Yang
 and Zhang (Problem 1.1 of their 2012 monograph) [S4:85–87].
 Stancu announced the all-dimensional logarithmic Minkowski inequality
 in 2018, concluding the equivalent Brunn–Minkowski form but
-deferring the flow asymptotics [S4:88–91]. The $L_p$
-Brunn–Minkowski theory was initiated by Firey's $p$-means and
-developed by Lutwak through mixed volumes; the $p\downarrow0$
+deferring the flow asymptotics [S4:88–91]. The $`L_p`$
+Brunn–Minkowski theory was initiated by Firey's $`p`$-means and
+developed by Lutwak through mixed volumes; the $`p\downarrow0`$
 endpoint is the logarithmic inequality [S4:92–97].
 
 Prior results covered special classes: the planar case (B\H{o}r\H{o}czky–Lutwak–Yang–Zhang), bodies
 unconditional with respect to a fixed basis (Saroglou), and bodies
-invariant under $n$ common reflections (B\H{o}r\H{o}czky–Kalantzopoulos).
-Spectral and PDE approaches gave local or $p$-close-to-$1$ results
+invariant under $`n`$ common reflections (B\H{o}r\H{o}czky–Kalantzopoulos).
+Spectral and PDE approaches gave local or $`p`$-close-to-$`1`$ results
 (Colesanti–Livshyts–Marsiglietti, Kolesnikov–Milman,
 Chen–Huang–Li–Liu, Putterman, Van Handel, Milman,
 Iffland, Lu, Xi) [S4:98–120].
 
 **Prior (my training data, not this repo).** I know the
-Brunn–Minkowski inequality, the $L_p$ Brunn–Minkowski theory,
+Brunn–Minkowski inequality, the $`L_p`$ Brunn–Minkowski theory,
 the B\H{o}r\H{o}czky–Lutwak–Yang–Zhang conjecture,
 the Stancu announcement, and the local/spectral results. An
 all-dimensional origin-symmetric logarithmic Brunn–Minkowski
-inequality, with the full $L_p$ and measure-theoretic consequences, is,
+inequality, with the full $`L_p`$ and measure-theoretic consequences, is,
 to my knowledge, not established in the literature I was trained on. I
 cannot independently verify this 2026 manuscript's argument.
 
 ## Consequences
 
 **Logarithmic Brunn–Minkowski resolved.** For every dimension
-$n\ge1$ and origin-symmetric convex bodies $K,L$, the logarithmic Wulff
-combination has volume at least $|K|^{1-\lambda}|L|^\lambda$
-for all $0\le\lambda\le1$ [S4:21–29].
+$`n\ge1`$ and origin-symmetric convex bodies $`K,L`$, the logarithmic Wulff
+combination has volume at least $`|K|^{1-\lambda}|L|^\lambda`$
+for all $`0\le\lambda\le1`$ [S4:21–29].
 
-**Symmetric $L_p$ Brunn–Minkowski.** The full symmetric volume
-inequality holds for every $0<p<1$, by the B\H{o}r\H{o}czky–Lutwak–Yang–Zhang
+**Symmetric $`L_p`$ Brunn–Minkowski.** The full symmetric volume
+inequality holds for every $`0<p<1`$, by the B\H{o}r\H{o}czky–Lutwak–Yang–Zhang
 monotone implication [S4:55–65].
 
 **Even log-concave measures.** By Saroglou's transfer, the logarithmic
 inequality holds for every even log-concave Radon measure, and the
-scalar-dilation $B$-conjecture follows [S4:71–82].
+scalar-dilation $`B`$-conjecture follows [S4:71–82].
 
 ## Section skeleton
 
@@ -131,10 +131,10 @@ The manuscript ships no `verification/` bundle.
 
 **Scope note** [S5:9]. The formalization proves the origin-symmetric
 logarithmic Brunn–Minkowski inequality for every dimension
-$n\ge1$, with no boundary-smoothness or coordinatewise-unconditionality
+$`n\ge1`$, with no boundary-smoothness or coordinatewise-unconditionality
 assumption 
 
-> The logarithmic Brunn–Minkowski conjecture asserts that logarithmic interpolation of origin-symmetric convex bodies preserves the geometric-mean lower bound for volume. The formalized result proves, for every dimension $n\ge1$, such bodies $K,L\subset\mathbb R^n$, and $0\le t\le1$, that their logarithmic Wulff combination has volume at least $|K|^{1-t}|L|^t$. It assumes neither boundary smoothness nor coordinatewise unconditionality. [S5:9]
+> The logarithmic Brunn–Minkowski conjecture asserts that logarithmic interpolation of origin-symmetric convex bodies preserves the geometric-mean lower bound for volume. The formalized result proves, for every dimension $`n\ge1`$, such bodies $`K,L\subset\mathbb R^n`$, and $`0\le t\le1`$, that their logarithmic Wulff combination has volume at least $`|K|^{1-t}|L|^t`$. It assumes neither boundary smoothness nor coordinatewise unconditionality. [S5:9]
 
 The scope note links the manuscript [S5:5] and names one comparator
 [S5:13–15]. The release records `scope: "Partial progress."` and
@@ -208,33 +208,33 @@ trace.
 - Berman, Robert J., Berndtsson, Bo, Real {Monge–Amp\`ere} equations and Kähler–Ricci solitons on toric log Fano varieties (2013)
 - Borell, Christer, Convex measures on locally convex spaces (1974)
 - Brascamp, Herm Jan, Lieb, Elliott H., On extensions of the Brunn–Minkowski and {Prékopa–Leindler} theorems, including inequalities for log concave functions, and with an application to the diffusion equation (1976)
-- Chen, Shibing, Huang, Yong, Li, Qi-Rui, Liu, Jiakun, The $L_p$-Brunn–Minkowski inequality for $p<1$ (2020)
+- Chen, Shibing, Huang, Yong, Li, Qi-Rui, Liu, Jiakun, The $`L_p`$-Brunn–Minkowski inequality for $`p<1`$ (2020)
 - Colesanti, Andrea, Livshyts, Galyna V., Marsiglietti, Arnaud, On the stability of Brunn–Minkowski type inequalities (2017)
 - Cordero-Erausquin, Dario, Klartag, Bo'az, Moment measures (2015)
-- Cordero-Erausquin, Dario, Santaló's inequality on $\mathbb C^n$ by complex interpolation (2002)
-- Cordero-Erausquin, D., Fradelizi, M., Maurey, B., The $(B)$-conjecture for the Gaussian measure of dilates of symmetric convex sets and related problems (2004)
+- Cordero-Erausquin, Dario, Santaló's inequality on $`\mathbb C^n`$ by complex interpolation (2002)
+- Cordero-Erausquin, D., Fradelizi, M., Maurey, B., The $`(B)`$-conjecture for the Gaussian measure of dilates of symmetric convex sets and related problems (2004)
 - Böröczky, Károly J., Lutwak, Erwin, Yang, Deane, Zhang, Gaoyong, The log-Brunn–Minkowski inequality (2012)
 - Böröczky, Károly J., Lutwak, Erwin, Yang, Deane, Zhang, Gaoyong, The logarithmic Minkowski problem (2013)
 - Böröczky, Károly J., Kalantzopoulos, Pavlos, Log-Brunn–Minkowski inequality under symmetry (2022)
 - Dyatlov, Semyon, Lecture notes for 18.155: distributions, elliptic regularity, and applications to PDEs (2026)
 - Fathi, Max, Stein kernels and moment maps (2019)
-- Firey, William J., $p$-Means of Convex Bodies (1962)
+- Firey, William J., $`p`$-Means of Convex Bodies (1962)
 - van Handel, Ramon, The local logarithmic Brunn–Minkowski inequality for zonoids (2023)
 - Iffland, Luca, The local logarithmic Brunn–Minkowski inequality for bodies of revolution (2026)
 - Klartag, Bo'az, Logarithmically-concave moment measures I (2013)
-- Kolesnikov, Alexander, Livshyts, Galyna, Rotem, Liran, On $p$-Brunn–Minkowski and Brascamp–Lieb inequalities (2026)
-- Kolesnikov, Alexander V., Milman, Emanuel, Local $L^p$-Brunn–Minkowski inequalities for $p<1$ (2022)
-- Kolesnikov, Alexander V., Hessian metrics, $CD(K,N)$-spaces, and optimal transportation of log-concave measures (2014)
-- Lu, XiaoRui, Logarithmic Brunn–Minkowski Inequality under $n-2$ Reflection Symmetries (2026)
+- Kolesnikov, Alexander, Livshyts, Galyna, Rotem, Liran, On $`p`$-Brunn–Minkowski and Brascamp–Lieb inequalities (2026)
+- Kolesnikov, Alexander V., Milman, Emanuel, Local $`L^p`$-Brunn–Minkowski inequalities for $`p<1`$ (2022)
+- Kolesnikov, Alexander V., Hessian metrics, $`CD(K,N)`$-spaces, and optimal transportation of log-concave measures (2014)
+- Lu, XiaoRui, Logarithmic Brunn–Minkowski Inequality under $`n-2`$ Reflection Symmetries (2026)
 - Lutwak, Erwin, The Brunn–Minkowski–Firey theory. I. Mixed volumes and the Minkowski problem (1993)
 - Milman, Emanuel, Centro-affine differential geometry and the log-Minkowski problem (2025)
 - Fernández-Real, Xavier, Ros-Oton, Xavier, Regularity Theory for Elliptic PDE (2023)
-- Putterman, Eli, Equivalence of the local and global versions of the $L^p$-Brunn–Minkowski inequality (2021)
+- Putterman, Eli, Equivalence of the local and global versions of the $`L^p`$-Brunn–Minkowski inequality (2021)
 - Rotem, Liran, A letter: The log-Brunn–Minkowski inequality for complex bodies (2014)
 - Bollobás, Béla, Leader, Imre, Products of unconditional bodies (1995)
 - Saroglou, Christos, Remarks on the conjectured log-Brunn–Minkowski inequality (2015)
 - Saroglou, Christos, More on logarithmic sums of convex bodies (2016)
 - Stancu, Alina, A PDE approach to geometric inequalities (2018)
 - Uhrin, B., Curvilinear extensions of the Brunn–Minkowski–Lusternik inequality (1994)
-- Wang, Yu, On the $C^{2,\alpha}$-regularity of the complex {Monge–Amp\`ere} equation (2012)
+- Wang, Yu, On the $`C^{2,\alpha}`$-regularity of the complex {Monge–Amp\`ere} equation (2012)
 - Xi, Dongmeng, A very short unified proof of Dar's conjecture and Log-Brunn–Minkowski in the plane (2026)

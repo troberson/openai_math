@@ -11,10 +11,10 @@ The release's blurb "**055. Gepner symmetry and large-volume stability on threef
 has the abstract "We prove Toda's normalized quintic Gepner conjecture. On every smooth complex
 quintic threefold, we construct a numerical Bridgeland stability condition for
 which tensoring by the hyperplane bundle, followed by the spherical twist at
-the structure sheaf, increases phase by $2/5$. [S3:48–51]"
+the structure sheaf, increases phase by $`2/5`$. [S3:48–51]"
 The second manuscript, *Prescribed large-volume charges on threefolds
 with trivial canonical bundle* [S8], has the abstract [S9:78–86]:
-"Let $X$ be a smooth projective complex threefold with trivial canonical
+"Let $`X`$ be a smooth projective complex threefold with trivial canonical
 bundle. We construct numerical Bridgeland stability conditions with the exact
 ordinary and square-root-Todd central charges at every sufficiently large
 volume. One volume threshold works on an open set of real twists and ample
@@ -33,7 +33,7 @@ compatible with a distinguished autoequivalence: the functor should
 rotate the central charge and translate every semistable phase by a fixed
 amount . "Stability conditions organize the objects of a derived category by a complex
 central charge and a real phase, with finite filtrations into semistable
-objects. Their physical antecedent is Douglas's proposal of $\Pi$-stability
+objects. Their physical antecedent is Douglas's proposal of $`\Pi`$-stability
 for D-branes ; Bridgeland gave the mathematical framework
 used here . At a Gepner point, one seeks a stability
 condition compatible with a distinguished autoequivalence: the functor should
@@ -44,18 +44,18 @@ The theorem
 
 > **theorem**
 Every smooth complex quintic threefold admits a numerical Bridgeland stability
-condition $\sigma=(Z,\mathcal P)$ with the support property on $K_{\mathrm{num}}(X)_{\mathbb R}$
-such that, for every $E\in\mathcal D$ and $\varphi\in\mathbb R$,
+condition $`\sigma=(Z,\mathcal P)`$ with the support property on $`K_{\mathrm{num}}(X)_{\mathbb R}`$
+such that, for every $`E\in\mathcal D`$ and $`\varphi\in\mathbb R`$,
 $$Z(\Phi E)=e^{2\pi i/5}Z(E),\qquad
  \Phi\bigl(\mathcal P(\varphi)\bigr)=\mathcal P(\varphi+2/5),\qquad
  Z(\mathcal O_x)=-1$$
-for every closed point $x\in X$. [S4:52–62]
+for every closed point $`x\in X`$. [S4:52–62]
 
-The autoequivalence $\Phi$ is the composition of tensoring by the
+The autoequivalence $`\Phi`$ is the composition of tensoring by the
 hyperplane bundle with the spherical twist at the structure sheaf. The
-periodicity $\Phi^5\simeq[2]$ [S5:28–35] is what makes the phase
-rotation by $2/5$ consistent: applying $\Phi$ five times shifts phase by
-$2$ (one full cycle), so the eigenvalue $e^{2\pi i/5}$ has order five.
+periodicity $`\Phi^5\simeq[2]`$ [S5:28–35] is what makes the phase
+rotation by $`2/5`$ consistent: applying $`\Phi`$ five times shifts phase by
+$`2`$ (one full cycle), so the eigenvalue $`e^{2\pi i/5}`$ has order five.
 
 ## Graduate summary
 
@@ -72,33 +72,33 @@ this support estimate before defining semistable objects. It makes finite
 refinement possible even though the image of the numerical lattice under the
 charge need not be discrete. [S4:95–100]
 
-**The uniform aisle family.** The construction tilts $\mathrm{Coh}(X)$ twice,
-beginning at slope $-1/2$, and varies the rank and first-Chern
+**The uniform aisle family.** The construction tilts $`\mathrm{Coh}(X)`$ twice,
+beginning at slope $`-1/2`$, and varies the rank and first-Chern
 coefficients of the second cut over a fixed open square. Xu's stronger
 Bogomolov–Gieseker inequality supplies strict margins 
 
-> Our goal is to construct bounded aisles $U_\eta$ for which
-$\Phi U_\eta\subset U_\theta$ holds uniformly with independent parameters.
+> Our goal is to construct bounded aisles $`U_\eta`$ for which
+$`\Phi U_\eta\subset U_\theta`$ holds uniformly with independent parameters.
 We begin with Toda's proposed two tilts for the quintic Gepner charge
 \cite[Sections 3.4–3.6]TodaQuintic2013, and vary the second cut in two
 numerical directions. The slope estimate below supplies the strict margins
 that make the comparison survive these variations.
-The two first-tilt slopes $-1/2$ and $1/2$ reflect the order of the factors
-in $\Phi$: tensoring by $\mathcal O_X(1)$ moves the first cut from $-1/2$ to
-$1/2$, and the spherical twist will take the resulting aisle into one
-constructed at $-1/2$. [S6:4–13]
+The two first-tilt slopes $`-1/2`$ and $`1/2`$ reflect the order of the factors
+in $`\Phi`$: tensoring by $`\mathcal O_X(1)`$ moves the first cut from $`-1/2`$ to
+$`1/2`$, and the spherical twist will take the resulting aisle into one
+constructed at $`-1/2`$. [S6:4–13]
 
-The crucial conclusion is $\Phi U_\eta\subset U_\theta$ with both
+The crucial conclusion is $`\Phi U_\eta\subset U_\theta`$ with both
 parameters varying independently throughout the same square.
 
 **From aisles to a slicing.** Simultaneous positivity in fixed middle
-hearts improves the coarse nesting to a grid with spacing $1/5$, and
+hearts improves the coarse nesting to a grid with spacing $`1/5`$, and
 positivity in every perturbed preceding heart bounds the full numerical
 class of each grid block by its charge 
 
 > The decisive use of the perturbations is twofold. Simultaneous positivity
 in fixed middle hearts improves the coarse nesting to a grid with spacing
-$1/5$. Positivity in every perturbed preceding heart then bounds the full
+$`1/5`$. Positivity in every perturbed preceding heart then bounds the full
 numerical class of each grid block by its charge. [S7:27–30]
 
 Each block is refined into semistable factors; support and a positive
@@ -119,14 +119,14 @@ a compatible heart, finite semistable filtrations, and a support bound
 controlling the numerical classes of all semistable objects. [S10:3–11]" The theorem 
 
 > **Theorem 1.1**
-Let $X$ be a smooth projective complex threefold with
-$K_X\simeq\mathcal O_X$. For any $B_*\in N^1(X)_{\mathbb R}$ and
-$H_*\in\mathrm{Amp}(X)$ there are open neighborhoods $V$ of
-$B_*$ and $W$ of $H_*$ and one $T>0$ such that, for all
-$B\in V$, $H\in W$ and $t\geq T$, the following hold.
+Let $`X`$ be a smooth projective complex threefold with
+$`K_X\simeq\mathcal O_X`$. For any $`B_*\in N^1(X)_{\mathbb R}`$ and
+$`H_*\in\mathrm{Amp}(X)`$ there are open neighborhoods $`V`$ of
+$`B_*`$ and $`W`$ of $`H_*`$ and one $`T>0`$ such that, for all
+$`B\in V`$, $`H\in W`$ and $`t\geq T`$, the following hold.
 \beginenumerate[label=\textup{(\roman*)}]
-\item $(Z_{B,tH},\mathcal A_{B,tH})$ is a geometric numerical
-stability condition with support on $K_{\mathrm{num}}(X)_{\mathbb R}$.
+\item $`(Z_{B,tH},\mathcal A_{B,tH})`$ is a geometric numerical
+stability condition with support on $`K_{\mathrm{num}}(X)_{\mathbb R}`$.
 \item There is a geometric numerical stability condition, with support
 on the same full numerical space, whose charge is exactly
 $$Z^{\mathrm{LV}}_{B,tH}(E)
@@ -135,7 +135,7 @@ $$Z^{\mathrm{LV}}_{B,tH}(E)
 Its heart is the one constructed in Section .
 \endenumerate [S10:103–122]
 
-Only triviality of $K_X$ is assumed; the additional vanishings in the
+Only triviality of $`K_X`$ is assumed; the additional vanishings in the
 strict Calabi–Yau convention are unnecessary. The Todd-corrected charge
 uses the heart constructed by a product-embedding route [S12].
 
@@ -144,30 +144,30 @@ complex threefold (no canonical-bundle hypothesis), a strong tilt
 inequality holds 
 
 > **Theorem 1.2**
-Let $X$ be a smooth projective complex threefold, $H$ an ample integral
-divisor, and $B_0\in N^1(X)_{\mathbb Q}$.
-There are constants $k\in\mathbb Q_{\geq0}$ and $R_*>0$, depending only on
-$(X,H,B_0)$, such that every finite-slope $\nu_{a,b}$-semistable
-$E\in\mathcal B_{H,B_0+bH}$ with $\nu_{a,b}(E)=0$ satisfies
+Let $`X`$ be a smooth projective complex threefold, $`H`$ an ample integral
+divisor, and $`B_0\in N^1(X)_{\mathbb Q}`$.
+There are constants $`k\in\mathbb Q_{\geq0}`$ and $`R_*>0`$, depending only on
+$`(X,H,B_0)`$, such that every finite-slope $`\nu_{a,b}`$-semistable
+$`E\in\mathcal B_{H,B_0+bH}`$ with $`\nu_{a,b}(E)=0`$ satisfies
 $$\mathrm{ch}_3^{B_0+bH}(E)
  \leq \left(\frac{a^2}{6}+k\right)H^2\mathrm{ch}_1^{B_0+bH}(E)
  \qquad(a>0,\ b\in\mathbb R).$$
 For the same fixed data, the stronger bound
 $$\mathrm{ch}_3^{B_0+bH}(E)
  \leq \frac{a^2}{6}H^2\mathrm{ch}_1^{B_0+bH}(E)$$
-holds whenever $a>R_*$, for every $b\in\mathbb R$. [S10:167–184]
+holds whenever $`a>R_*`$, for every $`b\in\mathbb R`$. [S10:167–184]
 
-Both constants are independent of the rank and Chern character of $E$.
-The curve class $\Gamma=kH^2$ gives the correction and satisfies
-$\Gamma\cdot H\geq 0$. Beyond the threshold $R_*$ the correction
+Both constants are independent of the rank and Chern character of $`E`$.
+The curve class $`\Gamma=kH^2`$ gives the correction and satisfies
+$`\Gamma\cdot H\geq 0`$. Beyond the threshold $`R_*`$ the correction
 vanishes.
 
 ## History of the conjecture
 
-Douglas proposed $\Pi$-stability for D-branes; Bridgeland gave the
+Douglas proposed $`\Pi`$-stability for D-branes; Bridgeland gave the
 mathematical framework. Toda formulated Gepner-type stability for
 graded matrix factorizations and gave the normalized quintic
-formulation. The functor relation $\Phi^5\simeq[2]$ and its
+formulation. The functor relation $`\Phi^5\simeq[2]`$ and its
 eigencharge are established through Orlov's equivalence and
 Ballard–Favero–Katzarkov's grade-shift compatibility. The double-tilt
 approach to threefold stability was developed by Bayer–Macrì–Toda.
@@ -187,13 +187,13 @@ version allowing a fixed rational transverse twist [S10:191–196].
 
 **Toda's normalized quintic Gepner conjecture is resolved.** Every
 smooth complex quintic threefold admits a numerical Bridgeland
-stability condition with the prescribed phase shift $2/5$ and
-$Z(\mathcal O_x)=-1$ [S4:52–62].
+stability condition with the prescribed phase shift $`2/5`$ and
+$`Z(\mathcal O_x)=-1`$ [S4:52–62].
 
 **The square-root-Todd charge is realized.** For every smooth projective
 complex threefold with trivial canonical bundle, there is a stability
 condition whose charge is exactly
-$-\int_X e^{-B-itH}\mathrm{ch}(E)\sqrt{\mathrm{td}(X)}$ on an open sector [S10:103–122].
+$`-\int_X e^{-B-itH}\mathrm{ch}(E)\sqrt{\mathrm{td}(X)}`$ on an open sector [S10:103–122].
 
 **The corrected-inequality questions are answered affirmatively.** The
 uniform strong inequality gives a curve-class correction on every

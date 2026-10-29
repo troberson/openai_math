@@ -11,18 +11,18 @@ the family's claim: the coefficient-free reduced Baum--Connes conjecture
 is false — once through a failure of rational injectivity of assembly
 witnessed by a finitely generated torsion-free group, and separately
 through the existence of a torsion-free group whose reduced group
-$C^*$-algebra carries a nontrivial projection, which also disproves the
+$`C^*`$-algebra carries a nontrivial projection, which also disproves the
 Kadison--Kaplansky projection conjecture. The three manuscripts make
 three related claims. The injectivity manuscript "We disprove rational injectivity of the coefficient-free reduced
 Baum–Connes assembly map for torsion-free groups. Specifically, we construct
 a finitely generated torsion-free discrete group whose degree-zero assembly
 map has a kernel class of infinite order. [S3:57–62]"
 The projection manuscript "We construct a finitely generated torsion-free discrete group whose reduced
-group $C^*$-algebra contains a projection other than zero and the identity.
+group $`C^*`$-algebra contains a projection other than zero and the identity.
 This disproves the Kadison–Kaplansky projection conjecture. [S5:9–13]" The irrational-trace
 manuscript "We construct a finitely generated discrete group whose reduced group
-$C^*$-algebra contains a projection of irrational canonical trace. Its
-$K_0$-class lies outside the image of the coefficient-free reduced
+$`C^*`$-algebra contains a projection of irrational canonical trace. Its
+$`K_0`$-class lies outside the image of the coefficient-free reduced
 Baum–Connes assembly map. This disproves the coefficient-free reduced
 Baum–Connes conjecture for countable discrete groups. [S7:8–14]"
 
@@ -31,36 +31,36 @@ Baum–Connes conjecture for countable discrete groups. [S7:8–14]"
 Two long-standing conjectures in operator algebra and index theory
 make the same prediction for torsion-free discrete groups, and this
 family refutes both. The Baum--Connes assembly map sends the
-topology of a group — the $K$-homology of its classifying space
-$B\G$ — to the $K$-theory of its reduced group $C^*$-algebra
-$C_r^*(\G)$, the completion of the group's left regular
-representation on $\ell^2(\G)$. The conjecture asserts this map is an
+topology of a group — the $`K`$-homology of its classifying space
+$`B\G`$ — to the $`K`$-theory of its reduced group $`C^*`$-algebra
+$`C_r^*(\G)`$, the completion of the group's left regular
+representation on $`\ell^2(\G)`$. The conjecture asserts this map is an
 isomorphism in the (coefficient-free) case. A separate
 prediction, the Kadison--Kaplansky projection conjecture, says the
-reduced group $C^*$-algebra of a torsion-free group contains no
+reduced group $`C^*`$-algebra of a torsion-free group contains no
 projections other than zero and the identity — the group's canonical
-trace $\tau(x)=\langle x\delta_1,\delta_1\rangle$ being integral on
+trace $`\tau(x)=\langle x\delta_1,\delta_1\rangle`$ being integral on
 the assembly image is the standard route to that conclusion [S4:4–16].
 The first manuscript disproves injectivity of the assembly map by
 constructing a torsion-free group whose degree-zero assembly map has a
 kernel class of infinite order. The other two construct torsion-free
-groups whose reduced $C^*$-algebras carry a projection: the second
-wants any projection $e$ with $0<\tau(e)<1$ 
+groups whose reduced $`C^*`$-algebras carry a projection: the second
+wants any projection $`e`$ with $`0<\tau(e)<1`$ 
 
 > **theorem**
-There exist a finitely generated torsion-free discrete group $G_{\mathrm{proj}}$
-and a projection $e\in C_r^*(G_{\mathrm{proj}})$ such that
+There exist a finitely generated torsion-free discrete group $`G_{\mathrm{proj}}`$
+and a projection $`e\in C_r^*(G_{\mathrm{proj}})`$ such that
 $$0<\tau_{G_{\mathrm{proj}}}(e)<\frac12.$$
-In particular, $e$ is neither zero nor the identity. [S6:13–21]
+In particular, $`e`$ is neither zero nor the identity. [S6:13–21]
 
 The third wants a projection whose trace is *irrational*, a stronger
-property that places its $K_0$-class outside the assembly image and so
+property that places its $`K_0`$-class outside the assembly image and so
 disproves the coefficient-free Baum--Connes conjecture directly
 
 
 > **theorem**
-There exist a finitely generated discrete group $G_{\mathrm{sur}}$ and a projection
-$b_0\in C_r^*(G_{\mathrm{sur}})$ with irrational canonical trace. Moreover,
+There exist a finitely generated discrete group $`G_{\mathrm{sur}}`$ and a projection
+$`b_0\in C_r^*(G_{\mathrm{sur}})`$ with irrational canonical trace. Moreover,
 $$[b_0]\notin\mu_0^{G_{\mathrm{sur}}}\bigl(K_0^{G_{\mathrm{sur}}}(\underline EG_{\mathrm{sur}})\bigr).$$
 In particular, the coefficient-free reduced Baum–Connes conjecture for
 countable discrete groups is false. [S8:57–65]
@@ -68,12 +68,12 @@ countable discrete groups is false. [S8:57–65]
 ## Graduate summary
 
 **The injectivity failure.** The Baum--Connes manuscript embeds the
-torus $\mathbb Z^2$ into a finitely generated torsion-free group and tracks
+torus $`\mathbb Z^2`$ into a finitely generated torsion-free group and tracks
 the torus's rank-zero Bott class through the assembly map. A
 cohomology class that pairs to one with the embedded torus's Dirac
-class detects a class $h$ of infinite order in $K_0(B\G)$; a
+class detects a class $`h`$ of infinite order in $`K_0(B\G)`$; a
 separate operator-algebra construction then shows the corresponding
-Bott class vanishes in $K_0(C_r^*(\G))$, so $h$ maps to zero. The
+Bott class vanishes in $`K_0(C_r^*(\G))`$, so $`h`$ maps to zero. The
 group is built by a layered graph labeled by interleaved finite
 streams, given voltages in the integral Heisenberg group, and completed
 to a finitely generated torsion-free group; finite additivity of the
@@ -84,13 +84,13 @@ rank-zero Bott representatives forces the height-zero term to vanish
 manuscript builds a torsion-free group from an infinite graphical
 presentation followed by a free product with a finitely generated free
 group; every parameter is finite, and the resulting reduced
-$C^*$-algebra carries a projection of trace strictly between zero and
+$`C^*`$-algebra carries a projection of trace strictly between zero and
 one half. The group's geometry encodes an infinite tower through
 embedded nilpotent covers, so the standard integrality route to
 projectionlessness does not apply [S6:34–70]. The irrational-trace
 manuscript produces a torsion-free group with a projection of
 irrational canonical trace; because the trace is irrational the
-projection's $K_0$-class cannot lie in the image of the
+projection's $`K_0`$-class cannot lie in the image of the
 coefficient-free reduced assembly map, which is the precise failure
 the conjecture forbids.
 
@@ -111,7 +111,7 @@ Lafforgue, and Skandalis constructed counterexamples to surjectivity
 with nontrivial coefficients, but their group examples are distinct
 from the coefficient-free group injectivity addressed here. The
 projection form of Kadison--Kaplansky goes back to Kaplansky's
-question about idempotents in simple unital $C^*$-algebras; Pimsner
+question about idempotents in simple unital $`C^*`$-algebras; Pimsner
 and Voiculescu proved the free-group case, and the integrality of the
 canonical trace on the assembly image gives projectionlessness for
 the same hyperbolic and affine-isometry classes [S4:39–83]
@@ -122,13 +122,13 @@ the same hyperbolic and affine-isometry classes [S4:39–83]
 **The coefficient-free reduced Baum--Connes conjecture is false.** The
 family provides two independent counterexamples: a torsion-free group
 with an infinite-order kernel class of the assembly map, and a torsion-free
-group with a projection of irrational trace whose $K_0$-class lies
+group with a projection of irrational trace whose $`K_0`$-class lies
 outside the assembly image [S4:18–26] [S8:57–65].
 
 **The Kadison--Kaplansky projection conjecture is false.** A
 finitely generated torsion-free discrete group has a reduced group
-$C^*$-algebra containing a projection $e$ with
-$0<\tau(e)<1/2$, so the algebra carries a nontrivial scalar
+$`C^*`$-algebra containing a projection $`e`$ with
+$`0<\tau(e)<1/2`$, so the algebra carries a nontrivial scalar
 projection [S6:13–21].
 
 ## Section skeleton

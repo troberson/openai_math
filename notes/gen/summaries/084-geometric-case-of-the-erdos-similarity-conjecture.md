@@ -7,39 +7,39 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:2079] and the catalog abstract [S2:242] state
-the family's claim: for every fixed $q\in(0,1)$, a compact subset of
-$[0,1]$ of arbitrarily close to full measure that contains no translated,
-nontrivially dilated copy of $\{q^n:n\ge1\}$, with dilations of either
+the family's claim: for every fixed $`q\in(0,1)`$, a compact subset of
+$`[0,1]`$ of arbitrarily close to full measure that contains no translated,
+nontrivially dilated copy of $`\{q^n:n\ge1\}`$, with dilations of either
 sign — the geometric-progression case of the Erd\H{o}s similarity
 conjecture. The family ships two manuscripts: the general-ratio (geometric)
 statement [S5:34–42] and the dyadic subcase it subsumes
 . The geometric manuscript's abstract 
 
 > We prove the geometric-progression case of the Erdős similarity
-conjecture. For every fixed $q\in(0,1)$ and every $\eta\in(0,1)$, we
-construct a compact set $E_{q,\eta}\subseteq[0,1]$ of measure greater
-than $1-\eta$ containing no nontrivial affine copy of
-$\{q^n:n\ge1\}$, for any translation and either sign of nonzero dilation.
-The set may depend on $q$; the result makes no simultaneous assertion
+conjecture. For every fixed $`q\in(0,1)`$ and every $`\eta\in(0,1)`$, we
+construct a compact set $`E_{q,\eta}\subseteq[0,1]`$ of measure greater
+than $`1-\eta`$ containing no nontrivial affine copy of
+$`\{q^n:n\ge1\}`$, for any translation and either sign of nonzero dilation.
+The set may depend on $`q`$; the result makes no simultaneous assertion
 for different ratios. [S5:34–42]
 
 ## Undergraduate summary
 
 Erd\H{o}s's similarity conjecture asks whether any infinite set
-$A\subseteq\mathbb R$ is *measure universal* — that is, whether every
+$`A\subseteq\mathbb R`$ is *measure universal* — that is, whether every
 set of positive Lebesgue measure contains a translated, dilated copy
-$x+sA$ of $A$. The conjecture says no infinite set is. Finite patterns
-always are universal, by a simple $L^1$ continuity argument [S4:13–17],
+$`x+sA`$ of $`A`$. The conjecture says no infinite set is. Finite patterns
+always are universal, by a simple $`L^1`$ continuity argument [S4:13–17],
 so the question is genuinely about infinite sets.
 
-The dyadic sequence $D=\{2^{-n}:n\ge1\}$ [S4:19–22] and its
+The dyadic sequence $`D=\{2^{-n}:n\ge1\}`$ [S4:19–22] and its
 one-parameter generalization, the geometric progression
-$G_q=\{q^n:n\ge1\}$ [S6:11–15], are the natural infinite
+$`G_q=\{q^n:n\ge1\}`$ [S6:11–15], are the natural infinite
 candidates. The two manuscripts prove two nested statements: the dyadic
 case [S4:24–33] — no positive-measure set contains a signed
-affine copy of $D$ — and the full geometric case [S6:17–24]
-— the same, for every ratio $q\in(0,1)$. The dyadic case is exactly
-the $q=1/2$ instance of the geometric one [S6:26–30].
+affine copy of $`D`$ — and the full geometric case [S6:17–24]
+— the same, for every ratio $`q\in(0,1)`$. The dyadic case is exactly
+the $`q=1/2`$ instance of the geometric one [S6:26–30].
 
 The construction is probabilistic at its core: it builds an open set of
 arbitrarily small density that meets every scaled copy of the target
@@ -52,27 +52,27 @@ sequence, then takes the complement. The complement is the avoiding set
 
 
 > **Theorem 1.1**
-For every $q\in(0,1)$ and $\eta\in(0,1)$, there is a compact set
-$E_{q,\eta}\subseteq[0,1]$ with $m(E_{q,\eta})>1-\eta$ such that
+For every $`q\in(0,1)`$ and $`\eta\in(0,1)`$, there is a compact set
+$`E_{q,\eta}\subseteq[0,1]`$ with $`m(E_{q,\eta})>1-\eta`$ such that
 $$\text{for every }x\in\mathbb R\text{ and }s\in\mathbb R\setminus\{0\},
  \quad x+sq^n\notin E_{q,\eta}\text{ for some integer }n\ge1.$$ [S6:17–24]
 
-The set $E_{q,\eta}$ may depend on $q$; the statement makes no
+The set $`E_{q,\eta}`$ may depend on $`q`$; the statement makes no
 simultaneous assertion over different ratios [S5:40–41]. The
-dyadic-case manuscript proves the $q=1/2$ instance 
+dyadic-case manuscript proves the $`q=1/2`$ instance 
 
 > **theorem**
-For every $\eta\in(0,1)$, there is a compact set $E_\eta\subseteq[0,1]$
-with $m(E_\eta)>1-\eta$ such that
+For every $`\eta\in(0,1)`$, there is a compact set $`E_\eta\subseteq[0,1]`$
+with $`m(E_\eta)>1-\eta`$ such that
 $$\text{for every }x\in\mathbb R\text{ and every }s\in\mathbb R\setminus\{0\},
  \quad x+sD\nsubseteq E_\eta.$$
-Equivalently, for every such $x,s$ there is an integer $n\ge1$ with
-$x+s2^{-n}\notin E_\eta$. [S4:24–33]
+Equivalently, for every such $`x,s`$ there is an integer $`n\ge1`$ with
+$`x+s2^{-n}\notin E_\eta`$. [S4:24–33]
 
 **The proof mechanism** [S6:34–50]. Both papers construct the open
 complement of the avoiding set. The intermediate goal is an open,
-$1$-periodic set of arbitrarily small density meeting $x+tG_q$ for every
-$x\in\mathbb R$ and every $t\in[1,2]$; a summable union of its dilations
+$`1`$-periodic set of arbitrarily small density meeting $`x+tG_q`$ for every
+$`x\in\mathbb R`$ and every $`t\in[1,2]`$; a summable union of its dilations
 and reflections then covers every nonzero scale. The difficulty is
 controlling all scales at once: the random cell tests are arranged on a
 finite ordered tree so that each group of tests uses only the grids on one
@@ -81,28 +81,28 @@ other parts of the tree may use finer grids for free. Each point is routed to
 a leaf by independent binary tables.
 
 **The relationship between the two.** The geometric case subsumes the dyadic
-case (take $q=1/2$) [S6:26–30]. The dyadic paper was written first
+case (take $`q=1/2`$) [S6:26–30]. The dyadic paper was written first
 (September 25) and the geometric paper (October 5) extends it to arbitrary
 ratios. The formalization, however, covers only the dyadic case — see
 the formalized section.
 
 ## History of the conjecture
 
-Erd\H{o}s posed the similarity conjecture as Problem 4.33.7$^\ast$ in his
+Erd\H{o}s posed the similarity conjecture as Problem 4.33.7$`^\ast`$ in his
 1974 problem collection [S4:9–12]. The pre-existing results concern
 slowly decreasing sequences: Falconer and Eigen proved nonuniversality for
-positive sequences $a_n\downarrow0$ with $a_{n+1}/a_n\to1$, and Humke
+positive sequences $`a_n\downarrow0`$ with $`a_{n+1}/a_n\to1`$, and Humke
 and Laczkovich gave a finite hitting-set characterization with further
 relative-gap criteria [S4:43–49]. Kolountzakis's finite-gap criterion
 and Chleb\'ik's translation-invariant formulation cover sequences with
 appropriate gap structure [S4:50–55]. The dyadic sequence satisfies
-neither the slow-decreasing nor the finite-gap condition: for $n\ge2$
+neither the slow-decreasing nor the finite-gap condition: for $`n\ge2`$
 dyadic points the normalized minimum gap is at most
-$2^{-(n-3)}$ [S4:56–59].
+$`2^{-(n-3)}`$ [S4:56–59].
 
 Additive-structure results give a separate line. Bourgain proved a sum of
 three infinite sets is nonuniversal, and Kolountzakis treated sums of two
-copies of certain sequences, including $D+D$ [S4:61–64]. The single
+copies of certain sequences, including $`D+D`$ [S4:61–64]. The single
 dyadic sequence is distinct from these sumset results — avoiding a
 larger pattern does not imply avoiding a subset of it
 [S4:71–72].
@@ -119,14 +119,14 @@ in the literature I was trained on. I cannot independently verify these
 
 ## Consequences
 
-**Geometric-progression case resolved.** For every fixed $q\in(0,1)$ and
-$\eta\in(0,1)$, a compact set of measure $>1-\eta$ avoids every
-translated, nontrivially dilated copy of $\{q^n:n\ge1\}$, for both
+**Geometric-progression case resolved.** For every fixed $`q\in(0,1)`$ and
+$`\eta\in(0,1)`$, a compact set of measure $`>1-\eta`$ avoids every
+translated, nontrivially dilated copy of $`\{q^n:n\ge1\}`$, for both
 dilation signs [S6:17–24].
 
-**Dyadic case resolved.** The $q=1/2$ instance: a compact
+**Dyadic case resolved.** The $`q=1/2`$ instance: a compact
 near-full-measure set avoids every signed affine copy of
-$\{2^{-n}:n\ge1\}$ [S4:24–33].
+$`\{2^{-n}:n\ge1\}`$ [S4:24–33].
 
 **Scope of the conjecture.** These are specific infinite patterns; the
 conjecture for arbitrary infinite sets is not addressed by either
@@ -134,7 +134,7 @@ manuscript [S4:35–39].
 
 ## Section skeleton
 
-Two manuscripts, a dyadic $\to$ geometric extension:
+Two manuscripts, a dyadic $`\to`$ geometric extension:
 
 - **dyadic** `The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026`
   — root `build/paper.tex` [S3:36–42] (title [S3:31], date [S3:33]), eight
@@ -152,9 +152,9 @@ No manuscript ships a `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S7]. The formalization proves the **dyadic** case of the
-Erd\H{o}s similarity conjecture: for every $0<\eta<1$, a compact set
-$E\subset[0,1]$ of measure greater than $1-\eta$ containing no affine
-copy of $\{2^{-n}:n\ge1\}$, both dilation signs. The scope note links
+Erd\H{o}s similarity conjecture: for every $`0<\eta<1`$, a compact set
+$`E\subset[0,1]`$ of measure greater than $`1-\eta`$ containing no affine
+copy of $`\{2^{-n}:n\ge1\}`$, both dilation signs. The scope note links
 only the dyadic manuscript. It records `scope: "Partial progress."` and
 `review: status: unchecked`; zero `sorry` in the Lean source is not a
 comparator pass, and the library has not been built here.
@@ -162,7 +162,7 @@ comparator pass, and the library has not been built here.
 **Two structural gaps.** First, the formalization proves the dyadic
 subcase, not the family's headline geometric-progression claim: the family
 is named for the general-ratio statement [S5:34–42], but the Lean
-work covers only $q=1/2$. Second, the work is unregistered:
+work covers only $`q=1/2`$. Second, the work is unregistered:
 `formalization.yaml` carries **no `main_results` entry** for this family,
 and the ledger records `paps_form 0` and `mainres 0`. This is a T2
 structural absence.

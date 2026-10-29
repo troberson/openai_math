@@ -21,22 +21,22 @@
 
 A **logarithmic-space machine** can read its whole input, but it can only keep
 a number of notes proportional to the *length of the input in bits* — for an
-input of length $n$ that is $O(\log n)$ bits, enough to remember a handful of
+input of length $`n`$ that is $`O(\log n)`$ bits, enough to remember a handful of
 positions, not a working copy of the input. Add a coin: the machine may flip
 fair random bits, and on some inputs it is allowed to get the occasional one
-wrong, so long as the answer is right with probability at least $2/3$ when the
-right answer is "yes" and at most $1/3$ when it is "no". The
-classes $\mathsf L$, $\mathsf{RL}$ and $\mathsf{BPL}$ are the languages such machines decide,
+wrong, so long as the answer is right with probability at least $`2/3`$ when the
+right answer is "yes" and at most $`1/3`$ when it is "no". The
+classes $`\mathsf L`$, $`\mathsf{RL}`$ and $`\mathsf{BPL}`$ are the languages such machines decide,
 for the deterministic, one-sided-error, and two-sided-error cases
 respectively. The three classes sit in the order
-$\mathsf L \subseteq \mathsf{RL} \subseteq \mathsf{BPL}$ for free: a deterministic machine
-ignores its coins, and running an $\mathsf{RL}$ machine twice and accepting if
+$`\mathsf L \subseteq \mathsf{RL} \subseteq \mathsf{BPL}`$ for free: a deterministic machine
+ignores its coins, and running an $`\mathsf{RL}`$ machine twice and accepting if
 either run accepts turns one-sided error into two-sided error without using
 more space [S6:279–290].
 
 The open question for decades was whether the inclusions are equalities.
-The paper answers yes, and it answers the strong form: "The class $\mathsf L$ consists of languages decidable by deterministic [S4:19–21]"
-([S4:19–21]) defines $\mathsf L$, and the main theorem is the
+The paper answers yes, and it answers the strong form: "The class $`\mathsf L`$ consists of languages decidable by deterministic [S4:19–21]"
+([S4:19–21]) defines $`\mathsf L`$, and the main theorem is the
 equality "**theorem**
  [S4:28–30]" () — in this machine model, fresh random
 bits do not let a logarithmic-space machine decide anything a
@@ -47,7 +47,7 @@ tries to simulate the random coins; instead it builds a finite family of
 deterministic estimates of the probability the machine accepts, indexed by
 short descriptions, and shows that more than three quarters of the estimates
 are accurate. Enumerating them and taking the median gives one accurate
-deterministic answer, and comparing that answer with $1/2$ decides the
+deterministic answer, and comparing that answer with $`1/2`$ decides the
 language [S4:34–38]. The estimate is a dyadic rational — a fraction whose
 denominator is a power of two — produced in logarithmic space and
 polynomial time, with an explicit error bound. That is the
@@ -59,49 +59,49 @@ polynomial time, with an explicit error bound. That is the
 machines with an endmarked read-only input, finitely many work tapes, and
 fresh fair bits, with space counting every simultaneously live counter and
 register in bits and the randomized classes using polynomial time,
-$\mathsf L=\mathsf{RL}=\mathsf{BPL}$. Here $\mathsf{RL}$ accepts a no-instance with probability zero
-and a yes-instance with probability at least $1/2$; $\mathsf{BPL}$ uses $2/3$ and
-$1/3$ [S4:19–26].
+$`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$. Here $`\mathsf{RL}`$ accepts a no-instance with probability zero
+and a yes-instance with probability at least $`1/2`$; $`\mathsf{BPL}`$ uses $`2/3`$ and
+$`1/3`$ [S4:19–26].
 
 The proof has two stages. The first stage builds an estimator
 ([S4:40–49], `thm:probability`): there is a uniform deterministic
-algorithm which, on input $(x, 1^q)$, outputs a dyadic rational
-$a2^{-(q+2)}$ satisfying
-$|a2^{-(q+2)} - p_{\mathcal M}(x)| \le 2^{-q}$,
-using $O(\log(n+2)+q)$ work space and
-$(n+2)^{O(1)} 2^{O(q)}$ time. The second stage
+algorithm which, on input $`(x, 1^q)`$, outputs a dyadic rational
+$`a2^{-(q+2)}`$ satisfying
+$`|a2^{-(q+2)} - p_{\mathcal M}(x)| \le 2^{-q}`$,
+using $`O(\log(n+2)+q)`$ work space and
+$`(n+2)^{O(1)} 2^{O(q)}`$ time. The second stage
 ([S6:18–27], `thm:fixed-precision`) specialises the unary
-precision parameter $q$ to a fixed $d \ge 1$ and reads off the constant
-$(n+2)^{-d}$ accuracy, $O(\log(n+2))$ space, and polynomial time, which is
+precision parameter $`q`$ to a fixed $`d \ge 1`$ and reads off the constant
+$`(n+2)^{-d}`$ accuracy, $`O(\log(n+2))`$ space, and polynomial time, which is
 enough for the bounded-error threshold.
 
 The estimator is a **configuration-graph matrix inverse**. The
 configuration-reduction lemma
 ([S5:18–33], `lem:model-reduction`) specifies, uniformly in logarithmic
-space, a polynomial-size vertex set $V_0$, a strictly forward substochastic
-matrix $S$, an accepting-configuration vector $e \in \{0,1\}^{V_0}$, and a
-start $x_0$, such that
-"$\item The coordinate$p_0(x_0)$is the acceptance probability of [S5:31–32]$"
+space, a polynomial-size vertex set $`V_0`$, a strictly forward substochastic
+matrix $`S`$, an accepting-configuration vector $`e \in \{0,1\}^{V_0}`$, and a
+start $`x_0`$, such that
+"$`\item The coordinate`$`p_0(x_0)`$`is the acceptance probability of [S5:31–32]`$"
 ([S5:31–32]) — the matrix model that the rest of the construction feeds on.
-The hierarchy of [S4:197–250] replaces $S$ by a sequence of
-correction-and-copy steps on enlarged vertex sets $V_l$, with a reward
-$W_l \in [0,1]^{V_l}$ that converges to $p_0(x_0)$
-at rate $2^{-(H-1)l}$; a fixed number $L = O(B)$ of stages gives
+The hierarchy of [S4:197–250] replaces $`S`$ by a sequence of
+correction-and-copy steps on enlarged vertex sets $`V_l`$, with a reward
+$`W_l \in [0,1]^{V_l}`$ that converges to $`p_0(x_0)`$
+at rate $`2^{-(H-1)l}`$; a fixed number $`L = O(B)`$ of stages gives
 inverse-polynomial accuracy. The
-finite random environment $\sigma$ then evaluates the final reward $W_L$ in
+finite random environment $`\sigma`$ then evaluates the final reward $`W_L`$ in
 an integrated norm, the moment estimate
-`thm:fp-estimators` controls the $8$th absolute moment of
+`thm:fp-estimators` controls the $`8`$th absolute moment of
 the estimator's error over the retained environments, and the
 conditioning lemma `lem:final-majority`
-([S6:148]) spends a factor $N = 2^{C_NB}$ to pass
+([S6:148]) spends a factor $`N = 2^{C_NB}`$ to pass
 from the integrated bound to one specified start. The median of the
-retained values then carries the $3\Delta/8$ error bound, and
+retained values then carries the $`3\Delta/8`$ error bound, and
 [S6:279–290] closes the class equality:
 
-> "$2/3-1/8=13/24$ on a yes input. Comparing this answer with $1/2$ [S6:286–287]"
+> "$`2/3-1/8=13/24`$ on a yes input. Comparing this answer with $`1/2`$ [S6:286–287]"
 
 **Derived consequences.** The promise corollary
-([S6:307–311], `cor:promise-bpl`) states "$$\mathsf{PromiseBPL}=\mathsf{PromiseL}$. [S6:311]$",
+([S6:307–311], `cor:promise-bpl`) states "$$`\mathsf{PromiseBPL}=\mathsf{PromiseL}`$. [S6:311]$",
 so the same argument separates bounded-error promise problems in
 logarithmic space. The variable-precision theorem
 ([S6:325–360]) handles an arbitrary requested accuracy $q$ by
@@ -114,7 +114,7 @@ $p_{\mathcal M}(x) \ge (n+2)^{-c}$,
 streaming the configurations through the first halting state; it is
 the mechanism for turning the probability estimate into a witness.
 The space bound is a telescoping
-recursion (): "$The controller assigns each call a decreasing recursion allowance $w$, [S4:246–247]$"
+recursion (): "$The controller assigns each call a decreasing recursion allowance $`w`$, [S4:246–247]$"
 and the digits requested at each recursive level telescope along
 the call chain, so the total live work is $O(B)$
 rather than $O(B)$ per level.
@@ -146,36 +146,36 @@ deterministic simulation for the unrestricted setting [S4:80].
 The pseudorandom-generator line begins with **Ajtai, Komlós and
 Szemerédi**'s small-space constructions [S4:91] and **Babai, Nisan and
 Szegedy's** communication-based generators [S4:93]. **Nisan's** 1992
-generator uses $O(S \log R)$ seed bits for a space-$S$ computation
-reading $R$ random bits, giving
-$O(\log^2 n)$ seed length in the
+generator uses $`O(S \log R)`$ seed bits for a space-$`S`$ computation
+reading $`R`$ random bits, giving
+$`O(\log^2 n)`$ seed length in the
 logarithmic-space case [S4:94–96]; his 1994 simultaneous simulation
-achieves polynomial time and $O(\log^2 n)$ space with two-sided error
-[S4:98–101]. **Nisan and Zuckerman** showed a space-$S$ computation
-using $\mathrm{poly}(S)$ random bits can be simulated with
-$O(S)$ random bits and $O(S)$ space [S4:102–104].
+achieves polynomial time and $`O(\log^2 n)`$ space with two-sided error
+[S4:98–101]. **Nisan and Zuckerman** showed a space-$`S`$ computation
+using $`\mathrm{poly}(S)`$ random bits can be simulated with
+$`O(S)`$ random bits and $`O(S)`$ space [S4:102–104].
 
 The space-containment line: **Saks and Zhou** reduced the deterministic
 space for general bounded-error logarithmic-space computation to
-$O(\log^{3/2} n)$ [S4:108]; **Cai, Chakaravarthy and van Melkebeek**
+$`O(\log^{3/2} n)`$ [S4:108]; **Cai, Chakaravarthy and van Melkebeek**
 established a simultaneous time-space tradeoff
-$n^{O(\log^{1/2-\alpha} n)}$ time with
-$O(\log^{3/2+\alpha} n)$ space
-for each fixed $0 \le \alpha \le 1/2$ [S4:112]. **Hoza** improved the
+$`n^{O(\log^{1/2-\alpha} n)}`$ time with
+$`O(\log^{3/2+\alpha} n)`$ space
+for each fixed $`0 \le \alpha \le 1/2`$ [S4:112]. **Hoza** improved the
 general space bound to
-$O(\log^{3/2} n / \sqrt{\log\log n})$
+$`O(\log^{3/2} n / \sqrt{\log\log n})`$
 and developed weighted pseudorandomness
 [S4:117–122].
 
 The structural line: **Nisan, Szemerédi and Wigderson**'s
-$O(\log^{3/2} n)$ connectivity, improved to
-$O(\log^{4/3} n)$ by **Armoni, Ta-Shma, Wigderson and Zhou**
+$`O(\log^{3/2} n)`$ connectivity, improved to
+$`O(\log^{4/3} n)`$ by **Armoni, Ta-Shma, Wigderson and Zhou**
 [S4:139–141]; **Reingold's** logarithmic-space undirected-connectivity
 algorithm [S4:143–144]; **Reingold, Trevisan and Vadhan's** oblivious
 walks for Eulerian directed graphs [S4:145–147].
 **Cheng and Hoza** proved that a uniformly logarithmic-space-enumerable
-$1/2$-hitting-set family for all width-$n$, length-$n$ read-once branching
-programs would yield $\mathsf L = \mathsf{BPL}$ [S4:158–161].
+$`1/2`$-hitting-set family for all width-$`n`$, length-$`n`$ read-once branching
+programs would yield $`\mathsf L = \mathsf{BPL}`$ [S4:158–161].
 
 The recent line: **Chen, Cohen, Doron, Khaskelberg and Ta-Shma**'s
 improved error reduction for weighted generators in the polynomial-width
@@ -184,17 +184,17 @@ polylogarithmic-space simulations for regular branching programs [S4:171];
 **Pyne and Tell**'s survey of hardness-versus-randomness approaches [S4:179].
 
 The effectivity line: **Pyne, Raz and Zhan** constructed a universal
-deterministic estimator whose $O(S(n))$ space guarantee follows from
-$\mathsf{prBPL} \subseteq \mathsf{SPACE}[O(S(n))]$
-for space-constructible $S(n) \ge \log n$ [S4:183–185].
+deterministic estimator whose $`O(S(n))`$ space guarantee follows from
+$`\mathsf{prBPL} \subseteq \mathsf{SPACE}[O(S(n))]`$
+for space-constructible $`S(n) \ge \log n`$ [S4:183–185].
 The compiler of [S4:187] uses a fixed separator established in
 this paper and supplies explicit source-specific resource bounds —
 its construction sits in this context of universal simulation, with
 the source bounds supplied as part of the compiler input.
 
-**Prior (my training data, not this repo).** $\mathsf L = \mathsf{RL} = \mathsf{BPL}$
+**Prior (my training data, not this repo).** $`\mathsf L = \mathsf{RL} = \mathsf{BPL}`$
 is a central derandomization target in complexity theory. The one-sided
-case $\mathsf L = \mathsf{RL}$ has been known since the AKSZ line and the bounded
+case $`\mathsf L = \mathsf{RL}`$ has been known since the AKSZ line and the bounded
 randomness of **Chang** (for one-sided); the two-sided case is the harder
 direction and is what this paper addresses. The pseudorandom-generator
 route gives a small-space containment with a polynomially-iterated
@@ -209,24 +209,24 @@ formalization records the class equality only.
 
 ## Consequences
 
-- **The class equality.** $\mathsf L = \mathsf{RL} = \mathsf{BPL}$ in the
+- **The class equality.** $`\mathsf L = \mathsf{RL} = \mathsf{BPL}`$ in the
   explicit Turing-machine model with the stated space convention.
-  The containment $\mathsf{BPL} \subseteq \mathsf L$ is proved directly from the
-  $d = 3$ fixed-precision approximation and the threshold $1/2$
+  The containment $`\mathsf{BPL} \subseteq \mathsf L`$ is proved directly from the
+  $`d = 3`$ fixed-precision approximation and the threshold $`1/2`$
   [S6:279–290]. The reverse direction is the two free inclusions.
-- **The promise version.** $\mathsf{PromiseBPL} = \mathsf{PromiseL}$
-  [S6:307–311]. The same $d=3$ approximation and threshold separate
+- **The promise version.** $`\mathsf{PromiseBPL} = \mathsf{PromiseL}`$
+  [S6:307–311]. The same $`d=3`$ approximation and threshold separate
   the promise classes, and the approximating machine halts outside
   the promise as well, because the digit queries are total.
 - **The variable-precision algorithm.** The unary precision parameter
-  $q$ moves into the input via padding; the running time is
-  $(n+2)^{O(1)} 2^{O(q)}$ and the space is
-  $O(\log(n+2)+q)$ [S6:325–360]. A single algorithm serves every
+  $`q`$ moves into the input via padding; the running time is
+  $`(n+2)^{O(1)} 2^{O(q)}`$ and the space is
+  $`O(\log(n+2)+q)`$ [S6:325–360]. A single algorithm serves every
   fixed inverse-polynomial accuracy.
 - **The certified accepting computation.** Whenever
-  $p_{\mathcal M}(x) \ge (n+2)^{-c}$, a deterministic
+  $`p_{\mathcal M}(x) \ge (n+2)^{-c}`$, a deterministic
   logarithmic-space, polynomial-time transducer outputs an accepting
-  computation of $\mathcal M$ [S6:396–404]. This is the witness
+  computation of $`\mathcal M`$ [S6:396–404]. This is the witness
   mechanism: the estimation gives a greedy path through the
   configuration graph that reaches a terminal accepting state.
 - **The effective compiler.** A terminating compiler that, given a
@@ -239,7 +239,7 @@ formalization records the class equality only.
 
 **Prior (my training data, not this repo).** The consequence that matters
 in the wider derandomization program is the first: the equality
-$\mathsf L = \mathsf{BPL}$ closes a thirty-year gap in the space complexity
+$`\mathsf L = \mathsf{BPL}`$ closes a thirty-year gap in the space complexity
 hierarchy. The certified-search corollary is the mechanism by which
 the estimation produces a witness; the compiler is the effectivity
 result that makes the simulation constructive. Both are
@@ -265,7 +265,7 @@ explicit resource bounds for each source machine [S4:248–250].
 
 The scope note [S10] states the formalization's scope and its one
 explicit exclusion. It proves the class equality
-$\mathsf L=\mathsf{RL}=\mathsf{BPL}$ for binary languages in the explicit
+$`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$ for binary languages in the explicit
 Turing-machine model with logarithmic workspace, and it does not
 separately state the paper's explicit compiler or its numerical
 running-time bounds. The comparator stub [S11] carries the
@@ -298,7 +298,7 @@ scope note, and no verification bundle or reasoning trace [S12].
 - Ahmadinejad, AmirMahdi, Kelner, Jonathan, Murtagh, Jack, Peebles, John, Sidford, Aaron, Vadhan, Salil, High-precision estimation of random walks in small space (2020)
 - Ajtai, Miklós, Komlós, János, Szemerédi, Endre, Deterministic simulation in LOGSPACE (1987)
 - Aleliunas, Romas, Karp, Richard M., Lipton, Richard J., Lovász, László, Rackoff, Charles, Random Walks, Universal Traversal Sequences, and the Complexity of Maze Problems (1979)
-- Roy Armoni, Amnon Ta-Shma, Avi Wigderson, Shiyu Zhou, An $O(\log(n)^{4/3})$ space algorithm for $(s,t)$ connectivity in undirected graphs (2000)
+- Roy Armoni, Amnon Ta-Shma, Avi Wigderson, Shiyu Zhou, An $`O(\log(n)^{4/3})`$ space algorithm for $`(s,t)`$ connectivity in undirected graphs (2000)
 - Avizienis, Algirdas, On a Flexible Implementation of Digital Computer Arithmetic (1963)
 - Babai, László, Nisan, Noam, Szegedy, Márió, Multiparty protocols, pseudorandom generators for logspace, and time-space trade-offs (1992)
 - Bekka, Bachir, de la Harpe, Pierre, Valette, Alain, Kazhdan's property (T) (2008)
@@ -315,19 +315,19 @@ scope note, and no verification bundle or reasoning trace [S12].
 - Cook, Stephen A., McKenzie, Pierre, Problems Complete for Deterministic Logarithmic Space (1987)
 - Gill, John, Computational Complexity of Probabilistic Turing Machines (1977)
 - Hoza, William M., Better pseudodistributions and derandomization for space-bounded computation (2021)
-- Kassabov, Martin, Kazhdan constants for $\mathrm{SL}_n(\mathbb Z)$ (2005)
+- Kassabov, Martin, Kazhdan constants for $`\mathrm{SL}_n(\mathbb Z)`$ (2005)
 - Lange, Klaus-Jörn, McKenzie, Pierre, Tapp, Alain, Reversible space equals deterministic space (2000)
 - Nisan, Noam, Pseudorandom generators for space-bounded computation (1992)
 - Nisan, Noam, Zuckerman, David, Randomness is linear in space (1996)
-- Nisan, Noam, $\mathrm{RL}\subseteq\mathrm{SC}$ (1994)
-- Noam Nisan, Endre Szemerédi, Avi Wigderson, Undirected connectivity in $O(\log^{1.5} n)$ space (1992)
+- Nisan, Noam, $`\mathrm{RL}\subseteq\mathrm{SC}`$ (1994)
+- Noam Nisan, Endre Szemerédi, Avi Wigderson, Undirected connectivity in $`O(\log^{1.5} n)`$ space (1992)
 - Pyne, Edward, Tell, Roei, Using Hardness vs Randomness to Design Low-Space Algorithms (2026)
 - Pyne, Edward, Raz, Ran, Zhan, Wei, Certified Hardness vs. Randomness for Log-Space (2023)
 - Reingold, Omer, Undirected connectivity in log-space (2008)
 - Reingold, Omer, Trevisan, Luca, Vadhan, Salil, Pseudorandom walks on regular digraphs and the RL vs. L problem (2006)
 - Omer Reingold, Undirected ST-connectivity in log-space (2005)
 - Riesz, Marcel, Sur les maxima des formes bilinéaires et sur les fonctionnelles linéaires (1927)
-- Saks, Michael, Zhou, Shiyu, $\mathrm{BP}_{\mathrm H}\mathrm{SPACE}(S)\subseteq \mathrm{DSPACE}(S^{3/2})$ (1999)
+- Saks, Michael, Zhou, Shiyu, $`\mathrm{BP}_{\mathrm H}\mathrm{SPACE}(S)\subseteq \mathrm{DSPACE}(S^{3/2})`$ (1999)
 - Savitch, Walter J., Relationships between nondeterministic and deterministic tape complexities (1970)
 - Schwartz, Jacob T., Fast Probabilistic Algorithms for Verification of Polynomial Identities (1980)
 - Shalom, Yehuda, Bounded generation and Kazhdan's property (T) (1999)

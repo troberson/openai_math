@@ -8,14 +8,14 @@
 
 The release's blurb [S1:3591] and the catalog abstract [S2:381] state
 the family's claim: the billiard flow in every nondegenerate Euclidean
-triangle with at least one angle irrational relative to $\pi$ is weakly
+triangle with at least one angle irrational relative to $`\pi`$ is weakly
 mixing for normalized area times uniform direction. This strengthens
 ergodicity on the entire irrational-angle class, with no genericity or
 Diophantine restrictions. The headline weak-mixing manuscript's abstract
 
 
 > We prove that the unit-speed billiard flow in every nondegenerate Euclidean
-triangle with at least one angle irrational relative to $\pi$ is weakly
+triangle with at least one angle irrational relative to $`\pi`$ is weakly
 mixing for normalized Liouville measure. Equivalently, the product of the
 flow with itself is ergodic. [S3:31–34]
 
@@ -36,21 +36,21 @@ scatters its initial correlation and the product of the flow with itself
 is again ergodic — the flow forgets its own phase, not just its
 position [S3:31–34]. The family proves weak mixing for **every**
 nondegenerate triangle with at least one angle that is irrational
-relative to $\pi$ — no "typical angle" or Diophantine
+relative to $`\pi`$ — no "typical angle" or Diophantine
 restriction needed [S3:31–34, S5:9].
 
 ## Graduate summary
 
 **Weak mixing (headline)** [S3:31–34, S2:381]. The unit-speed
 billiard flow in every nondegenerate Euclidean triangle with at least
-one angle irrational relative to $\pi$ is weakly mixing for normalized
+one angle irrational relative to $`\pi`$ is weakly mixing for normalized
 Liouville measure; equivalently, the product of the flow with itself is
 ergodic. This is stated for the whole irrational-angle class, with no
 genericity or Diophantine condition [S3:31–34].
 
 **Ergodicity (companion, the formalized claim)** [S4:41–46, S5:9].
 The unit-speed billiard flow in every nondegenerate Euclidean triangle
-with at least one angle irrational relative to $\pi$ is ergodic for
+with at least one angle irrational relative to $`\pi`$ is ergodic for
 normalized area times uniform angular measure. The flow is considered
 outside the null set of trajectories that hit a vertex; the
 formalization constructs the flow there, proves uniqueness of the flight
@@ -64,7 +64,7 @@ The ergodicity of the billiard flow on triangular tables was a long-
 standing open problem: the general (non-rational) triangle case resisted
 the tools that worked on rational and on a single generic class of
 triangles. The *irrational-angle* regime — triangles with at least
-one angle whose measure, as a multiple of $\pi$, is irrational
+one angle whose measure, as a multiple of $`\pi`$, is irrational
 — is where the flow is expected to have no resonant periodic
 structure, and hence to mix. The family asserts the full weak-mixing
 conclusion on exactly that class, and records the ergodicity statement
@@ -74,7 +74,7 @@ S4:41–46, S5:9].
 
 **Prior (my training data, not this repo).** I know the ergodicity
 problem for triangular billiards, that rational triangles (all angles
-rational multiples of $\pi$) carry an integrable family of invariant
+rational multiples of $`\pi`$) carry an integrable family of invariant
 curves and are generically *not* ergodic, and that the irrational-angle
 regime is where ergodicity is expected. That the *entire* irrational-
 angle class is weakly mixing — uniformly, with no Diophantine
@@ -86,7 +86,7 @@ manuscript's argument.
 
 **Weak mixing on the irrational-angle class.** The billiard flow in
 every nondegenerate Euclidean triangle with at least one angle irrational
-relative to $\pi$ is weakly mixing for normalized Liouville measure
+relative to $`\pi`$ is weakly mixing for normalized Liouville measure
 [S3:31–34, S2:381].
 
 **Ergodicity (formalized).** The same flow is ergodic for normalized
@@ -114,7 +114,7 @@ No manuscript ships a `verification/` bundle.
 
 **Scope note** [S5:9]. The formalization proves that the unit-speed
 billiard flow in every nondegenerate Euclidean triangle with at least
-one angle irrational relative to $\pi$ is ergodic for normalized area
+one angle irrational relative to $`\pi`$ is ergodic for normalized area
 times uniform angular measure. It constructs the flow outside the null
 set of exceptional trajectories, proves uniqueness of the flight chain
 there, and establishes measure preservation and the flow law almost

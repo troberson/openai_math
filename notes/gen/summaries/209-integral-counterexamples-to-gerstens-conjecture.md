@@ -8,10 +8,10 @@
 
 The release's blurb [S1:4773] and the catalog abstract [S2:501]
 state the family's claim: unrestricted integral Gersten
-injectivity, disproved in degrees $3$ and $5$. Two
+injectivity, disproved in degrees $`3`$ and $`5`$. Two
 explicit two-dimensional ramified regular local rings of
-mixed characteristic $(0,5)$ have nonzero integral
-$K$-theory classes that vanish over their fraction
+mixed characteristic $`(0,5)`$ have nonzero integral
+$`K`$-theory classes that vanish over their fraction
 fields. The family ships two manuscripts [S1:4773]:
 
 - *An integral counterexample to Gersten's
@@ -21,16 +21,16 @@ fields. The family ships two manuscripts [S1:4773]:
 
 The degree-five abstract 
 
-> We construct a two-dimensional ramified regular local ring $A$ of mixed
-characteristic $(0,5)$ for which $K_5(A)\to K_5(\mathrm{Frac} A)$ has a nonzero
+> We construct a two-dimensional ramified regular local ring $`A`$ of mixed
+characteristic $`(0,5)`$ for which $`K_5(A)\to K_5(\mathrm{Frac} A)`$ has a nonzero
 kernel. This disproves Gersten's conjecture in its unrestricted integral
 form. [S3:45–48]
 
 The degree-three abstract 
 
-> We construct a two-dimensional ramified regular local ring $A$ in mixed
-characteristic $(0,5)$ for which the integral map
-$K_3(A)\to K_3(\mathrm{Frac} A)$ has nonzero kernel. This gives a negative
+> We construct a two-dimensional ramified regular local ring $`A`$ in mixed
+characteristic $`(0,5)`$ for which the integral map
+$`K_3(A)\to K_3(\mathrm{Frac} A)`$ has nonzero kernel. This gives a negative
 answer to the unrestricted integral Gersten conjecture. [S4:31–34]
 
 ## Undergraduate summary
@@ -60,16 +60,16 @@ the fraction field, and similarly for K_5
 
 **The degree-five counterexample** [S3:45–48, S2:501].
 There exists a two-dimensional ramified regular local
-ring $A$ of mixed characteristic $(0,5)$ such that
-$K_5(A) 	o K_5(\mathrm{Frac} A)$ has a
+ring $`A`$ of mixed characteristic $`(0,5)`$ such that
+$`K_5(A) 	o K_5(\mathrm{Frac} A)`$ has a
 nonzero kernel. This disproves Gersten's conjecture
 in its unrestricted integral form in degree five.
 
 **The degree-three counterexample** [S4:31–34, S2:501].
 There exists a two-dimensional ramified regular local
-ring $A$ in mixed characteristic $(0,5)$ such that
-the integral map $K_3(A) 	o K_3(\mathrm{Frac}
-A)$ has nonzero kernel. This gives a negative answer
+ring $`A`$ in mixed characteristic $`(0,5)`$ such that
+the integral map $`K_3(A) 	o K_3(\mathrm{Frac}
+A)`$ has nonzero kernel. This gives a negative answer
 to the unrestricted integral Gersten conjecture in
 degree three.
 
@@ -84,37 +84,37 @@ result is entirely unformalized.
 ## History of the conjecture
 
 **Gersten's conjecture** (1970) predicts that for a
-regular local ring $A$ of dimension $d$, the
+regular local ring $`A`$ of dimension $`d`$, the
 **Gersten complex** — a chain complex built from
-the K-theory of $A$ and its residue fields — is
+the K-theory of $`A`$ and its residue fields — is
 exact. In degree zero this recovers the injectivity
-of $K_d(A) 	o K_d(\mathrm{Frac} A)$. The
-conjecture is known for $d \leq 2$ in all
-characteristics (Quillen), and for $d = 3$ in
+of $`K_d(A) 	o K_d(\mathrm{Frac} A)`$. The
+conjecture is known for $`d \leq 2`$ in all
+characteristics (Quillen), and for $`d = 3`$ in
 characteristic zero (Sweede--Weibel). The **integral**
 form (as opposed to the mod-
-$p$ or rational form) is strictly stronger: it
-requires the kernel to vanish over $\mathbb{Z}$, not
-just over $\mathbb{Q}$ or $\mathbb{Z}/p$. The
+$`p`$ or rational form) is strictly stronger: it
+requires the kernel to vanish over $`\mathbb{Z}`$, not
+just over $`\mathbb{Q}`$ or $`\mathbb{Z}/p`$. The
 **mixed characteristic** setting
-$(0,p)$ — where the ring has characteristic
-zero but its residue field has characteristic $p$
+$`(0,p)`$ — where the ring has characteristic
+zero but its residue field has characteristic $`p`$
 — is the most delicate case, because the
-reduction map introduces $p$-torsion that can
+reduction map introduces $`p`$-torsion that can
 create kernel elements invisible in characteristic
 zero. The two manuscripts construct explicit
 two-dimensional ramified regular local rings of
-mixed characteristic $(0,5)$ with nonzero kernel
-elements in $K_3$ and $K_5$
+mixed characteristic $`(0,5)`$ with nonzero kernel
+elements in $`K_3`$ and $`K_5`$
 [S3:45–48, S4:31–34, S2:501].
 
 **Prior (my training data, not this repo).** I know
 Gersten's conjecture as a named open problem in
 algebraic K-theory, the positive cases for
-$d \leq 2$ and for $d = 3$ in characteristic zero,
+$`d \leq 2`$ and for $`d = 3`$ in characteristic zero,
 and the distinction between the integral and
-mod-$p$ forms. The **explicit counterexamples in
-mixed characteristic $(0,5)$** — in both
+mod-$`p`$ forms. The **explicit counterexamples in
+mixed characteristic $`(0,5)`$** — in both
 degrees three and five, for two-dimensional ramified
 regular local rings — are results I cannot
 independently verify from training alone.
@@ -123,14 +123,14 @@ independently verify from training alone.
 
 **The unrestricted integral Gersten conjecture is
 disproved in degree five.** A two-dimensional ramified
-regular local ring of mixed characteristic $(0,5)$ has
-a nonzero $K_5$ class that vanishes over its fraction
+regular local ring of mixed characteristic $`(0,5)`$ has
+a nonzero $`K_5`$ class that vanishes over its fraction
 field [S3:45–48, S2:501].
 
 **The unrestricted integral Gersten conjecture is
 disproved in degree three.** A two-dimensional ramified
-regular local ring of mixed characteristic $(0,5)$ has
-a nonzero $K_3$ class that vanishes over its fraction
+regular local ring of mixed characteristic $`(0,5)`$ has
+a nonzero $`K_3`$ class that vanishes over its fraction
 field [S4:31–34, S2:501].
 
 **The counterexamples are two-dimensional.** Both

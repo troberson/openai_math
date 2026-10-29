@@ -13,33 +13,33 @@ The release blurb
 The manuscript abstract 
 
 > We prove Ostmann's inverse Goldbach conjecture: no set differing from the primes
-by finitely many elements can be written as $A+B$, where $A$ and $B$ are sets
+by finitely many elements can be written as $`A+B`$, where $`A`$ and $`B`$ are sets
 of nonnegative integers with at least two elements each. [S2:54–58]
 
 ## Undergraduate summary
 
-A "sumset" $A+B$ is the set of all sums $a+b$ with $a$ from $A$ and
-$b$ from $B$. The ordinary Goldbach problem asks which integers are
+A "sumset" $`A+B`$ is the set of all sums $`a+b`$ with $`a`$ from $`A`$ and
+$`b`$ from $`B`$. The ordinary Goldbach problem asks which integers are
 sums of primes. Ostmann's conjecture turns the question around: it
 asks which sets *cannot* be written as a sumset of two nontrivial sets.
 
-A set is "additively indecomposable" if it cannot be written as $A+B$
-with both $A$ and $B$ containing at least two elements. The primes —
+A set is "additively indecomposable" if it cannot be written as $`A+B`$
+with both $`A`$ and $`B`$ containing at least two elements. The primes —
 and any set that differs from the primes by only finitely many
 elements — are additively indecomposable in this sense. That is the
 content of this paper: no finite modification of the prime number set
 is a sumset of two sets with at least two elements each.
 
-Equivalently, for any two such sets $A,B$, the sumset $A+B$ differs
+Equivalently, for any two such sets $`A,B`$, the sumset $`A+B`$ differs
 from the primes at infinitely many places — they can agree on the
 primes in only a finite way.
 
 The main statement 
 
 > **theorem**
-If $A,B\subseteq\mathbb N_0$ satisfy $|A|,|B|\ge2$, then
-$(A+B)\mathbin{\triangle}\mathcal P$ is infinite.
-Equivalently, every finite modification of $\mathcal P$ is additively
+If $`A,B\subseteq\mathbb N_0`$ satisfy $`|A|,|B|\ge2`$, then
+$`(A+B)\mathbin{\triangle}\mathcal P`$ is infinite.
+Equivalently, every finite modification of $`\mathcal P`$ is additively
 indecomposable into two sets with at least two elements each. [S3:15–20]
 
 ## Graduate summary
@@ -50,13 +50,13 @@ the prime set up to finite changes.
 **Ostmann's inverse Goldbach theorem.** 
 
 > **theorem**
-If $A,B\subseteq\mathbb N_0$ satisfy $|A|,|B|\ge2$, then
-$(A+B)\mathbin{\triangle}\mathcal P$ is infinite.
-Equivalently, every finite modification of $\mathcal P$ is additively
+If $`A,B\subseteq\mathbb N_0`$ satisfy $`|A|,|B|\ge2`$, then
+$`(A+B)\mathbin{\triangle}\mathcal P`$ is infinite.
+Equivalently, every finite modification of $`\mathcal P`$ is additively
 indecomposable into two sets with at least two elements each. [S3:15–20]
 
-Read in the $|A|,|B| \ge 2$ form, the statement says the symmetric
-difference $(A+B) \triangle \mathcal{P}$ is infinite: the sumset and
+Read in the $`|A|,|B| \ge 2`$ form, the statement says the symmetric
+difference $`(A+B) \triangle \mathcal{P}`$ is infinite: the sumset and
 the primes disagree at infinitely many integers. The equivalent
 phrasing pins the direction — it is not that the sumset misses the
 primes, but that no finite perturbation of the primes is expressible
@@ -72,7 +72,7 @@ the linked formalizations carry.
 
 Prior (my training data, not this repo): Ostmann (1940) proved that
 the positive integers are additively indecomposable in the strong
-sense that $\mathbb{Z}_{\ge 0}$ is not a sumset of two sets with
+sense that $`\mathbb{Z}_{\ge 0}`$ is not a sumset of two sets with
 both having at least two elements (equivalently, the only finite
 summand decomposition of the integers is trivial). The "inverse
 Goldbach" formulation asks the same question for the primes — which
@@ -87,8 +87,8 @@ carry composites and small integers in a way the primes do not.
 ## Consequences
 
 **Additive indecomposability of the primes up to finite changes.**
-No set that differs from $\mathcal{P}$ by finitely many elements is a
-sumset $A+B$ with $|A|,|B| \ge 2$, which is the additive-combinatorial
+No set that differs from $`\mathcal{P}`$ by finitely many elements is a
+sumset $`A+B`$ with $`|A|,|B| \ge 2`$, which is the additive-combinatorial
 counterpart to the primes being, in a precise sense, "far from a
 sumset."
 
@@ -142,7 +142,7 @@ theorem twoInfiniteSummandsImpossible : TwoInfiniteSummandsImpossible := by
 ```
 [S5:30–34]
 
-The scope note confirms the formalization's reach: "The formalization proves Ostmann's inverse Goldbach conjecture. For any two sets $A,B$ of nonnegative integers, each containing at least two elements, the symmetric difference between their sumset $A+B$ and the set of primes is infinite. Thus no set differing from the primes by only finitely many elements can be decomposed as such a sumset. The linked statements include the full result and its two-infinite-summands case. [S4:9]" Note
+The scope note confirms the formalization's reach: "The formalization proves Ostmann's inverse Goldbach conjecture. For any two sets $`A,B`$ of nonnegative integers, each containing at least two elements, the symmetric difference between their sumset $`A+B`$ and the set of primes is infinite. Thus no set differing from the primes by only finitely many elements can be decomposed as such a sumset. The linked statements include the full result and its two-infinite-summands case. [S4:9]" Note
 the ledger reads `paps_form 0` (no `main_results` entry), so the scope
 note describes an intended target, not a landed formalization.
 
@@ -163,7 +163,7 @@ note describes an intended target, not a landed formalization.
 ## Bibliography
 
 - Babai, László, Nikolov, Nikolay, Pyber, László, Product growth and mixing in finite groups (2008)
-- Bonami, Aline, Étude des coefficients de Fourier des fonctions de $L^p(G)$ (1970)
+- Bonami, Aline, Étude des coefficients de Fourier des fonctions de $`L^p(G)`$ (1970)
 - Croot, III, Ernest S., Elsholtz, Christian, On thin sets of primes expressible as sumsets (2005)
 - Croot, Ernie, Mao, Junzhe, Pohoata, Cosmin, Yip, Chi Hoi, A sharp inverse theorem for the quadratic large sieve (2026)
 - Croot, Ernie, Mao, Junzhe, Yip, Chi Hoi, An inverse theorem on sets with rich additive structure modulo primes (2025)
@@ -189,8 +189,8 @@ note describes an intended target, not a landed formalization.
 - Laffer, W. B., Mann, H. B., Decomposition of sets of group elements (1964)
 - Montgomery, H. L., Vaughan, R. C., The large sieve (1973)
 - Montgomery, Hugh L., Vaughan, Robert C., Multiplicative Number Theory I: Classical Theory (2007)
-- Montgomery, H. L., Zeros of $L$-functions (1969)
-- OpenAI, {The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $\mathrm{Re}(s)>7/8$} (2026)
+- Montgomery, H. L., Zeros of $`L`$-functions (1969)
+- OpenAI, {The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $`\mathrm{Re}(s)>7/8`$} (2026)
 - Ostmann, Hans-Heinrich, Additive Zahlentheorie. Erster Teil: Allgemeine Untersuchungen (1956)
 - Pomerance, Carl, Sárközy, András, Stewart, C. L., On divisors of sums of integers, III (1988)
 - Rota, Gian-Carlo, On the foundations of combinatorial theory I. Theory of Möbius functions (1964)

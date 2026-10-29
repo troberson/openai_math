@@ -12,36 +12,36 @@ The release's blurb
 
 The catalog entry [S11:363] restates the claim and adds the circuit
 lower bound consequence: it "yields superlinear circuit lower bounds
-for a language in $\mathsf{E}^{\mathsf{NP}}$ on infinitely many input
+for a language in $`\mathsf{E}^{\mathsf{NP}}`$ on infinitely many input
 lengths." The manuscript abstract 
 
 > We give a deterministic algorithm for exactly counting the satisfying assignments
-of an arbitrary $k$-CNF formula.
-For every fixed $k\geqslant2$, on a formula with $n$ variables and $m$ clauses,
-our algorithm uses $\mathrm{poly}_k(n,m)$ space and runs in time
-$(n+m)^{O_k(1)}2^{\,n/(\log n)^{\frac12+o(1)}}$.
+of an arbitrary $`k`$-CNF formula.
+For every fixed $`k\geqslant2`$, on a formula with $`n`$ variables and $`m`$ clauses,
+our algorithm uses $`\mathrm{poly}_k(n,m)`$ space and runs in time
+$`(n+m)^{O_k(1)}2^{\,n/(\log n)^{\frac12+o(1)}}`$.
 Our algorithm refutes the Exponential Time Hypothesis (ETH), which
-postulates that deciding $3$-SAT on $n$ variables requires
-$2^{\Omega(n)}$ time in the worst case. [S2:30–39]
+postulates that deciding $`3`$-SAT on $`n`$ variables requires
+$`2^{\Omega(n)}`$ time in the worst case. [S2:30–39]
 
 ## Undergraduate summary
 
-The Exponential Time Hypothesis (ETH) is the conjecture that $k$-SAT
-requires $2^{\Omega(n)}$ time in the worst case. It underlies most
+The Exponential Time Hypothesis (ETH) is the conjecture that $`k`$-SAT
+requires $`2^{\Omega(n)}`$ time in the worst case. It underlies most
 fine-grained complexity lower bounds: proving ETH false would break a
 large body of conditional hardness results. The paper refutes ETH by
 giving a deterministic algorithm that *counts* satisfying assignments
-of a $k$-CNF in subexponential time. Counting is a priori harder than
+of a $`k`$-CNF in subexponential time. Counting is a priori harder than
 deciding, but testing whether the count is positive decides
-satisfiability, so the counting algorithm also decides $k$-SAT in
+satisfiability, so the counting algorithm also decides $`k`$-SAT in
 subexponential time.
 
 The proof works in three stages. First, reduce to a bounded-occurrence
 setting where each variable appears in at most three clauses, using
 sparsification and a standard variable-copy reduction. Second, build a
 polynomial whose constant term equals the count, and evaluate it at
-$Q$ points using a group-separation scheme: at each point, the
-variables are partitioned into $r$ groups, and a small set of shared
+$`Q`$ points using a group-separation scheme: at each point, the
+variables are partitioned into $`r`$ groups, and a small set of shared
 measurements lets each group be evaluated independently. Third, recover
 the count from the evaluation points by polynomial interpolation. The
 key new ingredient is a low-degree replacement for the original clause
@@ -51,16 +51,16 @@ cost.
 The manuscript states the result 
 
 > **theorem**
-For each fixed $k\geqslant2$, there exists a deterministic algorithm that,
-given a $k$-CNF $F$ on $n\geqslant20$ declared variables with $m$ clauses,
-computes $\\\#F$ as defined in in
+For each fixed $`k\geqslant2`$, there exists a deterministic algorithm that,
+given a $`k`$-CNF $`F`$ on $`n\geqslant20`$ declared variables with $`m`$ clauses,
+computes $`\\\#F`$ as defined in in
 $$(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}$$
-bit operations and $(n+m)^{O_k(1)}$ bits of space.
-For each fixed $D>0$, its running time on inputs with $m\leqslant Dn$ is
+bit operations and $`(n+m)^{O_k(1)}`$ bits of space.
+For each fixed $`D>0`$, its running time on inputs with $`m\leqslant Dn`$ is
 $$(n+m)^{O_{k,D}(1)}2^{O_{k,D}(n/\sqrt{\log n})}.$$ [S2:73–85]
 
-The fixed-density case $m\leqslant Dn$ gives the sharper
-$2^{O_{k,D}(n/\sqrt{\log n})}$ bound, which is what the circuit lower
+The fixed-density case $`m\leqslant Dn`$ gives the sharper
+$`2^{O_{k,D}(n/\sqrt{\log n})}`$ bound, which is what the circuit lower
 bound and the graph-counting corollaries use.
 
 ## Graduate summary
@@ -68,64 +68,64 @@ bound and the graph-counting corollaries use.
 The main result is Theorem `thm:main` 
 
 > **theorem**
-For each fixed $k\geqslant2$, there exists a deterministic algorithm that,
-given a $k$-CNF $F$ on $n\geqslant20$ declared variables with $m$ clauses,
-computes $\\\#F$ as defined in in
+For each fixed $`k\geqslant2`$, there exists a deterministic algorithm that,
+given a $`k`$-CNF $`F`$ on $`n\geqslant20`$ declared variables with $`m`$ clauses,
+computes $`\\\#F`$ as defined in in
 $$(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}$$
-bit operations and $(n+m)^{O_k(1)}$ bits of space.
-For each fixed $D>0$, its running time on inputs with $m\leqslant Dn$ is
+bit operations and $`(n+m)^{O_k(1)}`$ bits of space.
+For each fixed $`D>0`$, its running time on inputs with $`m\leqslant Dn`$ is
 $$(n+m)^{O_{k,D}(1)}2^{O_{k,D}(n/\sqrt{\log n})}.$$ [S2:73–85]
 
 The technique overview [S2:541–548] summarizes the three-stage argument
-and notes that taking $k=3$ already refutes ETH. The bounded-occurrence
-algorithm counts in $n^{O(1)}2^{O(n(\log\log n)^2/\sqrt{\log n})}$
-time; the sharper $2^{O_k(n\log\log n/\sqrt{\log n})}$ bound for the
+and notes that taking $`k=3`$ already refutes ETH. The bounded-occurrence
+algorithm counts in $`n^{O(1)}2^{O(n(\log\log n)^2/\sqrt{\log n})}`$
+time; the sharper $`2^{O_k(n\log\log n/\sqrt{\log n})}`$ bound for the
 full theorem comes from a Boolean tensor-contraction argument in the
 appendices. The tensor-contraction theorem is the workhorse:
 
 > **theorem**
-Fix positive constants $C,A,b$. Let $s\geqslant2$ be an integer, and let
-$\mathcal L$ be the total length of the graph and tensor descriptions
-of a bipartite tensor network with at most $Cs$ edges and maximum
-degree at most $\lceil s^{9/10}\rceil$. Suppose that the number of
-vertices is bounded by a fixed polynomial in $s$, and that the entries
+Fix positive constants $`C,A,b`$. Let $`s\geqslant2`$ be an integer, and let
+$`\mathcal L`$ be the total length of the graph and tensor descriptions
+of a bipartite tensor network with at most $`Cs`$ edges and maximum
+degree at most $`\lceil s^{9/10}\rceil`$. Suppose that the number of
+vertices is bounded by a fixed polynomial in $`s`$, and that the entries
 belong to
 $$\mathcal B_{P_0,\ell}
    =(\mathbb Z/2^{P_0}\mathbb Z)[V]/(V^\ell),
  \qquad 1\leqslant P_0,\ell\leqslant Cs.$$
 Suppose, uniformly for every vertex and Boolean choice of its ports,
 that its entry can be computed from the description in time
-$(s+\mathcal L)^b2^{A s^{9/10}}$ and space $(s+\mathcal L)^b$.
+$`(s+\mathcal L)^b2^{A s^{9/10}}`$ and space $`(s+\mathcal L)^b`$.
 Then the contraction can be computed deterministically in
 $$(s+\mathcal L)^{O(1)}
   2^{O(s/\sqrt{\log s})}$$
-bit operations and $(s+\mathcal L)^{O(1)}$ bits of space. Constants
+bit operations and $`(s+\mathcal L)^{O(1)}`$ bits of space. Constants
 depend only on the fixed bounds in the hypotheses. In particular,
-$\ell=1$ is permitted. [S4:26–49]
+$`\ell=1`$ is permitted. [S4:26–49]
 
-It computes the contraction of a Boolean tensor network with $s$ edges
-in $2^{O(s/\sqrt{\log s})}$ time. The fixed-density case has
-$s=O_k(n)$ edges, giving $2^{O_k(n/\sqrt{\log n})}$.
+It computes the contraction of a Boolean tensor network with $`s`$ edges
+in $`2^{O(s/\sqrt{\log s})}`$ time. The fixed-density case has
+$`s=O_k(n)`$ edges, giving $`2^{O_k(n/\sqrt{\log n})}`$.
 
 Two consequences stand out. The graph-counting corollary [S2:151–157]
 gives subexponential algorithms for counting independent sets,
-$q$-colorings, and perfect matchings:
+$`q`$-colorings, and perfect matchings:
 
 > **corollary**
-On simple graphs with $v$ vertices and $e$ edges, the number of
-independent sets and, for each fixed $q\geqslant2$, the number of proper
-$q$-colorings can be computed deterministically in $2^{o(v)}$ time
-and $\mathrm{poly}_q(v,e)$ space. The number of perfect matchings can be
-computed deterministically in $2^{o(v+e)}$ time and $\mathrm{poly}(v,e)$ space. [S2:151–157]
+On simple graphs with $`v`$ vertices and $`e`$ edges, the number of
+independent sets and, for each fixed $`q\geqslant2`$, the number of proper
+$`q`$-colorings can be computed deterministically in $`2^{o(v)}`$ time
+and $`\mathrm{poly}_q(v,e)`$ space. The number of perfect matchings can be
+computed deterministically in $`2^{o(v+e)}`$ time and $`\mathrm{poly}(v,e)`$ space. [S2:151–157]
 
 The circuit lower bound [S2:183–191] is the first superlinear circuit
-lower bound for a language in $\mathsf{E}^{\mathsf{NP}}$:
+lower bound for a language in $`\mathsf{E}^{\mathsf{NP}}`$:
 
 > **corollary**
-Let $C_L(n)$ be the minimum number of noninput gates in a circuit
-computing $L$ on $\{0,1\}^n$, allowing arbitrary Boolean gates of
+Let $`C_L(n)`$ be the minimum number of noninput gates in a circuit
+computing $`L`$ on $`\{0,1\}^n`$, allowing arbitrary Boolean gates of
 fan-in at most two and unrestricted fan-out. There exist a language
-$L\in\mathrm E^{\mathrm{NP}}$ and a constant $c>0$ such that
+$`L\in\mathrm E^{\mathrm{NP}}`$ and a constant $`c>0`$ such that
 $$C_L(n)>c\,n\sqrt{\log n}\qquad\text{for infinitely many }n.$$ [S2:183–191]
 
 The proof [S3] combines Williams's witness-circuit argument with the
@@ -136,7 +136,7 @@ contradicts a nondeterministic time hierarchy.
 
 Prior (my training data, not repo text): ETH was proposed by Impagliazzo
 and Paturi in 2001, alongside SETH. The best known upper bounds at the
-time were the PPSZ algorithm (randomized $O(1.308^n)$ for 3-SAT) and
+time were the PPSZ algorithm (randomized $`O(1.308^n)`$ for 3-SAT) and
 Schöning's local search. The bounded-occurrence reduction and
 polynomial interpolation are standard tools in algebraic complexity;
 what is new here is the low-degree replacement construction that makes
@@ -147,35 +147,35 @@ landscape. It notes that the deterministic algorithm refutes not just
 ETH but SETH, Gap-ETH, and NSETH "Theorem refutes ETH, SETH, Gap-ETH, and NSETH.
 Indeed, testing whether the exact count is positive or zero decides
 both satisfiability and unsatisfiability in deterministic
-$2^{o(n)}(n+m)^{O_k(1)}$ time for every fixed $k$; deciding
+$`2^{o(n)}(n+m)^{O_k(1)}`$ time for every fixed $`k`$; deciding
 satisfiability also solves the Gap-ETH promise problem. [S2:289–293]" The
 randomized versions of ETH and SETH are also refuted. The result does
 not conflict with unconditional exponential lower bounds for restricted
 proof systems such as regular resolution. In 2016, Ryan Williams
 refuted the Merlin–Arthur version of SETH by giving a protocol that
-certifies $k$-CNF unsatisfiability in $2^{n/2}\mathrm{poly}(n,m)$ time.
+certifies $`k`$-CNF unsatisfiability in $`2^{n/2}\mathrm{poly}(n,m)`$ time.
 
 ## Consequences
 
 **ETH, SETH, Gap-ETH, and NSETH are all refuted.** The decisive
 observation is that testing whether the count is positive decides
 satisfiability, and testing whether it is zero decides unsatisfiability,
-both in deterministic $2^{o(n)}(n+m)^{O_k(1)}$ time [S2:289–293].
+both in deterministic $`2^{o(n)}(n+m)^{O_k(1)}`$ time [S2:289–293].
 
 **Subexponential counting for graph problems.** Independent sets,
-$q$-colorings, and perfect matchings are countable in $2^{o(v)}$ time
+$`q`$-colorings, and perfect matchings are countable in $`2^{o(v)}`$ time
 on simple graphs [S2:151–157]. The proof is a counting-preserving
-reduction to a $k$-CNF with $O(v+e)$ clauses.
+reduction to a $`k`$-CNF with $`O(v+e)`$ clauses.
 
-**First superlinear circuit lower bound for $\mathsf{E}^{\mathsf{NP}}$.**
-There exists a language in $\mathsf{E}^{\mathsf{NP}}$ with
-$C_L(n)>cn\sqrt{\log n}$ gates for infinitely many $n$ [S2:183–191].
+**First superlinear circuit lower bound for $`\mathsf{E}^{\mathsf{NP}}`$.**
+There exists a language in $`\mathsf{E}^{\mathsf{NP}}`$ with
+$`C_L(n)>cn\sqrt{\log n}`$ gates for infinitely many $`n`$ [S2:183–191].
 The argument uses only the decision version of the 3-SAT algorithm.
 
 **Inversion of constant-locality Boolean maps.** Given a Boolean map
-whose output bits each depend on at most $d$ input bits, the preimage
+whose output bits each depend on at most $`d`$ input bits, the preimage
 set can be counted and a preimage found in
-$(n+m)^{O_d(1)}2^{O_d(\rho(n))}$ time [S2:4284–4292]. This applies to
+$`(n+m)^{O_d(1)}2^{O_d(\rho(n))}`$ time [S2:4284–4292]. This applies to
 constant-locality versions of Goldreich's candidate one-way functions.
 
 ## Section skeleton
@@ -189,7 +189,7 @@ work (197) covering SAT algorithms, exact counting, fine-grained
 implications, algebraic prior work, and sparsification; Notation (500);
 Technique overview (540) with subsubsections from the bounded-occurrence
 setting through the low-degree replacement construction and the general
-$\\#k$-SAT reduction via sparse polynomial equations; then the three
+$`\\#k`$-SAT reduction via sparse polynomial equations; then the three
 appendices and the bibliography (line 4329).
 
 **Appendices** (input at lines 4269–4327): `quantitative-circuits.tex`
@@ -203,11 +203,11 @@ No `verification/` bundle ships with this manuscript.
 ## Comparison with the formalized statement
 
 The scope note [S7:9] states what Lean proves: a deterministic machine
-exactly counts satisfying assignments of a canonically encoded $k$-CNF
-in time $(L+1)^{O_k(1)}2^{O_k(n(\log\log n)^2/\sqrt{\log n})}$, where
-$L$ is the encoding's bit length. The manuscript's bound is
-$2^{O_k(n\log\log n/\sqrt{\log n})}$; the Lean bound carries an extra
-factor of $\log\log n$ in the exponent.
+exactly counts satisfying assignments of a canonically encoded $`k`$-CNF
+in time $`(L+1)^{O_k(1)}2^{O_k(n(\log\log n)^2/\sqrt{\log n})}`$, where
+$`L`$ is the encoding's bit length. The manuscript's bound is
+$`2^{O_k(n\log\log n/\sqrt{\log n})}`$; the Lean bound carries an extra
+factor of $`\log\log n`$ in the exponent.
 
 The comparator stub [S8:194–218] states the target and ends in
 `sorry`:
@@ -272,12 +272,12 @@ theorem exact_count_and_sat (k : ℕ) (hk : 2 ≤ k) :
 ```
 [S9:74–97]
 
-The gap is the $(\log\log n)$ vs $(\log\log n)^2$ factor in the
+The gap is the $`(\log\log n)`$ vs $`(\log\log n)^2`$ factor in the
 exponent. Both are subexponential, so the formalization proves the
 headline conclusion (ETH is false) even though it does not match the
 manuscript's exponent. The scope note [S7:11] confirms the gap
 explicitly: "the October 25 manuscript gives the sharper time bound
-$(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}$."
+$`(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}`$."
 
 ## Coverage
 
@@ -312,7 +312,7 @@ three appendices), a compiled `paper.pdf` [S6], and a `README.md`
 - Erwin H. Bareiss. _Sylvester's Identity and Multistep Integer-Preserving Gaussian Elimination_. Mathematics of Computation **22**(103), 1968, 565–578.
 - Noga Alon and Yuval Roichman. _Random Cayley Graphs and Expanders_. Random Structures & Algorithms **5**(2), 1994, 271–284.
 - Timon Hertli. _3-SAT Faster and Simpler—Unique-SAT Bounds for PPSZ Hold in General_. SIAM Journal on Computing **43**(2), 2014, 718–729. Conference version in FOCS 2011.
-- Russell Impagliazzo and Ramamohan Paturi. _On the Complexity of $k$-SAT_. Journal of Computer and System Sciences **62**(2), 2001, 367–375.
+- Russell Impagliazzo and Ramamohan Paturi. _On the Complexity of $`k`$-SAT_. Journal of Computer and System Sciences **62**(2), 2001, 367–375.
 - Prabhakar Raghavan. _Probabilistic Construction of Deterministic Algorithms: Approximating Packing Integer Programs_. Journal of Computer and System Sciences **37**(2), 1988, 130–143.
 - Ryan Williams. _A New Algorithm for Optimal 2-Constraint Satisfaction and Its Implications_. Theoretical Computer Science **348**(2–3), 2005, 357–365.
 - Zeev Dvir and Allen Liu. _Fourier and Circulant Matrices are Not Rigid_. Theory of Computing **16**(20), 2020, 1–48.
@@ -341,10 +341,10 @@ three appendices), a compiled `paper.pdf` [S6], and a `README.md`
 - Andreas Björklund, Petteri Kaski, and Ryan Williams. _Generalized Kakeya Sets for Polynomial Evaluation and Faster Computation of Fermionants_. Algorithmica **81**, 2019, 4010–4028. Conference version in IPEC 2017.
 - Chris Calabro, Russell Impagliazzo, and Ramamohan Paturi. _A Duality between Clause Width and Clause Density for SAT_. 21st IEEE Conference on Computational Complexity, 2006, 252–260.
 - Marco L. Carmosino, Jiawei Gao, Russell Impagliazzo, Ivan Mihajlin, Ramamohan Paturi, and Stefan Schneider. _Nondeterministic Extensions of the Strong Exponential Time Hypothesis and Consequences for Non-reducibility_. 7th Innovations in Theoretical Computer Science Conference, 2016, 261–270.
-- Sixue Liu. _Chain, Generalization of Covering Code, and Deterministic Algorithm for $k$-SAT_. 45th International Colloquium on Automata, Languages, and Programming, LIPIcs **107**, 2018, 88:1–88:13.
+- Sixue Liu. _Chain, Generalization of Covering Code, and Deterministic Algorithm for $`k`$-SAT_. 45th International Colloquium on Automata, Languages, and Programming, LIPIcs **107**, 2018, 88:1–88:13.
 - Parinya Chalermsook, Marek Cygan, Guy Kortsarz, Bundit Laekhanukit, Pasin Manurangsi, Danupon Nanongkai, and Luca Trevisan. _From Gap-Exponential Time Hypothesis to Fixed Parameter Tractable Inapproximability: Clique, Dominating Set, and More_. SIAM Journal on Computing **49**(4), 2020, 772–810. Conference version in FOCS 2017.
 - Jianer Chen, Xiuzhen Huang, Iyad A. Kanj, and Ge Xia. _Strong Computational Lower Bounds via Parameterized Complexity_. Journal of Computer and System Sciences **72**(8), 2006, 1346–1367.
-- Zongchen Chen, Aditya Lonkar, Chunyang Wang, Kuan Yang, and Yitong Yin. _Counting Random $k$-SAT near the Satisfiability Threshold_. 57th ACM Symposium on Theory of Computing, 2025, 867–878. Theorem 1.2 is numbered as in the authors' full version.
+- Zongchen Chen, Aditya Lonkar, Chunyang Wang, Kuan Yang, and Yitong Yin. _Counting Random $`k`$-SAT near the Satisfiability Threshold_. 57th ACM Symposium on Theory of Computing, 2025, 867–878. Theorem 1.2 is numbered as in the authors' full version.
 - Irit Dinur. _Mildly Exponential Reduction from Gap 3SAT to Polynomial-Gap Label-Cover_. Electronic Colloquium on Computational Complexity, Report TR16-128, 2016.
 - Oded Goldreich. _Candidate One-Way Functions Based on Expander Graphs_. Electronic Colloquium on Computational Complexity, Report TR00-090, 2000.
 - Richard Ryan Williams. _Strong ETH Breaks With Merlin and Arthur: Short Non-Interactive Proofs of Batch Evaluation_. 31st Conference on Computational Complexity, LIPIcs **50**, 2016, 2:1–2:17.
@@ -359,8 +359,8 @@ three appendices), a compiled `paper.pdf` [S6], and a `README.md`
 - Holger Dell, Thore Husfeldt, Dániel Marx, Nina Taslaman, and Martin Wahlén. _Exponential Time Complexity of the Permanent and the Tutte Polynomial_. ACM Transactions on Algorithms **10**(4), Article 21, 2014, 1–32.
 - Chris Calabro. _The Exponential Complexity of Satisfiability Problems_. Ph.D. dissertation, University of California, San Diego, 2009. Chapter 5.
 - Joachim von zur Gathen and Jürgen Gerhard. _Modern Computer Algebra_. 3rd edition, Cambridge University Press, 2013.
-- Thomas Dueholm Hansen, Haim Kaplan, Or Zamir, and Uri Zwick. _Faster $k$-SAT Algorithms Using Biased-PPSZ_. 51st ACM Symposium on Theory of Computing, 2019, 578–589.
-- Russell Impagliazzo, William Matthews, and Ramamohan Paturi. _A Satisfiability Algorithm for $AC^0$_. 23rd ACM–SIAM Symposium on Discrete Algorithms, 2012, 961–972. Publisher's version.
+- Thomas Dueholm Hansen, Haim Kaplan, Or Zamir, and Uri Zwick. _Faster $`k`$-SAT Algorithms Using Biased-PPSZ_. 51st ACM Symposium on Theory of Computing, 2019, 578–589.
+- Russell Impagliazzo, William Matthews, and Ramamohan Paturi. _A Satisfiability Algorithm for $`AC^0`$_. 23rd ACM–SIAM Symposium on Discrete Algorithms, 2012, 961–972. Publisher's version.
 - Russell Impagliazzo, Ramamohan Paturi, and Francis Zane. _Which Problems Have Strongly Exponential Complexity?_ Journal of Computer and System Sciences **63**(4), 2001, 512–530.
 - Konstantin Kutzkov. _Complementary Branching for #SAT: Bounded-Degree Bounds and Faster #3-SAT_. 35th International Joint Conference on Artificial Intelligence, 2026, 2282–2290.
 - Hamid Jahanjou, Eric Miles, and Emanuele Viola. _Local Reductions_. Electronic Colloquium on Computational Complexity, Report TR13-099, revision 2, 2013. Conference version in ICALP 2015, 749–760.
@@ -369,14 +369,14 @@ three appendices), a compiled `paper.pdf` [S6], and a `README.md`
 - Daniel Lokshtanov, Dániel Marx, and Saket Saurabh. _Known Algorithms on Graphs of Bounded Treewidth Are Probably Optimal_. ACM Transactions on Algorithms **14**(2), Article 13, 2018, 1–30. Conference version in SODA 2011.
 - OpenAI, _The Unique Games Theorem_, OpenAI Math Release preprint OAI:The-Unique-Games-Theorem-September-23-2026, 2026.
 - Oded Goldreich. _P, NP, and NP-Completeness: The Basics of Computational Complexity_. Author's draft, June 14, 2008, Proposition 4.7. The Cambridge University Press edition appeared in 2010.
-- Ramamohan Paturi, Pavel Pudlák, Michael E. Saks, and Francis Zane. _An Improved Exponential-Time Algorithm for $k$-SAT_. Journal of the ACM **52**(3), 2005, 337–364. Conference version in FOCS 1998.
+- Ramamohan Paturi, Pavel Pudlák, Michael E. Saks, and Francis Zane. _An Improved Exponential-Time Algorithm for $`k`$-SAT_. Journal of the ACM **52**(3), 2005, 337–364. Conference version in FOCS 1998.
 - Alexander D. Scott and Gregory B. Sorkin. _Polynomial Constraint Satisfaction Problems, Graph Bisection, and the Ising Partition Function_. ACM Transactions on Algorithms **5**(4), 2009, 45:1–45:27.
 - Amir Abboud and Virginia Vassilevska Williams. _Popular Conjectures Imply Strong Lower Bounds for Dynamic Problems_. 55th IEEE Symposium on Foundations of Computer Science, 2014, 434–443.
 - Josh Alman and Ryan Williams. _Probabilistic Polynomials and Hamming Nearest Neighbors_. 56th IEEE Symposium on Foundations of Computer Science, 2015, 136–150.
 - Arturs Backurs and Piotr Indyk. _Which Regular Expression Patterns Are Hard to Match?_ 57th IEEE Symposium on Foundations of Computer Science, 2016, 457–466.
 - Karl Bringmann. _Why Walking the Dog Takes Time: Fréchet Distance Has No Strongly Subquadratic Algorithms Unless SETH Fails_. 55th IEEE Symposium on Foundations of Computer Science, 2014, 661–670.
 - Karl Bringmann and Marvin Künnemann. _Quadratic Conditional Lower Bounds for String Problems and Dynamic Time Warping_. 56th IEEE Symposium on Foundations of Computer Science, 2015, 79–97.
-- Uwe Schöning. _A Probabilistic Algorithm for $k$-SAT and Constraint Satisfaction Problems_. 40th IEEE Symposium on Foundations of Computer Science, 1999, 410–414.
+- Uwe Schöning. _A Probabilistic Algorithm for $`k`$-SAT and Constraint Satisfaction Problems_. 40th IEEE Symposium on Foundations of Computer Science, 1999, 410–414.
 - Richard Ryan Williams. _The Polynomial Method in Circuit Complexity Applied to Algorithm Design (Invited Talk)_. 34th International Conference on Foundation of Software Technology and Theoretical Computer Science, LIPIcs **29**, 2014, 47–60.
 - Bart Selman, Henry A. Kautz, and Bram Cohen. _Noise Strategies for Improving Local Search_. 12th National Conference on Artificial Intelligence, 1994, 337–343.
 - Boaz Barak. _Introduction to Theoretical Computer Science_. Online textbook, 2023. Chapter 15, Lemmas 15.9–15.10. Archived 2023 edition (v0.95).

@@ -10,10 +10,10 @@ The release's blurb [S1:4943] and the catalog abstract [S2:513]
 state the family's claim: the bond-percolation nonuniqueness
 conjecture of Benjamini and Schramm is resolved. Every infinite
 connected locally finite nonamenable quasi-transitive graph has
-$p_c < p_u$: there is a nonempty range of probabilities with
+$`p_c < p_u`$: there is a nonempty range of probabilities with
 infinitely many infinite clusters. A stronger operator bound
 also establishes the critical triangle condition, giving
-$p_c < p_{2\to 2} \le p_u$. The family ships one
+$`p_c < p_{2\to 2} \le p_u`$. The family ships one
 manuscript [S1:4943]:
 
 - *Nonuniqueness of percolation on nonamenable
@@ -26,21 +26,21 @@ Schramm: every infinite connected, locally finite, nonamenable quasi-transitive
 graph has a nonempty interval of parameters for which Bernoulli bond
 percolation almost surely has infinitely many infinite clusters. We also prove
 Hutchcroft's stronger operator-threshold conjecture, establishing
-$p_c<p_{2\to2}\le p_u$. [S3:135–140]
+$`p_c<p_{2\to2}\le p_u`$. [S3:135–140]
 
 ## Undergraduate summary
 
 **Percolation** on a graph asks: if each edge is independently
-"open" with probability $p$, what happens to the clusters of
+"open" with probability $`p`$, what happens to the clusters of
 connected open edges? On a "regular" infinite graph like
-$\mathbb{Z}^d$ there is a sharp threshold: below a critical
-probability $p_c$ all clusters are finite, above it one giant
+$`\mathbb{Z}^d`$ there is a sharp threshold: below a critical
+probability $`p_c`$ all clusters are finite, above it one giant
 infinite cluster appears. The **nonuniqueness conjecture**
 (Benjamini and Schramm, 1996) asks about "irregular" graphs
 that grow exponentially (nonamenable): can there be a range of
-$p$ values where **more than one** infinite cluster appears
+$`p`$ values where **more than one** infinite cluster appears
 simultaneously? The answer is **yes** — on every such
-graph, there is a range $(p_c, p_u)$ of probabilities with
+graph, there is a range $`(p_c, p_u)`$ of probabilities with
 infinitely many infinite clusters [S3:135–140,
 S2:513].
 
@@ -52,21 +52,21 @@ quasi-transitive graph has a nonempty interval of parameters
 for which Bernoulli bond percolation almost surely has
 infinitely many infinite clusters. The stronger
 operator-threshold conjecture of Hutchcroft is also
-established: $p_c < p_{2\to 2} \le p_u$. For Cayley
+established: $`p_c < p_{2\to 2} \le p_u`$. For Cayley
 graphs, the result holds for every finite symmetric
 generating set of a nonamenable finitely generated group.
 
 **The scope of the formalization.** The scope note covers
 the full result [S4:9]: the nonuniqueness phase conjecture
-with $p_c < p_{2\to 2} \le p_u$ and a common nonempty
+with $`p_c < p_{2\to 2} \le p_u`$ and a common nonempty
 coupled interval. For Cayley graphs, the result holds for
 every finite symmetric generating set. The critical
 estimates include a finite triangle diagram, susceptibility
-of order $(p_c - p)^{-1}$, percolation probability of order
-$p - p_c$, cluster-volume tail of order $n^{-1/2}$, and
-intrinsic and extrinsic radius tails of order $n^{-1}$
+of order $`(p_c - p)^{-1}`$, percolation probability of order
+$`p - p_c`$, cluster-volume tail of order $`n^{-1/2}`$, and
+intrinsic and extrinsic radius tails of order $`n^{-1}`$
 [S4:11]. Connection probabilities decay exponentially below
-$p_{2\to 2}$ [S4:11]. The scope note names two
+$`p_{2\to 2}`$ [S4:11]. The scope note names two
 comparators [S4:17–18]: `BenjaminiSchramm.lean` and
 `CayleyPercolation.lean`.
 
@@ -80,11 +80,11 @@ there exist probabilities with more than one infinite
 cluster. The conjecture was known for specific graphs (tree
 products, certain Cayley graphs) but the general
 quasi-transitive case was open. The proof establishes the
-**critical triangle condition** at $p_c$ for bond
+**critical triangle condition** at $`p_c`$ for bond
 percolation on every nonamenable quasi-transitive graph,
-which implies $p_c < p_{2\to 2} \le p_u$ and hence
+which implies $`p_c < p_{2\to 2} \le p_u`$ and hence
 nonuniqueness. The Hutchcroft operator-threshold
-conjecture is the stronger form: the $2 \to 2$ Sobolev
+conjecture is the stronger form: the $`2 \to 2`$ Sobolev
 improvement constant is the right threshold
 [S3:135–140, S2:513].
 
@@ -101,14 +101,14 @@ independently verify from training alone.
 **The Benjamini–Schramm nonuniqueness conjecture is
 resolved** for bond percolation on every infinite connected
 locally finite nonamenable quasi-transitive graph:
-$p_c < p_u$ with infinitely many infinite clusters in
+$`p_c < p_u`$ with infinitely many infinite clusters in
 between [S3:135–140, S2:513].
 
 **The Hutchcroft operator-threshold conjecture is
-resolved**: $p_c < p_{2\to 2} \le p_u$ [S3:135–140,
+resolved**: $`p_c < p_{2\to 2} \le p_u`$ [S3:135–140,
 S2:513].
 
-**The critical triangle condition holds** at $p_c$ for bond
+**The critical triangle condition holds** at $`p_c`$ for bond
 percolation on every nonamenable quasi-transitive graph
 [S3:135–140, S2:513, S4:11].
 
@@ -125,14 +125,14 @@ bundle.
 nonuniqueness phase conjecture for Bernoulli bond
 percolation on infinite connected locally finite
 nonamenable quasi-transitive graphs. It establishes
-$p_c < p_{2\to 2} \le p_u$ and a common nonempty coupled
+$`p_c < p_{2\to 2} \le p_u`$ and a common nonempty coupled
 interval with infinitely many infinite clusters almost
 surely [S4:9]. For Cayley graphs, the result holds for
 every finite symmetric generating set of a nonamenable
 finitely generated group [S4:9]. The critical estimates
 include a finite triangle diagram, susceptibility,
 percolation probability, cluster-volume and radius tails,
-and exponential decay below $p_{2\to 2}$ [S4:11]. The
+and exponential decay below $`p_{2\to 2}`$ [S4:11]. The
 scope note names two comparators [S4:17–18]:
 `BenjaminiSchramm.lean` and `CayleyPercolation.lean`.
 

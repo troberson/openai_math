@@ -22,8 +22,8 @@ Rubinstein formulated the PCP-for-PPAD conjecture as a quasilinear reduction
 from End-of-Line to generalized circuits in which both the allowed numerical
 error and the allowed fraction of violated gates are positive
 constants" [S3:19-22]. A generalized circuit is a network of gates over
-numbers in $[0,1]$; "Generalized circuits provide another useful language
-for this class: a solution assigns real values in $[0,1]$ to wires and
+numbers in $`[0,1]`$; "Generalized circuits provide another useful language
+for this class: a solution assigns real values in $`[0,1]`$ to wires and
 approximately satisfies local arithmetic, comparison, and Boolean
 constraints." [S3:6-9]
 
@@ -36,28 +36,28 @@ constant numerical error, does not provide it." [S3:26-27]
 
 This paper proves the conjecture. "We give a positive resolution of the
 quasilinear PCP-for-PPAD conjecture." [S3:48] The main theorem produces
-fixed constants $\varepsilon, \delta$, a fixed polynomial, and two deterministic
-algorithms $R$ and $D$ such that an End-of-Line instance of length $N$
+fixed constants $`\varepsilon, \delta`$, a fixed polynomial, and two deterministic
+algorithms $`R`$ and $`D`$ such that an End-of-Line instance of length $`N`$
 becomes a generalized circuit of encoding length at most
-$A N \lceil \log_2(N+2) \rceil^b$, and any assignment that fails a
-$\delta$ fraction of gates still decodes to a solution. "The conclusion
-about $D$ is universal over the locations and values of the failed
+$`A N \lceil \log_2(N+2) \rceil^b`$, and any assignment that fails a
+$`\delta`$ fraction of gates still decodes to a solution. "The conclusion
+about $`D`$ is universal over the locations and values of the failed
 gates." [S3:174-176]
 
 ## Graduate summary
 
-**The definitions.** End-of-Line is a pair of Boolean circuits $S, P$ with
-$P(0^n) = 0^n$, $S(0^n) \ne 0^n$, $P(S(0^n)) = 0^n$; a solution is a string
-$v \ne 0^n$ with $P(S(v)) \ne v$ or $S(P(v)) \ne v$. [S3:71-87] A
+**The definitions.** End-of-Line is a pair of Boolean circuits $`S, P`$ with
+$`P(0^n) = 0^n`$, $`S(0^n) \ne 0^n`$, $`P(S(0^n)) = 0^n`$; a solution is a string
+$`v \ne 0^n`$ with $`P(S(v)) \ne v`$ or $`S(P(v)) \ne v`$. [S3:71-87] A
 generalized circuit has one output and at most two inputs per gate, cycles
-allowed, parameters binary-encoded rationals in $[0,1]$, and five arithmetic
+allowed, parameters binary-encoded rationals in $`[0,1]`$, and five arithmetic
 gate types (Constant, Scale, Copy, Add, Subtract) plus Less, Or, And, Not,
-each $\varepsilon$-satisfied by an implication. [S3:89-126] An acceptable
-assignment is rational, of encoding length at most $p(M)$, and
-$\varepsilon$-satisfies at least $(1-\delta)|T|$ gates; "Failed gates may violate
+each $`\varepsilon`$-satisfied by an implication. [S3:89-126] An acceptable
+assignment is rational, of encoding length at most $`p(M)`$, and
+$`\varepsilon`$-satisfies at least $`(1-\delta)|T|`$ gates; "Failed gates may violate
 their relations arbitrarily, but all their nodes still have one globally
-consistent value in $[0,1]$." [S3:132-134] The Boolean predicates make the
-error parameter nonmonotone: "increasing $\varepsilon$ can activate an antecedent
+consistent value in $`[0,1]`$." [S3:132-134] The Boolean predicates make the
+error parameter nonmonotone: "increasing $`\varepsilon`$ can activate an antecedent
 that was previously vacuous." [S3:137-138] The authors use one actual
 tolerance throughout, and their later upper bounds "do not reclassify a
 satisfied Boolean gate at a larger tolerance." [S3:141-142]
@@ -66,16 +66,16 @@ satisfied Boolean gate at a larger tolerance." [S3:141-142]
 Replace the End-of-Line graph by a locally evolving directed graph with a
 known source, no isolated vertices, and the same endpoint-decoding
 property." [S3:183-185] Each vertex is a separated binary word; in the box
-$[-1,2]^{4m}$, "each edge $u\to v$ traces a polygon that first changes a
-copy of $E_u$ to $E_v$, changes a repeated control bit, updates the other
+$`[-1,2]^{4m}`$, "each edge $`u\to v`$ traces a polygon that first changes a
+copy of $`E_u`$ to $`E_v`$, changes a repeated control bit, updates the other
 copy, and resets the control bit." [S3:188-190] Rounded corners join the
 polygons into paths, and "Every other path endpoint encodes an End-of-Line
-answer." [S3:193] A bounded displacement field $v$ on the box uses the
+answer." [S3:193] A bounded displacement field $`v`$ on the box uses the
 directed tangent and inward normal close to a path and a fixed direction
 farther away, so the clipped move has norm at least a fixed multiple of the
 step outside a fixed neighborhood of the endpoints. The catch: "The proof
 must also provide local numerical access to the field: it cannot inspect
-the entire encoded graph when computing one coordinate of $v$."
+the entire encoded graph when computing one coordinate of $`v`$."
 [S3:203-205]
 
 **The two scales.** "The present reduction needs two further properties
@@ -106,32 +106,32 @@ lengthens the represented path rather than the data stored at a
 vertex." [S3:256-258]
 
 **One fixed binary port.** "A polynomial-size robust construction applied
-directly to an $N$-bit vertex would not give the required size. Instead we
-apply it only to the $L$-bit outer symbols." [S3:262-264] The inner
-construction supplies one injective encoding of $L$ bits into
-$\mathrm{poly}(L)$ bits, with encoding and correction radius chosen
+directly to an $`N`$-bit vertex would not give the required size. Instead we
+apply it only to the $`L`$-bit outer symbols." [S3:262-264] The inner
+construction supplies one injective encoding of $`L`$ bits into
+$`\mathrm{poly}(L)`$ bits, with encoding and correction radius chosen
 before the number of symbols a local function inspects. "All polynomial
-factors in $L$ remain fixed powers of $\log N$." [S3:278-279] The inner
+factors in $`L`$ remain fixed powers of $`\log N`$." [S3:278-279] The inner
 graph is one computation path with blank work at its source and output
-$f(s)$ at its sink; polynomial charts encode its tapes and certificates, and
+$`f(s)`$ at its sink; polynomial charts encode its tapes and certificates, and
 their dependencies are kept separate for each read-only input, "the
 input-dependent parts of the source and its first successor have the same
 formulas in every later invocation." [S3:288-289]
 
 **Synchronization under gate failures.** The generalized circuit has many
 physical replicas of each geometric coordinate; "A fixed-degree expander
-average $A$ couples the replicas." [S3:316-317] "First, boundedness of the
+average $`A`$ couples the replicas." [S3:316-317] "First, boundedness of the
 update and the expander gap force the replicas close to their means, without
 assuming that any decision is correct." [S3:323-325] Randomized threshold
 offsets control ambiguous comparisons and the gate-failure budget controls
 the circuits containing a failed gate; "the printed circuit assigns
 replicas a deterministically enumerated list of fixed tapes of size
-polynomial in $L$." [S3:329-331] Expensive Boolean decision gadgets are
+polynomial in $`L`$." [S3:329-331] Expensive Boolean decision gadgets are
 shared by groups of output replicas, whose many designated outputs "ensure
 that failures concentrated on extraction wires still spoil only a controlled
 fraction of the group." [S3:336-338] "An estimate that keeps clipping inside
 the replica contraction argument then makes the mean an approximate fixed
-point. The displacement lower bound forces $\bar X$ near an endpoint.
+point. The displacement lower bound forces $`\bar X`$ near an endpoint.
 Rounding its first block and applying the global binary and outer decoders
 yields the required End-of-Line answer." [S3:341-345]
 
@@ -196,7 +196,7 @@ The theorem's decoder is universal, and the totality proof is separate:
 meeting the gate-failure budget; rationality is needed for the finite search
 relation and its computational decoder. The totality proof supplies an
 assignment satisfying every gate on a fixed rational mesh. Neither tolerance
-tends to zero with $N$." [S3:175-179]
+tends to zero with $`N`$." [S3:175-179]
 
 The applications are the point. "supplies the positive failed-gate premise
 in the cited reductions to equilibrium problems" [S4:3-4] — for weak
@@ -211,17 +211,17 @@ before reducing numerical tolerances or controlling fan-out." [S4:15-17]
 The flagship consequence is polymatrix Nash. "Babichenko, Papadimitriou,
 and Rubinstein reduce positive-gap generalized circuits to weak approximate
 Nash search, where a fixed fraction of players may have deviation gain
-larger than a fixed positive error" [S4:147-150]; "An $n$-player two-action
+larger than a fixed positive error" [S4:147-150]; "An $`n`$-player two-action
 polymatrix game is specified by an undirected interaction graph and, for
-each edge, a pair of rational $2$-by-$2$ payoff matrices." [S4:155-157] The
-corollary fixes constants $\varepsilon_{\rm w}, \delta_{\rm w}$ and a polynomial
-$p_{\rm w}$ such that finding a rational product profile of encoding length
-at most $p_{\rm w}(L)$ with at most $\lfloor \delta_{\rm w} n \rfloor$
-players exceeding regret $\varepsilon_{\rm w}$ is PPAD-hard. "No further regret
+each edge, a pair of rational $`2`$-by-$`2`$ payoff matrices." [S4:155-157] The
+corollary fixes constants $`\varepsilon_{\rm w}, \delta_{\rm w}`$ and a polynomial
+$`p_{\rm w}`$ such that finding a rational product profile of encoding length
+at most $`p_{\rm w}(L)`$ with at most $`\lfloor \delta_{\rm w} n \rfloor`$
+players exceeding regret $`\varepsilon_{\rm w}`$ is PPAD-hard. "No further regret
 bound is imposed on the players counted on the left." [S4:184] The game
-side is normalized: matrices with entries in $[0,1/3]$ and graphs of
+side is normalized: matrices with entries in $`[0,1/3]`$ and graphs of
 maximum degree at most three, and "The encoding explicitly lists all
-players, edges, and matrices, so its length is at least" $n$.
+players, edges, and matrices, so its length is at least" $`n`$.
 [S4:160-161]
 
 Two things to keep straight. First, "These consequences use fixed-gap
@@ -249,7 +249,7 @@ fixed-port composition." [S3:363-364]
 - Babichenko, Yakov, Papadimitriou, Christos H., Rubinstein, Aviad, Can Almost Everybody be Almost Happy? (2016)
 - Bennett, C. H., Logical Reversibility of Computation (1973)
 - Blum, Manuel, Luby, Michael, Rubinfeld, Ronitt, Self-Testing/Correcting with Applications to Numerical Problems (1993)
-- Bourgain, Jean, Gamburd, Alex, Uniform Expansion Bounds for Cayley Graphs of $\mathrm{SL}_2(\mathbb{F}_p)$ (2008)
+- Bourgain, Jean, Gamburd, Alex, Uniform Expansion Bounds for Cayley Graphs of $`\mathrm{SL}_2(\mathbb{F}_p)`$ (2008)
 - Braverman, Mark, Liu, Jingyi, Xue, Eric, Zhou, Chenghan, Hardness of Approximate Hylland–Zeckhauser Equilibria (2026)
 - Brouwer, L. E. J., Über Abbildung von Mannigfaltigkeiten (1911)
 - Budish, Eric, The Combinatorial Assignment Problem: Approximate Competitive Equilibrium from Equal Incomes (2011)

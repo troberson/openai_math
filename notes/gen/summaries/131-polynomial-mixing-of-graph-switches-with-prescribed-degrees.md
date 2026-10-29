@@ -26,7 +26,7 @@ valid graph, it "switches" the edges.
 
 **Mixing time** is how many steps the chain needs before it forgets where
 it started and is close to uniform over all valid graphs. This family
-proves the switch chain mixes in **$O(n^8)$** steps [S4:32–39] —
+proves the switch chain mixes in **$`O(n^8)`$** steps [S4:32–39] —
 polynomial in the number of vertices — for *every* graphical degree
 sequence. This resolves the simple-undirected form of a long-standing
 conjecture [S4:86–90].
@@ -37,17 +37,17 @@ uniformly random** graph with a given degree sequence
 
 ## Graduate summary
 
-**Main theorem** ([S4:32–39], `thm:main`). "For every $n\ge4$ and every
-graphical degree vector $d$, $t_{\mathrm{mix}}(d)\le 2n^8$. If
-$|\Omega_d|>1$, the spectral gap of $P_d$ is at least
-$[24n^2\binom n4]^{-1}$" [S4:32–39]. The mixing time is measured at
-total-variation distance $1/4$, the standard convention
+**Main theorem** ([S4:32–39], `thm:main`). "For every $`n\ge4`$ and every
+graphical degree vector $`d`$, $`t_{\mathrm{mix}}(d)\le 2n^8`$. If
+$`|\Omega_d|>1`$, the spectral gap of $`P_d`$ is at least
+$`[24n^2\binom n4]^{-1}`$" [S4:32–39]. The mixing time is measured at
+total-variation distance $`1/4`$, the standard convention
 [S4:25–30].
 
 **Exact uniform sampling corollary** ([S4:42–44], `cor:exact-sampling`).
 "There is a uniform randomized algorithm that, given any finite graphical
-labeled degree vector $d$, uses unbiased random bits, [...] and samples
-$a$ graph from the uniform distribution over $\Omega_d$" [S4:42–44]. The
+labeled degree vector $`d`$, uses unbiased random bits, [...] and samples
+$`a`$ graph from the uniform distribution over $`\Omega_d`$" [S4:42–44]. The
 algorithm is almost-surely terminating with expected polynomial bit
 running time.
 
@@ -98,11 +98,11 @@ independently; the release ships the manuscript as proof.
 ## Consequences
 
 - **The switch chain mixes in polynomial time for every graphical degree
-  sequence.** The total-variation mixing time is at most $2n^8$
+  sequence.** The total-variation mixing time is at most $`2n^8`$
   [S4:32–39].
 - **The spectral gap is explicit.** When more than one graph realizes the
   degree sequence, the spectral gap is at least
-  $[24n^2\binom n4]^{-1}$ [S4:32–39].
+  $`[24n^2\binom n4]^{-1}`$ [S4:32–39].
 - **Exact uniform sampling is possible.** The same degree-constrained
   graphs can be sampled exactly uniformly by an almost-surely
   terminating expected-polynomial algorithm [S4:42–44].
@@ -135,11 +135,11 @@ that config has no proved declaration in `lean/OAI/`.
 The scope note [S6:9] states precisely what is formalized: "The
 Kannan–Tetali–Vempala conjecture asks for polynomial mixing of the switch
 chain for every graphical degree sequence. The formalization proves the
-simple undirected case: for $n\ge4$, the lazy chain that proposes switches
-on four vertices has total-variation mixing time at distance $1/4$ at
-most $2n^8$. It also proves switch connectivity, the stated exponential
+simple undirected case: for $`n\ge4`$, the lazy chain that proposes switches
+on four vertices has total-variation mixing time at distance $`1/4`$ at
+most $`2n^8`$. It also proves switch connectivity, the stated exponential
 total-variation bound, and a spectral gap of at least
-$1/(24n^2\binom n4)$ when more than one graph realizes the degree
+$`1/(24n^2\binom n4)`$ when more than one graph realizes the degree
 sequence. The paper's exactly uniform sampling algorithm is outside these
 selected chain estimates" [S6:9].
 
@@ -154,13 +154,13 @@ switch-proposal machinery, `switchKernel`, `kernelPow`, `uniformAverage`,
 `mixingTime`, `SwitchStep` — and three statements, each with a `sorry`:
 
 - `switch_chain_main` [S7:155–156], `sorry` at [S7:157] — for every
-  $n\ge4$ and graphical $d$: mixing time at distance $1/4$ is
-  $\le 2n^8$; if exactly one graph realizes $d$ the chain is already
-  mixed at time 0; if more than one graph realizes $d$ the spectral gap is
-  at least $[24n^2\binom n4]^{-1}$.
+  $`n\ge4`$ and graphical $`d`$: mixing time at distance $`1/4`$ is
+  $`\le 2n^8`$; if exactly one graph realizes $`d`$ the chain is already
+  mixed at time 0; if more than one graph realizes $`d`$ the spectral gap is
+  at least $`[24n^2\binom n4]^{-1}`$.
 - `switch_chain_tv_bound` [S7:159–160], `sorry` at [S7:161] — the
   exponential total-variation decay
-  $\le \tfrac12\sqrt{|\Omega_d|}\,e^{-t/(24n^2\binom n4)}$.
+  $`\le \tfrac12\sqrt{|\Omega_d|}\,e^{-t/(24n^2\binom n4)}`$.
 - `switch_connectivity` [S7:163–164], `sorry` at [S7:165] — the switch
   step is connected: any two realizations are joined by a reflexive-
   transitive closure of valid switches.

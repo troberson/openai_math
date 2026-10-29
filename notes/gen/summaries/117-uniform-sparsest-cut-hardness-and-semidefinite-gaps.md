@@ -30,24 +30,24 @@ agree on the statement.
 **Sparsest cut** asks: given a network of pipes with capacities, find the
 partition of the vertices into two groups that separates the least total
 capacity relative to the number of pairs it splits. When every pair of
-vertices demands exactly one unit, the denominator is simply $|S|(N-|S|)$,
+vertices demands exactly one unit, the denominator is simply $`|S|(N-|S|)`$,
 the size of the smaller group times the size of the larger group.
 
 The family has two papers, addressing two different questions about
 this uniform-demand variant:
 
-1. **Hardness** [S4:14–31]: for every fixed $C > 1$, no polynomial-time
-   algorithm can approximate Uniform Sparsest Cut within factor $C$.
+1. **Hardness** [S4:14–31]: for every fixed $`C > 1`$, no polynomial-time
+   algorithm can approximate Uniform Sparsest Cut within factor $`C`$.
    The reduction is from 3CNF-SAT and uses no complexity hypothesis
-   beyond P $\neq$ NP. The output is a finite undirected graph with
+   beyond P $`\neq`$ NP. The output is a finite undirected graph with
    nonnegative rational capacities and unit demand on every pair.
 
 2. **Integrality gaps** [S5:152–161]: the Goemans–Linial semidefinite
    relaxation (the natural LP relaxation that powers the best known
    approximation algorithm) has instances where the gap between the
    integral optimum and the relaxation value is at least
-   $c\sqrt{\log n}/(\log\log n)^3$ along a sequence. This nearly matches
-   the Arora–Rao–Vazirani upper bound of $O(\sqrt{\log n})$, off by a
+   $`c\sqrt{\log n}/(\log\log n)^3`$ along a sequence. This nearly matches
+   the Arora–Rao–Vazirani upper bound of $`O(\sqrt{\log n})`$, off by a
    power of the iterated logarithm.
 
 The two results are complementary: the first says no efficient algorithm
@@ -57,22 +57,22 @@ relaxation is essentially as good as any semidefinite approach can be.
 ## Graduate summary
 
 **Hardness** ([S4:14–31], `thm:main`). "For every fixed real constant
-$C>1$, there is a polynomial-time reduction from $3$CNF satisfiability
+$`C>1`$, there is a polynomial-time reduction from $`3`$CNF satisfiability
 to finite undirected graphs with nonnegative rational capacities and
-exactly unit demands, together with a positive rational threshold $a$,
-such that" [S4:16–19]: satisfiable implies $\Phi(G)\le a$,
-unsatisfiable implies $\Phi(G)>Ca$ [S4:20–24]. "The graph size and the
+exactly unit demands, together with a positive rational threshold $`a`$,
+such that" [S4:16–19]: satisfiable implies $`\Phi(G)\le a`$,
+unsatisfiable implies $`\Phi(G)>Ca`$ [S4:20–24]. "The graph size and the
 bit lengths of all output numbers are polynomial in the formula size,
-with constants and exponents allowed to depend on $C$. In particular,
-approximating Uniform Sparsest Cut within any fixed factor $C>1$ is
+with constants and exponents allowed to depend on $`C`$. In particular,
+approximating Uniform Sparsest Cut within any fixed factor $`C>1`$ is
 NP-hard" [S4:25–31]. The reduction uses no unproved complexity
 hypothesis [S4:34].
 
 **Integrality gaps** ([S5:152–161], `thm:main`). "There are an absolute
-constant $c>0$ and capacity instances $C^{(j)}$ on $n_j\to\infty$
-vertices, with $\mathrm{GL}(C^{(j)})>0$, such that"
-$\mathrm{OPT}(C^{(j)})/\mathrm{GL}(C^{(j)})\ge c\sqrt{\log n_j}/(\log\log n_j)^3$ "for
-all sufficiently large $j$. The demand is one between every pair of
+constant $`c>0`$ and capacity instances $`C^{(j)}`$ on $`n_j\to\infty`$
+vertices, with $`\mathrm{GL}(C^{(j)})>0`$, such that"
+$`\mathrm{OPT}(C^{(j)})/\mathrm{GL}(C^{(j)})\ge c\sqrt{\log n_j}/(\log\log n_j)^3`$ "for
+all sufficiently large $`j`$. The demand is one between every pair of
 distinct vertices" [S5:153–161]. The capacities are nonnegative real
 numbers; no regularity is assumed [S5:70–72].
 
@@ -94,7 +94,7 @@ density with nearly extremal entropy. A clipping argument forces the
 density near two values, giving a single valuation [S4:158–163].
 
 *Cut variance to rare event* [S4:165–177]: a candidate cut is a
-$\{0,1\}$-valued function of scores. Small resampling cost forces the cut
+$`\{0,1\}`$-valued function of scores. Small resampling cost forces the cut
 color to retain a signal from at least one amplitude scale. Smoothed
 comparison paths produce the successful conjunction response. Every error
 is proportional to the cut variance [S4:175–177].
@@ -106,37 +106,37 @@ cuts from separating copies [S4:183–194].
 
 **Proof strategy — gaps** ([S5:198–283]). The construction has two tasks:
 build a negative-type semimetric with large average distance, and force
-every $\ell_1$ contraction to have small average distance [S5:199–201].
+every $`\ell_1`$ contraction to have small average distance [S5:199–201].
 
-*Common parameter space* [S5:204–216]: $S$ rounded charts on the cube
-$(-2,2)^m$, each partitioning into cells by hyperplanes. Directions are
+*Common parameter space* [S5:204–216]: $`S`$ rounded charts on the cube
+$`(-2,2)^m`$, each partitioning into cells by hyperplanes. Directions are
 fixed before choosing any contraction; every unit direction has small
 projections in at least half the charts [S5:212–216].
 
 *Large distances, small interface costs* [S5:219–233]: a common smooth
-feature map gives squared distances approximating $c_*\sqrt m\,|\theta-\eta|$.
+feature map gives squared distances approximating $`c_*\sqrt m\,|\theta-\eta|`$.
 Gaussian-kernel repair (Schoenberg) fixes triangle inequalities with only
 a logarithmic loss at interfaces [S5:224–233].
 
-*Simultaneous constraints* [S5:235–255]: a contraction $F:V\to\ell_1^D$
-induces functions $f_s$ on the cube. Small jumps across interfaces express
-gradients as combinations of normals, with total budget $Cm(\log m)^2$.
+*Simultaneous constraints* [S5:235–255]: a contraction $`F:V\to\ell_1^D`$
+induces functions $`f_s`$ on the cube. Small jumps across interfaces express
+gradients as combinations of normals, with total budget $`Cm(\log m)^2`$.
 The Maurey–Pisier Gaussian rotation method converts this into
-$\mathbb E\|F(v_1(\theta))-F(v_1(\eta))\|_1\le C\sqrt m(\log m)^{5/2}$, uniform
-in $D$ [S5:243–255].
+$`\mathbb E\|F(v_1(\theta))-F(v_1(\eta))\|_1\le C\sqrt m(\log m)^{5/2}`$, uniform
+in $`D`$ [S5:243–255].
 
 *Uniform copies and capacities* [S5:257–283]: multiplicities approximate
-the first-chart measure while keeping every vertex of $V$. Cut-cone
+the first-chart measure while keeping every vertex of $`V`$. Cut-cone
 duality supplies capacities with unit demand. The gap conversion is
-$m/(\sqrt m(\log m)^{5/2})$ with $\log n\asymp m\log m$, yielding the
-power 3 on $\log\log n$ [S5:272–280].
+$`m/(\sqrt m(\log m)^{5/2})`$ with $`\log n\asymp m\log m`$, yielding the
+power 3 on $`\log\log n`$ [S5:272–280].
 
 ## History of the conjecture
 
 The flow–cut approach to sparsest cut was developed by **Leighton and
 Rao**, who gave logarithmic approximation guarantees via multicommodity
 flow [S4:47]. **Arora, Rao, and Vazirani** improved the approximation
-factor to $O(\sqrt{\log N})$ using semidefinite programming [S4:48];
+factor to $`O(\sqrt{\log N})`$ using semidefinite programming [S4:48];
 their treatment of the unweighted uniform objective appears in their
 2009 paper [S4:49].
 
@@ -155,12 +155,12 @@ hardness [S4:62–81]. The nonuniform hardness under Unique Games is due
 to **Chawla, Krauthgamer, Kumar, Rabani, and Sivakumar** [S4:85–89].
 
 For the integrality gaps, **Devanur, Khot, Saket, and Vishnoi** obtained
-an $\Omega(\log\log n)$ gap, refuting the uniform constant-gap
+an $`\Omega(\log\log n)`$ gap, refuting the uniform constant-gap
 conjecture [S5:180]. **Kane and Meka** proved
-$\exp(\Omega(\sqrt{\log\log n}))$ [S5:182]. For arbitrary demands,
+$`\exp(\Omega(\sqrt{\log\log n}))`$ [S5:182]. For arbitrary demands,
 **Khot and Vishnoi** disproved the Goemans–Linial Conjecture
 [**Khot–Vishnoi**, S5:188], and **Naor and Young** obtained the sharp
-$\Omega(\sqrt{\log n})$ lower bound [S5:193]. The geometric line is
+$`\Omega(\sqrt{\log n})`$ lower bound [S5:193]. The geometric line is
 **Cheeger, Kleiner, and Naor** (Heisenberg group) [S5:190]; they explain
 explicitly that their bounded-doubling examples have constant average
 distortion into a line, so their construction cannot yield a diverging
@@ -169,7 +169,7 @@ uniform gap [S5:194–195].
 **Prior (my training data, not this repo).** The uniform-demand
 integrality gap was a long-standing open problem after the
 constant-gap conjecture was disproved for arbitrary demands. The
-$\sqrt{\log n}$ rate for the uniform case was expected to be the right
+$`\sqrt{\log n}`$ rate for the uniform case was expected to be the right
 order given the ARV upper bound, but no construction achieved it. The
 unconditional constant-factor hardness was expected to be difficult
 because the uniform denominator constrains the standard gap-amplification
@@ -179,19 +179,19 @@ manuscripts as proofs.
 ## Consequences
 
 - **Unconditional NP-hardness of constant-factor approximation.**
-  For every fixed $C>1$, approximating Uniform Sparsest Cut within
-  factor $C$ is NP-hard, with no complexity hypothesis beyond P $\neq$ NP
+  For every fixed $`C>1`$, approximating Uniform Sparsest Cut within
+  factor $`C`$ is NP-hard, with no complexity hypothesis beyond P $`\neq`$ NP
   [S4:14–31].
 - **Near-optimal integrality gap for the GL relaxation.** The
   Goemans–Linial SDP has integrality gaps of
-  $\Omega(\sqrt{\log n}/(\log\log n)^3)$ for uniform demands, matching
-  the ARV upper bound up to a power of $\log\log n$
+  $`\Omega(\sqrt{\log n}/(\log\log n)^3)`$ for uniform demands, matching
+  the ARV upper bound up to a power of $`\log\log n`$
   [S5:152–161].
 - **No polynomial-time approximation below the constant barrier.**
   The hardness result rules out a PTAS for Uniform Sparsest Cut under
-  P $\neq$ NP, unconditionally [S4:25–31].
+  P $`\neq`$ NP, unconditionally [S4:25–31].
 - **The uniform case separates from the general case.** The general-demand
-  $\Omega(\sqrt{\log n})$ gap of Naor–Young does not imply the uniform
+  $`\Omega(\sqrt{\log n})`$ gap of Naor–Young does not imply the uniform
   conclusion [S5:194–195].
 
 ## Section skeleton
@@ -221,9 +221,9 @@ covers the gaps manuscript only, not the hardness manuscript. The
 
 The scope note's single paragraph states: "The formalized result gives
 integrality gaps for the Goemans–Linial relaxation of uniform sparsest
-cut. Along a sequence of instance sizes $n\to\infty$, the ratio of the
+cut. Along a sequence of instance sizes $`n\to\infty`$, the ratio of the
 integral optimum to the positive relaxation optimum is at least
-$c\sqrt{\log n}/(\log\log n)^3$ for one absolute $c>0$. Every unordered
+$`c\sqrt{\log n}/(\log\log n)^3`$ for one absolute $`c>0`$. Every unordered
 pair has unit demand, and the relaxation uses squared Euclidean
 distances satisfying the triangle inequalities. The result is an
 existential sequence, not a bound for every size or a computational
@@ -236,7 +236,7 @@ The `UniformSparsestCut.lean` stub [S9] (55 lines) defines the
 (negative type with unit total mass), and `glValue` (infimum over
 feasible negative-type semimetrics). The single theorem `mainGap` at
 [S9:40–49] states the existential sequence with the
-$c\sqrt{\log n}/(\log\log n)^3$ gap and closes with `sorry` [S9:49].
+$`c\sqrt{\log n}/(\log\log n)^3`$ gap and closes with `sorry` [S9:49].
 
 The reading is of source text only — no `lake` or `lean` run elaborates
 the stub, so the claim here is that the statement type and the `sorry`

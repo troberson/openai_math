@@ -14,26 +14,26 @@ The manuscript abstract
 
 > We prove Patterson's first-moment conjecture for normalized cubic
 Gauss sums over all primary Eisenstein primes, unconditionally. The sharp-cutoff main
-term is $(6/5)c_*X^{5/6}/\log X$, where
-$c_*=(2\pi)^{2/3}/(3\Gamma(2/3))$.
+term is $`(6/5)c_*X^{5/6}/\log X`$, where
+$`c_*=(2\pi)^{2/3}/(3\Gamma(2/3))`$.
 For every fixed nonzero angular Fourier mode of the prime argument,
 we also prove cancellation at the first-moment scale. [S2:40–47]
 
 ## Undergraduate summary
 
-A "Gauss sum" attached to a prime $\pi$ in the ring of Eisenstein
-integers (integers of the form $a + b\sqrt{-3}$) is a finite sum of
+A "Gauss sum" attached to a prime $`\pi`$ in the ring of Eisenstein
+integers (integers of the form $`a + b\sqrt{-3}`$) is a finite sum of
 cubic roots of unity that encodes how the prime sits in the number
 field. Patterson's conjecture predicts what the *average* of these
-sums looks like as you sweep over all primes up to a size $X$: the
-average should have a main term of order $X^{5/6} / \log X$ with an
+sums looks like as you sweep over all primes up to a size $`X`$: the
+average should have a main term of order $`X^{5/6} / \log X`$ with an
 explicit positive constant.
 
 This paper proves that prediction unconditionally — no unproved
 hypotheses needed. It covers all primary Eisenstein primes (those
-congruent to $1 \bmod 3$), including both conjugate directions, and
-proves that the leading term is $(6/5) \cdot c_* \cdot X^{5/6} /
-\log X$ where $c_* = (2\pi)^{2/3} / (3\Gamma(2/3))$. It also proves
+congruent to $`1 \bmod 3`$), including both conjugate directions, and
+proves that the leading term is $`(6/5) \cdot c_* \cdot X^{5/6} /
+\log X`$ where $`c_* = (2\pi)^{2/3} / (3\Gamma(2/3))`$. It also proves
 that the "angular" Fourier modes (the parts of the sum that oscillate
 with the angle of the prime) are all smaller order for any
 nonzero frequency.
@@ -41,11 +41,11 @@ nonzero frequency.
 The main statement 
 
 > **theorem**
-As $X\longrightarrow\infty$,
+As $`X\longrightarrow\infty`$,
 $$\sum_{\substack{N\pi\le X\\\pi\equiv1\pmod3\ \mathrm{prime}}}G(\pi)
  =\frac65c_*\frac{X^{5/6}}{\log X}
    +o\!\left(\frac{X^{5/6}}{\log X}\right).$$
-The sum is over all primary primes in $\mathcal O$. [S2:64–72]
+The sum is over all primary primes in $`\mathcal O`$. [S2:64–72]
 
 ## Graduate summary
 
@@ -55,26 +55,26 @@ normalized cubic Gauss sums over primary Eisenstein primes.
 **First moment.** 
 
 > **theorem**
-As $X\longrightarrow\infty$,
+As $`X\longrightarrow\infty`$,
 $$\sum_{\substack{N\pi\le X\\\pi\equiv1\pmod3\ \mathrm{prime}}}G(\pi)
  =\frac65c_*\frac{X^{5/6}}{\log X}
    +o\!\left(\frac{X^{5/6}}{\log X}\right).$$
-The sum is over all primary primes in $\mathcal O$. [S2:64–72]
+The sum is over all primary primes in $`\mathcal O`$. [S2:64–72]
 
-As $X \to \infty$, the sum of $G(\pi)$ over all primary Eisenstein
-primes of norm at most $X$ equals
-$\frac{6}{5} c_* X^{5/6} / \log X + o(X^{5/6} / \log X)$, with
-$c_* = (2\pi)^{2/3} / (3\Gamma(2/3))$. The sum is unconditional — all
+As $`X \to \infty`$, the sum of $`G(\pi)`$ over all primary Eisenstein
+primes of norm at most $`X`$ equals
+$`\frac{6}{5} c_* X^{5/6} / \log X + o(X^{5/6} / \log X)`$, with
+$`c_* = (2\pi)^{2/3} / (3\Gamma(2/3))`$. The sum is unconditional — all
 primary primes are included, no GRH-type hypothesis, and both
 conjugate directions contribute to the same main term.
 
 **Angular comparison.** For each fixed integer angular Fourier mode
-$\ell$, the oscillatory part of the sum is $o(X^{5/6} / \log X)$
+$`\ell`$, the oscillatory part of the sum is $`o(X^{5/6} / \log X)`$
 [S3:19–35]. In the nonzero-mode case this gives cancellation: the
 angular component of the first moment is smaller than the main term
 at the first-moment scale.
 
-**Scope note confirmation.** "Patterson's first-moment conjecture concerns the average of normalized cubic Gauss sums over primary Eisenstein primes. The formalization proves the sharp-cutoff asymptotic with main term $\frac65c_*X^{5/6}/\log X$, where $c_*=(2\pi)^{2/3}/(3\Gamma(2/3))$. It also proves the corresponding angular comparison for every integer Fourier mode and cancellation of order $o(X^{5/6}/\log X)$ for each fixed nonzero mode. All primary Eisenstein primes are included, without an extra conjectural premise. [S4:9]" All primary Eisenstein
+**Scope note confirmation.** "Patterson's first-moment conjecture concerns the average of normalized cubic Gauss sums over primary Eisenstein primes. The formalization proves the sharp-cutoff asymptotic with main term $`\frac65c_*X^{5/6}/\log X`$, where $`c_*=(2\pi)^{2/3}/(3\Gamma(2/3))`$. It also proves the corresponding angular comparison for every integer Fourier mode and cancellation of order $`o(X^{5/6}/\log X)`$ for each fixed nonzero mode. All primary Eisenstein primes are included, without an extra conjectural premise. [S4:9]" All primary Eisenstein
 primes are included without an extra conjectural premise, and the
 angular comparison covers every integer Fourier mode.
 
@@ -82,7 +82,7 @@ angular comparison covers every integer Fourier mode.
 
 Prior (my training data, not this repo): Patterson (1976) studied the
 first moment of cubic Gauss sums and predicted the sharp-cutoff
-asymptotic with main term of order $X^{5/6} / \log X$ under a
+asymptotic with main term of order $`X^{5/6} / \log X`$ under a
 conditional framework. The unconditional all-primary-prime form is
 the content of this paper: it removes the conditional premise and
 covers the full prime set without a bias towards one conjugate class.
@@ -95,12 +95,12 @@ and a Perron-type integral decomposition.
 ## Consequences
 
 **Unconditional first-moment asymptotic for cubic Gauss sums.** The
-sharp-cutoff main term $(6/5)c_* X^{5/6}/\log X$ is proved for all
+sharp-cutoff main term $`(6/5)c_* X^{5/6}/\log X`$ is proved for all
 primary Eisenstein primes, with both conjugates, no conjectural
 premise [S2:64–72].
 
 **Angular comparison and cancellation.** Every fixed nonzero angular
-Fourier mode is $o(X^{5/6}/\log X)$: the oscillatory part of the
+Fourier mode is $`o(X^{5/6}/\log X)`$: the oscillatory part of the
 first moment is strictly smaller than the main term [S3:19–35].
 
 ## section skeleton
@@ -145,7 +145,7 @@ theorem patterson_angularCancellation : AngularCancellationStatement := by
 ```
 [S5:84–93]
 
-The scope note confirms the formalization's reach: "Patterson's first-moment conjecture concerns the average of normalized cubic Gauss sums over primary Eisenstein primes. The formalization proves the sharp-cutoff asymptotic with main term $\frac65c_*X^{5/6}/\log X$, where $c_*=(2\pi)^{2/3}/(3\Gamma(2/3))$. It also proves the corresponding angular comparison for every integer Fourier mode and cancellation of order $o(X^{5/6}/\log X)$ for each fixed nonzero mode. All primary Eisenstein primes are included, without an extra conjectural premise. [S4:9]"
+The scope note confirms the formalization's reach: "Patterson's first-moment conjecture concerns the average of normalized cubic Gauss sums over primary Eisenstein primes. The formalization proves the sharp-cutoff asymptotic with main term $`\frac65c_*X^{5/6}/\log X`$, where $`c_*=(2\pi)^{2/3}/(3\Gamma(2/3))`$. It also proves the corresponding angular comparison for every integer Fourier mode and cancellation of order $`o(X^{5/6}/\log X)`$ for each fixed nonzero mode. All primary Eisenstein primes are included, without an extra conjectural premise. [S4:9]"
 Note the ledger reads `paps_form 0` (no `main_results` entry), so
 the scope note describes an intended target, not a landed
 formalization.

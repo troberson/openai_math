@@ -31,7 +31,7 @@ A **contingency table** is a matrix of nonnegative integers whose row sums
 and column sums are prescribed — think of a two-way contingency table in
 statistics, where the margins are fixed and the interior cells are what you
 are trying to fill in. The set of all such matrices is finite but can be
-enormous: a single entry can be as large as the total sum $N$, and the
+enormous: a single entry can be as large as the total sum $`N`$, and the
 number of feasible tables can be exponential in the input size.
 
 The two manuscripts in this family tackle the two natural questions about
@@ -39,12 +39,12 @@ this finite set. The **exact-uniform manuscript** asks: can you pick one
 table at random, with exactly equal probability for every feasible table,
 in polynomial time? It gives two answers: an **exact** sampler that
 terminates almost surely with polynomial *expected* running time, and a
-**bounded-time** sampler whose output is within $2^{-k}$ of uniform in
+**bounded-time** sampler whose output is within $`2^{-k}`$ of uniform in
 total variation, running in polynomial worst-case time [S4:18–32].
 
 The **cell-bounded manuscript** asks: how many such tables are there? More
 precisely, it counts tables where each entry is also bounded by a prescribed
-cell bound (so $b_{ij}=0$ forbids a position), and gives a fully polynomial
+cell bound (so $`b_{ij}=0`$ forbids a position), and gives a fully polynomial
 randomized approximation scheme (FPRAS) — a relative-error approximation
 whose running time is polynomial in the input size, the inverse
 error, and the log of the inverse failure probability, on *every*
@@ -55,23 +55,23 @@ fixed-dimension assumption is required in either result.
 
 **Exact and bounded-time sampling** ([S4:18–32], `thm:main`). Two
 algorithms exist for arbitrary nonnegative integer margins of equal total.
-Part (i): given $k\ge1$, a bounded-time algorithm outputs a table whose
-law is within $2^{-k}$ in total variation of the uniform law, in time
-polynomial in $m,n,\log(N+1),k$ [S4:20–23]. Part (ii): an algorithm
+Part (i): given $`k\ge1`$, a bounded-time algorithm outputs a table whose
+law is within $`2^{-k}`$ in total variation of the uniform law, in time
+polynomial in $`m,n,\log(N+1),k`$ [S4:20–23]. Part (ii): an algorithm
 outputs an exactly uniform table, terminates almost surely, and has
-expected running time polynomial in $m,n,\log(N+1)$ [S4:25–28]. The
+expected running time polynomial in $`m,n,\log(N+1)`$ [S4:25–28]. The
 polynomials are uniform over all margin vectors; no positivity, sparsity,
 balance, or fixed-dimension hypothesis is imposed [S4:30–31].
 
 **Cell-bounded FPRAS** ([S6:21–35], `thm:main`). "There is one randomized
-algorithm with the following guarantee. Given $(r,c,b)$ as above and
-rational $\varepsilon,\delta\in(0,1)$, it outputs a nonnegative rational
-$\widehat Z$ such that
-$\Pr((1-\varepsilon)Z(r,c,b)\le\widehat
-Z\le(1+\varepsilon)Z(r,c,b))\ge1-\delta$" [S6:23–27]. "If
-$\Omega(r,c,b)$ is empty, the output is zero on every execution. The
+algorithm with the following guarantee. Given $`(r,c,b)`$ as above and
+rational $`\varepsilon,\delta\in(0,1)`$, it outputs a nonnegative rational
+$`\widehat Z`$ such that
+$`\Pr((1-\varepsilon)Z(r,c,b)\le\widehat
+Z\le(1+\varepsilon)Z(r,c,b))\ge1-\delta`$" [S6:23–27]. "If
+$`\Omega(r,c,b)`$ is empty, the output is zero on every execution. The
 algorithm uses independent unbiased bits, and one fixed polynomial in
-$L$, $\varepsilon^{-1}$, and $\log(\delta^{-1})$ bounds its total bit
+$`L`$, $`\varepsilon^{-1}`$, and $`\log(\delta^{-1})`$ bounds its total bit
 operations on every execution" [S6:28–32]. No counting or sampling oracle
 is required [S6:33].
 
@@ -99,7 +99,7 @@ bounds cannot be expanded into that many binary choices" [S6:57–59].
 Instead, a maximum-capacity spanning forest in the bipartite graph of large
 cells identifies free coordinates; leaf elimination determines tree entries
 from margin equations. Small cells are replaced by labeled pairs with
-transversal weights; two weight extensions ($f_j$ and $\widetilde f_j$)
+transversal weights; two weight extensions ($`f_j`$ and $`\widetilde f_j`$)
 control transport and defect masses via quadratic-signature (Lorentzian)
 tests [S6:97–117]. The chain simulates exchanges of selected and
 unselected elements with multipliers learned during annealing, in the style
@@ -114,21 +114,21 @@ The exact-uniform manuscript positions itself against a named line of
 contingency-table sampling. **Diaconis and Gangolli** treat enumeration and
 generation as a basic problem [S4:46–47]. For two rows, **Dyer and
 Greenhill** give polynomial-time approximate counting and sampling via a
-heat-bath chain with mixing time at most $n(n-1)\log(N/\varepsilon)/2$
+heat-bath chain with mixing time at most $`n(n-1)\log(N/\varepsilon)/2`$
 [S4:49–50], and **Kijima and Matsui** give exact uniform sampling by
 monotone coupling from the past [S4:52–54]. The fixed-row case extends
 through **Cryan and Dyer** (dynamic programming + volume estimation),
 **Dyer** (dynamic-programming rejection), and **Cryan, Dyer, Goldberg,
-Jerrum, and Martin** (rapid mixing of the $2\times2$ heat-bath chain for
+Jerrum, and Martin** (rapid mixing of the $`2\times2`$ heat-bath chain for
 every fixed row count) [S4:56–61], but the polynomial bounds in those
 results depend on the fixed row count. **DeSalvo and Zhao** give a general
-exact divide-and-conquer construction using $O(mn\log M)$ expected random
+exact divide-and-conquer construction using $`O(mn\log M)`$ expected random
 bits, but their polynomial total-runtime conclusion is conditional on an
 open conjecture about parity-restricted counting quantities [S4:64–70].
 For dense margins, **Dyer, Kannan, and Mount** develop scaled coordinates,
 softened constraints, and lattice walks; **Morris** improves the dense
 bounds [S4:73–75]. For sparse margins, **Arman, Gao, and Wormald** give
-exact uniform generation under $5\Delta^4<N$ [S4:77–80]. Theorem
+exact uniform generation under $`5\Delta^4<N`$ [S4:77–80]. Theorem
 `thm:main` removes the margin and dimension restrictions and includes all
 random bits and integer arithmetic in its cost [S4:82–84].
 
@@ -157,7 +157,7 @@ ships both manuscripts as proofs.
   structural assumptions [S4:18–32].
 - **Bounded-time almost-uniform sampling.** The same family with a
   worst-case polynomial bound and a tunable total-variation tolerance
-  $2^{-k}$ [S4:18–23].
+  $`2^{-k}`$ [S4:18–23].
 - **Cell-bounded counting FPRAS.** A fully polynomial randomized
   approximation for counting tables with individual entry bounds, including
   structural zeros, with polynomial cost on every execution and exact zero
@@ -195,7 +195,7 @@ equal totals. It terminates almost surely, every halted output is feasible,
 and each table has exactly the uniform limiting probability. Expected bit
 complexity is polynomial in the dimensions and the binary length of the
 margins" [S9:10]. It also describes the bounded-time sampler with
-$2^{-k}$ TV error [S9:12] and the cell-bounded FPRAS [S9:14–16].
+$`2^{-k}`$ TV error [S9:12] and the cell-bounded FPRAS [S9:14–16].
 
 The comparator stub [S10] defines the machine model (`RandomMachine`,
 `Configuration`, `tick`, `run`), the table types (`HasMargins`, `Table`,

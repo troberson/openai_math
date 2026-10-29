@@ -12,38 +12,38 @@ The release blurb
 
 The manuscript abstract 
 
-> For every fixed $C>0$, we prove that a positive proportion of consecutive
-prime gaps exceed $C\log p$, where $p$ is the smaller prime. The proportion
+> For every fixed $`C>0`$, we prove that a positive proportion of consecutive
+prime gaps exceed $`C\log p`$, where $`p`$ is the smaller prime. The proportion
 is bounded below for every sufficiently large initial segment of the
-prime sequence, with a constant depending on $C$. It follows that the
-indices at which $p_n/n$ increases have positive lower asymptotic density,
+prime sequence, with a constant depending on $`C`$. It follows that the
+indices at which $`p_n/n`$ increases have positive lower asymptotic density,
 answering a question of Erdős and Prachar. [S2:28–35]
 
 ## Undergraduate summary
 
 A "prime gap" is the difference between two consecutive primes. The
-prime number theorem says the *average* gap near $p$ is about
-$\log p$ — the primes thin out at exactly that rate. But individual
+prime number theorem says the *average* gap near $`p`$ is about
+$`\log p`$ — the primes thin out at exactly that rate. But individual
 gaps can be far larger than average: Westzynthius showed the ratio
-of a gap to $\log p$ is unbounded, and later work (Erdős–Rankin, and
+of a gap to $`\log p`$ is unbounded, and later work (Erdős–Rankin, and
 more recently Ford–Green–Konyagin–Tao and Maynard) pushed how large a
 single gap can be.
 
 The question here is not about the *largest* gap, but about
-*frequency*: for a fixed multiple $C$ of the average, what proportion
-of primes have a *next* gap larger than $C\log p$? The paper proves that
-for every such $C > 0$, a strictly positive proportion of primes are
+*frequency*: for a fixed multiple $`C`$ of the average, what proportion
+of primes have a *next* gap larger than $`C\log p`$? The paper proves that
+for every such $`C > 0`$, a strictly positive proportion of primes are
 followed by such a large gap — and the bound holds uniformly across
 every sufficiently large initial segment of the prime list, not just
 on average. A clean consequence answers a question of Erdős and
-Prachar: the indices at which the ratio $p_n/n$ increases have
+Prachar: the indices at which the ratio $`p_n/n`$ increases have
 positive lower density.
 
 The main statement 
 
 > **Theorem 1.1**
-For every fixed real $C>0$, there are constants $c(C)>0$ and $N_0(C)$
-such that, for every integer $N\ge N_0(C)$,
+For every fixed real $`C>0`$, there are constants $`c(C)>0`$ and $`N_0(C)`$
+such that, for every integer $`N\ge N_0(C)`$,
 $$\\\#\{1\le n\le N:p_{n+1}-p_n>C\log p_n\}\ge c(C)N.$$ [S3:22–28]
 
 ## Graduate summary
@@ -54,48 +54,48 @@ primes whose next gap exceeds a fixed multiple of the log scale.
 **Main theorem.** 
 
 > **Theorem 1.1**
-For every fixed real $C>0$, there are constants $c(C)>0$ and $N_0(C)$
-such that, for every integer $N\ge N_0(C)$,
+For every fixed real $`C>0`$, there are constants $`c(C)>0`$ and $`N_0(C)`$
+such that, for every integer $`N\ge N_0(C)`$,
 $$\\\#\{1\le n\le N:p_{n+1}-p_n>C\log p_n\}\ge c(C)N.$$ [S3:22–28]
 
-For every fixed real $C > 0$ there are constants $c(C) > 0$ and
-$N_0(C)$ such that, for every integer $N \ge N_0(C)$, at least $c(C)N$
-of the first $N$ primes satisfy $p_{n+1} - p_n > C\log p_n$. The content
+For every fixed real $`C > 0`$ there are constants $`c(C) > 0`$ and
+$`N_0(C)`$ such that, for every integer $`N \ge N_0(C)`$, at least $`c(C)N`$
+of the first $`N`$ primes satisfy $`p_{n+1} - p_n > C\log p_n`$. The content
 is the uniformity in the "lower density" sense: the positive proportion
 is a floor on the initial-segment count, so it cannot be produced by a
 sparse set of exceptionally large gaps, and both constants may depend
-on the threshold $C$.
+on the threshold $`C`$.
 
-**The prime-ratio corollary.** [S3:38–45]: the set of indices $n$ with
-$p_n/n < p_{n+1}/(n+1)$ has positive lower asymptotic density. The
+**The prime-ratio corollary.** [S3:38–45]: the set of indices $`n`$ with
+$`p_n/n < p_{n+1}/(n+1)`$ has positive lower asymptotic density. The
 displayed inequality is the large-gap condition repackaged: since
-$p_n/n \sim \log p_n$, an increase in the ratio is driven precisely by
+$`p_n/n \sim \log p_n`$, an increase in the ratio is driven precisely by
 a gap that beats the log scale, so the corollary follows from the
-theorem. This is the statement the formalization lands , "The formalized supplement proves that the indices $n$ for which $p_n/n<p_{n+1}/(n+1)$ have positive lower asymptotic density, where $p_n$ is the $n$th prime. Thus the normalized prime sequence has a positive-density set of increases. This is the prime-ratio corollary associated with the paper's theorem on a positive lower density of large prime gaps. [S4:9]".
+theorem. This is the statement the formalization lands , "The formalized supplement proves that the indices $`n`$ for which $`p_n/n<p_{n+1}/(n+1)`$ have positive lower asymptotic density, where $`p_n`$ is the $`n`$th prime. Thus the normalized prime sequence has a positive-density set of increases. This is the prime-ratio corollary associated with the paper's theorem on a positive lower density of large prime gaps. [S4:9]".
 
 ## history of the conjecture
 
 Prior (my training data, not this repo): the existence of unbounded
 normalized gaps is classical — Westzynthius (1931) proved
-$d_n / \log p_n$ is unbounded, and the Erdős–Rankin construction gave
-gaps of order $\log p \cdot \log\log p \cdot \log\log\log\log p /
-(\log\log\log p)^2$. The Ford–Green–Konyagin–Tao and Maynard
+$`d_n / \log p_n`$ is unbounded, and the Erdős–Rankin construction gave
+gaps of order $`\log p \cdot \log\log p \cdot \log\log\log\log p /
+(\log\log\log p)^2`$. The Ford–Green–Konyagin–Tao and Maynard
 refinements (2015–2016) removed the extra iterated-log factors, so the
 largest gaps are within a constant of the best possible
-$\asymp \log p \cdot \log\log p$ order. A large-gap *upper* bound,
+$`\asymp \log p \cdot \log\log p`$ order. A large-gap *upper* bound,
 however, says nothing about *how often* large gaps occur; proving a
-positive proportion of gaps exceed $C\log p$ is a distinct, frequency
-statement. The $p_n/n$-increase question of Erdős and Prachar (1962)
+positive proportion of gaps exceed $`C\log p`$ is a distinct, frequency
+statement. The $`p_n/n`$-increase question of Erdős and Prachar (1962)
 had remained open, and the corollary resolves it.
 
 ## Consequences
 
 **A positive lower density of large prime gaps, uniformly in the
-initial segment.** For every fixed $C > 0$, at least $c(C)N$ of the
-first $N$ primes have a next gap exceeding $C\log p_n$ [S3:22–28].
+initial segment.** For every fixed $`C > 0`$, at least $`c(C)N`$ of the
+first $`N`$ primes have a next gap exceeding $`C\log p_n`$ [S3:22–28].
 
 **A positive lower density of prime-ratio increases.** The set of
-indices $n$ with $p_n/n < p_{n+1}/(n+1)$ has positive lower
+indices $`n`$ with $`p_n/n < p_{n+1}/(n+1)`$ has positive lower
 asymptotic density, answering Erdős and Prachar [S3:38–45].
 
 ## section skeleton
@@ -135,7 +135,7 @@ theorem large_gaps_and_ratio_density :
 [S5:36–41]
 
 The scope note [S4:9] confirms which half the formalization reaches:
-"The formalized supplement proves that the indices $n$ for which $p_n/n<p_{n+1}/(n+1)$ have positive lower asymptotic density, where $p_n$ is the $n$th prime. Thus the normalized prime sequence has a positive-density set of increases. This is the prime-ratio corollary associated with the paper's theorem on a positive lower density of large prime gaps. [S4:9]" Note the ledger reads `paps_form 0` (no `main_results` entry),
+"The formalized supplement proves that the indices $`n`$ for which $`p_n/n<p_{n+1}/(n+1)`$ have positive lower asymptotic density, where $`p_n`$ is the $`n`$th prime. Thus the normalized prime sequence has a positive-density set of increases. This is the prime-ratio corollary associated with the paper's theorem on a positive lower density of large prime gaps. [S4:9]" Note the ledger reads `paps_form 0` (no `main_results` entry),
 so the scope note describes an intended target, not a landed
 formalization.
 
@@ -157,7 +157,7 @@ formalization.
 - Bazzanella, Danilo, Languasco, Alessandro, Zaccagnini, Alessandro, Prime numbers in logarithmic intervals (2010)
 - Bombieri, Enrico, Friedlander, John B., Iwaniec, Henryk, Primes in arithmetic progressions to large moduli (1986)
 - Bombieri, Enrico, On the large sieve (1965)
-- Erdős, Paul, Prachar, Karl, Sätze und Probleme über $p_k/k$ (1962)
+- Erdős, Paul, Prachar, Karl, Sätze und Probleme über $`p_k/k`$ (1962)
 - Erdős, Paul, On the difference of consecutive primes (1935)
 - Ford, Kevin, Green, Ben, Konyagin, Sergei, Tao, Terence, Large gaps between consecutive prime numbers (2016)
 - Ford, Kevin, Green, Ben, Konyagin, Sergei, Maynard, James, Tao, Terence, Long gaps between primes (2018)
@@ -170,5 +170,5 @@ formalization.
 - Maynard, James, Large gaps between primes (2016)
 - Rankin, R. A., The difference between consecutive prime numbers (1938)
 - Tao, Terence, Answer to: Positive proportion of logarithmic gaps between consecutive primes (2019)
-- Vinogradov, A. I., The density hypothesis for Dirichlet $L$-series (1965)
-- Westzynthius, E., Über die Verteilung der Zahlen, die zu den $n$ ersten Primzahlen teilerfremd sind (1931)
+- Vinogradov, A. I., The density hypothesis for Dirichlet $`L`$-series (1965)
+- Westzynthius, E., Über die Verteilung der Zahlen, die zu den $`n`$ ersten Primzahlen teilerfremd sind (1931)

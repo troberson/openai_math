@@ -10,8 +10,8 @@ The release's blurb "**053. A counterexample to Pixton completeness in Chow.** C
 "A high-arity counterexample to Pixton completeness in Chow [S3:1]" , and its abstract reads: "We disprove the Chow and rational-cohomological forms of Pixton's completeness
 conjecture for his original relation system. We construct a formal tautological
 class outside the original Pixton relation span whose image is zero in the Chow
-ring and in rational cohomology. The example has genus $10^{60}$ and
-$3\binom{10^{60}}{3}$ markings. [S4:62–66]"
+ring and in rational cohomology. The example has genus $`10^{60}`$ and
+$`3\binom{10^{60}}{3}`$ markings. [S4:62–66]"
 
 ## Undergraduate summary
 
@@ -28,14 +28,14 @@ relations and conjectured that it is complete. We construct a relation
 outside that system: an alternating product of corrected small diagonals
 that vanishes in rational Chow, and therefore in rational cohomology. [S5:3–10]" Pixton proposed a uniform
 system of stable-graph relations and conjectured it is complete. The
-Chow completeness question is whether $\ker q_{g,n}=\mathcal P_{g,n}$
+Chow completeness question is whether $`\ker q_{g,n}=\mathcal P_{g,n}`$
 for every stable pair 
 
-> Writing $R^*(\overline{\mathcal M}_{g,n})=\mathrm{im} q_{g,n}$, the Chow completeness question is
+> Writing $`R^*(\overline{\mathcal M}_{g,n})=\mathrm{im} q_{g,n}`$, the Chow completeness question is
 whether
 $$\ker q_{g,n}=\mathcal P_{g,n}$$
 for every stable pair. The known validity theorem gives the inclusion
-$\mathcal P_{g,n}\subseteq\ker q_{g,n}$. Our example makes it strict. [S5:25–30]
+$`\mathcal P_{g,n}\subseteq\ker q_{g,n}`$. Our example makes it strict. [S5:25–30]
 
 The known validity theorem gives the inclusion; this example makes
 it strict. The theorem 
@@ -43,12 +43,12 @@ it strict. The theorem
 > **Theorem 1.1**
 Set
 $$g=10^{60},\qquad D_*=\binom g3,\qquad n=3D_*.$$
-The explicitly defined class $Y\in S_{g,n}^{2D_*}$ of
+The explicitly defined class $`Y\in S_{g,n}^{2D_*}`$ of
 Definition satisfies
 $$q_{g,n}(Y)=0,\qquad Y\notin\mathcal P_{g,n}.$$
 Consequently Pixton's original relation span does not exhaust the
 tautological Chow relations: the equality
-$\ker q_{g,n}=\mathcal P_{g,n}$ fails for this stable pair. [S5:76–89]
+$`\ker q_{g,n}=\mathcal P_{g,n}`$ fails for this stable pair. [S5:76–89]
 
 ## Graduate summary
 
@@ -64,18 +64,18 @@ while satisfying the identities needed to annihilate the original
 Pixton span. The actual Chow correspondences of a curve satisfy an
 additional nilpotence identity obtained from a surface Quot scheme.
 The first algebra proves nonmembership; the second proves vanishing.
-Figure separates these two assertions about $Y$. [S5:166–172]
+Figure separates these two assertions about $`Y`$. [S5:166–172]
 
 The first algebra proves nonmembership; the second proves vanishing.
 
 **The formal detector.** A linear map on decorated graphs discards
 graphs outside the rational-tails locus and evaluates rational
 branches by Frobenius multiplication and coproduct. Every element of
-$\mathcal P_{g,n}$ has zero test, while the test of $Y$ has a
+$`\mathcal P_{g,n}`$ has zero test, while the test of $`Y`$ has a
 nonzero coefficient proportional to
-$\prod_{i<j<k}\theta_{ijk}$ . "Every element of $\mathcal P_{g,n}$ has zero test,
-while the test of $Y$ has a nonzero coefficient proportional to
-$\prod_{i<j<k}\theta_{ijk}$. [S5:181–186]"
+$`\prod_{i<j<k}\theta_{ijk}`$ . "Every element of $`\mathcal P_{g,n}`$ has zero test,
+while the test of $`Y`$ has a nonzero coefficient proportional to
+$`\prod_{i<j<k}\theta_{ijk}`$. [S5:181–186]"
 
 **The smooth-family identity.** The correspondence object of a
 smooth curve splits into two even summands and an odd symplectic
@@ -89,7 +89,7 @@ equality diagonals; the common scalar is nonzero [S10].
 **The compactification and the support induction.** The corrected
 stable cubic is compared with the projected smooth-curve cubic
 through Hassett's weighted stable curves and a rational-bridge
-correction of coefficient $-1/2$, which cancels the remaining
+correction of coefficient $`-1/2`$, which cancels the remaining
 triple-exceptional contribution. The errors then lower the dimension
 of the supporting cycle 
 
@@ -114,17 +114,17 @@ enough entries for every advancement, until the support is empty.
 
 Mumford initiated the systematic study of natural classes in the Chow
 ring; Faber proposed a description of the tautological ring of
-$\mathcal M_g$; Faber–Zagier gave explicit hypergeometric relations;
+$`\mathcal M_g`$; Faber–Zagier gave explicit hypergeometric relations;
 Pandharipande–Pixton proved them in Chow. On the compactification,
 Arbarello–Cornalba and Graber–Pandharipande developed the boundary
 calculus; Keel gave the genus-zero presentation; Pixton's 2012 graph
-formula extends the system to $\overline{\mathcal M}_{g,n}$ [S5:14–33].
+formula extends the system to $`\overline{\mathcal M}_{g,n}`$ [S5:14–33].
 Pandharipande–Pixton–Zvonkine proved the cohomological validity using
 the 3-spin CohFT; Janda proved the Chow validity using equivariant
 Gromov–Witten theory [S5:35–39].
 
 Completeness is distinct from the Gorenstein property: Pixton proved
-$R^*(\mathcal M_{25})$ is not Gorenstein while establishing
+$`R^*(\mathcal M_{25})`$ is not Gorenstein while establishing
 Faber–Zagier completeness there; Canning–Larson–Schmitt proved
 completeness together with non-Gorenstein behavior on the
 compact-type spaces [S5:142–152].
@@ -132,16 +132,16 @@ compact-type spaces [S5:142–152].
 ## Consequences
 
 **Pixton's Chow completeness conjecture is false.** For
-$g=10^{60}$ and $n=3\binom{g}{3}$, the explicitly defined class
-$Y$ satisfies $q_{g,n}(Y)=0$ and $Y\notin\mathcal P_{g,n}$ [S5:76–89].
-The equality $\ker q_{g,n}=\mathcal P_{g,n}$ fails for this stable
+$`g=10^{60}`$ and $`n=3\binom{g}{3}`$, the explicitly defined class
+$`Y`$ satisfies $`q_{g,n}(Y)=0`$ and $`Y\notin\mathcal P_{g,n}`$ [S5:76–89].
+The equality $`\ker q_{g,n}=\mathcal P_{g,n}`$ fails for this stable
 pair.
 
 **The rational-cohomological form is also false.** The same class
-gives $q^H_{g,n}(Y)=0$ in
-$H^{4D_*}(\overline{\mathcal M}_{g,n}(\mathbb C);\mathbb Q)$ with
-$Y\notin\mathcal P_{g,n}$, so
-$\mathcal P_{g,n}\subsetneq\ker q^H_{g,n}$ [S5:105–118]. Passing
+gives $`q^H_{g,n}(Y)=0`$ in
+$`H^{4D_*}(\overline{\mathcal M}_{g,n}(\mathbb C);\mathbb Q)`$ with
+$`Y\notin\mathcal P_{g,n}`$, so
+$`\mathcal P_{g,n}\subsetneq\ker q^H_{g,n}`$ [S5:105–118]. Passing
 from Chow vanishing to cohomological vanishing uses no injectivity
 of the cycle-class map.
 
@@ -196,7 +196,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - The Stacks Project Authors, _The Stacks Project_, 2026. . Specific results are cited by their stable tags.
 - A. Beauville, _Quelques remarques sur la transformation de Fourier dans l'anneau de Chow d'une variété abélienne_, in _Algebraic Geometry (Tokyo/Kyoto, 1982)_, Lecture Notes in Math. **1016**, Springer, 1983, 238–260. doi:10.1007/BFb0099965.
 - S. Bosch, W. Lütkebohmert, and M. Raynaud, _Néron Models_, Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 21, Springer-Verlag, Berlin, 1990.
-- S. Canning, _The tautological ring of $\overline{\mathcal M}_{g,n}$ is rarely Gorenstein_, Geom.\ Topol.\ **29** (2025), no. 7, 3905–3919. doi:10.2140/gt.2025.29.3905. Numbered statements refer to arXiv:2406.10516v1.
+- S. Canning, _The tautological ring of $`\overline{\mathcal M}_{g,n}`$ is rarely Gorenstein_, Geom.\ Topol.\ **29** (2025), no. 7, 3905–3919. doi:10.2140/gt.2025.29.3905. Numbered statements refer to arXiv:2406.10516v1.
 - S. Canning, H. Larson, and J. Schmitt, _The Gorenstein property and Pixton's conjecture for compact type moduli_, arXiv:2607.02249v2, 2026.
 - E. Arbarello and M. Cornalba, _Combinatorial and algebro-geometric cohomology classes on the moduli spaces of curves_, J.\ Algebraic Geom.\ **5** (1996), no. 4, 705–749. arXiv:alg-geom/9406008.
 - G. Ellingsrud, L. Göttsche, and M. Lehn, _On the cobordism class of the Hilbert scheme of a surface_, J.\ Algebraic Geom.\ **10** (2001), no. 1, 81–100. arXiv:math/9904095v1.
@@ -207,9 +207,9 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - W. Fulton, _Intersection Theory_, second edition, Springer, 1998. doi:10.1007/978-1-4612-1700-8.
 - D. Edidin and W. Graham, _Equivariant intersection theory_, Invent.\ Math.\ **131** (1998), no. 3, 595–634. Numbered statements refer to arXiv:alg-geom/9609018v3.
 - B. Hassett, _Moduli spaces of weighted pointed stable curves_, Adv.\ Math.\ **173** (2003), no. 2, 316–352. doi:10.1016/S0001-8708(02)00058-0. Preprint version: arXiv:math/0205009v1.
-- F. Janda, _Relations on $\overline{\mathcal M}_{g,n}$ via equivariant Gromov–Witten theory of $\mathbb P^1$_, Algebraic Geometry **4** (2017), no. 3, 311–336. doi:10.14231/AG-2017-018. Preprint version: arXiv:1509.08421v3.
+- F. Janda, _Relations on $`\overline{\mathcal M}_{g,n}`$ via equivariant Gromov–Witten theory of $`\mathbb P^1`$_, Algebraic Geometry **4** (2017), no. 3, 311–336. doi:10.14231/AG-2017-018. Preprint version: arXiv:1509.08421v3.
 - F. Janda, _Frobenius manifolds near the discriminant and relations in the tautological ring_, Lett.\ Math.\ Phys.\ **108** (2018), no. 7, 1649–1675. doi:10.1007/s11005-018-1047-2. Numbered statements refer to arXiv:1505.03419v3.
-- S. Keel, _Intersection theory of moduli space of stable $n$-pointed curves of genus zero_, Trans.\ Amer.\ Math.\ Soc.\ **330** (1992), no. 2, 545–574. doi:10.1090/S0002-9947-1992-1034665-0.
+- S. Keel, _Intersection theory of moduli space of stable $`n`$-pointed curves of genus zero_, Trans.\ Amer.\ Math.\ Soc.\ **330** (1992), no. 2, 545–574. doi:10.1090/S0002-9947-1992-1034665-0.
 - S. L. Kleiman, _The Picard scheme_, arXiv:math/0504020v1, 2005.
 - B. Kong, _Tautological pushforwards of Hilbert schemes of points on curves and surfaces_, arXiv:2608.25447v1, 2026.
 - A. Kresch, _Cycle groups for Artin stacks_, Invent.\ Math.\ **138** (1999), 495–536. Numbered statements refer to arXiv:math/9810166v1.
@@ -220,18 +220,18 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - A. Marian, D. Oprea, and R. Pandharipande, _Segre classes and Hilbert schemes of points_, Ann.\ Sci.\ École Norm.\ Sup.\ (4) **50** (2017), no. 1, 239–267. doi:10.24033/asens.2320. arXiv:1507.00688v2.
 - A. Marian, D. Oprea, and R. Pandharipande, _The combinatorics of Lehn's conjecture_, J.\ Math.\ Soc.\ Japan **71** (2019), 299–308. arXiv:1708.08129v2. Numbered statements refer to the December 2017 author manuscript, author version.
 - J. S. Milne, _Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field_, Cambridge Studies in Advanced Mathematics **170**, Cambridge University Press, 2017. Numbered statements refer to the revised 2022 author version, Algebraic Groups (2022).
-- S. Mukai, _Duality between $D(X)$ and $D(\widehat X)$ with its application to Picard sheaves_, Nagoya Math. J. **81** (1981), 153–175. doi:10.1017/S002776300001922X.
+- S. Mukai, _Duality between $`D(X)`$ and $`D(\widehat X)`$ with its application to Picard sheaves_, Nagoya Math. J. **81** (1981), 153–175. doi:10.1017/S002776300001922X.
 - P. Deligne and D. Mumford, _The irreducibility of the space of curves of given genus_, Publ.\ Math.\ IHÉS **36** (1969), 75–109. Original article.
 - D. Mumford, _Towards an enumerative geometry of the moduli space of curves_, in _Arithmetic and Geometry, Vol. II_, Progress in Mathematics **36**, Birkhäuser, 1983, 271–328. doi:10.1007/978-1-4757-9286-7\_12.
 - N. Nitsure, _Construction of Hilbert and Quot schemes_, arXiv:math/0504590v1, 2005.
 - T. Graber and R. Pandharipande, _Localization of virtual classes_, Invent.\ Math.\ **135** (1999), 487–518. doi:10.1007/s002220050293. Preprint version: arXiv:alg-geom/9708001v2.
 - T. Graber and R. Pandharipande, _Constructions of nontautological classes on moduli spaces of curves_, Michigan Math.\ J.\ **51** (2003), no. 1, 93–109. arXiv:math/0104057v2.
 - D. Oprea and R. Pandharipande, _Quot schemes of curves and surfaces: virtual classes, integrals, Euler characteristics_, Geom.\ Topol.\ **25** (2021), 3425–3505. doi:10.2140/gt.2021.25.3425. arXiv:1903.08787v2.
-- R. Pandharipande, A. Pixton, and D. Zvonkine, _Relations on $\overline{\mathcal M}_{g,n}$ via $3$-spin structures_, J.\ Amer.\ Math.\ Soc.\ **28** (2015), no. 1, 279–309. Numbered statements and formulas refer to the corrected version arXiv:1303.1043v3.
+- R. Pandharipande, A. Pixton, and D. Zvonkine, _Relations on $`\overline{\mathcal M}_{g,n}`$ via $`3`$-spin structures_, J.\ Amer.\ Math.\ Soc.\ **28** (2015), no. 1, 279–309. Numbered statements and formulas refer to the corrected version arXiv:1303.1043v3.
 - D. Petersen, _Poincaré duality of wonderful compactifications and tautological rings_, Int.\ Math.\ Res.\ Not.\ **2016** (2016), no. 17, 5187–5201. Numbered statements refer to arXiv:1501.04742v2.
 - R. Pandharipande and A. Pixton, _Relations in the tautological ring of the moduli space of curves_, Pure Appl.\ Math.\ Q.\ **17** (2021), no. 2, 717–771. doi:10.4310/PAMQ.2021.v17.n2.a7. arXiv:1301.4561v2.
-- A. Pixton, _Conjectural relations in the tautological ring of $\overline{\mathcal M}_{g,n}$_, arXiv:1207.1918v1, 2012.
-- A. Pixton, _The tautological ring of $\mathcal M_{25}$ is not Gorenstein_, arXiv:2609.15949v1, 2026.
+- A. Pixton, _Conjectural relations in the tautological ring of $`\overline{\mathcal M}_{g,n}`$_, arXiv:1207.1918v1, 2012.
+- A. Pixton, _The tautological ring of $`\mathcal M_{25}`$ is not Gorenstein_, arXiv:2609.15949v1, 2026.
 - P. Deligne and M. Rapoport, _Les schémas de modules de courbes elliptiques_, in _Modular Functions of One Variable II_, Lecture Notes in Mathematics **349**, Springer, 1973, 143–316. Original article.
 - E. Routis, _Weighted compactifications of configuration spaces and relative stable degenerations_, arXiv:1411.2955v1, 2014.
 - Y. Bae and J. Schmitt, with an appendix jointly with J. Skowera, _Chow rings of stacks of prestable curves I_, Forum Math. Sigma **10** (2022), e28. doi:10.1017/fms.2022.21.
@@ -239,7 +239,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - T. Schürg, B. Toën, and G. Vezzosi, _Derived algebraic geometry, determinants of perfect complexes, and applications to obstruction theories for maps and complexes_, J.\ Reine Angew.\ Math.\ **702** (2015), 1–40. doi:10.1515/crelle-2013-0037. Numbered statements follow the accepted-manuscript galley.
 - A. Borel and J.-P. Serre, _Le théor\`eme de Riemann–Roch_, Bull.\ Soc.\ Math.\ France **86** (1958), 97–136. doi:10.24033/bsmf.1500.
 - P. O'Sullivan, _Algebraic cycles on an abelian variety_, J.\ Reine Angew.\ Math.\ **654** (2011), 1–81. doi:10.1515/crelle.2011.025. Numbered statements refer to arXiv:0908.0626v1.
-- M. Tavakol, _The connection between $R^*(\mathcal C_g^n)$ and $R^*(\mathcal M_{g,n}^{\mathrm{rt}})$_, J.\ Pure Appl.\ Algebra **222** (2018), no. 6, 1306–1315. Preprint version, titled _A conjectural connection between $R^*(\mathcal C_g^n)$ and $R^*(\mathcal M_{g,n}^{\mathrm{rt}})$_: arXiv:1412.5036v2.
+- M. Tavakol, _The connection between $`R^*(\mathcal C_g^n)`$ and $`R^*(\mathcal M_{g,n}^{\mathrm{rt}})`$_, J.\ Pure Appl.\ Algebra **222** (2018), no. 6, 1306–1315. Preprint version, titled _A conjectural connection between $`R^*(\mathcal C_g^n)`$ and $`R^*(\mathcal M_{g,n}^{\mathrm{rt}})`$_: arXiv:1412.5036v2.
 - T. Graber and R. Vakil, _Relative virtual localization and vanishing of tautological classes on moduli spaces of curves_, Duke Math.\ J.\ **130** (2005), no. 1, 1–37. arXiv:math/0309227v3.
 - B. Toën and M. Vaquié, _Moduli of objects in dg-categories_, Ann.\ Sci.\ École Norm.\ Sup.\ (4) **40** (2007), no. 3, 387–444. doi:10.1016/j.ansens.2007.05.001. Numbered statements follow the April 2007 author manuscript.
 - M. Rubey and B. W. Westbury, _Combinatorics of symplectic invariant tensors_, Discrete Math.\ Theor.\ Comput.\ Sci.\ Proc., FPSAC 2015 (2015), 285–296. doi:10.46298/dmtcs.2508.

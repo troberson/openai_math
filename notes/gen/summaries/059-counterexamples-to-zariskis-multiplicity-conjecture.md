@@ -14,23 +14,23 @@ lie in a common complex affine space of dimension divisible by eight. Their
 defining function germs are also topologically right equivalent, and the same
 examples answer Arnold's corank problem negatively for ambient topological equivalence.
 3.inline	S3	4	14	For a nonzero convergent power series
-$f\in\mathbb C\{z_1,\ldots,z_N\}$ with $f(0)=0$, the order $\mathrm{ord}_0f$ is
-the least total degree of a monomial with nonzero coefficient. When $f$
+$`f\in\mathbb C\{z_1,\ldots,z_N\}`$ with $`f(0)=0`$, the order $`\mathrm{ord}_0f`$ is
+the least total degree of a monomial with nonzero coefficient. When $`f`$
 is reduced, this integer is the multiplicity of the hypersurface germ
-$V(f)=\{f=0\}$. Two such germs are _ambiently homeomorphic_ if a
-homeomorphism between neighborhoods of the origin in $\mathbb C^N$ fixes the
+$`V(f)=\{f=0\}`$. Two such germs are _ambiently homeomorphic_ if a
+homeomorphism between neighborhoods of the origin in $`\mathbb C^N`$ fixes the
 origin and carries one hypersurface to the other. Zariski's multiplicity
 question asks whether this embedded topological equivalence determines
 multiplicity . It asks, in particular, whether topology
 can distinguish a hypersurface with a nonzero quadratic term from one
 whose first nonzero terms are cubic.
 4.inline	S3	39	51	\begintheorem 
-There is a finite integer $N>3$, divisible by eight, and there are reduced
-polynomials $f_1,f_2\in\mathbb R[z_1,\ldots,z_N]$, weighted homogeneous for
+There is a finite integer $`N>3`$, divisible by eight, and there are reduced
+polynomials $`f_1,f_2\in\mathbb R[z_1,\ldots,z_N]`$, weighted homogeneous for
 positive rational weights, such that:
 \beginenumerate[label=\textup{(\roman*)}]
-\item each $f_j$ has an isolated critical point at the origin;
-\item $\mathrm{ord}_0f_1=2$ and $\mathrm{ord}_0f_2=3$;
+\item each $`f_j`$ has an isolated critical point at the origin;
+\item $`\mathrm{ord}_0f_1=2`$ and $`\mathrm{ord}_0f_2=3`$;
 \item there is a homeomorphism germ of ambient pairs
 $$(\mathbb C^N,V(f_1),0)\ \cong\ (\mathbb C^N,V(f_2),0).$$
 \endenumerate
@@ -57,7 +57,7 @@ function germs with isolated critical points and multiplicities four and
 five whose zero-set germs are ambiently homeomorphic.
 7.inline	S9	31	45	\begintheorem 
 There are reduced convergent holomorphic function germs
-$f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)$, each with an isolated
+$`f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)`$, each with an isolated
 critical point at the origin, such that
 $$\mathrm{ord}_0f_4=4,\qquad
     \mathrm{ord}_0f_5=5,$$
@@ -69,7 +69,7 @@ $$(\mathbb C^4,V(f_4),0)
 8.inline	S9	47	54	The Milnor open book has a compact page whose middle-dimensional
 cycles carry an integral Seifert form: it records the linking of a
 cycle on a reference page with a cycle transported to a positive
-neighboring page. For the open books on $S^7$ used here, a
+neighboring page. For the open books on $`S^7`$ used here, a
 classification theorem turns a congruence of these integral forms
 into an equivalence of the embedded links. The proof is therefore
 organized around obtaining that integral congruence while retaining
@@ -80,7 +80,7 @@ Two manuscripts carry this family. The first,
 two and three* [S2], has the abstract [S2:9–15]: "2"
 
 The second, *Ambiently homeomorphic isolated hypersurface germs in
-$\mathbb C^4$ with multiplicities four and five* [S8], has the abstract
+$`\mathbb C^4`$ with multiplicities four and five* [S8], has the abstract
 [S8:9–13]: "6"
 
 ## Undergraduate summary
@@ -121,7 +121,7 @@ operator for sums of chain singularities. The arithmetic part of
 the proof produces a single integral map preserving the whole
 Seifert form.
 
-**The C4 construction.** For the open books on $S^7$, a
+**The C4 construction.** For the open books on $`S^7`$, a
 classification theorem turns a congruence of integral Seifert forms
 into an equivalence of embedded links [S9:47–54]:
 
@@ -136,10 +136,10 @@ construction uses plane curve inputs [S10], a tube construction
 theorem shows that a reduced hypersurface germ ambiently
 homeomorphic to a smooth one is itself smooth, so multiplicity one
 cannot occur in an unequal-multiplicity pair [S3:19–24]. Within a
-$\mu$-constant family, equimultiplicity holds by the work of
+$`\mu`$-constant family, equimultiplicity holds by the work of
 Greuel–O'Shea and Fernández de Bobadilla–Pełka [S3:106–130].
 The two different multiplicities in the theorems therefore
-preclude a connecting $\mu$-constant family.
+preclude a connecting $`\mu`$-constant family.
 
 ## History of the conjecture
 
@@ -149,7 +149,7 @@ topology determines the characteristic data of the branches and
 hence the multiplicity [S3:16–24, S9:13–22]. The A'Campo–Lê theorem
 handles the smooth case. Yau established multiplicity invariance
 for pairs of isolated quasihomogeneous surface singularities in
-$\mathbb C^3$. Fernandes, Jelonek, and Sampaio proved that multiplicity
+$`\mathbb C^3`$. Fernandes, Jelonek, and Sampaio proved that multiplicity
 two is preserved by ambient bi-Lipschitz equivalence [S3:132–148].
 
 For the C4 case, Koike and Parusiński proposed high-power

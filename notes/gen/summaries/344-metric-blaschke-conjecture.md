@@ -29,7 +29,7 @@ The conjecture starts from a property the round sphere has, and that the standar
 
 The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal 
 
-> For a connected closed smooth Riemannian manifold $(M,g)$, write $$\mathrm{inj}(M,g)=\inf_{p\in M}\mathrm{inj}_p(M,g), \qquad \mathrm{diam}(M,g)=\sup_{p,q\in M}d_g(p,q).$$ Here $\mathrm{inj}_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\mathrm{inj}(M,g)=\mathrm{diam}(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma . [S6:18–29]
+> For a connected closed smooth Riemannian manifold $`(M,g)`$, write $$\mathrm{inj}(M,g)=\inf_{p\in M}\mathrm{inj}_p(M,g), \qquad \mathrm{diam}(M,g)=\sup_{p,q\in M}d_g(p,q).$$ Here $`\mathrm{inj}_p(M,g)`$ is the supremum of the radii on whose open tangent balls $`\exp_p`$ is a diffeomorphism onto its image. We call $`M`$ a _Blaschke manifold_ if it has positive dimension and $`\mathrm{inj}(M,g)=\mathrm{diam}(M,g)`$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma . [S6:18–29]
 
 The main theorem is the classification 
 
@@ -42,7 +42,7 @@ The proof is a volume argument in two directions. Every Blaschke manifold has vo
 > Every Blaschke manifold and its model at the same diameter satisfy
 > $$>  \mathrm{Vol}(M,g)\ge\mathrm{Vol}(M_0,g_0).
 >$$
-> Equality holds if and only if $(M,g)$ is isometric to $(M_0,g_0)$.
+> Equality holds if and only if $`(M,g)`$ is isometric to $`(M_0,g_0)`$.
 > \end{theorem}
 >
 > \begin{corollary}[Reduction to an upper volume bound]
@@ -53,40 +53,40 @@ The proof is a volume argument in two directions. Every Blaschke manifold has vo
 
 The classification covers every quaternionic dimension, and the hypothesis is the global equality, not a curvature bound 
 
-> The classification includes every quaternionic dimension. Its hypothesis is the global equality just defined. Classical Blaschke structure associates to $M$ a compact rank-one symmetric _model_ $M_0$ by its cut-locus and integral cohomology type. Throughout the volume comparisons, the standard metric $g_0$ on $M_0$ is scaled to have the same diameter as $(M,g)$. Prime geodesics have length twice the diameter, so fixing the diameter is equivalent to fixing their prime period. [S6:39–46]
+> The classification includes every quaternionic dimension. Its hypothesis is the global equality just defined. Classical Blaschke structure associates to $`M`$ a compact rank-one symmetric _model_ $`M_0`$ by its cut-locus and integral cohomology type. Throughout the volume comparisons, the standard metric $`g_0`$ on $`M_0`$ is scaled to have the same diameter as $`(M,g)`$. Prime geodesics have length twice the diameter, so fixing the diameter is equivalent to fixing their prime period. [S6:39–46]
 
 ## Graduate summary
 
-The geometric input is the cut-time lemma, which turns the global equality into a pointwise statement: every geodesic is minimizing exactly up to the diameter, the cut locus of every point is the sphere at that distance, and the exponential map is a diffeomorphism on the open ball of that radius [S7:4–9]. Classical Blaschke structure then fixes the model: the prime geodesics form a locally trivial circle bundle over $M$ with fibre length twice the diameter, the cut locus of every point is a sphere, and the cohomology type is one of the compact rank-one symmetric models [S7:34–50].
+The geometric input is the cut-time lemma, which turns the global equality into a pointwise statement: every geodesic is minimizing exactly up to the diameter, the cut locus of every point is the sphere at that distance, and the exponential map is a diffeomorphism on the open ball of that radius [S7:4–9]. Classical Blaschke structure then fixes the model: the prime geodesics form a locally trivial circle bundle over $`M`$ with fibre length twice the diameter, the cut locus of every point is a sphere, and the cohomology type is one of the compact rank-one symmetric models [S7:34–50].
 
-The analytic comparison begins on one closed geodesic. The Lagrangian planes $L_x$ and $L_y$ of normal Jacobi fields give the determinant $f(x,y)$ as the absolute symplectic pairing of two orthonormal frames; where the plane is a graph over the initial coordinates, the same determinant is a quotient of the difference of the graph matrix by the square root of the product of its derivatives [S8:112–146]:
+The analytic comparison begins on one closed geodesic. The Lagrangian planes $`L_x`$ and $`L_y`$ of normal Jacobi fields give the determinant $`f(x,y)`$ as the absolute symplectic pairing of two orthonormal frames; where the plane is a graph over the initial coordinates, the same determinant is a quotient of the difference of the graph matrix by the square root of the product of its derivatives [S8:112–146]:
 
 > \begin{proposition}[Jacobi determinant normalization]
 > \label{lag:determinant}
-> Choose $G_x$- and $G_y$-orthonormal frames
-> $Z_x=(Z_{x,1},\ldots,Z_{x,d})$ and
-> $Z_y=(Z_{y,1},\ldots,Z_{y,d})$ of $L_x$ and $L_y$.  Then
+> Choose $`G_x`$- and $`G_y`$-orthonormal frames
+> $`Z_x=(Z_{x,1},\ldots,Z_{x,d})`$ and
+> $`Z_y=(Z_{y,1},\ldots,Z_{y,d})`$ of $`L_x`$ and $`L_y`$.  Then
 > \begin{equation}
 >  f(x,y)=\left|\det\bigl(\omega(Z_{x,a},Z_{y,b})\bigr)_{a,b=1}^d\right|
 >  \label{eq:lag-f}
 > \end{equation}
 > is independent of these choices.  It is continuous, symmetric in its
-> arguments, and separately $T$-periodic.  It is the absolute normal
-> Jacobi determinant at $y$ of fields vanishing at $x$ with orthonormal
-> initial derivatives there.  In particular, for $0<y-x<D$ it is the
-> polar volume density with respect to $dt$ and ordinary sphere area at
-> $\gamma(x)$.
+> arguments, and separately $`T`$-periodic.  It is the absolute normal
+> Jacobi determinant at $`y`$ of fields vanishing at $`x`$ with orthonormal
+> initial derivatives there.  In particular, for $`0<y-x<D`$ it is the
+> polar volume density with respect to $`dt`$ and ordinary sphere area at
+> $`\gamma(x)`$.
 >
-> Use the same orthonormal basis of $\dot\gamma(0)^\perp$ for the
+> Use the same orthonormal basis of $`\dot\gamma(0)^\perp`$ for the
 > coordinates
 > $$>  (q,p)=(J(0),J'(0))\in\mathbb R^d\oplus\mathbb R^d,
 >$$
-> choosing its first $k$ vectors to be the initial derivatives of a basis
-> of $L_0\cap L_D$.  On
+> choosing its first $`k`$ vectors to be the initial derivatives of a basis
+> of $`L_0\cap L_D`$.  On
 > $$>  \mathcal I=(0,D)\cup(D,T)
 >$$
-> there is a smooth symmetric matrix $A(t)$ such that
-> $L_t=\{(q,A(t)q):q\in\mathbb R^d\}$, and $A'(t)>0$.  For $x,y\in\mathcal I$,
+> there is a smooth symmetric matrix $`A(t)`$ such that
+> $`L_t=\{(q,A(t)q):q\in\mathbb R^d\}`$, and $`A'(t)>0`$.  For $`x,y\in\mathcal I`$,
 > \begin{equation}
 >  f(x,y)=
 >  \frac{|\det(A(y)-A(x))|}
@@ -99,45 +99,45 @@ The Schur factorization splits the determinant into a regular factor and a Schur
 
 > \begin{proposition}[Two Schur-complement bounds]
 > \label{lag:schur}
-> The matrix $Q(x,y)$ is symmetric and satisfies
+> The matrix $`Q(x,y)`$ is symmetric and satisfies
 > \begin{equation}
 >  \det(\Delta A)=\det(\Delta H)\det Q(x,y),\qquad
 >  Q(y,x)=-Q(x,y).
 >  \label{eq:lag-Schur-factorization}
 > \end{equation}
-> It extends continuously by zero to $y=x\in\mathcal I$, and
+> It extends continuously by zero to $`y=x\in\mathcal I`$, and
 > \begin{equation}
 >  Q(u,u+D)=Q(u+D,u)=0\qquad(0<u<D).
 >  \label{eq:lag-Q-zeros}
 > \end{equation}
-> Whenever its distinct endpoints remain in $\mathcal I$, it obeys the
+> Whenever its distinct endpoints remain in $`\mathcal I`$, it obeys the
 > positive-semidefinite matrix inequalities
 > \begin{equation}
 >  \partial_yQ(x,y)\ge S(y),\qquad
 >  -\partial_xQ(x,y)\ge S(x).
 >  \label{eq:lag-Q-derivatives}
 > \end{equation}
-> Consequently, for every $0<u<v<D$ and $i,j\in\{0,1\}$,
+> Consequently, for every $`0<u<v<D`$ and $`i,j\in\{0,1\}`$,
 > \begin{align}
 >  Q(u+iD,v+jD)&\ge\int_u^v S(t+jD)\,dt,
 >  \label{eq:lag-Q-bound-j}\\
 >  Q(u+iD,v+jD)&\ge\int_u^v S(t+iD)\,dt.
 >  \label{eq:lag-Q-bound-i}
 > \end{align}
-> In particular, this $Q$ is positive definite for all four choices of
-> $i,j$, including $i=1,j=0$.
+> In particular, this $`Q`$ is positive definite for all four choices of
+> $`i,j`$, including $`i=1,j=0`$.
 > \end{proposition}
 
-The scalar estimate is a weighted integral inequality against the model density. Relative to $p_0$, the weighted average of the log-interval-average, minus the mean of the endpoint values, is nonnegative; the symmetry of the weight is what makes the endpoint terms cancel [S9:25–48]:
+The scalar estimate is a weighted integral inequality against the model density. Relative to $`p_0`$, the weighted average of the log-interval-average, minus the mean of the endpoint values, is nonnegative; the symmetry of the weight is what makes the endpoint terms cancel [S9:25–48]:
 
 > \begin{lemma}[Weighted scalar identity]\label{weighted:scalar}
-> Let $b>0$, $\lambda=\pi/b$, and
+> Let $`b>0`$, $`\lambda=\pi/b`$, and
 > $$>  p_0(t)=\frac{\lambda^2}{\sin^2(\lambda t)},\qquad 0<t<b.
 >$$
-> Let $p:(0,b)\to(0,\infty)$ be continuous and suppose that
-> $g=\log(p/p_0)$ is bounded.  Let $W$ be nonnegative and measurable on
-> $(0,b)$, with $W(b-z)=W(z)$ almost everywhere and
-> $W(z)/\sin(\lambda z)$ essentially bounded.  Write
+> Let $`p:(0,b)\to(0,\infty)`$ be continuous and suppose that
+> $`g=\log(p/p_0)`$ is bounded.  Let $`W`$ be nonnegative and measurable on
+> $`(0,b)`$, with $`W(b-z)=W(z)`$ almost everywhere and
+> $`W(z)/\sin(\lambda z)`$ essentially bounded.  Write
 > $$>  \Delta_b=\{(x,y):0<x<y<b\},\qquad
 >  d\nu_{xy}(t)=\frac{p_0(t)\,dt}{\int_x^y p_0},\quad x<t<y.
 >$$
@@ -166,21 +166,21 @@ Integrating the radial density over the unit tangent bundle at each point gives 
 The quaternionic upper bound comes from characteristic classes. Pairs of points at the cut distance form a smooth incidence manifold, and the rank of the complement of two direction planes forces the total Pontryagin class [S11:175–183]:
 
 > \begin{theorem}\label{inc:pontryagin}
-> The total Pontryagin class of $M$ is
+> The total Pontryagin class of $`M`$ is
 > \begin{equation}\label{inc:pontryagin-formula}
 >  p(TM)=\frac{(1+2su+u^2)^{r+1}}{1+4su}
 >  \quad\text{in }H^*(M;\mathbb Q).
 > \end{equation}
 > The quotient means its power-series expansion truncated by
-> $u^{r+1}=0$.
+> $`u^{r+1}=0`$.
 > \end{theorem}
 
 The signature estimate fixes the sign of the coefficient [S12:9–13]:
 
 > \begin{theorem}\label{sig:coefficient}
-> In Proposition~\ref{inc:normal}, $|s|=1$. In particular, the
+> In Proposition~\ref{inc:normal}, $`|s|=1`$. In particular, the
 > actual tautological four-plane bundle of every tangent great-sphere
-> fibration at a point of $M$ satisfies $p_1=\pm2e$.
+> fibration at a point of $`M`$ satisfies $`p_1=\pm2e`$.
 > \end{theorem}
 
 The geodesic space carries the arithmetic. The period-normalized contact form expresses volume as the top power of the Euler class of the geodesic-circle bundle, and the model's characteristic number is a binomial coefficient [S13:61–72]:
@@ -207,7 +207,7 @@ The complete-intersection calculation turns the characteristic number into the s
 
 > \begin{theorem}
 > \label{alg:upper}
-> For a quaternionic-type Blaschke manifold of dimension $4r$, $r\ge2$,
+> For a quaternionic-type Blaschke manifold of dimension $`4r`$, $`r\ge2`$,
 > the contact characteristic number of Proposition~\ref{geo:contact}
 > satisfies
 > \begin{equation}
@@ -242,7 +242,7 @@ The manuscript states the route through the proof
 
 The arithmetic step is where the integral structure matters 
 
-> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound. [S6:160–179]
+> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $`M`$ also pulls back its cohomology generator; the vanishing of the $`(r+1)`$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound. [S6:160–179]
 
 ## History of the conjecture
 
@@ -318,15 +318,15 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - Moore, John Douglas, Lecture Notes on Seiberg–Witten Invariants (2010)
 - Ottosen, Iver, Bökstedt, Marcel, String cohomology groups of complex projective spaces (2007)
 - Álvarez Paiva, Juan-Carlos, Asymmetry in Hilbert's fourth problem (2013)
-- Reznikov, Alexander G., The weak Blaschke conjecture for $\mathbf{H}P^n$ (1985)
-- Reznikov, Alexander G., The weak Blaschke conjecture for $\mathbf{C}P^n$ (1994)
+- Reznikov, Alexander G., The weak Blaschke conjecture for $`\mathbf{H}P^n`$ (1985)
+- Reznikov, Alexander G., The weak Blaschke conjecture for $`\mathbf{C}P^n`$ (1994)
 - Rovenskii, Vladimir Y., Toponogov, Victor A., Great sphere foliations and manifolds with curvature bounded above (1996)
 - Shankar, Krishnan, Spatzier, Ralf, Wilking, Burkhard, Spherical rank rigidity and Blaschke manifolds (2005)
 - Song, Kyobeom, Blaschke conjecture and complex geometry (2026)
 - Su, Xiaole, Sun, Hongwei, Wang, Yusheng, On Blaschke's conjecture (2016)
 - Weinstein, Alan, On the volume of manifolds all of whose geodesics are closed (1974)
 - Wilking, Burkhard, Index parity of closed geodesics and rigidity of Hopf fibrations (2001)
-- Yang, Chung-Tao, Any Blaschke manifold of the homotopy type of $\mathbf{C}P^n$ has the right volume (1991)
+- Yang, Chung-Tao, Any Blaschke manifold of the homotopy type of $`\mathbf{C}P^n`$ has the right volume (1991)
 - Zelditch, Steve, Eigenfunctions of the Laplacian of Riemannian manifolds (2017)
 - Szabó, Zoltán I., The Lichnerowicz conjecture on harmonic manifolds (1990)
 - Szabó, Zoltán I., Harmonic manifolds; the proof of the Lichnerowicz conjecture in the compact case (1988)

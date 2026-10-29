@@ -12,12 +12,12 @@ simplicial volume, plus the rational-inessentiality obstruction to
 positive scalar curvature and its consequences. The family ships two
 companion manuscripts. The first proves the integral bound
  "We prove the integral scalar-curvature inequality proposed by Gromov.
-For every dimension $n\ge3$, there is a constant $a_n>0$, depending
-only on $n$, such that
+For every dimension $`n\ge3`$, there is a constant $`a_n>0`$, depending
+only on $`n`$, such that
 $$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|$$
-for every closed connected oriented smooth $n$-manifold $M$ and every
-smooth Riemannian metric $g$. Here
-$\mathrm{Scal}_g^-:=\max\{0,-\mathrm{Scal}_g\}$, and $\|M\|$ is real simplicial volume.
+for every closed connected oriented smooth $`n`$-manifold $`M`$ and every
+smooth Riemannian metric $`g`$. Here
+$`\mathrm{Scal}_g^-:=\max\{0,-\mathrm{Scal}_g\}`$, and $`\|M\|`$ is real simplicial volume.
 The proof uses the nonnegative-scalar-curvature vanishing theorem of the
 companion paper on rational inessentiality. [S3:49–61]"
 The second proves the rational-inessentiality theorem on which the
@@ -26,21 +26,21 @@ first's proof depends [S5:113–123].
 ## Undergraduate summary
 
 Simplicial volume measures the topological complexity of a manifold
-through the $\ell^1$-seminorm of its real fundamental class. Gromov
+through the $`\ell^1`$-seminorm of its real fundamental class. Gromov
 connected this invariant with Riemannian volume under lower Ricci
 curvature bounds, but a lower scalar curvature bound retains much less
 directional information. In 1986 Gromov proposed that the integral of
-the $n/2$-power of the negative part of scalar curvature still controls
+the $`n/2`$-power of the negative part of scalar curvature still controls
 simplicial volume, with a dimension-dependent constant [S4:4–65]:
 
 > **Theorem 1.1**
-For every integer $n\ge3$, there is a constant $a_n>0$, depending
-only on $n$, such that every closed connected oriented smooth
-$n$-manifold $M$ and every smooth Riemannian metric $g$ on $M$
+For every integer $`n\ge3`$, there is a constant $`a_n>0`$, depending
+only on $`n`$, such that every closed connected oriented smooth
+$`n`$-manifold $`M`$ and every smooth Riemannian metric $`g`$ on $`M`$
 satisfy
 $$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|.$$ [S4:67–77]
 
-The constant $a_n$ is uniform over the topology of $M$ and over all its
+The constant $`a_n`$ is uniform over the topology of $`M`$ and over all its
 metrics, so the negative scalar curvature is permitted to be
 concentrated in a small region. The companion manuscript proves the
 qualitative input: every closed connected oriented smooth manifold
@@ -50,33 +50,33 @@ simplicial volume [S5:113–123].
 ## Graduate summary
 
 **The conformal reduction.** The proof of the integral bound begins
-with a Yamabe reduction: if $\|M\|>0$, the vanishing input forces the
+with a Yamabe reduction: if $`\|M\|>0`$, the vanishing input forces the
 Yamabe minimizer in every conformal class to have negative scalar
-curvature. Normalizing it to scalar curvature $-1$, Hölder's inequality
+curvature. Normalizing it to scalar curvature $`-1`$, Hölder's inequality
 bounds the volume of this normalized metric by the integral for the
 original metric, reducing the problem to proving
-$\|M\|\le C_n\mathrm{Vol}_g(M)$ when $\mathrm{Scal}_g=-1$ [S4:90–203].
+$`\|M\|\le C_n\mathrm{Vol}_g(M)`$ when $`\mathrm{Scal}_g=-1`$ [S4:90–203].
 
 **The detector and the graph construction.** Bounded cohomology
 supplies a cocycle of supremum norm at most one whose value on the
-fundamental class is at least $\|M\|/2$, realized as a closed
+fundamental class is at least $`\|M\|/2`$, realized as a closed
 differential form on a simplex of probability vectors. A graph
 deformation enlarges the metric while preserving the weighted volume,
 adapting the graph stabilization and prescribed-curvature method of the
 companion manuscript. Iterating the construction produces a measured
-equivariant family over $M$ with a density bounded by $dV_g$, a
+equivariant family over $`M`$ with a density bounded by $`dV_g`$, a
 deformed metric and weight, and a large energy coefficient satisfying a
 leafwise inequality [S4:90–203].
 
 **The degree estimate and the transfer.** A degree bound for maps from
-a measured family of $d$-manifolds to a $d$-cube contains
-$-\mathcal S/2$ and a penalty for the derivative of each coordinate, using
-the $\mu$-bubble functional. In high dimensions the minimizing
+a measured family of $`d`$-manifolds to a $`d`$-cube contains
+$`-\mathcal S/2`$ and a penalty for the derivative of each coordinate, using
+the $`\mu`$-bubble functional. In high dimensions the minimizing
 boundaries can be singular; the residual map is moved away from the
 target near the singular region. The final transfer construction
 connects the cocycle integral to these degrees through Gaifullin's
 reflected permutohedral realization, producing the bound
-$I\le C_n\int\rho\le C_n\mathrm{Vol}_g(M)$ [S4:90–203].
+$`I\le C_n\int\rho\le C_n\mathrm{Vol}_g(M)`$ [S4:90–203].
 
 **The rational-inessentiality proof.** The companion manuscript
 converts a cohomology pairing into a local degree by adding a parameter
@@ -84,7 +84,7 @@ manifold, then changes the metric to contract the resulting map while
 retaining positive scalar curvature. The four stages are: finite
 comparison and local degree; a graph with one warped circle per
 coordinate, whose fibre scalar loss is bounded by
-$C(n+1)(2+\log q)L^2/w^2$; finite shortening with a summable cost; and
+$`C(n+1)(2+\log q)L^2/w^2`$; finite shortening with a summable cost; and
 an obstruction independent of the circle count, using the local torical
 theorem of Cecchini and Schick [S6:39–175].
 
@@ -116,9 +116,9 @@ minimal-surface method and the Gromov–Lawson Dirac-operator method [S6:258–3
 ## Consequences
 
 **Gromov's integral scalar-curvature inequality is proved.** For every
-$n\ge3$ there is a constant $a_n>0$ such that
-$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|$ for every closed connected
-oriented smooth $n$-manifold and every smooth metric [S4:67–77].
+$`n\ge3`$ there is a constant $`a_n>0`$ such that
+$`\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|`$ for every closed connected
+oriented smooth $`n`$-manifold and every smooth metric [S4:67–77].
 
 **The Gromov–Lawson aspherical conjecture is resolved.** No closed
 smooth aspherical manifold, orientable or not, admits a Riemannian
@@ -134,9 +134,9 @@ the qualitative vanishing consequence of Gromov's conjectural
 comparison, proved without a spin hypothesis [S6:243–248].
 
 **An oriented target-map obstruction.** If a continuous map
-$f:M\to N$ of degree $d\ne0$ maps into a closed aspherical target $N$,
-then $M$ admits no positive-scalar-curvature metric; in particular the
-oriented connected sum $N\\#P$ admits no such metric [S6:215–225].
+$`f:M\to N`$ of degree $`d\ne0`$ maps into a closed aspherical target $`N`$,
+then $`M`$ admits no positive-scalar-curvature metric; in particular the
+oriented connected sum $`N\\#P`$ admits no such metric [S6:215–225].
 
 ## Section skeleton
 
@@ -208,7 +208,7 @@ bibliography. No non-LaTeX evidence.
 - Gromov, Misha, A dozen problems, questions and conjectures about positive scalar curvature (2018)
 - Guth, Larry, Volumes of balls in large Riemannian manifolds (2011)
 - Hamilton, Richard S., Three-manifolds with positive Ricci curvature (1982)
-- Hanke, Bernhard, Positive scalar curvature, $K$-area and essentialness (2012)
+- Hanke, Bernhard, Positive scalar curvature, $`K`$-area and essentialness (2012)
 - Hatcher, Allen, Algebraic Topology (2002)
 - N. V. Ivanov, _Notes on the bounded cohomology theory_, preprint, 2017, revised December 2020. arXiv:1708.05150v3.
 - A. S. Kechris, _Classical Descriptive Set Theory_, Graduate Texts in Mathematics **156**, Springer, New York, 1995. doi:10.1007/978-1-4612-4190-4.
@@ -236,6 +236,6 @@ bibliography. No non-LaTeX evidence.
 - D. Gilbarg and N. S. Trudinger, _Elliptic Partial Differential Equations of Second Order_, second edition, Classics in Mathematics, Springer, Berlin, 2001. doi:10.1007/978-3-642-61798-0.
 - N. S. Trudinger, _Remarks concerning the conformal deformation of Riemannian structures on compact manifolds_, Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (3) **22** (1968), no. 2, 265–274. Numdam: ASNSP\_1968\_3\_22\_2\_265\_0.
 - Wei, Guofang, Manifolds with a lower Ricci curvature bound (2007)
-- Whitehead, J. H. C., On $C^1$-complexes (1940)
+- Whitehead, J. H. C., On $`C^1`$-complexes (1940)
 - H. Yamabe, _On a deformation of Riemannian structures on compact manifolds_, Osaka Mathematical Journal **12** (1960), no. 1, 21–37. doi:10.18910/8577.
 - Yau, Shing-Tung, Review of geometry and analysis (2000)

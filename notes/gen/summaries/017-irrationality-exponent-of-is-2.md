@@ -18,7 +18,7 @@ HTML and its inequality with an entity, so the blurb is quoted here from its tag
 The blurb is quoted verbatim; the release's inline tags and its `>` entity are quoted around rather
 than transcribed, because this page carries no raw HTML, and the Lean link is rewritten so it
 resolves from this page. `overview.tex` carries the entry as
-`\resultentry{017}{The irrationality exponent of $\pi$ is $2$}` [S2:110].
+`\resultentry{017}{The irrationality exponent of $`\pi`$ is $`2`$}` [S2:110].
 
 ## Undergraduate summary
 
@@ -28,13 +28,13 @@ least 2, so the interesting question is how much larger it can be. The manuscrip
 exactly 2 [S5:64–71], [S8:55–130]. In the plainest form: fix any exponent bigger than 2, and once
 the denominators are large enough, *no* fraction at all — reduced or not — comes closer to π than
 1/*q*^ν^. The paper's own abstract states both halves of the result: "We prove the conjecture that
-the irrationality exponent of $\pi$ is $2$." and "As a consequence, the classical Flint--Hills
-series $\sum_{n\ge1}1/(n^3\sin^2 n)$ converges, with angles in radians." [S5:43–45]
+the irrationality exponent of $`\pi`$ is $`2`$." and "As a consequence, the classical Flint--Hills
+series $`\sum_{n\ge1}1/(n^3\sin^2 n)`$ converges, with angles in radians." [S5:43–45]
 
 That is a statement about *every* sufficiently large denominator, and the distinction matters. The
 threshold may depend on the exponent you chose, and the paper does not compute it: "The threshold
-may depend on $\nu$, and the argument does not give it effectively. In particular, an exponent of
-$2$ is different from a uniform positive lower bound of the form $c/q^2$, or equivalently from
+may depend on $`\nu`$, and the argument does not give it effectively. In particular, an exponent of
+$`2`$ is different from a uniform positive lower bound of the form $`c/q^2`$, or equivalently from
 bounded continued-fraction partial quotients." [S5:74–78] So this does not say the continued
 fraction of π behaves tamely; it says the fractions cannot be exceptionally good, infinitely often,
 at any rate faster than 1/*q*^2^ times a small slack.
@@ -72,7 +72,7 @@ contradiction "allowed unreduced fractions and zero error [S8:139–140]" [S8:13
 characterization — μ(π) = 2, not merely an eventual lower bound — is recovered by a pigeonhole
 argument on 0, π, …, *N*π modulo one, which produces approximations at error 1/*q*² and forces the
 reduced denominators to be unbounded [S8:144–155]. No prior irrationality measure for π enters the
-argument: "no prior irrationality bound for $\pi$ is assumed. [S5:254]" [S5:253–254]
+argument: "no prior irrationality bound for $`\pi`$ is assumed. [S5:254]" [S5:253–254]
 
 **The moves.** Three of them carry the weight.
 
@@ -107,8 +107,8 @@ question, which the paper locates strictly inside the bracket left by the two ci
 quantitative bounds are context, not inputs to our proof." [S5:134–135]
 
 **Formalization status.** Source-level, from `lean/docs/017.md`: the selected statement proves the
-exponent-two claim in the form "For every $\nu>2$, all sufficiently large positive denominators
-$q$ satisfy $|\pi-p/q|\ge q^{-\nu}$ for every integer numerator $p$" and "also states the exact
+exponent-two claim in the form "For every $`\nu>2`$, all sufficiently large positive denominators
+$`q`$ satisfy $`|\pi-p/q|\ge q^{-\nu}`$ for every integer numerator $`p`$" and "also states the exact
 supremum characterization using infinitely many rational approximations" [S11:9]. The
 exclusion is explicit and narrower than it first reads: "The paper's convergence consequence for the
 Flint–Hills series is outside this selected statement." [S11:11] That exclusion is about the
@@ -135,7 +135,7 @@ pass, and the library is not built here.
 
 The manuscript's own account, with the entries it cites.
 
-**The exponent ladder.** Mahler "established a finite irrationality exponent for $\pi$ [S5:113–114]" [S5:113–116]
+**The exponent ladder.** Mahler "established a finite irrationality exponent for $`\pi`$ [S5:113–114]" [S5:113–116]
 with 42, and proved an eventual bound with exponent 30 [S10:81–90]. Mignotte brought the published
 exponent to 21 and the eventual bound to 20 [S5:117–119], [S10:92–103]. Chudnovsky's 1982 thesis
 attached an exponent to π for the first time [S5:119–121], [S10:105–118]. Hata reached 8.01604533…
@@ -150,7 +150,7 @@ criteria, Roth's theorem, Farhi's and Demailly's constructions — is in the sam
 **The Flint–Hills series.** The manuscript dates the question to a Pickover column, with
 Alekseyev's 2011 necessary condition and Meiburg's 2022 sufficient condition bracketing the answer
 at 5/2 [S5:80–100], [S10:25–31], [S10:33–39]. It is candid that the gap is unresolved by the cited
-criteria: "Neither cited criterion settles its equality boundary at $5/2$. [S5:99–100]" 
+criteria: "Neither cited criterion settles its equality boundary at $`5/2`$. [S5:99–100]" 
 
 **The trigonometric side.** Dan and López Zapata's 2026 preprint is cited for the
 ∑ *n*^−*a^ |sin *n*|^−*b^ family [S5:139–142], [S10:231–239], [S10:241–249]. The manuscript records
@@ -173,7 +173,7 @@ was understood to be an artifact of method, not evidence about π.
 **A named open question closes.** The Flint–Hills series converges, and the manuscript proves more
 than the headline: a two-parameter family gets an exact criterion rather than a one-sided bound.
 For fixed *a*, *b* > 0 the series ∑ *n*^−*a^ |sin *n*|^−*b^ "converges if and only if
-$a>\max\{1,b\}$." [S9:97–104] The divergence side is a continued-fraction argument on the
+$`a>\max\{1,b\}`$." [S9:97–104] The divergence side is a continued-fraction argument on the
 convergents of π, and it settles the boundary the earlier criteria left open: the series diverges
 throughout 1 < *a* ≤ *b*, including the boundary case *a* = *b* > 1 [S9:153–154]. The proof of the
 corollary is short because the work is the dyadic spacing estimate that precedes it [S9:11–64].
@@ -225,26 +225,26 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 
 - Alekseyev, Max A., On convergence of the Flint Hills series (2011)
 - The Stacks Project Authors, The Stacks Project (2026)
-- Bai, Yufei, The Irrationality Measure of $\pi$ Is at Most $7.101862832357$ (2026)
+- Bai, Yufei, The Irrationality Measure of $`\pi`$ Is at Most $`7.101862832357`$ (2026)
 - Carella, N. A., Irrationality Measure of Pi (2022)
-- Chudnovsky, G. V., Hermite–Padé approximations to exponential functions and elementary estimates of the measure of irrationality of $\pi$ (1982)
+- Chudnovsky, G. V., Hermite–Padé approximations to exponential functions and elementary estimates of the measure of irrationality of $`\pi`$ (1982)
 - Dan, Yuya, Critical Convergence and Hausdorff Measures for Generalized Flint Hills Series (2026)
 - Demailly, Jean-Pierre, Singular hermitian metrics on positive line bundles (1992)
 - Farhi, Bakir, Un lemme de Roth sur les groupes algébriques commutatifs (2006)
-- Hata, Masayoshi, Rational approximations to $\pi$ and some other numbers (1993)
+- Hata, Masayoshi, Rational approximations to $`\pi`$ and some other numbers (1993)
 - Laurent, Michel, Sur quelques résultats récents de transcendance (1991)
 - Laurent, Michel, Interpolation determinants of exponential polynomials (2000)
 - Lazarsfeld, Robert, Positivity in Algebraic Geometry I: Classical Setting: Line Bundles and Linear Series (2004)
-- Mahler, Kurt, On the approximation of $\pi$ (1953)
+- Mahler, Kurt, On the approximation of $`\pi`$ (1953)
 - Mantzakouras, Nikos, López Zapata, Carlos, Diophantine FLINT-HILLS Series (2025)
 - Meiburg, Alex, Bounds on irrationality measures and the Flint-Hills series (2022)
-- Mignotte, Maurice, Approximations rationnelles de $\pi$ et quelques autres nombres (1974)
+- Mignotte, Maurice, Approximations rationnelles de $`\pi`$ et quelques autres nombres (1974)
 - Mondal, Pinaki, How many zeroes? Counting the number of solutions of systems of polynomials via geometry at infinity (Draft III) (2021)
 - Philippon, Patrice, Lemmes de zéros dans les groupes algébriques commutatifs (1986)
 - Roth, K. F., Rational approximations to algebraic numbers (1960)
-- Salikhov, V. Kh., On the irrationality measure of $\pi$ (2008)
-- Salikhov, V. Kh., On the measure of irrationality of the number $\pi$ (2010)
+- Salikhov, V. Kh., On the irrationality measure of $`\pi`$ (2008)
+- Salikhov, V. Kh., On the measure of irrationality of the number $`\pi`$ (2010)
 - Waldschmidt, Michel, Open Diophantine problems (2004)
 - López Zapata, Carlos H., A Continued-Fraction Criterion for the Flint Hills Series, and the Integer Sequences It Generates (2026)
-- Zeilberger, Doron, Zudilin, Wadim, The irrationality measure of $\pi$ is at most 7.103205334137  (2020)
-- Zudilin, Wadim, An essay on irrationality measures of $\pi$ and other logarithms (2004)
+- Zeilberger, Doron, Zudilin, Wadim, The irrationality measure of $`\pi`$ is at most 7.103205334137  (2020)
+- Zudilin, Wadim, An essay on irrationality measures of $`\pi`$ and other logarithms (2004)

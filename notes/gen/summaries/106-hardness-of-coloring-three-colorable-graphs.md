@@ -27,20 +27,20 @@ statement as "more strongly" — the manuscript puts them in the opposite order
 
 A **proper coloring** assigns different colors to adjacent vertices, and an
 **independent set** is a set of pairwise nonadjacent vertices [S4:3–4]. For a
-nonempty finite graph $G$ with $n$ vertices, $\alpha(G)$ is the maximum
+nonempty finite graph $`G`$ with $`n`$ vertices, $`\alpha(G)`$ is the maximum
 independent-set size [S4:5–6]. Every three-colorable graph has an independent
-set of size at least $n/3$, because one of its three color classes has that
+set of size at least $`n/3`$, because one of its three color classes has that
 size: "every three-colorable graph contains an independent set of size at
-least $n/3$" [S4:7–8]. So a graph with independence ratio below $\delta<1/3$
+least $`n/3`$" [S4:7–8]. So a graph with independence ratio below $`\delta<1/3`$
 is *not* three-colorable, and the reduction separates the two cases.
 
 The decision problem is **approximate graph coloring**: given a graph promised
-to be $k$-colorable, find a proper $c$-coloring for fixed $k\le c$
-[S4:42–44]. It is NP-hard even for the promise $k=3$ and any fixed palette
-$c\ge3$ — the corollary the family delivers [S4:48–58]. The strength of this
-family's statement is that the soundness side is not "not $c$-colorable" but
-a *density* bound: every independent set is below $\delta n$, for any fixed
-$\delta>0$, no matter how large the palette [S4:12–30].
+to be $`k`$-colorable, find a proper $`c`$-coloring for fixed $`k\le c`$
+[S4:42–44]. It is NP-hard even for the promise $`k=3`$ and any fixed palette
+$`c\ge3`$ — the corollary the family delivers [S4:48–58]. The strength of this
+family's statement is that the soundness side is not "not $`c`$-colorable" but
+a *density* bound: every independent set is below $`\delta n`$, for any fixed
+$`\delta>0`$, no matter how large the palette [S4:12–30].
 
 The graph the reduction outputs is unweighted, simple, and explicitly listed;
 the satisfying coloring in the completeness case exists for the whole vertex
@@ -49,23 +49,23 @@ set, and the reduction does not ship it [S4:28–29].
 ## Graduate summary
 
 **Main theorem** ([S4:12–30], `thm:main`). "For every fixed real
-$\delta\in(0,\,1/3)$" — in the manuscript's exact form: "for every fixed real
-$0<\delta<1/3$, there is a deterministic polynomial-time algorithm $R_\delta$
-that maps each explicitly encoded Boolean $3$-CNF formula $\phi$ to a nonempty
-finite simple undirected unweighted graph $G_\phi$" [S4:13–16], such that a
-satisfiable $\phi$ gives a three-colorable $G_\phi$ and an unsatisfiable
-$\phi$ gives $\alpha(G_\phi)<\delta\,|V(G_\phi)|$ [S4:19–22]. Running time
+$`\delta\in(0,\,1/3)`$" — in the manuscript's exact form: "for every fixed real
+$`0<\delta<1/3`$, there is a deterministic polynomial-time algorithm $`R_\delta`$
+that maps each explicitly encoded Boolean $`3`$-CNF formula $`\phi`$ to a nonempty
+finite simple undirected unweighted graph $`G_\phi`$" [S4:13–16], such that a
+satisfiable $`\phi`$ gives a three-colorable $`G_\phi`$ and an unsatisfiable
+$`\phi`$ gives $`\alpha(G_\phi)<\delta\,|V(G_\phi)|`$ [S4:19–22]. Running time
 and output size are polynomial in the binary encoding length, with constants
-and degree allowed to depend on $\delta$ [S4:25–27]. It suffices to prove it
-for rational $\delta$ [S4:32–34], and the density conclusion is strictly
+and degree allowed to depend on $`\delta`$ [S4:25–27]. It suffices to prove it
+for rational $`\delta`$ [S4:32–34], and the density conclusion is strictly
 stronger than a chromatic-number lower bound, since adding isolated vertices
 preserves chromatic number while pushing the independence ratio toward one
 [S4:35–39].
 
 **Corollary** ([S4:48–58], `cor:coloring`). For every fixed pair
-$3\le k\le c$, distinguishing $k$-colorable graphs from graphs that are not
-$c$-colorable is NP-hard: choose $\delta<\min\{1/3,1/c\}$; a $c$-colorable
-graph has an independent set of size at least $n/c$, which the soundness
+$`3\le k\le c`$, distinguishing $`k`$-colorable graphs from graphs that are not
+$`c`$-colorable is NP-hard: choose $`\delta<\min\{1/3,1/c\}`$; a $`c`$-colorable
+graph has an independent set of size at least $`n/c`$, which the soundness
 bound excludes [S4:53–57].
 
 **Construction** (the proof overview [S4:141–212]). The starting problem is
@@ -73,12 +73,12 @@ Label Cover, fed by the PCP theorem and parallel repetition [S4:141–146].
 The construction replaces one left question at a time by a right question,
 building chains of question tuples in the style of the multilayered PCP
 [Dinur–Guruswami–Khot–Regev, S4:148–151]. Each tuple carries points that
-assign a phase in the circle $\mathbb T=\mathbb R/\mathbb Z$ to every product answer, and a
-projection $\pi$ pulls a phase vector back along the chain
+assign a phase in the circle $`\mathbb T=\mathbb R/\mathbb Z`$ to every product answer, and a
+projection $`\pi`$ pulls a phase vector back along the chain
 [S4:152–154]. Zero-length links between a point and its pullback, and
 circle-distance links within each phase space, define a pseudometric; edges
 compare a point with the coordinatewise half-shift of another. The edge
-threshold forces adjacent vertices to sit more than $1/3$ apart on the
+threshold forces adjacent vertices to sit more than $`1/3`$ apart on the
 circle, so three half-open intervals color the graph properly [S4:160–162].
 
 For soundness, an independent set yields functions on the tuple phase spaces
@@ -99,10 +99,10 @@ enter the graph, so the probability experiment expands exactly into
 unweighted vertices and the reduction is deterministic [S4:199–201].
 
 The final section fixes the constants in dependency order: the list bound
-$d$ first, so it cannot depend on the Label Cover alphabets
-[S5:6–8]; then $\varepsilon=\delta/8$, $L=64$, the influence constants,
+$`d`$ first, so it cannot depend on the Label Cover alphabets
+[S5:6–8]; then $`\varepsilon=\delta/8`$, $`L=64`$, the influence constants,
 the repetition power [S5:10–17]. The density bound closes at
-$6\varepsilon+2\varepsilon=8\varepsilon<\delta$ for every independent set [S5:78–82].
+$`6\varepsilon+2\varepsilon=8\varepsilon<\delta`$ for every independent set [S5:78–82].
 
 ## History of the conjecture
 
@@ -111,17 +111,17 @@ hardness. **Khanna, Linial and Safra** established hardness of
 four-coloring three-colorable graphs, and **Guruswami and Khanna** gave a
 different proof with bounded-degree variants [S4:62–66]. The algebraic
 promiseConstraintSatisfaction theory of **Barto, Bul\'{\i}n, Krokhin and
-Opr\v{s}al** gave hardness of $(2k-1)$-coloring $k$-colorable graphs — five
-colors for $k=3$ — and recorded the conjectured hardness for every fixed
-$k\le c$ [S4:68–72]. **Guruswami and Sandeep** showed that the ordinary
-$d$-to-1 Games Conjecture with perfect completeness implies constant-palette
+Opr\v{s}al** gave hardness of $`(2k-1)`$-coloring $`k`$-colorable graphs — five
+colors for $`k=3`$ — and recorded the conjectured hardness for every fixed
+$`k\le c`$ [S4:68–72]. **Guruswami and Sandeep** showed that the ordinary
+$`d`$-to-1 Games Conjecture with perfect completeness implies constant-palette
 hardness for three-colorable graphs, via a reduction that first gives small
-independent-set density with a $2d$-colorable completeness promise, then
+independent-set density with a $`2d`$-colorable completeness promise, then
 collapses the palette through the arc-graph reduction of **Krokhin, Opr\v{s}al,
 Wrochna and \v{Z}ivn\'y** — and that route loses the independent-set
 guarantee [S4:74–85]. The manuscript cites the companion release article as
-the perfect-completeness premise for $d=2$: "the companion article ...
-establishes the ordinary perfect-completeness premise for $d=2$" [S4:86–87]
+the perfect-completeness premise for $`d=2`$: "the companion article ...
+establishes the ordinary perfect-completeness premise for $`d=2`$" [S4:86–87]
 — this is a citation to the family 105 manuscript, whose page is
 [105-2-to-1-games-conjecture-with-perfect-completeness.md](105-2-to-1-games-conjecture-with-perfect-completeness.md).
 **Fei, Minzer and Wang** proved the 4-to-1 Games Conjecture with perfect
@@ -137,7 +137,7 @@ result give the same promise under conjectural hypotheses [S4:101–112], and
 a deletion model that relaxes completeness [S4:114–122]. The all-vertex
 completeness here retains the original promise at every fixed positive
 soundness density [S4:123–124]. The algorithmic side keeps narrowing the
-quantitative gap: Bansal–Huang–Lee's $O(n^{0.19539})$-color algorithm,
+quantitative gap: Bansal–Huang–Lee's $`O(n^{0.19539})`$-color algorithm,
 improving Kawarabayashi–Thorup–Yoneda, and post-release preprints by Narang–Tang
 and Anand [S4:126–137].
 
@@ -151,16 +151,16 @@ below).
 
 ## Consequences
 
-- **Constant-palette coloring hardness.** For every fixed $c\ge3$, coloring a
-  three-colorable graph with $c$ colors is NP-hard [S3:43–45, S4:48–58] —
+- **Constant-palette coloring hardness.** For every fixed $`c\ge3`$, coloring a
+  three-colorable graph with $`c`$ colors is NP-hard [S3:43–45, S4:48–58] —
   the conjecture-level conclusion the intro says prior combinations reach
   only through the 4-to-1 route [S4:89–95].
 - **The density form.** The independent-set statement is stronger than the
-  coloring statement: independence ratio below $\delta n$ excludes every
+  coloring statement: independence ratio below $`\delta n`$ excludes every
   palette, and it survives in the promise, not as a derived bound
   [S4:12–30].
 - **A 2-to-1 consequence.** The manuscript cites the family 105 theorem as
-  the perfect-completeness premise for $d=2$ that the Guruswami–Sandeep
+  the perfect-completeness premise for $`d=2`$ that the Guruswami–Sandeep
   reduction consumes [S4:86–87].
 - **Method transfer.** The phase-circle graph and the alignment lemma are
   self-contained ([S4:199–201], `sec:alignment-proof` [S3:54]), so the
@@ -182,9 +182,9 @@ The release formalises this family at tier T3 with one scope note [S7], one
 comparator stub [S8:76–77], and one `main_results` entry [S10]. The Scope section
 states: "the formalized result shows hardness of finding large independent
 sets even under a three-colorability promise. For every fixed
-$0<\delta<1/3$, a deterministic polynomial-time reduction maps binary 3SAT
+$`0<\delta<1/3`$, a deterministic polynomial-time reduction maps binary 3SAT
 formulas to nonempty finite simple graphs" [S7:9], with three-colorable
-outputs on satisfiable inputs, largest independent set below $\delta n$
+outputs on satisfiable inputs, largest independent set below $`\delta n`$
 otherwise, and "the complete adjacency-matrix output is included in the
 runtime bound" [S7:9].
 
@@ -200,10 +200,10 @@ theorem is stated and closed: "theorem mainTheoremReal : ∀ δ : ℝ, 0 < δ �
 
 The comparator stub [S8:76–77] defines `RealGraphReduction` — the graph, the
 machine, the output-size bound, the completeness and soundness fields
-[S8:64–73] — and the target statement "$```lean
+[S8:64–73] — and the target statement ````lean
 theorem mainTheoremReal : ∀ δ : ℝ, 0 < δ → δ < 1 / 3 → Nonempty (RealGraphReduction δ) := by
 ```
-[S8:76–77]$" ends in
+[S8:76–77]` ends in
 `sorry` at [S8:78]. The proved copy is the one the `main_results` entry
 names [S9:124–135]. The reading is of source text only — no `lake` or `lean`
 run elaborates the proof, so the claim here is that the proof body exists

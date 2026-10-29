@@ -9,61 +9,61 @@
 The release's blurb [S1:3931] and the catalog abstract [S2:415] state
 the family's two-part claim. It **proves the weak pinned
 Erd\H{o}s distance conjecture**: for every fixed
-$\varepsilon>0$, all but $o(n)$ points of any $n$-point planar set
-determine at least $n^{1-\varepsilon}$ distinct nonzero
+$`\varepsilon>0`$, all but $`o(n)`$ points of any $`n`$-point planar set
+determine at least $`n^{1-\varepsilon}`$ distinct nonzero
 distances. A **complementary theorem** bounds the number of
-unit-distance pairs by $O(n^{4/3-\delta})$ for an absolute
-$\delta>0$. Two manuscripts carry the family. The first, *The weak
+unit-distance pairs by $`O(n^{4/3-\delta})`$ for an absolute
+$`\delta>0`$. Two manuscripts carry the family. The first, *The weak
 pinned planar distance theorem* [S3:31, S3:33], abstract
 
 
 > We prove the weak pinned Erdős distinct-distance conjecture.
-For every fixed $\varepsilon>0$, all but $o(n)$ points of any
-$n$-point planar set determine at least $n^{1-\varepsilon}$ distinct
+For every fixed $`\varepsilon>0`$, all but $`o(n)`$ points of any
+$`n`$-point planar set determine at least $`n^{1-\varepsilon}`$ distinct
 nonzero distances. [S3:38–41]
 
 The second, *A power saving for planar unit distances* [S4:42,
 S4:45], abstract [S4:50]:
 
 We prove a power saving for the planar unit-distance problem: for
-some absolute $\beta<4/3$, every set of $n$ points in the Euclidean
-plane determines $O(n^\beta)$ unordered pairs at unit distance
+some absolute $`\beta<4/3`$, every set of $`n`$ points in the Euclidean
+plane determines $`O(n^\beta)`$ unordered pairs at unit distance
 [S4:50].
 
 ## Undergraduate summary
 
-Pick $n$ points in the plane and look at all the pairwise
+Pick $`n`$ points in the plane and look at all the pairwise
 distances. Erd\H{o}s's distinct-distance problem (1946) asks how
-**few** distinct distances those $n$ points can determine. The
-"pinned" version looks from a single point — a **pin** $x$:
-how many distinct distances does $x$ determine to the other
+**few** distinct distances those $`n`$ points can determine. The
+"pinned" version looks from a single point — a **pin** $`x`$:
+how many distinct distances does $`x`$ determine to the other
 points? The weak pinned conjecture says that, up to a vanishing
-$fraction$ of the points as pins, **every** pin sees at least
-roughly $n$ distinct distances (precisely, at least $n^{1-
-\varepsilon}$ for any fixed $\varepsilon>0$). Separately, the
-**unit-distance problem** asks how many pairs of the $n$ points can
+$`fraction`$ of the points as pins, **every** pin sees at least
+roughly $`n`$ distinct distances (precisely, at least $`n^{1-
+\varepsilon}`$ for any fixed $`\varepsilon>0`$). Separately, the
+**unit-distance problem** asks how many pairs of the $`n`$ points can
 lie exactly one unit apart; the classical answer is on the order of
-$n^{4/3}$. This family gives a **power saving** in that unit-
-distance count: the bound drops to $O(n^{4/3-\delta})$ for some
-absolute $\delta>0$, a genuine exponent improvement
+$`n^{4/3}`$. This family gives a **power saving** in that unit-
+distance count: the bound drops to $`O(n^{4/3-\delta})`$ for some
+absolute $`\delta>0`$, a genuine exponent improvement
 [S3:38–41, S4:50, S2:415].
 
 ## Graduate summary
 
 **The weak pinned distinct-distance theorem** [S3:38–41,
-S5:10]. For each fixed $s>0$, the largest fraction of ordered
-distinct pairs $(x,y)$ whose distance from the pin $x$ occurs at
-least $n^s$ times tends to zero as $n\to\infty$; equivalently,
-for every $\varepsilon>0$ the fraction of pins determining fewer
-than $n^{1-\varepsilon}$ distinct distances tends **uniformly** to
+S5:10]. For each fixed $`s>0`$, the largest fraction of ordered
+distinct pairs $`(x,y)`$ whose distance from the pin $`x`$ occurs at
+least $`n^s`$ times tends to zero as $`n\to\infty`$; equivalently,
+for every $`\varepsilon>0`$ the fraction of pins determining fewer
+than $`n^{1-\varepsilon}`$ distinct distances tends **uniformly** to
 zero [S5:10]. The statement is over **arbitrary** finite planar
 point sets, with no regularity hypothesis [S5:10].
 
 **The unit-distance power saving** [S4:50, S5:12]. There are
-absolute constants $C>0$ and $1\le\beta<4/3$ such that every
-finite planar point set of size $n$ determines at most $C n^\beta$
+absolute constants $`C>0`$ and $`1\le\beta<4/3`$ such that every
+finite planar point set of size $`n`$ determines at most $`C n^\beta`$
 unordered unit-distance pairs; the same constants work for every
-$n$, a fixed power improvement over the classical exponent $4/3$
+$`n`$, a fixed power improvement over the classical exponent $`4/3`$
 [S5:12].
 
 **The scope of the formalization.** Only the **pinned** theorem is
@@ -75,39 +75,39 @@ which has no `main_results` entry [S5:10, S5:12, S5:16–19].
 ## History of the conjecture
 
 The Erd\H{o}s distinct-distance problem (1946) was resolved in 2015
-by Guth and Katz, who proved the $\Omega(n/\log n)$ lower bound
+by Guth and Katz, who proved the $`\Omega(n/\log n)`$ lower bound
 via the finite-field sum-product machinery transplanted to
-$\mathbb R^2$. The **pinned** variant asks the same question from
+$`\mathbb R^2`$. The **pinned** variant asks the same question from
 a single vantage point and is strictly more delicate; the weak form
-(allowing an $n^{\varepsilon}$ loss and an $o(n)$ exceptional set
+(allowing an $`n^{\varepsilon}`$ loss and an $`o(n)`$ exceptional set
 of pins) was a natural open step. The **unit-distance** problem is
-one of the oldest in discrete geometry, with the $\Theta(n^{4/3})$
+one of the oldest in discrete geometry, with the $`\Theta(n^{4/3})`$
 bound long known to be essentially tight for the usual algebraic
-methods; a power saving below $4/3$ is a notable improvement
+methods; a power saving below $`4/3`$ is a notable improvement
 [S3:38–41, S4:50, S2:415].
 
 **Prior (my training data, not this repo).** I know the Guth–
 Katz resolution of the distinct-distance problem and the
-$n^{4/3}$ unit-distance bound. A proof of the **weak pinned** form
-uniformly in $\varepsilon$ together with a power saving
-$O(n^{4/3-\delta})$ for unit distances goes beyond the specific
+$`n^{4/3}`$ unit-distance bound. A proof of the **weak pinned** form
+uniformly in $`\varepsilon`$ together with a power saving
+$`O(n^{4/3-\delta})`$ for unit distances goes beyond the specific
 results I recall; I cannot independently verify the arithmetic-
 sequence / number-field model argument in [S3:38–41] from training alone.
 
 ## Consequences
 
 **The weak pinned Erd\H{o}s distance conjecture is proved.** For
-every $\varepsilon>0$, all but $o(n)$ pins of an $n$-point planar
-set determine at least $n^{1-\varepsilon}$ distinct nonzero
+every $`\varepsilon>0`$, all but $`o(n)`$ pins of an $`n`$-point planar
+set determine at least $`n^{1-\varepsilon}`$ distinct nonzero
 distances [S3:38–41, S5:10, S2:415].
 
-**A power saving for planar unit distances.** Every $n$-point
-planar set has $O(n^{4/3-\delta})$ unordered unit-distance pairs
-for an absolute $\delta>0$ [S4:50, S5:12, S2:415].
+**A power saving for planar unit distances.** Every $`n`$-point
+planar set has $`O(n^{4/3-\delta})`$ unordered unit-distance pairs
+for an absolute $`\delta>0`$ [S4:50, S5:12, S2:415].
 
 **The statements are uniform.** The pinned result is uniform in
-$\varepsilon$, and the unit-distance constants $C,\beta$ are
-independent of $n$ [S5:10, S5:12].
+$`\varepsilon`$, and the unit-distance constants $`C,\beta`$ are
+independent of $`n`$ [S5:10, S5:12].
 
 **The formalization covers the pinned theorem only.** The
 unit-distance power saving is stated and proved in the manuscript
@@ -127,14 +127,14 @@ no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S5:10, S5:12]. The first paragraph formalizes the
-pinned theorem: for each fixed $s>0$ the largest fraction of
-ordered distinct pairs whose pin distance occurs at least $n^s$
-times tends to zero, so for every $\varepsilon>0$ the fraction of
-pins determining fewer than $n^{1-\varepsilon}$ distances tends
+pinned theorem: for each fixed $`s>0`$ the largest fraction of
+ordered distinct pairs whose pin distance occurs at least $`n^s`$
+times tends to zero, so for every $`\varepsilon>0`$ the fraction of
+pins determining fewer than $`n^{1-\varepsilon}`$ distances tends
 uniformly to zero; it is explicit that "the separate unit-distance
 power-saving theorem is not included" [S5:10]. The second paragraph
 describes the **unregistered** unit-distance theorem: absolute
-constants $C>0$ and $1\le\beta<4/3$ with at most $C n^\beta$
+constants $`C>0`$ and $`1\le\beta<4/3`$ with at most $`C n^\beta`$
 unordered unit-distance pairs [S5:12]. The scope note names two
 comparators [S5:16–19]: `PinnedDistances.lean` (registered)
 and `PlanarUnitDistances.lean` (unregistered).
@@ -150,8 +150,8 @@ comparator is a scope-note link with no `main_results` entry
 [S5:10, S5:12, S5:16–19].
 
 **What the proof does.** The registered `main` states, for
-$s>0$, that the worst-case rich-pair fraction
-`F n s` tends to zero as $n\to\infty$ [S8:29–30]. It
+$`s>0`$, that the worst-case rich-pair fraction
+`F n s` tends to zero as $`n\to\infty`$ [S8:29–30]. It
 discharges by `mainStatement s hs`, whose body is a genuine Lean
 proof: by contradiction it extracts an arithmetic sequence model
 from the failing hypothesis (`sequence_arithmetic_model`), realizes
@@ -203,8 +203,8 @@ body [S6:29–30]:
 
 The unregistered `PlanarUnitDistances.lean` comparator restates the
 unit-distance power saving
-— $\exists C,\beta,\ 0<C\wedge1\le\beta
-\wedge\beta<4/3,\ \forall n,\ u(n)\le C n^\beta$ —
+— $`\exists C,\beta,\ 0<C\wedge1\le\beta
+\wedge\beta<4/3,\ \forall n,\ u(n)\le C n^\beta`$ —
 with a bare `sorry` [S7:19–21]. The release records
 `scope: "Partial progress."` and `review: status: unchecked`; the
 comparators' `sorry` bodies are the targets the release set itself,

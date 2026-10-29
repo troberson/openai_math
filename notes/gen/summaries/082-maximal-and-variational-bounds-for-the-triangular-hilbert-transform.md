@@ -7,15 +7,15 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:2029] and the catalog abstract [S2:238] state the
-family's claim: maximal and annular $r$-variation bounds for the triangular
-Hilbert transform, for every $r>2$, from complex $L^3(\mathbb R^2)\times
-L^3(\mathbb R^2)$ to $L^{3/2}(\mathbb R^2)$, with the maximal estimate
+family's claim: maximal and annular $`r`$-variation bounds for the triangular
+Hilbert transform, for every $`r>2`$, from complex $`L^3(\mathbb R^2)\times
+L^3(\mathbb R^2)`$ to $`L^{3/2}(\mathbb R^2)`$, with the maximal estimate
 controlling both hard truncation endpoints and yielding joint
 almost-everywhere and norm convergence. The family ships three manuscripts
 in a versioning chain; the current (highest) manuscript's abstract
 
 
-> We prove a uniform $L^3\times L^3\times L^3$ estimate for the dyadic
+> We prove a uniform $`L^3\times L^3\times L^3`$ estimate for the dyadic
 triangular Hilbert form with unrestricted real inputs. The sum of the
 absolute local contributions over any finite set of scales is bounded
 by forty times the product of the input norms. In particular, the bound
@@ -24,20 +24,20 @@ admissible interval triples. [S6:8–14]
 
 ## Undergraduate summary
 
-The bilinear Hilbert transform $B(F,G)(x)$ averages two functions against
-a kernel supported on a triangle in the $(\xi,\eta)$ frequency plane. Its
+The bilinear Hilbert transform $`B(F,G)(x)`$ averages two functions against
+a kernel supported on a triangle in the $`(\xi,\eta)`$ frequency plane. Its
 triangular variant restricts the averaging to a one-sided (triangular)
 region, which makes the kernel non-oscillatory and the analysis
 substantially different from the classical bilinear case.
 
-The "maximal" operator $B_*(F,G)$ takes the supremum of the bilinear
+The "maximal" operator $`B_*(F,G)`$ takes the supremum of the bilinear
 expression over all finite truncation intervals of the kernel. The
-$L^3\times L^3\to L^{3/2}$ bound for $B_*$ is a strong endpoint estimate
-at the symmetric point $(3,3,3/2)$: it controls the worst-case
+$`L^3\times L^3\to L^{3/2}`$ bound for $`B_*`$ is a strong endpoint estimate
+at the symmetric point $`(3,3,3/2)`$: it controls the worst-case
 truncation uniformly, not just the limit. The three manuscripts sharpen
 and extend this estimate in sequence: first the pointwise maximal bound
-[S3:7–14], then the full annular $r$-variation estimate for $r>2$
-[S5:27–33], and finally a uniform $L^3$ bound for the dyadic
+[S3:7–14], then the full annular $`r`$-variation estimate for $`r>2`$
+[S5:27–33], and finally a uniform $`L^3`$ bound for the dyadic
 triangular form with unrestricted real inputs [S6:8–14].
 
 ## Graduate summary
@@ -48,8 +48,8 @@ estimates for the same triangular Hilbert bilinear form.
 The first (maximal) proves 
 
 > **theorem**
-There is an absolute constant $C$ such that, for every pair of complex
-functions $F,G\in L^3(\mathbb R^2)$,
+There is an absolute constant $`C`$ such that, for every pair of complex
+functions $`F,G\in L^3(\mathbb R^2)`$,
 $$\|B_*(F,G)\|_{L^{3/2}(\mathbb R^2)}
  \le C\|F\|_{L^3(\mathbb R^2)}\|G\|_{L^3(\mathbb R^2)}.$$
 The supremum is over both finite hard truncation endpoints. [S4:16–24]
@@ -57,24 +57,24 @@ The supremum is over both finite hard truncation endpoints. [S4:16–24]
 The supremum is over both finite hard truncation endpoints, chosen
 separately at each spatial point — stronger than a uniform bound for
 each individual truncation [S4:26–32]. The joint principal value
-$B(F,G)=\lim_{\varepsilon\downarrow 0,\, R\uparrow\infty}
-B_{\varepsilon,R}(F,G)$ is obtained as a consequence.
+$`B(F,G)=\lim_{\varepsilon\downarrow 0,\, R\uparrow\infty}
+B_{\varepsilon,R}(F,G)`$ is obtained as a consequence.
 
-The second (annular variation) proves the full $r$-variation estimate
+The second (annular variation) proves the full $`r`$-variation estimate
 
 
 > **Theorem 1.1**
-For every real $r>2$ there is a finite constant $C_r$ such that
+For every real $`r>2`$ there is a finite constant $`C_r`$ such that
 $$\|V_r(F,G)\|_{L^{3/2}(\mathbb R^2)}
  \le C_r\|F\|_{L^3(\mathbb R^2)}\|G\|_{L^3(\mathbb R^2)}$$
-for all complex $F,G\in L^3(\mathbb R^2)$. [S5:27–33]
+for all complex $`F,G\in L^3(\mathbb R^2)`$. [S5:27–33]
 
-for every $r>2$, which subsumes the maximal estimate by taking a single
+for every $`r>2`$, which subsumes the maximal estimate by taking a single
 increment [S5:36–39]. The variation estimate gives almost everywhere
-and $L^{3/2}$ norm convergence of the truncated integrals.
+and $`L^{3/2}`$ norm convergence of the truncated integrals.
 
-The third (dyadic $L^3$ bound) proves a uniform
-$L^3\times L^3\times L^3$ estimate for the dyadic triangular form
+The third (dyadic $`L^3`$ bound) proves a uniform
+$`L^3\times L^3\times L^3`$ estimate for the dyadic triangular form
 with unrestricted real inputs, allowing coefficients of modulus at most
 one to vary independently among admissible interval triples
 [S6:8–14].
@@ -83,7 +83,7 @@ one to vary independently among admissible interval triples
 decomposition of the triangular kernel, a trace estimate for the
 resulting integral operators, a heat-kernel smoothing argument, and a
 jumps argument to pass from smoothed to pointwise bounds
-[S3:16–22]. The maximal step converts these to a single $L^{3/2}$
+[S3:16–22]. The maximal step converts these to a single $`L^{3/2}`$
 majorant controlling all truncation choices simultaneously.
 
 ## History of the conjecture
@@ -91,23 +91,23 @@ majorant controlling all truncation choices simultaneously.
 The bilinear Hilbert transform was conjectured by Fefferman and proved
 by Coifman, Lacey, and Pisier in 1991. The triangular variant, where the
 kernel is supported on a one-sided triangle, was studied by Lacey,
-Pisier, and Tchamitchian; the endpoint $(3,3,3/2)$ estimate for the
+Pisier, and Tchamitchian; the endpoint $`(3,3,3/2)`$ estimate for the
 maximal triangular form was a long-standing open question. The present
 papers prove that estimate, and the v2 and v3 papers extend it to the
 variation and dyadic settings.
 
-The symmetric point $(3,3,3/2)$ is the endpoint of the known range:
-interpolating from $L^2\times L^2\to L^1$ (trivial by
-Cauchy–Schwarz) and $L^\infty\times L^\infty\to L^\infty$
-(bounded operators) gives $L^{p}\times L^{p}\to L^{p/2}$ for $p\in(2,\infty)$,
-and $p=3$ is the first integer at the endpoint where the maximal
+The symmetric point $`(3,3,3/2)`$ is the endpoint of the known range:
+interpolating from $`L^2\times L^2\to L^1`$ (trivial by
+Cauchy–Schwarz) and $`L^\infty\times L^\infty\to L^\infty`$
+(bounded operators) gives $`L^{p}\times L^{p}\to L^{p/2}`$ for $`p\in(2,\infty)`$,
+and $`p=3`$ is the first integer at the endpoint where the maximal
 estimate is nontrivial.
 
 **Prior (my training data, not this repo).** The bilinear Hilbert
 transform and its triangular variant are classical objects in
 harmonic analysis; I know the Coifman–Lacey–Pisier theorem
 and the Lacey–Pisier–Tchamitchian work on the triangular
-case. A maximal $L^3\times L^3\to L^{3/2}$ estimate for the
+case. A maximal $`L^3\times L^3\to L^{3/2}`$ estimate for the
 triangular form is, to my knowledge, not established in the
 literature I was trained on. I cannot independently verify these
 2026 manuscripts' arguments.
@@ -115,16 +115,16 @@ literature I was trained on. I cannot independently verify these
 ## Consequences
 
 **Pointwise maximal endpoint estimate.** For all complex
-$F,G\in L^3(\mathbb R^2)$, $\|B_*(F,G)\|_{L^{3/2}}\le
-C\|F\|_3\|G\|_3$ with both truncation endpoints under one
+$`F,G\in L^3(\mathbb R^2)`$, $`\|B_*(F,G)\|_{L^{3/2}}\le
+C\|F\|_3\|G\|_3`$ with both truncation endpoints under one
 majorant [S4:16–24].
 
-**Annular $r$-variation for $r>2$.** The full annular $r$-variation of
+**Annular $`r`$-variation for $`r>2`$.** The full annular $`r`$-variation of
 the triangular Hilbert transform is bounded in
-$L^3\times L^3\to L^{3/2}$ for every $r>2$, yielding joint
+$`L^3\times L^3\to L^{3/2}`$ for every $`r>2`$, yielding joint
 almost-everywhere and norm convergence [S5:27–33].
 
-**Dyadic $L^3$ bound.** A uniform $L^3\times L^3\times L^3$
+**Dyadic $`L^3`$ bound.** A uniform $`L^3\times L^3\times L^3`$
 estimate for the dyadic triangular form with unrestricted real inputs,
 allowing sign-varying coefficients [S6:8–14].
 
@@ -157,9 +157,9 @@ No manuscript ships a `verification/` bundle.
 
 **Scope note** [S7]. The formalization proves the symmetric maximal
 estimate for the triangular Hilbert transform: for arbitrary complex
-$F,G\in L^3(\mathbb R^2)$, the $L^{3/2}$ norm of the supremum over all
-finite hard-truncation intervals is at most $C\|F\|_3\|G\|_3$ for one
-absolute constant $C$. It also establishes a common full-measure set on
+$`F,G\in L^3(\mathbb R^2)`$, the $`L^{3/2}`$ norm of the supremum over all
+finite hard-truncation intervals is at most $`C\|F\|_3\|G\|_3`$ for one
+absolute constant $`C`$. It also establishes a common full-measure set on
 which the truncated integrals are defined and almost-everywhere
 measurability of the maximal output. The release records
 `scope: "Partial progress."` and `review: status: unchecked`; zero
@@ -241,7 +241,7 @@ trace.
 - Durcik, Polona, Kovač, Vjekoslav, Škreb, Kristina Ana, Thiele, Christoph, Norm-variation of ergodic averages with respect to two commuting transformations (2019)
 - Durcik, Polona, Kovač, Vjekoslav, Thiele, Christoph, Power-type cancellation for the simplex Hilbert transform (2019)
 - Durcik, Polona, Roos, Joris, Averages of simplex Hilbert transforms (2021)
-- Durcik, Polona, An $L^4$ estimate for a singular entangled quadrilinear form (2015)
+- Durcik, Polona, An $`L^4`$ estimate for a singular entangled quadrilinear form (2015)
 - Grafakos, Loukas, Oliveira e Silva, Diogo, Pramanik, Malabika, Seeger, Andreas, Stovall, Betsy, Some problems in harmonic analysis (2017)
 - Hardy, G. H., Littlewood, J. E., A maximal theorem with function-theoretic applications (1930)
 - Hsu, Martin, Lin, Fred Yu-Hsiang, Smoothing inequalities for corner-type bilinear averages: geometric characterization and applications (2026)

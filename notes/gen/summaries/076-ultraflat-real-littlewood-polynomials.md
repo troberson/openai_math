@@ -7,27 +7,27 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:1888] and the catalog abstract [S2:226] state the
-family's claim: real Littlewood polynomials — polynomials of length $N$ with
-$\{-1,1\}$ coefficients — can be made ultraflat, with modulus
-$(1+o(1))\sqrt N$ uniformly on the entire unit circle for every
+family's claim: real Littlewood polynomials — polynomials of length $`N`$ with
+$`\{-1,1\}`$ coefficients — can be made ultraflat, with modulus
+$`(1+o(1))\sqrt N`$ uniformly on the entire unit circle for every
 sufficiently large integer length, and their binary merit factors tend to
 infinity, disproving Turyn's bounded-merit-factor conjecture. The family
 ships three manuscripts in a versioning chain; the current (highest)
 manuscript's abstract 
 
-> For every $\varepsilon\in(0,1)$ and every sufficiently large integer $N$,
-there is a polynomial of length $N$ with coefficients in $\{-1,1\}$ whose
-modulus lies between $(1-\varepsilon)\sqrt N$ and
-$(1+\varepsilon)\sqrt N$ everywhere on the unit circle. Thus real
+> For every $`\varepsilon\in(0,1)`$ and every sufficiently large integer $`N`$,
+there is a polynomial of length $`N`$ with coefficients in $`\{-1,1\}`$ whose
+modulus lies between $`(1-\varepsilon)\sqrt N`$ and
+$`(1+\varepsilon)\sqrt N`$ everywhere on the unit circle. Thus real
 Littlewood polynomials can be ultraflat through every sufficiently large
 integer length. The signs may be chosen separately at each length. [S7:39–46]
 
 ## Undergraduate summary
 
-A Littlewood polynomial of length $N$ is $\sum_{k=0}^{N-1}\varepsilon_k z^k$
-with each sign $\varepsilon_k\in\{-1,1\}$. Parseval's identity says its
+A Littlewood polynomial of length $`N`$ is $`\sum_{k=0}^{N-1}\varepsilon_k z^k`$
+with each sign $`\varepsilon_k\in\{-1,1\}`$. Parseval's identity says its
 mean-square modulus on the unit circle is exactly one, so the maximum
-$|P(z)|$ can never fall below $\sqrt N$; $m_N$, the minimum over all sign
+$`|P(z)|`$ can never fall below $`\sqrt N`$; $`m_N`$, the minimum over all sign
 choices of the normalized maximum, is at least one. The flatness question is
 how close to that square-root floor the *maximum* can be pushed.
 
@@ -36,53 +36,53 @@ of modulus one can be made ultraflat by classical quadratic-phase
 constructions, and a two-sided *constant-factor* flat statement was proved
 for real signs, but making the upper constant tend to one for real signs
 — at every integer length, not just a subsequence — is the theorem
-here. Erdös's fixed-gap question had asked whether $m_N$ stays above
-$1+c$ for some absolute $c>0$ [S4:14–19]; the answer is no.
+here. Erdös's fixed-gap question had asked whether $`m_N`$ stays above
+$`1+c`$ for some absolute $`c>0`$ [S4:14–19]; the answer is no.
 
 The three manuscripts sharpen the result in sequence: first the maximum is
 asymptotically minimal [S3:35–42], then it is asymptotically minimal
-while the minimum stays a fixed positive multiple of $\sqrt N$
-[S5:36–41], and finally both bounds pinch to $(1\pm\varepsilon)\sqrt N$
-for every small $\varepsilon$ [S7:39–46].
+while the minimum stays a fixed positive multiple of $`\sqrt N`$
+[S5:36–41], and finally both bounds pinch to $`(1\pm\varepsilon)\sqrt N`$
+for every small $`\varepsilon`$ [S7:39–46].
 
 ## Graduate summary
 
 **The versioning chain.** The three manuscripts are a nesting of statements
 about the same real-sign class. The first (asymptotically-minimal) defines
-$m_N$ and proves 
+$`m_N`$ and proves 
 
 > **Theorem 1.1**
 For Littlewood polynomials with real coefficients,
 $$\lim_{N\to\infty}m_N=1.$$
-Equivalently, for every $\eta>0$ there is $N_0$ such that for every integer
-$N\ge N_0$ there are signs $\varepsilon_0,\ldots,\varepsilon_{N-1}$ with
+Equivalently, for every $`\eta>0`$ there is $`N_0`$ such that for every integer
+$`N\ge N_0`$ there are signs $`\varepsilon_0,\ldots,\varepsilon_{N-1}`$ with
 $$\max_{|z|=1}\left|\sum_{k=0}^{N-1}\varepsilon_kz^k\right|
  \le(1+\eta)\sqrt N.$$ [S4:22–33]
 
-so the smallest possible maximum is $(1+o(1))\sqrt N$ through all integer
+so the smallest possible maximum is $`(1+o(1))\sqrt N`$ through all integer
 lengths. The second strengthens the result to coexist with a uniform lower
 bound — a single polynomial at every sufficiently large length whose
-modulus lies between $\sqrt N/16$ and $(1+\eta)\sqrt N$ on the whole circle
+modulus lies between $`\sqrt N/16`$ and $`(1+\eta)\sqrt N`$ on the whole circle
 
 
 > **Theorem 1.1**
-For every $\eta>0$ there is an integer $N_0=N_0(\eta)$ such that, for every
-integer $N\ge N_0$, there exist real signs
-$\varepsilon_0,\ldots,\varepsilon_{N-1}$ for which
+For every $`\eta>0`$ there is an integer $`N_0=N_0(\eta)`$ such that, for every
+integer $`N\ge N_0`$, there exist real signs
+$`\varepsilon_0,\ldots,\varepsilon_{N-1}`$ for which
 $$\frac1{16}\sqrt N
  \le\left|\sum_{k=0}^{N-1}\varepsilon_kz^k\right|
  \le(1+\eta)\sqrt N
  \qquad (|z|=1).$$ [S6:18–28]
 
 The third (the current manuscript) drops the fixed constant on the lower
-side, giving two-sided ultraflatness: for every $\varepsilon\in(0,1)$ there
-are signs with $(1-\varepsilon)\sqrt N\le |P(z)|\le(1+\varepsilon)\sqrt N$
-for every $|z|=1$ 
+side, giving two-sided ultraflatness: for every $`\varepsilon\in(0,1)`$ there
+are signs with $`(1-\varepsilon)\sqrt N\le |P(z)|\le(1+\varepsilon)\sqrt N`$
+for every $`|z|=1`$ 
 
 > **Theorem 1**
-For every $\varepsilon\in(0,1)$ there is an integer $N_0$ such that,
-for every integer $N\ge N_0$, there are signs
-$\varepsilon_0,\ldots,\varepsilon_{N-1}$ for which
+For every $`\varepsilon\in(0,1)`$ there is an integer $`N_0`$ such that,
+for every integer $`N\ge N_0`$, there are signs
+$`\varepsilon_0,\ldots,\varepsilon_{N-1}`$ for which
 $$(1-\varepsilon)\sqrt N
  \le\left|\sum_{k=0}^{N-1}\varepsilon_k z^k\right|
  \le(1+\varepsilon)\sqrt N
@@ -92,17 +92,17 @@ The first manuscript's proof gives no positive lower bound and asserts no
 two-sided ultraflatness [S4:35–39]; all three conclusions are existential,
 with no convergence rate and no signing algorithm.
 
-**The $L^p$-flatness addition.** Beyond the uniform maximum, the
+**The $`L^p`$-flatness addition.** Beyond the uniform maximum, the
 formalization proves a finite-exponent statement for one all-length real-sign
-family: for every fixed finite $p>0$ the $L^p$ mean of
-$\bigl||P_N(z)|/\sqrt N-1\bigr|$ on the circle tends to zero [S9].
+family: for every fixed finite $`p>0`$ the $`L^p`$ mean of
+$`\bigl||P_N(z)|/\sqrt N-1\bigr|`$ on the circle tends to zero [S9].
 
 ## History of the conjecture
 
 Erdös asked (Problem 26) whether real-sign polynomials could stay between
-two fixed positive multiples of $\sqrt N$ on the entire circle
+two fixed positive multiples of $`\sqrt N`$ on the entire circle
 [S8:33–40]; Littlewood posed the related flatness question. The Rudin–Shapiro
-construction gives real-sign polynomials with maximum $\sqrt{2N}$ at dyadic
+construction gives real-sign polynomials with maximum $`\sqrt{2N}`$ at dyadic
 lengths, and Balister, Bollobás, Morris, Sahasrabudhe and Tiba proved the
 two-sided constant-factor flat statement at every degree at least two;
 neither makes the upper constant tend to one.
@@ -112,12 +112,12 @@ admit ultraflat constructions (Kahane; Bombieri–Bourgain quantitatively),
 and the present proof must instead preserve real coefficients and round them
 to signs [S4:56–64]. A growing additive gap above the Parseval bound is
 nonetheless possible — Erdélyi showed every Littlewood polynomial satisfies
-$\|P\|_\infty^2\ge N+(N-1)^{1/3}/38$ — which is compatible with
-$m_N\to1$ [S4:73–80].
+$`\|P\|_\infty^2\ge N+(N-1)^{1/3}/38`$ — which is compatible with
+$`m_N\to1`$ [S4:73–80].
 
 The merit-factor consequence is on a separate line. The largest binary merit
-factor at length $N$ is, in the standard normalization, what Turyn's
-conjecture (Erdös's $L^4$-norm conjecture) asserts is bounded
+factor at length $`N`$ is, in the standard normalization, what Turyn's
+conjecture (Erdös's $`L^4`$-norm conjecture) asserts is bounded
 [S4:100–102]; the family disproves that boundedness in the stronger
 all-length form, the merit factor tending to infinity through all integers
 [S4:107–109].
@@ -131,22 +131,22 @@ cannot independently verify these 2026 manuscripts' arguments.
 
 ## Consequences
 
-**Two-sided ultraflatness.** For every $\varepsilon\in(0,1)$ and every
-sufficiently large $N$ there are real signs with
-$(1-\varepsilon)\sqrt N\le |P(z)|\le(1+\varepsilon)\sqrt N$ on the whole
+**Two-sided ultraflatness.** For every $`\varepsilon\in(0,1)`$ and every
+sufficiently large $`N`$ there are real signs with
+$`(1-\varepsilon)\sqrt N\le |P(z)|\le(1+\varepsilon)\sqrt N`$ on the whole
 circle, including the real endpoints [S8:15–29].
 
 **Unbounded binary merit factor.** The largest binary merit factor at length
-$N$ tends to infinity through all integers, disproving Turyn's conjecture
+$`N`$ tends to infinity through all integers, disproving Turyn's conjecture
 [S4:107–109].
 
 **A simple-spectrum Morse shift.** By the Downarowicz–Lacroix theorem,
 unbounded binary merit factors feed a uniquely ergodic binary Morse shift
 with simple spectrum whose zero-coordinate spectral measure is absolutely
-continuous with an $L^2$ density [S4:111–118].
+continuous with an $`L^2`$ density [S4:111–118].
 
-**The $L^p$-flatness implication.** The main theorem implies flatness in
-every fixed finite $L^p$ modulus sense, the content of the second formalized
+**The $`L^p`$-flatness implication.** The main theorem implies flatness in
+every fixed finite $`L^p`$ modulus sense, the content of the second formalized
 statement [S9].
 
 ## Section skeleton
@@ -173,10 +173,10 @@ No manuscript ships a `verification/` bundle.
 
 **Scope note** [S9]. The formalization gives real Littlewood polynomials of
 every sufficiently large length with maximum modulus at most
-$(1+\eta)\sqrt N$ for any fixed $\eta>0$ (so the smallest possible maximum
+$`(1+\eta)\sqrt N`$ for any fixed $`\eta>0`$ (so the smallest possible maximum
 is asymptotically minimal through all integer lengths), plus a second
-statement choosing one all-length real-sign family whose $L^p$ mean of
-$\bigl||P_N(z)|/\sqrt N-1\bigr|$ tends to zero for every fixed finite $p>0$.
+statement choosing one all-length real-sign family whose $`L^p`$ mean of
+$`\bigl||P_N(z)|/\sqrt N-1\bigr|`$ tends to zero for every fixed finite $`p>0`$.
 Both results are existential, with no effective convergence rate or signing
 algorithm. The scope note links only the v1 manuscript; it records
 `scope: "Partial progress."` and `review: status: unchecked`, and zero
@@ -247,7 +247,7 @@ theorem main : MainStatement := by
 [S13:187–192]
 
 **Statement 2, proven in the OAI tree.** The second statement's
-`MainStatement` (the $L^p$-flatness of one all-length family) is defined in
+`MainStatement` (the $`L^p`$-flatness of one all-length family) is defined in
 `FlatnessModel.lean` 
 
 ```lean

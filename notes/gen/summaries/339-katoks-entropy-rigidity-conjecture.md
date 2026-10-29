@@ -27,15 +27,15 @@ measures the exponential growth of orbit complexity; the Liouville
 entropy measures the complexity seen by the invariant probability
 measure naturally defined by the metric. The variational principle
 bounds the latter by the former. Katok proved the surface case
-($n=2$) by placing the Liouville entropy below, and the topological
+($`n=2`$) by placing the Liouville entropy below, and the topological
 entropy above, the entropy of the constant-curvature metric of the same
 area, with rigidity in equality. The surface strategy does not extend
 to higher dimensions: Flaminio showed the entropy Hessian is indefinite
 at some hyperbolic three-manifolds. The manuscript proves the
-conjecture for all $n\ge3$ 
+conjecture for all $`n\ge3`$ 
 
 > **theorem**
-Suppose $n\ge3$ and every sectional curvature of $g$ is strictly
+Suppose $`n\ge3`$ and every sectional curvature of $`g`$ is strictly
 negative. Then
 $$h_{m_L}(\phi_1)=h_{\mathrm{top}}(\phi_1)
  \quad\Longleftrightarrow\quad
@@ -54,9 +54,9 @@ sectional curvature.
 the entropy equality into geometric data. The entropy formula,
 Bowen–Ruelle thermodynamic formalism, Gibbs estimates, and Livšic
 cohomology give the infinitesimal unstable volume-expansion rate
-$J=h+XF$, where $X$ generates the flow. A transfer function produces
-two conormal volume forms: one annihilates $E^u$, the other $E^s$,
-and flow transport multiplies them by $e^{-ht}$ and $e^{ht}$. Their
+$`J=h+XF`$, where $`X`$ generates the flow. A transfer function produces
+two conormal volume forms: one annihilates $`E^u`$, the other $`E^s`$,
+and flow transport multiplies them by $`e^{-ht}`$ and $`e^{ht}`$. Their
 controlled derivatives along individual weak leaves provide the initial
 data; ambient smoothness is still to be established [S3:162–170].
 
@@ -66,7 +66,7 @@ plaques and their conormal densities are encoded in finite-dimensional
 contracting state spaces. Section 3 (algebraic hulls) takes the
 polynomial relations obeyed by actual plaque jets, extracts affine
 families of alternative conormal covectors from their solution sets,
-and constructs formal affine fields $\mathcal{A}^u, \mathcal{A}^s$
+and constructs formal affine fields $`\mathcal{A}^u, \mathcal{A}^s`$
 with full ambient Taylor coefficients that are smooth and holonomic
 along both actual foliations. All constructions use finite weight
 cutoffs; no formal series is assumed to converge [S4:1–12].
@@ -77,7 +77,7 @@ determined by the Lyapunov exponents belongs to the symmetry algebra,
 and the entropy trace identity gives a constraint on its elements.
 Combined with Cartan–Guillemin structure theory, the result is a
 dichotomy: a finite-dimensional symmetry algebra supplies formal fields
-with values in $E^s, E^u$; an infinite-dimensional one supplies nonzero
+with values in $`E^s, E^u`$; an infinite-dimensional one supplies nonzero
 stable and unstable directions joined by a formal flat affine
 connection [S3:183–196].
 
@@ -106,7 +106,7 @@ transverse to the diffeomorphism orbit for higher-dimensional real
 hyperbolic metrics, showing equality is locally isolated along each
 such path, and produced a hyperbolic three-manifold at which the
 Hessian is indefinite. Humbert (2026) proved rigidity throughout a
-sufficiently small $C^N$ neighborhood of any fixed real or complex
+sufficiently small $`C^N`$ neighborhood of any fixed real or complex
 hyperbolic metric. For more general flows, Foulon (2001) characterized
 maximal-entropy measure for contact Anosov flows on three-dimensional
 phase spaces by conjugacy to constant-curvature surface geodesic flows;
@@ -121,7 +121,7 @@ global smoothness of the invariant distributions is established
 ## Consequences
 
 **Katok's entropy rigidity conjecture is resolved in dimensions
-$\ge3$.** For every closed connected smooth Riemannian manifold of
+$`\ge3`$.** For every closed connected smooth Riemannian manifold of
 dimension at least three with strictly negative sectional curvature,
 entropy equality holds if and only if the metric is locally symmetric
 [S3:90–100].

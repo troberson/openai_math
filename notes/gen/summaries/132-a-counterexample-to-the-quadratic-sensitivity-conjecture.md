@@ -15,42 +15,42 @@ agree on the statement.
 
 ## Undergraduate summary
 
-For a Boolean function (an input of $n$ bits producing one bit of
-output), **sensitivity** $s(f)$ counts the most number of *single bits*
+For a Boolean function (an input of $`n`$ bits producing one bit of
+output), **sensitivity** $`s(f)`$ counts the most number of *single bits*
 that can be flipped to change the output. **Block sensitivity**
-$\mathrm{bs}(f)$ counts the most number of *disjoint groups of bits* that can
+$`\mathrm{bs}(f)`$ counts the most number of *disjoint groups of bits* that can
 each be flipped to change the output.
 
 It was conjectured that block sensitivity is at most a constant power of
 sensitivity. The **quadratic strengthening** was the specific guess
-$\mathrm{bs}(f)\le s(f)^2$.
+$`\mathrm{bs}(f)\le s(f)^2`$.
 
 This family constructs functions where block sensitivity grows **faster
-than $s(f)^2$** [S4:53–64] — in fact faster than $s(f)^\alpha$ for some
-$\alpha>2$ — so the quadratic bound is **false**. It is a genuine
+than $`s(f)^2`$** [S4:53–64] — in fact faster than $`s(f)^\alpha`$ for some
+$`\alpha>2`$ — so the quadratic bound is **false**. It is a genuine
 **counterexample** to that strengthening.
 
 ## Graduate summary
 
-**Main theorem** ([S4:53–64], `thm:main`). "For every real $C>0$, there
-are a positive integer $n$ and a nonconstant total Boolean function $f$
-such that $\mathrm{bs}(f)>C\,s(f)^2$. More precisely, for every integer $d\ge1$
-the construction below gives a nonconstant total Boolean function $f$
-with $\mathrm{bs}(f)/s(f)^2\ge 2^d/[4(d+2)^2]$" [S4:53–64]. The ratio
-$\mathrm{bs}(f)/s(f)^2$ is unbounded as $d\to\infty$.
+**Main theorem** ([S4:53–64], `thm:main`). "For every real $`C>0`$, there
+are a positive integer $`n`$ and a nonconstant total Boolean function $`f`$
+such that $`\mathrm{bs}(f)>C\,s(f)^2`$. More precisely, for every integer $`d\ge1`$
+the construction below gives a nonconstant total Boolean function $`f`$
+with $`\mathrm{bs}(f)/s(f)^2\ge 2^d/[4(d+2)^2]`$" [S4:53–64]. The ratio
+$`\mathrm{bs}(f)/s(f)^2`$ is unbounded as $`d\to\infty`$.
 
 **The construction.** The separation is built recursively: a seed
 function with block sensitivity exceeding sensitivity squared is
-amplified through recurrences that track how $s$ and $\mathrm{bs}$ scale under a
+amplified through recurrences that track how $`s`$ and $`\mathrm{bs}`$ scale under a
 tensor-like product [S4:135]. The recurrences yield the explicit
-$2^d/[4(d+2)^2]$ lower bound and, along a subsequence, a fixed exponent
-$\alpha>2$ with $\mathrm{bs}(f)\ge s(f)^\alpha$.
+$`2^d/[4(d+2)^2]`$ lower bound and, along a subsequence, a fixed exponent
+$`\alpha>2`$ with $`\mathrm{bs}(f)\ge s(f)^\alpha`$.
 
 **Relationship to the resolved conjecture.** The full *polynomial*
-Sensitivity Conjecture ($\mathrm{bs}$ polynomial in $s$) was resolved by **Huang**
-in 2019, giving $\mathrm{bs}(f)\le s(f)^4$ via the degree bound and Tal's
+Sensitivity Conjecture ($`\mathrm{bs}`$ polynomial in $`s`$) was resolved by **Huang**
+in 2019, giving $`\mathrm{bs}(f)\le s(f)^4`$ via the degree bound and Tal's
 refinement, later sharpened by **Wellens** to
-$\mathrm{bs}(f)\le\sqrt{2/3}\,s(f)^4+1$ [S4:43–49]. The theorem here does not
+$`\mathrm{bs}(f)\le\sqrt{2/3}\,s(f)^4+1`$ [S4:43–49]. The theorem here does not
 contradict that polynomial bound; it only rules out the *quadratic*
 strengthening [S4:50–51].
 
@@ -61,20 +61,20 @@ introduced block sensitivity and already recorded **Rubinstein's**
 quadratic separation [S4:25–27]. **Nisan and Szegedy** studied the problem
 through the degree of the unique multilinear real polynomial representing
 a Boolean function and explicitly suggested the quadratic inequality
-$\mathrm{bs}(f)\le s(f)^2$ [S4:28–30].
+$`\mathrm{bs}(f)\le s(f)^2`$ [S4:28–30].
 
 **Huang** resolved the polynomial conjecture in 2019. His degree bound,
 together with **Tal's** refinement of the degree–block-sensitivity
-comparison, gives $\mathrm{bs}(f)\le s(f)^4$ for every total Boolean function.
+comparison, gives $`\mathrm{bs}(f)\le s(f)^4`$ for every total Boolean function.
 **Wellens** later improved its leading constant, proving
-$\mathrm{bs}(f)\le\sqrt{2/3}\,s(f)^4+1$ [S4:43–49]. These results settle the
+$`\mathrm{bs}(f)\le\sqrt{2/3}\,s(f)^4+1`$ [S4:43–49]. These results settle the
 polynomial question but leave the quadratic strengthening open — the
 theorem below rules it out.
 
 **Prior (my training data, not this repo).** Huang's resolution of the
 Sensitivity Conjecture in 2019 was a landmark result. The quadratic
-strengthening $\mathrm{bs}(f)\le s(f)^2$ was the natural guess, and the known
-upper bound $s(f)^4$ left open how tight the true exponent was. A
+strengthening $`\mathrm{bs}(f)\le s(f)^2`$ was the natural guess, and the known
+upper bound $`s(f)^4`$ left open how tight the true exponent was. A
 superquadratic separation is a clean negative result pinning down that
 the square is not the right scale. I cannot confirm the specific prior
 results independently; the release ships the manuscript as proof.
@@ -82,19 +82,19 @@ results independently; the release ships the manuscript as proof.
 ## Consequences
 
 - **The quadratic sensitivity bound is false.** There are total Boolean
-  functions with $\mathrm{bs}(f)>C\,s(f)^2$ for every constant $C$
+  functions with $`\mathrm{bs}(f)>C\,s(f)^2`$ for every constant $`C`$
   [S4:53–64].
-- **The separation is unbounded and explicit.** For every $d\ge1$, the
+- **The separation is unbounded and explicit.** For every $`d\ge1`$, the
   constructed function satisfies
-  $\mathrm{bs}(f)/s(f)^2\ge 2^d/[4(d+2)^2]$ [S4:53–64].
+  $`\mathrm{bs}(f)/s(f)^2\ge 2^d/[4(d+2)^2]`$ [S4:53–64].
 - **A fixed exponent above 2 is achieved.** Along a subsequence,
-  $\mathrm{bs}(f)\ge s(f)^\alpha$ for some $\alpha>2$, with $\mathrm{bs}(f)\to\infty$
+  $`\mathrm{bs}(f)\ge s(f)^\alpha`$ for some $`\alpha>2`$, with $`\mathrm{bs}(f)\to\infty`$
   [S6:9].
 - **The polynomial bound stands.** This does not contradict Huang's
-  $\mathrm{bs}(f)\le s(f)^4$; it only rules out the quadratic strengthening
+  $`\mathrm{bs}(f)\le s(f)^4`$; it only rules out the quadratic strengthening
   [S4:50–51].
 - **The question is settled at the quadratic level.** The true exponent
-  separating $\mathrm{bs}$ from $s$ lies strictly between 2 and 4 in this sense
+  separating $`\mathrm{bs}`$ from $`s`$ lies strictly between 2 and 4 in this sense
   [S4:43–51].
 
 ## Section skeleton
@@ -105,7 +105,7 @@ section files [S3:33–36], and an `alpha` bibliography [S3:37–38]. The
 sections, in order and line count: `00-introduction` (139),
 `01-construction` (193), `02-recurrences` (149), `03-separation` (275) —
 756 section lines. The proof develops the seed and the recursive
-amplification, analyzes the scaling recurrences for $s$ and $\mathrm{bs}$, and
+amplification, analyzes the scaling recurrences for $`s`$ and $`\mathrm{bs}`$, and
 extracts the separation bound. The shipped PDF [S5] is the manuscript in
 the form the release distributes.
 
@@ -117,12 +117,12 @@ formalization is **complete at the declaration level**.
 
 The scope note [S6:9] states precisely what is formalized: "The formalized
 result disproves a universal quadratic bound of block sensitivity by
-sensitivity for total Boolean functions. For every integer $d\ge1$, it
+sensitivity for total Boolean functions. For every integer $`d\ge1`$, it
 constructs a nonconstant function with
-$\mathrm{bs}(f)/s(f)^2\ge2^d/(4(d+2)^2)$, making the ratio unbounded.
-The formalization also gives a fixed exponent $\alpha>2$ and a sequence
-with $s(f)^\alpha\le\mathrm{bs}(f,0)$ while the latter tends to infinity;
-here $\mathrm{bs}(f,0)$ is block sensitivity at the all-zero input"
+$`\mathrm{bs}(f)/s(f)^2\ge2^d/(4(d+2)^2)`$, making the ratio unbounded.
+The formalization also gives a fixed exponent $`\alpha>2`$ and a sequence
+with $`s(f)^\alpha\le\mathrm{bs}(f,0)`$ while the latter tends to infinity;
+here $`\mathrm{bs}(f,0)`$ is block sensitivity at the all-zero input"
 [S6:9].
 
 The scope note links a single comparator config
@@ -134,10 +134,10 @@ The scope note links a single comparator config
 The `SensitivitySeparation.lean` comparator stub [S7:30–35] (42 lines) defines
 the sensitivity and block-sensitivity machinery and one statement
 
-- `quantitative_separation` [S7:30–35] — for every $d\ge1$, there is a
-  positive $n$ and a nonconstant function $f$ (with
-  $f(0^n)=0$) such that
-  $2^d/[4(d+2)^2]\le \mathrm{bs}(f)/s(f)^2$; `sorry` at [S7:36].
+- `quantitative_separation` [S7:30–35] — for every $`d\ge1`$, there is a
+  positive $`n`$ and a nonconstant function $`f`$ (with
+  $`f(0^n)=0`$) such that
+  $`2^d/[4(d+2)^2]\le \mathrm{bs}(f)/s(f)^2`$; `sorry` at [S7:36].
 
 The comparator still carries a `sorry`, but the declaration
 `OAI.Paper320.quantitative_separation` exists in the library's

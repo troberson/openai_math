@@ -16,20 +16,20 @@ agree on the statement.
 ## Undergraduate summary
 
 **Average sensitivity** measures how "unstable" a Boolean function is. For
-a function $f$ on an $n$-bit input, count how often flipping a single
+a function $`f`$ on an $`n`$-bit input, count how often flipping a single
 random bit changes the output, then average over all bits. This is the
-**average sensitivity** (or **total influence**) $I(f)$.
+**average sensitivity** (or **total influence**) $`I(f)`$.
 
 A **polynomial threshold function** (PTF) is the sign of a polynomial. For
 example, "do the majority of the bits equal 1?" is the sign of
-$x_1+\cdots+x_n$.
+$`x_1+\cdots+x_n`$.
 
-**Gotsman and Linial** conjectured that degree-$d$ PTFs have average
-sensitivity at most on the order of $d\sqrt n$. This family proves an
-explicit version: **$I(f) \le 8d\sqrt n$** [S4:20–28], for every
-degree-at-most-$d$ real multilinear polynomial, on the uniform $n$-dimensional
-Boolean cube. The constant 8 is absolute — it does not depend on $d$ or
-$n$, so the degree may grow with the dimension.
+**Gotsman and Linial** conjectured that degree-$`d`$ PTFs have average
+sensitivity at most on the order of $`d\sqrt n`$. This family proves an
+explicit version: **$`I(f) \le 8d\sqrt n`$** [S4:20–28], for every
+degree-at-most-$`d`$ real multilinear polynomial, on the uniform $`n`$-dimensional
+Boolean cube. The constant 8 is absolute — it does not depend on $`d`$ or
+$`n`$, so the degree may grow with the dimension.
 
 This establishes the **asymptotic** form of the conjecture. The *exact*
 extremal version (which function maximizes influence) is a separate,
@@ -38,28 +38,28 @@ harder question — and it is false, as **Chapman** showed
 
 ## Graduate summary
 
-**Main theorem** ([S4:20–28], `thm:main`). "Let $n\ge1$ and
-$1\le d\le n$ be integers. Let $p$ be a real multilinear polynomial of
-degree at most $d$, and define $f:\{-1,1\}^n\to\{-1,1\}$ by
-$f(x)=\mathrm{sgn}(p(x))$, with $\mathrm{sgn}(0)=1$. Then, for average sensitivity under
-the uniform law, $I(f)\le 8d\sqrt n$" [S4:20–28]. The convention
-$\mathrm{sgn}(0)=1$ is load-bearing: it lets the polynomial vanish on the cube
+**Main theorem** ([S4:20–28], `thm:main`). "Let $`n\ge1`$ and
+$`1\le d\le n`$ be integers. Let $`p`$ be a real multilinear polynomial of
+degree at most $`d`$, and define $`f:\{-1,1\}^n\to\{-1,1\}`$ by
+$`f(x)=\mathrm{sgn}(p(x))`$, with $`\mathrm{sgn}(0)=1`$. Then, for average sensitivity under
+the uniform law, $`I(f)\le 8d\sqrt n`$" [S4:20–28]. The convention
+$`\mathrm{sgn}(0)=1`$ is load-bearing: it lets the polynomial vanish on the cube
 without a regularity condition [S4:30–32].
 
 **Asymptotic vs. exact.** "Gotsman and Linial proposed an exact extremal
 bound for average sensitivity. Their candidate is symmetric: it is the
-sign of a degree-$d$ polynomial in $x_1+\cdots+x_n$ whose roots lie between
+sign of a degree-$`d`$ polynomial in $`x_1+\cdots+x_n`$ whose roots lie between
 the central levels of the cube. The proposal asserts that this function
-maximizes influence among all degree-$d$ polynomial threshold functions in
-$n$ variables. Chapman constructed counterexamples to this exact assertion
+maximizes influence among all degree-$`d`$ polynomial threshold functions in
+$`n`$ variables. Chapman constructed counterexamples to this exact assertion
 and explicitly distinguished it from the asymptotic bound
-$I(f)=O(d\sqrt n)$" [S4:34–42]. The theorem here establishes the
+$`I(f)=O(d\sqrt n)`$" [S4:34–42]. The theorem here establishes the
 asymptotic bound with an absolute constant "and makes no assertion about
 exact maximizers" [S4:48–49].
 
-**Sharpness.** The symmetric examples show the order $d\sqrt n$ is sharp
-for $1\le d\le\sqrt n$: a sign function whose roots sit between the central
-Hamming levels has influence $\asymp d\sqrt n$ [S4:53–78].
+**Sharpness.** The symmetric examples show the order $`d\sqrt n`$ is sharp
+for $`1\le d\le\sqrt n`$: a sign function whose roots sit between the central
+Hamming levels has influence $`\asymp d\sqrt n`$ [S4:53–78].
 
 ## History of the conjecture
 
@@ -67,22 +67,22 @@ Hamming levels has influence $\asymp d\sqrt n$ [S4:53–78].
 **Chapman** constructed counterexamples to the exact assertion and
 distinguished it from the asymptotic bound [S4:34–42]. **Kim, Maldonado,
 and Wellens** independently constructed quadratic counterexamples for odd
-$n\ge5$ and proved influence bounds for quadratic polynomials with
+$`n\ge5`$ and proved influence bounds for quadratic polynomials with
 restricted support graphs [S4:44–47].
 
 The early general bounds established sublinear influence for every fixed
-degree. For $n>1$, **Harsha, Klivans, and Meka** proved
-$I(f)\le 2^{O(d)}n^{1-1/(4d+6)}$, while the independent work of
+degree. For $`n>1`$, **Harsha, Klivans, and Meka** proved
+$`I(f)\le 2^{O(d)}n^{1-1/(4d+6)}`$, while the independent work of
 **Diakonikolas, Raghavendra, Servedio, and Tan** gave
-$I(f)\le 2^{O(d)}(\log n)n^{1-1/(4d+2)}$. Their proofs use regularity and
+$`I(f)\le 2^{O(d)}(\log n)n^{1-1/(4d+2)}`$. Their proofs use regularity and
 invariance arguments to compare sufficiently regular Boolean polynomials
 with Gaussian ones [S4:81–90]. The theorem here gives the matching
-$\tilde O(d\sqrt n)$ scale with a clean absolute constant.
+$`\tilde O(d\sqrt n)`$ scale with a clean absolute constant.
 
 **Prior (my training data, not this repo).** The Gotsman–Linial conjecture
 was a central open problem in analysis of Boolean functions. The exact
 extremal version was known to be false (Chapman's counterexamples), leaving
-the asymptotic $O(d\sqrt n)$ bound as the target; an explicit constant
+the asymptotic $`O(d\sqrt n)`$ bound as the target; an explicit constant
 (8) with no regularity condition on the polynomial is a clean resolution of
 the asymptotic form. I cannot confirm the specific prior results
 independently; the release ships the manuscript as proof.
@@ -90,16 +90,16 @@ independently; the release ships the manuscript as proof.
 ## Consequences
 
 - **The asymptotic Gotsman–Linial bound is proved.** For every
-  degree-at-most-$d$ real multilinear polynomial $p$ on the uniform
-  $n$-cube, the average sensitivity of $\mathrm{sgn}\circ p$ (with
-  $\mathrm{sgn}(0)=1$) is at most $8d\sqrt n$ [S4:20–28].
+  degree-at-most-$`d`$ real multilinear polynomial $`p`$ on the uniform
+  $`n`$-cube, the average sensitivity of $`\mathrm{sgn}\circ p`$ (with
+  $`\mathrm{sgn}(0)=1`$) is at most $`8d\sqrt n`$ [S4:20–28].
 - **The constant is absolute and the degree may grow.** The 8 is
-  independent of both $d$ and $n$, and the polynomial may vanish on the
+  independent of both $`d`$ and $`n`$, and the polynomial may vanish on the
   cube with no regularity condition [S4:30–32].
 - **The exact extremal version is out of scope.** The theorem is the
   asymptotic bound, not the (false) exact maximizer claim; Chapman's
   counterexamples apply to the latter [S4:34–42].
-- **The $d\sqrt n$ scale is sharp** for $1\le d\le\sqrt n$ via the
+- **The $`d\sqrt n`$ scale is sharp** for $`1\le d\le\sqrt n`$ via the
   symmetric central-level sign functions [S4:53–78].
 
 ## Section skeleton
@@ -123,10 +123,10 @@ formalization is **complete at the declaration level**, in contrast to the
 T2 structural-absence cases.
 
 The scope note [S6:9] states precisely what is formalized and what is not:
-"The formalized result proves the average-sensitivity bound $8d\sqrt n$
+"The formalized result proves the average-sensitivity bound $`8d\sqrt n`$
 for every Boolean threshold function defined by a real multilinear
-polynomial of degree at most $d$ on the $n$-dimensional cube. The sign
-convention assigns value $1$ at zero. This establishes the stated
+polynomial of degree at most $`d`$ on the $`n`$-dimensional cube. The sign
+convention assigns value $`1`$ at zero. This establishes the stated
 asymptotic bound, rather than the separate conjecture identifying exact
 extremizers" [S6:9].
 
@@ -141,8 +141,8 @@ apparatus: `cubeCoord`, `flip`, `thresholdSign`, `sensitiveVertices`,
 `averageSensitivity`, `IsMultilinear`, `polynomialValue`,
 `polynomialThreshold`, and the statement
 
-- `GotsmanLinialStatement` [S7:43–47] — for every $1\le d\le n$ and every
-  multilinear $p$ of degree $\le d$,
+- `GotsmanLinialStatement` [S7:43–47] — for every $`1\le d\le n`$ and every
+  multilinear $`p`$ of degree $`\le d`$,
   `averageSensitivity (polynomialThreshold p) ≤ 8 * d * sqrt n`;
   `gotsmanLinialStatement` [S7:49–50], `sorry` at [S7:50].
 

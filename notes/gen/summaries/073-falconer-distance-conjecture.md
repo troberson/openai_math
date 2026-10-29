@@ -13,31 +13,31 @@ The release's blurb
 The catalog entry [S9:220] states the same. The manuscript abstract 
 
 > We resolve the Falconer distance conjecture in every dimension. For every
-integer $d\ge2$, a compact subset of $\mathbb R^d$ with Hausdorff dimension
-greater than $d/2$ determines a set of Euclidean distances of positive
+integer $`d\ge2`$, a compact subset of $`\mathbb R^d`$ with Hausdorff dimension
+greater than $`d/2`$ determines a set of Euclidean distances of positive
 Lebesgue measure. [S2:7–12]
 
 ## Undergraduate summary
 
-Take a collection of points $E$ in $\mathbb R^d$. Its **distance set** is the set of
-all the distances between pairs of points in it, $\Delta(E)=\{|x-y|:x,y\in
-E\}$. The question is how "large" $E$ must be to force that set of distances
-to be large. One way to measure the size of $E$ is its **Hausdorff
-dimension**: the familiar topological dimension of a line is $1$, of a plane
-$2$, but a fractal can carry a fractional value such as $1.5$ even when it is
+Take a collection of points $`E`$ in $`\mathbb R^d`$. Its **distance set** is the set of
+all the distances between pairs of points in it, $`\Delta(E)=\{|x-y|:x,y\in
+E\}`$. The question is how "large" $`E`$ must be to force that set of distances
+to be large. One way to measure the size of $`E`$ is its **Hausdorff
+dimension**: the familiar topological dimension of a line is $`1`$, of a plane
+$`2`$, but a fractal can carry a fractional value such as $`1.5`$ even when it is
 topologically much thinner. The Falconer distance conjecture asked: if a
-compact set $E$ has Hausdorff dimension strictly larger than half the ambient
-dimension $d/2$, must its distance set have **positive Lebesgue measure** —
+compact set $`E`$ has Hausdorff dimension strictly larger than half the ambient
+dimension $`d/2`$, must its distance set have **positive Lebesgue measure** —
 that is, must the distances it realizes stretch over an interval of positive
 length, rather than accumulating as a thin dust?
 
-This manuscript answers yes, in every dimension $d\ge2$, and — importantly —
-without assuming $E$ is smooth, has a regular measure on it, or has any
+This manuscript answers yes, in every dimension $`d\ge2`$, and — importantly —
+without assuming $`E`$ is smooth, has a regular measure on it, or has any
 product structure. The theorem 
 
 > **theorem**
-Let $d\ge2$ be an integer and let $E\subset\mathbb R^d$ be compact. If
-$\dim_H E>d/2$, then
+Let $`d\ge2`$ be an integer and let $`E\subset\mathbb R^d`$ be compact. If
+$`\dim_H E>d/2`$, then
 $$\mathcal L^1(\Delta(E))>0.$$ [S3:11–17]
 
 The point of the second sentence [S3:19–22] is that the only hypothesis is the
@@ -48,8 +48,8 @@ strict dimension bound.
 The headline claim is Theorem `thm:main` 
 
 > **theorem**
-Let $d\ge2$ be an integer and let $E\subset\mathbb R^d$ be compact. If
-$\dim_H E>d/2$, then
+Let $`d\ge2`$ be an integer and let $`E\subset\mathbb R^d`$ be compact. If
+$`\dim_H E>d/2`$, then
 $$\mathcal L^1(\Delta(E))>0.$$ [S3:11–17]
 
 and it carries no regularity beyond the strict Hausdorff-dimension assumption
@@ -67,39 +67,39 @@ Fourier mass in a shell, the limit is absolutely continuous. The argument
 regularizes the set, extracts angular gain, controls oscillatory integral
 estimates on the sphere, recurses through a graph structure over pairs, and
 assembles the final monotone-measure argument in the assembly section. The
-limiting measure is nonzero and supported on $\Delta(E)$, which is what gives
+limiting measure is nonzero and supported on $`\Delta(E)`$, which is what gives
 positive Lebesgue measure.
 
 The setting has a long history 
 
 > The problem originates in Falconer's work , which
-established the sufficient threshold $(d+1)/2$. His lattice-type examples
-at dimension $d/2$ explain the strict inequality in the positive-measure
+established the sufficient threshold $`(d+1)/2`$. His lattice-type examples
+at dimension $`d/2`$ explain the strict inequality in the positive-measure
 formulation. Mattila's spherical-average criterion 
-made Fourier $L^2$ estimates a central approach to the problem. [S3:29–33]
+made Fourier $`L^2`$ estimates a central approach to the problem. [S3:29–33]
 
-The threshold has been pushed from Falconer's sufficient $(d+1)/2$ down to the
-conjectured $d/2$ over four decades; this manuscript is the one that reaches
-the full $d/2$ in every dimension.
+The threshold has been pushed from Falconer's sufficient $`(d+1)/2`$ down to the
+conjectured $`d/2`$ over four decades; this manuscript is the one that reaches
+the full $`d/2`$ in every dimension.
 
 ## History of the conjecture
 
 Prior (my training data, not repo text): the problem is a distance analogue
 of the distinct-distances question and sits with the Falconer–Bourgain
 line of Fourier-analytic attacks. The manuscript's own history section
-[S3:29–33] records the milestones: Falconer's $(d+1)/2$, Mattila's
+[S3:29–33] records the milestones: Falconer's $`(d+1)/2`$, Mattila's
 spherical-average criterion, Bourgain's connection to restriction theory,
-Wolff's planar $4/3$, and Erdoğan's $d/2+1/3$, with the most recent
+Wolff's planar $`4/3`$, and Erdoğan's $`d/2+1/3`$, with the most recent
 pre-manuscript bounds coming from decoupling (Du–Guth–ou et al., Du–Zhang)
 and the pinned-distance work of Liu and the Du–Iosevich–Ou–Wang family.
-The endpoint question — what happens at dimension exactly $d/2$ — is
+The endpoint question — what happens at dimension exactly $`d/2`$ — is
 explicitly left open by the strict inequality in the statement; the
 manuscript makes no endpoint assertion.
 
 ## Consequences
 
-**The full Falconer threshold in every dimension.** The strict $d/2$ bound
-is now settled across all $d\ge2$ for compact sets with no auxiliary
+**The full Falconer threshold in every dimension.** The strict $`d/2`$ bound
+is now settled across all $`d\ge2`$ for compact sets with no auxiliary
 structure [S3:11–17].
 
 **A monotone-measure shell principle.** The closing argument — a scalar
@@ -109,7 +109,7 @@ the manuscript's section 10) and could apply to other problems about
 absolute continuity of limiting measures.
 
 **Pinned distances follow.** The manuscript notes the pinned analogue,
-$\mathcal L^1(\Delta_y(E))>0$ for some $y\in E$, as a corollary of the same
+$`\mathcal L^1(\Delta_y(E))>0`$ for some $`y\in E`$, as a corollary of the same
 machinery in the range the prior restriction estimates already cover.
 
 ## Section skeleton
@@ -137,7 +137,7 @@ No `verification/` bundle ships with this manuscript.
 The scope note [S4:9] states the all-dimensional claim for the
 formalization:
 
-> The formalization proves the Falconer distance conjecture in every dimension. For every integer $d\ge2$ and compact set $E\subset\mathbb R^d$ with Hausdorff dimension greater than $d/2$, the set $\{\lVert x-y\rVert:x,y\in E\}$ has positive Lebesgue measure. The linked statements include both this all-dimensional result and the earlier planar case. [S4:9]
+> The formalization proves the Falconer distance conjecture in every dimension. For every integer $`d\ge2`$ and compact set $`E\subset\mathbb R^d`$ with Hausdorff dimension greater than $`d/2`$, the set $`\{\lVert x-y\rVert:x,y\in E\}`$ has positive Lebesgue measure. The linked statements include both this all-dimensional result and the earlier planar case. [S4:9]
 
 The tracked declaration is narrower. The single `main_results` entry names
 `OAI.PlanarFalconer.mainTarget_proved`, whose file closes by aliasing the

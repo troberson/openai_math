@@ -8,10 +8,10 @@
 
 The release's blurb [S1:5084] and the catalog abstract [S2:519]
 state the family's claim: for every fixed inverse temperature
-$\beta > 1$, the zero-field Gaussian Sherrington–Kirkpatrick
+$`\beta > 1`$, the zero-field Gaussian Sherrington–Kirkpatrick
 log partition function has variance asymptotic to
-$c_\beta n^{1/3}$ with $c_\beta > 0$, confirming the
-predicted $n^{1/6}$ standard-deviation scale. Exact
+$`c_\beta n^{1/3}`$ with $`c_\beta > 0`$, confirming the
+predicted $`n^{1/6}`$ standard-deviation scale. Exact
 centering and standardization give full-sequence
 convergence to a uniquely characterized nondegenerate
 law. The family ships two manuscripts [S1:5084]:
@@ -26,31 +26,31 @@ law. The family ships two manuscripts [S1:5084]:
 The free-energy limiting-law abstract
 
 
-> For every fixed inverse temperature $\beta>1$, we prove that the zero-field Gaussian Ising Sherrington–Kirkpatrick free energy, centered by its expectation and divided by its standard deviation, converges in distribution to a nondegenerate law as the system size tends to infinity through all integers. We also prove that its variance divided by $n^{1/3}$ converges to a finite positive constant. [S3:47–49]
+> For every fixed inverse temperature $`\beta>1`$, we prove that the zero-field Gaussian Ising Sherrington–Kirkpatrick free energy, centered by its expectation and divided by its standard deviation, converges in distribution to a nondegenerate law as the system size tends to infinity through all integers. We also prove that its variance divided by $`n^{1/3}`$ converges to a finite positive constant. [S3:47–49]
 
 The fluctuation-scale abstract 
 
-> For the zero-field Gaussian Sherrington–Kirkpatrick model at every fixed inverse temperature $\beta>1$, we prove that the standard deviation of the log partition function is $n^{1/6+o(1)}$. The same exponent describes its typical centered absolute fluctuations, establishing the predicted one-sixth exponent in this regime. [S4:41–43]
+> For the zero-field Gaussian Sherrington–Kirkpatrick model at every fixed inverse temperature $`\beta>1`$, we prove that the standard deviation of the log partition function is $`n^{1/6+o(1)}`$. The same exponent describes its typical centered absolute fluctuations, establishing the predicted one-sixth exponent in this regime. [S4:41–43]
 
 ## Undergraduate summary
 
 The **Sherrington–Kirkpatrick (SK) model** is a
 mathematical model of a **spin glass** — a
 disordered magnet where each pair of spins interacts
-with a random strength. On $n$ sites, each spin is
-$+1$ or $-1$, and the energy of a configuration is
-$H(\sigma) = \sum_{i<j} g_{ij} \sigma_i \sigma_j$
-where the $g_{ij}$ are i.i.d. Gaussian random numbers.
+with a random strength. On $`n`$ sites, each spin is
+$`+1`$ or $`-1`$, and the energy of a configuration is
+$`H(\sigma) = \sum_{i<j} g_{ij} \sigma_i \sigma_j`$
+where the $`g_{ij}`$ are i.i.d. Gaussian random numbers.
 The **free energy** (log partition function)
-$F_n = \log \sum_{\sigma} e^{-\beta H(\sigma)}$
+$`F_n = \log \sum_{\sigma} e^{-\beta H(\sigma)}`$
 encodes the thermodynamics. The big question: what
-does $F_n$ look like when centered and scaled? In
-the **low-temperature** regime ($\beta > 1$), the
-fluctuations are of order $n^{1/6}$, not the
-Gaussian $n^{1/2}$ — a hallmark of the spin-glass
+does $`F_n`$ look like when centered and scaled? In
+the **low-temperature** regime ($`\beta > 1`$), the
+fluctuations are of order $`n^{1/6}`$, not the
+Gaussian $`n^{1/2}`$ — a hallmark of the spin-glass
 phase. The family proves the **exact scaling** and the
 **limiting law**: the variance is
-$c_\beta n^{1/3}(1+o(1))$ and the standardized
+$`c_\beta n^{1/3}(1+o(1))`$ and the standardized
 free energy converges to a specific nondegenerate
 random variable [S3:47–49, S4:41–43,
 S2:519].
@@ -59,19 +59,19 @@ S2:519].
 
 **The fluctuation scale** [S4:41–43, S2:519].
 For the zero-field Gaussian SK model at every fixed
-inverse temperature $\beta > 1$, the standard
+inverse temperature $`\beta > 1`$, the standard
 deviation of the log partition function is
-$n^{1/6+o(1)}$. The same exponent describes the
+$`n^{1/6+o(1)}`$. The same exponent describes the
 typical centered absolute fluctuations,
 establishing the predicted one-sixth exponent.
 
 **The limiting law** [S3:47–49, S2:519]. For
-every fixed $\beta > 1$, the zero-field Gaussian
+every fixed $`\beta > 1`$, the zero-field Gaussian
 Ising SK free energy, centered by its expectation
 and divided by its standard deviation, converges in
-distribution to a nondegenerate law as $n \to
-\infty$ through all integers. The variance divided
-by $n^{1/3}$ converges to a finite positive
+distribution to a nondegenerate law as $`n \to
+\infty`$ through all integers. The variance divided
+by $`n^{1/3}`$ converges to a finite positive
 constant.
 
 **The scope of the formalization.** The family is
@@ -91,12 +91,12 @@ thermodynamic limit by the Guerra ``interpolation''
 method (Talagrand 2006, resolving a conjecture of
 Sherrington and Kirkpatrick). The **fluctuation
 scale** question asks: after centering, what is
-the typical size of $F_n - \mathbb{E}F_n$? In the
-high-temperature regime ($\beta < 1$), the
-fluctuations are Gaussian of order $n^{1/2}$. In
-the **low-temperature** regime ($\beta > 1$),
+the typical size of $`F_n - \mathbb{E}F_n`$? In the
+high-temperature regime ($`\beta < 1`$), the
+fluctuations are Gaussian of order $`n^{1/2}`$. In
+the **low-temperature** regime ($`\beta > 1`$),
 Bryson--Seigal (2007) and later work predicted the
-$n^{1/6}$ scale from the replica-symmetric theory.
+$`n^{1/6}`$ scale from the replica-symmetric theory.
 The two manuscripts establish this prediction
 rigorously: the first determines the fluctuation
 scale, the second determines the limiting law
@@ -105,8 +105,8 @@ scale, the second determines the limiting law
 **Prior (my training data, not this repo).** I
 know the SK model, the free-energy existence, the
 replica-symmetric picture, and the predicted
-$n^{1/6}$ low-temperature scale. The **rigorous
-proof of the $n^{1/6}$ scale** and the
+$`n^{1/6}`$ low-temperature scale. The **rigorous
+proof of the $`n^{1/6}`$ scale** and the
 **convergence to a uniquely characterized
 nondegenerate law** are results I cannot
 independently verify from training alone.
@@ -114,19 +114,19 @@ independently verify from training alone.
 ## Consequences
 
 **The low-temperature SK fluctuation scale is
-$n^{1/6}$**: the standard deviation of the log
-partition function is $n^{1/6+o(1)}$ for every
-$\beta > 1$ [S4:41–43, S2:519].
+$`n^{1/6}`$**: the standard deviation of the log
+partition function is $`n^{1/6+o(1)}`$ for every
+$`\beta > 1`$ [S4:41–43, S2:519].
 
 **The SK free energy has a non-Gaussian limiting
 law** in the low-temperature regime: after
-centering and scaling by $n^{1/6}$, the free
+centering and scaling by $`n^{1/6}`$, the free
 energy converges to a nondegenerate distribution
 [S3:47–49, S2:519].
 
 **The variance constant is positive**:
-$\mathrm{Var}(F_n) / n^{1/3} \to c_\beta > 0$
-for every $\beta > 1$ [S3:47–49, S2:519].
+$`\mathrm{Var}(F_n) / n^{1/3} \to c_\beta > 0`$
+for every $`\beta > 1`$ [S3:47–49, S2:519].
 
 ## Section skeleton
 

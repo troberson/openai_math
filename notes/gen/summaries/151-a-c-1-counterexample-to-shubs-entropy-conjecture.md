@@ -7,67 +7,67 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:3616] and the catalog abstract [S2:383] state
-the family's claim: a noninvertible $C^1$ self-map of a compact smooth
-manifold has zero topological entropy but eigenvalue $2$ on second
+the family's claim: a noninvertible $`C^1`$ self-map of a compact smooth
+manifold has zero topological entropy but eigenvalue $`2`$ on second
 homology. This disproves the homological entropy lower bound for general
-$C^1$ self-maps — homological growth need not force positive orbit
+$`C^1`$ self-maps — homological growth need not force positive orbit
 complexity. The manuscript's abstract 
 
-> We disprove the general $C^1$ self-map formulation of Shub's entropy
-conjecture. We construct a noninvertible $C^1$ self-map of a compact
+> We disprove the general $`C^1`$ self-map formulation of Shub's entropy
+conjecture. We construct a noninvertible $`C^1`$ self-map of a compact
 smooth manifold without boundary whose topological entropy is zero,
-while its action on second real homology has eigenvalue $2$. Thus the
+while its action on second real homology has eigenvalue $`2`$. Thus the
 topological entropy is strictly smaller than the logarithm of the
 homological spectral radius. [S3:40–45]
 
 ## Undergraduate summary
 
-Take a smooth map $f$ of a compact manifold $M$ and study two
+Take a smooth map $`f`$ of a compact manifold $`M`$ and study two
 "complexity" numbers. The *topological entropy* measures how fast
-distinct orbits of $f$ separate — zero entropy means the dynamics
+distinct orbits of $`f`$ separate — zero entropy means the dynamics
 are not actually orbit-complex, no matter how the map looks under a
-lens. The *action on homology* is the linear map $f_*$ that $f$ induces
-on the manifold's $H_2(M;\mathbb R)$: its *spectral radius* $\rho$
+lens. The *action on homology* is the linear map $`f_*`$ that $`f`$ induces
+on the manifold's $`H_2(M;\mathbb R)`$: its *spectral radius* $`\rho`$
 measures how quickly the map stretches cycles in the second homology
 group. Shub's entropy conjecture says a smooth self-map's topological
-entropy is at least $\log \rho$ — homological growth must force
-positive orbit complexity. This manuscript shows that for general $C^1$
+entropy is at least $`\log \rho`$ — homological growth must force
+positive orbit complexity. This manuscript shows that for general $`C^1`$
 (invertible-not-required) self-maps the bound fails: one can build a
-noninvertible $C^1$ map with zero topological entropy and eigenvalue $2$
-on second homology, so $\log \rho=\log 2>0$ while the entropy is
-$s=0$ [S3:40–45, S4:9].
+noninvertible $`C^1`$ map with zero topological entropy and eigenvalue $`2`$
+on second homology, so $`\log \rho=\log 2>0`$ while the entropy is
+$`s=0`$ [S3:40–45, S4:9].
 
 ## Graduate summary
 
 **The counterexample statement** [S3:40–45, S4:9]. There exists a
-compact smooth manifold without boundary $M$ (built from the comparator's
-`CounterexampleManifold q` family, $q\ge2$) and a noninvertible $C^1$
-self-map $f:M\to M$ with:
+compact smooth manifold without boundary $`M`$ (built from the comparator's
+`CounterexampleManifold q` family, $`q\ge2`$) and a noninvertible $`C^1`$
+self-map $`f:M\to M`$ with:
 
-- Topological entropy $h_{\mathrm{top}}(f)=0$ (the comparator states
+- Topological entropy $`h_{\mathrm{top}}(f)=0`$ (the comparator states
   this as
   `Dynamics.coverEntropy f (Set.univ) = (0 : EReal)`);
-- A nonzero eigenvector $v\in H_2(M;\mathbb R)$ with
-  $f_*v=2 v$ (the comparator's
+- A nonzero eigenvector $`v\in H_2(M;\mathbb R)`$ with
+  $`f_*v=2 v`$ (the comparator's
   `realHomologyMap 2 f hf.1 v = (2 : ℝ) • v`);
 - Hence the total-real-homology spectral radius satisfies
-  $\rho(f_*)\ge2$, so $\log \rho\ge\log 2>0$;
-- $f$ is genuinely noninvertible
+  $`\rho(f_*)\ge2`$, so $`\log \rho\ge\log 2>0`$;
+- $`f`$ is genuinely noninvertible
   (`¬ Function.Bijective f`).
 
-Together $h_{\mathrm{top}}(f)=0<\log \rho(f_*)$, disproving the
-general $C^1$ self-map version of Shub's lower bound [S4:9]. The
+Together $`h_{\mathrm{top}}(f)=0<\log \rho(f_*)`$, disproving the
+general $`C^1`$ self-map version of Shub's lower bound [S4:9]. The
 comparator's theorem `exists_C1_entropy_counterexample` is a
 `sorry`-terminated statement of exactly these conjuncts
 [S5:65–67].
 
 **What the bound is, and where it survives.** Shub's entropy conjecture
-is a statement about the *general* $C^1$ self-map version; a positive
+is a statement about the *general* $`C^1`$ self-map version; a positive
 answer for homeomorphisms, or for smooth maps with some additional
 hypothesis (e.g. invertibility), is a strictly stronger regime. The
 counterexample shows the lower bound fails once invertibility is
 dropped — the map can be topologically zero-entropy while
-stretching a homology class by a factor of $2$ at each iteration
+stretching a homology class by a factor of $`2`$ at each iteration
 [S4:9].
 
 ## History of the conjecture
@@ -75,34 +75,34 @@ stretching a homology class by a factor of $2$ at each iteration
 Shub's entropy conjecture (1970s) is one of the classical links
 between the orbit complexity of a dynamical system and the linear
 algebra of its action on homology. It is often quoted as
-$h_{\mathrm{top}}(f)\ge\log \rho(f_*)$ for a smooth self-map $f$ of
+$`h_{\mathrm{top}}(f)\ge\log \rho(f_*)`$ for a smooth self-map $`f`$ of
 a compact smooth manifold, and it is *known* for homeomorphisms of
 finite CW complexes, for algebraic maps of projective varieties, and
-for other special classes. The conjecture in its full $C^1$ self-map
+for other special classes. The conjecture in its full $`C^1`$ self-map
 form had resisted proof: this manuscript asserts a counterexample
 [S3:40–45, S4:9].
 
 **Prior (my training data, not this repo).** I know Shub's entropy
 conjecture, the known cases (homeomorphisms, algebraic maps, maps with
-finite entropy), and that the general $C^1$ form is where the
+finite entropy), and that the general $`C^1`$ form is where the
 conjecture is often stated most strongly. A *negative* answer to the
-general $C^1$ form by an explicit $C^1$ construction $f$ with
-$h_{\mathrm{top}}(f)=0$ and $\rho(f_*)\ge2$ on $H_2$ is, to my
+general $`C^1`$ form by an explicit $`C^1`$ construction $`f`$ with
+$`h_{\mathrm{top}}(f)=0`$ and $`\rho(f_*)\ge2`$ on $`H_2`$ is, to my
 knowledge, not established in the literature I was trained on; the
 known positive results go in the other direction, and I do not recall
-a negative result of this shape in the $C^1$ self-map regime. I cannot
+a negative result of this shape in the $`C^1`$ self-map regime. I cannot
 independently verify this manuscript's construction.
 
 ## Consequences
 
-**Shub's lower bound fails for general $C^1$ self-maps.** The
-topological entropy of a $C^1$ self-map is not in general bounded below
+**Shub's lower bound fails for general $`C^1`$ self-maps.** The
+topological entropy of a $`C^1`$ self-map is not in general bounded below
 by the log spectral radius of its action on homology
 [S3:40–45, S4:9].
 
 **A concrete counterexample.** There is a compact smooth manifold
-without boundary $M$ and a noninvertible $C^1$ self-map $f$ with
-$h_{\mathrm{top}}(f)=0$ and $\rho(f_*)\ge2$ on $H_2(M;\mathbb R)$
+without boundary $`M`$ and a noninvertible $`C^1`$ self-map $`f`$ with
+$`h_{\mathrm{top}}(f)=0`$ and $`\rho(f_*)\ge2`$ on $`H_2(M;\mathbb R)`$
 [S4:9, S5:65–67].
 
 **Invertibility is a genuine constraint.** The counterexample is
@@ -120,13 +120,13 @@ manuscript ships a `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization gives a counterexample to the
-general $C^1$ self-map formulation of Shub's entropy conjecture: a
-noninvertible $C^1$ map on a compact smooth manifold without boundary
+general $`C^1`$ self-map formulation of Shub's entropy conjecture: a
+noninvertible $`C^1`$ map on a compact smooth manifold without boundary
 has topological entropy zero, while its action on second real homology
-has a nonzero eigenvector with eigenvalue $2$, so the homological lower
+has a nonzero eigenvector with eigenvalue $`2`$, so the homological lower
 bound
-$\log \rho(f_*)\ge\log 2>0$ strictly exceeds
-$h_{\mathrm{top}}(f)=0$ [S4:9]. The scope note names one comparator
+$`\log \rho(f_*)\ge\log 2>0`$ strictly exceeds
+$`h_{\mathrm{top}}(f)=0`$ [S4:9]. The scope note names one comparator
 [S4:13–15]: `C1EntropyCounterexample.lean`.
 
 **The structural absence.** The family is at tier T2: the ledger row
@@ -193,7 +193,7 @@ bundle and no reasoning trace.
 - Manning, Anthony, Topological entropy and the first homology group (1975)
 - Manning, Anthony, Topological entropy and homology (1976)
 - Misiurewicz, Michal, Przytycki, Feliks, Topological entropy and degree of smooth mappings (1977)
-- Misiurewicz, Michal, A short proof of the variational principle for a $\mathbb Z_+^N$ action on a compact space (1976)
+- Misiurewicz, Michal, A short proof of the variational principle for a $`\mathbb Z_+^N`$ action on a compact space (1976)
 - Saghin, Radu, Xia, Zhihong, The entropy conjecture for partially hyperbolic diffeomorphisms with 1-D center (2010)
 - Shub, Michael, Dynamical systems, filtrations and entropy (1974)
 - Shub, Michael, All, most, some differentiable dynamical systems (2007)

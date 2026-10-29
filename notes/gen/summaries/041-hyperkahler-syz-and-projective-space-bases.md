@@ -15,14 +15,14 @@ irreducible holomorphic symplectic Kähler manifold is semiample. [S4:7–11]"
 ## Undergraduate summary
 
 A compact irreducible holomorphic symplectic (IHS) Kähler manifold
-has a symplectic form $\sigma$ with $H^0(X,\Omega_X^2)=\mathbb C\sigma$
-and even complex dimension $2n$. A line bundle $L$ is nef isotropic
-when $c_1(L)$ lies on the boundary of the Kähler cone and satisfies
-$q(c_1(L))=0$ for the Beauville–Bogomolov–Fujiki form. Such a class
-has numerical dimension exactly $n$, by Fujiki's relation [S5:15–23].
-"A nonzero nef isotropic class has numerical dimension $n$, by
+has a symplectic form $`\sigma`$ with $`H^0(X,\Omega_X^2)=\mathbb C\sigma`$
+and even complex dimension $`2n`$. A line bundle $`L`$ is nef isotropic
+when $`c_1(L)`$ lies on the boundary of the Kähler cone and satisfies
+$`q(c_1(L))=0`$ for the Beauville–Bogomolov–Fujiki form. Such a class
+has numerical dimension exactly $`n`$, by Fujiki's relation [S5:15–23].
+"A nonzero nef isotropic class has numerical dimension $`n`$, by
 Fujiki's relation: its powers have positive intersection with a
-Kähler class through degree $n$, and zero intersection in higher
+Kähler class through degree $`n`$, and zero intersection in higher
 degrees. The strong hyperkähler SYZ conjecture asks whether every
 line bundle with such a class is semiample
 \cite[Conjecture 1.7]VerbitskySYZ. This would turn a class on the
@@ -32,23 +32,23 @@ neither sections nor control of their base locus. [S5:15–23]" The strong SYZ c
 such line bundle is semiample. The theorem 
 
 > **theorem**
-Let $X$ be a compact irreducible holomorphic symplectic Kähler
-manifold of complex dimension $2n$, where $n\ge1$. If a holomorphic
-line bundle $L$ satisfies
+Let $`X`$ be a compact irreducible holomorphic symplectic Kähler
+manifold of complex dimension $`2n`$, where $`n\ge1`$. If a holomorphic
+line bundle $`L`$ satisfies
 $$c_1(L)\ne0,\qquad c_1(L)\in\overline{\mathcal K_X},
                   \qquad q_X(c_1(L))=0,$$
-then $L$ is semiample.
+then $`L`$ is semiample.
 
-More precisely, there exist a positive integer $m$, a normal
-projective variety $B$, an ample line bundle $A$ on $B$, and a
+More precisely, there exist a positive integer $`m`$, a normal
+projective variety $`B`$, an ample line bundle $`A`$ on $`B`$, and a
 surjective holomorphic map with connected fibers
 $$f:X\longrightarrow B,\qquad L^m\simeq f^*A,$$
-such that $\dim_{\mathbb C}B=n$. Every irreducible component of every
-fiber has complex dimension $n$, and $\sigma$ vanishes on its
+such that $`\dim_{\mathbb C}B=n`$. Every irreducible component of every
+fiber has complex dimension $`n`$, and $`\sigma`$ vanishes on its
 smooth locus. [S5:25–44]
 
-The conclusion is that a positive power of $L$ defines a Lagrangian
-fibration $f:X\to B$ with $\dim B=n$ and every component of every
+The conclusion is that a positive power of $`L`$ defines a Lagrangian
+fibration $`f:X\to B`$ with $`\dim B=n`$ and every component of every
 fiber Lagrangian — the holomorphic version of the SYZ
 fibration picture.
 
@@ -57,47 +57,47 @@ fibration picture.
 **The finiteness corollary.** Combining the semiampleness theorem
 with the boundedness of Lagrangian-fibered symplectic varieties
 (Engel–Filipazzi–Greer–Mauri–Svaldi) gives finiteness of smooth
-deformation types in dimension $2n$ with $b_2\ge5$ 
+deformation types in dimension $`2n`$ with $`b_2\ge5`$ 
 
 > **corollary**
-For each integer $n\ge1$, there are only finitely many smooth
+For each integer $`n\ge1`$, there are only finitely many smooth
 deformation types of compact irreducible holomorphic symplectic
-Kähler manifolds of complex dimension $2n$ with $b_2\ge5$.
+Kähler manifolds of complex dimension $`2n`$ with $`b_2\ge5`$.
 \endcorollary
 
 This follows by combining Theorem with the boundedness
 of Lagrangian-fibered symplectic varieties proved by
 Engel–Filipazzi–Greer–Mauri–Svaldi . [S5:57–65]
 
-**The projective corollary.** When $X$ is projective, the base must
+**The projective corollary.** When $`X`$ is projective, the base must
 be projective space, with no codimension-one multiple
 fibers 
 
 > **corollary**
-In Theorem , assume additionally that $X$ is projective,
-and let $f:X\to B$ be the associated connected-fiber map furnished there.
-Then $B\simeq\mathbb P^n_{\mathbb C}$. Moreover, there do not exist a prime
-divisor $D\subset B$, an effective divisor $E$ on $X$, and an integer
-$r>1$ such that $f^*D=rE$. [S5:69–74]
+In Theorem , assume additionally that $`X`$ is projective,
+and let $`f:X\to B`$ be the associated connected-fiber map furnished there.
+Then $`B\simeq\mathbb P^n_{\mathbb C}`$. Moreover, there do not exist a prime
+divisor $`D\subset B`$, an effective divisor $`E`$ on $`X`$, and an integer
+$`r>1`$ such that $`f^*D=rE`$. [S5:69–74]
 
 This is a consequence of the companion's projective-space base
 theorem 
 
 > **theorem**
-Let $n\geq1$, and let $X$ be a compact irreducible holomorphic symplectic
-Kähler manifold of dimension $2n$, with symplectic form $\sigma$.
+Let $`n\geq1`$, and let $`X`$ be a compact irreducible holomorphic symplectic
+Kähler manifold of dimension $`2n`$, with symplectic form $`\sigma`$.
 Suppose that
 $$f:X\longrightarrow B$$
 is a projective surjective holomorphic morphism with connected fibers,
-where $B$ is a normal projective variety of dimension $n$.
+where $`B`$ is a normal projective variety of dimension $`n`$.
 Assume that every irreducible component of every fiber has dimension
-$n$ and that the restriction of $\sigma$ to its smooth locus is zero.
-Then $B$ is isomorphic to $\mathbb P^n_{\mathbb C}$. [S13:59–70]
+$`n`$ and that the restriction of $`\sigma`$ to its smooth locus is zero.
+Then $`B`$ is isomorphic to $`\mathbb P^n_{\mathbb C}`$. [S13:59–70]
 
 The companion's proof first establishes smoothness of the base and
 then applies Hwang's smooth-base theorem . "For projective IHS total spaces, the cohomological constraint is already
 that of projective space: Shen–Yin compute the rational intersection
-cohomology of $B$ as one-dimensional in degrees $0,2,\ldots,2n$ and
+cohomology of $`B`$ as one-dimensional in degrees $`0,2,\ldots,2n`$ and
 zero in odd degrees \cite[Theorem 0.4(a)]ShenYin2022. This does not itself establish
 smoothness. Our proof first establishes smoothness and then applies Hwang's
 theorem. [S13:52–57]"
@@ -136,12 +136,12 @@ established the conjecture for each known deformation type
 
 The projective-space base problem: Hwang proved it for smooth
 bases, Greb–Lehn for compact Kähler total spaces, leaving the
-singular-base case . "Hwang proved the projective-space conclusion when $X$ is projective and
-$B$ is smooth \cite[Theorem 1.2]Hwang2008. Greb and Lehn extended the
+singular-base case . "Hwang proved the projective-space conclusion when $`X`$ is projective and
+$`B`$ is smooth \cite[Theorem 1.2]Hwang2008. Greb and Lehn extended the
 smooth-base theorem to compact Kähler IHS total spaces
 \cite[Theorem 1.1]GrebLehn2014. These results reduce the base problem to
-the possible singularities of $B$. [S13:16–20]" Ou reduced the
-dimension-four surface base to $\mathbb P^2$ or a specific Fano
+the possible singularities of $`B`$. [S13:16–20]" Ou reduced the
+dimension-four surface base to $`\mathbb P^2`$ or a specific Fano
 surface; Huybrechts–Xu excluded the second case; Müller–Zheng Xu
 proved a local smoothness theorem [S13:37–50].
 
@@ -150,14 +150,14 @@ proved a local smoothness theorem [S13:37–50].
 **The strong SYZ conjecture in full.** Every nonzero nef
 isotropic line bundle on a compact IHS Kähler manifold is
 semiample, in every dimension and deformation type, with no
-$B_2$ restriction [S5:25–44].
+$`B_2`$ restriction [S5:25–44].
 
-**Finiteness of deformation types.** For $b_2\ge5$, there are
+**Finiteness of deformation types.** For $`b_2\ge5`$, there are
 finitely many smooth deformation types in each even complex
 dimension [S5:57–65].
 
 **Projective-space bases.** Every projective Lagrangian
-fibration with normal projective base has $\mathbb P^n$ as its base,
+fibration with normal projective base has $`\mathbb P^n`$ as its base,
 and no codimension-one multiple fibers exist [S13:59–70].
 
 ## Section skeleton

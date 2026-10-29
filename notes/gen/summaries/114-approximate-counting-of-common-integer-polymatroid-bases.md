@@ -39,14 +39,14 @@ The difficulty is that the matroids are given only by **independence
 oracles** — black boxes that answer "is this subset independent?" — with no
 explicit list of independent sets. An **FPRAS** (fully polynomial randomized
 approximation scheme) is the target: a randomized algorithm that approximates
-the count within a prescribed relative error $\varepsilon$ with high
-probability $1-\delta$, running in time polynomial in the input size,
-$\varepsilon^{-1}$, and $\log\delta^{-1}$ [S3:50–54].
+the count within a prescribed relative error $`\varepsilon`$ with high
+probability $`1-\delta`$, running in time polynomial in the input size,
+$`\varepsilon^{-1}`$, and $`\log\delta^{-1}`$ [S3:50–54].
 
 The second manuscript generalizes from matroids to **integer polymatroids**,
 where the rank is replaced by a submodular capacity function and the bases are
-integer vectors satisfying $x(E)=R$ and $x(A)\le r_i(A)$ for all subsets
-$A$ [S5:33–38]. The counting problem is the same shape — count the common
+integer vectors satisfying $`x(E)=R`$ and $`x(A)\le r_i(A)`$ for all subsets
+$`A`$ [S5:33–38]. The counting problem is the same shape — count the common
 feasible integer vectors — but the capacities are binary-encoded, so a large
 capacity admits exponentially many coordinate values without inflating the
 input size [S5:40–41].
@@ -55,29 +55,29 @@ input size [S5:40–41].
 
 **Matroid FPRAS** ([S3:86–104], `thm:main`). "There is a single randomized
 oracle algorithm with the following guarantee. Given independence oracles for
-arbitrary rank-$r$ matroids $M_1,M_2$ on $[n]$, and rational
-$\epsilon,\delta\in(0,1)$, it outputs a nonnegative rational $\widehat Z$
-such that $\Pr[(1-\epsilon)Z(M_1,M_2)\le\widehat
-Z\le(1+\epsilon)Z(M_1,M_2)]\ge1-\delta$" [S3:87–90]. "If $Z(M_1,M_2)=0$,
+arbitrary rank-$`r`$ matroids $`M_1,M_2`$ on $`[n]`$, and rational
+$`\epsilon,\delta\in(0,1)`$, it outputs a nonnegative rational $`\widehat Z`$
+such that $`\Pr[(1-\epsilon)Z(M_1,M_2)\le\widehat
+Z\le(1+\epsilon)Z(M_1,M_2)]\ge1-\delta`$" [S3:87–90]. "If $`Z(M_1,M_2)=0`$,
 its output is always zero. On every execution, the number of oracle calls and
 the number of other bit operations are bounded by a fixed polynomial in
-$n,\ell,\epsilon^{-1},\log\delta^{-1}$" [S3:95–97]. The polynomial bound is
+$`n,\ell,\epsilon^{-1},\log\delta^{-1}`$" [S3:95–97]. The polynomial bound is
 on *every* execution, not only in expectation.
 
 **Polymatroid FPRAS** ([S5:53–67], `thm:main`). "There is a single uniform
 randomized algorithm which, for every input described above, outputs a
-nonnegative rational $\widehat Z$ satisfying
-$\mathbb P((1-\varepsilon)Z\le\widehat Z\le(1+\varepsilon)Z)\ge1-\delta$" [S5:54–57]. "If $Z=0$,
+nonnegative rational $`\widehat Z`$ satisfying
+$`\mathbb P((1-\varepsilon)Z\le\widehat Z\le(1+\varepsilon)Z)\ge1-\delta`$" [S5:54–57]. "If $`Z=0`$,
 the algorithm outputs zero on every execution. On every execution, both its
 number of oracle calls and its number of other bit operations are bounded by
-one fixed polynomial in $n,\ell,\varepsilon^{-1},\log(\delta^{-1})$" [S5:58–61].
+one fixed polynomial in $`n,\ell,\varepsilon^{-1},\log(\delta^{-1})`$" [S5:58–61].
 
 **Common independent sets** ([S3:1471–1477], `cor:intersection`). "The
 equal-rank common-bases theorem also gives counting and sampling algorithms
 for common independent sets when the input ranks differ. Truncation reduces
 prescribed-cardinality counting to common bases; self-reduction then supplies
-sampling" [S3:1474–1477]. For each of the three families $\mathcal C_k$
-(prescribed cardinality), $\mathcal C$ (unrestricted), and $\mathcal C_{\max}$
+sampling" [S3:1474–1477]. For each of the three families $`\mathcal C_k`$
+(prescribed cardinality), $`\mathcal C`$ (unrestricted), and $`\mathcal C_{\max}`$
 (maximum cardinality), the corollary gives both an FPRAS and an
 almost-uniform sampler with the same polynomial work bound [S3:1479–1535].
 
@@ -92,17 +92,17 @@ bipartite matching problem" [S3:125–127]. For single matroids, "Anari, Liu,
 Oveis Gharan, and Vinzant removed such restrictions for single-matroid
 counting by developing high-dimensional walks for log-concave polynomials,
 obtaining an independence-oracle FPRAS" [S3:138–140]. For intersections, the
-strongest prior result was a "$2^{O(r)}$-factor approximation for common bases
-of arbitrary rank-$r$ independence-oracle matroids" [S3:154–156] — fully
-polynomial only when $r=O(\log n)$. "The question of an FPRAS for two
+strongest prior result was a "$`2^{O(r)}`$-factor approximation for common bases
+of arbitrary rank-$`r`$ independence-oracle matroids" [S3:154–156] — fully
+polynomial only when $`r=O(\log n)`$. "The question of an FPRAS for two
 arbitrary independence-oracle matroids is explicitly recorded in Liu's
 dissertation" [S3:171–172].
 
 The proof strategy is a **paired-ground-set reduction**: "We first replace
 common bases by transversal bases of one matroid. This gives a single
 rank-deficiency weight that can be evaluated using the two input oracles"
-[S3:246–247]. The state space is a rank-$n$ matroid on $2n$ elements choosing
-one from each of $n$ pairs, with a negative-weight annealing schedule
+[S3:246–247]. The state space is a rank-$`n`$ matroid on $`2n`$ elements choosing
+one from each of $`n`$ pairs, with a negative-weight annealing schedule
 [S3:176–180]. The algebraic input is the Brändén–Huh homogeneous Tutte theorem,
 which yields quadratic signature inequalities and a missing-slot transport
 bound [S3:200–209]. A Metropolis chain on the augmented state space mixes
@@ -119,7 +119,7 @@ part totals with polynomially many possible values as discrete variables" and
 **Prior (my training data, not this repo).** FPRAS for the permanent (bipartite
 matching) was given by Jerrum, Sinclair, and Vigoda in 2004. The extension to
 arbitrary two-matroid common bases was a natural open problem in the
-approximate-counting community. The $2^{O(r)}$-factor bound of Anari, Oveis
+approximate-counting community. The $`2^{O(r)}`$-factor bound of Anari, Oveis
 Gharan, and Vinzant (2021) was the best known for unrestricted-rank
 independence-oracle matroids before this work. I cannot confirm these
 independently; the release ships both manuscripts as proofs.
@@ -127,7 +127,7 @@ independently; the release ships both manuscripts as proofs.
 ## Consequences
 
 - **Matroid FPRAS.** A randomized polynomial-time approximation for counting
-  common bases of two arbitrary rank-$r$ independence-oracle matroids, with
+  common bases of two arbitrary rank-$`r`$ independence-oracle matroids, with
   exact zero detection and a work bound on every execution [S3:86–104].
 - **Polymatroid FPRAS.** The same guarantee for common integer bases of two
   integer polymatroids with binary-encoded capacities [S5:53–67].
@@ -135,8 +135,8 @@ independently; the release ships both manuscripts as proofs.
   unrestricted, or maximum-cardinality common independent sets, even when the
   ranks differ [S3:1471–1535].
 - **Almost-uniform sampling.** For each of the three families, an
-  almost-uniform sampler with total-variation tolerance $\theta$ and
-  polynomial dependence on $\theta^{-1}$ [S3:1500–1530].
+  almost-uniform sampler with total-variation tolerance $`\theta`$ and
+  polynomial dependence on $`\theta^{-1}`$ [S3:1500–1530].
 
 ## Section skeleton
 
@@ -164,11 +164,11 @@ polymatroid manuscript is not a formalization source, so `paps_form=1` of 2.
 The scope note's Scope section states: "The formalized result gives a fully
 polynomial randomized approximation scheme for the number of common bases of
 two equal-rank matroids on an enumerated finite ground set, using independence
-oracles. For rational $0<\varepsilon,\delta<1$, the nonnegative rational
-output has relative error at most $\varepsilon$ with probability at least
-$1-\delta$. A zero count produces zero on every execution. Oracle calls and
+oracles. For rational $`0<\varepsilon,\delta<1`$, the nonnegative rational
+output has relative error at most $`\varepsilon`$ with probability at least
+$`1-\delta`$. A zero count produces zero on every execution. Oracle calls and
 bit operations have polynomial bounds on every random tape in the input size,
-$\varepsilon^{-1}$, and $\log(\delta^{-1})$" [S8:9]. The note carries no
+$`\varepsilon^{-1}`$, and $`\log(\delta^{-1})`$" [S8:9]. The note carries no
 exclusions — the formalized statement *is* the FPRAS, and the scope is the
 full machine-level guarantee, not a weakened bound.
 

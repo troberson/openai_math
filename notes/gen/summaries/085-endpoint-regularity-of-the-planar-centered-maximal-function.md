@@ -9,32 +9,32 @@
 The release's blurb [S1:2104] and the catalog abstract [S2:244] state
 the family's claim: the planar centered-disk case of the Hajlłasz
 –Onninen maximal-function regularity problem. For every real
-$f\in W^{1,1}(\mathbb R^2)$, the centered disk maximal function
-satisfies $\|\nabla Mf\|_1\le C\|\nabla f\|_1$ with an absolute
-constant, belongs locally to $W^{1,1}$, and has a globally integrable
+$`f\in W^{1,1}(\mathbb R^2)`$, the centered disk maximal function
+satisfies $`\|\nabla Mf\|_1\le C\|\nabla f\|_1`$ with an absolute
+constant, belongs locally to $`W^{1,1}`$, and has a globally integrable
 weak gradient. The manuscript's abstract 
 
-> We prove the endpoint gradient bound $\|\nabla Mf\|_1\le C\|\nabla f\|_1$
-for every real-valued $f\in W^{1,1}(\mathbb R^2)$, where $Mf(x)$ is the supremum
-of the averages of $|f|$ over disks centered at $x$, and $C$ is an absolute
-constant. The maximal function belongs to $W^{1,1}_{\mathrm{loc}}(\mathbb R^2)$
+> We prove the endpoint gradient bound $`\|\nabla Mf\|_1\le C\|\nabla f\|_1`$
+for every real-valued $`f\in W^{1,1}(\mathbb R^2)`$, where $`Mf(x)`$ is the supremum
+of the averages of $`|f|`$ over disks centered at $`x`$, and $`C`$ is an absolute
+constant. The maximal function belongs to $`W^{1,1}_{\mathrm{loc}}(\mathbb R^2)`$
 and has a globally integrable weak gradient. This gives a positive resolution
 of the planar centered-disk case of the endpoint question of Hajłasz and
 Onninen. [S3:47–53]
 
 ## Undergraduate summary
 
-The centered disk maximal function averages $|f|$ over every disk
+The centered disk maximal function averages $`|f|`$ over every disk
 centered at a point and takes the supremum over all radii [S4:3–7].
 It is a hard cousin of the Hardy–Littlewood maximal operator: the
-classical theory gives strong type for exponents $p>1$, and Kinnunen
-proved the operator is bounded on $W^{1,p}$ for $1<p<\infty$
-[S4:8–17]. At the endpoint $p=1$ the gradient estimate behaves
+classical theory gives strong type for exponents $`p>1`$, and Kinnunen
+proved the operator is bounded on $`W^{1,p}`$ for $`1<p<\infty`$
+[S4:8–17]. At the endpoint $`p=1`$ the gradient estimate behaves
 differently — the simple maximal-inequality step that works for
-$p>1$ breaks down. Hajlłasz and Onninen asked whether the
+$`p>1`$ breaks down. Hajlłasz and Onninen asked whether the
 one-sided gradient bound nonetheless survives [S4:8–17]. This
 paper says yes, for disks in the plane: the maximal function of a
-$W^{1,1}$ function still has an integrable gradient, controlled by the
+$`W^{1,1}`$ function still has an integrable gradient, controlled by the
 gradient of the input, with a universal constant [S4:19–29].
 
 No radiality or compact-support condition is imposed on the input, and
@@ -44,14 +44,14 @@ determined [S4:31–38].
 ## Graduate summary
 
 **The theorem** [S4:19–29, `thm:main`]. There is an absolute
-constant $C<\infty$ such that, for every real-valued
-$f\in W^{1,1}(\mathbb R^2)$, the function $Mf$ is locally
-integrable, belongs to $W^{1,1}_{\mathrm{loc}}(\mathbb R^2)$, and
+constant $`C<\infty`$ such that, for every real-valued
+$`f\in W^{1,1}(\mathbb R^2)`$, the function $`Mf`$ is locally
+integrable, belongs to $`W^{1,1}_{\mathrm{loc}}(\mathbb R^2)`$, and
 
 > **Theorem 1.1**
-There is an absolute constant $C<\infty$ such that, for every
-real-valued $f\in W^{1,1}(\mathbb R^2)$, the function $Mf$ is locally
-integrable, belongs to $W^{1,1}_{\mathrm{loc}}(\mathbb R^2)$, and satisfies
+There is an absolute constant $`C<\infty`$ such that, for every
+real-valued $`f\in W^{1,1}(\mathbb R^2)`$, the function $`Mf`$ is locally
+integrable, belongs to $`W^{1,1}_{\mathrm{loc}}(\mathbb R^2)`$, and satisfies
 $$\int_{\mathbb R^2}|\nabla Mf|\,\mathop{}\!\mathrm{d} x
  \le C\int_{\mathbb R^2}|\nabla f|\,\mathop{}\!\mathrm{d} x.$$
 In particular, its distributional derivatives are represented by
@@ -59,7 +59,7 @@ globally integrable functions. [S4:19–29]
 
 The statement is the genuine Sobolev one: the input and its weak first
 derivatives are globally integrable, vector norms are Euclidean, and the
-conclusion is that the distributional derivatives of $Mf$ are represented
+conclusion is that the distributional derivatives of $`Mf`$ are represented
 by globally integrable functions [S4:27–29].
 
 **The signed estimate behind it** [S4:52–61, `prop:finite-band`].
@@ -68,11 +68,11 @@ sign of the input — the envelope of signed disk averages over a
 finite band of radii:
 
 > **Theorem 1.2**
-There is an absolute constant $C$ such that, for every real
-$g\in C_c^\infty(\mathbb R^2)$ and $0<a\le b$ with $b/a$ a power of two, including one,
+There is an absolute constant $`C`$ such that, for every real
+$`g\in C_c^\infty(\mathbb R^2)`$ and $`0<a\le b`$ with $`b/a`$ a power of two, including one,
 $$\int_{\mathbb R^2}|\nabla S_{a,b}g|\,\mathop{}\!\mathrm{d} x
  \le C\int_{\mathbb R^2}|\nabla g|\,\mathop{}\!\mathrm{d} x.$$
-The constant is independent of $a$, $b$, and the number of dyadic
+The constant is independent of $`a`$, $`b`$, and the number of dyadic
 radius scales between them. [S4:52–61]
 
 The constant is independent of the band endpoints and the number of
@@ -82,23 +82,23 @@ which Poincaré's inequality closes the argument [S4:63–73].
 
 ## History of the conjecture
 
-For $1<p<\infty$ the centered disk maximal operator is
-$W^{1,p}$-bounded, by Kinnunen, whose proof controls the pointwise
-gradient by the maximal function of $|\nabla f|$ [S4:8–17]. The
-endpoint $p=1$ is the open case. In one dimension, Tanaka proved an
-$L^1$ derivative bound for the uncentered maximal operator, and Aldaz and
+For $`1<p<\infty`$ the centered disk maximal operator is
+$`W^{1,p}`$-bounded, by Kinnunen, whose proof controls the pointwise
+gradient by the maximal function of $`|\nabla f|`$ [S4:8–17]. The
+endpoint $`p=1`$ is the open case. In one dimension, Tanaka proved an
+$`L^1`$ derivative bound for the uncentered maximal operator, and Aldaz and
 Pérez Lázaro extended it to bounded-variation inputs with
 variation constant one; Kurka obtained a centered-operator variation bound
 with local Sobolev regularity [S4:75–88]. In higher dimensions,
 Aldaz and Pérez Lázaro proved regularity for block-decreasing
 inputs and uncentered ball operators, whose weak-gradient conclusion
-covers block-decreasing $W^{1,1}$ input and Euclidean balls
+covers block-decreasing $`W^{1,1}`$ input and Euclidean balls
 [S4:90–95]. None of those arguments, keyed to the ordering of
 intervals or to monotonicity, directly organizes a family of centered
 disks [S4:87–88].
 
 **Prior (my training data, not this repo).** The Hajlłasz
-–Onninen endpoint question and the $W^{1,p}$ regularity of
+–Onninen endpoint question and the $`W^{1,p}`$ regularity of
 maximal operators are standard objects in harmonic analysis; I know the
 Kinnunen and one-dimensional Tanaka / Kurka / Aldaz–Pérez
 Lázaro results. A planar endpoint gradient bound for the centered
@@ -109,13 +109,13 @@ independently verify this 2026 manuscript's argument.
 ## Consequences
 
 **Planar centered-disk endpoint resolution.** For every real
-$f\in W^{1,1}(\mathbb R^2)$, the centered disk maximal function has
+$`f\in W^{1,1}(\mathbb R^2)`$, the centered disk maximal function has
 a globally integrable weak gradient with
-$\|\nabla Mf\|_1\le C\|\nabla f\|_1$ for one absolute
+$`\|\nabla Mf\|_1\le C\|\nabla f\|_1`$ for one absolute
 constant [S4:19–29].
 
-**Local $W^{1,1}$ regularity.** The maximal function belongs to
-$W^{1,1}_{\mathrm{loc}}(\mathbb R^2)$, so its distributional
+**Local $`W^{1,1}`$ regularity.** The maximal function belongs to
+$`W^{1,1}_{\mathrm{loc}}(\mathbb R^2)`$, so its distributional
 derivatives are integrable functions [S4:21–29].
 
 **Signed finite-band estimate.** The signed envelope of disk averages
@@ -137,10 +137,10 @@ The manuscript ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S5]. The formalization proves that every real
-$f\in W^{1,1}(\mathbb R^2)$ has a centered disk maximal function that
-is finite almost everywhere, belongs to $W^{1,1}_{\mathrm{loc}}$, and
+$`f\in W^{1,1}(\mathbb R^2)`$ has a centered disk maximal function that
+is finite almost everywhere, belongs to $`W^{1,1}_{\mathrm{loc}}`$, and
 has a globally integrable weak gradient with
-$\|\nabla Mf\|_1\le C\|\nabla f\|_1$. The earlier signed
+$`\|\nabla Mf\|_1\le C\|\nabla f\|_1`$. The earlier signed
 finite-band estimate for smooth compactly supported functions is also
 retained; a BV extension is outside these statements. The release
 records `scope: "Partial progress."` and `review: status: unchecked`;

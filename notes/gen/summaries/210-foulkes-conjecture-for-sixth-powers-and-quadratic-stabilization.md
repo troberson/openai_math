@@ -8,12 +8,12 @@
 
 The release's blurb [S1:4798] and the catalog abstract [S2:503]
 state the family's claim: Foulkes' conjecture for the sixth
-symmetric power, proved — for every partition of $n$ with
-$n \geq 6$ and every partition of $6n$, the multiplicity of the
+symmetric power, proved — for every partition of $`n`$ with
+$`n \geq 6`$ and every partition of $`6n`$, the multiplicity of the
 latter in the sixth symmetric power of the former is nonnegative.
 The quadratic-stabilization companion proves that the canonical
-Foulkes–Howe map is surjective for all $a \geq 6$ and
-$b \geq 30$. The family ships two manuscripts [S1:4798]:
+Foulkes–Howe map is surjective for all $`a \geq 6`$ and
+$`b \geq 30`$. The family ships two manuscripts [S1:4798]:
 
 - *Foulkes' conjecture for the sixth symmetric power*
   [S3:85, S3:87]
@@ -23,33 +23,33 @@ $b \geq 30$. The family ships two manuscripts [S1:4798]:
 The sixth-power abstract 
 
 > We prove the sixth-symmetric-power case of Foulkes' conjecture. For every
-integer $b\ge6$ and every finite-dimensional complex vector space $V$,
-there is a $\mathrm{GL}(V)$-equivariant injection
-$\mathrm{Sym}^6(\mathrm{Sym}^b V)\mathrel{%
+integer $`b\ge6`$ and every finite-dimensional complex vector space $`V`$,
+there is a $`\mathrm{GL}(V)`$-equivariant injection
+$`\mathrm{Sym}^6(\mathrm{Sym}^b V)\mathrel{%
   \BeginAccSupp{method=hex,unicode,ActualText=21AA}%
-  \OriginalHookrightarrow\EndAccSupp{}}\mathrm{Sym}^b(\mathrm{Sym}^6 V)$. [S3:91–94]
+  \OriginalHookrightarrow\EndAccSupp{}}\mathrm{Sym}^b(\mathrm{Sym}^6 V)`$. [S3:91–94]
 
 The quadratic-stabilization abstract 
 
-> For every finite-dimensional complex vector space $V$, we prove that the
+> For every finite-dimensional complex vector space $`V`$, we prove that the
 canonical Foulkes–Howe map
-$\mathrm{Sym}^b(\mathrm{Sym}^a V)\longrightarrow\mathrm{Sym}^a(\mathrm{Sym}^b V)$ is surjective whenever
-$a\ge2$ and $b\ge a(a-1)$. This gives a quadratic stabilization bound
-independent of $\dim V$. [S4:52–56]
+$`\mathrm{Sym}^b(\mathrm{Sym}^a V)\longrightarrow\mathrm{Sym}^a(\mathrm{Sym}^b V)`$ is surjective whenever
+$`a\ge2`$ and $`b\ge a(a-1)`$. This gives a quadratic stabilization bound
+independent of $`\dim V`$. [S4:52–56]
 
 ## Undergraduate summary
 
-A **partition** of a positive integer $n$ is a way to write $n$
+A **partition** of a positive integer $`n`$ is a way to write $`n`$
 as a sum of non-increasing positive parts — for
-example, $5 = 3+1+1$. The **symmetric group** $S_n$
-(permutations of $n$ objects) has a building block for each
+example, $`5 = 3+1+1`$. The **symmetric group** $`S_n`$
+(permutations of $`n`$ objects) has a building block for each
 partition: an irreducible representation. The **sixth
-symmetric power** of a representation $V$, written
-$\mathrm{Sym}^6(V)$, is the part of the six-fold
-tensor product of $V$ with itself that is invariant under
+symmetric power** of a representation $`V`$, written
+$`\mathrm{Sym}^6(V)`$, is the part of the six-fold
+tensor product of $`V`$ with itself that is invariant under
 all permutations of the factors. **Foulkes' conjecture**
 (1927) asks: when you decompose
-$\mathrm{Sym}^6(V_\lambda)$ into irreducible
+$`\mathrm{Sym}^6(V_\lambda)`$ into irreducible
 representations, are all the multiplicities **nonnegative**?
 Since multiplicities are counts, this sounds obvious
 — but the formula that computes them involves
@@ -60,26 +60,26 @@ always nonnegative. This manuscript pair says **yes**
 ## Graduate summary
 
 **The sixth power** [S3:91–94, S2:503]. Let
-$\lambda$ be a partition of $n \geq 6$. For every
-partition $\mu$ of $6n$, the multiplicity of the Specht
-module $S_\mu$ in the sixth symmetric power
-$\mathrm{Sym}^6(S_\lambda)$ is nonnegative.
+$`\lambda`$ be a partition of $`n \geq 6`$. For every
+partition $`\mu`$ of $`6n`$, the multiplicity of the Specht
+module $`S_\mu`$ in the sixth symmetric power
+$`\mathrm{Sym}^6(S_\lambda)`$ is nonnegative.
 Equivalently, the Foulkes conjecture holds in degree six.
 
 **The quadratic stabilization** [S4:52–56, S2:503].
 The canonical Foulkes–Howe map from the tensor
 product of two Schur modules to the corresponding Schur
-module is **surjective** for all $a \geq 6$ and
-$b \geq 30$. This is the quadratic-stabilization
+module is **surjective** for all $`a \geq 6`$ and
+$`b \geq 30`$. This is the quadratic-stabilization
 property that implies the Foulkes conjecture in the
 stable range.
 
 **The scope of the formalization.** The scope note
 covers the quadratic-stabilization result [S5:9]: the
 canonical Foulkes–Howe map is surjective for
-$a \geq 6$ and $b \geq 30$. The sixth-power
-specialization is included only for $b \geq 30$, not
-for the full $b \geq 6$ range of M1 [S5:9]. The scope
+$`a \geq 6`$ and $`b \geq 30`$. The sixth-power
+specialization is included only for $`b \geq 30`$, not
+for the full $`b \geq 6`$ range of M1 [S5:9]. The scope
 note names one comparator [S5:15]: `FoulkesHowe.lean`.
 
 ## History of the conjecture
@@ -101,7 +101,7 @@ from complementary directions: the first proves the
 Foulkes conjecture directly via a branching-graph and
 Littlewood–Richardson computation; the second
 proves the quadratic-stabilization surjectivity for
-$a \geq 6$, $b \geq 30$ [S3:91–94,
+$`a \geq 6`$, $`b \geq 30`$ [S3:91–94,
 S4:52–56, S2:503].
 
 **Prior (my training data, not this repo).** I know
@@ -109,20 +109,20 @@ the Foulkes conjecture as a named open problem in
 symmetric group representation theory, the positive
 cases through degree 5, and the Foulkes–Howe
 quadratic-stabilization program. The **degree-6 proof**
-and the **stabilization for $a \geq 6$, $b \geq 30$**
+and the **stabilization for $`a \geq 6`$, $`b \geq 30`$**
 are results I cannot independently verify from training
 alone.
 
 ## Consequences
 
 **The sixth case of Foulkes' conjecture is proved.**
-For every partition of $n \geq 6$, the Foulkes
+For every partition of $`n \geq 6`$, the Foulkes
 coefficients in degree six are nonnegative
 [S3:91–94, S2:503].
 
 **The quadratic stabilization is proved in the stable
 range.** The canonical Foulkes–Howe map is
-surjective for $a \geq 6$ and $b \geq 30$
+surjective for $`a \geq 6`$ and $`b \geq 30`$
 [S4:52–56, S2:503].
 
 ## Section skeleton
@@ -140,9 +140,9 @@ bundle.
 
 **Scope note** [S5:9]. The scope note covers the
 quadratic stabilization: the canonical Foulkes–Howe
-map is surjective for $a \geq 6$ and $b \geq 30$,
+map is surjective for $`a \geq 6`$ and $`b \geq 30`$,
 with the sixth-power specialization included only for
-$b \geq 30$ [S5:9]. The scope note names one
+$`b \geq 30`$ [S5:9]. The scope note names one
 comparator [S5:15]: `FoulkesHowe.lean`.
 
 **The registration.** The family is at tier T3: the

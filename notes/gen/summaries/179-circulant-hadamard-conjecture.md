@@ -12,19 +12,19 @@ state the family's claim: real circulant Hadamard matrices exist
 conjecture. As a consequence, together with classical
 Barker-sequence results, binary sequences whose nontrivial
 aperiodic autocorrelations have magnitude at most one exist at
-lengths $n > 1$ exactly when $n \in
-\{2,3,4,5,7,11,13\}$, proving the Barker-sequence conjecture.
+lengths $`n > 1`$ exactly when $`n \in
+\{2,3,4,5,7,11,13\}`$, proving the Barker-sequence conjecture.
 The manuscript is *The circulant Hadamard conjecture*
 [S3:29, S3:31]; its abstract 
 
 > We prove the circulant Hadamard conjecture: a real circulant Hadamard
-matrix has order $1$ or $4$. As a consequence, Barker sequences of
-length greater than one exist exactly at lengths $2,3,4,5,7,11,13$,
+matrix has order $`1`$ or $`4`$. As a consequence, Barker sequences of
+length greater than one exist exactly at lengths $`2,3,4,5,7,11,13`$,
 proving the Barker-sequence conjecture. [S3:47–50]
 
 ## Undergraduate summary
 
-A **Hadamard matrix** is a square matrix of $\pm 1$ entries whose
+A **Hadamard matrix** is a square matrix of $`\pm 1`$ entries whose
 rows are all mutually orthogonal — the dot product of any two
 distinct rows is zero. This is the matrix form of a perfect
 binary code: every pair of rows "agrees" on exactly half the
@@ -34,18 +34,18 @@ previous row shifted by one position, so the whole matrix is
 determined by a single row (a circulant sequence). The
 **circulant Hadamard conjecture** asked which order such a matrix
 can have. The answer is strikingly small: a real circulant
-Hadamard matrix exists only in order **1** (the $1 \times 1$
+Hadamard matrix exists only in order **1** (the $`1 \times 1`$
 trivial case) and order **4** — no bigger one exists, ever
 [S3:47–50, S2:439].
 
 ## Graduate summary
 
 **The circulant Hadamard classification** [S3:47–50,
-S4:9]. A real circulant Hadamard matrix of positive order $n$
-exists exactly when $n = 1$ or $n = 4$: a sign matrix
-$H \in \{\pm1\}^{n \times n}$ that is circulant (each row
+S4:9]. A real circulant Hadamard matrix of positive order $`n`$
+exists exactly when $`n = 1`$ or $`n = 4`$: a sign matrix
+$`H \in \{\pm1\}^{n \times n}`$ that is circulant (each row
 is a cyclic shift of the first) and satisfies
-$HH^{\top} = n I_n$ exists iff $n \in \{1,4\}$. Explicit
+$`HH^{\top} = n I_n`$ exists iff $`n \in \{1,4\}`$. Explicit
 witnesses are supplied for both orders, with no restriction on
 prime factors [S4:9].
 
@@ -53,8 +53,8 @@ prime factors [S4:9].
 sign sequence whose nonzero **aperiodic autocorrelations** all
 have magnitude at most one. The circulant-Hadamard
 classification, together with the classical even-length
-result, gives that Barker sequences of length $>1$ exist exactly
-at lengths $2,3,4,5,7,11,13$ [S3:47–50, S4:11].
+result, gives that Barker sequences of length $`>1`$ exist exactly
+at lengths $`2,3,4,5,7,11,13`$ [S3:47–50, S4:11].
 
 **The scope of the formalization.** The formalization proves the
 circulant-Hadamard classification in exact form (orders 1 and 4)
@@ -78,15 +78,15 @@ open. The Barker-sequence conjecture (that Barker sequences
 exist only at the seven short lengths) is a classical
 autocorrelation problem whose odd-length half had long been
 out of reach. This manuscript closes both: the exact order
-classification $\{1,4\}$ and, with the classical even result,
+classification $`\{1,4\}`$ and, with the classical even result,
 the full Barker-length list [S3:47–50, S2:439].
 
 **Prior (my training data, not this repo).** I know Hadamard
 matrices, the circulant structure, and that Barker sequences are
 a longstanding open problem in autocorrelation. A **complete**
 classification of real circulant Hadamard orders as exactly
-$\{1,4\}$, and the consequent **full** Barker-length
-classification down to the odd lengths $5,7,11,13$, go beyond
+$`\{1,4\}`$, and the consequent **full** Barker-length
+classification down to the odd lengths $`5,7,11,13`$, go beyond
 the partial results I recall; the reduction argument and the
 odd-Barker classification in [S3:47–50] are not something I can
 independently verify from training alone.
@@ -98,7 +98,7 @@ circulant Hadamard matrices exist exactly in orders 1 and 4
 [S3:47–50, S4:9, S2:439].
 
 **The Barker-sequence conjecture is resolved.** Barker sequences
-of length $>1$ exist exactly at $2,3,4,5,7,11,13$
+of length $`>1`$ exist exactly at $`2,3,4,5,7,11,13`$
 [S3:47–50, S2:439].
 
 **Both witness orders are explicit.** Orders 1 and 4 are
@@ -123,8 +123,8 @@ bundle.
 
 **Scope note** [S4:9, S4:11]. The first paragraph proves the
 circulant-Hadamard conjecture in exact form: a real circulant
-Hadamard matrix of positive order $n$ exists exactly when
-$n=1$ or $n=4$, with explicit witnesses for both orders and no
+Hadamard matrix of positive order $`n`$ exists exactly when
+$`n=1`$ or $`n=4`$, with explicit witnesses for both orders and no
 restriction on prime factors [S4:9]. The second paragraph
 proves the **even-length** Barker part: a positive even-length
 sign sequence whose nonzero aperiodic autocorrelations have
@@ -157,10 +157,10 @@ theorem exists_iff_order_one_or_four (n : ℕ) (hn : 0 < n) :
 **What the proof does.** The registered
 `exists_iff_order_one_or_four` in the OAI tree is a genuine
 proof, not a `sorry`: it is a constructor. The forward
-direction reduces any order $n>1$ that carried a circulant
-Hadamard matrix, via `order_reduction`, to an odd $u$ with a
-circulant Hadamard matrix, rules out $u=1$ by
-`simp`, and for $u>1$ discharges the case by the
+direction reduces any order $`n>1`$ that carried a circulant
+Hadamard matrix, via `order_reduction`, to an odd $`u`$ with a
+circulant Hadamard matrix, rules out $`u=1`$ by
+`simp`, and for $`u>1`$ discharges the case by the
 `not_exists_four_mul_odd_square` lemma; the reverse direction
 is the explicit witness `exists_of_order_one_or_four`
 
@@ -201,7 +201,7 @@ assembles [S6:21–34].
 comparator restates the even-length Barker classification as
 `theorem even_length_eq_two_or_four : n = 2 ∨ n = 4` with a bare
 `sorry` body and no `main_results` entry [S7:21–23]. The
-**odd-length** Barker classification ($5,7,11,13$) that
+**odd-length** Barker classification ($`5,7,11,13`$) that
 completes the Barker-sequence conjecture is stated and proved
 in the manuscript [S3:47–50] but has no comparator and no
 registration — it is outside the formalization. The

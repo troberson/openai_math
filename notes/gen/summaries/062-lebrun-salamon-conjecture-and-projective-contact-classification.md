@@ -15,37 +15,37 @@ projective contact Fano manifold of complex dimension at least three,
 with its given contact distribution, is contact-isomorphic to the
 adjoint variety of a simple complex Lie algebra. Consequently, every
 closed connected smooth positive quaternionic-Kähler manifold of real
-dimension $4m\geq8$ is homothetic to a compact symmetric Wolf space.
-3.inline	S3	3	18	Let $X$ be a smooth connected complex projective variety of dimension
-$2n+1$, where $n\geq1$. A _contact structure_ on $X$ is an exact
+dimension $`4m\geq8`$ is homothetic to a compact symmetric Wolf space.
+3.inline	S3	3	18	Let $`X`$ be a smooth connected complex projective variety of dimension
+$`2n+1`$, where $`n\geq1`$. A _contact structure_ on $`X`$ is an exact
 sequence of algebraic vector bundles
 $$0\longrightarrow F\longrightarrow T_X
  \xrightarrow{\ \theta\ }L\longrightarrow0,$$
-with $L$ a line bundle, such that the Levi pairing
+with $`L`$ a line bundle, such that the Levi pairing
 $$F\otimes F\longrightarrow L,
  \qquad (v,w)\longmapsto\theta([v,w])$$
-is everywhere nondegenerate. In a local frame of $L$, write $\alpha$
-for the scalar one-form representing $\theta$. The condition is
-equivalent to $\alpha\wedge(d\alpha)^n$ being nowhere zero. We call
-$(X,F)$ a _contact Fano manifold_ if $-K_X$ is ample. [S2:60–66]"
+is everywhere nondegenerate. In a local frame of $`L`$, write $`\alpha`$
+for the scalar one-form representing $`\theta`$. The condition is
+equivalent to $`\alpha\wedge(d\alpha)^n`$ being nowhere zero. We call
+$`(X,F)`$ a _contact Fano manifold_ if $`-K_X`$ is ample. [S2:60–66]"
 
 ## Undergraduate summary
 
 A contact structure on a smooth complex projective variety of
-dimension $2n+1$ is an exact sequence of vector bundles with a
+dimension $`2n+1`$ is an exact sequence of vector bundles with a
 nondegenerate Levi pairing [S3:3–18]: "3"
 
-When $-K_X$ is ample, the pair $(X,F)$ is a contact Fano manifold.
+When $`-K_X`$ is ample, the pair $`(X,F)`$ is a contact Fano manifold.
 The main theorem classifies them all 
 
 > **Theorem 1.1**
-Let $(X,F)$ be a smooth connected complex projective contact Fano
-manifold of dimension $2n+1$, with $n\geq1$, and let $L=T_X/F$.
+Let $`(X,F)`$ be a smooth connected complex projective contact Fano
+manifold of dimension $`2n+1`$, with $`n\geq1`$, and let $`L=T_X/F`$.
 There exist a finite-dimensional simple complex Lie algebra
-$\mathfrak g$ and an algebraic isomorphism
+$`\mathfrak g`$ and an algebraic isomorphism
 $$\varphi:X\xrightarrow{\ \sim\ }Y_{\mathfrak g}$$
-whose differential carries the given distribution $F$ to the canonical
-contact distribution on $Y_{\mathfrak g}$. Moreover,
+whose differential carries the given distribution $`F`$ to the canonical
+contact distribution on $`Y_{\mathfrak g}`$. Moreover,
 $$L\simeq\varphi^*\bigl(\mathcal O_{\mathbb P(\mathfrak g)}(1)|_{Y_{\mathfrak g}}\bigr).$$ [S3:30–43]
 
 Every contact Fano manifold is the adjoint variety of a simple
@@ -57,26 +57,26 @@ complex Lie algebra, with its canonical contact structure.
 Fano, the second Betti number determines the model 
 
 > **Theorem 1.3**
-Let $(X,F)$ be a smooth connected complex projective contact manifold
-of dimension $2n+1$, where $n\geq1$. Its second Betti number determines
+Let $`(X,F)`$ be a smooth connected complex projective contact manifold
+of dimension $`2n+1`$, where $`n\geq1`$. Its second Betti number determines
 the following alternatives.
 \beginenumerate
-\item If $b_2(X)=1$, then $(X,F)$ is contact-isomorphic to the adjoint
-variety $Y_{\mathfrak g}$, with its canonical contact distribution, for
-a simple complex Lie algebra $\mathfrak g$.
-\item If $b_2(X)\geq2$, then there is a smooth connected complex
-projective manifold $Z$ of dimension $n+1$ and a biholomorphism
+\item If $`b_2(X)=1`$, then $`(X,F)`$ is contact-isomorphic to the adjoint
+variety $`Y_{\mathfrak g}`$, with its canonical contact distribution, for
+a simple complex Lie algebra $`\mathfrak g`$.
+\item If $`b_2(X)\geq2`$, then there is a smooth connected complex
+projective manifold $`Z`$ of dimension $`n+1`$ and a biholomorphism
 $$X\simeq\mathbb P(T^*Z).$$
-Here $\mathbb P(T^*Z)$ parametrizes lines in cotangent spaces, equivalently
+Here $`\mathbb P(T^*Z)`$ parametrizes lines in cotangent spaces, equivalently
 hyperplanes in tangent spaces. This assertion identifies the underlying
-manifolds, without imposing compatibility with the given distribution $F$.
+manifolds, without imposing compatibility with the given distribution $`F`$.
 \endenumerate
-Conversely, every adjoint variety of complex dimension $2n+1$ and every
+Conversely, every adjoint variety of complex dimension $`2n+1`$ and every
 projectivized cotangent bundle in the second alternative admits a contact
 structure. Thus these are precisely the underlying manifolds of smooth
 connected complex projective contact manifolds in these dimensions. [S3:75–96]
 
-The $b_2=1$ case is the adjoint variety; the $b_2\ge 2$ case is a
+The $`b_2=1`$ case is the adjoint variety; the $`b_2\ge 2`$ case is a
 projectivized cotangent bundle. The reduction from general projective
 contact to the Fano case uses Demailly's integrability theorem
 (canonical bundle not pseudoeffective) and the Kebekus--Peternell--
@@ -86,11 +86,11 @@ Sommese--Wiśniewski classification [S3:71–73, S3:142–150].
 follows from the twistor construction 
 
 > **Theorem 1.4**
-Let $(M^{4m},g)$ be a closed connected smooth Riemannian manifold,
-where $m\geq2$, with holonomy contained in $\mathrm{Sp}(m)\mathrm{Sp}(1)$ in the
+Let $`(M^{4m},g)`$ be a closed connected smooth Riemannian manifold,
+where $`m\geq2`$, with holonomy contained in $`\mathrm{Sp}(m)\mathrm{Sp}(1)`$ in the
 standard representation and with positive scalar curvature. Then
 $$\nabla\mathrm{Rm}_g=0.$$
-Moreover, $(M,g)$ is homothetic to a compact symmetric positive
+Moreover, $`(M,g)`$ is homothetic to a compact symmetric positive
 quaternionic-Kähler Wolf space. [S3:105–114]
 
 A positive quaternionic-Kähler manifold has a twistor space that
@@ -144,10 +144,10 @@ the Riemannian metric after its scale has been fixed.
 
 \subsectionThe normalized metric and its twistor space
 
-For $m\geq2$, the holonomy containment in the corollary makes $g$
+For $`m\geq2`$, the holonomy containment in the corollary makes $`g`$
 Einstein ; see also \cite[Definition 1.1 and the
-following discussion]LeBrun1995. Thus, writing $s>0$ for its constant
-scalar curvature, we have $\mathrm{Ric}_g=(s/4m)g$. [S3:128–140]
+following discussion]LeBrun1995. Thus, writing $`s>0`$ for its constant
+scalar curvature, we have $`\mathrm{Ric}_g=(s/4m)g`$. [S3:128–140]
 
 Poon and Salamon classified the dimension-eight case; Ye and Druel
 handled complex dimensions three and five. Buczyński and Wiśniewski
@@ -158,18 +158,18 @@ groups [S3:164–180].
 
 **The LeBrun--Salamon conjecture is proved in every dimension.**
 Every closed connected positive quaternionic-Kähler manifold of real
-dimension $4m \ge 8$ is homothetic to a compact symmetric Wolf
+dimension $`4m \ge 8`$ is homothetic to a compact symmetric Wolf
 space [S3:105–114].
 
 **The contact-Fano homogeneity conjecture is proved.** Every
 smooth connected complex projective contact Fano manifold of
-dimension $2n+1 \ge 3$ is contact-isomorphic to the adjoint
+dimension $`2n+1 \ge 3`$ is contact-isomorphic to the adjoint
 variety of a simple complex Lie algebra [S3:30–43].
 
 **The projective contact classification is complete.** Smooth
-connected complex projective contact manifolds of dimension $2n+1 \ge
-3$ are either adjoint varieties ($b_2 = 1$) or projectivized
-cotangent bundles ($b_2 \ge 2$) [S3:75–96].
+connected complex projective contact manifolds of dimension $`2n+1 \ge
+3`$ are either adjoint varieties ($`b_2 = 1`$) or projectivized
+cotangent bundles ($`b_2 \ge 2`$) [S3:75–96].
 
 **Kähler--Einstein existence follows.** Every contact Fano manifold
 admits a Kähler--Einstein metric of positive scalar curvature

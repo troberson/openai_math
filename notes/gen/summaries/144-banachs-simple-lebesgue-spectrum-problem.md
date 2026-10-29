@@ -9,24 +9,24 @@
 The release's blurb [S1:3477] and the catalog abstract [S2:369] state
 the family's claim: a smooth volume-preserving diffeomorphism of the
 standard-volume three-torus has simple Lebesgue spectrum on its entire
-complex mean-zero $L^2$ space — the bilateral iterates of one real
+complex mean-zero $`L^2`$ space — the bilateral iterates of one real
 observable form an orthonormal basis of that space. This resolves the
 probability-preserving form of Banach's simple Lebesgue-spectrum
 problem within smooth dynamics. The manuscript's abstract 
 
-> We solve the probability-preserving form of Banach's simple Lebesgue-spectrum problem in smooth dynamics. We construct a $C^\infty$ diffeomorphism of the three-torus that preserves standard volume and whose Koopman operator has simple Lebesgue spectrum on the entire mean-zero $L^2$ space. [S3:45]
+> We solve the probability-preserving form of Banach's simple Lebesgue-spectrum problem in smooth dynamics. We construct a $`C^\infty`$ diffeomorphism of the three-torus that preserves standard volume and whose Koopman operator has simple Lebesgue spectrum on the entire mean-zero $`L^2`$ space. [S3:45]
 
 ## Undergraduate summary
 
 Take a smooth, volume-preserving map of the three-torus and study how
 it acts on the space of square-integrable functions
-$\{f:\mathbb T^3\to\mathbb C\}$ with mean zero, under the
-*Koopman operator* $U f=f\circ T$ (the function pulled back along the
+$`\{f:\mathbb T^3\to\mathbb C\}`$ with mean zero, under the
+*Koopman operator* $`U f=f\circ T`$ (the function pulled back along the
 map). The Koopman operator's *spectrum* describes how the dynamics
 mix. *Simple Lebesgue spectrum* is the strongest mixing type: the
 spectrum is a single copy of the Lebesgue measure on the unit disk,
 and one single observable, together with all its iterates
-$U^nf\ (n\in\mathbb Z)$, spans the whole space as an orthonormal
+$`U^nf\ (n\in\mathbb Z)`$, spans the whole space as an orthonormal
 basis. Banach asked in 1932 for an example of a probability-preserving
 transformation with this property; this manuscript gives one that is
 smooth and volume-preserving, on the three-torus [S3:45, S4:9].
@@ -34,11 +34,11 @@ smooth and volume-preserving, on the three-torus [S3:45, S4:9].
 ## Graduate summary
 
 **The simple-Lebesgue-spectrum construction** [S3:45, S4:9]. The
-formalization constructs a $C^\infty$ diffeomorphism
-$T:\mathbb T^3\to\mathbb T^3$ preserving standard volume whose
+formalization constructs a $`C^\infty`$ diffeomorphism
+$`T:\mathbb T^3\to\mathbb T^3`$ preserving standard volume whose
 Koopman operator has simple Lebesgue spectrum on the entire complex
-mean-zero $L^2$ space. It gives a real-valued cyclic vector
-$\phi$ whose integer iterates $\{T^n\phi\}_{n\in\mathbb Z}$
+mean-zero $`L^2`$ space. It gives a real-valued cyclic vector
+$`\phi`$ whose integer iterates $`\{T^n\phi\}_{n\in\mathbb Z}`$
 form an orthonormal basis of the mean-zero space, and an isometric
 identification under which the Koopman operator becomes multiplication
 by the coordinate function on the circle. The transformation is also
@@ -47,9 +47,9 @@ ergodic [S4:9].
 **The mechanism.** The construction works by reducing the three-torus
 dynamics to a circle model: the isometric identification makes the
 Koopman operator a multiplication operator
-$(M_\zeta f)(\zeta)=\zeta f(\zeta)$ on $L^2(\mathbb T)$, whose
+$`(M_\zeta f)(\zeta)=\zeta f(\zeta)`$ on $`L^2(\mathbb T)`$, whose
 spectrum is the single Lebesgue copy, and the cyclic vector is the
-coordinate function $\zeta$ itself [S4:9].
+coordinate function $`\zeta`$ itself [S4:9].
 
 ## History of the conjecture
 
@@ -64,7 +64,7 @@ three-torus [S3:45, S4:9].
 
 **Prior (my training data, not this repo).** I know Banach's 1932
 question and the spectral-type hierarchy in ergodic theory
-(Lebesgue, $K$-automorphism, weak mixing), and I know that simple
+(Lebesgue, $`K`$-automorphism, weak mixing), and I know that simple
 Lebesgue spectrum is the strongest mixing type. A *smooth,
 volume-preserving* diffeomorphism of the three-torus realizing simple
 Lebesgue spectrum on the full mean-zero space is, to my knowledge,
@@ -77,7 +77,7 @@ independently verify this manuscript's construction.
 **Resolution of Banach's problem (probability-preserving, smooth).**
 A smooth volume-preserving diffeomorphism of the standard-volume
 three-torus has simple Lebesgue spectrum on its entire mean-zero
-$L^2$ space [S3:45, S4:9].
+$`L^2`$ space [S3:45, S4:9].
 
 **A single cyclic observable.** The bilateral iterates of one real
 observable form an orthonormal basis of the mean-zero space
@@ -97,7 +97,7 @@ under `build/` plus section files; 2,183 lines total; one
 
 **Scope note** [S4:9]. The formalized result constructs a smooth
 volume-preserving diffeomorphism of the three-torus with simple
-Lebesgue spectrum on the mean-zero $L^2$ space, a real-valued cyclic
+Lebesgue spectrum on the mean-zero $`L^2`$ space, a real-valued cyclic
 vector whose integer iterates are an orthonormal basis, and the
 isometric identification under which the Koopman operator becomes
 multiplication by the circle coordinate; the transformation is also
@@ -158,7 +158,7 @@ ships no verification bundle and no reasoning trace.
 - el Abdalaoui, el Houcein, Spectral ergodic Banach problem and flat polynomials (2023)
 - Abdedou, Fatna, Fayad, Bassam, Kessi, Arezki, Analytic reparametrizations of translation toral flows with countable Lebesgue spectrum (2023)
 - Anosov, D. V., Katok, A. B., New examples in smooth ergodic theory. Ergodic diffeomorphisms (1970)
-- Fayad, Bassam R., {Partially mixing and locally rank one smooth transformations and flows on the torus {$\mathbb T^d$, $d\ge3$}} (2001)
+- Fayad, Bassam R., {Partially mixing and locally rank one smooth transformations and flows on the torus {$`\mathbb T^d`$, $`d\ge3`$}} (2001)
 - Fayad, Bassam, Forni, Giovanni, Kanigowski, Adam, Lebesgue spectrum of countable multiplicity for conservative flows on the torus (2021)
 - Guenais, Mélanie, Morse cocycles and simple Lebesgue spectrum (1999)
 - Helson, Henry, Parry, William, Cocycles and spectra (1978)

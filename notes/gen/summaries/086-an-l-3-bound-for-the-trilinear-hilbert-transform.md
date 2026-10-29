@@ -8,46 +8,46 @@
 
 The release's blurb [S1:2111] and the catalog abstract [S2:246] state
 the family's claim: it proves the principal-value trilinear Hilbert
-transform with shifts $x-t$, $x-2t$, $x-3t$ is bounded from
-$L^3(\mathbb R)^3$ to $L^1(\mathbb R)$, the $L^3$ exponent case of the
+transform with shifts $`x-t`$, $`x-2t`$, $`x-3t`$ is bounded from
+$`L^3(\mathbb R)^3`$ to $`L^1(\mathbb R)`$, the $`L^3`$ exponent case of the
 standard trilinear Hilbert transform conjecture for the fixed slopes
-$1,2,3$. The manuscript's abstract "We prove that the trilinear Hilbert transform with fixed slopes $1,2,3$ maps
-$L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)$ to $L^1(\mathbb R)$, resolving this case of
+$`1,2,3`$. The manuscript's abstract "We prove that the trilinear Hilbert transform with fixed slopes $`1,2,3`$ maps
+$`L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)`$ to $`L^1(\mathbb R)`$, resolving this case of
 the trilinear Hilbert transform conjecture. [S3:10–12]"
 
 ## Undergraduate summary
 
 The operator multiplies three shifted copies of its inputs and
-integrates against the principal value of $1/t$:
+integrates against the principal value of $`1/t`$:
 
 $$T(f_1,f_2,f_3)(x)
  =\mathrm{p.v.}\int_{\mathbb R}
  f_1(x-t)f_2(x-2t)f_3(x-3t)\,\frac{dt}{t}.$$
 
-The question is which input exponents make $T$ bounded. The family
-proves the symmetric $L^3$ case — each input in $L^3(\mathbb R)$,
-output in $L^1(\mathbb R)$ [S4:1–9]:
+The question is which input exponents make $`T`$ bounded. The family
+proves the symmetric $`L^3`$ case — each input in $`L^3(\mathbb R)`$,
+output in $`L^1(\mathbb R)`$ [S4:1–9]:
 
 > **theorem**
-There is a finite constant $C$ such that
+There is a finite constant $`C`$ such that
 $$\lVert T(f_1,f_2,f_3)\rVert_{L^1(\mathbb R)}
  \le C\prod_{j=1}^3\lVert f_j\rVert_{L^3(\mathbb R)}
  \qquad(f_1,f_2,f_3\in\mathcal S(\mathbb R)).$$
-Consequently $T$ has a unique bounded trilinear extension from
-$L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)$ to $L^1(\mathbb R)$. [S4:11–20]
+Consequently $`T`$ has a unique bounded trilinear extension from
+$`L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)`$ to $`L^1(\mathbb R)`$. [S4:11–20]
 
 The principal value removes a symmetric interval about the origin; the
-estimate extends $T$ uniquely as a bounded trilinear operator from
-three $L^3(\mathbb R)$ inputs to $L^1(\mathbb R)$.
+estimate extends $`T`$ uniquely as a bounded trilinear operator from
+three $`L^3(\mathbb R)`$ inputs to $`L^1(\mathbb R)`$.
 
 ## Graduate summary
 
-**Why the $L^3$ endpoint is hard.** The $L^3$ case is the critical
-exponent of the standard conjecture for the fixed slopes $1,2,3$; the
+**Why the $`L^3`$ endpoint is hard.** The $`L^3`$ case is the critical
+exponent of the standard conjecture for the fixed slopes $`1,2,3`$; the
 full conjecture asks for a broader range of exponents [S4:22–33]. The
 difficulty is the interaction of cancellation across scales with
-quadratic modulation: the coefficients $c=(-1,3,-3,1)$ annihilate
-$(x+jt)^a$ for $a=0,1,2$, so matched quadratic phases can persist in
+quadratic modulation: the coefficients $`c=(-1,3,-3,1)`$ annihilate
+$`(x+jt)^a`$ for $`a=0,1,2`$, so matched quadratic phases can persist in
 the associated four-linear form, and quantitative information at one
 scale must be organized so that this persistence does not accumulate a
 loss proportional to the number of scales [S4:34–53].
@@ -71,11 +71,11 @@ coherent components with hereditary representatives
 **The operator bound reduces to a local estimate.** The outer section
 reduces the operator estimate to a uniform maximal-function bound for
 local forms; the uniform local estimate bounds the constants
-independently of the depth parameter $N$ [S5:1–56]:
+independently of the depth parameter $`N`$ [S5:1–56]:
 
 > **theorem**
-For some $q\in(2,3)$, the constants $C_N(q)$ are bounded independently
-of $N$. [S5:58–61]
+For some $`q\in(2,3)`$, the constants $`C_N(q)`$ are bounded independently
+of $`N`$. [S5:58–61]
 
 **Formalization status.** Nothing about this family is machine-checked.
 There is no Lean library, no scope note, no comparator challenge, and
@@ -96,10 +96,10 @@ case provides the quantitative structure the proof organizes
 
 ## Consequences
 
-**The $L^3$ exponent case of the standard conjecture.** The theorem
-resolves affirmatively the $L^3\times L^3\times L^3 \to L^1$ case of
+**The $`L^3`$ exponent case of the standard conjecture.** The theorem
+resolves affirmatively the $`L^3\times L^3\times L^3 \to L^1`$ case of
 the standard trilinear Hilbert transform conjecture for the fixed
-slopes $1,2,3$, and extends $T$ as a bounded trilinear operator
+slopes $`1,2,3`$, and extends $`T`$ as a bounded trilinear operator
 [S4:22–33]. The result concerns the displayed fixed operator; it does
 not cover the broader exponent range the full conjecture asks for
 [S4:22–30].
@@ -142,14 +142,14 @@ evidence.
 ## Bibliography
 
 - David V. Cruz-Uribe, José María Martell, Carlos Pérez, Weights, Extrapolation and the Theory of Rubio de Francia (2011)
-- W. T. Gowers, Julia Wolf, Linear forms and quadratic uniformity for functions on $\mathbb{Z}_N$ (2010)
+- W. T. Gowers, Julia Wolf, Linear forms and quadratic uniformity for functions on $`\mathbb{Z}_N`$ (2010)
 - Ben Green, Terence Tao, The quantitative behaviour of polynomial orbits on nilmanifolds (2012)
 - Martin Henk, Successive Minima and Lattice Points (2002)
 - Bingyang Hu, Victor Lie, On the curved trilinear Hilbert transform (2023)
-- Bingyang Hu, Victor Lie, On the boundedness of the curved trilinear Hilbert transform and the curved $n$-linear maximal operator in the quasi-Banach regime (2025)
-- Michael Lacey, Christoph Thiele, $L^p$ estimates on the bilinear Hilbert transform for $2<p<\infty$ (1997)
+- Bingyang Hu, Victor Lie, On the boundedness of the curved trilinear Hilbert transform and the curved $`n`$-linear maximal operator in the quasi-Banach regime (2025)
+- Michael Lacey, Christoph Thiele, $`L^p`$ estimates on the bilinear Hilbert transform for $`2<p<\infty`$ (1997)
 - Michael Lacey, Christoph Thiele, On Calderón's conjecture (1999)
-- James Leng, Ashwin Sah, Mehtaab Sawhney, Quasipolynomial bounds on the inverse theorem for the Gowers $U^{s+1}[N]$-norm (2024)
+- James Leng, Ashwin Sah, Mehtaab Sawhney, Quasipolynomial bounds on the inverse theorem for the Gowers $`U^{s+1}[N]`$-norm (2024)
 - Vladimir A. Mikhailets, Aleksandr A. Murach, General forms of the Menshov–Rademacher, Orlicz, and Tandori theorems on orthogonal series (2011)
 - Giorgis Petridis, New proofs of Plünnecke-type estimates for product sets in groups (2012)
 - Terence Tao, Cancellation for the multilinear Hilbert transform (2015)

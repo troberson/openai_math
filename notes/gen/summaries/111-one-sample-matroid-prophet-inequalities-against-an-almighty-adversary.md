@@ -33,7 +33,7 @@ The twist is how many samples the online rule gets. Normally you would
 need to know each value's *distribution*. This paper shows **one
 independent sample per element is enough** — no distribution knowledge,
 no extra samples. The rule earns a universal constant fraction,
-$2^{-310}$, of the expected offline optimum [S4:24–40].
+$`2^{-310}`$, of the expected offline optimum [S4:24–40].
 
 The adversarial model is stronger than usual. A **standard** adversary
 chooses the arrival order without seeing the values. An **almighty**
@@ -45,17 +45,17 @@ holds against this fully informed adversary [S4:17–22].
 
 **Main theorem** ([S4:24–40], `thm:main`). "There is a measurable online
 selection rule, independent of the value distributions, with the
-following property. Let $M=(E,\mathcal I)$ be any finite known labeled
-matroid, and let $(S_e,V_e:e\in E)$ be mutually independent nonnegative
-real random variables, with $S_e$ and $V_e$ having the same arbitrary law
-$D_e$. Assume $\mathbb E[\mathrm{OPT}_M(V)]<\infty$" [S4:25–31]. For every measurable
-permutation rule $\pi$ depending on $M$, the laws $(D_e)$, $S$, $V$, and
-the seed $R$ — i.e. against an almighty adversary — the rule accepts an
-independent set $A$ and
-$\mathbb E\left[\sum_{e\in A}V_e\right]\ge 2^{-310}\mathbb E[\mathrm{OPT}_M(V)]$ [S4:36–38].
+following property. Let $`M=(E,\mathcal I)`$ be any finite known labeled
+matroid, and let $`(S_e,V_e:e\in E)`$ be mutually independent nonnegative
+real random variables, with $`S_e`$ and $`V_e`$ having the same arbitrary law
+$`D_e`$. Assume $`\mathbb E[\mathrm{OPT}_M(V)]<\infty`$" [S4:25–31]. For every measurable
+permutation rule $`\pi`$ depending on $`M`$, the laws $`(D_e)`$, $`S`$, $`V`$, and
+the seed $`R`$ — i.e. against an almighty adversary — the rule accepts an
+independent set $`A`$ and
+$`\mathbb E\left[\sum_{e\in A}V_e\right]\ge 2^{-310}\mathbb E[\mathrm{OPT}_M(V)]`$ [S4:36–38].
 
-**The constant is loose.** The stated bound is $2^{-310}$, but the
-accounting section "proves the stronger constant $2^{-293}$, leaving slack
+**The constant is loose.** The stated bound is $`2^{-310}`$, but the
+accounting section "proves the stronger constant $`2^{-293}`$, leaving slack
 in the stated bound" [S4:45–46]. The constant is independent of the
 matroid, its size, its rank, and the distributions [S4:42–44].
 
@@ -78,7 +78,7 @@ The connection between single-sample prophet inequalities and **secretary
 algorithms** runs through **Azar, Karlin, and Warnell** [S4:70–73], who
 showed secretary algorithms yield single-sample prophet algorithms.
 **Rey, Wu, and Wormald** gave the optimal one-sample reward fraction
-$1/2$ [S4:75]; **Caramanis et al.** developed greedy-ordered selection
+$`1/2`$ [S4:75]; **Caramanis et al.** developed greedy-ordered selection
 and a pointwise sample-pair framework for single-sample guarantees under
 structured feasibility [S4:76–78].
 
@@ -89,7 +89,7 @@ work on matroid secretary selection by **Singla** and **Huang** retains
 uniformly random arrival order [S4:91–94].
 
 The **sample-complexity** literature measures how many samples per element
-a distribution-agnostic rule needs: $O_\delta(\log^4(2+n))$ samples
+a distribution-agnostic rule needs: $`O_\delta(\log^4(2+n))`$ samples
 [S4:100], improved by **Feldman, Svensson, and Zenklusen** [S4:101].
 This paper's contribution is the **almighty adversary** [S4:103–108]: the
 adversary observes all random realizations before choosing the order,
@@ -99,7 +99,7 @@ growing with the matroid remains essential [S4:107–108].
 
 **Prior (my training data, not this repo).** One-sample prophet
 inequalities are a central model for distribution-agnostic online
-selection. The $1/2$ bound is the classical secretary fraction. The
+selection. The $`1/2`$ bound is the classical secretary fraction. The
 contribution here is that one sample suffices against an adversary that
 sees the full random seed, which is a stronger model than the standard
 oblivious-adversary one. I cannot confirm these independently; the release
@@ -109,7 +109,7 @@ ships the manuscript as a proof.
 
 - **One-sample constant-competitive guarantee.** For every finite matroid
   known in advance, one independent sample per element suffices for an
-  online rule earning $2^{-310}$ times the expected offline optimum
+  online rule earning $`2^{-310}`$ times the expected offline optimum
   [S4:24–40].
 - **Distribution-independent.** The rule needs no description of the
   value distributions [S4:25–28].
@@ -139,7 +139,7 @@ manuscript; the comparator stubs state the targets the release set
 itself.
 
 The scope note states: "The formalization proves a one-sample matroid
-prophet inequality with expected reward at least $2^{-310}$ times the
+prophet inequality with expected reward at least $`2^{-310}`$ times the
 expected offline optimum. Each element has one independent sample paired
 with an identically distributed nonnegative online value, and all
 coordinates are independent. The rule and finite seed law depend only on
@@ -148,7 +148,7 @@ prefix. The arrival order may depend measurably on all samples, values,
 and the seed, and only the offline optimum must be integrable" [S6:9].
 The supporting result: "A supporting hidden-vector selection result for
 fixed nonnegative matroid weights gives expected worst-order reward at
-least $2^{-293}$ times the optimum, again with a finite seed law and
+least $`2^{-293}`$ times the optimum, again with a finite seed law and
 prefix feasibility" [S6:11].
 
 The `MatroidProphet.lean` stub [S7] (94 lines) defines `Matroid`,

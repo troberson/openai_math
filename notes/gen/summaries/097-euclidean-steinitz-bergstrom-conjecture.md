@@ -8,57 +8,57 @@
 
 The release's blurb [S1:2386] and the catalog abstract [S2:270] state
 the family's claim: any finite sequence in the Euclidean unit ball of
-$\mathbb R^d$ admits signs keeping every partial sum within
-$C\sqrt d$, independently of length, and every zero-sum family can be
+$`\mathbb R^d`$ admits signs keeping every partial sum within
+$`C\sqrt d`$, independently of length, and every zero-sum family can be
 reordered with the same bound on unsigned partial sums. The
 manuscript's abstract 
 
 > Every prescribed-order finite sequence of vectors in the Euclidean unit
-ball of $\mathbb R^d$ has one signing for which every signed prefix has norm at
-most $C\sqrt d$, with $C$ absolute and independent of the sequence length.
+ball of $`\mathbb R^d`$ has one signing for which every signed prefix has norm at
+most $`C\sqrt d`$, with $`C`$ absolute and independent of the sequence length.
 Consequently, every indexed zero-sum family of unit-ball vectors admits an
 ordering with the same bound for its unsigned partial sums. This determines
 the Euclidean Steinitz constant up to absolute factors,
-$S_2(d)=\Theta(\sqrt d)$, and resolves the Euclidean
+$`S_2(d)=\Theta(\sqrt d)`$, and resolves the Euclidean
 Steinitz–Bergström conjecture. [S3:40–47]
 
 ## Undergraduate summary
 
 Take a finite list of vectors, each of length at most 1. Can you put a
-$+$ or $-$ in front of each so that the running total never wanders
+$`+`$ or $`-`$ in front of each so that the running total never wanders
 far from the origin? The Steinitz–Bergstr\H{o}m question asks
 for a universal bound on how far the partial sums can drift, in terms
-of the dimension $d$ alone [S4:10–20]. The answer here is
-$C\sqrt d$ for some absolute constant $C$ [S4:15–16]. A second,
+of the dimension $`d`$ alone [S4:10–20]. The answer here is
+$`C\sqrt d`$ for some absolute constant $`C`$ [S4:15–16]. A second,
 companion form: if the vectors sum to zero, some ordering keeps every
 unsigned partial sum within the same bound [S4:35–45]. A
-matching lower bound shows $\sqrt d$ is the right order
+matching lower bound shows $`\sqrt d`$ is the right order
 [S2:270].
 
 ## Graduate summary
 
 **The prescribed-order signed-prefix bound** [S4:10–20,
-`thm:signing`]. There is an absolute constant $C$ such that, for all
-$d,N\ge1$ and every sequence $v_1,\ldots,v_N$ of unit-ball vectors
-in $\mathbb R^d$, there are signs
-$\varepsilon_i\in\{-1,1\}$ with
+`thm:signing`]. There is an absolute constant $`C`$ such that, for all
+$`d,N\ge1`$ and every sequence $`v_1,\ldots,v_N`$ of unit-ball vectors
+in $`\mathbb R^d`$, there are signs
+$`\varepsilon_i\in\{-1,1\}`$ with
 
 > **Theorem 1.2**
-There is an absolute constant $C$ such that, for all integers $d,N\ge1$ and
-every indexed family $v_1,\ldots,v_N\in\mathbb R^d$ satisfying
-$\lVert v_i\rVert_2\le1$ and $\sum_{i=1}^N v_i=0$, some permutation
-$\pi\in\mathfrak S_N$ satisfies
+There is an absolute constant $`C`$ such that, for all integers $`d,N\ge1`$ and
+every indexed family $`v_1,\ldots,v_N\in\mathbb R^d`$ satisfying
+$`\lVert v_i\rVert_2\le1`$ and $`\sum_{i=1}^N v_i=0`$, some permutation
+$`\pi\in\mathfrak S_N`$ satisfies
 $$\max_{0\le k\le N}\left\lVert\sum_{i=1}^k v_{\pi(i)}\right\rVert_2
  \le C\sqrt d.$$
 The constant in Theorem also suffices here. [S4:35–45]
 
-The same signs control all prefixes, and $C$ is independent of $d$,
-$N$ and the sequence [S4:18–19].
+The same signs control all prefixes, and $`C`$ is independent of $`d`$,
+$`N`$ and the sequence [S4:18–19].
 
 **The zero-sum reordering** [S4:35–45, `thm:steinitz`]. Under
-the added condition $\sum_i v_i=0$, some permutation
-$\pi$ satisfies
-$\max_k\lVert\sum_{i\le k}v_{\pi(i)}\rVert_2\le C\sqrt d$, with
+the added condition $`\sum_i v_i=0`$, some permutation
+$`\pi`$ satisfies
+$`\max_k\lVert\sum_{i\le k}v_{\pi(i)}\rVert_2\le C\sqrt d`$, with
 the constant from the signed bound also sufficing
 [S4:44–45].
 
@@ -70,13 +70,13 @@ dimension-dependent constant for unit-ball vectors; Bergstr\H{o}m's
 formulation isolates the zero-sum reordering case
 [S2:270]. The manuscript resolves both the signed-prescribed-order and
 the reordering forms with a single constant and proves the
-$\Theta(\sqrt d)$ order sharp.
+$`\Theta(\sqrt d)`$ order sharp.
 
 **Prior (my training data, not this repo).** I know Steinitz's
 polygon (sign-assignment) lemma in the plane and the classical
 higher-dimensional sign-assignment problem, and that the optimal
 constant's dependence on dimension was a question of interest. A proof
-that the Euclidean Steinitz constant is $\Theta(\sqrt d)$
+that the Euclidean Steinitz constant is $`\Theta(\sqrt d)`$
 simultaneously for the prescribed-order signed form and the zero-sum
 reordering form, with a matching lower bound, is, to my knowledge,
 not established in the literature I was trained on. I cannot
@@ -85,9 +85,9 @@ independently verify this manuscript's argument.
 ## Consequences
 
 **Optimal Steinitz constant.** The Euclidean Steinitz constant
-$S_2(d)$ is $\Theta(\sqrt d)$: upper-bounded by $C\sqrt d$
+$`S_2(d)`$ is $`\Theta(\sqrt d)`$: upper-bounded by $`C\sqrt d`$
 (both signed and reordered forms) and matched from below by
-$\sqrt d$ [S3:44–47, S2:270].
+$`\sqrt d`$ [S3:44–47, S2:270].
 
 **Signed and reordered agree.** The same absolute constant bounds the
 prescribed-order signed prefixes and the zero-sum reordered unsigned
@@ -104,9 +104,9 @@ a `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S5:9]. The formalized result gives the Euclidean
-Steinitz–Bergstr\H{o}m bound with one absolute constant $C$:
+Steinitz–Bergstr\H{o}m bound with one absolute constant $`C`$:
 for every finite family of unit-ball vectors, signs make every
-prescribed-order prefix have norm at most $C\sqrt d$, and when the sum
+prescribed-order prefix have norm at most $`C\sqrt d`$, and when the sum
 is zero a permutation makes every unsigned prefix satisfy the same
 bound. Repeated and zero vectors are included; the result is
 existential and does not supply an online algorithm [S5:9]. The scope
@@ -152,7 +152,7 @@ ships one 2,102-line LaTeX manuscript, a scope note, one comparator
 challenge carrying one `sorry` theorem, and the registered
 `main_results` declaration `OAI.EuclideanSteinitzBergstrom.main`,
 the signed+reordered prefix bound, proven in the 29-file `Steinitz` OAI
-tree. The matching $\sqrt d$ lower bound giving the sharp order is a
+tree. The matching $`\sqrt d`$ lower bound giving the sharp order is a
 manuscript claim alongside the bound. The family ships no verification
 bundle and no reasoning trace.
 
@@ -173,7 +173,7 @@ bundle and no reasoning trace.
 
 - Akbas, Emrullah, Sra, Suvrit, Tighter bounds on Komlós discrepancy: existence and algorithmic results (2026)
 - Ambrus, Gergely, Heck, Rainie, A note on the Steinitz Lemma (2026)
-- Banaszczyk, Wojciech, Balancing vectors and Gaussian measures of $n$-dimensional convex bodies (1998)
+- Banaszczyk, Wojciech, Balancing vectors and Gaussian measures of $`n`$-dimensional convex bodies (1998)
 - Banaszczyk, Wojciech, On series of signed vectors and their rearrangements (2012)
 - Bandeira, Afonso S., A simplification of the solution to the Komlós Conjecture (2026)
 - Bansal, Nikhil, Jiang, Haotian, Meka, Raghu, Singla, Sahil, Sinha, Makrand, Prefix Discrepancy, Smoothed Analysis, and Combinatorial Vector Balancing (2021)
@@ -184,7 +184,7 @@ bundle and no reasoning trace.
 - Chobanyan, Sergei, Chobanyan, Levon, Gorgadze, Zaza, Ghlonti, Giorgi, An Algorithm for Finding a Near-Optimal Rearrangement in the Steinitz Functional (2023)
 - Chobanyan, Sergej, Convergence A.S. of Rearranged Random Series in Banach Space and Associated Inequalities (1994)
 - Davies, E. B., Simon, Barry, Ultracontractivity and the heat kernel for Schrödinger operators and Dirichlet Laplacians (1984)
-- Dutta, Kunal, Jha, Agastya Vibhuti, Jiang, Haotian, Near-Optimal Constructive Bounds for $\ell_2$ Prefix Discrepancy and Steinitz Problems via Affine Spectral Independence (2026)
+- Dutta, Kunal, Jha, Agastya Vibhuti, Jiang, Haotian, Near-Optimal Constructive Bounds for $`\ell_2`$ Prefix Discrepancy and Steinitz Problems via Affine Spectral Independence (2026)
 - Grinberg, V. S., Sevast'yanov, S. V., Value of the Steinitz constant (1980)
 - Guo, Shengtao, Fang, Ethan X., Lu, Junwei, Vector Balancing via Directional Total Variation (2026)
 - Prékopa, András, On logarithmic concave measures and functions (1973)

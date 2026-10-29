@@ -12,63 +12,63 @@ The release blurb
 
 The manuscript abstract 
 
-> Let $P^+(n)$ denote the largest prime factor of $n$. We prove that
-$\log P^+(n)/\log n$ and $\log P^+(n+1)/\log n$ are asymptotically
+> Let $`P^+(n)`$ denote the largest prime factor of $`n`$. We prove that
+$`\log P^+(n)/\log n`$ and $`\log P^+(n+1)/\log n`$ are asymptotically
 independent in ordinary natural density, with Dickman marginals. This resolves the Erdős–Pomerance
 joint Dickman conjecture positively and implies that the ordering
-$P^+(n)<P^+(n+1)$ has natural density $1/2$. [S2:8–14]
+$`P^+(n)<P^+(n+1)`$ has natural density $`1/2`$. [S2:8–14]
 
 ## Undergraduate summary
 
-Write $P^+(n)$ for the largest prime factor of $n$. A "rough" integer
-is one whose largest prime factor is small relative to itself: $P^+(n)
-\le n^a$ for some $0 < a < 1$ means every prime factor of $n$ is at
-most $n^a$, so $n$ has no very large prime factor. The Dickman
-function $\rho$ is the classical object that counts how rough the
-integers are: the density of $n \le X$ with $P^+(n) \le n^a$ tends to
-$\rho(1/a)$ as $X \to \infty$.
+Write $`P^+(n)`$ for the largest prime factor of $`n`$. A "rough" integer
+is one whose largest prime factor is small relative to itself: $`P^+(n)
+\le n^a`$ for some $`0 < a < 1`$ means every prime factor of $`n`$ is at
+most $`n^a`$, so $`n`$ has no very large prime factor. The Dickman
+function $`\rho`$ is the classical object that counts how rough the
+integers are: the density of $`n \le X`$ with $`P^+(n) \le n^a`$ tends to
+$`\rho(1/a)`$ as $`X \to \infty`$.
 
 The Erdős–Pomerance conjecture asked whether, for two *consecutive*
-integers, the roughness of $n$ and the roughness of $n+1$ behave as if
+integers, the roughness of $`n`$ and the roughness of $`n+1`$ behave as if
 they were independent. This paper proves that they are: the joint
 density of the pairs where both are rough is the product of the two
-marginal densities. A clean consequence is that the ordering $P^+(n)
-< P^+(n+1)$ holds for exactly half the integers, with the reverse
+marginal densities. A clean consequence is that the ordering $`P^+(n)
+< P^+(n+1)`$ holds for exactly half the integers, with the reverse
 ordering holding for the other half.
 
 The main statement 
 
 > **theorem**
-For every fixed $a,b\in(0,1)$,
+For every fixed $`a,b\in(0,1)`$,
 $$\lim_{X\to\infty}\frac1X
  \\\#\{2\leq n\leq X:P^+(n)\leq n^a,
                          \ P^+(n+1)\leq n^b\}
  =\rho(1/a)\rho(1/b).$$
-Here the limit is taken over all real $X$, with ordinary, unweighted
+Here the limit is taken over all real $`X`$, with ordinary, unweighted
 counting. [S3:19–29]
 
 ## Graduate summary
 
 The theorem is a joint large-deviation / limit statement for the pair
-$(P^+(n), P^+(n+1))$.
+$`(P^+(n), P^+(n+1))`$.
 
 **Joint Dickman law.** 
 
 > **theorem**
-For every fixed $a,b\in(0,1)$,
+For every fixed $`a,b\in(0,1)`$,
 $$\lim_{X\to\infty}\frac1X
  \\\#\{2\leq n\leq X:P^+(n)\leq n^a,
                          \ P^+(n+1)\leq n^b\}
  =\rho(1/a)\rho(1/b).$$
-Here the limit is taken over all real $X$, with ordinary, unweighted
+Here the limit is taken over all real $`X`$, with ordinary, unweighted
 counting. [S3:19–29]
 
-For every fixed $a,b \in (0,1)$ the two-dimensional density of the
-event $\{P^+(n) \le n^a \text{ and } P^+(n+1) \le n^b\}$ tends to
-$\rho(1/a)\rho(1/b)$, the product of the one-dimensional Dickman
+For every fixed $`a,b \in (0,1)`$ the two-dimensional density of the
+event $`\{P^+(n) \le n^a \text{ and } P^+(n+1) \le n^b\}`$ tends to
+$`\rho(1/a)\rho(1/b)`$, the product of the one-dimensional Dickman
 marginals. That the limit is a *product* is precisely the
 independence assertion: the joint law factors into the marginals. The
-limit is taken over all real $X$ with ordinary, unweighted counting —
+limit is taken over all real $`X`$ with ordinary, unweighted counting —
 no logarithmic weighting, so the statement is the "ordinary natural
 density" form the conjecture asks for.
 
@@ -80,20 +80,20 @@ $$\lim_{X\to\infty}\frac1X
  \\\#\{2\leq n\leq X:P^+(n)<P^+(n+1)\}=\frac12.$$
 The reverse ordering has the same natural density. [S3:43–50]
 
-Setting $b$ just above $a$ (or vice versa) and letting the threshold
-sweep past $n$ yields the ordering statement: the density of
-$\{P^+(n) < P^+(n+1)\}$ is $1/2$, and by symmetry so is the reverse
+Setting $`b`$ just above $`a`$ (or vice versa) and letting the threshold
+sweep past $`n`$ yields the ordering statement: the density of
+$`\{P^+(n) < P^+(n+1)\}`$ is $`1/2`$, and by symmetry so is the reverse
 ordering.
 
 ## history of the conjecture
 
 Prior (my training data, not this repo): the one-dimensional Dickman
 law is classical (Dickman 1930, de Bruijn 1951) and describes the
-distribution of $\log P^+(n)/\log n$. The *joint* distribution for
+distribution of $`\log P^+(n)/\log n`$. The *joint* distribution for
 consecutive integers was conjectured by Erdős and Pomerance, who
 predicted asymptotic independence with the Dickman marginals. The
-difficulty is the arithmetic correlation between $n$ and $n+1$ — they
-are coprime, so one cannot read $P^+(n+1)$ off $P^+(n)$, and any
+difficulty is the arithmetic correlation between $`n`$ and $`n+1`$ — they
+are coprime, so one cannot read $`P^+(n+1)`$ off $`P^+(n)`$, and any
 dependence has to come through the additive structure, not a shared
 factor. The result places this joint law firmly in the positive
 resolutions of the catalog.
@@ -101,13 +101,13 @@ resolutions of the catalog.
 ## Consequences
 
 **Positive resolution of the Erdős–Pomerance joint Dickman
-conjecture.** The logarithmic sizes $\log P^+(n)/\log n$ and
-$\log P^+(n+1)/\log n$ are asymptotically independent in ordinary
+conjecture.** The logarithmic sizes $`\log P^+(n)/\log n`$ and
+$`\log P^+(n+1)/\log n`$ are asymptotically independent in ordinary
 natural density, with the Dickman marginals, closing the conjecture.
 
 **A 1/2 ordering density.** The comparison corollary
-[S3:43–50] pins the density of $\{P^+(n) < P^+(n+1)\}$ at exactly
-$1/2$, with the reverse ordering equal, a clean symmetry statement
+[S3:43–50] pins the density of $`\{P^+(n) < P^+(n+1)\}`$ at exactly
+$`1/2`$, with the reverse ordering equal, a clean symmetry statement
 with no effective constant.
 
 ## section skeleton
@@ -146,10 +146,10 @@ theorem joint_law (a b : ℝ) (ha : 0 < a) (ha1 : a < 1) (hb : 0 < b) (hb1 : b <
 ```
 [S5:44–49]
 
-The scope note confirms the formalization's reach: "Let $P^+(n)$ be the largest prime factor of $n$. The formalization proves the joint Dickman law in ordinary natural density: for every $0<a,b<1$, the density of integers satisfying $P^+(n)\le n^a$ and $P^+(n+1)\le n^b$ tends to $\rho(1/a)\rho(1/b)$, where $\rho$ is the Dickman function. [S4:9]" and
+The scope note confirms the formalization's reach: "Let $`P^+(n)`$ be the largest prime factor of $`n`$. The formalization proves the joint Dickman law in ordinary natural density: for every $`0<a,b<1`$, the density of integers satisfying $`P^+(n)\le n^a`$ and $`P^+(n+1)\le n^b`$ tends to $`\rho(1/a)\rho(1/b)`$, where $`\rho`$ is the Dickman function. [S4:9]" and
 [S4:11] states the ordering result ("It also proves that each of the
-orderings $P^+(n)<P^+(n+1)$ and $P^+(n+1)<P^+(n)$ has natural density
-$1/2$."). Note the ledger reads `paps_form 0` (no `main_results`
+orderings $`P^+(n)<P^+(n+1)`$ and $`P^+(n+1)<P^+(n)`$ has natural density
+$`1/2`$."). Note the ledger reads `paps_form 0` (no `main_results`
 entry), so the scope note describes an intended target, not a landed
 formalization.
 
@@ -170,7 +170,7 @@ formalization.
 
 - Alon, Noga, Fernandez de la Vega, W., Kannan, Ravi, Karpinski, Marek, Random sampling and approximation of MAX-CSPs (2003)
 - Borgs, Christian, Chayes, Jennifer T., Lovász, László, Sós, Vera T., Vesztergombi, Katalin, Convergent sequences of dense graphs I: Subgraph frequencies, metric properties and testing (2008)
-- de Bruijn, N. G., On the number of positive integers $\leq x$ and free of prime factors $>y$ (1951)
+- de Bruijn, N. G., On the number of positive integers $`\leq x`$ and free of prime factors $`>y`$ (1951)
 - Caputti, Telma, A note on the extension of Lipschitz functions (1984)
 - {de la Bret{\`e}che}, Régis, Pomerance, Carl, Tenenbaum, Gérald, Products of ratios of consecutive integers (2005)
 - Dickman, Karl, On the frequency of numbers containing prime factors of a certain relative magnitude (1930)
@@ -188,13 +188,13 @@ formalization.
 - McShane, E. J., Extension of range of functions (1934)
 - Montgomery, H. L., Vaughan, R. C., Exponential sums with multiplicative coefficients (1977)
 - Pilatte, Cédric, Improved bounds for the two-point logarithmic Chowla conjecture (2023)
-- Ramaswami, V., On the number of positive integers less than $x$ and free of prime divisors greater than $x^c$ (1949)
-- Erdős, Paul, Pomerance, Carl, On the largest prime factors of $n$ and $n+1$ (1978)
+- Ramaswami, V., On the number of positive integers less than $`x`$ and free of prime divisors greater than $`x^c`$ (1949)
+- Erdős, Paul, Pomerance, Carl, On the largest prime factors of $`n`$ and $`n+1`$ (1978)
 - Tao, Terence, Teräväinen, Joni, The structure of correlations of multiplicative functions at almost all scales, with applications to the Chowla and Elliott conjectures (2019)
 - Tao, Terence, The logarithmically averaged Chowla and Elliott conjectures for two-point correlations (2016)
 - Tao, Terence, Teräväinen, Joni, Quantitative correlations and some problems on prime factors of consecutive integers (2026)
 - Wang, Zhiwei, On the largest prime factors of consecutive integers in short intervals (2017)
 - Wang, Zhiwei, Sur les plus grands facteurs premiers d'entiers consécutifs (2018)
-- Wang, Zhiwei, Three conjectures on $P^+(n)$ and $P^+(n+1)$ hold under the Elliott–Halberstam conjecture for friable integers (2021)
+- Wang, Zhiwei, Three conjectures on $`P^+(n)`$ and $`P^+(n+1)`$ hold under the Elliott–Halberstam conjecture for friable integers (2021)
 - Yang, Zhiyuan, An improvement on the largest prime factors of consecutive integers (2026)
 - Lü, Xiaodong, Wang, Zhiwei, On the largest prime factors of consecutive integers (2025)

@@ -22,9 +22,9 @@ Conjecture* [S3:69, S3:71]; its abstract
 ## Undergraduate summary
 
 A finite group can be "decorated" with a prime number
-$p$ — this is called a **modular setting**, and it
+$`p`$ — this is called a **modular setting**, and it
 lets you study the group's symmetries using fields of
-characteristic $p$ instead of characteristic zero. In this
+characteristic $`p`$ instead of characteristic zero. In this
 setting, the irreducible representations
 ("characters") of the group break into **blocks**
 — smaller families of characters that interact
@@ -33,7 +33,7 @@ census: it says the number of characters in a certain
 subset ("Brauer characters") of a block should equal the
 number of **weights** (a combinatorial object attached to
 the block — roughly, ways to decompose a
-$p$-subgroup into a chain where each link has a
+$`p`$-subgroup into a chain where each link has a
 faithful irreducible character). The **blockwise**
 version asks this census to hold **block by block**, not
 just in total. This manuscript says **yes** — for
@@ -42,11 +42,11 @@ every finite group, every prime, every block
 
 ## Graduate summary
 
-**The main theorem** [S3:74–77, S2:487]. Let $G$
-be a finite group and $p$ a prime. For every $p$-block
-$B$ of $G$, the number of irreducible Brauer characters
-in $B$ equals the number of conjugacy classes of
-$B$-weights. This is the numerical (quantitative) form
+**The main theorem** [S3:74–77, S2:487]. Let $`G`$
+be a finite group and $`p`$ a prime. For every $`p`$-block
+$`B`$ of $`G`$, the number of irreducible Brauer characters
+in $`B`$ equals the number of conjugacy classes of
+$`B`$-weights. This is the numerical (quantitative) form
 of the blockwise Alperin weight conjecture.
 
 **The scope of the formalization.** The family is at
@@ -90,7 +90,7 @@ independently verify from training alone.
 
 **The numerical blockwise Alperin weight conjecture is
 proved.** For every finite group, every prime, and every
-$p$-block, the Brauer-character count equals the
+$`p`$-block, the Brauer-character count equals the
 weight-class count [S3:74–77, S2:487].
 
 **The result is uniform.** No restriction on the group

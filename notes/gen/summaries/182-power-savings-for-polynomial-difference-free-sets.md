@@ -8,11 +8,11 @@
 
 The release's blurb [S1:4220] and the catalog abstract [S2:445]
 state the family's claim: for every fixed intersective integer
-polynomial $h$ of degree $k \geq 2$ with positive leading
-coefficient, a subset of $\{1,\ldots,N\}$ avoiding nonzero
-values $h(1),h(2),\ldots$ as differences has size
-$O_h(N^{1-c_k})$ with $c_k > 0$ depending only on the degree.
-For prime arguments, a power saving also holds when $h$ has a
+polynomial $`h`$ of degree $`k \geq 2`$ with positive leading
+coefficient, a subset of $`\{1,\ldots,N\}`$ avoiding nonzero
+values $`h(1),h(2),\ldots`$ as differences has size
+$`O_h(N^{1-c_k})`$ with $`c_k > 0`$ depending only on the degree.
+For prime arguments, a power saving also holds when $`h`$ has a
 unit root modulo every modulus. The family ships three
 manuscripts [S1:4220]:
 
@@ -25,9 +25,9 @@ manuscripts [S1:4220]:
 
 The square-difference-free abstract 
 
-> We prove that there are absolute constants $c>0$ and $C<\infty$ such that
-every set $A\subseteq\{1,\ldots,N\}$ with no nonzero square difference
-satisfies $|A|\le C N^{1-c}$. This answers the fixed-power question posed
+> We prove that there are absolute constants $`c>0`$ and $`C<\infty`$ such that
+every set $`A\subseteq\{1,\ldots,N\}`$ with no nonzero square difference
+satisfies $`|A|\le C N^{1-c}`$. This answers the fixed-power question posed
 by Green and Sawhney. [S5:43–46]
 
 ## Undergraduate summary
@@ -37,60 +37,60 @@ collection of forbidden values when no two of its elements are
 separated by one of those values. The simplest case: a set with
 no two elements whose difference is a perfect square. A
 **power saving** is a density bound that says such a set can
-occupy at most a fraction $N^{-c}$ of the first $N$ integers,
-for some positive $c$ — it is strictly smaller than a
+occupy at most a fraction $`N^{-c}`$ of the first $`N`$ integers,
+for some positive $`c`$ — it is strictly smaller than a
 positive fraction, but not as small as logarithmic. The
 family's three papers study when a set avoiding the values of
-a polynomial $h$ as differences must have this kind of
-power-saving density, and they show the exponent $c$ can be
-made to depend only on the **degree** of $h$, not on its
+a polynomial $`h`$ as differences must have this kind of
+power-saving density, and they show the exponent $`c`$ can be
+made to depend only on the **degree** of $`h`$, not on its
 specific coefficients [S3:51–57, S4:55–63,
 S5:43–46].
 
 ## Graduate summary
 
 **The intersective result** [S3:51–57, S2:445]. For
-each degree $k \geq 2$ there is an exponent $c_k > 0$ such
-that, for every intersective polynomial $h$ of degree $k$ with
-positive leading coefficient, a set $A \subseteq
-\{1,\ldots,N\}$ whose pairwise differences avoid all
-nonzero values $h(1),h(2),\ldots$ satisfies
-$|A| = O_h(N^{1-c_k})$. The implied constant may depend on
-$h$, but the power-saving exponent depends **only** on the
-degree $k$ [S3:51–57].
+each degree $`k \geq 2`$ there is an exponent $`c_k > 0`$ such
+that, for every intersective polynomial $`h`$ of degree $`k`$ with
+positive leading coefficient, a set $`A \subseteq
+\{1,\ldots,N\}`$ whose pairwise differences avoid all
+nonzero values $`h(1),h(2),\ldots`$ satisfies
+$`|A| = O_h(N^{1-c_k})`$. The implied constant may depend on
+$`h`$, but the power-saving exponent depends **only** on the
+degree $`k`$ [S3:51–57].
 
 **The prime-argument result** [S4:55–63, S2:445]. When
 the avoidance condition is restricted to **prime** arguments
-— the differences avoid $h(p)$ for primes $p$ — a
-power saving holds under the weaker hypothesis that $h$ has a
+— the differences avoid $`h(p)`$ for primes $`p`$ — a
+power saving holds under the weaker hypothesis that $`h`$ has a
 unit root modulo every modulus, with the exponent allowed to
-depend on $h$ [S4:55–63].
+depend on $`h`$ [S4:55–63].
 
 **The square-difference-free result** [S5:43–46, S6:9].
-There are absolute constants $c > 0$ and $C$ such that every
-$A \subseteq \{1,\ldots,N\}$ with no nonzero square
-difference satisfies $|A| \leq C N^{1-c}$. This answers the
+There are absolute constants $`c > 0`$ and $`C`$ such that every
+$`A \subseteq \{1,\ldots,N\}`$ with no nonzero square
+difference satisfies $`|A| \leq C N^{1-c}`$. This answers the
 fixed-power question posed by Green and Sawhney
 [S5:43–46]. The bound is uniform for every integer
-$N \geq 1$ [S6:9].
+$`N \geq 1`$ [S6:9].
 
 **The scope of the formalization.** The scope note states the
 formalization proves the square-difference-free power saving
-— the absolute-constant $C N^{1-c}$ bound for sets with
-no nonzero square difference, uniform in $N$ [S6:9]. The scope
+— the absolute-constant $`C N^{1-c}`$ bound for sets with
+no nonzero square difference, uniform in $`N`$ [S6:9]. The scope
 note names one comparator [S6:13–15]:
 `SquareDifference.lean`.
 
 ## History of the conjecture
 
-The question of how large a subset of $\{1,\ldots,N\}$ can
+The question of how large a subset of $`\{1,\ldots,N\}`$ can
 be when its differences avoid a given set of values is a
 central theme in additive combinatorics. The special case of
 **square-difference-free** sets — sets with no two
 elements separated by a perfect square — was posed by
 Green and Sawhney as a fixed-power question: can one prove a
 power saving with an **absolute** constant, independent of
-$N$? More generally, the theory of **intersective polynomials**
+$`N`$? More generally, the theory of **intersective polynomials**
 (polynomials with a root modulo every modulus) provides a
 framework in which the degree, not the specific coefficients,
 controls the density bound. This manifold closes the
@@ -112,37 +112,37 @@ machinery in [S8:83–91] is not something I can recall.
 ## Consequences
 
 **The square-difference-free power saving is resolved.**
-There are absolute constants $c > 0$ and $C$ such that every
-square-difference-free $A \subseteq \{1,\ldots,N\}$
-satisfies $|A| \leq C N^{1-c}$, uniform in $N$
+There are absolute constants $`c > 0`$ and $`C`$ such that every
+square-difference-free $`A \subseteq \{1,\ldots,N\}`$
+satisfies $`|A| \leq C N^{1-c}`$, uniform in $`N`$
 [S5:43–46, S6:9, S2:445].
 
 **The intersective polynomial-difference power saving holds
-with a degree-only exponent.** For each $k \geq 2$,
-$c_k > 0$ depends only on $k$ [S3:51–57, S2:445].
+with a degree-only exponent.** For each $`k \geq 2`$,
+$`c_k > 0`$ depends only on $`k`$ [S3:51–57, S2:445].
 
 **The prime-argument power saving holds under the unit-root
-hypothesis.** The exponent may depend on $h$
+hypothesis.** The exponent may depend on $`h`$
 [S4:55–63, S2:445].
 
 ## Section skeleton
 
 Three manuscripts:
 [S3] (title [S3:43], date [S3:46]) —
-`manuscript/main.tex` ($75$ lines) under `build/manuscript/`;
+`manuscript/main.tex` ($`75`$ lines) under `build/manuscript/`;
 [S4] (title [S4:49], date [S4:51]) — `main.tex`
-($78$ lines) under `build/`; [S5:43–46] (title [S5:37], date
-[S5:39]) — `main.tex` ($60$ lines) under `build/`. The
+($`78`$ lines) under `build/`; [S5:43–46] (title [S5:37], date
+[S5:39]) — `main.tex` ($`60`$ lines) under `build/`. The
 family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
 **Scope note** [S6:9]. The formalization proves a **fixed
 power saving** for sets with no nonzero square difference:
-there are absolute constants $c > 0$ and $C$ such that every
-$A \subseteq \{1,\ldots,N\}$ satisfying $a - b \neq m^2$
-for all $a,b \in A$ and integers $m \geq 1$ has
-$|A| \leq C N^{1-c}$, uniform for every $N \geq 1$
+there are absolute constants $`c > 0`$ and $`C`$ such that every
+$`A \subseteq \{1,\ldots,N\}`$ satisfying $`a - b \neq m^2`$
+for all $`a,b \in A`$ and integers $`m \geq 1`$ has
+$`|A| \leq C N^{1-c}`$, uniform for every $`N \geq 1`$
 [S6:9]. The scope note names one comparator [S6:13–15]:
 `SquareDifference.lean`.
 
@@ -168,9 +168,9 @@ theorem power_saving :
 24,221 lines, zero `sorry`**) carries a **real, non-`sorry`**
 proof of the comparator's target. The `Main.lean` theorem
 `theorem power_saving` [S8:83–91] obtains the
-`nat_power_saving` constants, then for a given $N$ and
-square-difference-free set $A \subseteq \{1,\ldots,N\}$,
-translates $A$ to natural numbers via `natTranslate`, applies
+`nat_power_saving` constants, then for a given $`N`$ and
+square-difference-free set $`A \subseteq \{1,\ldots,N\}`$,
+translates $`A`$ to natural numbers via `natTranslate`, applies
 the natural-number power saving, and discharges the
 integer-to-natural equivalence by
 `natTranslate_card` 

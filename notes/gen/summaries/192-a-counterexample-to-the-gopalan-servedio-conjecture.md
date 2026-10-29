@@ -7,53 +7,53 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:4416] and the catalog abstract [S2:465]
-state the family's claim: for every $C > 0$ there is a
-nonconstant Boolean function $f : \{-1,1\}^n \to
-\{-1,1\}$ whose sum of linear Fourier coefficients exceeds
-$C\sqrt{\deg f}$, disproving the Gopalan–Servedio
+state the family's claim: for every $`C > 0`$ there is a
+nonconstant Boolean function $`f : \{-1,1\}^n \to
+\{-1,1\}`$ whose sum of linear Fourier coefficients exceeds
+$`C\sqrt{\deg f}`$, disproving the Gopalan–Servedio
 square-root conjecture by an arbitrary factor. The
 manuscript is *Unbounded Violations of the Square-Root
 Degree Bound* [S3:18, S3:20]; its abstract
 
 
 > We disprove the Gopalan–Servedio square-root conjecture, even up to an
-arbitrary constant factor. For every real $C>0$, there is a nonconstant
-Boolean function $f:\{-1,1\}^n\to\{-1,1\}$ on a finite sign cube such that
+arbitrary constant factor. For every real $`C>0`$, there is a nonconstant
+Boolean function $`f:\{-1,1\}^n\to\{-1,1\}`$ on a finite sign cube such that
 $$\sum_{i=1}^n \widehat f(\{i\})>C\sqrt{\deg(f)}.$$
-Here $\widehat f(\{i\})$ is the linear Fourier coefficient associated with
-the $i$th input, and $\deg(f)$ is the degree of the real multilinear
-polynomial representing $f$. [S3:26–36]
+Here $`\widehat f(\{i\})`$ is the linear Fourier coefficient associated with
+the $`i`$th input, and $`\deg(f)`$ is the degree of the real multilinear
+polynomial representing $`f`$. [S3:26–36]
 
 ## Undergraduate summary
 
-A **Boolean function** on $n$ bits takes a string of $n$
+A **Boolean function** on $`n`$ bits takes a string of $`n`$
 ±1 signs and returns ±1. You can write it as a
 **polynomial** in the input bits
-($x_1, \ldots, x_n$ that are each ±1); the
+($`x_1, \ldots, x_n`$ that are each ±1); the
 **degree** of that polynomial is the highest number of bits
 that appear multiplied together in any term. The
 **Fourier coefficients** tell you how much the function
 "correlates" with individual bits:
-$\hat{f}(\{i\})$ measures how much the output depends
-on bit $i$ alone. The **square-root degree bound**
+$`\hat{f}(\{i\})`$ measures how much the output depends
+on bit $`i`$ alone. The **square-root degree bound**
 conjectured by Gopalan and Servedio says: the total
 correlation with individual bits should be at most
-on the order of $\sqrt{\deg f}$ — the square root of
+on the order of $`\sqrt{\deg f}`$ — the square root of
 the polynomial degree. This manuscript **disproves** that
-conjecture: for any proposed constant $C$, there is a
+conjecture: for any proposed constant $`C`$, there is a
 Boolean function whose total correlation with its bits is
-more than $C$ times the square root of its degree
+more than $`C`$ times the square root of its degree
 [S3:26–36, S2:465].
 
 ## Graduate summary
 
 **The main theorem** [S3:26–36, S4:9]. For every
-$C > 0$ there exists a nonconstant Boolean function
-$f : \{-1,1\}^n \to \{-1,1\}$ on a finite sign cube
-such that $\sum_{i=1}^n \hat{f}(\{i\}) > C
-\sqrt{\deg f}$, where $\widehat{f}(\{i\})$ is the
-linear Fourier coefficient and $\deg f$ is the degree of
-the real multilinear polynomial representing $f$
+$`C > 0`$ there exists a nonconstant Boolean function
+$`f : \{-1,1\}^n \to \{-1,1\}`$ on a finite sign cube
+such that $`\sum_{i=1}^n \hat{f}(\{i\}) > C
+\sqrt{\deg f}`$, where $`\widehat{f}(\{i\})`$ is the
+linear Fourier coefficient and $`\deg f`$ is the degree of
+the real multilinear polynomial representing $`f`$
 [S3:26–36]. The violation is **unbounded**: no
 constant factor saves the conjecture
 [S3:26–36, S4:9].
@@ -61,10 +61,10 @@ constant factor saves the conjecture
 **The scope of the formalization.** The scope note states
 the formalization disproves the Gopalan–Servedio
 square-root degree conjecture by an unbounded factor: for
-every $C > 0$ it gives a nonconstant Boolean function on
+every $`C > 0`$ it gives a nonconstant Boolean function on
 a finite sign cube for which the sum of its linear Fourier
-coefficients exceeds $C\sqrt{\deg f}$, where
-$\deg f$ is its real multilinear degree [S4:9]. The scope
+coefficients exceeds $`C\sqrt{\deg f}`$, where
+$`\deg f`$ is its real multilinear degree [S4:9]. The scope
 note names one comparator [S4:15]:
 `SquareRootDegree.lean`.
 
@@ -79,10 +79,10 @@ with subsets of input bits; the linear coefficients are
 the "first-order" part. A natural question is how large
 the total linear correlation can be relative to the
 degree. Gopalan and Servedio conjectured a
-square-root bound: $\sum_i \hat{f}(\{i\}) \leq C
-\sqrt{\deg f}$ for a universal constant $C$. This
+square-root bound: $`\sum_i \hat{f}(\{i\}) \leq C
+\sqrt{\deg f}`$ for a universal constant $`C`$. This
 manuscript **disproves** the conjecture: the ratio
-$\sum_i \hat{f}(\{i\}) / \sqrt{\deg f}$ is
+$`\sum_i \hat{f}(\{i\}) / \sqrt{\deg f}`$ is
 **unbounded** over nonconstant Boolean functions
 [S3:26–36, S2:465]. The construction produces
 functions whose linear coefficients are large while the
@@ -96,23 +96,23 @@ Gopalan–Servedio conjecture as a named open problem
 in the field, and the classical results on influence and
 degree. A **complete disproof by unbounded factor** —
 with the specific construction of sign-cube functions
-where $\sum_i \hat{f}(\{i\})$ grows without bound
-relative to $\sqrt{\deg f}$ — is a result I cannot
+where $`\sum_i \hat{f}(\{i\})`$ grows without bound
+relative to $`\sqrt{\deg f}`$ — is a result I cannot
 independently verify from training alone.
 
 ## Consequences
 
 **The Gopalan–Servedio square-root degree
-conjecture is disproved.** For every $C > 0$, there is a
+conjecture is disproved.** For every $`C > 0`$, there is a
 nonconstant Boolean function with
-$\sum_i \hat{f}(\{i\}) > C \sqrt{\deg f}$
+$`\sum_i \hat{f}(\{i\}) > C \sqrt{\deg f}`$
 [S3:26–36, S4:9, S2:465].
 
 **The violation is unbounded in both formulations.** The
 comparator's `main` theorem is a two-term conjunction:
 `SignedViolations` (the signed sum exceeds
-$C\sqrt{\deg f}$ for every $C$) and
-$\neg\, \text{BddAbove}\, \text{AbsoluteRatios}$ (the
+$`C\sqrt{\deg f}`$ for every $`C`$) and
+$`\neg\, \text{BddAbove}\, \text{AbsoluteRatios}`$ (the
 set of absolute-value ratios is unbounded)
 [S5:47–54, S5:57–58].
 
@@ -129,10 +129,10 @@ under `build/sections/` (`00-introduction` through
 
 **Scope note** [S4:9]. The formalization disproves the
 Gopalan–Servedio square-root degree conjecture by an
-unbounded factor: for every $C > 0$ it gives a
+unbounded factor: for every $`C > 0`$ it gives a
 nonconstant Boolean function on a finite sign cube for
 which the sum of its linear Fourier coefficients exceeds
-$C\sqrt{\deg f}$, where $\deg f$ is its real
+$`C\sqrt{\deg f}`$, where $`\deg f`$ is its real
 multilinear degree [S4:9]. The scope note names one
 comparator [S4:15]: `SquareRootDegree.lean`.
 

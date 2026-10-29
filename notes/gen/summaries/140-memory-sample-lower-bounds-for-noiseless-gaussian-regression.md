@@ -20,52 +20,52 @@ agree on the statement. The `\resultentry` lists six manuscripts:
 ## Undergraduate summary
 
 **The problem.** Imagine a learner who watches one measurement at a
-time: each measurement is an inner product $\langle x_t, s\rangle$
-where $s$ is a fixed unit vector in $\mathbb R^d$ and $x_t$ is a random
+time: each measurement is an inner product $`\langle x_t, s\rangle`$
+where $`s`$ is a fixed unit vector in $`\mathbb R^d`$ and $`x_t`$ is a random
 Gaussian vector. The learner must *remember* something between
-measurements, but the memory is limited to $M$ bits (where a bit is a
-state in a set of size $2^M$). After $T$ measurements, the learner
-must output a unit vector $\hat s$ whose angle from $s$ is at most
-$\epsilon$.
+measurements, but the memory is limited to $`M`$ bits (where a bit is a
+state in a set of size $`2^M`$). After $`T`$ measurements, the learner
+must output a unit vector $`\hat s`$ whose angle from $`s`$ is at most
+$`\epsilon`$.
 
-The question: **how many measurements $T$ are needed when memory is
+The question: **how many measurements $`T`$ are needed when memory is
 small?**
 
 The answer from this family is
 $$T \ge c_A\, d\,\log(1/\epsilon)$$
-for every $M \le A d^2$ bits [S4:59–73]. The $d\log(1/\epsilon)$
-scale is what you'd get from information theory: $d$ is the number of
-independent parameters of $s$, and $\log(1/\epsilon)$ is the number
+for every $`M \le A d^2`$ bits [S4:59–73]. The $`d\log(1/\epsilon)`$
+scale is what you'd get from information theory: $`d`$ is the number of
+independent parameters of $`s`$, and $`\log(1/\epsilon)`$ is the number
 of bits of precision needed to pin down the direction to angle
-$\epsilon$.
+$`\epsilon`$.
 
-When the memory is *subquadratic* — $M = o(d^2)$ — the constant $c$
-is universal (does not depend on $A$) [S4:81–91].
+When the memory is *subquadratic* — $`M = o(d^2)`$ — the constant $`c`$
+is universal (does not depend on $`A`$) [S4:81–91].
 
 ## Graduate summary
 
 **Main theorem** ([S4:59–73], `h:main`). "For every fixed finite
-$A>0$, there are constants $c_A>0$ and $d_A$ such that the following
-holds. Let $d\ge d_A$, let $0\le M\le Ad^2$ be an integer, and let
-$0<\epsilon\le1/10$. For any learner in Definition `h:model`, draw
-$S\sim\sigma_d$ independently of the rows and the learner's
+$`A>0`$, there are constants $`c_A>0`$ and $`d_A`$ such that the following
+holds. Let $`d\ge d_A`$, let $`0\le M\le Ad^2`$ be an integer, and let
+$`0<\epsilon\le1/10`$. For any learner in Definition `h:model`, draw
+$`S\sim\sigma_d`$ independently of the rows and the learner's
 data-independent randomness. If
-$\mathbb P\{\arccos\langle\hat s,S\rangle\le\epsilon\}\ge\frac23$,
-then its prescribed horizon satisfies $T\ge c_A\,d\log(1/\epsilon)$"
+$`\mathbb P\{\arccos\langle\hat s,S\rangle\le\epsilon\}\ge\frac23`$,
+then its prescribed horizon satisfies $`T\ge c_A\,d\log(1/\epsilon)`$"
 [S4:59–73].
 
 **The model** [S4:8–48]. The learner is a finite-state machine: after
 each observation, its persistent state belongs to a set of at most
-$2^M$ elements. Computation is unrestricted (no bit-complexity bound);
+$`2^M`$ elements. Computation is unrestricted (no bit-complexity bound);
 randomization is allowed; the output uses only the terminal state,
 the stopping index, and fresh randomness — a discarded observation
 cannot be read again.
 
-**Two corollaries.** `h:subquadratic` [S4:81–91]: when $M(d)=o(d^2)$,
-the constant $c>0$ is absolute — it does not depend on $A$.
+**Two corollaries.** `h:subquadratic` [S4:81–91]: when $`M(d)=o(d^2)`$,
+the constant $`c>0`$ is absolute — it does not depend on $`A`$.
 `h:worst-signal` [S4:93–102]: the same bound holds when the
 average-success assumption is replaced by success for *every*
-$s\in S^{d-1}$.
+$`s\in S^{d-1}`$.
 
 **The six manuscripts.** The main result [S4] is built on five
 supporting papers: posterior replicas and conditional information [S5],
@@ -80,45 +80,45 @@ comparisons that the main proof uses.
 
 The study of **memory-constrained estimation** connects information
 theory, learning, and high-dimensional geometry. In the noiseless
-Gaussian linear model, $d$ exact measurements determine $s$ almost
+Gaussian linear model, $`d`$ exact measurements determine $`s`$ almost
 surely — the information is there. The question is whether a learner
 with *limited persistent memory* can extract it.
 
-The **information-theoretic lower bound** $d\log(1/\epsilon)$ is
-standard: to specify a direction on $S^{d-1}$ to angle $\epsilon$,
-one needs about $d\log(1/\epsilon)$ bits. The content of this family
+The **information-theoretic lower bound** $`d\log(1/\epsilon)`$ is
+standard: to specify a direction on $`S^{d-1}`$ to angle $`\epsilon`$,
+one needs about $`d\log(1/\epsilon)`$ bits. The content of this family
 is that the bound is *achieved* as a *sample lower bound*: even with
 unrestricted computation and randomization, a finite-memory learner
-needs $\Omega(d\log(1/\epsilon))$ observations, regardless of how
+needs $`\Omega(d\log(1/\epsilon))`$ observations, regardless of how
 cleverly it uses its memory.
 
-The **$Ad^2$ memory regime** is natural: $d^2$ bits is enough to store
-the full Gram matrix of $d$ Gaussian rows (up to the precision
-$\epsilon$), so $o(d^2)$ memory is genuinely less than "store
-everything." The universal constant for $o(d^2)$ memory [S4:81–91]
+The **$`Ad^2`$ memory regime** is natural: $`d^2`$ bits is enough to store
+the full Gram matrix of $`d`$ Gaussian rows (up to the precision
+$`\epsilon`$), so $`o(d^2)`$ memory is genuinely less than "store
+everything." The universal constant for $`o(d^2)`$ memory [S4:81–91]
 separates the two regimes.
 
 **Prior (my training data, not this repo).** Information-theoretic
 lower bounds for estimation under memory constraints are a
 well-studied area. The precise constants and the separation between
-$Ad^2$ and $o(d^2)$ memory, together with the specific streaming and
+$`Ad^2`$ and $`o(d^2)`$ memory, together with the specific streaming and
 subsphere constructions used to prove the bound, are the load-bearing
 contributions of the release. I cannot independently confirm the
-specific constant $2^{-16}$ in the subsphere variant as a prior
+specific constant $`2^{-16}`$ in the subsphere variant as a prior
 result, and the release ships the six manuscripts as proof.
 
 ## Consequences
 
-- **The sample lower bound is $\Omega(d\log(1/\epsilon))$.** A
+- **The sample lower bound is $`\Omega(d\log(1/\epsilon))`$.** A
   finite-memory learner in the noiseless Gaussian regression model
-  needs at least $c_A\,d\log(1/\epsilon)$ observations to achieve
-  angular error $\epsilon$ with probability $2/3$ under the uniform
-  sphere prior, for every $M\le Ad^2$ [S4:59–73][S1:3359].
+  needs at least $`c_A\,d\log(1/\epsilon)`$ observations to achieve
+  angular error $`\epsilon`$ with probability $`2/3`$ under the uniform
+  sphere prior, for every $`M\le Ad^2`$ [S4:59–73][S1:3359].
 - **The constant is universal for subquadratic memory.** When
-  $M(d)=o(d^2)$, the bound $T\ge c\,d\log(1/\epsilon)$ holds with an
-  absolute $c>0$ [S4:81–91].
+  $`M(d)=o(d^2)`$, the bound $`T\ge c\,d\log(1/\epsilon)`$ holds with an
+  absolute $`c>0`$ [S4:81–91].
 - **The bound is worst-signal.** Replacing the average-success
-  assumption with success for every $s\in S^{d-1}$ does not change
+  assumption with success for every $`s\in S^{d-1}`$ does not change
   the bound [S4:93–102].
 - **Computation is unrestricted.** The lower bound holds even when the
   learner has unlimited computation between observations; the
@@ -150,12 +150,12 @@ declarations over **five** configs — the formalization is **complete
 at the declaration level**.
 
 The scope note [S10:9] states (in summary): "The formalization proves
-that, for every fixed $A>0$, there is $c_A>0$ such that, in
-sufficiently large dimension, a learner retaining at most $Ad^2$ bits
-between observations needs at least $c_A d\log(1/\varepsilon)$
-observations to attain angular error at most $\varepsilon$ with
-probability at least $2/3$ for a uniformly random unit signal, for
-$0<\varepsilon\le1/10$" [S10:9]. It also covers posterior-replica
+that, for every fixed $`A>0`$, there is $`c_A>0`$ such that, in
+sufficiently large dimension, a learner retaining at most $`Ad^2`$ bits
+between observations needs at least $`c_A d\log(1/\varepsilon)`$
+observations to attain angular error at most $`\varepsilon`$ with
+probability at least $`2/3`$ for a uniformly random unit signal, for
+$`0<\varepsilon\le1/10`$" [S10:9]. It also covers posterior-replica
 identities, localization/regularization bounds, projection moments
 and Riesz estimates, Gaussian replacement comparisons, and subsphere
 lower bounds.

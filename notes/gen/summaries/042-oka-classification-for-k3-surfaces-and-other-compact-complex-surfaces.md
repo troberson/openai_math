@@ -16,25 +16,25 @@
 
 ## Undergraduate summary
 
-A complex manifold is called **Oka** when holomorphic maps into it are as flexible as the target allows: any holomorphic map defined near a compact convex set in some $\mathbb{C}^m$ can be uniformly approximated on that set by a map defined on all of $\mathbb{C}^m$. The name comes from the Oka principle, the idea that on flexible targets, topological problems have holomorphic solutions. The paper proves that every complex K3 surface is Oka, which settles a conjecture listed among the problems in Forstneric's book. [S2:47–50]
+A complex manifold is called **Oka** when holomorphic maps into it are as flexible as the target allows: any holomorphic map defined near a compact convex set in some $`\mathbb{C}^m`$ can be uniformly approximated on that set by a map defined on all of $`\mathbb{C}^m`$. The name comes from the Oka principle, the idea that on flexible targets, topological problems have holomorphic solutions. The paper proves that every complex K3 surface is Oka, which settles a conjecture listed among the problems in Forstneric's book. [S2:47–50]
 
-The paper's main theorem states the approximation directly: fix a K3 surface with any smooth Hermitian distance, a compact convex set, a holomorphic map near it, and a tolerance. Then an entire map from $\mathbb{C}^m$ to the surface approximates the given map to within the tolerance. [S3:20–29] A corollary turns this into a statement about curves drawn on the surface: through every point and every tangent direction there passes a holomorphic map from the plane whose image is dense in the surface, and when the surface is projective the image is Zariski dense. [S3:43–52]
+The paper's main theorem states the approximation directly: fix a K3 surface with any smooth Hermitian distance, a compact convex set, a holomorphic map near it, and a tolerance. Then an entire map from $`\mathbb{C}^m`$ to the surface approximates the given map to within the tolerance. [S3:20–29] A corollary turns this into a statement about curves drawn on the surface: through every point and every tangent direction there passes a holomorphic map from the plane whose image is dense in the surface, and when the surface is projective the image is Zariski dense. [S3:43–52]
 
 The release's blurb is broader than the manuscript's title. The paper proves the K3 case; the classification of the other Kodaira-zero and class-VII surfaces is assembled from the K3 result plus cases already established, and the classification is explicitly restricted to minimal surfaces. [S4:108–114]
 
 **Proof sketch.** [S3:54–58]
 
 1. The paper reduces the Oka property to the **convex approximation property** (CAP), which Forstneric proved characterizes Oka manifolds. [S3:11–18]
-2. A local operation $L$ is defined on a complex surface, and the paper proves that if $L$ holds at every point, the manifold has CAP in every source dimension. [S5:24–26]
-3. For a K3 surface, $L$ is built from two ingredients: a local-to-global approximation lemma, and a **sewing theorem** that glues annular chains of convex sets into one spray. [S6:24–28]
+2. A local operation $`L`$ is defined on a complex surface, and the paper proves that if $`L`$ holds at every point, the manifold has CAP in every source dimension. [S5:24–26]
+3. For a K3 surface, $`L`$ is built from two ingredients: a local-to-global approximation lemma, and a **sewing theorem** that glues annular chains of convex sets into one spray. [S6:24–28]
 4. The K3 lattice structure supplies the genus-one curves whose self-intersection grows, which is what makes the sewing work on a K3 surface. [S3:54–58]
 5. The Enriques case follows from the K3 case: an Enriques surface has an unramified K3 double cover, and the Oka property descends through holomorphic covering maps. [S4:116–125]
 
 ## Graduate summary
 
-**The theorem.** For a complex K3 surface $X$ with any smooth Hermitian distance $d_X$, every integer $m \ge 1$, every nonempty compact convex $K \subset \mathbb{C}^m$, every neighborhood $U$ of $K$, every holomorphic $f : U \to X$ and every $\epsilon > 0$, there is a holomorphic $F : \mathbb{C}^m \to X$ with $\sup_{z \in K} d_X(F(z), f(z)) < \epsilon$. [S3:20–29]
+**The theorem.** For a complex K3 surface $`X`$ with any smooth Hermitian distance $`d_X`$, every integer $`m \ge 1`$, every nonempty compact convex $`K \subset \mathbb{C}^m`$, every neighborhood $`U`$ of $`K`$, every holomorphic $`f : U \to X`$ and every $`\epsilon > 0`$, there is a holomorphic $`F : \mathbb{C}^m \to X`$ with $`\sup_{z \in K} d_X(F(z), f(z)) < \epsilon`$. [S3:20–29]
 
-**The moves.** CAP is the operative property, and the paper's architecture is a chain of implications: the local operation $L$ at every point of a manifold implies CAP in every source dimension [S5:24–26]; CAP characterizes the Oka property, in the Stein-source formulation that includes deforming continuous maps to holomorphic ones with approximation and interpolation [S3:11–18]. The geometric side supplies $L$ for a K3 surface: the annular-chain sewing theorem takes a chain of annuli indexed by the integers, with a nowhere-zero holomorphic two-form fixed on the surface, and produces the spray the approximation needs. [S6:24–28]
+**The moves.** CAP is the operative property, and the paper's architecture is a chain of implications: the local operation $`L`$ at every point of a manifold implies CAP in every source dimension [S5:24–26]; CAP characterizes the Oka property, in the Stein-source formulation that includes deforming continuous maps to holomorphic ones with approximation and interpolation [S3:11–18]. The geometric side supplies $`L`$ for a K3 surface: the annular-chain sewing theorem takes a chain of annuli indexed by the integers, with a nowhere-zero holomorphic two-form fixed on the surface, and produces the spray the approximation needs. [S6:24–28]
 
 **What the paper does not say.** The manuscript's own classification corollary states the class-VII case as a biconditional: "A connected minimal compact complex surface of class VII is Oka if and only if it is a Hopf surface or an Enoki surface." [S4:108–114]
 
@@ -72,7 +72,7 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 - Artebani, Michela, Sarti, Alessandra, Non-symplectic automorphisms of order 3 on K3 surfaces (2008)
 - Borel, Armand, Density properties for certain subgroups of semi-simple groups without compact components (1960)
 - Borel, Armand, Harish-Chandra, Arithmetic subgroups of algebraic groups (1962)
-- Buzzard, Gregery T., Lu, Steven S. Y., Algebraic surfaces holomorphically dominable by $\mathbb{C}^2$ (2000)
+- Buzzard, Gregery T., Lu, Steven S. Y., Algebraic surfaces holomorphically dominable by $`\mathbb{C}^2`$ (2000)
 - Cadorel, Beno{\^ı}t, Campana, Frédéric, Rousseau, Erwan, Hyperbolicity and specialness of symmetric powers (2022)
 - Campana, Frédéric, Orbifolds, special varieties and classification theory (2004)
 - Chen, Xi, Gounelas, Frank, Curves of maximal moduli on K3 surfaces (2022)
@@ -95,7 +95,7 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 - OpenAI, Global Spherical Shells on Minimal Surfaces of Class VII (2026)
 - Ratner, Marina, Raghunathan's topological conjecture and distributions of unipotent flows (1991)
 - Hörmander, Lars, An Introduction to Complex Analysis in Several Variables (1990)
-- Hörmander, Lars, $L^2$ estimates and existence theorems for the $\bar\partial$ operator (1965)
+- Hörmander, Lars, $`L^2`$ estimates and existence theorems for the $`\bar\partial`$ operator (1965)
 - Siu, Yum-Tong, Every Stein subvariety admits a Stein neighborhood (1976)
 - Verbitsky, Misha, Ergodic complex structures on hyperkähler manifolds: an erratum (2017)
 - Xie, Song-Yan, Zhao, Shengyuan, Periods of Oka K3 surfaces are dense (2026)

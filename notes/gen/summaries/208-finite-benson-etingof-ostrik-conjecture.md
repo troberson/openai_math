@@ -8,10 +8,10 @@
 
 The release's blurb [S1:4757] and the catalog abstract [S2:499]
 state the family's claim: every finite symmetric tensor
-category over an algebraically closed field $k$ of
-characteristic $p > 0$ admits a $k$-linear exact faithful
+category over an algebraically closed field $`k`$ of
+characteristic $`p > 0`$ admits a $`k`$-linear exact faithful
 strong symmetric monoidal fiber functor to a higher
-Verlinde category $\mathrm{Ver}_{p^n}$. The level may
+Verlinde category $`\mathrm{Ver}_{p^n}`$. The level may
 depend on the category, and the theorem includes
 characteristic two, resolving the finite case of the
 Benson–Etingof–Ostrik conjecture. The
@@ -21,10 +21,10 @@ S3:8]; its abstract
 
 > We prove the finite case of the Benson–Etingof–Ostrik conjecture:
 every finite symmetric tensor category over an algebraically closed field
-$k$ of characteristic $p>0$ admits a $k$-linear exact faithful strong symmetric
+$`k`$ of characteristic $`p>0`$ admits a $`k`$-linear exact faithful strong symmetric
 monoidal functor to a finite higher Verlinde category
-$\mathrm{Ver}_{p^n}(k)$. The result includes characteristic two,
-and the level $n$ may depend on the category. [S3:12–17]
+$`\mathrm{Ver}_{p^n}(k)`$. The result includes characteristic two,
+and the level $`n`$ may depend on the category. [S3:12–17]
 
 ## Undergraduate summary
 
@@ -56,16 +56,16 @@ Verlinde category [S3:12–17, S2:499].
 ## Graduate summary
 
 **The main theorem** [S3:12–17, S2:499]. Let
-$\mathcal{C}$ be a finite symmetric tensor category
-over an algebraically closed field $k$ of
-characteristic $p > 0$. Then there exists a positive
-integer $n$ and a $k$-linear exact faithful strong
+$`\mathcal{C}`$ be a finite symmetric tensor category
+over an algebraically closed field $`k`$ of
+characteristic $`p > 0`$. Then there exists a positive
+integer $`n`$ and a $`k`$-linear exact faithful strong
 symmetric monoidal functor
-$F: \mathcal{C} \to
-\mathrm{Ver}_{p^n}(k)$, where
-$\mathrm{Ver}_{p^n}(k)$ is the $n$-th higher Verlinde
-category. The integer $n$ may depend on
-$\mathcal{C}$. The result includes $p = 2$.
+$`F: \mathcal{C} \to
+\mathrm{Ver}_{p^n}(k)`$, where
+$`\mathrm{Ver}_{p^n}(k)`$ is the $`n`$-th higher Verlinde
+category. The integer $`n`$ may depend on
+$`\mathcal{C}`$. The result includes $`p = 2`$.
 
 **The scope of the formalization.** The family is at
 tier T0: the ledger row records `mainres 0`,
@@ -81,12 +81,12 @@ The **Benson–Etingof–Ostrik conjecture**
 (2011) is a central open problem in the theory of
 tensor categories. It generalizes **Deligne's theorem**
 (characteristic zero: every finite tensor category is
-a rep $A$ for a finite quantum group $A$) to positive
+a rep $`A`$ for a finite quantum group $`A`$) to positive
 characteristic, where the expected target is a
 **higher Verlinde category** rather than a
-representation category. The $n = 0$ case recovers
+representation category. The $`n = 0`$ case recovers
 **Deligne's theorem** for characteristic zero. The
-$n = 1$ case is related to **Etingof–Ostrik's**
+$`n = 1`$ case is related to **Etingof–Ostrik's**
 classification of symmetric fiber functors. Known
 partial results: the conjecture is known for
 **nilpotent** categories and for categories of
@@ -94,7 +94,7 @@ partial results: the conjecture is known for
 proof in this manuscript uses **projectivity** and
 **support** arguments to reduce the general case to
 the **restricted** case, then uses **descent** to lift
-from a smaller level $n$ to the required level
+from a smaller level $`n`$ to the required level
 [S3:12–17, S2:499].
 
 **Prior (my training data, not this repo).** I know
@@ -104,8 +104,8 @@ Deligne's theorem in characteristic zero, and the
 higher Verlinde categories as the positive-characteristic
 target. The **full proof** — for every finite
 symmetric tensor category in every positive
-characteristic, including $p = 2$, with the level
-$n$ allowed to depend on the category — is a
+characteristic, including $`p = 2`$, with the level
+$`n`$ allowed to depend on the category — is a
 result I cannot independently verify from training
 alone.
 
@@ -120,7 +120,7 @@ functor to a higher Verlinde category
 **The result includes characteristic two.** No
 odd-prime restriction is imposed [S3:12–17].
 
-**The level is not uniform.** The integer $n$ may
+**The level is not uniform.** The integer $`n`$ may
 depend on the category, so no single Verlinde level
 suffices for all finite symmetric tensor categories
 [S3:12–17].

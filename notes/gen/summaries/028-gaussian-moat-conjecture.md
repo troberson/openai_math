@@ -23,29 +23,29 @@ information-theoretic estimates. [S2:43–51]
 ## Undergraduate summary
 
 A "Gaussian prime" is a prime in the grid of complex numbers
-$a + bi$ — a point on the integer lattice that cannot be factored into
+$`a + bi`$ — a point on the integer lattice that cannot be factored into
 two closer lattice points. The "Gaussian moat" question asks whether you
 can walk from Gaussian prime to Gaussian prime (always to a *new* prime,
 never repeating) while keeping every step short — say, never longer than
-some fixed distance $D$.
+some fixed distance $`D`$.
 
-The paper says no. For any fixed step size $D$, the graph that joins two
-Gaussian primes when they are at most $D$ apart has only *finite*
+The paper says no. For any fixed step size $`D`$, the graph that joins two
+Gaussian primes when they are at most $`D`$ apart has only *finite*
 connected components, and the size of a component is bounded by a number
-$B_D$ that depends only on $D$ and not on where you start. So any walk
-with steps of length at most $D$ can take at most $B_D$ steps before it
+$`B_D`$ that depends only on $`D`$ and not on where you start. So any walk
+with steps of length at most $`D`$ can take at most $`B_D`$ steps before it
 runs out of distinct primes to land on. There is always a "moat" — a gap
-bigger than $D$ — eventually, no matter which prime you start from,
+bigger than $`D`$ — eventually, no matter which prime you start from,
 including primes sitting on the coordinate axes.
 
 The main statement 
 
 > **theorem**
-For every finite real $D$ there is a finite $B_D$ such that every
-connected component of $G_D$ has at most $B_D$ vertices.
+For every finite real $`D`$ there is a finite $`B_D`$ such that every
+connected component of $`G_D`$ has at most $`B_D`$ vertices.
 The bound is independent of the starting prime and includes primes on
 the coordinate axes. Consequently every sequence of distinct Gaussian
-primes whose successive distances are at most $D$ has at most $B_D$ terms. [S2:63–69]
+primes whose successive distances are at most $`D`$ has at most $`B_D`$ terms. [S2:63–69]
 
 ## Graduate summary
 
@@ -55,23 +55,23 @@ Gaussian-prime graph, whose consequence is the moat result.
 **Main theorem.** 
 
 > **theorem**
-For every finite real $D$ there is a finite $B_D$ such that every
-connected component of $G_D$ has at most $B_D$ vertices.
+For every finite real $`D`$ there is a finite $`B_D`$ such that every
+connected component of $`G_D`$ has at most $`B_D`$ vertices.
 The bound is independent of the starting prime and includes primes on
 the coordinate axes. Consequently every sequence of distinct Gaussian
-primes whose successive distances are at most $D$ has at most $B_D$ terms. [S2:63–69]
+primes whose successive distances are at most $`D`$ has at most $`B_D`$ terms. [S2:63–69]
 
-For every finite real $D$ there is a finite $B_D$ such that every
-connected component of $G_D$ (the graph joining Gaussian primes within
-distance $D$) has at most $B_D$ vertices. The bound is independent of the
+For every finite real $`D`$ there is a finite $`B_D`$ such that every
+connected component of $`G_D`$ (the graph joining Gaussian primes within
+distance $`D`$) has at most $`B_D`$ vertices. The bound is independent of the
 starting prime and includes axis primes. The moat statement follows
-immediately: an injective bounded-step walk is a path in $G_D$, so it has
-at most $B_D$ terms and is therefore finite.
+immediately: an injective bounded-step walk is a path in $`G_D`$, so it has
+at most $`B_D`$ terms and is therefore finite.
 
-**The nonexplicit bound.** The bound $B_D$ exists but is *not* given as
-an explicit function of $D$ [S4:9] — the proof is a compactness/finite
+**The nonexplicit bound.** The bound $`B_D`$ exists but is *not* given as
+an explicit function of $`D`$ [S4:9] — the proof is a compactness/finite
 obstruction argument, so it produces the constant only by existence. The
-scope note is explicit here: "No explicit function of $D$ is supplied."
+scope note is explicit here: "No explicit function of $`D`$ is supplied."
 
 **The machine.** The proof builds a finite periodic sieve obstruction —
 a geometric-sampling argument (the one-step coverage transfer in
@@ -84,7 +84,7 @@ Prior (my training data, not this repo): the "moat" language comes from
 the prime moat heuristics (Cramér's random model and the Bateman–Horn
 conjecture), which predict that arbitrarily large gaps occur in the
 primes. The Gaussian-prime version asks the same question in
-$\mathbb Z[i]$: do bounded-step walks through distinct Gaussian primes go on
+$`\mathbb Z[i]`$: do bounded-step walks through distinct Gaussian primes go on
 forever? The answer here is negative, and uniformly — the component-size
 bound that implies the moat is the stronger content. The axis primes
 (those on the real or imaginary axis) are the delicate case for the
@@ -97,12 +97,12 @@ divergence arguments.
 **The Gaussian moat conjecture is proved.** No infinite walk through
 distinct Gaussian primes has uniformly bounded steps [S2:63–69].
 
-**A uniform component-size bound depending only on $D$.** Every
-connected component of the bounded-step graph has at most $B_D$ vertices,
+**A uniform component-size bound depending only on $`D`$.** Every
+connected component of the bounded-step graph has at most $`B_D`$ vertices,
 independent of the starting prime and including axis primes [S2:63–69].
 
-**No explicit function of $D$.** The bound is an existence result; no
-closed form for $B_D$ is supplied [S4:9].
+**No explicit function of $`D`$.** The bound is an existence result; no
+closed form for $`B_D`$ is supplied [S4:9].
 
 ## section skeleton
 
@@ -120,8 +120,8 @@ information (information.tex); references (references.tex).
 
 ## Comparison with the formalized statement
 
-The scope note states the formalization's reach: "The Gaussian moat problem asks whether an infinite walk through distinct Gaussian primes can have bounded step lengths. The formalized result gives a negative answer for every real step bound $D$. More strongly, one finite bound depending only on $D$ limits the size of every connected component of the bounded-step graph and the length of every injective bounded-step walk. Axis primes and all associates are included. No explicit function of $D$ is supplied. [S4:9]" — the
-negative answer for every real step bound $D$, with the uniform
+The scope note states the formalization's reach: "The Gaussian moat problem asks whether an infinite walk through distinct Gaussian primes can have bounded step lengths. The formalized result gives a negative answer for every real step bound $`D`$. More strongly, one finite bound depending only on $`D`$ limits the size of every connected component of the bounded-step graph and the length of every injective bounded-step walk. Axis primes and all associates are included. No explicit function of $`D`$ is supplied. [S4:9]" — the
+negative answer for every real step bound $`D`$, with the uniform
 component-size bound, axis primes and all associates included.
 
 The comparator stub [S5:36–37] states the combined moat-plus-uniform

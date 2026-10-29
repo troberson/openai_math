@@ -7,66 +7,66 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:4008] and the catalog abstract [S2:421] state
-the family's claim: the two-color Ramsey number of the $n$-dimensional
-binary cube is at most $C2^n$ for an absolute constant $C$, resolving
+the family's claim: the two-color Ramsey number of the $`n`$-dimensional
+binary cube is at most $`C2^n`$ for an absolute constant $`C`$, resolving
 positively the hypercube Ramsey conjecture of Burr and Erdős. The
-manuscript's abstract "We prove that the two-color Ramsey number of the $n$-dimensional binary cube
-is at most $C2^n$, where $C$ is an absolute constant. This resolves positively
+manuscript's abstract "We prove that the two-color Ramsey number of the $`n`$-dimensional binary cube
+is at most $`C2^n`$, where $`C`$ is an absolute constant. This resolves positively
 the hypercube Ramsey conjecture of Burr and Erdős. [S3:37–39]"
 
 ## Undergraduate summary
 
-For a finite graph $H$, let $R(H)$ be the least $M$ such that every
-red-blue coloring of $K_M$ contains a monochromatic copy of $H$. The
-$n$-cube $Q_n$ is the graph on $\{0,1\}^n$ with edges between vertices
-differing in one coordinate, so $|V(Q_n)|=2^n$ and its maximum degree
-is $n$ [S4:4–8]. The hypercube Ramsey conjecture, raised by Burr and
-Erdős in 1975 as the cube case of their $L$-set question, asks whether
-a single constant bounds $R(Q_n)/2^n$ for all $n$ [S4:20–30]. The
+For a finite graph $`H`$, let $`R(H)`$ be the least $`M`$ such that every
+red-blue coloring of $`K_M`$ contains a monochromatic copy of $`H`$. The
+$`n`$-cube $`Q_n`$ is the graph on $`\{0,1\}^n`$ with edges between vertices
+differing in one coordinate, so $`|V(Q_n)|=2^n`$ and its maximum degree
+is $`n`$ [S4:4–8]. The hypercube Ramsey conjecture, raised by Burr and
+Erdős in 1975 as the cube case of their $`L`$-set question, asks whether
+a single constant bounds $`R(Q_n)/2^n`$ for all $`n`$ [S4:20–30]. The
 manuscript answers yes 
 
 > **theorem**
-There is an absolute constant $C>0$ such that
+There is an absolute constant $`C>0`$ such that
 $$R(Q_n)\le C2^n
 \qquad\text{for every integer }n\ge0.$$ [S4:10–16]
 
 The lower bound is the standard two-block construction: color the edges
 of two large sets red and the crossing edges blue, forcing
-$R(Q_n)\ge3\cdot2^{n-1}-1$ [S4:47–62]. The theorem therefore determines
-the order of $R(Q_n)$, though it gives no numerical value for $C$ and
-does not settle whether $R(Q_n)/2^n$ converges.
+$`R(Q_n)\ge3\cdot2^{n-1}-1`$ [S4:47–62]. The theorem therefore determines
+the order of $`R(Q_n)`$, though it gives no numerical value for $`C`$ and
+does not settle whether $`R(Q_n)/2^n`$ converges.
 
 ## Graduate summary
 
 **Why a constant factor is hard.** The cube's degree and degeneracy
-both equal $n$, so the bounded-degeneracy results of Chvátal–Rödl–
+both equal $`n`$, so the bounded-degeneracy results of Chvátal–Rödl–
 Szemerédi–Trotter and Lee, which give linear bounds with constants
 depending on the degree, cannot settle the cube question — their
 constants may grow with the dimension [S4:64–79]. The upper-bound
 program had to handle a target whose degree diverges, and its history
 is a sequence of exponent improvements [S4:81–90]: from Beck's 1983
-bound and the Graham–Rödl–Ruciński estimate $R(H)<8(8\Delta)^\Delta
-|V(H)|$, which for the cube reads $m^{O(\log\log m)}$ in
-$m=2^n$, through Shi's polynomial-in-$m$ bound, to Fox–Sudakov's
-$n2^{2n+5}$, Conlon–Fox–Sudakov's $2^{2n+6}$, Lee's $2^{2n}+n^2 2^n$,
-and Tikhomirov's $2^{2n-cn+1}$ — passing from a growing exponent in
-$m$, to a fixed exponent, to an extra logarithmic factor above $m^2$,
-to a constant multiple of $m^2$, to $(1+o(1))m^2$, and finally to an
-exponent below $2$. The present theorem reaches a constant multiple of
-$m$ [S4:81–90].
+bound and the Graham–Rödl–Ruciński estimate $`R(H)<8(8\Delta)^\Delta
+|V(H)|`$, which for the cube reads $`m^{O(\log\log m)}`$ in
+$`m=2^n`$, through Shi's polynomial-in-$`m`$ bound, to Fox–Sudakov's
+$`n2^{2n+5}`$, Conlon–Fox–Sudakov's $`2^{2n+6}`$, Lee's $`2^{2n}+n^2 2^n`$,
+and Tikhomirov's $`2^{2n-cn+1}`$ — passing from a growing exponent in
+$`m`$, to a fixed exponent, to an extra logarithmic factor above $`m^2`$,
+to a constant multiple of $`m^2`$, to $`(1+o(1))m^2`$, and finally to an
+exponent below $`2`$. The present theorem reaches a constant multiple of
+$`m`$ [S4:81–90].
 
 **The density boundary.** The cube sits at the natural density limit
-for the $L$-set program: the first-moment lower bound used by Burr and
+for the $`L`$-set program: the first-moment lower bound used by Burr and
 Erdős forces a linear Ramsey constant to satisfy
-$e(H)/|V(H)|=O(\log|V(H)|)$, and the cube achieves exactly
-$\tfrac12\log_2|V(Q_n)|$ edges per vertex, so it tests linear growth at
+$`e(H)/|V(H)|=O(\log|V(H)|)`$, and the cube achieves exactly
+$`\tfrac12\log_2|V(Q_n)|`$ edges per vertex, so it tests linear growth at
 the largest density the necessary condition permits, beyond every
 bounded-degeneracy family [S4:32–45].
 
 **The proof's shape.** The argument works with a hypothetical
-counterexample sequence of two disjoint host sides of size $N$ with
-$N/2^n\to\infty$, and must retain a constant multiplicative loss while
-the host order is only a slowly diverging multiple of $2^n$
+counterexample sequence of two disjoint host sides of size $`N`$ with
+$`N/2^n\to\infty`$, and must retain a constant multiplicative loss while
+the host order is only a slowly diverging multiple of $`2^n`$
 [S4:125–180]. It uses a common-neighborhood embedding framework —
 Kostochka–Rödl's deterministic lemma and Sudakov's probabilistic
 argument, refined by Conlon, Fox–Sudakov, and Lee — together with
@@ -74,7 +74,7 @@ patch tiling of the cube into retained pieces whose sizes are chosen
 from the host's mass distribution, and a resampling argument over the
 patch profiles to recover a full cube in one color [S4:125–180]. A
 terminology table at the end of the introduction fixes the vocabulary:
-positions, labels, the ratio $C_n=N/2^n$, patch widths, raw laws,
+positions, labels, the ratio $`C_n=N/2^n`$, patch widths, raw laws,
 gates, and profiles [S4:192–217].
 
 **Formalization status.** Nothing about this family is machine-checked.
@@ -83,40 +83,40 @@ no reasoning trace; the LaTeX under `build/` is the only source.
 
 ## History of the conjecture
 
-Burr and Erdős introduced the $L$-set notion in 1975, conjecturing
-that every family of uniformly bounded arboricity is an $L$-set, and
+Burr and Erdős introduced the $`L`$-set notion in 1975, conjecturing
+that every family of uniformly bounded arboricity is an $`L`$-set, and
 raised the cube question separately in Section 7 of that paper
 [S4:20–30]. The cube's arboricity, maximum degree, and degeneracy all
-equal $n$, so it sits at the boundary of every known positive result:
+equal $`n`$, so it sits at the boundary of every known positive result:
 the Chvátal–Rödl–Szemerédi–Trotter theorem (1983) handles fixed maximum
 degree, Lee's 2017 bound handles fixed degeneracy, and both leave the
 cube's diverging degree open [S4:64–79]. The upper bound then improved
 step by step — Beck (1983), Graham–Rödl–Ruciński (2001), Shi (2001,
 2007), Fox–Sudakov (2009), Conlon–Fox–Sudakov (2016), Lee (2017),
 Tikhomirov (2024) — each removing a factor of the growing exponent,
-until the present constant multiple of $2^n$ closes the gap
+until the present constant multiple of $`2^n`$ closes the gap
 [S4:81–90].
 
 ## Consequences
 
-**The $L$-set question, cube case.** The theorem resolves positively
+**The $`L`$-set question, cube case.** The theorem resolves positively
 the hypercube Ramsey conjecture of Burr and Erdős, establishing that
-the cubes form an $L$-set: one constant $C$ bounds $R(Q_n)/2^n$ for
-every $n$ [S4:20–30].
+the cubes form an $`L`$-set: one constant $`C`$ bounds $`R(Q_n)/2^n`$ for
+every $`n`$ [S4:20–30].
 
 **Transfer to subcubes and their Cartesian powers.** The bound
-transfers immediately to any subgraph $H$ of $Q_d$ with
-$2^d\le A|V(H)|$ for a fixed $A$, by monotonicity, giving
-$R(H)\le CA|V(H)|$; and it extends to Cartesian powers of spanning
-subgraphs, so $R(F^{\square k})\le C|V(F)|^k$ for a fixed $C$,
-covering Cartesian powers of paths and cycles on $2^d$ vertices
+transfers immediately to any subgraph $`H`$ of $`Q_d`$ with
+$`2^d\le A|V(H)|`$ for a fixed $`A`$, by monotonicity, giving
+$`R(H)\le CA|V(H)|`$; and it extends to Cartesian powers of spanning
+subgraphs, so $`R(F^{\square k})\le C|V(F)|^k`$ for a fixed $`C`$,
+covering Cartesian powers of paths and cycles on $`2^d`$ vertices
 [S4:93–121].
 
 **The diagonal contrast.** The bound is for the *diagonal* Ramsey
-number, where the target in both colors grows with $n$; the
-off-diagonal results $R(Q_n,K_s)\le c_s 2^n$ for fixed $s$ (Conlon–
+number, where the target in both colors grows with $`n`$; the
+off-diagonal results $`R(Q_n,K_s)\le c_s 2^n`$ for fixed $`s`$ (Conlon–
 Fox–Lee–Sudakov) and the triangle asymptotic
-$R(Q_n,K_3)=(1+o(1))2^{n+1}$ (Fiz Pontiveros et al.) are strictly
+$`R(Q_n,K_3)=(1+o(1))2^{n+1}`$ (Fiz Pontiveros et al.) are strictly
 weaker in this sense and do not imply the diagonal theorem
 [S4:125–180].
 
@@ -176,7 +176,7 @@ evidence.
 - W. Hoeffding, Probability inequalities for sums of bounded random variables, _Journal of the American Statistical Association_ **58** (1963), no. 301, 13–30. .
 - S. Kakutani, A generalization of Brouwer's fixed point theorem, _Duke Mathematical Journal_ **8** (1941), no. 3, 457–459. .
 - C. Lee, Ramsey numbers of degenerate graphs, _Annals of Mathematics_ (2) **185** (2017), no. 3, 791–829. .
-- P. Erdős and L. Lovász, Problems and results on $3$-chromatic hypergraphs and some related questions, in _Infinite and Finite Sets_ (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10** (1975), 609–627. .
+- P. Erdős and L. Lovász, Problems and results on $`3`$-chromatic hypergraphs and some related questions, in _Infinite and Finite Sets_ (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10** (1975), 609–627. .
 - G. O. Mota, G. N. Sárközy, M. Schacht and A. Taraz, Ramsey numbers for bipartite graphs with small bandwidth, _European Journal of Combinatorics_ **48** (2015), 165–176. .
 - G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, The Ramsey number of the clique and the hypercube, _Journal of the London Mathematical Society_ **89** (2014), no. 3, 680–702. .
 - G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, On the Ramsey number of the triangle and the cube, _Combinatorica_ **36** (2016), 71–89. .

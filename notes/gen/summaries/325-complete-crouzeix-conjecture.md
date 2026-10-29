@@ -8,7 +8,7 @@
 
  carries the family entry:
 
-> Resolves the complete Crouzeix conjecture: for every bounded operator $A$ on a complex Hilbert space and every finite matrix-valued polynomial $P$, one has $\lVert P[A]\rVert\le2\sup_{z\in W(A)}\lVert P(z)\rVert$, where $W(A)$ is the numerical range. The constant $2$ is sharp, independent of the matrix size, and valid in infinite dimensions. [S1:746]
+> Resolves the complete Crouzeix conjecture: for every bounded operator $`A`$ on a complex Hilbert space and every finite matrix-valued polynomial $`P`$, one has $`\lVert P[A]\rVert\le2\sup_{z\in W(A)}\lVert P(z)\rVert`$, where $`W(A)`$ is the numerical range. The constant $`2`$ is sharp, independent of the matrix size, and valid in infinite dimensions. [S1:746]
 
 The entry links the two manuscripts as "Direct proof [S1:746]" and "Structural proof [S1:746]" .
 
@@ -19,24 +19,24 @@ The second manuscript's title is "The complete Crouzeix theorem [S6:1]" .
 
 ## Undergraduate summary
 
-The numerical range of a matrix is the set of values $u^*Au$ over unit
+The numerical range of a matrix is the set of values $`u^*Au`$ over unit
 vectors. It is convex and contains the spectrum. Evaluating a polynomial at
 the matrix and taking its norm can be bounded by the largest norm the
 polynomial reaches on that set, and the question is the constant.
 [S3:55–56] states the complete form: "The complete Crouzeix conjecture asks
-whether the constant two holds uniformly in the coefficient dimension $m$, the
+whether the constant two holds uniformly in the coefficient dimension $`m`$, the
 base dimension, and the degree."
 
 The coefficients are matrices, not scalars, which is what makes the complete
 conjecture harder than the scalar one. [S3:68–70] says why: "Its complete
-character is the uniformity in $m$: a scalar proof need not survive matrix
+character is the uniformity in $`m`$: a scalar proof need not survive matrix
 amplification, because coefficient matrices need not commute."
 
 The first manuscript proves the bound directly. [S3:32–33] gives its abstract:
 "We give a direct proof of the sharp constant-two numerical-range inequality
 for matrix-valued polynomials in all finite base and coefficient dimensions."
 The theorem adds the sharpness half: [S3:65] states "The constant two cannot
-be decreased uniformly over $n,m$, and $d$." The manuscript is dated [S2:5].
+be decreased uniformly over $`n,m`$, and $`d`$." The manuscript is dated [S2:5].
 
 The second manuscript reaches the same result through a structural theorem
 and extends it to operators. [S7:46–49] gives its abstract: "We resolve the
@@ -58,19 +58,19 @@ depend on the matrix and the enclosing domain, not on the coefficient size or
 the function being evaluated.
 
 The metric problem has an attained optimum. [S7:120] states that the
-minimization "and has an attained minimum $1\le\kappa^2\le4$. [S7:120]" The
+minimization "and has an attained minimum $`1\le\kappa^2\le4`$. [S7:120]" The
 minimizing inner product gives a similarity with condition number at most two
 that makes the conformal disk image of the matrix a contraction.
 
 The representation half supplies one density for every test. [S7:146] states
-it: "The same $S$, $\Lambda$, and $\kappa$ work for all $m$ and $v$. [S7:146]" The
+it: "The same $`S`$, $`\Lambda`$, and $`\kappa`$ work for all $`m`$ and $`v`$. [S7:146]" The
 density is a continuous positive semidefinite function on the unit circle
 integrating to the identity.
 
 The scope note records what the formalization carries. [S10:10] gives the
 matrix result: "The complete Crouzeix inequality bounds a matrix-valued
 polynomial evaluated at a matrix by its maximum norm on the numerical range.
-The formalized result proves the bound with constant $2$ for every positive
+The formalized result proves the bound with constant $`2`$ for every positive
 matrix and coefficient size, every polynomial degree, and arbitrary complex
 coefficients. It also proves that no smaller universal constant works.
 Normality of the matrix and nonempty interior of its numerical range are not
@@ -116,7 +116,7 @@ permit the same three axioms: `propext`, `Quot.sound`, `Classical.choice`.
 The scalar question is Crouzeix's, and the first manuscript records the
 published bounds. [S3:75–76] gives the dates and the first number: "Crouzeix
 formulated the scalar constant-two question in 2004 and proved a universal
-complete bound of $11.08$ in 2007", with the bibliography entries at [S4:36]
+complete bound of $`11.08`$ in 2007", with the bibliography entries at [S4:36]
 and [S4:41].
 
 The constant two was known for small matrices before this result.
@@ -129,7 +129,7 @@ manuscript's structural theorem is the same shape, for a general admissible
 domain.
 
 The gap the complete form closes is recorded in the first manuscript's own
-comparison. [S3:99–100] states it: "The scalar results fix $m=1$, while the
+comparison. [S3:99–100] states it: "The scalar results fix $`m=1`$, while the
 latter complete result restricts the base dimension;" — the scalar proofs pin
 the coefficient dimension at one, and the most recent complete result pins the
 base dimension. The theorem leaves both independent. The second manuscript
@@ -151,8 +151,8 @@ The operator form removes hypotheses the published results carried. [S10:10]
 says normality and nonempty interior are not assumed, and [S10:12] says no
 separability assumption is required and the bound extends to holomorphic
 functions near the closure of the numerical range and to rational functions
-with poles outside it. The published bound of $11.08$ and the bound
-$1+\sqrt2$ both sat under extra conditions.
+with poles outside it. The published bound of $`11.08`$ and the bound
+$`1+\sqrt2`$ both sat under extra conditions.
 
 The structural theorem is the part that reaches past the inequality.
 [S7:120] gives the attained optimum with condition number at most two, and
@@ -191,9 +191,9 @@ claims exist and names their declarations; the five comparator configs carry
 
 - L. V. Ahlfors, _Complex Analysis_, third ed., McGraw–Hill, New York, 1979.
 - L. V. Ahlfors, _Complex Analysis_, third ed., McGraw–Hill, New York, 1979.
-- W. Arveson, Subalgebras of $C^*$-algebras II, _Acta Math._ **128** (1972), 271–308.
-- C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, _Math. Z._ **252** (2006), 345–365. doi:10.1007/s00209-005-0857-y.
-- C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, _Math. Z._ **252** (2006), 345–365.
+- W. Arveson, Subalgebras of $`C^*`$-algebras II, _Acta Math._ **128** (1972), 271–308.
+- C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $`K`$-spectral sets, _Math. Z._ **252** (2006), 345–365. doi:10.1007/s00209-005-0857-y.
+- C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $`K`$-spectral sets, _Math. Z._ **252** (2006), 345–365.
 - B. Beckermann, Image numérique, GMRES et polyn{\^o}mes de Faber, _C. R. Math._ **340** (2005), 855–860. doi:10.1016/j.crma.2005.04.027.
 - B. Beckermann, Image numérique, GMRES et polyn\^omes de Faber, _C. R. Math._ **340** (2005), 855–860.
 - B. Beckermann and M. Crouzeix, Faber polynomials of matrices for non-convex sets, _Jaen J. Approx._ **6** (2014), 219–231. arXiv:1310.1356v1.
@@ -204,28 +204,28 @@ claims exist and names their declarations; the five comparator configs carry
 - M. Crouzeix, Numerical range and functional calculus in Hilbert space, _J. Funct. Anal._ **244** (2007), 668–690. doi:10.1016/j.jfa.2006.10.013.
 - B. Delyon and F. Delyon, Generalization of von Neumann's spectral sets and integral representation of operators, _Bull. Soc. Math. France_ **127** (1999), 25–41. doi:10.24033/bsmf.2340.
 - B. Delyon and F. Delyon, Generalization of von Neumann's spectral sets and integral representation of operators, _Bull. Soc. Math. France_ **127** (1999), 25–41.
-- M. Crouzeix and A. Greenbaum, _A new proof that the numerical range is a complete $2$-spectral set for weighted shift matrices_, arXiv:2508.12768v1, August 18, 2025.
+- M. Crouzeix and A. Greenbaum, _A new proof that the numerical range is a complete $`2`$-spectral set for weighted shift matrices_, arXiv:2508.12768v1, August 18, 2025.
 - P. Å hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
 - P. Å hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
 - F. Hausdorff, Der Wertvorrat einer Bilinearform, _Math. Z._ **3** (1919), 314–316. doi:10.1007/BF01292610.
 - F. Hausdorff, Der Wertvorrat einer Bilinearform, _Math. Z._ **3** (1919), 314–316.
-- S. Jin, _The numerical range is a $2$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
-- S. Jin, _The numerical range is a $2$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
+- S. Jin, _The numerical range is a $`2`$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
+- S. Jin, _The numerical range is a $`2`$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
 - V. E. Katsnelson, A. Ya. Kheifets, and P. M. Yuditskii, An abstract interpolation problem and the extension theory of isometric operators, in _Topics in Interpolation Theory_, OTAA **95**, Birkhäuser, 1997, 283–298. Preprint version: arXiv:0706.1896v1.
 - Q. Luo, _Two boundary-certificate proofs of the Crouzeix theorem: Fiberwise Fourier recurrence and defect-Gram telescoping_, Preprints.org 202608.1661, version 2, August 28, 2026.
 - Q. Luo, _Two boundary-certificate proofs of the Crouzeix theorem: Fiberwise Fourier recurrence and defect-Gram telescoping_, Preprints.org 202608.1661, version 2, August 28, 2026.
 - OpenAI, _The complete Crouzeix theorem: optimal similarity and a common positive boundary representation_, OpenAI Math Release preprint OAI:The-complete-Crouzeix-theorem-September-23-2026, 2026.
 - OpenAI, _A direct proof of the complete Crouzeix inequality_, OpenAI Math Release preprint OAI:A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026, 2026.
-- M. Crouzeix and C. Palencia, The numerical range is a $(1+\sqrt{2})$-spectral set, _SIAM J. Matrix Anal. Appl._ **38** (2017), 649–655. doi:10.1137/17M1116672.
-- M. Crouzeix and C. Palencia, The numerical range is a $(1+\sqrt2)$-spectral set, _SIAM J. Matrix Anal. Appl._ **38** (2017), 649–655.
+- M. Crouzeix and C. Palencia, The numerical range is a $`(1+\sqrt{2})`$-spectral set, _SIAM J. Matrix Anal. Appl._ **38** (2017), 649–655. doi:10.1137/17M1116672.
+- M. Crouzeix and C. Palencia, The numerical range is a $`(1+\sqrt2)`$-spectral set, _SIAM J. Matrix Anal. Appl._ **38** (2017), 649–655.
 - V. I. Paulsen, Completely bounded homomorphisms of operator algebras, _Proc. Amer. Math. Soc._ **92** (1984), 225–228.
 - C. Pommerenke, _Boundary Behaviour of Conformal Maps_, Springer-Verlag, 1992.
 - R. T. Rockafellar, _Convex Analysis_, Princeton University Press, 1970.
 - C. Runge, Zur Theorie der eindeutigen analytischen Functionen, _Acta Math._ **6** (1885), 229–244. doi:10.1007/BF02400416.
 - E. Lorist and F. L. Schwenninger, _A solution to Crouzeix's conjecture_, arXiv:2608.03841v2, August 17, 2026.
-- T. Ransford and F. L. Schwenninger, Remarks on the Crouzeix–Palencia proof that the numerical range is a $(1+\sqrt{2})$-spectral set, _SIAM J. Matrix Anal. Appl._ **39** (2018), 342–345. doi:10.1137/17M1143757.
+- T. Ransford and F. L. Schwenninger, Remarks on the Crouzeix–Palencia proof that the numerical range is a $`(1+\sqrt{2})`$-spectral set, _SIAM J. Matrix Anal. Appl._ **39** (2018), 342–345. doi:10.1137/17M1143757.
 - E. Lorist and F. L. Schwenninger, _A solution to Crouzeix's conjecture_, arXiv:2608.03841v2, August 17, 2026.
-- T. Ransford and F. L. Schwenninger, Remarks on the Crouzeix–Palencia proof that the numerical range is a $(1+\sqrt{2})$-spectral set, _SIAM J. Matrix Anal. Appl._ **39** (2018), 342–345. doi:10.1137/17M1143757.
+- T. Ransford and F. L. Schwenninger, Remarks on the Crouzeix–Palencia proof that the numerical range is a $`(1+\sqrt{2})`$-spectral set, _SIAM J. Matrix Anal. Appl._ **39** (2018), 342–345. doi:10.1137/17M1143757.
 - P. Stein, Some General Theorems on Iterants, _J. Res. Nat. Bur. Stand._ **48** (1952), 82–83.
 - B. Beckermann and N. Stylianopoulos, _Bergman Orthogonal Polynomials and the Grunsky Matrix_, Constr. Approx. **47** (2018), 211–235. doi:10.1007/s00365-017-9381-7.
 - B. Beckermann and N. Stylianopoulos, Bergman Orthogonal Polynomials and the Grunsky Matrix, _Constr. Approx._ **47** (2018), 211–235.

@@ -38,11 +38,11 @@ before conversion. [S3:50–61]
 
 Manuscript 3, bounded anticanonical metrics on klt pairs 
 
-> Let $(W,D)$ be a projective $\mathbb Q$-factorial klt pair with effective rational boundary. We prove that a positive Cartier multiple of $-(K_W+D)$ has a nonzero section if this divisor is nef, its pullback to a resolution admits a semipositive metric with locally bounded weights, and the resolution has nonzero structure-sheaf Euler characteristic. Consequently a smooth rationally connected projective variety with smoothly semipositive anticanonical bundle has a nonzero naturally invariant anticanonical plurisection for every algebraic torus action. [S4:38–40]
+> Let $`(W,D)`$ be a projective $`\mathbb Q`$-factorial klt pair with effective rational boundary. We prove that a positive Cartier multiple of $`-(K_W+D)`$ has a nonzero section if this divisor is nef, its pullback to a resolution admits a semipositive metric with locally bounded weights, and the resolution has nonzero structure-sheaf Euler characteristic. Consequently a smooth rationally connected projective variety with smoothly semipositive anticanonical bundle has a nonzero naturally invariant anticanonical plurisection for every algebraic torus action. [S4:38–40]
 
 Manuscript 4, cohomological transfer and equivariant sections 
 
-> Let $X$ be a smooth projective complex variety with smoothly semipositive anticanonical bundle. For any torus linearization of that bundle, we show that invariant sections in unbounded degrees with one fixed negative pseudoeffective error yield an invariant section in a positive untwisted degree. Combining the natural invariant index with compact-monodromy structure, we deduce that every such $X$ has a nonzero section of some positive anticanonical power. [S5:46–48]
+> Let $`X`$ be a smooth projective complex variety with smoothly semipositive anticanonical bundle. For any torus linearization of that bundle, we show that invariant sections in unbounded degrees with one fixed negative pseudoeffective error yield an invariant section in a positive untwisted degree. Combining the natural invariant index with compact-monodromy structure, we deduce that every such $`X`$ has a nonzero section of some positive anticanonical power. [S5:46–48]
 
 Manuscript 5, metric descent and rank-preserving contractions 
 
@@ -66,15 +66,15 @@ unless an invariant global section already exists. [S6:32–49]
 Manuscript 6, integrable metrics and effectivity with controlled
 boundary 
 
-> Let $Y$ be smooth projective and let $C$ be an effective integral divisor.
-If $-K_Y+C$ admits a metric with a global strict curvature lower bound
-for which the canonical section of $C$ is locally square integrable,
+> Let $`Y`$ be smooth projective and let $`C`$ be an effective integral divisor.
+If $`-K_Y+C`$ admits a metric with a global strict curvature lower bound
+for which the canonical section of $`C`$ is locally square integrable,
 every pseudoeffective rational divisor becomes rationally effective
-after an effective correction supported on $C$.
-For a smooth projective $X$ with smoothly semipositive $L=-K_X$,
-sections of $m_jL-P$ at unbounded positive exponents, with any fixed
-pseudoeffective Cartier error $P$, yield a section of a positive
-multiple of $L$. [S7:33–43]
+after an effective correction supported on $`C`$.
+For a smooth projective $`X`$ with smoothly semipositive $`L=-K_X`$,
+sections of $`m_jL-P`$ at unbounded positive exponents, with any fixed
+pseudoeffective Cartier error $`P`$, yield a section of a positive
+multiple of $`L`$. [S7:33–43]
 
 Manuscript 7, exact orders and invariant anticanonical linear systems
 
@@ -87,9 +87,9 @@ bundle is arbitrary. [S8:34–39]
 ## Undergraduate summary
 
 **Anticanonical nonvanishing** asks a deceptively simple question: if
-the anticanonical bundle $-K_X$ of a smooth projective variety carries
+the anticanonical bundle $`-K_X`$ of a smooth projective variety carries
 a metric whose curvature is everywhere nonnegative (a "smoothly
-semipositive" metric), must some positive power $m K_X$ have a nonzero
+semipositive" metric), must some positive power $`m K_X`$ have a nonzero
 holomorphic section? In geometric language: does smooth semipositivity
 of the anticanonical curvature force the anticanonical bundle to be
 "nef enough" to actually produce sections?
@@ -113,9 +113,9 @@ nonvanishing without any additional projective-genus hypothesis.
 **The headline theorem** (manuscript 1) 
 
 > **theorem**
-Let $X$ be a smooth connected projective variety over $\mathbb C$.
-If $-K_X$ admits a smooth Hermitian metric of semipositive curvature,
-then $H^0(X,-mK_X)\ne0$ for some integer $m>0$. [S9:14–18]
+Let $`X`$ be a smooth connected projective variety over $`\mathbb C`$.
+If $`-K_X`$ admits a smooth Hermitian metric of semipositive curvature,
+then $`H^0(X,-mK_X)\ne0`$ for some integer $`m>0`$. [S9:14–18]
 
 This is the positive-multiple formulation of Yau's anticanonical
 nonvanishing question. The proof proceeds by induction on dimension,
@@ -147,7 +147,7 @@ section of some positive anticanonical power. This is the positive-
 multiple analogue of the classical result that a smooth semipositive
 Hermite-Einstein metric with vanishing first Chern class is flat. The
 question is open in the general dimension: the Enriques-surface
-example (where $K_E$ has order two and no first-power section, but the
+example (where $`K_E`$ has order two and no first-power section, but the
 square has sections) shows that the positive multiple is genuinely
 necessary, not just a technical convenience.
 
@@ -164,7 +164,7 @@ actual section on the base.
 
 **Anticanonical nonvanishing in every dimension:** a smooth connected
 projective complex variety with a smoothly semipositive anticanonical
-bundle has $H^0(X, -mK_X) \neq 0$ for some $m > 0$ [S9:14–18].
+bundle has $`H^0(X, -mK_X) \neq 0`$ for some $`m > 0`$ [S9:14–18].
 
 **The Enriques surface is the sharp example:** the first positive
 anticanonical power has no section, the second does, and the

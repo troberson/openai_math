@@ -18,11 +18,11 @@ manuscript's abstract
 
 ## Undergraduate summary
 
-A measure-preserving map $T$ of a probability space *mixes* when two
-measurable sets $A,B$ forget their correlation under iteration:
-$\mu(T^{-n}A\cap B)\to\mu(A)\mu(B)$ as $n\to\infty$. *Mixing of
-order $k$* generalizes this to $k$ sets at once: the joint
-intersection $T^{-n_1}A_1\cap\cdots\cap T^{-n_k}A_k$ decouples into
+A measure-preserving map $`T`$ of a probability space *mixes* when two
+measurable sets $`A,B`$ forget their correlation under iteration:
+$`\mu(T^{-n}A\cap B)\to\mu(A)\mu(B)`$ as $`n\to\infty`$. *Mixing of
+order $`k`$* generalizes this to $`k`$ sets at once: the joint
+intersection $`T^{-n_1}A_1\cap\cdots\cap T^{-n_k}A_k`$ decouples into
 the product of the individual measures as the times separate. Rokhlin
 asked in the 1960s whether ordinary (second-order) mixing of a single
 transformation already forces mixing of every finite order. This
@@ -31,21 +31,21 @@ manuscript answers that question affirmatively, for one transformation
 
 ## Graduate summary
 
-**The multiple-mixing theorem** [S3:14, S4:9]. Let $T$ be an
-invertible mixing probability-preserving transformation. Then $T$ is
-mixing of every finite order: for each $k\ge3$ and every $k$
-measurable sets $A_1,\ldots,A_k$, the measure of their translated
-intersection $T^{-\vec n}(A_1\cap\cdots\cap A_k)$ in the
+**The multiple-mixing theorem** [S3:14, S4:9]. Let $`T`$ be an
+invertible mixing probability-preserving transformation. Then $`T`$ is
+mixing of every finite order: for each $`k\ge3`$ and every $`k`$
+measurable sets $`A_1,\ldots,A_k`$, the measure of their translated
+intersection $`T^{-\vec n}(A_1\cap\cdots\cap A_k)`$ in the
 appropriate sense tends to
-$\prod_{i=1}^k\mu(A_i)$ as all successive time gaps
-$|n_{i+1}-n_i|$ tend to infinity [S4:9].
+$`\prod_{i=1}^k\mu(A_i)`$ as all successive time gaps
+$`|n_{i+1}-n_i|`$ tend to infinity [S4:9].
 
 **The statement shape.** The comparator states it as an implication
 from the hypotheses
-$\mu$ a probability measure, $T$ a measure-preserving measure-space
-isomorphism, and $T$ mixing, to the conclusion
-$\mathrm{MixingOfOrder}\ \mu\ T\ k$ for every $k\ge3$
-[S5:30–32]. The result is for a single $T$; it does not assert that
+$`\mu`$ a probability measure, $`T`$ a measure-preserving measure-space
+isomorphism, and $`T`$ mixing, to the conclusion
+$`\mathrm{MixingOfOrder}\ \mu\ T\ k`$ for every $`k\ge3`$
+[S5:30–32]. The result is for a single $`T`$; it does not assert that
 mixing is generic among all transformations, only that one mixing map
 is mixing of all orders.
 
@@ -62,8 +62,8 @@ argument that the second-order condition, on its own, cascades to all
 orders [S3:14, S4:9].
 
 **Prior (my training data, not this repo).** I know the mixing
-hierarchy (ergodic, weak mixing, mixing, mixing of order $k$, $K$-
-and $C$-mixing) and that Rokhlin raised the question of whether
+hierarchy (ergodic, weak mixing, mixing, mixing of order $`k`$, $`K`$-
+and $`C`$-mixing) and that Rokhlin raised the question of whether
 mixing implies mixing of all orders for a single map. The
 affirmative resolution — that *every* invertible mixing map is
 mixing of all finite orders — is, to my knowledge, not
@@ -77,7 +77,7 @@ delicate. I cannot independently verify this manuscript's argument.
 invertible mixing probability-preserving transformation is mixing of
 every finite order [S3:14, S4:9].
 
-**Higher-order correlations decouple.** For any $k\ge3$ measurable
+**Higher-order correlations decouple.** For any $`k\ge3`$ measurable
 sets, the joint translated intersection tends to the product of the
 measures as all pairwise time separations diverge
 [S2:371, S4:9].
@@ -96,7 +96,7 @@ under `build/` plus section files; 2,933 lines total; a
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalized result proves the multiple-
-mixing implication: for each $k\ge3$ and every $k$ measurable sets,
+mixing implication: for each $`k\ge3`$ and every $`k`$ measurable sets,
 the measure of their translated intersection tends to the product of
 their measures as all successive time gaps tend to infinity, for one
 invertible mixing probability-preserving transformation [S4:9]. The

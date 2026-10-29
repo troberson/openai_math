@@ -8,7 +8,7 @@
 
 The release's blurb [S1:7562] and the catalog abstract [S2:706] state
 the family's claim: the purely cosmetic surgery conjecture — distinct
-Dehn surgery slopes on a nontrivial smooth knot in $S^3$ never produce
+Dehn surgery slopes on a nontrivial smooth knot in $`S^3`$ never produce
 orientation-preservingly homeomorphic manifolds. The statement includes
 the meridional slope. The manuscript's abstract "We prove the purely cosmetic surgery conjecture for knots in the three-sphere.
 Distinct Dehn surgery slopes on a nontrivial smooth knot never give
@@ -18,20 +18,20 @@ orientation-preservingly homeomorphic manifolds. [S3:8–12]"
 
 Dehn surgery is the standard operation by which one builds a closed
 three-manifold from a knot: remove a tubular neighborhood of the knot
-and glue it back so that the meridian is filled by a slope $r$ on the
+and glue it back so that the meridian is filled by a slope $`r`$ on the
 boundary torus. Two fillings are called *purely cosmetic* if they are
 homeomorphic by an orientation-preserving map, even though the slopes
-$r$ and $s$ are distinct. The purely cosmetic surgery conjecture
+$`r`$ and $`s`$ are distinct. The purely cosmetic surgery conjecture
 predicts that this cannot happen for a nontrivial knot: the slope is
 determined by the resulting closed manifold, up to orientation. In
 other words, the knot's exterior encodes its filling slope in the
 oriented manifold it produces [S4:3–11]:
 
 > **theorem**
-Let $K\subset S^3$ be a smooth nontrivial knot. For any
-$r,s\in\mathbb Q\cup\{\infty\}$, an orientation-preserving homeomorphism
+Let $`K\subset S^3`$ be a smooth nontrivial knot. For any
+$`r,s\in\mathbb Q\cup\{\infty\}`$, an orientation-preserving homeomorphism
 $$S^3_r(K)\cong S^3_s(K)$$
-implies $r=s$. [S4:13–20]
+implies $`r=s`$. [S4:13–20]
 
 The orientation hypothesis is essential: orientation-reversing, or
 *chirally* cosmetic, coincidences are a different phenomenon and the
@@ -41,9 +41,9 @@ conjecture does not address them [S4:22–27].
 
 **The argument's two counts.** The proof is an analytic gauged
 comparison of two moduli-counting constructions. The first is an
-integer instanton count $\Omega\ne0$ on a closed parameterized
+integer instanton count $`\Omega\ne0`$ on a closed parameterized
 cobordism; the second is an oriented one-dimensional spinor count
-whose boundary would force $2^\eta\Omega=0$. The work is to construct
+whose boundary would force $`2^\eta\Omega=0`$. The work is to construct
 the two counts with compatible metrics, incidence conditions,
 determinant lifts, and orientations, so that the two are simultaneously
 well-defined and the second's boundary contradicts the first's
@@ -62,7 +62,7 @@ seal the boundary of the cobordism [S4:107–216].
 **The remaining case.** The conjecture is the cosmetic filling problem
 of Gordon (Conjecture 6.1), recorded as Bleiler's Problem 1.81(A) in
 Kirby's list. Gordon and Luecke's theorem that nontrivial surgery on a
-nontrivial knot cannot produce $S^3$ settles the meridional case; the
+nontrivial knot cannot produce $`S^3`$ settles the meridional case; the
 remaining finite slopes had been narrowed by a sequence of obstructions
 — Alexander polynomial (Boyer--Lines), Heegaard Floer (Ozsváth--Szabó,
 Wang, Wu, Ni--Wu), immersed-curve restrictions (Hanselman), and
@@ -96,14 +96,14 @@ crossings and for the one-cusped SnapPy census [S4:31–103].
 ## Consequences
 
 **The purely cosmetic surgery conjecture is true for knots in
-$S^3$.** For any smooth nontrivial knot $K\subset S^3$ and any two
-slopes $r,s\in\mathbb Q\cup\{\infty\}$, an orientation-preserving
-homeomorphism $S^3_r(K)\cong S^3_s(K)$ implies $r=s$. The statement
+$`S^3`$.** For any smooth nontrivial knot $`K\subset S^3`$ and any two
+slopes $`r,s\in\mathbb Q\cup\{\infty\}`$, an orientation-preserving
+homeomorphism $`S^3_r(K)\cong S^3_s(K)`$ implies $`r=s`$. The statement
 includes the meridional slope and does not require the homeomorphism
 to preserve a surgery core or the knot exterior [S4:13–20].
 
 **The filling slope is an oriented-manifold invariant.** For the
-exterior of a nontrivial smooth knot in $S^3$, the Dehn surgery slope
+exterior of a nontrivial smooth knot in $`S^3`$, the Dehn surgery slope
 is determined by the oriented closed manifold it produces: no two
 distinct slopes yield orientation-preservingly homeomorphic fillings
 [S3:8–12].
@@ -148,7 +148,7 @@ non-LaTeX evidence.
 - Auroux, Denis, Katzarkov, Ludmil, A degree doubling formula for braid monodromies and Lefschetz pencils (2008)
 - Bleiler, Steven A., Hodgson, Craig D., Weeks, Jeffrey R., Cosmetic surgery on knots (1999)
 - Boyer, Steven, Lines, Daniel, Surgery formulae for Casson's invariant and extensions to homology lens spaces (1990)
-- Culler, Lucas, Daemi, Aliakbar, Xie, Yi, Surgery, polygons and $SU(N)$-Floer homology (2020)
+- Culler, Lucas, Daemi, Aliakbar, Xie, Yi, Surgery, polygons and $`SU(N)`$-Floer homology (2020)
 - Daemi, Aliakbar, Lidman, Tye, Miller Eismeier, Mike, Filtered instanton homology and cosmetic surgery (2025)
 - Detcherry, Renaud, A quantum obstruction for purely cosmetic surgeries (2026)
 - Dolgachev, Igor, Weighted projective varieties (1982)
@@ -162,15 +162,15 @@ non-LaTeX evidence.
 - Feehan, Paul M. N., Leness, Thomas G., PU(2) monopoles. II: Top-level Seiberg–Witten moduli spaces and Witten's conjecture in low degrees (2001)
 - Fintushel, Ronald, Stern, Ronald J., Rational blowdowns of smooth 4-manifolds (1997)
 - Floer, Andreas, An instanton-invariant for 3-manifolds (1988)
-- Futer, David, Purcell, Jessica S., Schleimer, Saul, Excluding cosmetic surgeries on hyperbolic $3$-manifolds (2025)
+- Futer, David, Purcell, Jessica S., Schleimer, Saul, Excluding cosmetic surgeries on hyperbolic $`3`$-manifolds (2025)
 - Gabai, David, Foliations and the topology of 3-manifolds. III (1987)
-- Ghosh, Sudipta, Sivek, Steven, Zentner, Raphael, Rational homology 3-spheres and $\mathrm{SL}(2,\mathbb C)$ representations (2023)
+- Ghosh, Sudipta, Sivek, Steven, Zentner, Raphael, Rational homology 3-spheres and $`\mathrm{SL}(2,\mathbb C)`$ representations (2023)
 - Giroux, Emmanuel, Géométrie de contact: de la dimension trois vers les dimensions supérieures (2002)
 - Gordon, C. McA., Dehn surgery on knots (1991)
 - Gordon, C. McA., Luecke, J., Knots are determined by their complements (1989)
 - Gramain, André, Le type d'homotopie du groupe des difféomorphismes d'une surface compacte (1973)
 - Guillemin, Victor, {Kähler} structures on toric varieties (1994)
-- Hanselman, Jonathan, Heegaard Floer homology and cosmetic surgeries in $S^3$ (2023)
+- Hanselman, Jonathan, Heegaard Floer homology and cosmetic surgeries in $`S^3`$ (2023)
 - Ichihara, Kazuhiro, Wu, Zhongtao, A note on Jones polynomial and cosmetic surgery (2019)
 - Kawasaki, Tetsuro, The Riemann–Roch theorem for complex V-manifolds (1979)
 - Kirby, Rob, Problems in low-dimensional topology (1997)
@@ -180,10 +180,10 @@ non-LaTeX evidence.
 - Kronheimer, Peter, Mrowka, Tomasz, Knots, sutures, and excision (2010)
 - Lockhart, Robert B., McOwen, Robert C., Elliptic differential operators on noncompact manifolds (1985)
 - Massuyeau, Gwénaël, An introduction to the abelian Reidemeister torsion of three-dimensional manifolds (2011)
-- Ni, Yi, Wu, Zhongtao, Cosmetic surgeries on knots in $S^3$ (2015)
+- Ni, Yi, Wu, Zhongtao, Cosmetic surgeries on knots in $`S^3`$ (2015)
 - Okonek, Christian, Teleman, Andrei, Quaternionic monopoles (1996)
-- Mu{\ n}oz, Vicente, Ring structure of the Floer cohomology of $\Sigma\times S^1$ (1999)
-- Mu{\ n}oz, Vicente, Fukaya–Floer homology of $\Sigma\times S^1$ and applications (1999)
+- Mu{\ n}oz, Vicente, Ring structure of the Floer cohomology of $`\Sigma\times S^1`$ (1999)
+- Mu{\ n}oz, Vicente, Fukaya–Floer homology of $`\Sigma\times S^1`$ and applications (1999)
 - Pidstrigach, Victor, Tyurin, Andrei, Localisation of the Donaldson's invariants along Seiberg–Witten classes (1995)
 - Ren, Qiuyu, Cosmetic surgery on satellite knots (2025)
 - Sivek, Steven, Donaldson invariants of symplectic manifolds (2015)
@@ -195,7 +195,7 @@ non-LaTeX evidence.
 - Taubes, Clifford Henry, More constraints on symplectic forms from Seiberg–Witten invariants (1995)
 - Taylor, Michael E., Pseudodifferential Operators and Nonlinear PDE (1991)
 - Ozsváth, Peter S., Szabó, Zoltán, Knot Floer homology and rational surgeries (2011)
-- Uhlenbeck, Karen K., Connections with $L^p$ bounds on curvature (1982)
+- Uhlenbeck, Karen K., Connections with $`L^p`$ bounds on curvature (1982)
 - Uhlenbeck, Karen K., Removable singularities in Yang–Mills fields (1982)
 - Wang, Jiajun, Cosmetic surgeries on genus one knots (2006)
-- Wu, Zhongtao, Cosmetic surgery in $L$-space homology spheres (2011)
+- Wu, Zhongtao, Cosmetic surgery in $`L`$-space homology spheres (2011)

@@ -8,7 +8,7 @@
 
  carries the family entry:
 
-> Proves Brennan's conjecture: for every conformal bijection $\phi$ from a simply connected plane domain onto the disk, $|\phi'|^s$ is area-integrable for $4/3<s<4$. The sharp universal integral-means identity is $B_{\mathcal S}(t)=|t|-1$ for $t\le-2$. A strict bound $B_b(-1)<1/4$ for bounded univalent functions disproves Kraetzer's prediction at that parameter. [S1:218]
+> Proves Brennan's conjecture: for every conformal bijection $`\phi`$ from a simply connected plane domain onto the disk, $`|\phi'|^s`$ is area-integrable for $`4/3<s<4`$. The sharp universal integral-means identity is $`B_{\mathcal S}(t)=|t|-1`$ for $`t\le-2`$. A strict bound $`B_b(-1)<1/4`$ for bounded univalent functions disproves Kraetzer's prediction at that parameter. [S1:218]
 
 The entry links the two manuscripts as "Brennan’s conjecture [S1:218]" and "Strict
 inverse-first-power bound" [S1:218].
@@ -22,52 +22,52 @@ The second manuscript's title is "A strict inverse-first-power bound for univale
 A **univalent map** is an injective holomorphic map. Brennan's conjecture asks
 how large the derivative of a conformal map can get near a boundary.
 [S4:6–8] states the question: "Brennan's conjecture asks whether, for every
-conformal bijection $\varphi:W\to\mathbb D$ from a simply connected plane domain,
+conformal bijection $`\varphi:W\to\mathbb D`$ from a simply connected plane domain,
 the derivative satisfies" — the display that follows asks that the integral of
-$|\varphi'(z)|^s$ over the domain be finite for $4/3<s<4$.
+$`|\varphi'(z)|^s`$ over the domain be finite for $`4/3<s<4`$.
 
 The conjecture carries no hypothesis on the domain's boundary. [S4:13–14]
 says: "There is no regularity assumption on the boundary and no boundedness
-assumption on $W$." The problem measures how strongly a conformal map can
+assumption on $`W`$." The problem measures how strongly a conformal map can
 compress area near an arbitrary boundary.
 
 The first manuscript's theorem fixes the domain class. [S4:61–63] states the
-hypothesis: "Let $W\subset\mathbb C$ be any simply connected domain whose boundary
+hypothesis: "Let $`W\subset\mathbb C`$ be any simply connected domain whose boundary
 in the Riemann sphere contains at least two points. Every conformal bijection
-$\varphi:W\to\mathbb D$ satisfies" — the display gives the integral for
-$4/3<s<4$. The abstract gives the same result with the sharp endpoint added:
+$`\varphi:W\to\mathbb D`$ satisfies" — the display gives the integral for
+$`4/3<s<4`$. The abstract gives the same result with the sharp endpoint added:
 [S3:46–50] says "We prove Brennan's conjecture: if a simply connected plane
-domain admits a conformal bijection $\varphi$ onto the unit disk, then
-$|\varphi'|^s$ is area-integrable for every $4/3<s<4$. We also prove the sharp
-inverse-square integral-means exponent $B_{\mathcal S}(-2)=1$ for the normalized
-schlicht class $\mathcal S$."
+domain admits a conformal bijection $`\varphi`$ onto the unit disk, then
+$`|\varphi'|^s`$ is area-integrable for every $`4/3<s<4`$. We also prove the sharp
+inverse-square integral-means exponent $`B_{\mathcal S}(-2)=1`$ for the normalized
+schlicht class $`\mathcal S`$."
 
 The open interval is sharp, and the Koebe function is the example that shows
-it. [S4:83–83] names the example: "The Koebe function $f(z)=z/(1-z)^2$
-belongs to $\mathcal S$ and satisfies" — the display gives its inverse-square means
-growing like $(1-r)^{-1}$. [S4:89–89] gives the consequence: "Its inverse
-therefore fails area integrability at both $s=4$ and $s=4/3$." So neither
+it. [S4:83–83] names the example: "The Koebe function $`f(z)=z/(1-z)^2`$
+belongs to $`\mathcal S`$ and satisfies" — the display gives its inverse-square means
+growing like $`(1-r)^{-1}`$. [S4:89–89] gives the consequence: "Its inverse
+therefore fails area integrability at both $`s=4`$ and $`s=4/3`$." So neither
 endpoint can be included.
 
 The second manuscript attacks a prediction about the bounded subclass.
 [S15:29–30] names it: "Kraetzer's experiments with conformal maps onto
 bounded domains led to the prediction" — the display that follows is
-$B_b(-1)=1/4$. [S15:45–45] states the theorem's shape: "There exist constants
-$0<\varepsilon<1/4$ and $C<\infty$ such that" — the display bounds the
-inverse-first-power mean with exponent $-1/4+\varepsilon$. [S15:50–51] gives
-the consequence: "Consequently $B_b(-1)<1/4$, and Kraetzer's conjectured
+$`B_b(-1)=1/4`$. [S15:45–45] states the theorem's shape: "There exist constants
+$`0<\varepsilon<1/4`$ and $`C<\infty`$ such that" — the display bounds the
+inverse-first-power mean with exponent $`-1/4+\varepsilon`$. [S15:50–51] gives
+the consequence: "Consequently $`B_b(-1)<1/4`$, and Kraetzer's conjectured
 identity \eqref{eq:kraetzer} is false." The abstract gives the same:
 [S14:41–44] says "We prove a uniform upper bound for inverse-first-power
 integral means of normalized univalent disk maps with exponent strictly below
-$1/4$. Consequently, the bounded universal integral-means spectrum satisfies
-$B_b(-1)<1/4$, disproving Kraetzer's conjectured spectrum at $p=-1$."
+$`1/4`$. Consequently, the bounded universal integral-means spectrum satisfies
+$`B_b(-1)<1/4`$, disproving Kraetzer's conjectured spectrum at $`p=-1`$."
 
 ## Graduate summary
 
 The first manuscript's theorem is a package, not a single inequality. The
 block at [S4:52–73] carries the uniform inverse-square radial-mean estimate
-with exponent $-1-\varepsilon$, the spectrum value $B_{\mathcal S}(-2)=1$, the
-domain integrability for $4/3<s<4$, and the disk integrability for $-2<t<2/3$.
+with exponent $`-1-\varepsilon`$, the spectrum value $`B_{\mathcal S}(-2)=1`$, the
+domain integrability for $`4/3<s<4`$, and the disk integrability for $`-2<t<2/3`$.
 The proof runs through the weighted affine law [S8:1], compact superlevels for
 almost every target [S9:1], critical points and an equivariant pairing
 [S10:1], transport between saddles and maxima [S11:1], and the integrability
@@ -75,23 +75,23 @@ conclusion [S12:1], over the preliminaries and the dyadic transfer operator at
 [S7:1] and the rank-pairing figure [S6:1].
 
 The manuscript states what the sharp form does not give. [S4:75–80] says:
-"That section also derives $B_{\mathcal S}(t)=|t|-1$ for every $t\le-2$; the
+"That section also derives $`B_{\mathcal S}(t)=|t|-1`$ for every $`t\le-2`$; the
 corresponding uniform radial bounds retain an arbitrary positive loss. The
-radial exponent $1$ is compatible with divergence of the area integral at
-$t=-2$. The other area endpoint also fails for the same classical example."
+radial exponent $`1`$ is compatible with divergence of the area integral at
+$`t=-2`$. The other area endpoint also fails for the same classical example."
 
 The second manuscript's theorem is stated for the unrestricted normalized
 class and the consequence is drawn for the bounded spectrum. [S15:61–61]
 flags the distinction: "The distinction between bounded and unrestricted disk
 maps matters." The earlier estimates do not reach the target: [S15:75–77]
-says "These estimates remain above the conjectured value $1/4$;
+says "These estimates remain above the conjectured value $`1/4`$;
 Theorem~\ref{thm:main} establishes a uniform exponent strictly below it."
 
 The limits of the constants are stated plainly. [S15:54–57] records them:
 "Both constants are independent of the map, including its image size. The
 proof gives existence of a positive gap but does not evaluate it numerically.
 The conclusion concerns the inverse first power; it does not settle the
-proposed value at $p=1$."
+proposed value at $`p=1`$."
 
 The two manuscripts share machinery, and the second says what it does not
 import. [S15:91–93] names the shared construction: "The affine-law and
@@ -107,28 +107,28 @@ produces the uniform gap [S22:1].
 
 The scope note records what the formalization carries. [S23:10] gives the
 conjecture and the formalized interval: "Brennan's conjecture asserts that
-$|\phi'|^s$ is area-integrable for $4/3<s<4$ when $\phi$ conformally maps a
+$`|\phi'|^s`$ is area-integrable for $`4/3<s<4`$ when $`\phi`$ conformally maps a
 simply connected plane domain with nontrivial spherical boundary onto the
 disk. The formalization establishes this interval, along with area
-integrability of $|f'|^t$ for univalent disk maps when $-2<t<2/3$."
+integrability of $`|f'|^t`$ for univalent disk maps when $`-2<t<2/3`$."
 
 The scope note's second paragraph names the sharp part. [S23:12] says: "It
 also gives the uniform inverse-square radial-mean bound with exponent
-$-1-\varepsilon$ for every $\varepsilon>0$ and the spectrum value
-$B_{\mathcal S}(-2)=1$. The Koebe map and its inverse give divergence at all
+$`-1-\varepsilon`$ for every $`\varepsilon>0`$ and the spectrum value
+$`B_{\mathcal S}(-2)=1`$. The Koebe map and its inverse give divergence at all
 four boundary exponents."
 
 The third paragraph carries the counterexample. [S23:14] states it:
-"Kraetzer's proposed integral-means spectrum predicts $B_b(-1)=1/4$ for
-bounded univalent maps. The formalized result proves $B_b(-1)<1/4$,
+"Kraetzer's proposed integral-means spectrum predicts $`B_b(-1)=1/4`$ for
+bounded univalent maps. The formalized result proves $`B_b(-1)<1/4`$,
 contradicting that prediction."
 
 The fourth paragraph names the estimate behind the strict bound and what it
 does not fix. [S23:16] says: "The underlying estimate gives constants
-$0<\varepsilon<1/4$ and $C<\infty$ such that the normalized circular mean of
-$|f'|^{-1}$ is at most $C(1-r)^{-1/4+\varepsilon}$ for every normalized
-univalent disk map and $1/2\le r<1$. The bound requires neither bounded image
-nor boundary regularity, and no numerical value of $\varepsilon$ is
+$`0<\varepsilon<1/4`$ and $`C<\infty`$ such that the normalized circular mean of
+$`|f'|^{-1}`$ is at most $`C(1-r)^{-1/4+\varepsilon}`$ for every normalized
+univalent disk map and $`1/2\le r<1`$. The bound requires neither bounded image
+nor boundary regularity, and no numerical value of $`\varepsilon`$ is
 specified."
 
 The three declarations are the quantified forms. `OAI.Brennan.main_theorem`
@@ -174,11 +174,11 @@ reading. The claim in the entry is the record.
 Brennan's conjecture is settled for the full class, with no boundary
 regularity and no boundedness, and the open interval cannot be widened. The
 Koebe function supplies the divergence at both endpoints [S4:83–83], and its
-inverse fails integrability at $s=4$ and $s=4/3$ [S4:89–89].
+inverse fails integrability at $`s=4`$ and $`s=4/3`$ [S4:89–89].
 
 The strict gap is proved to exist and is not evaluated. [S15:101–102] names
 the hard part: "The obstacle specific to the present theorem is strictness at
-the candidate exponent $1/4$." The scope note records the same limit for the
+the candidate exponent $`1/4`$." The scope note records the same limit for the
 formalized estimate [S23:16].
 
 The two results sit in one family because they share the integral-means

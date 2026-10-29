@@ -8,16 +8,16 @@
 
 The release's blurb [S1:4188] and the catalog abstract [S2:441]
 state the family's claim: every finite simple cubic bipartite
-planar $3$-vertex-connected graph has a Hamiltonian cycle,
+planar $`3`$-vertex-connected graph has a Hamiltonian cycle,
 **resolving Barnette's conjecture**. Equivalently, every
-three-edge path in a finite simple cubic $3$-vertex-connected
+three-edge path in a finite simple cubic $`3`$-vertex-connected
 bipartite Pfaffian graph lies in a Hamiltonian cycle. The
 manuscript is *Paired states and Hamiltonian cycles in cubic
 bipartite planar graphs* [S3:35, S3:38]; its abstract
 
 
 > We prove Barnette's conjecture: every finite simple cubic bipartite planar
-$3$-vertex-connected graph has a Hamiltonian cycle. [S3:43–44]
+$`3`$-vertex-connected graph has a Hamiltonian cycle. [S3:43–44]
 
 ## Undergraduate summary
 
@@ -25,7 +25,7 @@ A graph is **cubic** when every vertex has exactly three edges
 meeting it, and **bipartite** when its vertices split into two
 groups with edges only between the groups, so every cycle has
 even length. It is **planar** when it can be drawn on a plane
-with no crossing edges, and **$3$-vertex-connected** when
+with no crossing edges, and **$`3`$-vertex-connected** when
 removing any two vertices leaves the graph in one piece. A
 **Hamiltonian cycle** is a single cycle that visits every
 vertex exactly once and returns to the start. Barnette's
@@ -39,14 +39,14 @@ single tour through every vertex [S3:43–44, S2:441].
 ## Graduate summary
 
 **The main theorem** [S3:43–44, S4:9]. Every finite
-simple cubic bipartite planar graph that is $3$-vertex-
+simple cubic bipartite planar graph that is $`3`$-vertex-
 connected has a Hamiltonian cycle. Equivalently, every
-three-edge path in a finite simple cubic $3$-vertex-connected
+three-edge path in a finite simple cubic $`3`$-vertex-connected
 bipartite **Pfaffian** graph lies in a Hamiltonian cycle
 [S1:4188, S2:441]. The proof proceeds by **paired states**:
 the graph's planar cubic structure is recast as an exact
 dual of a network, where a connected complement of a matching
-yields a $2$-regular subgraph whose connected component is a
+yields a $`2`$-regular subgraph whose connected component is a
 cycle covering every vertex [S4:9].
 
 **The scope of the formalization.** The scope note states the
@@ -58,7 +58,7 @@ scope note names one comparator [S4:13–15]:
 
 ## History of the conjecture
 
-Barnette's conjecture is a $1972$ claim in the Hamiltonian-
+Barnette's conjecture is a $`1972`$ claim in the Hamiltonian-
 cycle literature: the question of when a planar graph carries
 a single tour of all its vertices. It was widely believed and
 studied for half a century as an open problem in planar graph
@@ -69,15 +69,15 @@ four elementary graph properties. This manuscript closes it
 with a self-contained argument built on **dual networks and
 paired states**, translating the graph hypotheses into
 connectivity statements about a complement of a matching and
-extracting the spanning cycle from the resulting $2$-regular
+extracting the spanning cycle from the resulting $`2`$-regular
 subgraph [S3:43–44, S2:441].
 
 **Prior (my training data, not this repo).** I know Barnette's
-conjecture is a long-standing $1972$ open problem in planar
+conjecture is a long-standing $`1972`$ open problem in planar
 graph theory, and that many related cubic planar classes carry
 Hamiltonian cycles. A **complete proof via dual-network paired
 states and exact-dual matchings** that closes the general
-$3$-vertex-connected case goes beyond what I can place from
+$`3`$-vertex-connected case goes beyond what I can place from
 training alone; the exact-dual construction and the
 `Duality.hamiltonian` discharging lemma are not something I can
 independently verify from memory.
@@ -85,11 +85,11 @@ independently verify from memory.
 ## Consequences
 
 **Barnette's conjecture is resolved.** Every finite simple
-cubic bipartite planar $3$-vertex-connected graph has a
+cubic bipartite planar $`3`$-vertex-connected graph has a
 Hamiltonian cycle [S3:43–44, S4:9, S2:441].
 
 **The equivalent Pfaffian form.** Every three-edge path in a
-finite simple cubic $3$-vertex-connected bipartite Pfaffian
+finite simple cubic $`3`$-vertex-connected bipartite Pfaffian
 graph lies in a Hamiltonian cycle [S1:4188, S2:441].
 
 **The method is the argument.** The proof is a
@@ -99,14 +99,14 @@ planar-graph case split [S4:9, S6:47–82].
 ## Section skeleton
 
 One manuscript [S3:43–44] (title [S3:35], date [S3:38]) —
-`paper.tex` ($837$ lines) under `build/`. The family ships no
+`paper.tex` ($`837`$ lines) under `build/`. The family ships no
 `verification/` bundle.
 
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization proves the
 Hamiltonian-cycle statement for every finite simple cubic
-bipartite planar $3$-vertex-connected graph; the selected
+bipartite planar $`3`$-vertex-connected graph; the selected
 result is the existence of a cycle visiting every vertex
 exactly once. The scope note names one comparator
 [S4:13–15]: `BarnetteHamiltonian.lean`.
@@ -131,9 +131,9 @@ theorem main : MainStatement.{u} := by
 proof of the comparator's target. The
 `Main.lean` theorem `theorem main : MainStatement.{u}`
 [S6:47–82] takes the graph hypotheses, constructs an
-exact dual network $D$ of the graph's network realization $N$,
+exact dual network $`D`$ of the graph's network realization $`N`$,
 translates the cubic, bipartite, planar, and
-$3$-vertex-connected hypotheses across the duality
+$`3`$-vertex-connected hypotheses across the duality
 (`hN`, `hc'`, `h3'`, `hec`, `hcolor`), and discharges the
 Hamiltonian-cycle conclusion by the
 `Duality.hamiltonian` lemma 

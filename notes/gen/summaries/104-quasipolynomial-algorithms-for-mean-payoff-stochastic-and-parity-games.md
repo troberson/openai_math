@@ -8,7 +8,7 @@
 
 [S1:2579] (family entry):
 
-> **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $L$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. (Lean)
+> **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $`L`$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. (Lean)
 
 The four manuscripts under that family:
 
@@ -29,7 +29,7 @@ The four manuscripts under that family:
 > Randomized quasipolynomial-time mean-payoff games
 
 [S2:286] carries the `\resultentry`, so the release blurb and the overview agree to
-the word on the $2^{O((\log(L+2))^2)}$ bound.
+the word on the $`2^{O((\log(L+2))^2)}`$ bound.
 
 ## Undergraduate summary
 
@@ -38,21 +38,21 @@ vertex belongs to Max or Min, who picks the next edge, and each edge carries an
 integer weight. A play is an infinite walk, and its payoff is the long-run
 average weight — the liminf of the running average [S4:24–26]. The decision
 question is *who can enforce a nonnegative average*: a start is in the zero-
-threshold winning set $U$ if Max has a strategy such that every play it forces
+threshold winning set $`U`$ if Max has a strategy such that every play it forces
 has nonnegative liminf average.
 
 What this family delivers is a **quasipolynomial** bound on the length of the
 binary input, not on the size of the weights. That distinction is the whole
 point: an algorithm polynomial in the *values* of the weights can be exponential
-in the *input length*, because a $b$-digit weight has value up to $2^b$. The
-bound is $2^{O((\log(L+2))^2)}$ bit operations for complete binary input length
-$L$ — the exponent is a square of a logarithm, slower than any polynomial but
-faster than $2^{L^{\epsilon}}$ for fixed $\epsilon>0$.
+in the *input length*, because a $`b`$-digit weight has value up to $`2^b`$. The
+bound is $`2^{O((\log(L+2))^2)}`$ bit operations for complete binary input length
+$`L`$ — the exponent is a square of a logarithm, slower than any polynomial but
+faster than $`2^{L^{\epsilon}}`$ for fixed $`\epsilon>0`$.
 
 The family is four results on one theme. The deterministic game computes the
 whole winning set, and a reduction recovers the exact rational value at every
 vertex and optimal positional strategies [S4:34–50]. The randomized variant
-computes the same set with probability at least $7/8$ on every random tape, and
+computes the same set with probability at least $`7/8`$ on every random tape, and
 a polynomial-time check certifies the answer so repetition turns it into an
 always-correct expected-quasipolynomial algorithm [S6:36–53]. Two extensions
 carry the bound: the **turn-based stochastic** game, where some vertices are
@@ -64,8 +64,8 @@ parity condition on the priorities visited infinitely often [S8:33–42].
 
 **Deterministic** ([S4:34–50], `thm:main`). For a finite directed graph with
 arbitrary signed binary edge weights, a uniform deterministic algorithm returns
-exactly the zero-threshold winning set $U$ in at most
-$2^{C(\log_2(L+2))^2}$ bit operations, including preprocessing, exact
+exactly the zero-threshold winning set $`U`$ in at most
+$`2^{C(\log_2(L+2))^2}`$ bit operations, including preprocessing, exact
 arithmetic, recursion, and output [S4:35]. A reduction (`sec:full-solution`)
 recovers the exact rational value at every vertex and globally optimal
 positional strategies for both players within the same bound; `sec:energy-credits`
@@ -74,32 +74,32 @@ decides one-resource energy games and computes minimum winning credits, and
 fixed-corank tropical rank.
 
 **Randomized** ([S6:36–53]). A uniform randomized algorithm returns the same set
-$U$ correctly with probability at least $7/8$; on every random tape its total
-cost is at most $2^{C(\log_2(L+2))^2}$ bit operations [S6:37]. The certificate
+$`U`$ correctly with probability at least $`7/8`$; on every random tape its total
+cost is at most $`2^{C(\log_2(L+2))^2}`$ bit operations [S6:37]. The certificate
 is a polynomial-time check that validates the winning regions and positional
 strategies or reports failure, so independent repetition gives an always-correct
-algorithm with the same expected bound. The $7/8$ certificate line [S6:64] states
+algorithm with the same expected bound. The $`7/8`$ certificate line [S6:64] states
 that a polynomial-time check certifies the winning regions and positional
 strategies, and never accepts an incorrect output.
 
 **Turn-based stochastic** ([S10:49–59]). Here the vertex set is partitioned into
 Max, Min, and chance vertices, and the objective is the expectation of the
 pathwise liminf mean payoff; the algorithm outputs exactly the nonnegative-value
-set $U$ (including value zero) in the same quasipolynomial bound, using exact
+set $`U`$ (including value zero) in the same quasipolynomial bound, using exact
 rational arithmetic [S10:51].
 
 **Mean-payoff parity** ([S8:33–42]). Max must force the conjunction that the
 minimum priority visited infinitely often is even *and* the liminf average reward
 is nonnegative [S8:20–26]. The reduction reuses the deterministic mean-payoff
-theorem as a black box and runs $2^{O((\log(n+2))^2)}$ mean-payoff queries, each
-on an arena of encoding length polynomial in $L$ [S8:34].
+theorem as a black box and runs $`2^{O((\log(n+2))^2)}`$ mean-payoff queries, each
+on an arena of encoding length polynomial in $`L`$ [S8:34].
 
 ## History of the conjecture
 
 The deterministic introduction [S4:35] situates the result against the standard
 line. **Ehrenfeucht and Mycielski** proved the existence of positional optimal
 strategies for mean-payoff games [S4:76]; positional determinacy places the
-threshold problem in $\mathrm{NP}\cap\mathrm{coNP}$. **Zwick and Paterson**
+threshold problem in $`\mathrm{NP}\cap\mathrm{coNP}`$. **Zwick and Paterson**
 developed the pseudopolynomial algorithms and the hardness reductions
 [S4:78]. The companion randomized manuscript is the second half of the same
 family [S4:132].
@@ -121,11 +121,11 @@ winning-set statement (see the comparison below).
 ## Consequences
 
 - **The deterministic winning set, value, and strategies.** The whole
-  zero-threshold winning set $U$, the exact rational value at every vertex, and
+  zero-threshold winning set $`U`$, the exact rational value at every vertex, and
   globally optimal positional strategies for both players, in
-  $2^{O((\log(L+2))^2)}$ bit operations [S4:34–50].
+  $`2^{O((\log(L+2))^2)}`$ bit operations [S4:34–50].
 - **The randomized winning set with a certificate.** The same set with
-  probability at least $7/8$ on every random tape, plus a polynomial-time check
+  probability at least $`7/8`$ on every random tape, plus a polynomial-time check
   that makes repetition always correct [S6:36–53].
 - **The stochastic extension.** The nonnegative expectation-of-liminf value set
   for turn-based stochastic games [S10:49–59].
@@ -166,24 +166,24 @@ The scope note states that the formalization "checks that a specified two-step
 execution of Truffet's elimination procedure terminates with a feasible but
 nonoptimal output. It is a finite counterexample to that proposed optimization
 step." The stub [S16:118] carries exactly that: the selected statement
-"$```lean
+````lean
 theorem finite_execution_not_optimal :
 ```
-[S16:118]$" proves a two-step execution (`ForcedSingletonStep initial middle` then
+[S16:118]` proves a two-step execution (`ForcedSingletonStep initial middle` then
 `ForcedSingletonStep middle final`) reaches a feasible, stopped state whose
 output cost is not minimal, and it ends in a `sorry`.
 
 The second target is the **randomized winning-set algorithm**. The scope note
 states that it "gives one randomized algorithm for the complete zero-threshold
 winning set of every finite mean-payoff game with signed binary weights",
-succeeding with probability at least $7/8$ in quasipolynomial bit time on every
+succeeding with probability at least $`7/8`$ in quasipolynomial bit time on every
 random tape, allowing self-loops, parallel edges, and history-dependent
 strategies. The stub [S17:113] carries the selected statement `"```lean
 noncomputable def MainClaim : Prop := by
 ```
 [S17:113]"`, which
-exists a machine and a constant $C$ with an $O((\log(\text{input length}))^2)$
-runtime and a $7/8$ correctness mass, and its `theorem randomized_quasipolynomial_mean_payoff`
+exists a machine and a constant $`C`$ with an $`O((\log(\text{input length}))^2)`$
+runtime and a $`7/8`$ correctness mass, and its `theorem randomized_quasipolynomial_mean_payoff`
 ends in a `sorry`.
 
 What is **not** formalized: the deterministic theorem [S4:34–50], the value and

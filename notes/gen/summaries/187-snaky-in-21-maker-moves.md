@@ -17,8 +17,8 @@ Maker moves* [S3:24, S3:26]; its abstract
 
 > We prove that Maker can achieve the Snaky hexomino within 21 actual
 Maker moves against arbitrary legal Breaker play on the initially empty
-infinite square board. The same bound holds on a $17\times17$ square;
-in fact, Maker can confine its claims to a fixed $251$-cell board. [S3:30–33]
+infinite square board. The same bound holds on a $`17\times17`$ square;
+in fact, Maker can confine its claims to a fixed $`251`$-cell board. [S3:30–33]
 
 ## Undergraduate summary
 
@@ -32,36 +32,36 @@ the two players take turns claiming one unclaimed cell each,
 and **Maker** wins the moment the cells it has claimed contain
 a copy of the Snaky shape in any of its orientations.
 "Snaky in 21 Maker moves" says the target can be forced within
-$21$ of Maker's own moves — fewer than the $35$ moves
-the older certificate used — and the same $21$ bound
-holds on a $17 \times 17$ square, in fact on a fixed
-$251$-cell region [S3:30–33, S2:455].
+$`21`$ of Maker's own moves — fewer than the $`35`$ moves
+the older certificate used — and the same $`21`$ bound
+holds on a $`17 \times 17`$ square, in fact on a fixed
+$`251`$-cell region [S3:30–33, S2:455].
 
 ## Graduate summary
 
 **The main theorem** [S3:30–33, S4:9]. There is a
 **legal Maker strategy** (a `Policy` over cells) that, from
 the empty infinite board, against **every** legal Breaker
-reply, completes a Snaky shape within $21$ actual Maker
-moves: at the final position Maker's $21$ claimed cells
+reply, completes a Snaky shape within $`21`$ actual Maker
+moves: at the final position Maker's $`21`$ claimed cells
 contain a Snaky (`HasSnaky`), and throughout play the two
 players' claimed sets stay disjoint with the correct move
-counts. The same bound holds on a $17 \times 17$ square;
-Maker can in fact confine its claims to a fixed $251$-cell
+counts. The same bound holds on a $`17 \times 17`$ square;
+Maker can in fact confine its claims to a fixed $`251`$-cell
 board [S3:30–33].
 
 **The scope of the formalization.** The scope note states the
-formalization gives a legal strategy that wins within $21$
+formalization gives a legal strategy that wins within $`21`$
 actual Maker moves against every legal Breaker play from the
 empty infinite board; the selected theorem checks disjointness
 and the move counts throughout play, and does **not** impose
 the paper's smaller finite-board restriction [S4:9]. The scope
 note names three comparators [S4:15–19]:
-`SnakyCertificate.lean` (the $35$-move certificate
+`SnakyCertificate.lean` (the $`35`$-move certificate
 reconstruction), `SnakyConditional.lean` (conditional winning
 templates from partial positions), and `SnakyTwentyOne.lean`
-(the $21$-move strategy). The linked supplements reconstruct
-the older $35$-move appendix's finite recursive certificate
+(the $`21`$-move strategy). The linked supplements reconstruct
+the older $`35`$-move appendix's finite recursive certificate
 and prove four conditional winning templates from partial
 positions [S4:11].
 
@@ -71,14 +71,14 @@ The **achievement** problem for hexominoes asks for the
 minimum number of moves a player needs to complete a given
 shape on the empty grid against arbitrary opposition. The
 Snaky shape's achievement number was open, with an earlier
-**recursive certificate** establishing a $35$-move bound.
-Shrinking that to $21$ moves is a genuine tightening: it
-requires a strategy whose every branch, up to the $21$st
+**recursive certificate** establishing a $`35`$-move bound.
+Shrinking that to $`21`$ moves is a genuine tightening: it
+requires a strategy whose every branch, up to the $`21`$st
 Maker move, is certified to reach the shape, and the proof is
 a large finite case analysis expressed as a recursive
-certificate. This manuscript lands the $21$-move bound and,
-separately, a $17 \times 17$ finite-board version with a
-$251$-cell confinement
+certificate. This manuscript lands the $`21`$-move bound and,
+separately, a $`17 \times 17`$ finite-board version with a
+$`251`$-cell confinement
 [S3:30–33, S2:455].
 
 **Prior (my training data, not this repo).** I know
@@ -86,26 +86,26 @@ Maker–Breaker and achievement games on the grid as a
 class, and that finite **recursive certificates** (a
 branching verification tree checked by a script) are the
 standard way to prove such bounds. The specific
-**$21$-move Snaky achievement number**, the
-$17 \times 17$ / $251$-cell refinement, and the exact
+**$`21`$-move Snaky achievement number**, the
+$`17 \times 17`$ / $`251`$-cell refinement, and the exact
 `policy` / `playState` / `empty_board_wins_21` machinery in
 [S6:18–38] are a specific computational result I cannot
 independently verify from training alone.
 
 ## Consequences
 
-**The Snaky achievement number is $21$.** Maker forces the
-six-cell Snaky shape within $21$ of its own moves from the
+**The Snaky achievement number is $`21`$.** Maker forces the
+six-cell Snaky shape within $`21`$ of its own moves from the
 empty infinite board
 [S3:30–33, S4:9, S2:455].
 
-**The bound holds on a finite board.** The same $21$ bound
-holds on a $17 \times 17$ square, in fact on a fixed
-$251$-cell board [S3:30–33].
+**The bound holds on a finite board.** The same $`21`$ bound
+holds on a $`17 \times 17`$ square, in fact on a fixed
+$`251`$-cell board [S3:30–33].
 
-**The certificate tightens the $35$-move appendix.** The
-reconstructed $35$-move finite recursive certificate is the
-comparative baseline the $21$-move strategy improves on
+**The certificate tightens the $`35`$-move appendix.** The
+reconstructed $`35`$-move finite recursive certificate is the
+comparative baseline the $`21`$-move strategy improves on
 [S4:11, S4:15–19].
 
 ## Section skeleton
@@ -119,12 +119,12 @@ a Lean proof [S4:11, S4:15–19].
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization gives a legal
-strategy that wins within $21$ actual Maker moves against
+strategy that wins within $`21`$ actual Maker moves against
 every legal Breaker play from the empty infinite board; the
 selected theorem checks disjointness and the move counts
 throughout play and does not impose the paper's smaller
 finite-board restriction. The supplements reconstruct the
-older $35$-move appendix's finite recursive certificate and
+older $`35`$-move appendix's finite recursive certificate and
 prove four conditional winning templates from partial
 positions [S4:11]. The scope note names three comparators
 [S4:15–19]: `SnakyCertificate.lean`,
@@ -136,7 +136,7 @@ ledger row records `mainres 0` and `paps_form 0`.
 this family and the manuscript is **not** in its `sources:`
 listing. The main comparator `SnakyTwentyOne.lean` restates
 the target `theorem
-snaky_winning_strategy_21_with_legal_states` — the $21$-
+snaky_winning_strategy_21_with_legal_states` — the $`21`$-
 move legal-strategy witness with its disjointness and
 move-count clauses — with a bare `sorry` body
 
@@ -165,7 +165,7 @@ proof of the comparator's target. The `Main.lean`
 `policy HasSnaky`, proves its moves are fresh by
 `policy_fresh`, obtains the win from `empty_board_wins_21`
 applied under `policy_wins`, and discharges the three
-side-obligations — the $21$ maker-cardinality, the
+side-obligations — the $`21`$ maker-cardinality, the
 final disjointness, and the per-prefix
 `playState_legal_prefix` legality — by
 `playState_maker_card`, `final_maker_disjoint`, and
@@ -203,7 +203,7 @@ The proof closes with
 legal-prefix lemma, no `sorry` [S6:18–38].
 
 **Registration, not proof.** The OAI tree proves the
-comparator's $21$-move target in full, but the release
+comparator's $`21`$-move target in full, but the release
 registered neither a `main_results` entry nor a `sources:`
 listing for it — the gap between the tree and the
 ledger is one of **registration**, not of proof. The
@@ -212,7 +212,7 @@ the solution module and
 `OAI.SnakyPrototype.snaky_winning_strategy_21_with_legal_states`
 as the theorem, so the release set the target and the tree
 answered it; the ledger simply does not carry that answer.
-The other two comparators (the $35$-move certificate
+The other two comparators (the $`35`$-move certificate
 reconstruction and the conditional templates
 [S4:15–19]) and the shipped `verification/` certificate
 bundle [S4:11] are the release's non-Lean and

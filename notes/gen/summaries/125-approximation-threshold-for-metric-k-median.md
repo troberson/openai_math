@@ -15,21 +15,21 @@ agree on the statement.
 
 ## Undergraduate summary
 
-**$k$-median** is a classic clustering problem. You have a set of clients
+**$`k`$-median** is a classic clustering problem. You have a set of clients
 and a set of facility locations in a metric space. You must open at most
-$k$ facilities and assign each client to its nearest open facility. The
+$`k`$ facilities and assign each client to its nearest open facility. The
 goal is to minimize the total assignment cost.
 
 The question is: **how good can an approximation algorithm be?** The
-answer, for metric $k$-median with candidate facilities, is
-**$1+2/e \approx 1.736$** — and this family proves it.
+answer, for metric $`k`$-median with candidate facilities, is
+**$`1+2/e \approx 1.736`$** — and this family proves it.
 
 The second manuscript gives a deterministic polynomial-time algorithm that
-achieves any factor above $1+2/e$ [S7:25–35]. The first manuscript provides
-a randomized sub-two approximation $(2-\sigma)$ that feeds into the
-derandomization [S4:142–155]. Together they establish that $1+2/e$ is the
+achieves any factor above $`1+2/e`$ [S7:25–35]. The first manuscript provides
+a randomized sub-two approximation $`(2-\sigma)`$ that feeds into the
+derandomization [S4:142–155]. Together they establish that $`1+2/e`$ is the
 **optimal** threshold: no polynomial-time algorithm can do better,
-assuming $P \ne NP$ [S7:56–59].
+assuming $`P \ne NP`$ [S7:56–59].
 
 This is a "meeting in the middle" result: the upper bound (algorithm) and
 lower bound (hardness) meet at the same constant, closing a problem that
@@ -39,44 +39,44 @@ factor-3 barrier.
 ## Graduate summary
 
 **Main theorem (deterministic approximation)** ([S7:25–35], `thm:main`).
-"For every fixed $\varepsilon>0$, there is a deterministic algorithm which,
-given a finite rational metric $k$-median instance with $1\le k\le |F|$,
-returns $S\subseteq F$, $|S|\le k$, such that
-$\sum_{j\in J}d(j,S)\le(1+2/e+\varepsilon)\mathrm{OPT}_k$. Its running time is
+"For every fixed $`\varepsilon>0`$, there is a deterministic algorithm which,
+given a finite rational metric $`k`$-median instance with $`1\le k\le |F|`$,
+returns $`S\subseteq F`$, $`|S|\le k`$, such that
+$`\sum_{j\in J}d(j,S)\le(1+2/e+\varepsilon)\mathrm{OPT}_k`$. Its running time is
 polynomial in the binary encoding length of the instance. The polynomial
-may depend on $\varepsilon$" [S7:25–35].
+may depend on $`\varepsilon`$" [S7:25–35].
 
-**Hardness corollary** ([S7:56–59], `cor:threshold`). "If $P\ne NP$, the
+**Hardness corollary** ([S7:56–59], `cor:threshold`). "If $`P\ne NP`$, the
 infimum of deterministic polynomial-time approximation factors for metric
-$k$-median with specified candidate facilities is $1+2/e$" [S7:56–59].
-The gap reduction is from **Max-$k$-Coverage**: covered clients have
+$`k`$-median with specified candidate facilities is $`1+2/e`$" [S7:56–59].
+The gap reduction is from **Max-$`k`$-Coverage**: covered clients have
 distance one, uncovered have distance at least three, and the connection
-cost is exactly $3m-2c$ when the chosen sets cover $c$ elements
+cost is exactly $`3m-2c`$ when the chosen sets cover $`c`$ elements
 [S7:37–52].
 
-**Refined recovery** ([S4:47–75], `ref:recovery`). "Let $D$ and $F$ be
+**Refined recovery** ([S4:47–75], `ref:recovery`). "Let $`D`$ and $`F`$ be
 disjoint indexed sets in a metric whose distances between distinct indices
 are positive integers bounded by a fixed polynomial in
-$N=|D|+|F|$. [...] Given $S$, $\mu$, $L_0$, and a failure parameter
-$\zeta\in(0,1)$, a randomized algorithm returns
-$\widehat S\subseteq F$ with $|\widehat S|\le h$ always and
-$\mathrm{cost}(\widehat S)\le(1+2/e+\varepsilon)P$ with probability
-at least $1-\zeta$" [S4:47–75]. The running time is single-exponential
-in the allowed number of bad centers $m\le L_0\log N$
+$`N=|D|+|F|`$. [...] Given $`S`$, $`\mu`$, $`L_0`$, and a failure parameter
+$`\zeta\in(0,1)`$, a randomized algorithm returns
+$`\widehat S\subseteq F`$ with $`|\widehat S|\le h`$ always and
+$`\mathrm{cost}(\widehat S)\le(1+2/e+\varepsilon)P`$ with probability
+at least $`1-\zeta`$" [S4:47–75]. The running time is single-exponential
+in the allowed number of bad centers $`m\le L_0\log N`$
 [S4:77–82].
 
 **Global application** ([S4:142–155], `main:theorem`). "There is an
-absolute constant $\sigma>0$ with the following property. For every fixed
-$a>0$, a randomized polynomial-time algorithm for metric $k$-median always
-returns a set $S\subseteq F$ with $|S|\le k$ and satisfies
-$\Pr\{\mathrm{cost}(S)\le(2-\sigma)\mathrm{opt}_k\}\ge
-1-(|D|+|F|+2)^{-a}$. The same algorithm can be chosen to satisfy
-$\mathbb E\mathrm{cost}(S)\le(2-\sigma)\mathrm{opt}_k$"
+absolute constant $`\sigma>0`$ with the following property. For every fixed
+$`a>0`$, a randomized polynomial-time algorithm for metric $`k`$-median always
+returns a set $`S\subseteq F`$ with $`|S|\le k`$ and satisfies
+$`\Pr\{\mathrm{cost}(S)\le(2-\sigma)\mathrm{opt}_k\}\ge
+1-(|D|+|F|+2)^{-a}`$. The same algorithm can be chosen to satisfy
+$`\mathbb E\mathrm{cost}(S)\le(2-\sigma)\mathrm{opt}_k`$"
 [S4:142–155].
 
 ## History of the conjecture
 
-Metric $k$-median approximations developed through LP rounding
+Metric $`k`$-median approximations developed through LP rounding
 (**Charikar, Guha, Tardos, Shmoys**), primal-dual and Lagrangian methods
 (**Jain, Vazirani**), dual-fitting (**Jain et al.**), and bounded-swap
 local search (**Arya et al.**) [S7:68–78].
@@ -84,42 +84,42 @@ local search (**Arya et al.**) [S7:68–78].
 **Li and Svensson** made constant-additive pseudo-approximations a route
 past the factor-three barrier: a constant number of extra facilities can
 be removed at an arbitrarily small additional approximation loss.
-Subsequent bi-point rounding, including the corrected $2.675+\varepsilon$
+Subsequent bi-point rounding, including the corrected $`2.675+\varepsilon`$
 guarantee of **Byrka et al.**, refined this approach. **Gowda et al.**
-obtained $2.613$. **Cohen-Addad et al.** reached $2+\varepsilon$, first
+obtained $`2.613`$. **Cohen-Addad et al.** reached $`2+\varepsilon`$, first
 announced in 2025. **Byrka et al.** subsequently developed a graph-based
-iterative rounding framework that also gives $2+\varepsilon$ [S7:80–93].
-The theorem here reaches every fixed factor above the $1+2/e$ hardness
+iterative rounding framework that also gives $`2+\varepsilon`$ [S7:80–93].
+The theorem here reaches every fixed factor above the $`1+2/e`$ hardness
 boundary, which is strictly below all prior upper bounds
 [S7:92–93].
 
 **Prior (my training data, not this repo).** The best-known approximation
-factors for metric $k$-median in 2025 were in the $2+\varepsilon$ range.
-A deterministic algorithm achieving $1+2/e+\varepsilon$ together with a
-matching $P\ne NP$ hardness is a major advance, essentially closing the
+factors for metric $`k`$-median in 2025 were in the $`2+\varepsilon`$ range.
+A deterministic algorithm achieving $`1+2/e+\varepsilon`$ together with a
+matching $`P\ne NP`$ hardness is a major advance, essentially closing the
 approximation threshold question for the candidate-facility model. I cannot
 confirm the specific prior results independently; the release ships the
 two manuscripts as proofs.
 
 ## Consequences
 
-- **The approximation threshold is $1+2/e$.** For metric $k$-median with
+- **The approximation threshold is $`1+2/e`$.** For metric $`k`$-median with
   specified candidate facilities, the infimum of deterministic
-  polynomial-time approximation factors is exactly $1+2/e$ under
-  $P\ne NP$ [S7:56–59].
+  polynomial-time approximation factors is exactly $`1+2/e`$ under
+  $`P\ne NP`$ [S7:56–59].
 - **A deterministic algorithm achieves any factor above the threshold.**
-  For every fixed $\varepsilon>0$, a polynomial-time algorithm achieves
-  $(1+2/e+\varepsilon)$ [S7:25–35].
+  For every fixed $`\varepsilon>0`$, a polynomial-time algorithm achieves
+  $`(1+2/e+\varepsilon)`$ [S7:25–35].
 - **A randomized sub-two approximation feeds the derandomization.** The
-  $(2-\sigma)$ global application on arbitrary finite rational metrics
+  $`(2-\sigma)`$ global application on arbitrary finite rational metrics
   provides the input to the directed comparison inequality and potential
   framework [S4:142–155].
-- **The gap reduction is from Max-$k$-Coverage.** The hardness is via a
+- **The gap reduction is from Max-$`k`$-Coverage.** The hardness is via a
   metric completion where covered clients have distance one and uncovered
-  have distance three, yielding the exact $3m-2c$ cost structure
+  have distance three, yielding the exact $`3m-2c`$ cost structure
   [S7:37–52].
 - **The result is for the candidate-facility model.** The lower bound
-  does not apply to the unrestricted model where $F=J$ is the full point
+  does not apply to the unrestricted model where $`F=J`$ is the full point
   set [S7:63–64].
 
 ## Section skeleton
@@ -152,7 +152,7 @@ The scope note [S9:10–16] describes three layers of formalized content:
 [S9:10] the exact-budget recovery algorithm on polynomially bounded
 integral metrics; [S9:12] the linked final approximation result on
 arbitrary finite rational metrics; and [S9:14–16] the deterministic
-$(1+2/e+\varepsilon)$-approximation and the $P\ne NP$ threshold.
+$`(1+2/e+\varepsilon)`$-approximation and the $`P\ne NP`$ threshold.
 
 The scope note links **four** comparator configs [S9:22–25]:
 
@@ -170,9 +170,9 @@ The scope note links **four** comparator configs [S9:22–25]:
   [S13:59–62], `sorry` at [S13:62]. No `main_results` entry.
 
 The one proved declaration (`global_application`) covers the randomized
-$(2-\sigma)$ sub-two approximation on polynomially bounded integral
+$`(2-\sigma)`$ sub-two approximation on polynomially bounded integral
 metrics. The three remaining comparators — the refined recovery, the
-$P\ne NP$ threshold, and the deterministic approximation at the threshold —
+$`P\ne NP`$ threshold, and the deterministic approximation at the threshold —
 have no proved declaration under `lean/OAI/`, so the formalization
 incompletes at the challenge stubs for those three results.
 
@@ -194,7 +194,7 @@ formalized at the declaration level; the other three comparators
 `main_results` entries. MS2 (the deterministic threshold) is the
 formalized manuscript (`paps_form=1`). The shape flags are
 `uniform|conditional`; `resolves_named=1` — the result establishes the
-named $1+2/e$ threshold; `counterex_broad=0`.
+named $`1+2/e`$ threshold; `counterex_broad=0`.
 
 ## Sources
 

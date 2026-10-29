@@ -7,17 +7,17 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:4732] and the catalog abstract [S2:497]
-state the family's claim: the $\ell^1$-Bass conjecture,
+state the family's claim: the $`\ell^1`$-Bass conjecture,
 proved for every discrete group — Hattori–
 Stallings traces of idempotent matrices over
-$\ell^1(G)$ are supported on finitely many finite-order
+$`\ell^1(G)`$ are supported on finitely many finite-order
 conjugacy classes. The algebraic companion proves the
 complex Bass trace conjecture and Kaplansky's idempotent
 conjecture for torsion-free groups over every
 commutative unital characteristic-zero domain.
 The family ships two manuscripts [S1:4732]:
 
-- *The $\ell^1$-Bass Conjecture for Discrete
+- *The $`\ell^1`$-Bass Conjecture for Discrete
   Groups* [S3:6, S3:8]
 - *The Bass trace conjecture and the
   characteristic-zero Kaplansky idempotent
@@ -25,17 +25,17 @@ The family ships two manuscripts [S1:4732]:
 
 The l1-Bass abstract 
 
-> We prove the $\ell^1$-Bass conjecture for every discrete group. The
+> We prove the $`\ell^1`$-Bass conjecture for every discrete group. The
 Hattori–Stallings trace of every idempotent matrix over the complex
-$\ell^1$ group algebra is supported on finitely many conjugacy classes
+$`\ell^1`$ group algebra is supported on finitely many conjugacy classes
 of finite-order elements. [S3:13–16]
 
 The complex Bass trace abstract 
 
 > over its complex group ring is supported on conjugacy classes of finite-order
-elements. As a consequence, for every torsion-free group $G$ and every
-commutative unital domain $R$ of characteristic zero, the only idempotents
-in $RG$ are $0$ and $1$. This proves Kaplansky's idempotent conjecture in
+elements. As a consequence, for every torsion-free group $`G`$ and every
+commutative unital domain $`R`$ of characteristic zero, the only idempotents
+in $`RG`$ are $`0`$ and $`1`$. This proves Kaplansky's idempotent conjecture in
 characteristic zero.
 \endabstract
 \tableofcontents [S4:44–50]
@@ -45,14 +45,14 @@ characteristic zero.
 A **discrete group** is a collection of "symmetry
 operations" (like permutations) that you can compose,
 with no notion of distance between them. The **group
-ring** $\mathbb{C}[G]$ is a big algebra built from
+ring** $`\mathbb{C}[G]`$ is a big algebra built from
 the group: you take formal sums of group elements with
 complex coefficients. The **Hattori–Stallings
 trace** is a way to "measure" an element of this
 algebra by projecting it onto the **conjugacy
 classes** of the group. The **Bass trace
-conjecture** says: if $P$ is a "nice" (finitely
-generated projective) module over $\mathbb{C}[G]$,
+conjecture** says: if $`P`$ is a "nice" (finitely
+generated projective) module over $`\mathbb{C}[G]`$,
 then its trace is **zero** on conjugacy classes of
 elements with infinite order (elements that, when you
 repeat them forever, never come back). In other words,
@@ -67,34 +67,34 @@ group ring over a characteristic-zero domain are 0 and
 
 ## Graduate summary
 
-**The $\ell^1$-Bass conjecture** [S3:13–16,
-S2:497]. For every discrete group $G$, the
+**The $`\ell^1`$-Bass conjecture** [S3:13–16,
+S2:497]. For every discrete group $`G`$, the
 Hattori–Stallings trace of every idempotent
-matrix over $\ell^1(G)$ is supported on finitely
+matrix over $`\ell^1(G)`$ is supported on finitely
 many conjugacy classes of finite-order elements.
 
 **The complex Bass trace conjecture** [S4:44–50,
-S2:497]. For every discrete group $G$, the
+S2:497]. For every discrete group $`G`$, the
 Hattori–Stallings trace of each virtual class of
 finitely generated projective right
-$\mathbb{C}[G]$-modules vanishes on conjugacy classes
+$`\mathbb{C}[G]`$-modules vanishes on conjugacy classes
 of infinite-order elements. No finiteness,
-countability, or geometric hypothesis on $G$ is
+countability, or geometric hypothesis on $`G`$ is
 imposed.
 
 **The Kaplansky idempotent conjecture (torsion-free,
 characteristic zero)** [S4:44–50, S5:11]. For
-every torsion-free group $G$ and every commutative
-unital domain $R$ of characteristic zero, the only
-idempotents in $R[G]$ are $0$ and $1$.
+every torsion-free group $`G`$ and every commutative
+unital domain $`R`$ of characteristic zero, the only
+idempotents in $`R[G]`$ are $`0`$ and $`1`$.
 
 **The scope of the formalization.** The scope note
 covers the complex Bass trace vanishing [S5:9]: the
 Hattori–Stallings trace of each virtual class of
 finitely generated projective right
-$\mathbb{C}[G]$-modules vanishes on conjugacy classes
-of infinite-order elements. For torsion-free $G$, it
-identifies the trace on $K_0(\mathbb{C}[G])$ with the
+$`\mathbb{C}[G]`$-modules vanishes on conjugacy classes
+of infinite-order elements. For torsion-free $`G`$, it
+identifies the trace on $`K_0(\mathbb{C}[G])`$ with the
 integral augmentation rank and proves the
 characteristic-zero Kaplansky idempotent conjecture
 [S5:11]. The scope note names two comparators
@@ -105,24 +105,24 @@ characteristic-zero Kaplansky idempotent conjecture
 
 The **Bass trace conjecture** (1969) is one of the
 central conjectures in geometric group theory and
-algebraic $K$-theory. It is a key ingredient in the
+algebraic $`K`$-theory. It is a key ingredient in the
 **Atiyard conjecture** and the **Novikov conjecture**,
-and its truth for a group $G$ implies that the
-$K$-theory of the group $C^*$-algebra is determined
+and its truth for a group $`G`$ implies that the
+$`K`$-theory of the group $`C^*`$-algebra is determined
 by the conjugacy classes. Known positive cases:
 amenable groups, groups with finite virtual cohomological
 dimension, hyperbolic groups (in many formulations),
-and CAT(0) groups. The **$\ell^1$-Bass** form
-strengthens the hypothesis from $\mathbb{C}[G]$ to
-the Banach algebra $\ell^1(G)$, which is relevant for
-the **$\ell^1$-conjecture** in noncommutative
+and CAT(0) groups. The **$`\ell^1`$-Bass** form
+strengthens the hypothesis from $`\mathbb{C}[G]`$ to
+the Banach algebra $`\ell^1(G)`$, which is relevant for
+the **$`\ell^1`$-conjecture** in noncommutative
 geometry. **Kaplansky's idempotent conjecture**
 (1957) asks whether a torsion-free group ring over a
 domain has only trivial idempotents; it is a
 consequence of the Bass trace conjecture in
 characteristic zero. The two manuscripts attack the
 conjectures from complementary directions: the first
-proves the $\ell^1$ form via a
+proves the $`\ell^1`$ form via a
 **curvature/connection** argument with a **cyclic
 reduction**; the second proves the complex form via a
 **filtration/surgery** argument with a
@@ -136,21 +136,21 @@ geometric group theory, its known positive cases
 to the Atiyard and Novikov conjectures, and
 Kaplansky's idempotent conjecture as a classical
 problem. The **full proof** — for every discrete
-group, in both the $\ell^1$ and complex forms, with
+group, in both the $`\ell^1`$ and complex forms, with
 the torsion-free Kaplansky consequence — is a
 result I cannot independently verify from training
 alone.
 
 ## Consequences
 
-**The $\ell^1$-Bass conjecture is proved.** For
+**The $`\ell^1`$-Bass conjecture is proved.** For
 every discrete group, the Hattori–Stallings
-trace over $\ell^1(G)$ is supported on finitely many
+trace over $`\ell^1(G)`$ is supported on finitely many
 finite-order classes [S3:13–16, S2:497].
 
 **The complex Bass trace conjecture is proved.** For
 every discrete group, the trace over
-$\mathbb{C}[G]$ vanishes on infinite-order classes
+$`\mathbb{C}[G]`$ vanishes on infinite-order classes
 [S4:44–50, S5:9, S2:497].
 
 **Kaplansky's idempotent conjecture is proved in
@@ -182,10 +182,10 @@ ships no `verification/` bundle.
 the complex Bass trace vanishing: the
 Hattori–Stallings trace of each virtual class of
 finitely generated projective right
-$\mathbb{C}[G]$-modules vanishes on conjugacy classes
+$`\mathbb{C}[G]`$-modules vanishes on conjugacy classes
 of infinite-order elements, with no hypothesis on
-$G$ [S5:9]. For torsion-free $G$, it identifies the
-trace on $K_0(\mathbb{C}[G])$ with the integral
+$`G`$ [S5:9]. For torsion-free $`G`$, it identifies the
+trace on $`K_0(\mathbb{C}[G])`$ with the integral
 augmentation rank and proves the characteristic-zero
 Kaplansky idempotent conjecture [S5:11]. The scope
 note names two comparators [S5:17–18]:
@@ -199,7 +199,7 @@ bassTraceModules_vanishing_and_support` at
 `OAI/RingTheory/BassTrace/Main.lean`. The one
 registered manuscript (M2, the complex Bass trace
 proof) is in the `sources:` listing. The other
-manuscript (M1, the $\ell^1$-Bass conjecture) is
+manuscript (M1, the $`\ell^1`$-Bass conjecture) is
 **not** in the yaml `sources:` listing.
 
 **The BassTrace comparator stub.** The
@@ -248,7 +248,7 @@ The release records `scope: "Partial progress."` and
 `review: status: unchecked`. The BassTrace `sorry`
 stub is answered by a real proof in the OAI tree. The
 BassTorsionFree `sorry` stub has no OAI tree answer.
-The $\ell^1$-Bass manuscript (M1) is entirely
+The $`\ell^1`$-Bass manuscript (M1) is entirely
 unregistered.
 
 ## Sources

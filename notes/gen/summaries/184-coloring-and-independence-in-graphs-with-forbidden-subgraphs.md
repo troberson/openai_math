@@ -10,12 +10,12 @@ The release's blurb [S1:4270] and the catalog abstract [S2:449]
 state the family's dual claim. **First**, the
 Alon–Krivelevich–Sudakov coloring conjecture in
 correspondence-coloring form: graphs avoiding any fixed
-subgraph $F$ need $O_F(\Delta/\log\Delta)$ colors when
-their maximum degree $\Delta$ is sufficiently large.
+subgraph $`F`$ need $`O_F(\Delta/\log\Delta)`$ colors when
+their maximum degree $`\Delta`$ is sufficiently large.
 **Second**, the Ajtai–Erd–Koml–Szemeríi independence
-conjecture: for fixed $r \geq 4$, every $n$-vertex
-$K_r$-free graph of average degree $d \geq 2$ has an
-independent set of size $\Omega_r(n\log d/d)$. The family
+conjecture: for fixed $`r \geq 4`$, every $`n`$-vertex
+$`K_r`$-free graph of average degree $`d \geq 2`$ has an
+independent set of size $`\Omega_r(n\log d/d)`$. The family
 ships two manuscripts [S1:4270]:
 
 - *Correspondence coloring graphs with a forbidden clique*
@@ -25,9 +25,9 @@ ships two manuscripts [S1:4270]:
 
 The independence abstract 
 
-> For every fixed integer $r\ge4$, every $K_r$-free graph on $n$ vertices
-with average degree $d\ge2$ has an independent set of size at least
-$c_r n\log d/d$, where $c_r>0$ depends only on $r$.
+> For every fixed integer $`r\ge4`$, every $`K_r`$-free graph on $`n`$ vertices
+with average degree $`d\ge2`$ has an independent set of size at least
+$`c_r n\log d/d`$, where $`c_r>0`$ depends only on $`r`$.
 This proves the fixed-clique-size independence conjecture of Ajtai,
 Erdős, Komlós and Szemerédi. [S4:12–16]
 
@@ -39,43 +39,43 @@ vertices. A **correspondence** (or list) coloring adds a twist:
 each vertex carries its own list of allowed colors, and each
 edge forbids specific *pairs* of colors between its endpoints,
 so the coloring rules can vary from edge to edge. A
-**$K_r$-free** graph is one that contains no complete
-$r$-clique on $r$ mutually-adjacent vertices. An
+**$`K_r`$-free** graph is one that contains no complete
+$`r`$-clique on $`r`$ mutually-adjacent vertices. An
 **independent set** is a group of vertices with no edges
 between them. The independence result says: in a large graph
-that has no $r$-clique, you can always find a fairly large
+that has no $`r`$-clique, you can always find a fairly large
 set of non-adjacent vertices — and the size of that set
 grows when you divide by the graph's average degree and
 multiply by its logarithm [S4:12–16, S2:449]. The
 coloring result says the same sparsity (no fixed forbidden
 subgraph) forces the graph to be colorable with only
-order $\Delta/\log\Delta$ colors [S3:9–15].
+order $`\Delta/\log\Delta`$ colors [S3:9–15].
 
 ## Graduate summary
 
 **The independence conjecture** [S4:12–16, S5:9]. For
-every fixed integer $r \geq 4$ there is $c_r > 0$ such that
-every finite $K_r$-free simple graph on $n$ vertices with
-average degree $d \geq 2$ has an independent set of size at
-least $c_r n \log d / d$. The constant $c_r$ depends only on
-$r$ [S5:9]. This proves the fixed-clique-size independence
+every fixed integer $`r \geq 4`$ there is $`c_r > 0`$ such that
+every finite $`K_r`$-free simple graph on $`n`$ vertices with
+average degree $`d \geq 2`$ has an independent set of size at
+least $`c_r n \log d / d`$. The constant $`c_r`$ depends only on
+$`r`$ [S5:9]. This proves the fixed-clique-size independence
 conjecture of Ajtai, Erd–Koml–Szemeríi
 [S4:12–16].
 
 **The coloring conjecture** [S3:9–15]. For every fixed
-integer $r \geq 4$, every $K_r$-free graph of sufficiently
-large maximum degree $\Delta$ has correspondence chromatic
-number $O_r(\Delta/\log\Delta)$, resolving the
+integer $`r \geq 4`$, every $`K_r`$-free graph of sufficiently
+large maximum degree $`\Delta`$ has correspondence chromatic
+number $`O_r(\Delta/\log\Delta)`$, resolving the
 Alon–Krivelevich–Sudakov coloring conjecture in the
 stronger correspondence-coloring form; the same bound, with a
-constant depending on $F$, holds when any fixed graph $F$ is
+constant depending on $`F`$, holds when any fixed graph $`F`$ is
 excluded as an ordinary subgraph, and ordinary and list
 coloring satisfy the same bounds [S3:9–15].
 
 **The scope of the formalization.** The scope note states the
 formalized result is the logarithmic improvement in the
 independence number of clique-free graphs — the
-$c_r n \log d / d$ bound with $c_r$ depending only on $r$
+$`c_r n \log d / d`$ bound with $`c_r`$ depending only on $`r`$
 [S5:9]. The scope note names one comparator
 [S5:13–15]: `CliqueFreeLog.lean`.
 
@@ -105,7 +105,7 @@ Alon–Krivelevich–Sudakov conjectures as named open
 problems in extremal graph theory, and that the
 Erd–Renyi-Sel heuristic predicts logarithmic corrections
 here. **Complete proofs** of both — the independence
-bound with a $c_r$ depending only on $r$, and the coloring
+bound with a $`c_r`$ depending only on $`r`$, and the coloring
 bound in correspondence form uniformly over forbidden
 subgraphs — go beyond what I can place from training
 alone; the `exists_optimizer_triangle_bound` and
@@ -115,16 +115,16 @@ something I can independently verify from memory.
 ## Consequences
 
 **The Ajtai–Erd–Koml–Szemeríi
-independence conjecture is resolved.** Every $n$-vertex
-$K_r$-free graph of average degree $d \geq 2$ has an
-independent set of size $\Omega_r(n\log d/d)$
+independence conjecture is resolved.** Every $`n`$-vertex
+$`K_r`$-free graph of average degree $`d \geq 2`$ has an
+independent set of size $`\Omega_r(n\log d/d)`$
 [S4:12–16, S5:9, S2:449].
 
 **The Alon–Krivelevich–Sudakov coloring
-conjecture is resolved in correspondence form.** $K_r$-free
-graphs of large maximum degree need $O_r(\Delta/\log\Delta)$
+conjecture is resolved in correspondence form.** $`K_r`$-free
+graphs of large maximum degree need $`O_r(\Delta/\log\Delta)`$
 correspondence colors, and the same holds for any fixed
-forbidden subgraph $F$ [S3:9–15, S2:449].
+forbidden subgraph $`F`$ [S3:9–15, S2:449].
 
 **The coloring result is in the strongest form and is
 uniform.** Ordinary, list, and correspondence coloring satisfy
@@ -142,11 +142,11 @@ family ships no `verification/` bundle.
 
 **Scope note** [S5:9]. The formalized result gives a
 logarithmic improvement in the independence number of
-clique-free graphs: for every fixed $r \geq 4$ there is
-$c_r > 0$ such that every finite $K_r$-free simple graph on
-$n$ vertices with average degree $d \geq 2$ has an
-independent set of size at least $c_r n \log d / d$, with
-$c_r$ depending only on $r$ [S5:9]. The scope note names one
+clique-free graphs: for every fixed $`r \geq 4`$ there is
+$`c_r > 0`$ such that every finite $`K_r`$-free simple graph on
+$`n`$ vertices with average degree $`d \geq 2`$ has an
+independent set of size at least $`c_r n \log d / d`$, with
+$`c_r`$ depending only on $`r`$ [S5:9]. The scope note names one
 comparator [S5:13–15]: `CliqueFreeLog.lean`.
 
 **The registration.** The family is at tier T3: the ledger row
@@ -179,11 +179,11 @@ theorem logarithmic_independence_bound (r : ℕ) (hr : 4 ≤ r) :
 **What the proof does.** The registered
 `logarithmic_independence_bound` in the OAI tree is a genuine
 proof, not a `sorry`: it obtains the
-`exists_optimizer_triangle_bound` constant $B$, sets
-$D = 3 + 3B/2$, and witnesses $c = 1/(16D)$; for a given
-$K_r$-free graph of average degree $d$, it cuts the graph to
-the set $A$ of low-degree vertices (at least $n/2$ of them),
-transfers the $K_r$-freedom and the $2d$ degree bound to the
+`exists_optimizer_triangle_bound` constant $`B`$, sets
+$`D = 3 + 3B/2`$, and witnesses $`c = 1/(16D)`$; for a given
+$`K_r`$-free graph of average degree $`d`$, it cuts the graph to
+the set $`A`$ of low-degree vertices (at least $`n/2`$ of them),
+transfers the $`K_r`$-freedom and the $`2d`$ degree bound to the
 induced subgraph, applies `maximum_degree_independence`, and
 discharges the logarithmic comparison by `nlinarith`
 

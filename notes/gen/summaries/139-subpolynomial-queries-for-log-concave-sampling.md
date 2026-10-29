@@ -15,52 +15,52 @@ agree on the statement.
 
 ## Undergraduate summary
 
-**Log-concave sampling**: given a potential $V:\mathbb R^d\to\mathbb R$ whose
-Hessian satisfies $I\preceq\nabla^2 V\preceq 2I$ (so the density
-$e^{-V}$ is log-concave and well-conditioned), draw a sample from the
-Gibbs law $\pi_V\propto e^{-V}\,dx$.
+**Log-concave sampling**: given a potential $`V:\mathbb R^d\to\mathbb R`$ whose
+Hessian satisfies $`I\preceq\nabla^2 V\preceq 2I`$ (so the density
+$`e^{-V}`$ is log-concave and well-conditioned), draw a sample from the
+Gibbs law $`\pi_V\propto e^{-V}\,dx`$.
 
 The standard approach is to discretize Langevin or Hamiltonian dynamics
-and step through the resulting ODE. In $d$ dimensions, those
+and step through the resulting ODE. In $`d`$ dimensions, those
 discretizations need a number of gradient evaluations that grows as a
-*positive power* of $d$ — typically $d^{1/6}$, $d^{1/4}$, or $d^{1/3}$
+*positive power* of $`d`$ — typically $`d^{1/6}`$, $`d^{1/4}`$, or $`d^{1/3}`$
 depending on the method and the accuracy metric.
 
-This family asks: **is any positive power of $d$ actually
+This family asks: **is any positive power of $`d`$ actually
 necessary?** In the exact first-order oracle model — where a query
-returns $(V(x),\nabla V(x))$ and computation between queries is
+returns $`(V(x),\nabla V(x))`$ and computation between queries is
 unrestricted — the answer is **no**. The optimal dimension exponent is
-**zero**: for every $\varepsilon>0$, $C_\varepsilon d^\varepsilon$
-queries suffice [S4:51–65]. A matching $\Omega(\log d)$ lower bound
+**zero**: for every $`\varepsilon>0`$, $`C_\varepsilon d^\varepsilon`$
+queries suffice [S4:51–65]. A matching $`\Omega(\log d)`$ lower bound
 shows the exponent cannot be driven below zero.
 
 ## Graduate summary
 
 **Main theorem** ([S4:51–65], `thm:main`). "In the oracle model above,
-for every $\varepsilon>0$ there is $C_\varepsilon<\infty$ such that
-$Q(d)\le C_\varepsilon d^\varepsilon$ $(d\ge2)$. There are also
-absolute constants $c>0$ and $d_0$ such that $Q(d)\ge c\log d$
-$(d\ge d_0)$. The lower bound applies to arbitrary randomized adaptive
-first-order algorithms. In particular, $\gamma_*=0$" [S4:51–65].
+for every $`\varepsilon>0`$ there is $`C_\varepsilon<\infty`$ such that
+$`Q(d)\le C_\varepsilon d^\varepsilon`$ $`(d\ge2)`$. There are also
+absolute constants $`c>0`$ and $`d_0`$ such that $`Q(d)\ge c\log d`$
+$`(d\ge d_0)`$. The lower bound applies to arbitrary randomized adaptive
+first-order algorithms. In particular, $`\gamma_*=0`$" [S4:51–65].
 
-**The model.** The potential class $\mathcal V_d$ consists of
-$C^2$ functions with $V(0)=0$, $\nabla V(0)=0$, and
-$I_d\preceq\nabla^2 V(x)\preceq 2I_d$ for all $x$ [S4:20–26]. A query
-at $x$ returns the exact pair $(V(x),\nabla V(x))$; queries are
+**The model.** The potential class $`\mathcal V_d`$ consists of
+$`C^2`$ functions with $`V(0)=0`$, $`\nabla V(0)=0`$, and
+$`I_d\preceq\nabla^2 V(x)\preceq 2I_d`$ for all $`x`$ [S4:20–26]. A query
+at $`x`$ returns the exact pair $`(V(x),\nabla V(x))`$; queries are
 adaptive; computation between queries is unrestricted (no arithmetic
-or bit-complexity bound) [S4:32–36]. The budget $Q(d)$ is the smallest
-integer such that an algorithm makes at most $q$ queries on *every*
-execution and returns $X$ with
-$\|\mathcal L(X)-\pi_V\|_{\mathrm{TV}}\le 1/10$ for all
-$V\in\mathcal V_d$ [S4:39–45]. The optimal dimension exponent is
-$\gamma_*=\limsup_{d\to\infty}\frac{\log Q(d)}{\log d}$ [S4:47–49].
+or bit-complexity bound) [S4:32–36]. The budget $`Q(d)`$ is the smallest
+integer such that an algorithm makes at most $`q`$ queries on *every*
+execution and returns $`X`$ with
+$`\|\mathcal L(X)-\pi_V\|_{\mathrm{TV}}\le 1/10`$ for all
+$`V\in\mathcal V_d`$ [S4:39–45]. The optimal dimension exponent is
+$`\gamma_*=\limsup_{d\to\infty}\frac{\log Q(d)}{\log d}`$ [S4:47–49].
 
-**The upper bound is worst-case.** The $C_\varepsilon d^\varepsilon$
+**The upper bound is worst-case.** The $`C_\varepsilon d^\varepsilon`$
 bound holds on every execution, not in expectation. The constants and
-the algorithmic approximation orders may depend on $\varepsilon$; no
+the algorithmic approximation orders may depend on $`\varepsilon`$; no
 polylogarithmic query count is asserted [S4:68–74].
 
-**The lower bound is for all algorithms.** The $\Omega(\log d)$ lower
+**The lower bound is for all algorithms.** The $`\Omega(\log d)`$ lower
 bound applies to arbitrary randomized adaptive first-order algorithms,
 so it is not an artifact of a particular construction [S4:63–65].
 
@@ -75,23 +75,23 @@ smoothness [S4:81–84].
 
 The best prior dimension exponents in this fixed-conditioning,
 fixed-accuracy regime were:
-- **$\tilde O(d^{1/3})$** — shifted-composition analysis of
+- **$`\tilde O(d^{1/3})`$** — shifted-composition analysis of
   **Altschuler et al.** (2026) and a gradient-only rejection-sampling
   route of **Chen** (2026) [S4:82–86].
-- **$\tilde O(d^{1/6})$** — expected-gradient-query bound of
+- **$`\tilde O(d^{1/6})`$** — expected-gradient-query bound of
   **Chen** (2026, Theorem 7.1(i)) at fixed relative-entropy accuracy;
   Pinsker's inequality transfers the exponent to TV accuracy
   [S4:96–103].
 
 The construction here uses approximation orders that can depend on the
-desired exponent $\varepsilon$ and aims at oracle complexity rather
+desired exponent $`\varepsilon`$ and aims at oracle complexity rather
 than practical running time [S4:12–15]. The result determines the
-*exponent* to be zero but not the finer growth rate of $Q(d)$: the
+*exponent* to be zero but not the finer growth rate of $`Q(d)`$: the
 upper bound does not assert a polylogarithmic query count
 [S4:68–74].
 
 **Prior (my training data, not this repo).** Log-concave sampling and
-the $d^{1/6}$-to-$d^{1/3}$ dimension dependence of Langevin/HMC
+the $`d^{1/6}`$-to-$`d^{1/3}`$ dimension dependence of Langevin/HMC
 discretizations are well-established. The claim that the optimal
 dimension exponent is *zero* in the exact first-order oracle model with
 unrestricted computation is the load-bearing result of the release;
@@ -100,11 +100,11 @@ release ships the manuscript as proof.
 
 ## Consequences
 
-- **The dimension exponent is zero.** For every $\varepsilon>0$,
-  $C_\varepsilon d^\varepsilon$ exact first-order queries suffice for
-  TV-accuracy $1/10$ on every execution
+- **The dimension exponent is zero.** For every $`\varepsilon>0`$,
+  $`C_\varepsilon d^\varepsilon`$ exact first-order queries suffice for
+  TV-accuracy $`1/10`$ on every execution
   [S4:51–65][S1:3343].
-- **A logarithmic lower bound matches.** $Q(d)\ge c\log d$ eventually,
+- **A logarithmic lower bound matches.** $`Q(d)\ge c\log d`$ eventually,
   for arbitrary randomized adaptive first-order algorithms, so the
   infimal polynomial exponent is exactly zero
   [S4:58–64][S1:3343].
@@ -116,7 +116,7 @@ release ships the manuscript as proof.
   deduced [S4:33–36][S6:9].
 - **The result determines the exponent, not the rate.** The upper
   bound does not assert a polylogarithmic query count; the finer
-  growth of $Q(d)$ between $\log d$ and $d^\varepsilon$ is left open
+  growth of $`Q(d)`$ between $`\log d`$ and $`d^\varepsilon`$ is left open
   [S4:68–74].
 
 ## Section skeleton
@@ -141,10 +141,10 @@ level**.
 The scope note [S6:9] states the formalized result: "The formalized
 result determines the dimension exponent of exact value-and-gradient
 query complexity for well-conditioned log-concave sampling. For
-potentials with $V(0)=0$, $\nabla V(0)=0$, and $I\le\nabla^2V\le2I$,
+potentials with $`V(0)=0`$, $`\nabla V(0)=0`$, and $`I\le\nabla^2V\le2I`$,
 the least worst-case query budget achieving total-variation error at
-most $1/10$ is at most $C_\varepsilon d^\varepsilon$ for every
-$\varepsilon>0$, and at least $c\log d$ eventually. Hence the infimal
+most $`1/10`$ is at most $`C_\varepsilon d^\varepsilon`$ for every
+$`\varepsilon>0`$, and at least $`c\log d`$ eventually. Hence the infimal
 polynomial exponent is zero. Algorithms may be measurable, randomized,
 and adaptive; arithmetic and bit costs are not bounded" [S6:9].
 
@@ -164,10 +164,10 @@ structure with its `history` and `run`, the `CanSample` predicate,
 statement:
 
 - `exact_source_main` [S7:81–87] — the conjunction of the upper bound
-  ($\forall\varepsilon>0,\;\exists C,\;\forall d\ge2$:
-  $Q(d)\le C\cdot d^\varepsilon$), the lower bound
-  ($\exists c>0, d_0$: $Q(d)\ge c\log d$ for $d\ge d_0$), and
-  $\gamma_* = 0$; `sorry` at [S7:87].
+  ($`\forall\varepsilon>0,\;\exists C,\;\forall d\ge2`$:
+  $`Q(d)\le C\cdot d^\varepsilon`$), the lower bound
+  ($`\exists c>0, d_0`$: $`Q(d)\ge c\log d`$ for $`d\ge d_0`$), and
+  $`\gamma_* = 0`$; `sorry` at [S7:87].
 
 The comparator still carries its `sorry`, but the declaration
 `OAI.LogConcaveSampling.exact_source_main` exists in the library's

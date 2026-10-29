@@ -9,30 +9,30 @@
 The release's blurb [S1:1947] and the catalog abstract [S2:230] state
 the family's claim: it resolves the three-dimensional Bochner–Riesz
 conjecture in its strict range, in which the multipliers of order
-$\delta$ are bounded on $L^p(\mathbb R^3)$ for every $1\le p\le\infty$
-whenever $\delta>\max\{3|1/p-1/2|-1/2,0\}$. The manuscript proves the
-estimate at $L^3$ for every positive order and reaches the full range
+$`\delta`$ are bounded on $`L^p(\mathbb R^3)`$ for every $`1\le p\le\infty`$
+whenever $`\delta>\max\{3|1/p-1/2|-1/2,0\}`$. The manuscript proves the
+estimate at $`L^3`$ for every positive order and reaches the full range
 by interpolation and duality. Its abstract "We prove the three-dimensional Bochner–Riesz conjecture in its
 strict-order formulation. The main result is boundedness of the
-Bochner–Riesz multipliers on $L^3(\mathbb R^3)$ for every positive order.
+Bochner–Riesz multipliers on $`L^3(\mathbb R^3)`$ for every positive order.
 Interpolation and duality then give the full conjectured strict range. [S3:46–49]"
 
 ## Undergraduate summary
 
-The Bochner–Riesz multiplier $T_\delta$ has multiplier
-$(1-|\xi|^2)_+^\delta$, which softens the boundary of the frequency
-ball. The question is how much smoothing — an order $\delta$ — is
-needed to keep an $L^p$ norm. The manuscript's central estimate is
-boundedness at $L^3$ for every positive order 
+The Bochner–Riesz multiplier $`T_\delta`$ has multiplier
+$`(1-|\xi|^2)_+^\delta`$, which softens the boundary of the frequency
+ball. The question is how much smoothing — an order $`\delta`$ — is
+needed to keep an $`L^p`$ norm. The manuscript's central estimate is
+boundedness at $`L^3`$ for every positive order 
 
 > **theorem**
-For every $\delta>0$, there is a finite constant $C_\delta$ such that
+For every $`\delta>0`$, there is a finite constant $`C_\delta`$ such that
 $$\norm{T_\delta f}_{L^3(\mathbb R^3)}
  \le C_\delta\norm f_{L^3(\mathbb R^3)}
  \qquad(f\in\mathcal S(\mathbb R^3)).$$
-Consequently $T_\delta$ has a unique bounded extension to $L^3(\mathbb R^3)$. [S4:21–31]
+Consequently $`T_\delta`$ has a unique bounded extension to $`L^3(\mathbb R^3)`$. [S4:21–31]
 
-Interpolating this with the $L^2$ bound and applying duality gives
+Interpolating this with the $`L^2`$ bound and applying duality gives
 the full conjugate range, the conjectured strict order [S4:33–40]:
 "Theorem gives
 $$\norm{T_\delta f}_{L^p(\mathbb R^3)}
@@ -57,7 +57,7 @@ Assuming excessive growth and localizing a sequence that reaches the
 largest rate produces a saturated path; an isotropic extremizer is
 excluded by a time-fiber, planar-projection, and Loomis–Whitney
 argument, and the remaining case gives four data coordinates whose
-resolution speeds are $0,1,m,1+m$. Matched clocks and planar
+resolution speeds are $`0,1,m,1+m`$. Matched clocks and planar
 projections then transfer the lower bounds to a contradiction.
 
 The second stage records the discrepancy at the boundary as fine
@@ -86,7 +86,7 @@ Bochner's spherical means for multiple Fourier series, and radial
 inversion and summability were studied by Herz and Welland [S4:51–98].
 For general functions the geometry of frequency directions is
 essential: using a Kakeya construction, Fefferman proved the order-
-zero ball multiplier unbounded on $L^p$ for $p\ne2$ in dimension at
+zero ball multiplier unbounded on $`L^p`$ for $`p\ne2`$ in dimension at
 least two, while Carleson and Sjölin established the conjectured
 positive-order range in the plane.
 
@@ -96,40 +96,40 @@ Fourier restriction; Bourgain combined geometric maximal-function
 estimates with improved restriction and multiplier bounds in three
 dimensions. The bilinear restriction theorems of Wolff and Tao led,
 through Lee's multiplier reduction, to sharp-order estimates for
-$\max\{p,p'\}\ge10/3$. More recently Wu obtained the strict-order
-range for $\max\{p,p'\}\ge13/4$, and Gao, Wu, and Xi established the
-range $\max\{p,p'\}\ge22/7$ [S4:51–98]. The connection runs in the
+$`\max\{p,p'\}\ge10/3`$. More recently Wu obtained the strict-order
+range for $`\max\{p,p'\}\ge13/4`$, and Gao, Wu, and Xi established the
+range $`\max\{p,p'\}\ge22/7`$ [S4:51–98]. The connection runs in the
 other direction as well: Tao showed the Bochner–Riesz conjecture
 implies the spherical restriction conjecture, and Zipeng Wang has
 proposed a proof in all dimensions.
 
 ## Consequences
 
-**The full strict range.** The $L^3$ estimate yields the complete
-strict-order range for $1\le p\le\infty$ 
+**The full strict range.** The $`L^3`$ estimate yields the complete
+strict-order range for $`1\le p\le\infty`$ 
 
 > **corollary**
-Let $1\le p\le\infty$ and
+Let $`1\le p\le\infty`$ and
 $$\delta>\max\left\{0,\,3\left|\frac1p-\frac12\right|-\frac12\right\}.$$
-Then the multiplier $(1-|\xi|^2)_+^\delta$ is bounded on
-$L^p(\mathbb R^3)$. The same bounds hold uniformly for every positive
+Then the multiplier $`(1-|\xi|^2)_+^\delta`$ is bounded on
+$`L^p(\mathbb R^3)`$. The same bounds hold uniformly for every positive
 radius after dilation. This assertion concerns the strict
 inequality . [S5:437–447]
 
 Its proof applies the positive-order theorem at arbitrarily small,
 fixed orders, combines it with the beta-integral complex-order lemma,
-and uses Stein's interpolation over the strip between $L^3$ and
-$L^\infty$ [S5:449–470].
+and uses Stein's interpolation over the strip between $`L^3`$ and
+$`L^\infty`$ [S5:449–470].
 
-**Fourier inversion by mild smoothing.** For finite $p$ in the range,
-the dilated multipliers converge to $f$ in $L^p$ as the radius tends
+**Fourier inversion by mild smoothing.** For finite $`p`$ in the range,
+the dilated multipliers converge to $`f`$ in $`L^p`$ as the radius tends
 to infinity, recovering Fourier inversion by arbitrarily mild
-spherical smoothing at the central exponents $3/2\le p\le3$
+spherical smoothing at the central exponents $`3/2\le p\le3`$
 [S4:41–47].
 
 **The multiplier section.** The final section turns the packet
 growth into the operator bound, first establishing an oscillatory-
-integral estimate with loss $\lambda^\nu$ for every $\nu>0$, uniform
+integral estimate with loss $`\lambda^\nu`$ for every $`\nu>0`$, uniform
 over fixed phase and amplitude classes [S5:4–11].
 
 ## Section skeleton
@@ -166,7 +166,7 @@ evidence.
 
 - Bochner, Salomon, Summation of Multiple Fourier Series by Spherical Means (1935)
 - Bochner, Salomon, Summation of Multiple Fourier Series by Spherical Means (1936)
-- Bourgain, Jean, On the restriction and multiplier problems in $\mathbb{R}^3$ (1991)
+- Bourgain, Jean, On the restriction and multiplier problems in $`\mathbb{R}^3`$ (1991)
 - Bourgain, Jean, The Discretized Sum-Product and Projection Theorems (2010)
 - Carleson, Lennart, Sjölin, Per, Oscillatory Integrals and Multiplier Problem for the Disc (1972)
 - Fefferman, Charles, The Multiplier Problem for the Ball (1971)
@@ -194,15 +194,15 @@ evidence.
 - Ren, Kevin, Wang, Hong, Furstenberg Sets Estimate in the Plane (2025)
 - Riesz, Marcel, Sur la sommation des séries de Fourier (1923)
 - Shannon, Claude E., A Mathematical Theory of Communication (1948)
-- Shmerkin, Pablo, Wang, Hong, On the distance sets spanned by sets of dimension $d/2$ in $\mathbb{R}^d$ (2025)
+- Shmerkin, Pablo, Wang, Hong, On the distance sets spanned by sets of dimension $`d/2`$ in $`\mathbb{R}^d`$ (2025)
 - Shmerkin, Pablo, On the packing dimension of Furstenberg sets (2022)
 - Stein, Elias M., Interpolation of Linear Operators (1956)
 - Tao, Terence, The Bochner–Riesz Conjecture Implies the Restriction Conjecture (1999)
 - Tao, Terence, A sharp bilinear restriction estimate for paraboloids (2003)
 - Tao, Terence, Sumset and Inverse Sumset Theory for Shannon Entropy (2010)
 - Wang, Hong, Wu, Shukun, Restriction Estimates Using Decoupling Theorems and Two-Ends Furstenberg Inequalities (2024)
-- Wang, Hong, A restriction estimate in $\mathbb{R}^3$ using brooms (2022)
-- Wang, Zipeng, $L^p$-boundedness of the Bochner–Riesz operator (2026)
+- Wang, Hong, A restriction estimate in $`\mathbb{R}^3`$ using brooms (2022)
+- Wang, Zipeng, $`L^p`$-boundedness of the Bochner–Riesz operator (2026)
 - Welland, G. V., Norm Convergence of Riesz-Bochner Means for Radial Functions (1975)
 - Wolff, Thomas, A sharp bilinear cone restriction estimate (2001)
-- Wu, Shukun, {On the Bochner–Riesz Operator in $\mathbb{R}^{3}$} (2023)
+- Wu, Shukun, {On the Bochner–Riesz Operator in $`\mathbb{R}^{3}`$} (2023)

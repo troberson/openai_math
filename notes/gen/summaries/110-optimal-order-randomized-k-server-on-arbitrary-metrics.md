@@ -27,7 +27,7 @@ agree on the statement.
 
 ## Undergraduate summary
 
-The **$k$-server problem** is an online optimization problem. You have $k$
+The **$`k`$-server problem** is an online optimization problem. You have $`k`$
 servers in a metric space. Requests arrive one at a time, and each request
 is a point that some server must occupy. You pay the distance the server
 moves. An *offline* algorithm knows the entire future and can plan
@@ -35,16 +35,16 @@ optimally; an *online* algorithm must decide where to move a server after
 seeing each request, without knowing what comes next.
 
 The **competitive ratio** compares an online policy's cost to the offline
-optimum. The classical $k$-server conjecture (Manasse, McGeoch, Sleator,
-1988) asked whether $O(\log k)$ suffices for randomized policies against
+optimum. The classical $`k`$-server conjecture (Manasse, McGeoch, Sleator,
+1988) asked whether $`O(\log k)`$ suffices for randomized policies against
 oblivious request sequences on *every* metric. Bubeck, Coester, and Rabani
 (2023) disproved that conjecture with a worst-case lower bound of
-$\Omega(\log^2 k)$.
+$`\Omega(\log^2 k)`$.
 
-This family proves the matching upper bound: randomized $k$-server has
-competitive ratio $O(\log^2(k+1))$ on every metric space, against
+This family proves the matching upper bound: randomized $`k`$-server has
+competitive ratio $`O(\log^2(k+1))`$ on every metric space, against
 oblivious request sequences [S4:21–35]. The constant is universal —
-independent of the metric, $k$, and the request sequence. The same policy
+independent of the metric, $`k`$, and the request sequence. The same policy
 serves all finite sequences on any given metric and initial configuration.
 When the initial server positions are distinct, no additive constant is
 needed.
@@ -57,23 +57,23 @@ and the binary length of the request counter.
 ## Graduate summary
 
 **Main theorem (existence)** ([S4:21–35], `thm:main`). "There is an
-absolute constant $C<\infty$ such that, for every integer $k\ge2$, every
-metric space $(X,d)$ with at least $k+1$ points, and every $s\in X^k$,
-there exist a randomized online policy $A$ and a finite $B\ge0$ satisfying
-$\mathbb E\,\mathrm{cost}_{A,s}(\sigma)\le C(\log(k+1))^2\mathrm{OPT}_{X,d,k,s}(\sigma)+B$ for
-every finite request sequence $\sigma$" [S4:22–34]. The constant $C$ is
-independent of every property of the metric. The additive term $B$ may
-depend on $(X,d)$, $k$, and $s$, but not on the sequence or its length.
-If the initial positions are distinct, one may take $B=0$ [S4:34].
+absolute constant $`C<\infty`$ such that, for every integer $`k\ge2`$, every
+metric space $`(X,d)`$ with at least $`k+1`$ points, and every $`s\in X^k`$,
+there exist a randomized online policy $`A`$ and a finite $`B\ge0`$ satisfying
+$`\mathbb E\,\mathrm{cost}_{A,s}(\sigma)\le C(\log(k+1))^2\mathrm{OPT}_{X,d,k,s}(\sigma)+B`$ for
+every finite request sequence $`\sigma`$" [S4:22–34]. The constant $`C`$ is
+independent of every property of the metric. The additive term $`B`$ may
+depend on $`(X,d)`$, $`k`$, and $`s`$, but not on the sequence or its length.
+If the initial positions are distinct, one may take $`B=0`$ [S4:34].
 
 **Main theorem (uniform algorithm)** ([S6:21–41], `thm:main`). There are
-an absolute constant $C$ and a polynomial $p$ such that for $n\ge3$,
-$2\le k<n$, a rational metric $d$ on $X=\{1,\ldots,n\}$, and an initial
-configuration $s\in X^k$: a uniform randomized algorithm preprocesses in
-at most $p(L)$ bit operations and serves each request in at most
-$p(L+\lceil\log_2(t+1)\rceil)$ additional bits, achieving the same
-$\log^2(k+1)$ competitive ratio with a finite instance-dependent additive
-constant $B_{d,k,s}$ [S6:22–40].
+an absolute constant $`C`$ and a polynomial $`p`$ such that for $`n\ge3`$,
+$`2\le k<n`$, a rational metric $`d`$ on $`X=\{1,\ldots,n\}`$, and an initial
+configuration $`s\in X^k`$: a uniform randomized algorithm preprocesses in
+at most $`p(L)`$ bit operations and serves each request in at most
+$`p(L+\lceil\log_2(t+1)\rceil)`$ additional bits, achieving the same
+$`\log^2(k+1)`$ competitive ratio with a finite instance-dependent additive
+constant $`B_{d,k,s}`$ [S6:22–40].
 
 **No finiteness, boundedness, or discreteness assumption** on the metric
 space [S4:37–39]. There is no computational-efficiency claim for the
@@ -87,54 +87,54 @@ are proved in the manuscript's dedicated sections [S4:126–195].
 
 ## History of the conjecture
 
-The **$k$-server problem** was introduced by **Manasse, McGeoch, and
-Sleator** [S4:43–44]. They proved the deterministic lower bound $k$ on
-every metric with more than $k$ points and conjectured it attainable.
-**Koutsoupias and Papadimitriou** established the $(2k-1)$-competitive
+The **$`k`$-server problem** was introduced by **Manasse, McGeoch, and
+Sleator** [S4:43–44]. They proved the deterministic lower bound $`k`$ on
+every metric with more than $`k`$ points and conjectured it attainable.
+**Koutsoupias and Papadimitriou** established the $`(2k-1)`$-competitive
 work function algorithm [S4:45–47].
 
 The **paging** case (uniform metric) gave the initial evidence for the
-randomized $k$-server conjecture: **Fiat, Karp, Luby, McGeoch, Sleator,
-and Young** proved the $2H_k$-competitive randomized marking algorithm,
-and **McGeoch and Sleator** attained the exact harmonic bound $H_k$
+randomized $`k`$-server conjecture: **Fiat, Karp, Luby, McGeoch, Sleator,
+and Young** proved the $`2H_k`$-competitive randomized marking algorithm,
+and **McGeoch and Sleator** attained the exact harmonic bound $`H_k`$
 [S4:54–60].
 
-The conjecture — $O(\log k)$ on every metric — was **disproved by
-Bubeck, Coester, and Rabani** [S4:72–76]: there exist $(k+1)$-point
-metrics requiring competitive ratio $\Omega(\log^2 k)$. The sharp
-universal lower bound $\Omega(\log k)$ on every metric follows from the
+The conjecture — $`O(\log k)`$ on every metric — was **disproved by
+Bubeck, Coester, and Rabani** [S4:72–76]: there exist $`(k+1)`$-point
+metrics requiring competitive ratio $`\Omega(\log^2 k)`$. The sharp
+universal lower bound $`\Omega(\log k)`$ on every metric follows from the
 decomposition and metric Ramsey methods developed through the 1990s and
 2000s [S4:62–76].
 
 For the upper bound, **Bartal** introduced probabilistic approximation by
 hierarchically separated trees [S4:81–83]; **Fakcharoenphol, Rao, and
-Talwar** obtained expected distortion $O(\log n)$ [S4:83–84]. The first
+Talwar** obtained expected distortion $`O(\log n)`$ [S4:83–84]. The first
 polylogarithmic bound for arbitrary finite metrics,
-$O(\log^2 k\,\log^3 n\,\log\log n)$, is due to **Bansal, Buchbinder,
+$`O(\log^2 k\,\log^3 n\,\log\log n)`$, is due to **Bansal, Buchbinder,
 Mądry, and Naor** [S4:89–91]. **Bubeck, Cohen, Lee, Lee, and Mądry**
-achieved $O(\log^2 k)$ on HSTs [S4:91–93].
+achieved $`O(\log^2 k)`$ on HSTs [S4:91–93].
 
 **Coester and Cosson** (2026) made the HST and finite-metric bounds
 polynomial-time, using a total number of random bits independent of the
 request length [S4:95–98]. Their general finite-metric ratio retains a
-factor $\log n$.
+factor $`\log n`$.
 
 The **uniform algorithm** paper [S6:57] builds on the companion existence
 theorem [S6:57–103], using finite-policy synthesis and bounded-sequence
 reductions in the style of **Mömke** [S6:105–108] and **Mikkelsen**
 [S6:110–112].
 
-**Prior (my training data, not this repo).** The $k$-server problem is a
-central problem in online optimization. The $O(\log^2 k)$ bound matching
-the $\Omega(\log^2 k)$ lower bound resolves the asymptotic order of the
+**Prior (my training data, not this repo).** The $`k`$-server problem is a
+central problem in online optimization. The $`O(\log^2 k)`$ bound matching
+the $`\Omega(\log^2 k)`$ lower bound resolves the asymptotic order of the
 randomized competitive ratio. The uniform algorithm result makes the
 existence guarantee effective on rational metrics. I cannot confirm these
 independently; the release ships the manuscripts as proofs.
 
 ## Consequences
 
-- **Squared-logarithmic competitive ratio.** Randomized $k$-server has
-  competitive ratio $O(\log^2(k+1))$ on every metric space against
+- **Squared-logarithmic competitive ratio.** Randomized $`k`$-server has
+  competitive ratio $`O(\log^2(k+1))`$ on every metric space against
   oblivious finite request sequences, matching the worst-case lower bound
   [S4:21–35].
 - **One policy, all sequences.** For each metric and initial
@@ -145,7 +145,7 @@ independently; the release ships the manuscripts as proofs.
 - **Uniform bit algorithm.** On finite rational metrics, a single uniform
   randomized algorithm achieves the same competitive ratio with
   polynomial preprocessing and per-request bit cost in the input length
-  and $\log(t+1)$ [S6:21–41].
+  and $`\log(t+1)`$ [S6:21–41].
 
 ## Section skeleton
 
@@ -174,18 +174,18 @@ manuscripts; the comparator stubs state the targets the release set
 itself.
 
 The scope note states: "The formalization proves an
-$O((\log(k+1))^2)$ competitive ratio for randomized $k$-server against
-oblivious finite request sequences. For every $k\ge2$, every metric space
-containing at least $k+1$ points, and every initial configuration, one
+$`O((\log(k+1))^2)`$ competitive ratio for randomized $`k`$-server against
+oblivious finite request sequences. For every $`k\ge2`$, every metric space
+containing at least $`k+1`$ points, and every initial configuration, one
 policy works for all request sequences, including in infinite and
 unbounded spaces" [S9:10]. The additive constant "is zero when the
 initial server positions are distinct. The universal multiplicative
-constant is independent of the metric and $k$" [S9:12].
+constant is independent of the metric and $`k`$" [S9:12].
 
 For the uniform algorithm: "The formalization constructs one uniform
-randomized bit algorithm for $k$-server on finite rational metrics, for
-$2\le k<n$. Its expected movement on every oblivious finite request
-sequence is at most an absolute multiple of $(\log(k+1))^2$ times the
+randomized bit algorithm for $`k`$-server on finite rational metrics, for
+$`2\le k<n`$. Its expected movement on every oblivious finite request
+sequence is at most an absolute multiple of $`(\log(k+1))^2`$ times the
 offline optimum, plus a finite instance-dependent additive constant"
 [S9:14]. "Preprocessing is polynomial in the encoded input length, and
 each request is processed in time polynomial in that length and the binary
@@ -194,7 +194,7 @@ length of the request counter" [S9:16].
 The `KServer.lean` stub [S10] (69 lines) defines `Configuration`,
 `LabelDistribution`, `Policy`, `serve`, `serviceCost`, `pathProbability`,
 `expectedCost`, and `optimalCost`. The `MainStatement` at [S10:51–62]
-states the $\log^2(k+1)$ bound with an additive term, and
+states the $`\log^2(k+1)`$ bound with an additive term, and
 `theorem main_theorem` at [S10:62–63] closes with `sorry`.
 
 The `UniformKServer.lean` stub [S11] (205 lines) defines `RationalMetric`,

@@ -9,7 +9,7 @@
 The release's blurb [S1:4500] and the catalog abstract [S2:477]
 state the family's claim: a finitely presented torsion-free
 nonsofic group whose group algebra over
-$\mathbb{F}_2$ is not directly finite, disproving
+$`\mathbb{F}_2`$ is not directly finite, disproving
 Kaplansky's conjecture even without torsion; companion
 examples give injective nonsurjective cellular automata
 (refuting Gottschalk's surjunctivity conjecture); and an
@@ -29,22 +29,22 @@ manuscripts [S1:4500]:
 
 The char-two abstract 
 
-> We disprove Kaplansky's direct-finiteness conjecture by constructing a finite field $K$ of characteristic two, a finitely presented group $G$, and finite sums $a,b\in K[G]$ with $ab=1$ but $ba\ne1$. The group $G$ is nonsofic. The same elements define a cellular automaton on $K^G$ that is injective but not surjective, disproving Gottschalk's surjunctivity conjecture. [S3:43]
+> We disprove Kaplansky's direct-finiteness conjecture by constructing a finite field $`K`$ of characteristic two, a finitely presented group $`G`$, and finite sums $`a,b\in K[G]`$ with $`ab=1`$ but $`ba\ne1`$. The group $`G`$ is nonsofic. The same elements define a cellular automaton on $`K^G`$ that is injective but not surjective, disproving Gottschalk's surjunctivity conjecture. [S3:43]
 
 ## Undergraduate summary
 
-A **group algebra** $K[G]$ is the ring you build by taking
-a field $K$ and a group $G$ and letting you form
-"weighted sums" of group elements. Two elements $a, b$ in
-the algebra are **inverses** if $a \cdot b = 1$ (the
+A **group algebra** $`K[G]`$ is the ring you build by taking
+a field $`K`$ and a group $`G`$ and letting you form
+"weighted sums" of group elements. Two elements $`a, b`$ in
+the algebra are **inverses** if $`a \cdot b = 1`$ (the
 multiplicative identity). **Direct finiteness** says: if
-$a \cdot b = 1$, then automatically $b \cdot a = 1$
+$`a \cdot b = 1`$, then automatically $`b \cdot a = 1`$
 — the two-sided condition you'd expect from ordinary
 matrix algebra. **Kaplansky's conjecture** says this holds
 for every group algebra over every field. The
 counterexamples in this family say **no**: there are groups
-where you can find $a, b$ with $a \cdot b = 1$ but
-$b \cdot a \neq 1$. The same elements also define a
+where you can find $`a, b`$ with $`a \cdot b = 1`$ but
+$`b \cdot a \neq 1`$. The same elements also define a
 **cellular automaton** (a rule that updates a grid of
 colors based on neighbors) that can map every state to a
 unique state (injective) but cannot reach every state
@@ -54,33 +54,33 @@ conjunctivity** conjecture [S3:43, S2:477].
 ## Graduate summary
 
 **The char-two counterexample** [S3:43, S4:11–13].
-There exists a finite field $K$ of characteristic 2, a
-finitely presented group $G$ with an element of odd prime
-order, and elements $a, b \in K[G]$ with $ab = 1$ and
-$ba \neq 1$. The group $G$ is **nonsofic** (does not
-embed into the hyperfinite II$_1$ factor). The same
-elements define a cellular automaton on $K^G$ that is
+There exists a finite field $`K`$ of characteristic 2, a
+finitely presented group $`G`$ with an element of odd prime
+order, and elements $`a, b \in K[G]`$ with $`ab = 1`$ and
+$`ba \neq 1`$. The group $`G`$ is **nonsofic** (does not
+embed into the hyperfinite II$`_1`$ factor). The same
+elements define a cellular automaton on $`K^G`$ that is
 injective but not surjective [S3:43].
 
 **The determinant counterexample** [S4:21–23]. There
-exists a finitely generated group $G$ and a square matrix
-$A$ over $\mathbb{Z}[G]$ that is invertible over
-$\mathbb{Q}[G]$, whose bounded left-regular operator has
+exists a finitely generated group $`G`$ and a square matrix
+$`A`$ over $`\mathbb{Z}[G]`$ that is invertible over
+$`\mathbb{Q}[G]`$, whose bounded left-regular operator has
 Fuglede–Kadison determinant strictly between 0 and
 1 — contradicting the Determinant Conjecture's
 nonnegative lower bound.
 
 **The odd-characteristic counterexample**
-[S4:25–27]. For the smallest odd prime divisor $p$
-of $\binom{1200}{600}!^2 + 1$, there is a field $K$ of
-order $p^4$, a finitely generated group $G$ with torsion,
-and elements $a, b \in K[G]$ with $ab = 1$ and
-$ba \neq 1$, plus the injective-nonsurjective cellular
+[S4:25–27]. For the smallest odd prime divisor $`p`$
+of $`\binom{1200}{600}!^2 + 1`$, there is a field $`K`$ of
+order $`p^4`$, a finitely generated group $`G`$ with torsion,
+and elements $`a, b \in K[G]`$ with $`ab = 1`$ and
+$`ba \neq 1`$, plus the injective-nonsurjective cellular
 automaton.
 
 **The torsion-free manuscript** (Oct 4 2026). The fourth
 manuscript constructs a finitely presented **torsion-free**
-counterexample over $\mathbb{F}_2$ with a finite 2D
+counterexample over $`\mathbb{F}_2`$ with a finite 2D
 classifying complex [S2:477]. It is **outside** the scope
 note's three registered statements [S4:5–7].
 
@@ -98,7 +98,7 @@ note names four comparators [S4:33–36]:
 ## History of the conjecture
 
 **Kaplansky's direct-finiteness conjecture** (1950s)
-asserts that $ab = 1 \Rightarrow ba = 1$ in every group
+asserts that $`ab = 1 \Rightarrow ba = 1`$ in every group
 algebra over a field. It is known for torsion-free abelian
 groups and follows from the Atiyah conjecture in general.
 The **zero-divisor conjecture** (also Kaplansky, 1950s) and
@@ -121,7 +121,7 @@ Kaplansky's conjectures, their known positive cases, and
 their relation to the Atiyah conjecture and Gottschalk's
 conjecture. The **specific counterexamples** — the
 nonsofic finitely presented char-2 group, the determinant
-matrix with $\det \in (0,1)$, the odd-prime prescribed
+matrix with $`\det \in (0,1)`$, the odd-prime prescribed
 construction, and the torsion-free variant — are
 results I cannot independently verify from training alone.
 
@@ -129,21 +129,21 @@ results I cannot independently verify from training alone.
 
 **Kaplansky's direct-finiteness conjecture is disproved in
 characteristic two.** A finitely presented nonsofic group
-$G$ with an element of odd prime order has
-$\mathbb{F}_2[G]$ with $ab = 1$, $ba \neq 1$
+$`G`$ with an element of odd prime order has
+$`\mathbb{F}_2[G]`$ with $`ab = 1`$, $`ba \neq 1`$
 [S3:43, S4:11–13, S2:477].
 
 **Gottschalk's surjunctivity conjecture is disproved.**
 The same elements define an injective-nonsurjective
-cellular automaton on $K^G$ [S3:43].
+cellular automaton on $`K^G`$ [S3:43].
 
 **The unrestricted group-ring Determinant Conjecture is
-disproved.** A matrix over $\mathbb{Z}[G]$, invertible
-over $\mathbb{Q}[G]$, has Fuglede–Kadison
-determinant in $(0, 1)$ [S4:21–23].
+disproved.** A matrix over $`\mathbb{Z}[G]`$, invertible
+over $`\mathbb{Q}[G]`$, has Fuglede–Kadison
+determinant in $`(0, 1)`$ [S4:21–23].
 
 **The odd-characteristic case is also open no more.** For
-a prescribed odd prime $p$, $K$ of order $p^4$, and a
+a prescribed odd prime $`p`$, $`K`$ of order $`p^4`$, and a
 finitely generated group with torsion, direct finiteness
 fails [S4:25–27].
 
@@ -252,7 +252,7 @@ manuscript (Oct 4 2026) is the fourth manuscript
 in the yaml `sources:` listing, and carries no comparator
 registration. Its result — a finitely presented
 torsion-free nonsofic group with a finite 2D classifying
-complex over $\mathbb{F}_2$ — is the strongest form
+complex over $`\mathbb{F}_2`$ — is the strongest form
 of the direct-finiteness disproof, removing the torsion
 assumption. The release records `scope: "Partial
 progress."` and `review: status: unchecked`.

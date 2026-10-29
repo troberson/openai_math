@@ -8,7 +8,7 @@
 
  carries the family entry:
 
-> Proves Petty's projection-volume conjecture in the remaining dimensions $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak–Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension. [S1:252]
+> Proves Petty's projection-volume conjecture in the remaining dimensions $`n\ge4`$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak–Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension. [S1:252]
 
 The entry links the two manuscripts as "Petty’s projection-volume conjecture [S1:252]"
 and "Product counterexample to simplex maximum [S1:252]" .
@@ -19,24 +19,24 @@ The second manuscript's title is "A product counterexample to the simplex maximu
 
 ## Undergraduate summary
 
-The **projection body** $\Pi K$ of a convex body $K$ records the areas of its
-shadows. [S4:4–6] defines it: "For a convex body $K\subset\mathbb R^n$, its
-projection body $\Pi K$ is the origin-symmetric convex body whose support
+The **projection body** $`\Pi K`$ of a convex body $`K`$ records the areas of its
+shadows. [S4:4–6] defines it: "For a convex body $`K\subset\mathbb R^n`$, its
+projection body $`\Pi K`$ is the origin-symmetric convex body whose support
 function is" — the display gives the support function as the volume of the
 shadow in each direction.
 
 Petty's conjecture asks which body has the smallest projection-body volume at
 a fixed volume. [S4:26–27] states it: "Petty's projection-volume conjecture
-asserts, for $n\ge3$, that $R_n$ is minimized precisely by ellipsoids
-\cite{Petty1971}." The functional $R_n$ is the projection-body volume divided
-by the body's volume to the power $n-1$, so the comparison is scale-free.
+asserts, for $`n\ge3`$, that $`R_n`$ is minimized precisely by ellipsoids
+\cite{Petty1971}." The functional $`R_n`$ is the projection-body volume divided
+by the body's volume to the power $`n-1`$, so the comparison is scale-free.
 
 The first manuscript settles the conjecture from dimension four up.
 [S4:34–34] states the result: "We prove the unpolarized conjecture in every
 dimension at least four." The theorem is at [S4:37–37]: "For every integer
-$n\ge4$ and every convex body $K\subset\mathbb R^n$," — the display gives the
+$`n\ge4`$ and every convex body $`K\subset\mathbb R^n`$," — the display gives the
 inequality, and [S4:42–43] gives the equality case: "Equality holds if and
-only if $K=a+TB_2^n$ for some $a\in\mathbb R^n$ and some invertible linear map $T$."
+only if $`K=a+TB_2^n`$ for some $`a\in\mathbb R^n`$ and some invertible linear map $`T`$."
 The abstract says the same: [S3:48–50] gives "We prove that ellipsoids
 uniquely minimize the volume of the projection body among convex bodies of
 fixed volume in every dimension at least four. This proves Petty's
@@ -47,11 +47,11 @@ includes bodies without symmetry or boundary regularity."
 
 The second manuscript attacks a different extremal question, the maximum
 rather than the minimum. [S13:63–65] names the conjecture: "Brannen
-conjectured in 1996 that simplices maximize $R_d$ among all convex
+conjectured in 1996 that simplices maximize $`R_d`$ among all convex
 bodies~\cite{Brannen}." [S13:91–93] states the counterexample: "Let
-$T_{10}=\mathrm{conv}(0,e_1,\ldots,e_{10})\subset\mathbb R^{10}$, where the $e_i$ are the
-coordinate unit vectors, and let $K=T_{10}\times T_{10}\subset\mathbb R^{20}$."
-[S13:99–99] gives the conclusion: "Thus $K$ violates \eqref{eq:proposed-bound}
+$`T_{10}=\mathrm{conv}(0,e_1,\ldots,e_{10})\subset\mathbb R^{10}`$, where the $`e_i`$ are the
+coordinate unit vectors, and let $`K=T_{10}\times T_{10}\subset\mathbb R^{20}`$."
+[S13:99–99] gives the conclusion: "Thus $`K`$ violates \eqref{eq:proposed-bound}
 in dimension twenty." The abstract gives the same: [S13:33–35] says "The
 product of two ten-dimensional simplices has larger normalized projection-body
 volume than a twenty-dimensional simplex. This gives a counterexample to
@@ -87,27 +87,27 @@ lower-dimensional volumes. [S13:121–123] states the reach of the identity:
 benchmark" — the sentence continues into the dimension threshold.
 
 The second manuscript places its result against the known history.
-[S13:72–74] separates the two problems: "For $d\ge3$, Petty's separate
+[S13:72–74] separates the two problems: "For $`d\ge3`$, Petty's separate
 minimum problem asks whether ellipsoids are the only minimizers of the same
-functional $R_d$" — Petty's conjecture is the minimum, Brannen's the
+functional $`R_d`$" — Petty's conjecture is the minimum, Brannen's the
 maximum.
 
 The three-dimensional state is recorded next. [S13:76–80] says: "In dimension
 three, Chen, Feng, Li, Xi, and Xu settle the minimum problem and also prove
-the bound $R_3(K)\le18=c_3$ for all three-dimensional convex bodies, with
+the bound $`R_3(K)\le18=c_3`$ for all three-dimensional convex bodies, with
 tetrahedra attaining equality" — the citation is to their Theorems 1.1 and
 1.2.
 
 The earlier counterexamples are cited separately. [S13:80–83] records them:
 "Feng, Hu, Liu, and Xu give counterexamples to \eqref{eq:proposed-bound} in
-every dimension $d\ge9$, using polytopes with at most $d+2$ facets" — the
+every dimension $`d\ge9`$, using polytopes with at most $`d+2`$ facets" — the
 citation is to their Theorem 1.3.
 
 The scope note records what the formalization carries. [S15:14] gives the
 conjecture as the formalization states it: "with equality exactly for
-ellipsoids; here $\kappa_j$ is the volume of the Euclidean unit ball in
-dimension $j$. The formalization establishes this for every convex body
-$K\subset\mathbb R^n$ and every $n\ge4$."
+ellipsoids; here $`\kappa_j`$ is the volume of the Euclidean unit ball in
+dimension $`j`$. The formalization establishes this for every convex body
+$`K\subset\mathbb R^n`$ and every $`n\ge4`$."
 
 The scope note names what the formalized projection family leaves out.
 [S15:16] says: "Other inequalities in the projection-body family are not
@@ -115,17 +115,17 @@ included."
 
 The counterexample paragraph names the witness and the gap. [S15:18] states
 it: "Brannen's simplex-maximization conjecture predicts that a simplex
-maximizes normalized projection-body volume $|\Pi K|/|K|^{n-1}$ in dimension
-$n$. The formalized counterexample is the product of two ten-dimensional
+maximizes normalized projection-body volume $`|\Pi K|/|K|^{n-1}`$ in dimension
+$`n`$. The formalized counterexample is the product of two ten-dimensional
 simplices. Its normalized projection volume, divided by that of a
 twenty-dimensional simplex, is" — the display gives the ratio.
 
 The scope note's last paragraph states the limit. [S15:22] says: "Thus the
-proposed maximum fails in dimension $20$. The paper's exponential-factor
+proposed maximum fails in dimension $`20`$. The paper's exponential-factor
 result for every sufficiently large dimension is not included."
 
 The three declarations are the quantified forms. `OAI.PettyProjectionVolume.petty_projection_volume` at [S16:11] is the minimum
-theorem, typed for every $n\ge4$. `OAI.ProjectionCounterexample.universal_simplex_upper_bound_false`
+theorem, typed for every $`n\ge4`$. `OAI.ProjectionCounterexample.universal_simplex_upper_bound_false`
 at [S17:96] is the dimension-twenty counterexample.
 `OAI.Paper092.product_counterexample` at [S18:31] is the product identity the
 third comparator config targets.
@@ -214,9 +214,9 @@ claims exist and names their declarations; the three comparator configs carry
 - Y. Feng, S. Hu, W. Liu, and L. Xu, _On the reverse projection inequality_, preprint, 2026, MathSciDoc:2608.23002. Full text.
 - R. J. Gardner, The Brunn–Minkowski inequality, _Bull. Amer. Math. Soc. (N.S.)_ **39** (2002), no. 3, 355–405. .
 - J. E. Haddad, A convex body associated to the Busemann random simplex inequality and the Petty conjecture, _J. Funct. Anal._ **281** (2021), no. 7, 109118. . Preprint: arXiv:1904.10427v6, 10 January 2020. .
-- M. Henk, _Note on projection bodies of zonotopes with $n+1$ generators_, Acta Mathematica Scientia **45** (2025), 96–103. doi:10.1007/s10473-025-0107-9.
+- M. Henk, _Note on projection bodies of zonotopes with $`n+1`$ generators_, Acta Mathematica Scientia **45** (2025), 96–103. doi:10.1007/s10473-025-0107-9.
 - Y. Huang, E. Lutwak, D. Yang, and G. Zhang, Geometric measures in the dual Brunn–Minkowski theory and their associated Minkowski problems, _Acta Math._ **216** (2016), 325–388. .
-- Y. Huang, E. Lutwak, D. Yang, and G. Zhang, The $L_p$-Aleksandrov problem for $L_p$-integral curvature, _J. Differential Geom._ **110** (2018), no. 1, 1–29. .
+- Y. Huang, E. Lutwak, D. Yang, and G. Zhang, The $`L_p`$-Aleksandrov problem for $`L_p`$-integral curvature, _J. Differential Geom._ **110** (2018), no. 1, 1–29. .
 - M. N. Ivaki, A local uniqueness theorem for minimizers of Petty's conjectured projection inequality, _Mathematika_ **64** (2018), no. 1, 1–19. . Preprint: .
 - M. Ludwig, Projection bodies and valuations, _Adv. Math._ **172** (2002), no. 2, 158–168. .
 - M. Ludwig, _Projection bodies and valuations_, Advances in Mathematics **172** (2002), no. 2, 158–168. doi:10.1016/S0001-8708(02)00021-X.
@@ -231,7 +231,7 @@ claims exist and names their declarations; the three comparator configs carry
 - O. Ortega-Moreno and F. E. Schuster, Fixed points of Minkowski valuations, _Adv. Math._ **392** (2021), 108017. . Author version: .
 - D. Spector, Simple proofs of some results of Reshetnyak, _Proc. Amer. Math. Soc._ **139** (2011), no. 5, 1681–1690. . Author version: .
 - G. Zhang, The affine Sobolev inequality, _J. Differential Geom._ **53** (1999), no. 1, 183–202.
-- Y. Huang and Y. Zhao, On the $L_p$ dual Minkowski problem, _Adv. Math._ **332** (2018), 57–84. .
-- H. Wang and J. Zhou, Uniqueness and continuity of the solution to $L_p$ dual Minkowski problem, _Commun. Math. Stat._ **14** (2026), no. 1, 105–140. . Preprint: .
+- Y. Huang and Y. Zhao, On the $`L_p`$ dual Minkowski problem, _Adv. Math._ **332** (2018), 57–84. .
+- H. Wang and J. Zhou, Uniqueness and continuity of the solution to $`L_p`$ dual Minkowski problem, _Commun. Math. Stat._ **14** (2026), no. 1, 105–140. . Preprint: .
 - C. Saroglou and A. Zvavitch, Iterations of the projection body operator and a remark on Petty's conjectured projection inequality, _J. Funct. Anal._ **272** (2017), no. 2, 613–630. .
 - G. Ólafsson, A. Pasquale, and B. Rubin, Analytic and group-theoretic aspects of the cosine transform, in _Geometric Analysis and Integral Geometry_, Contemporary Mathematics **598**, American Mathematical Society, Providence, RI, 2013, pp. 167–188. . Preprint: .

@@ -9,18 +9,18 @@
 The release's blurb [S1:3813] and the catalog abstract [S2:403] state
 the family's claim: a resolution of Erdős's
 superexponential-growth question for the van der Waerden numbers. If
-$W_r(k)$ is the least interval length forcing a monochromatic
-$k$-term arithmetic progression in every $r$-coloring, then
-$W_r(k)>k^{ck\lfloor\log_2 r\rfloor}$ for an absolute
-$c>0$, all $r\ge2$ and sufficiently large $k$, uniformly in
-$r$; in particular $W_r(k)^{1/k}\to\infty$ for each fixed
-$r$. The manuscript is *Quantitative Superexponential Bounds for
+$`W_r(k)`$ is the least interval length forcing a monochromatic
+$`k`$-term arithmetic progression in every $`r`$-coloring, then
+$`W_r(k)>k^{ck\lfloor\log_2 r\rfloor}`$ for an absolute
+$`c>0`$, all $`r\ge2`$ and sufficiently large $`k`$, uniformly in
+$`r`$; in particular $`W_r(k)^{1/k}\to\infty`$ for each fixed
+$`r`$. The manuscript is *Quantitative Superexponential Bounds for
 van der Waerden Numbers* [S3:3, S3:5]; its abstract
 
 
-> We prove that there are absolute constants $c>0$ and $K_0$ such that
-$W_r(k)>k^{ck\lfloor\log_2 r\rfloor}$ for every $k\ge K_0$ and $r\ge2$.
-Consequently $W_r(k)^{1/k}\to\infty$ for each fixed $r\ge2$, giving a
+> We prove that there are absolute constants $`c>0`$ and $`K_0`$ such that
+$`W_r(k)>k^{ck\lfloor\log_2 r\rfloor}`$ for every $`k\ge K_0`$ and $`r\ge2`$.
+Consequently $`W_r(k)^{1/k}\to\infty`$ for each fixed $`r\ge2`$, giving a
 quantitative positive resolution of Erdős's superexponential-growth
 question, including the two-color case. [S3:9–13]
 
@@ -28,59 +28,59 @@ question, including the two-color case. [S3:9–13]
 
 Van der Waerden's theorem (1927) says that in any coloring of the
 integers with finitely many colors, some color class contains
-arithmetic progressions of **every** length $k$. The *van der
-Waerden number* $W(r,k)$ is the **smallest** interval length
-$N$ such that every coloring of
-$\{1,\ldots,N\}$ with $r$ colors forces a monochromatic
-$k$-term arithmetic progression. Classical results
+arithmetic progressions of **every** length $`k`$. The *van der
+Waerden number* $`W(r,k)`$ is the **smallest** interval length
+$`N`$ such that every coloring of
+$`\{1,\ldots,N\}`$ with $`r`$ colors forces a monochromatic
+$`k`$-term arithmetic progression. Classical results
 (bibercourt, Hales–Jewett, etc.) gave **tower-type** upper
 bounds, and Erdős asked whether a **superexponential lower
-bound** holds — is $W(r,k)$ growing faster than
-$2^{ck}$, faster than any fixed exponential in $k$? This
+bound** holds — is $`W(r,k)`$ growing faster than
+$`2^{ck}`$, faster than any fixed exponential in $`k`$? This
 manuscript answers **yes** in a **quantitative** way: it
-produces an explicit power $k$ times a function of $r$ as the
-exponent, giving an absolute $c>0$ such that
-$W_r(k)>k^{ck\lfloor\log_2 r\rfloor}$ for all large $k$
-and every $r\ge2$, and this **immediately** yields
-$W_r(k)^{1/k}\to\infty$ (the $k$-th root of $W_r(k)$
-tends to infinity) at fixed $r$
+produces an explicit power $`k`$ times a function of $`r`$ as the
+exponent, giving an absolute $`c>0`$ such that
+$`W_r(k)>k^{ck\lfloor\log_2 r\rfloor}`$ for all large $`k`$
+and every $`r\ge2`$, and this **immediately** yields
+$`W_r(k)^{1/k}\to\infty`$ (the $`k`$-th root of $`W_r(k)`$
+tends to infinity) at fixed $`r`$
 [S3:9–13, S2:403, S4:9].
 
 ## Graduate summary
 
 **The headline lower bound** [S3:9–13, S6:12–15].
-There is an absolute real $c>0$ and an integer $K_0$ such that for
-every $r\ge2$ and every $k\ge K_0$:
-$W_r(k)>k^{c\,k\,\lfloor\log_2 r\rfloor}$. The exponent
-**grows linearly in $k$ and in
-$\lfloor\log_2 r\rfloor$** — the growth rate is
-superexponential in $k$ (the base is $k$ itself, not a
-constant) and the rate improves with $r$. The bound is **uniform**
-in $r$ [S3:9–13, S4:9].
+There is an absolute real $`c>0`$ and an integer $`K_0`$ such that for
+every $`r\ge2`$ and every $`k\ge K_0`$:
+$`W_r(k)>k^{c\,k\,\lfloor\log_2 r\rfloor}`$. The exponent
+**grows linearly in $`k`$ and in
+$`\lfloor\log_2 r\rfloor`$** — the growth rate is
+superexponential in $`k`$ (the base is $`k`$ itself, not a
+constant) and the rate improves with $`r`$. The bound is **uniform**
+in $`r`$ [S3:9–13, S4:9].
 
 **The growth-limit corollary.** Because
-$W_r(k)>k^{ck\lfloor\log_2 r\rfloor}$, taking $k$-th
-roots gives $W_r(k)^{1/k}>k^{c\lfloor\log_2 r\rfloor}
-\to\infty$ as
-$k\to\infty$ (for any fixed $r\ge2$ with
-$\lfloor\log_2 r\rfloor\ge1$); this is the **quantitative**
-content of $W_r(k)^{1/k}\to\infty$
+$`W_r(k)>k^{ck\lfloor\log_2 r\rfloor}`$, taking $`k`$-th
+roots gives $`W_r(k)^{1/k}>k^{c\lfloor\log_2 r\rfloor}
+\to\infty`$ as
+$`k\to\infty`$ (for any fixed $`r\ge2`$ with
+$`\lfloor\log_2 r\rfloor\ge1`$); this is the **quantitative**
+content of $`W_r(k)^{1/k}\to\infty`$
 [S3:9–13, S2:403, S4:9].
 
 **The scope of the formalization.** The registered statement
-fixes the absolute constant to $c=1/100000$ and asserts the
+fixes the absolute constant to $`c=1/100000`$ and asserts the
 bound at that specific rate; the scope note is explicit that
 "the sharper intermediate estimates used in the paper are not
 part of the described formalization" — the proof of the
-specific $1/100000$ rate is what is formalized, and the
-general $c>0$ form in the manuscript is a strengthening of
+specific $`1/100000`$ rate is what is formalized, and the
+general $`c>0`$ form in the manuscript is a strengthening of
 the same underlying construction
 [S4:9, S6:12–15].
 
-**Two-color (and all-$r$) coverage.** The bound is stated and
-proved for every $r\ge2$ simultaneously, so the two-color case
-($r=2$) is included in the same theorem (the exponent is then
-$k^{ck}$) — a quantification the classical lower bounds
+**Two-color (and all-$`r`$) coverage.** The bound is stated and
+proved for every $`r\ge2`$ simultaneously, so the two-color case
+($`r=2`$) is included in the same theorem (the exponent is then
+$`k^{ck}`$) — a quantification the classical lower bounds
 do not provide uniformly [S3:9–13, S2:403, S4:9].
 
 ## History of the conjecture
@@ -89,19 +89,19 @@ The van der Waerden numbers have been a central object in Ramsey
 theory since 1927. The **upper** bounds are classical:
 B\H{a}b (1933), Hales–Jewett (1963), and subsequent
 improvements give tower-type bounds
-$W(r,k)$ growing like a tower of twos of height polynomial in
-$k$. The **lower** bound for a single color and small $r$ was
-long at best exponential: $W(2,k)\ge e^{ck}$ (the best
+$`W(r,k)`$ growing like a tower of twos of height polynomial in
+$`k`$. The **lower** bound for a single color and small $`r`$ was
+long at best exponential: $`W(2,k)\ge e^{ck}`$ (the best
 known **before** this work, roughly, was
-$W(2,k)\ge 2^{c' k}$ for some $c'>0$, with $c'$ not
+$`W(2,k)\ge 2^{c' k}`$ for some $`c'>0`$, with $`c'`$ not
 uniformly optimized). The Erdős superexponential-growth
 question asks whether the lower bound can be pushed to
-**superexponential** in $k$ — a positive answer would pin
+**superexponential** in $`k`$ — a positive answer would pin
 the growth rate between
 a tower-type upper bound and a superexponential lower bound,
 leaving a wide gap. This manuscript gives a **quantitative**
 positive answer with the explicit rate
-$k^{ck\lfloor\log_2 r\rfloor}$
+$`k^{ck\lfloor\log_2 r\rfloor}`$
 [S3:9–13, S2:403, S4:9].
 
 **Prior (my training data, not this repo).** I know the van der
@@ -109,8 +109,8 @@ Waerden theorem, the tower-type upper bounds, and that the
 superexponential **lower** bound question is a classical open
 problem (the two-color case in particular). A **quantitative**
 resolution at the specific rate
-$k^{ck\lfloor\log_2 r\rfloor}$ with absolute $c>0$,
-uniform in $r\ge2$, including the explicit $1/100000$ constant
+$`k^{ck\lfloor\log_2 r\rfloor}`$ with absolute $`c>0`$,
+uniform in $`r\ge2`$, including the explicit $`1/100000`$ constant
 in the formalized form, goes beyond the specific constructions
 I recall; I cannot independently verify the cyclic-coloring /
 progression-rigidity argument in [S3:9–13] from training alone.
@@ -118,23 +118,23 @@ progression-rigidity argument in [S3:9–13] from training alone.
 ## Consequences
 
 **Erdős's superexponential-growth question is resolved
-positively.** For every $r\ge2$ and all sufficiently large
-$k$, $W_r(k)>k^{ck\lfloor\log_2 r\rfloor}$ for an absolute
-$c>0$ [S3:9–13, S2:403, S4:9].
+positively.** For every $`r\ge2`$ and all sufficiently large
+$`k`$, $`W_r(k)>k^{ck\lfloor\log_2 r\rfloor}`$ for an absolute
+$`c>0`$ [S3:9–13, S2:403, S4:9].
 
-**$W_r(k)^{1/k}\to\infty$ for each fixed $r$.** The
-$k$-th root of the van der Waerden number diverges as
-$k\to\infty$, at a rate at least
-$k^{c\lfloor\log_2 r\rfloor}$
+**$`W_r(k)^{1/k}\to\infty`$ for each fixed $`r`$.** The
+$`k`$-th root of the van der Waerden number diverges as
+$`k\to\infty`$, at a rate at least
+$`k^{c\lfloor\log_2 r\rfloor}`$
 [S3:9–13, S2:403].
 
-**Uniformity in $r$.** The lower bound holds uniformly for all
-$r\ge2$; the exponent's dependence on $r$ is
-$\lfloor\log_2 r\rfloor$, so the rate is best at large $r$
+**Uniformity in $`r`$.** The lower bound holds uniformly for all
+$`r\ge2`$; the exponent's dependence on $`r`$ is
+$`\lfloor\log_2 r\rfloor`$, so the rate is best at large $`r`$
 [S3:9–13, S4:9].
 
 **The two-color case is included.** The same theorem
-$W_2(k)>k^{ck}$ covers $r=2$ at the same absolute $c$
+$`W_2(k)>k^{ck}`$ covers $`r=2`$ at the same absolute $`c`$
 [S3:9–13, S2:403].
 
 ## Section skeleton
@@ -147,14 +147,14 @@ family ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalized result gives an absolute
-threshold $K$ such that
-$W(r,k)>k^{k\lfloor\log_2 r\rfloor/100000}$
-for all $k\ge K$ and $r\ge2$, and also establishes the
+threshold $`K`$ such that
+$`W(r,k)>k^{k\lfloor\log_2 r\rfloor/100000}`$
+for all $`k\ge K`$ and $`r\ge2`$, and also establishes the
 associated growth limits, finiteness, and boundary values. The
 scope note is explicit that the "sharper intermediate estimates
 used in the paper are not part of the described formalization"
 — the formalization pins the absolute constant to
-$c=1/100000$
+$`c=1/100000`$
 [S4:9]. The scope note names one comparator
 [S4:13–15]:
 `QuantitativeVanDerWaerden.lean`.
@@ -173,8 +173,8 @@ comparison target and registered declaration agree by name
 
 **What the proof does.** The registered
 `uniform_lower_bound` states
-$\exists K\,\forall k\ge K\,\forall r\ge2:
-(k)^{(1/100000)\,k\,(\log_2 r)}< W(r,k)$,
+$`\exists K\,\forall k\ge K\,\forall r\ge2:
+(k)^{(1/100000)\,k\,(\log_2 r)}< W(r,k)`$,
 and the OAI tree proves it with a genuine Lean proof: it
 closes the goal from the cyclic-coloring construction
 `exists_cyclic_coloring` via the
@@ -205,7 +205,7 @@ discharges the goal from the explicit cyclic-coloring witness
 
 **The comparator stub.** The
 `QuantitativeVanDerWaerden.lean` comparator restates
-`uniform_lower_bound` at the same $1/100000$ rate with a bare
+`uniform_lower_bound` at the same $`1/100000`$ rate with a bare
 `sorry` body 
 
 ```lean

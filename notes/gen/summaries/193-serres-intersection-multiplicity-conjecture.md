@@ -8,10 +8,10 @@
 
 The release's blurb [S1:4436] and the catalog abstract [S2:469]
 state the family's claim: strict positivity of Serre's
-intersection multiplicity $\chi^R(M,N)$ for nonzero finitely
+intersection multiplicity $`\chi^R(M,N)`$ for nonzero finitely
 generated modules over any regular local ring, provided
-$M \otimes_R N$ has finite length and
-$\dim M + \dim N = \dim R$. This resolves the Serre
+$`M \otimes_R N`$ has finite length and
+$`\dim M + \dim N = \dim R`$. This resolves the Serre
 positivity conjecture, including ramified mixed
 characteristic. The manuscript is *Positivity of Serre's
 Intersection Multiplicity* [S3:35, S3:37]; its abstract
@@ -28,8 +28,8 @@ An **intersection multiplicity** counts how many times two
 algebraic objects "meet" at a point, weighted by the
 geometry of their intersection. In a **regular local ring**
 — the algebraic analogue of a smooth point — two
-nonzero modules $M$ and $N$ have an intersection
-multiplicity $\chi^R(M,N)$ that measures the "size" of
+nonzero modules $`M`$ and $`N`$ have an intersection
+multiplicity $`\chi^R(M,N)`$ that measures the "size" of
 their overlap when they meet at exactly the right
 codimension. **Serre's positivity conjecture** asks: is
 this number always **positive** (never zero) when the
@@ -42,14 +42,14 @@ even in the hardest setting (ramified mixed characteristic)
 
 ## Graduate summary
 
-**The main theorem** [S3:40–45, S2:469]. Let $R$ be a
-regular local ring and let $M$, $N$ be nonzero finitely
-generated $R$-modules such that $M \otimes_R N$ has finite
-length and $\dim M + \dim N = \dim R$. Then the
+**The main theorem** [S3:40–45, S2:469]. Let $`R`$ be a
+regular local ring and let $`M`$, $`N`$ be nonzero finitely
+generated $`R`$-modules such that $`M \otimes_R N`$ has finite
+length and $`\dim M + \dim N = \dim R`$. Then the
 Serre intersection multiplicity
-$\chi^R(M,N) > 0$. The result holds in all characteristics,
+$`\chi^R(M,N) > 0`$. The result holds in all characteristics,
 including the **ramified mixed characteristic** case
-(characteristic $p > 0$ with a ramified residue field
+(characteristic $`p > 0`$ with a ramified residue field
 extension) [S3:40–45].
 
 **The scope of the formalization.** The family is at tier
@@ -61,7 +61,7 @@ The result is entirely unformalized.
 
 ## History of the conjecture
 
-**Serre's intersection multiplicity** $\chi^R(M,N)$ was
+**Serre's intersection multiplicity** $`\chi^R(M,N)`$ was
 introduced by Jean-Pierre Serre in the 1950s as a
 generalization of the classical intersection number in
 algebraic geometry. For two modules over a regular local
@@ -69,15 +69,15 @@ ring with complementary dimensions, the intersection
 multiplicity is an integer (or rational number, depending
 on the definition) that vanishes if the modules do not
 "meet properly." The **posability conjecture** --- that
-$\chi^R(M,N) > 0$ whenever $M$ and $N$ are nonzero with
-$\dim M + \dim N = \dim R$ and $M \otimes_R N$ of
+$`\chi^R(M,N) > 0`$ whenever $`M`$ and $`N`$ are nonzero with
+$`\dim M + \dim N = \dim R`$ and $`M \otimes_R N`$ of
 finite length --- was a major open problem in commutative
 algebra. The characteristic-zero case was settled by
-Lichtenbaum (1971) using $K$-theoretic methods, and the
+Lichtenbaum (1971) using $`K`$-theoretic methods, and the
 equal-characteristic case followed. The **mixed
 characteristic** case, especially the **ramified**
 subcase, remained open: Lichtenbaum's argument uses the
-Chow group of $\mathrm{Spec}(R)$, which behaves
+Chow group of $`\mathrm{Spec}(R)`$, which behaves
 differently in mixed characteristic, and the ramification
 of the residue field extension introduces an
 additional obstruction. This manuscript resolves the
@@ -97,10 +97,10 @@ training alone.
 ## Consequences
 
 **Serre's positivity conjecture is resolved in full.** For
-nonzero finitely generated modules $M$, $N$ over a regular
-local ring $R$ with $M \otimes_R N$ of finite length and
-$\dim M + \dim N = \dim R$, the intersection
-multiplicity $\chi^R(M,N) > 0$ [S3:40–45, S2:469].
+nonzero finitely generated modules $`M`$, $`N`$ over a regular
+local ring $`R`$ with $`M \otimes_R N`$ of finite length and
+$`\dim M + \dim N = \dim R`$, the intersection
+multiplicity $`\chi^R(M,N) > 0`$ [S3:40–45, S2:469].
 
 **The result includes ramified mixed characteristic.** The
 hardest case of the conjecture --- mixed characteristic

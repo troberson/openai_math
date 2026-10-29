@@ -11,7 +11,7 @@ state the family's claim: Saxl's conjecture proved —
 the tensor square of every staircase representation
 contains every irreducible complex representation of the
 corresponding symmetric group. More generally, every
-$S_n$ with $n \notin \{2,4,9\}$ has an irreducible
+$`S_n`$ with $`n \notin \{2,4,9\}`$ has an irreducible
 representation whose tensor square contains all
 irreducibles. The family ships two manuscripts [S1:4682]:
 
@@ -22,8 +22,8 @@ irreducibles. The family ships two manuscripts [S1:4682]:
 
 The universal tensor squares abstract 
 
-> For every positive integer $n$ other than $2$, $4$, and $9$, we prove that
-some irreducible complex representation of $S_n$ has a tensor square [S3:56–58]
+> For every positive integer $`n`$ other than $`2`$, $`4`$, and $`9`$, we prove that
+some irreducible complex representation of $`S_n`$ has a tensor square [S3:56–58]
 
 The cyclic polytabloid proof abstract 
 
@@ -32,53 +32,53 @@ corresponding irreducible complex representation of the symmetric group [S4:55�
 
 ## Undergraduate summary
 
-A **symmetric group** $S_n$ (permutations of $n$ objects)
+A **symmetric group** $`S_n`$ (permutations of $`n`$ objects)
 has a "building block" structure for its
 representations — ways the group acts on a vector
 space. The irreducible representations are classified
-by **partitions** (ways to write $n$ as a sum of
+by **partitions** (ways to write $`n`$ as a sum of
 non-increasing positive integers). The **tensor
-square** of a representation $V$ is $V \otimes V$
+square** of a representation $`V`$ is $`V \otimes V`$
 — "multiplying" the representation by itself. A
 representation is **universal** (in this context) if its
 tensor square contains every irreducible representation
 as a subrepresentation. **Saxl's conjecture** says: the
 **staircase** partitions (those shaped like
-$(m, m-1, \ldots, 1)$) give universal tensor squares.
+$`(m, m-1, \ldots, 1)`$) give universal tensor squares.
 This manuscript pair says **yes** — for every
 staircase, the tensor square of the representation
 contains all irreducibles. More generally, for
-$n \notin \{2, 4, 9\}$, some irreducible
+$`n \notin \{2, 4, 9\}`$, some irreducible
 representation has this property [S3:56–58,
 S4:55–57, S2:493].
 
 ## Graduate summary
 
 **The universal tensor square theorem**
-[S3:56–58, S2:493]. For every positive integer $n$
-with $n \notin \{2,4,9\}$, there exists an
-irreducible complex representation $V$ of $S_n$ such
+[S3:56–58, S2:493]. For every positive integer $`n`$
+with $`n \notin \{2,4,9\}`$, there exists an
+irreducible complex representation $`V`$ of $`S_n`$ such
 that for every irreducible complex representation
-$W$ of $S_n$, $\mathrm{Hom}_{S_n}(W, V
-\otimes V) \neq 0$. Equivalently, all corresponding
-Kronecker coefficients $g(\lambda, \lambda,
-\mu) > 0$.
+$`W`$ of $`S_n`$, $`\mathrm{Hom}_{S_n}(W, V
+\otimes V) \neq 0`$. Equivalently, all corresponding
+Kronecker coefficients $`g(\lambda, \lambda,
+\mu) > 0`$.
 
 **The Saxl conjecture (staircase form)** [S4:55–57,
-S2:493]. For every $m \geq 1$, let
-$\rho_m = (m, m-1, \ldots, 1)$ be the staircase
-partition of $m(m+1)/2$. Then
-$g(\rho_m, \rho_m, \mu) > 0$ for every partition
-$\mu$ of $m(m+1)/2$.
+S2:493]. For every $`m \geq 1`$, let
+$`\rho_m = (m, m-1, \ldots, 1)`$ be the staircase
+partition of $`m(m+1)/2`$. Then
+$`g(\rho_m, \rho_m, \mu) > 0`$ for every partition
+$`\mu`$ of $`m(m+1)/2`$.
 
 **The scope of the formalization.** The scope note
 covers both results [S5:10, S5:12]. The universal
-form: for every $n \notin \{2,4,9\}$, the
+form: for every $`n \notin \{2,4,9\}`$, the
 formalization constructs an irreducible whose tensor
 square contains every irreducible, and supplies
 injective intertwining maps [S5:10]. The
-staircase form: for every $m \geq 1$,
-$g(\rho_m, \rho_m, \mu) > 0$ [S5:12]. The
+staircase form: for every $`m \geq 1`$,
+$`g(\rho_m, \rho_m, \mu) > 0`$ [S5:12]. The
 stronger claim that every constituent appears in the
 orbit span of one prescribed tensor is not included
 [S5:14]. The scope note names two comparators
@@ -92,14 +92,14 @@ square of the staircase Specht module contains every
 irreducible representation of the corresponding
 symmetric group. It is a special case of the **tensor
 square conjecture** for symmetric groups, which asks
-for which $n$ there exists an irreducible
+for which $`n`$ there exists an irreducible
 representation whose tensor square is "universal"
 (contains every irreducible as a constituent). The
-exceptions $n \in \{2, 4, 9\}$ are the only degrees
+exceptions $`n \in \{2, 4, 9\}`$ are the only degrees
 where no such representation exists. Known partial
 results: the staircase case was verified computationally
-for small $m$, and the universal case was proved for
-$S_3$, $S_5$, $S_6$, $S_7$, $S_8$ by direct computation.
+for small $`m`$, and the universal case was proved for
+$`S_3`$, $`S_5`$, $`S_6`$, $`S_7`$, $`S_8`$ by direct computation.
 The two manuscripts attack the conjecture from
 complementary directions: the first classifies
 candidate partitions by **band structure** and
@@ -114,7 +114,7 @@ construction and **path-band** analysis
 Saxl's conjecture as a named open problem in symmetric
 group representation theory, the staircase partition
 as the conjectured universal tensor square, and the
-exception set $\{2,4,9\}$. The **full proof** —
+exception set $`\{2,4,9\}`$. The **full proof** —
 the universal form via band structure and capacity, and
 the staircase form via cyclic polytabloids — is a
 result I cannot independently verify from training
@@ -127,12 +127,12 @@ every staircase Specht module contains every
 irreducible representation [S4:55–57, S2:493].
 
 **The universal tensor square conjecture is proved.**
-Every $S_n$ with $n \notin \{2,4,9\}$ has an
+Every $`S_n`$ with $`n \notin \{2,4,9\}`$ has an
 irreducible representation whose tensor square contains
 all irreducibles [S3:56–58, S2:493].
 
-**The exceptions are characterized.** $n \in
-\{2,4,9\}$ are the only degrees where no universal
+**The exceptions are characterized.** $`n \in
+\{2,4,9\}`$ are the only degrees where no universal
 tensor square exists [S3:56–58].
 
 ## Section skeleton
@@ -156,13 +156,13 @@ test_smallcode_verify.py) and `computation/`
 ## Comparison with the formalized statement
 
 **Scope note** [S5:10, S5:12]. The scope note covers
-both results. The universal form: for every $n
-\notin \{2,4,9\}$, the formalization constructs an
-irreducible complex representation of $S_n$ whose
+both results. The universal form: for every $`n
+\notin \{2,4,9\}`$, the formalization constructs an
+irreducible complex representation of $`S_n`$ whose
 tensor square contains every irreducible, and supplies
 injective intertwining maps [S5:10]. The
-staircase form: for every $m \geq 1$,
-$g(\rho_m, \rho_m, \mu) > 0$ [S5:12]. The
+staircase form: for every $`m \geq 1`$,
+$`g(\rho_m, \rho_m, \mu) > 0`$ [S5:12]. The
 stronger claim about orbit span of one prescribed
 tensor is not included [S5:14]. The scope note names
 two comparators [S5:20–21]: `Saxl.lean` and

@@ -95,7 +95,7 @@ The quantitative theorem is stated as "A logarithmic saving for affine Liouville
 
 |Σ_{*n*≤*X*} *λ*(*a*₁*n*+*b*₁)*λ*(*a*₂*n*+*b*₂)| ≤ *C**X*/(log *X*)^*c* for *X* ≥ 3.
 
-Two boundary conditions are part of the statement: "The cutoff $X$ may be any real number. No
+Two boundary conditions are part of the statement: "The cutoff $`X`$ may be any real number. No
 coprimality condition is imposed on the coefficients." ([S6:32–33]) The route is stated in the
 introduction — the saving is first obtained for *λ*(*n*)*λ*(*n*+*h*) in each fixed residue class modulo
 each fixed modulus, "including nonunit and zero classes [S6:42]", and "Complete multiplicativity then gives
@@ -110,7 +110,7 @@ The functions may be complex, need not have modulus one, and need not be complet
 multiplicative." () and "We make no quantitative rate claim for this class of functions. [S6:78–79]"
 ([S6:78–79]) The affine and progression consequences are collected in Part III, where "We now deduce
 correlations on arbitrary fixed progressions and affine forms" from the shifted theorem
-(); the progression form holds "through all real $X$, including nonunit residue classes [S15:193]"
+(); the progression form holds "through all real $`X`$, including nonunit residue classes [S15:193]"
 ([S15:193]), and Liouville is verified to satisfy the hypothesis outright, with an explicit rate
 ([S15:268–278]).
 
@@ -133,7 +133,7 @@ self-adjoint edge operators directly, because "distinct edge operators need not 
 ([S10:19–23]).
 
 What the result does **not** say is delimited in the statement paragraphs. The implied constants
-"need not be effective [S6:38–39]", and "no uniformity for coefficients growing with $X$ is asserted [S6:39–40]"
+"need not be effective [S6:38–39]", and "no uniformity for coefficients growing with $`X`$ is asserted [S6:39–40]"
 ([S6:38–40]); the exponent is independent of the forms, and only the implied constant depends on
 them ([S11:48–49]). The qualitative theorem carries no rate ([S6:78–79]). The comparison with prior
 work is framed the same way: the logarithmically weighted bounds of Helfgott–Radziwiłł and Pilatte
@@ -166,8 +166,8 @@ does not mean the library elaborates — nothing in this release's metadata reco
 Chowla's conjecture is named for a 1965 book: "Chowla's conjecture predicts vanishing Liouville
 correlations at every fixed collection of distinct shifts" ([S6:102–103]), cited to Chowla's *The
 Riemann Hypothesis and Hilbert's Tenth Problem* ([S23:101–109]). Its binary case "asks whether the
-parities of the numbers of prime factors of $n$ and $n+h$ become uncorrelated for each fixed
-$h\ge1$." ([S6:103–105]) Elliott's generalization to bounded multiplicative functions is cited to a
+parities of the numbers of prime factors of $`n`$ and $`n+h`$ become uncorrelated for each fixed
+$`h\ge1`$." ([S6:103–105]) Elliott's generalization to bounded multiplicative functions is cited to a
 1992 note, "On the correlation of multiplicative functions [S23:113]" ([S23:111–119]), and the manuscript
 records that "Elliott extended the correlation problem to bounded multiplicative functions [S6:110–111]"
 ([S6:110–111]).
@@ -283,9 +283,9 @@ only published derivation artifact for this family.
 
 ## Bibliography
 
-- Alon, Noga, Goldreich, Oded, Mansour, Yishay, Almost $k$-wise independence versus $k$-wise independence (2003)
+- Alon, Noga, Goldreich, Oded, Mansour, Yishay, Almost $`k`$-wise independence versus $`k`$-wise independence (2003)
 - Bazzi, Louay M. J., Polylogarithmic independence can fool DNF formulas (2009)
-- Braverman, Mark, Polylogarithmic independence fools $AC^0$ circuits (2010)
+- Braverman, Mark, Polylogarithmic independence fools $`AC^0`$ circuits (2010)
 - Chowla, Sarvadaman, The Riemann Hypothesis and Hilbert's Tenth Problem (1965)
 - Elliott, P. D. T. A., On the correlation of multiplicative functions (1992)
 - Erdős, Paul, Szekeres, George, A combinatorial problem in geometry (1935)

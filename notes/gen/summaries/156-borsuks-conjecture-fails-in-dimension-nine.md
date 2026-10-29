@@ -7,15 +7,15 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:3727] and the catalog abstract [S2:395] state
-the family's claim: a compact subset of $\mathbb R^9$ that cannot be
+the family's claim: a compact subset of $`\mathbb R^9`$ that cannot be
 covered by ten sets of strictly smaller diameter, disproving Borsuk's
 covering assertion already in dimension nine. The example is the
 compact set of rank-one orthogonal projectors onto lines in
-$\mathbb R^4$, with the Frobenius metric. The manuscript is *A
+$`\mathbb R^4`$, with the Frobenius metric. The manuscript is *A
 nine-dimensional counterexample to Borsuk's covering assertion*
 [S3:6, S3:8]; its abstract 
 
-> The compact set of rank-one orthogonal projectors on $\mathbb R^4$,
+> The compact set of rank-one orthogonal projectors on $`\mathbb R^4`$,
 with the Frobenius metric, cannot be covered by ten sets of strictly
 smaller diameter. It therefore gives a counterexample to Borsuk's
 conjecture in dimension nine. [S3:12–15]
@@ -24,7 +24,7 @@ conjecture in dimension nine. [S3:12–15]
 
 The *diameter* of a set is the largest distance between any two of
 its points. Borsuk's conjecture asks: can every bounded set in
-$\mathbb R^d$ be broken into $d+1$ pieces, each with **smaller**
+$`\mathbb R^d`$ be broken into $`d+1`$ pieces, each with **smaller**
 diameter than the whole? For a disk in the plane the answer is
 intuitively yes, and the conjecture was known to hold in small
 dimensions. This manuscript shows the answer is **no** in dimension
@@ -38,19 +38,19 @@ strictly smaller diameter exists [S3:12–15, S4:9].
 
 **The headline theorem (registered).** The compact set
 `projectorSet` of rank-one orthogonal projectors onto lines in
-$\mathbb R^4$ — viewed as trace-one symmetric matrices, so it
+$`\mathbb R^4`$ — viewed as trace-one symmetric matrices, so it
 lies in a nine-dimensional affine space, with the Frobenius
-(`Metric`) distance — has diameter $\sqrt 2$ and admits **no**
-cover by ten sets each of diameter strictly less than $\sqrt 2$
+(`Metric`) distance — has diameter $`\sqrt 2`$ and admits **no**
+cover by ten sets each of diameter strictly less than $`\sqrt 2`$
 [S4:9, S6:49–56]. Because the set lives in a nine-dimensional
-space and resists a ten-set (i.e. $d+1$-set) smaller-diameter cover,
+space and resists a ten-set (i.e. $`d+1`$-set) smaller-diameter cover,
 it refutes Borsuk's assertion at the dimension the conjecture would
 first allow failure.
 
 **What the formalization proves.** The registered declaration
 `OAI.BorsukNine.main_theorem` states exactly the four conjuncts: the
 set is compact, it lies in the trace-one symmetric affine space, its
-diameter is $\sqrt 2$, and it has no ten-small cover. The OAI tree
+diameter is $`\sqrt 2`$, and it has no ten-small cover. The OAI tree
 proves it with a genuine Lean proof, closing the last conjunct by
 reducing an arbitrary cover to an admissible one and discharging it
 with the no-admissible-ten argument 
@@ -81,9 +81,9 @@ families of sets, but high-dimensional counterexamples were long
 known to exist: the first disproofs appeared in dimensions in the
 hundreds (Kleitman, and later improved bounds). The release's claim
 is to push the first failure **down to dimension nine**, using a
-concrete, named set (the rank-one projectors in $\mathbb R^4$)
+concrete, named set (the rank-one projectors in $`\mathbb R^4`$)
 rather than a purely existence-style construction. The specific
-nine-dimensional set and its $\sqrt 2$ diameter with the
+nine-dimensional set and its $`\sqrt 2`$ diameter with the
 no-ten-cover property is the family's content
 [S3:12–15, S4:9].
 
@@ -91,8 +91,8 @@ no-ten-cover property is the family's content
 conjecture, its proof in low dimensions, and that counterexamples are
 known in large dimensions with improved lower bounds over time. A
 concrete failure **at dimension nine** — specifically the
-rank-one orthogonal projectors onto lines in $\mathbb R^4$ with the
-Frobenius metric, diameter $\sqrt 2$, no ten-set smaller-diameter
+rank-one orthogonal projectors onto lines in $`\mathbb R^4`$ with the
+Frobenius metric, diameter $`\sqrt 2`$, no ten-set smaller-diameter
 cover — is a precise, strong lower-bound claim that I cannot
 independently verify from training alone; the exact nine-dimension
 threshold and this particular set go beyond the constructions I
@@ -101,8 +101,8 @@ recall.
 ## Consequences
 
 **Borsuk's covering assertion fails in dimension nine.** The compact
-set of rank-one projectors onto lines in $\mathbb R^4$ has diameter
-$\sqrt 2$ and cannot be covered by ten sets of strictly smaller
+set of rank-one projectors onto lines in $`\mathbb R^4`$ has diameter
+$`\sqrt 2`$ and cannot be covered by ten sets of strictly smaller
 diameter [S3:12–15, S4:9, S6:49–56].
 
 **A named, concrete set.** The counterexample is an explicit
@@ -110,9 +110,9 @@ identifiable set (rank-one orthogonal projectors, Frobenius metric,
 in the nine-dimensional trace-one symmetric affine space), not an
 existence-only object [S4:9, S6:49–56].
 
-**$d+1$ is the sharp piece count tested.** The set resists a cover by
-$d+1=10$ smaller-diameter pieces — the exact number Borsuk's
-assertion guarantees for dimension $d=9$ [S3:12–15, S4:9].
+**$`d+1`$ is the sharp piece count tested.** The set resists a cover by
+$`d+1=10`$ smaller-diameter pieces — the exact number Borsuk's
+assertion guarantees for dimension $`d=9`$ [S3:12–15, S4:9].
 
 ## Section skeleton
 
@@ -126,9 +126,9 @@ no `verification/` bundle.
 
 **Scope note** [S4:9]. The formalized counterexample is the compact
 set of rank-one orthogonal projectors onto lines in
-$\mathbb R^4$, with the Frobenius metric; it lies in the
+$`\mathbb R^4`$, with the Frobenius metric; it lies in the
 nine-dimensional affine space of trace-one symmetric matrices, has
-diameter $\sqrt 2$, and cannot be covered by ten arbitrary sets of
+diameter $`\sqrt 2`$, and cannot be covered by ten arbitrary sets of
 smaller diameter [S4:9]. The scope note names one comparator
 [S4:13–15]: `BorsukNine.lean`.
 
@@ -142,7 +142,7 @@ Lean proof in the OAI tree [S6:49–56].
 
 **What the proof does.** The theorem fixes the three positive
 conjuncts (compactness, containment in the trace-one symmetric space,
-diameter $\sqrt 2$) from lemmas the package proves, then discharges
+diameter $`\sqrt 2`$) from lemmas the package proves, then discharges
 the no-ten-small-cover conjunct by reducing any putative cover to an
 admissible one and applying `no_admissible_ten`
 [S6:54–56]. The OAI `Borsuk` package (269 files over 78,964

@@ -8,14 +8,14 @@
 
 The release's blurb [S1:2304] and the catalog abstract [S2:262] state
 the family's claim: every centered log-concave probability measure on
-$\mathbb R^n$ with linear subgaussian parameter $a$ satisfies a
-logarithmic Sobolev inequality with universal constant $Ca^2$,
+$`\mathbb R^n`$ with linear subgaussian parameter $`a`$ satisfies a
+logarithmic Sobolev inequality with universal constant $`Ca^2`$,
 independent of dimension. The manuscript's abstract 
 
 > We prove that every centered log-concave probability measure with a
-Lebesgue density on $\mathbb R^n$ and linear subgaussian parameter $a$
-satisfies $\mathrm{Ent}_\mu(f^2)\le Ca^2\int|Df|^2\,d\mu$
-for compactly supported smooth $f$, with one universal constant $C$.
+Lebesgue density on $`\mathbb R^n`$ and linear subgaussian parameter $`a`$
+satisfies $`\mathrm{Ent}_\mu(f^2)\le Ca^2\int|Df|^2\,d\mu`$
+for compactly supported smooth $`f`$, with one universal constant $`C`$.
 This resolves positively the dimension-free logarithmic Sobolev conjecture
 for subgaussian log-concave measures. [S3:55–60]
 
@@ -23,34 +23,34 @@ for subgaussian log-concave measures. [S3:55–60]
 
 A logarithmic Sobolev inequality (LSI) bounds the entropy of a
 function's square by its Dirichlet energy:
-$\mathrm{Ent}_\mu(f^2)\le C\int|Df|^2\,d\mu$.
-The constant $C$ controls Gaussian concentration of Lipschitz
+$`\mathrm{Ent}_\mu(f^2)\le C\int|Df|^2\,d\mu`$.
+The constant $`C`$ controls Gaussian concentration of Lipschitz
 functions and, through the Otto–Villani implication, a
 transport–entropy inequality. For a log-concave measure
-(density $\rho$ with $\log\rho$ concave), the natural question is
+(density $`\rho`$ with $`\log\rho`$ concave), the natural question is
 whether Gaussian tails of all *linear* functions already force the LSI,
 with a constant that does not grow with the dimension.
 
-The answer here is yes. A measure is "linearly $a$-subgaussian"
+The answer here is yes. A measure is "linearly $`a`$-subgaussian"
 [S4:18–22] if every one-dimensional projection has
-subgaussian parameter at most $a$. Under that hypothesis and
-log-concavity, the LSI holds with a universal constant times $a^2$
+subgaussian parameter at most $`a`$. Under that hypothesis and
+log-concavity, the LSI holds with a universal constant times $`a^2`$
 [S4:26–36]. No smoothness of the density or positive
 curvature bound is required [S4:38–41].
 
 ## Graduate summary
 
 **The main theorem** [S4:26–36, `thm:main`]. There is an
-absolute constant $C<\infty$ such that for every $n\ge1$, every
-centered log-concave probability measure $\mu$ with a Lebesgue
-density on $\mathbb R^n$, and every $a>0$ satisfying the
-linearly-$a$-subgaussian condition,
+absolute constant $`C<\infty`$ such that for every $`n\ge1`$, every
+centered log-concave probability measure $`\mu`$ with a Lebesgue
+density on $`\mathbb R^n`$, and every $`a>0`$ satisfying the
+linearly-$`a`$-subgaussian condition,
 
 > **Theorem 1.1**
-There is an absolute constant $C<\infty$ with the following property.
-For every $n\ge1$, every centered log-concave probability measure
-$\mu$ with a Lebesgue density on $\mathbb R^n$, and every $a>0$
-satisfying for $X\sim\mu$,
+There is an absolute constant $`C<\infty`$ with the following property.
+For every $`n\ge1`$, every centered log-concave probability measure
+$`\mu`$ with a Lebesgue density on $`\mathbb R^n`$, and every $`a>0`$
+satisfying for $`X\sim\mu`$,
 $$\mathrm{Ent}_\mu(f^2)\le C a^2\int_{\mathbb R^n}|Df|^2\,d\mu
  \qquad\text{for every }f\in C_c^\infty(\mathbb R^n).$$
 The same constant works in every dimension. [S4:26–36]
@@ -59,9 +59,9 @@ The same constant works in every dimension.
 
 **The transport–entropy corollary** [S4:57–65,
 `cor:intro-transport`]. Under the same hypotheses,
-$W_2(\nu,\mu)^2\le Ca^2\,H(\nu\mid\mu)$ for every
-$\nu\in\mathcal P_2(\mathbb R^n)$, with the same absolute
-constant $C$.
+$`W_2(\nu,\mu)^2\le Ca^2\,H(\nu\mid\mu)`$ for every
+$`\nu\in\mathcal P_2(\mathbb R^n)`$, with the same absolute
+constant $`C`$.
 
 **The conjecture resolved.** Bizeul formulated the sufficiency of
 uniformly subgaussian linear marginals for the dimension-free LSI
@@ -74,8 +74,8 @@ under the precise marginal condition
  . [S4:94–98]
 
 Prior bounds carried dimension dependence: Bobkov's norm-based
-criterion gives order $na^2$; Bizeul's improvement gives order
-$\sqrt n\,a^2$; and Bizeul obtained the dimension-free conclusion
+criterion gives order $`na^2`$; Bizeul's improvement gives order
+$`\sqrt n\,a^2`$; and Bizeul obtained the dimension-free conclusion
 restricted to rotationally invariant log-concave laws
 [S4:100–114].
 
@@ -83,9 +83,9 @@ restricted to rotationally invariant log-concave laws
 
 Gross connected the Gaussian LSI with hypercontractivity and
 established the framework of dimension-independent constants. Bakry
-and \'Emery gave the LSI for a density $e^{-V}$ with
-$D^2V\ge\kappa\,\mathrm{Id}$, constant at most
-$\kappa^{-1}$; log-concavity alone gives only $D^2V\ge0$
+and \'Emery gave the LSI for a density $`e^{-V}`$ with
+$`D^2V\ge\kappa\,\mathrm{Id}`$, constant at most
+$`\kappa^{-1}`$; log-concavity alone gives only $`D^2V\ge0`$
 [S4:72–80]. Herbst's argument shows that an LSI implies
 Gaussian concentration, and under log-concavity the converse
 direction holds through Milman's isoperimetric theorem and
@@ -111,11 +111,11 @@ squared linear subgaussian parameter, uniformly over all dimensions
 [S4:26–36].
 
 **Transport–entropy inequality.** The quadratic
-transport–entropy constant is bounded by the same $Ca^2$
+transport–entropy constant is bounded by the same $`Ca^2`$
 [S4:57–65].
 
 **Gaussian concentration.** All Lipschitz functions concentrate
-Gaussianly with variance proxy $Ca^2$ [S4:84–88].
+Gaussianly with variance proxy $`Ca^2`$ [S4:84–88].
 
 ## Section skeleton
 

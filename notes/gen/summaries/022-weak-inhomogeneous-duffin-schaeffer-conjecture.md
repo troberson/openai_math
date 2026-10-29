@@ -8,41 +8,41 @@
 
 The release's blurb 
 
-> **022. The weak inhomogeneous Duffin–Schaeffer conjecture.** Proves that for every real shift *γ* and finite-valued $\`\psi:\mathbb N\to[0,\infty)`$, divergence of $\`\sum_q\phi(q)\psi(q)/q`$ implies $\`\|qx-\gamma\|\lt \psi(q)`$ for infinitely many *q*, for almost every *x*. Here *ϕ* is Euler's totient and the norm is distance to the nearest integer. Numerators are unrestricted; no monotonicity or Diophantine condition on *γ* is needed. [S1:586]
+> **022. The weak inhomogeneous Duffin–Schaeffer conjecture.** Proves that for every real shift *γ* and finite-valued $`\`\psi:\mathbb N\to[0,\infty)``$, divergence of $`\`\sum_q\phi(q)\psi(q)/q``$ implies $`\`\|qx-\gamma\|\lt \psi(q)``$ for infinitely many *q*, for almost every *x*. Here *ϕ* is Euler's totient and the norm is distance to the nearest integer. Numerators are unrestricted; no monotonicity or Diophantine condition on *γ* is needed. [S1:586]
 
-The catalog abstract says the same thing: "Proves that for every real shift $\gamma$ and finite-valued $\psi:\mathbb N\to[0,\infty)$, divergence of $\sum_q\phi(q)\psi(q)/q$ implies $\|qx-\gamma\|<\psi(q)$ for infinitely many $q$, for almost every $x$. Here $\phi$ is Euler's totient and the norm is distance to the nearest integer. Numerators are unrestricted; no Diophantine condition on $\gamma$ is needed. [S2:120]" The manuscript's own
-title is "The Weak Inhomogeneous Duffin–Schaeffer Conjecture [S3:1]" , and its abstract reads: "We prove the weak inhomogeneous Duffin–Schaeffer conjecture. For every fixed $\gamma\in\mathbb R$ and finite-valued $\psi:\mathbb N\to[0,\infty)$, divergence of $\sum_{q\ge1}\phi(q)\psi(q)/q$ implies $\|qx-\gamma\|<\psi(q)$ for infinitely many $q$, for almost every $x$. Here $\phi$ is Euler's totient and $\|\cdot\|$ is distance to the nearest integer. Numerators need not be reduced, and the shift satisfies no Diophantine restriction. [S4:38–45]"
+The catalog abstract says the same thing: "Proves that for every real shift $`\gamma`$ and finite-valued $`\psi:\mathbb N\to[0,\infty)`$, divergence of $`\sum_q\phi(q)\psi(q)/q`$ implies $`\|qx-\gamma\|<\psi(q)`$ for infinitely many $`q`$, for almost every $`x`$. Here $`\phi`$ is Euler's totient and the norm is distance to the nearest integer. Numerators are unrestricted; no Diophantine condition on $`\gamma`$ is needed. [S2:120]" The manuscript's own
+title is "The Weak Inhomogeneous Duffin–Schaeffer Conjecture [S3:1]" , and its abstract reads: "We prove the weak inhomogeneous Duffin–Schaeffer conjecture. For every fixed $`\gamma\in\mathbb R`$ and finite-valued $`\psi:\mathbb N\to[0,\infty)`$, divergence of $`\sum_{q\ge1}\phi(q)\psi(q)/q`$ implies $`\|qx-\gamma\|<\psi(q)`$ for infinitely many $`q`$, for almost every $`x`$. Here $`\phi`$ is Euler's totient and $`\|\cdot\|`$ is distance to the nearest integer. Numerators need not be reduced, and the shift satisfies no Diophantine restriction. [S4:38–45]"
 
 ## Undergraduate summary
 
-The setting is Diophantine approximation with a shift. Write $\|t\|$ for
-distance to the nearest integer, and let $\phi$ be Euler's totient.
+The setting is Diophantine approximation with a shift. Write $`\|t\|`$ for
+distance to the nearest integer, and let $`\phi`$ be Euler's totient.
 The theorem 
 
 > **Theorem 1.1**
-Let $\gamma\in\mathbb R$ be fixed, and let
-$\psi:\mathbb N\to[0,\infty)$ be finite-valued. If
+Let $`\gamma\in\mathbb R`$ be fixed, and let
+$`\psi:\mathbb N\to[0,\infty)`$ be finite-valued. If
 $$\sum_{q=1}^{\infty}\frac{\phi(q)}q\,\psi(q)=\infty,$$
-then, for Lebesgue-almost every $x\in\mathbb R$, the inequality
+then, for Lebesgue-almost every $`x\in\mathbb R`$, the inequality
 $$\|qx-\gamma\|<\psi(q)$$
-holds for infinitely many positive integers $q$. [S5:9–21]
+holds for infinitely many positive integers $`q`$. [S5:9–21]
 
-In words: if the totient-weighted sum $\sum_q \phi(q)\psi(q)/q$ diverges,
-then for almost every real $x$ the inequality $\|qx-\gamma\|<\psi(q)$
-holds for infinitely many $q$. The shift $\gamma$ is arbitrary — no
-Diophantine condition. The integer nearest to $qx-\gamma$ is
+In words: if the totient-weighted sum $`\sum_q \phi(q)\psi(q)/q`$ diverges,
+then for almost every real $`x`$ the inequality $`\|qx-\gamma\|<\psi(q)`$
+holds for infinitely many $`q`$. The shift $`\gamma`$ is arbitrary — no
+Diophantine condition. The integer nearest to $`qx-\gamma`$ is
 unrestricted: no coprimality condition on the numerator [S5:23–27].
 "Theorem resolves the weak inhomogeneous Duffin–Schaeffer
 conjecture positively, including every prescribed irrational shift.
-The integer nearest to $qx-\gamma$ is unrestricted: no coprimality
+The integer nearest to $`qx-\gamma`$ is unrestricted: no coprimality
 condition is imposed on the numerator. The conclusion is a divergence
 statement, not a convergence converse or a quantitative asymptotic. [S5:23–27]"
 
 The "weak" in the name refers to the unrestricted numerator. The
-stronger formulation requires $(a,q)=1$, and that assertion is false
+stronger formulation requires $`(a,q)=1`$, and that assertion is false
 in general: counterexamples exist for every nonzero rational shift
-. "$|qx-a-\gamma|<\psi(q)$ is arbitrary. The stronger formulation
-requires $(a,q)=1$; this distinction is already explicit in
+. "$`|qx-a-\gamma|<\psi(q)`$ is arbitrary. The stronger formulation
+requires $`(a,q)=1`$; this distinction is already explicit in
 Ramírez . Theorem addresses the weak
 formulation for every prescribed real shift.
 
@@ -52,14 +52,14 @@ Maynard and Pollington \cite[Theorem 1]HMP2026 construct [S5:95–101]"
 ## Graduate summary
 
 **The proof strategy.** The proof works on arbitrarily late finite
-collections of "rows" — periodic arrays of points $(z+\gamma)/q$ with
-spatial half-width $\psi(q)/q$. On each collection it constructs a
+collections of "rows" — periodic arrays of points $`(z+\gamma)/q`$ with
+spatial half-width $`\psi(q)/q`$. On each collection it constructs a
 nonnegative weighted sum of interval indicators, changes weights through
 prescribed prime-step updates, and shows the comparison sum is
 equidistributed with a uniform second-moment bound. These bounds
 contradict the existence of a positive-measure set avoiding all
-sufficiently late rows . "Put $r(q)=\psi(q)/q$. A row is the periodic array of points
-$(z+\gamma)/q$, $z\in\mathbb Z$, with spatial half-width $r(q)$.
+sufficiently late rows . "Put $`r(q)=\psi(q)/q`$. A row is the periodic array of points
+$`(z+\gamma)/q`$, $`z\in\mathbb Z`$, with spatial half-width $`r(q)`$.
 The proof works on arbitrarily late finite collections of rows whose
 totient-weighted mass lies in a fixed small interval. On each collection
 we construct a nonnegative weighted sum of interval indicators supported
@@ -80,9 +80,9 @@ paid by a squared-mass argument using history-preserving partitions
 
 **The Hausdorff corollary.** The Lebesgue-measure theorem feeds the
 mass transference principle of Beresnevich–Velani to give a
-Hausdorff-$f$-measure divergence theorem: if
-$\sum_q \phi(q)\,f(\psi(q)/q)$ diverges with $f(r)/r$ monotone,
-then the limsup set has full $\mathcal H^f$-measure in every bounded
+Hausdorff-$`f`$-measure divergence theorem: if
+$`\sum_q \phi(q)\,f(\psi(q)/q)`$ diverges with $`f(r)/r`$ monotone,
+then the limsup set has full $`\mathcal H^f`$-measure in every bounded
 interval . "\sectionThe Hausdorff-measure consequence
  
 
@@ -90,20 +90,20 @@ We now apply the proved Lebesgue-measure theorem to the transformed
 radii in the mass transference principle.
 
 \beginproof[Proof of Corollary ]
-Put $r_q=\psi(q)/q$. If $r_q\not\to0$, then along an unbounded
-sequence of denominators $r_q\ge\delta>0$, so $\psi(q)>1/2$
-eventually. Since $\|qx-\gamma\|\le1/2$ for every $x$, in this
-case $W_\gamma(\psi)=\mathbb R$. [S15:1–15]"
+Put $`r_q=\psi(q)/q`$. If $`r_q\not\to0`$, then along an unbounded
+sequence of denominators $`r_q\ge\delta>0`$, so $`\psi(q)>1/2`$
+eventually. Since $`\|qx-\gamma\|\le1/2`$ for every $`x`$, in this
+case $`W_\gamma(\psi)=\mathbb R`$. [S15:1–15]"
 
 ## History of the conjecture
 
 The monotone theory is classical: Khintchine's theorem gives a
-full-measure conclusion for $\|qx\|<\psi(q)$ when $\psi$ is
-non-increasing and $\sum_q\psi(q)$ diverges; Szüsz extended it to
+full-measure conclusion for $`\|qx\|<\psi(q)`$ when $`\psi`$ is
+non-increasing and $`\sum_q\psi(q)`$ diverges; Szüsz extended it to
 each fixed inhomogeneous shift . "The starting point is the monotone theory of metric approximation.
 Khintchine's theorem , in its usual modern form,
-gives a full-measure conclusion for $\|qx\|<\psi(q)$ when $\psi$ is
-non-increasing and $\sum_q\psi(q)$ diverges. Szüsz extended the
+gives a full-measure conclusion for $`\|qx\|<\psi(q)`$ when $`\psi`$ is
+non-increasing and $`\sum_q\psi(q)`$ diverges. Szüsz extended the
 monotone theory to each fixed inhomogeneous shift ;
 see also the precise modern formulation in .
 Removing monotonicity changes the problem because many denominators
@@ -112,12 +112,12 @@ can describe strongly overlapping approximation intervals. [S5:60–67]"
 Removing monotonicity is the hard step: "many denominators can
 describe strongly overlapping approximation intervals" [S5:67].
 "can describe strongly overlapping approximation intervals. [S5:67]" Duffin and Schaeffer proposed the weighted sum
-$\sum_q\phi(q)\psi(q)/q$ in the homogeneous setting;
+$`\sum_q\phi(q)\psi(q)/q`$ in the homogeneous setting;
 Koukoulopoulos and Maynard proved their 1941 conjecture [S5:68–74].
 "Duffin and Schaeffer exhibited this obstruction in the
 homogeneous setting and proposed using reduced fractions with the
-weighted sum $\sum_q\phi(q)\psi(q)/q$. Koukoulopoulos and
-Maynard proved their conjecture. The weight $\phi(q)/q$
+weighted sum $`\sum_q\phi(q)\psi(q)/q`$. Koukoulopoulos and
+Maynard proved their conjecture. The weight $`\phi(q)/q`$
 records the proportion of reduced residue classes; it also gives a
 meaningful sufficient divergence criterion when all numerators are
 allowed. [S5:68–74]"
@@ -130,16 +130,16 @@ Yu \cite[Question 1.2]Yu2021 and under the name _weak inhomogeneous
 Duffin–Schaeffer conjecture_ in Chow and
 Technau \cite[Conjecture 1.22]ChowTechnau2024. It is also
 Conjecture 2 of Beresnevich, Hauke and Velani .
-The word ``weak'' concerns the conclusion: the integer $a$ in
-$|qx-a-\gamma|<\psi(q)$ is arbitrary. [S5:89–95]"
+The word ``weak'' concerns the conclusion: the integer $`a`$ in
+$`|qx-a-\gamma|<\psi(q)`$ is arbitrary. [S5:89–95]"
 
 ## Consequences
 
 **Hausdorff-measure divergence.** The mass transference principle
-gives a full Hausdorff-$f$-measure conclusion for each fixed shift,
-with unrestricted numerators and no monotonicity of $\psi$
+gives a full Hausdorff-$`f`$-measure conclusion for each fixed shift,
+with unrestricted numerators and no monotonicity of $`\psi`$
 [S15:1–15]. The proof applies the theorem to the transformed radii
-$f(\psi(q)/q)$ and transfers via the closed-ball limsup [S15:1–15].
+$`f(\psi(q)/q)`$ and transfers via the closed-ball limsup [S15:1–15].
 
 ## Section skeleton
 
@@ -202,7 +202,7 @@ section `.tex` alone.
 - He, Yubin, Liao, Lingmin, Counterexamples to the inhomogeneous Duffin–Schaeffer conjecture for a residual set of shifts (2026)
 - Khintchine, A., Einige Sätze über Kettenbrüche, mit Anwendungen auf die Theorie der Diophantischen Approximationen (1924)
 - Koukoulopoulos, Dimitris, Maynard, James, On the Duffin–Schaeffer conjecture (2020)
-- Pollington, A. D., Vaughan, R. C., The $k$-dimensional Duffin and Schaeffer conjecture (1990)
+- Pollington, A. D., Vaughan, R. C., The $`k`$-dimensional Duffin and Schaeffer conjecture (1990)
 - Ramírez, Felipe A., Counterexamples, covering systems, and zero-one laws for inhomogeneous approximation (2017)
 - Selberg, Atle, On an elementary method in the theory of primes (1947)
 - Szüsz, P., Über die metrische Theorie der diophantischen Approximation (1958)

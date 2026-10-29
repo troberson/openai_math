@@ -28,7 +28,7 @@ decades.
 
 This family resolves it: a deterministic polynomial-time algorithm finds
 the optimal schedule [S3:120–130]. The catch is the exponent —
-$O((L+2)^{150020})$ — polynomial in principle, useless in practice.
+$`O((L+2)^{150020})`$ — polynomial in principle, useless in practice.
 The proof works by showing that every feasible schedule can be broken
 into intervals whose job sets are describable by short Boolean formulas
 [S3:456–460], and then doing a dynamic program over those descriptions.
@@ -37,23 +37,23 @@ into intervals whose job sets are describable by short Boolean formulas
 
 **Main theorem** ([S3:120–130], `thm:main`). "Let an explicitly listed
 finite directed acyclic graph specify the precedence constraints on
-$n\ge1$ nonpreemptive unit-length jobs on three identical machines. There
+$`n\ge1`$ nonpreemptive unit-length jobs on three identical machines. There
 is a uniform deterministic algorithm that constructs a feasible schedule of
-minimum makespan. Given also an integer deadline $1\le T\le n$, it decides
+minimum makespan. Given also an integer deadline $`1\le T\le n`$, it decides
 feasibility exactly and returns a schedule whenever the answer is
-affirmative. Both tasks can be performed in $O((L+2)^{150020})$ steps on a
-deterministic multitape Turing machine, where $L$ is the total binary input
+affirmative. Both tasks can be performed in $`O((L+2)^{150020})`$ steps on a
+deterministic multitape Turing machine, where $`L`$ is the total binary input
 length" [S3:120–130]. The model is the explicit one: the graph is listed
 vertex by vertex and edge by edge, and the deadline is an integer in
-$[1,n]$.
+$`[1,n]`$.
 
 **Algorithm** ([S3:374–379], `prop:algorithm`). "This is a uniform
 deterministic polynomial-time algorithm. Every set it accepts has a full
-schedule, which the algorithm can explicitly return. With $K=10000$, its
+schedule, which the algorithm can explicitly return. With $`K=10000`$, its
 deadline decision and schedule construction take
-$O((L+2)^{150020})$ deterministic multitape steps" [S3:374–379]. The
+$`O((L+2)^{150020})`$ deterministic multitape steps" [S3:374–379]. The
 algorithm enumerates a fixed family of Boolean formulas with at most
-$K=10000$ leaves over atomic tests (rank thresholds, membership in job
+$`K=10000`$ leaves over atomic tests (rank thresholds, membership in job
 triples and their precedence cones), evaluates each to a subset of the job
 set, and runs a dynamic program over the resulting states
 [S3:341–372].
@@ -61,7 +61,7 @@ set, and runs a dynamic program over the resulting states
 **Structural theorem** ([S3:456–460], `thm:structure`). "Every feasible
 full three-machine schedule has a bounded-description hierarchy. In fact,
 the global node predicates and relative split predicates needed in the
-hierarchy have fewer than $500$ leaves" [S3:456–460]. This is the key
+hierarchy have fewer than $`500`$ leaves" [S3:456–460]. This is the key
 completeness step: it shows the finite search covers every feasible
 instance. The proof spans five sections — separators [S4], construction
 [S5], lists [S6], boundary [S7], and descriptions [S8] — totaling 1,144
@@ -79,13 +79,13 @@ central complexity question in scheduling [S3:82–93].
 Structural restrictions on precedence yielded intermediate results.
 **Garey, Johnson, Tarjan, and Yannakakis** gave a linear-time algorithm on
 three processors for opposing forests [S3:138–153]. **Dolev and Warmuth**
-obtained $O(n^{h(m-1)+1})$ when the precedence graph has height $h$ and at
-most $m$ processors are available per slot — polynomial when both are
+obtained $`O(n^{h(m-1)+1})`$ when the precedence graph has height $`h`$ and at
+most $`m`$ processors are available per slot — polynomial when both are
 fixed [S3:138–153].
 
 **Nederlof, Swennenhuis, and Węgrzycki** developed the structural approach
 into an exact algorithm with running time
-$(1+n/m)^{O(\sqrt{nm})}$, hence $2^{O(\sqrt n\log n)}$ for three machines —
+$`(1+n/m)^{O(\sqrt{nm})}`$, hence $`2^{O(\sqrt n\log n)}`$ for three machines —
 subexponential but not polynomial [S3:155–169]. Their decomposition at
 selected slots and memoization of subproblems described by source and sink
 sets already control the number of subproblems. This family builds on that
@@ -95,7 +95,7 @@ subexponential bound [S3:155–169].
 
 Approximation algorithms also revealed recursive structure: **Levey and
 Rothvoß**, **Garg**, **Li**, and **Das and Wiese** gave
-$(1+\varepsilon)$-approximations with quasipolynomial running time
+$`(1+\varepsilon)`$-approximations with quasipolynomial running time
 [S3:171–183].
 
 **Prior (my training data, not this repo).** The three-machine unit-job
@@ -124,7 +124,7 @@ proof.
   intervals whose job sets are describable by Boolean formulas with fewer
   than 500 leaves, independent of decomposition depth [S3:456–460].
 - **The subexponential-to-polynomial gap is closed.** The prior best
-  exact algorithm was $2^{O(\sqrt n\log n)}$ [S3:155–169]; this result
+  exact algorithm was $`2^{O(\sqrt n\log n)}`$ [S3:155–169]; this result
   brings the running time to polynomial at the cost of a large exponent.
 
 ## Section skeleton

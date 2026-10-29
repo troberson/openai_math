@@ -38,26 +38,26 @@ algebras, the answer was conjectured to be
 **yes** — there should be a uniform bound. This
 manuscript says **no**: it constructs a specific
 finite-dimensional complex algebra where, for every bound
-$2m-2$, there is a finite-dimensional module with projective
-dimension at least $2m-2$
+$`2m-2`$, there is a finite-dimensional module with projective
+dimension at least $`2m-2`$
 [S3:9–11, S2:479].
 
 ## Graduate summary
 
 **The main theorem** [S3:9–11, S4:9–11]. There
-exists a finite-dimensional complex algebra $A$ such that
-for every $m \geq 1$ there is a finitely generated $A$-
-module $N$ with $\mathrm{pd}(N) \geq 2m - 2$ and
-$\mathrm{pd}(N) < \infty$. Equivalently, the little
-finitistic dimension $\mathrm{fin.dim}(A) = \infty$
+exists a finite-dimensional complex algebra $`A`$ such that
+for every $`m \geq 1`$ there is a finitely generated $`A`$-
+module $`N`$ with $`\mathrm{pd}(N) \geq 2m - 2`$ and
+$`\mathrm{pd}(N) < \infty`$. Equivalently, the little
+finitistic dimension $`\mathrm{fin.dim}(A) = \infty`$
 [S4:9–11].
 
 **The asymmetry result** [S4:9–11, S4:15–18].
 There exists a finite-dimensional complex algebra
-$\Lambda$ such that $\mathrm{fin.dim}(\Lambda) =
-\infty$, $\mathrm{Fin.dim}(\Lambda) = \infty$ (big
-finitistic dimension), $\mathrm{fin.dim}(\Lambda^{op})
-= 0$, and $\mathrm{Fin.dim}(\Lambda^{op}) = 0$.
+$`\Lambda`$ such that $`\mathrm{fin.dim}(\Lambda) =
+\infty`$, $`\mathrm{Fin.dim}(\Lambda) = \infty`$ (big
+finitistic dimension), $`\mathrm{fin.dim}(\Lambda^{op})
+= 0`$, and $`\mathrm{Fin.dim}(\Lambda^{op}) = 0`$.
 Injectives fail to generate the unbounded derived category
 on the left and generate it on the right
 [S4:15–18].
@@ -65,8 +65,8 @@ on the left and generate it on the right
 **The scope of the formalization.** The scope note states
 the formalized counterexample is a finite-dimensional
 complex algebra with a finitely generated module of
-projective dimension at least $2m-2$ and still finite for
-every $m \geq 1$, and a separate formalized result giving
+projective dimension at least $`2m-2`$ and still finite for
+every $`m \geq 1`$, and a separate formalized result giving
 the left/right finitistic-dimension asymmetry
 [S4:9–11]. The scope note names two comparators
 [S4:15–18]: `LittleFinitistic.lean` and
@@ -75,7 +75,7 @@ the left/right finitistic-dimension asymmetry
 ## History of the conjecture
 
 The **little finitistic-dimension conjecture** asserts
-that for a finite-dimensional algebra $A$, the supremum
+that for a finite-dimensional algebra $`A`$, the supremum
 of projective dimensions of finitely generated modules of
 finite projective dimension is finite. The **big
 finitistic dimension** (supremum over all modules of
@@ -101,7 +101,7 @@ problem in representation theory of finite-dimensional
 algebras, the Fossier--Gauthier equality result, and the
 known positive cases. A **disproof by explicit
 construction** — with the specific algebra, the
-$2m-2$ lower bound, and the left/right asymmetry
+$`2m-2`$ lower bound, and the left/right asymmetry
 companion — is a result I cannot independently
 verify from training alone.
 
@@ -133,8 +133,8 @@ The family ships no `verification/` bundle.
 two formalized results: (1) the infinite little
 finitistic-dimension counterexample — a finite-
 dimensional complex algebra with a finitely generated
-module of projective dimension at least $2m-2$ and still
-finite for every $m \geq 1$; (2) the left/right
+module of projective dimension at least $`2m-2`$ and still
+finite for every $`m \geq 1`$; (2) the left/right
 finitistic-dimension asymmetry — a finite-
 dimensional complex algebra whose little and big
 finitistic dimensions are infinite on the left and zero on
@@ -187,7 +187,7 @@ real non-`sorry` proofs:
   `exact ⟨SelectedOrdinaryAlgebra.A, inferInstance,
   inferInstance, counterexample⟩`, where `counterexample`
   is the conjunction of finite dimensionality, infinite
-  little finitistic dimension, and the per-$m$ module
+  little finitistic dimension, and the per-$`m`$ module
  witness [S6:36–42]:
 
 ```lean

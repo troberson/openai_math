@@ -38,7 +38,7 @@ seven** [S3:9–11, S4:9].
 
 **The five-color lower bound** [S3:9–11, S7:124–127].
 There is no proper five-coloring of the plane: for every coloring
-$c:\mathbb C\to\{1,\ldots,5\}$ of unit disk, some pair of
+$`c:\mathbb C\to\{1,\ldots,5\}`$ of unit disk, some pair of
 unit-distance points carries the same color. The bound is stated with
 **no regularity assumption** on the color classes — not
 measurable, not Borel, not continuous — arbitrary colorings
@@ -52,13 +52,13 @@ set-theoretic choice-principle artifact) [S4:9, S8:36–37].
 
 **Together the two bounds pin the answer.** Combining the five-color
 impossibility with the seven-color construction narrows the
-Hadwiger–Nelson number to $\{6,7\}$
+Hadwiger–Nelson number to $`\{6,7\}`$
 [S3:9–11, S4:9, S7:124–127, S8:36–37].
 
 ## History of the conjecture
 
 The Hadwiger–Nelson problem asks for the chromatic number of
-the unit-distance graph on $\mathbb R^2$. The classical
+the unit-distance graph on $`\mathbb R^2`$. The classical
 lower-bound history runs from the Moebius-Kantor 4-chromatic unit-
 distance graph (no four-coloring) to the eventual elimination of the
 five- and six-color hypotheses in turn: the five-color case is the
@@ -74,7 +74,7 @@ Hadwiger–Nelson problem, the 4-to-7 range, and that both the
 five-color and the six-color cases had long been open. A **no-
 regularity** five-color lower bound (arbitrary colorings, not just
 measurable ones) together with a boundary-inclusive seven-color
-construction, narrowing the answer to $\{6,7\}$, is the specific
+construction, narrowing the answer to $`\{6,7\}`$, is the specific
 advance the family claims. I cannot independently verify the
 unit-distance graph rigidity / spectral argument in [S3:9–11] from
 training alone.
@@ -90,7 +90,7 @@ plane including every boundary point of the regions
 [S4:9, S8:36–37].
 
 **The Hadwiger–Nelson number is 6 or 7.** The two bounds
-together pin the plane's chromatic number to $\{6,7\}$
+together pin the plane's chromatic number to $`\{6,7\}`$
 [S3:9–11, S4:9].
 
 ## Section skeleton
@@ -127,9 +127,9 @@ family's two halves are registered under distinct names
 
 **What the proofs do.** The five-color declaration
 `no_proper_five_coloring` states
-$\neg\exists c\colon\mathbb C\to\mathrm{Fin\ 5},\
-\mathrm{ProperColoring\ 5\ c}$, and the OAI tree proves it with a
-real Lean proof: it assumes a proper $c$, extracts a Borel weak
+$`\neg\exists c\colon\mathbb C\to\mathrm{Fin\ 5},\
+\mathrm{ProperColoring\ 5\ c}`$, and the OAI tree proves it with a
+real Lean proof: it assumes a proper $`c`$, extracts a Borel weak
 coloring from it via `proper_to_borel_weak`, and discharges the goal
 with the no-measurable-weak-five-coloring lemma
 

@@ -11,7 +11,7 @@ the family's claim: the density-one triangular lattice minimizes the
 lower limit of energy per particle for every nonnegative completely
 monotone potential of squared distance among locally finite planar
 configurations of centered-disk density one, and separately minimizes
-unit-background renormalized Riesz energies for $0<s<2$ and the Coulomb
+unit-background renormalized Riesz energies for $`0<s<2`$ and the Coulomb
 energy, resolving the Sandier–Serfaty and the two-dimensional
 Brauchart–Hardin–Saff conjectures. The family ships four
 manuscripts. The atomic-certificate manuscript 
@@ -37,7 +37,7 @@ The four manuscripts prove four interlocking theorems. Three of them
 say the triangular lattice is the energy minimizer (for a very large
 class of interaction potentials, and for the Coulomb and Riesz energies
 specifically), and one says the hexagonal circle-packing density
-$\pi/(2\sqrt3)$ is the *best possible* two-point Fourier bound. The
+$`\pi/(2\sqrt3)`$ is the *best possible* two-point Fourier bound. The
 recurring proof device is a sharp Gaussian Fourier minorant: a function
 that lies just below the Gaussian, has a nonnegative Fourier transform,
 and touches the Gaussian exactly at the triangular-lattice points.
@@ -53,7 +53,7 @@ Among locally finite configurations of centered density one, it minimizes the
 lower limit of centered-ball energy averages for every nonnegative completely
 monotone function of squared distance, including when the energy is infinite.
 We also prove triangular minimality for planar logarithmic and Riesz
-renormalized energies, with $0<s<2$ in the Riesz case, and the corresponding
+renormalized energies, with $`0<s<2`$ in the Riesz case, and the corresponding
 jellium minima. The proof uses sharp Gaussian Fourier bounds, positive
 mixtures, and heat-kernel comparison. [S4:32–39]
 
@@ -61,7 +61,7 @@ The Fourier-certificate manuscript [S5:70–75] resolves the
 planar Cohn–Elkies sharpness conjecture:
 
 > We resolve the planar Cohn–Elkies sharpness conjecture: the two-point
-Fourier bound attains the optimal circle-packing density $\pi/(2\sqrt3)$.
+Fourier bound attains the optimal circle-packing density $`\pi/(2\sqrt3)`$.
 We construct a radial Schwartz certificate and prove its global sign
 conditions using rigorous interval arithmetic and analytic estimates.
 The same certificate recovers the classical uniqueness of the triangular
@@ -118,7 +118,7 @@ density-one configurations, infinite energies included
 [S3:29–33, S4:32–39].
 
 **Sharp circle-packing density.** The two-point Fourier method attains
-the optimal density $\pi/(2\sqrt3)$, with the certificate's global sign
+the optimal density $`\pi/(2\sqrt3)`$, with the certificate's global sign
 conditions proved by rigorous interval arithmetic
 [S5:70–75].
 
@@ -173,7 +173,7 @@ It also constructs sharp radial Schwartz minorants for every Gaussian potential:
 The Cohn–Elkies certificate conditions, with the periodic-uniqueness
 exclusion:
 
-> The planar Cohn–Elkies sharpness conjecture asks whether the two-point Fourier method attains the optimal circle-packing density. The formalization constructs a radial Schwartz function $f$ on $\mathbb R^2$ with $\widehat f(0)=1$, $f(0)=2/\sqrt3$, $\widehat f$ real and nonnegative everywhere, and $f(x)\le0$ whenever $\|x\|\ge1$. These are the sharp Fourier certificate conditions yielding density $\pi/(2\sqrt3)$. The separate uniqueness statement for periodic equality cases is outside this selected theorem. [S7:14]
+> The planar Cohn–Elkies sharpness conjecture asks whether the two-point Fourier method attains the optimal circle-packing density. The formalization constructs a radial Schwartz function $`f`$ on $`\mathbb R^2`$ with $`\widehat f(0)=1`$, $`f(0)=2/\sqrt3`$, $`\widehat f`$ real and nonnegative everywhere, and $`f(x)\le0`$ whenever $`\|x\|\ge1`$. These are the sharp Fourier certificate conditions yielding density $`\pi/(2\sqrt3)`$. The separate uniqueness statement for periodic equality cases is outside this selected theorem. [S7:14]
 
 The scope note links **two** of the four manuscripts (the
 atomic-certificate and the Fourier-certificate papers)
@@ -332,7 +332,7 @@ statements, but the release registers the family in `main_results` and
 
 ## Bibliography
 
-- Henry Cohn and Stephen D. Miller. Some properties of optimal functions for sphere packing in dimensions $8$ and $24$, 2016. Version 1, March 15, 2016. .
+- Henry Cohn and Stephen D. Miller. Some properties of optimal functions for sphere packing in dimensions $`8`$ and $`24`$, 2016. Version 1, March 15, 2016. .
 - Douglas P. Hardin and Nathaniel J. Tenpas. Universally optimal periodic configurations in the plane.  Discrete Analysis, 2025. Paper No. 26, 63 pp. doi:10.19086/da.144978.
 - J. W. S. Cassels. On a problem of Rankin about the Epstein zeta-function.  Proceedings of the Glasgow Mathematical Association, 4(2):73–80, 1959. See corrigendum, volume 6 (1963), page 116, and the 1964 corrections by Ennola and Diananda. doi:10.1017/S2040618500033906.
 - J. W. S. Cassels. Corrigendum.  Proceedings of the Glasgow Mathematical Association, 6(2):116, 1963. Corrigendum to ``On a problem of Rankin about the Epstein zeta-function''. doi:10.1017/S2040618500034833.
@@ -340,7 +340,7 @@ statements, but the release registers the family in `main_results` and
 - Veikko Ennola. A lemma about the Epstein zeta-function.  Proceedings of the Glasgow Mathematical Association, 6(4):198–201, 1964. doi:10.1017/S2040618500035024.
 - R. A. Rankin. A minimum problem for the Epstein zeta-function.  Proceedings of the Glasgow Mathematical Association, 1(4):149–158, 1953. doi:10.1017/S2040618500035668.
 - Emanuel Carneiro, Friedrich Littmann, and Jeffrey D. Vaaler. Gaussian subordination for the Beurling–Selberg extremal problem.  Transactions of the American Mathematical Society, 365(7):3493–3534, 2013. doi:10.1090/S0002-9947-2013-05716-9.
-- Henry Cohn, Abhinav Kumar, Stephen D. Miller, Danylo Radchenko, and Maryna Viazovska. {Universal optimality of the $E_8$ and Leech lattices and interpolation formulas}.  Annals of Mathematics, 196(3):983–1082, 2022. doi:10.4007/annals.2022.196.3.3.
+- Henry Cohn, Abhinav Kumar, Stephen D. Miller, Danylo Radchenko, and Maryna Viazovska. {Universal optimality of the $`E_8`$ and Leech lattices and interpolation formulas}.  Annals of Mathematics, 196(3):983–1082, 2022. doi:10.4007/annals.2022.196.3.3.
 - Jihad Titi and Jürgen Garloff. Matrix methods for the tensorial Bernstein form.  Applied Mathematics and Computation, 346:254–271, 2019. doi:10.1016/j.amc.2018.08.049.
 - Markus Faulhuber, Irina Shafkulovska, and Ilia Zlotnikov. A note on energy minimization in dimension 2.  Proceedings of the American Mathematical Society, Series B, 11:664–679, 2024. doi:10.1090/bproc/247.
 - Henry Cohn and Matthew de Courcy-Ireland. The Gaussian core model in high dimensions.  Duke Mathematical Journal, 167(13):2417–2455, 2018. doi:10.1215/00127094-2018-0018.

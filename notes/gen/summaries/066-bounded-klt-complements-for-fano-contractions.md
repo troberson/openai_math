@@ -15,11 +15,11 @@ complement theorem (the headline):
 
 Manuscript 1, bounded klt complements for Fano contractions 
 
-> For fixed dimension $d$ and positive rational $\epsilon$, we prove that
-every $\epsilon$-log-canonical Fano contraction over an algebraically
+> For fixed dimension $`d`$ and positive rational $`\epsilon`$, we prove that
+every $`\epsilon`$-log-canonical Fano contraction over an algebraically
 closed field of characteristic zero admits, near each closed base point,
-a klt complement of index bounded only by $d$ and $\epsilon$.
-Over $\mathbb C$, we also obtain monotone klt complements for Fano type
+a klt complement of index bounded only by $`d`$ and $`\epsilon`$.
+Over $`\mathbb C`$, we also obtain monotone klt complements for Fano type
 pairs with nef anti-log-canonical divisor and coefficients in a fixed
 finite rational set. This proves the finite-rational-coefficient form of
 Shokurov's bounded-klt-complement conjecture. [S2:9–18]
@@ -29,7 +29,7 @@ formalization links to, but does not prove):
 
 Manuscript 2, uniform Cartier sections 
 
-> We prove the Cartier-divisor conjecture of Birkar and Shokurov for rational boundaries in characteristic zero and for real boundaries over $\mathbb C$. For an $\epsilon$-lc Fano type contraction with positive-dimensional base and nef negative log canonical class, a Cartier divisor through any prescribed base point can be chosen with pullback log canonical threshold bounded below in terms of the dimension and $\epsilon$ alone. [S4:58–60]
+> We prove the Cartier-divisor conjecture of Birkar and Shokurov for rational boundaries in characteristic zero and for real boundaries over $`\mathbb C`$. For an $`\epsilon`$-lc Fano type contraction with positive-dimensional base and nef negative log canonical class, a Cartier divisor through any prescribed base point can be chosen with pullback log canonical threshold bounded below in terms of the dimension and $`\epsilon`$ alone. [S4:58–60]
 
 ## Undergraduate summary
 
@@ -49,11 +49,11 @@ related question: through any prescribed point on the base, can we
 choose a Cartier divisor whose pullback has a *log canonical threshold*
 (a singularities-measuring number) bounded below uniformly, depending
 only on dimension and the discrepancy lower bound? The two questions
-are equivalent over $\mathbb C$ (a theorem of Chen), and this family
+are equivalent over $`\mathbb C`$ (a theorem of Chen), and this family
 proves both forms in their natural settings: the klt-complement form
-for $\mathbb C$ with finite rational coefficients (manuscript 1), and
+for $`\mathbb C`$ with finite rational coefficients (manuscript 1), and
 the uniform Cartier-section form for rational boundaries in
-characteristic zero and for real boundaries over $\mathbb C$
+characteristic zero and for real boundaries over $`\mathbb C`$
 (manuscript 2).
 
 ## Graduate summary
@@ -61,42 +61,42 @@ characteristic zero and for real boundaries over $\mathbb C$
 **Bounded klt complements.** 
 
 > **theorem**
-For every positive integer $d$ and positive rational number $\epsilon$ there
-is a positive integer $N=N(d,\epsilon)$ with the following property. Let $k$
+For every positive integer $`d`$ and positive rational number $`\epsilon`$ there
+is a positive integer $`N=N(d,\epsilon)`$ with the following property. Let $`k`$
 be an algebraically closed field of characteristic zero, and let
-$f\colon X\to Z$ be a projective surjective morphism of normal integral
-$k$-varieties such that $f_*\mathcal O_X=\mathcal O_Z$, $\dim X=d$, $K_X$ is
-$\mathbb Q$-Cartier, $X$ is $\epsilon$-lc, and $-K_X$ is ample over $Z$.
-For every closed point $z\in Z$ there are an effective $\mathbb Q$-divisor $B$ on
-$X$ and a Zariski open neighbourhood $U$ of $z$ such that $(X,B)$ is klt over
-$U$ and
+$`f\colon X\to Z`$ be a projective surjective morphism of normal integral
+$`k`$-varieties such that $`f_*\mathcal O_X=\mathcal O_Z`$, $`\dim X=d`$, $`K_X`$ is
+$`\mathbb Q`$-Cartier, $`X`$ is $`\epsilon`$-lc, and $`-K_X`$ is ample over $`Z`$.
+For every closed point $`z\in Z`$ there are an effective $`\mathbb Q`$-divisor $`B`$ on
+$`X`$ and a Zariski open neighbourhood $`U`$ of $`z`$ such that $`(X,B)`$ is klt over
+$`U`$ and
 $$N(K_X+B)|_{f^{-1}(U)}\sim 0$$
 is an integral Cartier divisor. [S3:22–36]
 
-For every positive integer $d$ and positive rational $\epsilon$, there is
-a positive integer $N = N(d, \epsilon)$ such that for every
-$\epsilon$-lc Fano contraction $f : X \to Z$ of dimension $d$ over an
+For every positive integer $`d`$ and positive rational $`\epsilon`$, there is
+a positive integer $`N = N(d, \epsilon)`$ such that for every
+$`\epsilon`$-lc Fano contraction $`f : X \to Z`$ of dimension $`d`$ over an
 algebraically closed characteristic-zero field, every closed base point
-$z \in Z$ has a neighbourhood $U$ and an effective $\mathbb Q$-divisor
-$B$ on $X$ with $(X, B)$ klt over $U$ and
-$N(K_X + B)|_{f^{-1}(U)} \sim 0$ an integral Cartier divisor. The index
-$N$ depends only on $d$ and $\epsilon$.
+$`z \in Z`$ has a neighbourhood $`U`$ and an effective $`\mathbb Q`$-divisor
+$`B`$ on $`X`$ with $`(X, B)`$ klt over $`U`$ and
+$`N(K_X + B)|_{f^{-1}(U)} \sim 0`$ an integral Cartier divisor. The index
+$`N`$ depends only on $`d`$ and $`\epsilon`$.
 
 **Uniform Cartier sections.** 
 
 > **Theorem 1**
-For every integer $d>0$ and every real number $\epsilon>0$, there is a real number $\tau=\tau(d,\epsilon)>0$ with the following property. Let $(X,B)$ be an $\epsilon$-lc rational pair of dimension $d$, and let $f:X\to Z$ be a Fano type contraction of normal integral quasi-projective varieties with $\dim Z>0$. Suppose that $-(K_X+B)$ is nef over $Z$. For every closed point $z\in Z$, there are an open neighbourhood $U$ of $z$ and a nonzero effective Cartier divisor $D$ on $U$, with $z\in\mathrm{Supp} D$, such that
+For every integer $`d>0`$ and every real number $`\epsilon>0`$, there is a real number $`\tau=\tau(d,\epsilon)>0`$ with the following property. Let $`(X,B)`$ be an $`\epsilon`$-lc rational pair of dimension $`d`$, and let $`f:X\to Z`$ be a Fano type contraction of normal integral quasi-projective varieties with $`\dim Z>0`$. Suppose that $`-(K_X+B)`$ is nef over $`Z`$. For every closed point $`z\in Z`$, there are an open neighbourhood $`U`$ of $`z`$ and a nonzero effective Cartier divisor $`D`$ on $`U`$, with $`z\in\mathrm{Supp} D`$, such that
 $$\bigl(f^{-1}(U),B|_{f^{-1}(U)}+\tau f^*D\bigr)
 \quad\text{is log canonical.}$$ [S5:21–27]
 
-For every $d > 0$ and real $\epsilon > 0$, there is a real $\tau =
-\tau(d, \epsilon) > 0$ such that for every $\epsilon$-lc rational pair
-$(X, B)$ of dimension $d$ and Fano type contraction $f : X \to Z$ with
-$\dim Z > 0$ and $-(K_X + B)$ nef over $Z$, every closed base point $z$
-has a neighbourhood $U$ and a nonzero effective Cartier divisor $D$ on
-$U$ with $z \in \mathrm{Supp} D$ such that
-$(f^{-1}(U), B|_{f^{-1}(U)} + \tau f^* D)$ is log canonical. The
-constant $\tau$ is uniform: it depends only on $d$ and $\epsilon$, not
+For every $`d > 0`$ and real $`\epsilon > 0`$, there is a real $`\tau =
+\tau(d, \epsilon) > 0`$ such that for every $`\epsilon`$-lc rational pair
+$`(X, B)`$ of dimension $`d`$ and Fano type contraction $`f : X \to Z`$ with
+$`\dim Z > 0`$ and $`-(K_X + B)`$ nef over $`Z`$, every closed base point $`z`$
+has a neighbourhood $`U`$ and a nonzero effective Cartier divisor $`D`$ on
+$`U`$ with $`z \in \mathrm{Supp} D`$ such that
+$`(f^{-1}(U), B|_{f^{-1}(U)} + \tau f^* D)`$ is log canonical. The
+constant $`\tau`$ is uniform: it depends only on $`d`$ and $`\epsilon`$, not
 on the contraction, the boundary, or any Cartier index.
 
 ## history of the conjecture
@@ -112,27 +112,27 @@ a uniform positive lower bound on the log canonical threshold of a
 Cartier divisor through a prescribed base point, depending only on
 dimension and discrepancy. Chen's reduction (2025) establishes the
 equivalence of the klt-complement, Cartier-section, and
-identity-contraction forms over $\mathbb C$, and proves the surface and
+identity-contraction forms over $`\mathbb C`$, and proves the surface and
 curve-base cases. The two manuscripts here prove the missing general
 directions: manuscript 1 by a valuation-optimization argument over the
 cone of normalized valuations, and manuscript 2 by a character-and
-pinning-obstruction argument over a constrained $h$-lc slice of
+pinning-obstruction argument over a constrained $`h`$-lc slice of
 normalized-volume minimizers, invoking Chen's equivalence to transfer
 the birational theorem to the uniform Cartier-section statement.
 
 ## Consequences
 
-**Bounded klt complements** for $\epsilon$-lc Fano contractions over
+**Bounded klt complements** for $`\epsilon`$-lc Fano contractions over
 any algebraically closed characteristic-zero field, index bounded by
-$d$ and $\epsilon$ alone [S3:22–36].
+$`d`$ and $`\epsilon`$ alone [S3:22–36].
 
-**Monotone klt complements** over $\mathbb C$ for Fano-type pairs with
+**Monotone klt complements** over $`\mathbb C`$ for Fano-type pairs with
 nef anti-log-canonical divisor and coefficients in a fixed finite
 rational set, proving the finite-rational-coefficient form of
 Shokurov's conjecture [S3:22–36, S2:14–16].
 
-**Uniform Cartier sections** for $\epsilon$-lc rational pairs in
-characteristic zero, and for real boundaries over $\mathbb C$, with a
+**Uniform Cartier sections** for $`\epsilon`$-lc rational pairs in
+characteristic zero, and for real boundaries over $`\mathbb C`$, with a
 uniform log-canonical-threshold lower bound [S5:21–27].
 
 **The Birkar–Shokurov Cartier-divisor conjecture** is resolved

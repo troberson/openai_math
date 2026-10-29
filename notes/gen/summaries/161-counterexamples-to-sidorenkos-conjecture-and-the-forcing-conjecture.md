@@ -10,15 +10,15 @@ The release's blurb [S1:3829] and the catalog abstract [S2:405] state
 the family's claim: a connected bipartite pattern on 35 vertices and
 66 edges whose homomorphism density in some finite simple host graph
 is **smaller** than the random-graph prediction
-$t(K_2,G)^{66}$ — a counterexample to Sidorenko's conjecture.
+$`t(K_2,G)^{66}`$ — a counterexample to Sidorenko's conjecture.
 The same pattern also disproves the Skokan–Thoma forcing
 conjecture: matching its density and the edge density of a constant
 graphon need not force quasirandomness. The manuscript is *A
 counterexample to Sidorenko's conjecture* [S3:3, S3:5]; its abstract
 
 
-> We disprove Sidorenko's conjecture with a bipartite graph on $35$ vertices
-and $66$ edges: its homomorphism density in some finite simple graph is
+> We disprove Sidorenko's conjecture with a bipartite graph on $`35`$ vertices
+and $`66`$ edges: its homomorphism density in some finite simple graph is
 smaller than the conjectured lower bound. The same connected graph also
 disproves the forcing conjecture: at one fixed density, asymptotically
 matching the edge and pattern densities does not imply quasirandomness. [S3:10–14]
@@ -26,16 +26,16 @@ matching the edge and pattern densities does not imply quasirandomness. [S3:10�
 ## Undergraduate summary
 
 Sidorenko's conjecture (1993) says that for any
-**bipartite** graph $H$ and any large graph $G$ with edge density
-$p$, the *homomorphism density* $t(H,G)$ — the fraction of
-all vertex-maps from $H$ to $G$ that preserve edges — is at
-least $p^{|E(H)|}$, the value a truly random graph of density $p$
+**bipartite** graph $`H`$ and any large graph $`G`$ with edge density
+$`p`$, the *homomorphism density* $`t(H,G)`$ — the fraction of
+all vertex-maps from $`H`$ to $`G`$ that preserve edges — is at
+least $`p^{|E(H)|}`$, the value a truly random graph of density $`p`$
 would give. Intuitively: a bipartite pattern cannot be **rarer**
 than random. For 30+ years this held for all known small bipartite
 graphs. This manuscript breaks it: it exhibits a specific connected
 bipartite graph on 35 vertices and 66 edges (the incidence graph of
-22 triangular faces on 13 points) for which $t(H,G)<p^{66}$ in a
-concrete finite host $G$ [S3:10–14, S4:9]. The same
+22 triangular faces on 13 points) for which $`t(H,G)<p^{66}`$ in a
+concrete finite host $`G`$ [S3:10–14, S4:9]. The same
 construction also shows that **forcing quasirandomness** requires
 more than matching edge density and pattern density at a single
 value [S3:10–14, S2:405].
@@ -43,8 +43,8 @@ value [S3:10–14, S2:405].
 ## Graduate summary
 
 **The Sidorenko counterexample** [S3:10–14, S4:9]. There
-exists a nonempty finite simple graph $G$ such that
-$t(H,G)<t(K_2,G)^{66}$, where $H$ is the fixed connected bipartite
+exists a nonempty finite simple graph $`G`$ such that
+$`t(H,G)<t(K_2,G)^{66}`$, where $`H`$ is the fixed connected bipartite
 graph on 35 vertices and 66 edges. The inequality is **strict** and
 the host is a genuine finite simple graph — the conjecture's
 asymptotic form (taking limits over graphons) is not needed; the
@@ -52,10 +52,10 @@ failure is witnessed at the finite level
 [S3:10–14, S4:9, S2:405].
 
 **The forcing-conjecture consequence.** The Skokan–Thoma
-forcing conjecture predicts that if a graphon $W$ satisfies
-$t(H,W)=t(H,W_0)$ and $t(K_2,W)=t(K_2,W_0)$ for a constant graphon
-$W_0$, then $W$ must be quasirandom (equal to $W_0$ almost
-everywhere). The same pattern $H$ disproves this: there exist
+forcing conjecture predicts that if a graphon $`W`$ satisfies
+$`t(H,W)=t(H,W_0)`$ and $`t(K_2,W)=t(K_2,W_0)`$ for a constant graphon
+$`W_0`$, then $`W`$ must be quasirandom (equal to $`W_0`$ almost
+everywhere). The same pattern $`H`$ disproves this: there exist
 graphons matching both densities that are **not** quasirandom
 [S3:10–14, S2:405].
 
@@ -74,7 +74,7 @@ extremal combinatorics and additive number theory. The
 Skokan–Thoma forcing conjecture (2000s) is a quasirandomness
 strengthening: not just "at least random" but "matching the pattern
 density at one value forces the full random structure." Both
-were long expected to hold for all bipartite $H$; this manuscript
+were long expected to hold for all bipartite $`H`$; this manuscript
 disproves both with a **single** 35-vertex pattern
 [S3:10–14, S2:405].
 
@@ -90,8 +90,8 @@ cannot independently verify the orbit/kernel/tail construction in
 ## Consequences
 
 **Sidorenko's conjecture is false.** There is a connected bipartite
-graph $H$ (35 vertices, 66 edges) and a finite simple host $G$ with
-$t(H,G)<t(K_2,G)^{66}$ [S3:10–14, S4:9, S2:405].
+graph $`H`$ (35 vertices, 66 edges) and a finite simple host $`G`$ with
+$`t(H,G)<t(K_2,G)^{66}`$ [S3:10–14, S4:9, S2:405].
 
 **The forcing conjecture is false.** Matching the homomorphism
 density of a constant graphon at one fixed value, together with
@@ -113,7 +113,7 @@ family ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization constructs a nonempty
-finite simple host graph with $t(H,G)<t(K_2,G)^{66}$ for the
+finite simple host graph with $`t(H,G)<t(K_2,G)^{66}`$ for the
 paper's fixed bipartite graph on 35 vertices and 66 edges. The
 scope note is explicit that "the separate forcing-conjecture
 consequence in the paper is outside this statement" [S4:9]. The

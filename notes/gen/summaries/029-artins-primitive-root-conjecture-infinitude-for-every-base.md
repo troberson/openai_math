@@ -7,43 +7,43 @@
 ## Original CONTENTS.md summary
 
 The release's blurb "**029. Primitive roots for every admissible integer base.** Proves the infinitude assertion in Artin's primitive root conjecture [S1:698]" The catalog abstract 
-expands on it: "Proves the infinitude assertion in Artin's primitive root conjecture for every integer $a$ that is neither $-1$ nor a square. For each such base, at least $c_a x/(\log x)^2$ primes in every sufficiently large interval $(x,2x)$ have primitive root $a$, with $c_a>0$. [S2:134]" The two manuscripts are
+expands on it: "Proves the infinitude assertion in Artin's primitive root conjecture for every integer $`a`$ that is neither $`-1`$ nor a square. For each such base, at least $`c_a x/(\log x)^2`$ primes in every sufficiently large interval $`(x,2x)`$ have primitive root $`a`$, with $`c_a>0`$. [S2:134]" The two manuscripts are
 "Primitive roots for every admissible integer base [S3:1]" and "Simultaneous primitive roots: a conditional lower bound for prime bases [S4:1]" .
 
 ## Undergraduate summary
 
-A prime $p$ has $a$ as a primitive root when the multiplicative order
-$\mathrm{ord}_p(a)=p-1$. Artin's 1927 conjecture asserts that every "admissible"
-integer (not $-1$, not a square) is a primitive root modulo infinitely
+A prime $`p`$ has $`a`$ as a primitive root when the multiplicative order
+$`\mathrm{ord}_p(a)=p-1`$. Artin's 1927 conjecture asserts that every "admissible"
+integer (not $`-1`$, not a square) is a primitive root modulo infinitely
 many primes. The theorem 
 
 > **Theorem 1.1**
-For every admissible integer $a$, there are constants $c_a>0$ and
-$x_a\ge2$ such that, for every real $x\ge x_a$,
+For every admissible integer $`a`$, there are constants $`c_a>0`$ and
+$`x_a\ge2`$ such that, for every real $`x\ge x_a`$,
 $$\\\#\{p\text{ prime}:x<p<2x,\ p\nmid a,\ \mathrm{ord}_p(a)=p-1\}
        \ge c_a\frac{x}{(\log x)^2}.$$ [S6:17–24]
 
-The predicted scale is $x/\log x$; the theorem gives $x/(\log x)^2$ in
+The predicted scale is $`x/\log x`$; the theorem gives $`x/(\log x)^2`$ in
 every dyadic interval — a square-root loss in the log, but unconditional
-and base-specific . "The predicted counting scale is $x/\log x$; the theorem gives
-$x/(\log x)^2$ in every sufficiently large dyadic interval. In
+and base-specific . "The predicted counting scale is $`x/\log x`$; the theorem gives
+$`x/(\log x)^2`$ in every sufficiently large dyadic interval. In
 particular, it proves the infinitude assertion for each fixed
-admissible integer, including the prescribed base $2$. The constants
+admissible integer, including the prescribed base $`2`$. The constants
 and the threshold may depend on the base. [S6:26–30]"
 
 ## Graduate summary
 
 **The analytic engine.** The proof establishes a uniform zero-free region
-for Hecke $L$-functions 
+for Hecke $`L`$-functions 
 
 > **Theorem 1.2**
-Let $F$ be a cyclotomic number field containing $\mu_{12}$.
-For every finite-order Hecke character $\eta$ of $F$, the meromorphic
-continuation of $L_F(s,\eta)$ has no zeros in
+Let $`F`$ be a cyclotomic number field containing $`\mu_{12}`$.
+For every finite-order Hecke character $`\eta`$ of $`F`$, the meromorphic
+continuation of $`L_F(s,\eta)`$ has no zeros in
 $$\mathrm{Re} s>1-10^{-6}.$$ [S6:38–45]
 
-The width $10^{-6}$ is common to all cyclotomic fields containing
-$\mu_{12}$ and all finite-order Hecke characters, with no conductor
+The width $`10^{-6}`$ is common to all cyclotomic fields containing
+$`\mu_{12}`$ and all finite-order Hecke characters, with no conductor
 cutoff [S6:47–53]. This uniformity is what allows a single splitting
 estimate to handle a growing family of Kummer fields [S14].
 
@@ -68,12 +68,12 @@ companion manuscripts are outside the scope of this paper. [S21:23–30]" The co
 
 > **theorem**
 Assume Inputs , ,
- , and . Let $k\ge1$ and let
-$q_1,\ldots,q_k$ be distinct positive primes. There are constants
-$c_{\mathbf q}>0$ and $x_{\mathbf q}>1$ such that, for every real
-$x\ge x_{\mathbf q}$, at least
+ , and . Let $`k\ge1`$ and let
+$`q_1,\ldots,q_k`$ be distinct positive primes. There are constants
+$`c_{\mathbf q}>0`$ and $`x_{\mathbf q}>1`$ such that, for every real
+$`x\ge x_{\mathbf q}`$, at least
 $$c_{\mathbf q}\frac{x}{(\log x)^2}$$
-primes $p\in(x,2x)$ satisfy
+primes $`p\in(x,2x)`$ satisfy
 $$p\nmid q_1\cdots q_k,
         \qquad
         \mathrm{ord}_p(q_i)=p-1\quad(1\le i\le k).$$ [S21:32–47]
@@ -86,19 +86,19 @@ the argument.
 
 Hooley proved Artin's asymptotic under the Riemann hypothesis for the
 Dedekind zeta functions of the Kummer fields
-$\mathbb{Q}(\mu_n,a^{1/n})$ . "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
+$`\mathbb{Q}(\mu_n,a^{1/n})`$ . "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
 for the Dedekind zeta functions of the Kummer fields
-$\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree .
+$`\mathbb{Q}(\mu_n,a^{1/n})`$, with $`n`$ squarefree .
 These fields encode the obstructions to maximal order. For a prime
-$q$ and $p\nmid aq$, the conditions
+$`q`$ and $`p\nmid aq`$, the conditions
 $$p\equiv1\pmod q,\qquad a^{(p-1)/q}\equiv1\pmod p$$
-say that $p$ splits completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
-They hold precisely when $q$ divides the index
-$(p-1)/\mathrm{ord}_p(a)$. Hooley's method counts and sums such splitting
-conditions. Here a restricted factorization of $p-1$ confines the
+say that $`p`$ splits completely in $`\mathbb{Q}(\mu_q,a^{1/q})`$.
+They hold precisely when $`q`$ divides the index
+$`(p-1)/\mathrm{ord}_p(a)`$. Hooley's method counts and sums such splitting
+conditions. Here a restricted factorization of $`p-1`$ confines the
 possible index divisors to ranges where they can all be removed. [S6:57–69]" The Kummer fields encode
-the obstructions: for $q|(p-1)/\mathrm{ord}_p(a)$, the prime $p$ splits
-completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
+the obstructions: for $`q|(p-1)/\mathrm{ord}_p(a)`$, the prime $`p`$ splits
+completely in $`\mathbb{Q}(\mu_q,a^{1/q})`$.
 
 Unconditional results allow only a finite choice of bases [S6:71–76].
 "Classical unconditional results allow a finite choice of bases.
@@ -106,17 +106,17 @@ Gupta and Murty constructed a set of thirteen integers from three
 distinct primes, at least one of which is a primitive root modulo
 infinitely many primes . Heath-Brown proved that
 at most two prime bases fail the infinitude assertion, so at least
-one of $2,3,5$ satisfies it . [S6:71–76]" Averaging over the base gives asymptotics for almost all
-integers in a short range, but the exceptional set may depend on $x$
+one of $`2,3,5`$ satisfies it . [S6:71–76]" Averaging over the base gives asymptotics for almost all
+integers in a short range, but the exceptional set may depend on $`x`$
 [S6:77–82].
 
 ## Consequences
 
 **Simultaneous primitive roots.** Given the four analytic inputs from
 the first manuscript, the second proves a positive-density lower bound
-for primes $p$ where every member of a fixed set of $k$ prime bases
+for primes $`p`$ where every member of a fixed set of $`k`$ prime bases
 is simultaneously a primitive root [S21:32–47]. The bound is
-$c_{\mathbf q}\,x/(\log x)^2$ in every dyadic interval, with constants
+$`c_{\mathbf q}\,x/(\log x)^2`$ in every dyadic interval, with constants
 depending only on the chosen bases.
 
 ## Section skeleton
@@ -205,7 +205,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - C. Hooley, On Artin's conjecture, _J. Reine Angew. Math._ **225** (1967), 209–220. doi:10.1515/crll.1967.225.209.
 - A. Hoshi and K. Kanai, Davenport and Hasse's theorems and lifts of multiplication matrices of Gaussian periods, _Finite Fields Appl._ **84** (2022), article 102101. doi:10.1016/j.ffa.2022.102101.
 - O. Klurman, I. E. Shparlinski, and J. Teräväinen, On Artin's conjecture on average and short character sums, _Bull. Lond. Math. Soc._ **57** (2025), no. 8, 2429–2443. doi:10.1112/blms.70103.
-- T. Kubota, Topological covering of $\mathrm{SL}(2)$ over a local field, _J. Math. Soc. Japan_ **19** (1967), no. 1, 114–121. doi:10.2969/jmsj/01910114.
+- T. Kubota, Topological covering of $`\mathrm{SL}(2)`$ over a local field, _J. Math. Soc. Japan_ **19** (1967), no. 1, 114–121. doi:10.2969/jmsj/01910114.
 - L. Goldmakher and B. Louvel, A quadratic large sieve inequality over number fields, _Math. Proc. Cambridge Philos. Soc._ **154** (2013), no. 2, 193–212. doi:10.1017/S0305004112000370.
 - K. Matthews, A generalisation of Artin's conjecture for primitive roots, _Acta Arith._ **29** (1976), no. 2, 113–146. doi:10.4064/aa-29-2-113-146.
 - R. Gupta and M. R. Murty, A remark on Artin's conjecture, _Invent. Math._ **78** (1984), no. 1, 127–130. doi:10.1007/BF01388719.
@@ -215,7 +215,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - OpenAI, Weighted dilation graphs, smooth shifted primes and totient fibers, OpenAI Math Release preprint OAI:Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026, 2026. Lemmas 2.9 and 7.4.
 - OpenAI, The Poisson–Dirichlet law for prime predecessors, OpenAI Math Release preprint OAI:The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026, 2026. Theorem 3.1 and Sections 3–5.
 - OpenAI, Prime Predecessors with an Even Number of Prime Factors, OpenAI Math Release preprint OAI:Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026, 2026. Section 3, especially Lemmas 3.1 and 3.3.
-- OpenAI, The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $\mathrm{Re}(s)>7/8$, OpenAI Math Release preprint OAI:The-Quasi-Riemann-Hypothesis-September-30-2026, 2026. Part I, Sections 5–7.
+- OpenAI, The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $`\mathrm{Re}(s)>7/8`$, OpenAI Math Release preprint OAI:The-Quasi-Riemann-Hypothesis-September-30-2026, 2026. Part I, Sections 5–7.
 - OpenAI, Primitive roots for every admissible integer base, OpenAI Math Release preprint OAI:Primitive-roots-for-every-admissible-integer-base-October-4-2026, 2026.
 - M. Anwar and F. Pappalardi, On simultaneous primitive roots, _Acta Arith._ **180** (2017), no. 1, 35–43. doi:10.4064/aa8566-3-2017.
 - D. A. Kazhdan and S. J. Patterson, Metaplectic forms, _Publ. Math. Inst. Hautes Études Sci._ **59** (1984), 35–142. doi:10.1007/BF02698770.
@@ -225,8 +225,8 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - P. J. Stephens, An average result for Artin's conjecture, _Mathematika_ **16** (1969), no. 2, 178–188. doi:10.1112/S0025579300008159.
 - J. T. Tate, Fourier analysis in number fields and Hecke's zeta-functions, in _Algebraic Number Theory_, edited by J. W. S. Cassels and A. Fröhlich, Academic Press, London, 1967, 305–347. Scan of the volume.
 - J. T. Tate, Fourier analysis in number fields and Hecke's zeta-functions, in _Algebraic Number Theory_, edited by J. W. S. Cassels and A. Fröhlich, Academic Press, London, 1967, 305–347. Scan of the volume.
-- A. I. Vinogradov, On the density hypothesis for Dirichlet $L$-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
-- A. I. Vinogradov, On the density hypothesis for Dirichlet $L$-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
+- A. I. Vinogradov, On the density hypothesis for Dirichlet $`L`$-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
+- A. I. Vinogradov, On the density hypothesis for Dirichlet $`L`$-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
 - A. Weil, Sur certains groupes d'opérateurs unitaires, _Acta Math._ **111** (1964), 143–211. doi:10.1007/BF02391012.
 - S. Baier and M. P. Young, Mean values with cubic characters, _J. Number Theory_ **130** (2010), no. 4, 879–903. doi:10.1016/j.jnt.2009.11.007. The cited equation numbering is that of arXiv:0804.2233v4.
 - J. Thorner and A. Zaman, A unified and improved Chebotarev density theorem, _Algebra Number Theory_ **13** (2019), no. 5, 1039–1068. doi:10.2140/ant.2019.13.1039.

@@ -8,49 +8,49 @@
 
 The release's blurb [S1:2370] and the catalog abstract [S2:268] state
 the family's claim: the sum of squared Gaussian first moments of any
-finite measurable partition is at most $9/(8\pi)$, and in dimension
-at least two three planar sectors of angle $2\pi/3$ extended
+finite measurable partition is at most $`9/(8\pi)`$, and in dimension
+at least two three planar sectors of angle $`2\pi/3`$ extended
 orthogonally attain the bound. The manuscript's abstract
 
 
 > We prove the Gaussian propeller conjecture: for every finite measurable
 partition of a Euclidean space, the sum of the squared lengths of its
-Gaussian first moments is at most $9/(8\pi)$.
+Gaussian first moments is at most $`9/(8\pi)`$.
 For dimension at least two and at least three cells, three planar
-sectors of angle $2\pi/3$, extended by an orthogonal Euclidean factor,
+sectors of angle $`2\pi/3`$, extended by an orthogonal Euclidean factor,
 attain the bound. [S3:37–42]
 
 ## Undergraduate summary
 
 Take a finite measurable partition of Euclidean space into regions
-$A_1,\ldots,A_k$. Each region has a Gaussian first moment—the
+$`A_1,\ldots,A_k`$. Each region has a Gaussian first moment—the
 mean of a standard Gaussian measure restricted to that region
 [S3:51]. The propeller functional is the sum of the squared lengths
 of those first moments. The conjecture, from Khot and Naor's work on
 approximate kernel clustering [S3:62–70], asks for the largest
 this sum can be, and proposes that the maximizer for
-$d\ge2$, $k\ge3$ is a "propeller": three planar sectors meeting at
-$120^\circ$ angles, extended by an orthogonal Euclidean factor. The
-answer is the universal bound $9/(8\pi)$ [S3:85–86].
+$`d\ge2`$, $`k\ge3`$ is a "propeller": three planar sectors meeting at
+$`120^\circ`$ angles, extended by an orthogonal Euclidean factor. The
+answer is the universal bound $`9/(8\pi)`$ [S3:85–86].
 
 ## Graduate summary
 
 **The main theorem** [S3:81–92, `thm:main`]. For all positive
-integers $d$ and $k$, every measurable partition
-$(A_1,\ldots,A_k)$ of $\mathbb R^d$ satisfies
+integers $`d`$ and $`k`$, every measurable partition
+$`(A_1,\ldots,A_k)`$ of $`\mathbb R^d`$ satisfies
 
 > **theorem**
-For all positive integers $d$ and $k$, every measurable partition
-$(A_1,\ldots,A_k)$ of $\mathbb R^d$ satisfies
+For all positive integers $`d`$ and $`k`$, every measurable partition
+$`(A_1,\ldots,A_k)`$ of $`\mathbb R^d`$ satisfies
 $$\sum_{i=1}^k\left\|\int_{A_i}x\,d\gamma_d(x)\right\|^2
  \le\frac9{8\pi}.$$
-Empty cells are allowed. The constant is sharp whenever $d\ge2$ and
-$k\ge3$: three planar sectors of angle $2\pi/3$, multiplied by the
+Empty cells are allowed. The constant is sharp whenever $`d\ge2`$ and
+$`k\ge3`$: three planar sectors of angle $`2\pi/3`$, multiplied by the
 orthogonal complement of their plane, attain equality, with any further
 cells empty. [S3:81–92]
 
-Empty cells are allowed, and the constant is sharp whenever $d\ge2$
-and $k\ge3$ [S3:88–91].
+Empty cells are allowed, and the constant is sharp whenever $`d\ge2`$
+and $`k\ge3`$ [S3:88–91].
 
 **How the bound is reached.** Khot–Naor determined the
 three-cell value and showed a maximizer can be chosen conical in the
@@ -59,21 +59,21 @@ proved the bound in dimension three, their computer-assisted
 argument treating the remaining four-cell conical configurations
 through spherical geometry [S3:72–75]. The new estimates show
 that an extremizer with five or more active cells cannot exceed
-$9/(8\pi)$, closing all remaining dimensions [S3:76–79].
+$`9/(8\pi)`$, closing all remaining dimensions [S3:76–79].
 
 ## History of the conjecture
 
 The propeller conjecture arises in Khot and Naor's study of
 approximate kernel clustering, where Gaussian first moments govern
 approximation quality and Unique Games hardness; their formulation
-uses $k$ cells in $\mathbb R^{k-1}$ with unused cells permitted
+uses $`k`$ cells in $`\mathbb R^{k-1}`$ with unused cells permitted
 [S3:64–70]. The dimension-three case was settled by Heilman,
 Jagannath, and Naor, whose result the manuscript takes as an
 established input [S3:72–75].
 
 **Prior (my training data, not this repo).** I know the Khot–Naor
 kernel-clustering framework and the role of Gaussian first moments in
-it. The assertion that $9/(8\pi)$ is the universal upper bound for
+it. The assertion that $`9/(8\pi)`$ is the universal upper bound for
 the sum of squared Gaussian first moments over all finite measurable
 partitions in every dimension, with the three-sector propeller as the
 maximizer, is, to my knowledge, a conjecture that was open in the
@@ -84,16 +84,16 @@ manuscript's argument.
 
 **Universal propeller bound.** The sum of squared Gaussian first
 moments of any finite measurable partition in any dimension is at
-most $9/(8\pi)$ [S3:81–86].
+most $`9/(8\pi)`$ [S3:81–86].
 
-**Sharpness and the maximizer.** For $d\ge2$, $k\ge3$ the bound is
-attained by three planar sectors of angle $2\pi/3$ extended by the
+**Sharpness and the maximizer.** For $`d\ge2`$, $`k\ge3`$ the bound is
+attained by three planar sectors of angle $`2\pi/3`$ extended by the
 orthogonal complement, with any further cells empty
 [S3:88–91].
 
 **Kernel-clustering hardness.** Combined with the separate Unique
 Games theorem, the bound yields NP-hardness of improving the loss
-factor for identity-target kernel clustering at fixed $k\ge3$ on
+factor for identity-target kernel clustering at fixed $`k\ge3`$ on
 rational centered positive-semidefinite inputs [S2:268].
 
 ## Section skeleton
@@ -108,7 +108,7 @@ Total 1,873 lines. The manuscript ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalized result proves the sharp bound
-$9/(8\pi)$ for every positive dimension and every positive number of
+$`9/(8\pi)`$ for every positive dimension and every positive number of
 labelled cells, allowing empty cells and arbitrary masses, with
 equality attained by the three-sector propeller in dimension at least
 two with at least three cells. The scope note **excludes** the

@@ -18,103 +18,103 @@ the associated-K3 rationality prediction. [S4:51–58]"
 
 ## Undergraduate summary
 
-A smooth cubic fourfold $X\subset\mathbf P^5$ is rational if its function
-field is a purely transcendental extension of $\mathbb C$ of transcendence
+A smooth cubic fourfold $`X\subset\mathbf P^5`$ is rational if its function
+field is a purely transcendental extension of $`\mathbb C`$ of transcendence
 degree four. The connection between this birational question and K3
 surfaces appears both in the middle cohomology and in the derived
-category . "A smooth cubic fourfold $X\subset\mathbf P^5_{\mathbb C}$ is rational if its field of rational functions is
-a purely transcendental extension of $\mathbb C$ of transcendence degree four. The connection
+category . "A smooth cubic fourfold $`X\subset\mathbf P^5_{\mathbb C}`$ is rational if its field of rational functions is
+a purely transcendental extension of $`\mathbb C`$ of transcendence degree four. The connection
 between this birational question and K3 surfaces appears both in the
 middle cohomology and in the derived category. We prove that both
 connections can hold for the same irrational cubic. [S5:3–7]" Kuznetsov's rationality conjecture asserts
-that $X$ is rational if and only if its Kuznetsov component
-$\mathrm{Ku}(X)$ is equivalent to the derived category of a projective K3
+that $`X`$ is rational if and only if its Kuznetsov component
+$`\mathrm{Ku}(X)`$ is equivalent to the derived category of a projective K3
 surface. The theorem 
 
 > **theorem**
-There is an integer $d_0$ such that, for every admissible $d>d_0$, a very
-general cubic fourfold $X$ in $\mathcal C_d$ is irrational
-and admits an exact $\mathbb C$-linear equivalence
+There is an integer $`d_0`$ such that, for every admissible $`d>d_0`$, a very
+general cubic fourfold $`X`$ in $`\mathcal C_d`$ is irrational
+and admits an exact $`\mathbb C`$-linear equivalence
 $$\mathrm{Ku}(X)\simeq D^b(\mathrm{Coh}S)$$
-for a smooth projective K3 surface $S$. [S5:77–85]
+for a smooth projective K3 surface $`S`$. [S5:77–85]
 
-The threshold $d_0$ is ineffective. Some Hassett divisors
-($\mathcal C_{26}$, $\mathcal C_{38}$, $\mathcal C_{42}$) consist
+The threshold $`d_0`$ is ineffective. Some Hassett divisors
+($`\mathcal C_{26}`$, $`\mathcal C_{38}`$, $`\mathcal C_{42}`$) consist
 entirely of rational cubics [S5:87–92].
 
 ## Graduate summary
 
 **The two-evaluations argument.** The proof uses a fixed collection
-$\mathcal S$ of Picard-number-one K3 surfaces whose integral
-transcendental Hodge lattice, after shifting Hodge types by $(1,1)$
-and reversing the pairing, is isometric to $T_X$ [S5:100–118].
-An invariant $c_u(f)$ counts prime divisors acquired and lost by a
+$`\mathcal S`$ of Picard-number-one K3 surfaces whose integral
+transcendental Hodge lattice, after shifting Hodge types by $`(1,1)`$
+and reversing the pairing, is isometric to $`T_X`$ [S5:100–118].
+An invariant $`c_u(f)`$ counts prime divisors acquired and lost by a
 birational map, each weighted by the MRC-quotient test 
 
-> For an integral variety $E$, let $u(E)$ be one if the MRC quotient
+> For an integral variety $`E`$, let $`u(E)`$ be one if the MRC quotient
 of a smooth projective model of its function field is birational to a
-member of $\mathcal S$, and zero otherwise. Section defines $c_u(f)$ by counting the
+member of $`\mathcal S`$, and zero otherwise. Section defines $`c_u(f)`$ by counting the
 prime divisors acquired by the target with positive sign and those
-lost from the source with negative sign, each weighted by $u$.
+lost from the source with negative sign, each weighted by $`u`$.
 The count is finite and additive under composition. We evaluate this
 same invariant in two ways. [S5:121–127]
 
 **Evaluation via smooth factorization.** Weak factorization expresses
-$f$ as blowups and blowdowns along smooth centers. Genus-zero
+$`f`$ as blowups and blowdowns along smooth centers. Genus-zero
 Gromov–Witten pairings determine operators on the transcendental
 lattice whose projectors force a blowdown to remove a whole integral
-block. Rank $21$ and $h^{3,1}(X)=1$ leave exactly one block, giving
-$c_u(f)=1$ 
+block. Rank $`21`$ and $`h^{3,1}(X)=1`$ leave exactly one block, giving
+$`c_u(f)=1`$ 
 
-> Smooth weak factorization expresses $f$ as blowups and blowdowns
+> Smooth weak factorization expresses $`f`$ as blowups and blowdowns
 along smooth centers. Only surface centers can have nonzero test.
 Classically, a surface blowup adds its whole transcendental lattice,
 shifted to weight four with reversed pairing, as an integral orthogonal
 summand. The difficulty is to recognize that same summand on blowdown.
 Section uses genus-zero Gromov–Witten pairings with
 two variable transcendental inputs and all remaining insertions rational
-of diagonal Hodge type. For an intermediate fourfold $M$,
-define $T_M$ as for $X$. Each such pairing $B(a,b)$ determines an
-operator $A_B$ by
-$B(a,b)=q_M(A_Ba,b)$, where $q_M$ is the cup form on
-$T_M\otimes\mathbb Q$. The algebra generated by these operators has a
+of diagonal Hodge type. For an intermediate fourfold $`M`$,
+define $`T_M`$ as for $`X`$. Each such pairing $`B(a,b)`$ determines an
+operator $`A_B`$ by
+$`B(a,b)=q_M(A_Ba,b)`$, where $`q_M`$ is the cup form on
+$`T_M\otimes\mathbb Q`$. The algebra generated by these operators has a
 separate scalar factor on each whole surface contribution. Its
 projectors force a later blowdown to remove a whole block. Intersecting
 that rational block with the ambient integral lattice recovers its
 entire integral lattice, so cancellation preserves the exact test
-class. Every nonzero block has a nonzero $(3,1)$ part, so
-$h^{3,1}(X)=1$ leaves one block in the final transcendental lattice.
-Rank $21$ makes its surface center birational to a
+class. Every nonzero block has a nonzero $`(3,1)`$ part, so
+$`h^{3,1}(X)=1`$ leaves one block in the final transcendental lattice.
+Rank $`21`$ makes its surface center birational to a
 Picard-number-one K3 surface, and its discriminant fixes the degree
-$d$. Thus one more member of the class $\mathcal S$ is added than
-removed, and Proposition gives $c_u(f)=1$. [S5:129–150]
+$`d`$. Thus one more member of the class $`\mathcal S`$ is added than
+removed, and Proposition gives $`c_u(f)=1`$. [S5:129–150]
 
 **Evaluation via Sarkisov factorization.** The Mori-factorization
-pass through conic-bundle nodes gives integer-valued functions $v,s$
+pass through conic-bundle nodes gives integer-valued functions $`v,s`$
 on the nodes. The surface calculation at a conic-bundle node uses
 finite residue fields and Brauer ramification covers. A second
 Sarkisov factorization on the threefold bases gives genus bounds
 incompatible with pencils on large-degree K3 surfaces, so the
-corrections telescope to $c_u(f)=0$ 
+corrections telescope to $`c_u(f)=0`$ 
 
 > The Sarkisov factorization passes through Mori fibre spaces: contractions
-$V\to B$ with terminal $\mathbb Q$-factorial projective fourfold $V$,
-$\dim B<4$, relative Picard number one, and relatively ample
-$-K_V$. These are the nodes of the factorization. An elementary
+$`V\to B`$ with terminal $`\mathbb Q`$-factorial projective fourfold $`V`$,
+$`\dim B<4`$, relative Picard number one, and relatively ample
+$`-K_V`$. These are the nodes of the factorization. An elementary
 birational transformation between nodes is a link; its endpoint bases
-map to a common base $Q$. The bases can change along the path.
+map to a common base $`Q`$. The bases can change along the path.
 Sections – construct integer-valued
-functions $v,s$ on the nodes and prove, for sufficiently large $d$,
+functions $`v,s`$ on the nodes and prove, for sufficiently large $`d`$,
 $$c_u(\text{link})=(v+s)(V'/B')-(v+s)(V/B).$$
-The value $v(V/B)$ is the finite cancelled difference between the
-tests of vertical divisors on $V$ and divisors on $B$.
-The value $s$ comes from the remaining generic-surface calculation.
+The value $`v(V/B)`$ is the finite cancelled difference between the
+tests of vertical divisors on $`V`$ and divisors on $`B`$.
+The value $`s`$ comes from the remaining generic-surface calculation.
 
-At a conic-bundle node, the base field $L=\mathbb C(B)$ has transcendence
-degree three. For a surface subfield $k\subset L$ arising from a link,
-$L$ is the function field of a genus-zero curve over $k$. The surface
+At a conic-bundle node, the base field $`L=\mathbb C(B)`$ has transcendence
+degree three. For a surface subfield $`k\subset L`$ arising from a link,
+$`L`$ is the function field of a genus-zero curve over $`k`$. The surface
 calculation
-then gives a candidate for $s$, using the test on finite residue
+then gives a candidate for $`s`$, using the test on finite residue
 fields and covers determined by the conic's Brauer ramification.
 The crucial point is that the candidates agree for every such
 presentation with the ramification bound supplied by the links.
@@ -124,9 +124,9 @@ give genus bounds incompatible with pencils on Picard-number-one K3
 surfaces of sufficiently large degree. This proves independence with
 one bound for all test subcollections and factorizations. At nodes over
 a point both corrections vanish; the displayed differences therefore
-telescope to $c_u(f)=0$ by Theorem . [S5:152–181]
+telescope to $`c_u(f)=0`$ by Theorem . [S5:152–181]
 
-The contradiction $c_u(f)=1$ and $c_u(f)=0$ proves irrationality.
+The contradiction $`c_u(f)=1`$ and $`c_u(f)=0`$ proves irrationality.
 
 ## History of the conjecture
 
@@ -143,7 +143,7 @@ cubic with an associated K3 surface [S5:9–71].
 
 **Kuznetsov's rationality conjecture is false.** For every
 sufficiently large admissible discriminant, a very general cubic
-fourfold is irrational despite having $\mathrm{Ku}(X)\simeq D^b(\Coh S)$
+fourfold is irrational despite having $`\mathrm{Ku}(X)\simeq D^b(\Coh S)`$
 for a smooth projective K3 surface [S5:77–85].
 
 **The associated-K3 rationality prediction is also false.** The same
@@ -151,7 +151,7 @@ cubics have untwisted polarized K3 surfaces in the Hodge-theoretic
 sense, disproving the sufficiency direction of Huybrechts's
 associated-K3 criterion [S4:56–58].
 
-**The threshold is uniform and ineffective.** One bound $d_0$ works
+**The threshold is uniform and ineffective.** One bound $`d_0`$ works
 for all lattice data in the irrationality criterion, and the bound is
 independent of the test subcollection and the number of links
 [S5:178–191].

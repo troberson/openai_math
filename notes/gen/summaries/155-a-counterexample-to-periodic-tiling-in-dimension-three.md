@@ -8,20 +8,20 @@
 
 The release's blurb [S1:3711] and the catalog abstract [S2:393] state
 the family's claim: a finite translational tile in
-$\mathbb Z^3$ that tiles space but admits no fully periodic tiling,
+$`\mathbb Z^3`$ that tiles space but admits no fully periodic tiling,
 disproving the periodic tiling conjecture in the smallest possible
 lattice dimension; its unit-cube thickening gives the same
-counterexample in $\mathbb R^3$, even with arbitrary real
+counterexample in $`\mathbb R^3`$, even with arbitrary real
 translation vectors. The manuscript is *A translational tile with no
 fully periodic tiling in dimension three* [S3:61, S3:63]; its abstract
 
 
-> We construct a finite translational tile in $\mathbb Z^3$ that admits tilings but no fully periodic tiling. Its unit-cube thickening has the same property in $\mathbb R^3$, even when arbitrary real translations are allowed. This gives a negative resolution of the periodic tiling conjecture in dimension three. [S3:68]
+> We construct a finite translational tile in $`\mathbb Z^3`$ that admits tilings but no fully periodic tiling. Its unit-cube thickening has the same property in $`\mathbb R^3`$, even when arbitrary real translations are allowed. This gives a negative resolution of the periodic tiling conjecture in dimension three. [S3:68]
 
 ## Undergraduate summary
 
 A *tile* is a finite set of unit cubes in the integer lattice
-$\mathbb Z^d$. It *tiles* space if copies of it, moved by
+$`\mathbb Z^d`$. It *tiles* space if copies of it, moved by
 translations, can cover the whole space with no gaps and no
 overlaps. A tiling is *fully periodic* if it repeats in every
 direction — there is a finite set of translation vectors
@@ -36,17 +36,17 @@ can fail [S3:68, S4:9].
 ## Graduate summary
 
 **The headline theorem (registered).** There exists a finite set
-$T$ of lattice points in $\mathbb Z^3$ (nonempty) such that:
-$T$ tiles (there is a subset $A\subset\mathbb Z^3$ with $T$
-translating to cover $A$); no tiling of $A$ by translates of $T$ is
-fully periodic; the unit-cube *thickening* of $T$ almost-everywhere
-tiles $\mathbb R^3$; and no such thickening tiling is
+$`T`$ of lattice points in $`\mathbb Z^3`$ (nonempty) such that:
+$`T`$ tiles (there is a subset $`A\subset\mathbb Z^3`$ with $`T`$
+translating to cover $`A`$); no tiling of $`A`$ by translates of $`T`$ is
+fully periodic; the unit-cube *thickening* of $`T`$ almost-everywhere
+tiles $`\mathbb R^3`$; and no such thickening tiling is
 Euclidean-fully-periodic, even with arbitrary real translations; and
-$3$ is the least lattice dimension in which a tile exists with no
+$`3`$ is the least lattice dimension in which a tile exists with no
 periodic complement [S4:9, S6:23–31].
 
 **The minimal-dimension clause.** The result is not merely that a
-non-periodic tile exists in $\mathbb Z^3$: dimension three is
+non-periodic tile exists in $`\mathbb Z^3`$: dimension three is
 established as the **least** lattice dimension where the failure
 occurs — in dimensions one and two every finite tile that
 tiles admits a fully periodic tiling
@@ -55,9 +55,9 @@ tiles admits a fully periodic tiling
 **What the formalization proves.** The registered declaration
 `OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality`
 states exactly the headline theorem: the existence of a nonempty
-finite $T\subset$ ``Lattice 3`` with a tiling $A$, no fully
-periodic tiling of $A$, an a.e. tiling of the thickening, no
-Euclidean-fully-periodic thickening tiling, and $3$ as the least such
+finite $`T\subset`$ ``Lattice 3`` with a tiling $`A`$, no fully
+periodic tiling of $`A`$, an a.e. tiling of the thickening, no
+Euclidean-fully-periodic thickening tiling, and $`3`$ as the least such
 dimension. The OAI tree proves it directly, by assembling the
 constructed tile with the minimality lemma
 
@@ -85,40 +85,40 @@ argument that no dimension below three can carry such a tile.
 The periodic tiling (or "is every aperiodic tiling aperiodic in the
 periodic sense?") question sits in the geometry of tiling and
 combinatorial group theory. In one dimension every translation tile
-of $\mathbb Z$ is periodic, and the question has a long history in
+of $`\mathbb Z`$ is periodic, and the question has a long history in
 the two-dimensional case, closely related to the classical
 periodicity/aperiodicity of domino and polyomino tilings. The
 release's claim is a **three-dimensional** counterexample with the
 added **minimality** content: three is the first dimension in which a
 finite tile can tile without any fully periodic tiling. The
 unit-cube thickening extends the lattice counterexample to
-$\mathbb R^3$ with arbitrary real translation vectors, matching the
+$`\mathbb R^3`$ with arbitrary real translation vectors, matching the
 form of the Euclidean question
 [S3:68, S4:9].
 
 **Prior (my training data, not this repo).** I know the
 one- and two-dimensional periodicity facts for translation tiles, and
 that the three-dimensional case is where the question is
-nontrivial. A concrete finite tile in $\mathbb Z^3$ that tiles but
+nontrivial. A concrete finite tile in $`\mathbb Z^3`$ that tiles but
 has **no** fully periodic tiling, together with the **minimality**
 statement (three is the least such dimension), and its extension to
-$\mathbb R^3$ with real translations, goes beyond the specific
+$`\mathbb R^3`$ with real translations, goes beyond the specific
 constructions I recall; I cannot independently verify the tile or the
 minimality argument from training alone.
 
 ## Consequences
 
 **The periodic tiling conjecture is false in dimension three.**
-There is a finite translational tile in $\mathbb Z^3$ that tiles
+There is a finite translational tile in $`\mathbb Z^3`$ that tiles
 but admits no fully periodic tiling [S3:68, S4:9, S6:23–31].
 
-**Dimension three is minimal.** No tile in $\mathbb Z^d$ for
-$d<3$ exhibits the failure; three is the least lattice dimension
+**Dimension three is minimal.** No tile in $`\mathbb Z^d`$ for
+$`d<3`$ exhibits the failure; three is the least lattice dimension
 where a tile can tile without a fully periodic tiling
 [S4:9, S6:8–21].
 
-**The failure survives thickening to $\mathbb R^3$.** The
-unit-cube thickening tiles $\mathbb R^3$ almost everywhere but
+**The failure survives thickening to $`\mathbb R^3`$.** The
+unit-cube thickening tiles $`\mathbb R^3`$ almost everywhere but
 admits no Euclidean-fully-periodic tiling, even with arbitrary real
 translation vectors [S3:68, S4:9, S6:23–31].
 
@@ -131,8 +131,8 @@ under `build/`, 98 lines; one `references.bib`. The family ships no
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalized counterexample is a finite tile
-in $\mathbb Z^3$ that tiles but has no complement invariant under a
-finite-index subgroup; its unit-cube thickening tiles $\mathbb R^3$
+in $`\mathbb Z^3`$ that tiles but has no complement invariant under a
+finite-index subgroup; its unit-cube thickening tiles $`\mathbb R^3`$
 almost everywhere but admits no fully periodic tiling even with
 arbitrary real translations, and dimension three is established as
 the least lattice dimension where this failure occurs [S4:9]. The

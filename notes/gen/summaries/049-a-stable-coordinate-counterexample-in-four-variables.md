@@ -24,20 +24,20 @@ an element that becomes a coordinate after adjoining finitely many variables
 was already a coordinate."
 
 The first manuscript writes down the polynomial. [S4:8–16] states its result:
-"There is a $\mathbf C$-algebra automorphism of $R[w]$ sending $f$ to $x_1$, but
-there is no such automorphism of $R$."
+"There is a $`\mathbf C`$-algebra automorphism of $`R[w]`$ sending $`f`$ to $`x_1`$, but
+there is no such automorphism of $`R`$."
 
-The polynomial is $Q=x_2^2-x_4^2+x_1x_3$ and
-$f=x_1-2Q\bigl(Q(x_2+x_4)+x_1x_4\bigr)$, read from the display at [S4:10–14].
+The polynomial is $`Q=x_2^2-x_4^2+x_1x_3`$ and
+$`f=x_1-2Q\bigl(Q(x_2+x_4)+x_1x_4\bigr)`$, read from the display at [S4:10–14].
 The abstract names its degree: [S3:36–43] says "We construct an explicit
-degree-five polynomial over $\mathbf C$ that is not a coordinate in four variables
+degree-five polynomial over $`\mathbf C`$ that is not a coordinate in four variables
 but becomes one after adjoining a single variable." The manuscript is dated
 [S2:5].
 
 The same polynomial settles an older question about embeddings. [S4:20–22]
-states the corollary: "For every $\lambda\in\mathbf C$, the hypersurface
-$f^{-1}(\lambda)\subset\mathbb A^4$ is isomorphic to $\mathbb A^3$ and its embedding in
-$\mathbb A^4$ is not rectifiable." Every fiber is affine three-space, yet no ambient
+states the corollary: "For every $`\lambda\in\mathbf C`$, the hypersurface
+$`f^{-1}(\lambda)\subset\mathbb A^4`$ is isomorphic to $`\mathbb A^3`$ and its embedding in
+$`\mathbb A^4`$ is not rectifiable." Every fiber is affine three-space, yet no ambient
 automorphism can straighten any of them.
 
 The second manuscript reaches the same conclusion by a different route.
@@ -46,45 +46,45 @@ variables whose zero fibre is affine three-space. Adjoining variables gives
 counterexamples in every ambient dimension at least four."
 
 Its engine is an elementary lifting lemma. [S11:164–175] states it: for a ring
-$B$ with $x^2+y^3=hs$ and $(h,y)=B$, the algebra $B[U,V,W]$ modulo three
-relations "is isomorphic to $B[T]$, where $T$ is an indeterminate. [S11:174]" The
+$`B`$ with $`x^2+y^3=hs`$ and $`(h,y)=B`$, the algebra $`B[U,V,W]`$ modulo three
+relations "is isomorphic to $`B[T]`$, where $`T`$ is an indeterminate. [S11:174]" The
 unit-ideal hypothesis is what lets the construction solve two linear equations
 without dividing by either coefficient.
 
-The obstruction is a critical point. [S11:103–111] proves $R/(F)\cong\mathbb C^{[3]}$
-and $\mathrm{\nabla} F(2,0,-1/2,1/2)=0$, and concludes "Consequently $F$ is not a
-coordinate of $R$." A coordinate polynomial cannot have a critical point: the
+The obstruction is a critical point. [S11:103–111] proves $`R/(F)\cong\mathbb C^{[3]}`$
+and $`\mathrm{\nabla} F(2,0,-1/2,1/2)=0`$, and concludes "Consequently $`F`$ is not a
+coordinate of $`R`$." A coordinate polynomial cannot have a critical point: the
 Jacobian matrix of a polynomial automorphism is invertible at every point.
 
 [S11:116–120] extends the example to every ambient dimension: "For every
-integer $n\ge4$, there is a polynomial $f\in\mathbb C[z_1,\ldots,z_n]$ such that
-$\mathbb C[z_1,\ldots,z_n]/(f)\cong\mathbb C^{[n-1]}$ and $f$ is not a coordinate."
+integer $`n\ge4`$, there is a polynomial $`f\in\mathbb C[z_1,\ldots,z_n]`$ such that
+$`\mathbb C[z_1,\ldots,z_n]/(f)\cong\mathbb C^{[n-1]}`$ and $`f`$ is not a coordinate."
 
 ## Graduate summary
 
 The first manuscript's proof runs in two stages, and the introduction names
 them. [S4:35] opens the construction: "The proof uses two presentations of the
 same four-variable polynomial ring." The ring is written as a hypersurface
-$A=P/(H)$ in five variables, and a determinant-preserving matrix
-transformation makes $H$ linear in one new coordinate, identifying $A$ with
-$R$. The exponential of a locally nilpotent derivation then gives the
-automorphism of $A[w]$ that sends the distinguished element to a coordinate.
+$`A=P/(H)`$ in five variables, and a determinant-preserving matrix
+transformation makes $`H`$ linear in one new coordinate, identifying $`A`$ with
+$`R`$. The exponential of a locally nilpotent derivation then gives the
+automorphism of $`A[w]`$ that sends the distinguished element to a coordinate.
 
 The negative half is a derivation obstruction. [S4:44] names the last two
 sections: "The last two sections exclude that invariant. [S4:44]" An integer-indexed
-filtration on $A$ has associated graded ring $G=B[\tau,I/\tau]$ over
-$B=k[x,y,z,u]/(xy-z(z+1))$; if the polynomial were a coordinate, a nonzero
-locally nilpotent derivation on $B$ with a nonzero element of $I$ in its
+filtration on $`A`$ has associated graded ring $`G=B[\tau,I/\tau]`$ over
+$`B=k[x,y,z,u]/(xy-z(z+1))`$; if the polynomial were a coordinate, a nonzero
+locally nilpotent derivation on $`B`$ with a nonzero element of $`I`$ in its
 kernel would exist. Passing to the complement of the zero section in a line
-bundle makes $I$ principal, generated by $v=a^3b+a^2u^2-d^2$, and the lifted
-derivation would have to annihilate $v$. A second grading forces a coefficient
-that is simultaneously a polynomial in $a,d,u$ and of negative fiber weight.
+bundle makes $`I`$ principal, generated by $`v=a^3b+a^2u^2-d^2`$, and the lifted
+derivation would have to annihilate $`v`$. A second grading forces a coefficient
+that is simultaneously a polynomial in $`a,d,u`$ and of negative fiber weight.
 
 The second manuscript's proof is elementary by comparison. [S11:84–85] gives
 the construction: "The construction starts from the cusp parametrization
-$(u^3,-u^2)$ and perturbs its two entries by independent multiples of $h$."
-The cusp relation $x^2+y^3=hs$ is what the lifting lemma consumes, and the
-critical point at $(2,0,-1/2,1/2)$ on the fiber $F=-1$ is what rules out a
+$`(u^3,-u^2)`$ and perturbs its two entries by independent multiples of $`h`$."
+The cusp relation $`x^2+y^3=hs`$ is what the lifting lemma consumes, and the
+critical point at $`(2,0,-1/2,1/2)`$ on the fiber $`F=-1`$ is what rules out a
 coordinate. The manuscript is dated [S10:5].
 
 The two papers attack different halves of the same distinction. [S4:32]
@@ -99,10 +99,10 @@ claim. [S12:10] gives the conjecture as the scope note records it: "The stable
 coordinate conjecture predicts that a polynomial that becomes a coordinate
 after adjoining variables was already a coordinate."
 
-[S12:12] gives the formalized counterexample: "For every $n\ge4$, the
-formalized counterexample gives $F\in\mathbb C[x_1,\ldots,x_n]$ with quotient
-$\mathbb C[x_1,\ldots,x_n]/(F)\cong\mathbb C[y_1,\ldots,y_{n-1}]$, although
-$F$ is not a coordinate."
+[S12:12] gives the formalized counterexample: "For every $`n\ge4`$, the
+formalized counterexample gives $`F\in\mathbb C[x_1,\ldots,x_n]`$ with quotient
+$`\mathbb C[x_1,\ldots,x_n]/(F)\cong\mathbb C[y_1,\ldots,y_{n-1}]`$, although
+$`F`$ is not a coordinate."
 
 The method is split across four sections, each named by its own header:
 `Polynomial presentation and stabilization` [S6:1], `A graded obstruction to
@@ -115,7 +115,7 @@ The declaration is `OAI.AbhyankarSathaye.exists_noncoordinate_polynomial` at
 packages the stabilization and the fiber statement together.
 
 The scope note records a third formalized result, not a second manuscript.
-[S12:14] describes it: "A companion gives $n-1$ commuting, locally nilpotent
+[S12:14] describes it: "A companion gives $`n-1`$ commuting, locally nilpotent
 derivations, linearly independent over the polynomial ring, whose common
 kernel is generated by the construction's explicit polynomial and contains no
 ambient coordinate." Its declaration is
@@ -129,7 +129,7 @@ each is a stub. [S16:17] carries `sorry`; [S17:67] carries `sorry`;
 `AbhyankarSathaye` target asks for a polynomial with affine-space quotient
 that is not a coordinate, the `StableCoordinateFour` target asks for a
 polynomial that is a coordinate in the extension by one variable and not in
-the original ring, and the `CommutingDerivations` target asks for $n-1$
+the original ring, and the `CommutingDerivations` target asks for $`n-1`$
 independent commuting locally nilpotent derivations with the stated kernel.
 
 ## History of the conjecture
@@ -143,11 +143,11 @@ The conjecture is tied to cancellation. [S4:28] states the connection:
 "Cancellation asks instead whether an affine variety whose product with an
 affine line is an affine space must itself be an affine space." The
 manuscript notes that its own example sits in the coordinate direction, since
-the ambient variety is already $\mathbb A^4$.
+the ambient variety is already $`\mathbb A^4`$.
 
 The embedding conjecture is older. [S11:34–40] states it: "must be a
 coordinate, that is, the first component of a polynomial automorphism of
-$\mathbb A^n_{\mathbb C}$." Sathaye separated the two questions early. [S11:52–53]
+$`\mathbb A^n_{\mathbb C}`$." Sathaye separated the two questions early. [S11:52–53]
 records the separation: "whether an affine-space zero fibre forces all fibres
 to be affine space."
 
@@ -172,16 +172,16 @@ release's own reading. The claim in the entry is the record.
 ## Consequences
 
 The counterexample is not confined to four variables. [S11:116–120] states the
-extension: "For every integer $n\ge4$, there is a polynomial
-$f\in\mathbb C[z_1,\ldots,z_n]$ such that
-$\mathbb C[z_1,\ldots,z_n]/(f)\cong\mathbb C^{[n-1]}$ and $f$ is not a coordinate." The
+extension: "For every integer $`n\ge4`$, there is a polynomial
+$`f\in\mathbb C[z_1,\ldots,z_n]`$ such that
+$`\mathbb C[z_1,\ldots,z_n]/(f)\cong\mathbb C^{[n-1]}`$ and $`f`$ is not a coordinate." The
 critical point survives the adjunction, which is what keeps the obstruction
 alive in higher dimension.
 
 The Shpilrain–Yu question about the gradient is answered. [S11:122–127]
 states the question and the answer: "They asked whether the gradient must be
 nowhere zero when the zero fibre is isomorphic to a coordinate hyperplane."
-The critical point at $(2,0,-1/2,1/2)$ is the negative answer.
+The critical point at $`(2,0,-1/2,1/2)`$ is the negative answer.
 
 The rectifiability statement is stronger than the coordinate statement.
 [S4:20–22] says every fiber is affine three-space and its embedding is not
@@ -189,7 +189,7 @@ rectifiable, so the failure is not one bad fiber: the whole family of fibers
 resists straightening.
 
 The formalized companion is the part of the family that reaches past the
-counterexample. [S12:14] describes a kernel result: $n-1$ commuting locally
+counterexample. [S12:14] describes a kernel result: $`n-1`$ commuting locally
 nilpotent derivations, linearly independent over the polynomial ring, with a
 common kernel generated by the construction's polynomial and containing no
 ambient coordinate. That is a structural statement about derivations, not a
@@ -229,24 +229,24 @@ claims exist and names their declarations; the comparator configs carry
 - Blanc, Jérémy, Poloni, Pierre-Marie, Bivariables and Vénéreau polynomials (2022)
 - Brion, Michel, On linearization of line bundles (2015)
 - Dutta, Amartya Kumar, Lahiri, Animesh, On residual and stable coordinates (2021)
-- Edo, Eric, Vénéreau, Stéphane, Length 2 variables of $A[x,y]$ and transfer (2001)
-- P. Ghosh, _On $\Aff^1$-contractibility of certain simple birational extensions of affine spaces_, arXiv:2506.09166v4 (2026).
+- Edo, Eric, Vénéreau, Stéphane, Length 2 variables of $`A[x,y]`$ and transfer (2001)
+- P. Ghosh, _On $`\Aff^1`$-contractibility of certain simple birational extensions of affine spaces_, arXiv:2506.09166v4 (2026).
 - P. Ghosh, N. Gupta, and A. Pal, _On embedding of linear hypersurfaces_, arXiv:2405.07205v3 (2024).
-- P. Ghosh, N. Gupta, and A. Pal, _On the family of affine threefolds $a(x)y=F(x,z,t)$_, J. Algebra **700** (2026), 267–288. doi:10.1016/j.jalgebra.2026.04.008; arXiv:2403.17397v2.
+- P. Ghosh, N. Gupta, and A. Pal, _On the family of affine threefolds $`a(x)y=F(x,z,t)`$_, J. Algebra **700** (2026), 267–288. doi:10.1016/j.jalgebra.2026.04.008; arXiv:2403.17397v2.
 - M. El Kahoui, N. Essamaoui, and M. Ouali, _Interpolation in the automorphism group of a polynomial ring_, Algebra Colloq. **27** (2020), no. 3, 587–598. doi:10.1142/S1005386720000486.
 - Kaliman, Shulim, Makar-Limanov, Leonid, AK-invariant of affine domains (2007)
 - Kaliman, Shulim, Zaidenberg, Mikhail, Affine modifications and affine hypersurfaces with a very transitive automorphism group (1999)
-- Kaliman, Shulim, Polynomials with general $\mathbf{C}^{2}$-fibers are variables (2002)
-- S. Kaliman, S. Vénéreau, and M. Zaidenberg, _Simple birational extensions of the polynomial algebra $\CC^{[3]}$_, Trans. Amer. Math. Soc. **356** (2004), 509–555. doi:10.1090/S0002-9947-03-03398-1; arXiv:math/0104204v2.
-- H. Kraft, _Challenging problems on affine $n$-space_, Séminaire Bourbaki, Vol. 1994/95, Exposé 802, Astérisque **237** (1996), 295–317.
+- Kaliman, Shulim, Polynomials with general $`\mathbf{C}^{2}`$-fibers are variables (2002)
+- S. Kaliman, S. Vénéreau, and M. Zaidenberg, _Simple birational extensions of the polynomial algebra $`\CC^{[3]}`$_, Trans. Amer. Math. Soc. **356** (2004), 509–555. doi:10.1090/S0002-9947-03-03398-1; arXiv:math/0104204v2.
+- H. Kraft, _Challenging problems on affine $`n`$-space_, Séminaire Bourbaki, Vol. 1994/95, Exposé 802, Astérisque **237** (1996), 295–317.
 - Lewis, Drew, Vénéreau-type polynomials as potential counterexamples (2013)
 - Makar-Limanov, Leonid, van Rossum, Peter, Shpilrain, Vladimir, Yu, Jie-Tai, The stable equivalence and cancellation problems (2004)
 - S. Maubach, _The commuting derivations conjecture_, J. Pure Appl. Algebra **179** (2003), 159–168. doi:10.1016/S0022-4049(02)00198-6.
-- S. Maubach, _Triangular monomial derivations on $k[X_1,X_2,X_3,X_4]$ have kernel generated by at most four elements_, J. Pure Appl. Algebra **153** (2000), no. 2, 165–170. doi:10.1016/S0022-4049(99)00084-5.
+- S. Maubach, _Triangular monomial derivations on $`k[X_1,X_2,X_3,X_4]`$ have kernel generated by at most four elements_, J. Pure Appl. Algebra **153** (2000), no. 2, 165–170. doi:10.1016/S0022-4049(99)00084-5.
 - S. S. Abhyankar and T. T. Moh, _Embeddings of the line in the plane_, J. Reine Angew. Math. **276** (1975), 148–166. doi:10.1515/crll.1975.276.148.
 - OpenAI, An explicit failure of complex affine-space cancellation (2026)
 - P. Russell, _Simple birational extensions of two dimensional affine rational domains_, Compositio Math. **33** (1976), no. 2, 197–208. Archival full text.
 - A. Sathaye, _On linear planes_, Proc. Amer. Math. Soc. **56** (1976), 1–7. doi:10.1090/S0002-9939-1976-0409472-6.
 - Shpilrain, Vladimir, Yu, Jie-Tai, Affine varieties with equivalent cylinders (2002)
-- M. Suzuki, _Propriétés topologiques des polyn\^omes de deux variables complexes, et automorphismes algébriques de l'espace $\CC^2$_, J. Math. Soc. Japan **26** (1974), 241–257. doi:10.2969/jmsj/02620241.
+- M. Suzuki, _Propriétés topologiques des polyn\^omes de deux variables complexes, et automorphismes algébriques de l'espace $`\CC^2`$_, J. Math. Soc. Japan **26** (1974), 241–257. doi:10.2969/jmsj/02620241.
 - V. Shpilrain and J.-T. Yu, _Embeddings of hypersurfaces in affine spaces_, J. Algebra **239** (2001), no. 1, 161–173. doi:10.1006/jabr.2000.8677; arXiv:math/0010211v1.

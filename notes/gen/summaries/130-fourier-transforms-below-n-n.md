@@ -15,21 +15,21 @@ agree on the statement.
 
 ## Undergraduate summary
 
-The **discrete Fourier transform** (DFT) of a vector of $n$ complex
+The **discrete Fourier transform** (DFT) of a vector of $`n`$ complex
 numbers produces a new vector capturing the frequencies in the original.
 The classic **Fast Fourier Transform** (FFT) computes it in
-$O(n\log n)$ operations, down from the naive $O(n^2)$.
+$`O(n\log n)`$ operations, down from the naive $`O(n^2)`$.
 
-This family asks: can we do **better than $O(n\log n)$** while computing
+This family asks: can we do **better than $`O(n\log n)`$** while computing
 the DFT *exactly* (no rounding)? The answer, in a precise model, is yes —
 in a limited sense.
 
 MS1 [S4:85–91] gives a single deterministic algorithm that computes the
-exact DFT at every length $n$ in
-$O(n(\log n)^{1-10^{-13}})$ operations [S4:93–99] — a power saving of
-$\delta=10^{-13}$ over the $O(n\log n)$ barrier. MS2 [S8:46–54] proves the
+exact DFT at every length $`n`$ in
+$`O(n(\log n)^{1-10^{-13}})`$ operations [S4:93–99] — a power saving of
+$`\delta=10^{-13}`$ over the $`O(n\log n)`$ barrier. MS2 [S8:46–54] proves the
 subsequential form: along some unbounded sequence of lengths, the exact
-circuit cost is $o(n\log n)$.
+circuit cost is $`o(n\log n)`$.
 
 The catch is the **model**: exact complex arithmetic, unrestricted
 coefficients, a supplied root of unity, and logarithmic-word indexing
@@ -39,21 +39,21 @@ are enormous — not a practical speedup over the FFT.
 ## Graduate summary
 
 **MS1 main theorem** ([S4:85–91], `thm:main`). "There is a single
-deterministic algorithm which, for every positive integer $n$ and every
-$x\in\mathbb C^n$, computes $F_nx$ exactly. In the model above, including scalar
+deterministic algorithm which, for every positive integer $`n`$ and every
+$`x\in\mathbb C^n`$, computes $`F_nx`$ exactly. In the model above, including scalar
 preparation, schedule construction, and index work, its running time is
-$O(n(\log n)^\theta(\log\log n)^{4-\theta})$ as $n\to\infty$" [S4:85–91].
+$`O(n(\log n)^\theta(\log\log n)^{4-\theta})`$ as $`n\to\infty`$" [S4:85–91].
 The corollary specializes to
-$O(n(\log n)^{1-10^{-13}})=o(n\log n)$ [S4:93–99]. The model uses exact
+$`O(n(\log n)^{1-10^{-13}})=o(n\log n)`$ [S4:93–99]. The model uses exact
 complex arithmetic, unrestricted coefficients, and a supplied root of
 unity; scalar preparation and indexing work are included [S4:101].
 
 **MS2 main theorem** ([S8:46–54], `thm:main`). "In this model,
-$\liminf_{n\to\infty}\frac{L(n)}{n\log_2 n}=0$. Equivalently, for every
-$c>0$ and every integer $N_0\ge2$, there is an integer $n\ge N_0$ and an
-exact circuit for $F_n$ with fewer than $c n\log_2 n$ gates" [S8:46–54].
-This refutes the assertion that $L(n)\ge c n\log_2 n$ for some fixed
-$c>0$ and all sufficiently large $n$ [S8:58–59].
+$`\liminf_{n\to\infty}\frac{L(n)}{n\log_2 n}=0`$. Equivalently, for every
+$`c>0`$ and every integer $`N_0\ge2`$, there is an integer $`n\ge N_0`$ and an
+exact circuit for $`F_n`$ with fewer than $`c n\log_2 n`$ gates" [S8:46–54].
+This refutes the assertion that $`L(n)\ge c n\log_2 n`$ for some fixed
+$`c>0`$ and all sufficiently large $`n`$ [S8:58–59].
 
 **The two results are related but distinct.** MS1 is *uniform* — one
 algorithm for every length — with an explicit (tiny) power saving. MS2 is
@@ -62,20 +62,20 @@ arbitrarily small normalized cost [S6:10,12].
 
 ## History of the conjecture
 
-The $\Omega(n\log n)$ lower-bound question for the Fourier transform is
+The $`\Omega(n\log n)`$ lower-bound question for the Fourier transform is
 discussed in the work of **Ailon** and of **Alman and Rao**
 [S8:56–57]. The prior best exact-arithmetic bounds met the
-$O(n\log n)$ barrier; the question was whether an exact algorithm could
+$`O(n\log n)`$ barrier; the question was whether an exact algorithm could
 behave asymptotically better.
 
 MS2's proof refutes the lower-bound assertion by constructing, via tensor
-methods, circuits of sub-$n\log n$ cost on an unbounded sequence of
+methods, circuits of sub-$`n\log n`$ cost on an unbounded sequence of
 lengths [S8:46–60]. MS1's proof supplies the uniform algorithm with an
 explicit, if tiny, power saving [S4:85–101].
 
-**Prior (my training data, not this repo).** The $O(n\log n)$ barrier for
+**Prior (my training data, not this repo).** The $`O(n\log n)`$ barrier for
 the DFT was long believed to be fundamental in exact-arithmetic models.
-Sub-$n\log n$ upper bounds in the *real-arithmetic* / bounded-coefficient
+Sub-$`n\log n`$ upper bounds in the *real-arithmetic* / bounded-coefficient
 setting were known (the Schönhage-style results), but the extension to
 the exact-complex-unrestricted-coefficient model with the power saving
 made explicit is the contribution here. I cannot confirm the specific
@@ -84,17 +84,17 @@ proofs.
 
 ## Consequences
 
-- **The exact DFT is computable in sub-$n\log n$ time (subsequentially).**
-  There is an unbounded sequence of lengths $n$ for which the exact DFT
-  circuit cost is $o(n\log n)$ [S8:46–54].
+- **The exact DFT is computable in sub-$`n\log n`$ time (subsequentially).**
+  There is an unbounded sequence of lengths $`n`$ for which the exact DFT
+  circuit cost is $`o(n\log n)`$ [S8:46–54].
 - **A uniform algorithm with an explicit power saving exists.** A single
-  deterministic algorithm computes the exact DFT at every length $n$ in
-  $O(n(\log n)^{1-10^{-13}})$ operations [S4:85–99].
+  deterministic algorithm computes the exact DFT at every length $`n`$ in
+  $`O(n(\log n)^{1-10^{-13}})`$ operations [S4:85–99].
 - **The model is exact and unrestricted.** Exact complex arithmetic,
   unrestricted coefficients, a supplied root of unity, logarithmic-word
   indexing; scalar preparation and indexing work are counted [S6:10].
 - **Convolution is covered too.** The uniform formalization also gives a
-  bilinear program for the full length-$n$ convolution at the same
+  bilinear program for the full length-$`n`$ convolution at the same
   asymptotic bound [S6:12].
 - **No practical crossover.** The constants are enormous; the results are
   asymptotic existence and explicitness, not a floating-point speedup or
@@ -125,25 +125,25 @@ The release formalizes this family at tier T3 with one scope note [S6],
 formalization is **complete at the declaration level**.
 
 The scope note [S6] describes two layers of formalized content:
-[S6:10] the subsequential result — for every $c>0$ and cutoff $N_0\ge2$,
-some $n\ge N_0$ has a circuit computing the unnormalized DFT with fewer
-than $cn\log_2 n$ gates, with addition, subtraction, and scalar
+[S6:10] the subsequential result — for every $`c>0`$ and cutoff $`N_0\ge2`$,
+some $`n\ge N_0`$ has a circuit computing the unnormalized DFT with fewer
+than $`cn\log_2 n`$ gates, with addition, subtraction, and scalar
 multiplication each costing one gate; and [S6:12] the uniform
-formalization — fixed deterministic programs for every positive length $n$
+formalization — fixed deterministic programs for every positive length $`n`$
 computing the canonical DFT and the full convolution exactly, at
-$O(n(\log n)^{1-10^{-13}})=o(n\log n)$ work.
+$`O(n(\log n)^{1-10^{-13}})=o(n\log n)`$ work.
 
 The scope note links **two** comparator configs [S6:18–19]:
 
 - `ExactFourier.lean` [S10] (62 lines) — `MainStatement` [S10:52–55]
-  encodes the subsequential claim: for every $c>0$ and $N_0\ge2$, some
-  $n\ge N_0$ has a circuit computing the Fourier matrix with size
-  $< c n\log_2 n$; `main_theorem` [S10:57–58], `sorry` at [S10:58].
+  encodes the subsequential claim: for every $`c>0`$ and $`N_0\ge2`$, some
+  $`n\ge N_0`$ has a circuit computing the Fourier matrix with size
+  $`< c n\log_2 n`$; `main_theorem` [S10:57–58], `sorry` at [S10:58].
   Declaration `OAI.ExactFourier.main_theorem`.
 - `UniformFourier.lean` [S11:326–331] (336 lines) —
   `transform_main : DFTGoal` [S11:326–327] (one fixed program computes
   every positive-length canonical DFT, including preparation, with a
-  sub-$n\log n$ time bound) and `convolution_main : ConvGoal`
+  sub-$`n\log n`$ time bound) and `convolution_main : ConvGoal`
   [S11:330–331] (one fixed bilinear program computes the convolution at
   the same bound); `sorry` at [S11:327] and [S11:331]. Declarations
   `OAI.PowerSaving.transform_main` and `OAI.PowerSaving.convolution_main`.

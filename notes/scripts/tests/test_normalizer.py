@@ -199,13 +199,17 @@ class TestHtmlEntities:
 class TestMathRegions:
     """Region splitting: inline and display math."""
     def test_inline_math(self):
+        # Inline math is backticked (`$`...`$`) so the GitHub markdown parser
+        # treats the inner span as code and does not misread the `$` as currency.
         out = normalize_window("If $x + y = 0$ then done.", "")
-        assert "$x + y = 0$" in out
+        assert "$`x + y = 0`$" in out
         assert_clean(out)
 
     def test_display_math(self):
+        # Display math is not backticked: only the inline form needs the escape.
         out = normalize_window("We get $$\\sum_{i=1}^n a_i$$", "")
-        assert "$$" in out
+        assert "$$\\sum_{i=1}^n a_i$$" in out
+        assert "`" not in out
         assert_clean(out)
 
     def test_macro_in_math(self):

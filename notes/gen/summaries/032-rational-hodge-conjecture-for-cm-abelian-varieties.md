@@ -383,7 +383,7 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - The Stacks Project Authors, _The Stacks project_, https://stacks.math.columbia.edu. The cited tag and theorem locators were consulted on 30 September 2026.
 - P. Baum, W. Fulton, and R. MacPherson, Riemann–Roch for singular varieties, _Publications Mathématiques de l'IHÉS_ **45** (1975), 101–145.
 - Bergeron, Nicolas, Millson, John, Mœglin, Colette, The Hodge conjecture and arithmetic quotients of complex balls (2016)
-- Bhatt, Bhargav, Morrow, Matthew, Scholze, Peter, Integral $p$-adic Hodge theory (2018)
+- Bhatt, Bhargav, Morrow, Matthew, Scholze, Peter, Integral $`p`$-adic Hodge theory (2018)
 - Birkenhake, Christina; Lange, Herbert, _Complex Abelian Varieties_, second edition, Grundlehren der mathematischen Wissenschaften **302**, Springer-Verlag, 2004. doi:10.1007/978-3-662-06307-1.
 - Bolognesi, Michele; Laterveer, Robert, _A 9-dimensional family of K3 surfaces with finite-dimensional motive_, Rendiconti del Circolo Matematico di Palermo, Series 2 **73** (2024), 2313–2331. Cited locators follow arXiv:2310.11981v2 (16 April 2024). doi:10.1007/s12215-024-01036-0; .
 - Borade, Neelima, Franzel, Jonas, Girsch, Johannes and Yao, Wei, Yu, Qiyao, Zelingher, Elad, On tori periods of Weil representations of unitary groups (2025)
@@ -392,7 +392,7 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - Bosch, Siegfried, Lütkebohmert, Werner, Raynaud, Michel, Néron Models (1990)
 - Boucksom, Sébastien; Demailly, Jean-Pierre; Păun, Mihai; Peternell, Thomas, _The pseudo-effective cone of a compact {Kähler} manifold and varieties of negative Kodaira dimension_, Journal of Algebraic Geometry **22** (2013), no. 2, 201–248. Cited locators follow arXiv:math/0405285v1. doi:10.1090/S1056-3911-2012-00574-8; .
 - Brieskorn, Egbert, _Die Auflösung der rationalen Singularitäten holomorpher Abbildungen_, Mathematische Annalen **178** (1968), 255–270. doi:10.1007/BF01352140.
-- Brinon, Olivier, Conrad, Brian, CMI Summer School Notes on $p$-adic Hodge Theory (2009)
+- Brinon, Olivier, Conrad, Brian, CMI Summer School Notes on $`p`$-adic Hodge Theory (2009)
 - Buskin, Nikolay, _Every rational Hodge isometry between two K3 surfaces is algebraic_, Journal für die reine und angewandte Mathematik **755** (2019), 127–150. Cited locators follow arXiv:1510.02852v3. doi:10.1515/crelle-2017-0027; .
 - D. Calaque, C. A. Rossi, and M. Van den Bergh, C\ualdăraru's conjecture and Tsygan's formality, _Annals of Mathematics_ (2) **176** (2012), no. 2, 865–923.
 - de Cataldo, Mark Andrea A.; Migliorini, Luca, _The Chow groups and the motive of the Hilbert scheme of points on a surface_, Journal of Algebra **251** (2002), no. 2, 824–848. doi:10.1006/jabr.2001.9105.
@@ -434,7 +434,7 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - Grothendieck, Alexander, _Techniques de construction et théor{\`e}mes d'existence en géométrie algébrique IV: les schémas de Hilbert_, Séminaire Bourbaki, 1960/61, Exposé 221, 249–276. . See also the 1962 erratum, which does not change the statement of Theorem 3.2: .
 - A. Grothendieck, Techniques de construction et théor\`emes d'existence en géométrie algébrique IV: les schémas de Hilbert, _Séminaire Bourbaki_, 1960/61, exposé 221, vol. 6 (1961), 249–276.
 - Hazama, Fumio, On the General Hodge Conjecture for Abelian Varieties of CM-type (2003)
-- Hellmann, Eugen, On families of weakly admissible filtered $\varphi$-modules and the adjoint quotient of $\mathrm{GL}_d$ (2011)
+- Hellmann, Eugen, On families of weakly admissible filtered $`\varphi`$-modules and the adjoint quotient of $`\mathrm{GL}_d`$ (2011)
 - R. A. Hidalgo, A. Kontogeorgis, M. Leyton-Álvarez, and P. Paramantzoglou, _Automorphisms of generalized Fermat curves_, Journal of Pure and Applied Algebra **221** (2017), 2312–2337. doi:10.1016/j.jpaa.2016.12.011; preprint arXiv:1409.3063.
 - F. Hirzebruch, Arithmetic genera and the theorem of Riemann–Roch for algebraic varieties, _Proc. Natl. Acad. Sci. USA_ **40** (1954), 110–114. doi:10.1073/pnas.40.2.110.
 - Hodge, W. V. D., The topological invariants of algebraic varieties (1952)
@@ -453,8 +453,8 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - Bülles, Tim-Henrik, _Motives of moduli spaces on K3 surfaces and of special cubic fourfolds_, Manuscripta Mathematica **161** (2020), no. 1–2, 109–124. Cited locators follow arXiv:1806.08284v1 (21 June 2018). doi:10.1007/s00229-018-1086-0; .
 - Di Lorenzo, Andrea; Fringuelli, Roberto; Vistoli, Angelo, _Integral Picard group of moduli of polarized K3 surfaces_, Bulletin of the London Mathematical Society **56** (2024), no. 2, 833–846. Cited locators follow arXiv:2305.07574v2 (3 November 2023). doi:10.1112/blms.12968; .
 - B. Farb and D. Margalit, _A Primer on Mapping Class Groups_, Princeton Mathematical Series 49, Princeton University Press, 2012.
-- Markman, Eyal, Cycles on abelian $2n$-folds of Weil type from secant sheaves on abelian $n$-folds (2025)
-- E. Markman, _Cycles on abelian $2n$-folds of Weil type from secant sheaves on abelian $n$-folds_, arXiv:2502.03415v2 (2025). Theorem locators refer to this version.
+- Markman, Eyal, Cycles on abelian $`2n`$-folds of Weil type from secant sheaves on abelian $`n`$-folds (2025)
+- E. Markman, _Cycles on abelian $`2n`$-folds of Weil type from secant sheaves on abelian $`n`$-folds_, arXiv:2502.03415v2 (2025). Theorem locators refer to this version.
 - E. Markman, Secant sheaves and Weil classes on abelian varieties, in _Proceedings of the International Congress of Mathematicians 2026_, vol. 3, S. Friedlander and Y. Tschinkel (eds.), SIAM, 2026, 586–602.
 - Milne, J. S., Lefschetz Motives and the Tate Conjecture (1999)
 - Milne, J. S., Abelian Varieties (1986)
@@ -469,10 +469,10 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - Moonen, Ben, Zarhin, Yuri G., Hodge classes on abelian varieties of low dimension (1999)
 - B. Moonen, _Special subvarieties arising from families of cyclic covers of the projective line_, Documenta Mathematica **15** (2010), 793–819. doi:10.4171/DM/314. Locators refer to arXiv:1006.3400v2 (2010).
 - P. Deligne and G. D. Mostow, _Monodromy of hypergeometric functions and non-lattice integral monodromy_, Publications Mathématiques de l'IHÉS **63** (1986), 5–89.
-- S. Mukai, Duality between $D(X)$ and $D(\widehat X)$ with its application to Picard sheaves, _Nagoya Math. J._ **81** (1981), 153–175. doi:10.1017/S002776300001922X.
+- S. Mukai, Duality between $`D(X)`$ and $`D(\widehat X)`$ with its application to Picard sheaves, _Nagoya Math. J._ **81** (1981), 153–175. doi:10.1017/S002776300001922X.
 - Mumford, David, Fogarty, John, Geometric Invariant Theory (1982)
 - Mumford, David, _Tata Lectures on Theta I_, Progress in Mathematics **28**, Birkhäuser Boston, 1983. doi:10.1007/978-1-4899-2843-6.
-- C.-L. Chai and F. Oort, Moduli of abelian varieties and $p$-divisible groups, in _Arithmetic Geometry_, H. Darmon, D. A. Ellwood, B. Hassett, and Y. Tschinkel (eds.), Clay Mathematics Proceedings 8, American Mathematical Society, 2009, 441–536.
+- C.-L. Chai and F. Oort, Moduli of abelian varieties and $`p`$-divisible groups, in _Arithmetic Geometry_, H. Darmon, D. A. Ellwood, B. Hassett, and Y. Tschinkel (eds.), Clay Mathematics Proceedings 8, American Mathematical Society, 2009, 441–536.
 - OpenAI, Milne's rationality conjecture for abelian varieties (2026)
 - OpenAI, _The rational Hodge conjecture for CM abelian varieties_, OpenAI Math Release preprint OAI:The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026, 2026.
 - OpenAI, _The rational Hodge conjecture for CM abelian varieties_, OpenAI Math Release preprint OAI:The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026, 2026.
@@ -484,7 +484,7 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - Pohlmann, Henry, Algebraic cycles on abelian varieties of complex multiplication type (1968)
 - Poon, Flora, _Kuga–Satake construction on families of K3 surfaces of Picard rank 14_, Mathematische Nachrichten **299** (2026), no. 8, 1894–1916. doi:10.1002/mana.70173.
 - D. Eisenbud and S. Popescu, _The projective geometry of the Gale transform_, Journal of Algebra **230** (2000), 127–173. doi:10.1006/jabr.1999.7940; preprint arXiv:math/9807127.
-- G. Pourcin, Théor\`eme de Douady au-dessus de $S$, _Annali della Scuola Normale Superiore di Pisa, Scienze Fisiche e Matematiche_, Serie 3, **23** (1969), no. 3, 451–459.
+- G. Pourcin, Théor\`eme de Douady au-dessus de $`S`$, _Annali della Scuola Normale Superiore di Pisa, Scienze Fisiche e Matematiche_, Serie 3, **23** (1969), no. 3, 451–459.
 - Schnürer, Olaf M.; Soergel, Wolfgang, _Proper base change for separated locally proper maps_, Rendiconti del Seminario Matematico della Universit{\`a} di Padova **135** (2016), 223–250. Cited locators follow arXiv:1404.7630v2 (5 November 2014). doi:10.4171/RSMUP/135-13; .
 - Rieß, Ulrike, _On the Chow ring of birational irreducible symplectic varieties_, Manuscripta Mathematica **145** (2014), no. 3–4, 473–501. Cited locators follow arXiv:1304.4404v2 (11 September 2014). doi:10.1007/s00229-014-0698-2; .
 - J. C. Rohde, _Cyclic coverings, Calabi–Yau manifolds and complex multiplication_, Lecture Notes in Mathematics **1975**, Springer, Berlin, 2009. The preprint locator refers to arXiv:0711.2195v4 (2008).
@@ -493,8 +493,8 @@ states in its own consequences section — Milne's two theorems, as corrected by
 - C. Schoen, Hodge classes on self-products of a variety with an automorphism, _Compositio Mathematica_ **65** (1988), no. 1, 3–32.
 - C. Schoen, Addendum to: Hodge classes on self-products of a variety with an automorphism, _Compositio Mathematica_ **114** (1998), no. 3, 329–336.
 - C. Schoen, _Hodge classes on self-products of a variety with an automorphism_, Compositio Mathematica **65** (1988), 3–32. Original article.
-- Scholze, Peter, $p$-adic Hodge theory for rigid-analytic varieties (2013)
-- Scholze, Peter, $p$-adic Hodge theory for rigid-analytic varieties—corrigendum (2016)
+- Scholze, Peter, $`p`$-adic Hodge theory for rigid-analytic varieties (2013)
+- Scholze, Peter, $`p`$-adic Hodge theory for rigid-analytic varieties—corrigendum (2016)
 - A. Schrijver, Tensor subalgebras and first fundamental theorems in invariant theory, _Journal of Algebra_ **319** (2008), no. 3, 1305–1319. The section locator refers to the author version.
 - Serre, Jean-Pierre, _Géométrie algébrique et géométrie analytique_, Annales de l'Institut Fourier **6** (1956), 1–42. doi:10.5802/aif.59.
 - A. Borel and J.-P. Serre, Le théor\`eme de Riemann–Roch, _Bulletin de la Société Mathématique de France_ **86** (1958), 97–136.

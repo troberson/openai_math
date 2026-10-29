@@ -27,27 +27,27 @@ and two companion finite-approximation theorems.
 
 A *cylinder cover* of a convex body is a finite union of cylinders
 whose axes are parallel to some direction
-$v_i$ and whose perpendicular bases
-$B_i$ are compact sets in the plane perpendicular to $v_i$. The
+$`v_i`$ and whose perpendicular bases
+$`B_i`$ are compact sets in the plane perpendicular to $`v_i`$. The
 *perpendicular-base area* of the cover is
-$\sum_i\mathrm{area}(B_i)$, and the *minimum projection area*
-$\mathrm{proj}_{\min}K$ is
-$\min_u\mathrm{area}(K|u^\perp)$ — the smallest area the body
-has when projected perpendicular to some direction $u$.
+$`\sum_i\mathrm{area}(B_i)`$, and the *minimum projection area*
+$`\mathrm{proj}_{\min}K`$ is
+$`\min_u\mathrm{area}(K|u^\perp)`$ — the smallest area the body
+has when projected perpendicular to some direction $`u`$.
 
 Bang's conjecture (generalized from a classical bound) predicts that
-every cylinder cover of a convex body $K$ has perpendicular-base area
+every cylinder cover of a convex body $`K`$ has perpendicular-base area
 at least
-$\mathrm{proj}_{\min}K/2$. The family shows this fails in dimension
+$`\mathrm{proj}_{\min}K/2`$. The family shows this fails in dimension
 three: the regular tetrahedron has a finite cylinder cover with
 perpendicular-base area strictly below half its minimum projection
 area [S3:14–18]. By affine invariance the same construction
 gives a counterexample to the *directionwise normalized* half-bound
 (the ratio of base area to the projection area in the axis
 direction) for every nondegenerate tetrahedron [S3:17–18].
-For the explicit small covering parameter $\varepsilon$ the
+For the explicit small covering parameter $`\varepsilon`$ the
 normalized area is
-$1/2-(13/6000)\varepsilon^2+O(\varepsilon^4)$, giving a strict
+$`1/2-(13/6000)\varepsilon^2+O(\varepsilon^4)`$, giving a strict
 quadratic saving [S7:12].
 
 ## Graduate summary
@@ -79,7 +79,7 @@ area below half its minimum projection area [S6:28–35].
 approximates compact ruled families of line segments by finitely many
 cylinders with square intercept tiles, the perpendicular-base area at
 most the integral projection cost plus any positive error; the
-velocity field is $C^1$ and its differential has opposite real
+velocity field is $`C^1`$ and its differential has opposite real
 eigenvalues whose magnitudes are strictly below the inverse segment
 half-length [S4:49–57].
 
@@ -88,7 +88,7 @@ half-length [S4:49–57].
 Bang's 1951 classical result bounds the surface area of a unit ball by
 a cylinder cover (in particular, its total perpendicular cross-section
 area is at least
-$2\cdot\mathrm{area}(\mathrm{unit disk})=2\pi$, the half-ball
+$`2\cdot\mathrm{area}(\mathrm{unit disk})=2\pi`$, the half-ball
 projection), and the conjectural extension to general convex bodies
 was open in dimension three. The family resolves the dimension-three
 case negatively for the regular tetrahedron: three independently
@@ -115,10 +115,10 @@ S5:36–41, S6:28–35].
 invariance the directionwise conclusion extends to every nondegenerate
 tetrahedron [S3:17–18, S5:40–41, S6:34–35].
 
-**Explicit saving.** For the covering parameter $\varepsilon$ the
+**Explicit saving.** For the covering parameter $`\varepsilon`$ the
 normalized area is
-$1/2-(13/6000)\varepsilon^2+O(\varepsilon^4)$ [S7:12] — the
-saving is quadratic in $\varepsilon$.
+$`1/2-(13/6000)\varepsilon^2+O(\varepsilon^4)`$ [S7:12] — the
+saving is quadratic in $`\varepsilon`$.
 
 ## Section skeleton
 
@@ -140,9 +140,9 @@ No manuscript ships a `verification/` bundle.
 **Scope note** [S7:12]. The formalized counterexample is a finite
 cover of the regular tetrahedron by cylinders with compact triangular
 perpendicular bases whose total area is strictly below the half-area
-bound; for the explicit small parameter $\varepsilon$ the normalized
+bound; for the explicit small parameter $`\varepsilon`$ the normalized
 area is
-$1/2-(13/6000)\varepsilon^2+O(\varepsilon^4)$. A companion theorem
+$`1/2-(13/6000)\varepsilon^2+O(\varepsilon^4)`$. A companion theorem
 gives a counterexample to the directionwise normalized half-bound
 [S7:12]. The scope note **excludes** the affine extension to every
 nondegenerate tetrahedron; the selected statements are the

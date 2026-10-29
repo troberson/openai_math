@@ -24,14 +24,14 @@ affirmatively. [S3:60–64]
 
 The *standard map* is the family of area-preserving twist maps of the
 two-torus
-$(x,y)\mapsto(x+y+\lambda\sin 2\pi y,\ y+\lambda\sin 2\pi y)$
-(parametrized by the strength $\lambda$). It is the archetypal model
-for how a smooth area-preserving map develops chaos as $\lambda$
-grows: small $\lambda$ is mostly regular islands, large $\lambda$ is
+$`(x,y)\mapsto(x+y+\lambda\sin 2\pi y,\ y+\lambda\sin 2\pi y)`$
+(parametrized by the strength $`\lambda`$). It is the archetypal model
+for how a smooth area-preserving map develops chaos as $`\lambda`$
+grows: small $`\lambda`$ is mostly regular islands, large $`\lambda`$ is
 expected to be mostly chaotic. Chaos here means *positive metric
 entropy* — the rate at which a typical point forgets its past.
 Sinai asked (conjecturally) that for the original family, every
-sufficiently large positive $\lambda$ gives positive entropy with
+sufficiently large positive $`\lambda`$ gives positive entropy with
 respect to area. This manuscript settles that, with the stronger
 statement that the conclusion holds for the whole tail of large
 parameters [S3:60–64].
@@ -39,16 +39,16 @@ parameters [S3:60–64].
 ## Graduate summary
 
 **Positive metric entropy on a parameter tail** [S3:60–64,
-S4:9]. For every sufficiently large positive parameter $\lambda$, the
+S4:9]. For every sufficiently large positive parameter $`\lambda`$, the
 standard sine map
-$T_\lambda$ has positive metric entropy with respect to normalized
+$`T_\lambda`$ has positive metric entropy with respect to normalized
 area. This is a full parameter tail, not a sparse set of parameters:
-the threshold is some absolute $\Lambda_0$ and every
-$\lambda\ge\Lambda_0$ works [S4:9]. No genericity assumption on the
+the threshold is some absolute $`\Lambda_0`$ and every
+$`\lambda\ge\Lambda_0`$ works [S4:9]. No genericity assumption on the
 parameter is used [S4:11].
 
 **The hyperbolic mechanism.** The proof builds a positive-area
-invariant ergodic hyperbolic component for large $\lambda$. That
+invariant ergodic hyperbolic component for large $`\lambda`$. That
 component splits into finitely many cyclic pieces on each of which the
 corresponding iterate is Bernoulli; a Bernoulli (hence positive-
 entropy) invariant measure of positive area forces the area measure to
@@ -61,7 +61,7 @@ largest Lyapunov exponent with the stated derivative-growth limit
 The standard map, introduced by standard-map models of Hamiltonian
 dynamics, is the canonical route from regular to chaotic
 area-preserving motion. Sinai's positive-entropy conjecture for the
-original family — that large $\lambda$ forces positive metric
+original family — that large $`\lambda`$ forces positive metric
 entropy with respect to the invariant area measure — was open.
 Related results establish chaos for *generic* or *most* parameters,
 and positive Lyapunov exponents on large sets, but the full-tail,
@@ -70,7 +70,7 @@ asserts [S3:60–64, S4:11].
 
 **Prior (my training data, not this repo).** I know the standard map
 as a model, the positive-entropy / positive-Lyapunov heuristics for
-large $\lambda$, and that generic-parameter chaos results exist. A
+large $`\lambda`$, and that generic-parameter chaos results exist. A
 *full parameter tail* result giving positive metric entropy with
 respect to the invariant area measure (rather than a generic set) is,
 to my knowledge, not established in the literature I was trained on;

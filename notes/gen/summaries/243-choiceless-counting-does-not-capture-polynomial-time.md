@@ -8,7 +8,7 @@
 
  carries the family entry:
 
-> consistency of a linear system over $\mathbb F_3$ defines a polynomial-time query on unordered finite structures that choiceless polynomial time with counting cannot express. A separate result shows that adding witnessed symmetric choice strictly increases expressive power. Both separations hold for the full counting formalism, allowing hereditarily finite sets of arbitrary finite rank. [S1:571]
+> consistency of a linear system over $`\mathbb F_3`$ defines a polynomial-time query on unordered finite structures that choiceless polynomial time with counting cannot express. A separate result shows that adding witnessed symmetric choice strictly increases expressive power. Both separations hold for the full counting formalism, allowing hereditarily finite sets of arbitrary finite rank. [S1:571]
 
 The entry links the two manuscripts as "Failure to capture polynomial time [S1:571]"
 and "Witnessed symmetric choice [S1:571]" .
@@ -30,16 +30,16 @@ The formalism's defining constraint is that it cannot pick an order.
 [S6:19–20] states it: "Its operations commute with input automorphisms and do
 not provide an arbitrary choice of an ordering." The manuscript adds that the
 counting operation is included and the set rank is unbounded: [S6:23–24] says
-"In particular, $\mathrm{CPT}$ here always includes counting and has no imposed bound
+"In particular, $`\mathrm{CPT}`$ here always includes counting and has no imposed bound
 on the rank of its sets."
 
 The first manuscript's theorem names the separating query. [S6:81–86] states
-it: "The query $Q$ on all finite structures in the fixed vocabulary $\tau$ of
+it: "The query $`Q`$ on all finite structures in the fixed vocabulary $`\tau`$ of
 eight binary relations is isomorphism-invariant and decidable in
 deterministic polynomial time, but is not definable in full choiceless
 polynomial time with counting." The query asks whether a linear system over
 the three-element field is consistent, and its abstract says the same:
-[S3:36–40] gives "A linear-consistency query over $\mathbb F_3$ in a fixed
+[S3:36–40] gives "A linear-consistency query over $`\mathbb F_3`$ in a fixed
 binary vocabulary is decidable in polynomial time but not in the full counting
 formalism."
 
@@ -51,9 +51,9 @@ occurrence defines a Boolean query on every finite input that is not definable
 in the original counting formalism."
 
 The separation is stated as a strict inclusion. [S13:44] states the half that
-matters: "no $\mathrm{CPT}$ sentence over $\tau$ has the same true-model class. [S13:44]"
+matters: "no $`\mathrm{CPT}`$ sentence over $`\tau`$ has the same true-model class. [S13:44]"
 
-The choiceless side keeps its full power. [S13:46–47] says: "The $\mathrm{CPT}$ sentences in \textup{(ii)} may use counting
+The choiceless side keeps its full power. [S13:46–47] says: "The $`\mathrm{CPT}`$ sentences in \textup{(ii)} may use counting
 and hereditarily finite sets of unrestricted finite rank."
 
 ## Graduate summary

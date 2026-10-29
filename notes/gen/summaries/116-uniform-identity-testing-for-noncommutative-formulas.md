@@ -35,9 +35,9 @@ agree on the statement.
 
 **Polynomial identity testing** asks whether an arithmetic expression
 computes the zero polynomial. In the **noncommutative** setting, the
-variables do not commute: $x_1 x_2$ is a different polynomial from
-$x_2 x_1$. Scalar substitutions cannot detect this — the commutator
-$x_1x_2 - x_2x_1$ vanishes on every scalar tuple but is nonzero as a
+variables do not commute: $`x_1 x_2`$ is a different polynomial from
+$`x_2 x_1`$. Scalar substitutions cannot detect this — the commutator
+$`x_1x_2 - x_2x_1`$ vanishes on every scalar tuple but is nonzero as a
 polynomial. The fix is to evaluate on **matrices**, where the noncommutative
 structure is invisible to scalars but visible to linear algebra.
 
@@ -51,14 +51,14 @@ The three manuscripts in this family build hitting points and hitting lists
 for three classes of noncommutative formulas:
 
 1. **Positive characteristic** [S4:17–35]: one deterministic machine,
-   given a prime $p$ and bounds $n,s$, outputs a matrix tuple over
-   $\mathbb F_p$ of dimension $O(n^3 s^6)$ that hits every nonzero
-   division-free formula of size $\le s$ in $n$ variables, over *every*
-   field of characteristic $p$ — including arbitrary extension fields and
+   given a prime $`p`$ and bounds $`n,s`$, outputs a matrix tuple over
+   $`\mathbb F_p`$ of dimension $`O(n^3 s^6)`$ that hits every nonzero
+   division-free formula of size $`\le s`$ in $`n`$ variables, over *every*
+   field of characteristic $`p`$ — including arbitrary extension fields and
    characteristic two.
 
 2. **Characteristic zero** [S6:14–32]: one tuple of rational matrices of
-   dimension $O(ns^2)$ that hits every nonzero division-free formula over
+   dimension $`O(ns^2)`$ that hits every nonzero division-free formula over
    *every* field of characteristic zero.
 
 3. **Rational formulas** [S8:20–24]: a polynomial-size *list* of rational
@@ -73,36 +73,36 @@ advice — only the size parameters.
 ## Graduate summary
 
 **Positive characteristic** ([S4:17–35], `thm:main`). "There is a
-deterministic Turing machine and absolute positive integers $C,k$ with
-the following property. Given a prime $p$ in binary and positive integers
-$n,s$ in unary, the machine outputs a positive integer $d=O(n^3s^6)$ and a
-tuple $(T_1,\ldots,T_n)\in\mathrm{Mat}_d(\mathbb F_p)^n$" [S4:19–23]. "For every field
-$F$ of characteristic $p$ and every nonzero $f\in F\langle
-x_1,\ldots,x_n\rangle$ computed by a formula of size at most $s$, the same
-tuple, viewed over $F$, satisfies $f(T_1,\ldots,T_n)\ne0$" [S4:26–28].
+deterministic Turing machine and absolute positive integers $`C,k`$ with
+the following property. Given a prime $`p`$ in binary and positive integers
+$`n,s`$ in unary, the machine outputs a positive integer $`d=O(n^3s^6)`$ and a
+tuple $`(T_1,\ldots,T_n)\in\mathrm{Mat}_d(\mathbb F_p)^n`$" [S4:19–23]. "For every field
+$`F`$ of characteristic $`p`$ and every nonzero $`f\in F\langle
+x_1,\ldots,x_n\rangle`$ computed by a formula of size at most $`s`$, the same
+tuple, viewed over $`F`$, satisfies $`f(T_1,\ldots,T_n)\ne0`$" [S4:26–28].
 The total running time and output length are at most
-$C(n+s+L+1)^k$ where $L=\lceil\log_2p\rceil$ [S4:30–31]. The generator
+$`C(n+s+L+1)^k`$ where $`L=\lceil\log_2p\rceil`$ [S4:30–31]. The generator
 receives no formula or coefficients [S4:34].
 
 **Characteristic zero** ([S6:14–32], `thm:main`). "There is a
-deterministic algorithm which, given integers $n,s\ge1$, constructs a
-tuple $\mathbf T_{n,s}\in\mathrm{Mat}_d(\mathbb Q)^n$, $d\le 2ns^2$, in time polynomial in
-$n,s$, measured in bit operations" [S6:17–19]. "The numerators and
+deterministic algorithm which, given integers $`n,s\ge1`$, constructs a
+tuple $`\mathbf T_{n,s}\in\mathrm{Mat}_d(\mathbb Q)^n`$, $`d\le 2ns^2`$, in time polynomial in
+$`n,s`$, measured in bit operations" [S6:17–19]. "The numerators and
 denominators of its entries have bit length
-$O(\log(ns+1)+ns^2\log(n+1))$" [S6:20–22]. "For every field $F$ of
-characteristic zero and every $0\ne f\in\mathsf{Form}_{n,s}(F)$,
-$f(\mathbf T_{n,s})\ne0$" [S6:24–27]. The construction uses
-$d=2ns^2$ when $ns\ge2$ and $d=1$ when $n=s=1$ [S6:30–31].
+$`O(\log(ns+1)+ns^2\log(n+1))`$" [S6:20–22]. "For every field $`F`$ of
+characteristic zero and every $`0\ne f\in\mathsf{Form}_{n,s}(F)`$,
+$`f(\mathbf T_{n,s})\ne0`$" [S6:24–27]. The construction uses
+$`d=2ns^2`$ when $`ns\ge2`$ and $`d=1`$ when $`n=s=1`$ [S6:30–31].
 
 **Rational formulas** ([S8:20–24], `thm:main`). "There are a
-deterministic Turing machine $G$ and fixed positive integers $C,k$ with
-the following property. Given $1^n,1^s$, where $n,s\geq1$, the machine
-outputs a finite list $\mathcal H_{n,s}$ of $n$-tuples of rational square
-matrices, in at most $C(n+s+1)^k$ bit operations. The entire output, with
+deterministic Turing machine $`G`$ and fixed positive integers $`C,k`$ with
+the following property. Given $`1^n,1^s`$, where $`n,s\geq1`$, the machine
+outputs a finite list $`\mathcal H_{n,s}`$ of $`n`$-tuples of rational square
+matrices, in at most $`C(n+s+1)^k`$ bit operations. The entire output, with
 signed binary numerators and positive binary denominators, has at most
-$C(n+s+1)^k$ bits. For every nonzero admissible rational formula $\Phi$ in
-$n$ variables of size at most $s$, some tuple in $\mathcal H_{n,s}$ is a
-defined evaluation of $\Phi$ with invertible value" [S8:21–23]. "The same
+$`C(n+s+1)^k`$ bits. For every nonzero admissible rational formula $`\Phi`$ in
+$`n`$ variables of size at most $`s`$, some tuple in $`\mathcal H_{n,s}`$ is a
+defined evaluation of $`\Phi`$ with invertible value" [S8:21–23]. "The same
 list works for all such formulas, regardless of the bit lengths of their
 rational constants or their inverse depth. The generator receives no
 formula, oracle, randomness, or advice" [S8:23].
@@ -110,34 +110,34 @@ formula, oracle, randomness, or advice" [S8:23].
 **Proof strategy — positive characteristic** ([S4:117–153]). The proof
 retains the word-series organization of the characteristic-zero companion
 but replaces the differential operator by an infinite-order multiplicative
-shift [S4:120–122]. Over $K=F(t)$, the shift $\sigma$ acts on series by
-$\sigma(g)(z)=g(tz)$, and each letter defines an operator $\mathcal J_i$ whose
-action divides by $t^r-1$ — nonzero in every characteristic [S4:126–128].
-The series $h_w$ are proved linearly independent by a pole-obstruction
-argument: a difference $\sigma(R)-R$ cannot have just one pole in an
+shift [S4:120–122]. Over $`K=F(t)`$, the shift $`\sigma`$ acts on series by
+$`\sigma(g)(z)=g(tz)`$, and each letter defines an operator $`\mathcal J_i`$ whose
+action divides by $`t^r-1`$ — nonzero in every characteristic [S4:126–128].
+The series $`h_w`$ are proved linearly independent by a pole-obstruction
+argument: a difference $`\sigma(R)-R`$ cannot have just one pole in an
 infinite shift orbit [S4:130–136]. A formula-to-matrix-system reduction
-(Nisan's construction, $m\le 2s$ states) gives the order bound
-$\mathrm{ord}_z(uHv)\le n\binom m2$ via a determinant/Vandermonde argument
-[S4:138–144]. Truncation and reduction modulo $t^E$ give matrices over
-$\mathbb F_p$ [S4:146–153].
+(Nisan's construction, $`m\le 2s`$ states) gives the order bound
+$`\mathrm{ord}_z(uHv)\le n\binom m2`$ via a determinant/Vandermonde argument
+[S4:138–144]. Truncation and reduction modulo $`t^E`$ give matrices over
+$`\mathbb F_p`$ [S4:146–153].
 
 **Proof strategy — characteristic zero** ([S6:117–193]). Words are
-encoded by iterated integrals: $h_{iw}(z)=\int_0^z h_w(t)/(t+i)\,dt$
-[S6:122–125]. The $h_w$ are linearly independent over every
+encoded by iterated integrals: $`h_{iw}(z)=\int_0^z h_w(t)/(t+i)\,dt`$
+[S6:122–125]. The $`h_w`$ are linearly independent over every
 characteristic-zero field, proved by a continuation/monodromy argument
-over $\mathbb C$ and a rational-coefficient-minor transfer [S6:127–135]. The
-differential system $G'=(\sum B_i/(z+i))G$ is bounded by Moura's
+over $`\mathbb C`$ and a rational-coefficient-minor transfer [S6:127–135]. The
+differential system $`G'=(\sum B_i/(z+i))G`$ is bounded by Moura's
 multiplicity estimate: the order of a nonzero component is at most
-$(n-1)\binom m2+m-1$ [S6:142–150]. The construction realizes the
-integration operators on Taylor coefficients of degrees below $2ns^2$,
+$`(n-1)\binom m2+m-1`$ [S6:142–150]. The construction realizes the
+integration operators on Taylor coefficients of degrees below $`2ns^2`$,
 giving explicit rational matrices [S6:152–160].
 
 **Proof strategy — rational formulas** ([S8:113–181]). The bridge from
 formula evaluation to linear algebra is an *affine linear pencil*
-$L(x)=A_0+\sum A_ix_i$ [S8:116–120]. A size-$s$ formula gives at most
-$s+1$ pencils of order at most $B=2s+1$; their simultaneous invertibility
+$`L(x)=A_0+\sum A_ix_i`$ [S8:116–120]. A size-$`s`$ formula gives at most
+$`s+1`$ pencils of order at most $`B=2s+1`$; their simultaneous invertibility
 certifies all inverse gates [S8:122–126]. Three steps follow: (1)
-*expansion* — $n+1$ rectangular matrices over $\mathbb Q[t]$ whose sum-of-images
+*expansion* — $`n+1`$ rectangular matrices over $`\mathbb Q[t]`$ whose sum-of-images
 dimension bound (via a Wronskian argument, following Guruswami–Kopparty
 and Forbes–Guruswami) forces injectivity for feasible pencils
 [S8:129–138]; (2) *division* — a lift into a division algebra where rank
@@ -163,7 +163,7 @@ For division-free formulas over characteristic zero, **Lakhani and
 Mukhopadhyay** constructed one integer matrix tuple for sparsity-bounded
 polynomials with dimension equal to the sparsity bound
 [S4:80, S6:89]. **Arvind, Chatterjee, and Mukhopadhyay** obtained
-quasipolynomial black-box tests over $\mathbb Q$ for rational formulas of
+quasipolynomial black-box tests over $`\mathbb Q`$ for rational formulas of
 inversion height two [S6:60], and subsequently for unrestricted
 noncommutative rational formulas [S6:62, S8:53–58]. The general treatment
 states a depth reduction preserving the evaluation domain [S8:59–60].
@@ -186,18 +186,18 @@ open problem in algebraic complexity. The characteristic-zero single-tuple
 result and its positive-characteristic companion are the first
 deterministic polynomial-size constructions without a sparsity or degree
 restriction. The rational-formula hitting list resolves the explicit
-polynomial-size hitting-set problem over $\mathbb Q$ for the formula model. I
+polynomial-size hitting-set problem over $`\mathbb Q`$ for the formula model. I
 cannot confirm these independently; the release ships all three
 manuscripts as proofs.
 
 ## Consequences
 
 - **Uniform positive-characteristic hitting point.** A single matrix
-  tuple over $\mathbb F_p$ of dimension $O(n^3s^6)$ that detects every nonzero
-  division-free formula of size $\le s$ over every field of characteristic
-  $p$, including extension fields and $p=2$ [S4:17–35].
+  tuple over $`\mathbb F_p`$ of dimension $`O(n^3s^6)`$ that detects every nonzero
+  division-free formula of size $`\le s`$ over every field of characteristic
+  $`p`$, including extension fields and $`p=2`$ [S4:17–35].
 - **Characteristic-zero hitting point.** A single rational matrix tuple of
-  dimension $2ns^2$ that works over every characteristic-zero field
+  dimension $`2ns^2`$ that works over every characteristic-zero field
   [S6:14–32].
 - **Rational-formula hitting list.** A polynomial-size list of rational
   matrix tuples with a common dimension, hitting every nonzero admissible
@@ -249,11 +249,11 @@ result. The one-rational comparator (`FormulaHitting`) has a stub but no
 
 The scope note's first paragraph states: "The formalization gives one
 explicit tuple of rational matrices that simultaneously detects every
-nonzero division-free noncommutative formula with at most $s$ gates in
-$n$ variables, for $n,s\ge1$. Evaluation at that tuple is a nonzero
+nonzero division-free noncommutative formula with at most $`s`$ gates in
+$`n`$ variables, for $`n,s\ge1`$. Evaluation at that tuple is a nonzero
 matrix over every characteristic-zero field" [S12:10]. It adds that "the
 paper's deterministic polynomial bit-construction bound and matrix
-dimension bound $O(ns^2)$ are not separately asserted in it" [S12:12].
+dimension bound $`O(ns^2)`$ are not separately asserted in it" [S12:12].
 The third paragraph describes the formalized hitting-list result
 [S12:14].
 

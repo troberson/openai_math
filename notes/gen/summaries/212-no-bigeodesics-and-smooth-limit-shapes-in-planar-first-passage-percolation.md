@@ -12,7 +12,7 @@ percolation. First, planar FPP with i.i.d. nonnegative nonatomic
 edge weights has almost surely no doubly infinite geodesic
 (a **bigeodesic**), under a finite second moment on the minimum of
 four weights. Second, the limit shape of the planar exponential model
-is strictly convex with a $C^1$ boundary, and the time-constant norm
+is strictly convex with a $`C^1`$ boundary, and the time-constant norm
 is differentiable for every Gamma edge-weight law with positive
 shape and rate. The family ships two manuscripts [S1:4893]:
 
@@ -33,8 +33,8 @@ any regularity assumption on the limit shape. [S3:39–44]
 The strict-convexity abstract 
 
 > We prove that the limit shape of undirected nearest-neighbor
-first-passage percolation on $\mathbb Z^2$ with independent exponential edge
-weights is strictly convex and has a $C^1$ boundary. This resolves the
+first-passage percolation on $`\mathbb Z^2`$ with independent exponential edge
+weights is strictly convex and has a $`C^1`$ boundary. This resolves the
 strict convexity and differentiability conjectures for the planar
 exponential model. More generally, we prove differentiability of the
 time-constant norm for every Gamma edge-weight law with positive shape
@@ -44,7 +44,7 @@ and rate. [S4:55–61]
 
 **First-passage percolation (FPP)** is a model of random
 travel times on a grid. Each edge of the integer lattice
-$\mathbb{Z}^2$ carries an independent, nonnegative random
+$`\mathbb{Z}^2`$ carries an independent, nonnegative random
 "weight" (travel time). The **passage time** between two
 points is the minimum total weight over all lattice paths
 connecting them. As the distance grows, the passage time
@@ -62,14 +62,14 @@ do bigeodesics exist in the planar model? The answer is
 every configuration has no doubly infinite geodesic at
 all [S3:39–44]. The second: is the limit shape
 "smooth"? The answer is **yes** — for the
-exponential model it is strictly convex with a $C^1$
+exponential model it is strictly convex with a $`C^1`$
 boundary, and the differentiability extends to all Gamma
 edge-weight distributions [S4:55–61].
 
 ## Graduate summary
 
 **The no-bigeodesics theorem** [S3:39–44, S2:509].
-For planar FPP on $\mathbb{Z}^2$ with i.i.d.
+For planar FPP on $`\mathbb{Z}^2`$ with i.i.d.
 nonnegative nonatomic edge weights, if the minimum of
 four independent weights has finite second moment, then
 there is almost surely no doubly infinite geodesic.
@@ -78,16 +78,16 @@ without any regularity assumption on the limit shape.
 
 **The strict convexity and differentiability
 theorem** [S4:55–61, S2:509]. The limit shape of
-undirected nearest-neighbor FPP on $\mathbb{Z}^2$ with
+undirected nearest-neighbor FPP on $`\mathbb{Z}^2`$ with
 independent exponential edge weights is strictly convex
-and has a $C^1$ boundary. More generally, the
+and has a $`C^1`$ boundary. More generally, the
 time-constant norm is differentiable for every Gamma
 edge-weight law with positive shape and rate.
 
 **The scope of the formalization.** The scope note
 covers the differentiability result [S5:9]: the norm is
 differentiable away from the origin, and its unit sphere
-has a $C^1$ boundary, including the exponential model
+has a $`C^1`$ boundary, including the exponential model
 with a unique supporting line at every boundary point.
 Strict convexity is explicitly outside the formalized
 statements [S5:11]. The scope note names two
@@ -102,7 +102,7 @@ of edge-weight distributions by a subadditive
 ergodic-theorem argument. The **limit shape** —
 the rescaled reachable region — was shown to
 exist by Kesten (1986), who proved it is convex.
-**Strict convexity** and **$C^1$ regularity** of the
+**Strict convexity** and **$`C^1`$ regularity** of the
 boundary were long open: the proof requires showing
 that the norm has no flat spots, which is a purely
 probabilistic statement about the geometry of
@@ -110,7 +110,7 @@ geodesics. The **no-bigeodesics** problem asks whether
 there exists a doubly infinite geodesic in the planar
 model. The result is notable because it holds without
 any assumption on the limit shape's regularity —
-the proof does not assume strict convexity, $C^1$
+the proof does not assume strict convexity, $`C^1`$
 boundary, or any geometric property of the shape
 [S3:39–44, S4:55–61, S2:509].
 
@@ -118,7 +118,7 @@ boundary, or any geometric property of the shape
 FPP as a classical model from Hammersley and Kesten,
 the time-constant existence, and the convexity of the
 limit shape. The **no-bigeodesics theorem** and the
-**strict convexity / $C^1$ boundary** result for the
+**strict convexity / $`C^1`$ boundary** result for the
 exponential and Gamma models are results I cannot
 independently verify from training alone.
 
@@ -132,7 +132,7 @@ geodesic [S3:39–44, S2:509].
 **The strict convexity and differentiability
 conjectures for the planar exponential model are
 resolved**: the limit shape is strictly convex with a
-$C^1$ boundary [S4:55–61, S2:509].
+$`C^1`$ boundary [S4:55–61, S2:509].
 
 **The differentiability extends to all Gamma
 edge-weight laws** with positive shape and rate
@@ -154,7 +154,7 @@ differentiability of the planar first-passage
 time-constant norm for independent Gamma edge weights
 of every positive shape and rate. The norm is
 differentiable away from the origin, and its unit
-sphere has a $C^1$ boundary. The exponential model is
+sphere has a $`C^1`$ boundary. The exponential model is
 included, with a unique supporting line at every
 boundary point. **Strict convexity is outside the
 formalized statements** [S5:11]. The scope note names

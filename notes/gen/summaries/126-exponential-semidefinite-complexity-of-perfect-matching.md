@@ -38,26 +38,26 @@ exponentially large [S4:74–80].
 
 ## Graduate summary
 
-**Main theorem** ([S4:37–44], `thm:main`). "There is a constant $c>0$ such
-that, for every fixed $0<\rho<1$, there is $n_0=n_0(\rho)$ for which
-$\mathrm{rank_{psd}} A_n(\rho)\ge2^{cn}$ for every even $n\ge n_0$" [S4:37–44]. Here
-$A_n(\rho)$ is the matrix indexed by odd vertex sets $U$ and perfect
-matchings $M$ of $K_n$, with entries $|M\cap\delta(U)|-1+\rho$, where
-$\delta(U)$ is the edge cut of $U$. The rate $c$ is independent of
-$\rho$, though the threshold $n_0$ may deteriorate as $\rho$ tends to one
+**Main theorem** ([S4:37–44], `thm:main`). "There is a constant $`c>0`$ such
+that, for every fixed $`0<\rho<1`$, there is $`n_0=n_0(\rho)`$ for which
+$`\mathrm{rank_{psd}} A_n(\rho)\ge2^{cn}`$ for every even $`n\ge n_0`$" [S4:37–44]. Here
+$`A_n(\rho)`$ is the matrix indexed by odd vertex sets $`U`$ and perfect
+matchings $`M`$ of $`K_n`$, with entries $`|M\cap\delta(U)|-1+\rho`$, where
+$`\delta(U)`$ is the edge cut of $`U`$. The rate $`c`$ is independent of
+$`\rho`$, though the threshold $`n_0`$ may deteriorate as $`\rho`$ tends to one
 [S4:51–53].
 
 **Corollary (exact lifts)** ([S4:74–80], `cor:exact-lift`). "There are
-constants $c_0>0$ and $n_1$ such that, for every even $n\ge n_1$, both
-$A_n(0)$ and $T_n(0)$ have real PSD rank at least $2^{c_0n}$, and every
-exact semidefinite lift of $P_n$ has size at least $2^{c_0n}$"
+constants $`c_0>0`$ and $`n_1`$ such that, for every even $`n\ge n_1`$, both
+$`A_n(0)`$ and $`T_n(0)`$ have real PSD rank at least $`2^{c_0n}`$, and every
+exact semidefinite lift of $`P_n`$ has size at least $`2^{c_0n}`$"
 [S4:74–80]. The argument appends scalar blocks to reduce the shifted case
 to the unshifted, and invokes the cone-factorization theorem to identify
 the PSD rank of the slack matrix with the minimum lift size
 [S4:81–100].
 
-**Endpoint remark.** The endpoint $\rho=1$ has a factorization of size
-$\binom n2$ (diagonal matrices indexed by edges), so it cannot be included
+**Endpoint remark.** The endpoint $`\rho=1`$ has a factorization of size
+$`\binom n2`$ (diagonal matrices indexed by edges), so it cannot be included
 in the exponential lower bound [S4:46–50].
 
 ## History of the conjecture
@@ -72,7 +72,7 @@ lift size with the PSD rank of an associated slack matrix.
 The proof method combines several smoothing techniques: **local averaging**
 over vertex sets, a **splitting** argument for the parity structure,
 **Fourier smoothing** of matrix squares, and a **matching-specific
-smoothing** that exploits the structure of perfect matchings in $K_n$.
+smoothing** that exploits the structure of perfect matchings in $`K_n`$.
 
 **Prior (my training data, not this repo).** Rothvoss's question about
 polynomial-size lifts of the perfect matching polytope was a prominent open
@@ -85,19 +85,19 @@ results independently; the release ships the manuscript as proof.
 ## Consequences
 
 - **Rothvoss's question is answered negatively.** Every exact semidefinite
-  lift of the perfect matching polytope $P_n$ has exponential size
+  lift of the perfect matching polytope $`P_n`$ has exponential size
   [S4:74–80].
 - **The odd-cut slack matrix has exponential PSD rank.** For every fixed
-  shift $0<\rho<1$, the matrix $A_n(\rho)$ has PSD rank
-  $2^{\Omega(n)}$ [S4:37–44].
+  shift $`0<\rho<1`$, the matrix $`A_n(\rho)`$ has PSD rank
+  $`2^{\Omega(n)}`$ [S4:37–44].
 - **The bound is for the unshifted case as well.** The corollary extends
-  the exponential rank to $A_n(0)$ and $T_n(0)$, the slack matrices of
+  the exponential rank to $`A_n(0)`$ and $`T_n(0)`$, the slack matrices of
   Edmonds's description [S4:74–80].
-- **The endpoint $\rho=1$ is excluded.** A factorization of size
-  $\binom n2$ exists at the endpoint, so the exponential bound requires
-  $\rho<1$ [S4:46–50].
+- **The endpoint $`\rho=1`$ is excluded.** A factorization of size
+  $`\binom n2`$ exists at the endpoint, so the exponential bound requires
+  $`\rho<1`$ [S4:46–50].
 - **The formalization records only superpolynomial bounds.** The
-  comparator stubs capture $n^C$ growth, not the paper's $2^{cn}$
+  comparator stubs capture $`n^C`$ growth, not the paper's $`2^{cn}`$
   exponential rate [S6:9–11].
 
 ## Section skeleton
@@ -121,21 +121,21 @@ config has a proved declaration in `lean/OAI/`.
 The scope note [S6:9–11] explicitly notes the gap between the paper's result
 and the formalization: "The paper proves exponential PSD-rank lower bounds
 for positively shifted matching matrices. The linked formalization records
-the related superpolynomial lower bounds: for every fixed $C>0$, the PSD
-rank of the selected perfect-matching slack matrix exceeds $n^C$ for all
-sufficiently large even $n$. [...] These selected statements give
+the related superpolynomial lower bounds: for every fixed $`C>0`$, the PSD
+rank of the selected perfect-matching slack matrix exceeds $`n^C`$ for all
+sufficiently large even $`n`$. [...] These selected statements give
 superpolynomial growth. They do not state the paper's exponential bound
 for every fixed positive shift" [S6:9–11].
 
 The scope note links **two** comparator configs [S6:17–18]:
 
 - `MatchingAffineLift.lean` [S7] (35 lines) —
-  `affine_lift_lower_bound` [S7:27–31]: for every $C>0$, every affine
-  lift of the $n$-vertex matching polytope has matrix size
-  $> n^C$ for all sufficiently large even $n$; `sorry` at [S7:31].
+  `affine_lift_lower_bound` [S7:27–31]: for every $`C>0`$, every affine
+  lift of the $`n`$-vertex matching polytope has matrix size
+  $`> n^C`$ for all sufficiently large even $`n`$; `sorry` at [S7:31].
 - `MatchingPSD.lean` [S8:46–48] (55 lines) — `MainClaim` [S8:46–48]: for every
-  $C>0$, the PSD rank of the $n$-vertex matching slack matrix is
-  $> n^C$ for all sufficiently large even $n$; `main` [S8:50–51],
+  $`C>0`$, the PSD rank of the $`n`$-vertex matching slack matrix is
+  $`> n^C`$ for all sufficiently large even $`n`$; `main` [S8:50–51],
   `sorry` at [S8:51].
 
 There is no `OAI/**` declaration that proves either theorem, so the

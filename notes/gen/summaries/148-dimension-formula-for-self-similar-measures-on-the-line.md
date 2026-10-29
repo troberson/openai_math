@@ -10,8 +10,8 @@ The release's blurb [S1:3550] and the catalog abstract [S2:377] state
 the family's claim: for every self-similar measure on the line generated
 by finitely many contracting similarities, the Hausdorff dimension
 equals
-$\min\{1,h_{\mathrm{RW}}/\chi\}$, where $h_{\mathrm{RW}}$ is the
-entropy rate of the random composed maps and $\chi$ the average
+$`\min\{1,h_{\mathrm{RW}}/\chi\}`$, where $`h_{\mathrm{RW}}`$ is the
+entropy rate of the random composed maps and $`\chi`$ the average
 logarithmic contraction. This resolves the entropy-rate dimension
 conjecture without a separation assumption, allowing exact overlaps and
 unequal, even signed, contraction ratios. The manuscript's abstract
@@ -26,18 +26,18 @@ conjecture. [S3:46–50]
 ## Undergraduate summary
 
 A *self-similar measure* on the line is built from a finite set of
-contracting similarities $x\mapsto r_i x+t_i$ (with
-$|r_i|<1$) together with a set of positive weights: a point is produced
+contracting similarities $`x\mapsto r_i x+t_i`$ (with
+$`|r_i|<1`$) together with a set of positive weights: a point is produced
 by a random infinite composition indexed by a weighted random sequence,
 and the measure is the distribution of its limit. The *Hausdorff
 dimension* measures how much the measure spreads over the line, on a
-scale from $0$ (a point) to $1$ (spreading along the whole line). The
-*random-walk entropy rate* $h_{\mathrm{RW}}$ is how fast a random
-composition forgets its past; the *Lyapunov exponent* $\chi$ is the
+scale from $`0`$ (a point) to $`1`$ (spreading along the whole line). The
+*random-walk entropy rate* $`h_{\mathrm{RW}}`$ is how fast a random
+composition forgets its past; the *Lyapunov exponent* $`\chi`$ is the
 average logarithmic contraction per step. The entropy-rate dimension
 conjecture says the dimension is controlled by the ratio
-$h_{\mathrm{RW}}/\chi$. This manuscript proves the formula
-$\dim_{\mathrm H}\mu=\min\{1,h_{\mathrm{RW}}/\chi\}$ in full
+$`h_{\mathrm{RW}}/\chi`$. This manuscript proves the formula
+$`\dim_{\mathrm H}\mu=\min\{1,h_{\mathrm{RW}}/\chi\}`$ in full
 generality — no open-set or separation condition, exact overlaps
 allowed, ratios unequal and negative [S3:46–50, S4:9].
 
@@ -47,8 +47,8 @@ allowed, ratios unequal and negative [S3:46–50, S4:9].
 every finite real self-similar probability measure with positive weights
 and contraction ratios of absolute value below one, the lower Hausdorff
 dimension equals
-$\min\{1,h_{\mathrm{RW}}/\chi\}$, where $h_{\mathrm{RW}}$ is the
-entropy rate of the random affine compositions and $\chi$ the
+$`\min\{1,h_{\mathrm{RW}}/\chi\}`$, where $`h_{\mathrm{RW}}`$ is the
+entropy rate of the random affine compositions and $`\chi`$ the
 corresponding Lyapunov exponent in the same logarithmic base. The ratios
 may be signed and unequal, and exact overlaps are allowed [S4:9].
 
@@ -63,9 +63,9 @@ through the coding exponent [S5:62–65].
 **The corollaries.** The scope note also records two consequences valid
 without exact overlaps: the usual entropy-over-Lyapunov formula for a
 common positive contraction ratio, and the attractor formula
-$\dim_{\mathrm H}K=\min\{1,s\}$, where $s\ge0$ is the unique
+$`\dim_{\mathrm H}K=\min\{1,s\}`$, where $`s\ge0`$ is the unique
 solution of
-$\sum_i|r_i|^s=1$; absolute continuity is outside these statements
+$`\sum_i|r_i|^s=1`$; absolute continuity is outside these statements
 [S4:11]. The second comparator `SelfSimilarCorollaries.lean` carries
 those two corollary theorems.
 
@@ -84,7 +84,7 @@ separation assumption at all [S3:46–50, S4:9].
 Lyapunov dimension bounds for self-similar measures, the open-set
 condition regime, and that exact overlaps are the hard case in the
 dimension theory of self-similar measures. A proof of the *full* formula
-$\dim_{\mathrm H}\mu=\min\{1,h_{\mathrm{RW}}/\chi\}$ for
+$`\dim_{\mathrm H}\mu=\min\{1,h_{\mathrm{RW}}/\chi\}`$ for
 arbitrary signed, unequal ratios with exact overlaps allowed is, to my
 knowledge, beyond the standard results I was trained on. I cannot
 independently verify this manuscript's argument.
@@ -92,18 +92,18 @@ independently verify this manuscript's argument.
 ## Consequences
 
 **The entropy-rate dimension formula (general).**
-$\dim_{\mathrm H}\mu=\min\{1,h_{\mathrm{RW}}/\chi\}$ for every
+$`\dim_{\mathrm H}\mu=\min\{1,h_{\mathrm{RW}}/\chi\}`$ for every
 finite real self-similar measure of positive weights and
-$|r_i|<1$, with exact overlaps and unequal/signed ratios allowed
+$`|r_i|<1`$, with exact overlaps and unequal/signed ratios allowed
 [S3:46–50, S4:9].
 
 **The homogeneous corollary.** Under a common positive contraction ratio
 and no exact overlaps, the usual entropy-over-Lyapunov formula holds
 [S4:11].
 
-**The attractor formula.** The self-similar set $K$ has
-$\dim_{\mathrm H}K=\min\{1,s\}$, $s\ge0$ the unique solution of
-$\sum_i|r_i|^s=1$ [S4:11].
+**The attractor formula.** The self-similar set $`K`$ has
+$`\dim_{\mathrm H}K=\min\{1,s\}`$, $`s\ge0`$ the unique solution of
+$`\sum_i|r_i|^s=1`$ [S4:11].
 
 ## Section skeleton
 
@@ -115,14 +115,14 @@ bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization proves
-$\dim_H\mu=\min\{1,h_{\mathrm{RW}}/\chi\}$ for the lower
+$`\dim_H\mu=\min\{1,h_{\mathrm{RW}}/\chi\}`$ for the lower
 Hausdorff dimension of every finite real self-similar probability
 measure with positive weights and nonzero contraction ratios of absolute
 value below one. The ratios may be signed and unequal, and exact
 overlaps are allowed [S4:9]. It also records two consequences without
 exact overlaps — the entropy-over-Lyapunov formula for a common
 positive ratio, and the attractor formula
-$\dim_H K=\min\{1,s\}$ — with absolute continuity outside the
+$`\dim_H K=\min\{1,s\}`$ — with absolute continuity outside the
 statements [S4:11]. The scope note names two comparators [S4:15–18]:
 the headline `SelfSimilar.lean` and the corollaries
 `SelfSimilarCorollaries.lean`.
@@ -190,7 +190,7 @@ trace.
 - Erdős, Paul, On a family of symmetric Bernoulli convolutions (1939)
 - Feng, De-Jun, Hu, Huyi, Dimension theory of iterated function systems (2009)
 - Feng, De-Jun, Feng, Zhou, Dimension of homogeneous iterated function systems with algebraic translations (2025)
-- Galicer, Daniel, Saglietti, Santiago, Shmerkin, Pablo, Yavicoli, Alexia, $L^q$ dimensions and projections of random measures (2016)
+- Galicer, Daniel, Saglietti, Santiago, Shmerkin, Pablo, Yavicoli, Alexia, $`L^q`$ dimensions and projections of random measures (2016)
 - Garsia, Adriano M., Entropy and singularity of infinite convolutions (1963)
 - Hochman, Michael, On self-similar sets with overlaps and inverse theorems for entropy (2014)
 - Hutchinson, John E., Fractals and self-similarity (1981)
@@ -202,7 +202,7 @@ trace.
 - Rapaport, Ariel, Varjú, Péter P., Self-similar measures associated to a homogeneous system of three maps (2024)
 - Saglietti, Santiago, Shmerkin, Pablo, Solomyak, Boris, Absolute continuity of non-homogeneous self-similar measures (2018)
 - Simon, Károly, Overlapping cylinders: the size of a dynamically defined Cantor-set (1996)
-- Solomyak, Boris, On the random series $\sum\pm\lambda^n$ (an Erdős problem) (1995)
+- Solomyak, Boris, On the random series $`\sum\pm\lambda^n`$ (an Erdős problem) (1995)
 - Varjú, Péter P., Absolute continuity of Bernoulli convolutions for algebraic parameters (2019)
 - Varjú, Péter P., Entropy rates in the dimension theory of self-similar measures (2026)
 - Wang, Zhiren, Quantitative density under higher rank abelian algebraic toral actions (2011)

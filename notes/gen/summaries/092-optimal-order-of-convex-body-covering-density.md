@@ -8,58 +8,58 @@
 
 The release's blurb [S1:2279] and the catalog abstract [S2:260] state
 the family's claim: the optimal worst-case covering density is
-$\Theta(n\log n)$, for both lattice and unrestricted translative
+$`\Theta(n\log n)`$, for both lattice and unrestricted translative
 coverings. The family ships two manuscripts. The single-lattice
 manuscript's abstract 
 
-> Every convex body in $\mathbb R^n$, $n\ge2$, admits a covering by translates
-along one full-rank lattice with density at most $Cn\log n$, for an absolute
-constant $C$. No symmetry or boundary regularity is assumed. [S3:73–77]
+> Every convex body in $`\mathbb R^n`$, $`n\ge2`$, admits a covering by translates
+along one full-rank lattice with density at most $`Cn\log n`$, for an absolute
+constant $`C`$. No symmetry or boundary regularity is assumed. [S3:73–77]
 
 ## Undergraduate summary
 
-To cover a convex body $K$ in $\mathbb R^n$ by translates means
-finding a set of points $X$ such that $K+X$ fills the entire space.
+To cover a convex body $`K`$ in $`\mathbb R^n`$ by translates means
+finding a set of points $`X`$ such that $`K+X`$ fills the entire space.
 The *density* of a covering measures how many translates are needed per
 unit volume. The classical question is: how dense must a covering be,
 in the worst case over all convex bodies?
 
-Rogers proved in 1957 that every convex body in dimension $n\ge3$
+Rogers proved in 1957 that every convex body in dimension $`n\ge3`$
 has a periodic covering of density at most
-$n\log n+n\log\log n+5n$ [S6:63–70]. The two manuscripts here
+$`n\log n+n\log\log n+5n`$ [S6:63–70]. The two manuscripts here
 close the loop: one proves the matching upper bound with a *single*
 lattice (no cosets) [S4:16–24], and the other constructs
 centrally symmetric bodies that *require* density
-$c\,n\log n$, matching Rogers' order from below
+$`c\,n\log n`$, matching Rogers' order from below
 [S6:49–56]. Together they show the optimal order is
-$\Theta(n\log n)$.
+$`\Theta(n\log n)`$.
 
 ## Graduate summary
 
 **The single-lattice bound** [S4:16–24, `thm:main`]. There is an
-absolute constant $C>0$ such that, for every integer $n\ge2$ and every
-convex body $K\subset\mathbb R^n$, one full-rank lattice $\Lambda$
+absolute constant $`C>0`$ such that, for every integer $`n\ge2`$ and every
+convex body $`K\subset\mathbb R^n`$, one full-rank lattice $`\Lambda`$
 satisfies
 
 > **Theorem 1.1**
-There is an absolute constant $C>0$ such that, for every integer
-$n\ge2$ and every convex body $K\subset\mathbb R^n$, one full-rank lattice
-$\Lambda$ satisfies
+There is an absolute constant $`C>0`$ such that, for every integer
+$`n\ge2`$ and every convex body $`K\subset\mathbb R^n`$, one full-rank lattice
+$`\Lambda`$ satisfies
 $$K+\Lambda=\mathbb R^n,\qquad
  \frac{\mathrm{vol}_n(K)}{\det\Lambda}\le Cn\log n.$$
 No symmetry or boundary regularity is assumed. [S4:16–24]
 
 No symmetry or boundary regularity is assumed; the covering is exact
-[K$+$\Lambda$=\mathbb R^n$].
+[K$`+`$\Lambda$`=\mathbb R^n`$].
 
 **The translative lower bound** [S6:49–56, `thm:main`]. There
-are absolute constants $c>0$ and $n_0$ such that, for every $n\ge n_0$,
-some centrally symmetric convex body $K_n\subset\mathbb R^n$
-satisfies $\theta_T(K_n)>c\,n\log n$:
+are absolute constants $`c>0`$ and $`n_0`$ such that, for every $`n\ge n_0`$,
+some centrally symmetric convex body $`K_n\subset\mathbb R^n`$
+satisfies $`\theta_T(K_n)>c\,n\log n`$:
 
 > **theorem**
-There are absolute constants $c>0$ and $n_0$ such that, for every integer
-$n\ge n_0$, some centrally symmetric convex body $K_n\subset\mathbb R^n$
+There are absolute constants $`c>0`$ and $`n_0`$ such that, for every integer
+$`n\ge n_0`$, some centrally symmetric convex body $`K_n\subset\mathbb R^n`$
 satisfies
 $$\theta_T(K_n)>c n\log n.$$ [S6:49–56]
 
@@ -67,20 +67,20 @@ This disproves the existence of a universal *linear* upper bound
 [S6:58–61].
 
 **The density definitions.** The translative covering density
-$\theta_T(K)$ is the infimum, over all locally finite arrangements
-$X$ with $K+X=\mathbb R^n$, of the asymptotic translate count per unit
+$`\theta_T(K)`$ is the infimum, over all locally finite arrangements
+$`X`$ with $`K+X=\mathbb R^n`$, of the asymptotic translate count per unit
 volume [S6:5–14]. The periodization principle
-$\theta_T(K)=\theta_{\mathrm{per}}(K)$ reduces the unrestricted
+$`\theta_T(K)=\theta_{\mathrm{per}}(K)`$ reduces the unrestricted
 infimum to periodic coverings [S6:41–44].
 
 ## History of the conjecture
 
 Rogers' 1957 upper bound [S6:63–70] gave the first
-$O(n\log n)$ estimate. Fejes T\H{o}th sharpened the lower-order term
-to $n(\log n+\log\log n+1+o(1))$ using $O(\log n)$ cosets
+$`O(n\log n)`$ estimate. Fejes T\H{o}th sharpened the lower-order term
+to $`n(\log n+\log\log n+1+o(1))`$ using $`O(\log n)`$ cosets
 [S6:79–83]. On the lower-bound side, Coxeter, Few and Rogers gave
-an order-$n$ obstruction for equal Euclidean balls, and D\H{u}mer gave
-the upper bound $(1/2+o(1))n\log n$ for balls; the gap for bodies that
+an order-$`n`$ obstruction for equal Euclidean balls, and D\H{u}mer gave
+the upper bound $`(1/2+o(1))n\log n`$ for balls; the gap for bodies that
 may also be chosen remained [S6:84–90]. The construction here
 builds on the random-slab and Poisson-witness method of Li and Liu
 [S6:92–98].
@@ -89,15 +89,15 @@ builds on the random-slab and Poisson-witness method of Li and Liu
 bound, the Fejes T\H{o}th refinement, and the
 Coxeter–Few–Rogers / D\H{u}mer results for Euclidean
 balls. A proof that the optimal worst-case covering density over all
-convex bodies is exactly $\Theta(n\log n)$, with a single-lattice
+convex bodies is exactly $`\Theta(n\log n)`$, with a single-lattice
 upper bound and a centrally symmetric lower-bound construction, is, to
 my knowledge, not established in the literature I was trained on. I
 cannot independently verify these 2026 manuscripts' arguments.
 
 ## Consequences
 
-**$\Theta(n\log n)$ optimal order.** The supremum of covering
-density over convex bodies in dimension $n$ is $\Theta(n\log n)$,
+**$`\Theta(n\log n)`$ optimal order.** The supremum of covering
+density over convex bodies in dimension $`n`$ is $`\Theta(n\log n)`$,
 for both lattice and unrestricted translative coverings, over all
 convex bodies and over centrally symmetric bodies
 [S4:16–24, S6:49–56].
@@ -105,8 +105,8 @@ convex bodies and over centrally symmetric bodies
 **Single-lattice suffices.** The upper bound is attained by a single
 full-rank lattice, not a finite union of cosets [S4:16–24].
 
-**No universal linear bound.** There is no absolute $C$ with
-$\theta_T(K)\le Cn$ for every convex body in every dimension, even
+**No universal linear bound.** There is no absolute $`C`$ with
+$`\theta_T(K)\le Cn`$ for every convex body in every dimension, even
 with central symmetry [S6:58–61].
 
 ## Section skeleton
@@ -130,9 +130,9 @@ No manuscript ships a `verification/` bundle.
 
 **Scope note** [S7:10–12]. The formalization covers two
 statements: the single-lattice covering bound (every convex body admits
-a single-lattice covering of density $\le Cn\log n$) and the optimal
+a single-lattice covering of density $`\le Cn\log n`$) and the optimal
 order of the covering-density suprema (both translative and lattice,
-over all and centrally symmetric bodies, are $\Theta(n\log n)$).
+over all and centrally symmetric bodies, are $`\Theta(n\log n)`$).
 The scope note links both manuscripts [S7:5–6] and names two
 comparators [S7:16–19]. The release records
 `scope: "Partial progress."` and `review: status: unchecked`; zero
@@ -272,7 +272,7 @@ ships no verification bundle and no reasoning trace.
 - Janson, Svante, Warnke, Lutz, The lower tail: Poisson approximation revisited (2016)
 - Janson, Svante, Poisson approximation for large deviations (1990)
 - Li, Heng, Liu, Xizhi, Nearly Sharp Bounds for Lattice Coverings by Convex Bodies (2026)
-- OpenAI, {A single-lattice covering bound of order $n\log n$} (2026)
+- OpenAI, {A single-lattice covering bound of order $`n\log n`$} (2026)
 - Prosanov, Roman, On a Relation Between Packing and Covering Densities of Convex Bodies (2021)
 - Rogers, C. A., A note on coverings (1957)
 - Fejes Tóth, Gábor, A note on covering by convex bodies (2009)

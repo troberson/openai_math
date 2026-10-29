@@ -18,59 +18,59 @@ agree on the statement.
 **Matching** is the task of pairing up as many vertices of a graph as
 possible so that no vertex is used twice. A **maximum-cardinality
 matching** pairs the largest number of vertices; its size is the
-matching number $\nu(G)$. This is one of the most fundamental
+matching number $`\nu(G)`$. This is one of the most fundamental
 optimization problems in combinatorics, and finding it exactly has a
 long algorithmic history: the classical **Edmonds blossom** algorithm
 runs in polynomial time, and the fastest general-graph routines reach
-about $O(n+m\sqrt n)$ word operations.
+about $`O(n+m\sqrt n)`$ word operations.
 
 This family gives a much faster exact algorithm. A **single uniform
 randomized** word-RAM algorithm finds an exact maximum matching of any
-simple undirected graph in $(n+m)^{1+o(1)}$ word time [S4:34–46] — that
+simple undirected graph in $`(n+m)^{1+o(1)}`$ word time [S4:34–46] — that
 is, in essentially **linear** time in the input size. Two features make
 the bound strong. First, it holds **on every computation path**: the
 time guarantee is not just high-probability over the algorithm's random
 choices, it is deterministic about how long any single run takes.
-Second, with probability at least $2/3$ the algorithm outputs the
+Second, with probability at least $`2/3`$ the algorithm outputs the
 matching's edge list.
 
-The exponent $n^{1+o(1)}$ interpolates across the whole density range:
-on sparse graphs ($m \le \kappa n$) it is near-linear in $n$, and at the
-dense extreme ($m = \Theta(n^2)$) it is $n^{2+o(1)}$, which is optimal
+The exponent $`n^{1+o(1)}`$ interpolates across the whole density range:
+on sparse graphs ($`m \le \kappa n`$) it is near-linear in $`n`$, and at the
+dense extreme ($`m = \Theta(n^2)`$) it is $`n^{2+o(1)}`$, which is optimal
 since the input itself is that large.
 
-The same machinery gives a second result. An **$f$-factor** is a
-spanning subgraph where each vertex $v$ has exactly $f(v)$ incident
-edges (with $0 \le f(v) \le \deg_G(v)$). The algorithm also decides
-whether an $f$-factor exists and returns one, with the same almost-linear
-time and $2/3$ success probability [S5:17–36].
+The same machinery gives a second result. An **$`f`$-factor** is a
+spanning subgraph where each vertex $`v`$ has exactly $`f(v)`$ incident
+edges (with $`0 \le f(v) \le \deg_G(v)`$). The algorithm also decides
+whether an $`f`$-factor exists and returns one, with the same almost-linear
+time and $`2/3`$ success probability [S5:17–36].
 
 ## Graduate summary
 
 **Main theorem (exact matching)** ([S4:34–46], `thm:main`). "There are
 a single uniform randomized word-RAM algorithm, fixed constants
-$c_0\ge2$ and $C\ge1$, and a nonincreasing function
-$\eta:\mathbb N_{\ge1}\to\mathbb R_{\ge0}$ with $\eta(q)\to0$ as
-$q\to\infty$ [...] For every input graph $G=([n],E)$ with $m=|E|$ and
-$p=n+m$, the algorithm halts on every computation path in at most
-$C p^{1+\eta(p)}$ instructions. With probability at least $2/3$ it
-outputs an explicit list of edges of a matching of size $\nu(G)$"
-[S4:34–46]. The word length is $\Theta(\log p)$, and the model charges
+$`c_0\ge2`$ and $`C\ge1`$, and a nonincreasing function
+$`\eta:\mathbb N_{\ge1}\to\mathbb R_{\ge0}`$ with $`\eta(q)\to0`$ as
+$`q\to\infty`$ [...] For every input graph $`G=([n],E)`$ with $`m=|E|`$ and
+$`p=n+m`$, the algorithm halts on every computation path in at most
+$`C p^{1+\eta(p)}`$ instructions. With probability at least $`2/3`$ it
+outputs an explicit list of edges of a matching of size $`\nu(G)`$"
+[S4:34–46]. The word length is $`\Theta(\log p)`$, and the model charges
 all allocation, initialization, data movement, and output writing; there
-is no oracle or nonuniform advice [S4:29–40]. For every fixed $\kappa\ge1$
-this is $C_\kappa n^{1+\eta(n)}$ on graphs with $m\le\kappa n$, and
-$n^{2+o(1)}$ at the dense extreme [S4:48–52].
+is no oracle or nonuniform advice [S4:29–40]. For every fixed $`\kappa\ge1`$
+this is $`C_\kappa n^{1+\eta(n)}`$ on graphs with $`m\le\kappa n`$, and
+$`n^{2+o(1)}`$ at the dense extreme [S4:48–52].
 
-**$f$-factor corollary** ([S5:17–36], `cor:f-factor`). "There are a
+**$`f`$-factor corollary** ([S5:17–36], `cor:f-factor`). "There are a
 single uniform randomized word-RAM algorithm [...] The input is a simple
-graph $G=([n],E)$ with $n\ge1$, $m=|E|$, and $p=n+m$ [...] together with
-one-word integers $f(v)$ satisfying $0\le f(v)\le\deg_G(v)$ for all $v$.
+graph $`G=([n],E)`$ with $`n\ge1`$, $`m=|E|`$, and $`p=n+m`$ [...] together with
+one-word integers $`f(v)`$ satisfying $`0\le f(v)\le\deg_G(v)`$ for all $`v`$.
 [...] the algorithm halts on every computation path in at most
-$C_f p^{1+\eta_f(p)}$ instructions. Every output is either an explicit
-edge list of a valid $f$-factor or \textnormal{NO}. If an $f$-factor
-exists, it returns one with probability at least $2/3$; otherwise it
+$`C_f p^{1+\eta_f(p)}`$ instructions. Every output is either an explicit
+edge list of a valid $`f`$-factor or \textnormal{NO}. If an $`f`$-factor
+exists, it returns one with probability at least $`2/3`$; otherwise it
 always returns \textnormal{NO}" [S5:17–36]. The reduction from
-$f$-factors to perfect matchings follows Tutte's incidence-port approach,
+$`f`$-factors to perfect matchings follows Tutte's incidence-port approach,
 replacing local complete connections by rearrangeable networks to keep
 the instance small even for high-degree vertices [S4:85–91].
 
@@ -101,26 +101,26 @@ odd-set constraints a complementary geometric explanation [S4:80–83].
 The combinatorial running-time record. Batching shortest augmenting paths
 gave the bipartite algorithms of **Hopcroft and Karp** (1973) and,
 independently, **Karzanov** (1973), and the **Micali–Vazirani** algorithm
-for general graphs with time $O(m\sqrt n)$ [S4:98–104]. **Gabow and
+for general graphs with time $`O(m\sqrt n)`$ [S4:98–104]. **Gabow and
 Tarjan** developed a weighted-scaling route, and **Goldberg and Karzanov**
 tightened the dense-graph combinatorial bound to
-$O(n+m\sqrt n\log(n^2/m)/\log n)$ [S4:105–110].
+$`O(n+m\sqrt n\log(n^2/m)/\log n)`$ [S4:105–110].
 
 The algebraic line is the main prior competitor. Random evaluation of the
 Tutte matrix connects matching to linear algebra (**Lovász**, 1979);
 **Mucha and Sankowski**, and subsequently **Harvey**, obtained randomized
-algorithms at the matrix-multiplication time scale $O(n^\omega)$ field
+algorithms at the matrix-multiplication time scale $`O(n^\omega)`$ field
 operations [S4:116–121]. Those algorithms already recover explicit
 witnesses over polynomial-size finite fields; the matrix-multiplication
 bound is most competitive on dense graphs, whereas this theorem gives an
 almost-linear bound in the explicit input size across all densities,
-including $n^{2+o(1)}$ at the dense extreme [S4:122–126].
+including $`n^{2+o(1)}`$ at the dense extreme [S4:122–126].
 
 **Prior (my training data, not this repo).** Nearly-linear-time exact
 matching in general graphs was a major open problem in algorithms; the
-long-standing best general-graph bound was near $O(n^{3/2})$ for sparse
-graphs via Micali–Vazirani, and $O(n^\omega)$ via the algebraic
-Tutte-matrix route. An $(n+m)^{1+o(1)}$ exact algorithm is a significant
+long-standing best general-graph bound was near $`O(n^{3/2})`$ for sparse
+graphs via Micali–Vazirani, and $`O(n^\omega)`$ via the algebraic
+Tutte-matrix route. An $`(n+m)^{1+o(1)}`$ exact algorithm is a significant
 improvement, especially because a single uniform program covers all
 densities. I cannot confirm these independently; the release ships the
 manuscript as a proof.
@@ -129,16 +129,16 @@ manuscript as a proof.
 
 - **Exact matching in almost-linear time.** A single uniform randomized
   word-RAM algorithm finds an exact maximum-cardinality matching of any
-  simple undirected graph in $(n+m)^{1+o(1)}$ word time, halting in that
+  simple undirected graph in $`(n+m)^{1+o(1)}`$ word time, halting in that
   bound on every computation path and succeeding with probability at
-  least $2/3$ [S4:34–46].
+  least $`2/3`$ [S4:34–46].
 - **All densities, one program.** The same algorithm and exponent
-  envelope work for every sparsity; $n^{1+o(1)}$ on sparse graphs and
-  $n^{2+o(1)}$ at the dense extreme, with no density parameter supplied
+  envelope work for every sparsity; $`n^{1+o(1)}`$ on sparse graphs and
+  $`n^{2+o(1)}`$ at the dense extreme, with no density parameter supplied
   [S4:48–52].
 - **Prescribed-degree factors.** The same guarantees decide and
   construct a spanning subgraph with prescribed admissible vertex degrees
-  (an $f$-factor), always returning \textnormal{NO} when none exists
+  (an $`f`$-factor), always returning \textnormal{NO} when none exists
   [S5:17–36].
 - **Witness-preserving.** Every successful run outputs the explicit edge
   list, not just a cardinality; the reduction preserves witness

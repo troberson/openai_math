@@ -190,7 +190,7 @@ and no certificate ships with it.
 ## Bibliography
 
 - Ball, Keith, Markov chains, Riesz transforms and Lipschitz maps (1992)
-- Cheng, Qingjin, Wang, Yue, Xiang, Bo, Sharp metric cotype inequalities for $L_1$ via nonlinear cut smoothing (2026)
+- Cheng, Qingjin, Wang, Yue, Xiang, Bo, Sharp metric cotype inequalities for $`L_1`$ via nonlinear cut smoothing (2026)
 - Deza, Michel Marie, Laurent, Monique, Geometry of Cuts and Metrics (1997)
 - Mendel, Manor, Naor, Assaf, Spectral calculus and Lipschitz extension for barycentric metric spaces (2013)
 - Naor, Assaf, Young, Robert, Foliated corona decompositions (2022)

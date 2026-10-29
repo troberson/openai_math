@@ -20,22 +20,22 @@ finite-dimensional topological manifold without boundary is a Lie group. [S3:89�
 
 The Hilbert--Smith conjecture asks how much a "mere" continuous group
 action can distort a manifold. A group of homeomorphisms acts on a
-manifold $M$; the action is *faithful* when no non-identity element
-fixes every point. The conjecture predicts that if $M$ is connected and
+manifold $`M`$; the action is *faithful* when no non-identity element
+fixes every point. The conjecture predicts that if $`M`$ is connected and
 finite-dimensional, then a locally compact group that acts faithfully
-and continuously on it must be a Lie group — a smooth $n$-dimensional
+and continuously on it must be a Lie group — a smooth $`n`$-dimensional
 manifold that is also a group, with smooth multiplication. Locally
 compact groups include familiar Lie groups (compact matrix groups,
-$\mathbb R^n$), but also the profinite groups such as the $p$-adic integers
-$\mathbb Z_p$, which are uncountable, totally disconnected, and far from
+$`\mathbb R^n`$), but also the profinite groups such as the $`p`$-adic integers
+$`\mathbb Z_p`$, which are uncountable, totally disconnected, and far from
 being manifolds [S4:3–7]. Positive dimension is the only hypothesis:
 the manifold may be noncompact, nonorientable, or nontriangulable, and
 actions may have arbitrary stabilizers 
 
 > **Theorem 1.1**
-Let $n\geq1$. A locally compact second-countable Hausdorff group
+Let $`n\geq1`$. A locally compact second-countable Hausdorff group
 acting faithfully and jointly continuously on a connected Hausdorff
-second-countable topological $n$-manifold without boundary is a Lie
+second-countable topological $`n`$-manifold without boundary is a Lie
 group. [S4:9–14]
 
 In dimension zero a connected manifold is a point, so a faithful
@@ -43,34 +43,34 @@ acting group is trivial and the conclusion holds as well [S4:16–20].
 
 ## Graduate summary
 
-**The reduction to $p$-adic exclusion.** The full group theorem follows
+**The reduction to $`p`$-adic exclusion.** The full group theorem follows
 from the classical structure theory of Gleason, Montgomery--Zippin, and
-Yamabe once faithful actions of the additive group of $p$-adic
-integers $\mathbb Z_p$ are excluded. The precise statement is that every
-jointly continuous action of $\mathbb Z_p$ on a connected Hausdorff
-second-countable $n$-manifold without boundary has nonzero kernel, so
+Yamabe once faithful actions of the additive group of $`p`$-adic
+integers $`\mathbb Z_p`$ are excluded. The precise statement is that every
+jointly continuous action of $`\mathbb Z_p`$ on a connected Hausdorff
+second-countable $`n`$-manifold without boundary has nonzero kernel, so
 the action factors through a finite quotient [S4:22–35].
 
 **The signature-lattice obstruction.** The proof by contradiction
 produces an integral cohomological obstruction. For an odd integer
-$d>n$ it constructs an abelian group $E_d(S^d)$, an orientation class
-$u_d$, and a positive integer $L_d$ such that rationaly the group is
+$`d>n`$ it constructs an abelian group $`E_d(S^d)`$, an orientation class
+$`u_d`$, and a positive integer $`L_d`$ such that rationaly the group is
 one-dimensional over the orientation class, with integral elements
-constrained to a lattice of index $L_d$. A faithful $\mathbb Z_p$-action
-would supply, for every $k\ge1$, $p^k$ integral classes with equal
-rational images summing to $4u_d$; each image is then $(4/p^k)u_d$,
-which lies outside the fixed lattice once $p^k>4L_d$ — the
+constrained to a lattice of index $`L_d`$. A faithful $`\mathbb Z_p`$-action
+would supply, for every $`k\ge1`$, $`p^k`$ integral classes with equal
+rational images summing to $`4u_d`$; each image is then $`(4/p^k)u_d`$,
+which lies outside the fixed lattice once $`p^k>4L_d`$ — the
 contradiction [S4:165–231].
 
 **How the action supplies the equal parts.** Newman's rigidity
 theorem for periodic transformations is the local input: a
 finite-order homeomorphism fixing a nonempty open set pointwise is the
 identity. The action is localized to a coordinate chart, thickened to
-a product $W=O\times\mathbb R^{d-n}$, one-point compactified and passed
-through the orbit space of a small open $\mathbb Z_p$-subgroup, so the
-characters of $\mathbb Z_p$ — the roots of unity of $p$-power order — decompose
+a product $`W=O\times\mathbb R^{d-n}`$, one-point compactified and passed
+through the orbit space of a small open $`\mathbb Z_p`$-subgroup, so the
+characters of $`\mathbb Z_p`$ — the roots of unity of $`p`$-power order — decompose
 the sheaf complex into orthogonal character parts whose signature data
-carry the $p^k$ equal rational parts the lattice forbids
+carry the $`p^k`$ equal rational parts the lattice forbids
 [S4:235–314].
 
 **Formalization status.** Nothing about this family is machine-checked.
@@ -92,7 +92,7 @@ Lipschitz actions, Maleshich for Hölder actions, and Martin for
 quasiconformal actions. Their dimension-raising obstructions connect
 to the integral cohomological dimension theory of Yang and
 Bredon--Raymond--Williams, and Shelukhin used Floer-theoretic methods
-to exclude nontrivial continuous $\mathbb Z_p$-actions on a class of closed
+to exclude nontrivial continuous $`\mathbb Z_p`$-actions on a class of closed
 symplectic manifolds [S4:59–127].
 
 ## Consequences
@@ -100,12 +100,12 @@ symplectic manifolds [S4:59–127].
 **The Hilbert--Smith conjecture is true in every finite dimension.**
 Every locally compact second-countable Hausdorff group acting
 faithfully and jointly continuously on a connected Hausdorff
-second-countable $n$-manifold without boundary is a Lie group
+second-countable $`n`$-manifold without boundary is a Lie group
 [S4:9–14].
 
 **A dynamical corollary (Pardon's Conjecture 1.4).** For such a
 manifold, an almost periodic homeomorphism — one whose cyclic subgroup
-has compact closure in $\mathrm{Homeo}(M)$ — has a positive iterate that is the
+has compact closure in $`\mathrm{Homeo}(M)`$ — has a positive iterate that is the
 time-one map of a continuous real flow: the compact closure is a
 compact abelian Lie group whose identity component is a torus of finite
 index [S4:42–55].
@@ -151,7 +151,7 @@ evidence.
 - Balmer, Paul, Walter, Charles, A Gersten–Witt Spectral Sequence for Regular Schemes (2002)
 - Bergfalk, Jeffrey, Lupini, Martino, Panagiotopoulos, Aristotelis, The Definable Content of Homological Invariants II: Čech Cohomology and Homotopy Classification (2024)
 - Bochner, Salomon, Montgomery, Deane, Locally Compact Groups of Differentiable Transformations (1946)
-- Bredon, G. E., Raymond, Frank, Williams, R. F., $p$-Adic Groups of Transformations (1961)
+- Bredon, G. E., Raymond, Frank, Williams, R. F., $`p`$-Adic Groups of Transformations (1961)
 - Coste, Michel, An Introduction to Semialgebraic Geometry (2000)
 - Dranishnikov, Alexander N., Ferry, Steven C., Weinberger, Shmuel, Large Riemannian Manifolds Which Are Flexible (2003)
 - Eilenberg, Samuel, Steenrod, Norman, Foundations of Algebraic Topology (1952)
@@ -162,7 +162,7 @@ evidence.
 - Hilbert, David, Mathematical problems (1902)
 - Hornbostel, Jens, Schlichting, Marco, Localization in Hermitian K-Theory of Rings (2004)
 - Kashiwara, Masaki, Schapira, Pierre, Sheaves on Manifolds (1990)
-- Lee, Joo Sung, Totally disconnected groups, $p$-adic groups and the Hilbert–Smith conjecture (1997)
+- Lee, Joo Sung, Totally disconnected groups, $`p`$-adic groups and the Hilbert–Smith conjecture (1997)
 - Maleshich, Iozhe, The Hilbert–Smith Conjecture for Hölder Actions (1997)
 - Martin, Gaven J., The Hilbert–Smith Conjecture for Quasiconformal Actions (1999)
 - Mj, Mahan, Pattern Rigidity and the Hilbert–Smith Conjecture (2012)
@@ -181,5 +181,5 @@ evidence.
 - Woolf, Jon, Witt Groups of Sheaves on Topological Spaces (2008)
 - Yamabe, Hidehiko, On the conjecture of Iwasawa and Gleason (1953)
 - Yamabe, Hidehiko, A generalization of a theorem of Gleason (1953)
-- Yang, Chung-Tao, $p$-Adic Transformation Groups (1960)
+- Yang, Chung-Tao, $`p`$-Adic Transformation Groups (1960)
 - Repovš, Dušan, Ščepin, Evgenij V., A Proof of the Hilbert–Smith Conjecture for Actions by Lipschitz Maps (1997)

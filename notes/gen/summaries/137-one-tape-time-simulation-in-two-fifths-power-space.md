@@ -18,18 +18,18 @@ agree on the statement.
 A **Turing machine** writes on a tape as it computes. To **simulate**
 one machine on a general-purpose computer, you must keep track of what's
 on the tape. The naive approach copies the whole tape into memory, which
-costs as much space as the tape has used — about $O(T)$ for a
-computation of $T$ steps.
+costs as much space as the tape has used — about $`O(T)`$ for a
+computation of $`T`$ steps.
 
 This family asks how little *space* a simulator can get by with. The
-key observation: in $T$ steps, a one-tape head has only visited about
-$T$ cells, and those cells are *roughly evenly spaced* from the origin.
+key observation: in $`T`$ steps, a one-tape head has only visited about
+$`T`$ cells, and those cells are *roughly evenly spaced* from the origin.
 By storing a compressed summary (a "block" partition) rather than the
 raw tape, the simulator needs only
 
 $$O\bigl(T^{2/5}\,\mathrm{polylog}\,T\bigr)$$
 
-space [S4:64–79] — a genuine improvement over the $O(T^{1/2})$
+space [S4:64–79] — a genuine improvement over the $`O(T^{1/2})`$
 "square-root" bound that was the long-standing best answer for this
 model.
 
@@ -42,32 +42,32 @@ The result answers a specific open question about one-tape machines
 machine with one writable tape and head, a fixed number of read-only
 input heads, unit movement and fixed origins for all heads,
 cap-independent symbol functions, and a fixed accessor as above. For
-every public input $x$ and supplied binary cap $T\ge2$ for which the
+every public input $`x`$ and supplied binary cap $`T\ge2`$ for which the
 access condition holds, its finite-control and halting outcome by time
-$T$ can be computed deterministically in $\widetilde O(T^{2/5})$ work-space
+$`T`$ can be computed deterministically in $`\widetilde O(T^{2/5})`$ work-space
 bits, excluding storage for the read-only input. Simulation time is
 unrestricted, and the final writable tape need not be materialized.
-If the access condition holds for $(x,T)$ at every $T\ge2$, and the
-machine halts on $x$ after $t$ steps without a supplied running time,
-its outcome can be computed in $\widetilde O((t+2)^{2/5})$ work-space bits"
+If the access condition holds for $`(x,T)`$ at every $`T\ge2`$, and the
+machine halts on $`x`$ after $`t`$ steps without a supplied running time,
+its outcome can be computed in $`\widetilde O((t+2)^{2/5})`$ work-space bits"
 [S4:64–79].
 
 **The two forms.** The theorem has a **capped** version (a binary
-time cap $T\ge2$ is supplied) and an **unknown-time** version (no
-cap; the bound is in the actual halting time $t$) [S6:9][S6:11]. The
+time cap $`T\ge2`$ is supplied) and an **unknown-time** version (no
+cap; the bound is in the actual halting time $`t`$) [S6:9][S6:11]. The
 capped simulator returns the finite-control outcome *and* the halting
-flag by time $T$; the unknown-time simulator returns the halted
+flag by time $`T`$; the unknown-time simulator returns the halted
 outcome on an input that halts.
 
 **Improving the square-root exponent.** For any fixed
-$0<\delta<1/10$, the bound is $O(T^{1/2-\delta})$, as requested by
+$`0<\delta<1/10`$, the bound is $`O(T^{1/2-\delta})`$, as requested by
 **Williams's** one-tape simulation question [S4:85–87]. No log-free
-endpoint at exponent $2/5$ is asserted.
+endpoint at exponent $`2/5`$ is asserted.
 
 **The scope is deliberately one-tape.** The result applies to one
 writable head, even when additional read-only input heads are present;
 it is *not* a two-fifths bound for arbitrary multitape machines
-[S4:88–90]. A separate $\widetilde O(\sqrt T)$ simulation covers every fixed
+[S4:88–90]. A separate $`\widetilde O(\sqrt T)`$ simulation covers every fixed
 number of writable tapes [S4:91–92].
 
 ## History of the conjecture
@@ -75,16 +75,16 @@ number of writable tapes [S4:91–92].
 The question is a **space-bounded simulation** problem: how much
 workspace is enough to run a given machine? For a one-writable-tape
 deterministic machine, the classical target is to beat the
-straightforward tape-copying $O(T)$ space.
+straightforward tape-copying $`O(T)`$ space.
 
 **Williams** posed the one-tape simulation question — asking whether
 the square-root workspace exponent is the right scale for this model
-[S4:86–87]. The $O(\sqrt T)$ ("square-root") bound was the long-standing
+[S4:86–87]. The $`O(\sqrt T)`$ ("square-root") bound was the long-standing
 best general answer, coming from storing the visited portion of the
 tape with a coarse granularity.
 
 The improvement here is to a **two-fifths** exponent,
-$T^{2/5}$, by a more refined block-partition / compressed-window
+$`T^{2/5}`$, by a more refined block-partition / compressed-window
 argument: the simulator partitions the writable tape into blocks of a
 chosen width and stores, per block, only the entries within the range
 the head can reach at the relevant time [S4:94–95]. Because the head
@@ -94,7 +94,7 @@ against the number of blocks that must be kept.
 
 The **access condition** is the price: contents and input symbols must
 be *accessible in polylogarithmic space* (a fixed accessor supplies
-every symbol within distance $T$ of a head origin in polylog space)
+every symbol within distance $`T`$ of a head origin in polylog space)
 [S3:39–41][S6:9]. This is a natural and standard hypothesis for
 one-tape simulations — the symbols are simple, not arbitrary.
 
@@ -106,7 +106,7 @@ other sections and are outside the selected statements [S6:11].
 
 **Prior (my training data, not this repo).** One-tape simulation and
 the relationship between time and workspace are classical
-descriptive/complexity topics; the $O(\sqrt T)$ square-root workspace
+descriptive/complexity topics; the $`O(\sqrt T)`$ square-root workspace
 bound for one-tape machines is a known general result. The exact
 two-fifths exponent and its sharp dependence on the access condition
 are the load-bearing claims of the release, and I cannot independently
@@ -117,16 +117,16 @@ manuscript as proof.
 
 - **A two-fifths workspace bound.** A fixed one-writable-tape
   deterministic machine is simulated in
-  $O(T^{2/5}\,\mathrm{polylog}\,T)$ work-space bits up to a binary
-  time cap $T$ [S4:64–79][S6:9].
-- **An unknown-time variant.** On an input halting at time $t$, the
-  outcome is computed in $O((t+2)^{2/5}\,\mathrm{polylog}(t+2))$
+  $`O(T^{2/5}\,\mathrm{polylog}\,T)`$ work-space bits up to a binary
+  time cap $`T`$ [S4:64–79][S6:9].
+- **An unknown-time variant.** On an input halting at time $`t`$, the
+  outcome is computed in $`O((t+2)^{2/5}\,\mathrm{polylog}(t+2))`$
   space [S6:11].
 - **The square-root exponent is improved.** For every fixed
-  $0<\delta<1/10$ the bound is $O(T^{1/2-\delta})$, answering
+  $`0<\delta<1/10`$ the bound is $`O(T^{1/2-\delta})`$, answering
   Williams's question for this model [S4:85–87][S3:41–42].
 - **The bound is one-tape specific.** It is not a two-fifths bound for
-  arbitrary multitape machines; a separate $\widetilde O(\sqrt T)$ result
+  arbitrary multitape machines; a separate $`\widetilde O(\sqrt T)`$ result
   covers fixed numbers of writable tapes [S4:88–92].
 - **Simulation time is unrestricted.** The result is a space bound
   only; the simulator's running time is not bounded [S4:73][S3:38].
@@ -154,12 +154,12 @@ level**.
 The scope note [S6:9] states precisely what is formalized, in two
 paragraphs:
 
-- **The capped simulator** [S6:9]: "Given a binary time cap $T\ge2$,
+- **The capped simulator** [S6:9]: "Given a binary time cap $`T\ge2`$,
   the simulator returns the source's finite-control outcome and
-  halting flag using $O(T^{2/5}(\log(T+2))^C)$ space."
+  halting flag using $`O(T^{2/5}(\log(T+2))^C)`$ space."
 - **The unknown-time simulator** [S6:11]: "A second simulator needs no
-  time cap: on an input that halts at time $t$, it returns the halted
-  outcome using $O((t+2)^{2/5}(\log(t+2))^C)$ space. Simulation time
+  time cap: on an input that halts at time $`t`$, it returns the halted
+  outcome using $`O((t+2)^{2/5}(\log(t+2))^C)`$ space. Simulation time
   is unrestricted." It excludes general multitape simulation,
   hierarchy consequences, and bounded-space-halting results.
 
@@ -178,13 +178,13 @@ machine and simulator machinery — the `Dir` / `Mark` / `Readers` /
 and the `Access` predicate — and carries two statements, one per
 simulator, each with a `sorry`:
 
-- `capped` [S7:258–263] — there is a simulator $N$ and exponent $e$
-  with a constant $c$ such that, for every input $x$ and cap
-  $T\ge2$ satisfying the access condition, the outcome is computed
-  within $c\,T^{\mathrm{exponent}}(\log T)^e$ space; `sorry` at
+- `capped` [S7:258–263] — there is a simulator $`N`$ and exponent $`e`$
+  with a constant $`c`$ such that, for every input $`x`$ and cap
+  $`T\ge2`$ satisfying the access condition, the outcome is computed
+  within $`c\,T^{\mathrm{exponent}}(\log T)^e`$ space; `sorry` at
   [S7:263].
 - `unknown` [S7:265–271] — the same for an input that halts at time
-  $t$, within $c\,(t+2)^{\mathrm{exponent}}(\log t)^e$ space;
+  $`t`$, within $`c\,(t+2)^{\mathrm{exponent}}(\log t)^e`$ space;
   `sorry` at [S7:271].
 
 The comparator still carries its `sorry`s, but both declarations

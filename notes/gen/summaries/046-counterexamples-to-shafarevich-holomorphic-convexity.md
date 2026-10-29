@@ -56,19 +56,19 @@ dimension-two settings respectively.
 **The fourfold.** 
 
 > **theorem**
-There exist a smooth connected projective complex fourfold $X$ and a
-simple abelian surface $A\subset X$ such that
+There exist a smooth connected projective complex fourfold $`X`$ and a
+simple abelian surface $`A\subset X`$ such that
 \beginenumerate
-\item $X$ has large fundamental group;
-\item $\mathrm{im}\bigl(\pi_1(A)\to\pi_1(X)\bigr)\simeq\mathbb Z$.
+\item $`X`$ has large fundamental group;
+\item $`\mathrm{im}\bigl(\pi_1(A)\to\pi_1(X)\bigr)\simeq\mathbb Z`$.
 \endenumerate
-The universal cover $\widetilde X$ contains no positive-dimensional
+The universal cover $`\widetilde X`$ contains no positive-dimensional
 compact complex analytic subvariety and is not Stein. [S3:17–26]
 
-There is a smooth connected projective complex fourfold $X$ and a simple
-abelian surface $A \subset X$ such that $X$ has large fundamental group
-and the image of $\pi_1(A)$ in $\pi_1(X)$ is isomorphic to $\mathbb Z$. The
-universal cover $\widetilde X$ contains no positive-dimensional compact
+There is a smooth connected projective complex fourfold $`X`$ and a simple
+abelian surface $`A \subset X`$ such that $`X`$ has large fundamental group
+and the image of $`\pi_1(A)`$ in $`\pi_1(X)`$ is isomorphic to $`\mathbb Z`$. The
+universal cover $`\widetilde X`$ contains no positive-dimensional compact
 complex-analytic subvariety and is not Stein. The large-fundamental-group
 hypothesis is met by the rank-one abelian-surface contribution, and the
 failure of Steinness is a topological obstruction arising in a closed
@@ -77,15 +77,15 @@ piece of the cover.
 **The surface.** 
 
 > **Theorem 1.1**
-There is a smooth connected projective complex surface $X$ containing a connected nodal curve $Z_0$ with smooth rational irreducible components such that
+There is a smooth connected projective complex surface $`X`$ containing a connected nodal curve $`Z_0`$ with smooth rational irreducible components such that
 $$\mathrm{im}\bigl(\pi_1(Z_0)\longrightarrow\pi_1(X)\bigr)
  \quad\text{is infinite}.$$
-In the simply connected universal cover of $X$, a connected component above $Z_0$ is a closed, connected, noncompact, locally finite union of compact rational curves. The holomorphic hull of any one of its points is noncompact. In particular, this universal cover is not holomorphically convex. [S5:19–26]
+In the simply connected universal cover of $`X`$, a connected component above $`Z_0`$ is a closed, connected, noncompact, locally finite union of compact rational curves. The holomorphic hull of any one of its points is noncompact. In particular, this universal cover is not holomorphically convex. [S5:19–26]
 
-There is a smooth connected projective complex surface $X$ containing a
-connected nodal curve $Z_0$ with smooth rational irreducible components
-whose image in $\pi_1(X)$ is infinite. In the simply connected universal
-cover, a connected component above $Z_0$ is a closed, connected,
+There is a smooth connected projective complex surface $`X`$ containing a
+connected nodal curve $`Z_0`$ with smooth rational irreducible components
+whose image in $`\pi_1(X)`$ is infinite. In the simply connected universal
+cover, a connected component above $`Z_0`$ is a closed, connected,
 noncompact, locally finite union of compact rational curves, and the
 holomorphic hull of any one of its points is noncompact — so the
 universal cover is not holomorphically convex. This is the
@@ -113,7 +113,7 @@ complex surface whose universal cover is not holomorphically convex
 [S5:19–26].
 
 **A fourfold counterexample with large fundamental group.** A smooth
-projective complex fourfold, $\pi_1$ large, whose universal cover is
+projective complex fourfold, $`\pi_1`$ large, whose universal cover is
 not Stein and contains no positive-dimensional compact analytic
 subvariety [S3:17–26].
 

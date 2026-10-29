@@ -12,25 +12,25 @@ The release blurb
 
 The manuscript abstract 
 
-> Let $h(k)$ be the least integer such that every interval of $h(k)$
+> Let $`h(k)`$ be the least integer such that every interval of $`h(k)`$
 consecutive integers contains an integer coprime to any prescribed
-positive integer having at most $k$ distinct prime divisors. We prove
-$h(k)\ll k^2/(\log\log(3k))^2$, giving an affirmative answer to
+positive integer having at most $`k`$ distinct prime divisors. We prove
+$`h(k)\ll k^2/(\log\log(3k))^2`$, giving an affirmative answer to
 Jacobsthal's quadratic-bound question. [S2:40–46]
 
 ## Undergraduate summary
 
-Jacobsthal's function $h(k)$ asks the worst-case gap: what is the
+Jacobsthal's function $`h(k)`$ asks the worst-case gap: what is the
 shortest interval of consecutive integers you must look in to be
 guaranteed to find a number coprime to a given modulus with at most
-$k$ distinct prime divisors? For example, if the modulus is squarefree
-with $k$ odd prime factors, then in any stretch of integers there is
+$`k`$ distinct prime divisors? For example, if the modulus is squarefree
+with $`k`$ odd prime factors, then in any stretch of integers there is
 always some integer none of those primes divides — the question is how
 long the stretch must be.
 
 Jacobsthal conjectured the answer should grow at most quadratically in
-$k$. This paper proves a slightly stronger statement: $h(k)$ is at
-most a constant times $k^2 / (\log\log(3k))^2$, which is a quadratic
+$`k`$. This paper proves a slightly stronger statement: $`h(k)`$ is at
+most a constant times $`k^2 / (\log\log(3k))^2`$, which is a quadratic
 bound with an iterated-logarithmic saving. The constant is absolute and
 the bound is uniform — it does not depend on which particular primes
 are used, and the interval may start at any (signed) integer. This
@@ -39,7 +39,7 @@ removes a classical logarithmic factor that earlier proofs carried.
 The main statement 
 
 > **Theorem 1.1**
-There is an absolute constant $C>0$ such that
+There is an absolute constant $`C>0`$ such that
 $$h(k)\le C\frac{k^2}{(\log\log(3k))^2}
  \qquad\text{for every integer }k\ge1.$$ [S3:24–30]
 
@@ -51,35 +51,35 @@ iterated-logarithmic saving over the classical quadratic order.
 **Main theorem.** 
 
 > **Theorem 1.1**
-There is an absolute constant $C>0$ such that
+There is an absolute constant $`C>0`$ such that
 $$h(k)\le C\frac{k^2}{(\log\log(3k))^2}
  \qquad\text{for every integer }k\ge1.$$ [S3:24–30]
 
-There is an absolute $C > 0$ with
-$h(k) \le C k^2 / (\log\log(3k))^2$ for every $k \ge 1$. The content is
-threefold: the order is $k^2$ (quadratic, confirming the conjectured
-order), the iterated-log factor $(\log\log(3k))^{-2}$ is a genuine
-saving over bare $k^2$, and the constant is absolute and the bound
+There is an absolute $`C > 0`$ with
+$`h(k) \le C k^2 / (\log\log(3k))^2`$ for every $`k \ge 1`$. The content is
+threefold: the order is $`k^2`$ (quadratic, confirming the conjectured
+order), the iterated-log factor $`(\log\log(3k))^{-2}`$ is a genuine
+saving over bare $`k^2`$, and the constant is absolute and the bound
 uniform over the underlying prime set. The scope note [S4:9] records
 that the interval start is unrestricted — "intervals may begin at any
 signed integer" — and that the optimal order of growth is not
 determined (the bound is an upper bound, not a matching lower one).
 
 **The quadratic baseline.** The scope note [S4:9] notes the *earlier*
-quadratic bound (bare $Ck^2$, no iterated-log saving) is retained as a
+quadratic bound (bare $`Ck^2`$, no iterated-log saving) is retained as a
 separate statement alongside the strengthened one — the two comparator
 targets formalize the two orders.
 
 ## history of the conjecture
 
 Prior (my training data, not this repo): Jacobsthal (1938) defined the
-function and proved a bound of the form $h(k) \ll k^2 \log^2 k$,
+function and proved a bound of the form $`h(k) \ll k^2 \log^2 k`$,
 carrying a logarithmic loss over the quadratic order he conjectured to
 be sharp. Iwaniec and Sutherland, and later Pintz, refined the argument
 and removed part of the loss. The iterated-logarithmic saving
-$(\log\log k)^{-2}$ is the content here: it is a genuine improvement
+$`(\log\log k)^{-2}`$ is the content here: it is a genuine improvement
 over the classical logarithmic factor, and the uniformity in the prime
-set (no dependence on which $k$ primes are involved) is what makes the
+set (no dependence on which $`k`$ primes are involved) is what makes the
 bound usable in the applications to consecutive-smooth-number and
 covering-system arguments that Jacobsthal's function feeds. The
 matching lower bound remains out of reach, which is why the scope note
@@ -88,13 +88,13 @@ flags the optimal order as undetermined.
 ## Consequences
 
 **An affirmative answer to Jacobsthal's quadratic-bound question,
-with a saving.** $h(k) \ll k^2 / (\log\log(3k))^2$ for an absolute
-$C$, uniformly over prime sets and interval positions, removing the
+with a saving.** $`h(k) \ll k^2 / (\log\log(3k))^2`$ for an absolute
+$`C`$, uniformly over prime sets and interval positions, removing the
 classical logarithmic loss [S3:24–30].
 
 **A uniform, start-position-free bound.** The interval may begin at
 any signed integer, so the estimate is usable for arbitrary windows,
-not just those anchored at $0$ [S4:9].
+not just those anchored at $`0`$ [S4:9].
 
 ## section skeleton
 
@@ -110,9 +110,9 @@ theorem (line 24); inputs (inputs.tex); tree (tree.tex); functions
 
 ## Comparison with the formalized statement
 
-The scope note states the formalization's reach: "Let $h(k)$ be the least interval length that guarantees an integer coprime to any prescribed positive modulus with at most $k$ distinct prime factors. The formalization proves the paper's strengthened Jacobsthal bound $h(k)\le Ck^2/(\log\log(3k))^2$ for one absolute $C>0$ and every $k\ge1$. Intervals may begin at any signed integer. The earlier quadratic bound is also retained as a separate statement; the optimal order of growth is not determined. [S4:9]" — the
-strengthened iterated-log Jacobsthal bound $h(k) \le Ck^2 /
-(\log\log(3k))^2$ for an absolute $C$, plus the retained quadratic
+The scope note states the formalization's reach: "Let $`h(k)`$ be the least interval length that guarantees an integer coprime to any prescribed positive modulus with at most $`k`$ distinct prime factors. The formalization proves the paper's strengthened Jacobsthal bound $`h(k)\le Ck^2/(\log\log(3k))^2`$ for one absolute $`C>0`$ and every $`k\ge1`$. Intervals may begin at any signed integer. The earlier quadratic bound is also retained as a separate statement; the optimal order of growth is not determined. [S4:9]" — the
+strengthened iterated-log Jacobsthal bound $`h(k) \le Ck^2 /
+(\log\log(3k))^2`$ for an absolute $`C`$, plus the retained quadratic
 bound, with unrestricted interval start.
 
 The two comparator stubs state the two targets. `Jacobsthal.lean`
@@ -186,13 +186,13 @@ No `verification/` bundle, no reasoning trace.
 - Iwaniec, Henryk, On the problem of Jacobsthal (1978)
 - Iwaniec, Henryk, Kowalski, Emmanuel, Analytic Number Theory (2004)
 - Iwaniec, Henryk, On the error term in the linear sieve (1971)
-- Jacobsthal, Ernst, Über Sequenzen ganzer Zahlen, von denen keine zu $n$ teilerfremd ist. I–III (1960)
+- Jacobsthal, Ernst, Über Sequenzen ganzer Zahlen, von denen keine zu $`n`$ teilerfremd ist. I–III (1960)
 - Jarník, Vojtěch, Über die Gitterpunkte auf konvexen Kurven (1926)
 - Lichtman, Jared Duker, Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors (2022)
 - Montgomery, H. L., Vaughan, R. C., The large sieve (1973)
 - Montgomery, Hugh L., Vaughan, Robert C., Multiplicative Number Theory III
 - Montgomery, Hugh L., Vaughan, Robert C., Multiplicative Number Theory II: Primes and Sieves
-- Erdős, P., On the integers relatively prime to $n$ and on a number-theoretic function considered by Jacobsthal (1962)
+- Erdős, P., On the integers relatively prime to $`n`$ and on a number-theoretic function considered by Jacobsthal (1962)
 - Serfozo, Richard, Basics of Applied Stochastic Processes (2009)
 - Sofos, Efthymios, Gaps between prime divisors and analogues in Diophantine geometry (2023)
 - Tao, Terence, 254A, Notes 4: Some sieve theory (2015)

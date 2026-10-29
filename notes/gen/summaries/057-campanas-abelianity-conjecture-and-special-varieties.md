@@ -26,7 +26,7 @@ general quasi-Albanese fibres are not special. [S9:60–66]"
 
 The third, *A conditional abelianity theorem for special fourfold
 pairs with a half-weight divisor* [S13:10], has the abstract
- "Using the abelianity theorem for special compact Kähler manifolds in every dimension, we prove virtual abelianity of the entire orbifold fundamental group of the special order-two root orbifold associated with a pair $(X,\tfrac12D)$, where $X$ is a smooth projective fourfold and $D$ is a nonempty smooth connected divisor. We construct a special smooth projective eightfold whose fundamental group surjects onto the required group. [S13:10]"
+ "Using the abelianity theorem for special compact Kähler manifolds in every dimension, we prove virtual abelianity of the entire orbifold fundamental group of the special order-two root orbifold associated with a pair $`(X,\tfrac12D)`$, where $`X`$ is a smooth projective fourfold and $`D`$ is a nonempty smooth connected divisor. We construct a special smooth projective eightfold whose fundamental group surjects onto the required group. [S13:10]"
 
 ## Undergraduate summary
 
@@ -46,9 +46,9 @@ after passage to a finite unramified cover
 The theorem 
 
 > **theorem**
-Let $X$ be a connected smooth compact Kähler manifold of arbitrary
-complex dimension. If $X$ is special, then $\pi_1(X)$ has an abelian
-subgroup of finite index. Equivalently, $X$ has a connected finite
+Let $`X`$ be a connected smooth compact Kähler manifold of arbitrary
+complex dimension. If $`X`$ is special, then $`\pi_1(X)`$ has an abelian
+subgroup of finite index. Equivalently, $`X`$ has a connected finite
 unramified holomorphic cover with abelian fundamental group. [S3:26–31]
 
 This is a positive resolution of the conjecture in the compact
@@ -59,7 +59,7 @@ finiteness, projectivity, or prescribed Kodaira dimension [S3:33–37].
 Kähler setting. The conclusion concerns the entire discrete
 topological fundamental group. It requires no linearity, residual
 finiteness, projectivity, or prescribed Kodaira dimension. The finite
-index may depend on $X$, and torsion in $\pi_1(X)$ is allowed. [S3:33–37]"
+index may depend on $`X`$, and torsion in $`\pi_1(X)`$ is allowed. [S3:33–37]"
 
 ## Graduate summary
 
@@ -68,9 +68,9 @@ nonabelian nilpotent groups. The second manuscript proves the sharp
 class-two bound 
 
 > **Theorem 1.1**
-Let $V$ be a connected smooth special complex quasi-projective variety.
-For every positive integer $d$ and every representation
-$\rho:\pi_1(V)\to\mathrm{GL}_d(\mathbf C)$, the image $\rho(\pi_1(V))$ has a subgroup
+Let $`V`$ be a connected smooth special complex quasi-projective variety.
+For every positive integer $`d`$ and every representation
+$`\rho:\pi_1(V)\to\mathrm{GL}_d(\mathbf C)`$, the image $`\rho(\pi_1(V))`$ has a subgroup
 of finite index and nilpotency class at most two. [S10:40–45]
 
 Priority for the conclusion belongs to Cao–Deng–Hacon–Paun, who
@@ -97,17 +97,17 @@ manifold abelianity theorem to order-two root orbifolds of fourfolds
 
 
 > **theorem**
-Assume Assumption . Let $X$ be a connected smooth projective complex fourfold and let $D\subset X$ be a nonempty smooth connected reduced divisor. If $\sqrt[2]{(X,D)}$ is special, then
+Assume Assumption . Let $`X`$ be a connected smooth projective complex fourfold and let $`D\subset X`$ be a nonempty smooth connected reduced divisor. If $`\sqrt[2]{(X,D)}`$ is special, then
 $$G=\pi_1(X\setminus D,x)\big/\langle\!\langle\gamma^2\rangle\!\rangle$$
-contains an abelian subgroup of finite index. Here $\gamma$ is a positively oriented meridian about $D$, transported to $x\in X\setminus D$. [S14:39–45]
+contains an abelian subgroup of finite index. Here $`\gamma`$ is a positively oriented meridian about $`D`$, transported to $`x\in X\setminus D`$. [S14:39–45]
 
-The proof constructs a smooth projective eightfold $Y$ over the root
+The proof constructs a smooth projective eightfold $`Y`$ over the root
 orbifold, with general fibre a product of four genus-one curves.
-Specialness of the base orbifold forces specialness of $Y$, while
+Specialness of the base orbifold forces specialness of $`Y`$, while
 pullback multiplicities give the epimorphism
-$\pi_1(Y)\twoheadrightarrow G$ 
+$`\pi_1(Y)\twoheadrightarrow G`$ 
 
-> The main construction is independent of specialness. It produces a smooth projective eightfold $Y$ over $\mathcal X$ with general fibre a product of four genus-one curves. It also supplies a submersive lift at some point over the general point of _every_ base divisor. These points detect all poles in the descent of differential tensors. A direct argument then proves that specialness of $\mathcal X$ forces specialness of $Y$, while even pullback multiplicities give an epimorphism $\pi_1(Y)\twoheadrightarrow G$. These two conclusions permit the application of Assumption . [S14:49–51]
+> The main construction is independent of specialness. It produces a smooth projective eightfold $`Y`$ over $`\mathcal X`$ with general fibre a product of four genus-one curves. It also supplies a submersive lift at some point over the general point of _every_ base divisor. These points detect all poles in the descent of differential tensors. A direct argument then proves that specialness of $`\mathcal X`$ forces specialness of $`Y`$, while even pullback multiplicities give an epimorphism $`\pi_1(Y)\twoheadrightarrow G`$. These two conclusions permit the application of Assumption . [S14:49–51]
 
 The four independent genus-one factors eliminate stabilizers over the
 three-dimensional divisor. An alternative construction using branched
@@ -117,8 +117,8 @@ covers and elliptic actions is given in the appendix [S14:53].
 connected Kähler manifold of Kodaira dimension zero has virtually
 abelian fundamental group [S3:39–55]. Campana's Conjecture S and the
 bimeromorphic Iitaka uniformization follow: a special manifold with
-maximal $\Gamma$-dimension, or a manifold whose universal cover is
-biholomorphic to $\mathbf C^n$, has a finite cover bimeromorphic to a
+maximal $`\Gamma`$-dimension, or a manifold whose universal cover is
+biholomorphic to $`\mathbf C^n`$, has a finite cover bimeromorphic to a
 torus [S3:65–121].
 
 ## History of the conjecture
@@ -145,21 +145,21 @@ integral special geometric orbifold [S14:3].
 
 **Campana's abelianity conjecture is resolved in all dimensions.**
 Every special compact Kähler manifold has virtually abelian
-$\pi_1$, with no projectivity, linearity, or residual-finiteness
+$`\pi_1`$, with no projectivity, linearity, or residual-finiteness
 hypothesis [S3:26–31].
 
 **The Kodaira-dimension-zero case follows.** Every smooth compact
-connected Kähler manifold with $\kappa(X)=0$ has virtually abelian
+connected Kähler manifold with $`\kappa(X)=0`$ has virtually abelian
 fundamental group [S3:39–55].
 
 **The linear monodromy bound is class two.** Every complex
-linear representation of $\pi_1(V)$ for a connected smooth special
-quasi-projective variety $V$ has virtually nilpotent image of
+linear representation of $`\pi_1(V)`$ for a connected smooth special
+quasi-projective variety $`V`$ has virtually nilpotent image of
 class at most two [S10:40–45]. The bound is sharp [S10:57–60].
 
 **The root orbifold abelianity theorem.** For a special order-two
-root orbifold $\sqrt[2]{(X,D)}$ with $X$ a smooth projective
-fourfold and $D$ a nonempty smooth connected divisor, the orbifold
+root orbifold $`\sqrt[2]{(X,D)}`$ with $`X`$ a smooth projective
+fourfold and $`D`$ a nonempty smooth connected divisor, the orbifold
 fundamental group is virtually abelian [S14:39–45].
 
 ## Section skeleton

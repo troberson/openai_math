@@ -16,7 +16,7 @@ The manuscript's own abstract entry in the same table
 
 The same abstract as typeset in the manuscript source 
 
-> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed $k\ge3$, we show [S2:9–11]
+> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed $`k\ge3`$, we show [S2:9–11]
 
 ## Undergraduate summary
 
@@ -32,15 +32,15 @@ The saving is the interesting part. It beats every fixed power of log *N*, which
 
 The main theorem (label `ap:main`) is [S4:13–18]:
 
-> For each fixed integer $k\ge3$ there are constants $C_k,c_k,\varepsilon_k>0$ such that, for every $N\ge2$, $$r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr).$$ [S4:14–18]
+> For each fixed integer $`k\ge3`$ there are constants $`C_k,c_k,\varepsilon_k>0`$ such that, for every $`N\ge2`$, $$r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr).$$ [S4:14–18]
 
 The introduction states the sharp edges 
 
-> The constants may depend on the fixed length $k$; the exponent is not optimized. [S4:28–29]
+> The constants may depend on the fixed length $`k`$; the exponent is not optimized. [S4:28–29]
 
 The scheme is a triangular density increment, and the constraint that makes it hard is the budget rule 
 
-> At layer $j$, the _warm data_ consist of $p$, forecasts for all dimensions and structural variable counts, gap parameters depending only on these data, and the widths and numerical budgets already chosen at layers strictly above $j$. A warm logarithmic bound is polynomial in these data and does not use any $Q_i$ with $i\le j$. [S5:265–269]
+> At layer $`j`$, the _warm data_ consist of $`p`$, forecasts for all dimensions and structural variable counts, gap parameters depending only on these data, and the widths and numerical budgets already chosen at layers strictly above $`j`$. A warm logarithmic bound is polynomial in these data and does not use any $`Q_i`$ with $`i\le j`$. [S5:265–269]
 
 The dependency figure says the same thing geometrically 
 
@@ -52,11 +52,11 @@ The setup section is explicit about why the natural constructions fail
 
 What replaces them is a patch-existence statement. A patch's rank is its slot count 
 
-> Its _rank_ is the number $d$ of integer slots. [S5:170]
+> Its _rank_ is the number $`d`$ of integer slots. [S5:170]
 
 and the absolute starting rule bounds that count by data that excludes the ambient dimension 
 
-> unless the hypotheses are impossible, $f$ admits a degree-$s$ polynomial patch on a slice with positive score at target $(1+\xi)a$. The number of slots is at most $d_0=(2+p)^C$, independent of $n$. [S5:198–200]
+> unless the hypotheses are impossible, $`f`$ admits a degree-$`s`$ polynomial patch on a slice with positive score at target $`(1+\xi)a`$. The number of slots is at most $`d_0=(2+p)^C`$, independent of $`n`$. [S5:198–200]
 
 The absolute rule then feeds a constant old region into the lifting theorem 
 
@@ -64,7 +64,7 @@ The absolute rule then feeds a constant old region into the lifting theorem
 
 The forward-mass step advances the density target [S6:169–175]:
 
-> For any sufficiently small fixed $\eta>0$, a prepared certificate at threshold $a$ gives a surviving set of terminal injective paths whose expected terminal input mean, with stopped paths counted as zero, is at least $(1-\eta)a$. [S6:169–172]
+> For any sufficiently small fixed $`\eta>0`$, a prepared certificate at threshold $`a`$ gives a surviving set of terminal injective paths whose expected terminal input mean, with stopped paths counted as zero, is at least $`(1-\eta)a`$. [S6:169–172]
 
 and it is deliberately stated so that it cannot import a higher-layer budget downwards [S6:180–182]:
 
@@ -74,7 +74,7 @@ and it is deliberately stated so that it cannot import a higher-layer budget dow
 
 The iteration closes because the targets grow geometrically and a certificate at target 1 is impossible 
 
-> If no impossibility occurs, the targets satisfy $a_t\ge(\alpha/2)(1+\eta_k)^t$, and hence $a_T\ge1$. But a certificate at any target $a\ge1$ is impossible, since $$fB^-\le B^+$$ pointwise. [S8:391–397]
+> If no impossibility occurs, the targets satisfy $`a_t\ge(\alpha/2)(1+\eta_k)^t`$, and hence $`a_T\ge1`$. But a certificate at any target $`a\ge1`$ is impossible, since $$fB^-\le B^+$$ pointwise. [S8:391–397]
 
 The appendices carry the analytic interface with degree parameters fixed and dimensions inside the stated budgets 
 
@@ -82,11 +82,11 @@ The appendices carry the analytic interface with degree parameters fixed and dim
 
 What the paper does not say. Its saving is not, by itself, what the earlier five-term argument needed 
 
-> The resulting saving in $\log\log N$ does not give the dyadic summability above. [S4:152–153]
+> The resulting saving in $`\log\log N`$ does not give the dyadic summability above. [S4:152–153]
 
 and its contribution is the all-length summable bound, not a sharper exponent 
 
-> Theorem gives a stretched-exponential saving in $\log N$ for every fixed length. Its contribution to Erdős's conjecture is this all-length, summable bound; no improvement of the three-term exponent is claimed. [S4:155–158]
+> Theorem gives a stretched-exponential saving in $`\log N`$ for every fixed length. Its contribution to Erdős's conjecture is this all-length, summable bound; no improvement of the three-term exponent is claimed. [S4:155–158]
 
 Formalization status. The scope note states what the formalization proves 
 
@@ -94,7 +94,7 @@ Formalization status. The scope note states what the formalization proves
 
 and what it excludes 
 
-> The selected theorem is the reciprocal-sum consequence. The paper's quantitative upper bound for the largest progression-free subset of $\{1,\ldots,N\}$ is outside this statement. [S14:11]
+> The selected theorem is the reciprocal-sum consequence. The paper's quantitative upper bound for the largest progression-free subset of $`\{1,\ldots,N\}`$ is outside this statement. [S14:11]
 
 That exclusion is about the selected statement, not about the tree. The challenge is 36 lines asking for one term 
 
@@ -164,7 +164,7 @@ Prior (my training data, not repo text): the reciprocal-sum formulation comes ou
 The manuscript's own account is the citation trail. The dyadic threshold is the pivot [S4:113–116]:
 
 > Their later bound
-> $r_3(N)\ll N/(\log N)^{1+c}$, for an absolute $c>0$,
+> $`r_3(N)\ll N/(\log N)^{1+c}`$, for an absolute $`c>0`$,
 > crossed the dyadic summability threshold and established the
 > three-term reciprocal-sum conjecture~\cite{BloomSisask2020}.
 
@@ -172,11 +172,11 @@ Kelley and Meka obtained the stronger bound
 
 > Kelley and Meka obtained the stronger bound $$r_3(N)\ll N\exp\bigl(-c(\log N)^{1/12}\bigr)$$ [S4:118–121]
 
-Bloom and Sisask then simplified it and Raghavan extended it "Bloom and Sisask simplified the argument and then improved the exponent to $1/9$. [S4:124–126]" and "$r_3(N)\le N\exp\bigl(-(\log N)^{1/6-o(1)}\bigr)$ [S4:128]". The ceiling on what any such bound can be is Behrend's construction "Behrend's construction already gives $r_3(N)\ge N\exp(-C\sqrt{\log N})$, so a fixed power saving in $N$ is impossible even in this case [S4:130–132]".
+Bloom and Sisask then simplified it and Raghavan extended it "Bloom and Sisask simplified the argument and then improved the exponent to $`1/9`$. [S4:124–126]" and "$`r_3(N)\le N\exp\bigl(-(\log N)^{1/6-o(1)}\bigr)`$ [S4:128]". The ceiling on what any such bound can be is Behrend's construction "Behrend's construction already gives $`r_3(N)\ge N\exp(-C\sqrt{\log N})`$, so a fixed power saving in $`N`$ is impossible even in this case [S4:130–132]".
 
 The polylogarithmic line reached five terms and stopped 
 
-> Leng, Sah and Sawhney first treated five terms and then proved, for every fixed $k\ge5$, [S4:141–142]
+> Leng, Sah and Sawhney first treated five terms and then proved, for every fixed $`k\ge5`$, [S4:141–142]
 
 and its method is 
 
@@ -194,13 +194,13 @@ which is family 160 in the same release "Superexponential van der Waerden number
 
 The headline consequence is the uniform harmonic bound 
 
-> There is $H_k<\infty$ such that every $k$-term-progression-free $A\subseteq\mathbb N$ satisfies \[ \sum_{a\in A}\frac1a\le H_k. [S9:44–47]
+> There is $`H_k<\infty`$ such that every $`k`$-term-progression-free $`A\subseteq\mathbb N`$ satisfies \[ \sum_{a\in A}\frac1a\le H_k. [S9:44–47]
 
-So divergence of the reciprocal sum forces progressions of every length "Consequently, whenever $S_k(w)<\infty$, divergence of the weighted sum forces a nonconstant $k$-term progression. [S9:32–33]" The bound is stable under arbitrary logarithmic losses 
+So divergence of the reciprocal sum forces progressions of every length "Consequently, whenever $`S_k(w)<\infty`$, divergence of the weighted sum forces a nonconstant $`k`$-term progression. [S9:32–33]" The bound is stable under arbitrary logarithmic losses 
 
-> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with $$r_k(N)\le C_{k,B}N(\log N)^{-B}\qquad(N\ge3).$$ [S9:131–135]
+> The same comparison shows that, for each fixed $`B>0`$, there is a constant $`C_{k,B}`$ with $$r_k(N)\le C_{k,B}N(\log N)^{-B}\qquad(N\ge3).$$ [S9:131–135]
 
-The paper recovers a known theorem rather than replacing it "Theorem also recovers the established dense-primes theorem of Green and Tao [S9:138–139]" and the tail estimate that makes the weighted sums converge is "In particular, for every $0<a<c_k$, this tail is at most $C_{k,a}e^{-a(\log x)^{\varepsilon_k}}$. [S9:163–164]"
+The paper recovers a known theorem rather than replacing it "Theorem also recovers the established dense-primes theorem of Green and Tao [S9:138–139]" and the tail estimate that makes the weighted sums converge is "In particular, for every $`0<a<c_k`$, this tail is at most $`C_{k,a}e^{-a(\log x)^{\varepsilon_k}}`$. [S9:163–164]"
 
 Two structural pieces are reusable beyond this theorem. The extraction step preserves the determining weights exactly 
 
@@ -212,7 +212,7 @@ and the route diagram records the shape of the argument
 
 The same iteration yields the van der Waerden lower bound 
 
-> gives the complementary lower bound $W_r(k)>\exp((\log r)^2/(64\log2))$ for all integers $r\ge256$ and $k\ge3$. [S4:308–310]
+> gives the complementary lower bound $`W_r(k)>\exp((\log r)^2/(64\log2))`$ for all integers $`r\ge256`$ and $`k\ge3`$. [S4:308–310]
 
 The manuscript ships as a 37-line `main.tex` with ten sections and a seven-file foundations appendix — 15,569 lines of source across 29 files — plus a compiled [S13] `paper.pdf`.
 
@@ -262,7 +262,7 @@ Its README gives the release date "Date: September 23, 2026 [S3:5]".
 - W. T. Gowers, _A new proof of Szemerédi's theorem for arithmetic progressions of length four_, Geom. Funct. Anal. **8** (1998), 529–551. .
 - W. T. Gowers, _A new proof of Szemerédi's theorem_, Geom. Funct. Anal. **11** (2001), 465–588. .
 - W. T. Gowers, _Decompositions, approximate structure, transference, and the Hahn–Banach theorem_, Bull. London Math. Soc. **42** (2010), no. 4, 573–606. .
-- B. Green, T. Tao and T. Ziegler, _An inverse theorem for the Gowers $U^{s+1}[N]$-norm_, Ann. of Math. (2) **176** (2012), no. 2, 1231–1372. doi:10.4007/annals.2012.176.2.11.
+- B. Green, T. Tao and T. Ziegler, _An inverse theorem for the Gowers $`U^{s+1}[N]`$-norm_, Ann. of Math. (2) **176** (2012), no. 2, 1231–1372. doi:10.4007/annals.2012.176.2.11.
 - D. R. Heath-Brown, _Integer sets containing no arithmetic progressions_, J. London Math. Soc. (2) **35** (1987), 385–394. .
 - P. Keevash, N. Lifshitz, E. Long and D. Minzer, _Global hypercontractivity and its applications_, arXiv:2103.04604 (2021). .
 - N. Keller, N. Lifshitz and O. Marcus, _Sharp hypercontractivity for global functions_, J. Eur. Math. Soc., published online January 9, 2026. ; arXiv:2307.01356v2.
@@ -272,8 +272,8 @@ Its README gives the release date "Date: September 23, 2026 [S3:5]".
 - J. Leng, _Efficient equidistribution of nilsequences_, arXiv:2312.10772v5, 2023, revised 2024.
 - J. Leng, A. Sah and M. Sawhney, _Improved bounds for five-term arithmetic progressions_, Math. Proc. Cambridge Philos. Soc. **177** (2024), no. 3, 371–413. .
 - J. Leng, A. Sah and M. Sawhney, _Improved Bounds for Szemerédi's Theorem_, arXiv:2402.17995 (2024). .
-- J. Leng, A. Sah, and M. Sawhney, _Quasipolynomial bounds on the inverse theorem for the Gowers $U^{s+1}[N]$-norm_, arXiv:2402.17994v3, 2024.
-- F. Manners, _Quantitative bounds in the inverse theorem for the Gowers $U^{s+1}$-norms over cyclic groups_, arXiv:1811.00718v2, 2018, revised 2024.
+- J. Leng, A. Sah, and M. Sawhney, _Quasipolynomial bounds on the inverse theorem for the Gowers $`U^{s+1}[N]`$-norm_, arXiv:2402.17994v3, 2024.
+- F. Manners, _Quantitative bounds in the inverse theorem for the Gowers $`U^{s+1}`$-norms over cyclic groups_, arXiv:1811.00718v2, 2018, revised 2024.
 - Z. Kelley and R. Meka, _Strong bounds for 3-progressions_, in _2023 IEEE 64th Annual Symposium on Foundations of Computer Science (FOCS)_, IEEE, 2023, 933–973. doi:10.1109/FOCS57990.2023.00059; revised version arXiv:2302.05537v6 (2024).
 - OpenAI, _Quantitative Superexponential Bounds for van der Waerden Numbers_, OpenAI Math Release preprint OAI:Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026, 2026.
 - R. Raghavan, _Improved Bounds for 3-Progressions_, arXiv:2603.27045v3 (May 15, 2026). .
@@ -288,13 +288,13 @@ Its README gives the release date "Date: September 23, 2026 [S3:5]".
 - E. Croot and O. Sisask, _A probabilistic technique for finding almost-periods of convolutions_, Geom. Funct. Anal. **20** (2010), no. 6, 1367–1396. doi:10.1007/s00039-010-0101-8.
 - T. Schoen and O. Sisask, _Roth's theorem for four variables and additive structures in sums of sparse sets_, Forum Math. Sigma **4** (2016), e5. doi:10.1017/fms.2016.2; arXiv:1408.2568.
 - E. Szemerédi, _On sets of integers containing no four elements in arithmetic progression_, Acta Math. Acad. Sci. Hungar. **20** (1969), 89–104. .
-- E. Szemerédi, _On sets of integers containing no $k$ elements in arithmetic progression_, Acta Arith. **27** (1975), 199–245. doi:10.4064/aa-27-1-199-245.
+- E. Szemerédi, _On sets of integers containing no $`k`$ elements in arithmetic progression_, Acta Arith. **27** (1975), 199–245. doi:10.4064/aa-27-1-199-245.
 - E. Szemerédi, _Integer sets containing no arithmetic progressions_, Acta Math. Hungar. **56** (1990), 155–158. .
-- B. Green and T. Tao, _An inverse theorem for the Gowers $U^3(G)$ norm_, Proc. Edinb. Math. Soc. (2) **51** (2008), no. 1, 73–153. doi:10.1017/S0013091505000325.
+- B. Green and T. Tao, _An inverse theorem for the Gowers $`U^3(G)`$ norm_, Proc. Edinb. Math. Soc. (2) **51** (2008), no. 1, 73–153. doi:10.1017/S0013091505000325.
 - B. Green and T. Tao, _The primes contain arbitrarily long arithmetic progressions_, Ann. of Math. (2) **167** (2008), no. 2, 481–547. .
 - B. Green and T. Tao, _Yet another proof of Szemerédi's theorem_, in _An Irregular Mind: Szemerédi is 70_, Bolyai Soc. Math. Stud. **21**, Springer, 2010, 335–342. doi:10.1007/978-3-642-14444-8\_8.
 - B. Green and T. Tao, _The quantitative behaviour of polynomial orbits on nilmanifolds_, Ann. of Math. (2) **175** (2012), no. 2, 465–540. doi:10.4007/annals.2012.175.2.2.
-- B. Green and T. Tao, _New bounds for Szemerédi's theorem, III: A polylogarithmic bound for $r_4(N)$_, Mathematika **63** (2017), no. 3, 944–1040. .
+- B. Green and T. Tao, _New bounds for Szemerédi's theorem, III: A polylogarithmic bound for $`r_4(N)`$_, Mathematika **63** (2017), no. 3, 944–1040. .
 - P. Erdős and P. Turán, _On some sequences of integers_, J. London Math. Soc. **11** (1936), 261–264. .
 - B. L. van der Waerden, _Beweis einer Baudetschen Vermutung_, Nieuw Arch. Wisk. (2) **15** (1927), 212–216.
 - T. Ziegler, _Universal characteristic factors and Furstenberg averages_, J. Amer. Math. Soc. **20** (2007), no. 1, 53–97. doi:10.1090/S0894-0347-06-00532-7.

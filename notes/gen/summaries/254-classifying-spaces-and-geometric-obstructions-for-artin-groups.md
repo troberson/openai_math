@@ -12,13 +12,13 @@
 
 [S1:597] carries the first manuscript entry as link text:
 
-> Artin $K(\pi,1)$
+> Artin $`K(\pi,1)`$
 
 ## Undergraduate summary
 
 An **Artin group** is built from a set of generators and a symmetric table of labels: for each pair of generators, a label says how long the alternating product of the two generators must be before it equals the reversed product. A label of 2 gives the braid relation, a label of 3 gives the braid relation on three letters, and an infinite label means no relation at all. When every label is 2, 3, 4, or 6, the group is a Coxeter group; Artin groups are the larger family that maps onto Coxeter groups.
 
-The **Salvetti complex** is the standard topological space built from an Artin group: one cell for each spherical subset of generators, glued together. The **Artin $K(\pi,1)$ conjecture** says this complex is aspherical — its universal cover is contractible, so the group's higher homotopy vanishes and the complex is the classifying space for the group. It is open in general. [S11:11]
+The **Salvetti complex** is the standard topological space built from an Artin group: one cell for each spherical subset of generators, glued together. The **Artin $`K(\pi,1)`$ conjecture** says this complex is aspherical — its universal cover is contractible, so the group's higher homotopy vanishes and the complex is the classifying space for the group. It is open in general. [S11:11]
 
 The first manuscript proves it. "We prove that the standard Salvetti complex of every Artin group with finitely many standard generators is aspherical. [S2:47–48]" The theorem covers every Coxeter matrix on a finite generating set, including empty and disconnected ones, and both finite and infinite labels. [S2:46–50]
 
@@ -35,13 +35,13 @@ The third manuscript settles a structural conjecture about subgroups. "We prove 
 
 ## Graduate summary
 
-**The asphericity theorem.** For every Coxeter matrix $M$ on a finite generating set $S$, the universal cover of the Salvetti complex is contractible. The statement is unconditional on the labels — finite, infinite, connected, or disconnected diagrams are all covered. [S3:22–30]
+**The asphericity theorem.** For every Coxeter matrix $`M`$ on a finite generating set $`S`$, the universal cover of the Salvetti complex is contractible. The statement is unconditional on the labels — finite, infinite, connected, or disconnected diagrams are all covered. [S3:22–30]
 
-**The CAT(0) obstruction.** There is an Artin matrix on 116 generators, with every off-diagonal label in $\{2,3,\infty\}$, such that the associated Artin group admits no geometric action: no proper, cocompact, isometric action on any nonempty proper CAT(0) space, in any dimension. [S5:61–66]
+**The CAT(0) obstruction.** There is an Artin matrix on 116 generators, with every off-diagonal label in $`\{2,3,\infty\}`$, such that the associated Artin group admits no geometric action: no proper, cocompact, isometric action on any nonempty proper CAT(0) space, in any dimension. [S5:61–66]
 
 **The parabolic intersection theorem.** For every Coxeter matrix, every pair of subsets of generators, and every pair of group elements, the intersection of two conjugates of standard parabolic subgroups is itself a conjugate of a standard parabolic subgroup. [S7:21–28]
 
-**What the formalization says.** The scope note covers all three manuscripts. The Artin $K(\pi,1)$ conjecture is stated as the asphericity of the standard Salvetti complex for every finite-rank Artin group, and the formalization applies "to every Coxeter matrix on a finite generating set, including empty and disconnected [S11:13]" cases. 
+**What the formalization says.** The scope note covers all three manuscripts. The Artin $`K(\pi,1)`$ conjecture is stated as the asphericity of the standard Salvetti complex for every finite-rank Artin group, and the formalization applies "to every Coxeter matrix on a finite generating set, including empty and disconnected [S11:13]" cases. 
 
 For the CAT(0) result, the formalized statement names the 116-generator matrix and the label set, and the conclusion is that "It admits no such action on any nonempty proper CAT(0) space, in any dimension. [S11:17]" 
 
@@ -53,7 +53,7 @@ For the parabolic result, "The formalization proves that the intersection of any
 
 ## History of the conjecture
 
-The Artin $K(\pi,1)$ conjecture is the standard statement that the Salvetti complex is aspherical, posed for the class of Artin groups of finite type and extended to arbitrary Coxeter labels. The Parabolic Intersection Conjecture is the statement that parabolic subgroups are closed under intersection, posed for Artin groups of finite type. The release's blurb states both as conjectures the manuscripts prove, and the scope note records the formalized versions as covering every Coxeter matrix on a finite generating set. [S1:597]
+The Artin $`K(\pi,1)`$ conjecture is the standard statement that the Salvetti complex is aspherical, posed for the class of Artin groups of finite type and extended to arbitrary Coxeter labels. The Parabolic Intersection Conjecture is the statement that parabolic subgroups are closed under intersection, posed for Artin groups of finite type. The release's blurb states both as conjectures the manuscripts prove, and the scope note records the formalized versions as covering every Coxeter matrix on a finite generating set. [S1:597]
 
 The CAT(0) side sits in the geometric-action literature: the manuscript's README records the citation key `ArtinNoCAT0`, and the theorem is stated as a nonexistence over all nonempty proper CAT(0) spaces, in any dimension. [S9:11–12]
 

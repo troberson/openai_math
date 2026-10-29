@@ -54,8 +54,8 @@ positive lower bound and one finite upper bound [S3:44–51, S5:9].
 finite weakly reversible mass-action system with fixed positive rates,
 every positive stoichiometric compatibility class — even an
 unbounded one — admits one compact convex forward-invariant set
-$C$ that **every** positive trajectory in the class enters in finite
-time; $C$ depends only on the network, the rates, and the class, while
+$`C`$ that **every** positive trajectory in the class enters in finite
+time; $`C`$ depends only on the network, the rates, and the class, while
 the entry time may depend on the initial state. After its entry time,
 every concentration of every trajectory in the class satisfies the same
 positive lower and finite upper bounds [S3:44–51]. This is a
@@ -65,8 +65,8 @@ per-trajectory bound.
 **Per-trajectory boundedness and persistence (companion)** [S4:35–40,
 S5:9]. For every positive initial condition, the solution exists for
 all forward time (a global forward solution), and one
-$\varepsilon\in(0,1)$ bounds every concentration of every global
-forward solution between $\varepsilon$ and $\varepsilon^{-1}$ for all
+$`\varepsilon\in(0,1)`$ bounds every concentration of every global
+forward solution between $`\varepsilon`$ and $`\varepsilon^{-1}`$ for all
 nonnegative times; the bound may depend on the network, the rates, and
 the initial state, and no boundedness assumption is imposed on the
 stoichiometric compatibility class [S4:35–40, S5:9].
@@ -110,9 +110,9 @@ class, even an unbounded one, has a common compact convex forward-
 invariant set that every positive trajectory in the class enters in
 finite time [S3:44–51].
 
-**A uniform-in-time $\varepsilon$ bound.** One $\varepsilon\in(0,1)$
+**A uniform-in-time $`\varepsilon`$ bound.** One $`\varepsilon\in(0,1)`$
 bounds every concentration of every global forward solution between
-$\varepsilon$ and $\varepsilon^{-1}$ for all nonnegative times [S5:9].
+$`\varepsilon`$ and $`\varepsilon^{-1}`$ for all nonnegative times [S5:9].
 
 ## Section skeleton
 
@@ -133,9 +133,9 @@ No manuscript ships a `verification/` bundle.
 persistence conjectures for mass-action systems: for every finite
 weakly reversible reaction network with positive constant reaction
 rates and every strictly positive initial state, a global forward
-solution exists, and one $\varepsilon\in(0,1)$ bounds every
-concentration of every global forward solution between $\varepsilon$
-and $\varepsilon^{-1}$ for all nonnegative times; the bound may depend
+solution exists, and one $`\varepsilon\in(0,1)`$ bounds every
+concentration of every global forward solution between $`\varepsilon`$
+and $`\varepsilon^{-1}`$ for all nonnegative times; the bound may depend
 on the network, the rates, and the initial state [S5:9]. This is the
 per-trajectory statement (the companion manuscript's claim), not the
 headline classwise common-absorbing-set statement. The scope note links

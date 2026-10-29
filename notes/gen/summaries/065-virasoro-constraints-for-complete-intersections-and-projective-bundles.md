@@ -26,7 +26,7 @@ the complete-intersections manuscript proves it in full. The
 theorem 
 
 > **Theorem 1.1**
-Let $X\subset\mathbb P^N_\mathbb C$ be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from $H^*(X;\mathbb C)$. [S4:15–17]
+Let $`X\subset\mathbb P^N_\mathbb C`$ be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from $`H^*(X;\mathbb C)`$. [S4:15–17]
 
 That resolves the Virasoro conjecture positively for
 projective-space complete intersections, including primitive and
@@ -38,10 +38,10 @@ constraints pass from a base to the projectivization of any
 algebraic vector bundle of rank at least two 
 
 > **theorem**
-Let $B$ be a smooth connected projective variety over $\mathbb C$, and
-let $E$ be an algebraic vector bundle of rank $r\geq2$ on $B$.
-Let $X=\mathbb P_B(E)$ parametrize one-dimensional subspaces of
-the fibers of $E$. Then
+Let $`B`$ be a smooth connected projective variety over $`\mathbb C`$, and
+let $`E`$ be an algebraic vector bundle of rank $`r\geq2`$ on $`B`$.
+Let $`X=\mathbb P_B(E)`$ parametrize one-dimensional subspaces of
+the fibers of $`E`$. Then
 $$\mathsf V(B)\ \Longrightarrow\ \mathsf V(X).$$ [S12:36–45]
 
 The bundle need not split and satisfies no positivity condition;
@@ -58,29 +58,29 @@ theory of each total space. [S12:47–53]"
 
 **Two-stage degeneration.** The complete-intersections proof
 factors one defining equation and resolves the resulting family,
-giving a degeneration $X\rightsquigarrow U\cup_D\widetilde M$
-where $U$ and $M$ have smaller defining degree and the seam $D$
-and blowup center $S$ have smaller dimension . "The reduction has two stages. Factoring one defining equation and resolving
+giving a degeneration $`X\rightsquigarrow U\cup_D\widetilde M`$
+where $`U`$ and $`M`$ have smaller defining degree and the seam $`D`$
+and blowup center $`S`$ have smaller dimension . "The reduction has two stages. Factoring one defining equation and resolving
 the resulting family gives a degeneration
 $$X\rightsquigarrow U\cup_D\widetilde M,
  \qquad \widetilde M=\mathrm{Bl}_S M.$$
-Here $U$ and $M$ are complete intersections of smaller defining degree,
-while the seam $D$ and blowup center $S$ have smaller dimension. We first prove the constraints for $\widetilde M$ from those for $M$ and projective-bundle towers over $S$. [S4:32–38]"
-The constraints are then proved for $\widetilde M$ from those
-for $M$ and the projective-bundle towers over $S$, and for $X$
-from those for $U$, $\widetilde M$, and a ruled bundle over $D$.
+Here $`U`$ and $`M`$ are complete intersections of smaller defining degree,
+while the seam $`D`$ and blowup center $`S`$ have smaller dimension. We first prove the constraints for $`\widetilde M`$ from those for $`M`$ and projective-bundle towers over $`S`$. [S4:32–38]"
+The constraints are then proved for $`\widetilde M`$ from those
+for $`M`$ and the projective-bundle towers over $`S`$, and for $`X`$
+from those for $`U`$, $`\widetilde M`$, and a ruled bundle over $`D`$.
 
 **Three transport constructions.** The transport rests on
 contractions on the first page of the weight spectral sequence
 (using Steenbrink's limiting Hodge structures and Fujisawa's
 ordered model), relative caps that reproduce the contact pairing
 at a seam, and a positivity detector: pairing a Virasoro error
-tensor with its conjugate gives its squared $H^p$ norm, and
+tensor with its conjugate gives its squared $`H^p`$ norm, and
 Hodge–Riemann positivity forces it to vanish [S4:40–52],
 [S6], [S7], [S9].
 
 **Projectivization transfer.** The transfer theorem
-$\mathsf V(B)\Rightarrow\mathsf V(X)$ for $X=\mathbb P_B(E)$ is stated over an
+$`\mathsf V(B)\Rightarrow\mathsf V(X)`$ for $`X=\mathbb P_B(E)`$ is stated over an
 arbitrary base and bundle [S12:36–45]. The proof builds a master
 space over the projective bundle [S13] and continues the
 constraints from each level [S14], so the result applies
@@ -95,10 +95,10 @@ a target-dependent Virasoro system for Fano varieties,
 extended by Eguchi–Jinzenji–Xiong to odd and off-diagonal Hodge
 classes, with Katz's Hodge-index grading and Getzler's
 central normalization [S4:3–5]. Liu–Tian proved the decisive
-$L_1$ and $L_2$ identities in genus zero [S4:21].
+$`L_1`$ and $`L_2`$ identities in genus zero [S4:21].
 
 Getzler proved the ordinary constraints for Calabi–Yau targets
-with $c_1=0$ and $H^1=0$ [S4:23]. Okounkov–Pandharipande proved
+with $`c_1=0`$ and $`H^1=0`$ [S4:23]. Okounkov–Pandharipande proved
 the fixed-degree relative constraints for target curves;
 Givental's quantized semisimple construction with Teleman's
 classification covers the semisimple geometric theories

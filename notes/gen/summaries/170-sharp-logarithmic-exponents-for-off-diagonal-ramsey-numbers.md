@@ -7,107 +7,107 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:3988] and the catalog abstract [S2:421] state
-the family's claim: for every fixed integer $s \ge 5$, the
+the family's claim: for every fixed integer $`s \ge 5`$, the
 off-diagonal Ramsey number satisfies
-$r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}$ as $t \to \infty$,
+$`r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}`$ as $`t \to \infty`$,
 determining the **sharp logarithmic exponent**. Two manuscripts
 carry the family. The first, *The sharp logarithmic exponent of
-$r(5,t)$* [S3:51, S3:53], abstract 
+$`r(5,t)`$* [S3:51, S3:53], abstract 
 
 > We determine the sharp logarithmic exponent of the off-diagonal Ramsey
-number $r(5,t)$:
+number $`r(5,t)`$:
 $$r(5,t)=\frac{t^4}{(\log t)^{3+o(1)}}
  \qquad (t\longrightarrow\infty).$$ [S3:58–63]
 
 The second, *Sharp Logarithmic Exponents for Fixed Off-Diagonal
 Ramsey Numbers* [S4:33, S4:35], abstract 
 
-> For every fixed integer $s\ge6$, we determine the sharp logarithmic exponent
+> For every fixed integer $`s\ge6`$, we determine the sharp logarithmic exponent
 of the off-diagonal Ramsey number:
 $$r(s,t)=\frac{t^{s-1}}{(\log t)^{s-2+o(1)}}
  \qquad (t\longrightarrow\infty).$$ [S4:39–44]
 
 ## Undergraduate summary
 
-The **Ramsey number** $r(s,t)$ is the smallest number of vertices
+The **Ramsey number** $`r(s,t)`$ is the smallest number of vertices
 such that any red/blue coloring of the edges of the complete graph
-on that many vertices forces either a red $K_s$ or a blue
-$K_t$. The **off-diagonal** case has $s \ll t$ fixed and $t$
+on that many vertices forces either a red $`K_s`$ or a blue
+$`K_t`$. The **off-diagonal** case has $`s \ll t`$ fixed and $`t`$
 growing. The classical result (Erd\H{o}s 1947, Spencer 1971,
 Kahn--Koml\'os--Szab\'o 1995) gives the upper bound
-$r(s,t) \le C_s t^{s-1}/(\log t)^{s-2}$ and the lower bound
-$r(s,t) \ge c_s t^{s-1}/(\log t)^{s-2}$, pinning the
-**polynomial** exponent $s-1$. What was not known is the exact
-**logarithmic** exponent: is it exactly $s-2$? This family proves
-the logarithmic exponent is $s-2+o(1)$, resolving the question
+$`r(s,t) \le C_s t^{s-1}/(\log t)^{s-2}`$ and the lower bound
+$`r(s,t) \ge c_s t^{s-1}/(\log t)^{s-2}`$, pinning the
+**polynomial** exponent $`s-1`$. What was not known is the exact
+**logarithmic** exponent: is it exactly $`s-2`$? This family proves
+the logarithmic exponent is $`s-2+o(1)`$, resolving the question
 [S3:58–63, S4:39–44, S2:421].
 
 ## Graduate summary
 
-**The $r(5,t)$ theorem** [S3:58–63, S5:10–12]. The
-off-diagonal Ramsey number $r(5,t)$ satisfies
-$r(5,t) = t^4/(\log t)^{3+o(1)}$ as $t \to \infty$.
-Explicitly, for every $\varepsilon>0$ the lower bound
-$t^4/(\log t)^{3+\varepsilon}$ holds eventually, and the upper
-bound is $Ct^4/(\log t)^3$ for an absolute $C>0$; the
-logarithmic exponent converges to $3$ along all natural values of
-$t$ [S5:10–12].
+**The $`r(5,t)`$ theorem** [S3:58–63, S5:10–12]. The
+off-diagonal Ramsey number $`r(5,t)`$ satisfies
+$`r(5,t) = t^4/(\log t)^{3+o(1)}`$ as $`t \to \infty`$.
+Explicitly, for every $`\varepsilon>0`$ the lower bound
+$`t^4/(\log t)^{3+\varepsilon}`$ holds eventually, and the upper
+bound is $`Ct^4/(\log t)^3`$ for an absolute $`C>0`$; the
+logarithmic exponent converges to $`3`$ along all natural values of
+$`t`$ [S5:10–12].
 
-**The general $s \ge 6$ theorem** [S4:39–44, S5:14–16].
-For every fixed integer $s \ge 6$, the off-diagonal Ramsey number
-satisfies $r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}$ as
-$t \to \infty$. For each $\varepsilon>0$ the lower bound
-$t^{s-1}/(\log t)^{s-2+\varepsilon}$ holds eventually, and the
-upper bound is $C_s t^{s-1}/(\log t)^{s-2}$; the exponent limit
-is taken along all natural $t$ [S5:14–16].
+**The general $`s \ge 6`$ theorem** [S4:39–44, S5:14–16].
+For every fixed integer $`s \ge 6`$, the off-diagonal Ramsey number
+satisfies $`r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}`$ as
+$`t \to \infty`$. For each $`\varepsilon>0`$ the lower bound
+$`t^{s-1}/(\log t)^{s-2+\varepsilon}`$ holds eventually, and the
+upper bound is $`C_s t^{s-1}/(\log t)^{s-2}`$; the exponent limit
+is taken along all natural $`t`$ [S5:14–16].
 
 **The scope of the formalization.** The formalization determines
-the sharp logarithmic exponent for both the $r(5,t)$ case and the
-general $s \ge 6$ case, proving the matching lower and upper
+the sharp logarithmic exponent for both the $`r(5,t)`$ case and the
+general $`s \ge 6`$ case, proving the matching lower and upper
 bounds and the convergence of the logarithmic exponent
 [S5:10–12, S5:14–16].
 
 ## History of the conjecture
 
 Erd\H{o}s (1947) established the first nontrivial upper bound
-$r(s,t) \le t^{s-1}(\log t)^{O(1)}$. Spencer (1971) improved
-the exponent of $\log t$ in the upper bound to $s-2$ via the
+$`r(s,t) \le t^{s-1}(\log t)^{O(1)}`$. Spencer (1971) improved
+the exponent of $`\log t`$ in the upper bound to $`s-2`$ via the
 probabilistic method. The matching lower bound
-$r(s,t) \ge c_s t^{s-1}/(\log t)^{s-2}$ was established by
-Erd\H{o}s, R\'enyi, and S\'os (1964) for $s=3$ and by
-Kahn--Koml\'os--Szab\'o (1995) for general $s$. The
+$`r(s,t) \ge c_s t^{s-1}/(\log t)^{s-2}`$ was established by
+Erd\H{o}s, R\'enyi, and S\'os (1964) for $`s=3`$ and by
+Kahn--Koml\'os--Szab\'o (1995) for general $`s`$. The
 **logarithmic exponent** question — whether the exponent of
-$\log t$ in the bounds is exactly $s-2$ up to $o(1)$, for all
-natural $t$ — remained open because the classical proofs
-give only $O((\log t)^{s-2})$ in the denominator without
+$`\log t`$ in the bounds is exactly $`s-2`$ up to $`o(1)`$, for all
+natural $`t`$ — remained open because the classical proofs
+give only $`O((\log t)^{s-2})`$ in the denominator without
 pinning the leading constant in the exponent. This family
-resolves the question for $s \ge 5$ [S3:58–63,
+resolves the question for $`s \ge 5`$ [S3:58–63,
 S4:39–44, S2:421].
 
 **Prior (my training data, not this repo).** I know the
 Erd\H{o}s--R\'enyi--S\'os lower bound and the
 Kahn--Koml\'os--Szab\'o upper bound for off-diagonal Ramsey
 numbers, and the classical bounds
-$r(s,t) = t^{s-1}/(\log t)^{s-2+O(1)}$. A proof that the
-logarithmic exponent is **exactly** $s-2+o(1)$ — matching
-the upper bound at that scale — for $s \ge 5$ goes beyond
+$`r(s,t) = t^{s-1}/(\log t)^{s-2+O(1)}`$. A proof that the
+logarithmic exponent is **exactly** $`s-2+o(1)`$ — matching
+the upper bound at that scale — for $`s \ge 5`$ goes beyond
 what I recall; I cannot independently verify the flag-entropy /
 predictor / prime-construction arguments in [S3:58–63] and [S4:39–44]
 from training alone.
 
 ## Consequences
 
-**The sharp logarithmic exponent of $r(5,t)$ is $3$.**
-$r(5,t) = t^4/(\log t)^{3+o(1)}$, matching the classical upper
+**The sharp logarithmic exponent of $`r(5,t)`$ is $`3`$.**
+$`r(5,t) = t^4/(\log t)^{3+o(1)}`$, matching the classical upper
 bound at that scale [S3:58–63, S5:10–12, S2:421].
 
-**The sharp logarithmic exponent of $r(s,t)$ for $s \ge 6$ is
-$s-2$.** $r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}$, uniform in the
-constant $C_s$ and the rate [S4:39–44, S5:14–16,
+**The sharp logarithmic exponent of $`r(s,t)`$ for $`s \ge 6`$ is
+$`s-2`$.** $`r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}`$, uniform in the
+constant $`C_s`$ and the rate [S4:39–44, S5:14–16,
 S2:421].
 
-**The exponent is along all natural $t$.** The logarithmic
-exponent converges along all natural values of $t$, not just
+**The exponent is along all natural $`t`$.** The logarithmic
+exponent converges along all natural values of $`t`$, not just
 along a subsequence [S5:10–12, S5:14–16].
 
 ## Section skeleton
@@ -126,11 +126,11 @@ family ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S5:10–16]. The first paragraph formalizes
-the $r(5,t)$ case: $r(5,t) = t^4/(\log t)^{3+o(1)}$ with matching
+the $`r(5,t)`$ case: $`r(5,t) = t^4/(\log t)^{3+o(1)}`$ with matching
 lower and upper bounds, the logarithmic exponent converging to
-$3$ along all natural $t$ [S5:10–12]. The second paragraph
-formalizes the general $s \ge 6$ case:
-$r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}$ with matching bounds
+$`3`$ along all natural $`t`$ [S5:10–12]. The second paragraph
+formalizes the general $`s \ge 6`$ case:
+$`r(s,t) = t^{s-1}/(\log t)^{s-2+o(1)}`$ with matching bounds
 [S5:14–16]. The scope note names two comparators
 [S5:20–23]: `RamseyFive.lean` and `SharpLogRamsey.lean`.
 

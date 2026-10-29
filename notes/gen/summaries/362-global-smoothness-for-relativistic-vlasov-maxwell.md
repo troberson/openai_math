@@ -46,18 +46,18 @@ The field class is the load-bearing choice. `C_b^∞` bounds every spatial deriv
 
 The admissible datum, and the meaning of the field class 
 
-> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying $$\begin{gathered} f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered}$$ Here $C_b^\infty$ means that every spatial derivative is bounded. [S4:27–35]
+> A _smooth admissible datum_ is a triple $`(f_0,E_0,B_0)`$ satisfying $$\begin{gathered} f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered}$$ Here $`C_b^\infty`$ means that every spatial derivative is bounded. [S4:27–35]
 
 The theorem, stated in full [S4:42–52]:
 
 > \begin{theorem}\label{thm:global}
 > Every smooth admissible datum \eqref{eq:data} generates a unique global
-> classical solution of \eqref{eq:rvm}. For every finite $T$, this solution
+> classical solution of \eqref{eq:rvm}. For every finite $`T`$, this solution
 > satisfies
 > $$>  f\in C^\infty([0,T]\times\mathbb R^3_x\times\mathbb R^3_v),\qquad
 >  E,B\in C^\infty([0,T]\times\mathbb R^3_x;\mathbb R^3),
 >$$
-> and $f$ has compact phase-space support on $[0,T]$.
+> and $`f`$ has compact phase-space support on $`[0,T]`$.
 > The two divergence constraints hold for all time.
 > \end{theorem}
 
@@ -70,17 +70,17 @@ The proof is split into a kinetic half and a PDE half. The kinetic half is a sin
 The bootstrap, with its two-scale structure [S5:35–47]:
 
 > \begin{proposition}[Signed momentum increments]\label{prop:increment}
-> For each smooth admissible datum and finite $T_0$, there are constants
-> $M,A\ge1$ and $P_0$ with the following property. On every compact
-> classical solution interval $[0,t_*]$ as above, for every dyadic
-> $P\ge P_0$ satisfying \eqref{eq:P-range}, every supported receiver,
-> every $w=2^k$, $k\ge0$, and every interval $[t_1,t_2]\subset[0,t_*]$
-> on which $w/8\le q_X(t)\le8w$ throughout, one has
+> For each smooth admissible datum and finite $`T_0`$, there are constants
+> $`M,A\ge1`$ and $`P_0`$ with the following property. On every compact
+> classical solution interval $`[0,t_*]`$ as above, for every dyadic
+> $`P\ge P_0`$ satisfying \eqref{eq:P-range}, every supported receiver,
+> every $`w=2^k`$, $`k\ge0`$, and every interval $`[t_1,t_2]\subset[0,t_*]`$
+> on which $`w/8\le q_X(t)\le8w`$ throughout, one has
 > \begin{equation}\label{eq:bootstrap}
 >  |V_X(t_2)-V_X(t_1)|
 >  \le MP\sqrt{t_2-t_1}+A(t_2-t_1)S(w).
 > \end{equation}
-> The constants are independent of $t_*$ and $P$.
+> The constants are independent of $`t_*`$ and $`P`$.
 > \end{proposition}
 
 The `sqrt` term is what makes the argument quantitative: it is a square-root-in-time bound, so a doubling of momentum costs time proportional to the square of the momentum increment, and the `S(w) = P²L/w` term is linear in time with a coefficient that decays in the receiver energy. The PDE half is the continuation criterion, packaged for a field class that is not Sobolev.
@@ -94,18 +94,18 @@ The Sobolev hypotheses of the cited criterion are manufactured rather than assum
 
 The finite-horizon field modification, described where the proposition is introduced 
 
-> The proof is given in the final section. It combines the Glassey–Strauss bounded-momentum criterion in the $H^5$ formulation quoted by Luk and Strain \cite[Theorem 1.1 and Footnote 1, arXiv version]LukStrain2014Continuation with a finite-horizon modification of the initial fields. The modification retains the initial Coulomb field and cuts off vector potentials for the divergence-free remainders. The removed part evolves as a vacuum Maxwell field that vanishes throughout the particle region for the chosen horizon. This supplies Sobolev field data for the continuation theorem while preserving the original particle dynamics. [S5:59–67]
+> The proof is given in the final section. It combines the Glassey–Strauss bounded-momentum criterion in the $`H^5`$ formulation quoted by Luk and Strain \cite[Theorem 1.1 and Footnote 1, arXiv version]LukStrain2014Continuation with a finite-horizon modification of the initial fields. The modification retains the initial Coulomb field and cuts off vector potentials for the divergence-free remainders. The removed part evolves as a vacuum Maxwell field that vanishes throughout the particle region for the chosen horizon. This supplies Sobolev field data for the continuation theorem while preserving the original particle dynamics. [S5:59–67]
 
 The criterion itself, quoted where it is used 
 
-> The continuation input is the Glassey–Strauss criterion in \cite[Theorem 1.1 and Footnote 1, arXiv version]LukStrain2014Continuation. In its normalization, nonnegative compactly supported $H^5$ particle data and $H^5$ field data satisfying the constraints have the following property: a unique classical solution on $[0,T)$, $T<\infty$, extends uniquely as a $C^1$ solution past $T$ if there is a bounded continuous function $\kappa:[0,T)\to(0,\infty)$ such that $f(t,x,v)=0$ whenever $|v|\ge\kappa(t)$. [S13:444–451]
+> The continuation input is the Glassey–Strauss criterion in \cite[Theorem 1.1 and Footnote 1, arXiv version]LukStrain2014Continuation. In its normalization, nonnegative compactly supported $`H^5`$ particle data and $`H^5`$ field data satisfying the constraints have the following property: a unique classical solution on $`[0,T)`$, $`T<\infty`$, extends uniquely as a $`C^1`$ solution past $`T`$ if there is a bounded continuous function $`\kappa:[0,T)\to(0,\infty)`$ such that $`f(t,x,v)=0`$ whenever $`|v|\ge\kappa(t)`$. [S13:444–451]
 
 The kinetic estimate is a light-cone argument. Fields are represented by integrating the source along the backward light cone of the receiving particle, split into dyadic bins of momentum, distance, and angle; the force kernel carries the source acceleration evaluated at the retarded point.
 
 The retarded representation and its kernel [S6:155–162]:
 
 > \begin{proposition}[Retarded field representation]\label{ret:representation}
-> Let $E^{\rm fr},B^{\rm fr}$ be the homogeneous wave solutions with data
+> Let $`E^{\rm fr},B^{\rm fr}`$ be the homogeneous wave solutions with data
 > $$>  (E^{\rm fr},\partial_tE^{\rm fr})|_{t=0}
 >        =(E_0,\nabla\times B_0),\qquad
 >  (B^{\rm fr},\partial_tB^{\rm fr})|_{t=0}
@@ -125,7 +125,7 @@ The integrated force bounds, with the absolute estimate last [S8:18–31]:
 
 > \begin{proposition}[Integrated force bounds]\label{dir:direct}
 > Assume the bootstrap \eqref{eq:bootstrap}.  The bounded data term,
-> $T_r$, $T_\perp$, $S_b$, and the remaining-sector part of $S_g$ have
+> $`T_r`$, $`T_\perp`$, $`S_b`$, and the remaining-sector part of $`S_g`$ have
 > combined integral at most
 > \begin{equation}\label{dir:baseline}
 >  C\bigl[P\sqrt I+(M+\sqrt A)I S(w)\bigr].
@@ -135,40 +135,40 @@ The integrated force bounds, with the absolute estimate last [S8:18–31]:
 >  \int_{\mathcal T}|K(t)|\,dt
 >  \le C\sqrt w\bigl[P\sqrt I+(M+\sqrt A)I S(w)\bigr].
 > \end{equation}
-> The constant $C$ is independent of $P,w,I,M,A$.
+> The constant $`C`$ is independent of $`P,w,I,M,A`$.
 > \end{proposition}
 
 The paper names the loss and the geometry that produces it 
 
-> At receiver energy comparable to $w$, the absolute-force bound has an extra factor $\sqrt w$ compared with the signed estimate we need. The loss occurs when the source velocity is much closer to the light-ray direction than the receiver velocity is. [S4:174–177]
+> At receiver energy comparable to $`w`$, the absolute-force bound has an extra factor $`\sqrt w`$ compared with the signed estimate we need. The loss occurs when the source velocity is much closer to the light-ray direction than the receiver velocity is. [S4:174–177]
 
 The recovery is an integration-by-parts identity applied to the signed force, integrating along the source trajectory before taking absolute values. It converts the singular part into a total derivative plus less singular bulk terms, one of which contains the receiver's own acceleration — hence a coefficient multiplying the very force being estimated.
 
 The weighted signed formula, as stated [S9:278–284]:
 
 > \begin{proposition}[Weighted signed formula]\label{can:weighted-formula}
-> Let $J=[t_1,t_2]$ lie in a compact classical time interval. Let
-> $0\leq\psi\leq1$ be Lipschitz on $J$, vanish at its endpoints, and be
-> extended by zero outside $J$. Let $\chi$ be a selected sum as in
+> Let $`J=[t_1,t_2]`$ lie in a compact classical time interval. Let
+> $`0\leq\psi\leq1`$ be Lipschitz on $`J`$, vanish at its endpoints, and be
+> extended by zero outside $`J`$. Let $`\chi`$ be a selected sum as in
 > Lemma~\ref{can:cutoff-cancellation}. One may integrate
-> \eqref{can:label-identity} labelwise against $\psi\chi$ and a bounded
-> $C^1$ matrix $\Pi(t)$, including $\Pi=\mathrm{Id}$. More precisely,
+> \eqref{can:label-identity} labelwise against $`\psi\chi`$ and a bounded
+> $`C^1`$ matrix $`\Pi(t)`$, including $`\Pi=\mathrm{Id}`$. More precisely,
 
 The identity is used twice. The first use controls direction: under the bootstrap, a particle's direction of motion cannot change by a prescribed angular amount too many times, and that monotone crossing behaviour improves occupation at intermediate relative angles.
 
 The direction-change lemma [S10:22–37]:
 
 > \begin{lemma}[Direction changes]\label{ang:direction}
-> Assume the signed increment bootstrap \eqref{eq:bootstrap} on $[0,\tau]$.
-> Let $w$ be a dyad with $w\ge P^{3/5}$, and let $J\subset[0,\tau]$ be a closed
-> interval of length at most $(w/P)^2$ on which a supported characteristic
-> satisfies $w/8\le q_X\le8w$. Suppose
+> Assume the signed increment bootstrap \eqref{eq:bootstrap} on $`[0,\tau]`$.
+> Let $`w`$ be a dyad with $`w\ge P^{3/5}`$, and let $`J\subset[0,\tau]`$ be a closed
+> interval of length at most $`(w/P)^2`$ on which a supported characteristic
+> satisfies $`w/8\le q_X\le8w`$. Suppose
 > $$>  w^{-3/5}\le\delta\le w^{-1/10}.
 >$$
-> Starting at the left endpoint of $J$, stop whenever the direction
-> $\xi=V_X/|V_X|$ first has chordal distance $\delta$ from its direction at
+> Starting at the left endpoint of $`J`$, stop whenever the direction
+> $`\xi=V_X/|V_X|`$ first has chordal distance $`\delta`$ from its direction at
 > the preceding stopping time. Include the last, possibly incomplete,
-> interval. For sufficiently large $P$, the number of intervals is at most
+> interval. For sufficiently large $`P`$, the number of intervals is at most
 > \begin{equation}\label{ang:count}
 >  C(M,A)L^6/\delta.
 > \end{equation}
@@ -186,12 +186,12 @@ The second use of the identity is the payoff. Selection keeps only the bins whos
 The weighted signed estimate, with no `sqrt(w)` [S11:447–454]:
 
 > \begin{proposition}\label{sel:bulk-impulse}
-> For the weight $\psi$ above and $P\ge P_*(M,A)$,
+> For the weight $`\psi`$ above and $`P\ge P_*(M,A)`$,
 > \begin{equation}\label{sel:bulk}
 >  \left|\int_J\psi(t)K(t)\,dt\right|
 >  \le C_\eta\big[P\sqrt I+(M+\sqrt A)I S(w)\big].
 > \end{equation}
-> The constant $C_\eta$ is independent of $M,A$.
+> The constant $`C_\eta`$ is independent of $`M,A`$.
 > \end{proposition}
 
 The coefficient bound that pays for the loss 
@@ -200,7 +200,7 @@ The coefficient bound that pays for the loss
 
 The strategy section says exactly what that factor buys 
 
-> coefficient multiplying the receiver force is at most a constant times $w^{-1/2}$ after summation. This exactly compensates for the $\sqrt w$ loss in the available absolute-force bound. [S4:205–207]
+> coefficient multiplying the receiver force is at most a constant times $`w^{-1/2}`$ after summation. This exactly compensates for the $`\sqrt w`$ loss in the available absolute-force bound. [S4:205–207]
 
 The weighted estimate vanishes at interval endpoints, so short endpoint intervals are restored from the bootstrap assumption itself, giving a strict improvement.
 
@@ -210,17 +210,17 @@ The uniform improvement, and the continuity argument that closes the bootstrap
 
 The end of the continuity argument 
 
-> This proves relative openness. Hence $\mathcal T=[0,t_*]$ and Proposition follows. [S12:81–82]
+> This proves relative openness. Hence $`\mathcal T=[0,t_*]`$ and Proposition follows. [S12:81–82]
 
 The bookkeeping that keeps the bootstrap usable in the doubling argument 
 
-> The compact-time force bound $C_*$ was used only to propagate the bootstrap for a fixed $P$. It does not enter $M,A$ or $P_0$. This distinction preserves the uniformity needed in the momentum-doubling argument of Section . [S12:84–87]
+> The compact-time force bound $`C_*`$ was used only to propagate the bootstrap for a fixed $`P`$. It does not enter $`M,A`$ or $`P_0`$. This distinction preserves the uniformity needed in the momentum-doubling argument of Section . [S12:84–87]
 
 With the bootstrap in hand, the conclusion is a divergent series. Doubling momentum from `2^(n-1)` to `2ⁿ` takes time at least `c / log(2 + 1024·2ⁿ)`, and the sum over `n` diverges, so the doubling times cannot accumulate below a finite `T_max`.
 
 The momentum-doubling step, verbatim 
 
-> At least one term on the right is at least $2^{n-2}$. Consequently $$t_n-t_{n-1}\ge\Delta_n \ge \frac{c}{\log(2+1024\cdot2^n)}$$ for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$. [S5:95–102]
+> At least one term on the right is at least $`2^{n-2}`$. Consequently $$t_n-t_{n-1}\ge\Delta_n \ge \frac{c}{\log(2+1024\cdot2^n)}$$ for a fixed $`c>0`$. The sum of these lower bounds diverges, contradicting $`t_n<T_{\max}`$. Thus $`T_{\max}=\infty`$. [S5:95–102]
 
 Smoothness is then propagated by restarting a Sobolev construction near an alleged first loss and identifying the restart with the classical solution by uniqueness; persistence at every Sobolev order follows on the same lifespan, and the equations give all time derivatives.
 
@@ -256,7 +256,7 @@ The small-data line, which relaxes compact momentum support but keeps a particle
 
 The nearest concurrent work is a July 2026 pair of papers by Wang on cylindrically symmetric large data. The paper states the difference in data classes explicitly, and declines to identify the two results 
 
-> Wang's July 2026 two-paper treatment establishes global existence for large cylindrically symmetric data . The first paper develops an iterative smoothing construction and the second supplies pointwise estimates. Their Theorem 1.1 assumes $H^s$ fields, $s\ge6$, a weighted $H^s$ particle density, and covariance of the data under rotations about a fixed axis. It allows localized noncompact particle data and has no smallness requirement. The theorem here instead concerns arbitrary compatible compactly supported particle data, without symmetry, and fields in the class . Thus the two data classes should not be identified. [S4:127–136]
+> Wang's July 2026 two-paper treatment establishes global existence for large cylindrically symmetric data . The first paper develops an iterative smoothing construction and the second supplies pointwise estimates. Their Theorem 1.1 assumes $`H^s`$ fields, $`s\ge6`$, a weighted $`H^s`$ particle density, and covariance of the data under rotations about a fixed axis. It allows localized noncompact particle data and has no smallness requirement. The theorem here instead concerns arbitrary compatible compactly supported particle data, without symmetry, and fields in the class . Thus the two data classes should not be identified. [S4:127–136]
 
 The two concurrent papers as the bibliography records them [S14:85–107]:
 

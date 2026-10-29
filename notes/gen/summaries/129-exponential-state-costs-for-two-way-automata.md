@@ -21,47 +21,47 @@ whether to accept it. A **one-way** automaton reads left to right; a
 **nondeterministic** automaton (NFA) can branch at each step; a
 **deterministic** automaton has exactly one move per state and symbol.
 
-**Complementation** means: given an NFA that accepts language $L$, build
-one that accepts everything $L$ does not. **Determinization** means: given
+**Complementation** means: given an NFA that accepts language $`L`$, build
+one that accepts everything $`L`$ does not. **Determinization** means: given
 an NFA, build an equivalent deterministic one.
 
 Both operations can blow up the number of states. This family proves that
 the blow-up is **exponential** and that no polynomial bound is possible
 when the alphabet grows with the input.
 
-MS1 [S4:38–48] constructs, for every $n\ge4$, an $n$-state two-way NFA
+MS1 [S4:38–48] constructs, for every $`n\ge4`$, an $`n`$-state two-way NFA
 whose complement requires at least
-$\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1$ states. MS2 [S8:99–110] shows
-that a one-way NFA with $h+3$ states (no left moves) has an equivalent
-two-way DFA requiring $s\ge2^{\lfloor(h-2)/31\rfloor}/4-2$ states.
+$`\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1`$ states. MS2 [S8:99–110] shows
+that a one-way NFA with $`h+3`$ states (no left moves) has an equivalent
+two-way DFA requiring $`s\ge2^{\lfloor(h-2)/31\rfloor}/4-2`$ states.
 Both results rule out polynomial state bounds independent of alphabet size.
 
 ## Graduate summary
 
 **MS1 main theorem** ([S4:38–48], `main:theorem`). "For every integer
-$n\ge4$, set $H=\{1,\ldots,n-2\}$ and $\Sigma_n=\mathcal R_H$. There is
-an $n$-state 2NFA $A_n$ recognizing $L_H$ such that every 2NFA recognizing
-$\Sigma_n^*\setminus L(A_n)$ has at least
-$\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1$ states. In particular, there is
+$`n\ge4`$, set $`H=\{1,\ldots,n-2\}`$ and $`\Sigma_n=\mathcal R_H`$. There is
+an $`n`$-state 2NFA $`A_n`$ recognizing $`L_H`$ such that every 2NFA recognizing
+$`\Sigma_n^*\setminus L(A_n)`$ has at least
+$`\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1`$ states. In particular, there is
 no polynomial state bound for complementation that is independent of the
-finite alphabet" [S4:38–48]. The alphabet $\Sigma_n$ consists of all
-binary relations on a set of $n-2$ points, so $|\Sigma_n|=2^{(n-2)^2}$
+finite alphabet" [S4:38–48]. The alphabet $`\Sigma_n`$ consists of all
+binary relations on a set of $`n-2`$ points, so $`|\Sigma_n|=2^{(n-2)^2}`$
 [S4:50–51].
 
 **MS2 main theorem** ([S8:99–110], `thm:main`). "For every integer
-$h\ge2$, the language $\mathsf{OWL}_h$ is recognized by a nondeterministic
-automaton with $h+3$ states using no left moves. Every equivalent
-deterministic two-way automaton with $s$ states satisfies
-$4(s+2)^2\ge 2^{\lfloor(h-2)/31\rfloor}$. If an initially accepting
-configuration counts as acceptance, $s+2$ may be replaced by $s+1$"
-[S8:99–110]. The language $\mathsf{OWL}_h$ is **one-way liveness**: a word of
-binary relations on $h$ points is accepted when their ordered product is
+$`h\ge2`$, the language $`\mathsf{OWL}_h`$ is recognized by a nondeterministic
+automaton with $`h+3`$ states using no left moves. Every equivalent
+deterministic two-way automaton with $`s`$ states satisfies
+$`4(s+2)^2\ge 2^{\lfloor(h-2)/31\rfloor}`$. If an initially accepting
+configuration counts as acceptance, $`s+2`$ may be replaced by $`s+1`$"
+[S8:99–110]. The language $`\mathsf{OWL}_h`$ is **one-way liveness**: a word of
+binary relations on $`h`$ points is accepted when their ordered product is
 nonempty [S7:9–10].
 
 **Sakoda–Sipser context.** MS2's witness is Sakoda and Sipser's complete
-family $B_h$, now called one-way liveness. Their Theorem 2.3 establishes
+family $`B_h`$, now called one-way liveness. Their Theorem 2.3 establishes
 this family's completeness for one-to-two-way conversion
-[S8:9–23]. The proof here gives the small nondeterministic side ($h+3$
+[S8:9–23]. The proof here gives the small nondeterministic side ($`h+3`$
 states, no left moves) and the exponential lower bound against
 unrestricted two-way deterministic targets [S8:27–36].
 
@@ -81,8 +81,8 @@ deterministic targets were known, but the exponential case over growing
 alphabets was open [S8:36].
 
 MS1's proof builds on a nesting and amplification construction over the
-relational alphabet $\mathcal R_H$: the $n$-state automaton $A_n$
-recognizes a language $L_H$ whose complement forces exponential state
+relational alphabet $`\mathcal R_H`$: the $`n`$-state automaton $`A_n`$
+recognizes a language $`L_H`$ whose complement forces exponential state
 growth through a 127-state amplification layer
 [S4:38–48].
 
@@ -98,15 +98,15 @@ manuscripts as proofs.
 ## Consequences
 
 - **Two-way NFA complementation has no polynomial state bound.** For
-  every $n\ge4$, there is an $n$-state 2NFA whose complement requires
-  at least $\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1$ states
+  every $`n\ge4`$, there is an $`n`$-state 2NFA whose complement requires
+  at least $`\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1`$ states
   [S4:38–48].
 - **One-way liveness simulation has no polynomial state bound.** Every
-  equivalent two-way DFA for $\mathsf{OWL}_h$ requires $s$ states satisfying
-  $4(s+2)^2\ge 2^{\lfloor(h-2)/31\rfloor}$ [S8:99–110].
+  equivalent two-way DFA for $`\mathsf{OWL}_h`$ requires $`s`$ states satisfying
+  $`4(s+2)^2\ge 2^{\lfloor(h-2)/31\rfloor}`$ [S8:99–110].
 - **The Sakoda–Sipser conjecture is resolved over growing alphabets.**
   MS2 provides the exponential lower bound that the conjecture
-  predicted; the alphabet grows with $h$, so the bound is
+  predicted; the alphabet grows with $`h`$, so the bound is
   alphabet-dependent [S8:99–110].
 - **Both results are over the full two-way model.** The model has two
   endmarkers, left, right, and stay moves, and acceptance by a finite
@@ -139,32 +139,32 @@ the formalization is **complete at the declaration level** for all three
 results.
 
 The scope note [S6:10–14] describes two layers of formalized content:
-[S6:10] the complementation lower bound for every $n\ge4$ and the
-determinization lower bound for every $n\ge131$; [S6:12] the model
+[S6:10] the complementation lower bound for every $`n\ge4`$ and the
+determinization lower bound for every $`n\ge131`$; [S6:12] the model
 (two endmarkers, left/right/stay moves, finite-run acceptance) and the
 explicit exclusion of the one-way liveness results from the first scope;
 and [S6:14] the liveness family with its exponential lower bound
-$2^{\lfloor(h-2)/31\rfloor}\le4(s+2)^2$.
+$`2^{\lfloor(h-2)/31\rfloor}\le4(s+2)^2`$.
 
 The scope note links **three** comparator configs [S6:20–22]:
 
 - `TwoWayComplementation.lean` [S10:36–40] (45 lines) —
-  `complementation_lower_bound_finite` [S10:36–40]: for every $n\ge4$,
-  there exists an $n$-state 2NFA whose complement requires at least
-  $\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1$ states; `sorry` at [S10:41].
+  `complementation_lower_bound_finite` [S10:36–40]: for every $`n\ge4`$,
+  there exists an $`n`$-state 2NFA whose complement requires at least
+  $`\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1`$ states; `sorry` at [S10:41].
   Declaration `OAI.TwoWayComplementation.complementation_lower_bound_finite`.
 - `TwoWayDeterminization.lean` [S11:58–68] (73 lines) —
-  `explicit_family_main` [S11:58–68]: for every $n\ge4$, there exists
-  an $n$-state 2NFA such that (i) its complement requires
-  $\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1$ states, and (ii) for
-  $n\ge131$, every equivalent deterministic 2NFA requires
-  $\tfrac12\,2^{\lfloor(n-4)/127\rfloor}$ states; `sorry` at [S11:69].
+  `explicit_family_main` [S11:58–68]: for every $`n\ge4`$, there exists
+  an $`n`$-state 2NFA such that (i) its complement requires
+  $`\tfrac12\,2^{\lfloor(n-4)/127\rfloor}-1`$ states, and (ii) for
+  $`n\ge131`$, every equivalent deterministic 2NFA requires
+  $`\tfrac12\,2^{\lfloor(n-4)/127\rfloor}`$ states; `sorry` at [S11:69].
   Declaration `OAI.TwoWayComplementation.explicit_family_main`.
 - `OneWayLiveness.lean` [S12:95–100] (105 lines) —
-  `main_theorem` [S12:95–100]: for every $h\ge2$, there exists an
-  $h+3$-state one-way NFA (no left moves) recognizing $\mathsf{OWL}_h$, and
-  every equivalent two-way DFA with $s$ states satisfies
-  $2^{\lfloor(h-2)/31\rfloor}\le4(s+2)^2$ (or $4(s+1)^2$ under the
+  `main_theorem` [S12:95–100]: for every $`h\ge2`$, there exists an
+  $`h+3`$-state one-way NFA (no left moves) recognizing $`\mathsf{OWL}_h`$, and
+  every equivalent two-way DFA with $`s`$ states satisfies
+  $`2^{\lfloor(h-2)/31\rfloor}\le4(s+2)^2`$ (or $`4(s+1)^2`$ under the
   initially-accepting convention); `sorry` at [S12:101].
   Declaration `OAI.OneWayLiveness.main_theorem`.
 

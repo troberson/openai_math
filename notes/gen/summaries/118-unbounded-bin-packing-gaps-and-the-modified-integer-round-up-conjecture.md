@@ -16,34 +16,34 @@ agree on the statement.
 ## Undergraduate summary
 
 **Bin packing** is the classic problem of fitting items into identical
-bins of unit capacity. You have a list of item sizes (all in $(0,1]$)
+bins of unit capacity. You have a list of item sizes (all in $`(0,1]`$)
 and want to pack them into the fewest bins, where each bin's total load
-is at most one. Writing $\mathrm{OPT}$ for the minimum number of bins, the
+is at most one. Writing $`\mathrm{OPT}`$ for the minimum number of bins, the
 **configuration LP** is a fractional relaxation: it assigns weights to
 all feasible bin "patterns" (sub-multisets of items that fit in one
 bin) and minimizes total weight while covering every item's demand.
-The LP value is always a lower bound on $\mathrm{OPT}$.
+The LP value is always a lower bound on $`\mathrm{OPT}`$.
 
 The **Modified Integer Round-Up Conjecture** (Scheithauer and Terno,
-1995) asked whether $\mathrm{OPT} \le \lceil \text{LP} \rceil + 1$ always holds:
+1995) asked whether $`\mathrm{OPT} \le \lceil \text{LP} \rceil + 1`$ always holds:
 the integral optimum is at most the LP value, rounded up, plus one.
-This family **disproves** that conjecture. For every integer $c \ge 0$,
-there is a rational instance where the LP value is exactly $B$ but the
-integral optimum exceeds $B + c$ [S4:87–95]. The gap is unbounded.
+This family **disproves** that conjecture. For every integer $`c \ge 0`$,
+there is a rational instance where the LP value is exactly $`B`$ but the
+integral optimum exceeds $`B + c`$ [S4:87–95]. The gap is unbounded.
 
 The construction also settles an algorithmic question: for any fixed
-$c$, it is NP-hard to tell whether an instance fits in $B$ bins or
-requires more than $B+c$ bins [S4:106–112]. A deterministic polynomial-
+$`c`$, it is NP-hard to tell whether an instance fits in $`B`$ bins or
+requires more than $`B+c`$ bins [S4:106–112]. A deterministic polynomial-
 time algorithm with a fixed additive constant exists **if and only if**
-$P = NP$ [S4:114–117]. All items exceed $1/6$, so each bin holds at
+$`P = NP`$ [S4:114–117]. All items exceed $`1/6`$, so each bin holds at
 most five items.
 
 ## Graduate summary
 
 **Main theorem (unbounded gap)** ([S4:87–95], `thm:unbounded-gap`).
-"For every integer $c\ge0$, there is a finite rational bin-packing
-instance $I$ and an integer $B$ such that every item size exceeds $1/6$
-and $\mathrm{OPT}_{\mathrm{LP}}(I)=B$, $\mathrm{OPT}(I)>B+c$. The equality for the fractional optimum
+"For every integer $`c\ge0`$, there is a finite rational bin-packing
+instance $`I`$ and an integer $`B`$ such that every item size exceeds $`1/6`$
+and $`\mathrm{OPT}_{\mathrm{LP}}(I)=B`$, $`\mathrm{OPT}(I)>B+c`$. The equality for the fractional optimum
 also holds for the configuration LP whose patterns are subsets of the
 individual item copies" [S4:87–95]. The gap is between the restricted
 numerical-type LP and the integral optimum, and the same equality holds
@@ -51,31 +51,31 @@ for the stronger individual-copy formulation, so both configuration
 relaxations are simultaneously defeated.
 
 **Main theorem (additive hardness)** ([S4:106–112], `thm:additive-
-hardness`). "For every fixed integer $c\ge0$, it is NP-hard to
-distinguish pairs $(I,B)$ such that $I$ packs into $B$ bins from pairs
-such that $I$ cannot be packed into $B+c$ bins" [S4:106–112]. The
+hardness`). "For every fixed integer $`c\ge0`$, it is NP-hard to
+distinguish pairs $`(I,B)`$ such that $`I`$ packs into $`B`$ bins from pairs
+such that $`I`$ cannot be packed into $`B+c`$ bins" [S4:106–112]. The
 instance is an explicit rational list; every item size is strictly
-greater than $1/6$.
+greater than $`1/6`$.
 
 **Corollary (complexity equivalence)** ([S4:114–117], `cor:complexity-
 equiv`). "A deterministic polynomial-time algorithm that always uses at
-most $\mathrm{OPT}(I)+C$ bins for some absolute constant $C$ exists if and only
-if $P=NP$" [S4:114–117]. The forward direction reduces from the
-additive-hardness gaps; the reverse direction uses $P=NP$ to solve
+most $`\mathrm{OPT}(I)+C`$ bins for some absolute constant $`C`$ exists if and only
+if $`P=NP`$" [S4:114–117]. The forward direction reduces from the
+additive-hardness gaps; the reverse direction uses $`P=NP`$ to solve
 bin feasibility exactly by binary search over the bin count.
 
 **Construction sketch** ([S4:181–276]). The proof reduces from
-vertex cover. A graph with $n$ vertices and a cover target $k$ produces
-$5B$ rational items with five roles per bin (row, anchor, global
+vertex cover. A graph with $`n`$ vertices and a cover target $`k`$ produces
+$`5B`$ rational items with five roles per bin (row, anchor, global
 auxiliary, local auxiliary, flag). Two finite rooted trees with
 competing depth quotas [S4:185–191] force each vertex to fund one of
 two sides; the funded side determines the extracted cover. The
-fractional witness uses the four-vertex clique with weight $1/2$ on
+fractional witness uses the four-vertex clique with weight $`1/2`$ on
 each local state [S4:265–270].
 
 **No computational claim for the gap instances.** The unbounded-gap
-instances have no stated polynomial-size bound; the integers $P_0$ and
-$K$ in the reduction grow rapidly in $c$ and $\rho$ [S5:31–35]. The
+instances have no stated polynomial-size bound; the integers $`P_0`$ and
+$`K`$ in the reduction grow rapidly in $`c`$ and $`\rho`$ [S5:31–35]. The
 hardness result is what places the instances in polynomial encoding
 [S4:270–274].
 
@@ -85,13 +85,13 @@ The **configuration LP** and its cutting-stock antecedents go back to
 **Gilmore and Gomory** (1961) [S4:12–13]. **Marcotte** (1985, 1986)
 exhibited the first instance where the integral round-up property
 fails [S4:62–63]. **Scheithauer and Terno** (1995, 1997) conjectured
-the modified bound $\mathrm{OPT} \le \lceil \mathrm{OPT}_{\mathrm{LP}} \rceil + 1$ [S4:64–65].
+the modified bound $`\mathrm{OPT} \le \lceil \mathrm{OPT}_{\mathrm{LP}} \rceil + 1`$ [S4:64–65].
 
 On the algorithmic side, **Fernandez de la Vega and Lueker** (1981)
 gave an asymptotic approximation scheme [S4:128–130]. **Karmarkar and
-Karp** (1982) obtained an additive bound of order $\log^2 \mathrm{OPT}$ [S4:134–137].
-**Rothvoss** (2013) improved this to $\log \mathrm{OPT} \cdot \log\log \mathrm{OPT}$
-[S4:138–140]. **Hoberg and Rothvoss** (2017) reached order $\log \mathrm{OPT}$
+Karp** (1982) obtained an additive bound of order $`\log^2 \mathrm{OPT}`$ [S4:134–137].
+**Rothvoss** (2013) improved this to $`\log \mathrm{OPT} \cdot \log\log \mathrm{OPT}`$
+[S4:138–140]. **Hoberg and Rothvoss** (2017) reached order $`\log \mathrm{OPT}`$
 [S4:141–143]. These logarithmic upper bounds are compatible with the
 unbounded additive gap: the constructed instances can grow very rapidly
 with the prescribed gap.
@@ -109,21 +109,21 @@ open problems in **Williamson and Shmoys** (2011) [S4:5–7].
 **Prior (my training data, not this repo).** The Modified Integer
 Round-Up Conjecture was a well-known open problem in combinatorial
 optimization; its disproof is a significant negative result. The
-$P=NP$ equivalence for fixed-additive approximation is a clean
+$`P=NP`$ equivalence for fixed-additive approximation is a clean
 complexity-theoretic corollary. I cannot confirm these independently;
 the release ships the manuscript as a proof.
 
 ## Consequences
 
-- **Modified Integer Round-Up Conjecture is false.** For every $c\ge0$,
-  there is a rational instance with $\mathrm{OPT}_{\mathrm{LP}}(I) = B$ and $\mathrm{OPT}(I) > B+c$,
-  so the conjectured $\lceil \mathrm{OPT}_{\mathrm{LP}} \rceil + 1$ bound fails by an
+- **Modified Integer Round-Up Conjecture is false.** For every $`c\ge0`$,
+  there is a rational instance with $`\mathrm{OPT}_{\mathrm{LP}}(I) = B`$ and $`\mathrm{OPT}(I) > B+c`$,
+  so the conjectured $`\lceil \mathrm{OPT}_{\mathrm{LP}} \rceil + 1`$ bound fails by an
   arbitrarily large additive constant [S4:87–95].
-- **No fixed-additive approximation in $P$.** A deterministic
+- **No fixed-additive approximation in $`P`$.** A deterministic
   polynomial-time algorithm with a fixed absolute additive constant
-  exists if and only if $P=NP$ [S4:114–117].
-- **Constant gap for item sizes $> 1/6$.** Both results hold when
-  every item exceeds $1/6$, so each bin contains at most five items
+  exists if and only if $`P=NP`$ [S4:114–117].
+- **Constant gap for item sizes $`> 1/6`$.** Both results hold when
+  every item exceeds $`1/6`$, so each bin contains at most five items
   [S4:91–92].
 - **Both configuration formulations defeated.** The gap holds for
   both the numerical-type configuration LP and the stronger
@@ -148,27 +148,27 @@ fully proved theorem in `lean/OAI/`.
 
 The scope note states: "The formalized results rule out a universal
 additive bound for the configuration linear program in bin packing.
-For every integer $c\ge0$, there are an integer $B$ and a rational
-instance with $5B$ items whose individual-copy and size-type
-configuration-LP values both equal $B$, but whose integral optimum is
-greater than $B+c$. Distinguishing a packing in $B$ bins from the
-absence of one in $B+c$ bins is NP-hard for each fixed $c$. A
+For every integer $`c\ge0`$, there are an integer $`B`$ and a rational
+instance with $`5B`$ items whose individual-copy and size-type
+configuration-LP values both equal $`B`$, but whose integral optimum is
+greater than $`B+c`$. Distinguishing a packing in $`B`$ bins from the
+absence of one in $`B+c`$ bins is NP-hard for each fixed $`c`$. A
 deterministic polynomial-time algorithm with a fixed absolute additive
-allowance exists exactly when $P=NP$; under that equality, an optimal
+allowance exists exactly when $`P=NP`$; under that equality, an optimal
 algorithm is constructed" [S8:9].
 
 The `BinPackingGap.lean` comparator stub [S9] (379 lines) defines the
 full bin-packing theory: `Instance` [S9:66], `Packing`, `opt` [S9:82],
 `IndividualConfiguration`, `NumericalSize`, and the NP-hardness and
-$P=NP$ machinery. The `main_results` statement at [S9:370–378] states
+$`P=NP`$ machinery. The `main_results` statement at [S9:370–378] states
 all four components as a conjunction, and `theorem main` at
 [S9:378] closes with `sorry`.
 
 The formalized declaration `OAI.BinPackingGap.main_results` in
 `Main.lean` [S10] (28 lines) is the **proved** version. At
 [S10:7–28] the theorem conjoins four results: the structural additive
-gap, the packing-gap NP-hardness, the $P=NP$ equivalence for absolute
-additive algorithms, and the constructive algorithm under $P=NP$.
+gap, the packing-gap NP-hardness, the $`P=NP`$ equivalence for absolute
+additive algorithms, and the constructive algorithm under $`P=NP`$.
 The proof is a single `refine` that instantiates four named lemmas
 from the `OAI.Computability.BinPacking.Results.Aggregate` module.
 There is no `sorry` in this file.

@@ -28,8 +28,8 @@ it: "The problem is whether this cardinal comparison alone can recover choice
 for arbitrary families." The manuscript answers it with a relative-consistency
 statement.
 
-The main theorem is that statement. [S4:23–25] states it: "If $\mathsf{ZF}$ is
-consistent, then so is $\mathsf{ZF}+\mathsf{PP}+\mathsf{AC}_{\mathrm{WO}}+\neg\mathsf{AC}$." The model keeps Choice for
+The main theorem is that statement. [S4:23–25] states it: "If $`\mathsf{ZF}`$ is
+consistent, then so is $`\mathsf{ZF}+\mathsf{PP}+\mathsf{AC}_{\mathrm{WO}}+\neg\mathsf{AC}`$." The model keeps Choice for
 wellorderable families while losing the full axiom.
 
 The abstract gives the same result in prose. [S3:49–51] says: "We prove that
@@ -86,7 +86,7 @@ ordinal Choice and failure of Choice. Both JSON targets permit the same three
 axioms: `propext`, `Quot.sound`, `Classical.choice`.
 
 The manuscript fixes the theory its theorem is about. [S4:42–43] states it:
-"Here $\mathsf{ZF}$ is classical first-order set theory with pure sets, Foundation,
+"Here $`\mathsf{ZF}`$ is classical first-order set theory with pure sets, Foundation,
 and the full Separation and Replacement schemata." The injection the Partition
 Principle supplies need not pick a member of each part, and that is why the
 principle can survive while choice fails.
@@ -97,7 +97,7 @@ The Partition Principle is a long-standing weak form of choice, and the
 manuscript's introduction opens by naming the direction that is easy:
 [S4:12–13] says "The Axiom of Choice implies this principle by choosing one
 element of each fiber. The converse is less direct: the injection supplied by
-$\mathsf{PP}$ need" — the injection need not satisfy $f\circ j=\mathrm{id}_Y$, which is the
+$`\mathsf{PP}`$ need" — the injection need not satisfy $`f\circ j=\mathrm{id}_Y`$, which is the
 section property choice would give.
 
 The scope note's own first sentence gives the principle in the form the

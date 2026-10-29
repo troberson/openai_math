@@ -9,7 +9,7 @@
 The release's blurb [S1:8288] and the catalog abstract [S2:780] state
 the family's claim: every positive triple of smooth closed two-forms on
 a closed connected oriented four-manifold, normalized by
-$\int\omega_i\wedge\omega_j=\delta_{ij}$, deforms through positive
+$`\int\omega_i\wedge\omega_j=\delta_{ij}`$, deforms through positive
 closed triples to a hyperkähler triple while preserving all three
 cohomology classes. The manuscript's abstract "Every smooth normalized positive triple of closed two-forms on a closed
 connected oriented four-manifold admits a smooth deformation, with each
@@ -28,28 +28,28 @@ normalized deformation problem as their Conjecture 1.1 (2017). The
 manuscript resolves this deformation conjecture 
 
 > **theorem**
-Let $X$ be a closed connected oriented smooth four-manifold, and let
-$\omega=(\omega_1,\omega_2,\omega_3)$ be a smooth hypersymplectic structure
+Let $`X`$ be a closed connected oriented smooth four-manifold, and let
+$`\omega=(\omega_1,\omega_2,\omega_3)`$ be a smooth hypersymplectic structure
 normalized by
 $$\int_X\omega_i\wedge\omega_j=\delta_{ij}.$$
-There is a smooth family of hypersymplectic structures $\omega(t)$,
-$0\le t\le1$, such that
+There is a smooth family of hypersymplectic structures $`\omega(t)`$,
+$`0\le t\le1`$, such that
 $$\omega(0)=\omega,\qquad [\omega_i(t)]=[\omega_i]
  \quad (i=1,2,3),$$
-and a positive volume form $\mu_1$ with
+and a positive volume form $`\mu_1`$ with
 $$\omega_i(1)\wedge\omega_j(1)=2\delta_{ij}\mu_1.$$
 The endpoint forms are parallel and self-dual for a hyperkähler metric. [S4:11–29]
 
 A corollary identifies the smooth type: any closed connected
 four-manifold admitting a positive closed triple is diffeomorphic to
-the standard K3 manifold or to $T^4$ [S4:77–90].
+the standard K3 manifold or to $`T^4`$ [S4:77–90].
 
 ## Graduate summary
 
-**The lattice and $b^+=3$.** The topology of a positive closed triple
+**The lattice and $`b^+=3`$.** The topology of a positive closed triple
 is rigid: any two forms determine an almost-complex structure whose
 canonical line is trivial, and the third form tames it. Bauer's bound
-plus the three positive period classes gives $b^+=3$; the lattice is
+plus the three positive period classes gives $`b^+=3`$; the lattice is
 the K3 lattice or three hyperbolic planes [S4:153–170].
 
 **Currents and the prescribed taming class.** Cone separation of
@@ -71,7 +71,7 @@ one-nodal rational curves [S4:218–252].
 nodal fiber, a Gibbons–Hawking/Ooguri–Vafa model glues to an
 auxiliary form of small fiber area. An exact-form identity controls
 the inverse while fibers collapse, producing a closed equal-square
-pair $A,D$. Two Kähler steps in the original classes — Buchdahl–Lamari
+pair $`A,D`$. Two Kähler steps in the original classes — Buchdahl–Lamari
 criteria plus Yau's volume theorem — complete the hyperkähler
 triple with every class preserved [S4:281–310].
 
@@ -83,13 +83,13 @@ no reasoning trace; the LaTeX under `build/` is the only source.
 
 Donaldson formulated the question in his 2006 study of closed
 two-forms on four-manifolds. Fine and Yao (2017) obtained the
-hypersymplectic flow from the $G_2$-Laplacian flow and proved
+hypersymplectic flow from the $`G_2`$-Laplacian flow and proved
 finite-time extension under bounded torsion; their later work gives
 an integral torsion extension criterion and subsequential convergence
 under geometric bounds. Complete convergence is known for restricted
-classes: Huang–Wang–Yao for simple-type structures on $T^4$;
-Picard–Suan for $G_2$ flows from Kähler Calabi–Yau data;
-Fine–He–Yao for $T^3$-invariant triples in symmetric normal form and
+classes: Huang–Wang–Yao for simple-type structures on $`T^4`$;
+Picard–Suan for $`G_2`$ flows from Kähler Calabi–Yau data;
+Fine–He–Yao for $`T^3`$-invariant triples in symmetric normal form and
 for triples preserved by a smooth circle action [S4:103–152]. The
 path constructed here starts from an arbitrary positive closed triple;
 its existence is separate from convergence or uniqueness for the
@@ -102,12 +102,12 @@ in the cohomology-preserving form.** Every smooth normalized positive
 triple deforms through positive closed triples to a hyperkähler
 triple with all three cohomology classes fixed [S4:11–29].
 
-**The smooth type is K3 or $T^4$.** Any closed connected
+**The smooth type is K3 or $`T^4`$.** Any closed connected
 four-manifold admitting a positive closed triple is diffeomorphic to
-the standard K3 manifold or to $T^4$ [S4:77–90].
+the standard K3 manifold or to $`T^4`$ [S4:77–90].
 
 **Every linear combination is Kähler for some hyperkähler metric.**
-For every fixed nonzero $c\in\mathbb R^3$, the form $\alpha_c=\sum c_i\omega_i$
+For every fixed nonzero $`c\in\mathbb R^3`$, the form $`\alpha_c=\sum c_i\omega_i`$
 is a Kähler form for a parallel integrable complex structure of some
 hyperkähler metric [S4:55–76].
 

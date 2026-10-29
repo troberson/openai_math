@@ -8,11 +8,11 @@
 
 The release's blurb for family 334 [S1:8145]:
 
-> **334. A smooth surface metric with no local isometric immersion in ℝ3.** Constructs a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into ℝ3. This answers the unrestricted smooth local isometric realization problem for surfaces negatively, even after shrinking the neighborhood. (Lean)
+> **334. A smooth surface metric with no local isometric immersion in ℝ3.** Constructs a smooth positive-definite metric on $`(-1,1)^2`$ for which no neighborhood of the origin admits a smooth isometric immersion into ℝ3. This answers the unrestricted smooth local isometric realization problem for surfaces negatively, even after shrinking the neighborhood. (Lean)
 
 The catalog abstract in `overview.tex` [S2:768] is the same sentence, and the manuscript's own abstract says the same in the first person 
 
-> We construct a smooth positive-definite Riemannian metric on $(-1,1)^2$ that agrees with the Euclidean metric to every order at the origin, yet no neighborhood of the origin admits a smooth isometric immersion into Euclidean three-space. This gives a negative answer to the unrestricted smooth local isometric realization problem for surfaces. [S5:45–50]
+> We construct a smooth positive-definite Riemannian metric on $`(-1,1)^2`$ that agrees with the Euclidean metric to every order at the origin, yet no neighborhood of the origin admits a smooth isometric immersion into Euclidean three-space. This gives a negative answer to the unrestricted smooth local isometric realization problem for surfaces. [S5:45–50]
 
 The bibtex key the release ships [S3:9–12]:
 
@@ -25,14 +25,14 @@ The bibtex key the release ships [S3:9–12]:
 
 The question is local. Near one point, can a surface carrying a given smooth metric be realized as a smooth surface in ordinary three-dimensional space? The manuscript states the question in coordinates 
 
-> The local isometric realization problem asks whether a Riemannian surface $(\Sigma,g)$ can, near each point, be realized as a smooth surface in Euclidean three-space. In local coordinates this means finding a smooth map $F$ with [S5:56–59]
+> The local isometric realization problem asks whether a Riemannian surface $`(\Sigma,g)`$ can, near each point, be realized as a smooth surface in Euclidean three-space. In local coordinates this means finding a smooth map $`F`$ with [S5:56–59]
 
 The answer given is no. The main result is Theorem A [S5:70–78]:
 
 > \begin{maintheorem}
-> There is a $C^\infty$ positive definite Riemannian metric $g$ on
-> $(-1,1)^2$ such that no open neighborhood $U$ of the origin admits a
-> $C^\infty$ isometric immersion
+> There is a $`C^\infty`$ positive definite Riemannian metric $`g`$ on
+> $`(-1,1)^2`$ such that no open neighborhood $`U`$ of the origin admits a
+> $`C^\infty`$ isometric immersion
 > $$> F:(U,g)\longrightarrow\mathbb R^3.
 >$$
 > In particular, no such neighborhood admits a smooth isometric embedding.
@@ -42,7 +42,7 @@ Two things make the example sharp. First, the metric is not singular at the base
 
 > \begin{corollary}[Euclidean Taylor jet]\label{cor:flat-jet}
 > The metric in Theorem~A can be chosen so that, in the coordinates
-> $X,Y$,
+> $`X,Y`$,
 > $$> \partial^\alpha(g_{ij}-\delta_{ij})(0)=0
 > \qquad
 > \text{for every multi-index }\alpha\in\mathbb N_0^2
@@ -54,7 +54,7 @@ Two things make the example sharp. First, the metric is not singular at the base
 
 Second, the obstruction is not a curvature sign. The construction uses both signs, and the manuscript states plainly that it leaves the sign-restricted versions open 
 
-> In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction $K\ge0$ or $K\le0$. [S5:115–118]
+> In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction $`K\ge0`$ or $`K\le0`$. [S5:115–118]
 
 The proof runs through a scalar equation. Any smooth isometric immersion into three-space has a height function in a fixed ambient direction, and that height must satisfy one second-order relation. The manuscript sets out the two tasks 
 
@@ -64,12 +64,12 @@ So the argument is: find a metric for which the height equation has no solution 
 
 ## Graduate summary
 
-The model geometry is a square with a prescribed curvature profile. The background metric has curvature $\kappa(x^2-h(y))$, where $h$ equals 1 near the center, is positive outside, and vanishes at $y=\pm1$ [S6:8–29]. The perturbation set $\mathcal U$ is the set of smooth symmetric tensors supported in $[-1/10,1/10]^2$ whose resulting metric is positive and strongly negative on $[-1/5,1/5]^2$ [S6:24–43].
+The model geometry is a square with a prescribed curvature profile. The background metric has curvature $`\kappa(x^2-h(y))`$, where $`h`$ equals 1 near the center, is positive outside, and vanishes at $`y=\pm1`$ [S6:8–29]. The perturbation set $`\mathcal U`$ is the set of smooth symmetric tensors supported in $`[-1/10,1/10]^2`$ whose resulting metric is positive and strongly negative on $`[-1/5,1/5]^2`$ [S6:24–43].
 
 An admissible height is the class the obstruction targets [S6:52–57]:
 
 > An \emph{admissible height}
-> for $g$ is a function $z$, smooth on a neighborhood of the closed square $S$, satisfying throughout~$S$
+> for $`g`$ is a function $`z`$, smooth on a neighborhood of the closed square $`S`$, satisfying throughout~$`S`$
 > \begin{equation}\label{eq:admissible}
 > H_{xx}H_{yy}-H_{xy}^2=KE,\qquad
 > E>0,\qquad H_{yy}\ne0,\qquad \abs q\le1/100.
@@ -78,14 +78,14 @@ An admissible height is the class the obstruction targets [S6:52–57]:
 The link from an immersion to that equation is one lemma [S6:62–72]:
 
 > \begin{lemma}[Height equation]\label{lem:height}
-> Let $F$ be a smooth isometric immersion of a surface into $\mathbb R^3$,
-> let $e$ be a fixed ambient unit vector, and set $z=\langle F,e\rangle$.
+> Let $`F`$ be a smooth isometric immersion of a surface into $`\mathbb R^3`$,
+> let $`e`$ be a fixed ambient unit vector, and set $`z=\langle F,e\rangle`$.
 > Then
 > $$> \det(\nabla_g^2z)=K\det(g)(1-\left\lvertdz\right\rvert_g^2).
 >$$
-> If $e$ is normal to the immersed surface at a point $b$, then
-> $dz(b)=0$ and $\nabla_g^2z(b)=\mathrm{II}(b)$, with the choice of unit
-> normal equal to $e$ at $b$.
+> If $`e`$ is normal to the immersed surface at a point $`b`$, then
+> $`dz(b)=0`$ and $`\nabla_g^2z(b)=\mathrm{II}(b)`$, with the choice of unit
+> normal equal to $`e`$ at $`b`$.
 > \end{lemma}
 
 The manuscript is explicit that it uses only the necessary direction 
@@ -95,17 +95,17 @@ The manuscript is explicit that it uses only the necessary direction
 The analytic obstruction is a category statement [S6:86–91]:
 
 > \begin{proposition}[Patch obstruction]\label{prop:patch}
-> The metrics in $\mathcal U$ admitting no admissible height form
-> a residual subset of $\mathcal U$. In particular, for every
-> $C^\infty$ neighborhood of $g_0$ in $\mathcal U$, there is
+> The metrics in $`\mathcal U`$ admitting no admissible height form
+> a residual subset of $`\mathcal U`$. In particular, for every
+> $`C^\infty`$ neighborhood of $`g_0`$ in $`\mathcal U`$, there is
 > a metric in that neighborhood with no admissible height.
 > \end{proposition}
 
 The square-wide quantification is what makes this an obstruction rather than a local existence failure 
 
-> The whole-square requirement is essential. Every curvature zero in $S$ of a metric in $\mathcal U$ is a clean change of sign. Indeed, [S6:93–94]
+> The whole-square requirement is essential. Every curvature zero in $`S`$ of a metric in $`\mathcal U`$ is a clean change of sign. Indeed, [S6:93–94]
 
-Every curvature zero in the square is a clean change of sign, so the pointwise local-existence theorems recalled in the introduction remain compatible with the proposition: they give heights locally, not one height on all of $S$ [S6:93–100].
+Every curvature zero in the square is a clean change of sign, so the pointwise local-existence theorems recalled in the introduction remain compatible with the proposition: they give heights locally, not one height on all of $`S`$ [S6:93–100].
 
 The cap estimate is the analytic core. A cap is a region with three edges in positive curvature and one artificial edge that may cut through negative curvature 
 
@@ -114,16 +114,16 @@ The cap estimate is the analytic core. A cap is a region with three edges in pos
 The proposition itself [S7:41–53]:
 
 > \begin{proposition}[Cap regularity]\label{prop:cap}
-> Fix $-1/4<b_*\le0$, and assume \eqref{eq:low-bounds}.
+> Fix $`-1/4<b_*\le0`$, and assume \eqref{eq:low-bounds}.
 > Suppose that, for every compact rectangle
 > $$> R\Subset(-2,2)\times(-2,b_*),
 >$$
-> the ordinary coordinate derivatives of $g$ of every order have
-> uniform bounds on $\Phi_z(R)$.
-> Then the ordinary coordinate derivatives of $z$ of every order
-> also have uniform bounds on $\Phi_z(R)$.
+> the ordinary coordinate derivatives of $`g`$ of every order have
+> uniform bounds on $`\Phi_z(R)`$.
+> Then the ordinary coordinate derivatives of $`z`$ of every order
+> also have uniform bounds on $`\Phi_z(R)`$.
 > The corresponding assertion holds for the upper cap
-> $(-2,2)\times(-b_*,2)$.
+> $`(-2,2)\times(-b_*,2)`$.
 > \end{proposition}
 
 Two caps supply smooth data on opposite sides of a thin negative-curvature slab; hyperbolic propagation carries that data to the edges of an oscillating perturbation. The strip width is a small parameter times the inverse oscillation frequency, so the forced oscillatory moment is linear in the parameter while the competing spatial terms are quadratic. The manuscript's own summary of the count 
@@ -132,7 +132,7 @@ Two caps supply smooth data on opposite sides of a thin negative-curvature slab;
 
 The closing lines of the pulse section state the category step 
 
-> We have proved that every $\mathcal A_{M,q_0}$ is nowhere dense. Their countable union contains every metric admitting an admissible height. Baire's theorem now proves . [S8:404–406]
+> We have proved that every $`\mathcal A_{M,q_0}`$ is nowhere dense. Their countable union contains every metric admitting an admissible height. Baire's theorem now proves . [S8:404–406]
 
 The geometric step explains why a squarewide obstruction is enough. The boundary-saddle lemma is the load-bearing piece 
 
@@ -149,11 +149,11 @@ The assembly is two levels of accumulation, with summable bounds in each derivat
 
 The final comparison is with the flat metric 
 
-> The Euclidean metric itself admits an isometric immersion into $\mathbb R^3$, whereas the constructed metric does not on any neighborhood of the origin. [S9:286–288]
+> The Euclidean metric itself admits an isometric immersion into $`\mathbb R^3`$, whereas the constructed metric does not on any neighborhood of the origin. [S9:286–288]
 
 The formalization is one declaration. The scope note states what it covers 
 
-> The local isometric-immersion problem asks whether every smooth surface metric can be realized locally in Euclidean three-space. The formalized counterexample is a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into $\mathbb R^3$. The obstruction applies to every smooth candidate map on every such neighborhood. [S11:9]
+> The local isometric-immersion problem asks whether every smooth surface metric can be realized locally in Euclidean three-space. The formalized counterexample is a smooth positive-definite metric on $`(-1,1)^2`$ for which no neighborhood of the origin admits a smooth isometric immersion into $`\mathbb R^3`$. The obstruction applies to every smooth candidate map on every such neighborhood. [S11:9]
 
 The release's index names the paper and the one result [S12:172–175] [S12:1325–1327]:
 
@@ -214,19 +214,19 @@ The ledger records the family as one manuscript at tier T3, formalized, with one
 
 The manuscript places its result inside a literature that had settled the analytic local problem for nondegenerate curvature 
 
-> The analytic local problem is settled by the classical Janet–Cartan theorem . For smooth metrics, nonzero Gaussian curvature leads to elliptic or hyperbolic equations and smooth local existence; zeros of curvature introduce degeneracy and changes of type. Lin's foundational work treated nonnegative curvature and a clean change of sign with finite differentiability estimates . Here a clean change of sign means $K(p)=0$ and $dK(p)\ne0$. Smooth local existence under this condition was established by Nakamura and Maeda ; see also the regularity comparison in \cite[p. 320]NY2008. More complicated zero sets have been treated under finite-order and geometric restrictions, including transverse curves and cusps \cite[Theorem 1.1]HanKhuri2010\cite[Theorem 1.1]Lin2015. [S5:89–101]
+> The analytic local problem is settled by the classical Janet–Cartan theorem . For smooth metrics, nonzero Gaussian curvature leads to elliptic or hyperbolic equations and smooth local existence; zeros of curvature introduce degeneracy and changes of type. Lin's foundational work treated nonnegative curvature and a clean change of sign with finite differentiability estimates . Here a clean change of sign means $`K(p)=0`$ and $`dK(p)\ne0`$. Smooth local existence under this condition was established by Nakamura and Maeda ; see also the regularity comparison in \cite[p. 320]NY2008. More complicated zero sets have been treated under finite-order and geometric restrictions, including transverse curves and cusps \cite[Theorem 1.1]HanKhuri2010\cite[Theorem 1.1]Lin2015. [S5:89–101]
 
 The bibliography carries these entries: Janet 1926 [S10:163–172], Cartan 1927 [S10:174–183], Lin 1985 [S10:1–10], Lin 1986 [S10:12–21], Nakamura–Maeda 1989 [S10:23–32], Han–Khuri 2010 [S10:124–137], and Lin 2015 [S10:139–153]. The two questions the manuscript cites as the source of the problem are Yau's discussion at page 236 [S10:185–195] and Ghomi's survey, Section 1.5, Problem 1.9 [S10:155–161].
 
 The regularity ladder is the part of the history the manuscript is careful about 
 
-> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives $C^1$ local isometric realizations in three-space . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a $C^{2,1}$ metric with no local $C^2$ realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves $K\ge0$ with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction $K\ge0$ or $K\le0$. [S5:103–118]
+> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives $`C^1`$ local isometric realizations in three-space . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a $`C^{2,1}`$ metric with no local $`C^2`$ realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves $`K\ge0`$ with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction $`K\ge0`$ or $`K\le0`$. [S5:103–118]
 
-Pogorelov's example is the nearest predecessor: a $C^{2,1}$ metric with no local $C^2$ realization, cited at paragraph 7 of the 1971 paper [S10:79–89]. The manuscript's result is at the smooth end of that scale.
+Pogorelov's example is the nearest predecessor: a $`C^{2,1}`$ metric with no local $`C^2`$ realization, cited at paragraph 7 of the 1971 paper [S10:79–89]. The manuscript's result is at the smooth end of that scale.
 
 The manuscript records a disagreement in the literature and declines to adjudicate it 
 
-> An earlier preprint of Nadirashvili and Yuan \cite[Theorem 1.1]NY2002 states a stronger counterexample: a smooth metric with $K\le0$ and no $C^3$ isometric embedding on any neighborhood of the distinguished point. Their later published paper, however, explicitly leaves the arbitrary smooth-metric question open \cite[p. 320]NY2008, as does the subsequent discussion in \cite[p. 650]HanKhuri2010. The earlier preprint and these later accounts therefore give different statuses for the unrestricted smooth question. We leave this discrepancy unresolved. We do not use the preprint's nonsolvability assertion; the construction below supplies its own analytic obstruction. [S5:120–131]
+> An earlier preprint of Nadirashvili and Yuan \cite[Theorem 1.1]NY2002 states a stronger counterexample: a smooth metric with $`K\le0`$ and no $`C^3`$ isometric embedding on any neighborhood of the distinguished point. Their later published paper, however, explicitly leaves the arbitrary smooth-metric question open \cite[p. 320]NY2008, as does the subsequent discussion in \cite[p. 650]HanKhuri2010. The earlier preprint and these later accounts therefore give different statuses for the unrestricted smooth question. We leave this discrepancy unresolved. We do not use the preprint's nonsolvability assertion; the construction below supplies its own analytic obstruction. [S5:120–131]
 
 The 2002 preprint is in the bibliography as an arXiv entry [S10:102–111], the 2008 paper as a published article [S10:91–100]. The two analytic debts the manuscript names are the boundary-saddle argument in the 2002 preprint's Section 2, Step 3, and Khuri's high-frequency integral testing for general Monge–Ampère equations, together with Khuri's own open construction of a nonsolvable curvature profile 
 
@@ -234,7 +234,7 @@ The 2002 preprint is in the bibliography as an arXiv entry [S10:102–111], the 
 
 The Khuri entries are the 2007 counterexamples paper [S10:55–64] and the 2009 Darboux paper [S10:113–122].
 
-**Prior (my training data, not this repo).** The local isometric embedding problem for surfaces is classical: the Janet–Cartan theorem gives analytic local realization, and the degenerate cases — where the Gaussian curvature vanishes — are the hard ones. Lin, Nakamura–Maeda, Han–Khuri, and Lin's later work on cusp domains are the standard names for the finite-regularity results, and Pogorelov's example is the standard counterexample at low regularity. Nash's and Kuiper's $C^1$ flexibility sits at the opposite end. The literature I recall treats the smooth, unrestricted case as open, which is consistent with the manuscript's own framing [S5:65–67] and with the discrepancy it records [S5:120–131]. The prior is a training-data recollection at an early-2025 cutoff, self-rated, and the repo supplies only the manuscript's citations.
+**Prior (my training data, not this repo).** The local isometric embedding problem for surfaces is classical: the Janet–Cartan theorem gives analytic local realization, and the degenerate cases — where the Gaussian curvature vanishes — are the hard ones. Lin, Nakamura–Maeda, Han–Khuri, and Lin's later work on cusp domains are the standard names for the finite-regularity results, and Pogorelov's example is the standard counterexample at low regularity. Nash's and Kuiper's $`C^1`$ flexibility sits at the opposite end. The literature I recall treats the smooth, unrestricted case as open, which is consistent with the manuscript's own framing [S5:65–67] and with the discrepancy it records [S5:120–131]. The prior is a training-data recollection at an early-2025 cutoff, self-rated, and the repo supplies only the manuscript's citations.
 
 ## Consequences
 
@@ -242,7 +242,7 @@ The direct consequence is the one the release states: the unrestricted smooth lo
 
 The second consequence is about what smooth data determine. The constructed metric has the Euclidean Taylor jet at the origin, so the full jet at a point does not decide local smooth realizability [S9:250–261]. A negative answer at that level is stronger than a singularity example: the metric is flat to every order at the point where the obstruction is located.
 
-The third is what the result does not settle. The construction uses both signs of curvature, so the sign-restricted problems ($K\ge0$ and $K\le0$) remain open, as the manuscript states [S5:115–118]. The manuscript also declines to use the 2002 preprint's stronger assertion, so the $K\le0$ smooth case is not resolved by this paper [S5:130–131].
+The third is what the result does not settle. The construction uses both signs of curvature, so the sign-restricted problems ($`K\ge0`$ and $`K\le0`$) remain open, as the manuscript states [S5:115–118]. The manuscript also declines to use the 2002 preprint's stronger assertion, so the $`K\le0`$ smooth case is not resolved by this paper [S5:130–131].
 
 Inside the release, the formalization is one declaration, `OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion`, over one file [S12:1325–1327] [S15:49–61]. The comparator challenge for the family is a stub with one `sorry` [S14:46–56], and the release's review status for the formalization is `unchecked`. The scope note describes the formalized counterexample as the metric and the obstruction over every neighborhood of the origin [S11:9]; the Darboux lemma, the cap estimate, the Baire argument, the boundary-saddle lemma, and the accumulation construction are not formalized, and the scope note names no exclusion. The manuscript ships no verification bundle, no reasoning trace, and no second manuscript [S16:330].
 
@@ -273,18 +273,18 @@ What has not been checked: no Lean or comparator run was performed, so nothing h
 
 - Cartan, Élie, Sur la possibilité de plonger un espace riemannien donné dans un espace euclidien (1927)
 - Ghomi, Mohammad, Open problems in geometry of curves and surfaces (2019)
-- Han, Qing, Khuri, Marcus, On the local isometric embedding in $\mathbb{R}^3$ of surfaces with Gaussian curvature of mixed sign (2010)
+- Han, Qing, Khuri, Marcus, On the local isometric embedding in $`\mathbb{R}^3`$ of surfaces with Gaussian curvature of mixed sign (2010)
 - Janet, Maurice, Sur la possibilité de plonger un espace riemannien donné dans un espace euclidien (1926)
 - Khuri, Marcus A., Counterexamples to the Local Solvability of {Monge–Amp\`ere} Equations in the Plane (2007)
 - Khuri, Marcus A., On the local solvability of Darboux's equation (2009)
-- Kuiper, Nicolaas H., On $C^1$-isometric imbeddings. I (1955)
-- Lin, Chang-Shou, The local isometric embedding in $\mathbb{R}^3$ of 2-dimensional Riemannian manifolds with nonnegative curvature (1985)
-- Lin, Chang-Shou, The local isometric embedding in $\mathbb{R}^3$ of two-dimensional Riemannian manifolds with Gaussian curvature changing sign cleanly (1986)
-- Lin, Tsung-Yin, On the local isometric embedding in $\mathbb{R}^3$ of surfaces with zero sets of Gaussian curvature forming cusp domains (2016)
+- Kuiper, Nicolaas H., On $`C^1`$-isometric imbeddings. I (1955)
+- Lin, Chang-Shou, The local isometric embedding in $`\mathbb{R}^3`$ of 2-dimensional Riemannian manifolds with nonnegative curvature (1985)
+- Lin, Chang-Shou, The local isometric embedding in $`\mathbb{R}^3`$ of two-dimensional Riemannian manifolds with Gaussian curvature changing sign cleanly (1986)
+- Lin, Tsung-Yin, On the local isometric embedding in $`\mathbb{R}^3`$ of surfaces with zero sets of Gaussian curvature forming cusp domains (2016)
 - Nadirashvili, Nikolai, Yuan, Yu, Improving Pogorelov's isometric embedding counterexample (2008)
 - Nadirashvili, Nikolai, Yuan, Yu, Counterexamples for Local Isometric Embedding (2002)
 - Nakamura, Gen, Maeda, Yoshiaki, Local smooth isometric embeddings of low-dimensional Riemannian manifolds into Euclidean spaces (1989)
-- Nash, John, $C^1$ isometric imbeddings (1954)
-- Pogorelov, A. V., An example of a two-dimensional Riemannian metric admitting no local realization in $E^3$ (1971)
+- Nash, John, $`C^1`$ isometric imbeddings (1954)
+- Pogorelov, A. V., An example of a two-dimensional Riemannian metric admitting no local realization in $`E^3`$ (1971)
 - Schoen, Richard, Yau, Shing-Tung, Lectures on Differential Geometry (1994)
 - Yau, Shing-Tung, Review of geometry and analysis (2000)

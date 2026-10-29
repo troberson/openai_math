@@ -8,35 +8,35 @@
 
 The release's blurb [S1:4959] and the catalog abstract [S2:515]
 state the family's claim: three results in statistical
-mechanics of planar $O(n)$ spin models. First, the
+mechanics of planar $`O(n)`$ spin models. First, the
 canonical massive continuum limit of the
-two-dimensional nearest-neighbor $O(3)$ model is a
+two-dimensional nearest-neighbor $`O(3)`$ model is a
 non-Gaussian local relativistic theory with a unique
 vacuum and a positive mass gap. Second, for the
-square-lattice $O(4)$ model, the exact leading
+square-lattice $`O(4)`$ model, the exact leading
 asymptotic of the full transfer gap is
-$m_{\mathrm{lat}}(\beta) \sim 32 e^{\pi/4 - 1/2}
-\sqrt{\beta} \, e^{-\pi \beta}$. Third,
+$`m_{\mathrm{lat}}(\beta) \sim 32 e^{\pi/4 - 1/2}
+\sqrt{\beta} \, e^{-\pi \beta}`$. Third,
 exponential spin-correlation decay holds for
-two-dimensional nearest-neighbor $O(n)$ models with
-$n \geq 3$ at every positive temperature. The
+two-dimensional nearest-neighbor $`O(n)`$ models with
+$`n \geq 3`$ at every positive temperature. The
 family ships five manuscripts [S1:4959]:
 
 - *The canonical massive continuum limit of the
-  two-dimensional $O(3)$ model* [S3:43, S3:45]
+  two-dimensional $`O(3)`$ model* [S3:43, S3:45]
 - *An isolated particle pole for the two-dimensional
-  $O(3)$ spin field* [S4:4, S4:6]
+  $`O(3)`$ spin field* [S4:4, S4:6]
 - *Exact mass asymptotics for the two-dimensional
-  $O(4)$ lattice model* [S5:54, S5:56]
-- *Sharp mass bounds for the two-dimensional $O(4)$
+  $`O(4)`$ lattice model* [S5:54, S5:56]
+- *Sharp mass bounds for the two-dimensional $`O(4)`$
   model* [S6:40, S6:42]
 - *Exponential decay in two-dimensional classical
-  $O(n)$ models* [S7:35, S7:37]
+  $`O(n)`$ models* [S7:35, S7:37]
 
-The $O(3)$ continuum-limit abstract 
+The $`O(3)`$ continuum-limit abstract 
 
 > We construct a canonical interacting massive continuum limit of the
-two-dimensional nearest-neighbor $O(3)$ model with unit-length spins,
+two-dimensional nearest-neighbor $`O(3)`$ model with unit-length spins,
 no external field, and no topological term. Normalized by susceptibility
 and second-moment correlation length, the limit exists as the bare coupling
 tends to infinity through all positive real values, without selecting
@@ -45,19 +45,19 @@ and have a nonzero connected four-point correlation on separated time
 supports. Their reconstructed theory has a unique vacuum, a nonzero vacuum
 complement, and a positive Hamiltonian gap on that entire complement. [S3:49–57]
 
-The $O(4)$ exact-mass abstract 
+The $`O(4)`$ exact-mass abstract 
 
-> For the nearest-neighbor $O(4)$ model on the square lattice at inverse
-temperature $\beta$, we prove the exact low-temperature asymptotic
+> For the nearest-neighbor $`O(4)`$ model on the square lattice at inverse
+temperature $`\beta`$, we prove the exact low-temperature asymptotic
 $$m_{\mathrm{lat}}(\beta)\sim
  32\exp(\pi/4-1/2)\sqrt\beta\,\exp(-\pi\beta)
  \qquad (\beta\to\infty).$$
 Here the mass is the gap of the full Osterwalder–Schrader transfer operator, [S5:60–67]
 
-The $O(n)$ exponential-decay abstract 
+The $`O(n)`$ exponential-decay abstract 
 
 > We prove exponential decay of two-point correlations for the classical
-nearest-neighbor $O(n)$ model on the square lattice, for every $n\ge3$
+nearest-neighbor $`O(n)`$ model on the square lattice, for every $`n\ge3`$
 and every finite positive inverse temperature. The estimate is uniform over
 finite free-boundary subgraphs and bounded nonnegative edge strengths. This
 resolves positively the all-temperature exponential spin-decay conjecture
@@ -66,27 +66,27 @@ for these models. [S7:42–47]
 ## Undergraduate summary
 
 **Spin models** describe magnetism on a lattice. Each
-site carries a unit vector (spin) in $n$-dimensional
+site carries a unit vector (spin) in $`n`$-dimensional
 space; neighboring spins prefer to align. The **mass**
 (measure of how fast correlations fall off with
 distance) is positive when the model is in a
 "massive" phase: correlations decay exponentially.
 The **continuum limit** describes the large-scale
 behavior as a field theory. The family proves: the
-$O(3)$ model's continuum limit is a *particle* theory
+$`O(3)`$ model's continuum limit is a *particle* theory
 (not free Gaussian) with a definite mass
-[S3:49–57]; the $O(4)$ mass has an exact
-formula [S5:60–67]; and for all $n \geq 3$,
+[S3:49–57]; the $`O(4)`$ mass has an exact
+formula [S5:60–67]; and for all $`n \geq 3`$,
 correlations always decay exponentially at every
 temperature [S7:42–47, S2:515].
 
 ## Graduate summary
 
-**The $O(3)$ massive continuum limit**
+**The $`O(3)`$ massive continuum limit**
 [S3:49–57, S4:10–14, S2:515]. As the
 bare coupling tends to infinity, the
 susceptibility-normalized and
-correlation-length-normalized $O(3)$ model
+correlation-length-normalized $`O(3)`$ model
 converges to a non-Gaussian local relativistic field
 theory satisfying the Osterwalder–Schrader
 axioms. The theory has a unique vacuum, a
@@ -95,86 +95,86 @@ Hamiltonian gap. The vector two-point spectral
 measure has a positive atom at the lowest mass,
 separated by a gap from the rest of the spectrum.
 
-**The $O(4)$ exact mass asymptotics**
+**The $`O(4)`$ exact mass asymptotics**
 [S5:60–67, S6:46–55, S2:515]. For the
-nearest-neighbor $O(4)$ model at inverse
-temperature $\beta$, the full transfer operator
+nearest-neighbor $`O(4)`$ model at inverse
+temperature $`\beta`$, the full transfer operator
 gap satisfies
-$m_{\mathrm{lat}}(\beta) \sim 32 e^{\pi/4 - 1/2}
-\sqrt{\beta} \, e^{-\pi \beta}$ as
-$\beta \to \infty$. Sharp upper and lower bounds
-by positive multiples of $\sqrt{\beta}\,
-e^{-\pi \beta}$ are also proved, along with a
+$`m_{\mathrm{lat}}(\beta) \sim 32 e^{\pi/4 - 1/2}
+\sqrt{\beta} \, e^{-\pi \beta}`$ as
+$`\beta \to \infty`$. Sharp upper and lower bounds
+by positive multiples of $`\sqrt{\beta}\,
+e^{-\pi \beta}`$ are also proved, along with a
 unique periodic local limit and a positive full
-gap at every finite $\beta > 0$.
+gap at every finite $`\beta > 0`$.
 
-**The $O(n)$ exponential decay** [S7:42–47,
-S2:515]. For the classical nearest-neighbor $O(n)$
-model on the square lattice, $n \geq 3$,
+**The $`O(n)`$ exponential decay** [S7:42–47,
+S2:515]. For the classical nearest-neighbor $`O(n)`$
+model on the square lattice, $`n \geq 3`$,
 two-point spin correlations decay exponentially
 at every positive inverse temperature. The estimate
 is uniform over finite free-boundary subgraphs and
 bounded nonnegative edge strengths.
 
 **The scope of the formalization.** The scope note
-covers the $O(n)$ exponential decay [S8:9]: for
-each interaction bound $\beta > 0$, constants
-$A$ and $m > 0$ work for every finite
+covers the $`O(n)`$ exponential decay [S8:9]: for
+each interaction bound $`\beta > 0`$, constants
+$`A`$ and $`m > 0`$ work for every finite
 square-lattice subgraph: the correlation between
-sites $x, y$ is at most $A e^{-m|x-y|}$. The
-infinite-volume limit and the separate $O(4)$
+sites $`x, y`$ is at most $`A e^{-m|x-y|}`$. The
+infinite-volume limit and the separate $`O(4)`$
 spectral-gap claim are not included [S8:9]. The
 scope note names one comparator [S8:15]:
 `ClassicalON.lean`.
 
 ## History of the conjecture
 
-**The $O(n)$ models** are classical spin models
+**The $`O(n)`$ models** are classical spin models
 studied since the 1960s. The **mass** (correlation
 length inverse) measures the rate of exponential
 correlation decay. The **continuum limit** problem
 asks: does the lattice model converge, at criticality
 or in the massive regime, to a universal field
-theory? For $O(2)$ (the XY model) and $O(1)$ (the
+theory? For $`O(2)`$ (the XY model) and $`O(1)`$ (the
 Ising model) the answer is classical. The
-**$O(3)$ massive continuum limit** is a new result:
+**$`O(3)`$ massive continuum limit** is a new result:
 the limit is non-Gaussian, has a particle
 interpretation (an isolated pole in the spectral
 measure), and satisfies the axioms of local
 relativistic QFT [S3:49–57,
-S4:10–14]. The **$O(4)$ exact asymptotic**
+S4:10–14]. The **$`O(4)`$ exact asymptotic**
 involves the transfer operator gap, a quantity
 that controls the spectral properties of the
 lattice model [S5:60–67,
 S6:46–55]. The **all-temperature
-exponential decay** for $n \geq 3$ resolves a
+exponential decay** for $`n \geq 3`$ resolves a
 conjecture that the correlation length is finite
 at every temperature [S7:42–47, S2:515].
 
 **Prior (my training data, not this repo).** I know
-the $O(n)$ models as classical spin models, the
+the $`O(n)`$ models as classical spin models, the
 Ising and XY special cases, and the general
 framework of mass and continuum limits. The
-**$O(3)$ non-Gaussian continuum limit**, the
-**isolated particle pole**, the **$O(4)$ exact mass
+**$`O(3)`$ non-Gaussian continuum limit**, the
+**isolated particle pole**, the **$`O(4)`$ exact mass
 formula**, and the **all-temperature exponential
-decay for $n \geq 3$** are results I cannot
+decay for $`n \geq 3`$** are results I cannot
 independently verify from training alone.
 
 ## Consequences
 
-**The $O(3)$ model has a well-defined massive
+**The $`O(3)`$ model has a well-defined massive
 continuum limit** that is a non-Gaussian local
 relativistic QFT with a unique vacuum and positive
 mass gap [S3:49–57, S2:515].
 
-**The $O(4)$ transfer gap has an exact leading
-asymptotic**: $m_{\mathrm{lat}}(\beta) \sim
+**The $`O(4)`$ transfer gap has an exact leading
+asymptotic**: $`m_{\mathrm{lat}}(\beta) \sim
 32 e^{\pi/4 - 1/2} \sqrt{\beta} \, e^{-\pi
-\beta}$ [S5:60–67, S2:515].
+\beta}`$ [S5:60–67, S2:515].
 
 **Exponential spin-correlation decay holds for all
-$O(n)$ models with $n \geq 3$** at every positive
+$`O(n)`$ models with $`n \geq 3`$** at every positive
 temperature [S7:42–47, S2:515].
 
 ## Section skeleton
@@ -191,14 +191,14 @@ no `verification/` bundle.
 
 **Scope note** [S8:9]. The scope note covers the
 exponential decay of spin correlations for the
-two-dimensional classical $O(n)$ model at every
-temperature when $n \geq 3$ [S8:9]. For each
-interaction bound $\beta > 0$, constants $A$ and
-$m > 0$ work for every finite square-lattice
+two-dimensional classical $`O(n)`$ model at every
+temperature when $`n \geq 3`$ [S8:9]. For each
+interaction bound $`\beta > 0`$, constants $`A`$ and
+$`m > 0`$ work for every finite square-lattice
 subgraph with free boundary and nonnegative edge
-strengths at most $\beta$: the correlation
-between sites $x, y$ is at most $A e^{-m|x-y|}$.
-The infinite-volume limit and the separate $O(4)$
+strengths at most $`\beta`$: the correlation
+between sites $`x, y`$ is at most $`A e^{-m|x-y|}`$.
+The infinite-volume limit and the separate $`O(4)`$
 spectral-gap claim are not included [S8:9]. The
 scope note names one comparator [S8:15]:
 `ClassicalON.lean`.

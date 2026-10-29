@@ -9,7 +9,7 @@
 The release's blurb [S1:3632] and the catalog abstract [S2:385] state
 the family's claim: a zero-entropy ergodic invertible transformation of
 a standard nonatomic probability space is not measurably conjugate to
-any $C^\infty$ diffeomorphism preserving a strictly positive smooth
+any $`C^\infty`$ diffeomorphism preserving a strictly positive smooth
 probability density on a compact finite-dimensional manifold. One
 example rules out every finite dimension. The manuscript's abstract
 
@@ -17,7 +17,7 @@ example rules out every finite dimension. The manuscript's abstract
 > We construct an ergodic invertible transformation of a standard nonatomic
 probability space with zero Kolmogorov–Sinai entropy that has no smooth
 positive-volume model. More precisely, it is not measurably conjugate to any
-$C^\infty$ diffeomorphism preserving a strictly positive smooth probability
+$`C^\infty`$ diffeomorphism preserving a strictly positive smooth probability
 density on a compact finite-dimensional manifold. A single example excludes
 every finite dimension, including models on nonorientable manifolds and
 manifolds with smooth boundary. [S3:9–15]
@@ -25,14 +25,14 @@ manifolds with smooth boundary. [S3:9–15]
 ## Undergraduate summary
 
 A *measure-preserving system* is a probability space with a measure-
-preserving map $T$; its *entropy* (the Kolmogorov–Sinai entropy)
+preserving map $`T`$; its *entropy* (the Kolmogorov–Sinai entropy)
 measures how quickly the system generates new information. A system
 with *zero entropy* is the least chaotic kind — for instance, an
 irrational rotation of the circle. A *smooth positive-volume model* of
-such a system is a representation of it as a $C^\infty$
-diffeomorphism of a compact smooth manifold $M$ that preserves some
+such a system is a representation of it as a $`C^\infty`$
+diffeomorphism of a compact smooth manifold $`M`$ that preserves some
 strictly positive smooth probability density (not just the Lebesgue
-measure, some smooth weight that is everywhere $>0$). The question is:
+measure, some smooth weight that is everywhere $`>0`$). The question is:
 can every zero-entropy system be modelled in this geometric language?
 This manuscript shows the answer is **no**: it builds one zero-entropy
 ergodic system that has no such model in **any** finite dimension
@@ -41,10 +41,10 @@ ergodic system that has no such model in **any** finite dimension
 ## Graduate summary
 
 **The obstruction (zero entropy, no smooth model)** [S3:9–15,
-S4:9]. There is an ergodic invertible transformation $T$ of a standard
-nonatomic probability space $(X,\mathcal B,\mu)$ with zero
-Kolmogorov–Sinai entropy, such that $T$ is not measurably
-conjugate (modulo null sets) to any $C^\infty$ diffeomorphism of a
+S4:9]. There is an ergodic invertible transformation $`T`$ of a standard
+nonatomic probability space $`(X,\mathcal B,\mu)`$ with zero
+Kolmogorov–Sinai entropy, such that $`T`$ is not measurably
+conjugate (modulo null sets) to any $`C^\infty`$ diffeomorphism of a
 compact finite-dimensional manifold preserving a strictly positive
 smooth probability density. The obstruction is dimension-agnostic: the
 same single example rules out models in every finite dimension,
@@ -63,11 +63,11 @@ the zero-entropy one.
 
 **The comparison notion.** "Smooth positive-volume model" means
 measurable conjugacy after discarding null sets: the system
-$(X,\mathcal B,\mu,T)$ is conjugate to
-$(M,\mathcal B_M,\nu,f)$ if there is a measurable
-$\varphi:X\to M$ with $\varphi\circ T=f\circ\varphi$ almost
-everywhere and $\varphi_\\#\mu=\nu$, where $f$ is a $C^\infty$
-diffeomorphism and $\nu$ a strictly positive smooth probability
+$`(X,\mathcal B,\mu,T)`$ is conjugate to
+$`(M,\mathcal B_M,\nu,f)`$ if there is a measurable
+$`\varphi:X\to M`$ with $`\varphi\circ T=f\circ\varphi`$ almost
+everywhere and $`\varphi_\\#\mu=\nu`$, where $`f`$ is a $`C^\infty`$
+diffeomorphism and $`\nu`$ a strictly positive smooth probability
 density [S5:70–89].
 
 ## History of the conjecture

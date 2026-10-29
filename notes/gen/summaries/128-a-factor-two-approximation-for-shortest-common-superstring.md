@@ -37,34 +37,34 @@ had a larger ratio [S4:13].
 
 **Main theorem** ([S4:5–10], `thm:main`). "There is a deterministic
 algorithm, polynomial in the total encoded input size, that on every finite
-collection $\mathcal S$ of explicitly represented ordinary strings outputs
-a common superstring $T$ satisfying $|T|\le 2\mathrm{OPT}(\mathcal S)$"
+collection $`\mathcal S`$ of explicitly represented ordinary strings outputs
+a common superstring $`T`$ satisfying $`|T|\le 2\mathrm{OPT}(\mathcal S)`$"
 [S4:5–10]. The ratio is measured in symbols; the running time is
 measured in bits of the explicitly encoded input, so the two measures are
 deliberately distinguished [S4:3].
 
 **Proof method.** The proof constructs integer counts on all substrings of
-the inputs. The one-letter sum of these counts is a lower bound $W$ on the
-optimum. The counts determine a balanced multigraph of cost $W$. Decomposing
-the graph into closed walks and assigning a layer budget of $p$ to each
-layer of period $p$ (total budget $W$), the connection procedure joins all
-layers at additional cost at most $W$, giving the factor-2 bound [S4:13].
+the inputs. The one-letter sum of these counts is a lower bound $`W`$ on the
+optimum. The counts determine a balanced multigraph of cost $`W`$. Decomposing
+the graph into closed walks and assigning a layer budget of $`p`$ to each
+layer of period $`p`$ (total budget $`W`$), the connection procedure joins all
+layers at additional cost at most $`W`$, giving the factor-2 bound [S4:13].
 
 **Not the Greedy procedure.** The guarantee applies to the algorithm
 constructed in the paper, not to the classical maximum-overlap Greedy
 procedure [S3:45–46]. A September 2026 preprint of Shibata reports a
 counterexample to the Greedy conjecture with worst-case ratio at least
-$9/4$ [S4:13].
+$`9/4`$ [S4:13].
 
 ## History of the conjecture
 
 **Tarhio and Ukkonen** proposed the factor-2 conjecture for the
 maximum-overlap Greedy procedure in 1988. **Blum, Jiang, Li, Tromp, and
-Yannakakis** established a polynomial-time $3$-approximation; **Sweedyk**
-later obtained a $5/2$ guarantee. **Mucha** obtained $2+11/23$, and
+Yannakakis** established a polynomial-time $`3`$-approximation; **Sweedyk**
+later obtained a $`5/2`$ guarantee. **Mucha** obtained $`2+11/23`$, and
 **Englert, Matsakis, and Veselý** obtained
-$(14+\sqrt{67})/9 < 2.466$. An August 2026 preprint of **Chukhin,
-Kulikov, Mihajlin, and Smal** reports a $7/3$-approximation
+$`(14+\sqrt{67})/9 < 2.466`$. An August 2026 preprint of **Chukhin,
+Kulikov, Mihajlin, and Smal** reports a $`7/3`$-approximation
 [S4:13]. The theorem here answers affirmatively the question of whether
 a polynomial-time factor-2 approximation exists.
 
@@ -76,7 +76,7 @@ is a closed walk on the all-substrings graph [S4:13].
 superstring problem is a classical NP-hard problem in string algorithms.
 The factor-2 barrier had resisted all polynomial-time approaches for
 decades; the best known approximation before this work was in the
-$2.466$ range. A deterministic factor-2 approximation is a major
+$`2.466`$ range. A deterministic factor-2 approximation is a major
 breakthrough. I cannot confirm the specific prior results independently;
 the release ships the manuscript as proof.
 
@@ -93,7 +93,7 @@ the release ships the manuscript as proof.
   does not transfer to the Greedy procedure or any other prescribed
   algorithm [S3:45–46].
 - **The proof is via the hierarchical graph.** The lower bound is the
-  one-letter count sum $W$; the upper bound is $2W$ through the
+  one-letter count sum $`W`$; the upper bound is $`2W`$ through the
   layer-budget connection procedure [S4:13].
 
 ## Section skeleton
@@ -133,10 +133,10 @@ apparatus: `Symbol`, `Word`, `Instance` abbreviations, `encodeList` /
 `encodeSymbol` / `encodeWord` / `encodeInstance`, `IsCommonSuperstring`,
 `opt`, `HasPolynomialImplementation`, and the statement
 
-- `main` [S7:36–38] — there exists a function $f$ from instances to words
-  such that: (i) $f$ has a polynomial-time finite-stack-machine
-  implementation in the encoded input, and (ii) for every instance $S$,
-  $f(S)$ is a common superstring of $S$ with
+- `main` [S7:36–38] — there exists a function $`f`$ from instances to words
+  such that: (i) $`f`$ has a polynomial-time finite-stack-machine
+  implementation in the encoded input, and (ii) for every instance $`S`$,
+  $`f(S)`$ is a common superstring of $`S`$ with
   `length ≤ 2 * opt S`; `sorry` at [S7:39].
 
 The comparator still carries a `sorry`, but the declaration

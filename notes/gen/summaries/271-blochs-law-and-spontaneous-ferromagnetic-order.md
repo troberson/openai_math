@@ -30,9 +30,9 @@ Manuscript A fixes the observable before it fixes the asymptotics. Its magnetiza
 >  \qquad m_{S,J}(\beta)=\partial_h^+p_\beta(0).
 >  \label{eq:pressure-magnetization}
 > \end{equation}
-> The finite-range pressure limit exists and is convex and $S$-Lipschitz;
-> Section~\ref{sec:pressure} recalls the proof. Rotation by $\pi$ about
-> the $x$-axis makes the pressure even, so $m_{S,J}(\beta)\in[0,S]$.
+> The finite-range pressure limit exists and is convex and $`S`$-Lipschitz;
+> Section~\ref{sec:pressure} recalls the proof. Rotation by $`\pi`$ about
+> the $`x`$-axis makes the pressure even, so $`m_{S,J}(\beta)\in[0,S]`$.
 > The derivative selects the magnetization in a field tending to zero
 > through positive values after the thermodynamic limit.
 
@@ -40,7 +40,7 @@ The theorem is then a sharp limit at fixed spin and fixed interaction [S4:68–7
 
 > \begin{theorem}[Bloch's law]
 > \label{thm:main}
-> For every fixed $S\in\{\tfrac12,1,\tfrac32,\ldots\}$ and every
+> For every fixed $`S\in\{\tfrac12,1,\tfrac32,\ldots\}`$ and every
 > interaction satisfying \eqref{eq:interaction},
 > \begin{equation}
 >  \lim_{\beta\to\infty}\beta^{3/2}\bigl(S-m_{S,J}(\beta)\bigr)
@@ -49,21 +49,21 @@ The theorem is then a sharp limit at fixed spin and fixed interaction [S4:68–7
 > \end{equation}
 > \end{theorem}
 
-The determinant of *D*_(S,J) is the whole content of the coefficient, so the theorem covers spatially anisotropic finite-range couplings, and the nearest-neighbour case is the specialization *D*_(S,J) = *SI*. The paper is explicit that the ordering of limits is part of the claim: "The order of limits is part of the assertion: first volume tends to infinity at fixed $\beta,h$, then $h\downarrow0$, and finally $\beta\to\infty$, with $S,J$ fixed. [S4:81–83]" It is also explicit about why the existing free-energy results do not already give this: "A zero-field free-energy estimate does not by itself control the one-sided field derivative that defines spontaneous magnetization. [S4:120–122]" The coefficient itself comes from the ideal walk on the full bond set, whose heat kernel satisfies "The ideal walk has site jump rates $SJ(z)$, and its heat kernel $p_t^{S,J}$ satisfies [S4:167–168]" a *t*^(-3/2) decay with constant κ = (4π)^(-3/2)(det *D*_(S,J))^(-1/2), and the paper adds that "the full jump kernel determines this coefficient. [S4:178–179]" [S4:167–179] The field is handled as a mixture of extra pins, whose selection probability is bounded, so that at fixed β the relevant neighbourhood is pin-free with probability tending to one as *h* ↓ 0 [S4:203–206].
+The determinant of *D*_(S,J) is the whole content of the coefficient, so the theorem covers spatially anisotropic finite-range couplings, and the nearest-neighbour case is the specialization *D*_(S,J) = *SI*. The paper is explicit that the ordering of limits is part of the claim: "The order of limits is part of the assertion: first volume tends to infinity at fixed $`\beta,h`$, then $`h\downarrow0`$, and finally $`\beta\to\infty`$, with $`S,J`$ fixed. [S4:81–83]" It is also explicit about why the existing free-energy results do not already give this: "A zero-field free-energy estimate does not by itself control the one-sided field derivative that defines spontaneous magnetization. [S4:120–122]" The coefficient itself comes from the ideal walk on the full bond set, whose heat kernel satisfies "The ideal walk has site jump rates $`SJ(z)`$, and its heat kernel $`p_t^{S,J}`$ satisfies [S4:167–168]" a *t*^(-3/2) decay with constant κ = (4π)^(-3/2)(det *D*_(S,J))^(-1/2), and the paper adds that "the full jump kernel determines this coefficient. [S4:178–179]" [S4:167–179] The field is handled as a mixture of extra pins, whose selection probability is bounded, so that at fixed β the relevant neighbourhood is pin-free with probability tending to one as *h* ↓ 0 [S4:203–206].
 
 Manuscript B is the lattice correction: it compares the true deficit with the full ideal-magnon density built from the lattice dispersion, not with its continuum approximation [S15:45–63]:
 
 > \begin{theorem}\label{thm:main}
-> For every fixed $S\in\{\tfrac12,1,\tfrac32,\ldots\}$,
+> For every fixed $`S\in\{\tfrac12,1,\tfrac32,\ldots\}`$,
 > $$>  \lim_{\beta\to\infty}(\beta S)^{5/2}
 >        \bigl[S-m_S(\beta)-n_S^{\mathrm{sw}}(\beta)\bigr]=0.
 >$$
 > \end{theorem}
 >
 > Expanding the lattice heat kernel gives the following explicit form.
-> Here $\zeta$ denotes the Riemann zeta function.
+> Here $`\zeta`$ denotes the Riemann zeta function.
 > \begin{corollary}\label{cor:expansion}
-> For every fixed positive half-integer $S$,
+> For every fixed positive half-integer $`S`$,
 > $$>  S-m_S(\beta)
 >  =\frac{\zeta(3/2)}{8\pi^{3/2}}(\beta S)^{-3/2}
 >   +\frac{3\zeta(5/2)}{128\pi^{3/2}}(\beta S)^{-5/2}
@@ -71,13 +71,13 @@ Manuscript B is the lattice correction: it compares the true deficit with the fu
 >$$
 > \end{corollary}
 
-The mechanism that keeps the subleading term is a capacity criterion stated in finite dimensions: "It applies to nonselfadjoint contraction kernels, so no reversibility of the exposed environment is needed. [S15:138–139]" and, because the trial potential sums returns over all positive periods, "the capacity comparison therefore retains the full Bose sum. [S15:140–141]" [S15:138–141] Its magnetization definition is the same one-sided derivative, and it says so: "Thus the volume limit precedes the zero-field limit in the definition of $m_S$. [S15:33–34]" 
+The mechanism that keeps the subleading term is a capacity criterion stated in finite dimensions: "It applies to nonselfadjoint contraction kernels, so no reversibility of the exposed environment is needed. [S15:138–139]" and, because the trial potential sums returns over all positive periods, "the capacity comparison therefore retains the full Bose sum. [S15:140–141]" [S15:138–141] Its magnetization definition is the same one-sided derivative, and it says so: "Thus the volume limit precedes the zero-field limit in the definition of $`m_S`$. [S15:33–34]" 
 
 Manuscript C is the strongest of the three October-5 results in the sense that it identifies a distribution rather than a number [S30:45–64]:
 
 > \begin{theorem}[Spherical magnetization law]\label{thm:main}
-> For each fixed $S$ there is a finite $\beta_0(S)$ such that, for every
-> fixed finite $\beta\ge\beta_0(S)$, one has $m=m_{S,\beta}>0$ and
+> For each fixed $`S`$ there is a finite $`\beta_0(S)`$ such that, for every
+> fixed finite $`\beta\ge\beta_0(S)`$, one has $`m=m_{S,\beta}>0`$ and
 > \begin{equation}\label{eq:spherical-law}
 >  \lim_{\substack{L\to\infty\\L\text{ even}}}
 >   \left\langle
@@ -87,8 +87,8 @@ Manuscript C is the strongest of the three October-5 results in the sense that i
 >    =\frac{\sinh(m|t|)}{m|t|}
 >  \qquad(t\in\R^3).
 > \end{equation}
-> Here $\sigma$ is surface-area measure on $\mathbb S^2$, and the quotient
-> at $t=0$ is interpreted as $1$. In addition,
+> Here $`\sigma`$ is surface-area measure on $`\mathbb S^2`$, and the quotient
+> at $`t=0`$ is interpreted as $`1`$. In addition,
 > \begin{equation}\label{eq:second-moment-law}
 >  \lim_{\substack{L\to\infty\\L\text{ even}}}
 >    \frac1{V^2}\sum_{x,y\in\Lambda_L}
@@ -96,26 +96,26 @@ Manuscript C is the strongest of the three October-5 results in the sense that i
 > \end{equation}
 > \end{theorem}
 
-The test functions are self-adjoint linear combinations of the three spin components, so the statement is about a law of a noncommuting triple without measuring it jointly: "The statement uses self-adjoint linear combinations of the spin components. It requires no joint finite-volume measurement of these noncommuting operators. [S30:66–68]" Its lower bound rests on two facts, "Two facts produce the lower bound. [S30:142]" — local squared magnetization is controlled by the global squared magnetization, and "every translation-ergodic equilibrium state has magnetization vector of length $m$. [S30:146–147]" [S30:142–147] The pressure step represents the perturbations as products of matrices on the 2*S* slots and uses that "For every realization, $Z(z)$ is nonzero on $\mathrm{Re} z>0$. [S30:193–194]" 
+The test functions are self-adjoint linear combinations of the three spin components, so the statement is about a law of a noncommuting triple without measuring it jointly: "The statement uses self-adjoint linear combinations of the spin components. It requires no joint finite-volume measurement of these noncommuting operators. [S30:66–68]" Its lower bound rests on two facts, "Two facts produce the lower bound. [S30:142]" — local squared magnetization is controlled by the global squared magnetization, and "every translation-ergodic equilibrium state has magnetization vector of length $`m`$. [S30:146–147]" [S30:142–147] The pressure step represents the perturbations as products of matrices on the 2*S* slots and uses that "For every realization, $`Z(z)`$ is nonzero on $`\mathrm{Re} z>0`$. [S30:193–194]" 
 
 The root paper's claim is the ordering statement itself [S44:64–73]:
 
 > \begin{theorem}\label{thm:main}
-> For every integer $d\geq3$ and every
-> $S\in\{\frac12,1,\frac32,\ldots\}$, there is a finite
-> $\beta_0(d,S)>0$ such that, for every finite $\beta\geq\beta_0(d,S)$,
+> For every integer $`d\geq3`$ and every
+> $`S\in\{\frac12,1,\frac32,\ldots\}`$, there is a finite
+> $`\beta_0(d,S)>0`$ such that, for every finite $`\beta\geq\beta_0(d,S)`$,
 > the dynamics associated with \eqref{eq:hamiltonian} has a
-> translation-invariant $\beta$-KMS state $\omega$ satisfying
+> translation-invariant $`\beta`$-KMS state $`\omega`$ satisfying
 > $$>                          \omega(S_0^z)\ge S/4.
 >$$
 > \end{theorem}
 
-The bound is a property of the selected state, not of the model: "This magnetization is a property of the chosen state and need not be retained by a rotation-invariant average. [S44:77–78]" The proof is a pin induction. Slots are created by "Replace a spin $S$ by $\ell=2S$ spin-$\frac12$ slots at its site and project onto their symmetric subspace. [S44:160–162]" and the core estimate is proved "by downward induction on the number of grid pins [S44:171]" on sparse test sets. Adding the test set *T* to the existing pins *E* gives an avoidance probability of at most (2*r*)^m, where *r* is the mean fraction of test points whose lines return to *T* before reaching *E*, so "It therefore suffices to use the larger-pin induction hypothesis to prove $r\le p/2$. [S44:185–186]" Identifying *r* requires exposing exactly the cycles that miss the enlarged pin set, and the paper is explicit that this step buys a Markov comparison without claiming independence: "The exposure itself is still averaged under its original $P$-law; no independence of the conditioned cycles is required. [S44:195–196]" The comparison is a quadratic loss for a one-period kernel *U* 
+The bound is a property of the selected state, not of the model: "This magnetization is a property of the chosen state and need not be retained by a rotation-invariant average. [S44:77–78]" The proof is a pin induction. Slots are created by "Replace a spin $`S`$ by $`\ell=2S`$ spin-$`\frac12`$ slots at its site and project onto their symmetric subspace. [S44:160–162]" and the core estimate is proved "by downward induction on the number of grid pins [S44:171]" on sparse test sets. Adding the test set *T* to the existing pins *E* gives an avoidance probability of at most (2*r*)^m, where *r* is the mean fraction of test points whose lines return to *T* before reaching *E*, so "It therefore suffices to use the larger-pin induction hypothesis to prove $`r\le p/2`$. [S44:185–186]" Identifying *r* requires exposing exactly the cycles that miss the enlarged pin set, and the paper is explicit that this step buys a Markov comparison without claiming independence: "The exposure itself is still averaged under its original $`P`$-law; no independence of the conditioned cycles is required. [S44:195–196]" The comparison is a quadratic loss for a one-period kernel *U* 
 
 > $$>                  m(1-r)\ge\mathbb E_P\langle f,(I-U)f\rangle.
 >$$
 
-Bounding that loss is where the geometry enters: a local Nash inequality spreads the mass initially on *T*, routed decaying finite-energy flows control its pairing with the propagated part, and short portions at both ends of a period absorb the pairing into the dissipated energy, giving a loss of at least *m*(1 − ε(*p*)) with "with $\varepsilon(p)=o(p)$. Choose $p$ small enough that $2\varepsilon(p)\le p$ [S44:225–226]" , which closes the induction. The state is then produced from the resulting surface-order tail; the field is the explicit volume-dependent sequence *h*_*N* = *N*^(-1/2), translations are averaged, and every subsequential limit satisfies 
+Bounding that loss is where the geometry enters: a local Nash inequality spreads the mass initially on *T*, routed decaying finite-energy flows control its pairing with the propagated part, and short portions at both ends of a period absorb the pairing into the dissipated energy, giving a loss of at least *m*(1 − ε(*p*)) with "with $`\varepsilon(p)=o(p)`$. Choose $`p`$ small enough that $`2\varepsilon(p)\le p`$ [S44:225–226]" , which closes the induction. The state is then produced from the resulting surface-order tail; the field is the explicit volume-dependent sequence *h*_*N* = *N*^(-1/2), translations are averaged, and every subsequential limit satisfies 
 
 > \begin{equation}\label{eq:positive-limit-magnetization}
 >  \omega(S_0^z)\geq S/4.
@@ -132,13 +132,13 @@ theorem spontaneous_magnetization (d ℓ : ℕ) (hd : 3≤d) (hℓ : 1≤ℓ) : 
 
 The formalized statement is the manuscript's statement in the slot parameter: the site Hilbert space is built as `abbrev Level (ℓ: ℕ):= Fin (ℓ + 1)` [S60:55], so a spin-*S* system is ℓ = 2*S*, and the formal bound ℓ/8 is exactly the manuscript's *S*/4 rather than a weaker encoding of it. The formalized version adds that the selected observable has zero imaginary part, and it conjoins convergence of the finite-volume dynamics to the infinite-volume dynamics. The scope note states both 
 
-> The formalization proves spontaneous magnetization for the nearest-neighbor isotropic quantum Heisenberg ferromagnet on $\mathbb Z^d$ for every $d\ge3$ and every spin $S\in\{\tfrac12,1,\tfrac32,\ldots\}$. At every sufficiently low positive temperature, it constructs a translation-invariant equilibrium state satisfying the KMS condition for the zero-field dynamics and having magnetization at least $S/4$. It also proves convergence of the finite-volume dynamics to the infinite-volume dynamics used in the KMS statement. [S56:9–11]
+> The formalization proves spontaneous magnetization for the nearest-neighbor isotropic quantum Heisenberg ferromagnet on $`\mathbb Z^d`$ for every $`d\ge3`$ and every spin $`S\in\{\tfrac12,1,\tfrac32,\ldots\}`$. At every sufficiently low positive temperature, it constructs a translation-invariant equilibrium state satisfying the KMS condition for the zero-field dynamics and having magnetization at least $`S/4`$. It also proves convergence of the finite-volume dynamics to the infinite-volume dynamics used in the KMS statement. [S56:9–11]
 
 ## History of the conjecture
 
-The magnetization side begins with "Bloch derived the $T^{3/2}$ reduction from long-wavelength spin waves [S4:87]" in 1930, followed by the Holstein–Primakoff bosonic representation and Dyson's interaction expansion [S4:87–90]. Dyson's own numbers are the historical benchmark that manuscript B is calibrated against: in his expansion "the terms of orders $T^{5/2}$ and $T^{7/2}$ in the magnetization already arise from the lattice dispersion of independent magnons [S15:73–74]" and "the leading interaction contribution is of order $T^4$ [S15:75–76]" [S15:73–76], and manuscript A records the limit of what Dyson claimed: "his estimates of the remaining higher-order terms were not a rigorous fixed-spin proof of the asymptotic law [S4:92–93]" . Effective-field-theory calculations retain the same distinction [S15:78–79].
+The magnetization side begins with "Bloch derived the $`T^{3/2}`$ reduction from long-wavelength spin waves [S4:87]" in 1930, followed by the Holstein–Primakoff bosonic representation and Dyson's interaction expansion [S4:87–90]. Dyson's own numbers are the historical benchmark that manuscript B is calibrated against: in his expansion "the terms of orders $`T^{5/2}`$ and $`T^{7/2}`$ in the magnetization already arise from the lattice dispersion of independent magnons [S15:73–74]" and "the leading interaction contribution is of order $`T^4`$ [S15:75–76]" [S15:73–76], and manuscript A records the limit of what Dyson claimed: "his estimates of the remaining higher-order terms were not a rigorous fixed-spin proof of the asymptotic law [S4:92–93]" . Effective-field-theory calculations retain the same distinction [S15:78–79].
 
-The rigorous thermodynamic line is a separate sequence: "The free energy has a different rigorous history. [S4:116]" Conlon and Solovej, then Tóth via a random-stirring representation, gave free-energy bounds, and Correggi, Giuliani, and Seiringer proved the leading spin-wave free-energy asymptotic on ℤ^3 at every fixed spin [S4:116–120] [S15:85–91]. Benedikter's interaction correction sits in a different regime, "Benedikter obtained an interaction correction as a free-energy upper bound in the different regime $S\to\infty$ with $\beta S$ fixed [S15:92–94]" , and Klippel's 2026 result is the two-dimensional free-energy analogue: "the present result constructs an ordered state at a fixed positive temperature in $d\ge3$ [S44:144–145]" .
+The rigorous thermodynamic line is a separate sequence: "The free energy has a different rigorous history. [S4:116]" Conlon and Solovej, then Tóth via a random-stirring representation, gave free-energy bounds, and Correggi, Giuliani, and Seiringer proved the leading spin-wave free-energy asymptotic on ℤ^3 at every fixed spin [S4:116–120] [S15:85–91]. Benedikter's interaction correction sits in a different regime, "Benedikter obtained an interaction correction as a free-energy upper bound in the different regime $`S\to\infty`$ with $`\beta S`$ fixed [S15:92–94]" , and Klippel's 2026 result is the two-dimensional free-energy analogue: "the present result constructs an ordered state at a fixed positive temperature in $`d\ge3`$ [S44:144–145]" .
 
 The ordering side is where the open problem sits. "Mermin and Wagner excluded positive-temperature spontaneous magnetic order for the one- and two-dimensional isotropic Heisenberg models under their finite-range hypotheses [S4:101–104]" ; infrared bounds gave symmetry breaking for classical models and ordering for quantum antiferromagnets, results that "do not supply the isotropic ferromagnetic ordering input used here [S30:79]" [S30:76–79]. That leaves the isotropic three-dimensional quantum ferromagnet, "left the standard three-dimensional quantum ferromagnet as a separate problem, recorded by Lieb [S4:107–108]" in 1999 "and still discussed as open in recent accounts [S4:109]" [S4:107–110]. Manuscript D states the problem's provenance precisely: "Seiringer's 2025 account records it using a volume-averaged finite-volume two-point order parameter [S44:148–150]" , and it states the form in which it is resolved: "Theorem 1 resolves the low-temperature ordering problem in the spontaneous-magnetization formulation stated here" [S44:150–152], adding that "the finite-volume correlation criterion in the cited account is a different formulation and is not used in this proof. [S44:155–156]" 
 
@@ -146,7 +146,7 @@ The spherical law has named antecedents. Ueltschi's survey of three-dimensional 
 
 ## Consequences
 
-The family's own stated consequence is a hard-core boson statement. The Matsubara–Matsuda correspondence "turns the ordered state into a state with averaged off-diagonal long-range order. [S44:242–243]" For *S* = ½, writing *b*_*x* = *S*_*x*^− and *n*_*x* = *b*_*x*^†*b*_*x* = *S*_*x*^z + ½ makes the Hamiltonian "This is the particle–hole-symmetric attractive hard-core hopping model. [S44:254]" Rotating the mean spin vector to the *x* direction commutes with the zero-field dynamics and with translations, so the rotated state ν is again translation-invariant and β-KMS, and "It satisfies $\nu(b_x)=r\ge1/8$ and $\nu(n_x)=1/2$, where $r$ is the length of the original mean-spin vector. [S44:260–262]" Positivity then gives 
+The family's own stated consequence is a hard-core boson statement. The Matsubara–Matsuda correspondence "turns the ordered state into a state with averaged off-diagonal long-range order. [S44:242–243]" For *S* = ½, writing *b*_*x* = *S*_*x*^− and *n*_*x* = *b*_*x*^†*b*_*x* = *S*_*x*^z + ½ makes the Hamiltonian "This is the particle–hole-symmetric attractive hard-core hopping model. [S44:254]" Rotating the mean spin vector to the *x* direction commutes with the zero-field dynamics and with translations, so the rotated state ν is again translation-invariant and β-KMS, and "It satisfies $`\nu(b_x)=r\ge1/8`$ and $`\nu(n_x)=1/2`$, where $`r`$ is the length of the original mean-spin vector. [S44:260–262]" Positivity then gives 
 
 > $$>  \frac1{|\Lambda|^2}\sum_{x,y\in\Lambda}\nu(b_x^\dagger b_y)
 >        \ge\frac1{64},
@@ -154,7 +154,7 @@ The family's own stated consequence is a hard-core boson statement. The Matsubar
 >  \nu(a_\Lambda^\dagger a_\Lambda)\ge\frac{|\Lambda|}{64}.
 >$$
 
-so "The first bound gives averaged off-diagonal long-range order [S44:277]" and "the uniform-mode occupation is at least $1/32$ of the expected particle number. [S44:279–280]" The paper marks the boundary of that claim: "These bounds concern restrictions of the chosen infinite-volume state, not finite-volume Gibbs states. [S44:281–282]" 
+so "The first bound gives averaged off-diagonal long-range order [S44:277]" and "the uniform-mode occupation is at least $`1/32`$ of the expected particle number. [S44:279–280]" The paper marks the boundary of that claim: "These bounds concern restrictions of the chosen infinite-volume state, not finite-volume Gibbs states. [S44:281–282]" 
 
 Internally, the family has a single root. Manuscript D's 36-entry bibliography contains no OpenAI self-citation [S54], while A cites D [S11:96–101], B cites both A and D [S26:77–89], and C cites both A and D [S40:146–160]. The three October-5 papers say what they take: B writes "Within this framework, two companion manuscripts provide the direct inputs. [S15:100]" and C frames the division of labour as "The existence of spontaneous magnetization and the identification of its zero-field distribution are distinct questions. [S30:96–97]" , adding "We use finite exchange and geometric estimates from these works. [S30:104]" So the ordering result is the load-bearing one, and the two asymptotic results and the distributional result are consequences of its estimates plus new arguments of their own.
 
@@ -245,13 +245,13 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - J. Nash. Continuity of solutions of parabolic and elliptic equations. _American Journal of Mathematics_ **80** (1958), 931–954. doi:10.2307/2372841.
 - J. Nash. Continuity of solutions of parabolic and elliptic equations. _American Journal of Mathematics_ **80** (1958), 931–954. doi:10.2307/2372841.
 - N. D. Mermin and H. Wagner. Absence of ferromagnetism or antiferromagnetism in one- or two-dimensional isotropic Heisenberg models. _Physical Review Letters_ **17** (1966), 1133–1136; erratum, **17** (1966), 1307. doi:10.1103/PhysRevLett.17.1133.
-- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
-- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
-- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
-- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
+- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin $`1/2`$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
+- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin $`1/2`$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
+- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin $`1/2`$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
+- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin $`1/2`$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
 - A. Gaudilli\`ere and C. Landim. A Dirichlet principle for non reversible Markov chains and some recurrence theorems. _Probability Theory and Related Fields_ **158** (2014), 55–89. doi:10.1007/s00440-012-0477-5. Author preprint: arXiv:1111.2445v1.
 - C. P. Hofmann. Cubic ideal ferromagnets at low temperature and weak magnetic field. _Physica B: Condensed Matter_ **510** (2017), 117–126. doi:10.1016/j.physb.2017.01.019.
-- J. E. Björnberg and K. Ryan. Exponential decay in $\mathcal O(n)$-invariant quantum spin systems. _Annales Henri Poincaré_ (2026), published online March 25, 2026. doi:10.1007/s00023-026-01690-3.
+- J. E. Björnberg and K. Ryan. Exponential decay in $`\mathcal O(n)`$-invariant quantum spin systems. _Annales Henri Poincaré_ (2026), published online March 25, 2026. doi:10.1007/s00023-026-01690-3.
 - B. Nachtergaele. Quasi-state decompositions for quantum spin systems. In B. Grigelionis et al. (eds.), _Probability Theory and Mathematical Statistics_, Proceedings of the Sixth Vilnius Conference, VSP/TEV, Utrecht–Tokyo–Vilnius, 1994, pp. 565–590. arXiv:cond-mat/9312012.
 - B. Nachtergaele. Quasi-state decompositions for quantum spin systems. In B. Grigelionis et al. (eds.), _Probability Theory and Mathematical Statistics_, Proceedings of the Sixth Vilnius Conference, VSP/TEV, Utrecht–Tokyo–Vilnius, 1994, pp. 565–590. arXiv:cond-mat/9312012v2.
 - Alon, Gil, Kozma, Gady, The Probability of Long Cycles in Interchange Processes (2013)
@@ -285,7 +285,7 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - Fröhlich, Jürg, Simon, Barry, Spencer, Thomas, Infrared Bounds, Phase Transitions and Continuous Symmetry Breaking (1976)
 - Fröhlich, Jürg, Simon, Barry, Spencer, Thomas, Infrared Bounds, Phase Transitions and Continuous Symmetry Breaking (1976)
 - Kastler, Daniel, Robinson, Derek W., Invariant States in Statistical Mechanics (1966)
-- Kennedy, Tom, Lieb, Elliott H., Shastry, B. Sriram, Existence of {Néel} Order in Some Spin-$1/2$ Heisenberg Antiferromagnets (1988)
+- Kennedy, Tom, Lieb, Elliott H., Shastry, B. Sriram, Existence of {Néel} Order in Some Spin-$`1/2`$ Heisenberg Antiferromagnets (1988)
 - Klippel, Andreas, Free-Energy Asymptotics of the Two-Dimensional Quantum Heisenberg Ferromagnet (2026)
 - Lanford, III, Oscar E., Robinson, Derek W., Mean Entropy of States in Quantum-Statistical Mechanics (1968)
 - Lanford, III, Oscar E., Robinson, Derek W., Statistical Mechanics of Quantum Spin Systems. III (1968)
@@ -310,7 +310,7 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - OpenAI, Spontaneous magnetization in the quantum Heisenberg ferromagnet (2026)
 - Paley, R. E. A. C., Zygmund, Antoni, On Some Series of Functions, (3) (1932)
 - E. H. Lieb. Long range order for the quantum Heisenberg model. _Open Problems in Mathematical Physics_, contribution dated January 27, 1999, Problem A. Author's problem statement.
-- N. Benedikter. Interaction corrections to spin-wave theory in the large-$S$ limit of the quantum Heisenberg ferromagnet. _Mathematical Physics, Analysis and Geometry_ **20** (2017), article 5. doi:10.1007/s11040-016-9237-6.
+- N. Benedikter. Interaction corrections to spin-wave theory in the large-$`S`$ limit of the quantum Heisenberg ferromagnet. _Mathematical Physics, Analysis and Geometry_ **20** (2017), article 5. doi:10.1007/s11040-016-9237-6.
 - Powers, Robert T., Heisenberg Model and a Random Walk on the Permutation Group (1976)
 - Powers, Robert T., Heisenberg Model and a Random Walk on the Permutation Group (1976)
 - Timár, Ádám, Boundary-connectivity via graph theory (2013)
@@ -323,9 +323,9 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - Dereziński, Michał, Liang, Feynman, Mahoney, Michael W., Exact Expressions for Double Descent and Implicit Regularization via Surrogate Random Design (2020)
 - Suzuki, Masuo, Fisher, Michael E., Zeros of the Partition Function for the Heisenberg, Ferroelectric, and General Ising Models (1971)
 - R. Seiringer. The Heisenberg ferromagnet: a dilute Bose gas in disguise. In _Mini-Workshop: New Directions in Correlated Quantum Systems_, _Oberwolfach Reports_ **22** (2025), 357–358. doi:10.4171/OWR/2025/7.
-- Sznitman, Alain-Sol, Decoupling Inequalities and Interlacement Percolation on $G\times\mathbb Z$ (2012)
-- Tóth, Bálint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $1/2$ Heisenberg Ferromagnet (1993)
-- Tóth, Bálint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $1/2$ Heisenberg Ferromagnet (1993)
+- Sznitman, Alain-Sol, Decoupling Inequalities and Interlacement Percolation on $`G\times\mathbb Z`$ (2012)
+- Tóth, Bálint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $`1/2`$ Heisenberg Ferromagnet (1993)
+- Tóth, Bálint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $`1/2`$ Heisenberg Ferromagnet (1993)
 - Thompson, Colin J., Inequality with Applications in Statistical Mechanics (1965)
 - Trotter, Hale F., On the Product of Semi-Groups of Operators (1959)
 - Ueltschi, Daniel, Universal behaviour of 3D loop soup models (2017)

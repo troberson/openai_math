@@ -16,33 +16,33 @@ agree on the statement.
 ## Undergraduate summary
 
 **Trace reconstruction** is a problem in reliable information storage. You
-have a binary string $x$ of length $n$. You make many copies of it, but
+have a binary string $`x`$ of length $`n`$. You make many copies of it, but
 each copy is **degraded**: every bit is independently deleted with
-probability $q$ (so, say, 10% of the bits vanish at random), and the
+probability $`q`$ (so, say, 10% of the bits vanish at random), and the
 surviving bits are concatenated in order. What you receive is a short
 string with no record of which positions survived — a **deletion trace**.
-Can you recover $x$ from independent traces?
+Can you recover $`x`$ from independent traces?
 
 The central question is a counting one: **how many traces are needed?**
 This family answers it from both sides.
 
 The first manuscript proves a **lower bound**: for every fixed deletion
-probability, recovering an arbitrary length-$n$ string requires at least
-$n^{\Omega(\log\log n)}$ independent traces [S4:7–13]. That is
+probability, recovering an arbitrary length-$`n`$ string requires at least
+$`n^{\Omega(\log\log n)}`$ independent traces [S4:7–13]. That is
 **superpolynomial** — no polynomial number of traces ever suffices. This
 settles a long-standing open question (posed in connection with DNA
 sequencing and multiple sequence alignment) with a clean negative answer
 for binary strings.
 
 The second manuscript gives a **reconstruction algorithm**. A single
-**uniform** randomized Turing machine, given the length $n$ and a known
-rational retention probability $p$, reconstructs any length-$n$ string
-using $\exp(O((\log n)^3))$ traces and in quasipolynomial running time
+**uniform** randomized Turing machine, given the length $`n`$ and a known
+rational retention probability $`p`$, reconstructs any length-$`n`$ string
+using $`\exp(O((\log n)^3))`$ traces and in quasipolynomial running time
 [S5:78–99]. So polynomial is impossible, quasipolynomial is achievable.
 
 The third manuscript improves the worst-case **sample** bound: the
-logarithm of the trace budget is $O((\log n)^3(1+\log\log(2n))^6)$, and
-when the deletion probability is small (at most $n^{-\varepsilon}$) a
+logarithm of the trace budget is $`O((\log n)^3(1+\log\log(2n))^6)`$, and
+when the deletion probability is small (at most $`n^{-\varepsilon}`$) a
 polynomial number of traces suffices [S7:110].
 
 The gap between the lower bound (superpolynomial) and the upper bound
@@ -52,54 +52,54 @@ complexity of binary trace reconstruction is not known.
 ## Graduate summary
 
 **Main theorem (superpolynomial sample lower bound)** ([S4:7–13],
-`thm:main`). "Fix $s\in(0,1]$ and $0<c<1/(4\log2)$. Along every sequence
-of instances $(n,q)$ with $n\to\infty$, $q\in(0,1)$, and
-$q^3\log n\to\infty$, $T_{q,s}(n)\ge n^{c\log(q^3\log n)}$ eventually. All
+`thm:main`). "Fix $`s\in(0,1]`$ and $`0<c<1/(4\log2)`$. Along every sequence
+of instances $`(n,q)`$ with $`n\to\infty`$, $`q\in(0,1)`$, and
+$`q^3\log n\to\infty`$, $`T_{q,s}(n)\ge n^{c\log(q^3\log n)}`$ eventually. All
 logarithms are natural. In particular, for each fixed deletion probability
-$q\in(0,1)$ and fixed positive success probability $s$, the required
-sample number is $n^{\Omega(\log\log n)}$" [S4:7–13]. Here $T_{q,s}(n)$
+$`q\in(0,1)`$ and fixed positive success probability $`s`$, the required
+sample number is $`n^{\Omega(\log\log n)}`$" [S4:7–13]. Here $`T_{q,s}(n)`$
 is the least number of independent complete traces from which every
-binary word of length $n$ is recovered with probability at least $s$, with
+binary word of length $`n`$ is recovered with probability at least $`s`$, with
 unrestricted computation [S4:3–5].
 
 **One-trace indistinguishability** ([S4:20–29], `thm:tv`). "For every
-fixed deletion probability $q\in(0,1)$,
-$\lim_{n\to\infty}n^A \min_{x\ne y}\mathrm{TV}(\mathcal D_q(x),\mathcal D_q(y))=0$ for
-every $A>0$. At this same channel
-$T_{q,s}(n)/n^A\to\infty$ for every fixed $A>0$ and $s\in(0,1)$"
+fixed deletion probability $`q\in(0,1)`$,
+$`\lim_{n\to\infty}n^A \min_{x\ne y}\mathrm{TV}(\mathcal D_q(x),\mathcal D_q(y))=0`$ for
+every $`A>0`$. At this same channel
+$`T_{q,s}(n)/n^A\to\infty`$ for every fixed $`A>0`$ and $`s\in(0,1)`$"
 [S4:20–29]. The minimum total-variation distance between any two distinct
-one-trace laws decays faster than every inverse power of $n$: a single
+one-trace laws decays faster than every inverse power of $`n`$: a single
 trace is provably too weak to distinguish nearby words.
 
 **Uniform reconstruction** ([S5:78–99], `thm:main`). "There exist
-absolute constants $C,c\ge1$ and one randomized multitape Turing machine
-$\mathcal A$ [...] For every $n\ge2$, every rational $p\in(0,1]$, and
-every $x\in\{0,1\}^n$, given $n,p$ in binary and access to independent
-ordinary deletion traces of $x$, the machine requests at most
-$M_C(n,p)=\lceil\exp(CB(n,p))\rceil$ traces, outputs an element of
-$\{0,1\}^n$, and returns $x$ with probability at least $2/3$. For every
+absolute constants $`C,c\ge1`$ and one randomized multitape Turing machine
+$`\mathcal A`$ [...] For every $`n\ge2`$, every rational $`p\in(0,1]`$, and
+every $`x\in\{0,1\}^n`$, given $`n,p`$ in binary and access to independent
+ordinary deletion traces of $`x`$, the machine requests at most
+$`M_C(n,p)=\lceil\exp(CB(n,p))\rceil`$ traces, outputs an element of
+$`\{0,1\}^n`$, and returns $`x`$ with probability at least $`2/3`$. For every
 internal random-bit sequence and every well-formed trace stream of strings
-of length at most $n$, it halts within $(n+L+M_C(n,p))^c$ bit
-operations" [S5:78–99]. The exponent $B(n,p)$ is
-$p^{-1}(\log n)^3(1+\log\mathsf X(n,p))^6$ [S5:70–76].
+of length at most $`n`$, it halts within $`(n+L+M_C(n,p))^c`$ bit
+operations" [S5:78–99]. The exponent $`B(n,p)`$ is
+$`p^{-1}(\log n)^3(1+\log\mathsf X(n,p))^6`$ [S5:70–76].
 
 **Improved sample bound** ([S7:110], stated result). The third manuscript
 states, in its summary report, an upper bound
-$\exp(O(p^{-1}(\log n)^3(1+\log\log(2n))^6))$ on the number of traces,
+$`\exp(O(p^{-1}(\log n)^3(1+\log\log(2n))^6))`$ on the number of traces,
 with a polynomial sample bound when the deletion probability is at most
-$n^{-\varepsilon}$ [S7:110]. It makes no claim of an efficient
+$`n^{-\varepsilon}`$ [S7:110]. It makes no claim of an efficient
 reconstruction algorithm or matching optimality [S7:115].
 
 **Scope (formalization)** ([S10:9–11]). "The formalization proves
 superpolynomial sample lower bounds for exact worst-case reconstruction of
 binary words from independent deletion traces, with unrestricted
 computation and any fixed positive success probability. For every fixed
-deletion probability $q\in(0,1)$, sample complexity grows faster than
+deletion probability $`q\in(0,1)`$, sample complexity grows faster than
 every fixed power of the word length; the minimum total-variation distance
 between two one-trace laws decays faster than every inverse power. More
-quantitatively, along sequences with $q^3\log n\to\infty$, the required
-number of samples is at least $n^{c\log(q^3\log n)}$ eventually for every
-fixed $0<c<1/(4\log2)$" [S10:9–11]. The scope note formalizes only the
+quantitatively, along sequences with $`q^3\log n\to\infty`$, the required
+number of samples is at least $`n^{c\log(q^3\log n)}`$ eventually for every
+fixed $`0<c<1/(4\log2)`$" [S10:9–11]. The scope note formalizes only the
 first manuscript (the lower bounds), not the decoder.
 
 ## History of the conjecture
@@ -114,18 +114,18 @@ sample obstruction at fixed deletion probability [S4:35].
 The lower-bound line uses a periodic defect in an alternating background.
 **McGregor, Price, and Vorotnikova** analyzed neighboring positions of a
 single one among zeros, using Hellinger distance [S4:35]. **Holden and
-Lyons** proved $\Omega(n^{5/4}/\sqrt{\log n})$, and **Chase** obtained
-$\Omega(n^{3/2}/\log^7 n)$ by a direct Hellinger calculation [S4:35].
+Lyons** proved $`\Omega(n^{5/4}/\sqrt{\log n})`$, and **Chase** obtained
+$`\Omega(n^{3/2}/\log^7 n)`$ by a direct Hellinger calculation [S4:35].
 The lower bound here starts from the periodic defect family Chase used
 and makes signed choices across many periods, then amplifies [S4:35].
 
 The upper-bound line is a sequence of quasipolynomial sample estimates.
 **Holenstein, Mitzenmacher, Panigrahy, and Wieder** obtained
-$\exp(\widetilde O(\sqrt n))$; **De, O'Donnell, and Servedio**, and
-**Nazarov and Peres**, improved it to $\exp(O(n^{1/3}))$; and **Chase**
-reached $\exp(O(n^{1/5}\log^5 n))$ [S6:11–25]. The 2026 preprint of
+$`\exp(\widetilde O(\sqrt n))`$; **De, O'Donnell, and Servedio**, and
+**Nazarov and Peres**, improved it to $`\exp(O(n^{1/3}))`$; and **Chase**
+reached $`\exp(O(n^{1/5}\log^5 n))`$ [S6:11–25]. The 2026 preprint of
 **Burudgunte, Valiant, and Wang** gives
-$\exp(p^{-7/3}(\log_2 n)^{C_0})$ samples for a universal constant $C_0$
+$`\exp(p^{-7/3}(\log_2 n)^{C_0})`$ samples for a universal constant $`C_0`$
 and every positive retention probability [S6:27–31]. That bound is
 quasipolynomial at fixed retention probability, but the cited preprint
 does not give a quasipolynomial-**time** reconstruction algorithm. The
@@ -144,22 +144,22 @@ three manuscripts as proofs.
 ## Consequences
 
 - **Polynomial-sample reconstruction is impossible.** For every fixed
-  deletion probability $q\in(0,1)$, exact worst-case reconstruction of a
-  length-$n$ binary string requires $n^{\Omega(\log\log n)}$ independent
+  deletion probability $`q\in(0,1)`$, exact worst-case reconstruction of a
+  length-$`n`$ binary string requires $`n^{\Omega(\log\log n)}`$ independent
   traces, even with unrestricted computation [S4:7–13].
 - **One trace is superpolynomially weak.** The minimum total-variation
   distance between any two distinct one-trace laws decays faster than
-  every inverse power of $n$ [S4:20–29].
+  every inverse power of $`n`$ [S4:20–29].
 - **Quasipolynomial reconstruction is achievable.** A single uniform
-  randomized Turing machine reconstructs every length-$n$ string using
-  $\exp(O((\log n)^3))$ traces and in quasipolynomial bit complexity, for
+  randomized Turing machine reconstructs every length-$`n`$ string using
+  $`\exp(O((\log n)^3))`$ traces and in quasipolynomial bit complexity, for
   every known rational retention probability [S5:78–99].
 - **Polynomial in the low-deletion regime.** When the deletion
-  probability is at most $n^{-\varepsilon}$ for fixed $\varepsilon>0$,
+  probability is at most $`n^{-\varepsilon}`$ for fixed $`\varepsilon>0`$,
   both the sample and running-time bounds become polynomial [S5:33–44].
 - **Open gap.** The exact worst-case sample complexity lies between
-  $n^{\Omega(\log\log n)}$ (lower) and
-  $\exp(O((\log n)^3))$ (upper); the matching rate is not known
+  $`n^{\Omega(\log\log n)}`$ (lower) and
+  $`\exp(O((\log n)^3))`$ (upper); the matching rate is not known
   [S7:115].
 
 ## Section skeleton
@@ -208,13 +208,13 @@ the full trace-reconstruction apparatus: `Word`, `Mask`, `Trace`,
 with `sorry`:
 
 - `quantitative_sample_lower_bound` [S11:62] — the
-  $n^{c\log(q^3\log n)}$ sample lower bound along sequences with
-  $q^3\log n\to\infty$; `sorry` at [S11:72].
+  $`n^{c\log(q^3\log n)}`$ sample lower bound along sequences with
+  $`q^3\log n\to\infty`$; `sorry` at [S11:72].
 - `superpolynomial_one_trace` [S11:74] — the
-  $n^C \min\text{TV}\to 0$ one-trace indistinguishability; `sorry` at
+  $`n^C \min\text{TV}\to 0`$ one-trace indistinguishability; `sorry` at
   [S11:77].
 - `superpolynomial_sample_complexity` [S11:79] — the
-  $T_{q,s}(n)/n^C\to\infty$ superpolynomial sample complexity; `sorry`
+  $`T_{q,s}(n)/n^C\to\infty`$ superpolynomial sample complexity; `sorry`
   at [S11:85].
 
 There is no `OAI/**` declaration that proves any of the three, so the

@@ -16,11 +16,11 @@ The dimension-twenty-two manuscript's abstract
 
 The companion manuscript's abstract 
 
-> We construct a simply connected closed Kähler manifold of real dimension 3332 and minimal Chern number one whose Hamiltonian fixed-point count attains the cyclic integral Floer bound while falling below the stable Morse number. The Hamiltonian diffeomorphism has exactly $1\,872\,232$ fixed points, all nondegenerate and with contractible orbit loops, whereas the stable Morse number is $1\,872\,264$. Thus the stronger stable Morse bound fails by exactly 32, even when the cyclic integral bound is sharp. [S1:8415]
+> We construct a simply connected closed Kähler manifold of real dimension 3332 and minimal Chern number one whose Hamiltonian fixed-point count attains the cyclic integral Floer bound while falling below the stable Morse number. The Hamiltonian diffeomorphism has exactly $`1\,872\,232`$ fixed points, all nondegenerate and with contractible orbit loops, whereas the stable Morse number is $`1\,872\,264`$. Thus the stronger stable Morse bound fails by exactly 32, even when the cyclic integral bound is sharp. [S1:8415]
 
 The October 5, 2026 base manuscript's abstract 
 
-> We disprove the stable Morse lower bound for nondegenerate Hamiltonian fixed points with examples in fixed real dimension twenty-two. For every integer m ≥ 1, we construct a simply connected closed Kähler manifold with stable Morse number $80+1968m$ and a Hamiltonian diffeomorphism with exactly $80+1952m$ fixed points, all nondegenerate and with contractible orbit loops. The deficit is therefore unbounded, and the fixed-point count is at most 127/128 of the stable Morse number. [S1:8406]
+> We disprove the stable Morse lower bound for nondegenerate Hamiltonian fixed points with examples in fixed real dimension twenty-two. For every integer m ≥ 1, we construct a simply connected closed Kähler manifold with stable Morse number $`80+1968m`$ and a Hamiltonian diffeomorphism with exactly $`80+1952m`$ fixed points, all nondegenerate and with contractible orbit loops. The deficit is therefore unbounded, and the fixed-point count is at most 127/128 of the stable Morse number. [S1:8406]
 
 The nondegenerate manuscript's abstract 
 
@@ -70,10 +70,10 @@ and [S23:10–13]:
 The Arnold fixed-point problem asks how many fixed points a Hamiltonian diffeomorphism must have. A proposed integral answer is the **stable Morse number**: the fewest critical points a Morse function on the manifold can have once you are allowed to add auxiliary quadratic variables [S16:6–12]:
 
 > \begin{definition}
-> Let $W$ be a connected closed smooth manifold. Its \emph{stable Morse number} $\mathrm{SM}(W)$ is the minimum of $\\#\mathrm{Crit}(F)$ over all integers $k\geq0$ and smooth Morse functions
+> Let $`W`$ be a connected closed smooth manifold. Its \emph{stable Morse number} $`\mathrm{SM}(W)`$ is the minimum of $`\\#\mathrm{Crit}(F)`$ over all integers $`k\geq0`$ and smooth Morse functions
 > $$>  F:W\times\mathbb R^k\longrightarrow\mathbb R
 >$$
-> such that, when $k>0$, there are a nondegenerate quadratic form $Q$ on $\mathbb R^k$ and $R>0$ with $F(x,z)=Q(z)$ for every $x\in W$ and $|z|\geq R$. The signature of $Q$ is unrestricted. For $k=0$, there is no condition at infinity. The ordinary Morse number $\mathrm{Morse}(W)$ is the same minimum restricted to $k=0$.
+> such that, when $`k>0`$, there are a nondegenerate quadratic form $`Q`$ on $`\mathbb R^k`$ and $`R>0`$ with $`F(x,z)=Q(z)`$ for every $`x\in W`$ and $`|z|\geq R`$. The signature of $`Q`$ is unrestricted. For $`k=0`$, there is no condition at infinity. The ordinary Morse number $`\mathrm{Morse}(W)`$ is the same minimum restricted to $`k=0`$.
 > \end{definition}
 
 The proposed bound is that a Hamiltonian whose fixed points are all nondegenerate must have at least that many fixed points 
@@ -83,22 +83,22 @@ The proposed bound is that a Hamiltonian whose fixed points are all nondegenerat
 The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 
 > \begin{theorem}\label{thm:main}
-> There exist a simply connected closed Kähler manifold $(M,\omega)$ and a smooth one-periodic Hamiltonian $H$ such that every fixed point of $\phi_H^1$ is nondegenerate and
+> There exist a simply connected closed Kähler manifold $`(M,\omega)`$ and a smooth one-periodic Hamiltonian $`H`$ such that every fixed point of $`\phi_H^1`$ is nondegenerate and
 > $$>  \\#\mathrm{Fix}_0(\phi_H^1;H)=\\#\mathrm{Fix}(\phi_H^1)=\mathrm{SM}(M)-16.
 >$$
-> One may take $\dim_{\mathbb R}M=1412$, with $\mathrm{SM}(M)=318968$ and $\\#\mathrm{Fix}(\phi_H^1)=318952$.
+> One may take $`\dim_{\mathbb R}M=1412`$, with $`\mathrm{SM}(M)=318968`$ and $`\\#\mathrm{Fix}(\phi_H^1)=318952`$.
 > \end{theorem}
 
 The dimension-twenty-two manuscript makes the deficit a fixed proportion in a fixed dimension [S21:37–53]:
 
 > \begin{theorem}\label{thm:main}
-> For every integer $m\geq1$, there exist a simply connected closed Kähler manifold $(M_m,\omega_m)$ of real dimension $22$ and a smooth one-periodic Hamiltonian $H_m$ such that all fixed points of $\phi_{H_m}^1$ are nondegenerate and
+> For every integer $`m\geq1`$, there exist a simply connected closed Kähler manifold $`(M_m,\omega_m)`$ of real dimension $`22`$ and a smooth one-periodic Hamiltonian $`H_m`$ such that all fixed points of $`\phi_{H_m}^1`$ are nondegenerate and
 > \begin{align*}
 >  \SM(M_m)&=80+1968m,\\
 >  \#\Fix(\phi_{H_m}^1)
 >  &=\#\Fix_0(\phi_{H_m}^1;H_m)=80+1952m.
 > \end{align*}
-> Consequently, with $\delta=1/128$, for every $R>0$ some member of this family satisfies
+> Consequently, with $`\delta=1/128`$, for every $`R>0`$ some member of this family satisfies
 > $$>  \mathrm{SM}(M_m)\geq R,\qquad
 >  \\#\mathrm{Fix}(\phi_{H_m}^1)\leq(1-\delta)\mathrm{SM}(M_m).
 >$$
@@ -107,9 +107,9 @@ The dimension-twenty-two manuscript makes the deficit a fixed proportion in a fi
 The nondegenerate manuscript works in real dimension twelve and beats the **ordinary** Morse number [S11:32–40]:
 
 > \begin{theorem}\label{thm:main}
-> There exist a closed connected symplectic manifold $(M,\omega)$ of real
-> dimension twelve and a smooth one-periodic Hamiltonian $H$ such that every
-> fixed point of $\phi_H^1$ is nondegenerate and
+> There exist a closed connected symplectic manifold $`(M,\omega)`$ of real
+> dimension twelve and a smooth one-periodic Hamiltonian $`H`$ such that every
+> fixed point of $`\phi_H^1`$ is nondegenerate and
 > $$> \\#\mathrm{Fix}_0(\phi_H^1;H)=\\#\mathrm{Fix}(\phi_H^1)
 >                    =\chi(M)+128<\mathrm{Morse}(M).
 >$$
@@ -119,12 +119,12 @@ The companion manuscript shows the cyclic integral Floer bound is sharp while th
 
 > \begin{theorem}
 > \label{thm:main}
-> There exist a simply connected closed K\"ahler manifold $(M,\omega)$
-> of complex dimension $1666$ and a smooth one-periodic Hamiltonian $H$
+> There exist a simply connected closed K\"ahler manifold $`(M,\omega)`$
+> of complex dimension $`1666`$ and a smooth one-periodic Hamiltonian $`H`$
 > such that
 > $$>  c_1(TM)(\pi_2(M))=\mathbb Z,
 >$$
-> every fixed point of $\phi_H^1$ is nondegenerate, and
+> every fixed point of $`\phi_H^1`$ is nondegenerate, and
 > \begin{align*}
 >  \#\Fix(\phi_H^1)
 >  &=\#\Fix_0(\phi_H^1;H)
@@ -136,13 +136,13 @@ The companion manuscript shows the cyclic integral Floer bound is sharp while th
 The degenerate manuscript is the smallest example, and its theorem sets the fixed-point count against the critical number and the rational cup length [S6:56–64]:
 
 > \begin{theorem}\label{thm:counterexample}
-> There is a smooth Hamiltonian diffeomorphism $\phi$ of the closed connected
-> symplectic six-manifold $Q^3$ such that
+> There is a smooth Hamiltonian diffeomorphism $`\phi`$ of the closed connected
+> symplectic six-manifold $`Q^3`$ such that
 > \begin{equation}\label{eq:counterexample}
 >  \#\Fix(\phi)=3<4=\Crit(Q^3)
 >                   =\operatorname{cuplength}(Q^3;\mathbb Q).
 > \end{equation}
-> At least one fixed point of $\phi$ is degenerate.
+> At least one fixed point of $`\phi`$ is degenerate.
 > \end{theorem}
 
 The count of three is sharp: Gong proved that a Hamiltonian involution on a closed symplectic manifold with a positive-dimensional fixed component has at least three fixed points [S6:74–77].
@@ -151,35 +151,35 @@ The count of three is sharp: Gong proved that a Hamiltonian involution on a clos
 
 The stable Morse number is a minimum over actual smooth functions, and the base manuscript states the algebraic caveat 
 
-> These functions have finitely many critical points, and $\mathrm{SM}(W)\leq\mathrm{Morse}(W)$. The definition is a minimum over actual smooth functions; an algebraic complex of small rank alone does not provide an upper bound. [S16:14]
+> These functions have finitely many critical points, and $`\mathrm{SM}(W)\leq\mathrm{Morse}(W)`$. The definition is a minimum over actual smooth functions; an algebraic complex of small rank alone does not provide an upper bound. [S16:14]
 
-The geometric lower bound is $\lambda(W)=b(W)+2\sum_i t_i(W)$, where $b$ is the total integral homology rank and $t_i$ is the minimum number of generators of the torsion in degree $i$ 
+The geometric lower bound is $`\lambda(W)=b(W)+2\sum_i t_i(W)`$, where $`b`$ is the total integral homology rank and $`t_i`$ is the minimum number of generators of the torsion in degree $`i`$ 
 
-> For a closed manifold $W$, let $b(W)$ be its total integral homology rank, and let $t_i(W)$ be the minimum number of generators of $\mathrm{Tor} H_i(W;\mathbb Z)$. The quantity $$\lambda(W)=b(W)+2\sum_i t_i(W)$$ is a lower bound for $\mathrm{SM}(W)$. For simply connected manifolds of the dimensions used here, Smale's theorem gives an ordinary Morse function attaining this bound. We prove the geometric lower bound in Section and recall a handle proof of attainment in Appendix . [S16:37–41]
+> For a closed manifold $`W`$, let $`b(W)`$ be its total integral homology rank, and let $`t_i(W)`$ be the minimum number of generators of $`\mathrm{Tor} H_i(W;\mathbb Z)`$. The quantity $$\lambda(W)=b(W)+2\sum_i t_i(W)$$ is a lower bound for $`\mathrm{SM}(W)`$. For simply connected manifolds of the dimensions used here, Smale's theorem gives an ordinary Morse function attaining this bound. We prove the geometric lower bound in Section and recall a handle proof of attainment in Appendix . [S16:37–41]
 
-The dynamical ingredient is the same in the three October 5 manuscripts: a Kähler surface $Y$ obtained by blowing up the four points $\{0,\infty\}\times\{0,\infty\}$ of $\mathbb {CP}^1\times\mathbb {CP}^1$, whose half-turn diagonal circle action lifts to a Hamiltonian involution with four exceptional projective lines as its fixed set 
+The dynamical ingredient is the same in the three October 5 manuscripts: a Kähler surface $`Y`$ obtained by blowing up the four points $`\{0,\infty\}\times\{0,\infty\}`$ of $`\mathbb {CP}^1\times\mathbb {CP}^1`$, whose half-turn diagonal circle action lifts to a Hamiltonian involution with four exceptional projective lines as its fixed set 
 
-> The dynamical ingredient is a Kähler surface $Y$, obtained by blowing up the four points $\{0,\infty\}\times\{0,\infty\}$ of $\mathbb{CP}^1\times\mathbb{CP}^1$. A half-turn of the diagonal circle action lifts to a Hamiltonian involution whose fixed set consists of four exceptional projective lines. For the high-dimensional simply connected Kähler manifold $X$ constructed below, the product involution $g$ on $M=X\times Y$ has four fixed components, each diffeomorphic to $C=X\times\mathbb{CP}^1$. Smale's theorem supplies a Morse function on $C$ with $\lambda(C)$ critical points. [S16:43]
+> The dynamical ingredient is a Kähler surface $`Y`$, obtained by blowing up the four points $`\{0,\infty\}\times\{0,\infty\}`$ of $`\mathbb{CP}^1\times\mathbb{CP}^1`$. A half-turn of the diagonal circle action lifts to a Hamiltonian involution whose fixed set consists of four exceptional projective lines. For the high-dimensional simply connected Kähler manifold $`X`$ constructed below, the product involution $`g`$ on $`M=X\times Y`$ has four fixed components, each diffeomorphic to $`C=X\times\mathbb{CP}^1`$. Smale's theorem supplies a Morse function on $`C`$ with $`\lambda(C)`$ critical points. [S16:43]
 
 The companion manuscript states the same mechanism as a construction plan, continuing its paragraph on the cyclic bound 
 
-> needed geometric arguments. A rational surface $Y$ admits a Hamiltonian involution whose fixed set is the disjoint union of four projective lines. For a simply connected Kähler manifold $X$, the product $M=X\times Y$ therefore has an involution with four fixed components $C=X\times\mathbb {CP}^1$. A small invariant Hamiltonian perturbation replaces each component by the critical points of a Morse function on $C$. In the dimensions used below, Smale's theorem supplies such a function with $\lambda(C)$ critical points. The dynamical construction therefore gives $4\lambda(C)$ nondegenerate fixed points. [S26:110–119]
+> needed geometric arguments. A rational surface $`Y`$ admits a Hamiltonian involution whose fixed set is the disjoint union of four projective lines. For a simply connected Kähler manifold $`X`$, the product $`M=X\times Y`$ therefore has an involution with four fixed components $`C=X\times\mathbb {CP}^1`$. A small invariant Hamiltonian perturbation replaces each component by the critical points of a Morse function on $`C`$. In the dimensions used below, Smale's theorem supplies such a function with $`\lambda(C)`$ critical points. The dynamical construction therefore gives $`4\lambda(C)`$ nondegenerate fixed points. [S26:110–119]
 
 The dimension-twenty-two manuscript's generator count combines primes by a maximum, not a sum 
 
 > The generator count combines different primes by a maximum rather than a sum. For example, $$d\bigl((\mathbf Z/2)^a\oplus(\mathbf Z/3)^q\bigr)=\max(a,q).$$ We will arrange that the prime contributing the larger multiplicity changes with the homological degree. Redistributing those degrees by taking products can then change the generator count in a way that the free ranks do not detect. [S21:118–126]
 
-It embeds $m$ copies of two projective surfaces, with torsion $(\mathbb Z/2)^2$ and $\mathbb Z/3$ in degrees 1 and 2, disjointly into $\mathbb {CP}^9$ and blows them up 
+It embeds $`m`$ copies of two projective surfaces, with torsion $`(\mathbb Z/2)^2`$ and $`\mathbb Z/3`$ in degrees 1 and 2, disjointly into $`\mathbb {CP}^9`$ and blows them up 
 
-> To arrange the needed homology, take two projective surfaces whose torsion groups are respectively $(\mathbf Z/2)^2$ and $\mathbf Z/3$ in degrees $1$ and $2$. The blow-up centers are the first surface and the product of the second with $\mathbf{CP}^1\times\mathbf{CP}^1$, of complex dimensions $2$ and $4$. Section embeds $m$ copies of each disjointly into $\mathbf{CP}^9$ and blows them up to obtain a simply connected Kähler manifold $X_m$. The projection argument applies more generally to every finite collection of smooth projective varieties of dimension at most $d$, using one ambient $\mathbf{CP}^{2d+1}$. [S21:128–136]
+> To arrange the needed homology, take two projective surfaces whose torsion groups are respectively $`(\mathbf Z/2)^2`$ and $`\mathbf Z/3`$ in degrees $`1`$ and $`2`$. The blow-up centers are the first surface and the product of the second with $`\mathbf{CP}^1\times\mathbf{CP}^1`$, of complex dimensions $`2`$ and $`4`$. Section embeds $`m`$ copies of each disjointly into $`\mathbf{CP}^9`$ and blows them up to obtain a simply connected Kähler manifold $`X_m`$. The projection argument applies more generally to every finite collection of smooth projective varieties of dimension at most $`d`$, using one ambient $`\mathbf{CP}^{2d+1}`$. [S21:128–136]
 
-The count that separates the two numbers is $\lambda(X_m\times Y)-4\lambda(X_m\times\mathbb {CP}^1)=16m$ 
+The count that separates the two numbers is $`\lambda(X_m\times Y)-4\lambda(X_m\times\mathbb {CP}^1)=16m`$ 
 
-> Products with $\mathbf{CP}^1$ and $Y$ combine the torsion in nearby degrees with different multiplicities. Taking the maximum of the two primary multiplicities in each degree then gives different savings in the number of generators. Section computes $$\lambda(X_m\times Y)-4\lambda(X_m\times\mathbf{CP}^1)=16m$$ and completes the proof. This separates the stable Morse count from the Hamiltonian count without any distinction between ordinary and stable Morse theory on the simply connected manifolds in the construction. [S21:148–157]
+> Products with $`\mathbf{CP}^1`$ and $`Y`$ combine the torsion in nearby degrees with different multiplicities. Taking the maximum of the two primary multiplicities in each degree then gives different savings in the number of generators. Section computes $$\lambda(X_m\times Y)-4\lambda(X_m\times\mathbf{CP}^1)=16m$$ and completes the proof. This separates the stable Morse count from the Hamiltonian count without any distinction between ordinary and stable Morse theory on the simply connected manifolds in the construction. [S21:148–157]
 
-The companion manuscript's mechanism is degree-sensitive: the 3-primary multiplicities dominate the 2-primary after convolution with the free ranks of $\mathbb {CP}^1$ (1,1), but not after convolution with those of $Y$ (1,6,1) 
+The companion manuscript's mechanism is degree-sensitive: the 3-primary multiplicities dominate the 2-primary after convolution with the free ranks of $`\mathbb {CP}^1`$ (1,1), but not after convolution with those of $`Y`$ (1,6,1) 
 
-> It remains to arrange $$4\lambda(C)=\beta_{\mathbb Z}^{\mathrm{cyc}}(M) <\lambda(M).$$ The free even homology of $\mathbb {CP}^1$ and $Y$ has ranks $(1,1)$ and $(1,6,1)$, respectively. Multiplication by these spaces convolves the torsion multiplicities of $X$ with these two sequences. We choose $X$ so that the $3$-primary multiplicities dominate the $2$-primary multiplicities after convolution with $(1,1)$, but not after convolution with $(1,6,1)$. Blow-ups along seven disjoint products of elliptic-curve quotients and projective spaces realize the required multiplicities. This degree-sensitive choice is the mechanism that makes the cyclic count sharp while preserving a positive degreewise gap. It is expressed entirely in finite sequences and can be separated from the geometric realization. [S26:121–136]
+> It remains to arrange $$4\lambda(C)=\beta_{\mathbb Z}^{\mathrm{cyc}}(M) <\lambda(M).$$ The free even homology of $`\mathbb {CP}^1`$ and $`Y`$ has ranks $`(1,1)`$ and $`(1,6,1)`$, respectively. Multiplication by these spaces convolves the torsion multiplicities of $`X`$ with these two sequences. We choose $`X`$ so that the $`3`$-primary multiplicities dominate the $`2`$-primary multiplicities after convolution with $`(1,1)`$, but not after convolution with $`(1,6,1)`$. Blow-ups along seven disjoint products of elliptic-curve quotients and projective spaces realize the required multiplicities. This degree-sensitive choice is the mechanism that makes the cyclic count sharp while preserving a positive degreewise gap. It is expressed entirely in finite sequences and can be separated from the geometric realization. [S26:121–136]
 
 The nondegenerate manuscript's mechanism is algebraic: generation of a group versus generation of a module over its group ring. Cossey, Gruenberg and Kovács proved that the augmentation-ideal generator number stays constant under direct powers of nontrivial perfect finite groups while the group generator number is unbounded 
 
@@ -187,23 +187,23 @@ The nondegenerate manuscript's mechanism is algebraic: generation of a group ver
 
 The construction places the same small-time return map in sixteen caps of a product of four spheres, and the two counts separate 
 
-> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies $$\\\#\mathrm{Fix}(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128.$$ [S11:149–159]
+> The closed symplectic manifold is $`M=X\times(S^2)^4`$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies $$\\\#\mathrm{Fix}(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128.$$ [S11:149–159]
 
 On the other side of the inequality, the fundamental group bounds every Morse function 
 
-> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives $$\mathrm{Morse}(M)\ge\chi(M)+4d(G).$$ Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure separates the two roles of the fundamental group. [S11:161–169]
+> On the other hand, the fundamental group forces every Morse function on $`M`$ to have at least $`d(G)`$ critical points in each of indices one and eleven. Euler's identity gives $$\mathrm{Morse}(M)\ge\chi(M)+4d(G).$$ Since $`d(A_5^k)`$ is unbounded while $`b`$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure separates the two roles of the fundamental group. [S11:161–169]
 
 The manuscript names the claim it contradicts: Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number 
 
 > Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number \cite[Theorem 1.5]Ma2013. Theorem contradicts that unrestricted assertion. [S11:118–121]
 
-The positive results the manuscripts cite are conditional. Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points on closed symplectic manifolds where both the symplectic area class and the first Chern class vanish on $\pi_2(M)$ 
+The positive results the manuscripts cite are conditional. Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points on closed symplectic manifolds where both the symplectic area class and the first Chern class vanish on $`\pi_2(M)`$ 
 
-> For closed symplectic manifolds on which both $[\omega]$ and $c_1(TM)$ vanish on $\pi_2(M)$, Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points \cite[Corollary 1.3]DRG2017. [S11:100–103]
+> For closed symplectic manifolds on which both $`[\omega]`$ and $`c_1(TM)`$ vanish on $`\pi_2(M)`$, Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points \cite[Corollary 1.3]DRG2017. [S11:100–103]
 
 The dimension-22 manuscript names the conjecture, the positive results, and why its examples escape the hypothesis 
 
-> The stable Morse formulation is stated explicitly in \cite[Conjecture 1.2]Golovko2020. Damian showed that ordinary and stable Morse numbers need not agree . Positive results for the stable bound include the theorem of Dimitroglou Rizell and Golovko for generic Hamiltonians when both the symplectic area class and the first Chern class vanish on $\pi_2(M)$ \cite[Corollary 1.4]DRG2017; Pöder Balkestå hl obtained an independent proof using the simple homotopy type of the Hamiltonian Floer complex \cite[Corollary 1.2]PoderBalkestahl2021. These hypotheses do not hold for the projective blow-ups used here. [S21:75–84]
+> The stable Morse formulation is stated explicitly in \cite[Conjecture 1.2]Golovko2020. Damian showed that ordinary and stable Morse numbers need not agree . Positive results for the stable bound include the theorem of Dimitroglou Rizell and Golovko for generic Hamiltonians when both the symplectic area class and the first Chern class vanish on $`\pi_2(M)`$ \cite[Corollary 1.4]DRG2017; Pöder Balkestå hl obtained an independent proof using the simple homotopy type of the Hamiltonian Floer complex \cite[Corollary 1.2]PoderBalkestahl2021. These hypotheses do not hold for the projective blow-ups used here. [S21:75–84]
 
 The dimension-22 manuscript contrasts the two bounds directly 
 
@@ -213,25 +213,25 @@ The degenerate manuscript's argument is a finite-order transfer that turns a cri
 
 > \paragraph{Proof mechanism.}
 > The key is to transfer a critical-point count from a fixed submanifold
-> to the fixed-point count of a nearby Hamiltonian map. Let $A$ be a
-> finite-order Hamiltonian map with fixed submanifold $F$, whose fixed
-> tangent vectors are exactly those tangent to $F$. Extend a function
-> $f$ on $F$ to an $A$-invariant function $K$ on the ambient manifold,
-> and let $B_s$ be its Hamiltonian flow. If $A^m=\mathrm{id}$, invariance gives
+> to the fixed-point count of a nearby Hamiltonian map. Let $`A`$ be a
+> finite-order Hamiltonian map with fixed submanifold $`F`$, whose fixed
+> tangent vectors are exactly those tangent to $`F`$. Extend a function
+> $`f`$ on $`F`$ to an $`A`$-invariant function $`K`$ on the ambient manifold,
+> and let $`B_s`$ be its Hamiltonian flow. If $`A^m=\mathrm{id}`$, invariance gives
 > $$>  (A\circ B_\varepsilon)^m=B_{m\varepsilon}.
 >$$
-> For sufficiently small $\varepsilon>0$, the right side has only
-> stationary fixed points. Any fixed point of $A\circ B_\varepsilon$
-> is therefore a critical point of $K$ fixed by $A$. Finite-group
-> averaging makes ambient criticality on $F$ equivalent to criticality
-> of $f$, giving
+> For sufficiently small $`\varepsilon>0`$, the right side has only
+> stationary fixed points. Any fixed point of $`A\circ B_\varepsilon`$
+> is therefore a critical point of $`K`$ fixed by $`A`$. Finite-group
+> averaging makes ambient criticality on $`F`$ equivalent to criticality
+> of $`f`$, giving
 > $$>  \mathrm{Fix}(A\circ B_\varepsilon)=\mathrm{crit}(f).
 >$$
 > This criticality step is the finite-group case of Palais's principle
 > of symmetric criticality~\cite[Section~5]{Palais1979}; the power identity
-> excludes additional fixed points away from $F$.
+> excludes additional fixed points away from $`F`$.
 
-**Prior (my training data, not this repo).** As of my early-2025 cutoff, the Arnold conjecture for nondegenerate Hamiltonian diffeomorphisms on closed symplectic manifolds is a theorem with a lower bound given by the sum of Betti numbers over a field, and the stable Morse number was proposed by Golovko as a stronger, integral bound. I recall the stable Morse bound as open, with positive results under the $\pi_2$-vanishing hypothesis. A counterexample with a uniform relative deficit in a fixed dimension, and a degenerate example with three fixed points on the quadric threefold, are not things I recall from the literature. The prior is a training-data recollection, self-rated, and the repo supplies only the manuscripts' citations.
+**Prior (my training data, not this repo).** As of my early-2025 cutoff, the Arnold conjecture for nondegenerate Hamiltonian diffeomorphisms on closed symplectic manifolds is a theorem with a lower bound given by the sum of Betti numbers over a field, and the stable Morse number was proposed by Golovko as a stronger, integral bound. I recall the stable Morse bound as open, with positive results under the $`\pi_2`$-vanishing hypothesis. A counterexample with a uniform relative deficit in a fixed dimension, and a degenerate example with three fixed points on the quadric threefold, are not things I recall from the literature. The prior is a training-data recollection, self-rated, and the repo supplies only the manuscripts' citations.
 
 ## Consequences
 
@@ -285,20 +285,20 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 ## Bibliography
 
-- Abouzaid, Mohammed, Blumberg, Andrew J., Arnold conjecture and Morava $K$-theory (2021)
+- Abouzaid, Mohammed, Blumberg, Andrew J., Arnold conjecture and Morava $`K`$-theory (2021)
 - Bai, Shaoyun, Xu, Guangbo, Arnold conjecture over integers (2022)
 - Bai, Shaoyun, Xu, Guangbo, Integral Hamiltonian Floer theory: Foundations (2026)
 - Bai, Shaoyun, Xu, Guangbo, Arnold conjecture over integers (2022)
 - Bai, Shaoyun, Xu, Guangbo, Integral Hamiltonian Floer theory: Foundations (2026)
 - {Pöder Balkeståhl}, Sebastian, Simple homotopy type of the Hamiltonian Floer complex (2021)
 - Barraud, Jean-François, A Floer fundamental group (2018)
-- Bass, Hyman, $K$-theory and stable algebra (1964)
+- Bass, Hyman, $`K`$-theory and stable algebra (1964)
 - T. Blomme, _Gromov–Witten invariants of bielliptic surfaces_, J. London Math. Soc. (2) **111** (2025), no. 2, e70081. doi:10.1112/jlms.70081.
 - T. Blomme, _Gromov–Witten invariants of bielliptic surfaces_, J. London Math. Soc. (2) **111** (2025), no. 2, e70081. doi:10.1112/jlms.70081.
 - Blomme, Thomas, Gromov–Witten invariants of bielliptic surfaces (2025)
-- M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $K$-theory_, preprint (2021), arXiv:2103.01507.
-- M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $K$-theory_, preprint (2021), arXiv:2103.01507.
-- L. Buhovsky, V. Humili\`ere, and S. Seyfaddini, _A $C^0$ counterexample to the Arnold conjecture_, Inventiones Mathematicae **213** (2018), no. 2, 759–809. doi:10.1007/s00222-018-0797-x.
+- M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $`K`$-theory_, preprint (2021), arXiv:2103.01507.
+- M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $`K`$-theory_, preprint (2021), arXiv:2103.01507.
+- L. Buhovsky, V. Humili\`ere, and S. Seyfaddini, _A $`C^0`$ counterexample to the Arnold conjecture_, Inventiones Mathematicae **213** (2018), no. 2, 759–809. doi:10.1007/s00222-018-0797-x.
 - Cerf, Jean, Travaux de Smale sur la structure des variétés (1962)
 - Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold (1983)
 - Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold (1983)
@@ -319,7 +319,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - A. Floer, _Symplectic fixed points and holomorphic spheres_, Comm. Math. Phys. **120** (1989), no. 4, 575–611. doi:10.1007/BF01260388.
 - A. Floer, _Symplectic fixed points and holomorphic spheres_, Comm. Math. Phys. **120** (1989), no. 4, 575–611. doi:10.1007/BF01260388.
 - Floer, Andreas, Symplectic fixed points and holomorphic spheres (1989)
-- B. Fortune, _A symplectic fixed point theorem for $\CP^n$_, Inventiones Mathematicae **81** (1985), no. 1, 29–46. doi:10.1007/BF01388770.
+- B. Fortune, _A symplectic fixed point theorem for $`\CP^n`$_, Inventiones Mathematicae **81** (1985), no. 1, 29–46. doi:10.1007/BF01388770.
 - Fukaya, Kenji, Ono, Kaoru, Arnold conjecture and Gromov–Witten invariant (1999)
 - R. Golovko, _On variants of Arnold conjecture_, Archivum Mathematicum **56** (2020), no. 5, 277–286. doi:10.5817/AM2020-5-277.
 - Golovko, Roman, On variants of Arnold conjecture (2020)
@@ -336,7 +336,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - S. Pöder Balkestå hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
 - S. Pöder Balkestå hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
 - H. Hofer, _Lusternik–Schnirelman-theory for Lagrangian intersections_, Annales de l'Institut Henri Poincaré C, Analyse non linéaire **5** (1988), no. 5, 465–499. doi:10.1016/S0294-1449(16)30339-0.
-- H. Jiao, _A smooth Hamiltonian diffeomorphism with two fixed points on $S^2\times S^2$_, arXiv:2609.33626v1, September 27, 2026.
+- H. Jiao, _A smooth Hamiltonian diffeomorphism with two fixed points on $`S^2\times S^2`$_, arXiv:2609.33626v1, September 27, 2026.
 - Laudenbach, François, A proof of Morse's theorem about the cancellation of critical points (2013)
 - H. Duan and B. Li, _Topology of blow-ups and enumerative geometry_, preprint (2009), revised 2016, arXiv:0906.4152v7.
 - H. Duan and B. Li, _Topology of blow-ups and enumerative geometry_, preprint (2009), revised 2016, arXiv:0906.4152v7.
@@ -344,14 +344,14 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - R. Ma, _Proofs on Arnold conjectures_, arXiv:0808.0613v7, July 5, 2013.
 - Ma, Renyi, Proofs on Arnold conjectures (2013)
 - A.-L. Mare, _Topology of isotropy orbits_, doctoral dissertation, Universität Augsburg, 1997. Author-hosted text.
-- Milnor, John, Lectures on the $h$-Cobordism Theorem (1965)
+- Milnor, John, Lectures on the $`h`$-Cobordism Theorem (1965)
 - J. Milnor, _Morse Theory_, Annals of Mathematics Studies, vol. 51, Princeton University Press, Princeton, NJ, 1963.
-- J. Milnor, _Lectures on the $h$-Cobordism Theorem_, notes by L. Siebenmann and J. Sondow, Princeton University Press, Princeton, NJ, 1965.
+- J. Milnor, _Lectures on the $`h`$-Cobordism Theorem_, notes by L. Siebenmann and J. Sondow, Princeton University Press, Princeton, NJ, 1965.
 - J. Milnor, _Morse Theory_, Annals of Mathematics Studies, vol. 51, Princeton University Press, Princeton, NJ, 1963.
-- J. Milnor, _Lectures on the $h$-Cobordism Theorem_, notes by L. Siebenmann and J. Sondow, Princeton University Press, Princeton, NJ, 1965.
+- J. Milnor, _Lectures on the $`h`$-Cobordism Theorem_, notes by L. Siebenmann and J. Sondow, Princeton University Press, Princeton, NJ, 1965.
 - Milnor, John, Morse Theory (1963)
-- Milnor, John, Lectures on the $h$-Cobordism Theorem (1965)
-- Morgan, John, Lecture IV: $K_0$, $K_1$, Whitehead torsion, and the $s$-cobordism theorem (2020)
+- Milnor, John, Lectures on the $`h`$-Cobordism Theorem (1965)
+- Morgan, John, Lecture IV: $`K_0`$, $`K_1`$, Whitehead torsion, and the $`s`$-cobordism theorem (2020)
 - K. Fukaya and K. Ono, _Arnold conjecture and Gromov–Witten invariant_, Topology **38** (1999), no. 5, 933–1048. doi:10.1016/S0040-9383(98)00042-1.
 - Ono, Kaoru, Pajitnov, Andrei, On the fixed points of a Hamiltonian diffeomorphism in presence of fundamental group (2016)
 - K. Fukaya and K. Ono, _Arnold conjecture and Gromov–Witten invariant_, Topology **38** (1999), no. 5, 933–1048. doi:10.1016/S0040-9383(98)00042-1.

@@ -23,8 +23,8 @@ that recognizes it.
 
 A **generalized** regular expression adds one more operation:
 **complement** (the strings *not* in the set). The **generalized star
-height** $h_\Sigma(L)$ of a language $L$ over alphabet $\Sigma$ is the
-smallest star nesting of a *generalized* expression recognizing $L$.
+height** $`h_\Sigma(L)`$ of a language $`L`$ over alphabet $`\Sigma`$ is the
+smallest star nesting of a *generalized* expression recognizing $`L`$.
 
 Adding complement makes a big difference. Ordinary star height is
 **unbounded** — over just two letters there are languages of arbitrarily
@@ -39,23 +39,23 @@ alphabet, the language, or the size of a recognizing automaton.
 ## Graduate summary
 
 **The bound of thirteen** ([S4:33–39], `thm:main`). "For every finite
-alphabet $\Sigma$ and every regular language $L\subseteq\Sigma^*$,
-$h_\Sigma(L)\le 13$" [S4:33–39]. This is the first uniform bound,
+alphabet $`\Sigma`$ and every regular language $`L\subseteq\Sigma^*`$,
+$`h_\Sigma(L)\le 13`$" [S4:33–39]. This is the first uniform bound,
 obtained by a prediction-trial / full-decision-history construction
 [S4:44–51]. Its numerical value records the depth of that method.
 
 **The bound of four** ([S7:24–27], `thm:main`). "For every finite
-alphabet $\Sigma$ and every regular language $L\subseteq\Sigma^*$, one
-has $h_\Sigma(L)\le4$" [S7:24–27]. Proved by a complete construction
+alphabet $`\Sigma`$ and every regular language $`L\subseteq\Sigma^*`$, one
+has $`h_\Sigma(L)\le4`$" [S7:24–27]. Proved by a complete construction
 over the given alphabet using multiscale periodic transport; the bound
-is independent of $\Sigma$, $L$, and the number of states in a
+is independent of $`\Sigma`$, $`L`$, and the number of states in a
 recognizing automaton [S7:29–34].
 
 **The bound of three** ([S10:29–35], `thm:main`). "For every finite
-alphabet $\Sigma$ and every regular language $L\subseteq\Sigma^*$,
-$h_\Sigma(L)\le3$" [S10:29–35]. Proved by arbitrary-function shift
+alphabet $`\Sigma`$ and every regular language $`L\subseteq\Sigma^*`$,
+$`h_\Sigma(L)\le3`$" [S10:29–35]. Proved by arbitrary-function shift
 tables with a whole-stencil decoder. The expressions use the letters of
-$\Sigma$ itself; their finite parameters and lengths may depend on the
+$`\Sigma`$ itself; their finite parameters and lengths may depend on the
 language, but the *nesting* is bounded [S10:37–40].
 
 **The hierarchy is nested.** Each stronger bound subsumes the weaker
@@ -83,7 +83,7 @@ groups of class two [S7:46–52]. These algebraic results do *not*
 supply a uniform bound for arbitrary finite monoids.
 
 The **uniform-boundedness** question — whether some absolute
-$h_\Sigma(L)\le h$ works for every regular $L$ — is the one this family
+$`h_\Sigma(L)\le h`$ works for every regular $`L`$ — is the one this family
 settles. **Straubing** (2002) distinguished the absolute-boundedness
 question from the height-one question [S4:39–42]: a language needing
 height greater than one would rule out the bound one, but not a larger
@@ -105,7 +105,7 @@ proof.
 ## Consequences
 
 - **A uniform generalized star-height bound exists.** Every regular
-  language over a finite alphabet has $h_\Sigma(L)\le3$
+  language over a finite alphabet has $`h_\Sigma(L)\le3`$
   [S10:29–35].
 - **The bound is absolute.** It is independent of the alphabet, the
   language, and the size of a recognizing automaton [S7:29–32].
@@ -197,7 +197,7 @@ height and `star` adds one — and the predicate
 [S13:39–40]. Its single statement is
 
 - `main` [S13:42–43] — for every finite alphabet and every regular
-  $L$, `HasHeightAtMost L 3`; `sorry` at [S13:44].
+  $`L`$, `HasHeightAtMost L 3`; `sorry` at [S13:44].
 
 There is no `OAI/**` declaration that proves this statement, so the
 formalization stops at the challenge stub. The reading is of source

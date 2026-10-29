@@ -8,25 +8,25 @@
 
 The counterexample manuscript's main theorem is the flow itself [S7:69–78]:
 
-> There are an integer $q\ge10$, a time $T>0$, and a smooth Ricci flow $g(t)$, $0\le t<T$, on the closed connected manifold $M=\mathbb S^2\times\mathbb S^{q+1}$, with smooth initial metric, such that $$\sup_{M\times[0,T)}|R_{g(t)}|<\infty, \qquad \lim_{t\uparrow T}\max_M|\mathrm{Rm}_{g(t)}|=\infty.$$ In particular, $T$ is the finite maximal existence time of this flow. [S7:69–77]
+> There are an integer $`q\ge10`$, a time $`T>0`$, and a smooth Ricci flow $`g(t)`$, $`0\le t<T`$, on the closed connected manifold $`M=\mathbb S^2\times\mathbb S^{q+1}`$, with smooth initial metric, such that $$\sup_{M\times[0,T)}|R_{g(t)}|<\infty, \qquad \lim_{t\uparrow T}\max_M|\mathrm{Rm}_{g(t)}|=\infty.$$ In particular, $`T`$ is the finite maximal existence time of this flow. [S7:69–77]
 
 The manuscript states what the theorem does not say: it refutes the unrestricted all-dimensions formulation, and it draws no dimension-four conclusion [S7:80–84].
 
 The four-dimensional manuscript's extension theorem is the positive half 
 
-> Let $M$ be a closed connected smooth four-manifold, let $0<T<\infty$, and let $g(t)$, $0\le t<T$, be a smooth Ricci flow with smooth initial metric. If $$\sup_{M\times[0,T)}|R(g(t))|<\infty,$$ then there are $\varepsilon>0$ and a smooth Ricci flow $\widetilde g(t)$ on $M$, $0\le t<T+\varepsilon$, such that $\widetilde g(t)=g(t)$ for every $t<T$. [S20:12–20]
+> Let $`M`$ be a closed connected smooth four-manifold, let $`0<T<\infty`$, and let $`g(t)`$, $`0\le t<T`$, be a smooth Ricci flow with smooth initial metric. If $$\sup_{M\times[0,T)}|R(g(t))|<\infty,$$ then there are $`\varepsilon>0`$ and a smooth Ricci flow $`\widetilde g(t)`$ on $`M`$, $`0\le t<T+\varepsilon`$, such that $`\widetilde g(t)=g(t)`$ for every $`t<T`$. [S20:12–20]
 
 Its corollary is the contrapositive, and it is the dimension-four detection statement 
 
-> If a Ricci flow on a closed smooth four-manifold has finite maximal smooth existence time $T$, then $$\limsup_{t\uparrow T}\max_{x\in M}R(g(t))(x)=+\infty.$$ [S20:32–36]
+> If a Ricci flow on a closed smooth four-manifold has finite maximal smooth existence time $`T`$, then $$\limsup_{t\uparrow T}\max_{x\in M}R(g(t))(x)=+\infty.$$ [S20:32–36]
 
 The proof of the corollary is short 
 
-> The equation $(\partial_t-\Delta)R=2|\mathrm{Ric}|^2$ and the maximum principle give a scalar lower bound on a finite time interval. A finite upper limit in the assertion would therefore give a uniform absolute bound near $T$, and smoothness supplies the bound on the remaining compact time interval. The componentwise extension just described contradicts maximality. [S20:40–45]
+> The equation $`(\partial_t-\Delta)R=2|\mathrm{Ric}|^2`$ and the maximum principle give a scalar lower bound on a finite time interval. A finite upper limit in the assertion would therefore give a uniform absolute bound near $`T`$, and smoothness supplies the bound on the remaining compact time interval. The componentwise extension just described contradicts maximality. [S20:40–45]
 
 The companion's abstract states its own result 
 
-> We prove a sequential elliptic inequality for the renormalized Einstein–Hilbert functional on a fixed finite tree of four-dimensional Ricci-flat spaces. As the joining lengths diverge and the scale-neutral weighted Ricci error $M$ tends to zero, the functional satisfies $E=o(M)$. The root end has decay exponent greater than one, and every joined quotient group is nontrivial. We also prove the multivariable path-selection theorem for asymptotic expansions used to obtain this estimate. [S31:9–15]
+> We prove a sequential elliptic inequality for the renormalized Einstein–Hilbert functional on a fixed finite tree of four-dimensional Ricci-flat spaces. As the joining lengths diverge and the scale-neutral weighted Ricci error $`M`$ tends to zero, the functional satisfies $`E=o(M)`$. The root end has decay exponent greater than one, and every joined quotient group is nontrivial. We also prove the multivariable path-selection theorem for asymptotic expansions used to obtain this estimate. [S31:9–15]
 
 ## Undergraduate summary
 
@@ -54,23 +54,23 @@ The construction separates two scales. With `δ = T − t`, the parabolic scale 
 
 The cap proposition is what decouples the two curvatures 
 
-> For every flow with the choices made above, and $q$ sufficiently large, there is a constant $C$, allowed to depend on that flow, such that $$(r^2+\theta^2)|\mathrm{Rm}|\le C$$ on $M\times[0,T)$. [S10:4–9]
+> For every flow with the choices made above, and $`q`$ sufficiently large, there is a constant $`C`$, allowed to depend on that flow, such that $$(r^2+\theta^2)|\mathrm{Rm}|\le C$$ on $`M\times[0,T)`$. [S10:4–9]
 
 The reaction proposition bounds the reaction quotient at the pole and at the cap 
 
-> At late times on $0<r\le\frac18\sqrt\delta$, the reaction quotient $$c(x,t)=\frac{2\langle\mathrm{Rm}(\mathrm{Ric}),\mathrm{Ric}\rangle}{|\mathrm{Ric}|^2} \quad\text{where }|\mathrm{Ric}|>0$$ satisfies both bounds $$c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}.$$ [S11:210–219]
+> At late times on $`0<r\le\frac18\sqrt\delta`$, the reaction quotient $$c(x,t)=\frac{2\langle\mathrm{Rm}(\mathrm{Ric}),\mathrm{Ric}\rangle}{|\mathrm{Ric}|^2} \quad\text{where }|\mathrm{Ric}|>0$$ satisfies both bounds $$c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}.$$ [S11:210–219]
 
 The three barrier propositions fix the parameters in order and control the pole, the interior, and the geometric exterior [S12:71–73] [S12:158–159] [S12:225–226].
 
 The rate corollary is the quantitative form, with `d_q = (q + 1 − √((q + 1)(q − 7)))/2` 
 
-> For every sufficiently large integer $q$, set $$d_q=\frac{q+1-\sqrt{(q+1)(q-7)}}2.$$ For every sufficiently large even integer $k$, with the threshold allowed to depend on $q$, there is a smooth Ricci flow on $\mathbb S^2\times\mathbb S^{q+1}$ with finite maximal time $T$, uniformly bounded scalar curvature, and constants $0<c\le C<\infty$ such that $$c(T-t)^{-2k/d_q}\le\max_M|\mathrm{Rm}|(\cdot,t) \le C(T-t)^{-2k/d_q}$$ for all sufficiently late times. In particular, one fixed dimension admits such flows with an unbounded discrete set of power-law Type-II curvature exponents. The flow, $T$, and the constants may depend on $q$ and $k$. [S12:284–299]
+> For every sufficiently large integer $`q`$, set $$d_q=\frac{q+1-\sqrt{(q+1)(q-7)}}2.$$ For every sufficiently large even integer $`k`$, with the threshold allowed to depend on $`q`$, there is a smooth Ricci flow on $`\mathbb S^2\times\mathbb S^{q+1}`$ with finite maximal time $`T`$, uniformly bounded scalar curvature, and constants $`0<c\le C<\infty`$ such that $$c(T-t)^{-2k/d_q}\le\max_M|\mathrm{Rm}|(\cdot,t) \le C(T-t)^{-2k/d_q}$$ for all sufficiently late times. In particular, one fixed dimension admits such flows with an unbounded discrete set of power-law Type-II curvature exponents. The flow, $`T`$, and the constants may depend on $`q`$ and $`k`$. [S12:284–299]
 
 The four-dimensional paper runs the other way. It models the spatial geometry near `T` as a tree of Ricci-flat ALE pieces with an outermost scale `a(t)` [S20:100–105], and studies a renormalized Einstein–Hilbert functional whose differential is the integral pairing with the Einstein tensor `½ R g − Ric` [S20:109–123]. The degeneration-tree theorem makes the tree precise [S22:31–60], the buffered-interval proposition selects time intervals on which the outermost scale changes by a fixed factor [S22:1270–1282], the exterior Ricci proposition is the parabolic input [S23:334–336], the collar extension theorem extends the flow across the collar [S24:82–108], and the final contradiction shows the energy must vanish [S25:476].
 
 The companion paper is the static half. It fixes a tree of Ricci-flat ALE model spaces, selects a path through the tree, and proves the tree inequality 
 
-> Fix a finite rooted tree with the end identifications and order-$20$ metric bounds of Section . Let $(g_j,L^{(j)},M_j)$ satisfy the compact vertex convergence, the same uniform half-end and root-end bounds, and Equation through order $10$, with every $L_e^{(j)}\to\infty$ and $M_j\to0$. Then, in physical root units, $$E(g_j)=o(M_j).$$ For an index with $M_j=0$, the assertion means $E(g_j)=0$. The little-oh is taken for this fixed tree; it does not assert a power exponent uniform over different trees. [S34:136–141]
+> Fix a finite rooted tree with the end identifications and order-$`20`$ metric bounds of Section . Let $`(g_j,L^{(j)},M_j)`$ satisfy the compact vertex convergence, the same uniform half-end and root-end bounds, and Equation through order $`10`$, with every $`L_e^{(j)}\to\infty`$ and $`M_j\to0`$. Then, in physical root units, $$E(g_j)=o(M_j).$$ For an index with $`M_j=0`$, the assertion means $`E(g_j)=0`$. The little-oh is taken for this fixed tree; it does not assert a power exponent uniform over different trees. [S34:136–141]
 
 Its path-selection theorem realizes finite sign conditions and finite prescribed limits along a real analytic path, with every actual coordinate eventually monotone or constant [S35:67–79], and its corollary gives the finite variation the elliptic argument consumes [S35:90–97].
 
@@ -161,8 +161,8 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - Cheeger, Jeff, Tian, Gang, Curvature and injectivity radius estimates for Einstein 4-manifolds (2006)
 - Cheeger, Jeff, Gromov, Mikhail, Taylor, Michael, Finite propagation speed, kernel estimates for functions of the Laplace operator, and the geometry of complete Riemannian manifolds (1982)
 - Chern, Shiing-Shen, A Simple Intrinsic Proof of the Gauss–Bonnet Formula for Closed Riemannian Manifolds (1944)
-- Chiarenza, Filippo, Frasca, Michele, Longo, Placido, Interior $W^{2,p}$ estimates for non divergence elliptic equations with discontinuous coefficients (1991)
-- Chiarenza, Filippo, Frasca, Michele, Longo, Placido, $W^{2,p}$-solvability of the Dirichlet problem for nondivergence elliptic equations with VMO coefficients (1993)
+- Chiarenza, Filippo, Frasca, Michele, Longo, Placido, Interior $`W^{2,p}`$ estimates for non divergence elliptic equations with discontinuous coefficients (1991)
+- Chiarenza, Filippo, Frasca, Michele, Longo, Placido, $`W^{2,p}`$-solvability of the Dirichlet problem for nondivergence elliptic equations with VMO coefficients (1993)
 - Ciarlet, Philippe G., Ciarlet, Jr., Patrick, Another approach to linearized elasticity and a new proof of Korn's inequality (2005)
 - Deruelle, Alix, Kröncke, Klaus, Stability of ALE Ricci-flat manifolds under Ricci flow (2021)
 - Deruelle, Alix, Ozuch, Tristan, A Łojasiewicz inequality for ALE metrics (2025)
@@ -178,11 +178,11 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - Hardy, G. H., Littlewood, J. E., A maximal theorem with function-theoretic applications (1930)
 - Haslhofer, Robert, A renormalized Perelman-functional and a lower bound for the ADM-mass (2011)
 - Khavkine, Igor, The Calabi complex and Killing sheaf cohomology (2017)
-- S. Angenent and D. Knopf, _An example of neckpinching for Ricci flow on $S^{n+1}$_, Math. Res. Lett. **11** (2004), no. 4, 493–518. Author's text; corrigendum.
+- S. Angenent and D. Knopf, _An example of neckpinching for Ricci flow on $`S^{n+1}`$_, Math. Res. Lett. **11** (2004), no. 4, 493–518. Author's text; corrigendum.
 - N. V. Krylov, _Parabolic equations with VMO coefficients in spaces with mixed norms_, arXiv:math/0610955v1, 2006. Theorem numbering refers to this version. Published as _Parabolic equations with VMO coefficients in Sobolev spaces with mixed norms_, J. Funct. Anal. **250** (2007), no. 2, 521–558. doi:10.1016/j.jfa.2007.04.003.
 - O. A. Ladyzhenskaya, V. A. Solonnikov, and N. N. Ural'tseva, _Linear and Quasi-linear Equations of Parabolic Type_, Translations of Mathematical Monographs, vol. 23, American Mathematical Society, Providence, RI, 1968; corrected reprint, 1988. doi:10.1090/mmono/023.
 - Li, Chuanhuan, Li, Yi, Long-time existence of some geometric flows with bounded scalar curvature (2026)
-- Liu, Jiawei, Simon, Miles, Volume estimates and convergence results for solutions to Ricci flow with $L^p$ bounded scalar curvature (2026)
+- Liu, Jiawei, Simon, Miles, Volume estimates and convergence results for solutions to Ricci flow with $`L^p`$ bounded scalar curvature (2026)
 - Lockhart, Robert B., McOwen, Robert C., Elliptic differential operators on noncompact manifolds (1985)
 - OpenAI, Path selection and an elliptic inequality on degenerating Ricci-flat trees (2026)
 - Ozuch, Tristan, Noncollapsed degeneration of Einstein 4-manifolds II (2022)
@@ -201,5 +201,5 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - Wang, Bing, On the conditions to extend Ricci flow (2008)
 - Zhang, Zhou, Scalar curvature behavior for finite-time singularity of Kähler–Ricci flow (2010)
 - H.-D. Cao and X.-P. Zhu, _A complete proof of the Poincaré and geometrization conjectures—application of the Hamilton–Perelman theory of the Ricci flow_, Asian J. Math. **10** (2006), no. 2, 165–492. Full text.
-- H.-L. Gu and X.-P. Zhu, _The existence of Type II singularities for the Ricci flow on $S^{n+1}$_, Comm. Anal. Geom. **16** (2008), no. 3, 467–494. arXiv:0707.0033v1.
+- H.-L. Gu and X.-P. Zhu, _The existence of Type II singularities for the Ricci flow on $`S^{n+1}`$_, Comm. Anal. Geom. **16** (2008), no. 3, 467–494. arXiv:0707.0033v1.
 - N. Šešum, _Curvature tensor under the Ricci flow_, Amer. J. Math. **127** (2005), no. 6, 1315–1324. doi:10.1353/ajm.2005.0042.

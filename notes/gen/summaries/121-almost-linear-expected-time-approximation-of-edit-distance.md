@@ -19,23 +19,23 @@ agree on the statement.
 deletions, and substitutions that turn one string into another. It is the
 basic similarity measure in string comparison — used for spell-checking,
 DNA alignment, and diffing. The classical algorithm is a dynamic
-program, the **Wagner–Fischer** recurrence, which fills an $n \times m$
-table in $O(nm)$ time.
+program, the **Wagner–Fischer** recurrence, which fills an $`n \times m`$
+table in $`O(nm)`$ time.
 
 The open problem for decades was to do it faster. This family gives an
-**approximation algorithm**. For any fixed accuracy $\varepsilon \in (0,1)$,
+**approximation algorithm**. For any fixed accuracy $`\varepsilon \in (0,1)`$,
 a **uniform randomized** algorithm estimates the edit distance between
-two strings of total length $N$ within a factor $1+\varepsilon$ — that is,
-it returns a number $\widehat D$ with the true distance between $\widehat D$
-and $(1+\varepsilon)\widehat D$ — with probability at least $2/3$, in
-worst-case **expected** time $N^{1+o(1)}$ [S4:13–26]. That is essentially
+two strings of total length $`N`$ within a factor $`1+\varepsilon`$ — that is,
+it returns a number $`\widehat D`$ with the true distance between $`\widehat D`$
+and $`(1+\varepsilon)\widehat D`$ — with probability at least $`2/3`$, in
+worst-case **expected** time $`N^{1+o(1)}`$ [S4:13–26]. That is essentially
 **linear** time.
 
 Three caveats are stated up front, and they matter. First, the guarantee
 is **expected** over the algorithm's internal randomness, not on every
 execution. Second, it is an **asymptotic** statement at fixed accuracy:
-the constants and the input-size threshold may depend on $\varepsilon$, and
-no polynomial dependence on $1/\varepsilon$ is claimed. Third, the
+the constants and the input-size threshold may depend on $`\varepsilon`$, and
+no polynomial dependence on $`1/\varepsilon`$ is claimed. Third, the
 algorithm supports polynomially bounded **integer** symbols, not just
 fixed-size alphabets, and returns exactly zero on equal strings
 deterministically. The output is a distance estimate only — no
@@ -45,31 +45,31 @@ edit script is reconstructed.
 
 **Main theorem (almost-linear approximation)** ([S4:13–26],
 `thm:main`). "There is one uniform randomized algorithm that, given
-$x,y$ and a rational $\varepsilon\in(0,1)$, returns a nonnegative integer
-$\widehat D$ such that
-$\Pr[\mathrm{ED}(x,y)\le \widehat D\le(1+\varepsilon)\mathrm{ED}(x,y)] \ge \frac23$.
-For every fixed rational $\varepsilon$, its worst-case expected running
-time on strings of total length $N$ is $N^{1+o(1)}$ as $N\to\infty$ on
+$`x,y`$ and a rational $`\varepsilon\in(0,1)`$, returns a nonnegative integer
+$`\widehat D`$ such that
+$`\Pr[\mathrm{ED}(x,y)\le \widehat D\le(1+\varepsilon)\mathrm{ED}(x,y)] \ge \frac23`$.
+For every fixed rational $`\varepsilon`$, its worst-case expected running
+time on strings of total length $`N`$ is $`N^{1+o(1)}`$ as $`N\to\infty`$ on
 the logarithmic-word RAM. The expectation is over internal randomness
 only, and the bound includes input processing, preprocessing, numerical
 work, random sampling and all data-structure operations. Equal strings
 return zero deterministically" [S4:13–26]. The program is uniform in the
 accuracy input, and the asymptotic assertion is pointwise in each fixed
 rational accuracy — the constants and the threshold may depend on
-$\varepsilon$ [S4:28–33]. The algorithm uses exact computation below an
+$`\varepsilon`$ [S4:28–33]. The algorithm uses exact computation below an
 accuracy-dependent input-length threshold [S4:35–38].
 
 **Scope (formalization)** ([S5:7–11]). "The formalization gives a
-randomized $(1+\varepsilon)$-approximation for unit-cost edit distance
+randomized $`(1+\varepsilon)`$-approximation for unit-cost edit distance
 between explicitly stored integer strings, for every fixed rational
-$0<\varepsilon<1$. Its estimate is at least the true distance and at most
-$(1+\varepsilon)$ times it with probability at least $2/3$; equal strings
-return zero on every execution. For total length at most $N$ and integer
-symbols bounded by a fixed polynomial in $N$, expected work is at most
-$(N+2)^{1+\eta}$ for every fixed $\eta>0$ and all sufficiently large
-$N$. Space is polynomially bounded on every execution" [S5:7–11]. The
-manuscript's $N^{1+o(1)}$ is here made explicit as
-$(N+2)^{1+\eta}$ for every fixed $\eta>0$.
+$`0<\varepsilon<1`$. Its estimate is at least the true distance and at most
+$`(1+\varepsilon)`$ times it with probability at least $`2/3`$; equal strings
+return zero on every execution. For total length at most $`N`$ and integer
+symbols bounded by a fixed polynomial in $`N`$, expected work is at most
+$`(N+2)^{1+\eta}`$ for every fixed $`\eta>0`$ and all sufficiently large
+$`N`$. Space is polynomially bounded on every execution" [S5:7–11]. The
+manuscript's $`N^{1+o(1)}`$ is here made explicit as
+$`(N+2)^{1+\eta}`$ for every fixed $`\eta>0`$.
 
 ## History of the conjecture
 
@@ -81,11 +81,11 @@ quadratic time [S4:43–45].
 
 **Prior (my training data, not this repo).** The edit-distance
 approximation literature is large: for constant-alphabet strings,
-several $(1+\varepsilon)$-approximation schemes with near-linear worst-
+several $`(1+\varepsilon)`$-approximation schemes with near-linear worst-
 case time exist (e.g. the Abbasi–Tiskin line of work); the long-standing
 difficulty is extending near-linear guarantees to arbitrary symbol
 alphabets, where the input size is dominated by the symbol values. The
-asymptotic $N^{1+o(1)}$ expected-time bound with polynomially bounded
+asymptotic $`N^{1+o(1)}`$ expected-time bound with polynomially bounded
 integer symbols is consistent with that frontier. I cannot confirm the
 specific prior results independently; the release ships the manuscript as
 a proof.
@@ -94,20 +94,20 @@ a proof.
 
 - **Almost-linear edit-distance approximation.** A uniform randomized
   algorithm estimates unit-cost edit distance within a factor
-  $1+\varepsilon$ with probability at least $2/3$ in worst-case expected
-  time $N^{1+o(1)}$ for every fixed rational $\varepsilon\in(0,1)$
+  $`1+\varepsilon`$ with probability at least $`2/3`$ in worst-case expected
+  time $`N^{1+o(1)}`$ for every fixed rational $`\varepsilon\in(0,1)`$
   [S4:13–26].
-- **Explicit work bound.** For total length at most $N$ and integer
-  symbols bounded by a fixed polynomial in $N$, expected work is at most
-  $(N+2)^{1+\eta}$ for every fixed $\eta>0$ and all sufficiently large
-  $N$; space is polynomially bounded on every execution [S5:11].
+- **Explicit work bound.** For total length at most $`N`$ and integer
+  symbols bounded by a fixed polynomial in $`N`$, expected work is at most
+  $`(N+2)^{1+\eta}`$ for every fixed $`\eta>0`$ and all sufficiently large
+  $`N`$; space is polynomially bounded on every execution [S5:11].
 - **Integer alphabets.** The guarantee holds for polynomially bounded
   integer symbols, not only fixed-size alphabets [S4:13–26].
 - **Deterministic zero.** Equal strings return exactly zero on every
   execution [S4:13–26].
 - **Asymptotic, not near-linear-constant.** The bound is pointwise in the
-  fixed accuracy; no polynomial dependence on $1/\varepsilon$ and no
-  joint bound as the accuracy varies with $N$ is asserted
+  fixed accuracy; no polynomial dependence on $`1/\varepsilon`$ and no
+  joint bound as the accuracy varies with $`N`$ is asserted
   [S4:28–33].
 
 ## Section skeleton
@@ -133,9 +133,9 @@ The `EditApproximation.lean` comparator stub [S6] is a 19,169-line file
 table, band, and workload machinery for the approximation algorithm. Its
 single top-level statement,
 `theorem almostLinearEditDistanceRawBand` [S6:19146], conjoins the four
-guarantees: the $2/3$-probability $(1+\varepsilon)$ bound, the
+guarantees: the $`2/3`$-probability $`(1+\varepsilon)`$ bound, the
 deterministic-zero case for equal strings, the expected-work bound at most
-$(N+2)^{1+\eta}$, and the polynomially bounded space on every outcome.
+$`(N+2)^{1+\eta}`$, and the polynomially bounded space on every outcome.
 It closes with `sorry` [S6:19166]. There is no `OAI/**` declaration that
 proves it, so the formalization stops at the challenge stub.
 

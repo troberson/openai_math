@@ -15,14 +15,14 @@ generalized-flip pair. The two generalized-flip termination statements:
 
 Manuscript 1, generalized log canonical flips 
 
-> Every sequence of generalized log canonical flips on a normal irreducible globally Weil $\mathbb{Q}$-factorial compact Kähler fourfold terminates, provided the flips are projective small diagrams with the stated opposite ample signs. The boundary is rational, and the nef b-divisor is fixed and represented by an analytically nef $\mathbb{Q}$-Cartier divisor on a projective modification. No scaling rule or pseudo-effectivity assumption is required. The theorem concerns existing flip sequences; it does not assert the existence of all contractions or flips. [S3:1]
+> Every sequence of generalized log canonical flips on a normal irreducible globally Weil $`\mathbb{Q}`$-factorial compact Kähler fourfold terminates, provided the flips are projective small diagrams with the stated opposite ample signs. The boundary is rational, and the nef b-divisor is fixed and represented by an analytically nef $`\mathbb{Q}`$-Cartier divisor on a projective modification. No scaling rule or pseudo-effectivity assumption is required. The theorem concerns existing flip sequences; it does not assert the existence of all contractions or flips. [S3:1]
 
 Manuscript 2, generalized-canonical flips 
 
 > Every sequence of generalized-canonical flips on compact Kähler
 fourfolds with rational boundary and fixed rational analytically nef
 b-divisor terminates when the small morphisms are projective. We prove
-this for normal globally Weil $\mathbb Q$-factorial models with boundary
+this for normal globally Weil $`\mathbb Q`$-factorial models with boundary
 coefficients less than one, allowing exceptional log discrepancies equal
 to one. No scaling rule or pseudo-effectivity assumption is required.
 The theorem applies to existing projective small diagrams with the
@@ -32,17 +32,17 @@ The two ordinary-program terminations (Kähler, klt, rational boundary):
 
 Manuscript 4, maximal ordinary programs 
 
-> We prove that every maximal ordinary negative-ray program starting from a compact Kähler klt fourfold pair with effective rational boundary in the global Weil-divisor $\mathbb Q$-factorial category terminates. It ends at a nef model when the adjoint is pseudo-effective and at a projective Mori fibre space otherwise. [S9:71–73]
+> We prove that every maximal ordinary negative-ray program starting from a compact Kähler klt fourfold pair with effective rational boundary in the global Weil-divisor $`\mathbb Q`$-factorial category terminates. It ends at a nef model when the adjoint is pseudo-effective and at a projective Mori fibre space otherwise. [S9:71–73]
 
 Manuscript 5, finite ordinary programs 
 
-> We prove that a globally Weil-$\mathbb Q$-factorial compact Kähler klt fourfold pair with effective rational boundary and canonical rational line bundle admits a finite ordinary minimal model program starting on the given pair. It ends at a nef model when the adjoint class is pseudo-effective and at a Mori fibre space otherwise. [S11:86–88]
+> We prove that a globally Weil-$`\mathbb Q`$-factorial compact Kähler klt fourfold pair with effective rational boundary and canonical rational line bundle admits a finite ordinary minimal model program starting on the given pair. It ends at a nef model when the adjoint class is pseudo-effective and at a Mori fibre space otherwise. [S11:86–88]
 
 The projective log canonical termination:
 
 Manuscript 3, projective lc fourfolds 
 
-> We prove that every permitted minimal model program for a projective log canonical fourfold with rational boundary over an algebraically closed field of characteristic zero terminates. The result allows arbitrary negative extremal rays and mixed birational steps on the given models, without pseudo-effectivity or initial $\mathbb Q$-factoriality. [S7:63–65]
+> We prove that every permitted minimal model program for a projective log canonical fourfold with rational boundary over an algebraically closed field of characteristic zero terminates. The result allows arbitrary negative extremal rays and mixed birational steps on the given models, without pseudo-effectivity or initial $`\mathbb Q`$-factoriality. [S7:63–65]
 
 ## Undergraduate summary
 
@@ -78,20 +78,20 @@ different categories and with different boundary/nef-b-data hypotheses.
 **Generalized log canonical flips (Kähler).** 
 
 > **Theorem 1.1**
-Let $X_0$ be a normal irreducible globally Weil $\mathbb{Q}$-factorial compact Kähler fourfold. Let $B_0$ be an effective rational Weil divisor of finite support with coefficients in $[0,1]$. Let $\mathbf{M}$ be represented by an analytically nef $\mathbb{Q}$-Cartier divisor on a projective bimeromorphic normal compact Kähler model of $X_0$. Fix compatible actual canonical divisor representatives on all birational models under consideration. Suppose that $D_0=K_{X_0}+B_0+M_{X_0}$ is $\mathbb{Q}$-Cartier and that $(X_0,B_0+\mathbf{M})$ is generalized log canonical.
+Let $`X_0`$ be a normal irreducible globally Weil $`\mathbb{Q}`$-factorial compact Kähler fourfold. Let $`B_0`$ be an effective rational Weil divisor of finite support with coefficients in $`[0,1]`$. Let $`\mathbf{M}`$ be represented by an analytically nef $`\mathbb{Q}`$-Cartier divisor on a projective bimeromorphic normal compact Kähler model of $`X_0`$. Fix compatible actual canonical divisor representatives on all birational models under consideration. Suppose that $`D_0=K_{X_0}+B_0+M_{X_0}`$ is $`\mathbb{Q}`$-Cartier and that $`(X_0,B_0+\mathbf{M})`$ is generalized log canonical.
 
-Consider a sequence of normal irreducible globally Weil $\mathbb{Q}$-factorial compact Kähler fourfolds
+Consider a sequence of normal irreducible globally Weil $`\mathbb{Q}`$-factorial compact Kähler fourfolds
 $$X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots.$$
-On $X_i$, let $B_i$ be the strict transform of $B_0$, let $M_i=M_{X_i}$ be the trace of the same b-divisor, and assume that $D_i=K_{X_i}+B_i+M_i$ is $\mathbb{Q}$-Cartier. Transport the canonical representatives under the induced identifications of prime divisors. Suppose that every step is given by a diagram
+On $`X_i`$, let $`B_i`$ be the strict transform of $`B_0`$, let $`M_i=M_{X_i}`$ be the trace of the same b-divisor, and assume that $`D_i=K_{X_i}+B_i+M_i`$ is $`\mathbb{Q}`$-Cartier. Transport the canonical representatives under the induced identifications of prime divisors. Suppose that every step is given by a diagram
 $$\begin{tikzcd}[column sep=large]
  X_i \arrow[r,"f_i"] & Z_i & X_{i+1}\arrow[l,"f_i^+"']
 \end{tikzcd}$$
-where $Z_i$ is normal compact Kähler, both maps are projective small bimeromorphic morphisms with connected fibers, neither is an isomorphism, and
+where $`Z_i`$ is normal compact Kähler, both maps are projective small bimeromorphic morphisms with connected fibers, neither is an isomorphism, and
 $$-D_i\text{ is }f_i\text{-ample},\qquad
  D_{i+1}\text{ is }f_i^+\text{-ample}.$$
 Here _small_ means that the exceptional locus contains no prime divisor. Then the sequence is finite. [S4:25–44]
 
-On a normal irreducible globally Weil $\mathbb Q$-factorial compact Kähler
+On a normal irreducible globally Weil $`\mathbb Q`$-factorial compact Kähler
 fourfold with rational boundary and a fixed analytically nef b-divisor,
 any sequence of projective *small* flip diagrams with the prescribed
 opposite ample signs is finite. The theorem concerns existing flip
@@ -101,49 +101,49 @@ flip.
 **Generalized-canonical flips (Kähler).** 
 
 > **theorem**
-Let $X_0$ be a normal irreducible globally Weil $\mathbb Q$-factorial compact
-Kähler fourfold, and let $B_0\geq0$ be a rational divisor with
-coefficients in $[0,1)$. Fix compatible actual canonical divisors on
-the birational models. Let $\mathbf M$ be the rational b-divisor represented
-by an analytically nef $\mathbb Q$-Cartier divisor $M'$ on a projective
-birational morphism $X'\to X_0$ of normal compact Kähler spaces.
+Let $`X_0`$ be a normal irreducible globally Weil $`\mathbb Q`$-factorial compact
+Kähler fourfold, and let $`B_0\geq0`$ be a rational divisor with
+coefficients in $`[0,1)`$. Fix compatible actual canonical divisors on
+the birational models. Let $`\mathbf M`$ be the rational b-divisor represented
+by an analytically nef $`\mathbb Q`$-Cartier divisor $`M'`$ on a projective
+birational morphism $`X'\to X_0`$ of normal compact Kähler spaces.
 Assume
 $$\begin{aligned}
  a(E;X_0,B_0+\mathbf M)&>0&&\text{for every prime over $X_0$},\\
  a(E;X_0,B_0+\mathbf M)&\geq1&&\text{for every exceptional prime}.
  \end{aligned}$$
-Consider a sequence of normal globally Weil $\mathbb Q$-factorial compact
+Consider a sequence of normal globally Weil $`\mathbb Q`$-factorial compact
 Kähler fourfolds
 $$X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots .$$
-On $X_i$, let $B_i$ be the strict transform of $B_0$, let $M_i$ be
-the trace of this same $\mathbf M$, and suppose
-$D_i=K_{X_i}+B_i+M_i$ is $\mathbb Q$-Cartier. Suppose that every step is
+On $`X_i`$, let $`B_i`$ be the strict transform of $`B_0`$, let $`M_i`$ be
+the trace of this same $`\mathbf M`$, and suppose
+$`D_i=K_{X_i}+B_i+M_i`$ is $`\mathbb Q`$-Cartier. Suppose that every step is
 given by a diagram
 $$X_i\xrightarrow{\ f_i\ }Z_i
        \xleftarrow{\ f_i^+\ }X_{i+1}$$
 of projective small bimeromorphic morphisms with connected fibres,
-where $Z_i$ is normal compact Kähler, both morphisms are
-nonisomorphisms, $-D_i$ is $f_i$-ample, and $D_{i+1}$ is
-$f_i^+$-ample. Then the sequence is finite. [S6:99–130]
+where $`Z_i`$ is normal compact Kähler, both morphisms are
+nonisomorphisms, $`-D_i`$ is $`f_i`$-ample, and $`D_{i+1}`$ is
+$`f_i^+`$-ample. Then the sequence is finite. [S6:99–130]
 
 The parallel statement for *generalized-canonical* fourfolds (coefficients
-in $[0,1)$, exceptional log discrepancies allowed to equal one): every
+in $`[0,1)`$, exceptional log discrepancies allowed to equal one): every
 projective small flip sequence with the fixed analytically nef
 b-divisor terminates.
 
 **Projective log canonical fourfolds.** 
 
 > **theorem**
-Let $k$ be an algebraically closed field of characteristic zero, and let $(X,B)$ be a projective lc pair of dimension four with rational boundary. No $\mathbb Q$-factoriality or pseudo-effectivity is assumed.
+Let $`k`$ be an algebraically closed field of characteristic zero, and let $`(X,B)`$ be a projective lc pair of dimension four with rational boundary. No $`\mathbb Q`$-factoriality or pseudo-effectivity is assumed.
 \beginenumerate[label=\textup{(\roman*)}]
 \item Every negative extremal ray at every stage has the contraction and, when birational, a positive model required by Definition .
-\item Every program of Definition starting from $(X,B)$ has finitely many birational steps, for every sequence of permitted choices.
+\item Every program of Definition starting from $`(X,B)`$ has finitely many birational steps, for every sequence of permitted choices.
 \item Every maximal program ends either at a projective lc pair with nef adjoint, or at a Mori fibre space: a projective contraction with connected fibres, relative Picard number one, lower-dimensional normal base, and relatively ample negative adjoint.
 \endenumerate
 An already nef input has a zero-step completed program. [S8:97–105]
 
 Over an algebraically closed field of characteristic zero, a projective
-lc pair of dimension four with rational boundary (no $\mathbb Q$-factoriality
+lc pair of dimension four with rational boundary (no $`\mathbb Q`$-factoriality
 or pseudo-effectivity assumed) has: every negative extremal ray
 contractable with a required positive birational model, every permitted
 program with finitely many birational steps, and every maximal program
@@ -152,38 +152,38 @@ ending at a nef adjoint or a Mori fibre space.
 **Ordinary programs, maximal form.** 
 
 > **Theorem 1.2**
-Let $X$ be a normal globally Weil $\mathbb Q$-factorial compact Kähler
-fourfold, with a canonical Weil divisor $K_X$, and let $\Delta\geq0$
-be a rational divisor such that $(X,\Delta)$ is klt. Then every maximal
-ordinary negative-ray program starting on $(X,\Delta)$ terminates.
+Let $`X`$ be a normal globally Weil $`\mathbb Q`$-factorial compact Kähler
+fourfold, with a canonical Weil divisor $`K_X`$, and let $`\Delta\geq0`$
+be a rational divisor such that $`(X,\Delta)`$ is klt. Then every maximal
+ordinary negative-ray program starting on $`(X,\Delta)`$ terminates.
 Its birational steps form a finite sequence
 $$(X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
  \dashrightarrow(X_n,\Delta_n).$$
-Every $X_i$ is normal, compact Kähler and globally Weil
-$\mathbb Q$-factorial; every $(X_i,\Delta_i)$ is klt, and
-$D_i=K_{X_i}+\Delta_i$ is $\mathbb Q$-Cartier. The canonical divisors are
+Every $`X_i`$ is normal, compact Kähler and globally Weil
+$`\mathbb Q`$-factorial; every $`(X_i,\Delta_i)`$ is klt, and
+$`D_i=K_{X_i}+\Delta_i`$ is $`\mathbb Q`$-Cartier. The canonical divisors are
 the transforms of the specified datum. The following alternatives hold.
 \beginenumerate[label=\textup{(\roman*)}]
-\item If $D=K_X+\Delta$ is pseudo-effective, then $D_n$ is nef.
-The composite $\phi:X\dashrightarrow X_n$ extracts no prime divisor,
+\item If $`D=K_X+\Delta`$ is pseudo-effective, then $`D_n`$ is nef.
+The composite $`\phi:X\dashrightarrow X_n`$ extracts no prime divisor,
 and
 $$a(E;X,\Delta)\leq a(E;X_n,\Delta_n)$$
 for every prime divisor over the two models, with strict inequality
-for every prime on $X$ contracted by $\phi$.
-\item If $D$ is not pseudo-effective, there is a projective surjective
-morphism $g:X_n\to S$ with connected fibres, where $S$ is normal
-compact Kähler, $\dim S<4$, $\rho(X_n/S)=1$, and $-D_n$ is
-$g$-ample.
+for every prime on $`X`$ contracted by $`\phi`$.
+\item If $`D`$ is not pseudo-effective, there is a projective surjective
+morphism $`g:X_n\to S`$ with connected fibres, where $`S`$ is normal
+compact Kähler, $`\dim S<4`$, $`\rho(X_n/S)=1`$, and $`-D_n`$ is
+$`g`$-ample.
 \endenumerate
-For each negative contraction, including $g$, the relative
-Bott–Chern dimension is one. If $X$ is globally strongly
-$\mathbb Q$-factorial, so is every $X_i$.
+For each negative contraction, including $`g`$, the relative
+Bott–Chern dimension is one. If $`X`$ is globally strongly
+$`\mathbb Q`$-factorial, so is every $`X_i`$.
 
 The same conclusions hold in the intrinsic formulation with the
 canonical rational line bundle in place of a chosen canonical Weil
-divisor. In either formulation the first model is exactly $X$. [S10:84–119]
+divisor. In either formulation the first model is exactly $`X`$. [S10:84–119]
 
-On a normal globally Weil $\mathbb Q$-factorial compact Kähler klt fourfold
+On a normal globally Weil $`\mathbb Q`$-factorial compact Kähler klt fourfold
 pair with rational boundary, every *maximal* ordinary negative-ray
 program terminates: the birational steps are finite, and the endpoint is
 a nef model (adjoint pseudo-effective) or a projective Mori fibre space
@@ -193,35 +193,35 @@ strictly increasing on contracted primes.
 **Ordinary programs, finite form.** 
 
 > **Theorem 1.2**
-Let $X$ be a normal globally Weil $\mathbb Q$-factorial compact Kähler
-fourfold, with a canonical Weil divisor $K_X$, and let $\Delta\geq0$
-be a rational divisor such that $(X,\Delta)$ is klt. Then there is a
+Let $`X`$ be a normal globally Weil $`\mathbb Q`$-factorial compact Kähler
+fourfold, with a canonical Weil divisor $`K_X`$, and let $`\Delta\geq0`$
+be a rational divisor such that $`(X,\Delta)`$ is klt. Then there is a
 finite sequence of ordinary negative steps
 $$(X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
  \dashrightarrow(X_n,\Delta_n).$$
-Every $X_i$ is normal, compact Kähler and globally Weil
-$\mathbb Q$-factorial; every $(X_i,\Delta_i)$ is klt, and
-$D_i=K_{X_i}+\Delta_i$ is $\mathbb Q$-Cartier. The canonical divisors are
+Every $`X_i`$ is normal, compact Kähler and globally Weil
+$`\mathbb Q`$-factorial; every $`(X_i,\Delta_i)`$ is klt, and
+$`D_i=K_{X_i}+\Delta_i`$ is $`\mathbb Q`$-Cartier. The canonical divisors are
 the transforms of the specified datum. The following alternatives hold.
 \beginenumerate[label=\textup{(\roman*)}]
-\item If $D=K_X+\Delta$ is pseudo-effective, then $D_n$ is nef.
-The composite $\phi:X\dashrightarrow X_n$ extracts no prime divisor,
+\item If $`D=K_X+\Delta`$ is pseudo-effective, then $`D_n`$ is nef.
+The composite $`\phi:X\dashrightarrow X_n`$ extracts no prime divisor,
 and
 $$a(E;X,\Delta)\leq a(E;X_n,\Delta_n)$$
 for every prime divisor over the two models, with strict inequality
-for every prime on $X$ contracted by $\phi$.
-\item If $D$ is not pseudo-effective, there is a projective surjective
-morphism $g:X_n\to S$ with connected fibres, where $S$ is normal
-compact Kähler, $\dim S<4$, $\rho(X_n/S)=1$, and $-D_n$ is
-$g$-ample.
+for every prime on $`X`$ contracted by $`\phi`$.
+\item If $`D`$ is not pseudo-effective, there is a projective surjective
+morphism $`g:X_n\to S`$ with connected fibres, where $`S`$ is normal
+compact Kähler, $`\dim S<4`$, $`\rho(X_n/S)=1`$, and $`-D_n`$ is
+$`g`$-ample.
 \endenumerate
-For each negative contraction, including $g$, the relative
-Bott–Chern dimension is one. If $X$ is globally strongly
-$\mathbb Q$-factorial, so is every $X_i$.
+For each negative contraction, including $`g`$, the relative
+Bott–Chern dimension is one. If $`X`$ is globally strongly
+$`\mathbb Q`$-factorial, so is every $`X_i`$.
 
 The same conclusions hold in the intrinsic formulation with the
 canonical rational line bundle in place of a chosen canonical Weil
-divisor. In either formulation the first model is exactly $X$. [S12:97–131]
+divisor. In either formulation the first model is exactly $`X`$. [S12:97–131]
 
 The same statement phrased as *existence* of a finite sequence of
 ordinary negative steps with the identical nef-model / Mori-fibre-space
@@ -250,7 +250,7 @@ b-data.
 ## Consequences
 
 **Termination of generalized log canonical flip sequences** on
-globally Weil $\mathbb Q$-factorial compact Kähler fourfolds with rational
+globally Weil $`\mathbb Q`$-factorial compact Kähler fourfolds with rational
 boundary and a fixed analytically nef b-divisor [S4:25–44].
 
 **Termination of generalized-canonical flip sequences** in the

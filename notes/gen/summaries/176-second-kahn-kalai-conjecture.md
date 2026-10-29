@@ -8,68 +8,68 @@
 
 The release's blurb [S1:4124] and the catalog abstract [S2:433]
 state the family's claim: **the second Kahn–Kalai
-conjecture** is proved — for every finite simple graph $H$
-with $h \ge 1$ edges and at most $n$ vertices, the threshold for
-$G(n,p)$ to contain an ordinary copy of $H$ is at most
-$C \, p_\mathrm E(n,H)\,(1+\log_2 h)$, where $C$ is universal
-and $p_\mathrm E(n,H)$ is the least density at which every
-subgraph of $H$ has expected copy count at least one half. The
+conjecture** is proved — for every finite simple graph $`H`$
+with $`h \ge 1`$ edges and at most $`n`$ vertices, the threshold for
+$`G(n,p)`$ to contain an ordinary copy of $`H`$ is at most
+$`C \, p_\mathrm E(n,H)\,(1+\log_2 h)`$, where $`C`$ is universal
+and $`p_\mathrm E(n,H)`$ is the least density at which every
+subgraph of $`H`$ has expected copy count at least one half. The
 manuscript is *The second Kahn–Kalai conjecture*
 [S3:34, S3:36]; its abstract 
 
 > We prove the second Kahn–Kalai conjecture. For every finite simple graph
-$H$ with $h\ge1$ edges and at most $n$ vertices, the threshold for
-$G(n,p)$ to contain an ordinary copy of $H$ is at most
-$C p_{\mathrm E}(n,H)(1+\log_2 h)$, where $C$ is universal.
-Here $p_{\mathrm E}(n,H)$ is the least density at which every subgraph
-of $H$ has expected copy count at least one half. [S3:41–46]
+$`H`$ with $`h\ge1`$ edges and at most $`n`$ vertices, the threshold for
+$`G(n,p)`$ to contain an ordinary copy of $`H`$ is at most
+$`C p_{\mathrm E}(n,H)(1+\log_2 h)`$, where $`C`$ is universal.
+Here $`p_{\mathrm E}(n,H)`$ is the least density at which every subgraph
+of $`H`$ has expected copy count at least one half. [S3:41–46]
 
 ## Undergraduate summary
 
-For a fixed graph $H$, the **threshold** for $G(n,p)$ to contain
-$H$ is the critical edge density $p$ where, in a random graph on
-$n$ vertices with each edge present independently with
-probability $p$, copies of $H$ appear: below the threshold you
+For a fixed graph $`H`$, the **threshold** for $`G(n,p)`$ to contain
+$`H`$ is the critical edge density $`p`$ where, in a random graph on
+$`n`$ vertices with each edge present independently with
+probability $`p`$, copies of $`H`$ appear: below the threshold you
 almost surely have no copy, above it you almost surely do. The
-**expectation threshold** $p_\mathrm E(n,H)$ is a simpler
-quantity: the smallest $p$ where the expected number of copies
-of every subgraph of $H$ is at least $1/2$. Kahn and Kalai
+**expectation threshold** $`p_\mathrm E(n,H)`$ is a simpler
+quantity: the smallest $`p`$ where the expected number of copies
+of every subgraph of $`H`$ is at least $`1/2`$. Kahn and Kalai
 conjectured that the real threshold is never much larger than the
 expectation threshold — the gap is at most a universal
-constant times $1+\log_2 h$, where $h$ is the number of edges
-in $H$. This family proves it [S3:41–46, S2:433].
+constant times $`1+\log_2 h`$, where $`h`$ is the number of edges
+in $`H`$. This family proves it [S3:41–46, S2:433].
 
 ## Graduate summary
 
 **The second Kahn–Kalai conjecture** [S3:41–46,
-S4:9]. There exists a universal $C>0$ such that for every
-$n \ge 2$ and every finite simple graph $H$ on at most $n$
+S4:9]. There exists a universal $`C>0`$ such that for every
+$`n \ge 2`$ and every finite simple graph $`H`$ on at most $`n`$
 vertices with at least one edge, the containment threshold
 satisfies
-$\mathrm{ct}(n,H) \le C \, (1+\log_2|E(H)|)
-\, p_\mathrm E(n,H)$, where $\mathrm{ct}(n,H)$ is the
-critical threshold for $G(n,p)$ to contain an ordinary (not
-necessarily induced) copy of $H$ and $p_\mathrm E(n,H)$ is the
-least density at which every subgraph of $H$ has expected copy
-count at least $1/2$ [S4:9].
+$`\mathrm{ct}(n,H) \le C \, (1+\log_2|E(H)|)
+\, p_\mathrm E(n,H)`$, where $`\mathrm{ct}(n,H)`$ is the
+critical threshold for $`G(n,p)`$ to contain an ordinary (not
+necessarily induced) copy of $`H`$ and $`p_\mathrm E(n,H)`$ is the
+least density at which every subgraph of $`H`$ has expected copy
+count at least $`1/2`$ [S4:9].
 
 **The scope of the formalization.** The formalization proves the
-comparison up to a universal factor times $1+\log_2|E(H)|$,
-and hence up to a universal factor times $\log_2 n$, for every
-graph $H$ with at least one edge and at most $n$ vertices,
-$n \ge 2$. The bounds use the actual containment and
+comparison up to a universal factor times $`1+\log_2|E(H)|`$,
+and hence up to a universal factor times $`\log_2 n`$, for every
+graph $`H`$ with at least one edge and at most $`n`$ vertices,
+$`n \ge 2`$. The bounds use the actual containment and
 expectation thresholds [S4:9].
 
 ## History of the conjecture
 
 Kahn and Kalai posed two conjectures in 1984 relating the
-threshold for a random graph to contain a fixed graph $H$ with
+threshold for a random graph to contain a fixed graph $`H`$ with
 the expectation threshold. The **first** (proved by
 Kahn–Koml\'os–Szab\'o and by
 Frankl–R\'onyi in different directions) concerns the
 **induced** containment threshold. The **second** concerns the
 **ordinary** (not necessarily induced) containment threshold
-and allows a $\log_2|E(H)|$ factor. The log factor reflects
+and allows a $`\log_2|E(H)|`$ factor. The log factor reflects
 the worst-case gap between the two notions for trees versus
 general graphs. This manuscript gives the general proof for
 all finite simple graphs [S3:41–46, S2:433].
@@ -77,7 +77,7 @@ all finite simple graphs [S3:41–46, S2:433].
 **Prior (my training data, not this repo).** I know the
 Kahn–Kalai conjectures and their relationship to
 random-graph thresholds. A **general** proof of the second
-conjecture with the explicit $1+\log_2 h$ factor, via a
+conjecture with the explicit $`1+\log_2 h`$ factor, via a
 spread-orbit-tree decomposition and a containment-probability
 lower bound, goes beyond what I recall from the literature;
 the tree-covering and orbit-extension machinery in [S3:41–46] is not
@@ -86,14 +86,14 @@ something I can independently verify from training alone.
 ## Consequences
 
 **The second Kahn–Kalai conjecture is resolved.** For
-every finite simple graph $H$ with $h \ge 1$ edges and at most
-$n$ vertices, the containment threshold is at most
-$C\,(1+\log_2 h)\,p_\mathrm E(n,H)$ for a universal $C$
+every finite simple graph $`H`$ with $`h \ge 1`$ edges and at most
+$`n`$ vertices, the containment threshold is at most
+$`C\,(1+\log_2 h)\,p_\mathrm E(n,H)`$ for a universal $`C`$
 [S3:41–46, S4:9, S2:433].
 
 **The log factor is sharp in the statement.** The comparison
-allows $1+\log_2|E(H)|$, which degrades to $\log_2 n$ via
-$h \le \binom{n}{2}$ [S4:9].
+allows $`1+\log_2|E(H)|`$, which degrades to $`\log_2 n`$ via
+$`h \le \binom{n}{2}`$ [S4:9].
 
 **The thresholds are the actual containment and expectation
 thresholds**, not asymptotic surrogates [S4:9].
@@ -109,9 +109,9 @@ bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization proves the comparison
-up to a universal factor times $1+\log_2|E(H)|$, and hence up
-to a universal factor times $\log_2 n$, for every graph $H$
-with at least one edge and at most $n$ vertices, $n \ge 2$.
+up to a universal factor times $`1+\log_2|E(H)|`$, and hence up
+to a universal factor times $`\log_2 n`$, for every graph $`H`$
+with at least one edge and at most $`n`$ vertices, $`n \ge 2`$.
 The bounds use the actual containment and expectation
 thresholds [S4:9]. The scope note names one comparator
 [S4:13–15]: `SecondKahnKalai.lean`.
@@ -142,15 +142,15 @@ the expectation-threshold certificate
 (`exists_graphRepresentationWithConstraints`), builds a
 spread-orbit-tree decomposition of the edge set
 (`exists_spread_orbit_tree`), defines the graph-sampling
-parameter $p = \min(1, 2048\,e^{50}\,q\,(1+\log_2 h))$ and
-the tree-sampling parameter $p_{\mathrm{tree}}$, shows the
-tree is covered with probability at least $2/3$ at
-$p_{\mathrm{tree}}$ (`tree_covering`), lifts the coverage to
+parameter $`p = \min(1, 2048\,e^{50}\,q\,(1+\log_2 h))`$ and
+the tree-sampling parameter $`p_{\mathrm{tree}}`$, shows the
+tree is covered with probability at least $`2/3`$ at
+$`p_{\mathrm{tree}}`$ (`tree_covering`), lifts the coverage to
 the graph parameter via monotonicity, transfers it to the
 containment probability via the edge-event correspondence
 (`hEevent`), and concludes the containment threshold is at
-most $p$ (`criticalThreshold_le_of_probability`), then bounds
-$p$ by the vertex-count bound
+most $`p`$ (`criticalThreshold_le_of_probability`), then bounds
+$`p`$ by the vertex-count bound
 (`graphThresholdParameter_le_vertexBound`)
 
 

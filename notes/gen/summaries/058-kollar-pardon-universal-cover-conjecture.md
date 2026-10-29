@@ -43,7 +43,7 @@ symmetric factor encodes the "hyperbolic" geometry, the affine factor
 comes from the Albanese variety (the "torus-like" part), and the
 projective factor is the "simply connected core." A special case gives
 the familiar fact: if a smooth projective variety is covered by
-$\mathbb C^n$, it has a finite étale cover by an abelian variety.
+$`\mathbb C^n`$, it has a finite étale cover by an abelian variety.
 
 The second manuscript proves the **bounded-domain symmetry theorem**:
 if a semialgebraic bounded domain in a complex affine variety admits a
@@ -58,43 +58,43 @@ bounded factor.
 **The Kollár–Pardon classification.** 
 
 > **theorem**
-Let $X$ be a connected normal projective variety over $\mathbb C$, and let
-$\widetilde X$ be its universal cover. The following conditions are
+Let $`X`$ be a connected normal projective variety over $`\mathbb C`$, and let
+$`\widetilde X`$ be its universal cover. The following conditions are
 equivalent:
 \beginenumerate[label=\textup{(\roman*)}]
-\item $\widetilde X$ is biholomorphic to a semialgebraic open subset
+\item $`\widetilde X`$ is biholomorphic to a semialgebraic open subset
 of a projective variety.
-\item There are an integer $m\geq0$, a bounded symmetric domain $D$,
-and a simply connected normal projective variety $F$ such that
+\item There are an integer $`m\geq0`$, a bounded symmetric domain $`D`$,
+and a simply connected normal projective variety $`F`$ such that
 $$\widetilde X\simeq D\times\mathbb C^m\times F.$$
 \endenumerate
-A point is allowed as either $D$ or $F$. No algebraicity of the
+A point is allowed as either $`D`$ or $`F`$. No algebraicity of the
 deck transformations is assumed. [S3:92–107]
 
-For a connected normal projective variety $X$ over $\mathbb C$, its
-universal cover $\widetilde X$ is biholomorphic to a semialgebraic open
+For a connected normal projective variety $`X`$ over $`\mathbb C`$, its
+universal cover $`\widetilde X`$ is biholomorphic to a semialgebraic open
 subset of a projective variety if and only if
-$\widetilde X \simeq D \times \mathbb C^m \times F$ for a bounded
-symmetric domain $D$, an integer $m \geq 0$, and a simply connected
-normal projective variety $F$. A point is allowed as either $D$ or $F$.
+$`\widetilde X \simeq D \times \mathbb C^m \times F`$ for a bounded
+symmetric domain $`D`$, an integer $`m \geq 0`$, and a simply connected
+normal projective variety $`F`$. A point is allowed as either $`D`$ or $`F`$.
 This proves Conjecture 2 of Kollár and Pardon in the normal-projective
-scope. The three factors have distinct geometric roles: $D$ records
-hyperbolic transverse geometry, $\mathbb C^m$ arises from Albanese
-varieties of compact fibres after finite covers, and $F$ is the simply
+scope. The three factors have distinct geometric roles: $`D`$ records
+hyperbolic transverse geometry, $`\mathbb C^m`$ arises from Albanese
+varieties of compact fibres after finite covers, and $`F`$ is the simply
 connected core.
 
 **Bounded-domain symmetry.** 
 
 > **theorem**
-Let $U$ be a nonempty connected semialgebraic bounded open subset of a
-complex affine variety. Suppose that a group $\Gamma$ of
-biholomorphisms acts properly discontinuously on $U$ and that
-$U/\Gamma$ is compact. Then $U$ is smooth and is biholomorphic to a
+Let $`U`$ be a nonempty connected semialgebraic bounded open subset of a
+complex affine variety. Suppose that a group $`\Gamma`$ of
+biholomorphisms acts properly discontinuously on $`U`$ and that
+$`U/\Gamma`$ is compact. Then $`U`$ is smooth and is biholomorphic to a
 bounded symmetric domain. [S5:77–83]
 
-A nonempty connected semialgebraic bounded open subset $U$ of a complex
-affine variety, admitting a properly discontinuous group $\Gamma$ of
-biholomorphisms with compact quotient $U/\Gamma$, is smooth and
+A nonempty connected semialgebraic bounded open subset $`U`$ of a complex
+affine variety, admitting a properly discontinuous group $`\Gamma`$ of
+biholomorphisms with compact quotient $`U/\Gamma`$, is smooth and
 biholomorphic to a bounded symmetric domain. This answers the
 bounded-domain question of Kollár and Pardon affirmatively. The
 ambient algebraic set may be singular, and the quotient may have finite
@@ -123,18 +123,18 @@ the "companion article" establishing the classification.
 
 **The Kollár–Pardon universal-cover classification**: the
 semialgebraic universal covers of connected normal projective complex
-varieties are exactly $D \times \mathbb C^m \times F$ with $D$
-bounded symmetric and $F$ simply connected, normal, projective
+varieties are exactly $`D \times \mathbb C^m \times F`$ with $`D`$
+bounded symmetric and $`F`$ simply connected, normal, projective
 [S3:92–107].
 
 **A universal cover is quasi-projective** exactly when the bounded
-symmetric factor $D$ is absent (a point) [S3:92–107].
+symmetric factor $`D`$ is absent (a point) [S3:92–107].
 
 **Bounded-domain symmetry**: a semialgebraic bounded domain with a
 properly discontinuous cocompact group of biholomorphisms is a bounded
 symmetric domain [S5:77–83].
 
-**A smooth projective variety covered by $\mathbb C^n$** has a finite
+**A smooth projective variety covered by $`\mathbb C^n`$** has a finite
 étale cover by an abelian variety [S3:92–107].
 
 ## section skeleton

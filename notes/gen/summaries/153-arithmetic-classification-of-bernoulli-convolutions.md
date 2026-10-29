@@ -9,68 +9,68 @@
 The release's blurb [S1:3648] and the catalog abstract [S2:387] state
 the family's claim: an arithmetic classification of the singular and
 absolutely continuous unbiased Bernoulli convolutions for every
-parameter $\lambda\in(0,1)$, plus singular examples beyond the
+parameter $`\lambda\in(0,1)`$, plus singular examples beyond the
 reciprocals of Pisot numbers. The manuscript's title is *Arithmetic
 classification and non-Pisot singularity for Bernoulli convolutions*
 [S3:31], dated October 3, 2026 [S3:33]. Its abstract
 
 
-> We give an arithmetic classification of singular and absolutely continuous unbiased Bernoulli convolutions for every parameter $\lambda\in(0,1)$. The criterion is expressed through one-sided approximation by explicitly defined finite sets of algebraic units; it is an infinite approximation condition, not a finite membership algorithm. We also establish singular examples beyond reciprocals of Pisot numbers: singularity holds at the reciprocal of every quartic Salem number in $(1,2)$ and at the reciprocal of a specified non-Pisot root of an explicit degree-$31$ polynomial. [S3:37]
+> We give an arithmetic classification of singular and absolutely continuous unbiased Bernoulli convolutions for every parameter $`\lambda\in(0,1)`$. The criterion is expressed through one-sided approximation by explicitly defined finite sets of algebraic units; it is an infinite approximation condition, not a finite membership algorithm. We also establish singular examples beyond reciprocals of Pisot numbers: singularity holds at the reciprocal of every quartic Salem number in $`(1,2)`$ and at the reciprocal of a specified non-Pisot root of an explicit degree-$`31`$ polynomial. [S3:37]
 
 ## Undergraduate summary
 
 An *unbiased Bernoulli convolution* with parameter
-$\lambda\in(0,1)$ is the probability measure $\nu_\lambda$ on
-$\mathbb R$ obtained by the random series
-$\sum_{n\ge0}\pm\lambda^n$ where the $\pm$ signs are independent
+$`\lambda\in(0,1)`$ is the probability measure $`\nu_\lambda`$ on
+$`\mathbb R`$ obtained by the random series
+$`\sum_{n\ge0}\pm\lambda^n`$ where the $`\pm`$ signs are independent
 coin flips. The classical question is when this measure is
 *absolutely continuous* (has a density) and when it is *singular*
 (concentrates on a set of Lebesgue measure zero). A *Pisot number* is
 an algebraic integer all of whose conjugates lie inside the unit
-circle; the reciprocal $1/\beta$ of a Pisot number $\beta>1$ is the
+circle; the reciprocal $`1/\beta`$ of a Pisot number $`\beta>1`$ is the
 canonical parameter where singularity is known. This manuscript (a)
 gives an arithmetic criterion, valid for **every**
-$\lambda\in(0,1)$, deciding exactly which parameters are singular and
+$`\lambda\in(0,1)`$, deciding exactly which parameters are singular and
 which are absolutely continuous, and (b) proves that singularity holds
 well outside the Pisot reciprocals — at the reciprocal of every
-quartic Salem number in $(1,2)$ and at the reciprocal of a specified
-non-Pisot root of an explicit degree-$31$ polynomial [S3:37].
+quartic Salem number in $`(1,2)`$ and at the reciprocal of a specified
+non-Pisot root of an explicit degree-$`31`$ polynomial [S3:37].
 
 ## Graduate summary
 
 **The arithmetic criterion.** The classification [S4:48–60]
 defines a parameter set
-$\mathcal C=(0,1/2)\cup\bigl[(1/2,1)\cap\bigcup_{d\ge2}
+$`\mathcal C=(0,1/2)\cup\bigl[(1/2,1)\cap\bigcup_{d\ge2}
 \bigcap_{j\ge1}\limsup_{n\to\infty}
-\bigcup_{r\in R_*(n,d,j)}[r-4^{-n},r)\bigr]\bigr)$,
+\bigcup_{r\in R_*(n,d,j)}[r-4^{-n},r)\bigr]\bigr)`$,
 an infinite one-sided-approximation condition by explicitly defined
-finite sets of algebraic units $R_*(n,d,j)$. For every
-$\lambda\in(0,1)$, $\nu_\lambda$ is singular if and only if
-$\lambda\in\mathcal C$, and absolutely continuous if and only if
-$\lambda\notin\mathcal C$ [S4:48–60]. It is an infinite
+finite sets of algebraic units $`R_*(n,d,j)`$. For every
+$`\lambda\in(0,1)`$, $`\nu_\lambda`$ is singular if and only if
+$`\lambda\in\mathcal C`$, and absolutely continuous if and only if
+$`\lambda\notin\mathcal C`$ [S4:48–60]. It is an infinite
 approximation condition, **not** a finite membership algorithm
 [S3:37].
 
-**Salem singularity.** Let $\beta\in(1,2)$ be a Salem number of
+**Salem singularity.** Let $`\beta\in(1,2)`$ be a Salem number of
 degree four. Then the unbiased Bernoulli convolution
-$\nu_{1/\beta}$ is singular with respect to Lebesgue measure
+$`\nu_{1/\beta}`$ is singular with respect to Lebesgue measure
 
 
 > **Theorem 4.1**
-Let $\beta\in(1,2)$ be a Salem number of degree four. Then the unbiased
-Bernoulli convolution $\nu_{1/\beta}$ is singular with respect to Lebesgue
+Let $`\beta\in(1,2)`$ be a Salem number of degree four. Then the unbiased
+Bernoulli convolution $`\nu_{1/\beta}`$ is singular with respect to Lebesgue
 measure. [S6:10–14]
 
-**The degree-31 non-Pisot singularity.** The polynomial $p$ in
+**The degree-31 non-Pisot singularity.** The polynomial $`p`$ in
 \eqref{np:polynomial} has a unique real root
-$\beta\in(1.8392,1.8393)$, which is not a Pisot number, and
-$\nu_{1/\beta}$ is singular with respect to Lebesgue measure
+$`\beta\in(1.8392,1.8393)`$, which is not a Pisot number, and
+$`\nu_{1/\beta}`$ is singular with respect to Lebesgue measure
 
 
 > **Theorem 5.1**
-The polynomial $p$ in has a unique real root
-$\beta\in(1.8392,1.8393)$. This root is not a Pisot number, and
-$\nu_{1/\beta}$ is singular with respect to Lebesgue measure. [S5:25–29]
+The polynomial $`p`$ in has a unique real root
+$`\beta\in(1.8392,1.8393)`$. This root is not a Pisot number, and
+$`\nu_{1/\beta}`$ is singular with respect to Lebesgue measure. [S5:25–29]
 
 Both results push singularity beyond the reciprocal of a Pisot number.
 
@@ -93,7 +93,7 @@ finite calculations to the infinite products. [S8:7–12]
 ## History of the conjecture
 
 The classification of Bernoulli convolutions by parameter
-$\lambda\in(0,1)$ is a long-standing problem connecting harmonic
+$`\lambda\in(0,1)`$ is a long-standing problem connecting harmonic
 analysis, probability, and Diophantine approximation. The Pisot
 reciprocals are the classical singular parameters (the Erdős
 conjecture regime and its resolution); Salem-number singularity and a
@@ -107,27 +107,27 @@ Salem and non-Pisot singular examples, is the family's combination
 Bernoulli-convolution dichotomy (Pisot reciprocals singular, many
 non-Pisot parameters absolutely continuous) and the Erdős
 conjecture on the size of the singular set. A complete
-**arithmetic criterion** valid for every $\lambda\in(0,1)$, plus
+**arithmetic criterion** valid for every $`\lambda\in(0,1)`$, plus
 proved singularity at quartic Salem reciprocals and at an explicit
 degree-31 non-Pisot root, goes beyond what I can independently verify;
-I cannot confirm the approximation sets $R_*(n,d,j)$ or the
+I cannot confirm the approximation sets $`R_*(n,d,j)`$ or the
 certificate's analytic tail bounds from training alone.
 
 ## Consequences
 
 **A parameter-by-parameter classification.** For every
-$\lambda\in(0,1)$, $\nu_\lambda$ is singular
-$\iff\lambda\in\mathcal C$ and absolutely continuous
-$\iff\lambda\notin\mathcal C$, an infinite one-sided-approximation
+$`\lambda\in(0,1)`$, $`\nu_\lambda`$ is singular
+$`\iff\lambda\in\mathcal C`$ and absolutely continuous
+$`\iff\lambda\notin\mathcal C`$, an infinite one-sided-approximation
 condition by algebraic units [S4:48–60].
 
 **Salem singularity.** The unbiased Bernoulli convolution at the
-reciprocal of every quartic Salem number in $(1,2)$ is singular
+reciprocal of every quartic Salem number in $`(1,2)`$ is singular
 [S6:10–14].
 
 **Non-Pisot singularity.** Singularity holds at the reciprocal of a
-specified non-Pisot root of an explicit degree-$31$ polynomial,
-$\beta\in(1.8392,1.8393)$ [S5:25–29].
+specified non-Pisot root of an explicit degree-$`31`$ polynomial,
+$`\beta\in(1.8392,1.8393)`$ [S5:25–29].
 
 **A reproducible certificate.** The degree-31 root bounds and
 predictor estimates are checked by a finite-arithmetic certificate

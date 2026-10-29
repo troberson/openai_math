@@ -7,59 +7,59 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:4400] and the catalog abstract [S2:463]
-state the family's claim: for every sufficiently large $n$,
-there exist $n$ points in the unit square such that every
-triangle they determine has area at least $n^{-2+c}$ for one
-absolute $c > 0$, disproving the conjectured almost-
-$n^{-2}$ upper bound in Heilbronn's triangle problem. The
+state the family's claim: for every sufficiently large $`n`$,
+there exist $`n`$ points in the unit square such that every
+triangle they determine has area at least $`n^{-2+c}`$ for one
+absolute $`c > 0`$, disproving the conjectured almost-
+$`n^{-2}`$ upper bound in Heilbronn's triangle problem. The
 manuscript is *A power improvement in the Heilbronn triangle
 lower bound* [S3:57, S3:59]; its abstract 
 
-> There are absolute constants $\eta,c_1>0$ such that, for every sufficiently
-large integer $n$, one can choose $n$ points in the unit square so that every
-triangle they determine has area at least $c_1n^{-2+\eta}$.
-Thus the almost $n^{-2}$ upper-bound formulation of Heilbronn's triangle
-problem is false. The exponent $\eta$ is fixed but extremely small. [S3:63–67]
+> There are absolute constants $`\eta,c_1>0`$ such that, for every sufficiently
+large integer $`n`$, one can choose $`n`$ points in the unit square so that every
+triangle they determine has area at least $`c_1n^{-2+\eta}`$.
+Thus the almost $`n^{-2}`$ upper-bound formulation of Heilbronn's triangle
+problem is false. The exponent $`\eta`$ is fixed but extremely small. [S3:63–67]
 
 ## Undergraduate summary
 
-Pick $n$ dots anywhere inside a square. Every trio of dots
+Pick $`n`$ dots anywhere inside a square. Every trio of dots
 forms a **triangle**, and each triangle has an **area**
 — some are large, some tiny. **Heilbronn's triangle
-problem** asks: as $n$ grows, how small can the
+problem** asks: as $`n`$ grows, how small can the
 **smallest** triangle's area get? For a long time the best
 guaranteed lower bound was only slightly better than
-$n^{-2}$ — meaning the smallest triangle could
-shrink almost as fast as $1/n^2$. This manuscript shows
+$`n^{-2}`$ — meaning the smallest triangle could
+shrink almost as fast as $`1/n^2`$. This manuscript shows
 that the smallest triangle is always at least
-$c \cdot n^{-2+\eta}$ for some fixed (tiny) power
-$\eta > 0$ — a **power improvement** over the
-$n^{-2}$ barrier. The almost-$n^{-2}$ upper-bound
+$`c \cdot n^{-2+\eta}`$ for some fixed (tiny) power
+$`\eta > 0`$ — a **power improvement** over the
+$`n^{-2}`$ barrier. The almost-$`n^{-2}`$ upper-bound
 conjecture — the idea that the smallest triangle
-*could* be as small as $n^{-2+\varepsilon}$ for any
-$\varepsilon > 0$ — is **false**
+*could* be as small as $`n^{-2+\varepsilon}`$ for any
+$`\varepsilon > 0`$ — is **false**
 [S3:63–67, S2:463].
 
 ## Graduate summary
 
 **The main theorem** [S3:63–67, S4:9]. There exist
-absolute constants $\eta, c_1 > 0$ such that for every
-sufficiently large integer $n$, one can choose $n$ points
+absolute constants $`\eta, c_1 > 0`$ such that for every
+sufficiently large integer $`n`$, one can choose $`n`$ points
 in the unit square so that every triangle they determine
-has area at least $c_1 n^{-2+\eta}$ [S3:63–67]. The
-exponent $\eta$ is fixed but extremely small
+has area at least $`c_1 n^{-2+\eta}`$ [S3:63–67]. The
+exponent $`\eta`$ is fixed but extremely small
 [S3:63–67]. The construction is for an unbounded
 sequence of sizes; the paper's statement for every
-sufficiently large $n$ is broader [S4:9].
+sufficiently large $`n`$ is broader [S4:9].
 
 **The scope of the formalization.** The scope note states
 the formalization constructs an unbounded sequence of sizes
-$n$ and point sets for which every triangle has area at
-least $n^{-2+\eta}$ for one fixed $\eta > 0$, and
+$`n`$ and point sets for which every triangle has area at
+least $`n^{-2+\eta}`$ for one fixed $`\eta > 0`$, and
 consequently refutes the proposed upper bound of order
-$n^{-2+\varepsilon}$ for every $\varepsilon > 0$. The
+$`n^{-2+\varepsilon}`$ for every $`\varepsilon > 0`$. The
 linked construction is for an unbounded sequence of sizes;
-the paper's statement for every sufficiently large $n$ is
+the paper's statement for every sufficiently large $`n`$ is
 broader [S4:9]. The scope note names one comparator
 [S4:15]: `HeilbronnTriangle.lean`.
 
@@ -67,50 +67,50 @@ broader [S4:9]. The scope note names one comparator
 
 **Heilbronn's triangle problem** was posed in the 1910s
 and asks for the asymptotic order of the minimum triangle
-area determined by $n$ points in the unit square. The
-classical bound $\Omega(n^{-5/2})$ (Erd–Moser,
-1925) was improved to $\Omega(n^{-2})$ up to a logarithmic
-factor by multiple approaches. The **almost-$n^{-2}$
+area determined by $`n`$ points in the unit square. The
+classical bound $`\Omega(n^{-5/2})`$ (Erd–Moser,
+1925) was improved to $`\Omega(n^{-2})`$ up to a logarithmic
+factor by multiple approaches. The **almost-$`n^{-2}`$
 upper-bound conjecture** held that for every
-$\varepsilon > 0$ and sufficiently large $n$, some
-configuration of $n$ points has a triangle of area at most
-$n^{-2+\varepsilon}$. This manuscript **disproves** that
+$`\varepsilon > 0`$ and sufficiently large $`n`$, some
+configuration of $`n`$ points has a triangle of area at most
+$`n^{-2+\varepsilon}`$. This manuscript **disproves** that
 conjecture by constructing, for an unbounded sequence of
 sizes, point sets where every triangle has area at least
-$n^{-2+\eta}$ for a fixed $\eta > 0$ — a genuine
-power improvement over the $n^{-2}$ barrier
+$`n^{-2+\eta}`$ for a fixed $`\eta > 0`$ — a genuine
+power improvement over the $`n^{-2}`$ barrier
 [S3:63–67, S2:463].
 
 **Prior (my training data, not this repo).** I know
 Heilbronn's triangle problem as a classical open problem
 in discrete geometry, and that the best known lower bound
-was $\Omega(n^{-5/2})$ with the almost-$n^{-2}$
+was $`\Omega(n^{-5/2})`$ with the almost-$`n^{-2}`$
 conjecture as the expected answer. A **power
 improvement** — showing the smallest triangle is
-at least $n^{-2+\eta}$ for a fixed $\eta > 0$
+at least $`n^{-2+\eta}`$ for a fixed $`\eta > 0`$
 — would be a major advance. The specific
 construction (lattice-based, with norm digits, orbits,
 auxiliary caps, sampling, zero determinants, and
 alteration steps [S3:63–67]) and the fixed exponent
-$\eta = 1/(100000 \cdot K)$ where
-$K = \binom{\binom{4\cdot 41-1}{41}}{3}^2 + 1$ [S5:31–40]
+$`\eta = 1/(100000 \cdot K)`$ where
+$`K = \binom{\binom{4\cdot 41-1}{41}}{3}^2 + 1`$ [S5:31–40]
 are results I cannot independently verify from training
 alone.
 
 ## Consequences
 
-**The almost-$n^{-2}$ upper bound is disproved.** For every
-$\varepsilon > 0$, there is no constant $C$ such that
-every sufficiently large $n$-point set in the unit square
-has a triangle of area at most $C n^{-2+\varepsilon}$
+**The almost-$`n^{-2}`$ upper bound is disproved.** For every
+$`\varepsilon > 0`$, there is no constant $`C`$ such that
+every sufficiently large $`n`$-point set in the unit square
+has a triangle of area at most $`C n^{-2+\varepsilon}`$
 [S3:63–67, S4:9, S2:463].
 
-**A power improvement over $n^{-2}$.** The minimum triangle
-area is at least $c_1 n^{-2+\eta}$ for an absolute
-$\eta > 0$ [S3:63–67, S4:9].
+**A power improvement over $`n^{-2}`$.** The minimum triangle
+area is at least $`c_1 n^{-2+\eta}`$ for an absolute
+$`\eta > 0`$ [S3:63–67, S4:9].
 
 **The exponent is explicit but tiny.** The construction
-uses $\eta = 1/(100000 \cdot K)$ where $K$ is a
+uses $`\eta = 1/(100000 \cdot K)`$ where $`K`$ is a
 specific combinatorial constant
 [S5:31–40].
 
@@ -125,13 +125,13 @@ ships no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization constructs an
-unbounded sequence of sizes $n$ and point sets for which
-every triangle has area at least $n^{-2+\eta}$ for one
-fixed $\eta > 0$, and consequently refutes the proposed
-upper bound of order $n^{-2+\varepsilon}$ for every
-$\varepsilon > 0$. The linked construction is for an
+unbounded sequence of sizes $`n`$ and point sets for which
+every triangle has area at least $`n^{-2+\eta}`$ for one
+fixed $`\eta > 0`$, and consequently refutes the proposed
+upper bound of order $`n^{-2+\varepsilon}`$ for every
+$`\varepsilon > 0`$. The linked construction is for an
 unbounded sequence of sizes; the paper's statement for
-every sufficiently large $n$ is broader [S4:9]. The scope
+every sufficiently large $`n`$ is broader [S4:9]. The scope
 note names one comparator [S4:15]:
 `HeilbronnTriangle.lean`.
 

@@ -8,22 +8,22 @@
 
 The release's blurb [S1:9025] and the catalog abstract [S2:852] state
 the family's claim: De Giorgi's conjecture is proved at its sharp
-dimension-eight endpoint. Every entire $C^2$ solution of
-$\Delta u=u^3-u$ in $\mathbb R^8$ that is strictly increasing in one
+dimension-eight endpoint. Every entire $`C^2`$ solution of
+$`\Delta u=u^3-u`$ in $`\mathbb R^8`$ that is strictly increasing in one
 direction depends on only one linear coordinate. A stronger companion
-theorem classifies all stable entire solutions in $\mathbb R^7$ as constant
+theorem classifies all stable entire solutions in $`\mathbb R^7`$ as constant
 wells or planar transitions, without an energy-growth assumption.
 The manuscript's abstract "We resolve De Giorgi's conjecture positively in dimension eight:
-every entire $C^2$ solution $u:\mathbb R^8\to(-1,1)$ of
-$\Delta u=u^3-u$ with an everywhere positive directional derivative
+every entire $`C^2`$ solution $`u:\mathbb R^8\to(-1,1)`$ of
+$`\Delta u=u^3-u`$ with an everywhere positive directional derivative
 is a planar heteroclinic. We prove that every stable solution
-$v:\mathbb R^7\to[-1,1]$ of this equation is a constant well or a planar heteroclinic,
+$`v:\mathbb R^7\to[-1,1]`$ of this equation is a constant well or a planar heteroclinic,
 without an energy-growth assumption. [S3:112–119]"
 
 ## Undergraduate summary
 
-The Allen–Cahn equation $\Delta u = u^3 - u$ models phase
-transitions: $u$ interpolates between the two wells $\pm1$ across
+The Allen–Cahn equation $`\Delta u = u^3 - u`$ models phase
+transitions: $`u`$ interpolates between the two wells $`\pm1`$ across
 a thin interface. De Giorgi (1979) conjectured that in dimensions
 up to eight, every bounded solution that is monotone in some
 direction is a one-dimensional planar transition — its level sets
@@ -31,9 +31,9 @@ are parallel hyperplanes. The manuscript proves this at the
 critical endpoint dimension eight 
 
 > **Theorem 1.1**
-Let $u\in C^2(\mathbb R^8,(-1,1))$ satisfy
+Let $`u\in C^2(\mathbb R^8,(-1,1))`$ satisfy
 $$\Delta u=u^3-u,\qquad \partial_8u>0\quad\text{in }\mathbb R^8.$$
-Then there are $e\in\mathbb S^7$ with $e_8>0$ and $c\in\mathbb R$ such that
+Then there are $`e\in\mathbb S^7`$ with $`e_8>0`$ and $`c\in\mathbb R`$ such that
 $$u(x)=\tanh\!\left(\frac{e\cdot x-c}{\sqrt2}\right)
  \qquad\text{for every }x\in\mathbb R^8.$$ [S4:59–70]
 
@@ -44,7 +44,7 @@ No energy growth, minimization, or well-limit assumption is required
 
 **The stable classification in dimension seven.** The analytic core
 is the stable rigidity theorem: every stable solution
-$v:\mathbb R^7\to[-1,1]$ of $\Delta v=v^3-v$ is a constant well or a
+$`v:\mathbb R^7\to[-1,1]`$ of $`\Delta v=v^3-v`$ is a constant well or a
 planar heteroclinic, with no energy-growth hypothesis [S4:103–112].
 This endpoint is sharp — Pacard and Wei constructed stable
 nonplanar solutions in dimension eight [S4:114–115].
@@ -58,7 +58,7 @@ singularity, and the directed-cone argument forces a hyperplane
 [S4:130–160].
 
 **Removing the density bound.** The finite-density step proves
-stable rigidity in dimensions $4\le n\le7$ under a bounded-energy
+stable rigidity in dimensions $`4\le n\le7`$ under a bounded-energy
 density hypothesis [S4:197–207]. The remaining work removes this
 hypothesis using radial monotonicity, interface geometry, and
 growth estimates in the interface and reach sections
@@ -74,7 +74,7 @@ Ghoussoub–Gui (dimension two), Ambrosio–Cabré (dimension three),
 and Savin (through dimension eight, under a well-limit assumption)
 proved the conjecture in lower dimensions [S4:33–44]. Del Pino,
 Kowalczyk, and Wei constructed nonplanar monotone solutions in
-dimension $\ge9$ near dilations of nonaffine minimal graphs
+dimension $`\ge9`$ near dilations of nonaffine minimal graphs
 [S4:45–49]. The dimension-eight endpoint is the sharp boundary:
 in dimension nine, nonaffine entire minimal graphs exist, and
 the corresponding Allen–Cahn solutions are nonplanar.
@@ -82,11 +82,11 @@ the corresponding Allen–Cahn solutions are nonplanar.
 ## Consequences
 
 **De Giorgi's conjecture is resolved at dimension eight.** Every
-entire $C^2$ solution of $\Delta u=u^3-u$ in $\mathbb R^8$ with
-$\partial_8 u>0$ is a planar heteroclinic [S4:59–70].
+entire $`C^2`$ solution of $`\Delta u=u^3-u`$ in $`\mathbb R^8`$ with
+$`\partial_8 u>0`$ is a planar heteroclinic [S4:59–70].
 
 **Stable rigidity in dimension seven without density bound.**
-Every stable solution in $\mathbb R^7$ is a constant well or a planar
+Every stable solution in $`\mathbb R^7`$ is a constant well or a planar
 transition [S4:103–112].
 
 **The dimension is sharp.** Nonplanar monotone solutions exist

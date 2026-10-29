@@ -9,10 +9,10 @@
 The release's blurb [S1:4641] and the catalog abstract [S2:489]
 state the family's claim: Donovan's conjecture, proved in
 bounded-defect order — over each fixed algebraically
-closed field of characteristic $p$, blocks of finite
+closed field of characteristic $`p`$, blocks of finite
 groups with bounded defect-group order carry only
 finitely many Morita-equivalence classes, for every
-prime $p$. The integral form over complete mixed-
+prime $`p`$. The integral form over complete mixed-
 characteristic discrete valuation rings with
 algebraically closed residue field is also proved.
 The family ships two manuscripts [S1:4641]:
@@ -25,19 +25,19 @@ The family ships two manuscripts [S1:4641]:
 The algebraically-closed-fields abstract 
 
 > We prove Donovan's conjecture over every algebraically closed field
-$K$ of characteristic $p>0$. For each fixed $K$ and bound on
+$`K`$ of characteristic $`p>0`$. For each fixed $`K`$ and bound on
 defect-group order, blocks of finite groups represent only finitely
-many $K$-linear Morita equivalence classes. The defect groups need
-not be abelian, and the result includes $p=2$.
+many $`K`$-linear Morita equivalence classes. The defect groups need
+not be abelian, and the result includes $`p=2`$.
 \endabstract [S4:2–7]
 
 The Witt-vectors abstract 
 
-> We prove integral Donovan finiteness: for every prime $p$ and positive
-integer $M$, the blocks of all finite groups with defect groups of order
-at most $M$ have only finitely many Morita equivalence classes over
-$W(\overline{\mathbb F}_p)$. The defect groups need not be abelian,
-and the result includes $p=2$. The same bounded-defect finiteness holds
+> We prove integral Donovan finiteness: for every prime $`p`$ and positive
+integer $`M`$, the blocks of all finite groups with defect groups of order
+at most $`M`$ have only finitely many Morita equivalence classes over
+$`W(\overline{\mathbb F}_p)`$. The defect groups need not be abelian,
+and the result includes $`p=2`$. The same bounded-defect finiteness holds
 over each fixed complete discrete valuation ring of characteristic zero [S5:8–14]
 
 ## Undergraduate summary
@@ -46,42 +46,42 @@ A **finite group** has a natural "building set" of
 representations — ways the group acts on a vector
 space. In **modular representation theory**, you study
 these representations over fields of prime characteristic
-$p$ instead of characteristic zero. The representations
+$`p`$ instead of characteristic zero. The representations
 sort into **blocks** — families that interact
 with each other. Each block has a **defect group**, a
-$p$-subgroup that measures how far the block is from
+$`p`$-subgroup that measures how far the block is from
 being "semisimple" (trivial). **Morita equivalence** is
 a notion of "same representation theory": two blocks
 are Morita equivalent if their module categories are
 equivalent. **Donovan's conjecture** asks: fix a
-$p$-group $P$. Are there only finitely many
+$`p`$-group $`P`$. Are there only finitely many
 non-Morita-equivalent blocks with defect group
-$P$? This manuscript pair says **yes** — for
+$`P`$? This manuscript pair says **yes** — for
 every prime, every algebraically closed field of
-characteristic $p$, and every bound on the
+characteristic $`p`$, and every bound on the
 defect-group order, there are finitely many such
 blocks [S4:2–7, S5:8–14, S2:489].
 
 ## Graduate summary
 
 **The field result** [S4:2–7, S2:489]. Fix a
-prime $p$, an algebraically closed field $K$ of
-characteristic $p$, and a positive integer $M$. There
-are only finitely many $K$-linear Morita-equivalence
+prime $`p`$, an algebraically closed field $`K`$ of
+characteristic $`p`$, and a positive integer $`M`$. There
+are only finitely many $`K`$-linear Morita-equivalence
 classes of blocks of finite groups whose defect groups
-have order at most $M$. The defect groups need not be
-abelian, and the result includes $p = 2$.
+have order at most $`M`$. The defect groups need not be
+abelian, and the result includes $`p = 2`$.
 
 **The integral result** [S5:8–14, S2:489]. For
-every prime $p$ and positive integer $M$, the blocks of
+every prime $`p`$ and positive integer $`M`$, the blocks of
 all finite groups with defect groups of order at most
-$M$ have only finitely many Morita-equivalence classes
-over $W(\overline{\mathbb{F}}_p)$ (the ring of Witt
+$`M`$ have only finitely many Morita-equivalence classes
+over $`W(\overline{\mathbb{F}}_p)`$ (the ring of Witt
 vectors over the algebraic closure of
-$\mathbb{F}_p$). The same bounded-defect finiteness
+$`\mathbb{F}_p`$). The same bounded-defect finiteness
 holds over each fixed complete discrete valuation ring
 of characteristic zero with algebraically closed
-residue field of characteristic $p$, including ramified
+residue field of characteristic $`p`$, including ramified
 rings.
 
 **The scope of the formalization.** The family is at
@@ -96,16 +96,16 @@ result is entirely unformalized.
 
 **Donovan's conjecture** (1972) is a central finiteness
 problem in modular representation theory. It asks
-whether, for a fixed finite $p$-group $P$, there are
+whether, for a fixed finite $`p`$-group $`P`$, there are
 only finitely many Morita-equivalence classes of
-blocks with defect group $P$. The conjecture is known
+blocks with defect group $`P`$. The conjecture is known
 for abelian defect groups (**Puig's theorem**, the
 **Kessar–Linckelmann** program for nilpotent
-blocks), for $p = 2$ in the principal-block case, and
+blocks), for $`p = 2`$ in the principal-block case, and
 several other families. The bounded-defect-order form
 proves a uniform finiteness statement across **all**
-$P$ of order at most $M$, which is strictly stronger
-than fixing $P$. The two manuscripts attack the
+$`P`$ of order at most $`M`$, which is strictly stronger
+than fixing $`P`$. The two manuscripts attack the
 conjecture from complementary directions: the first
 establishes the field form via a geometric-combinatorial
 classification of block families with bounded defect,
@@ -119,7 +119,7 @@ Donovan's conjecture as a named open problem in modular
 representation theory, Puig's theorem for abelian defect
 groups, and the known positive cases. The **full
 bounded-defect-order proof** — for every prime
-including $p = 2$, for non-abelian defect groups, over
+including $`p = 2`$, for non-abelian defect groups, over
 both algebraically closed fields and complete mixed-
 characteristic DVRs — is a result I cannot
 independently verify from training alone.
@@ -128,8 +128,8 @@ independently verify from training alone.
 
 **Donovan's conjecture is proved in bounded-defect
 order.** For every prime, every algebraically closed
-field of characteristic $p$, and every defect-order
-bound $M$, there are finitely many Morita-equivalence
+field of characteristic $`p`$, and every defect-order
+bound $`M`$, there are finitely many Morita-equivalence
 classes [S4:2–7, S2:489].
 
 **The integral form is also proved.** The same
@@ -138,7 +138,7 @@ mixed-characteristic DVRs with algebraically closed
 residue field, including ramified rings
 [S5:8–14, S2:489].
 
-**The result includes $p = 2$.** No odd-prime
+**The result includes $`p = 2`$.** No odd-prime
 restriction is imposed [S4:2–7, S5:8–14].
 
 ## Section skeleton

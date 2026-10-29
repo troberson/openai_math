@@ -55,10 +55,10 @@ comparator stub [S7] states both as a single challenge.
 **Circle-domain uniformization.** 
 
 > **Theorem 1.1**
-Every nonempty connected open set $G\subset\widehat{\mathbb C}$ is conformally equivalent
+Every nonempty connected open set $`G\subset\widehat{\mathbb C}`$ is conformally equivalent
 to a circle domain. [S5:9–12]
 
-Every nonempty connected open set $G \subset \widehat{\mathbb C}$ is
+Every nonempty connected open set $`G \subset \widehat{\mathbb C}`$ is
 conformally equivalent to a circle domain. The difficulty, as the
 manuscript's introduction puts it, is to control **all** complementary
 components at once — there may be uncountably many, with no regularity
@@ -69,19 +69,19 @@ obtained by following one of its finite approximations.
 
 > **Theorem 1.1**
 Every circle domain with conformally removable boundary is conformally
-rigid. More explicitly, if $\Omega,\Omega'\subset\widehat{\mathbb C}$ are circle
-domains, $\partial\Omega$ is conformally removable, and
-$f\colon\Omega\to\Omega'$ is a conformal equivalence, then there is a
-Möbius transformation $M$ such that $f=M|_\Omega$. [S3:22–28]
+rigid. More explicitly, if $`\Omega,\Omega'\subset\widehat{\mathbb C}`$ are circle
+domains, $`\partial\Omega`$ is conformally removable, and
+$`f\colon\Omega\to\Omega'`$ is a conformal equivalence, then there is a
+Möbius transformation $`M`$ such that $`f=M|_\Omega`$. [S3:22–28]
 
 Every circle domain with conformally removable boundary is conformally
-rigid: if $\Omega, \Omega' \subset \widehat{\mathbb C}$ are circle
-domains, $\partial \Omega$ is conformally removable, and
-$f : \Omega \to \Omega'$ is a conformal equivalence, then $f$ is the
+rigid: if $`\Omega, \Omega' \subset \widehat{\mathbb C}`$ are circle
+domains, $`\partial \Omega`$ is conformally removable, and
+$`f : \Omega \to \Omega'`$ is a conformal equivalence, then $`f`$ is the
 restriction of a Möbius transformation. The theorem allows arbitrary
 cardinality of the complementary component set, and the required
 boundary control is a conclusion of the argument — no boundary
-extension of $f$ is part of the hypothesis.
+extension of $`f`$ is part of the hypothesis.
 
 ## history of the conjecture
 

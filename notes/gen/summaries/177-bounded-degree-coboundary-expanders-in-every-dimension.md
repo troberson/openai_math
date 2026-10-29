@@ -7,22 +7,22 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:4140] and the catalog abstract [S2:435]
-state the family's claim: for every $d \ge 3$ there exist
-arbitrarily large finite $d$-dimensional simplicial complexes with
+state the family's claim: for every $`d \ge 3`$ there exist
+arbitrarily large finite $`d`$-dimensional simplicial complexes with
 **uniformly bounded vertex degrees** and **uniform
-$\mathbb F_2$ coboundary expansion in every degree below
-$d$**. Together with the known graph ($d=1$) and two-dimensional
-($d=2$) cases, this establishes the existence of bounded-degree
-$\mathbb F_2$ coboundary expanders in **every positive
+$`\mathbb F_2`$ coboundary expansion in every degree below
+$`d`$**. Together with the known graph ($`d=1`$) and two-dimensional
+($`d=2`$) cases, this establishes the existence of bounded-degree
+$`\mathbb F_2`$ coboundary expanders in **every positive
 dimension**. The manuscript is *Bounded-degree coboundary
 expanders in every dimension* [S3:62, S3:64]; its abstract
 
 
-> For every integer $d\ge3$, we construct arbitrarily large finite
-$d$-dimensional simplicial complexes with uniformly bounded vertex degrees
-and uniform $\mathbb F_2$ coboundary expansion in every degree below $d$.
+> For every integer $`d\ge3`$, we construct arbitrarily large finite
+$`d`$-dimensional simplicial complexes with uniformly bounded vertex degrees
+and uniform $`\mathbb F_2`$ coboundary expansion in every degree below $`d`$.
 Together with the known graph and two-dimensional cases, this establishes
-the existence of bounded-degree $\mathbb F_2$ coboundary expanders in every
+the existence of bounded-degree $`\mathbb F_2`$ coboundary expanders in every
 positive dimension. [S3:68–73]
 
 ## Undergraduate summary
@@ -39,33 +39,33 @@ large signal by taking derivatives. **Bounded degree** means each
 vertex sits in at most a fixed number of top-dimensional faces,
 so the complex is locally small. The result says such
 locally-small complexes with strong expansion at every level
-exist in every dimension $d \ge 3$ — a higher-dimensional
-analogue of expander graphs, where $d=1$ is just an expander
+exist in every dimension $`d \ge 3`$ — a higher-dimensional
+analogue of expander graphs, where $`d=1`$ is just an expander
 graph [S3:68–73, S2:435].
 
 ## Graduate summary
 
-**The main theorem** [S3:68–73, S4:9]. For every $d \ge 3$
-there is a sequence of finite pure connected $d$-dimensional
-simplicial complexes $X_m$ such that: (i) the vertex counts tend
-to infinity; (ii) every vertex lies in at most $D$ top-dimensional
-faces, for a single uniform $D$; and (iii) there is a positive
-constant $\varepsilon$ such that in every degree $i < d$ and for
-every cochain $f$,
-$\varepsilon \, \mathrm{dist}(f, \mathrm{Coboundaries}_i)
-\le \|\delta f\|$,
+**The main theorem** [S3:68–73, S4:9]. For every $`d \ge 3`$
+there is a sequence of finite pure connected $`d`$-dimensional
+simplicial complexes $`X_m`$ such that: (i) the vertex counts tend
+to infinity; (ii) every vertex lies in at most $`D`$ top-dimensional
+faces, for a single uniform $`D`$; and (iii) there is a positive
+constant $`\varepsilon`$ such that in every degree $`i < d`$ and for
+every cochain $`f`$,
+$`\varepsilon \, \mathrm{dist}(f, \mathrm{Coboundaries}_i)
+\le \|\delta f\|`$,
 where the distance and norm use the weighted support norm
-[induces the expansion constant]. The constants $D$ and
-$\varepsilon$ may depend on $d$ [S4:9].
+[induces the expansion constant]. The constants $`D`$ and
+$`\varepsilon`$ may depend on $`d`$ [S4:9].
 
 **The all-positive-dimensions conclusion.** The graph
-($d=1$) and two-dimensional ($d=2$) cases are known separately;
-this manuscript supplies $d \ge 3$, so together they give
-bounded-degree $\mathbb F_2$ coboundary expanders in every
+($`d=1`$) and two-dimensional ($`d=2`$) cases are known separately;
+this manuscript supplies $`d \ge 3`$, so together they give
+bounded-degree $`\mathbb F_2`$ coboundary expanders in every
 positive dimension [S3:68–73, S4:9].
 
 **The scope of the formalization.** The scope note states the
-formalization constructs the $d \ge 3$ expanders, with the
+formalization constructs the $`d \ge 3`$ expanders, with the
 graph and two-dimensional cases carried separately and
 **outside** the formalization [S4:9]. The scope note names one
 comparator [S4:15]: `CoboundaryExpanders.lean`.
@@ -74,41 +74,41 @@ comparator [S4:15]: `CoboundaryExpanders.lean`.
 
 Coboundary expansion in higher-dimensional complexes is the
 discrete-hodge-theory analogue of spectral-gap /
-Cheeger-type expansion for graphs. The $d=1$ case is the
+Cheeger-type expansion for graphs. The $`d=1`$ case is the
 classical expander-graph program (Ramanujan graphs,
-Alon-Boppana, etc.); the $d=2$ case was established by work on
+Alon-Boppana, etc.); the $`d=2`$ case was established by work on
 higher-order expanders. The open problem was to build such
-families with **uniformly bounded degree** in **every** $d \ge
-3$ — a requirement that rules out many naive constructions
+families with **uniformly bounded degree** in **every** $`d \ge
+3`$ — a requirement that rules out many naive constructions
 whose local degree blows up with the dimension. This manuscript
-gives the $d \ge 3$ construction, closing the all-positive-
+gives the $`d \ge 3`$ construction, closing the all-positive-
 dimensions picture [S3:68–73, S2:435].
 
 **Prior (my training data, not this repo).** I know
 higher-order / coboundary expanders and the bounded-degree
-requirement, and the $d=1$ expander-graph literature. A
-**uniformly-bounded-degree, all-degrees-below-$d$**
-construction for every $d \ge 3$ via an infinite-coset and
+requirement, and the $`d=1`$ expander-graph literature. A
+**uniformly-bounded-degree, all-degrees-below-$`d`$**
+construction for every $`d \ge 3`$ via an infinite-coset and
 cosystolic machinery with a gamma-vanishing argument goes
 beyond what I can place from training alone; the specific
-complexes and the expansion constant's dependence on $d$ are not
+complexes and the expansion constant's dependence on $`d`$ are not
 something I can independently reconstruct.
 
 ## Consequences
 
-**Bounded-degree coboundary expanders exist in every $d \ge 3$.**
-For each such $d$, arbitrarily large finite $d$-dimensional
+**Bounded-degree coboundary expanders exist in every $`d \ge 3`$.**
+For each such $`d`$, arbitrarily large finite $`d`$-dimensional
 complexes with a uniform top-degree bound and a positive
-expansion constant in every degree below $d$ [S3:68–73,
+expansion constant in every degree below $`d`$ [S3:68–73,
 S4:9, S2:435].
 
 **The all-positive-dimensions picture is complete.** Combined with
-$d=1$ (graphs) and $d=2$, bounded-degree $\mathbb F_2$
+$`d=1`$ (graphs) and $`d=2`$, bounded-degree $`\mathbb F_2`$
 coboundary expanders exist in every positive dimension
 [S3:68–73, S4:9].
 
-**The constants may depend on $d$.** The uniformity is in the
-sequence (over $m$), not across dimensions [S4:9].
+**The constants may depend on $`d`$.** The uniformity is in the
+sequence (over $`m`$), not across dimensions [S4:9].
 
 ## Section skeleton
 
@@ -121,12 +121,12 @@ no `verification/` bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization constructs bounded-degree
-$\mathbb F_2$ coboundary expanders in every dimension
-$d \ge 3$: for each such $d$, finite pure connected
-$d$-dimensional simplicial complexes with vertex counts tending
+$`\mathbb F_2`$ coboundary expanders in every dimension
+$`d \ge 3`$: for each such $`d`$, finite pure connected
+$`d`$-dimensional simplicial complexes with vertex counts tending
 to infinity, one uniform bound on top-dimensional degree at each
 vertex, and one positive coboundary-expansion constant in every
-degree below $d$, with the constants allowed to depend on $d$.
+degree below $`d`$, with the constants allowed to depend on $`d`$.
 The graph and two-dimensional cases used for the paper's
 all-positive-dimensions conclusion are separate [S4:9]. The scope
 note names one comparator [S4:15]: `CoboundaryExpanders.lean`.
@@ -155,7 +155,7 @@ positive open inputs, extracts a uniform infinite-coset positive
 witness, an actual uniform cosystolic witness, a gamma-vanishing
 witness, and an infinite supply of odd primes large enough to
 separate them, then discharges both degree cases
-($2d-1$ and $2d+1$) by target-vanishing 
+($`2d-1`$ and $`2d+1`$) by target-vanishing 
 
 ```lean
 theorem main : MainStatement := by

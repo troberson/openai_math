@@ -10,10 +10,10 @@ The release's blurb [S1:4918] and the catalog abstract [S2:511]
 state the family's claim: the Benjamini–Schramm
 criticality conjecture is resolved for bond percolation on
 every infinite connected locally finite quasi-transitive graph
-with $p_c < 1$: at the critical probability, there is almost
+with $`p_c < 1`$: at the critical probability, there is almost
 surely no infinite cluster. The family also establishes this
 conclusion for both nearest-neighbor bond and site percolation
-on $\mathbb{Z}^3$. The family ships two
+on $`\mathbb{Z}^3`$. The family ships two
 manuscripts [S1:4918]:
 
 - *Critical bond and site percolation on the cubic
@@ -24,7 +24,7 @@ manuscripts [S1:4918]:
 The cubic-lattice abstract 
 
 > We prove that nearest-neighbor Bernoulli bond and site percolation on
-$\mathbb Z^3$ have no infinite cluster at their respective critical parameters.
+$`\mathbb Z^3`$ have no infinite cluster at their respective critical parameters.
 The proof combines a finite connection inequality for independent hyperedges
 with a finite-scale extension estimate and an adaptive exploration. [S3:36–39]
 
@@ -39,17 +39,17 @@ the criticality conjecture of Benjamini and Schramm. [S4:43–46]
 
 **Percolation** is a model of random growth on a network.
 Imagine a grid of sites (or edges), where each one is
-"open" with probability $p$ and "closed" with probability
-$1-p$, independently. The **critical probability** $p_c$
+"open" with probability $`p`$ and "closed" with probability
+$`1-p`$, independently. The **critical probability** $`p_c`$
 is the threshold: below it, every connected cluster of
 open sites is finite; above it, an infinite cluster
 appears. The **criticality conjecture** (Benjamini and
-Schramm, 1996) asks: exactly at $p_c$, does an infinite
-cluster exist? For lattices like $\mathbb{Z}^2$ the
+Schramm, 1996) asks: exactly at $`p_c`$, does an infinite
+cluster exist? For lattices like $`\mathbb{Z}^2`$ the
 answer is known to be no (by planar duality), but for
-$\mathbb{Z}^3$ and general graphs it was open. The two
-manuscripts say **no** — at $p_c$ there is almost
-surely no infinite cluster, on $\mathbb{Z}^3$ and on
+$`\mathbb{Z}^3`$ and general graphs it was open. The two
+manuscripts say **no** — at $`p_c`$ there is almost
+surely no infinite cluster, on $`\mathbb{Z}^3`$ and on
 every quasi-transitive graph [S3:36–39,
 S4:43–46, S2:511].
 
@@ -57,7 +57,7 @@ S4:43–46, S2:511].
 
 **The cubic-lattice result** [S3:36–39, S2:511].
 Nearest-neighbor Bernoulli bond and site percolation on
-$\mathbb{Z}^3$ have no infinite cluster at their
+$`\mathbb{Z}^3`$ have no infinite cluster at their
 respective critical parameters. The proof combines a
 finite connection inequality for independent hyperedges
 with a finite-scale extension estimate and an adaptive
@@ -82,7 +82,7 @@ comparators [S5:18–19]: `CriticalZ3.lean` and
 
 **The criticality conjecture** was posed by Benjamini and
 Schramm (1996) in their study of percolation on
-transitive graphs. In the planar case ($\mathbb{Z}^2$),
+transitive graphs. In the planar case ($`\mathbb{Z}^2`$),
 the absence of an infinite cluster at criticality follows
 from the duality between the open and closed clusters.
 In three dimensions and on non-planar graphs, no such
@@ -95,14 +95,14 @@ estimate that controls how clusters grow. The
 result and uses a two-cluster DFS-entropy argument,
 interpolation, superpolynomial growth estimates, and a
 gluing construction to extend the result from
-$\mathbb{Z}^3$ to all quasi-transitive graphs
+$`\mathbb{Z}^3`$ to all quasi-transitive graphs
 [S3:36–39, S4:43–46, S2:511].
 
 **Prior (my training data, not this repo).** I know the
 criticality conjecture as a named open problem in
 percolation, the planar duality argument for
-$\mathbb{Z}^2$, and the general framework of
-quasi-transitive graphs. The **$\mathbb{Z}^3$ result**
+$`\mathbb{Z}^2`$, and the general framework of
+quasi-transitive graphs. The **$`\mathbb{Z}^3`$ result**
 and the **quasi-transitive extension** are results I
 cannot independently verify from training alone.
 
@@ -111,10 +111,10 @@ cannot independently verify from training alone.
 **The Benjamini–Schramm criticality conjecture is
 resolved for bond percolation** on every infinite
 connected locally finite quasi-transitive graph with
-$p_c < 1$: at criticality, there is almost surely no
+$`p_c < 1`$: at criticality, there is almost surely no
 infinite cluster [S4:43–46, S2:511].
 
-**The $\mathbb{Z}^3$ case is resolved for both bond and
+**The $`\mathbb{Z}^3`$ case is resolved for both bond and
 site percolation**: no infinite cluster at the
 respective critical parameters [S3:36–39,
 S2:511].

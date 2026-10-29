@@ -15,79 +15,79 @@ This family ships **two** manuscripts. Their abstracts:
 Manuscript 1, log-canonical threefold log abundance 
 
 > We prove the numerical-dimension-one case of log abundance for threefolds
-over algebraically closed fields of characteristic $p>3$. If $(X,B)$ is a
+over algebraically closed fields of characteristic $`p>3`$. If $`(X,B)`$ is a
 projective log canonical threefold pair with effective rational boundary,
-and $K_X+B$ is $\mathbb Q$-Cartier, nef, and of numerical dimension one, then
-$K_X+B$ is semiample. Neither terminality nor $\mathbb Q$-factoriality of $X$
+and $`K_X+B`$ is $`\mathbb Q`$-Cartier, nef, and of numerical dimension one, then
+$`K_X+B`$ is semiample. Neither terminality nor $`\mathbb Q`$-factoriality of $`X`$
 is required. [S2:40–47]
 
 Manuscript 2, terminal threefold abundance 
 
-> Let $X$ be a projective $\mathbb Q$-factorial terminal threefold over an
-algebraically closed field of characteristic $p>3$. We prove the
-numerical-dimension-one case of abundance: if $K_X$ is nef with
-$\nu(K_X)=1$, then $K_X$ is semiample and $\kappa(X,K_X)=1$. [S4:10–15]
+> Let $`X`$ be a projective $`\mathbb Q`$-factorial terminal threefold over an
+algebraically closed field of characteristic $`p>3`$. We prove the
+numerical-dimension-one case of abundance: if $`K_X`$ is nef with
+$`\nu(K_X)=1`$, then $`K_X`$ is semiample and $`\kappa(X,K_X)=1`$. [S4:10–15]
 
 ## Undergraduate summary
 
-The "Kodaira dimension" $\kappa(X)$ of a variety $X$ measures how many
-independent holomorphic differential forms $X$ carries — roughly, how
-close $X$ is to being "of general type." A natural conjecture, the
-**abundance conjecture**, says that if the canonical divisor $K_X$
+The "Kodaira dimension" $`\kappa(X)`$ of a variety $`X`$ measures how many
+independent holomorphic differential forms $`X`$ carries — roughly, how
+close $`X`$ is to being "of general type." A natural conjecture, the
+**abundance conjecture**, says that if the canonical divisor $`K_X`$
 (the "differential-form line bundle") is "nef" (non-negative on every
-curve) and has "numerical dimension" $\nu(K_X)$, then $K_X$ is
+curve) and has "numerical dimension" $`\nu(K_X)`$, then $`K_X`$ is
 semiample — it has enough sections to actually reach dimension
-$\nu(K_X)$, not just numerical dimension.
+$`\nu(K_X)`$, not just numerical dimension.
 
-This family proves the $p > 3$ characteristic version of the
+This family proves the $`p > 3`$ characteristic version of the
 numerical-dimension-one case, in two flavors. Manuscript 1 is the
 **log-canonical** version: you may add an effective "boundary" divisor
-$B$ (a weighted collection of subvarieties), and the combination
-$K_X + B$ is semiample under the nef / numerical-dimension-one
-hypothesis, without assuming $X$ is terminal or $\mathbb Q$-factorial.
-Manuscript 2 is the plain **terminal** version: for a $\mathbb Q$-factorial
-terminal threefold, nef $K_X$ with $\nu(K_X) = 1$ is semiample and
-$\kappa(X, K_X) = 1$.
+$`B`$ (a weighted collection of subvarieties), and the combination
+$`K_X + B`$ is semiample under the nef / numerical-dimension-one
+hypothesis, without assuming $`X`$ is terminal or $`\mathbb Q`$-factorial.
+Manuscript 2 is the plain **terminal** version: for a $`\mathbb Q`$-factorial
+terminal threefold, nef $`K_X`$ with $`\nu(K_X) = 1`$ is semiample and
+$`\kappa(X, K_X) = 1`$.
 
 ## Graduate summary
 
 Both theorems are numerical-dimension-one abundance statements for
-threefolds in positive characteristic $p > 3$, with manuscript 1 the
+threefolds in positive characteristic $`p > 3`$, with manuscript 1 the
 log version and manuscript 2 the terminal version.
 
 **Log-canonical log abundance.** 
 
 > **Theorem 1.1**
-Let $k$ be an algebraically closed field of characteristic $p>3$.
-Let $(X,B)$ be a projective log canonical threefold pair over $k$,
-where $X$ is normal, $B$ is an effective $\mathbb Q$-divisor, and $K_X+B$
-is $\mathbb Q$-Cartier. If $K_X+B$ is nef and has numerical dimension one,
-then $K_X+B$ is semiample. [S3:15–21]
+Let $`k`$ be an algebraically closed field of characteristic $`p>3`$.
+Let $`(X,B)`$ be a projective log canonical threefold pair over $`k`$,
+where $`X`$ is normal, $`B`$ is an effective $`\mathbb Q`$-divisor, and $`K_X+B`$
+is $`\mathbb Q`$-Cartier. If $`K_X+B`$ is nef and has numerical dimension one,
+then $`K_X+B`$ is semiample. [S3:15–21]
 
-For a projective log canonical threefold pair $(X, B)$ over an
-algebraically closed field of characteristic $p > 3$, with $X$ normal,
-$B$ an effective $\mathbb Q$-divisor, and $K_X + B$ $\mathbb Q$-Cartier: if $K_X + B$
-is nef and of numerical dimension one, then $K_X + B$ is semiample.
+For a projective log canonical threefold pair $`(X, B)`$ over an
+algebraically closed field of characteristic $`p > 3`$, with $`X`$ normal,
+$`B`$ an effective $`\mathbb Q`$-divisor, and $`K_X + B`$ $`\mathbb Q`$-Cartier: if $`K_X + B`$
+is nef and of numerical dimension one, then $`K_X + B`$ is semiample.
 The notable hypotheses dropped compared to the complex-number
-literature are **terminality** and **$\mathbb Q$-factoriality** of the
+literature are **terminality** and **$`\mathbb Q`$-factoriality** of the
 original variety — the boundary coefficients are the rational numbers
 allowed by log canonicity, and neither singularity assumption is
-required of $X$.
+required of $`X`$.
 
 **Terminal abundance.** 
 
 > **theorem**
-Let $X$ be a normal projective $\mathbb Q$-factorial threefold over an
-algebraically closed field $k$ of characteristic $p>3$. Suppose that
-$X$ has terminal singularities and that $K_X$ is nef with
-$\nu(K_X)=1$. Then some positive Cartier multiple of $K_X$ has at
+Let $`X`$ be a normal projective $`\mathbb Q`$-factorial threefold over an
+algebraically closed field $`k`$ of characteristic $`p>3`$. Suppose that
+$`X`$ has terminal singularities and that $`K_X`$ is nef with
+$`\nu(K_X)=1`$. Then some positive Cartier multiple of $`K_X`$ has at
 least two independent global sections. In particular,
-$\kappa(X,K_X)=1$ and $K_X$ is semiample. [S5:14–21]
+$`\kappa(X,K_X)=1`$ and $`K_X`$ is semiample. [S5:14–21]
 
-For a normal projective $\mathbb Q$-factorial terminal threefold $X$ over an
-algebraically closed field of characteristic $p > 3$ with $K_X$ nef and
-$\nu(K_X) = 1$: some positive Cartier multiple of $K_X$ has at least
-two independent global sections, so $\kappa(X, K_X) = 1$ and $K_X$ is
+For a normal projective $`\mathbb Q`$-factorial terminal threefold $`X`$ over an
+algebraically closed field of characteristic $`p > 3`$ with $`K_X`$ nef and
+$`\nu(K_X) = 1`$: some positive Cartier multiple of $`K_X`$ has at least
+two independent global sections, so $`\kappa(X, K_X) = 1`$ and $`K_X`$ is
 semiample. No assumption is made on the first Betti number,
 irregularity, or the Albanese variety.
 
@@ -99,23 +99,23 @@ numerical-dimension-zero case (Miyaoka, in characteristic zero and
 now in mixed/positive characteristic) and for various low-dimension
 and special-fiber scenarios. The numerical-dimension-one case for
 threefolds in positive characteristic is the content here. Manuscript
-1's log-canonical extension removes the terminal and $\mathbb Q$-factorial
+1's log-canonical extension removes the terminal and $`\mathbb Q`$-factorial
 hypotheses that the classical Miyaoka-style argument carries; the
-log boundary $B$ lets you absorb the adjunction data from a fibration
+log boundary $`B`$ lets you absorb the adjunction data from a fibration
 into a pair. Manuscript 2's terminal version is the plain
-canonical-divisor statement in the $\mathbb Q$-factorial terminal setting.
+canonical-divisor statement in the $`\mathbb Q`$-factorial terminal setting.
 Both resolve the numerical-dimension-one slice of the abundance
 conjecture in the stated characteristic range.
 
 ## Consequences
 
 **Log-canonical threefold log abundance in numerical dimension one**
-for $p > 3$, without terminality or $\mathbb Q$-factoriality of the original
+for $`p > 3`$, without terminality or $`\mathbb Q`$-factoriality of the original
 variety [S3:15–21].
 
 **Terminal threefold abundance in numerical dimension one** for
-$p > 3$: nef $\nu(K_X) = 1$ canonical divisor is semiample with
-$\kappa(X, K_X) = 1$, no Betti-number or Albanese hypothesis
+$`p > 3`$: nef $`\nu(K_X) = 1`$ canonical divisor is semiample with
+$`\kappa(X, K_X) = 1`$, no Betti-number or Albanese hypothesis
 [S5:14–21].
 
 ## section skeleton

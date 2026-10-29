@@ -8,67 +8,67 @@
 
 The release's blurb [S1:3845] and the catalog abstract [S2:407] state
 the family's claim. It **disproves Ryser's covering conjecture** by
-constructing intersecting $(q+1)$-partite, $(q+1)$-uniform
-hypergraphs with covering number $q+1$ — not the predicted
-bound $q$ — for every sufficiently large prime $q$. A separate
+constructing intersecting $`(q+1)`$-partite, $`(q+1)`$-uniform
+hypergraphs with covering number $`q+1`$ — not the predicted
+bound $`q`$ — for every sufficiently large prime $`q`$. A separate
 construction over extension fields also **disproves
 Gyárfás's monochromatic tree-cover conjecture**. Two
 manuscripts carry the family. The first, *Balanced counterexamples
 to Ryser's conjecture at prime orders* [S3:35, S3:37], abstract
 
 
-> For every sufficiently large prime $q$, we construct a finite intersecting
-$(q+1)$-partite $(q+1)$-uniform hypergraph with covering number $q+1$
-and exactly $q+1$ nonisolated vertices in each part. This disproves
+> For every sufficiently large prime $`q`$, we construct a finite intersecting
+$`(q+1)`$-partite $`(q+1)`$-uniform hypergraph with covering number $`q+1`$
+and exactly $`q+1`$ nonisolated vertices in each part. This disproves
 Ryser's covering conjecture, even for intersecting hypergraphs with
 equally sized parts. [S3:41–45]
 
 The second, *A counterexample to Ryser's covering conjecture*
 [S4:40, S4:42], abstract [S4:47–51]:
 
-For every sufficiently large prime $s\equiv2\pmod{3}$ and every
-sufficiently large odd integer $n$, with the threshold depending on
-$s$, we construct an intersecting $(s^n+1)$-partite $(s^n+1)$-uniform
-hypergraph with covering number $s^n+1$. This disproves Ryser's
+For every sufficiently large prime $`s\equiv2\pmod{3}`$ and every
+sufficiently large odd integer $`n`$, with the threshold depending on
+$`s`$, we construct an intersecting $`(s^n+1)`$-partite $`(s^n+1)`$-uniform
+hypergraph with covering number $`s^n+1`$. This disproves Ryser's
 covering conjecture in its intersecting case [S4:47–51].
 
 ## Undergraduate summary
 
 A **hypergraph** is like a graph, but an "edge" may join any number
-of vertices, not just two. An $r$-partite hypergraph splits its
-vertices into $r$ labeled groups, with every edge touching each
-group exactly once; $r$-uniform means every edge has exactly
-$r$ vertices. A **vertex cover** is a set of vertices that meets
-every edge, and the **covering number** $\tau$ is the size of the
-smallest such set. The **matching number** $\nu$ is the size of the
+of vertices, not just two. An $`r`$-partite hypergraph splits its
+vertices into $`r`$ labeled groups, with every edge touching each
+group exactly once; $`r`$-uniform means every edge has exactly
+$`r`$ vertices. A **vertex cover** is a set of vertices that meets
+every edge, and the **covering number** $`\tau`$ is the size of the
+smallest such set. The **matching number** $`\nu`$ is the size of the
 largest set of pairwise edge-disjoint edges. Ryser's covering
-conjecture says $\tau\le(r-1)\nu$ for an $r$-partite
+conjecture says $`\tau\le(r-1)\nu`$ for an $`r`$-partite
 hypergraph. When the hypergraph is *intersecting* (any two edges
-share a vertex), $\nu=1$, so the bound collapses to
-$\tau\le r-1$: a cover of size $r-1$ should always exist. This
-family breaks that: for every large prime $q$ it builds an
-intersecting $(q+1)$-partite hypergraph whose **smallest** cover has
-size $q+1$, not $q$, with every part the same size
+share a vertex), $`\nu=1`$, so the bound collapses to
+$`\tau\le r-1`$: a cover of size $`r-1`$ should always exist. This
+family breaks that: for every large prime $`q`$ it builds an
+intersecting $`(q+1)`$-partite hypergraph whose **smallest** cover has
+size $`q+1`$, not $`q`$, with every part the same size
 [S3:41–45, S5:10].
 
 ## Graduate summary
 
 **The balanced counterexample** [S3:41–45, S5:10]. For every
-sufficiently large prime $q$ there is a finite intersecting
-$(q+1)$-partite, $(q+1)$-uniform hypergraph with covering number
-$q+1$ and **exactly $q+1$ nonisolated vertices in each part**
+sufficiently large prime $`q`$ there is a finite intersecting
+$`(q+1)`$-partite, $`(q+1)`$-uniform hypergraph with covering number
+$`q+1`$ and **exactly $`q+1`$ nonisolated vertices in each part**
 — the parts are perfectly balanced, and the covering number is
-$r$ rather than $r-1$. The prime threshold is existential
+$`r`$ rather than $`r-1`$. The prime threshold is existential
 [S3:41–45, S5:10].
 
 **The general rank form** [S4:47–51, S5:12]. The ranks occur
-as $r=p^n+1$: one fixed prime $p\equiv2\pmod3$ works for all
-sufficiently large prime degrees $n$, and a second construction
-covers every sufficiently large such prime $p$ and every
-sufficiently large odd $n$ (degree threshold depending on $p$).
+as $`r=p^n+1`$: one fixed prime $`p\equiv2\pmod3`$ works for all
+sufficiently large prime degrees $`n`$, and a second construction
+covers every sufficiently large such prime $`p`$ and every
+sufficiently large odd $`n`$ (degree threshold depending on $`p`$).
 Infinitely many ranks occur, and each gives a finite intersecting
-$r$-partite $r$-uniform hypergraph with $\nu=1$ and
-$\tau=r$, contradicting $\tau\le(r-1)\nu$
+$`r`$-partite $`r`$-uniform hypergraph with $`\nu=1`$ and
+$`\tau=r`$, contradicting $`\tau\le(r-1)\nu`$
 [S4:47–51, S5:12].
 
 **The Gyárfás tree-cover consequence.** A separate
@@ -77,7 +77,7 @@ Gyárfás's monochromatic tree-cover conjecture
 [S1:3845, S2:407].
 
 **The scope of the formalization.** The two **registered**
-declarations are the general $r=p^n+1$ rank form (the scope note's
+declarations are the general $`r=p^n+1`$ rank form (the scope note's
 second paragraph). The **balanced** equal-part-size form (the scope
 note's first paragraph and the blurb's headline) is carried by the
 `BalancedRyser` comparator, which has **no** `main_results` entry,
@@ -89,20 +89,20 @@ comparator at all** [S5:10, S5:12, S5:16–20].
 Ryser's covering conjecture (1960s) is a central problem in
 extremal hypergraph theory, connecting the covering and matching
 numbers of multipartite hypergraphs; the bound
-$\tau\le(r-1)\nu$ is known for several special families, and the
-intersecting case $\tau\le r-1$ was a key open question.
+$`\tau\le(r-1)\nu`$ is known for several special families, and the
+intersecting case $`\tau\le r-1`$ was a key open question.
 Gyárfás's monochromatic tree-cover conjecture is a
 related extremal question about covering colored structures by
 monochromatic trees. Both stood as expected-true for all
-$r$; this family disproves both with **algebraic** constructions
+$`r`$; this family disproves both with **algebraic** constructions
 rooted in finite fields and their extensions
 [S3:41–45, S4:47–51, S5:10, S5:12].
 
 **Prior (my training data, not this repo).** I know Ryser's
-covering conjecture, the $\tau\le(r-1)\nu$ bound, and that the
+covering conjecture, the $`\tau\le(r-1)\nu`$ bound, and that the
 intersecting case was a long-standing open problem. Concrete
 counterexamples — at **every** sufficiently large prime order,
-balanced across parts, with the rank form $r=p^n+1$ giving
+balanced across parts, with the rank form $`r=p^n+1`$ giving
 infinitely many ranks, plus a tree-cover disproof over extension
 fields — go beyond the specific constructions I recall; I
 cannot independently verify the finite-field gadget / small-proper-
@@ -111,16 +111,16 @@ subfield argument in [S3, S4] from training alone.
 ## Consequences
 
 **Ryser's covering conjecture is false, in the intersecting case.**
-For every sufficiently large prime $q$ there is an intersecting
-$(q+1)$-partite hypergraph with covering number $q+1>q=(r-1)$
+For every sufficiently large prime $`q`$ there is an intersecting
+$`(q+1)`$-partite hypergraph with covering number $`q+1>q=(r-1)`$
 [S3:41–45, S5:10].
 
 **It fails even with equal part sizes.** The counterexample can be
-taken with exactly $q+1$ nonisolated vertices in each part
+taken with exactly $`q+1`$ nonisolated vertices in each part
 [S3:41–45, S5:10].
 
 **Infinitely many ranks.** Counterexamples occur at every rank
-$r=p^n+1$ in the two registered families, so the failure is not an
+$`r=p^n+1`$ in the two registered families, so the failure is not an
 isolated rank [S4:47–51, S5:12].
 
 **Gyárfás's tree-cover conjecture is also false.** A
@@ -142,14 +142,14 @@ bundle.
 ## Comparison with the formalized statement
 
 **Scope note** [S5:10, S5:12]. The first paragraph formalizes the
-balanced claim: an intersecting $(q+1)$-partite, $(q+1)$-uniform
-hypergraph with covering number $q+1$ and equal part sizes, for
-every sufficiently large prime $q$ (the prime threshold
+balanced claim: an intersecting $`(q+1)`$-partite, $`(q+1)`$-uniform
+hypergraph with covering number $`q+1`$ and equal part sizes, for
+every sufficiently large prime $`q`$ (the prime threshold
 existential) [S5:10]. The second paragraph formalizes the general
-rank form: finite intersecting $r$-partite $r$-uniform hypergraphs
-with $\nu=1$ and $\tau=r$ at ranks $r=p^n+1$ — one fixed
-prime $p\equiv2\pmod3$ for all large prime degrees $n$, and every
-large such prime $p$ for every large odd $n$, infinitely many
+rank form: finite intersecting $`r`$-partite $`r`$-uniform hypergraphs
+with $`\nu=1`$ and $`\tau=r`$ at ranks $`r=p^n+1`$ — one fixed
+prime $`p\equiv2\pmod3`$ for all large prime degrees $`n`$, and every
+large such prime $`p`$ for every large odd $`n`$, infinitely many
 ranks [S5:12]. The scope note names three comparators
 [S5:16–20]: `BalancedRyser.lean`, `RyserCovering.lean`, and
 `RyserOddExtensions.lean`.
@@ -171,12 +171,12 @@ named by any comparator
 
 **What the proofs do.** The registered
 `exists_prime_eventually_counterexampleRank` states
-$\exists p,\ p.\mathrm{Prime}\wedge5<p\wedge p
+$`\exists p,\ p.\mathrm{Prime}\wedge5<p\wedge p
 \equiv2\ (3),\ \exists N\,\forall n\ge N\,(n.\mathrm{Prime}
-\wedge2<n)\Rightarrow\mathrm{CounterexampleRank}(p^n+1)$, and the
+\wedge2<n)\Rightarrow\mathrm{CounterexampleRank}(p^n+1)`$, and the
 OAI tree proves it with a genuine Lean proof: it extracts a prime
 good-gadget, builds a uniform ambient pool over the extension field
-$\mathbb F_{p^n}$, verifies the small-proper-subfield condition, and
+$`\mathbb F_{p^n}`$, verifies the small-proper-subfield condition, and
 closes from the good-pool counterexample-rank lemma
 [S9:14–17, S9:45]:
 
@@ -226,8 +226,8 @@ The registered `RyserOddExtensions.lean` comparator restates
 `eventualOddFailures_and_infinite` with a bare `sorry`
 [S7:61–68], and the unregistered `BalancedRyser.lean`
 comparator restates the balanced `main_result`
-— $\exists q_0\,\forall q\ge q_0\,(q.\mathrm{Prime}
-\Rightarrow\mathrm{BalancedCounterexample}\ q)$ — with a
+— $`\exists q_0\,\forall q\ge q_0\,(q.\mathrm{Prime}
+\Rightarrow\mathrm{BalancedCounterexample}\ q)`$ — with a
 bare `sorry` [S8:39–40]. The release records
 `scope: "Partial progress."` and `review: status: unchecked`; the
 comparators' `sorry` bodies are the targets the release set itself,

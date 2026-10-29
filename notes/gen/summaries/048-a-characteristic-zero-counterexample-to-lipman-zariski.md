@@ -13,22 +13,22 @@ in characteristic zero. [S5:2–4]"
 
 ## Undergraduate summary
 
-For a finitely generated integral $\mathbb C$-algebra $A$, the derivation
-module $\mathrm{Der}_{\mathbb C}(A)=\mathrm{Hom}_A(\Omega^1_{A/\mathbb C},A)$ is the module of
-algebraic vector fields on $\mathrm{Spec} A$. On a smooth variety of dimension
-$d$ it is locally free of rank $d$. The Lipman–Zariski conjecture asks
+For a finitely generated integral $`\mathbb C`$-algebra $`A`$, the derivation
+module $`\mathrm{Der}_{\mathbb C}(A)=\mathrm{Hom}_A(\Omega^1_{A/\mathbb C},A)`$ is the module of
+algebraic vector fields on $`\mathrm{Spec} A`$. On a smooth variety of dimension
+$`d`$ it is locally free of rank $`d`$. The Lipman–Zariski conjecture asks
 for the converse: a complex algebraic variety with locally free tangent
-sheaf should be nonsingular . "For a finitely generated integral $\mathbb C$-algebra $A$, write
+sheaf should be nonsingular . "For a finitely generated integral $`\mathbb C`$-algebra $`A`$, write
 $$\mathrm{Der}_{\mathbb C}(A)=\mathrm{Hom}_A(\Omega^1_{A/\mathbb C},A).$$
-The module $\mathrm{Der}_{\mathbb C}(A)$ consists of the algebraic vector fields on
-$\mathrm{Spec} A$. On a smooth variety of dimension $d$, the tangent sheaf is
-locally free of rank $d$. The Lipman–Zariski conjecture asks for the
+The module $`\mathrm{Der}_{\mathbb C}(A)`$ consists of the algebraic vector fields on
+$`\mathrm{Spec} A`$. On a smooth variety of dimension $`d`$, the tangent sheaf is
+locally free of rank $`d`$. The Lipman–Zariski conjecture asks for the
 converse: a complex algebraic variety with locally free tangent sheaf
 should be nonsingular. In affine terms, it asserts that local freeness
-of $\mathrm{Der}_{\mathbb C}(A)$ forces $A$ to be regular. We prove the following. [S5:9–18]" The theorem 
+of $`\mathrm{Der}_{\mathbb C}(A)`$ forces $`A`$ to be regular. We prove the following. [S5:9–18]" The theorem 
 
 > **theorem**
-There exist a finitely generated normal integral $\mathbb C$-algebra $A$ of Krull dimension two and a maximal ideal $\mathfrak m\subset A$ such that
+There exist a finitely generated normal integral $`\mathbb C`$-algebra $`A`$ of Krull dimension two and a maximal ideal $`\mathfrak m\subset A`$ such that
 $$\mathrm{Der}_{\mathbb C}(A)\simeq A^{\oplus2},
 \qquad A_{\mathfrak m}\text{ is not regular}.$$ [S5:20–26]
 
@@ -41,12 +41,12 @@ tangent freeness descends.
 ## Graduate summary
 
 **Beyond the known positive criteria.** The analytic singularity has
-one exceptional curve of genus $21$ and self-intersection $-10$, with
-canonical discrepancy $-5$ and $p_g\ge33$, so $p_g-g-b\ge12$ 
+one exceptional curve of genus $`21`$ and self-intersection $`-10`$, with
+canonical discrepancy $`-5`$ and $`p_g\ge33`$, so $`p_g-g-b\ge12`$ 
 
-> The analytic singularity constructed here has one exceptional curve of genus $21$
-and self-intersection $-10$. Its canonical discrepancy is $-5$, and
-$p_g\ge33$, so $p_g-g-b\ge12$. Remark 
+> The analytic singularity constructed here has one exceptional curve of genus $`21`$
+and self-intersection $`-10`$. Its canonical discrepancy is $`-5`$, and
+$`p_g\ge33`$, so $`p_g-g-b\ge12`$. Remark 
 proves these calculations. They place the analytic example beyond the
 log-canonical and geometric-genus criteria just described. [S5:83–87]
 
@@ -55,60 +55,60 @@ Druel and Graf–Kovács and beyond Graf's geometric-genus and
 Bergner–Graf criteria.
 
 **The neighborhood and the vector fields.** Starting from a split
-line bundle $L$ with $L^{\otimes4}\simeq K_C$, the zero-section
+line bundle $`L`$ with $`L^{\otimes4}\simeq K_C`$, the zero-section
 neighborhood carries the meromorphic two-form
-$\sigma=t^{-5}\,dt\wedge dz$ . "Let $C$ be a smooth curve and $L$ a positive line bundle with
-$L^{\otimes4}\simeq K_C$. Its dual bundle $L^{-1}$ provides the initial
-neighborhood of $C$. In compatible base and fiber coordinates $(z,t)$,
+$`\sigma=t^{-5}\,dt\wedge dz`$ . "Let $`C`$ be a smooth curve and $`L`$ a positive line bundle with
+$`L^{\otimes4}\simeq K_C`$. Its dual bundle $`L^{-1}`$ provides the initial
+neighborhood of $`C`$. In compatible base and fiber coordinates $`(z,t)`$,
 that neighborhood carries the meromorphic two-form
 $$\sigma=t^{-5}\,dt\wedge dz.$$
 We seek two vector fields of the form
 $$v_i=t\bigl(A_i(t,z)t\partial_t+B_i(t,z)\partial_z\bigr),
 \qquad i=1,2,$$ [S5:131–142]" Two vector fields
-are sought with $\sigma(v_1,v_2)=1+O(t)$. The leading vertical
-coefficients are a pair of sections of $L$ with six simple common
+are sought with $`\sigma(v_1,v_2)=1+O(t)`$. The leading vertical
+coefficients are a pair of sections of $`L`$ with six simple common
 zeros, whose corrections must satisfy global residue constraints.
 
-**The curve and residue data.** $C$ is constructed on
-$\mathbb P^1\times\mathbb P^1$ with fourth-order contact at the marked divisor $Z$
-with an auxiliary elliptic curve $\Gamma$; a two-torsion relation
+**The curve and residue data.** $`C`$ is constructed on
+$`\mathbb P^1\times\mathbb P^1`$ with fourth-order contact at the marked divisor $`Z`$
+with an auxiliary elliptic curve $`\Gamma`$; a two-torsion relation
 controls the section dimensions and supplies six vectors, giving
-genus $21$ and $\deg L=10$ . "\paragraphA curve and normalized residues.
-Section constructs $C$ on $\mathbb P^1\times\mathbb P^1$, with
-fourth-order contact at $Z$ with an auxiliary elliptic curve $\Gamma$.
-A two-torsion relation on $\Gamma$ controls the section dimensions on $C$ and supplies
+genus $`21`$ and $`\deg L=10`$ . "\paragraphA curve and normalized residues.
+Section constructs $`C`$ on $`\mathbb P^1\times\mathbb P^1`$, with
+fourth-order contact at $`Z`$ with an auxiliary elliptic curve $`\Gamma`$.
+A two-torsion relation on $`\Gamma`$ controls the section dimensions on $`C`$ and supplies
 six vectors in a two-dimensional quadratic space. The resulting curve
-has genus $21$, and $\deg L=10$. [S5:151–156]" A trace pairing for
-a degree-four map $C\to\mathbb P^1$ transports the vectors, and residue
-duality fixes a meromorphic pair $P$ whose local expansions enforce the
+has genus $`21`$, and $`\deg L=10`$. [S5:151–156]" A trace pairing for
+a degree-four map $`C\to\mathbb P^1`$ transports the vectors, and residue
+duality fixes a meromorphic pair $`P`$ whose local expansions enforce the
 determinant condition and cancel the gluing obstructions.
 
 **Lifting and contraction.** The finite transition maps realize a
-Hausdorff neighborhood $Y$ of $C$; Grauert's criterion contracts $C$
-to a point $x$ of a normal surface $X$ 
+Hausdorff neighborhood $`Y`$ of $`C`$; Grauert's criterion contracts $`C`$
+to a point $`x`$ of a normal surface $`X`$ 
 
 > \paragraphHolomorphic lifting and contraction.
 Section realizes the finite transition maps as
-a Hausdorff surface neighborhood $Y$ of $C$. Set
-$\mathcal I=\mathcal O_Y(-C)$ and $\mathcal F=\mathcal T_Y(-\log C)$, the sheaf of vector fields
-tangent to $C$. Grauert's criterion contracts the curve to a point
-$x$ of a normal surface $X$ . Cohomology of the
+a Hausdorff surface neighborhood $`Y`$ of $`C`$. Set
+$`\mathcal I=\mathcal O_Y(-C)`$ and $`\mathcal F=\mathcal T_Y(-\log C)`$, the sheaf of vector fields
+tangent to $`C`$. Grauert's criterion contracts the curve to a point
+$`x`$ of a normal surface $`X`$ . Cohomology of the
 successive ideal quotients and the theorem on formal
 functions give the cohomological vanishing needed to
 lift these jets to holomorphic fields after shrinking, without requiring
 an infinite sequence of neighborhood
 changes to converge. Their determinant gives a frame on
-$Y\setminus C\simeq X\setminus\{x\}$, which normality extends to a
-free tangent sheaf on $X$. Adjunction proves that $x$ is singular. [S5:179–191]
+$`Y\setminus C\simeq X\setminus\{x\}`$, which normality extends to a
+free tangent sheaf on $`X`$. Adjunction proves that $`x`$ is singular. [S5:179–191]
 
 The jets lift to holomorphic fields via cohomological vanishing and
 the theorem on formal functions. Their determinant frames the punctured
-surface, which normality extends to a free tangent sheaf on $X$;
-adjunction proves $x$ is singular.
+surface, which normality extends to a free tangent sheaf on $`X`$;
+adjunction proves $`x`$ is singular.
 
 **The algebraic endpoint.** A finite-determinacy argument with a
 relation matrix produces an algebraic local ring with the same
-completion as $\mathcal O_{X,x}$ 
+completion as $`\mathcal O_{X,x}`$ 
 
 > \paragraphThe affine algebraic endpoint.
 Section combines approximation with the finite
@@ -119,7 +119,7 @@ of isolated singularities \cite[Theorems 1.10 and 3.8–3.9]Artin1969.
 We prove the required finite-determinacy statement with a relation matrix:
 the approximated equations and matrix retain their exact zero product.
 This produces an algebraic local ring with the same completion as
-$\mathcal O_{X,x}$. A finite Jacobian presentation identifies its completed
+$`\mathcal O_{X,x}`$. A finite Jacobian presentation identifies its completed
 derivation module with the continuous derivations of that completion.
 Faithful flatness descends freeness and the local ring properties.
 Finally, shrinking to one affine neighborhood gives the globally free
@@ -134,7 +134,7 @@ singular point.
 Lipman showed that local freeness of the tangent sheaf forces
 normality, so the conjecture asks whether it excludes the remaining
 normal singularities. In positive characteristic the assertion fails
-even for the hypersurface $xy-z^p=0$ [S5:35–43]. Hochster proved the
+even for the hypersurface $`xy-z^p=0`$ [S5:35–43]. Hochster proved the
 positively-graded cone case; Van Straten–Steenbrink the
 isolated-singularity case in dimension at least three; Scheja–Storch
 the hypersurface case; Källström the locally complete-intersection
@@ -142,12 +142,12 @@ case; Greb–Kebekus–Kovács–Peternell the klt case; Druel and
 Graf–Kovács the log-canonical case [S5:45–71].
 
 For normal complex surfaces, Graf proved smoothness for
-$p_g\le1$ and for $p_g=2$ with a non-tree exceptional divisor;
-Bergner–Graf gave the $p_g-g-b\le2$ criterion [S5:73–82].
-"where $g$ is the sum of the genera of the exceptional curves and $b$ is
+$`p_g\le1`$ and for $`p_g=2`$ with a non-tree exceptional divisor;
+Bergner–Graf gave the $`p_g-g-b\le2`$ criterion [S5:73–82].
+"where $`g`$ is the sum of the genera of the exceptional curves and $`b`$ is
 the first Betti number of the resolution's dual graph
 \cite[Theorem 1]BergnerGraf2020.
-The analytic singularity constructed here has one exceptional curve of genus $21$ [S5:73–82]" The construction here exceeds every one of these bounds.
+The analytic singularity constructed here has one exceptional curve of genus $`21`$ [S5:73–82]" The construction here exceeds every one of these bounds.
 Biswas–Gurjar–Kolte require logarithmic Kodaira dimension at most one
 on the smooth locus, so this affine surface's smooth locus has
 logarithmic Kodaira dimension two [S5:89–97].

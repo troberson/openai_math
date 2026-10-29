@@ -9,56 +9,56 @@
 The release's blurb [S1:4368] and the catalog abstract [S2:459]
 state the family's claim: the Erd–Faudree–Rousseau–
 Schelp cycle–clique Ramsey conjecture,
-$R(C_m,K_n)=(m-1)(n-1)+1$ for every $m \geq n \geq 3$,
-except $R(C_3,K_3)=6$. This is the exact threshold, in a
+$`R(C_m,K_n)=(m-1)(n-1)+1`$ for every $`m \geq n \geq 3`$,
+except $`R(C_3,K_3)=6`$. This is the exact threshold, in a
 red–blue coloring of a complete graph, forcing a red
-$m$-cycle or a blue $n$-clique. The manuscript is
+$`m`$-cycle or a blue $`n`$-clique. The manuscript is
 *Cycle–clique Ramsey numbers* [S3:26, S3:28]; its abstract
 
 
-> We prove that $R(C_m,K_n)=(m-1)(n-1)+1$ for every pair of integers
-$m\ge n\ge3$ other than $(m,n)=(3,3)$, for which $R(C_3,K_3)=6$.
+> We prove that $`R(C_m,K_n)=(m-1)(n-1)+1`$ for every pair of integers
+$`m\ge n\ge3`$ other than $`(m,n)=(3,3)`$, for which $`R(C_3,K_3)=6`$.
 This establishes the cycle–clique conjecture of Erdős, Faudree,
 Rousseau and Schelp. The proof combines expansion in a
 minimal counterexample with a large-clique lemma and an optimization of
 paths joining clique vertices. These arguments reduce the remaining cases
-to $3{,}099$ finite parameter-pattern instances, which are excluded by two exact
+to $`3{,}099`$ finite parameter-pattern instances, which are excluded by two exact
 implementations of proved inference rules. Complete programs and deduction
 traces accompany the paper. [S3:32–40]
 
 ## Undergraduate summary
 
-A **Ramsey number** $R(G,H)$ is the smallest number of dots
+A **Ramsey number** $`R(G,H)`$ is the smallest number of dots
 such that, however you paint every edge connecting them
-red or blue, you **must** find either a red copy of $G$ or a
-blue copy of $H$. A **cycle** $C_m$ is a ring of $m$ dots
+red or blue, you **must** find either a red copy of $`G`$ or a
+blue copy of $`H`$. A **cycle** $`C_m`$ is a ring of $`m`$ dots
 (each joined to its two neighbors and no others); a **clique**
-$K_n$ is a group of $n$ dots all joined to each other.
+$`K_n`$ is a group of $`n`$ dots all joined to each other.
 Coloring a complete graph's edges red and blue, the question
 is: what is the minimum number of dots that forces either a
-red ring of $m$ dots or a blue complete set of $n$ dots?
+red ring of $`m`$ dots or a blue complete set of $`n`$ dots?
 This manuscript gives the **exact** answer — a single
-formula $(m-1)(n-1)+1$ that works for every $m \geq n
-\geq 3$, with one exception (the $(3,3)$ case, where the
-answer is $6$) [S3:32–40, S2:459].
+formula $`(m-1)(n-1)+1`$ that works for every $`m \geq n
+\geq 3`$, with one exception (the $`(3,3)`$ case, where the
+answer is $`6`$) [S3:32–40, S2:459].
 
 ## Graduate summary
 
 **The main theorem** [S3:32–40, S4:9]. For every pair
-of integers $m \geq n \geq 3$ other than $(3,3)$:
-$R(C_m, K_n) = (m-1)(n-1)+1$. For the exceptional case:
-$R(C_3, K_3) = 6$ [S4:9, S5:23–27]. The proof combines
+of integers $`m \geq n \geq 3`$ other than $`(3,3)`$:
+$`R(C_m, K_n) = (m-1)(n-1)+1`$. For the exceptional case:
+$`R(C_3, K_3) = 6`$ [S4:9, S5:23–27]. The proof combines
 expansion in a minimal counterexample with a large-clique
 lemma and an optimization of paths joining clique vertices;
-the arguments reduce the remaining cases to $3{,}099$ finite
+the arguments reduce the remaining cases to $`3{,}099`$ finite
 parameter-pattern instances, excluded by two exact
 implementations of proved inference rules
 [S3:32–40].
 
 **The scope of the formalization.** The scope note states
-the formalization proves $R(C_m,K_n)=(m-1)(n-1)+1$ for all
-integers $m \geq n \geq 3$ except $(m,n)=(3,3)$, where it
-proves $R(C_3,K_3)=6$ — the **complete parameter range**
+the formalization proves $`R(C_m,K_n)=(m-1)(n-1)+1`$ for all
+integers $`m \geq n \geq 3`$ except $`(m,n)=(3,3)`$, where it
+proves $`R(C_3,K_3)=6`$ — the **complete parameter range**
 of the paper's main theorem [S4:9]. The scope note names one
 comparator [S4:15]: `CycleCliqueRamsey.lean`.
 
@@ -67,16 +67,16 @@ comparator [S4:15]: `CycleCliqueRamsey.lean`.
 The **cycle–clique Ramsey conjecture** was posed by
 Erd–Faudree, Rousseau, and Schelp as a unification of
 the cycle–cycle and clique–clique Ramsey
-problems. The formula $(m-1)(n-1)+1$ is the natural
+problems. The formula $`(m-1)(n-1)+1`$ is the natural
 "product + one" guess for the threshold, and the conjecture
-asserts it is exact. The $(3,3)$ exception — a triangle
+asserts it is exact. The $`(3,3)`$ exception — a triangle
 versus a triangle — is the one case that does not fit
-the formula (the answer is $6$, not $(3-1)(3-1)+1 = 5$).
+the formula (the answer is $`6`$, not $`(3-1)(3-1)+1 = 5`$).
 Prior work established the bound for restricted ranges and
 for the cycle–cycle case, but the full
 cycle–clique formula was open. This manuscript closes
 it, with a proof that is largely a **finite certificate**:
-the arguments reduce to $3{,}099$ parameter-pattern
+the arguments reduce to $`3{,}099`$ parameter-pattern
 instances, excluded by two exact implementations of proved
 inference rules, with complete programs and deduction traces
 accompanying the paper [S3:32–40, S2:459].
@@ -84,10 +84,10 @@ accompanying the paper [S3:32–40, S2:459].
 **Prior (my training data, not this repo).** I know the
 cycle–clique Ramsey conjecture of
 Erd–Faudree, Rousseau, and Schelp as a named open
-problem in Ramsey theory, and that the $(3,3)$ exception is
+problem in Ramsey theory, and that the $`(3,3)`$ exception is
 the well-known case where the formula breaks. A **complete
 proof of the full parameter range** via expansion, large-
-clique lemmas, and a $3{,}099$-instance finite certificate
+clique lemmas, and a $`3{,}099`$-instance finite certificate
 with two exact inference-rule implementations is not
 something I can independently verify from training alone.
 
@@ -95,12 +95,12 @@ something I can independently verify from training alone.
 
 **The Erd–Faudree–Rousseau–Schelp cycle–
 clique Ramsey conjecture is resolved.**
-$R(C_m,K_n)=(m-1)(n-1)+1$ for every $m \geq n \geq 3$
-except $(3,3)$, where $R(C_3,K_3)=6$ [S3:32–40, S4:9,
+$`R(C_m,K_n)=(m-1)(n-1)+1`$ for every $`m \geq n \geq 3`$
+except $`(3,3)`$, where $`R(C_3,K_3)=6`$ [S3:32–40, S4:9,
 S2:459].
 
 **The proof is a finite certificate.** The general argument
-reduces to $3{,}099$ parameter-pattern instances, excluded
+reduces to $`3{,}099`$ parameter-pattern instances, excluded
 by two exact implementations of proved inference rules,
 with complete programs and deduction traces
 [S3:32–40].
@@ -111,16 +111,16 @@ One manuscript [S3:32–40] (title [S3:26], date [S3:28]) —
 `main.tex` (62 lines) under `build/`, with sections under
 `build/sections/` including a `02-reduction` and a
 `clique-figure` section. The family ships one
-`verification/` **certificate bundle** (the $3{,}099$-
+`verification/` **certificate bundle** (the $`3{,}099`$-
 instance inference-rule programs and deduction traces), not
 a Lean proof [S3:32–40].
 
 ## Comparison with the formalized statement
 
 **Scope note** [S4:9]. The formalization proves
-$R(C_m,K_n)=(m-1)(n-1)+1$ for all integers
-$m \geq n \geq 3$ except $(m,n)=(3,3)$, where it proves
-$R(C_3,K_3)=6$ — the complete parameter range of the
+$`R(C_m,K_n)=(m-1)(n-1)+1`$ for all integers
+$`m \geq n \geq 3`$ except $`(m,n)=(3,3)`$, where it proves
+$`R(C_3,K_3)=6`$ — the complete parameter range of the
 paper's main theorem. The scope note names one comparator
 [S4:15]: `CycleCliqueRamsey.lean`.
 
@@ -132,9 +132,9 @@ listing. The comparator `CycleCliqueRamsey.lean` defines
 `cycleCliqueRamsey` and restates the target
 `theorem thm_main` — a two-term conjunction: the
 general case
-$(\forall\, m\, n : \mathbb{Z},\, n \leq m \to 3
+$`(\forall\, m\, n : \mathbb{Z},\, n \leq m \to 3
 \leq n \to (m,n) \neq (3,3) \to
-\text{cycleCliqueRamsey}\, m\, n = (m-1)(n-1)+1)$ and
+\text{cycleCliqueRamsey}\, m\, n = (m-1)(n-1)+1)`$ and
 the exceptional case
 `cycleCliqueRamsey 3 3 = 6` — with a bare `sorry` body
 [S5:18–27]:
@@ -187,7 +187,7 @@ theorem thm_main :
 [S6:23–43]
 
 The proof closes with `exact exceptional` for the
-$(3,3)$ conjunct — a closed argument, no `sorry`
+$`(3,3)`$ conjunct — a closed argument, no `sorry`
 [S6:23–43].
 
 **Registration, not proof.** The OAI tree proves the

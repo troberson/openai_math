@@ -16,10 +16,10 @@ Four manuscripts carry the family. The first, *Pointwise Multiple
 Ergodic Averages for Mixing Transformations* [S3:48, S3:50], is the
 general statement; its abstract 
 
-> Let $T$ be an invertible mixing probability-preserving transformation.
-For every integer $n\ge2$ and every fixed tuple of bounded measurable
+> Let $`T`$ be an invertible mixing probability-preserving transformation.
+For every integer $`n\ge2`$ and every fixed tuple of bounded measurable
 functions, we prove that the consecutive multiple ergodic averages of
-length $n$ converge almost everywhere to the product of the integrals,
+length $`n`$ converge almost everywhere to the product of the integrals,
 as the averaging length tends to infinity through all positive integers.
 The probability space need not be standard, and no rate of mixing is
 required. [S3:54–60]
@@ -28,7 +28,7 @@ The remaining three are the individual lower lengths. *Pointwise
 convergence of fourfold ergodic averages for mixing transformations*
 [S4:41, S4:43], abstract 
 
-> We prove that fourfold ergodic averages along the times $n,2n,3n,4n$
+> We prove that fourfold ergodic averages along the times $`n,2n,3n,4n`$
 converge almost everywhere to the product of the integrals for every
 invertible, bimeasurable, mixing probability-preserving transformation
 and every fixed choice of bounded measurable inputs. Convergence holds
@@ -47,45 +47,45 @@ And *Pointwise convergence of triple ergodic averages for mixing
 transformations* [S6:3, S6:5], abstract 
 
 > We prove pointwise convergence of triple ergodic averages for every
-invertible mixing probability preserving transformation $T$ of an
-arbitrary probability space $(X,\mathcal F,\mu)$, with measurable inverse.
+invertible mixing probability preserving transformation $`T`$ of an
+arbitrary probability space $`(X,\mathcal F,\mu)`$, with measurable inverse.
 For every triple of bounded measurable functions
-$f_1,f_2,f_3:X\to\mathbb C$,
+$`f_1,f_2,f_3:X\to\mathbb C`$,
 $$\frac1N\sum_{n=1}^N f_1(T^nx)f_2(T^{2n}x)f_3(T^{3n}x)
  \longrightarrow \prod_{j=1}^3\int_X f_j\,d\mu$$
-for $\mu$-almost every $x$ as $N\to\infty$ through all positive
+for $`\mu`$-almost every $`x`$ as $`N\to\infty`$ through all positive
 integers. [S6:10–20]
 
 ## Undergraduate summary
 
-Let $T$ be a map of a probability space that preserves the measure and
+Let $`T`$ be a map of a probability space that preserves the measure and
 *ergodizes* it (mixing is the strong form: correlations between a set
 and its far-past copies decay to zero). The *multiple ergodic average*
-of a tuple of functions $f_1,\ldots,f_n$ at a point $x$ is
-$\frac1N\sum_{k=1}^N f_1(T^k x)\cdots f_n(T^{nk} x)$, and the
-question is what it tends to as $N\to\infty$ — pointwise, at
-almost every $x$. The trivial limit is the product of the individual
-integrals $\prod_j \int f_j\,d\mu$, reached when the iterates
-"$T^x, T^{2n}x,\ldots$" behave like independent samples. A *multiple
+of a tuple of functions $`f_1,\ldots,f_n`$ at a point $`x`$ is
+$`\frac1N\sum_{k=1}^N f_1(T^k x)\cdots f_n(T^{nk} x)`$, and the
+question is what it tends to as $`N\to\infty`$ — pointwise, at
+almost every $`x`$. The trivial limit is the product of the individual
+integrals $`\prod_j \int f_j\,d\mu`$, reached when the iterates
+"$`T^x, T^{2n}x,\ldots`$" behave like independent samples. A *multiple
 Birkhoff* (ergodic) theorem asserts this limit exists at almost every
 point. This family proves the pointwise version of that limit
-**simultaneously for every finite length** $n\ge2$, for mixing
+**simultaneously for every finite length** $`n\ge2`$, for mixing
 transformations, without assuming how fast the mixing is or that the
 probability space is a nice (standard) one [S3:54–60].
 
 ## Graduate summary
 
 **The general finite-length statement** [S3:54–60]. For an
-invertible mixing probability-preserving transformation $T$, and every
-integer $n\ge2$ and every fixed tuple of bounded measurable functions,
-the consecutive multiple ergodic averages of length $n$ converge
-almost everywhere to $\prod_j\int f_j\,d\mu$ as the averaging
+invertible mixing probability-preserving transformation $`T`$, and every
+integer $`n\ge2`$ and every fixed tuple of bounded measurable functions,
+the consecutive multiple ergodic averages of length $`n`$ converge
+almost everywhere to $`\prod_j\int f_j\,d\mu`$ as the averaging
 length tends to infinity through all positive integers. Two
 hypotheses are explicitly *not* imposed: the space need not be
 standard, and no rate of mixing is required.
 
 **The fourfold case** [S4:47–52]. Fourfold ergodic averages along
-the times $n,2n,3n,4n$ converge almost everywhere to the product of the
+the times $`n,2n,3n,4n`$ converge almost everywhere to the product of the
 integrals for every invertible, bimeasurable, mixing
 probability-preserving transformation and every fixed bounded
 measurable inputs, along all positive integer averaging lengths, with
@@ -97,10 +97,10 @@ converge almost everywhere to the product of the integrals; the slopes
 may be positive or negative.
 
 **The triple, consecutive-slopes case** [S6:10–20]. For every
-invertible mixing probability-preserving $T$ with measurable inverse,
-$\frac1N\sum_{k=1}^N f_1(T^k x)f_2(T^{2k} x)f_3(T^{3k}x)
-\to\prod_{j=1}^3\int f_j\,d\mu$ for $\mu$-almost every $x$ as
-$N\to\infty$ through all positive integers.
+invertible mixing probability-preserving $`T`$ with measurable inverse,
+$`\frac1N\sum_{k=1}^N f_1(T^k x)f_2(T^{2k} x)f_3(T^{3k}x)
+\to\prod_{j=1}^3\int f_j\,d\mu`$ for $`\mu`$-almost every $`x`$ as
+$`N\to\infty`$ through all positive integers.
 
 **Why the general result needs the lower lengths.** The fourfold and
 the two triple statements are the individual cases the general theorem
@@ -129,7 +129,7 @@ results for mixing / strong-mixing / weakly-mixing transformations, and
 that the standard literature typically bounds the length it treats and
 assumes a rate of mixing and/or a standard Borel probability space.
 Pointwise convergence of the consecutive multiple averages for
-**every** finite length $n\ge2$ simultaneously, with **neither** a
+**every** finite length $`n\ge2`$ simultaneously, with **neither** a
 mixing rate **nor** a standardness assumption, goes beyond the
 individual-length results I can independently verify; I cannot confirm
 the general argument in [S3:54–60] from training alone.
@@ -138,7 +138,7 @@ the general argument in [S3:54–60] from training alone.
 
 **Every finite length, at once.** For an invertible mixing
 probability-preserving transformation, the consecutive multiple
-ergodic averages of every length $n\ge2$ converge a.e. to the product
+ergodic averages of every length $`n\ge2`$ converge a.e. to the product
 of the integrals, along all positive averaging lengths
 [S3:54–60].
 
@@ -146,9 +146,9 @@ of the integrals, along all positive averaging lengths
 probability space need not be standard [S3:54–60].
 
 **The lower lengths, individually.** The consecutive
-$n,2n,3n,4n$ fourfold averages [S4:47–52], the
+$`n,2n,3n,4n`$ fourfold averages [S4:47–52], the
 distinct-nonzero-integer-slope triple averages (slopes possibly
-negative) [S5:40–43], and the consecutive $n,2n,3n$ triple
+negative) [S5:40–43], and the consecutive $`n,2n,3n`$ triple
 averages [S6:10–20] all converge a.e. to the product of the
 integrals.
 

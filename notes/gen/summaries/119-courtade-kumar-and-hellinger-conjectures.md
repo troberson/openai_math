@@ -16,13 +16,13 @@ agree on the statement.
 ## Undergraduate summary
 
 The **Courtade–Kumar conjecture** asks a deceptively simple question.
-Take $n$ independent fair coins. You may look at all $n$ coins and
+Take $`n`$ independent fair coins. You may look at all $`n`$ coins and
 produce a single yes/no answer — a Boolean function of the coins. Now
-each coin is flipped with probability $\varepsilon$ (independently).
+each coin is flipped with probability $`\varepsilon`$ (independently).
 How much information does your one-bit answer retain about the noisy
 coins? Courtade and Kumar (2014) conjectured that the best strategy is
 to look at just **one** coin and report its value. No fancy combination
-of all $n$ coins helps.
+of all $`n`$ coins helps.
 
 This family **proves** that conjecture. In fact, it proves a stronger
 statement: the same is true for *randomized* one-bit summaries (soft
@@ -42,50 +42,50 @@ certificates verify the scalar inequalities, independent of dimension.
 ## Graduate summary
 
 **Main theorem (soft-channel contraction)** ([S3:72–84],
-`main:soft`). "For every finite $n\ge0$, every $u:\Omega_n\to[-1,1]$,
-and $-1\le\rho\le1$, $I(T_\rho u) \le\psi(|\rho|\,\psi^{-1}(I(u)))$
-[...]. For $n\ge1$, every soft coordinate $u(x)=a x_i$, $|a|\le1$,
-attains equality" [S3:72–84]. The parameter $\psi^{-1}(I(u))$ is the
-amplitude of a fair soft coordinate with the same information as $u$;
+`main:soft`). "For every finite $`n\ge0`$, every $`u:\Omega_n\to[-1,1]`$,
+and $`-1\le\rho\le1`$, $`I(T_\rho u) \le\psi(|\rho|\,\psi^{-1}(I(u)))`$
+[...]. For $`n\ge1`$, every soft coordinate $`u(x)=a x_i`$, $`|a|\le1`$,
+attains equality" [S3:72–84]. The parameter $`\psi^{-1}(I(u))`$ is the
+amplitude of a fair soft coordinate with the same information as $`u`$;
 the theorem says this effective amplitude contracts at least as fast as
 a coordinate.
 
 **Corollary (Boolean bound with output bias)** ([S3:92–104],
-`main:ck`). "For every finite $n\ge0$, $\rho\in[-1,1]$, and
-$f:\Omega_n\to\{-1,1\}$, put $m=\mathbb E f$ and
-$r_m=\psi^{-1}(H(m))$. Then
-$I(f(X);Y)\le\psi(|\rho|r_m)\le\psi(|\rho|)$" [S3:92–104]. At
-crossover probability $\varepsilon$ (so $\rho=1-2\varepsilon$), the
-universal bound in bits is $I_2(f(X);Y)\le 1-h_2(\varepsilon)$ — the
+`main:ck`). "For every finite $`n\ge0`$, $`\rho\in[-1,1]`$, and
+$`f:\Omega_n\to\{-1,1\}`$, put $`m=\mathbb E f`$ and
+$`r_m=\psi^{-1}(H(m))`$. Then
+$`I(f(X);Y)\le\psi(|\rho|r_m)\le\psi(|\rho|)`$" [S3:92–104]. At
+crossover probability $`\varepsilon`$ (so $`\rho=1-2\varepsilon`$), the
+universal bound in bits is $`I_2(f(X);Y)\le 1-h_2(\varepsilon)`$ — the
 Courtade–Kumar conjecture. The refinement uses the actual entropy of
-the Boolean output; for $0<|m|<1$ and nonzero noise, the refined curve
+the Boolean output; for $`0<|m|<1`$ and nonzero noise, the refined curve
 is strictly below the universal curve.
 
 **Production theorem** ([S3:307–317], `upgrade:production`). "For
-every finite $n\ge0$ and every $g:\{-1,1\}^n\to(-1,1)$, with
-$m=\mathbb E g$, $D(g)\ge\widehat{\mathcal B}_m(I(g)) =
-\max\{\mathcal B_m(I(g)),F(I(g))\} \ge F(I(g))$" [S3:307–317]. This
+every finite $`n\ge0`$ and every $`g:\{-1,1\}^n\to(-1,1)`$, with
+$`m=\mathbb E g`$, $`D(g)\ge\widehat{\mathcal B}_m(I(g)) =
+\max\{\mathcal B_m(I(g)),F(I(g))\} \ge F(I(g))`$" [S3:307–317]. This
 is the mean-dependent entropy-production inequality that drives the
 dimension induction.
 
 **Hellinger conjecture** ([S4:54–61], `thm:main`). "For every
-$n\ge1$, every Boolean function $f:\{-1,1\}^n\to\{-1,1\}$, and every
-$\rho\in[-1,1]$, writing $m=\mathbb E f$, one has
-$H(m)-\mathbb E H(T_\rho f)\le1-H(\rho)$" [S4:54–61], where
-$H(t)=\sqrt{1-t^2}$. Signed coordinate functions (dictators) attain
-equality for every $\rho$ [S4:64–65]. The implication to Courtade–Kumar
+$`n\ge1`$, every Boolean function $`f:\{-1,1\}^n\to\{-1,1\}`$, and every
+$`\rho\in[-1,1]`$, writing $`m=\mathbb E f`$, one has
+$`H(m)-\mathbb E H(T_\rho f)\le1-H(\rho)`$" [S4:54–61], where
+$`H(t)=\sqrt{1-t^2}`$. Signed coordinate functions (dictators) attain
+equality for every $`\rho`$ [S4:64–65]. The implication to Courtade–Kumar
 is explicit: the Hellinger inequality bounds the weighted affinity
 loss, and the Anantharam et al. (2017) proposition converts it to the
 information bound [S4:66–69].
 
 **Proof strategy for the Hellinger conjecture** ([S4:136–165]). Two
-complementary regimes: for $s\le 0.84$ (high noise), compress to
+complementary regimes: for $`s\le 0.84`$ (high noise), compress to
 increasing Boolean functions and induct in dimension with a calibrated
-noise-semigroup energy estimate. For $s\ge 0.84$ (low noise), continue
+noise-semigroup energy estimate. For $`s\ge 0.84`$ (low noise), continue
 from the established range and exclude an energy crossing via even–odd
 Fourier decomposition and cube norm estimates. The proof is
 computer-assisted only through fixed scalar inequalities, independent
-of $n$; every decimal constant denotes its exact rational value.
+of $`n`$; every decimal constant denotes its exact rational value.
 
 ## History of the conjecture
 
@@ -99,8 +99,8 @@ functions.
 sharp high-noise bounds for balanced Boolean functions [S3:117–119].
 **Samorodnitsky** (2016) proved the conjecture in a
 dimension-independent high-noise range [S3:119–121]. **Yu** (2023, 2026)
-enlarged the proved range for balanced functions via $\Phi$-stability;
-the 2026 paper gives $\rho\le 0.914$ by a computer-assisted argument
+enlarged the proved range for balanced functions via $`\Phi`$-stability;
+the 2026 paper gives $`\rho\le 0.914`$ by a computer-assisted argument
 [S3:122–124]. **Javanmard and Woodruff** (2026) extended the
 coordinatewise sum bound to arbitrary output bias [S3:125–127].
 
@@ -108,7 +108,7 @@ The **Hellinger conjecture** was formulated by Anantharam, Bogdanov,
 Chakrabarti, Jayram, and Nair (2017), who proved it implies
 Courtade–Kumar [S4:44]. **Chen and Nair** (2024) proved a
 mean-dependent lower bound using the Gaussian isoperimetric profile,
-sharp at $\rho=0$ but below the target at $m=0$ for $s>0$
+sharp at $`\rho=0`$ but below the target at $`m=0`$ for $`s>0`$
 [S4:93–104]. **Durcik, Ivanisvili, Roos, and Xie** (2026) proved the
 sharp square-root sensitivity inequality for balanced functions
 [S4:114–117]. Recent preprints by Chen et al. (2026), Ky and Tran
@@ -140,10 +140,10 @@ release ships both manuscripts as proofs.
   amplitude contracts at least as fast as a coordinate [S3:72–84].
 - **Mean-dependent refinement.** For nonconstant biased Boolean
   outputs at nonzero noise, the refined upper curve is strictly below
-  the universal $\psi(|\rho|)$ bound [S3:98–104].
+  the universal $`\psi(|\rho|)`$ bound [S3:98–104].
 - **Hellinger conjecture resolved in full generality.** The square-root
-  affinity loss is at most $1-H(\rho)$ for every Boolean function and
-  every $\rho\in[-1,1]$, with equality for signed coordinates
+  affinity loss is at most $`1-H(\rho)`$ for every Boolean function and
+  every $`\rho\in[-1,1]`$, with equality for signed coordinates
   [S4:54–61].
 - **Entropy-production bound.** A stronger mean-dependent
   entropy-production inequality holds for all interior soft fields

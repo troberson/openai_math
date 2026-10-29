@@ -24,10 +24,10 @@ This resolves Seymour's second neighborhood conjecture positively. [S3:35–37]
 
 An **oriented graph** is a directed graph with no loop (an edge
 from a vertex to itself) and no two opposite edges between the same
-pair. For a vertex $v$, its **first out-neighbors** are the
+pair. For a vertex $`v`$, its **first out-neighbors** are the
 vertices you can reach by one directed edge; its **second
 out-neighbors** are the vertices you can reach by exactly two
-directed edges, excluding $v$ and its first neighbors. Seymour's
+directed edges, excluding $`v`$ and its first neighbors. Seymour's
 conjecture says that in any nonempty finite oriented graph, some
 vertex has **at least as many** second out-neighbors as first
 out-neighbors — the graph "spreads out" at the second step.
@@ -39,11 +39,11 @@ seed. This manuscript proves that always
 ## Graduate summary
 
 **The main theorem** [S3:35–37, S4:9]. For every nonempty
-finite type $V$ and every oriented relation $r : V \to V \to
-\mathrm{Prop}$ (loopless, asymmetric), there exists a vertex $v$
-such that $|N_1(v)| \le |N_2(v)|$, where $N_1(v)$ is the first
-out-neighborhood and $N_2(v)$ the second out-neighborhood
-(vertices at directed distance exactly two, with $v$ and $N_1(v)$
+finite type $`V`$ and every oriented relation $`r : V \to V \to
+\mathrm{Prop}`$ (loopless, asymmetric), there exists a vertex $`v`$
+such that $`|N_1(v)| \le |N_2(v)|`$, where $`N_1(v)`$ is the first
+out-neighborhood and $`N_2(v)`$ the second out-neighborhood
+(vertices at directed distance exactly two, with $`v`$ and $`N_1(v)`$
 excluded; sinks are included in the count) [S3:35–37, S4:9].
 
 **The count conventions.** The second neighborhood excludes the

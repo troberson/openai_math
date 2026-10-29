@@ -15,46 +15,46 @@ semiampleness pair:
 
 Manuscript 1, Kähler adjoints via Bott–Chern cohomology 
 
-> Let $X$ be a smooth connected compact Kähler manifold, let $B$ be an
+> Let $`X`$ be a smooth connected compact Kähler manifold, let $`B`$ be an
 effective rational simple normal crossing divisor with coefficients less
-than one, and let $M$ be a nef rational holomorphic line bundle on $X$.
-If $K_X+B$ is pseudo-effective and $K_X+B+M$ is nef, we prove that its
+than one, and let $`M`$ be a nef rational holomorphic line bundle on $`X`$.
+If $`K_X+B`$ is pseudo-effective and $`K_X+B+M`$ is nef, we prove that its
 first Chern class in real Bott–Chern cohomology is represented by a semiample
 rational line bundle. This numerical statement allows a flat change of line
 bundle; it does not assert semiampleness of the original adjoint. [S2:8–16]
 
 Manuscript 2, projective klt rational pairs 
 
-> We prove the Generalised Abundance Conjecture: if $(X,B)$ is a projective
-klt $\mathbb Q$-pair over an algebraically closed field of characteristic zero,
-$K_X+B$ is pseudo-effective, $M$ is a nef $\mathbb Q$-Cartier divisor on $X$,
-and $K_X+B+M$ is nef, then $K_X+B+M$ is numerically equivalent to a
-semiample $\mathbb Q$-Cartier divisor on $X$. [S4:39–45]
+> We prove the Generalised Abundance Conjecture: if $`(X,B)`$ is a projective
+klt $`\mathbb Q`$-pair over an algebraically closed field of characteristic zero,
+$`K_X+B`$ is pseudo-effective, $`M`$ is a nef $`\mathbb Q`$-Cartier divisor on $`X`$,
+and $`K_X+B+M`$ is nef, then $`K_X+B+M`$ is numerically equivalent to a
+semiample $`\mathbb Q`$-Cartier divisor on $`X`$. [S4:39–45]
 
 The minimal-model pair:
 
-Manuscript 3, generalized log canonical $\mathbb Q$-pairs 
+Manuscript 3, generalized log canonical $`\mathbb Q`$-pairs 
 
 > We resolve the existence form of the minimal-model conjecture for projective
-generalized log canonical $\mathbb Q$-pairs over algebraically closed fields of
+generalized log canonical $`\mathbb Q`$-pairs over algebraically closed fields of
 characteristic zero. Such a pair admits a minimal model when its adjoint
 divisor is pseudo-effective, and a Mori fibre space otherwise, while keeping
-the nef $\mathbb Q$-Cartier b-divisor fixed. Taking the nef part to be zero gives
-the corresponding result for ordinary log canonical $\mathbb Q$-pairs. [S6:9–16]
+the nef $`\mathbb Q`$-Cartier b-divisor fixed. Taking the nef part to be zero gives
+the corresponding result for ordinary log canonical $`\mathbb Q`$-pairs. [S6:9–16]
 
 Manuscript 4, numerical-dimension-one minimal models 
 
 > We resolve the numerical-dimension-one case of the minimal-model conjecture
 for smooth connected complex projective varieties of dimension at least three.
-If $K_X$ is pseudo-effective and $\kappa_\sigma(X,K_X)=1$, with
-$\kappa_\sigma$ defined by section growth with a fixed ample twist, then $X$
-admits a projective $\mathbb Q$-factorial terminal minimal model. [S8:32–38]
+If $`K_X`$ is pseudo-effective and $`\kappa_\sigma(X,K_X)=1`$, with
+$`\kappa_\sigma`$ defined by section growth with a fixed ample twist, then $`X`$
+admits a projective $`\mathbb Q`$-factorial terminal minimal model. [S8:32–38]
 
 ## Undergraduate summary
 
 An **adjoint divisor** is a "canonical plus extra" divisor — the
-canonical divisor $K_X$ (encoding differential forms) plus a boundary
-$B$ (a weighted collection of subvarieties) plus a nef line bundle $M$.
+canonical divisor $`K_X`$ (encoding differential forms) plus a boundary
+$`B`$ (a weighted collection of subvarieties) plus a nef line bundle $`M`$.
 The **abundance conjecture** says that if such an adjoint is nef
 (nonnegative on every curve), then it is "semiample" — it has enough
 sections to define a map, not just a numerical class.
@@ -78,59 +78,59 @@ fields.
 **Kähler numerical semiampleness.** 
 
 > **theorem**
-Let $X$ be a smooth connected compact Kähler manifold, let
-$B\geq0$ be a rational simple normal crossing divisor whose
+Let $`X`$ be a smooth connected compact Kähler manifold, let
+$`B\geq0`$ be a rational simple normal crossing divisor whose
 coefficients are strictly less than one, and let
-$M\in\mathrm{Pic}(X)\otimes_{\mathbb Z}\mathbb Q$.
-Assume that $K_X+B$ is pseudo-effective, $M$ is nef, and
-$D=K_X+B+M$ is nef. Then there is a semiample rational line bundle
-$L$ on $X$ such that
+$`M\in\mathrm{Pic}(X)\otimes_{\mathbb Z}\mathbb Q`$.
+Assume that $`K_X+B`$ is pseudo-effective, $`M`$ is nef, and
+$`D=K_X+B+M`$ is nef. Then there is a semiample rational line bundle
+$`L`$ on $`X`$ such that
 $$c_1(L)=c_1(D)\quad\text{in }H^{1,1}_{\mathrm{BC}}(X,\mathbb R).$$ [S3:19–30]
 
-For a smooth connected compact Kähler manifold $X$, an effective
-rational SNC boundary $B$ with coefficients below one, and a nef rational
-line bundle $M$: if $K_X + B$ is pseudo-effective and $D = K_X + B + M$
-is nef, then there is a semiample rational line bundle $L$ with
-$c_1(L) = c_1(D)$ in real Bott–Chern cohomology. The statement is
+For a smooth connected compact Kähler manifold $`X`$, an effective
+rational SNC boundary $`B`$ with coefficients below one, and a nef rational
+line bundle $`M`$: if $`K_X + B`$ is pseudo-effective and $`D = K_X + B + M`$
+is nef, then there is a semiample rational line bundle $`L`$ with
+$`c_1(L) = c_1(D)`$ in real Bott–Chern cohomology. The statement is
 *numerical* — it allows a flat change of line bundle and does not assert
-semiampleness of the original adjoint $D$ itself.
+semiampleness of the original adjoint $`D`$ itself.
 
 **Projective klt abundance.** 
 
 > **Theorem 1.1**
-Let $(X,B)$ be a projective klt $\mathbb Q$-pair over an algebraically closed
-field of characteristic zero. Suppose that $K_X+B$ is pseudo-effective,
-and let $M$ be a nef $\mathbb Q$-Cartier divisor on $X$. If
+Let $`(X,B)`$ be a projective klt $`\mathbb Q`$-pair over an algebraically closed
+field of characteristic zero. Suppose that $`K_X+B`$ is pseudo-effective,
+and let $`M`$ be a nef $`\mathbb Q`$-Cartier divisor on $`X`$. If
 $$D=K_X+B+M$$
-is nef, then there is a semiample $\mathbb Q$-Cartier divisor $L$ on $X$ such
-that $D\equiv L$. [S5:18–30]
+is nef, then there is a semiample $`\mathbb Q`$-Cartier divisor $`L`$ on $`X`$ such
+that $`D\equiv L`$. [S5:18–30]
 
-For a projective klt $\mathbb Q$-pair $(X, B)$ over an algebraically closed
-characteristic-zero field, with $K_X + B$ pseudo-effective and a nef
-$\mathbb Q$-Cartier $M$: if $D = K_X + B + M$ is nef, then there is a semiample
-$\mathbb Q$-Cartier divisor $L$ with $D \equiv L$ numerically. This is the
+For a projective klt $`\mathbb Q`$-pair $`(X, B)`$ over an algebraically closed
+characteristic-zero field, with $`K_X + B`$ pseudo-effective and a nef
+$`\mathbb Q`$-Cartier $`M`$: if $`D = K_X + B + M`$ is nef, then there is a semiample
+$`\mathbb Q`$-Cartier divisor $`L`$ with $`D \equiv L`$ numerically. This is the
 Generalised Abundance Conjecture in the stated setting.
 
 **Generalized minimal models.** 
 
 > **theorem**
-Let $k$ be an algebraically closed field of characteristic zero, and let
-$(X,B+M)$ be a projective generalized log canonical $\mathbb Q$-pair. Thus $X$ is
-normal and integral, $B$ is an effective rational boundary, and $M$ is the
+Let $`k`$ be an algebraically closed field of characteristic zero, and let
+$`(X,B+M)`$ be a projective generalized log canonical $`\mathbb Q`$-pair. Thus $`X`$ is
+normal and integral, $`B`$ is an effective rational boundary, and $`M`$ is the
 trace of a nef rational Cartier divisor on a higher projective birational
-model, with $K_X+B+M$ $\mathbb Q$-Cartier.
+model, with $`K_X+B+M`$ $`\mathbb Q`$-Cartier.
 
-There are a normal integral projective variety $Y$ and a birational map
-$\phi\colon X\dashrightarrow Y$ whose inverse contracts no divisors such
-that, writing $B_Y=\phi_*B$ and taking $M_Y$ to be the trace of the same
-nef b-divisor, the generalized pair $(Y,B_Y+M_Y)$ is log canonical and
+There are a normal integral projective variety $`Y`$ and a birational map
+$`\phi\colon X\dashrightarrow Y`$ whose inverse contracts no divisors such
+that, writing $`B_Y=\phi_*B`$ and taking $`M_Y`$ to be the trace of the same
+nef b-divisor, the generalized pair $`(Y,B_Y+M_Y)`$ is log canonical and
 $$A_{X,B+M}(E)\le A_{Y,B_Y+M_Y}(E)$$
-for every prime divisor $E$ over $Y$. [S7:16–42]
+for every prime divisor $`E`$ over $`Y`$. [S7:16–42]
 
-For a projective generalized log canonical $\mathbb Q$-pair $(X, B + M)$
-(characteristic zero), there is a birational map $\phi : X
-\dashrightarrow Y$ whose inverse contracts no divisors, taking $M$ to the
-trace of the same nef b-divisor, such that $(Y, B_Y + M_Y)$ is log
+For a projective generalized log canonical $`\mathbb Q`$-pair $`(X, B + M)`$
+(characteristic zero), there is a birational map $`\phi : X
+\dashrightarrow Y`$ whose inverse contracts no divisors, taking $`M`$ to the
+trace of the same nef b-divisor, such that $`(Y, B_Y + M_Y)`$ is log
 canonical and log discrepancies do not increase. This is the existence
 form of the minimal-model conjecture for generalized pairs; the nef
 b-data is fixed, and the zero-nef-part case is the ordinary
@@ -139,23 +139,23 @@ log-canonical result.
 **Numerical-dimension-one minimal models.** 
 
 > **theorem**
-Let $X$ be a smooth connected complex projective variety of dimension
-$n\geq3$. Suppose that $K_X$ is pseudo-effective and
-$\kappa_\sigma(X,K_X)=1$, with the convention
+Let $`X`$ be a smooth connected complex projective variety of dimension
+$`n\geq3`$. Suppose that $`K_X`$ is pseudo-effective and
+$`\kappa_\sigma(X,K_X)=1`$, with the convention
  . Then there are a normal projective
-$\mathbb Q$-factorial terminal variety $Y$ with $K_Y$ nef and
+$`\mathbb Q`$-factorial terminal variety $`Y`$ with $`K_Y`$ nef and
 a finite sequence
-$\phi:X\dashrightarrow Y$ of $K$-negative divisorial contractions
-and flips. The inverse of $\phi$ contracts no prime divisor. On a
-common smooth projective resolution $p:W\to X$, $q:W\to Y$,
+$`\phi:X\dashrightarrow Y`$ of $`K`$-negative divisorial contractions
+and flips. The inverse of $`\phi`$ contracts no prime divisor. On a
+common smooth projective resolution $`p:W\to X`$, $`q:W\to Y`$,
 compatible canonical divisors satisfy
 $$q^*K_Y-p^*K_X\sim_{\mathbb Q,\mathrm{num}}0.$$ [S9:51–68]
 
-For a smooth connected complex projective variety $X$ of dimension
-$n \ge 3$ with $K_X$ pseudo-effective and $\kappa_\sigma(X, K_X) = 1$
+For a smooth connected complex projective variety $`X`$ of dimension
+$`n \ge 3`$ with $`K_X`$ pseudo-effective and $`\kappa_\sigma(X, K_X) = 1`$
 (the section-growth Kodaira dimension with a fixed ample twist), there is
-a normal projective $\mathbb Q$-factorial terminal $Y$ with $K_Y$ nef,
-reached by a finite sequence of $K$-negative divisorial contractions and
+a normal projective $`\mathbb Q`$-factorial terminal $`Y`$ with $`K_Y`$ nef,
+reached by a finite sequence of $`K`$-negative divisorial contractions and
 flips, and the pullbacks of the compatible canonical divisors agree
 numerically.
 
@@ -163,7 +163,7 @@ numerically.
 
 Prior (my training data, not this repo): the **Generalised Abundance
 Conjecture** (Kawamata, Nakayama) extends the classical abundance
-conjecture to the adjoint $K_X + B + M$ with an arbitrary nef $\mathbb Q$-Cartier
+conjecture to the adjoint $`K_X + B + M`$ with an arbitrary nef $`\mathbb Q`$-Cartier
 summand, and is known in the numerical-dimension-zero case (the
 Kawamata-Shokurov base-point-free result) and in low dimension. The
 projective klt case in manuscript 2 and the Kähler numerical form in
@@ -174,23 +174,23 @@ minimal-model side, the minimal-model conjecture for generalized pairs
 is a theorem of Birkar (for the log case) in the general setting;
 manuscripts 3 and 4 give the projective generalized log-canonical
 existence form and the numerical-dimension-one case for smooth
-complex projective varieties, the latter through the $K$-MMP and a
+complex projective varieties, the latter through the $`K`$-MMP and a
 fixed-ample-twist section-growth construction.
 
 ## Consequences
 
-**Numerical semiampleness of nef adjoints** $K_X + B + M$ with
-$K_X + B$ pseudo-effective and $M$ nef, in both the projective klt
+**Numerical semiampleness of nef adjoints** $`K_X + B + M`$ with
+$`K_X + B`$ pseudo-effective and $`M`$ nef, in both the projective klt
 rational-pair [S5:18–30] and the smooth compact Kähler
 [S3:19–30] settings.
 
 **Existence of generalized minimal models and Mori fiber spaces** for
-projective generalized log canonical $\mathbb Q$-pairs, nef b-data fixed
+projective generalized log canonical $`\mathbb Q`$-pairs, nef b-data fixed
 [S7:16–42].
 
 **A numerical-dimension-one minimal model** for smooth complex projective
-threefolds and higher with pseudo-effective $K_X$ and
-$\kappa_\sigma(X, K_X) = 1$ [S9:51–68].
+threefolds and higher with pseudo-effective $`K_X`$ and
+$`\kappa_\sigma(X, K_X) = 1`$ [S9:51–68].
 
 ## section skeleton
 

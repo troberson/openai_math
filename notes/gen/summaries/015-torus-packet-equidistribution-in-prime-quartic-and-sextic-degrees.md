@@ -45,13 +45,13 @@ of mass" means none of it leaks off to infinity (the cusp). This
 family proves exactly that, in three settings: every fixed prime
 degree at least five, the primitive quartic degree, and the primitive
 sextic degree. "Primitive" simply means the field has no proper
-intermediate field between it and $\mathbb{Q}$.
+intermediate field between it and $`\mathbb{Q}`$.
 
 The headline statement 
 
 > **theorem**
-For every fixed prime $n\ge5$ and every sequence
-$(K_i,M_i,\sigma_i)$ as above with \mbox$D(M_i)\to\infty$,
+For every fixed prime $`n\ge5`$ and every sequence
+$`(K_i,M_i,\sigma_i)`$ as above with \mbox$`D(M_i)\to\infty`$,
 $$\mu_{K_i,M_i,\sigma_i}\longrightarrow m_n.$$
 The convergence is weak convergence of probability measures. In
 particular, it holds against every continuous compactly supported
@@ -74,24 +74,24 @@ measures converge to Haar probability measure, with no escape of mass. [S2:41–
 The main theorem 
 
 > **theorem**
-For every fixed prime $n\ge5$ and every sequence
-$(K_i,M_i,\sigma_i)$ as above with \mbox$D(M_i)\to\infty$,
+For every fixed prime $`n\ge5`$ and every sequence
+$`(K_i,M_i,\sigma_i)`$ as above with \mbox$`D(M_i)\to\infty`$,
 $$\mu_{K_i,M_i,\sigma_i}\longrightarrow m_n.$$
 The convergence is weak convergence of probability measures. In
 particular, it holds against every continuous compactly supported
 function, and no mass escapes into the cusp. [S2:103–112]
 
-For each fixed prime $n \ge 5$, the volume-weighted packet measures
-$\mu_{K_i, M_i, \sigma_i}$ converge weakly to the Haar probability
-measure $m_n$ as the multiplier-order discriminant $D(M_i) \to
-\infty$. The content beyond the limit is the *no-escape* clause: the
+For each fixed prime $`n \ge 5`$, the volume-weighted packet measures
+$`\mu_{K_i, M_i, \sigma_i}`$ converge weakly to the Haar probability
+measure $`m_n`$ as the multiplier-order discriminant $`D(M_i) \to
+\infty`$. The content beyond the limit is the *no-escape* clause: the
 measures form a tight family, so convergence is against every
 continuous compactly supported function, with no mass lost to the
 cusp.
 
 **Quartic.** 
 
-> Let $K$ range over totally real quartic fields with no proper intermediate field, and let $\mathcal O$ be any order in $K$. We prove that the packets of periodic diagonal orbits attached to invertible $\mathcal O$-ideal classes, weighted by orbit volume, equidistribute with no escape of mass as $|\mathrm{Disc}(\mathcal O)|$ tends to infinity. The proof combines measure rigidity with a cubic-resolvent estimate that remains uniform at primes dividing the order index. [S3:15–17]
+> Let $`K`$ range over totally real quartic fields with no proper intermediate field, and let $`\mathcal O`$ be any order in $`K`$. We prove that the packets of periodic diagonal orbits attached to invertible $`\mathcal O`$-ideal classes, weighted by orbit volume, equidistribute with no escape of mass as $`|\mathrm{Disc}(\mathcal O)|`$ tends to infinity. The proof combines measure rigidity with a cubic-resolvent estimate that remains uniform at primes dividing the order index. [S3:15–17]
 
 The quartic paper allows *arbitrary* orders (not just maximal), which
 is the harder local point: the cubic-resolvent estimate must stay
@@ -119,7 +119,7 @@ the discriminant grows. The "packet" formulation packages the full
 orbit family for a given ideal class, weighted by volume, and asks
 for weak convergence to Haar measure with a tightness clause. The
 prime-degree regime generalizes the classical results to every fixed
-prime degree $\ge 5$ and to *arbitrary* local homothety types of full
+prime degree $`\ge 5`$ and to *arbitrary* local homothety types of full
 lattices; the quartic and sextic papers isolate the first two even
 degrees where a proper-intermediate-field condition ("primitive") is
 the right hypothesis. The no-escape clause is the technically
@@ -129,7 +129,7 @@ into the cusp.
 ## Consequences
 
 **No-escape Haar equidistribution in three regimes.** Prime degree
-$\ge 5$ (arbitrary lattices, arbitrary local types), primitive quartic
+$`\ge 5`$ (arbitrary lattices, arbitrary local types), primitive quartic
 (arbitrary orders), and primitive sextic (maximal orders) all give
 weak convergence of the volume-weighted packet measures to Haar
 probability measure with a tightness clause.
@@ -219,10 +219,10 @@ at all.
 - Greschonig, Gernot, Schmidt, Klaus, Ergodic decomposition of quasi-invariant probability measures (2000)
 - Khayutin, Ilya, Arithmetic of double torus quotients and the distribution of periodic torus orbits (2019)
 - Linnik, Yurij V., Ergodic Properties of Algebraic Fields (1968)
-- Mahler, Kurt, On lattice points in $n$-dimensional star bodies. I. Existence theorems (1946)
+- Mahler, Kurt, On lattice points in $`n`$-dimensional star bodies. I. Existence theorems (1946)
 - Milne, James S., Algebraic Number Theory (2020)
-- Lemke Oliver, Robert J., Thorner, Jesse, Zaman, Asif, An approximate form of Artin's holomorphy conjecture and non-vanishing of Artin $L$-functions (2024)
-- Pollack, Paul, Nonnegative multiplicative functions on sifted sets, and the square roots of $-1$ modulo shifted primes (2020)
+- Lemke Oliver, Robert J., Thorner, Jesse, Zaman, Asif, An approximate form of Artin's holomorphy conjecture and non-vanishing of Artin $`L`$-functions (2024)
+- Pollack, Paul, Nonnegative multiplicative functions on sifted sets, and the square roots of $`-1`$ modulo shifted primes (2020)
 - Rokhlin, V. A., Lectures on the entropy theory of measure-preserving transformations (1967)
 - Shiu, Peter, A Brun–Titchmarsh theorem for multiplicative functions (1980)
 - Stark, H. M., Some effective cases of the Brauer–Siegel theorem (1974)

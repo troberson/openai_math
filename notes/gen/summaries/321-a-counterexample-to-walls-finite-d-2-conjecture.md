@@ -11,9 +11,9 @@ the family's claim: a finite connected three-dimensional CW complex
 whose universal cover has no integral homology above degree two and
 whose third cohomology vanishes for every local coefficient module, yet
 which has no finite two-dimensional homotopy model — disproving Wall's
-finite $D(2)$ conjecture with an infinite fundamental group. The
-manuscript's abstract "We give a negative answer to Wall's finite $D(2)$ problem. We construct
-a finite connected three-dimensional CW complex satisfying the $D(2)$
+finite $`D(2)`$ conjecture with an infinite fundamental group. The
+manuscript's abstract "We give a negative answer to Wall's finite $`D(2)`$ problem. We construct
+a finite connected three-dimensional CW complex satisfying the $`D(2)`$
 finiteness condition but not homotopy equivalent to any finite CW complex
 of dimension at most two. The example has infinite fundamental group. [S3:8–13]"
 
@@ -21,19 +21,19 @@ of dimension at most two. The example has infinite fundamental group. [S3:8–13
 
 Wall's finiteness conditions ask when algebraic restrictions on a CW
 complex force it to have a homotopy model of a prescribed dimension.
-For a finite connected CW complex $X$ with universal cover
-$\widetilde X$, the $D(2)$ condition says that the universal cover has
+For a finite connected CW complex $`X`$ with universal cover
+$`\widetilde X`$, the $`D(2)`$ condition says that the universal cover has
 no integral homology above degree two, and that the third cohomology of
-$X$ vanishes for every finitely generated local coefficient module. The
-finite $D(2)$ problem asks whether every such complex is homotopy
+$`X`$ vanishes for every finitely generated local coefficient module. The
+finite $`D(2)`$ problem asks whether every such complex is homotopy
 equivalent to a finite two-dimensional complex, with no asphericity
 hypothesis imposed [S4:3–17]:
 
 > **theorem**
-There is a finite connected three-dimensional CW complex $X$ such that
+There is a finite connected three-dimensional CW complex $`X`$ such that
 $$H_i(\widetilde X;\mathbb Z)=0\quad(i>2),\qquad
  H^3(X;M)=0\quad\text{for every }\mathbb Z[\pi_1(X)]\text{-module }M,$$
-but $X$ is not homotopy equivalent to any finite CW complex of
+but $`X`$ is not homotopy equivalent to any finite CW complex of
 dimension at most two. [S4:19–27]
 
 The answer is negative: the constructed complex satisfies both
@@ -44,10 +44,10 @@ yet no finite two-dimensional complex is homotopy equivalent to it.
 
 **The obstruction.** The proof combines two independent ingredients.
 The geometric obstruction is a character-based criterion: for a
-connected finite two-dimensional complex $Y$, a character
-$\rho\colon\pi_1(Y)\to\mathbb C^\times$ determines a one-dimensional complex
-local system $L_\rho$, and if $H_2(Y;L_\rho)=0$ then
-$\rho(g)=1$ for every finite-order element $g\in\pi_1(Y)$. The proof
+connected finite two-dimensional complex $`Y`$, a character
+$`\rho\colon\pi_1(Y)\to\mathbb C^\times`$ determines a one-dimensional complex
+local system $`L_\rho`$, and if $`H_2(Y;L_\rho)=0`$ then
+$`\rho(g)=1`$ for every finite-order element $`g\in\pi_1(Y)`$. The proof
 lifts the argument to an infinite cyclic tower following the
 cyclic-tower method of Howie, with the additional input that vanishing
 of rank-one twisted second homology persists under these cyclic covers
@@ -56,7 +56,7 @@ by a Laurent-polynomial rank argument [S4:34–100].
 **The plus construction.** The second ingredient is Quillen's plus
 construction applied to a finite two-dimensional complex along a
 finitely normally generated perfect normal subgroup. Mannan showed
-directly that this produces a finite $D(2)$ complex, and proved that
+directly that this produces a finite $`D(2)`$ complex, and proved that
 every finite cohomologically two-dimensional three-dimensional complex
 arises in this way up to homotopy [S4:34–100].
 
@@ -66,7 +66,7 @@ powers. The quotient has an element of order two detected by a complex
 character. An exact four-row boundary calculation shows that the
 presentation complex has zero second homology with that character. The
 plus construction preserves this vanishing and gives the required
-finite $D(2)$ complex; the character obstruction excludes its
+finite $`D(2)`$ complex; the character obstruction excludes its
 two-dimensional realization [S4:106–131].
 
 **Formalization status.** Nothing about this family is machine-checked.
@@ -76,38 +76,38 @@ no reasoning trace; the LaTeX under `build/` is the only source.
 ## History of the conjecture
 
 Wall introduced the dimension conditions in his work on finiteness for
-CW complexes and reduced the $D(2)$ case to a finite three-dimensional
+CW complexes and reduced the $`D(2)`$ case to a finite three-dimensional
 model; the remaining question was whether its three-dimensional cells
 can also be removed up to homotopy. The problem reappeared as Problem
 D3 in his 1979 list. A stable form has a positive answer: Cohen showed
 that adjoining sufficiently many two-spheres suffices, and Hambleton
 gave a proof with the number bounded by the number of three-dimensional
 cells. Positive results for particular fundamental groups exist for
-finite subgroups of $\mathrm{SO}(3)$ and for the generalized
+finite subgroups of $`\mathrm{SO}(3)`$ and for the generalized
 quaternion groups of orders 24 and 32, established by Hambleton and by
 Hofmann and Nicholson. Candidate counterexamples have come from
-relation modules: Bridson and Tweedale constructed finite $D(2)$
+relation modules: Bridson and Tweedale constructed finite $`D(2)`$
 complexes with virtually free fundamental groups using coprime
 annihilation relations, whose failure to have finite two-dimensional
 models is conditional on a relation-gap assertion [S4:34–100].
 
 ## Consequences
 
-**Wall's finite $D(2)$ problem is answered negatively.** There exists
-a finite connected three-dimensional CW complex $X$ satisfying the
-$D(2)$ condition — no integral homology above degree two on the
-universal cover, and $H^3(X;M)=0$ for every $\mathbb Z[\pi_1(X)]$-module $M$
+**Wall's finite $`D(2)`$ problem is answered negatively.** There exists
+a finite connected three-dimensional CW complex $`X`$ satisfying the
+$`D(2)`$ condition — no integral homology above degree two on the
+universal cover, and $`H^3(X;M)=0`$ for every $`\mathbb Z[\pi_1(X)]`$-module $`M`$
 — that is not homotopy equivalent to any finite CW complex of
 dimension at most two [S4:19–27].
 
 **The example has infinite fundamental group.** The finiteness
 assertion concerns the cell structure, not the fundamental group; the
-constructed complex has infinite $\pi_1$ [S3:8–13].
+constructed complex has infinite $`\pi_1`$ [S3:8–13].
 
 **A character obstruction is established.** For any finite
-two-dimensional complex $Y$, the vanishing of $H_2(Y;L_\rho)$ for a
-rank-one local system $L_\rho$ forces $\rho$ to take the value one on
-every finite-order element of $\pi_1(Y)$, a criterion that applies
+two-dimensional complex $`Y`$, the vanishing of $`H_2(Y;L_\rho)`$ for a
+rank-one local system $`L_\rho`$ forces $`\rho`$ to take the value one on
+every finite-order element of $`\pi_1(Y)`$, a criterion that applies
 independently of any specific construction [S4:34–100].
 
 ## Section skeleton
@@ -150,7 +150,7 @@ and no non-LaTeX evidence.
 - Johnson, F. E. A., Stable Modules and the D(2)-Problem (2003)
 - Louder, Larsen, Wilton, Henry, Stackings and the W-cycles conjecture (2017)
 - Mannan, W. H., Quillen's plus construction and the D(2) problem (2009)
-- Mannan, W. H., Popiel, Tomasz, An exotic presentation of $Q_{28}$ (2021)
+- Mannan, W. H., Popiel, Tomasz, An exotic presentation of $`Q_{28}`$ (2021)
 - Nicholson, John, On CW-complexes over groups with periodic cohomology (2021)
 - Quillen, Daniel, Cohomology of groups (1971)
 - Wall, C. T. C., Finiteness conditions for CW-complexes (1965)

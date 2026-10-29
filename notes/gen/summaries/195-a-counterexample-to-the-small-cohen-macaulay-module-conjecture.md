@@ -8,17 +8,17 @@
 
 The release's blurb [S1:4468] and the catalog abstract [S2:473]
 state the family's claim: a three-dimensional complete Noetherian
-normal local domain over $\mathbb{C}$ with no nonzero finitely
+normal local domain over $`\mathbb{C}`$ with no nonzero finitely
 generated maximal Cohen–Macaulay module, plus a three-
 dimensional local domain **essentially of finite type** over
-$\mathbb{C}$ with the same property — disproving the
+$`\mathbb{C}`$ with the same property — disproving the
 domain form of the small Cohen–Macaulay module
 conjecture. The manuscript is *A Complete Local Domain
 without a Small Cohen–Macaulay Module*
 [S3:32, S3:34]; its abstract 
 
 > We construct a three-dimensional complete Noetherian normal local domain
-containing $\mathbb C$, with residue field $\mathbb C$, that has no nonzero finitely generated
+containing $`\mathbb C`$, with residue field $`\mathbb C`$, that has no nonzero finitely generated
 maximal Cohen–Macaulay module. This disproves the domain form of the small
 Cohen–Macaulay module conjecture. [S3:38–41]
 
@@ -47,20 +47,20 @@ generated module fails to be MCM
 
 **The main theorem** [S3:38–41, S2:473]. There
 exists a three-dimensional complete Noetherian normal
-local domain $R$ containing $\mathbb{C}$, with residue
-field $\mathbb{C}$, such that no nonzero finitely
-generated $R$-module is maximal Cohen–Macaulay
+local domain $`R`$ containing $`\mathbb{C}`$, with residue
+field $`\mathbb{C}`$, such that no nonzero finitely
+generated $`R`$-module is maximal Cohen–Macaulay
 [S3:38–41]. Equivalently: every nonzero finitely
-generated $R$-module has depth $< 3 = \dim R$. The
+generated $`R`$-module has depth $`< 3 = \dim R`$. The
 construction also yields a three-dimensional local domain
-**essentially of finite type** over $\mathbb{C}$ with the
+**essentially of finite type** over $`\mathbb{C}`$ with the
 same property [S2:473].
 
 **The scope of the formalization.** The scope note states
 the linked formalization **verifies only the ring-
 theoretic candidate**: there exists a three-dimensional
 complete Noetherian integrally closed local domain over
-$\mathbb{C}$ whose residue field is $\mathbb{C}$
+$`\mathbb{C}`$ whose residue field is $`\mathbb{C}`$
 — existence and the ring properties, no more
 [S4:9]. The proof uses a constructed completed surface
 cone [S4:9]. The scope note explicitly excludes the full
@@ -88,8 +88,8 @@ the absence of zero divisors was expected to prevent the
 pathological behavior in Hochster's examples. This
 manuscript **disproves the domain form** by constructing
 a 3-dimensional complete normal local domain over
-$\mathbb{C}$ where every nonzero finitely generated
-module has depth $< 3$, using an explicit Kummer surface
+$`\mathbb{C}`$ where every nonzero finitely generated
+module has depth $`< 3`$, using an explicit Kummer surface
 construction and a numerical obstruction to the
 existence of MCM modules. The essentially-of-finite-type
 variant extends the counterexample beyond the complete
@@ -102,7 +102,7 @@ counterexamples for non-domains, and the general belief
 that the domain form was true. A **disproof of the
 domain form** via a Kummer surface construction, with the
 specific 3-dimensional complete normal local domain over
-$\mathbb{C}$ and the depth-obstruction argument, is a
+$`\mathbb{C}`$ and the depth-obstruction argument, is a
 result I cannot independently verify from training alone.
 
 ## Consequences
@@ -110,12 +110,12 @@ result I cannot independently verify from training alone.
 **The domain form of the small Cohen–Macaulay module
 conjecture is disproved.** There exists a 3-dimensional
 complete Noetherian normal local domain over
-$\mathbb{C}$ with no nonzero finitely generated MCM module
+$`\mathbb{C}`$ with no nonzero finitely generated MCM module
 [S3:38–41, S2:473].
 
 **The counterexample extends to the essentially-of-finite-
 type setting.** A 3-dimensional local domain essentially
-of finite type over $\mathbb{C}$ has the same property
+of finite type over $`\mathbb{C}`$ has the same property
 [S2:473].
 
 **The formalization covers only the ring, not the
@@ -138,8 +138,8 @@ bundle.
 **Scope note** [S4:9]. The linked formalization verifies
 **only the ring-theoretic candidate**: there exists a
 three-dimensional complete Noetherian integrally closed
-local domain over $\mathbb{C}$ whose residue field is
-$\mathbb{C}$. The proof uses a constructed completed
+local domain over $`\mathbb{C}`$ whose residue field is
+$`\mathbb{C}`$. The proof uses a constructed completed
 surface cone. The resulting existence statement gives only
 the ring properties; it does not assert the absence of
 small Cohen–Macaulay modules. The paper's main
@@ -162,7 +162,7 @@ registered [S4:17].
 lean` comparator states the target
 `theorem candidate_ring_properties` — the existence of
 a 3-dimensional complete Noetherian integrally closed
-local domain over $\mathbb{C}$ with bijective residue-
+local domain over $`\mathbb{C}`$ with bijective residue-
 field map — with a bare `sorry` body
 
 
