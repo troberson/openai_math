@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [graph-theory](../topics/graph-theory.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md](../../../../notes/gen/summaries/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) |
 
 ## Manuscripts
 
