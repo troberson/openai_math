@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [disordered-systems](../topics/disordered-systems.md) · [condensed-matter](../topics/condensed-matter.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [261-localization-and-delocalization-in-the-anderson-model.md](../../../../notes/gen/summaries/261-localization-and-delocalization-in-the-anderson-model.md) |
 
 ## Manuscripts
 
