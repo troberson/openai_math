@@ -13,7 +13,7 @@
 | Claim shapes | bound, density |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [228-continuum-phase-transitions-for-radial-pair-potentials.md](../../../../notes/gen/summaries/228-continuum-phase-transitions-for-radial-pair-potentials.md) |
 
 ## Manuscripts
 
