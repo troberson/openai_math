@@ -13,7 +13,7 @@
 | Claim shapes | resolution, undecidability |
 | Topics | [computability](../topics/computability.md) · [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [242-single-fold-diophantine-representations.md](../../../../notes/gen/summaries/242-single-fold-diophantine-representations.md) |
 
 ## Manuscripts
 

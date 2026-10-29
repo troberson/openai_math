@@ -1,0 +1,546 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical logic](../index/disciplines/mathematical-logic.md) / [Family 242](../index/mathematical-logic/242-single-fold-diophantine-representations.md)
+
+# 242 — Single-fold Diophantine representations
+
+[Index page](../index/mathematical-logic/242-single-fold-diophantine-representations.md)
+
+## Original CONTENTS.md summary
+
+[S1:6030] (family entry):
+
+> **242. Single-fold Diophantine representations.** Every recursively enumerable set of natural-number tuples has a polynomial Diophantine representation with exactly one complete auxiliary tuple for each member. This proves the single-fold conjecture and, consequently, the finite-fold conjecture. ([Lean](../../../lean/docs/242.md))
+
+[S2:571] carries the `\resultentry`, so the release blurb and the overview agree. The single manuscript:
+
+**Single-fold Diophantine representations** [S3:28, S3:30]:
+
+> 1
+
+## Undergraduate summary
+
+A **Diophantine equation** is a polynomial equation in integers.
+A set of natural numbers is **Diophantine** if it can be
+described as the set of values making some polynomial equation
+solvable. **Matiyasevich's theorem** (1970) showed that every
+recursively enumerable set is Diophantine — but the
+equation may have many auxiliary witnesses for each member.
+The **single-fold conjecture** asks for a sharper
+representation: one where each member has **exactly one**
+complete auxiliary tuple, and nonmembers have **none**. The
+result proves this conjecture, and the finite-fold
+conjecture follows as a corollary
+[S3:33–38, S2:571].
+
+## Graduate summary
+
+**Single-fold Diophantine representations**
+[S3:33–38, S2:571]. Every recursively enumerable set
+$`R \ 	ext{of
+natural-number
+tuples
+has
+a
+polynomial
+}
+p
+:
+\mathbb{N}^n
+	imes
+\mathbb{N}^m
+	o
+\mathbb{Z}`$
+with
+the
+property
+that
+$`x
+\in
+R`$
+if
+and
+only
+if
+there
+exists
+**exactly
+one**
+auxiliary
+tuple
+$`y
+\in
+\mathbb{N}^m`$
+with
+$`p(x, y)
+= 0`$.
+The
+finite-fold
+conjecture
+follows:
+every
+recursively
+enumerable
+set
+has
+a
+Diophantine
+representation
+with
+a
+**bounded**
+number
+of
+auxiliary
+tuples
+per
+member.
+
+## History of the conjecture
+
+The
+study
+of
+Diophantine
+equations
+and
+recursively
+enumerable
+sets
+dates
+to
+the
+1930s
+(Mostowski,
+R"{o}si),
+culminating
+in
+the
+Davis--Putnam--Robinson--Matiyasevich
+theorem
+(1960s–70s),
+which
+established
+that
+the
+solvability
+of
+Diophantine
+equations
+is
+undecidable.
+That
+theorem
+guarantees
+a
+representation
+but
+says
+nothing
+about
+how
+many
+auxiliary
+witnesses
+each
+member
+carries.
+The
+**single-fold
+conjecture**
+asked
+whether
+one
+witness
+per
+member
+suffices.
+The
+result
+[S3:33–38]
+proves
+it,
+and
+the
+finite-fold
+conjecture
+follows
+immediately
+since
+one
+fold
+is
+a
+special
+case
+of
+finitely
+many
+folds.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+The
+Davis--Putnam--Robinson--Matiyasevich
+theorem
+and
+the
+foundations
+of
+Diophantine
+representations
+are
+well-established.
+The
+single-fold
+strengthening
+and
+its
+consequence
+for
+finite
+folds
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **The single-fold
+  conjecture**
+  [S3:33–38]:
+  every
+  recursively
+  enumerable
+  set
+  of
+  natural-number
+  tuples
+  has
+  a
+  polynomial
+  Diophantine
+  representation
+  with
+  exactly
+  one
+  complete
+  auxiliary
+  tuple
+  for
+  each
+  member
+  and
+  none
+  for
+  nonmembers.
+- **The finite-fold
+  conjecture**
+  [S3:33–38]:
+  every
+  recursively
+  enumerable
+  set
+  has
+  a
+  Diophantine
+  representation
+  with
+  a
+  bounded
+  number
+  of
+  auxiliary
+  tuples
+  per
+  member,
+  as
+  an
+  immediate
+  corollary
+  of
+  the
+  single-fold
+  result.
+
+## Section skeleton
+
+One
+manuscript:
+[S3]
+(title
+[S3:28],
+date
+[S3:30])
+—
+`main.tex`
+under
+`build/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T3
+with
+one
+scope
+note
+[S4],
+one
+comparator
+stub
+[S5],
+and
+one
+`main_results`
+entry
+[S7].
+The
+scope
+note
+[S4:9–11]
+states
+the
+target:
+every
+recursively
+enumerable
+set
+has
+a
+polynomial
+with
+exactly
+one
+witness
+for
+members
+and
+none
+for
+nonmembers.
+The
+undecidability
+consequence
+is
+**not**
+formalized
+[S4:11].
+
+The
+`main_results`
+entry
+[S7:1643–1645]
+names
+`OAI.SingleFold.main`
+in
+`lean/OAI/NumberTheory/SingleFold/Main.lean`.
+In
+the
+source,
+the
+theorem
+`recursively_enumerable_sf`
+[S6:8]
+is
+stated
+and
+the
+`main`
+declaration
+[S6:21]
+closes
+with
+it.
+`grep`
+finds
+**zero**
+`sorry`
+in
+the
+whole
+`lean/OAI/NumberTheory/SingleFold/`
+tree.
+
+The
+one
+comparator
+stub
+[S5]
+states
+the
+single-fold
+target
+and
+ends
+in
+`sorry`.
+The
+proved
+copy
+lives
+under
+`lean/OAI/`.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists,
+lives
+under
+`lean/OAI/`.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+proof.
+
+## Coverage
+
+The
+ledger
+row
+`fam=242`
+[S8]
+records
+the
+tier
+and
+the
+counts:
+`tier=T3`,
+`paps=1`,
+`paps_form=1`,
+`chal=1`,
+`mainres=1`,
+`scope_note=1`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=1`
+against
+`paps=1`
+is
+the
+coverage
+signature:
+the
+single
+manuscript
+is
+named
+as
+a
+formalization
+source,
+and
+the
+single
+`main_results`
+entry
+over
+that
+config
+reaches
+the
+full
+single-fold
+claim.
+The
+comparator
+stub
+names
+the
+same
+target,
+and
+the
+proved
+copy
+lives
+under
+`lean/OAI/`.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+`resolution|undecidability`,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+the
+single-fold
+conjecture
+with
+"proves".
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6030] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 242 at [S2:571] |
+| S3 | [`preprints/Single-fold-Diophantine-representations-September-24-2026/build/main.tex`](../../../preprints/Single-fold-Diophantine-representations-September-24-2026/build/main.tex) | 293 | manuscript 1 of 1; title [S3:28], date [S3:30], abstract [S3:33–38] |
+| S4 | [`lean/docs/242.md`](../../../lean/docs/242.md) | 17 | scope note — the formalization's Scope at [S4:9–11] and its one comparator link at [S4:17] |
+| S5 | [`lean/ComparatorChallenges/SingleFold.lean`](../../../lean/ComparatorChallenges/SingleFold.lean) | 29 | comparator stub — the single-fold target with its `sorry` |
+| S6 | [`lean/OAI/NumberTheory/SingleFold/Main.lean`](../../../lean/OAI/NumberTheory/SingleFold/Main.lean) | 28 | the formalized file — `recursively_enumerable_sf` at [S6:8], `main` at [S6:21] |
+| S7 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the `main_results` entry naming `OAI.SingleFold.main`, at [S7:1643–1645] |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=242`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
