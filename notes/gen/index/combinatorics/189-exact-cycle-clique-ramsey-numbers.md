@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [logic](../topics/logic.md) · [graph-coloring](../topics/graph-coloring.md) · [ramsey-theory](../topics/ramsey-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [189-exact-cycle-clique-ramsey-numbers.md](../../../../notes/gen/summaries/189-exact-cycle-clique-ramsey-numbers.md) |
 
 ## Manuscripts
 
