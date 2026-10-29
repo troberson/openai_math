@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, partial |
 | Topics | [graph-theory](../topics/graph-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [181-erdos-gallai-cycle-decomposition-conjecture.md](../../../../notes/gen/summaries/181-erdos-gallai-cycle-decomposition-conjecture.md) |
 
 ## Manuscripts
 
