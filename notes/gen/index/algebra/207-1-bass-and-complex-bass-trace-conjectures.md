@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [207-1-bass-and-complex-bass-trace-conjectures.md](../../../../notes/gen/summaries/207-1-bass-and-complex-bass-trace-conjectures.md) |
 
 ## Manuscripts
 
