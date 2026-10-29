@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [graph-theory](../topics/graph-theory.md) · [group-theory](../topics/group-theory.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [214-benjamini-schramm-nonuniqueness-conjecture.md](../../../../notes/gen/summaries/214-benjamini-schramm-nonuniqueness-conjecture.md) |
 
 ## Manuscripts
 
