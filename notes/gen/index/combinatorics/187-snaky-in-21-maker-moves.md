@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [combinatorial-games](../topics/combinatorial-games.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [187-snaky-in-21-maker-moves.md](../../../../notes/gen/summaries/187-snaky-in-21-maker-moves.md) |
 
 ## Manuscripts
 

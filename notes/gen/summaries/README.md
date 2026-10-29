@@ -1,6 +1,6 @@
 # Family summary pages
 
-245 extended summaries, one per family, each built from the manuscript's own LaTeX and
+246 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **245** of **373** families have a page.
+The summaries are a fifth layer: **246** of **373** families have a page.
 
 ## The pages
 
@@ -201,6 +201,7 @@ The summaries are a fifth layer: **245** of **373** families have a page.
 - [184 — Coloring and independence in graphs with forbidden subgraphs](184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md)
 - [185 — Counterexamples to infinite matroid intersection and packing/covering](185-counterexamples-to-infinite-matroid-intersection-and-packing-covering.md)
 - [186 — The Friedgut–Kalai graph and hypergraph threshold conjectures](186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md)
+- [187 — Snaky in 21 Maker moves](187-snaky-in-21-maker-moves.md)
 - [193 — Serre's intersection-multiplicity conjecture](193-serres-intersection-multiplicity-conjecture.md)
 - [195 — A counterexample to the small Cohen–Macaulay module conjecture](195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md)
 - [196 — A counterexample to Kaplansky's zero-divisor conjecture](196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
@@ -288,7 +289,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **128 families have no summary page.** The 245 pages cover 245 of 373 families; the rest are recorded
+- **127 families have no summary page.** The 246 pages cover 246 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
