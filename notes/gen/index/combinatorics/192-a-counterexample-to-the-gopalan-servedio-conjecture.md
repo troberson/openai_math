@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [192-a-counterexample-to-the-gopalan-servedio-conjecture.md](../../../../notes/gen/summaries/192-a-counterexample-to-the-gopalan-servedio-conjecture.md) |
 
 ## Manuscripts
 

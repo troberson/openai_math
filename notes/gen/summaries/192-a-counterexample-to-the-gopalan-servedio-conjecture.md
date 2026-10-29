@@ -1,0 +1,180 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Combinatorics](../index/disciplines/combinatorics.md) / [Family 192](../index/combinatorics/192-a-counterexample-to-the-gopalan-servedio-conjecture.md)
+
+# 192 — A counterexample to the Gopalan–Servedio conjecture
+
+[Index page](../index/combinatorics/192-a-counterexample-to-the-gopalan-servedio-conjecture.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:4416] and the catalog abstract [S2:465]
+state the family's claim: for every $C > 0$ there is a
+nonconstant Boolean function $f : \{-1,1\}^n \to
+\{-1,1\}$ whose sum of linear Fourier coefficients exceeds
+$C\sqrt{\deg f}$, disproving the Gopalan–Servedio
+square-root conjecture by an arbitrary factor. The
+manuscript is *Unbounded Violations of the Square-Root
+Degree Bound* [S3:18, S3:20]; its abstract
+
+
+> We disprove the Gopalan–Servedio square-root conjecture, even up to an
+arbitrary constant factor. For every real $C>0$, there is a nonconstant
+Boolean function $f:\{-1,1\}^n\to\{-1,1\}$ on a finite sign cube such that
+$$\sum_{i=1}^n \widehat f(\{i\})>C\sqrt{\deg(f)}.$$
+Here $\widehat f(\{i\})$ is the linear Fourier coefficient associated with
+the $i$th input, and $\deg(f)$ is the degree of the real multilinear
+polynomial representing $f$. [S3:26–36]
+
+## Undergraduate summary
+
+A **Boolean function** on $n$ bits takes a string of $n$
+±1 signs and returns ±1. You can write it as a
+**polynomial** in the input bits
+($x_1, \ldots, x_n$ that are each ±1); the
+**degree** of that polynomial is the highest number of bits
+that appear multiplied together in any term. The
+**Fourier coefficients** tell you how much the function
+"correlates" with individual bits:
+$\hat{f}(\{i\})$ measures how much the output depends
+on bit $i$ alone. The **square-root degree bound**
+conjectured by Gopalan and Servedio says: the total
+correlation with individual bits should be at most
+on the order of $\sqrt{\deg f}$ — the square root of
+the polynomial degree. This manuscript **disproves** that
+conjecture: for any proposed constant $C$, there is a
+Boolean function whose total correlation with its bits is
+more than $C$ times the square root of its degree
+[S3:26–36, S2:465].
+
+## Graduate summary
+
+**The main theorem** [S3:26–36, S4:9]. For every
+$C > 0$ there exists a nonconstant Boolean function
+$f : \{-1,1\}^n \to \{-1,1\}$ on a finite sign cube
+such that $\sum_{i=1}^n \hat{f}(\{i\}) > C
+\sqrt{\deg f}$, where $\widehat{f}(\{i\})$ is the
+linear Fourier coefficient and $\deg f$ is the degree of
+the real multilinear polynomial representing $f$
+[S3:26–36]. The violation is **unbounded**: no
+constant factor saves the conjecture
+[S3:26–36, S4:9].
+
+**The scope of the formalization.** The scope note states
+the formalization disproves the Gopalan–Servedio
+square-root degree conjecture by an unbounded factor: for
+every $C > 0$ it gives a nonconstant Boolean function on
+a finite sign cube for which the sum of its linear Fourier
+coefficients exceeds $C\sqrt{\deg f}$, where
+$\deg f$ is its real multilinear degree [S4:9]. The scope
+note names one comparator [S4:15]:
+`SquareRootDegree.lean`.
+
+## History of the conjecture
+
+The **Gopalan–Servedio square-root conjecture**
+concerns the relationship between the **linear Fourier
+coefficients** of a Boolean function and its **polynomial
+degree**. In the analysis of Boolean functions, the Fourier
+spectrum decomposes the function into its correlations
+with subsets of input bits; the linear coefficients are
+the "first-order" part. A natural question is how large
+the total linear correlation can be relative to the
+degree. Gopalan and Servedio conjectured a
+square-root bound: $\sum_i \hat{f}(\{i\}) \leq C
+\sqrt{\deg f}$ for a universal constant $C$. This
+manuscript **disproves** the conjecture: the ratio
+$\sum_i \hat{f}(\{i\}) / \sqrt{\deg f}$ is
+**unbounded** over nonconstant Boolean functions
+[S3:26–36, S2:465]. The construction produces
+functions whose linear coefficients are large while the
+degree stays small, by exploiting the structure of the
+sign cube and the multilinear representation
+[S3:26–36].
+
+**Prior (my training data, not this repo).** I know the
+Fourier analysis of Boolean functions, the
+Gopalan–Servedio conjecture as a named open problem
+in the field, and the classical results on influence and
+degree. A **complete disproof by unbounded factor** —
+with the specific construction of sign-cube functions
+where $\sum_i \hat{f}(\{i\})$ grows without bound
+relative to $\sqrt{\deg f}$ — is a result I cannot
+independently verify from training alone.
+
+## Consequences
+
+**The Gopalan–Servedio square-root degree
+conjecture is disproved.** For every $C > 0$, there is a
+nonconstant Boolean function with
+$\sum_i \hat{f}(\{i\}) > C \sqrt{\deg f}$
+[S3:26–36, S4:9, S2:465].
+
+**The violation is unbounded in both formulations.** The
+comparator's `main` theorem is a two-term conjunction:
+`SignedViolations` (the signed sum exceeds
+$C\sqrt{\deg f}$ for every $C$) and
+$\neg\, \text{BddAbove}\, \text{AbsoluteRatios}$ (the
+set of absolute-value ratios is unbounded)
+[S5:47–54, S5:57–58].
+
+## Section skeleton
+
+One manuscript [S3:26–36] (title [S3:18], date [S3:20]) —
+`main.tex` (46 lines) under `build/`, with seven sections
+under `build/sections/` (`00-introduction` through
+`06-small-width`), a `bibliography.tex`, and an appendix
+(`05-weighted`, `06-small-width`). The family ships no
+`verification/` bundle.
+
+## Comparison with the formalized statement
+
+**Scope note** [S4:9]. The formalization disproves the
+Gopalan–Servedio square-root degree conjecture by an
+unbounded factor: for every $C > 0$ it gives a
+nonconstant Boolean function on a finite sign cube for
+which the sum of its linear Fourier coefficients exceeds
+$C\sqrt{\deg f}$, where $\deg f$ is its real
+multilinear degree [S4:9]. The scope note names one
+comparator [S4:15]: `SquareRootDegree.lean`.
+
+**The structural absence.** The family is at tier T2: the
+ledger row records `mainres 0` and `paps_form 0`.
+`formalization.yaml` carries **no** `main_results` entry
+for this family and the manuscript is **not** in its
+`sources:` listing. There is **no OAI tree** for this
+family: no directory under `lean/OAI/` carries this
+result. The comparator `SquareRootDegree.lean` defines
+the Fourier-analytic primitives (`sign`, `average`,
+`character`, `fourierCoeff`, `fourierDegree`,
+`IsBoolean`, `Nonconstant`, `singletonSum`,
+`absoluteSingletonSum`), the two target propositions
+(`SignedViolations` [S5:47–50], `AbsoluteRatios`
+[S5:52–53]), and a single theorem `main` — the
+conjunction
+`SignedViolations ∧ ¬ BddAbove AbsoluteRatios` — with
+a bare `sorry` body 
+
+```lean
+theorem main : SignedViolations ∧ ¬ BddAbove AbsoluteRatios := by
+  sorry
+```
+[S5:57–58]
+
+**No proof exists in the Lean library.** Unlike the T2
+sub-shape where the OAI tree carries a real proof that is
+simply unregistered, here there is **no OAI tree at all** —
+no directory, no files, no proof of any part of the
+comparator's target. The gap is **total absence**, not
+registration. The release records `scope: "Partial
+progress."` and `review: status: unchecked`; the
+comparator's `sorry` is the target the release set, and no
+Lean proof of `main` exists in the library.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's blurb for family 192 at [S1:4416] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the catalog's \resultentry{192} at [S2:465] |
+| S3 | [`preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/build/main.tex`](../../../preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/build/main.tex) | 47 | the single manuscript root; title [S3:18], date [S3:20], abstract [S3:26–36] |
+| S4 | [`lean/docs/192.md`](../../../lean/docs/192.md) | 17 | the formalization scope note: the scope paragraph [S4:9] and the comparator table [S4:15] |
+| S5 | [`lean/ComparatorChallenges/SquareRootDegree.lean`](../../../lean/ComparatorChallenges/SquareRootDegree.lean) | 64 | the comparator: the `SignedViolations` definition [S5:46–48], the `AbsoluteRatios` definition [S5:50–53], the `main` theorem [S5:57–58] and the `sorry` [S5:58] |
