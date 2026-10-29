@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [representation-theory](../topics/representation-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [205-saxls-conjecture-and-universal-tensor-squares.md](../../../../notes/gen/summaries/205-saxls-conjecture-and-universal-tensor-squares.md) |
 
 ## Manuscripts
 
