@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, partial |
 | Topics | [graph-theory](../topics/graph-theory.md) · [graph-coloring](../topics/graph-coloring.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md](../../../../notes/gen/summaries/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md) |
 
 ## Manuscripts
 
