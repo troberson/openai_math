@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [spectral-theory](../topics/spectral-theory.md) · [dynamical-systems](../topics/dynamical-systems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [151-a-c-1-counterexample-to-shubs-entropy-conjecture.md](../../../../notes/gen/summaries/151-a-c-1-counterexample-to-shubs-entropy-conjecture.md) |
 
 ## Manuscripts
 
