@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [graph-coloring](../topics/graph-coloring.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [158-euclidean-plane-cannot-be-colored-with-five-colors.md](../../../../notes/gen/summaries/158-euclidean-plane-cannot-be-colored-with-five-colors.md) |
 
 ## Manuscripts
 
