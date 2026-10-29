@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [graph-theory](../topics/graph-theory.md) · [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md](../../../../notes/gen/summaries/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md) |
 
 ## Manuscripts
 
