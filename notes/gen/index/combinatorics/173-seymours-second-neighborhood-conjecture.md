@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [173-seymours-second-neighborhood-conjecture.md](../../../../notes/gen/summaries/173-seymours-second-neighborhood-conjecture.md) |
 
 ## Manuscripts
 
