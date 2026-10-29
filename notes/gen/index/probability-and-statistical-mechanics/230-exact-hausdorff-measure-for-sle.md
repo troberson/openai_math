@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [conformal-universality](../topics/conformal-universality.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [230-exact-hausdorff-measure-for-sle.md](../../../../notes/gen/summaries/230-exact-hausdorff-measure-for-sle.md) |
 
 ## Manuscripts
 
