@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [condensed-matter](../topics/condensed-matter.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [269-laughlin-gap-and-stability-under-scalar-disorder.md](../../../../notes/gen/summaries/269-laughlin-gap-and-stability-under-scalar-disorder.md) |
 
 ## Manuscripts
 
