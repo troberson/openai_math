@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [quantum-information](../topics/quantum-information.md) · [game-theory](../topics/game-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [277-threshold-repetition-for-entangled-games.md](../../../../notes/gen/summaries/277-threshold-repetition-for-entangled-games.md) |
 
 ## Manuscripts
 
