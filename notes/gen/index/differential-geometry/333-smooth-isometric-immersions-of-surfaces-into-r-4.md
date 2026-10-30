@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [surfaces](../topics/surfaces.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [333-smooth-isometric-immersions-of-surfaces-into-r-4.md](../../../../notes/gen/summaries/333-smooth-isometric-immersions-of-surfaces-into-r-4.md) |
 
 ## Manuscripts
 
