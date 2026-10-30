@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [328-fixed-points-of-nonexpansive-maps-in-reflexive-banach-spaces.md](../../../../notes/gen/summaries/328-fixed-points-of-nonexpansive-maps-in-reflexive-banach-spaces.md) |
 
 ## Manuscripts
 
