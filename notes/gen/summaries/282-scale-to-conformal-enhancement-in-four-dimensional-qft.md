@@ -1,0 +1,680 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 282](../index/mathematical-physics/282-scale-to-conformal-enhancement-in-four-dimensional-qft.md)
+
+# 282 — Scale-to-conformal enhancement in four-dimensional QFT
+
+[Index page](../index/mathematical-physics/282-scale-to-conformal-enhancement-in-four-dimensional-qft.md)
+
+## Original CONTENTS.md summary
+
+[S1:7061] (family entry):
+
+> **282. From scale symmetry to local conformal symmetry in four-dimensional QFT.** Under the stated bounded-local-net and field-reconstruction hypotheses, proves that scale symmetry implies local conformal symmetry for four-dimensional unitary positive-energy theories with a discrete bounded-below scaling spectrum of finite multiplicity, finite scaling support and a physical local scale current. The stress tensor has a traceless improvement with unchanged spacetime charges. The conclusion concerns local Ward identities, not a global conformal action on the whole net.
+
+[S2:656] carries the `\resultentry`, so the release blurb and the overview agree.
+The single manuscript:
+
+**Scale and conformal symmetry in four-dimensional operational quantum field theory** [S3:45–46, S3:47]:
+
+> 1
+
+## Undergraduate summary
+
+A **symmetry** of a physics theory is a transformation — rotate,
+shift, rescale — that leaves the laws unchanged. **Scale
+symmetry** means the theory looks the same at every size; **conformal
+symmetry** is the larger family that also allows local
+rescalings of spacetime. A long-standing question in quantum field
+theory is when scale symmetry *forces* conformal symmetry. This paper
+answers it in four dimensions, under explicit assumptions, for a
+well-behaved class of theories: it shows that if the theory has a
+physical "scale current" (the conserved quantity that generates
+rescalings) and the field spectrum is discrete and controlled, then the
+scale symmetry upgrades to **local conformal symmetry** — the
+conformal currents satisfy unbroken **local Ward identities**
+[S3:50–67]. The careful caveat, spelled out in the abstract:
+the conclusion is *local* (about identities the currents obey on the
+field algebra), and does not yet integrate to a **global** conformal
+action on the whole algebra — that remains a separate, open
+question.
+
+## Graduate summary
+
+**Scale-to-conformal enhancement in four dimensions**
+[S3:50–67, S2:656].
+For
+a
+four-dimensional
+unitary
+positive-energy
+quantum
+field
+theory
+with
+a
+Poincar'e-
+and
+scale-invariant
+vacuum,
+a
+discrete
+bounded-below
+spectrum
+of
+scaling
+dimensions
+of
+finite
+multiplicity,
+finite
+scaling
+support
+for
+each
+original
+field,
+compatible
+affiliated
+realizations
+of
+the
+fields
+and
+their
+adjoints
+in
+a
+causally
+commuting
+bounded
+local
+net,
+and
+a
+physical
+local
+dilatation
+current
+generating
+scale
+transformations
+through
+its
+local
+Ward
+identities,
+the
+stress
+tensor
+admits
+a
+symmetric,
+conserved,
+**traceless**
+improvement
+with
+unchanged
+translation
+and
+Lorentz
+charges,
+and
+the
+corresponding
+conformal
+currents
+satisfy
+unbroken
+local
+Ward
+identities
+on
+the
+physical
+field
+algebra
+[S3:50–67].
+The
+result
+is
+conditional
+on
+those
+hypotheses,
+and
+the
+conclusion
+is
+explicitly
+**local**:
+integration
+to
+a
+global
+conformal
+action
+on
+the
+whole
+bounded
+net
+remains
+a
+separate
+question
+[S3:65–67].
+
+## History of the conjecture
+
+The
+question
+of
+when
+scale
+invariance
+implies
+conformal
+invariance
+has
+a
+long
+history:
+in
+two
+dimensions
+the
+two
+coincide
+for
+rational
+CFTs,
+and
+in
+four
+dimensions
+the
+improvement-program
+for
+the
+stress
+tensor
+going
+back
+to
+Friedan
+(1980)
+and
+the
+algebraic
+approaches
+of
+Longo,
+M"{o}ller,
+and
+ collaborators
+set
+up
+the
+tools
+to
+pass
+from
+a
+dilatation
+current
+to
+conformal
+currents.
+The
+obstruction
+in
+higher
+dimensions
+is
+that
+a
+traceless
+improvement
+of
+the
+stress
+tensor
+need
+not
+exist
+without
+extra
+regularity
+on
+the
+spectrum
+and
+on
+the
+local
+net.
+The
+manuscript
+[S3:50–67]
+supplies
+a
+concrete,
+checkable
+set
+of
+hypotheses
+—
+discrete
+bounded-below
+scaling
+spectrum
+of
+finite
+multiplicity,
+finite
+scaling
+support,
+causally
+commuting
+bounded
+local
+net,
+and
+a
+physical
+local
+dilatation
+current
+—
+under
+which
+the
+traceless
+improvement
+exists
+with
+unchanged
+spacetime
+charges
+and
+the
+conformal
+currents
+satisfy
+unbroken
+local
+Ward
+identities.
+It
+stops
+short
+of
+the
+global
+statement
+by
+design
+[S3:65–67].
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+Scale-to-conformal
+enhancement,
+the
+Friedan
+stress-tensor
+improvement,
+dilatation
+and
+conformal
+currents,
+and
+local
+Ward
+identities
+in
+algebraic
+QFT
+are
+standard
+in
+conformal
+field
+theory
+and
+algebraic
+quantum
+field
+theory.
+The
+specific
+four-dimensional
+conditional
+result
+—
+the
+named
+hypothesis
+set
+under
+which
+the
+traceless
+improvement
+exists
+and
+the
+conformal
+currents
+obey
+unbroken
+local
+Ward
+identities,
+with
+the
+global
+action
+expressly
+left
+open
+—
+is
+the
+novel
+contribution.
+I
+cannot
+confirm
+this
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **Traceless
+  stress-tensor
+  improvement**
+  [S3:50–67, S2:656]:
+  under
+  the
+  stated
+  hypotheses,
+  the
+  stress
+  tensor
+  admits
+  a
+  symmetric,
+  conserved,
+  traceless
+  improvement
+  with
+  unchanged
+  translation
+  and
+  Lorentz
+  charges.
+- **Unbroken
+  local
+  conformal
+  Ward
+  identities**
+  [S3:50–67]:
+  the
+  corresponding
+  conformal
+  currents
+  satisfy
+  unbroken
+  local
+  Ward
+  identities
+  on
+  the
+  physical
+  field
+  algebra.
+- **The
+  local/global
+  boundary**
+  [S3:65–67]:
+  the
+  conclusion
+  is
+  local;
+  integration
+  to
+  a
+  global
+  conformal
+  action
+  on
+  the
+  whole
+  net
+  is
+  left
+  as
+  a
+  separate
+  question.
+
+## Section skeleton
+
+One
+manuscript.
+[S3]
+(title
+[S3:45–46],
+date
+[S3:47])
+—
+`main.tex`
+under
+`build/`,
+with
+sections
+under
+`build/sections/`
+(introduction,
+foundations,
+the
+null
+current,
+dispersion,
+charges
+and
+cones,
+extraction,
+short
+products,
+and
+reconstruction).
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+does
+**not**
+formalize
+this
+family.
+There
+is
+no
+scope
+note
+under
+`lean/docs/`,
+no
+comparator
+challenge
+stub
+under
+`lean/ComparatorChallenges/`,
+and
+no
+`main_results`
+entry
+in
+`lean/formalization.yaml`
+naming
+it,
+so
+no
+Lean
+statement
+—
+proved
+or
+otherwise
+—
+corresponds
+to
+the
+enhancement
+theorem
+in
+[S3:50–67].
+The
+ledger
+records
+`scope_note=0`,
+`chal=0`,
+and
+`mainres=0`
+[S4].
+The
+formalization
+gap
+is
+total:
+the
+conditional
+enhancement
+result
+exists
+only
+as
+the
+manuscript's
+LaTeX,
+and
+nothing
+in
+the
+release
+has
+stated
+it
+in
+Lean.
+
+## Coverage
+
+The
+ledger
+row
+`fam=282`
+[S4]
+records
+the
+tier
+and
+the
+counts:
+`tier=T0`,
+`paps=1`,
+`paps_form=0`,
+`chal=0`,
+`mainres=0`,
+`scope_note=0`,
+`verification=0`,
+`trace=`.
+The
+whole
+row
+is
+the
+coverage
+signature:
+no
+scope
+note,
+no
+comparator,
+no
+`main_results`
+entry,
+and
+no
+verification
+bundle,
+so
+the
+family
+sits
+entirely
+outside
+the
+release's
+checking
+workflow.
+The
+shape
+flags
+are
+`bound|conditional`,
+`conditional=1`,
+and
+`resolves_named=0`
+—
+the
+blurb
+states
+a
+hypothesis-
+conditional
+enhancement
+result
+(the
+"under
+the
+stated
+…
+hypotheses"
+form)
+without
+naming
+a
+conjecture
+in
+the
+resolve
+form
+the
+ledger
+flags.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7061] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 282 at [S2:656] |
+| S3 | [`preprints/Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026/build/main.tex`](../../../preprints/Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026/build/main.tex) | 79 | manuscript (single); title [S3:45–46], date [S3:47], abstract [S3:50–67] |
+| S4 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=282`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

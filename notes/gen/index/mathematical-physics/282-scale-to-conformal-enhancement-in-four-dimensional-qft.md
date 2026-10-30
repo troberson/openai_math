@@ -13,7 +13,7 @@
 | Claim shapes | bound, conditional |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [282-scale-to-conformal-enhancement-in-four-dimensional-qft.md](../../../../notes/gen/summaries/282-scale-to-conformal-enhancement-in-four-dimensional-qft.md) |
 
 ## Manuscripts
 
