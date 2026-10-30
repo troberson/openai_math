@@ -1,6 +1,6 @@
 # Family summary pages
 
-333 extended summaries, one per family, each built from the manuscript's own LaTeX and
+334 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **333** of **373** families have a page.
+The summaries are a fifth layer: **334** of **373** families have a page.
 
 ## The pages
 
@@ -317,6 +317,7 @@ The summaries are a fifth layer: **333** of **373** families have a page.
 - [300](300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) — The Popa–Vaes quadratic strong-operator paving conjecture
 - [301](301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) — Classification by trace cones after Razak–Jacelon stabilization
 - [302](302-phillips-toms-formula-for-minimal-integer-actions.md) — The Phillips–Toms formula for minimal integer actions
+- [303](303-from-ordinary-to-strong-pure-infiniteness.md) — From ordinary to strong pure infiniteness
 - [304](304-hilbert-smith-conjecture-in-every-dimension.md) — The Hilbert–Smith conjecture in every dimension
 - [305](305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) — Counterexamples to disk embedding and Wall's manifold conjecture
 - [306](306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md) — The purely cosmetic surgery conjecture for knots in $`S^3`$
@@ -376,7 +377,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **40 families have no summary page.** The 333 pages cover 333 of 373 families; the rest are recorded
+- **39 families have no summary page.** The 334 pages cover 334 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

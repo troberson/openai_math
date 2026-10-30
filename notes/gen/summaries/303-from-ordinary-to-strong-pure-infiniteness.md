@@ -1,0 +1,162 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 303](../index/operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md)
+
+# 303 — From ordinary to strong pure infiniteness
+
+[Index page](../index/operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md)
+
+## Original CONTENTS.md summary
+
+[S1:7505] (family entry):
+
+> **303. Weak pure infiniteness and Cuntz-algebra absorption.** Resolves the ordinary-to-strong pure-infiniteness question of Kirchberg and Rørdam for complex <i>C</i><sup>∗</sup>-algebras. For exact algebras, proper infiniteness of one fixed finite amplification of every positive element also suffices. Consequently, every separable nuclear algebra with this property absorbs $`\mathcal O_\infty`$, without unitality or simplicity assumptions. ([Lean](../../../lean/docs/303.md))
+
+[S2:700] carries the `\resultentry` with the single manuscript [S3:103, S3:105]. The abstract 
+
+> We prove that every complex $`C^*`$-algebra in which each positive
+element is properly infinite is strongly purely infinite. This answers
+the ordinary-to-strong part of Kirchberg–Rørdam's comparison question.
+For exact algebras, we also prove that proper infiniteness of one fixed
+finite amplification of every positive element implies proper infiniteness
+of each positive element. Consequently, every separable nuclear algebra
+with this fixed-amplification property absorbs $`\mathcal O_\infty`$, without
+assumptions of unitality or simplicity. [S3:110–119]
+
+## Undergraduate summary
+
+A **positive element** in a $`C^*`$-algebra is "properly infinite" if you
+can split it into two smaller copies of itself that fit side by side —
+it is, in a sense, infinite even inside a finite-sized algebra.
+
+"Ordinary" pure infiniteness means **every** positive element is properly
+infinite. "Strong" pure infiniteness is a stronger condition: the algebra
+has a full diagonalization property, meaning its positive elements can
+be lined up in a very controlled way.
+
+**Kirchberg–Rørdam's comparison question** asked: does ordinary pure
+infiniteness force strong pure infiniteness, at least for the algebras
+people classify? The answer is **yes**, with no extra assumptions
+[S3:110–119].
+
+There's a useful weakening. For **exact** algebras (those that behave
+nicely under tensor products), it's enough that one fixed finite
+**amplification** of each positive element is properly infinite — you
+don't need each element on its own. From there, every separable nuclear
+algebra with this weaker "fixed amplification" property absorbs the
+Cuntz algebra $`\mathcal{O}_\infty`$, again with no unitality or simplicity
+requirement [S3:114–119].
+
+## Graduate summary
+
+**Ordinary-to-strong pure infiniteness** [S3:110–113, S2:700].
+Every complex $`C^*`$-algebra in which each positive element is properly
+infinite is **strongly purely infinite**: it has the full positive-element
+diagonalization property. No exactness, nuclearity, unitality, or
+simplicity hypothesis is needed [S4:9]. This is the ordinary-to-strong
+part of Kirchberg–Rørdam's comparison question.
+
+**The fixed-amplification variant (exact algebras)** [S3:114–117, S4:11].
+For an exact complex $`C^*`$-algebra, proper infiniteness of one fixed
+finite amplification of every positive element implies individual proper
+infiniteness and hence strong pure infiniteness. The fixed amplification
+index is uniform across all positive elements.
+
+**The $`\mathcal{O}_\infty`$-absorption consequence** [S3:118–119, S2:700].
+Every separable nuclear complex $`C^*`$-algebra with the
+fixed-amplification property absorbs $`\mathcal{O}_\infty`$, without
+assumptions of unitality or simplicity. This places a broad class of
+nonunital, non-simple algebras in the Cuntz-stable regime.
+
+## History of the conjecture
+
+The distinction between ordinary and strong pure infiniteness has been
+central to the classification program for purely infinite
+$`C^*`$-algebras since Kirchberg and Rørdam. Ordinary pure infiniteness
+is a pointwise condition on positive elements; strong pure infiniteness
+adds the diagonalization structure that lets K-theoretic invariants
+control isomorphism classes. The implication from the pointwise to the
+structural condition was the comparison question.
+
+The exact-algebra variant is a strengthening tool: rather than checking
+proper infiniteness element by element, one checks a single finite
+amplification, which is more tractable and stable under the operations
+of the classification program. The $`\mathcal{O}_\infty`$-absorption
+consequence then puts these algebras on the same footing as the purely
+infinite side of the Elliott classification.
+
+**Prior (my training data, not this repo).** Ordinary versus strong pure
+infiniteness, and their role in the Kirchberg–Rørdam classification
+program, are well established. The unconditional ordinary-to-strong
+implication, the uniform fixed-amplification variant for exact algebras,
+and the resulting $`\mathcal{O}_\infty`$-absorption for nonunital,
+non-simple separable nuclear algebras are the novel contributions claimed
+here; I cannot verify the purely-infinite $`C^*`$-algebraic arguments
+independently from training alone.
+
+## Consequences
+
+- **The ordinary-to-strong pure-infiniteness question is resolved**
+  [S3:110–113, S2:700]: a complex $`C^*`$-algebra in which every positive
+  element is properly infinite is strongly purely infinite, with the
+  full diagonalization property. This is the named resolution the
+  ledger's `resolves_named` flag records.
+- **No structural hypotheses** [S4:9]: the implication needs no
+  exactness, nuclearity, unitality, or simplicity assumption.
+- **A uniform fixed-amplification criterion for exact algebras**
+  [S3:114–117, S4:11]: proper infiniteness of one fixed finite
+  amplification of every positive element implies individual proper
+  infiniteness and strong pure infiniteness.
+- **$`\mathcal{O}_\infty`$-absorption for a broad class** [S3:118–119,
+  S2:700]: every separable nuclear algebra with the
+  fixed-amplification property absorbs $`\mathcal{O}_\infty`$, without
+  unitality or simplicity.
+
+## Section skeleton
+
+One manuscript [S3:110–119]. Root `build/manuscript.tex` (134 lines), abstract in
+the root [S3:110–119]. Sections under `build/`: `introduction`,
+`foundations`, `four-variables`, `graph`, `localization`,
+`perturbation`, `separation`, `quantitative`, `exactness`, `nuclear`,
+`proof-routes`. No verification bundle.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T2** with a scope note [S4]
+and two comparator stubs [S5–S6]. There is **no** `main_results` entry,
+and no proved OAI tree. The T2 shape is "scope note and comparator stubs
+exist, but no `main_results` entry and no proved OAI tree."
+
+The scope note describes the formalized content in two paragraphs: the
+unconditional ordinary-to-strong implication with full diagonalization
+[S4:9], and the fixed-amplification variant for exact algebras [S4:11].
+
+The two comparator stubs carry 3 `sorry` occurrences total:
+`ExactInfiniteness.lean` (179 lines, 2) with
+`theorem exact_weaklyPurelyInfinite_individuallyProperlyInfinite_any` at
+[S5:164] and
+`theorem exact_weaklyPurelyInfinite_stronglyPurelyInfinite` at [S5:170],
+and `IndividualStrongInfiniteness.lean` (333 lines, 1) with
+`theorem individual_to_strong_main` at [S6:319]. No proved copies exist
+under `lean/OAI/`. The reading is of source text only.
+
+## Coverage
+
+The ledger row `fam=303` [S7] records the tier and the counts:
+`tier=T2`, `paps=1`, `paps_form=0`, `chal=2`, `mainres=0`,
+`scope_note=1`, `scope_chars=464`, `verification=0`, `trace=`. The T2
+shape is "scope note and comparator stubs exist, with no
+`main_results` entry." The two comparator stubs carry 3 `sorry` total.
+The shape flags are `shapes=resolution`, `resolves_named=1` — a
+resolution family recording the ordinary-to-strong pure-infiniteness
+question, with no proved OAI tree and no verification bundle.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7505] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 303 at [S2:700] |
+| S3 | [`preprints/Weak-pure-infiniteness-and-O-infinity-absorption-September-25-2026/build/manuscript.tex`](../../../preprints/Weak-pure-infiniteness-and-O-infinity-absorption-September-25-2026/build/manuscript.tex) | 134 | manuscript (root); title [S3:103], date [S3:105], abstract [S3:110–119] |
+| S4 | [`lean/docs/303.md`](../../../lean/docs/303.md) | 18 | scope note — Scope at [S4:9, S4:11] and the comparator links |
+| S5 | [`lean/ComparatorChallenges/ExactInfiniteness.lean`](../../../lean/ComparatorChallenges/ExactInfiniteness.lean) | 179 | comparator stub — 179 lines, 2 `sorry` |
+| S6 | [`lean/ComparatorChallenges/IndividualStrongInfiniteness.lean`](../../../lean/ComparatorChallenges/IndividualStrongInfiniteness.lean) | 333 | comparator stub — 333 lines, 1 `sorry` |
+| S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=303`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

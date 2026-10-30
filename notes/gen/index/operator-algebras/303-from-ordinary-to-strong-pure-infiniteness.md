@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [303-from-ordinary-to-strong-pure-infiniteness.md](../../../../notes/gen/summaries/303-from-ordinary-to-strong-pure-infiniteness.md) |
 
 ## Manuscripts
 
