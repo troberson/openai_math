@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [manifolds](../topics/manifolds.md) · [mathematical-physics](../topics/mathematical-physics.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [measure-theory](../topics/measure-theory.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [365-joint-metric-and-connection-recovery-from-one-boundary-patch.md](../../../../notes/gen/summaries/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md) |
 
 ## Manuscripts
 

@@ -1,0 +1,207 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Partial differential equations](../index/disciplines/partial-differential-equations.md) / [Family 365](../index/partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md)
+
+# 365 — Joint metric and connection recovery from one boundary patch
+
+[Index page](../index/partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md)
+
+## Original CONTENTS.md summary
+
+[S1:8847] (family entry):
+
+> **365. Joint metric and connection recovery from one boundary patch.** Zero-frequency measurements on any nonempty open boundary patch determine a smooth metric and smooth unitary connection on a trivial Hermitian rank-two bundle over a compact connected manifold of dimension at least three, up to diffeomorphism and gauge fixed on that patch. Inputs and observations use the same patch. In contrast, distinct uniformly positive bounded measurable scalar conductivities on a three-dimensional ball can have identical full-boundary data. ([Lean](lean/docs/365.md))
+
+[S2:832] carries the `\resultentry` with three manuscripts —
+manuscript 1 [S3] (the metric + connection recovery headline),
+manuscript 2 [S4] (smooth anisotropic uniqueness), and
+manuscript 3 [S5] (the measurable scalar nonuniqueness). The scope
+note names **only** manuscript 3 [S6:5] and states the formalized
+result 
+
+> The Calderón inverse problem asks whether boundary measurements determine an interior conductivity. The formalized result gives nonuniqueness for bounded measurable scalar conductivities on the ball $`B(0,3)\subset\mathbb R^3`$: two uniformly positive conductivities differ on a set of positive volume, equal $`1`$ near the boundary, and have the same full weak Dirichlet-to-Neumann operator. Weak solutions exist uniquely for every boundary trace. [S6:9]
+
+## Undergraduate summary
+
+The **Calderón inverse problem** asks: can you determine the
+"material" inside a black box by measuring only what enters and
+leaves its boundary? Give a voltage on the surface, measure the
+current that flows out, and from that boundary data, recover the
+interior conductivity.
+
+This family has two sides. The **positive** side (manuscripts 1 and 2)
+says that, for *smooth* materials in three or more dimensions, the
+answer is **yes** — and you only need to measure on a **small patch**
+of the boundary, not the whole surface. In fact, you can recover both
+the geometry (the metric) and a gauge field (the connection)
+simultaneously [S3:8–16, S4:8–15].
+
+The **negative** side (manuscript 3) says that the same question has
+a **no** answer at low regularity: there exist two *different*
+bounded, measurable scalar conductivities in a three-dimensional ball
+that produce **identical** boundary data [S5:48–54, S1:8847]. So the
+uniqueness theorem needs smoothness — it is not just a matter of
+having all the boundary data.
+
+The release formalizes the **negative** side (the nonuniqueness
+construction), not the smooth positive side [S6:5, S6:9].
+
+## Graduate summary
+
+**Headline theorem (manuscript 1, metric + connection recovery)**
+[S3:8–16, S1:8847].
+Zero-frequency boundary measurements on any nonempty open boundary
+patch determine both a smooth Riemannian metric and a smooth unitary
+connection on the trivial Hermitian rank-two bundle over a compact
+connected smooth manifold of dimension at least three with smooth
+boundary. Both inputs and observations are restricted to the same
+patch. The metric and connection are determined up to a diffeomorphism
+and a unitary gauge that restrict to the identity on the measured
+patch [S3:8–16].
+
+**Companion theorem (manuscript 2, smooth anisotropic uniqueness)**
+[S4:8–15, S1:8847].
+A smooth Riemannian metric on a compact connected manifold of
+dimension at least three is determined, up to a diffeomorphism fixing
+the measured patch, by its zero-frequency Dirichlet-to-Neumann energy
+form with both input and observation on any nonempty open boundary
+patch [S4:8–15].
+
+**Formalized theorem (manuscript 3, measurable nonuniqueness)**
+[S5:48–54, S5:79–89, S6:9].
+There exist two distinct uniformly positive bounded measurable scalar
+conductivities on the ball $`B(0,3)\subset\mathbb R^3`$ that differ
+on a set of positive volume, both equal $`1`$ near the boundary, and
+have the same full weak Dirichlet-to-Neumann operator
+[S5:81–88, S6:9]. The corollary extends the construction to any
+bounded connected Lipschitz domain in $`\mathbb R^3`$ with any finite
+family of pairwise disjoint interior balls [S5:98–114]. The positive
+smooth-side theorems [S3:8–16, S4:8–15] are **not** the formalized
+statements.
+
+**The formalization is T3, asymmetric with the headline**
+[S6, S7, S8, S9].
+The scope note names only manuscript 3 [S6:5]. The comparator stub
+`Conductivity.lean` (83 lines) states
+`theorem main_nonuniqueness : MainStatement` [S8:77] with the
+`sorry` at [S8:78] (1 in this stub). The `main_results` entry
+[S7:1127–1129] resolves the declaration
+`OAI.ScalarConductivity.main_nonuniqueness` to
+`lean/OAI/Analysis/Conductivity/Main.lean` [S9] (84 lines), entry
+of a 595-file OAI tree carrying 0 `sorry`. The two smooth-side
+manuscripts (the metric+connection recovery and the anisotropic
+uniqueness) are not formalized.
+
+## History of the conjecture
+
+The **Calderón inverse problem**, posed by **Calderón** (1982), asks
+whether the Dirichlet-to-Neumann map determines the interior
+conductivity. The classical positive results — **Sylvester–Uhlmann**
+(1987) for smooth conductivities in dimension at least three,
+**Astala–Päivärinta** (2006) for bounded measurable conductivities in
+the plane — establish uniqueness at various regularity levels.
+The **boundary patch** variant — recovering the interior from data on
+a proper subset of the boundary — is a strengthening that requires
+controlling the continuation of harmonic functions from a small
+region to the whole domain.
+
+The **novel contributions** are three [S3, S4, S5].
+Manuscript 1 [S3] jointly recovers **both** the metric and a unitary
+connection on a rank-two Hermitian bundle from a **single** boundary
+patch [S3:8–16] — the connection recovery is the new component over
+the classical metric-only statement.
+Manuscript 2 [S4] gives the **scalar** anisotropic uniqueness: the
+metric is determined by the energy form on one patch [S4:8–15].
+Manuscript 3 [S5] is the **sharp negative result**: at bounded
+measurable regularity in dimension three, uniqueness **fails** — two
+distinct conductivities with the same full boundary data exist
+[S5:79–89, S6:9]. The three together delineate the exact regularity
+boundary: smooth $`\Rightarrow`$ uniqueness (even on a patch),
+measurable $`\Rightarrow`$ nonuniqueness (full boundary).
+
+**Prior (my training data, not this repo).** As of my training cutoff,
+the smooth anisotropic Calderón problem in dimension at least three
+was resolved for full-boundary data, and the boundary-patch variant
+was an active research direction. A **joint** recovery of metric and
+connection from one patch was a strong strengthening. The bounded
+measurable **nonuniqueness** in three dimensions — showing that the
+Astala–Päivärinta plane result does not extend to dimension three at
+$`L^\infty`$ regularity — was consistent with the known limitations of
+the complex-geometric methods that give the planar result. I cannot
+verify the inverse-problem constructions independently from training
+alone.
+
+## Consequences
+
+- **Joint metric and connection recovery from one patch**
+  [S3:8–16, S1:8847]: zero-frequency measurements on any nonempty
+  open boundary patch determine both the smooth metric and the smooth
+  unitary connection on a rank-two Hermitian bundle, up to
+  diffeomorphism and gauge fixed on the patch.
+- **Smooth anisotropic uniqueness from one patch** [S4:8–15,
+  S1:8847]: the scalar metric is determined by the Dirichlet-to-Neumann
+  energy form with inputs and observations on a single boundary
+  patch.
+- **Bounded measurable nonuniqueness in three dimensions**
+  [S5:48–54, S5:79–89, S6:9]: there exist two distinct uniformly
+  positive bounded measurable scalar conductivities on
+  $`\mathbb R^3`$ with identical full boundary data, establishing
+  that smoothness is essential for uniqueness in dimension at least
+  three.
+- **The regularity boundary is sharp** [S3:8–16, S5:79–89]: the
+  smooth-side theorems give uniqueness (even on a patch), while the
+  measurable-side construction gives nonuniqueness (full boundary) —
+  the gap between $`C^\infty`$ and $`L^\infty`$ is where
+  uniqueness is lost.
+- **The formalization covers only the nonuniqueness half**
+  [S6:5, S7:1127–1129]: the release proves the measurable
+  nonuniqueness construction in Lean; the smooth metric+connection
+  recovery and the anisotropic uniqueness are not formalized.
+
+## Section skeleton
+
+Three manuscripts, all with `build/paper.tex` roots.
+Manuscript 1 [S3] (metric + connection, 27 lines): a `preamble` [S3:1]
+and 7 `input` files [S3:18–24]: `01-introduction` through
+`07-global`, plus a BibTeX `references.bib`.
+Manuscript 2 [S4] (anisotropic uniqueness, 28 lines): a `preamble`
+[S4:1] and 8 `input` files [S4:18–25]: `01-introduction` through
+`08-scalar-consequence`, plus a BibTeX `references.bib`.
+Manuscript 3 [S5] (measurable nonuniqueness, 334 lines): a `preamble`
+[S5:1] with the theorem environments and macros inlined, the main
+theorem at [S5:79–89], the localized corollary at [S5:98–114], and 3
+`input` files [S5:326–328]: `scalarization`, `block`,
+`nonuniqueness`, plus a `references` input at [S5:332]. **No
+verification bundles.**
+
+## Coverage
+
+The ledger row `fam=365` [S10] records the tier and the counts:
+`tier=T3`, `paps=3`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `scope_chars=444`, `verification=0`, `trace=`. The
+T3 shape is "scope note, comparator stub, `main_results` entry, and
+proved OAI tree (0 `sorry`)." The single comparator stub carries 1
+`sorry` [S8:78]. The shape flags are
+`shapes=bound|uniform`, `resolves_named=0`, `counterex_broad=0`,
+`covmd=0` — an inverse-problem **bound** result (the measurable
+contrast $`c/C`$) with a **uniform** character (uniformly positive
+conductivities, uniform boundary data). No named conjecture in the
+title, no counterexample tag in the ledger — the nonuniqueness is
+the sharp negative half of a regularity-boundary pair, not a named
+conjecture's disproof. Note `paps_form=1`: only manuscript 3 (the
+measurable nonuniqueness) appears in `formalization.yaml`'s
+`sources:` list; manuscripts 1 and 2 (the smooth positive side) do
+not — the scope note [S6:5] names only manuscript 3.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:8847] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 365 at [S2:832] |
+| S3 | [`preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/build/paper.tex`](../../../preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/build/paper.tex) | 27 | the `\documentclass` root (manuscript 1, the metric + connection headline, NOT the formalized one) — 27 lines, title [S3:3], date [S3:5], abstract [S3:8–16], 7 `input` files [S3:18–24] |
+| S4 | [`preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex`](../../../preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex) | 28 | the `\documentclass` root (manuscript 2, smooth anisotropic uniqueness) — 28 lines, title [S4:3], date [S4:5], abstract [S4:8–15], 8 `input` files [S4:18–25] |
+| S5 | [`preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/build/paper.tex`](../../../preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/build/paper.tex) | 334 | the `\documentclass` root (manuscript 3, the measurable nonuniqueness, the formalized one) — 334 lines, title [S5:42], date [S5:44], abstract [S5:48–54], theorem [S5:79–89], 3 `input` files [S5:326–328] |
+| S6 | [`lean/docs/365.md`](../../../lean/docs/365.md) | 15 | scope note — names only manuscript 3; Scope at [S6:9], comparator link at [S6:15] |
+| S7 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1833 | the `main_results` entry — [S7:1127–1129] |
+| S8 | [`lean/ComparatorChallenges/Conductivity.lean`](../../../lean/ComparatorChallenges/Conductivity.lean) | 83 | comparator stub — 83 lines, `def MainStatement` [S8:66], `theorem main_nonuniqueness` [S8:77], `sorry` [S8:78] |
+| S9 | [`lean/OAI/Analysis/Conductivity/Main.lean`](../../../lean/OAI/Analysis/Conductivity/Main.lean) | 84 | proved OAI declaration — 84 lines, 0 `sorry`; 595 files under the tree |
+| S10 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=365`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
