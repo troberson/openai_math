@@ -1,6 +1,6 @@
 # Family summary pages
 
-329 extended summaries, one per family, each built from the manuscript's own LaTeX and
+330 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **329** of **373** families have a page.
+The summaries are a fifth layer: **330** of **373** families have a page.
 
 ## The pages
 
@@ -312,6 +312,7 @@ The summaries are a fifth layer: **329** of **373** families have a page.
 - [295](295-kadison-ringrose-cohomology-conjecture.md) — The Kadison–Ringrose cohomology conjecture
 - [296](296-generator-problem-for-finite-factors.md) — The generator problem for finite factors
 - [297](297-a-zfc-counterexample-to-naimarks-problem.md) — A ZFC counterexample to Naimark's problem
+- [298](298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) — A counterexample to Voiculescu’s free-entropy equality conjecture
 - [300](300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) — The Popa–Vaes quadratic strong-operator paving conjecture
 - [304](304-hilbert-smith-conjecture-in-every-dimension.md) — The Hilbert–Smith conjecture in every dimension
 - [305](305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) — Counterexamples to disk embedding and Wall's manifold conjecture
@@ -372,7 +373,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **44 families have no summary page.** The 329 pages cover 329 of 373 families; the rest are recorded
+- **43 families have no summary page.** The 330 pages cover 330 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [quantum-information](../topics/quantum-information.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md](../../../../notes/gen/summaries/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) |
 
 ## Manuscripts
 
