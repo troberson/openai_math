@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [296-generator-problem-for-finite-factors.md](../../../../notes/gen/summaries/296-generator-problem-for-finite-factors.md) |
 
 ## Manuscripts
 
