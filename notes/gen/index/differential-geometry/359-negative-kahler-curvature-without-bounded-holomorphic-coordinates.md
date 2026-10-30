@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [complex-analysis](../topics/complex-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md](../../../../notes/gen/summaries/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) |
 
 ## Manuscripts
 
