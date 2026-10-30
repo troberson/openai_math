@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification |
 | Topics | [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [326-cotype-cotype-conjecture-under-the-approximation-property.md](../../../../notes/gen/summaries/326-cotype-cotype-conjecture-under-the-approximation-property.md) |
 
 ## Manuscripts
 
