@@ -1,0 +1,635 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 265](../index/mathematical-physics/265-two-dimensional-gapped-area-law.md)
+
+# 265 — The two-dimensional gapped area law
+
+[Index page](../index/mathematical-physics/265-two-dimensional-gapped-area-law.md)
+
+## Original CONTENTS.md summary
+
+[S1:6654] (family entry):
+
+> **265. Area laws and tensor networks for two-dimensional gapped systems.** Proves an entropy area law for unique ground states of finite-range Hamiltonians on arbitrary finite induced square-lattice domains, using only a uniform full-system spectral gap and bounds on the local interactions. On open $`L\times L`$ squares, uniformly gapped nearest-neighbor ground states also admit projected entangled-pair state approximations with polynomial bond dimension and global vector error at most <i>L</i><sup>−1</sup>.
+
+[S2:621] carries the `\resultentry`, so the release blurb and the overview agree.
+The two manuscripts:
+
+**A two-dimensional area law from a global spectral gap** [S3:43, S3:45]:
+
+> 1
+
+**Polynomial PEPS approximation** [S4:37, S4:39]:
+
+> 2
+
+## Undergraduate summary
+
+A **gapped quantum system** has an energy gap between its ground
+state (lowest energy) and the first excited state — a fixed
+amount of energy you must supply to "excite" it. The **area law**
+is a statement about how entangled (how quantum-correlated) a
+region of such a system is: the entanglement of a chunk of the
+system is bounded by a constant times the **area of its
+boundary**, not its volume. This is surprising because volume
+scales faster than area in 3D, so the law is a statement that
+gapped systems are "less entangled than you'd naively expect."
+The first manuscript proves the 2D area law for **arbitrary
+shapes** (not just squares), assuming only a uniform global gap
+[S3:51–56, S2:621]. The second manuscript shows that such
+ground states can be **approximated** by a compact
+representation (a **PEPS**, a 2D tensor network) with cost
+growing only polynomially in the system size [S4:44–49].
+
+## Graduate summary
+
+**Two-dimensional area law from a global spectral gap**
+[S3:51–56, S2:621].
+For
+the
+unique
+ground
+state
+of
+a
+finite-range
+Hamiltonian
+on
+any
+finite
+induced
+subgraph
+of
+the
+square
+lattice,
+a
+lower
+bound
+on
+the
+spectral
+gap
+of
+the
+full
+Hamiltonian
+together
+with
+fixed
+bounds
+on
+the
+local
+dimension,
+interaction
+range,
+and
+interaction
+strength
+imply
+that
+for
+every
+set
+of
+sites
+its
+entanglement
+entropy
+is
+bounded
+by
+a
+constant
+times
+the
+number
+of
+edges
+crossing
+its
+boundary,
+independently
+of
+the
+size
+and
+shape
+of
+the
+domain
+[S3:51–56].
+
+**Polynomial
+PEPS
+approximation**
+[S4:44–49,
+S2:621].
+The
+unique
+ground
+state
+of
+a
+uniformly
+gapped
+nearest-neighbor
+Hamiltonian
+on
+an
+$`L \times L`$
+square
+lattice
+admits
+a
+projected
+entangled-pair
+state
+approximation
+with
+bond
+dimension
+polynomial
+in
+$`L`$
+and
+global
+vector
+error
+at
+most
+$`L^{-1}`$
+after
+normalization.
+Only
+the
+gap
+of
+the
+full
+Hamiltonian
+is
+assumed;
+the
+constants
+are
+uniform
+over
+Hamiltonians
+of
+fixed
+local
+dimension,
+interaction
+strength,
+and
+gap
+[S4:44–49].
+
+## History of the conjecture
+
+The
+**area
+law
+for
+gapped
+quantum
+systems**
+had
+been
+proved
+in
+one
+dimension
+(Hastings,
+2007)
+and
+for
+specific
+shapes
+or
+with
+stronger
+assumptions
+in
+higher
+dimensions,
+but
+the
+**two-dimensional
+area
+law
+for
+arbitrary
+finite
+induced
+square-lattice
+domains**
+from
+only
+a
+uniform
+full-system
+spectral
+gap
+had
+remained
+open.
+The
+first
+manuscript
+[S3:51–56]
+resolves
+it:
+the
+bound
+is
+independent
+of
+the
+domain's
+size
+and
+shape,
+and
+the
+only
+spectral
+assumption
+is
+a
+positive
+lower
+bound
+on
+the
+gap
+of
+the
+full
+Hamiltonian.
+The
+**PEPS
+approximation**
+[S4:44–49]
+is
+the
+complementary
+result:
+the
+gapped
+ground
+states
+that
+obey
+the
+area
+law
+also
+admit
+a
+compact
+tensor-network
+representation
+at
+polylogarithmic
+cost,
+which
+is
+the
+practical
+consequence
+—
+the
+states
+that
+are
+"simple"
+in
+the
+area-law
+sense
+are
+also
+"compressible"
+in
+the
+tensor-network
+sense.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+The
+area
+law,
+the
+spectral
+gap,
+entanglement
+entropy,
+and
+projected
+entangled-pair
+states
+(PEPS)
+are
+standard
+in
+quantum
+many-body
+physics
+and
+quantum
+information
+theory.
+The
+two-dimensional
+area
+law
+for
+arbitrary
+finite
+induced
+square-lattice
+domains
+from
+a
+uniform
+full-system
+gap,
+and
+the
+polynomial
+PEPS
+approximation
+with
+$`L^{-1}`$
+global
+vector
+error,
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **The
+  2D
+  area
+  law
+  for
+  arbitrary
+  shapes**
+  [S3:51–56, S2:621]:
+  the
+  entanglement
+  entropy
+  of
+  any
+  induced
+  square-lattice
+  domain
+  is
+  bounded
+  by
+  a
+  constant
+  times
+  its
+  boundary
+  edge
+  count,
+  from
+  only
+  a
+  uniform
+  full-system
+  gap.
+- **The
+  PEPS
+  approximatibility
+  of
+  2D
+  gapped
+  ground
+  states**
+  [S4:44–49]:
+  uniformly
+  gapped
+  nearest-neighbor
+  ground
+  states
+  on
+  $`L \times L`$
+  squares
+  admit
+  a
+  PEPS
+  approximation
+  with
+  polynomial
+  bond
+  dimension
+  and
+  $`L^{-1}`$
+  global
+  vector
+  error.
+
+## Section skeleton
+
+Two
+manuscripts.
+[S3]
+(title
+[S3:43],
+date
+[S3:45])
+—
+`main.tex`
+under
+`build/`.
+[S4]
+(title
+[S4:37],
+date
+[S4:39])
+—
+`main.tex`
+under
+`build/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+does
+**not**
+formalize
+this
+family.
+There
+is
+no
+scope
+note
+at
+`lean/docs/265.md`,
+no
+comparator
+stub
+under
+`lean/ComparatorChallenges/`,
+no
+`main_results`
+entry
+in
+`lean/formalization.yaml`,
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+Both
+manuscripts
+[S3]
+[S4]
+sit
+entirely
+outside
+the
+formalization,
+so
+the
+$`2`/2`$
+coverage
+signature
+is
+`paps_form=0`.
+There
+is
+no
+Lean
+reading
+to
+report
+for
+this
+family.
+
+## Coverage
+
+The
+ledger
+row
+`fam=265`
+[S5]
+records
+the
+tier
+and
+the
+counts:
+`tier=T0`,
+`paps=2`,
+`paps_form=0`,
+`chal=0`,
+`mainres=0`,
+`scope_note=0`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=2`
+is
+the
+coverage
+signature:
+the
+family
+is
+entirely
+unformalized
+—
+no
+scope
+note,
+no
+comparator
+stub,
+no
+`main_results`
+entry,
+no
+OAI
+tree.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+`bound|partial|uniform`,
+and
+`resolves_named=0`
+—
+the
+blurb
+states
+the
+area
+law
+and
+PEPS
+approximation
+without
+a
+named
+conjecture
+in
+the
+resolve
+form
+the
+ledger
+flags.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6654] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 265 at [S2:621] |
+| S3 | [`preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/build/main.tex`](../../../preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/build/main.tex) | 76 | manuscript 1 of 2 (area law); title [S3:43], date [S3:45], abstract [S3:51–56] |
+| S4 | [`preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/build/main.tex`](../../../preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/build/main.tex) | 73 | manuscript 2 of 2 (PEPS approximation); title [S4:37], date [S4:39], abstract [S4:44–49] |
+| S5 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=265`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
