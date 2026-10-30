@@ -1,6 +1,6 @@
 # Family summary pages
 
-317 extended summaries, one per family, each built from the manuscript's own LaTeX and
+318 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **317** of **373** families have a page.
+The summaries are a fifth layer: **318** of **373** families have a page.
 
 ## The pages
 
@@ -297,6 +297,7 @@ The summaries are a fifth layer: **317** of **373** families have a page.
 - [280](280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md) — Strong locality for strongly rational unitary vertex operator algebras
 - [281](281-qaoa-optimality-for-the-sk-model.md) — QAOA optimality for the SK model
 - [282](282-scale-to-conformal-enhancement-in-four-dimensional-qft.md) — Scale-to-conformal enhancement in four-dimensional QFT
+- [283](283-polynomial-time-constant-error-unitary-synthesis-from-a-boolean-oracle.md) — Polynomial-time, constant-error unitary synthesis from a Boolean oracle
 - [284](284-optimal-randomized-quantum-query-exponent.md) — The optimal randomized–quantum query exponent
 - [285](285-counterexamples-to-baum-connes-and-kadison-kaplansky.md) — Counterexamples to Baum–Connes and Kadison–Kaplansky
 - [287](287-all-nonabelian-free-group-factors-are-isomorphic.md) — All nonabelian free group factors are isomorphic
@@ -360,7 +361,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **56 families have no summary page.** The 317 pages cover 317 of 373 families; the rest are recorded
+- **55 families have no summary page.** The 318 pages cover 318 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
