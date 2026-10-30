@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [computability](../topics/computability.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [logic](../topics/logic.md) · [kinetic-theory](../topics/kinetic-theory.md) · [fluid-dynamics](../topics/fluid-dynamics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [376-universal-computation-in-forced-navier-stokes-flows.md](../../../../notes/gen/summaries/376-universal-computation-in-forced-navier-stokes-flows.md) |
 
 ## Manuscripts
 

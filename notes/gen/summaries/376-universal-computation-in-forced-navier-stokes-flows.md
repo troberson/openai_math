@@ -1,0 +1,260 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Partial differential equations](../index/disciplines/partial-differential-equations.md) / [Family 376](../index/partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md)
+
+# 376 — Universal computation in forced Navier–Stokes flows
+
+[Index page](../index/partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md)
+
+## Original CONTENTS.md summary
+
+[S1:9050] (family entry):
+
+> **376. Universal computation in forced Navier–Stokes flows.** Constructs viscous incompressible flows starting from rest on a fixed flat three-dimensional domain that perform universal computation under smooth external forcing. A terminating compiler turns a Turing machine and input into a finite program for the force, so a designated particle reaches a fixed region exactly when the machine halts. The viscosity is fixed, positive and computable. ([Lean](lean/docs/376.md))
+
+[S2:857] carries the `\resultentry` with nine manuscripts.
+The scope note states the formalized result:
+
+> The formalization realizes finite families of prescribed positive diagonal maps on coding sheets by smooth incompressible flows on a flat three-torus. At every positive computable viscosity, it supplies a solution starting from rest with zero pressure and a force that is divergence free, has spatial mean zero, and is one-periodic from time zero. Each map acts on every point of its source sheet, and the construction provides effective bounds for all mixed derivatives. [S7:12]
+
+## Undergraduate summary
+
+A **Turing machine** is an abstract computer: a little state machine
+that reads and writes symbols on a strip of tape, one step at a time.
+Some machines run forever on certain inputs — and there is no recipe
+that can decide, in advance, which ones do. That is the **halting
+problem**.
+
+This family asks a strange question: can a **fluid** run a machine?
+Imagine a still pool of water. You stir it with a very carefully
+designed spoon-motion (a "force") and let its natural viscosity do the
+rest. Now watch a single colored particle drift through the water.
+The mathematics says: if you choose the stirring just right, that one
+particle will arrive at a fixed spot **exactly when** the machine
+halts — and will never arrive if it does not. The fluid *computes*,
+and the particle's path is the answer.
+
+What makes it remarkable is how tamed the stirring is. In the
+strongest versions the force, and even every rate at which it changes,
+becomes smaller than any inverse power of time — the pool is almost
+completely at rest — yet a single particle (or a single reading of the
+water's speed) still detects the halt. That a nearly-motionless fluid
+can carry a full computation is the surprising claim [S3:19–28,
+S4:29–39, S5:34–45, S6:23–38, S7:12–26, S1:9050].
+
+## Graduate summary
+
+**The setting is forced viscous Navier–Stokes flow from rest**
+[S3:19–28, S4:29–39, S5:34–45, S6:23–38].
+On a fixed flat three-dimensional domain (a solid box, a flat
+three-torus, or a product of the plane with a circle), the fluid
+starts at zero velocity and zero pressure and is driven by a smooth,
+divergence-free external force whose effective description a
+terminating compiler produces from a Turing machine and a finite
+input. The viscosity is fixed, positive, and computable. There is no
+claim of complexity efficiency: the force prescription is finite and
+evaluable to any rational accuracy, and every mixed derivative has an
+effective bound [S4:118–119, S7:12, 16].
+
+**Computation is a reachability question, not a trajectory that is
+precomputed** [S4:71–77].
+The input is a finite program prescribing the local instruction rule
+at every spatial code; the material particle performs the iteration,
+and the compiler does not first run the machine and then lay down its
+trace. A designated particle starts at a fixed point and the event is
+a fixed open set: the particle enters it exactly when the machine
+halts [S6:23–38, S7:26].
+
+**The nine manuscripts are a progression of constructions** [S2:857].
+Finite instruction maps by shear flows; a fixed-particle test in a
+forced viscous flow; eventually-stationary forcing; geometric programs
+for solenoidal forcing [S3]; prefix instructions and incompressible
+flows; rapidly vanishing forcing with three memory constructions
+[the addressed Euclidean field, the alternating-coordinate field,
+and the periodic lattice field] [S4]; velocity-field detection with
+a pointwise torus test and an integral cylindrical test [S5]; scalar
+potentials and slow clocks; and incompressible box transport with a
+balanced three-stack recorder [S6]. The scope note formalizes the
+last four [S7:5–8].
+
+**The formalization is T2, not T3** [S7, S14].
+A scope note and six comparator stubs are present, but there is
+**no** `main_results` entry and **no** proved OAI tree [S14]. The
+six comparators carry **7** `sorry` occurrences total:
+`theorem sheet_theorem` [S8:175] with `sorry` [S8:191];
+`theorem alternating` [S9:239] with `sorry` [S9:241];
+`theorem main_result` [S10:1232] with `sorry` [S10:1270] (the
+stubs' other `sorry` is an inline construction);
+`theorem balanced_box_routing` [S11:84] with `sorry` [S11:92];
+and `theorem balanced_three_stack_realization` in both
+[S12:211] with `sorry` [S12:235] and [S13:206] with `sorry`
+[S13:230]. The T2 shape is "scope note plus comparator stubs, no
+`main_results` entry, no OAI tree."
+
+**The formalization is asymmetric with the release** [S7:5–8, 14,
+S2:857, S14].
+The family ships **nine** manuscripts, but the scope note names only
+**four** of them [S7:5–8], and the scope is explicitly bounded: the
+"paper's fixed-particle halting detector and its reciprocal maps on
+solid boxes are outside its scope" [S7:14]. The five manuscripts the
+scope note does not name (finite instructions, fixed-particle test,
+eventually-stationary forcing, prefix instructions, scalar
+potentials) are not part of the formalization [S14: `paps_form=0`,
+`chal=6`].
+
+## History of the conjecture
+
+The idea of **computation by physical motion** descends from Turing's
+own symbol-printing problem: decide whether a described machine ever
+prints a designated symbol, which Turing proved undecidable. Moore
+then formalized the encoding of a machine tape in the real
+coordinates of space, representing a local tape instruction as a
+piecewise-affine change of coordinates; Landauer and Bennett supplied
+the reversibility framing — how to retain the information an
+irreversible step would discard, by recording the instruction
+history [S4:77–83, S5:85–91].
+
+Prior work had already made *fluids* compute, in two different
+settings. Cardona, Miranda, Peralta-Salas and Presas built stationary
+Euler flows and universal Beltrami fields that drive particle
+trajectories; Dyhr, González-Prieto, Miranda and Peralta-Salas built
+stationary *unforced* viscous flows on curved Riemannian
+three-manifolds, where the velocity is harmonic and the viscous term
+vanishes [S4:88–101, S5:104–111]. Both of those rely on a nonzero
+stationary velocity. The present family is different in three ways
+at once: the domain is flat, the viscosity is positive, and the fluid
+starts **from rest** — the motion is created entirely by a prescribed
+external force, and the force can be made to decay.
+
+The **novel contribution** is that computation survives in this
+forced, from-rest, flat three-dimensional setting even when the force
+and every derivative of the force (and of the velocity) decay faster
+than every inverse power of time [S4:29–39, S7:16]. A smooth flow is
+invertible between finite times while a machine step may erase
+information, so the constructions keep an entire record of prior
+configurations at finer and finer spatial scales, and each machine
+step takes one unit of physical time while the displacement shrinks
+fast enough to absorb every fixed derivative cost [S4:104–111,
+S7:12–16]. The detection is then exact: on the torus the velocity
+component exceeds one half in a fixed observation strip; on the
+cylinder an integral of the nonnegative vertical component over the
+observation half-plane times the circle exceeds one half [S5:52–60,
+S7:20].
+
+The consequence is an **undecidability corollary**: no algorithm
+decides the fixed particle or velocity event for every force the
+construction produces, because composing such a decider with the
+finite compiler would decide halting [S4:278–285, S5:262–271,
+S7:16, 20]. The exact observers also show the limitation honestly —
+the separating margin tends to zero, so no uniform finite-precision
+detection tolerance is asserted [S4:286–297, S5:273–281].
+
+**Prior (my training data, not this repo).** Fluid computation —
+simulating a Turing machine by particle trajectories in a steady
+incompressible flow — was an established area in the PDE/dynamical
+systems literature, with the Euler and Beltrami-field constructions
+of the Cardona–Miranda–Peralta-Salas school the leading examples.
+The specific combination here — flat domain, positive viscosity, zero
+initial velocity, and a force decaying faster than every inverse power
+of time — was at the frontier of that work as of my training cutoff.
+I cannot verify the diffusion and projection estimates
+independently from training alone.
+
+## Consequences
+
+- **Universal computation in forced viscous flow** [S2:857, S1:9050,
+  S7:12–26]: a terminating compiler turns a machine and input into a
+  finite force program so a fixed particle enters a fixed open set
+  exactly when the machine halts, from rest at any fixed positive
+  computable viscosity.
+- **Decay does not stop the computation** [S4:29–39, S7:16]: the
+  velocity and force, and every mixed derivative, can decay faster
+  than every inverse power of time, and halting is still detected.
+- **Velocity-field detection is equivalent to halting**
+  [S5:52–60, S7:20]: on the torus, the vertical velocity exceeding
+  one half in a fixed strip is equivalent to halting; on the cylinder,
+  the half-plane-circle integral of the nonnegative vertical velocity
+  exceeding one half is equivalent to halting.
+- **The event is undecidable** [S4:278–285, S5:262–271]: no algorithm
+  decides the fixed particle or velocity event for every force the
+  construction produces.
+- **The result is T2, a challenge not a proof** [S7, S8–S13, S14]:
+  a scope note names four of the nine manuscripts and six comparator
+  stubs carry 7 `sorry` [S8:191, S9:241, S10:1270, S11:92, S12:235,
+  S13:230], with no `main_results` entry or OAI tree.
+
+## Section skeleton
+
+Four of the nine manuscripts are named by the scope note [S7:5–8] and
+are read here; the other five (finite instructions, fixed-particle
+test, eventually-stationary forcing, prefix instructions, scalar
+potentials) ship in the release but are not part of the
+formalization [S14]. All four read roots are `build/main.tex`.
+
+[S3] is the shortest (35 lines): the theorem environments declared
+inline [S3:9–13], the title [S3:14], the date [S3:16], the abstract
+[S3:19–28], and 5 `input` files [S3:29–34] — `introduction`,
+`analytic-imports`, `body`, plus an appendix with `interpreter` and
+`references`.
+
+[S4] is the longest (312 lines) and carries its body sections inline
+rather than in `input` files: the preamble [S4:1–22], the title
+[S4:24], the date [S4:26], the abstract [S4:29–39], then the
+analytic and consequence sections in the root, with only `addressed`,
+`alternating`, `lattice` [S4:265–267] and `references` [S4:311]
+pulled in.
+
+[S5] is 288 lines and likewise inline: the preamble [S5:1–28], the
+title [S5:29], the date [S5:31], the abstract [S5:34–45], the scalar
+reduction and decision sections in the root, with `compact` [S5:256]
+and `bounded` [S5:257] and `references` [S5:287] pulled in.
+
+[S6] is 56 lines and the most decomposed: the preamble [S6:1–18],
+the title [S6:19], the date [S6:21], the abstract [S6:23–38], and 15
+`input` files [S6:39–53] — `introduction`, `analysis`, `geometry`,
+`balanced`, `compilers`, `coding-conventions`, `routing-conventions`,
+`initialization`, `compact-processors`, `persistent-history`,
+`guarded-history`, `observer-routing`, `solid-routing`,
+`torus-routing`, `clocks` — plus `references`. **No verification
+bundles** (`verification=0`) [S14].
+
+## Coverage
+
+The ledger row `fam=376` [S14] records the tier and the counts:
+`tier=T2`, `paps=9`, `paps_form=0`, `chal=6`, `mainres=0`,
+`scope_note=1`, `scope_chars=3234`, `verification=0`, `inputs=0`,
+`covmd=0`, `trace=` (empty). The T2 shape is "scope note plus
+comparator stubs, no `main_results` entry, no OAI tree." The six
+comparator stubs carry 7 `sorry` [S8:191, S9:241, S10:1270, S11:92,
+S12:235, S13:230]. The shape flags are all empty or zero —
+`shapes=` (empty), `conditional=0`, `resolves_named=0`,
+`counterex_broad=0`, `companions=` (empty), `companion_word=0` — an
+**existence/construction**-type family with no named conjecture
+resolved and no counterexample. The family has no verification
+bundle and no trace.
+
+The load-bearing asymmetry is `paps=9` against `paps_form=0` and
+`chal=6`: the release ships nine manuscripts, the scope note names
+only four of them [S7:5–8], the formalization's declared scope
+excludes the fixed-particle halting detector and the reciprocal maps
+on solid boxes [S7:14], and there is no `main_results` entry or proved
+OAI tree [S14]. The five manuscripts the scope note does not name are
+not formalized at all — the T2 surface is the scope note's description
+plus the six comparator challenges only, with no proved Lean surface.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:9050] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 376 at [S2:857], nine manuscripts |
+| S3 | [`preprints/Geometric-Programs-for-Solenoidal-Forcing-September-27-2026/build/main.tex`](../../../preprints/Geometric-Programs-for-Solenoidal-Forcing-September-27-2026/build/main.tex) | 35 | `\documentclass` root — 35 lines, title [S3:14], date [S3:16], abstract [S3:19–28], 5 `input` files [S3:29–34] |
+| S4 | [`preprints/Computation-under-Rapidly-Vanishing-Navier-Stokes-Forcing-September-27-2026/build/main.tex`](../../../preprints/Computation-under-Rapidly-Vanishing-Navier-Stokes-Forcing-September-27-2026/build/main.tex) | 312 | `\documentclass` root — 312 lines, title [S4:24], date [S4:26], abstract [S4:29–39], 3 `input` files [S4:265–267], `references` [S4:311] |
+| S5 | [`preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/build/main.tex`](../../../preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/build/main.tex) | 288 | `\documentclass` root — 288 lines, title [S5:29], date [S5:31], abstract [S5:34–45], `compact` [S5:256], `bounded` [S5:257] |
+| S6 | [`preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/main.tex`](../../../preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/build/main.tex) | 56 | `\documentclass` root — 56 lines, title [S6:19], date [S6:21], abstract [S6:23–38], 15 `input` files [S6:39–53] |
+| S7 | [`lean/docs/376.md`](../../../lean/docs/376.md) | 37 | scope note — names 4 of the 9 manuscripts [S7:5–8]; `## Scope` [S7:10], scope paragraphs [S7:12, 16, 20, 24, 26], the "outside its scope" sentence [S7:14], comparator table [S7:30–37] |
+| S8 | [`lean/ComparatorChallenges/SolenoidalSheetPrograms.lean`](../../../lean/ComparatorChallenges/SolenoidalSheetPrograms.lean) | 197 | comparator stub — 197 lines, `theorem sheet_theorem` [S8:175], `sorry` [S8:191] |
+| S9 | [`lean/ComparatorChallenges/NavierStokesAlternating.lean`](../../../lean/ComparatorChallenges/NavierStokesAlternating.lean) | 245 | comparator stub — 245 lines, `theorem alternating` [S9:239], `sorry` [S9:241] |
+| S10 | [`lean/ComparatorChallenges/NavierStokesVelocity.lean`](../../../lean/ComparatorChallenges/NavierStokesVelocity.lean) | 1275 | comparator stub — 1275 lines, `theorem main_result` [S10:1232], `sorry` [S10:1270] |
+| S11 | [`lean/ComparatorChallenges/BalancedBoxRouting.lean`](../../../lean/ComparatorChallenges/BalancedBoxRouting.lean) | 96 | comparator stub — 96 lines, `theorem balanced_box_routing` [S11:84], `sorry` [S11:92] |
+| S12 | [`lean/ComparatorChallenges/BalancedThreeStack.lean`](../../../lean/ComparatorChallenges/BalancedThreeStack.lean) | 239 | comparator stub — 239 lines, `theorem balanced_three_stack_realization` [S12:211], `sorry` [S12:235] |
+| S13 | [`lean/ComparatorChallenges/ForcedNavierStokesComputation.lean`](../../../lean/ComparatorChallenges/ForcedNavierStokesComputation.lean) | 232 | comparator stub — 232 lines, `theorem balanced_three_stack_realization` [S13:206], `sorry` [S13:230] |
+| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=376`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
