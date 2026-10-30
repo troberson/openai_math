@@ -1,0 +1,154 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Functional analysis](../index/disciplines/functional-analysis.md) / [Family 322](../index/functional-analysis/322-tingleys-sphere-isometry-problem.md)
+
+# 322 — Tingley's sphere-isometry problem
+
+[Index page](../index/functional-analysis/322-tingleys-sphere-isometry-problem.md)
+
+## Original CONTENTS.md summary
+
+[S1:7881] (family entry):
+
+> **322. Tingley's sphere-isometry problem.** Resolves Tingley's problem: every surjective isometry between the unit spheres of nonzero real Banach spaces extends uniquely to a surjective real-linear isometry of the whole spaces. No dimension restriction is imposed, so the metric geometry of the unit sphere determines the Banach space up to linear isometry. ([Lean](../../../lean/docs/322.md))
+
+[S2:742] carries the `\resultentry` with the single manuscript [S3:38, S3:40]. The abstract:
+
+> Every surjective isometry between the unit spheres of real Banach spaces extends uniquely to a surjective real-linear isometry, giving an affirmative solution to Tingley's problem. If distances between different radii are not preserved, we realize the positive maximal defect in a possibly enlarged pair of Banach spaces. We then align extremal chords using common supports and Darbo's fixed-point theorem and obtain a contradiction from support and convexity estimates. [S3:43–45]
+
+## Undergraduate summary
+
+Pick the points at distance exactly one from the origin in two vector
+spaces — their **unit spheres**. A **surjective isometry** between these
+spheres is a distance-preserving bijection: it moves every point on the
+first sphere to a point on the second, keeping all the pairwise distances
+intact.
+
+**Tingley's problem** (1987) asked whether such a sphere map always
+extends to a **linear** map of the whole spaces. Intuitively, if you know
+how the "shell" of a space is arranged, do you automatically know how the
+entire space is linearly arranged? The answer here is **yes**, with no
+restrictions on dimension, separability, reflexivity, or the shape of the
+unit ball. The extension is unique and is the **radial map**: each point
+is sent along its own line through the origin, with the sphere map telling
+you the direction and the norm telling you the scale.
+
+## Graduate summary
+
+**Tingley's theorem (formalized)** [S3:43–45, S2:742].
+Let $`X, Y`$ be nonzero real Banach spaces and let
+$`f : S_X \to S_Y`$ be a surjective isometry between their unit spheres.
+Then the radial map
+$`T(0) = 0,\quad T(x) = \lVert x \rVert f(x/\lVert x \rVert)`$ for $`x \neq 0`$
+is a surjective real-linear isometry, and it is the unique linear
+extension of $`f`$.
+
+**No structural hypotheses** [S4:9].
+The conclusion holds for arbitrary nonzero real Banach spaces: no
+finite-dimensionality, separability, reflexivity, smoothness, or strict
+convexity is assumed. For complex spaces regarded as real spaces, the
+conclusion is real linearity; complex linearity is not asserted [S4:9].
+
+**The proof strategy** [S3:44–45].
+The argument measures the largest failure $`M`$ of $`f`$ to preserve
+distances between points at different radii. If $`M > 0`$, this maximal
+defect is realized in a (possibly enlarged, ultrapower-and-completion)
+pair of Banach spaces. Extremal chords are then aligned via common
+supports, producing an invariant closed convex set of directions on which
+an opposite-endpoint return map contracts the Kuratowski measure of
+noncompactness; Darbo's fixed-point theorem supplies an aligned direction,
+and a support/convexity contradiction eliminates it.
+
+## History of the conjecture
+
+Tingley's problem is the sphere-restricted analogue of the
+**Mazur–Ulam theorem** (1932), which states that every surjective
+isometry between real normed spaces is affine. The obstruction to
+applying Mazur–Ulam directly is that a unit sphere has empty ambient
+interior, so the interior-based extension machinery does not reach it.
+
+Intermediate results accumulated over decades for specific classes:
+finite-dimensional spaces (Tingley, Banakh), $`L^p`$ spaces (Tan),
+von Neumann algebras and their preduals (Fernández-Polo–Peralta, Mori,
+Mori–Ozawa), and various sequence and Schatten spaces. The present result
+removes the class restriction entirely: the theorem holds for arbitrary
+nonzero real Banach spaces.
+
+**Prior (my training data, not this repo).** The Mazur–Ulam affine
+result and the partial sphere-isometry extensions for concrete Banach
+classes are classical. A full, hypothesis-free positive resolution of
+Tingley's problem for all nonzero real Banach spaces, via the
+maximal-defect/aligned-chord/Darbo fixed-point argument, is the novel
+contribution claimed here; I cannot verify the Banach-space
+fixed-point-theoretic argument independently from training alone.
+
+## Consequences
+
+- **Tingley's problem is resolved** [S3:43–44, S2:742]: every
+  surjective isometry between the unit spheres of nonzero real Banach
+  spaces extends uniquely to a surjective real-linear isometry. This is
+  the named resolution the ledger's `resolves_named` flag records.
+- **No dimension or geometric restriction** [S4:9, S3:45]: the theorem
+  needs no finite-dimensionality, separability, reflexivity, smoothness,
+  or convexity hypothesis, so the unit sphere's metric geometry
+  determines the Banach space up to real-linear isometry.
+- **Complex spaces give real linearity only** [S4:9]: for a complex
+  Banach space regarded as a real space the extension is real-linear;
+  complex linearity is not asserted.
+- **The extension is the radial map** [S3:44]: the unique linear
+  extension sends each point along its radial line through the origin.
+
+## Section skeleton
+
+One manuscript [S3:43–45]. Root `build/main.tex` (544 lines; an
+extensive inline preamble precedes the `\title` at [S3:38]), sections:
+Supporting functionals and radial contact; Attaining the maximal defect;
+Aligning extremal chords; The chord contradiction; plus the final
+extension section and an appendix with the fixed-point proofs. No
+verification bundle.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T3** with a scope note [S4:9],
+one comparator stub [S5], one `main_results` entry, and a proved OAI tree.
+The T3 shape is "scope note, comparator stub, `main_results` entry, and
+proved OAI tree all present."
+
+The scope note [S4:9] selects the sphere-isometry extension: a unique
+surjective real-linear isometric extension for arbitrary nonzero real
+Banach spaces, with no finite-dimensionality, separability, reflexivity,
+or convexity assumptions, and real (not complex) linearity for complex
+spaces viewed as real spaces.
+
+The single comparator stub carries 1 `sorry`:
+`TingleySphereIsometry.lean` (41 lines) with
+`theorem tingley_sphere_isometry_full` at [S5:22] and the `sorry` at
+[S5:35].
+
+The proved OAI declaration is `OAI.Tingley.tingley_sphere_isometry_full`
+at `lean/OAI/Analysis/SphereIsometry/Extension.lean` [S6:101]. The OAI
+tree under `lean/OAI/Analysis/SphereIsometry/` comprises 67 `.lean` files
+with 0 `sorry` occurrences — the sphere-isometry extension is proved in
+the OAI library. The reading is of source text only.
+
+## Coverage
+
+The ledger row `fam=322` [S7] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `scope_chars=450`, `verification=0`, `trace=`. The T3
+shape is "scope note, comparator stub, `main_results` entry, and proved
+OAI tree." The single comparator stub carries 1 `sorry`; the proved
+OAI tree carries 0. The shape flags are `shapes=resolution`,
+`resolves_named=1`, `counterex_broad=0`, `covmd=0` — a resolution
+family recording the Tingley resolution, with no coverage document in
+the manuscript directory.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7881] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 322 at [S2:742] |
+| S3 | [`preprints/A-positive-solution-to-Tingleys-problem-September-23-2026/build/main.tex`](../../../preprints/A-positive-solution-to-Tingleys-problem-September-23-2026/build/main.tex) | 544 | manuscript; title [S3:38], date [S3:40], abstract [S3:43–45] |
+| S4 | [`lean/docs/322.md`](../../../lean/docs/322.md) | 15 | scope note — Scope at [S4:9] and the comparator link `TingleySphereIsometry.lean` |
+| S5 | [`lean/ComparatorChallenges/TingleySphereIsometry.lean`](../../../lean/ComparatorChallenges/TingleySphereIsometry.lean) | 41 | comparator stub — 41 lines, 1 `sorry` |
+| S6 | [`lean/OAI/Analysis/SphereIsometry/Extension.lean`](../../../lean/OAI/Analysis/SphereIsometry/Extension.lean) | 120 | proved OAI declaration `OAI.Tingley.tingley_sphere_isometry_full` [S6:101] |
+| S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=322`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

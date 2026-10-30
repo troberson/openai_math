@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [322-tingleys-sphere-isometry-problem.md](../../../../notes/gen/summaries/322-tingleys-sphere-isometry-problem.md) |
 
 ## Manuscripts
 
