@@ -1,6 +1,6 @@
 # Family summary pages
 
-360 extended summaries, one per family, each built from the manuscript's own LaTeX and
+361 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **360** of **373** families have a page.
+The summaries are a fifth layer: **361** of **373** families have a page.
 
 ## The pages
 
@@ -375,6 +375,7 @@ The summaries are a fifth layer: **360** of **373** families have a page.
 - [358](358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md) — A three-manifold with no conjugate points and no nonpositively curved metric
 - [359](359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) — Negative Kähler curvature without bounded holomorphic coordinates
 - [360](360-villanis-convexity-conjecture-and-regular-optimal-transport.md) — Villani’s convexity conjecture and regular optimal transport
+- [361](361-counterexamples-to-yaus-harmonic-dimension-bound.md) — Counterexamples to Yau's harmonic dimension bound
 - [362](362-global-smoothness-for-relativistic-vlasov-maxwell.md) — Global smoothness for relativistic Vlasov–Maxwell
 - [366](366-planar-mumford-shah-regularity-conjecture.md) — The planar Mumford–Shah regularity conjecture
 - [368](368-three-dimensional-ball-evans-approximation-problem.md) — The three-dimensional Ball–Evans approximation problem
@@ -403,7 +404,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **13 families have no summary page.** The 360 pages cover 360 of 373 families; the rest are recorded
+- **12 families have no summary page.** The 361 pages cover 361 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, partial, uniform |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [361-counterexamples-to-yaus-harmonic-dimension-bound.md](../../../../notes/gen/summaries/361-counterexamples-to-yaus-harmonic-dimension-bound.md) |
 
 ## Manuscripts
 
