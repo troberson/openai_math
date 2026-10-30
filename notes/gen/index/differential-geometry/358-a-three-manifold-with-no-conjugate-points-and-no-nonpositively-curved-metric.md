@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [metric-geometry](../topics/metric-geometry.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md](../../../../notes/gen/summaries/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md) |
 
 ## Manuscripts
 
