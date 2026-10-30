@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md](../../../../notes/gen/summaries/292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md) |
 
 ## Manuscripts
 

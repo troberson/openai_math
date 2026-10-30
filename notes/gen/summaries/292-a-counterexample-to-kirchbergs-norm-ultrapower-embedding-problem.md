@@ -1,0 +1,157 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 292](../index/operator-algebras/292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md)
+
+# 292 — A counterexample to Kirchberg's norm-ultrapower embedding problem
+
+[Index page](../index/operator-algebras/292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md)
+
+## Original CONTENTS.md summary
+
+[S1:7302] (family entry):
+
+> **292. Kirchberg's $`\mathcal O_2`$ norm-ultrapower embedding problem.** Constructs an explicit separable unital full group *C*^*-algebra that cannot embed unitally into the norm ultrapower of any fixed nonzero unital nuclear *C*^*-algebra, for any free ultrafilter on the natural numbers. Taking the target to be $`\mathcal O_2`$ answers Kirchberg's norm-ultrapower embedding problem negatively. ([Lean](../../../lean/docs/292.md))
+
+[S2:678] carries the `\resultentry`, so the release blurb and the overview agree.
+The single manuscript [S3:32, S3:34]:
+
+> We give a negative answer to Kirchberg's norm-ultrapower embedding problem.
+We construct an explicit separable unital full group $`C^*`$-algebra that
+admits no unital embedding into $`B^\omega`$, for any nonzero unital nuclear
+$`C^*`$-algebra $`B`$ and any free ultrafilter $`\omega`$ on $`\mathbb N`$.
+In particular, it does not embed unitally into $`\mathcal O_2^\omega`$. [S3:37–42]
+
+## Undergraduate summary
+
+A **C\*-algebra** is a collection of operators closed under adjoints and
+norm limits; **nuclear** ones are the "nicest" and include the algebras of
+ordinary function spaces. The **norm ultrapower** $`B^\omega`$ of a C\*-algebra
+$`B`$ (taken along a free ultrafilter $`\omega`$) is a larger algebra built from
+bounded sequences in $`B`$ that are "eventually equal" modulo $`\omega`$ — a
+way of completing $`B`$ while keeping the operator norm exactly.
+
+Kirchberg asked a clean question: **does every separable C\*-algebra embed
+unitally into the norm ultrapower of some fixed nuclear one?** If the nuclear
+target is a single universal algebra, every separable C\*-algebra would fit
+inside it, up to this ultrapower completion. This had been open.
+
+This paper says **no** [S3:37–42]. It builds an *explicit* separable unital
+group C\*-algebra — the algebra of a specific countable group — that refuses
+to embed unitally into $`B^\omega`$ for *any* nonzero unital nuclear $`B`$ and
+*any* free ultrafilter $`\omega`$. In particular, it does not fit into the
+ultrapower of the Cuntz algebra $`\mathcal O_2`$ [S3:37–42]. The "explicit"
+part matters: the obstruction is a named group, not an existence argument.
+
+## Graduate summary
+
+**Main theorem** [S3:37–42, S2:678].
+There is an explicit separable unital **full** group C\*-algebra $`C^*(G)`$
+for a countable discrete group $`G`$ such that, for every nonzero unital
+nuclear C\*-algebra $`B`$ and every free ultrafilter $`\omega`$ on $`\mathbb N`$,
+there is **no** unital homomorphism $`C^*(G) \hookrightarrow B^\omega`$.
+Equivalently, taking $`B = \mathcal O_2`$ gives a negative answer to
+Kirchberg's norm-ultrapower embedding problem: $`\mathcal O_2`$ is not a
+nuclear norm-ultrapower target for all separable unital C\*-algebras.
+
+**The mechanism.** The obstruction is spectral. The group $`G`$ is chosen so
+that $`C^*(G)`$ is a full C\*-algebra (its image in any quotient is the whole
+quotient algebra) with a spectral gap property that the nuclear-finiteness
+of $`B^\omega`$ cannot accommodate [S3, S4:9]. Because the embedding would have
+to preserve the full group structure into the ultrapower, and the nuclear
+target's ultrafilter completion cannot realize the required spectral
+separation, the embedding is impossible. The Cuntz algebra $`\mathcal O_2`$
+corollary follows by taking $`B = \mathcal O_2`$, which is nuclear and
+universal among nuclear algebras of that class.
+
+**"Full" and "no nonzero."** The hypothesis is that $`B`$ is *nonzero* and
+*unital* and *nuclear* — the theorem rules out the embedding simultaneously
+for every such $`B`$ and every free $`\omega`$. The group is separable and the
+algebra unital, matching the setting of Kirchberg's original question.
+
+## History of the conjecture
+
+Kirchberg's norm-ultrapower embedding problem sits in the structure theory
+of ultraproducts of C\*-algebras: if a single nuclear algebra's norm
+ultrapower absorbed every separable unital C\*-algebra, that ultrafilter
+completion would be a universal object for the category of separable unital
+C\*-algebras. The problem asks whether nuclearity is a strong enough regularity
+condition to make that happen.
+
+The negative answer here is constructed: the manuscript gives a **named**
+group, computes its C\*-algebra, and shows the spectral properties of the
+ultrapower target make the embedding impossible [S3:37–42]. The release also
+sets the target in Lean, recording the construction and the obstruction as
+a challenge statement (the comparator stub [S5]).
+
+**Prior (my training data, not this repo).** Kirchberg's ultraproduct and
+embedding problems are central open problems in C\*-algebra theory,
+connected to the classification of nuclear C\*-algebras and to the
+ultraprocess structure of the category. The explicit counterexample via a
+full group C\*-algebra with a spectral gap is the novel contribution
+claimed here; I cannot verify the spectral estimates independently from
+training alone.
+
+## Consequences
+
+- **Kirchberg's norm-ultrapower embedding problem is answered
+  negatively** [S3:37–42, S2:678]: there is a separable unital C\*-algebra
+  (an explicit full group C\*-algebra) that embeds unitally into no nonzero
+  unital nuclear C\*-algebra's norm ultrapower, for any free ultrafilter.
+  This is the named counterexample the ledger's `resolves_named` flag
+  records.
+- **$`\mathcal O_2`$ is not universal** [S3:37–42]: the Cuntz algebra
+  $`\mathcal O_2^\omega`$ does not contain every separable unital C\*-algebra
+  as a unital subalgebra, so nuclearity alone does not give a
+  universal norm-ultrapower target.
+- **A named obstruction group** [S3:37–42]: the counterexample is an explicit
+  countable discrete group, so the negative answer is constructive — the
+  group can be written down and its C\*-algebra computed.
+
+## Section skeleton
+
+One manuscript [S3:37–42]: root `build/paper.tex` (54 lines), 6 sections
+(`introduction`, `group-example`, `spectral-preliminaries`,
+`nuclear-finiteness`, `ultrapower-contradiction`, `consequences`), a
+`figures/finite-chain.tex` TikZ diagram, and a `references` bibliography.
+No verification bundle.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T2** with one scope note [S4:9]
+and one comparator stub [S5], but **no** `main_results` entry and **no** OAI
+tree. The scope note [S4:9] states that the formalization "constructs an
+explicit separable unital full group $`C^*`$-algebra that has no unital
+embedding into $`B^\omega`$ for any nonzero unital nuclear $`C^*`$-algebra $`B`$
+and any free ultrafilter $`\omega`$ on $`\mathbb N`$," and closes with "In
+particular, it does not embed unitally into an ultrapower of the Cuntz
+algebra $`\mathcal O_2`$." The comparator link [S4:15] names
+`NuclearUltrapower.lean`.
+
+`NuclearUltrapower.lean` (213 lines) carries 1 `sorry` occurrence — the
+`MainStatementWithCuntzCorollary` proposition at [S5:191] encodes the full
+group C\*-algebra construction together with the $`\mathcal O_2`$ corollary,
+and `theorem main_no_embedding` at [S5:208] ends in `sorry` at [S5:209].
+No proved copy exists under `lean/OAI/`. The gap is the formalization
+itself: the release set the target and described the scope, but shipped no
+proof. The reading is of source text only.
+
+## Coverage
+
+The ledger row `fam=292` [S6] records the tier and the counts:
+`tier=T2`, `paps=1`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `scope_chars=457`, `verification=0`, `trace=`. The T2 shape
+is "scope note and comparator stub exist, no formalization": the release
+identified the target, wrote a scope note, and created one challenge stub
+with a single `sorry` (`NuclearUltrapower.lean`), but did not produce a
+`main_results` entry or an OAI proof. The shape flags are `counterex_broad=1`,
+`resolves_named=1` — this is a counterexample family resolving a named
+conjecture.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7302] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 292 at [S2:678] |
+| S3 | [`preprints/An-explicit-obstruction-to-nuclear-norm-ultrapower-embeddings-September-23-2026/build/paper.tex`](../../../preprints/An-explicit-obstruction-to-nuclear-norm-ultrapower-embeddings-September-23-2026/build/paper.tex) | 53 | the manuscript; title [S3:32], date [S3:34], abstract [S3:37–42] |
+| S4 | [`lean/docs/292.md`](../../../lean/docs/292.md) | 15 | scope note — the formalization's Scope at [S4:9] and its comparator link at [S4:15] |
+| S5 | [`lean/ComparatorChallenges/NuclearUltrapower.lean`](../../../lean/ComparatorChallenges/NuclearUltrapower.lean) | 213 | comparator stub — `main_no_embedding` at [S5:208] with its `sorry` at [S5:209] |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=292`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
