@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [metric-geometry](../topics/metric-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [357-bi-lipschitz-coordinates-at-every-regular-rcd-point.md](../../../../notes/gen/summaries/357-bi-lipschitz-coordinates-at-every-regular-rcd-point.md) |
 
 ## Manuscripts
 
