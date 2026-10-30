@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md](../../../../notes/gen/summaries/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) |
 
 ## Manuscripts
 

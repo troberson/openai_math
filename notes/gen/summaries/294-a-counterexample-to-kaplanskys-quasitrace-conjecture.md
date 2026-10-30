@@ -1,0 +1,166 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 294](../index/operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md)
+
+# 294 — A counterexample to Kaplansky's quasitrace conjecture
+
+[Index page](../index/operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md)
+
+## Original CONTENTS.md summary
+
+[S1:7343] (family entry):
+
+> **294. Kaplansky's quasitrace conjecture and failure of tensor-product stable finiteness.** Disproves Kaplansky's quasitrace conjecture by constructing a separable unital complex <i>C</i><sup>∗</sup>-algebra admitting normalized 2-quasitraces, all of which are nonadditive. As a consequence, two unital simple stably finite <i>C</i><sup>∗</sup>-algebras can have a properly infinite minimal tensor product, with one factor $`C_r^*(\mathbb F_2)`$. ([Lean](../../../lean/docs/294.md))
+
+[S2:682] carries the `\resultentry` with the single manuscript [S3:40, S3:42]. The abstract [S4:1–8]:
+
+> We refute Kaplansky's quasitrace conjecture by constructing a separable
+unital complex $`C^*`$-algebra that admits normalized $`2`$-quasitraces
+but has no tracial state. As a consequence, we show that the minimal tensor
+product of two unital simple stably finite complex $`C^*`$-algebras can be
+properly infinite, even when one factor is the reduced free-group algebra
+$`C_r^*(\mathbb F_2)`$. [S4:1–9]
+
+## Undergraduate summary
+
+A **trace** on a $`C^*`$-algebra is a positive linear functional $`\\tau`$ that
+satisfies the **cyclicity** condition $`\\tau(ab) = \\tau(ba)`$. A
+**quasitrace** is a weaker notion: it retains positivity and the condition
+$`\\tau(x^*x) = \\tau(xx^*)`$, but is only required to be linear on
+*commutative* subalgebras rather than on the whole algebra. A
+**$`2`$-quasitrace** adds one requirement: it must extend to the $`2 \\times 2`$
+matrix algebra.
+
+**Kaplansky's quasitrace conjecture** asked whether the $`2`$-quasitrace
+condition already forces full linearity — in other words, whether every
+$`2`$-quasitrace is automatically a trace. The answer is **no**.
+
+This paper [S4:1–8] constructs a separable unital complex $`C^*`$-algebra
+that admits normalized $`2`$-quasitraces but has **no tracial state at
+all**. The $`2`$-quasitraces that do exist are all nonadditive: there are
+fixed positive elements $`a, b`$ for which every such quasitrace $`\\tau`$
+satisfies
+$`\\mathrm{Re}(\tau(a+b) - \\tau(a) - \\tau(b)) \\ge 1/144`$ [S5:9].
+
+A striking consequence [S4:5–7]: the minimal tensor product of two unital
+simple stably finite $`C^*`$-algebras can be **properly infinite**, even
+when one factor is the reduced free-group algebra
+$`C_r^*(\\mathbb{F}_2)`$. This answers a question of Miihøj and Rørdam
+negatively.
+
+## Graduate summary
+
+**Main theorem (formalized)** [S4:1–9, S2:682].
+There exists a separable unital complex $`C^*`$-algebra $`A`$ admitting
+normalized $`2`$-quasitraces, and fixed positive contractions
+$`a, b \\in A_+`$, such that for every normalized $`2`$-quasitrace
+$`\\tau`$ on $`A`$:
+$`\\mathrm{Re}(\tau(a+b) - \\tau(a) - \\tau(b)) \\ge 1/144`$.
+In particular, no normalized $`2`$-quasitrace is additive on the pair
+$`(a, b)`$, and $`A`$ admits no tracial state. This is a negative answer to
+Kaplansky's quasitrace conjecture.
+
+**Tensor-product consequence** [S4:5–7, S5:11].
+The counterexample yields simple stably finite $`C^*`$-algebras $`A, B`$ whose
+spatial (minimal) tensor product $`A \\otimes_{\\min} B`$ is properly
+infinite, with one factor
+$`B = C_r^*(\\mathbb{F}_2)`$ the reduced $`C^*`$-algebra of the free group on
+two generators. The formalization also produces a separable stably finite
+algebra with no tracial state, and a tensor-product example in which
+normalized $`2`$-quasitraces are lost [S5:11].
+
+## History of the conjecture
+
+Kaplansky's quasitrace conjecture is a conjecture in operator algebras
+about the structure of state spaces of $`C^*`$-algebras. It asks whether the
+$`2`$-quasitrace condition — linearity on commutative subalgebras plus
+extension to $`M_2`$ — forces linearity on the entire algebra. The conjecture
+is closely related to questions about stable finiteness and tensor
+products of $`C^*`$-algebras.
+
+The connection to tensor products was made by Miihøj and Rørdam, who showed
+that the quasitrace problem is equivalent to the question of whether the
+minimal tensor product of two unital simple stably finite algebras must
+itself be stably finite [S4:16–19]. A negative answer to the quasitrace
+problem yields a properly infinite tensor product. This paper [S4:1–8]
+provides the negative answer with the specific free-group factor
+$`C_r^*(\\mathbb{F}_2)`$.
+
+**Prior (my training data, not this repo).** Kaplansky's quasitrace
+conjecture is a classical open problem in operator algebras, related to the
+tracial state space and stable finiteness. The free-group $`C^*`$-algebra
+$`C_r^*(\\mathbb{F}_2)`$ is well-studied in group von Neumann algebra theory.
+The explicit counterexample construction with the $`1/144`$ gap is the novel
+contribution claimed here; I cannot verify the $`C^*`$-algebraic
+constructions independently from training alone.
+
+## Consequences
+
+- **Kaplansky's quasitrace conjecture is disproven** [S4:1–9, S2:682]:
+  there exists a separable unital $`C^*`$-algebra with normalized
+  $`2`$-quasitraces, all nonadditive. This is the named resolution the
+  ledger's `resolves_named` flag records.
+- **A non-tracial stably finite algebra** [S4:3–4, S5:11]: the
+  constructed algebra admits no tracial state, giving a separable stably
+  finite $`C^*`$-algebra without traces.
+- **A properly infinite tensor product of stably finite algebras**
+  [S4:5–7, S5:11]: two unital simple stably finite algebras can have a
+  properly infinite minimal tensor product, with one factor
+  $`C_r^*(\\mathbb{F}_2)`$.
+- **The Miihøj–Rørdam question is answered negatively** [S4:16–19]: the
+  minimal tensor product of two unital simple stably finite algebras need
+  not be stably finite.
+
+## Section skeleton
+
+One manuscript [S3]. Root `build/paper.tex` (53 lines), no abstract in the
+root — the abstract lives in `01-introduction.tex` [S4:1–8]. Sections:
+`01-introduction`, `02-preliminaries`, `03-scaling`, `04-bundles`,
+`05-algebra`, `06-conclusion`, `07-consequences`, `bibliography`. No
+verification bundle.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T3** with a scope note [S5:9],
+two comparator stubs [S6–S7], one `main_results` entry
+(`OAI.Kaplansky.kaplansky_quasitrace_counterexample` from
+`ComparatorChallenges/KaplanskyQuasitrace.json`, file
+`OAI/Analysis/Kaplansky/Main.lean`), and a proved OAI tree.
+
+The scope note [S5:9, S5:11] describes the formalized content in two
+paragraphs: the quasitrace counterexample with the $`1/144`$ gap [S5:9], and
+the stable-finiteness consequences — properly infinite tensor products, a
+non-tracial stably finite algebra, and a tensor-product example losing
+normalized $`2`$-quasitraces [S5:11].
+
+The two comparator stubs carry 2 `sorry` occurrences total:
+`KaplanskyQuasitrace.lean` (55 lines, 1) and
+`KaplanskyStableFiniteness.lean` (247 lines, 1). The proved copy of the
+`main_results` declaration lives under `lean/OAI/Analysis/Kaplansky/`
+— a 72-file tree with 0 `sorry` — where `Main.lean` carries
+`theorem kaplansky_quasitrace_counterexample` [S8]. The reading is of
+source text only.
+
+## Coverage
+
+The ledger row `fam=294` [S8] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=2`, `mainres=1`,
+`scope_note=1`, `scope_chars=674`, `verification=0`, `trace=`. The T3
+shape is "scope note, comparators, `main_results`, and a proved OAI tree
+exist." The `main_results` target is
+`kaplansky_quasitrace_counterexample`; the 72-file OAI tree under
+`lean/OAI/Analysis/Kaplansky/` carries 0 `sorry`. The two comparator stubs
+carry 2 `sorry` total. The shape flags are `counterex_broad=1`,
+`resolves_named=1` — this is a counterexample family resolving
+Kaplansky's quasitrace conjecture.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7343] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 294 at [S2:682] |
+| S3 | [`preprints/A-counterexample-to-Kaplanskys-quasitrace-conjecture-September-23-2026/build/paper.tex`](../../../preprints/A-counterexample-to-Kaplanskys-quasitrace-conjecture-September-23-2026/build/paper.tex) | 53 | manuscript (root); title [S3:40], date [S3:42] |
+| S4 | [`preprints/A-counterexample-to-Kaplanskys-quasitrace-conjecture-September-23-2026/build/01-introduction.tex`](../../../preprints/A-counterexample-to-Kaplanskys-quasitrace-conjecture-September-23-2026/build/01-introduction.tex) | 222 | abstract [S4:1–8] |
+| S5 | [`lean/docs/294.md`](../../../lean/docs/294.md) | 18 | scope note — Scope at [S5:9, S5:11] and comparator links at [S5:17–18] |
+| S6 | [`lean/ComparatorChallenges/KaplanskyQuasitrace.lean`](../../../lean/ComparatorChallenges/KaplanskyQuasitrace.lean) | 55 | comparator stub (formalized target) — 55 lines, 1 `sorry` |
+| S7 | [`lean/ComparatorChallenges/KaplanskyStableFiniteness.lean`](../../../lean/ComparatorChallenges/KaplanskyStableFiniteness.lean) | 247 | comparator stub — 247 lines, 1 `sorry` |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=294`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
