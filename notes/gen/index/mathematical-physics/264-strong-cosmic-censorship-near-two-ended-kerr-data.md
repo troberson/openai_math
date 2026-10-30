@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [264-strong-cosmic-censorship-near-two-ended-kerr-data.md](../../../../notes/gen/summaries/264-strong-cosmic-censorship-near-two-ended-kerr-data.md) |
 
 ## Manuscripts
 
