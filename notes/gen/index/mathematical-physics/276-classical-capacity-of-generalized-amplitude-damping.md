@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [information-theory](../topics/information-theory.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [276-classical-capacity-of-generalized-amplitude-damping.md](../../../../notes/gen/summaries/276-classical-capacity-of-generalized-amplitude-damping.md) |
 
 ## Manuscripts
 
