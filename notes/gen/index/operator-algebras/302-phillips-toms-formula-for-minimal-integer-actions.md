@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial, uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [302-phillips-toms-formula-for-minimal-integer-actions.md](../../../../notes/gen/summaries/302-phillips-toms-formula-for-minimal-integer-actions.md) |
 
 ## Manuscripts
 
