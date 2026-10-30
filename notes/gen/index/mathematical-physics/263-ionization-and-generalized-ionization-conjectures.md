@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [263-ionization-and-generalized-ionization-conjectures.md](../../../../notes/gen/summaries/263-ionization-and-generalized-ionization-conjectures.md) |
 
 ## Manuscripts
 
