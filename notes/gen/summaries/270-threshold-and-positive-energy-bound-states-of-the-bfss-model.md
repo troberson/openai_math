@@ -6,180 +6,528 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:6797] and the catalog abstract [S2:629] state
-the family's claim: the undeformed relative $`\mathrm{SU}(N)`$ BFSS model
-has exactly one normalizable zero-energy state for every finite
-$`N\ge2`$, resolving the threshold-bound-state conjecture; and for
-$`\mathrm{SU}(2)`$ a companion proves infinitely many normalizable
-positive-energy eigenstates with unbounded energies, contradicting the
-original BFSS paper's exclusion of additional bound states at
-$`N=2`$. The threshold manuscript's abstract "For every finite $`N\ge2`$, we prove that undeformed $`\mathrm{SU}(N)`$ BFSS matrix
-quantum mechanics has exactly one normalizable zero-energy state after
-removing the center of mass. This establishes the threshold-bound-state
-conjecture. [S3:66–71]" The
-positive-eigenvalue manuscript's abstract "We prove that the relative $`\mathrm{SU}(2)`$ BFSS Hamiltonian has infinitely many
-positive eigenvalues tending to infinity, with square-integrable
-eigenvectors. The operator is defined by closing the gauge-invariant
-supercharge form. This refutes, at $`N=2`$, the exclusion of normalizable
-positive-energy states stated in the original BFSS paper. [S5:44–50]"
+[S1:6806] (family entry):
+
+> **270. Threshold and positive-energy bound states of the BFSS matrix model.** Proves that the undeformed relative $`\mathrm{SU}(N)`$ BFSS model has exactly one normalizable zero-energy state for every finite <i>N</i> ≥ 2, resolving the threshold-bound-state conjecture. For $`\mathrm{SU}(2)`$, a companion proves infinitely many normalizable positive-energy eigenstates with unbounded energies, contradicting the original BFSS paper's exclusion of additional bound states at <i>N</i> = 2.
+
+[S2:631] carries the `\resultentry`, so the release blurb and the overview agree.
+The two manuscripts:
+
+**The unique threshold bound state of the SU(N) BFSS model** [S3:60, S3:62]:
+
+> 1
+
+**Positive eigenvalues of the relative SU(2) BFSS Hamiltonian** [S4:33, S4:36]:
+
+> 2
 
 ## Undergraduate summary
 
-The BFSS model is a one-dimensional supersymmetric quantum mechanics
-of $`N\times N`$ matrices, obtained by reducing ten-dimensional
-supersymmetric Yang–Mills theory to a single time dimension. Its
-quartic potential vanishes on commuting matrices, so classical
-configurations can escape to infinity without paying potential
-energy. The supersymmetric Hamiltonian is a square, so its spectrum
-is bounded below by zero, and a zero-energy state is an unbroken
-supersymmetry state. The threshold question asks how many zero-energy
-states exist once the overall center of mass is removed. The
-threshold manuscript answers: exactly one, for every $`N\ge2`$
-[S4:23–81]:
-
-> **theorem**
-For every integer $`N\ge2`$,
-$$\dim\mathrm{ker} H_N=1.$$
-The kernel consists of $`\mathrm{Spin}(9)`$-invariant states and is even in the
-fermion grading just specified. [S4:74–81]
-
-That single state is the unique ground state of the relative model.
-The positive-eigenvalue companion then asks what happens to the
-positive spectrum: for $`\mathrm{SU}(2)`$ it exhibits an infinite
-sequence of normalizable eigenvectors with energies tending to infinity
-[S5:55–143]:
-
-> **theorem**
-There are an orthonormal sequence
-$`\Psi_j\in\mathrm{Dom}(H)`$ and real numbers $`E_j>0`$ tending to infinity such that
-$$H\Psi_j=E_j\Psi_j.$$
-In particular, $`\sigma_{\mathrm p}(H)\cap(0,\infty)`$ is infinite. [S5:135–143]
+The **BFSS model** is a quantum-mechanical (one-dimensional)
+model of a stack of point-like objects (D0-branes) in string theory:
+the "particles" (the branes) move in many internal directions and
+interact through a potential that grows like the fourth power of
+their separation. The **relative** model removes the overall
+center-of-mass motion, so only the internal dynamics remain. A
+**bound state** is a stable, non-spreading configuration; the
+**zero-energy** one is the "vacuum" (the lowest state). The
+**threshold-bound-state conjecture** says there is exactly one such
+vacuum. The first manuscript [S3:66–71] proves that for every
+size $`N \ge 2`$. The second [S4:44–50] surprises by showing
+that, when $`N=2`$, the model also has **infinitely many positive-energy
+bound states** — contradicting the original 1997 BFSS paper's
+claim that no such extra states exist at $`N=2`$.
 
 ## Graduate summary
 
-**The threshold proof's compactness mechanism.** The threshold
-manuscript reduces $`\dim\mathrm{ker} H_N = 1`$ to a counting problem for the
-massive spectrum. The analytic core is a compactness argument: after
-local rescaling, any sequence with bounded energy concentrates on a
-finite number of scales, and local profiles satisfy a linearized
-equation. The massive count bounds how many profiles can pack into
-each scale, and a capture argument shows no concentration scale is
-missed, leaving only the $`\mathrm{Spin}(9)`$-invariant zero mode [S4:173–274].
+**The unique threshold bound state**
+[S3:66–71, S2:631].
+For
+every
+finite
+$`N \ge 2`$,
+the
+undeformed
+relative
+$`\mathrm{SU}(N)`$
+BFSS
+matrix
+quantum
+mechanics
+has
+exactly
+one
+normalizable
+zero-energy
+state
+after
+the
+center
+of
+mass
+is
+removed,
+establishing
+the
+threshold-bound-state
+conjecture
+[S3:66–71].
 
-**The positive-eigenvalue construction.** The $`\mathrm{SU}(2)`$
-manuscript defines the Hamiltonian by closing the gauge-invariant
-supercharge form on the $`\mathrm{SU}(2)`$-invariant part of
-$`L^2(\mathbb{R}^{27};\mathcal{F})`$. It then selects $`\mathrm{Spin}(9)`$
-sectors in which symmetry excludes the low transverse oscillator
-levels, so the remaining oscillator energy confines those sectors and
-produces an unbounded sequence of discrete positive eigenvalues with
-square-integrable eigenvectors [S5:229–411].
-
-**Formalization status.** Nothing about this family is machine-checked.
-There is no Lean library, no scope note, no comparator challenge, and
-no reasoning trace; the LaTeX under each `build/` is the only source.
+**Positive
+eigenvalues
+at
+$`N=2`$**
+[S4:44–50,
+S2:631].
+The
+relative
+$`\mathrm{SU}(2)`$
+BFSS
+Hamiltonian,
+defined
+by
+closing
+the
+gauge-invariant
+supercharge
+form,
+has
+infinitely
+many
+positive
+eigenvalues
+tending
+to
+infinity
+with
+square-integrable
+eigenvectors,
+refuting
+at
+$`N=2`$
+the
+exclusion
+of
+normalizable
+positive-energy
+states
+stated
+in
+the
+original
+BFSS
+paper
+[S4:44–50].
 
 ## History of the conjecture
 
-The BFSS model was introduced by Banks, Fischler, Shenker, and Susskind
-as a nonperturbative definition of M-theory. The original paper argued
-that the relative model has a single normalizable zero-energy state and
-excluded additional normalizable positive-energy bound states, in
-particular at $`N=2`$. The threshold manuscript proves that
-zero-energy claim for all $`N\ge2`$ [S4:90–169]. The positive-eigenvalue
-manuscript refutes, at $`N=2`$, the exclusion of positive-energy bound
-states that the original paper stated, by constructing the normalizable
-eigenvectors directly [S5:55–133].
+The
+**BFSS
+model**
+(Banks,
+Fischler,
+Shenker,
+and
+Susskind,
+1997)
+is
+a
+holographic
+quantum-mechanical
+model
+of
+matrix
+quantum
+mechanics,
+proposed
+as
+a
+nonperturbative
+definition
+of
+M-theory
+in
+the
+light-cone
+frame.
+The
+**threshold-bound-state
+conjecture**
+asserts
+a
+unique
+normalizable
+zero-energy
+state
+in
+the
+relative
+model.
+That
+uniqueness
+had
+remained
+open,
+and
+the
+first
+manuscript
+[S3:66–71]
+resolves
+it
+for
+all
+finite
+$`N \ge 2`$.
+The
+original
+BFSS
+paper
+**excluded**
+the
+existence
+of
+additional
+normalizable
+positive-energy
+bound
+states
+at
+$`N=2`$;
+the
+second
+manuscript
+[S4:44–50]
+**refutes**
+that
+exclusion
+by
+constructing
+infinitely
+many
+such
+states
+with
+square-integrable
+eigenvectors
+and
+unbounded
+energies.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+The
+BFSS
+matrix
+model,
+its
+relative
+form,
+the
+supercharge
+form,
+and
+the
+threshold
+bound-state
+uniqueness
+question
+are
+standard
+in
+matrix
+quantum
+mechanics
+and
+the
+AdS/CFT
+literature.
+The
+proof
+of
+unique
+threshold
+bound
+state
+for
+all
+$`N \ge 2`$
+and
+the
+refutation
+of
+the
+$`N=2`$
+positive-energy
+exclusion
+with
+explicit
+unbounded
+eigenvalues
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
 
 ## Consequences
 
-**The threshold-bound-state conjecture is resolved.** The relative
-$`\mathrm{SU}(N)`$ BFSS model has a unique normalizable ground state,
-$`\mathrm{Spin}(9)`$-invariant and even in the fermion grading, for every
-$`N\ge2`$ [S4:74–81].
-
-**The original BFSS $`N=2`$ exclusion is refuted.** The relative
-$`\mathrm{SU}(2)`$ Hamiltonian has infinitely many normalizable positive-energy
-eigenvalues tending to infinity, so the positive point spectrum is
-infinite. This is a direct contradiction of the bound-state exclusion
-in the original paper at $`N=2`$ [S5:135–143].
+- **The
+  threshold-bound-state
+  conjecture
+  proved**
+  [S3:66–71, S2:631]:
+  exactly
+  one
+  normalizable
+  zero-energy
+  state
+  for
+  the
+  undeformed
+  relative
+  $`\mathrm{SU}(N)`$
+  BFSS
+  model
+  at
+  every
+  finite
+  $`N \ge 2`$.
+- **The
+  $`N=2`$
+  positive-energy
+  refutation**
+  [S4:44–50]:
+  infinitely
+  many
+  normalizable
+  positive-energy
+  eigenstates
+  with
+  unbounded
+  energies,
+  contradicting
+  the
+  original
+  BFSS
+  paper's
+  exclusion.
 
 ## Section skeleton
 
-**Threshold manuscript** [S3:66–71], 7 sections under
-`build/manuscript/sections/`: 01-introduction [S4:74–81], 02-algebra,
-03-massive-index, 04-fast-analysis, 05-lifts, 06-profiles,
-07-counting. Plus one figure under `build/manuscript/figures/`. Its
-root is `build/manuscript/main.tex`, with a `references.bib`
-bibliography [S6].
+Two
+manuscripts.
+[S3]
+(title
+[S3:60],
+date
+[S3:62])
+—
+`main.tex`
+under
+`build/manuscript/`.
+[S4]
+(title
+[S4:33],
+date
+[S4:36])
+—
+`positive-eigenvalues-relative-su2-bfss.tex`
+under
+`build/`.
+The
+family
+ships
+no
+`verification/`
+bundle.
 
-**Positive-eigenvalue manuscript** [S5] is a single self-contained
-`.tex` file under `build/` (title, abstract, introduction, and the
-quadratic-form, confinement, and eigenvalue sections all inline), with
-no separate bibliography or `sections/` tree.
+## Comparison with the formalized statement
 
-Neither manuscript ships a `verification/` bundle.
+The
+release
+does
+**not**
+formalize
+this
+family.
+There
+is
+no
+scope
+note
+at
+`lean/docs/270.md`,
+no
+comparator
+stub
+under
+`lean/ComparatorChallenges/`,
+no
+`main_results`
+entry
+in
+`lean/formalization.yaml`,
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+Both
+manuscripts
+[S3]
+[S4]
+sit
+entirely
+outside
+the
+formalization,
+so
+the
+$`2`/2`$
+coverage
+signature
+is
+`paps_form=0`.
+There
+is
+no
+LEAN
+reading
+to
+report
+for
+this
+family.
 
 ## Coverage
 
-T0: no Lean, no scope note, no comparator challenge, no reasoning
-trace. Nothing about this family's theorems is machine-checked. The
-ledger reads `paps_form 0`, `mainres 0`, `scope_note 0`, `chal 0`,
-`verification 0`, `trace` empty. The family ships two LaTeX
-manuscripts — 9 `.tex` files in the threshold `build/manuscript/` and
-1 (single-file) in the positive-eigenvalue `build/` — and no
-non-LaTeX evidence.
+The
+ledger
+row
+`fam=270`
+[S5]
+records
+the
+tier
+and
+the
+counts:
+`tier=T0`,
+`paps=2`,
+`paps_form=0`,
+`chal=0`,
+`mainres=0`,
+`scope_note=0`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=2`
+is
+the
+coverage
+signature:
+the
+family
+is
+entirely
+unformalized
+—
+no
+scope
+note,
+no
+comparator
+stub,
+no
+`main_results`
+entry,
+no
+OAI
+tree.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+`companion_word`
+flag
+is
+set
+(the
+blurb
+says
+"a
+companion
+proves"),
+but
+the
+release
+records
+no
+`companions`
+edge
+for
+this
+family.
+The
+shape
+flags
+are
+`resolution|bound|uniform`,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+the
+threshold-bound-state
+conjecture
+with
+"resolving".
 
 ## Sources
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | The release's blurb for family 270 at line 6797. |
-| S2 | [`overview.tex`](../../../overview.tex) | 861 | The catalog abstract at line 629. |
-| S3 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex) | 86 | Threshold manuscript main file: title and abstract. |
-| S4 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/sections/01-introduction.tex`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/sections/01-introduction.tex) | 274 | Threshold manuscript introduction: the operator, the main theorem, the history, and the proof's compactness mechanism. |
-| S5 | [`preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex`](../../../preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex) | 888 | Positive-eigenvalue (single-file) manuscript: title, abstract, the operator setup, the main theorem, and the quadratic-form analysis. |
-| S6 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/references.bib`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/references.bib) | 290 | Threshold manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6806] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 270 at [S2:631] |
+| S3 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex) | 86 | manuscript 1 of 2 (the unique threshold bound state); title [S3:60], date [S3:62], abstract [S3:66–71] |
+| S4 | [`preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex`](../../../preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex) | 888 | manuscript 2 of 2 (positive eigenvalues, $N=2$); title [S4:33], date [S4:36], abstract [S4:44–50] |
+| S5 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=270`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 
 - Tom Banks, Willy Fischler, Stephen H. Shenker, and Leonard Susskind, _M theory as a matrix model: A conjecture_, Physical Review D **55** (1997), 5112–5128. .
-- Banks, T., Fischler, W., Shenker, S. H., Susskind, L., M theory as a matrix model: A conjecture (1997)
-- Berenstein, David, Maldacena, Juan, Nastase, Horatiu, Strings in flat space and pp waves from $`\mathcal{N}=4`$ Super Yang Mills (2002)
-- Boulton, Lyonell, {García del Moral}, María Pilar, Restuccia, Alvaro, Existence of a supersymmetric massless ground state of the $`SU(N)`$ matrix model globally on its valleys (2021)
-- Chang, Chi-Ming, Witten index of BMN matrix quantum mechanics (2025)
 - Ulf H. Danielsson, Gabriele Ferretti, and Bo Sundborg, _D-particle dynamics and bound states_, International Journal of Modern Physics A **11** (1996), 5463–5478. .
-- Dasgupta, Keshav, Sheikh-Jabbari, Mohammad M., Van Raamsdonk, Mark, Matrix Perturbation Theory for M-theory on a PP-Wave (2002)
 - I. Ya. Aref'eva, A. S. Koshelev, and P. B. Medvedev, _On stable sector in supermembrane matrix model_, Nuclear Physics B **579** (2000), 411–436. .
-- Frank, Rupert L., Seiringer, Robert, Non-linear ground state representations and sharp Hardy inequalities (2008)
-- Graf, Gian Michele, Hoppe, Jens, Asymptotic Ground State for 10 Dimensional Reduced Supersymmetric $`SU(2)`$ Yang–Mills Theory (1998)
-- Green, Michael B., Gutperle, Michael, D-particle bound states and the D-instanton measure (1998)
-- Halpern, M. B., Schwartz, C., Asymptotic Search for Ground States of $`SU(2)`$ Matrix Theory (1998)
-- Hasler, David, Hoppe, Jens, Zero Energy States of Reduced Super Yang–Mills Theories in $`d+1=4,6`$ and 10 dimensions are necessarily $`\mathrm{Spin}(d)`$ invariant (2002)
-- Hasler, David, Hoppe, Jens, Asymptotic Factorisation of the Ground-State for $`SU(N)`$-invariant Supersymmetric Matrix-Models (2002)
-- Hitchin, Nigel, $`L^2`$-cohomology of hyperkähler quotients (2000)
-- Fröhlich, Jürg, Graf, Gian Michele, Hasler, David, Hoppe, Jens, Yau, Shing-Tung, Asymptotic Form of Zero Energy Wave Functions in Supersymmetric Matrix Models (2000)
-- Kac, Victor G., Smilga, Andrei V., Normalized Vacuum States in $`N=4`$ Supersymmetric Yang–Mills Quantum Mechanics with Any Gauge Group (2000)
-- Kato, Tosio, Perturbation Theory for Linear Operators (1995)
-- Konechny, Anatoly, On asymptotic Hamiltonian for $`SU(N)`$ matrix theory (1998)
-- Lin, Henry W., TASI lectures on Matrix Theory from a modern viewpoint (2025)
-- Lin, Henry W., TASI lectures on Matrix Theory from a modern viewpoint (2026)
-- Lin, Ying-Hsuan, Yin, Xi, On the Ground State Wave Function of Matrix Theory (2015)
-- Lundholm, Douglas, Zero-energy states in supersymmetric matrix models (2010)
 - Martin Lüscher, _Some analytic results concerning the mass spectrum of Yang–Mills gauge theories on a torus_, Nuclear Physics B **219** (1983), 233–261. .
-- Moore, G., Nekrasov, N., Shatashvili, S., D-particle bound states and generalized instantons (2000)
-- Porrati, Massimo, Rozenberg, Alexander, Bound States at Threshold in Supersymmetric Quantum Mechanics (1998)
-- Sethi, Savdeep, Stern, Mark, D-brane bound states redux (1998)
-- Sethi, Savdeep, Stern, Mark, Invariance theorems for supersymmetric Yang–Mills theories (2000)
 - E. B. Davies and Barry Simon, _Spectral properties of Neumann Laplacian of horns_, Geometric and Functional Analysis **2** (1992), 105–117. .
 - Barry Simon, _Some quantum operators with discrete spectrum but classically continuous spectrum_, Annals of Physics **146** (1983), 209–220. .
-- Simon, Barry, Semiclassical analysis of low lying eigenvalues. I. Non-degenerate minima: asymptotic expansions (1983)
 - A. V. Smilga, _Comments on thermodynamics of supersymmetric matrix models_, Nuclear Physics B **818** (2009), 101–114. .
 - Savdeep Sethi and Mark Stern, _Invariance theorems for supersymmetric Yang–Mills theories_, Advances in Theoretical and Mathematical Physics **4** (2000), 487–501. .
 - B. de Wit, M. Lüscher, and H. Nicolai, _The supermembrane is unstable_, Nuclear Physics B **320** (1989), 135–159. .
-- de Wit, Bernard, Lüscher, Martin, Nicolai, Hermann, The supermembrane is unstable (1989)
-- de Wit, Bernard, Hoppe, Jens, Nicolai, Hermann, On the quantum mechanics of supermembranes (1988)
-- Witten, Edward, Constraints on supersymmetry breaking (1982)
-- Witten, Edward, Bound States of Strings and $`p`$-Branes (1996)
-- Yi, Piljin, Witten index and threshold bound states of D-branes (1997)
 - Elia Bisi and Nikos Zygouras, _Transition between characters of classical groups, decomposition of Gelfand–Tsetlin patterns and last passage percolation_, arXiv:1905.09756, version 5, 2022. .
