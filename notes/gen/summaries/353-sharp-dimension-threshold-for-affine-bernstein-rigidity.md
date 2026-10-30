@@ -1,0 +1,191 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Differential geometry](../index/disciplines/differential-geometry.md) / [Family 353](../index/differential-geometry/353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md)
+
+# 353 — The sharp dimension threshold for affine Bernstein rigidity
+
+[Index page](../index/differential-geometry/353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md)
+
+## Original CONTENTS.md summary
+
+[S1:8592] (family entry):
+
+> **353. Affine Bernstein rigidity through dimension nine and a smooth dimension-ten counterexample.** Proves that every smooth locally uniformly convex affine-maximal graph of dimension three through nine, complete for its induced Euclidean metric, is an elliptic paraboloid. A smooth entire nonquadratic example in dimension ten makes this range sharp. In dimensions three through nine, the paraboloid classification also holds for connected open locally uniformly convex affine-maximal hypersurfaces complete for the affine Berwald–Blaschke metric.
+
+[S2:806] carries the `\resultentry` with two manuscripts.
+Manuscript 1 [S3] (the rigidity theorem in dimensions three through
+nine) and manuscript 2 [S4] (the smooth dimension-ten
+counterexample). The scope note [S5:9] states the formalized
+rigidity result:
+
+> The formalization proves the Euclidean-complete affine Bernstein theorem for graph dimensions $`3\le n\le9`$. If a smooth function on a nonempty open convex domain has positive-definite Hessian, satisfies the affine maximal equation, and its graph is complete in the induced Euclidean metric, then the domain is all of $`\mathbb R^n`$ and the function is a positive-definite quadratic polynomial plus an affine term. Its graph is therefore an elliptic paraboloid. [S5:9]
+
+## Undergraduate summary
+
+Take a bowl-shaped surface in space — the graph of a function that
+only curves upward (its **Hessian** is positive definite). The
+**affine maximal equation** is a special condition such a surface
+can satisfy, coming from affine differential geometry: roughly, the
+surface's "affine curvature" vanishes.
+
+The **affine Bernstein problem** asks a rigidity question: if such a
+bowl-shaped affine-maximal surface is "complete" (you can walk
+forever along it without falling off an edge, measured in the
+ordinary Euclidean distance), must it be *exactly* a standard paraboloid — the surface $`z = x_1^2 + \cdots + x_n^2`$? The
+answer, here, is **yes in dimensions three through nine**.
+
+A paraboloid is the only such complete bowl in those dimensions.
+But the range three-through-nine is **sharp**: in **dimension ten**
+the second paper builds a smooth, complete, bowl-shaped
+affine-maximal surface that is *not* a paraboloid. So the rigidity
+genuinely breaks at dimension ten, and the threshold cannot be
+pushed higher.
+
+## Graduate summary
+
+**Main theorem 1 (rigidity, dimensions 3–9, manuscript 1)**
+[S3:47–55, S2:806]. Let $`\Omega \subset \mathbb R^n`$ be a nonempty
+open convex domain, $`3 \le n \le 9`$, and $`u \in C^\infty(\Omega)`$ a
+smooth function with positive-definite Hessian satisfying the affine
+maximal equation, with graph complete in the induced Euclidean
+metric. Then $`\Omega = \mathbb R^n`$ and $`u`$ is a positive-definite
+quadratic polynomial plus an affine term; its graph is an elliptic
+paraboloid.
+
+**Main theorem 2 (sharpness, dimension 10, manuscript 2)**
+[S4:24–31, S2:806]. There is a smooth nonquadratic entire graph in
+dimension ten that solves the classical affine maximal equation and
+has positive-definite Hessian everywhere, giving a smooth
+counterexample to the entire-graph affine Bernstein assertion in
+dimension ten. Hessian positivity is pointwise; no global uniform
+lower bound or completeness of the Berwald–Blaschke metric is
+asserted.
+
+**The formalized statement** [S5:9, S6].
+The scope note selects the single rigidity result [S5:9]: the
+Euclidean-complete affine Bernstein theorem for graph dimensions
+$`3 \le n \le 9`$. The comparator stub `AffineBernstein.lean` (94
+lines) states `theorem affine_bernstein` [S6:73] with the `sorry` at
+[S6:88]. The dimension-ten counterexample [S4] is **not** part of
+the selected formalized statement — the scope note lists only
+manuscript 1 as its accompanying paper.
+
+## History of the conjecture
+
+The **affine Bernstein problem** is a classical question in affine
+differential geometry. In dimension two it is a theorem of the early
+twenty-first century (the $`n=2`$ case), and higher dimensions had
+long been open. The Euclidean-complete graph assertion — that a
+complete locally uniformly convex affine-maximal graph is a paraboloid
+— was known only in dimension two before this result.
+
+The **novel contribution** is the extension to dimensions three
+through nine, plus the sharp dimension-ten counterexample. The
+rigidity proof (manuscript 1) draws on affine-geometric
+quantities — area estimates, tube arguments, and bounds — as its
+section titles indicate. The counterexample (manuscript 2) is a
+genuinely new object: a smooth nonquadratic entire affine-maximal
+graph in dimension ten, showing the rigidity is not a general
+dimension-free phenomenon.
+
+The distinction between **Euclidean completeness** and **affine
+( Berwald–Blaschke) completeness** is load-bearing: the graph
+assertion uses the induced Euclidean metric, while the
+hypersurface extension (also proved in manuscript 1) uses the
+affine metric. The formalization selects only the Euclidean
+graph assertion.
+
+**Prior (my training data, not this repo).** As of my training
+cutoff, the affine Bernstein problem in dimensions $`n \ge 3`$ is a
+genuine open problem in affine differential geometry. The $`n=2`$
+case is classical; the extension to dimensions three through nine and
+the sharp dimension-ten counterexample are the claimed novelty. I
+cannot verify the affine-geometric construction independently from
+training alone.
+
+## Consequences
+
+- **The Euclidean-complete affine Bernstein theorem holds in
+  dimensions 3–9** [S3:47–55, S2:806, S5:9]: a smooth locally
+  uniformly convex affine-maximal graph complete for its induced
+  Euclidean metric is an elliptic paraboloid.
+- **The dimension threshold is sharp** [S4:24–31, S2:806]: a smooth
+  nonquadratic entire affine-maximal graph in dimension ten
+  disproves the assertion at $`n=10`$, so the range cannot extend
+  past nine.
+- **The graph assertion is formalized; the hypersurface extension is
+  not** [S5:9, S5:11]: the scope note excludes "the paper's
+  extension to immersed hypersurfaces without an initial graph
+  assumption."
+- **Two notions of completeness are distinct** [S3:47–55]: the
+  formalized result uses Euclidean completeness of the induced graph
+  metric, not affine completeness.
+
+## Section skeleton
+
+Two manuscripts.
+Manuscript 1 [S3] (rigidity, `build/main.tex`, 235 lines,
+`\documentclass` amsart): an inline `\section{Introduction}` [S3:59]
+followed by 5 `input` files under `sections/` [S3:226–230]:
+`geometry`, `area`, `tubes`, `bounds`, `rigidity`, plus a BibTeX
+`references.bib` [S3:233].
+Manuscript 2 [S4] (dimension-ten counterexample,
+`build/source/main.tex`, 482 lines): a single-file manuscript with
+an inline `\section{Introduction}` [S4:33] and subsequent sections
+in the same file. **No verification bundles.**
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T2** with a scope note
+[S5:9], one comparator stub [S6], and **no** `main_results` entry and
+**no** OAI tree. The T2 shape is "scope note and comparator stub
+present, no proved OAI tree and no `main_results` entry."
+
+The scope note [S5:9] selects the Euclidean-complete affine
+Bernstein theorem for graph dimensions $`3 \le n \le 9`$: if a
+smooth function on a nonempty open convex domain has positive-definite
+Hessian, satisfies the affine maximal equation, and its graph is
+Euclidean-complete, then the domain is all of
+$`\mathbb R^n`$ and the function is a positive-definite quadratic
+plus an affine term (an elliptic paraboloid). The exclusion [S5:11]
+states that the hypersurface extension is outside the selected
+statement.
+
+The single comparator stub carries 1 `sorry`.
+`AffineBernstein.lean` (94 lines) states
+`theorem affine_bernstein` [S6:73] with the `sorry` at [S6:88].
+The comparator config carries no `main_results` entry, and no proved
+OAI tree exists under `lean/OAI/` for this family. The reading is of
+source text only.
+
+## Coverage
+
+The ledger row `fam=353` [S7] records the tier and the counts:
+`tier=T2`, `paps=2`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `scope_chars=580`, `verification=0`, `trace=`. The T2
+shape is "scope note and comparator stub present, no `main_results`
+entry, no proved OAI tree." The single comparator stub carries 1
+`sorry`. The shape flags are `shapes=bound|classification|uniform`,
+`resolves_named=0`, `counterex_broad=0`, `covmd=0` — a
+classification family (paraboloid classification) with a uniform
+(dimension-range) quantifier, with no counterexample flag in the
+ledger despite the dimension-ten counterexample manuscript [S4] being
+a second-pass member of the family. Note `resolves_named=0`: the
+title names no conjecture in the ledger's target-noun set, so the
+rigidity is not recorded as a named resolution. Note `paps_form=0`:
+neither manuscript appears in `formalization.yaml`'s `sources:` list
+(the scope note has no `main_results` entry), so the per-manuscript
+formalized flag stays 0 even at tier T2. The scope note lists only
+manuscript 1 [S3] as its accompanying paper; manuscript 2 [S4]
+(the dimension-ten counterexample) is a family member in
+`overview.tex` but is not the object of the formalized statement.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:8592] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 353 at [S2:806] |
+| S3 | [`preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/build/main.tex`](../../../preprints/The-affine-Bernstein-theorem-in-dimensions-three-through-nine-September-24-2026/build/main.tex) | 235 | the `\documentclass` root (manuscript 1, rigidity) — title [S3:40–41], date [S3:43], abstract [S3:47–55] |
+| S4 | [`preprints/Smooth-Nonquadratic-Affine-Maximal-Graph-in-Dimension-Ten-October-5-2026/build/source/main.tex`](../../../preprints/Smooth-Nonquadratic-Affine-Maximal-Graph-in-Dimension-Ten-October-5-2026/build/source/main.tex) | 481 | the `\documentclass` root (manuscript 2, dimension-ten counterexample) — title [S4:18], date [S4:20], abstract [S4:24–31] |
+| S5 | [`lean/docs/353.md`](../../../lean/docs/353.md) | 17 | scope note — Scope at [S5:9], exclusion at [S5:11], comparator link at [S5:17] |
+| S6 | [`lean/ComparatorChallenges/AffineBernstein.lean`](../../../lean/ComparatorChallenges/AffineBernstein.lean) | 94 | comparator stub — 94 lines, `theorem affine_bernstein` [S6:73], `sorry` [S6:88] |
+| S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=353`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

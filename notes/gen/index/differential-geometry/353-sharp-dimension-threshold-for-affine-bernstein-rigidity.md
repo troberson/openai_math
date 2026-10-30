@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md](../../../../notes/gen/summaries/353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md) |
 
 ## Manuscripts
 

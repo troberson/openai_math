@@ -1,6 +1,6 @@
 # Family summary pages
 
-352 extended summaries, one per family, each built from the manuscript's own LaTeX and
+353 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **352** of **373** families have a page.
+The summaries are a fifth layer: **353** of **373** families have a page.
 
 ## The pages
 
@@ -367,6 +367,7 @@ The summaries are a fifth layer: **352** of **373** families have a page.
 - [350](350-yaus-nodal-conjecture-surfaces-and-counterexamples.md) — Yau's nodal conjecture: surfaces and counterexamples
 - [351](351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) — Scalar curvature detects four-dimensional Ricci-flow singularities
 - [352](352-finite-time-singularity-of-calabi-flow.md) — Finite-time singularity of Calabi flow
+- [353](353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md) — The sharp dimension threshold for affine Bernstein rigidity
 - [362](362-global-smoothness-for-relativistic-vlasov-maxwell.md) — Global smoothness for relativistic Vlasov–Maxwell
 - [366](366-planar-mumford-shah-regularity-conjecture.md) — The planar Mumford–Shah regularity conjecture
 - [368](368-three-dimensional-ball-evans-approximation-problem.md) — The three-dimensional Ball–Evans approximation problem
@@ -395,7 +396,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **21 families have no summary page.** The 352 pages cover 352 of 373 families; the rest are recorded
+- **20 families have no summary page.** The 353 pages cover 353 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
