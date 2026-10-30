@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [information-theory](../topics/information-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md](../../../../notes/gen/summaries/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md) |
 
 ## Manuscripts
 

@@ -1,0 +1,880 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 272](../index/mathematical-physics/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md)
+
+# 272 — Entanglement without secret key and the PPT-square conjecture
+
+[Index page](../index/mathematical-physics/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md)
+
+## Original CONTENTS.md summary
+
+[S1:6874] (family entry):
+
+> **272. Entanglement without distillable secret key.** Constructs an entangled state on $`\mathbb C^{10}\otimes\mathbb C^{10}`$ with zero distillable secret key for the specified local-instrument protocols that complete almost surely. These allow joint local processing and authenticated two-way public communication, with no other shared private resource and an eavesdropper holding the input purification and public record. A trace-preserving PPT channel on $`M_{21}(\mathbb C)`$ whose square is not entanglement breaking disproves Christandl's PPT-square conjecture. ([Lean](../../../lean/docs/272.md))
+
+[S2:635] carries the `\resultentry`, so the release blurb and the overview agree.
+The manuscript:
+
+**Entanglement with zero distillable secret key in local dimension ten** [S3:39, S3:42]:
+
+> 1
+
+## Undergraduate summary
+
+**Quantum entanglement** lets two distant parties share a resource more
+powerful than any classical correlation. One such resource is a
+**secret key**: shared random bits that an eavesdropper cannot know.
+You can build a secret key from an entangled state by measuring it
+("distillation"). The surprising result in this manuscript
+[S3:47–56] is that **some entangled states yield no secret key
+at all** — the entanglement is "bound" in the sense that it
+cannot be converted into a usable secret key, even with the most
+general two-way private communication and joint processing allowed.
+This is the first such example in local dimension ten
+(each party's system is 10-dimensional). The manuscript also
+**disproves** a conjecture (Christandl's **PPT-square**
+conjecture) about "PPT" (positive-partial-transpose, a class of
+maps that cannot create entanglement) channels: it builds a
+trace-preserving PPT channel whose **square** can create
+entanglement, showing that composing PPT maps does not stay safe.
+
+## Graduate summary
+
+**Zero distillable secret key**
+[S3:47–56, S2:635].
+There
+exists
+an
+entangled
+state
+on
+$`\mathbb C^{10} \otimes \mathbb C^{10}`$
+whose
+distillable
+secret
+key
+is
+zero
+for
+the
+specified
+local-instrument
+protocols,
+which
+complete
+almost
+surely:
+the
+protocol
+allows
+joint
+processing
+of
+all
+copies
+and
+unlimited
+authenticated
+two-way
+public
+communication,
+with
+the
+input
+as
+the
+only
+shared
+private
+resource
+and
+an
+eavesdropper
+holding
+a
+purification
+and
+the
+complete
+public
+record
+[S3:47–56, S4:9].
+
+**The
+PPT-square
+disproof**
+[S3:47–56,
+S2:635,
+S4:9].
+A
+trace-preserving
+PPT
+channel
+on
+$`M_{21}(\mathbb C)`$
+whose
+square
+is
+not
+entanglement
+breaking
+proves
+the
+unrestricted
+two-map
+PPT-composition
+conjecture
+false;
+the
+linked
+formalization
+covers
+this
+consequence
+together
+with
+a
+dimension-10
+PPT
+pair
+whose
+composition
+is
+not
+entanglement
+breaking
+and
+whose
+nonzero
+Choi
+matrix
+carries
+no
+nonzero
+product
+vector
+in
+its
+range
+[S4:9].
+
+## History of the conjecture
+
+**Distillable
+secret
+key**
+is
+a
+fundamental
+quantity
+in
+quantum
+information
+theory:
+the
+rate
+at
+which
+shared
+secret
+randomness
+can
+be
+extracted
+from
+a
+shared
+quantum
+state.
+The
+**bound-entanglement**
+problem
+asked
+whether
+there
+exist
+entangled
+states
+with
+**zero**
+distillable
+key
+—
+entanglement
+that
+is
+pure
+ly
+"locked."
+Known
+bound-entangled
+states
+had
+all
+carried
+a
+positive
+key
+rate
+under
+one-way
+protocols,
+and
+the
+existence
+of
+a
+zero-key
+entangled
+state
+in
+a
+small
+dimension
+had
+remained
+open.
+The
+manuscript
+[S3:47–56]
+constructs
+the
+first
+such
+state
+in
+local
+dimension
+ten,
+under
+the
+full
+two-way
+local-instrument
+protocol.
+The
+**PPT-square
+conjecture**
+(Christandl)
+asserted
+that
+the
+square
+of
+a
+trace-preserving
+PPT
+channel
+remains
+entanglement
+breaking
+—
+a
+stability
+claim
+for
+the
+PPT
+class;
+the
+manuscript
+builds
+a
+counterexample
+and
+thereby
+disproves
+it.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+Bound
+entanglement,
+the
+distillable
+secret
+key,
+PPT
+(and
+degradable)
+channels,
+the
+PPT
+criterion,
+and
+the
+Choi
+isomorphism
+are
+standard
+in
+quantum
+information
+theory.
+The
+zero-key
+entangled
+state
+in
+local
+dimension
+ten
+under
+the
+full
+two-way
+local-instrument
+protocol,
+and
+the
+trace-preserving
+PPT
+channel
+on
+$`M_{21}`$
+whose
+square
+creates
+entanglement
+(the
+PPT-square
+disproof),
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **A
+  zero-key
+  entangled
+  state
+  in
+  dimension
+  ten**
+  [S3:47–56, S2:635]:
+  an
+  entangled
+  state
+  on
+  $`\mathbb C^{10} \otimes \mathbb C^{10}`$
+  with
+  zero
+  distillable
+  secret
+  key
+  under
+  the
+  full
+  two-way
+  local-instrument
+  protocol.
+- **The
+  PPT-square
+  conjecture
+  disproved**
+  [S3:47–56, S4:9]:
+  a
+  trace-preserving
+  PPT
+  channel
+  on
+  $`M_{21}(\mathbb C)`$
+  whose
+  square
+  is
+  not
+  entanglement
+  breaking,
+  with
+  the
+  companion
+  dimension-10
+  PPT
+  pair
+  whose
+  composition
+  is
+  not
+  entanglement
+  breaking
+  and
+  whose
+  Choi
+  matrix
+  has
+  no
+  nonzero
+  product
+  vector
+  in
+  its
+  range.
+
+## Section skeleton
+
+One
+manuscript.
+[S3]
+(title
+[S3:39],
+date
+[S3:42])
+—
+`main.tex`
+under
+`build/source/`.
+The
+family
+ships
+one
+`verification/`
+bundle
+[S3:47–56]'s
+own
+directory:
+`exact_certificate.py`
+(121
+lines)
+with
+its
+`certificate-output.txt`
+(9
+lines),
+and
+the
+combinatorics/gadget
+exact-check
+pairs
+(`combinatorics_exact_checks.{py,json}`,
+`gadget_exact_check.{py,json}`).
+These
+are
+finite-arithmetic
+certificates,
+not
+Lean
+proofs.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S4]
+and
+two
+comparator
+stubs
+[S5]
+[S6],
+but
+no
+`main_results`
+entry.
+The
+scope
+note
+links
+the
+manuscript
+[S3]
+[S4:5].
+The
+recorded
+scope
+[S4:9]
+covers
+the
+**PPT-composition
+counterexamples**,
+not
+the
+secret-key
+claim:
+two
+explicitly
+specified
+PPT
+maps
+on
+$`10
+\times 10`$
+complex
+matrices
+have
+a
+composition
+that
+is
+not
+entanglement
+breaking,
+and
+the
+nonzero
+Choi
+matrix
+of
+that
+composition
+has
+no
+nonzero
+product
+vector
+in
+its
+range;
+a
+separate
+trace-preserving
+PPT
+channel
+on
+$`21
+\times 21`$
+matrices
+has
+a
+square
+that
+is
+not
+entanglement
+breaking.
+The
+scope
+note
+is
+explicit
+that
+the
+paper's
+**zero-distillable-secret-key
+statement**
+is
+outside
+these
+two
+selected
+Comparator
+statements
+[S4:11]
+—
+the
+formalization
+proves
+the
+PPT-composition
+counterexamples
+the
+manuscript
+also
+establishes,
+not
+the
+bound-entanglement
+construction
+[S3].
+
+There
+is
+no
+`main_results`
+entry
+naming
+this
+family,
+so
+there
+is
+no
+registered
+proved
+declaration
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+Unregistered
+support
+trees
+do
+sit
+under
+`lean/OAI/InformationTheory/`
+—
+`DimensionTen/`
+(4
+files
+including
+[S7]),
+`Entanglement/`
+(151
+files),
+and
+`SecretKey/`
+(15
+files),
+all
+zero
+`sorry`
+—
+but
+none
+is
+named
+in
+`lean/formalization.yaml`,
+so
+they
+are
+not
+a
+registered
+proved
+statement
+for
+this
+family.
+
+The
+two
+comparator
+stubs
+each
+carry
+one
+`sorry`:
+[S5]
+(the
+dimension-21
+PPT
+channel
+whose
+square
+is
+not
+entanglement
+breaking,
+`sorry`
+at
+[S5:49])
+and
+[S6]
+(the
+dimension-10
+PPT
+pair
+with
+non-entanglement-breaking
+composition,
+`sorry`
+at
+[S6:120]).
+Neither
+is
+a
+`main_results`
+registration.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists
+and
+is
+registered,
+lives
+under
+`lean/OAI/`.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+library.
+
+## Coverage
+
+The
+ledger
+row
+`fam=272`
+[S8]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=1`,
+`paps_form=0`,
+`chal=2`,
+`mainres=0`,
+`scope_note=1`,
+`verification=1`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=1`
+is
+the
+coverage
+signature:
+the
+scope
+note
+links
+the
+manuscript
+[S4:5],
+but
+no
+`main_results`
+entry
+registers
+a
+proved
+declaration,
+and
+the
+selected
+statement
+[S4:9]
+is
+the
+PPT-composition
+counterexamples,
+not
+the
+zero-distillable-secret-key
+claim
+[S4:11].
+The
+two
+comparator
+stubs
+carry
+two
+`sorry`.
+The
+`verification=1`
+marks
+the
+single
+finite-arithmetic
+certificate
+bundle
+—
+an
+`exact_certificate.py`
+with
+a
+shipped
+`certificate-output.txt`
+and
+the
+combinatorics/gadget
+exact
+checks,
+not
+a
+theorem
+check.
+There
+is
+no
+reasoning
+trace.
+The
+shape
+flag
+is
+`counterexample`,
+`counterex_broad=1`,
+and
+`resolves_named=1`
+—
+the
+blurb
+disproves
+Christandl's
+PPT-square
+conjecture
+and
+constructs
+the
+zero-key
+bound-entangled
+state,
+both
+in
+the
+resolve/counterexample
+form
+the
+ledger
+flags.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6874] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 272 at [S2:635] |
+| S3 | [`preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/main.tex`](../../../preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/build/source/main.tex) | 74 | the manuscript (entanglement, zero distillable secret key, and the PPT-square disproof); title [S3:39], date [S3:42], abstract [S3:47–56] |
+| S4 | [`lean/docs/272.md`](../../../lean/docs/272.md) | 18 | scope note — links the manuscript [S4:5], the formalized PPT-composition scope at [S4:9], the secret-key exclusion at [S4:11], and its two comparator links at [S4:17–18] |
+| S5 | [`lean/ComparatorChallenges/DimensionTenChannel.lean`](../../../lean/ComparatorChallenges/DimensionTenChannel.lean) | 55 | comparator stub — the dimension-21 PPT channel whose square is not entanglement breaking, with its `sorry` at [S5:49] (unregistered) |
+| S6 | [`lean/ComparatorChallenges/DimensionTenPair.lean`](../../../lean/ComparatorChallenges/DimensionTenPair.lean) | 125 | comparator stub — the dimension-10 PPT pair with non-entanglement-breaking composition, with its `sorry` at [S6:120] (unregistered) |
+| S7 | [`lean/OAI/InformationTheory/DimensionTen/ChoiTransfer.lean`](../../../lean/OAI/InformationTheory/DimensionTen/ChoiTransfer.lean) | 113 | a file in the unregistered `lean/OAI/InformationTheory/` support trees (`DimensionTen/` 4 files, `Entanglement/` 151 files, `SecretKey/` 15 files, all zero `sorry`) |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=272`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
