@@ -1,6 +1,6 @@
 # Family summary pages
 
-338 extended summaries, one per family, each built from the manuscript's own LaTeX and
+339 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **338** of **373** families have a page.
+The summaries are a fifth layer: **339** of **373** families have a page.
 
 ## The pages
 
@@ -331,6 +331,7 @@ The summaries are a fifth layer: **338** of **373** families have a page.
 - [314](314-chromatic-smith-fixed-point-problem-for-finite-p-groups.md) — The chromatic Smith fixed-point problem for finite $`p`$-groups
 - [315](315-four-dimensional-singer-conjecture.md) — The four-dimensional Singer conjecture
 - [316](316-curtiss-conjecture.md) — Curtis’s conjecture
+- [317](317-thomason-model-structures-in-every-strict-higher-dimension.md) — Thomason model structures in every strict higher dimension
 - [319](319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md) — Counterexamples to the Hahn–Wilson conjecture at height two
 - [320](320-a-four-dimensional-counterexample-to-borel-rigidity.md) — A four-dimensional counterexample to Borel rigidity
 - [321](321-a-counterexample-to-walls-finite-d-2-conjecture.md) — A counterexample to Wall's finite D(2) conjecture
@@ -381,7 +382,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **35 families have no summary page.** The 338 pages cover 338 of 373 families; the rest are recorded
+- **34 families have no summary page.** The 339 pages cover 339 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

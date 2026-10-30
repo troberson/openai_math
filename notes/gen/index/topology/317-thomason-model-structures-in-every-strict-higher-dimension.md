@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [stable-homotopy](../topics/stable-homotopy.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [317-thomason-model-structures-in-every-strict-higher-dimension.md](../../../../notes/gen/summaries/317-thomason-model-structures-in-every-strict-higher-dimension.md) |
 
 ## Manuscripts
 
