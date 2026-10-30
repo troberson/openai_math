@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) · [calculus-of-variations](../topics/calculus-of-variations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [301-classification-by-trace-cones-after-razak-jacelon-stabilization.md](../../../../notes/gen/summaries/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) |
 
 ## Manuscripts
 
