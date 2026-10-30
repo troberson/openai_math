@@ -1,6 +1,6 @@
 # Family summary pages
 
-304 extended summaries, one per family, each built from the manuscript's own LaTeX and
+305 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **304** of **373** families have a page.
+The summaries are a fifth layer: **305** of **373** families have a page.
 
 ## The pages
 
@@ -280,6 +280,7 @@ The summaries are a fifth layer: **304** of **373** families have a page.
 - [263](263-ionization-and-generalized-ionization-conjectures.md) — The ionization and generalized ionization conjectures
 - [264](264-strong-cosmic-censorship-near-two-ended-kerr-data.md) — Strong cosmic censorship near two-ended Kerr data
 - [265](265-two-dimensional-gapped-area-law.md) — The two-dimensional gapped area law
+- [266](266-exactly-three-mutually-unbiased-bases-in-dimension-six.md) — Exactly three mutually unbiased bases in dimension six
 - [268](268-spin-one-haldane-gap.md) — The spin-one Haldane gap
 - [270](270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md) — Threshold and positive-energy bound states of the BFSS model
 - [271](271-blochs-law-and-spontaneous-ferromagnetic-order.md) — Bloch's law and spontaneous ferromagnetic order
@@ -347,7 +348,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **69 families have no summary page.** The 304 pages cover 304 of 373 families; the rest are recorded
+- **68 families have no summary page.** The 305 pages cover 305 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

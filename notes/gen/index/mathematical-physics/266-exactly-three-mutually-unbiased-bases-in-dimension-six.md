@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [quantum-theory](../topics/quantum-theory.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [266-exactly-three-mutually-unbiased-bases-in-dimension-six.md](../../../../notes/gen/summaries/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md) |
 
 ## Manuscripts
 

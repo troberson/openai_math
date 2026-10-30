@@ -1,0 +1,946 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 266](../index/mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md)
+
+# 266 — Exactly three mutually unbiased bases in dimension six
+
+[Index page](../index/mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md)
+
+## Original CONTENTS.md summary
+
+[S1:6679] (family entry):
+
+> **266. Exactly three mutually unbiased bases in dimension six.** Proves $`N(6)=3`$, resolving Zauner's dimension-six mutually unbiased bases conjecture: three such bases exist in ℭ<sup>6</sup>, but four cannot. The exclusion is a complete certified computation under the stated binary64 arithmetic and compiler conditions. An independent companion proves the Matolcsi–Ruzsa–Weiner Fourier-vanishing conjecture for order-six complex Hadamard matrices outside Tao's cubic equivalence class. ([Lean](../../../lean/docs/266.md))
+
+[S2:623] carries the `\resultentry`, so the release blurb and the overview agree.
+The two manuscripts:
+
+**The maximum number of mutually unbiased bases in dimension six** [S3:49, S3:51]:
+
+> 1
+
+**Exact Fourier certificates for complex Hadamard matrices of order six** [S4:4, S4:6]:
+
+> 2
+
+## Undergraduate summary
+
+Two **bases** of a vector space are **mutually unbiased** if
+knowing the outcome of a measurement in one tells you nothing about the
+outcome in the other — a state from the first basis looks completely
+random when measured in the second. A famous question in quantum
+information asks how many mutually unbiased bases can fit in a
+$`d`$-dimensional space (write the answer $`N(d)`$). In dimensions that are
+prime powers the answer is $`d+1`$; in **dimension six** — the smallest
+dimension that is not a prime power — it was open, and Zauner's
+conjecture named three as the answer. The first manuscript
+[S3:55–61] proves $`N(6)=3`$: three bases fit, and a computer-assisted
+computation shows four cannot. The second
+[S4:11–19] is an **independent** attack on the same upper bound,
+through a Fourier-vanishing statement for the $`6	imes 6`$ complex
+Hadamard matrices that encode the bases; it excludes seven bases, which
+a completion theorem turns into an upper bound of five.
+
+## Graduate summary
+
+**The maximum number of MUBs in dimension six**
+[S3:55–61, S2:623].
+The
+maximum
+number
+of
+mutually
+unbiased
+orthonormal
+bases
+in
+$`\mathbb C^6`$
+is
+three,
+resolving
+Zauner's
+dimension-six
+MUB
+conjecture.
+The
+upper
+bound
+is
+computer-assisted:
+under
+the
+stated
+binary64
+arithmetic
+and
+compiler
+conditions,
+a
+complete
+execution
+of
+the
+documented
+verification
+pipeline
+excludes
+four
+arbitrary
+complex
+bases
+[S3:55–61].
+
+**Fourier
+certificates
+for
+order-six
+complex
+Hadamard
+matrices**
+[S4:11–19,
+S2:623].
+Every
+complex
+Hadamard
+matrix
+of
+order
+six
+outside
+Tao's
+cubic
+equivalence
+class
+has
+a
+vanishing
+character
+sum
+at
+every
+permutation
+of
+$`(1,1,1,-1,-1,-1)`$
+(the
+Matolcsi–Ruzsa–Weiner
+Fourier-vanishing
+conjecture).
+There
+is
+also
+an
+exact
+certificate
+excluding
+seven
+mutually
+unbiased
+bases
+in
+$`\mathbb C^6`$;
+by
+Weiner's
+completion
+theorem
+this
+yields
+an
+upper
+bound
+of
+five.
+Both
+certificates
+use
+only
+integer
+and
+rational
+arithmetic,
+and
+the
+complete
+verifier
+is
+included
+[S4:11–19].
+
+## History of the conjecture
+
+The
+**maximum
+number
+of
+mutually
+unbiased
+bases**
+$`N(d)`$
+is
+settled
+for
+dimensions
+that
+are
+prime
+powers
+(the
+answer
+is
+$`d+1`$,
+via
+the
+finite-field
+and
+cyclotomic
+constructions
+tracing
+back
+to
+Walgate,
+Shi,
+and
+Zauner),
+but
+the
+smallest
+non-prime-power
+dimension,
+**six**,
+had
+resisted
+proof.
+Zauner's
+dimension-six
+MUB
+conjecture
+asserted
+$`N(6)=3`$.
+The
+first
+manuscript
+[S3:55–61]
+resolves
+it
+directly,
+with
+the
+existence
+of
+three
+bases
+and
+a
+computer-assisted
+exclusion
+of
+a
+fourth
+arbitrary
+complex
+family.
+The
+second
+[S4:11–19]
+is
+an
+independent
+route
+in
+the
+same
+dimension:
+it
+settles
+the
+**Matolcsi–Ruzsa–Weiner
+Fourier-vanishing
+conjecture**
+for
+order-six
+complex
+Hadamard
+matrices
+outside
+the
+cubic
+equivalence
+class
+described
+by
+Tao,
+and
+converts
+an
+exact
+integer/rational
+certificate
+exclusing
+seven
+bases
+into
+a
+five-basis
+upper
+bound
+via
+Weiner's
+completion
+theorem.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+Mutually
+unbiased
+bases,
+complex
+Hadamard
+matrices,
+the
+prime-power
+constructions,
+and
+the
+Matolcsi–Ruzsa–Weiner
+Fourier-vanishing
+problem
+are
+standard
+in
+quantum
+information
+theory
+and
+additive
+combinatorics.
+The
+proof
+that
+$`N(6)=3`$
+(and
+the
+specific
+computer-assisted
+binary64
+verification
+that
+excludes
+four
+arbitrary
+complex
+bases),
+together
+with
+the
+order-six
+Fourier-vanishing
+resolution
+and
+the
+exact
+seven-to-five
+certificate,
+are
+the
+novel
+contributions.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **Zauner's
+  dimension-six
+  MUB
+  conjecture**
+  [S3:55–61, S2:623]:
+  $`N(6)=3`$
+  —
+  three
+  mutually
+  unbiased
+  orthonormal
+  bases
+  exist
+  in
+  $`\mathbb C^6`$,
+  and
+  four
+  arbitrary
+  complex
+  bases
+  are
+  excluded
+  by
+  a
+  complete
+  certified
+  computation
+  under
+  the
+  stated
+  binary64
+  conditions.
+- **The
+  order-six
+  Fourier-vanishing
+  conjecture**
+  [S4:11–19]:
+  every
+  complex
+  Hadamard
+  matrix
+  of
+  order
+  six
+  outside
+  Tao's
+  cubic
+  equivalence
+  class
+  has
+  a
+  vanishing
+  character
+  sum
+  at
+  every
+  permutation
+  of
+  $`(1,1,1,-1,-1,-1)`$.
+- **An
+  independent
+  five-basis
+  upper
+  bound**
+  [S4:11–19]:
+  the
+  exact
+  integer/rational
+  certificate
+  excluding
+  seven
+  bases,
+  with
+  the
+  upper
+  bound
+  of
+  five
+  by
+  Weiner's
+  completion
+  theorem.
+
+## Section skeleton
+
+Two
+manuscripts.
+[S3]
+(title
+[S3:49],
+date
+[S3:51])
+—
+`paper.tex`
+under
+`build/`.
+[S4]
+(title
+[S4:4],
+date
+[S4:6])
+—
+`paper.tex`
+under
+`build/`.
+Both
+manuscripts
+ship
+a
+`verification/`
+bundle:
+[S3]
+ships
+`verification/code/`
+and
+`verification/saved-run/`,
+and
+[S4]
+ships
+`verification/run.py`
+and
+`verification/verify.py`.
+These
+are
+finite-arithmetic
+certificates,
+not
+Lean
+proofs.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S5]
+and
+two
+comparator
+stubs
+[S6]
+[S7],
+but
+no
+`main_results`
+entry.
+The
+scope
+note
+links
+**both**
+manuscripts
+[S5:5–6].
+The
+recorded
+scope
+[S5:10]
+is
+**weaker
+than
+the
+paper's
+claim**:
+it
+proves
+that
+every
+family
+in
+its
+mutually
+unbiased
+bases
+model
+has
+at
+most
+**five**
+members,
+and
+a
+Fourier
+character-sum
+vanishing
+statement
+for
+order-six
+complex
+Hadamard
+matrices
+not
+equivalent
+to
+the
+Tao
+matrix,
+uniformly
+over
+coordinate
+permutations.
+The
+scope
+note
+is
+explicit
+that
+the
+selected
+statement
+"does
+not
+establish
+the
+paper's
+upper
+bound
+of
+three
+or
+its
+computer-assisted
+exclusion
+of
+four
+arbitrary
+bases"
+[S5:12].
+It
+also
+proves
+a
+supporting
+cube-fiber
+cancellation
+lemma
+[S5:14]:
+let
+$`H`$
+and
+its
+entrywise
+square
+both
+be
+complex
+Hadamard
+matrices,
+and
+fix
+two
+distinct
+rows;
+if
+the
+cubes
+of
+their
+six
+entrywise
+ratios
+take
+only
+two
+distinct
+values,
+then
+the
+sum
+of
+the
+row-ratio
+terms
+over
+either
+specified
+cube
+fiber
+is
+zero.
+The
+paper's
+full
+character-sum
+vanishing
+theorem
+and
+its
+MUB
+bound
+are
+outside
+this
+statement
+[S5:16].
+
+There
+is
+no
+`main_results`
+entry
+naming
+this
+family,
+so
+there
+is
+no
+registered
+proved
+declaration
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+Unregistered
+support
+trees
+do
+sit
+under
+`lean/OAI/`
+—
+for
+example
+`lean/OAI/Analysis/MutuallyUnbiased/`
+(3,386
+`.lean`
+files,
+zero
+`sorry`)
+—
+but
+none
+of
+them
+is
+named
+in
+`lean/formalization.yaml`,
+so
+they
+are
+not
+a
+registered
+proved
+statement
+for
+this
+family.
+
+The
+two
+comparator
+stubs
+carry
+the
+targets,
+each
+with
+one
+`sorry`:
+[S6]
+(the
+theorem
+`fourier_and_family_bound`
+at
+[S6:56]
+—
+the
+order-six
+Fourier
+vanishing
+conjoined
+with
+the
+`n \le 5`
+family
+bound
+—
+`sorry`
+at
+[S6:60])
+and
+[S7]
+(the
+cube-fiber
+cancellation
+target,
+`sorry`
+at
+[S7:33]).
+Neither
+is
+a
+`main_results`
+registration.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists
+and
+is
+registered,
+lives
+under
+`lean/OAI/`.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+library.
+
+## Coverage
+
+The
+ledger
+row
+`fam=266`
+[S8]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=2`,
+`paps_form=0`,
+`chal=2`,
+`mainres=0`,
+`scope_note=1`,
+`verification=2`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=2`
+is
+the
+coverage
+signature:
+the
+scope
+note
+links
+both
+manuscripts
+[S5:5–6],
+but
+no
+`main_results`
+entry
+registers
+a
+proved
+declaration,
+so
+the
+formalization
+stops
+at
+the
+scope
+note
+and
+the
+two
+comparator
+stubs.
+And
+the
+selected
+statement
+[S5:10]
+is
+the
+weaker
+**five-member**
+family
+bound
+plus
+a
+Fourier
+vanishing
+statement,
+not
+the
+paper's
+$`N(6)=3`$
+claim
+[S5:12].
+The
+`verification=2`
+marks
+this
+as
+the
+first
+family
+in
+this
+range
+to
+ship
+verification
+bundles
+for
+**both**
+manuscripts
+—
+finite-arithmetic
+certificates,
+not
+theorem
+checks.
+There
+is
+no
+reasoning
+trace.
+The
+shape
+flags
+are
+`resolution`,
+and
+`resolves_named=1`
+—
+the
+blurb
+names
+Zauner's
+dimension-six
+MUB
+conjecture
+with
+"resolving".
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:6679] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 266 at [S2:623] |
+| S3 | [`preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/paper.tex`](../../../preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/build/paper.tex) | 79 | manuscript 1 of 2 (the maximum number of MUBs); title [S3:49], date [S3:51], abstract [S3:55–61] |
+| S4 | [`preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/build/paper.tex`](../../../preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/build/paper.tex) | 278 | manuscript 2 of 2 (Fourier certificates); title [S4:4], date [S4:6], abstract [S4:11–19] |
+| S5 | [`lean/docs/266.md`](../../../lean/docs/266.md) | 23 | scope note — links both manuscripts [S5:5–6], the formalized scope at [S5:10], the explicit upper-bound exclusion at [S5:12], the cube-fiber cancellation lemma at [S5:14], and its two comparator links at [S5:20–22] |
+| S6 | [`lean/ComparatorChallenges/MUBSix.lean`](../../../lean/ComparatorChallenges/MUBSix.lean) | 66 | comparator stub — `fourier_and_family_bound` at [S6:56] with its `sorry` at [S6:60] (unregistered) |
+| S7 | [`lean/ComparatorChallenges/HadamardCubeFiber.lean`](../../../lean/ComparatorChallenges/HadamardCubeFiber.lean) | 37 | comparator stub — the cube-fiber cancellation target with its `sorry` at [S7:33] (unregistered) |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=266`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
