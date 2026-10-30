@@ -1,6 +1,6 @@
 # Family summary pages
 
-334 extended summaries, one per family, each built from the manuscript's own LaTeX and
+335 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **334** of **373** families have a page.
+The summaries are a fifth layer: **335** of **373** families have a page.
 
 ## The pages
 
@@ -321,6 +321,7 @@ The summaries are a fifth layer: **334** of **373** families have a page.
 - [304](304-hilbert-smith-conjecture-in-every-dimension.md) — The Hilbert–Smith conjecture in every dimension
 - [305](305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) — Counterexamples to disk embedding and Wall's manifold conjecture
 - [306](306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md) — The purely cosmetic surgery conjecture for knots in $`S^3`$
+- [307](307-failure-of-rational-injectivity-for-maximal-coarse-assembly.md) — Failure of rational injectivity for maximal coarse assembly
 - [309](309-kervaire-invariant-problem-at-the-prime-three.md) — The Kervaire invariant problem at the prime three
 - [310](310-quillens-conjecture-in-rational-homology.md) — Quillen's conjecture in rational homology
 - [311](311-chais-invariant-ideal-conjecture.md) — Chai's invariant-ideal conjecture
@@ -377,7 +378,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **39 families have no summary page.** The 334 pages cover 334 of 373 families; the rest are recorded
+- **38 families have no summary page.** The 335 pages cover 335 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [geometric-topology](../topics/geometric-topology.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [307-failure-of-rational-injectivity-for-maximal-coarse-assembly.md](../../../../notes/gen/summaries/307-failure-of-rational-injectivity-for-maximal-coarse-assembly.md) |
 
 ## Manuscripts
 
