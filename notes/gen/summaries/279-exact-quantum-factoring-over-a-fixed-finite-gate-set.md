@@ -1,0 +1,714 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 279](../index/mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md)
+
+# 279 — Exact quantum factoring over a fixed finite gate set
+
+[Index page](../index/mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md)
+
+## Original CONTENTS.md summary
+
+[S1:7004] (family entry):
+
+> **279. Exact quantum factoring over a fixed finite gate set.** Gives a polynomial-time uniform quantum circuit family that outputs the complete prime factorization of every integer with probability one. Both gate count and qubit count are polynomial in the input length, and one fixed finite gate set suffices. ([Lean](../../../lean/docs/279.md))
+
+[S2:649] carries the `\resultentry`, so the release blurb and the overview agree.
+The single manuscript:
+
+**Exact quantum factoring over a fixed finite gate set** [S3:57, S3:59]:
+
+> 1
+
+## Undergraduate summary
+
+**Factoring** — splitting a large number into its prime pieces
+— is the problem that makes today's internet encryption secure:
+if you can factor fast, RSA breaks. **Quantum computers** were
+promised to factor fast (Shor's algorithm, 1994), but Shor's circuit
+uses gates that get more and more precise as the number grows —
+no fixed, finite set of gates suffices. This result shows a
+**quantum circuit family** that factors *every* integer $`N
+\ge 2`$ **exactly** (probability one, not "with high probability" or
+"with bounded error"), using only a **fixed finite set of
+bounded-arity gates**, with both the gate count and the qubit count
+growing at most polynomially in the bit length of $`N`$
+[S3:62–64]. The circuit is **uniform**: a small classical
+machine, given $`N`$, writes out the circuit in polynomial time.
+
+## Graduate summary
+
+**Exact quantum factoring over a fixed finite gate set**
+[S3:62–64, S2:649, S4:9].
+There
+exists
+a
+polynomial-time
+uniform
+quantum
+circuit
+family
+$`\{\mathcal{C}_N\}_{N
+\ge 2}`$
+such
+that,
+for
+every
+integer
+$`N
+\ge 2`$,
+the
+circuit
+$`\mathcal{C}_N`$
+outputs
+the
+complete
+prime
+factorization
+of
+$`N`$
+with
+probability
+exactly
+one
+[S4:9].
+The
+circuits
+are
+drawn
+from
+one
+fixed
+finite
+set
+of
+bounded-arity
+gates,
+and
+both
+the
+gate
+count
+and
+the
+number
+of
+qubits
+have
+polynomial
+worst-case
+bounds
+in
+the
+bit
+length
+of
+$`N`$
+[S4:9].
+The
+probability-one
+conclusion
+is
+exact,
+rather
+than
+an
+asymptotic
+or
+bounded-error
+guarantee
+[S4:9].
+
+## History of the conjecture
+
+**Shor's
+algorithm**
+(1994)
+factored
+integers
+in
+polynomial
+quantum
+time,
+but
+its
+circuit
+uses
+arbitrary-precision
+rotation
+gates
+whose
+angle
+resolutions
+refine
+with
+the
+input
+length,
+so
+no
+fixed
+finite
+gate
+set
+suffices.
+The
+Toffoli
+gate
+is
+universal
+for
+reversible
+classical
+computation,
+and
+the
+**Solovay–Kitaev
+theorem**
+gives
+a
+polylogarithmic
+approximation
+cost
+for
+simulating
+arbitrary
+gates
+over
+a
+finite
+universal
+set
+—
+but
+approximation
+introduces
+error,
+and
+the
+error
+accumulates
+over
+the
+$`\mathrm{poly}(\log N)`$
+circuit
+depth.
+The
+manuscript
+[S3:62–64]
+avoids
+accumulated
+error
+entirely:
+the
+circuit
+family
+is
+built
+so
+that
+its
+output
+is
+the
+exact
+factorization
+with
+probability
+one,
+over
+one
+fixed
+finite
+gate
+set,
+with
+uniform
+polynomial
+resource
+bounds.
+The
+formalization
+[S4:9]
+records
+that
+same
+probability-one,
+exact-conclusion
+scope.
+
+**Prior
+(my
+training
+data,
+not
+this
+repo).**
+Shor's
+algorithm,
+the
+Solovay–Kitaev
+theorem,
+quantum
+circuit
+uniformity,
+and
+the
+finite-gate-set
+approximation
+program
+are
+standard
+in
+quantum
+computation.
+The
+specific
+circuit
+family
+with
+the
+probability-one
+exact
+conclusion
+over
+one
+fixed
+finite
+bounded-arity
+gate
+set,
+with
+uniform
+polynomial
+bounds
+in
+the
+bit
+length,
+is
+the
+novel
+contribution.
+I
+cannot
+confirm
+these
+independently
+from
+training
+alone.
+
+## Consequences
+
+- **Exact
+  factorization**
+  [S3:62–64, S2:649]:
+  for
+  every
+  integer
+  $`N
+  \ge 2`$,
+  a
+  uniform
+  polynomial-size
+  quantum
+  circuit
+  outputs
+  the
+  complete
+  prime
+  factorization
+  with
+  probability
+  exactly
+  one.
+- **Fixed
+  finite
+  gate
+  set**
+  [S3:62–64, S4:9]:
+  one
+  fixed
+  finite
+  set
+  of
+  bounded-arity
+  gates
+  suffices
+  for
+  all
+  $`N`$,
+  with
+  polynomial
+  worst-case
+  gate
+  and
+  qubit
+  counts
+  in
+  the
+  bit
+  length.
+
+## Section skeleton
+
+One
+manuscript.
+[S3]
+(title
+[S3:57],
+date
+[S3:59])
+—
+`main.tex`
+under
+`build/`,
+with
+sections
+under
+`build/sections/`
+(the
+introduction,
+the
+model,
+the
+order
+transform,
+the
+dyadic
+order,
+the
+factor
+process,
+exactness,
+and
+an
+appendix
+on
+primality).
+The
+family
+ships
+no
+`verification/`
+bundle.
+
+## Comparison with the formalized statement
+
+The
+release
+formalises
+this
+family
+at
+tier
+T2
+with
+one
+scope
+note
+[S4]
+and
+one
+comparator
+stub
+[S5],
+but
+no
+`main_results`
+entry.
+The
+scope
+note
+links
+the
+single
+manuscript
+[S4:5]
+and
+records
+the
+formalized
+scope
+[S4:9]:
+a
+polynomial-time
+uniform
+quantum
+circuit
+family
+outputting
+the
+complete
+prime
+factorization
+of
+every
+integer
+$`N
+\ge 2`$
+with
+probability
+exactly
+one,
+over
+one
+fixed
+finite
+set
+of
+bounded-arity
+gates,
+with
+polynomial
+worst-case
+gate
+and
+qubit
+bounds
+in
+the
+bit
+length
+of
+$`N`$.
+The
+scope
+matches
+the
+manuscript's
+headline
+claim
+[S3:62–64].
+
+There
+is
+no
+`main_results`
+entry
+naming
+this
+family,
+so
+there
+is
+no
+registered
+proved
+declaration
+and
+no
+OAI
+tree
+reachable
+through
+the
+yaml.
+An
+unregistered
+support
+tree
+does
+sit
+under
+`lean/OAI/Computability/QuantumFactoring/`
+(552
+`.lean`
+files
+including
+[S6],
+zero
+`sorry`),
+but
+it
+is
+not
+named
+in
+`lean/formalization.yaml`,
+so
+it
+is
+not
+a
+registered
+proved
+statement
+for
+this
+family.
+
+The
+one
+comparator
+stub
+[S5]
+carries
+`theorem exact_quantum_factoring`
+at
+[S5:149]
+with
+its
+`sorry`
+at
+[S5:150].
+It
+is
+not
+a
+`main_results`
+registration.
+A
+comparator
+stub
+is
+a
+target
+the
+release
+set
+itself;
+the
+proved
+version,
+where
+it
+exists
+and
+is
+registered,
+lives
+under
+`lean/OAI/`.
+The
+reading
+is
+of
+source
+text
+only
+—
+no
+`lake`
+or
+`lean`
+run
+elaborates
+the
+library.
+
+## Coverage
+
+The
+ledger
+row
+`fam=279`
+[S7]
+records
+the
+tier
+and
+the
+counts:
+`tier=T2`,
+`paps=1`,
+`paps_form=0`,
+`chal=1`,
+`mainres=0`,
+`scope_note=1`,
+`verification=0`,
+`trace=`.
+The
+`paps_form=0`
+against
+`paps=1`
+is
+the
+coverage
+signature:
+the
+scope
+note
+links
+the
+manuscript
+[S4:5],
+and
+the
+comparator
+stub
+[S5]
+states
+the
+target,
+but
+no
+`main_results`
+entry
+registers
+a
+proved
+declaration,
+so
+the
+formalization
+stops
+at
+the
+scope
+note
+and
+the
+comparator
+stub.
+The
+comparator
+stub
+[S5]
+carries
+one
+`sorry`.
+There
+is
+no
+verification
+bundle
+and
+no
+reasoning
+trace.
+The
+shape
+flag
+is
+`uniform`,
+and
+`resolves_named=0`
+—
+the
+blurb
+states
+a
+construction
+result
+without
+naming
+a
+conjecture
+in
+the
+resolve
+form
+the
+ledger
+flags.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7004] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 279 at [S2:649] |
+| S3 | [`preprints/Exact-quantum-factoring-over-a-fixed-finite-gate-set-September-25-2026/build/main.tex`](../../../preprints/Exact-quantum-factoring-over-a-fixed-finite-gate-set-September-25-2026/build/main.tex) | 75 | manuscript (single); title [S3:57], date [S3:59], abstract [S3:62–64] |
+| S4 | [`lean/docs/279.md`](../../../lean/docs/279.md) | 15 | scope note — links the manuscript [S4:5], the formalized scope at [S4:9], and its comparator link at [S4:15] |
+| S5 | [`lean/ComparatorChallenges/ExactQuantumFactoring.lean`](../../../lean/ComparatorChallenges/ExactQuantumFactoring.lean) | 154 | comparator stub — `theorem exact_quantum_factoring` at [S5:149] with its `sorry` at [S5:150] (unregistered) |
+| S6 | [`lean/OAI/Computability/QuantumFactoring/Basic.lean`](../../../lean/OAI/Computability/QuantumFactoring/Basic.lean) | 151 | a file in the unregistered `lean/OAI/Computability/QuantumFactoring/` support tree (552 `.lean` files, zero `sorry`) |
+| S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=279`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

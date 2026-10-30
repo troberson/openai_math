@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md](../../../../notes/gen/summaries/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md) |
 
 ## Manuscripts
 

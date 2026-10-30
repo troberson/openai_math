@@ -1,6 +1,6 @@
 # Family summary pages
 
-313 extended summaries, one per family, each built from the manuscript's own LaTeX and
+314 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **313** of **373** families have a page.
+The summaries are a fifth layer: **314** of **373** families have a page.
 
 ## The pages
 
@@ -293,6 +293,7 @@ The summaries are a fifth layer: **313** of **373** families have a page.
 - [276](276-classical-capacity-of-generalized-amplitude-damping.md) — The classical capacity of generalized amplitude damping
 - [277](277-threshold-repetition-for-entangled-games.md) — Threshold repetition for entangled games
 - [278](278-failure-of-kohn-sham-ensemble-representation.md) — Failure of Kohn–Sham ensemble representation
+- [279](279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md) — Exact quantum factoring over a fixed finite gate set
 - [284](284-optimal-randomized-quantum-query-exponent.md) — The optimal randomized–quantum query exponent
 - [285](285-counterexamples-to-baum-connes-and-kadison-kaplansky.md) — Counterexamples to Baum–Connes and Kadison–Kaplansky
 - [287](287-all-nonabelian-free-group-factors-are-isomorphic.md) — All nonabelian free group factors are isomorphic
@@ -356,7 +357,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **60 families have no summary page.** The 313 pages cover 313 of 373 families; the rest are recorded
+- **59 families have no summary page.** The 314 pages cover 314 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
