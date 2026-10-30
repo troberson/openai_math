@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [293-a-counterexample-to-the-hyperinvariant-subspace-problem.md](../../../../notes/gen/summaries/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md) |
 
 ## Manuscripts
 
