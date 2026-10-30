@@ -20,9 +20,8 @@ the trilinear Hilbert transform conjecture. [S3:10–12]"
 The operator multiplies three shifted copies of its inputs and
 integrates against the principal value of $`1/t`$:
 
-$$T(f_1,f_2,f_3)(x)
- =\mathrm{p.v.}\int_{\mathbb R}
- f_1(x-t)f_2(x-2t)f_3(x-3t)\,\frac{dt}{t}.$$
+$$T(f_1,f_2,f_3)(x) =\mathrm{p.v.}\int_{\mathbb R}
+f_1(x-t)f_2(x-2t)f_3(x-3t)\,\frac{dt}{t}.$$
 
 The question is which input exponents make $`T`$ bounded. The family
 proves the symmetric $`L^3`$ case — each input in $`L^3(\mathbb R)`$,

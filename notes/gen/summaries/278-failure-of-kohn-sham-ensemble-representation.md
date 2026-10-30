@@ -43,273 +43,40 @@ can just plug in.
 
 **A density without Kohn--Sham ensemble representation**
 [S3:84–89, S2:647].
-There
-exists
-a
-finite
-three-electron
-Coulomb
-molecule
-with
-two
-equal
-positive-integer
-nuclear
-charges,
-specified
-by
-an
-exact
-finite
-nonnumerical
-formula,
-whose
-spin-summed
-absolute
-ground-state
-density
-is
-not
-the
-density
-of
-any
-ground-state
-ensemble
-of
-noninteracting
-spinful
-electrons
-in
-a
-single
-real,
-spin-independent
-local
-potential
-in
+There exists a finite three-electron Coulomb molecule with two equal
+positive-integer nuclear charges, specified by an exact finite
+nonnumerical formula, whose spin-summed absolute ground-state density is
+not the density of any ground-state ensemble of noninteracting spinful
+electrons in a single real, spin-independent local potential in
 $`L^{3/2}(\mathbb R^3)+L^\infty(\mathbb R^3)`$
-[S3:84–89].
-The
-statement
-is
-a
-negation
-over
-the
-ensemble:
-no
-probability
-mixture
-of
-noninteracting
-ground
-states,
-no
-matter
-how
-the
-weights
-are
-chosen,
-reproduces
-the
-interacting
-density.
-The
-result
-therefore
-disproves
-Kohn–Sham
-ensemble
-representability
-for
-that
-potential
-class,
-for
-three-electron
-Coulomb
-molecules
-[S1:6988].
+[S3:84–89]. The statement is a negation over the ensemble: no
+probability mixture of noninteracting ground states, no matter how the
+weights are chosen, reproduces the interacting density. The result
+therefore disproves Kohn–Sham ensemble representability for that
+potential class, for three-electron Coulomb molecules [S1:6988].
 
 ## History of the conjecture
 
-The
-Kohn–Sham
-theorem
-(1965)
-guaranteed
-that,
-for
-a
-given
-interacting
-ground-state
-density,
-there
-is
-a
-noninteracting
-potential
-reproducing
-it
-—
-but
-the
-potential
-was
-shown
-to
-exist
-without
-any
-regularity
-class,
-and
-later
-work
-left
-open
-whether
-the
-reproducing
-potential
-can
-be
-**local**
-and
-in
-a
-natural
-function
-space.
-The
-question
-broadened
-from
-pure
-ground
-states
-to
-**ensembles**
-(probability
-mixtures),
-where
-representability
-had
-been
-expected
-to
-be
-more
-flexible.
-This
-manuscript
-[S3:84–89]
-answers
-both
-at
-once:
-an
-explicit
-three-electron
-Coulomb
-system
-whose
-density
-resists
-every
-ensemble
-reproduction
-by
-a
-single
-spin-independent
-local
-potential
-in
-$`L^{3/2}+L^\infty`$,
-with
-the
-charge
-given
-by
-a
-closed
-nonnumerical
-expression
-rather
-than
-a
-floored
-decimal.
+The Kohn–Sham theorem (1965) guaranteed that, for a given interacting
+ground-state density, there is a noninteracting potential reproducing it
+— but the potential was shown to exist without any regularity class, and
+later work left open whether the reproducing potential can be **local**
+and in a natural function space. The question broadened from pure ground
+states to **ensembles** (probability mixtures), where representability
+had been expected to be more flexible. This manuscript [S3:84–89]
+answers both at once: an explicit three-electron Coulomb system whose
+density resists every ensemble reproduction by a single spin-independent
+local potential in $`L^{3/2}+L^\infty`$, with the charge given by a closed
+nonnumerical expression rather than a floored decimal.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Kohn–Sham
-theory,
-the
-representability
-question,
-ensemble
-DFT,
-and
-the
-pathologies
-of
-reproducing
-potentials
-are
-standard
-in
-density
-functional
-theory.
-The
-specific
-counterexample
-—
-a
-three-electron,
-two-equal-charge
-Coulomb
-molecule
-whose
-spin-summed
-density
-has
-no
-noninteracting
-ensemble
-representation
-in
-the
-$`L^{3/2}+L^\infty`$
-class,
-with
-a
-nonnumerically
-specified
-charge
-—
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-it
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Kohn–Sham theory, the
+representability question, ensemble DFT, and the pathologies of
+reproducing potentials are standard in density functional theory. The
+specific counterexample — a three-electron, two-equal-charge Coulomb
+molecule whose spin-summed density has no noninteracting ensemble
+representation in the $`L^{3/2}+L^\infty`$ class, with a nonnumerically
+specified charge — is the novel contribution. I cannot confirm it
+independently from training alone.
 
 ## Consequences
 
@@ -317,257 +84,46 @@ alone.
   ensemble
   representation**
   [S3:84–89, S2:647]:
-  the
-  absolute
-  ground-state
-  density
-  of
-  the
-  constructed
-  three-electron
-  Coulomb
-  molecule
-  is
-  not
-  reproduced
-  by
-  any
-  ground-state
-  ensemble
-  of
-  noninteracting
-  electrons
-  in
-  a
-  single
-  real
-  spin-independent
-  local
-  potential
-  in
+the absolute ground-state density of the constructed three-electron
+Coulomb molecule is not reproduced by any ground-state ensemble of
+noninteracting electrons in a single real spin-independent local
+potential in
   $`L^{3/2}(\mathbb R^3)+L^\infty(\mathbb R^3)`$.
 - **Disproof
-  for
-  the
-  potential
-  class**
-  [S1:6988]:
-  Kohn–Sham
-  ensemble
-  representability
-  fails
-  for
-  that
-  potential
-  class,
-  with
-  the
-  charge
-  fixed
-  by
-  an
-  exact
-  nonnumerical
-  formula.
+for the potential class** [S1:6988]: Kohn–Sham ensemble representability
+fails for that potential class, with the charge fixed by an exact
+nonnumerical formula.
 
 ## Section skeleton
 
-One
-manuscript.
-[S3:83–90]
-(title
-[S3:80–81],
-date
-[S3:83])
-—
-`main.tex`
-under
-`build/`,
-with
-sections
-under
-`build/sections/`
-(the
-Coulomb
-setup,
-the
-channels,
-the
-angle
-spectrum,
-the
-ensemble
-obstruction,
-the
-plane
-obstruction,
-the
-parameters,
-and
-the
-functional
-consequence).
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript. [S3:83–90] (title [S3:80–81], date [S3:83]) — `main.tex` under
+`build/`, with sections under `build/sections/` (the Coulomb setup, the
+channels, the angle spectrum, the ensemble obstruction, the plane
+obstruction, the parameters, and the functional consequence). The family
+ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-does
-**not**
-formalize
-this
-family.
-There
-is
-no
-scope
-note
-under
-`lean/docs/`,
-no
-comparator
-challenge
-stub
-under
-`lean/ComparatorChallenges/`,
-and
-no
-`main_results`
-entry
-in
-`lean/formalization.yaml`
-naming
-it,
-so
-no
-Lean
-statement
-—
-proved
-or
-otherwise
-—
-corresponds
-to
-the
-density
-constructed
-in
-[S3:84–89].
-The
-ledger
-records
-`scope_note=0`,
-`chal=0`,
-and
-`mainres=0`
-[S4].
-The
-formalization
-gap
-is
-total:
-the
-counterexample
-exists
-only
-as
-the
-manuscript's
-LaTeX,
-and
-nothing
-in
-the
-release
-has
-stated
-it
-in
-Lean.
+The release does **not** formalize this family. There is no scope note
+under `lean/docs/`, no comparator challenge stub under
+`lean/ComparatorChallenges/`, and no `main_results` entry in
+`lean/formalization.yaml` naming it, so no Lean statement — proved or
+otherwise — corresponds to the density constructed in [S3:84–89]. The
+ledger records `scope_note=0`, `chal=0`, and `mainres=0` [S4]. The
+formalization gap is total: the counterexample exists only as the
+manuscript's LaTeX, and nothing in the release has stated it in Lean.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=278`
-[S4]
-records
-the
-tier
-and
-the
-counts:
-`tier=T0`,
-`paps=1`,
-`paps_form=0`,
-`chal=0`,
-`mainres=0`,
-`scope_note=0`,
-`verification=0`,
-`trace=`.
-The
-whole
-row
-is
-the
-coverage
-signature:
-no
-scope
-note,
-no
-comparator,
-no
-`main_results`
-entry,
-and
-no
-verification
-bundle,
-so
-the
-family
-sits
-entirely
-outside
-the
-release's
-checking
-workflow.
-The
-shape
-flags
-are
-`counterexample|density`,
-`counterex_broad=1`,
-and
-`resolves_named=0`
-—
-the
-blurb
-states
-a
-constructed
-counterexample
-without
-naming
-a
-conjecture
-in
-the
-resolve
-form
-the
-ledger
-flags.
+The ledger row `fam=278` [S4] records the tier and the counts:
+`tier=T0`, `paps=1`, `paps_form=0`, `chal=0`, `mainres=0`,
+`scope_note=0`, `verification=0`, `trace=`. The whole row is the
+coverage signature: no scope note, no comparator, no `main_results`
+entry, and no verification bundle, so the family sits entirely outside
+the release's checking workflow. The shape flags are
+`counterexample|density`, `counterex_broad=1`, and `resolves_named=0` —
+the blurb states a constructed counterexample without naming a
+conjecture in the resolve form the ledger flags.
 
 ## Sources
 

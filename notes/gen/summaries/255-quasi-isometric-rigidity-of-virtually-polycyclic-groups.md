@@ -39,669 +39,93 @@ large scale as a virtually polycyclic group, must it
 
 **Quasi-isometric recognition of virtually polycyclic groups**
 [S3:51–55, S2:599]. Every
-finitely
-generated
-group
-that
-is
-quasi-isometric
-to
-a
-finitely
-generated
-virtually
-polycyclic
-group
-is
-itself
-virtually
-polycyclic.
-Equivalently,
-a
-group
-quasi-isometric
-to
-a
-lattice
-in
-a
-connected
-simply
-connected
-solvable
-Lie
-group
-is
-virtually
-a
-uniform
-lattice
-in
-some
-connected
-simply
-connected
-solvable
-Lie
-group,
-the
-ambient
-Lie
-group
-in
-the
-conclusion
-possibly
-differing
-from
-the
-one
-in
-the
-hypothesis.
+finitely generated group that is quasi-isometric to a finitely generated
+virtually polycyclic group is itself virtually polycyclic. Equivalently,
+a group quasi-isometric to a lattice in a connected simply connected
+solvable Lie group is virtually a uniform lattice in some connected
+simply connected solvable Lie group, the ambient Lie group in the
+conclusion possibly differing from the one in the hypothesis.
 
 ## History of the conjecture
 
-The
-**lattice-recognition
-conjecture**
-(Eskin,
-Fisher,
-and
-Whyte)
-asked
-whether
-the
-virtually-polycyclic
-property
-is
-determined
-by
-the
-large-scale
-geometry
-of
-a
-finitely
-generated
-group.
-Virtually
-nilpotent
-recognition
-had
-previously
-been
-established
-by
-Eskin,
-Fisher,
-and
-Whyte
-themselves;
-the
-polycyclic
-case
-is
-the
-harder
-generalization,
-because
-the
-ambient
-Lie
-group
-need
-not
-be
-nilpotent
-and
-the
-conclusion's
-ambient
-group
-is
-only
-asserted
-to
-exist,
-not
-to
-be
-the
-original
-one.
-The
-result
-[S3:51–55]
-resolves
-the
-conjecture
-and,
-in
-the
-scope
-note's
-second
-claim,
-realizes
-a
-finite-index
-subgroup
-of
-the
-recognized
-group
-as
-a
-uniform
-lattice
-in
-a
-simply
-connected
-solvable
-Lie
-group
-[S4:9–11].
+The **lattice-recognition conjecture** (Eskin, Fisher, and Whyte) asked
+whether the virtually-polycyclic property is determined by the large-
+scale geometry of a finitely generated group. Virtually nilpotent
+recognition had previously been established by Eskin, Fisher, and Whyte
+themselves; the polycyclic case is the harder generalization, because
+the ambient Lie group need not be nilpotent and the conclusion's ambient
+group is only asserted to exist, not to be the original one. The result
+[S3:51–55] resolves the conjecture and, in the scope note's second
+claim, realizes a finite-index subgroup of the recognized group as a
+uniform lattice in a simply connected solvable Lie group [S4:9–11].
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Quasi-isometries,
-virtually
-polycyclic
-groups,
-and
-the
-study
-of
-lattice
-recognition
-in
-solvable
-Lie
-groups
-are
-standard
-in
-geometric
-group
-theory.
-The
-resolution
-of
-the
-Eskin–Fisher–Whyte
-lattice-recognition
-conjecture
-in
-the
-polycyclic
-case,
-with
-the
-ambient-group-differing
-formulation,
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Quasi-isometries, virtually
+polycyclic groups, and the study of lattice recognition in solvable Lie
+groups are standard in geometric group theory. The resolution of the
+Eskin–Fisher–Whyte lattice-recognition conjecture in the polycyclic
+case, with the ambient-group-differing formulation, is the novel
+contribution. I cannot confirm this independently from training alone.
 
 ## Consequences
 
 - **The
-  lattice-recognition
-  conjecture
-  resolved**
-  [S3:51–55]:
-  a
-  finitely
-  generated
-  group
-  is
-  virtually
-  polycyclic
-  exactly
-  when
-  it
-  is
-  quasi-isometric
-  to
-  a
-  finitely
-  generated
-  virtually
-  polycyclic
-  group.
+lattice-recognition conjecture resolved** [S3:51–55]: a finitely
+generated group is virtually polycyclic exactly when it is quasi-
+isometric to a finitely generated virtually polycyclic group.
 - **The
-  ambient
-  group
-  may
-  differ**
+ambient group may differ**
   [S1:6301, S2:599]:
-  the
-  recognized
-  group
-  is
-  a
-  uniform
-  lattice
-  in
-  a
-  simply
-  connected
-  solvable
-  Lie
-  group,
-  not
-  necessarily
-  the
-  original
-  one.
+the recognized group is a uniform lattice in a simply connected solvable
+Lie group, not necessarily the original one.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:50–56]
-(title
-[S3:45],
-date
-[S3:47])
-—
-`main.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:50–56] (title [S3:45], date [S3:47]) — `main.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T2
-with
-one
-scope
-note
-[S4]
-and
-one
-comparator
-stub
-[S5],
-but
-no
-`main_results`
-entry
-[S7].
-The
-scope
-note
-[S4:9–11]
-states
-the
-target:
-every
-finitely
-generated
-group
-quasi-isometric
-to
-a
-finitely
-generated
-virtually
-polycyclic
-group
-is
-itself
-virtually
-polycyclic,
-and
-it
-realizes
-a
-finite-index
-subgroup
-of
-the
-recognized
-group
-as
-a
-uniform
-lattice
-in
-a
-simply
-connected
-solvable
-Lie
-group
-that
-may
-differ
-from
-the
-original
-ambient
-group.
-The
-scope
-note
-[S4:11]
-adds
-a
-second
-claim
-the
-formalization
-carries:
-a
-structural
-estimate
-controlling
-the
-height-coordinate
-behavior
-of
-self
-quasi-isometries
-of
-the
-stated
-unimodular
-solvable
-Lie
-models,
-up
-to
-bounded
-error
-and
-one
-of
-finitely
-many
-linear
-height
-symmetries.
+The release formalises this family at tier T2 with one scope note [S4]
+and one comparator stub [S5], but no `main_results` entry [S7]. The
+scope note [S4:9–11] states the target: every finitely generated group
+quasi-isometric to a finitely generated virtually polycyclic group is
+itself virtually polycyclic, and it realizes a finite-index subgroup of
+the recognized group as a uniform lattice in a simply connected solvable
+Lie group that may differ from the original ambient group. The scope
+note [S4:11] adds a second claim the formalization carries: a structural
+estimate controlling the height-coordinate behavior of self quasi-
+isometries of the stated unimodular solvable Lie models, up to bounded
+error and one of finitely many linear height symmetries.
 
-The
-comparator
-stub
-[S5]
-states
-three
-targets,
-each
-ending
-in
-`sorry`:
-`group_recognition`
-([S5:209]),
-`main_uniform_bounded_height`
-([S5:219]),
-and
-`lattice_recognition`
-([S5:236]).
-There
-is
-no
-`main_results`
-entry
-naming
-this
-family,
-so
-there
-is
-no
-registered
-proved
-declaration
-[S7].
-There
-**is**,
-however,
-a
-large
-OAI
-tree
-at
-`lean/OAI/GroupTheory/PolycyclicRecognition/`
-[S6]:
-3,090
-`.lean`
-files,
-all
-free
-of
-`sorry`,
-with
-no
-`Main.lean`.
-The
-tree
-exists
-in
-the
-library
-but
-is
-not
-registered
-by
-any
-`main_results`
-entry
-and
-has
-no
-named
-main
-declaration
-—
-it
-is
-an
-unregistered
-support
-tree,
-not
-a
-registered
-proved
-statement.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists
-and
-is
-registered,
-would
-live
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-library.
+The comparator stub [S5] states three targets, each ending in `sorry`:
+`group_recognition` ([S5:209]), `main_uniform_bounded_height`
+([S5:219]), and `lattice_recognition` ([S5:236]). There is no
+`main_results` entry naming this family, so there is no registered
+proved declaration [S7]. There **is**, however, a large OAI tree at
+`lean/OAI/GroupTheory/PolycyclicRecognition/` [S6]: 3,090 `.lean` files,
+all free of `sorry`, with no `Main.lean`. The tree exists in the library
+but is not registered by any `main_results` entry and has no named main
+declaration — it is an unregistered support tree, not a registered
+proved statement. A comparator stub is a target the release set itself;
+the proved version, where it exists and is registered, would live under
+`lean/OAI/`. The reading is of source text only — no `lake` or `lean`
+run elaborates the library.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=255`
-[S8]
-records
-the
-tier
-and
-the
-counts:
-`tier=T2`,
-`paps=1`,
-`paps_form=0`,
-`chal=1`,
-`mainres=0`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-scope
-note
-names
-the
-manuscript,
-but
-no
-`main_results`
-entry
-registers
-a
-proved
-declaration
-for
-this
-family,
-so
-the
-formalization
-stops
-at
-the
-scope
-note
-and
-the
-comparator
-stub.
-The
-unregistered
-OAI
-tree
-[S6]
-—
-3,090
-files,
-zero
-`sorry`,
-no
-`Main.lean`
-—
-is
-library
-material
-the
-release
-did
-not
-promote
-to
-a
-`main_results`
-entry,
-so
-it
-does
-not
-count
-as
-a
-registered
-proved
-result.
-The
-one
-comparator
-stub
-[S5]
-carries
-three
-`sorry`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution|uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-Eskin–Fisher–Whyte
-lattice-recognition
-conjecture
-with
-"resolving".
+The ledger row `fam=255` [S8] records the tier and the counts:
+`tier=T2`, `paps=1`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=1` is the coverage signature: the scope note names the manuscript,
+but no `main_results` entry registers a proved declaration for this
+family, so the formalization stops at the scope note and the comparator
+stub. The unregistered OAI tree [S6] — 3,090 files, zero `sorry`, no
+`Main.lean` — is library material the release did not promote to a
+`main_results` entry, so it does not count as a registered proved
+result. The one comparator stub [S5] carries three `sorry`. There is no
+verification bundle and no reasoning trace. The shape flags are
+`resolution|uniform`, and `resolves_named=1` — the blurb names the
+Eskin–Fisher–Whyte lattice-recognition conjecture with "resolving".
 
 ## Sources
 

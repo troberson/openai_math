@@ -50,107 +50,19 @@ geometric property: every hyperbolic one-relator group is
 
 **Gersten's conjecture**
 [S3:30–32, S2:605]. Every
-finitely
-generated
-one-relator
-group
-that
-contains
-no
-subgroup
-isomorphic
-to
-a
-Baumslag–Solitar
-group
-$`\mathrm{BS}(m,n)`$
-for
-nonzero
-integers
-$`m,n`$
-is
-word-hyperbolic.
-This
-resolves
-Gersten's
-conjecture,
-which
-conjectured
-that
-Baumslag–Solitar
-subgroups
-are
-precisely
-the
-obstruction
-to
-hyperbolicity
-in
-one-relator
-groups.
+finitely generated one-relator group that contains no subgroup
+isomorphic to a Baumslag–Solitar group $`\mathrm{BS}(m,n)`$ for
+nonzero integers $`m,n`$ is word-hyperbolic. This resolves Gersten's
+conjecture, which conjectured that Baumslag–Solitar subgroups are
+precisely the obstruction to hyperbolicity in one-relator groups.
 
-**Virtual
-compact
-specialness**
-[S4:58–62,
-S2:605].
-Every
-word-hyperbolic
-one-relator
-group
-is
-virtually
-compact
-special:
-it
-has
-a
-finite-index
-subgroup
-that
-is
-the
-fundamental
-group
-of
-a
-compact
-special
-cube
-complex.
-Combined
-with
-the
-work
-of
-Kielak
-and
-Linton,
-this
-resolves
-Wise's
-virtual
-free-by-cyclic
-conjecture
-for
-hyperbolic
-one-relator
-groups:
-every
-such
-group
-is
-virtually
-free-by-cyclic,
-the
-free
-kernel
-allowed
-to
-have
-infinite
-rank
-[S4:58–62].
+**Virtual compact specialness** [S4:58–62, S2:605]. Every word-
+hyperbolic one-relator group is virtually compact special: it has a
+finite-index subgroup that is the fundamental group of a compact special
+cube complex. Combined with the work of Kielak and Linton, this resolves
+Wise's virtual free-by-cyclic conjecture for hyperbolic one-relator
+groups: every such group is virtually free-by-cyclic, the free kernel
+allowed to have infinite rank [S4:58–62].
 
 ## History of the conjecture
 
@@ -170,69 +82,13 @@ specialness, and with Kielak–Linton's prior work this
 resolves the conjecture, with the free kernel admitted to be
 of infinite rank.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-One-relator
-groups,
-Baumslag–Solitar
-groups,
-word
-hyperbolicity,
-compact
-special
-cube
-complexes,
-and
-Wise's
-virtual
-free-by-cyclic
-conjecture
-are
-standard
-in
-geometric
-group
-theory.
-The
-full
-resolution
-of
-Gersten's
-conjecture
-(the
-"only
-if"
-direction)
-and
-of
-Wise's
-virtual
-free-by-cyclic
-conjecture
-for
-hyperbolic
-one-relator
-groups
-(via
-virtual
-compact
-specialness)
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
+**Prior (my training data, not this repo).** One-relator groups,
+Baumslag–Solitar groups, word hyperbolicity, compact special cube
+complexes, and Wise's virtual free-by-cyclic conjecture are standard in
+geometric group theory. The full resolution of Gersten's conjecture (the
+"only if" direction) and of Wise's virtual free-by-cyclic conjecture for
+hyperbolic one-relator groups (via virtual compact specialness) are the
+novel contributions. I cannot confirm these independently from training
 alone.
 
 ## Consequences
@@ -241,211 +97,41 @@ alone.
   conjecture
   resolved**
   [S3:30–32, S2:605]:
-  a
-  finitely
-  generated
-  one-relator
-  group
-  is
-  word-hyperbolic
-  exactly
-  when
-  it
-  contains
-  no
-  Baumslag–Solitar
-  subgroup
-  $`\mathrm{BS}(m,n)`$
-  with
-  $`m,n\ne0`$.
+a finitely generated one-relator group is word-hyperbolic exactly when
+it contains no Baumslag–Solitar subgroup $`\mathrm{BS}(m,n)`$ with
+$`m,n\ne0`$.
 - **Wise's
-  virtual
-  free-by-cyclic
-  conjecture
-  resolved**
-  [S4:58–62]:
-  every
-  word-hyperbolic
-  one-relator
-  group
-  is
-  virtually
-  compact
-  special
-  and
-  hence
-  virtually
-  free-by-cyclic,
-  the
-  free
-  kernel
-  admitted
-  to
-  have
-  infinite
-  rank.
+virtual free-by-cyclic conjecture resolved** [S4:58–62]: every word-
+hyperbolic one-relator group is virtually compact special and hence
+virtually free-by-cyclic, the free kernel admitted to have infinite
+rank.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:29–33]
-(title
-[S3:24],
-date
-[S3:26])
-—
-`paper.tex`
-under
-`build/source/`.
-[S4:57–63]
-(title
-[S4:52],
-date
-[S4:54])
-—
-`main.tex`
-under
-`build/source/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+Two manuscripts. [S3:29–33] (title [S3:24], date [S3:26]) — `paper.tex` under
+`build/source/`. [S4:57–63] (title [S4:52], date [S4:54]) — `main.tex` under
+`build/source/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-does
-**not**
-formalize
-this
-family.
-There
-is
-no
-scope
-note
-at
-`lean/docs/258.md`,
-no
-comparator
-stub
-under
-`lean/ComparatorChallenges/`,
-no
-`main_results`
-entry
-in
-`lean/formalization.yaml`,
-and
-no
-OAI
-tree
-reachable
-through
-the
-yaml.
-Both
-manuscripts
-[S3:29–33]
-[S4:57–63]
-sit
-entirely
-outside
-the
-formalization,
-so
-the
-$`2`/2`$
-coverage
-signature
-is
-`paps_form=0`.
-There
-is
-no
-Lean
-reading
-to
-report
-for
-this
-family.
+The release does **not** formalize this family. There is no scope note
+at `lean/docs/258.md`, no comparator stub under
+`lean/ComparatorChallenges/`, no `main_results` entry in
+`lean/formalization.yaml`, and no OAI tree reachable through the yaml.
+Both manuscripts [S3:29–33] [S4:57–63] sit entirely outside the formalization, so
+the $`2`/2`$ coverage signature is `paps_form=0`. There is no Lean reading
+to report for this family.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=258`
-[S5]
-records
-the
-tier
-and
-the
-counts:
-`tier=T0`,
-`paps=2`,
-`paps_form=0`,
-`chal=0`,
-`mainres=0`,
-`scope_note=0`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-the
-family
-is
-entirely
-unformalized
-—
-no
-scope
-note,
-no
-comparator
-stub,
-no
-`main_results`
-entry,
-no
-OAI
-tree.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-empty,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-Gersten's
-conjecture
-with
-"Proves".
+The ledger row `fam=258` [S5] records the tier and the counts:
+`tier=T0`, `paps=2`, `paps_form=0`, `chal=0`, `mainres=0`,
+`scope_note=0`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=2` is the coverage signature: the family is entirely unformalized
+— no scope note, no comparator stub, no `main_results` entry, no OAI
+tree. There is no verification bundle and no reasoning trace. The shape
+flags are empty, and `resolves_named=1` — the blurb names Gersten's
+conjecture with "Proves".
 
 ## Sources
 

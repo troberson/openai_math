@@ -57,367 +57,60 @@ throughout, which pins down the structure of the ground state.
 
 **QAOA attains the SK ground-state energy**
 [S3:75–87, S2:653].
-For
-the
-Gaussian
-zero-field
-SK
-model,
-in
-the
-thermodynamic-first
-limit
-(system
-size
-$`N
+For the Gaussian zero-field SK model, in the thermodynamic-first limit
+(system size $`N
 \to \infty`$
-before
-circuit
-depth
-$`p
+before circuit depth $`p
 \to \infty`$),
 for
 every
 accuracy
 $`\varepsilon > 0`$,
-there
-exist
-a
-finite
-depth
-$`p_0`$
-and
-deterministic
-angles
+there exist a finite depth $`p_0`$ and deterministic angles
 $`\vec{\gamma}, \vec{\beta}`$,
-independent
-of
-$`N`$
-and
-of
-the
-disorder
-realization,
-such
-that
-the
-limiting
-expected
-energy
-per
-spin
-of
-QAOA
-applied
-with
-the
-standard
-cost
-Hamiltonian
-and
-transverse-field
-mixer
-is
-within
-$`\varepsilon`$
-of
-the
-ground-state
-energy
-per
-spin
-[S3:75–87].
-The
-paper
-gives
-no
-quantitative
-bound
-on
-the
-required
-depth
-or
-an
-efficient
-angle-selection
-procedure.
-This
-resolves
-the
-eventual
-Parisi-optimality
-conjecture
-of
-Basso,
-Farhi,
-Marwaha,
-Villalonga,
-and
-Zhou
-in
-its
-fixed-parameter
-thermodynamic
-formulation
-[S3:83–85].
+independent of $`N`$ and of the disorder realization, such that the
+limiting expected energy per spin of QAOA applied with the standard cost
+Hamiltonian and transverse-field mixer is within $`\varepsilon`$ of the
+ground-state energy per spin [S3:75–87]. The paper gives no quantitative
+bound on the required depth or an efficient angle-selection procedure.
+This resolves the eventual Parisi-optimality conjecture of Basso, Farhi,
+Marwaha, Villalonga, and Zhou in its fixed-parameter thermodynamic
+formulation [S3:83–85].
 
-**Full
-support
-of
-the
-zero-temperature
-SK
-order
-parameter**
+**Full support of the zero-temperature SK order parameter**
 [S4:32–38, S2:653].
-Every
-admissible
-integrable
-minimizer
-of
-the
-zero-temperature
-Parisi
-functional
-for
-the
-pure
-zero-field
-SK
-model
-has
-full
-relative
-Stieltjes
-support
-on
-$`[0,1)`$:
-its
-order
-parameter
-increases
-strictly
-between
-every
-two
-overlap
-values
-below
-one,
-so
-its
-support
-has
-no
-gap
-[S4:32–38].
-The
-covariance
-normalization
-is
+Every admissible integrable minimizer of the zero-temperature Parisi
+functional for the pure zero-field SK model has full relative Stieltjes
+support on $`[0,1)`$: its order parameter increases strictly between every
+two overlap values below one, so its support has no gap [S4:32–38]. The
+covariance normalization is
 $`\xi(t) = t^2/2`$
 [S4:37].
 
 ## History of the conjecture
 
-The
-**Parisi
-formula**
-(1979)
-and
-its
-rigorous
-proofs
-by
-Talagrand
-(2006)
-and
-Guo,
-Huang,
-and
-Shen
-(2023)
-established
-that
-the
-SK
-ground-state
-energy
-per
-spin
-converges
-to
-the
-Parisi
-value.
-The
-**Parisi-optimality
-conjecture**
-of
-Basso,
-Farhi,
-Marwaha,
-Villalonga,
-and
-Zhou
-(2021)
-asked
-whether
-QAOA
-—
-the
-most
-prominent
-quantum
-heuristic
-optimization
-algorithm
-—
-reaches
-that
-value
-as
-the
-circuit
-depth
-grows,
-with
-the
-system
-size
-going
-to
-infinity
-first.
-The
-manuscript
-[S3:75–87]
-answers
-it:
-in
-the
-thermodynamic-first
-limit,
-finite
-depth
-and
-size-independent
-deterministic
-angles
-achieve
-QAOA
-energy
-within
-any
-prescribed
-accuracy
-of
-the
-Parisi
-value.
-The
-second
-manuscript
-[S4:32–38]
-provides
-the
-analytic
-ingredient:
-the
-zero-temperature
-order
-parameter
-of
-every
-admissible
-Parisi
-minimizer
-has
-full
-Stieltjes
-support
-on
-$`[0,1)`$,
-ruling
-out
-gaps
-in
-the
-overlap
-spectrum
-and
-pinning
-down
-the
-structure
-needed
-for
-the
-QAOA
-convergence
-argument.
+The **Parisi formula** (1979) and its rigorous proofs by Talagrand
+(2006) and Guo, Huang, and Shen (2023) established that the SK ground-
+state energy per spin converges to the Parisi value. The **Parisi-
+optimality conjecture** of Basso, Farhi, Marwaha, Villalonga, and Zhou
+(2021) asked whether QAOA — the most prominent quantum heuristic
+optimization algorithm — reaches that value as the circuit depth grows,
+with the system size going to infinity first. The manuscript [S3:75–87]
+answers it: in the thermodynamic-first limit, finite depth and size-
+independent deterministic angles achieve QAOA energy within any
+prescribed accuracy of the Parisi value. The second manuscript
+[S4:32–38] provides the analytic ingredient: the zero-temperature order
+parameter of every admissible Parisi minimizer has full Stieltjes
+support on $`[0,1)`$, ruling out gaps in the overlap spectrum and pinning
+down the structure needed for the QAOA convergence argument.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-SK
-model,
-the
-Parisi
-formula,
-Talagrand's
-proof,
-the
-Parisi-optimality
-conjecture,
-and
-QAOA
-are
-standard
-in
-statistical
-physics
-and
-quantum
-optimization.
-The
-resolution
-of
-the
-Parisi-optimality
-conjecture
-in
-the
-thermodynamic-first
-limit,
-and
-the
-full-support
-theorem
-for
-every
-admissible
-zero-temperature
-Parisi
-minimizer,
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** The SK model, the Parisi
+formula, Talagrand's proof, the Parisi-optimality conjecture, and QAOA
+are standard in statistical physics and quantum optimization. The
+resolution of the Parisi-optimality conjecture in the thermodynamic-
+first limit, and the full-support theorem for every admissible zero-
+temperature Parisi minimizer, are the novel contributions. I cannot
+confirm these independently from training alone.
 
 ## Consequences
 
@@ -426,589 +119,88 @@ alone.
   for
   QAOA**
   [S3:75–87, S2:653]:
-  in
-  the
-  thermodynamic-first
-  limit,
-  QAOA
-  with
-  finite
-  depth
-  and
-  size-independent
-  deterministic
-  angles
-  attains
-  the
-  SK
-  ground-state
-  energy
-  within
-  any
-  accuracy,
-  resolving
-  the
-  Basso–Farhi–Marwaha–Villalonga–Zhou
-  conjecture.
+in the thermodynamic-first limit, QAOA with finite depth and size-
+independent deterministic angles attains the SK ground-state energy
+within any accuracy, resolving the Basso–Farhi–Marwaha–Villalonga–Zhou
+conjecture.
 - **Full
-  Stieltjes
-  support**
-  [S4:32–38]:
-  every
-  admissible
-  integrable
-  zero-temperature
-  Parisi
-  minimizer
-  has
-  order
-  parameter
-  with
-  full
-  relative
-  support
-  on
-  $`[0,1)`$,
-  i.e.
-  no
-  gaps
-  in
-  the
-  overlap
-  spectrum.
+Stieltjes support** [S4:32–38]: every admissible integrable zero-
+temperature Parisi minimizer has order parameter with full relative
+support on $`[0,1)`$, i.e. no gaps in the overlap spectrum.
 - **MaxCut
-  on
-  random
-  regular
-  graphs**
-  [S1:7036]:
-  the
-  SK
-  result
-  yields
-  leading-order
-  optimal
-  expected
-  MaxCut
-  values
-  on
-  large-degree
-  random
-  regular
-  graphs.
+on random regular graphs** [S1:7036]: the SK result yields leading-order
+optimal expected MaxCut values on large-degree random regular graphs.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:75–87]
-(title
-[S3:51–53],
-date
-[S3:54])
-—
-`main.tex`
-under
-`build/`,
-with
-sections
-under
-`build/sections/`
-(foundations,
-classical
-optimization,
-classical
-synthesis,
-seed
-simulation,
-assembly,
-positive
-temperature,
-and
-regular
-MaxCut).
-[S4:32–38]
-(title
-[S4:26–28],
-date
-[S4:29])
-—
-`main.tex`
-under
-`build/`,
-with
-section
-files
-beside
-it
-under
-`build/`
-(variables,
-variation,
-curvature,
-regularity,
-gap
-convexity,
-consequences,
-and
-a
-certificate).
-The
-family
-ships
-no
-`verification/`
+Two manuscripts. [S3:75–87] (title [S3:51–53], date [S3:54]) — `main.tex`
+under `build/`, with sections under `build/sections/` (foundations,
+classical optimization, classical synthesis, seed simulation, assembly,
+positive temperature, and regular MaxCut). [S4:32–38] (title [S4:26–28], date
+[S4:29]) — `main.tex` under `build/`, with section files beside it under
+`build/` (variables, variation, curvature, regularity, gap convexity,
+consequences, and a certificate). The family ships no `verification/`
 bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T2
-with
-one
-scope
-note
-[S5]
-and
-two
-comparator
-stubs
-[S6]
-[S7],
-but
-no
-`main_results`
-entry.
-The
-scope
-note
-links
-**both**
-manuscripts
-[S5:5–6].
-It
-records
-two
-formalized
-results:
+The release formalises this family at tier T2 with one scope note [S5]
+and two comparator stubs [S6] [S7], but no `main_results` entry. The
+scope note links **both** manuscripts [S5:5–6]. It records two
+formalized results:
 
-For
-manuscript
-one,
-the
-scope
-[S5:10]
-covers
-the
-**variational
-identities
-for
-the
-SK
-ground-state
-energy**
-used
-in
-the
-QAOA
-argument:
-conditional
-on
-an
-admissible
-Parisi
-minimizer
-and
-its
-associated
-diffusion,
-convergence
-of
-the
-finite-system
-ground-state
-energy,
-its
-identification
-with
-the
-Parisi
-value,
-and
-equivalent
-terminal-martingale
-and
-integrated-curvature
-formulas.
-The
-scope
-note
-is
-explicit
-that
-the
-selected
-statement
-**does
-not
-itself
-assert
-convergence
-of
-QAOA
-circuit
-energies**
-[S5:12]
-—
-the
-formalization
-proves
-the
-supporting
-value
-identities,
-not
-the
-QAOA
-convergence
-claim
-itself
-[S3:75–87].
+For manuscript one, the scope [S5:10] covers the **variational
+identities for the SK ground-state energy** used in the QAOA argument:
+conditional on an admissible Parisi minimizer and its associated
+diffusion, convergence of the finite-system ground-state energy, its
+identification with the Parisi value, and equivalent terminal-martingale
+and integrated-curvature formulas. The scope note is explicit that the
+selected statement **does not itself assert convergence of QAOA circuit
+energies** [S5:12] — the formalization proves the supporting value
+identities, not the QAOA convergence claim itself [S3:75–87].
 
-For
-manuscript
-two,
-the
-scope
-[S5:14–16]
-covers
-the
-**full
-relative
-Stieltjes
-support
-on
-$`[0,1)`$**
-of
-every
-admissible
-integrable
-zero-temperature
-Parisi
-minimizer,
-the
-construction
-of
-the
-associated
-diffusion,
-and
-its
-selected
-self-consistency
-moment
-identities,
-conditional
-on
-the
-order
-parameter
-being
-a
-minimizer.
-The
-scope
-note
-records
-that
-it
-**does
-not
-separately
-assert
-existence
-of
-a
-minimizer**
+For manuscript two, the scope [S5:14–16] covers the **full relative
+Stieltjes support on $`[0,1)`$** of every admissible integrable zero-
+temperature Parisi minimizer, the construction of the associated
+diffusion, and its selected self-consistency moment identities,
+conditional on the order parameter being a minimizer. The scope note
+records that it **does not separately assert existence of a minimizer**
 [S5:16].
 
-There
-is
-no
-`main_results`
-entry
-naming
-this
-family,
-so
-there
-is
-no
-registered
-proved
-declaration
-for
-these
-two
-results.
-A
-support
-tree
-does
-sit
-under
-`lean/OAI/MathematicalPhysics/CriticalSK/`
-(43
-`.lean`
-files
-including
-[S8],
-zero
-`sorry`),
-registered
-in
-the
-yaml
-for
-other
-configurations
-(`covariance_and_linear_tests`,
-`critical_mixing_bounds`),
-not
-for
-this
-family's
-two
-configs
-(SKValue,
+There is no `main_results` entry naming this family, so there is no
+registered proved declaration for these two results. A support tree does
+sit under `lean/OAI/MathematicalPhysics/CriticalSK/` (43 `.lean` files
+including [S8], zero `sorry`), registered in the yaml for other
+configurations (`covariance_and_linear_tests`,
+`critical_mixing_bounds`), not for this family's two configs (SKValue,
 SKFullSupport).
 
-The
-two
-comparator
-stubs
-carry
-two
-`sorry`
-in
-total:
-[S6]
-(`value_consequences`
-at
-[S6:163],
-`sorry`
-at
-[S6:171])
-and
-[S7]
-(`full_support`
-at
-[S7:90],
-`sorry`
-at
-[S7:92]).
-Neither
-is
-a
-`main_results`
-registration.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists
-and
-is
-registered,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-library.
+The two comparator stubs carry two `sorry` in total: [S6]
+(`value_consequences` at [S6:163], `sorry` at [S6:171]) and [S7]
+(`full_support` at [S7:90], `sorry` at [S7:92]). Neither is a
+`main_results` registration. A comparator stub is a target the release
+set itself; the proved version, where it exists and is registered, lives
+under `lean/OAI/`. The reading is of source text only — no `lake` or
+`lean` run elaborates the library.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=281`
-[S9]
-records
-the
-tier
-and
-the
-counts:
-`tier=T2`,
-`paps=2`,
-`paps_form=0`,
-`chal=2`,
-`mainres=0`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-the
-scope
-note
-links
-both
-manuscripts
-[S5:5–6],
-and
-the
-two
-comparator
-stubs
-[S6]
-[S7]
-state
-the
-targets,
-but
-no
-`main_results`
-entry
-registers
-a
-proved
-declaration,
-so
-the
-formalization
-stops
-at
-the
-scope
-note
-and
-the
-comparator
-stubs.
-Within
-that
-narrow
-scope
-there
-is
-a
-further
-gap:
-the
-formalized
-statement
-for
-manuscript
-one
-proves
-only
-the
-Parisi
-value
-identities
-[S5:10],
-and
-**does
-not
-assert
-convergence
-of
-QAOA
-circuit
-energies**
-[S5:12]
-—
-the
-manuscript's
-headline
-QAOA
-attainment
-claim
-[S3:75–87]
-is
-outside
-the
-formalized
-scope.
-The
-two
-comparator
-stubs
-carry
-two
-`sorry`
-in
-total.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flag
-is
-`uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-Parisi-optimality
-conjecture
-and
-states
-it
-is
-proved
-in
-the
-thermodynamic-first
-limit.
+The ledger row `fam=281` [S9] records the tier and the counts:
+`tier=T2`, `paps=2`, `paps_form=0`, `chal=2`, `mainres=0`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=2` is the coverage signature: the scope note links both
+manuscripts [S5:5–6], and the two comparator stubs [S6] [S7] state the
+targets, but no `main_results` entry registers a proved declaration, so
+the formalization stops at the scope note and the comparator stubs.
+Within that narrow scope there is a further gap: the formalized
+statement for manuscript one proves only the Parisi value identities
+[S5:10], and **does not assert convergence of QAOA circuit energies**
+[S5:12] — the manuscript's headline QAOA attainment claim [S3:75–87] is
+outside the formalized scope. The two comparator stubs carry two `sorry`
+in total. There is no verification bundle and no reasoning trace. The
+shape flag is `uniform`, and `resolves_named=1` — the blurb names the
+Parisi-optimality conjecture and states it is proved in the
+thermodynamic-first limit.
 
 ## Sources
 

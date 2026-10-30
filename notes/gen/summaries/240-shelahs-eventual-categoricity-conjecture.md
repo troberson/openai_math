@@ -45,15 +45,7 @@ in one sufficiently large cardinal, is it categorical in
 in ZFC (the standard axioms of set theory)
 [S3:64–70, S2:565]. The companion
 result shows that a
-**specific**
-proposed
-threshold
-is
-not
-enough
-under
-the
-continuum
+**specific** proposed threshold is not enough under the continuum
 hypothesis
 [S5:1–7, S2:565].
 
@@ -62,598 +54,91 @@ hypothesis
 **Eventual categoricity in ZFC**
 [S3:64–70, S2:565]. For each bound
 $`\kappa_0`$ on the
-L\"owenheim--Skolem
-number,
-there
-is
-a
-uniform
-threshold
-$`\kappa_1
->
-\kappa_0`$
-such
-that
-if
-an
-AEC
-is
-categorical
-in
-some
-$`\kappa
-\geq
-\kappa_1`$,
-it
-is
-categorical
-in
-every
-$`\lambda
-\geq
-\kappa`$.
-The
-threshold
-depends
-only
-on
-$`\kappa_0`$,
-not
-on
-the
-class.
+L\"owenheim--Skolem number, there is a uniform threshold $`\kappa_1 >
+\kappa_0`$ such that if an AEC is categorical in some $`\kappa \geq
+\kappa_1`$, it is categorical in every $`\lambda \geq \kappa`$. The
+threshold depends only on $`\kappa_0`$, not on the class.
 
-**CH
-obstruction**
-[S5:1–7,
-S2:565].
-Assuming
-CH,
-there
-is
-an
-AEC
-in
-a
-countable
-relational
-language
-with
-L\"owenheim--Skolem
-number
-$`\aleph_0`$
-that
-is
-categorical
-in
-every
-sufficiently
-large
-cardinal
-but
-has
-at
-least
-two
-nonisomorphic
-models
-of
-cardinality
-$`\beth_{\omega_2}`$.
-Thus
-categoricity
-does
-not
-transfer
-down
-to
-the
-proposed
-bound
-$`\beth_{(2^{\aleph_0})^+}`$,
-which
-equals
-$`\beth_{\omega_2}`$
-under
-CH.
+**CH obstruction** [S5:1–7, S2:565]. Assuming CH, there is an AEC in a
+countable relational language with L\"owenheim--Skolem number $`\aleph_0`$
+that is categorical in every sufficiently large cardinal but has at
+least two nonisomorphic models of cardinality $`\beth_{\omega_2}`$. Thus
+categoricity does not transfer down to the proposed bound
+$`\beth_{(2^{\aleph_0})^+}`$, which equals $`\beth_{\omega_2}`$ under CH.
 
 ## History of the conjecture
 
-**Shelah's
-eventual
-categoricity
-conjecture**
-(1980s)
-asked
-whether
-categoricity
-in
-one
-large
-cardinal
-implies
-categoricity
-in
-all
-larger
-cardinals
-for
-AECs.
-The
-result
-[S3:64–70]
-proves
-it
-in
-ZFC,
-with
-a
-uniform
-threshold
-depending
-only
-on
-the
-L\"owenheim--Skolem
-number.
-The
-**CH
-obstruction**
-[S5:1–7]
-shows
-that
-the
-specific
-Hanf
-threshold
-$`\beth_{(2^{\aleph_0})^+}`$
-proposed
-in
-earlier
-work
-is
-not
-sufficient:
-under
-CH,
-an
-AEC
-can
-be
-eventually
-categorical
-but
-not
-categorical
-at
-that
-specific
-cardinal.
-This
-separates
-the
-general
-existence
-theorem
-from
-any
-specific
-bound.
+**Shelah's eventual categoricity conjecture** (1980s) asked whether
+categoricity in one large cardinal implies categoricity in all larger
+cardinals for AECs. The result [S3:64–70] proves it in ZFC, with a
+uniform threshold depending only on the L\"owenheim--Skolem number. The
+**CH obstruction** [S5:1–7] shows that the specific Hanf threshold
+$`\beth_{(2^{\aleph_0})^+}`$ proposed in earlier work is not sufficient:
+under CH, an AEC can be eventually categorical but not categorical at
+that specific cardinal. This separates the general existence theorem
+from any specific bound.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-AECs,
-the
-L\"owenheim--Skolem
-number,
-categoricity,
-and
-Shelah's
-conjecture
-are
-standard
-model
-theory.
-The
-ZFC
-proof
-of
-eventual
-categoricity
-with
-a
-uniform
-threshold,
-and
-the
-CH
-obstruction
-to
-the
-specific
-Hanf
-bound,
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** AECs, the L\"owenheim--
+Skolem number, categoricity, and Shelah's conjecture are standard model
+theory. The ZFC proof of eventual categoricity with a uniform threshold,
+and the CH obstruction to the specific Hanf bound, are the novel
+contributions. I cannot confirm these independently from training alone.
 
 ## Consequences
 
 - **Eventual
-  categoricity
-  in
-  ZFC**
-  [S3:64–70]:
-  categoricity
-  in
-  one
-  sufficiently
-  large
-  cardinal
-  implies
-  categoricity
-  in
-  all
-  larger
-  cardinals,
-  with
-  a
-  uniform
-  threshold
-  depending
-  only
-  on
-  the
-  L\"owenheim--Skolem
-  number.
+categoricity in ZFC** [S3:64–70]: categoricity in one sufficiently large
+cardinal implies categoricity in all larger cardinals, with a uniform
+threshold depending only on the L\"owenheim--Skolem number.
 - **The
-  CH
-  obstruction**
-  [S5:1–7]:
-  the
-  specific
-  Hanf
-  threshold
-  $`\beth_{(2^{\aleph_0})^+}`$
-  is
-  not
-  sufficient
-  under
-  CH;
-  the
-  prescribed-threshold
-  form
-  of
-  Shelah's
-  conjecture
-  is
-  not
-  provable
-  in
-  ZFC.
+CH obstruction** [S5:1–7]: the specific Hanf threshold
+$`\beth_{(2^{\aleph_0})^+}`$ is not sufficient under CH; the prescribed-
+threshold form of Shelah's conjecture is not provable in ZFC.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:64–70]
-(title
-[S3:59],
-date
-[S3:61])
-—
-`main.tex`
-under
-`build/`.
-[S4]
-(title
-[S4:3],
-date
-[S4:5])
-—
-`paper.tex`
-under
-`build/`
-with
-`sections/`
-(abstract
-in
-`sections/00-introduction.tex`).
-The
-family
-ships
-no
-`verification/`
-bundle.
+Two manuscripts. [S3:64–70] (title [S3:59], date [S3:61]) — `main.tex` under
+`build/`. [S4] (title [S4:3], date [S4:5]) — `paper.tex` under `build/`
+with `sections/` (abstract in `sections/00-introduction.tex`). The
+family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S6],
-one
-comparator
-stub
-[S7],
-and
-one
-`main_results`
-entry
-[S9].
-The
-scope
-note
-[S6:9]
-states
-the
-target:
-under
-CH,
-an
-AEC
-in
-a
-countable
-relational
-language
-with
-L\"owenheim--Skolem
-number
-$`\aleph_0`$
-has
-two
-nonisomorphic
-models
-at
+The release formalises this family at tier T3 with one scope note [S6],
+one comparator stub [S7], and one `main_results` entry [S9]. The scope
+note [S6:9] states the target: under CH, an AEC in a countable
+relational language with L\"owenheim--Skolem number $`\aleph_0`$ has two
+nonisomorphic models at
 $`\beth_{\omega_2} = h(\aleph_0)`$
-but
-is
-categorical
-in
-every
-cardinal
-at
-least
-$`\beth_{(2^{\aleph_1})^+}`$.
-The
-later
-canonical-point
-obstruction
-and
-the
-separate
-eventual-categoricity
-theorem
-are
-not
-included
-[S6:11].
+but is categorical in every cardinal at least
+$`\beth_{(2^{\aleph_1})^+}`$. The later canonical-point obstruction and
+the separate eventual-categoricity theorem are not included [S6:11].
 
-The
-`main_results`
-entry
-[S9:1071–1073]
-names
-`OAI.CHObstruction.main`
-in
-`lean/OAI/ModelTheory/Categoricity/Main.lean`.
-The
-source
-carries
-the
-full
-construction:
-the
-Data
-structure,
-the
-tail
-threshold,
-the
-object
-and
-tail
-theorems,
-and
-the
-base/cardinal
-comparisons
-[S8].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/ModelTheory/Categoricity/`
-tree.
+The `main_results` entry [S9:1071–1073] names `OAI.CHObstruction.main`
+in `lean/OAI/ModelTheory/Categoricity/Main.lean`. The source carries the
+full construction: the Data structure, the tail threshold, the object
+and tail theorems, and the base/cardinal comparisons [S8]. `grep` finds
+**zero** `sorry` in the whole `lean/OAI/ModelTheory/Categoricity/` tree.
 
-The
-one
-comparator
-stub
-[S7]
-states
-the
-CH
-obstruction
-target
-and
-ends
-in
-`sorry`.
-The
-proved
-copy
-lives
-under
-`lean/OAI/`.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The one comparator stub [S7] states the CH obstruction target and ends
+in `sorry`. The proved copy lives under `lean/OAI/`. A comparator stub
+is a target the release set itself; the proved version, where it exists,
+lives under `lean/OAI/`. The reading is of source text only — no `lake`
+or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=240`
-[S10]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=2`,
-`paps_form=1`,
-`chal=1`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-one
-of
-the
-two
-manuscripts
-is
-named
-as
-a
-formalization
-source
-(the
-CH
-obstruction),
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-CH
-obstruction
-construction
-—
-the
-eventual
-categoricity
-theorem
-itself
-is
-outside
-the
-formalization.
-The
-comparator
-stub
-names
-the
-CH
-obstruction
-target,
-and
-the
-proved
-copy
-lives
-under
-`lean/OAI/`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-Shelah's
-conjecture
-with
-"Proves".
+The ledger row `fam=240` [S10] records the tier and the counts:
+`tier=T3`, `paps=2`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=2` is the coverage signature: one of the two manuscripts is named
+as a formalization source (the CH obstruction), and the single
+`main_results` entry over that config reaches the CH obstruction
+construction — the eventual categoricity theorem itself is outside the
+formalization. The comparator stub names the CH obstruction target, and
+the proved copy lives under `lean/OAI/`. There is no verification bundle
+and no reasoning trace. The shape flags are `resolution`, and
+`resolves_named=1` — the blurb names Shelah's conjecture with "Proves".
 
 ## Sources
 

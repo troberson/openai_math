@@ -40,483 +40,74 @@ has costs tending to one [S3:25–30, S2:607].
 
 **A group without fixed price**
 [S3:25–30, S2:607]. There
-exists
-a
-finitely
-generated
-group
-$`G`$
-—
-an
-amalgam
-of
-a
-free
-group
-of
-rank
-$`100`$
-with
-a
-direct
-product
-[S3:25–30]
-—
-carrying
-two
-essentially
-free
-probability-measure-preserving
-actions
-of
-different
-measure
-cost.
-The
-Bernoulli
-shift
-of
-$`G`$
-has
-cost
-bounded
-away
-from
-$`1`$,
-while
-a
-sequence
-of
-essentially
-free
-finite
-height
-extensions
-of
-it
-has
-costs
-tending
-to
-$`1`$.
-This
-gives
-a
-negative
-answer
-to
-Gaboriau's
-general
-fixed-price
-problem:
-the
-cost
-is
-not
-an
-invariant
-of
-the
-group
-alone.
+exists a finitely generated group $`G`$ — an amalgam of a free group of
+rank $`100`$ with a direct product [S3:25–30] — carrying two essentially
+free probability-measure-preserving actions of different measure cost.
+The Bernoulli shift of $`G`$ has cost bounded away from $`1`$, while a
+sequence of essentially free finite height extensions of it has costs
+tending to $`1`$. This gives a negative answer to Gaboriau's general
+fixed-price problem: the cost is not an invariant of the group alone.
 
 ## History of the conjecture
 
-The
-**fixed-price
-problem**
-(Gaboriau)
-asked
-whether
-the
-measure
-cost
-of
-an
-essentially
-free
-probability-measure-preserving
-action
-is
-determined
-by
-the
-group,
-independently
-of
-the
-action.
-Gaboriau
-had
-proved
-the
-fixed-price
-property
-for
-several
-important
-classes
-—
-for
-instance
-for
-groups
-where
-the
-cost
-is
-forced
-to
-be
-$`1`$
-—
-which
-made
-the
-general
-case
-a
-plausible
-conjecture.
-The
-result
-[S3:25–30]
-answers
-it
-negatively
-in
-full
-generality:
-a
-single
-finitely
-generated
-group
-carries
-essentially
-free
-actions
-with
-costs
-that
-differ,
-with
-the
-Bernoulli
-cost
-bounded
-away
-from
-$`1`$
-and
-the
-finite
-height
-extension
-costs
-tending
-to
-$`1`$.
-The
-construction
-—
-a
-rank-$`100`$
-free-group
-amalgam
-with
-a
-direct
-product
-—
-is
-the
-mechanism
-that
-separates
-the
-two
-costs.
+The **fixed-price problem** (Gaboriau) asked whether the measure cost of
+an essentially free probability-measure-preserving action is determined
+by the group, independently of the action. Gaboriau had proved the
+fixed-price property for several important classes — for instance for
+groups where the cost is forced to be $`1`$ — which made the general case
+a plausible conjecture. The result [S3:25–30] answers it negatively in
+full generality: a single finitely generated group carries essentially
+free actions with costs that differ, with the Bernoulli cost bounded
+away from $`1`$ and the finite height extension costs tending to $`1`$. The
+construction — a rank-$`100`$ free-group amalgam with a direct product —
+is the mechanism that separates the two costs.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Measure
-cost,
-essentially
-free
-probability-measure-preserving
-actions,
-Bernoulli
-shifts,
-and
-Gaboriau's
-fixed-price
-problem
-are
-standard
-in
-measured
-group
-theory
-and
-measurable
-ergodic
-theory.
-The
-explicit
-finitely
-generated
-group
-with
-two
-essentially
-free
-actions
-of
-different
-costs
-—
-resolving
-the
-general
-fixed-price
-problem
-negatively
-—
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Measure cost, essentially
+free probability-measure-preserving actions, Bernoulli shifts, and
+Gaboriau's fixed-price problem are standard in measured group theory and
+measurable ergodic theory. The explicit finitely generated group with
+two essentially free actions of different costs — resolving the general
+fixed-price problem negatively — is the novel contribution. I cannot
+confirm this independently from training alone.
 
 ## Consequences
 
 - **The
-  general
-  fixed-price
-  problem
-  answered
-  negatively**
+general fixed-price problem answered negatively**
   [S3:25–30, S2:607]:
-  a
-  finitely
-  generated
-  group
-  need
-  not
-  have
-  a
-  fixed
-  cost;
-  one
-  carries
-  essentially
-  free
-  actions
-  of
-  different
-  costs.
+a finitely generated group need not have a fixed cost; one carries
+essentially free actions of different costs.
 - **The
-  cost
-  gap
-  is
-  explicit**
-  [S3:25–30]:
-  the
-  same
-  group's
-  Bernoulli
-  action
-  has
-  cost
-  bounded
-  away
-  from
-  $`1`$,
-  while
-  its
-  finite
-  height
-  extension
-  actions
-  have
-  costs
-  tending
-  to
-  $`1`$.
+cost gap is explicit** [S3:25–30]: the same group's Bernoulli action has
+cost bounded away from $`1`$, while its finite height extension actions
+have costs tending to $`1`$.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:24–31]
-(title
-[S3:19],
-date
-[S3:21])
-—
-`paper.tex`
-under
-`build/`,
-with
-the
-body
-sections
-in
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:24–31] (title [S3:19], date [S3:21]) — `paper.tex` under
+`build/`, with the body sections in `build/`. The family ships no
+`verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-does
-**not**
-formalize
-this
-family.
-There
-is
-no
-scope
-note
-at
-`lean/docs/259.md`,
-no
-comparator
-stub
-under
-`lean/ComparatorChallenges/`,
-no
-`main_results`
-entry
-in
-`lean/formalization.yaml`,
-and
-no
-OAI
-tree
-reachable
-through
-the
-yaml.
-The
-single
-manuscript
-[S3:24–31]
-sits
-entirely
-outside
-the
-formalization,
-so
-the
-coverage
-signature
-is
-`paps_form=0`.
-There
-is
-no
-Lean
-reading
-to
-report
-for
-this
-family.
+The release does **not** formalize this family. There is no scope note
+at `lean/docs/259.md`, no comparator stub under
+`lean/ComparatorChallenges/`, no `main_results` entry in
+`lean/formalization.yaml`, and no OAI tree reachable through the yaml.
+The single manuscript [S3:24–31] sits entirely outside the formalization, so
+the coverage signature is `paps_form=0`. There is no Lean reading to
+report for this family.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=259`
-[S4]
-records
-the
-tier
-and
-the
-counts:
-`tier=T0`,
-`paps=1`,
-`paps_form=0`,
-`chal=0`,
-`mainres=0`,
-`scope_note=0`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-family
-is
-entirely
-unformalized
-—
-no
-scope
-note,
-no
-comparator
-stub,
-no
-`main_results`
-entry,
-no
-OAI
-tree.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flag
-is
-`bound`,
-`counterex_broad=1`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-general
-fixed-price
-problem
-with
-"answering".
+The ledger row `fam=259` [S4] records the tier and the counts:
+`tier=T0`, `paps=1`, `paps_form=0`, `chal=0`, `mainres=0`,
+`scope_note=0`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=1` is the coverage signature: the family is entirely unformalized
+— no scope note, no comparator stub, no `main_results` entry, no OAI
+tree. There is no verification bundle and no reasoning trace. The shape
+flag is `bound`, `counterex_broad=1`, and `resolves_named=1` — the blurb
+names the general fixed-price problem with "answering".
 
 ## Sources
 

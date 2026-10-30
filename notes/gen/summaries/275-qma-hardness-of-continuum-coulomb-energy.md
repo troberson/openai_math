@@ -51,833 +51,122 @@ fields — the hardest cases are not exotic.
 
 **QMA-hardness with binary nuclear charges**
 [S3:8–10, S2:641, S5:10].
-Approximating
-the
-electronic
-Coulomb
-spectral
-infimum
-in
-three-dimensional
-continuum
-space
-is
-QMA-hard
-when
-positive
-integer
-nuclear
-charges
-are
-encoded
-in
-binary:
-the
-nuclei
-have
-distinct
-rational
-positions,
-the
-electron
-number
-is
-unary,
-and
-the
-energy
-is
-minimized
-over
-all
-antisymmetric
-continuum
-states
-and
-spin
-sectors;
-a
-deterministic
-classical
-polynomial-time
-many-one
-reduction
-produces
-instances
-with
-threshold
-separation
-at
-least
-one
-while
-every
-output
-has
-polynomial
-bit
-length
-[S5:10].
+Approximating the electronic Coulomb spectral infimum in three-
+dimensional continuum space is QMA-hard when positive integer nuclear
+charges are encoded in binary: the nuclei have distinct rational
+positions, the electron number is unary, and the energy is minimized
+over all antisymmetric continuum states and spin sectors; a
+deterministic classical polynomial-time many-one reduction produces
+instances with threshold separation at least one while every output has
+polynomial bit length [S5:10].
 
-**QMA-hardness
-with
-unit
-nuclear
-charges**
-[S4:28–37,
-S2:641,
-S5:12].
-Approximating
-the
-electronic
-ground-energy
-infimum
-for
-clamped
-unit-charge
-nuclei
-is
-QMA-hard
-on
-the
-full
-spinful
-fermionic
-continuum:
-a
-deterministic
-classical
-polynomial-time
-reduction
-produces
-polynomially
-many
-nuclei
-at
-distinct
-rational
-positions
-and
-polynomially
-many
-electrons,
-with
-polynomial
-rational
-bit
-lengths
-and
-threshold
-separation
-at
-least
-one;
-no
-orbital
-basis,
-magnetic
-field,
-additional
-external
-potential,
-or
-binding
-premise
-is
-part
-of
-the
-input
-[S5:12].
+**QMA-hardness with unit nuclear charges** [S4:28–37, S2:641, S5:12].
+Approximating the electronic ground-energy infimum for clamped unit-
+charge nuclei is QMA-hard on the full spinful fermionic continuum: a
+deterministic classical polynomial-time reduction produces polynomially
+many nuclei at distinct rational positions and polynomially many
+electrons, with polynomial rational bit lengths and threshold separation
+at least one; no orbital basis, magnetic field, additional external
+potential, or binding premise is part of the input [S5:12].
 
 ## History of the conjecture
 
-The
-**Feynman
-hypothesis**
-and
-the
-program
-of
-Feynman,
-then
-the
-quantum
-complexity
-work
-of
-Bravyi
-and
-Stern
-(2007),
-and
-the
-continuum
-results
-of
-Oganesyan,
-and
-Stern,
-established
-that
-local
-spin
-Hamiltonians
-with
-polynomial
-interaction
-degree
-are
-QMA-hard.
-The
-**continuum
-Coulomb**
-problem
-—
-where
-the
-electrons
-live
-in
-the
-full
-Hilbert
-space
+The **Feynman hypothesis** and the program of Feynman, then the quantum
+complexity work of Bravyi and Stern (2007), and the continuum results of
+Oganesyan, and Stern, established that local spin Hamiltonians with
+polynomial interaction degree are QMA-hard. The **continuum Coulomb**
+problem — where the electrons live in the full Hilbert space
 $`H^1(\mathbb R^{3N})`$
-rather
-than
-a
-finite
-orbital
-basis
-—
-was
-harder:
-the
-hardness
-reductions
-had
-to
-work
-directly
-with
-the
-infinite-
-dimensional
-Coulomb
-operator,
-and
-most
-results
-assumed
-a
-fixed
-orbital
-basis
-or
-large
-nuclear
-charges.
-The
-first
-manuscript
-[S3:8–10]
-shows
-QMA-hardness
-with
-binary-encoded
-nuclear
-charges
-in
-the
-full
-continuum;
-the
-second
-[S4:28–37]
-goes
-further
-and
-proves
-it
-with
-**unit**
-nuclear
-charges
-only
-(the
-simplest
-physical
-case),
-rational
-positions,
-and
-no
-external
-fields
-or
-binding
-assumption,
-so
-the
-hardness
-is
-not
-an
-artifact
-of
-large
-charges
-or
-auxiliary
-structure.
+rather than a finite orbital basis — was harder: the hardness reductions
+had to work directly with the infinite- dimensional Coulomb operator,
+and most results assumed a fixed orbital basis or large nuclear charges.
+The first manuscript [S3:8–10] shows QMA-hardness with binary-encoded
+nuclear charges in the full continuum; the second [S4:28–37] goes
+further and proves it with **unit** nuclear charges only (the simplest
+physical case), rational positions, and no external fields or binding
+assumption, so the hardness is not an artifact of large charges or
+auxiliary structure.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-Coulomb
-Hamiltonian,
-the
-spinful
-fermionic
-continuum
+**Prior (my training data, not this repo).** The Coulomb Hamiltonian,
+the spinful fermionic continuum
 $`H^1(\mathbb R^{3N})`$,
-QMA-hardness,
-and
-the
-Bravyi–Stern
-sp
-in-Hamiltonian
-program
-are
-standard
-in
-quantum
-complexity
-and
-computational
-quantum
-chemistry.
-The
-full-continuum
-QMA-hardness
-with
-binary
-nuclear
-charges,
-and
-its
-strengthening
-to
-**unit**-charge
-nuclei
-at
-rational
-positions
-with
-no
-external
-field
-or
-binding
-premise,
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+QMA-hardness, and the Bravyi–Stern sp in-Hamiltonian program are
+standard in quantum complexity and computational quantum chemistry. The
+full-continuum QMA-hardness with binary nuclear charges, and its
+strengthening to **unit**-charge nuclei at rational positions with no
+external field or binding premise, are the novel contributions. I cannot
+confirm these independently from training alone.
 
 ## Consequences
 
 - **QMA-hardness
-  with
-  binary
-  nuclear
-  charges**
+with binary nuclear charges**
   [S3:8–10, S2:641]:
-  approximating
-  the
-  continuum
-  electronic
-  Coulomb
-  spectral
-  infimum
-  is
-  QMA-hard
-  with
-  binary-encoded
-  nuclear
-  charges,
-  unary
-  electron
-  count,
-  and
-  threshold
-  separation
-  at
-  least
-  one.
+approximating the continuum electronic Coulomb spectral infimum is QMA-
+hard with binary-encoded nuclear charges, unary electron count, and
+threshold separation at least one.
 - **QMA-hardness
-  with
-  unit
-  nuclear
-  charges**
+with unit nuclear charges**
   [S4:28–37, S5:12]:
-  the
-  same
-  hardness
-  holds
-  with
-  clamped
-  unit-charge
-  nuclei
-  at
-  rational
-  positions,
-  polynomially
-  many
-  electrons,
-  and
-  no
-  orbital
-  basis,
-  magnetic
-  field,
-  external
-  potential,
-  or
-  binding
-  premise.
+the same hardness holds with clamped unit-charge nuclei at rational
+positions, polynomially many electrons, and no orbital basis, magnetic
+field, external potential, or binding premise.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:8–10]
-(title
-[S3:3],
-date
-[S3:5])
-—
-`paper.tex`
-under
-`build/`,
-with
-sections
-under
-`build/sections/`.
-[S4:28–37]
-(title
-[S4:23],
-date
-[S4:25])
-—
-`paper.tex`
-under
-`build/`,
-with
-sections
-under
-`build/sections/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+Two manuscripts. [S3:8–10] (title [S3:3], date [S3:5]) — `paper.tex` under
+`build/`, with sections under `build/sections/`. [S4:28–37] (title [S4:23],
+date [S4:25]) — `paper.tex` under `build/`, with sections under
+`build/sections/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T2
-with
-one
-scope
-note
-[S5]
-and
-one
-comparator
-stub
-[S6],
-but
-no
-`main_results`
-entry.
-The
-scope
-note
-links
-**both**
-manuscripts
-[S5:5–6].
-It
-records
-two
-statements
-in
-the
-same
-comparator
-file:
-the
-binary-charge
-result
-[S5:10]
-—
-QMA-hardness
-of
-the
-electronic
-Coulomb
-spectral
-infimum
-with
-binary-encoded
-positive
-integer
-nuclear
-charges,
-distinct
-rational
-positions,
-unary
-electron
-count,
-over
-all
-antisymmetric
-continuum
-states
-and
-spin
-sectors,
-with
-a
-deterministic
-polynomial-time
-many-one
-reduction
-giving
-threshold
-separation
-at
-least
-one
-and
-polynomial
-output
-length
-—
-and
-the
-unit-charge
-result
-[S5:12]
-—
-QMA-hardness
-of
-the
-electronic
-ground-energy
-infimum
-for
-clamped
-unit-charge
-nuclei
-in
-the
-full
-spinful
-fermionic
-continuum,
-with
-rational
-positions,
-separated
-rational
-energy
-thresholds,
-and
-no
-orbital
-basis,
-magnetic
-field,
-external
-potential,
-or
-binding
-premise.
-The
-companion
-note
-[S5:14]
-states
-the
-same
-comparator
-file
-carries
-both
-hardness
-results.
+The release formalises this family at tier T2 with one scope note [S5]
+and one comparator stub [S6], but no `main_results` entry. The scope
+note links **both** manuscripts [S5:5–6]. It records two statements in
+the same comparator file: the binary-charge result [S5:10] — QMA-
+hardness of the electronic Coulomb spectral infimum with binary-encoded
+positive integer nuclear charges, distinct rational positions, unary
+electron count, over all antisymmetric continuum states and spin
+sectors, with a deterministic polynomial-time many-one reduction giving
+threshold separation at least one and polynomial output length — and the
+unit-charge result [S5:12] — QMA-hardness of the electronic ground-
+energy infimum for clamped unit-charge nuclei in the full spinful
+fermionic continuum, with rational positions, separated rational energy
+thresholds, and no orbital basis, magnetic field, external potential, or
+binding premise. The companion note [S5:14] states the same comparator
+file carries both hardness results.
 
-There
-is
-no
-`main_results`
-entry
-naming
-this
-family,
-so
-there
-is
-no
-registered
-proved
-declaration
-and
-no
-OAI
-tree
-reachable
-through
-the
-yaml.
-An
-unregistered
-support
-tree
-does
-sit
-under
-`lean/OAI/MathematicalPhysics/ContinuumCoulomb/`
-(1,783
-`.lean`
-files
-including
-[S7],
-zero
-`sorry`),
-but
-it
-is
-not
-named
-in
-`lean/formalization.yaml`,
-so
-it
-is
-not
-a
-registered
-proved
-statement
-for
-this
-family.
+There is no `main_results` entry naming this family, so there is no
+registered proved declaration and no OAI tree reachable through the
+yaml. An unregistered support tree does sit under
+`lean/OAI/MathematicalPhysics/ContinuumCoulomb/` (1,783 `.lean` files
+including [S7], zero `sorry`), but it is not named in
+`lean/formalization.yaml`, so it is not a registered proved statement
+for this family.
 
-The
-one
-comparator
-stub
-[S6]
-carries
-both
-targets,
-each
-with
-one
-`sorry`:
-`unit_coulomb_qmaHard`
-at
-[S6:546]
-(`sorry`
-at
-[S6:547])
-and
-`binary_coulomb_qmaHard`
-at
-[S6:549]
-(`sorry`
-at
-[S6:550]).
-Neither
-is
-a
-`main_results`
-registration.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists
-and
-is
-registered,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-library.
+The one comparator stub [S6] carries both targets, each with one
+`sorry`: `unit_coulomb_qmaHard` at [S6:546] (`sorry` at [S6:547]) and
+`binary_coulomb_qmaHard` at [S6:549] (`sorry` at [S6:550]). Neither is a
+`main_results` registration. A comparator stub is a target the release
+set itself; the proved version, where it exists and is registered, lives
+under `lean/OAI/`. The reading is of source text only — no `lake` or
+`lean` run elaborates the library.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=275`
-[S8]
-records
-the
-tier
-and
-the
-counts:
-`tier=T2`,
-`paps=2`,
-`paps_form=0`,
-`chal=1`,
-`mainres=0`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-the
-scope
-note
-links
-both
-manuscripts
-[S5:5–6],
-and
-the
-single
-comparator
-stub
-[S6]
-carries
-both
-the
-binary
-and
-unit-charge
-QMA-hardness
-targets,
-but
-no
-`main_results`
-entry
-registers
-a
-proved
-declaration,
-so
-the
-formalization
-stops
-at
-the
-scope
-note
-and
-the
-comparator
-stubs.
-The
-comparator
-stub
-[S6]
-carries
-two
-`sorry`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-empty,
-and
-`resolves_named=0`
-—
-the
-blurb
-states
-the
-QMA-hardness
-result
-without
-naming
-a
-conjecture
-in
-the
-resolve
-form
-the
-ledger
-flags.
+The ledger row `fam=275` [S8] records the tier and the counts:
+`tier=T2`, `paps=2`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=2` is the coverage signature: the scope note links both
+manuscripts [S5:5–6], and the single comparator stub [S6] carries both
+the binary and unit-charge QMA-hardness targets, but no `main_results`
+entry registers a proved declaration, so the formalization stops at the
+scope note and the comparator stubs. The comparator stub [S6] carries
+two `sorry`. There is no verification bundle and no reasoning trace. The
+shape flags are empty, and `resolves_named=0` — the blurb states the
+QMA-hardness result without naming a conjecture in the resolve form the
+ledger flags.
 
 ## Sources
 

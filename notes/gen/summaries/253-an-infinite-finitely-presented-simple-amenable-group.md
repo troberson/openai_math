@@ -36,77 +36,14 @@ finitely presented, simple, and amenable. The answer is
 
 **Infinite finitely presented simple amenable group**
 [S3:41, S2:595]. There
-exists
-a
-group
-$`G`$
-that
-is
-infinite,
-finitely
-presented,
-simple,
-and
-amenable.
-This
-gives
-a
-positive
-answer
-to
-the
-finite-presentation
-existence
-question
-for
-simple
-amenable
-groups:
-the
-three
-properties
-(infiniteness,
-finite
-presentation,
-simplicity)
-together
-with
-amenability
-are
-not
-mutually
-exclusive.
+exists a group $`G`$ that is infinite, finitely presented, simple, and
+amenable. This gives a positive answer to the finite-presentation
+existence question for simple amenable groups: the three properties
+(infiniteness, finite presentation, simplicity) together with
+amenability are not mutually exclusive.
 
-The
-formalized
-statement
-expresses
-amenability
-by
-the
-**Følner
-condition**:
-for
-every
-finite
-subset
-$`F`$
-of
-$`G`$
-and
-every
-$`arepsilon>0`$,
-there
-is
-a
-nonempty
-finite
-subset
-$`A`$
-of
-$`G`$
-such
-that
+The formalized statement expresses amenability by the **Følner
+condition**: for every finite subset $`F`$ of $`G`$ and every $`arepsilon>0`$, there is a nonempty finite subset $`A`$ of $`G`$ such that
 $`|Af \setminus A| / |A| < arepsilon`$
 for
 every
@@ -114,477 +51,77 @@ $`f \in F`$.
 
 ## History of the conjecture
 
-The
-question
-of
-whether
-an
-infinite
-finitely
-presented
-simple
-amenable
-group
-exists
-was
-a
-longstanding
-open
-problem
-at
-the
-intersection
-of
-geometric
-group
-theory
-and
-operator
-algebra.
-Tarski
-(1952)
-produced
-the
-first
-infinite
-finitely
-presented
-simple
-groups,
-but
-those
-were
-nonamenable
-(they
-contained
-a
-free
-subgroup).
-Amenable
-groups
-like
+The question of whether an infinite finitely presented simple amenable
+group exists was a longstanding open problem at the intersection of
+geometric group theory and operator algebra. Tarski (1952) produced the
+first infinite finitely presented simple groups, but those were
+nonamenable (they contained a free subgroup). Amenable groups like
 $`\mathbb Z`$
-or
-nilpotent
-groups
-are
-never
-simple
-in
-the
-finitely
-presented
-setting
-they
-arise
-in.
-The
-result
-[S3:41]
-closes
-the
-gap
-with
-an
-explicit
-construction:
-a
-single
-group
-simultaneously
-infinite,
-finitely
-presented,
-simple,
-and
-amenable,
-with
-amenability
-certified
-by
-the
-Følner
-condition.
+or nilpotent groups are never simple in the finitely presented setting
+they arise in. The result [S3:41] closes the gap with an explicit
+construction: a single group simultaneously infinite, finitely
+presented, simple, and amenable, with amenability certified by the
+Følner condition.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Infinite
-finitely
-presented
-simple
-groups
-(Tarski),
-amenability,
-the
-Følner
-condition,
-and
-the
-tension
-between
-simplicity
-and
-amenability
-are
-standard.
-The
-first
-construction
-of
-an
-infinite
-finitely
-presented
-simple
-amenable
-group
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Infinite finitely presented
+simple groups (Tarski), amenability, the Følner condition, and the
+tension between simplicity and amenability are standard. The first
+construction of an infinite finitely presented simple amenable group is
+the novel contribution. I cannot confirm this independently from
+training alone.
 
 ## Consequences
 
 - **The
-  existence
-  question
-  answered
-  affirmatively**
-  [S3:41]:
-  an
-  infinite,
-  finitely
-  presented,
-  simple,
-  amenable
-  group
-  exists,
-  so
-  the
-  three
-  structural
-  properties
-  together
-  with
-  amenability
-  are
-  compatible.
+existence question answered affirmatively** [S3:41]: an infinite,
+finitely presented, simple, amenable group exists, so the three
+structural properties together with amenability are compatible.
 - **Amenability
   by
   Følner
   condition**
   [S3:41, S4:9]:
-  the
-  constructed
-  group's
-  amenability
-  is
-  certified
-  via
-  the
-  Følner
-  condition,
-  the
-  standard
-  criterion
-  for
-  countable
-  groups.
+the constructed group's amenability is certified via the Følner
+condition, the standard criterion for countable groups.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:40–42]
-(title
-[S3:35],
-date
-[S3:37])
-—
-`main.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:40–42] (title [S3:35], date [S3:37]) — `main.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S4],
-one
-comparator
-stub
-[S5],
-and
-one
-`main_results`
-entry
-[S7].
-The
-scope
-note
-[S4:9]
-states
-the
-target:
-there
-is
-one
-group
-that
-is
-infinite,
-finitely
-presented,
-simple,
-and
-amenable,
-with
-amenability
-expressed
-by
-the
-Følner
-condition.
-The
-note
-excludes
-the
-paper's
-later
-general
-claims
-about
-central
-kernels
-and
-enlargements
-across
-families
-[S4:11].
+The release formalises this family at tier T3 with one scope note [S4],
+one comparator stub [S5], and one `main_results` entry [S7]. The scope
+note [S4:9] states the target: there is one group that is infinite,
+finitely presented, simple, and amenable, with amenability expressed by
+the Følner condition. The note excludes the paper's later general claims
+about central kernels and enlargements across families [S4:11].
 
-The
-`main_results`
-entry
-[S7:1639–1641]
-names
-`OAI.SimpleAmenable.main`
-in
-`lean/OAI/GroupTheory/SimpleAmenable/Main.lean`.
-In
-the
-source,
-the
-theorem
-`main`
-is
-stated
-and
-closed
-at
-[S6:102],
-asserting
-the
-existence
-of
-a
-group
-with
-the
-four
-required
-properties.
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/GroupTheory/SimpleAmenable/`
-tree.
+The `main_results` entry [S7:1639–1641] names `OAI.SimpleAmenable.main`
+in `lean/OAI/GroupTheory/SimpleAmenable/Main.lean`. In the source, the
+theorem `main` is stated and closed at [S6:102], asserting the existence
+of a group with the four required properties. `grep` finds **zero**
+`sorry` in the whole `lean/OAI/GroupTheory/SimpleAmenable/` tree.
 
-The
-one
-comparator
-stub
-[S5]
-states
-the
-simple
-amenable
-group
-target
-and
-ends
-in
-`sorry`.
-The
-proved
-copy
-lives
-under
-`lean/OAI/`.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The one comparator stub [S5] states the simple amenable group target and
+ends in `sorry`. The proved copy lives under `lean/OAI/`. A comparator
+stub is a target the release set itself; the proved version, where it
+exists, lives under `lean/OAI/`. The reading is of source text only — no
+`lake` or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=253`
-[S8]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=1`,
-`paps_form=1`,
-`chal=1`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-single
-manuscript
-is
-named
-as
-a
-formalization
-source,
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-full
-existence
-claim
-(infinite,
-finitely
-presented,
-simple,
-amenable
-by
-Følner).
-The
-comparator
-stub
-names
-the
-same
-target,
-and
-the
-proved
-copy
-lives
-under
-`lean/OAI/`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-empty,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-existence
-question
-with
+The ledger row `fam=253` [S8] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=1` is the coverage signature: the single manuscript is named as a
+formalization source, and the single `main_results` entry over that
+config reaches the full existence claim (infinite, finitely presented,
+simple, amenable by Følner). The comparator stub names the same target,
+and the proved copy lives under `lean/OAI/`. There is no verification
+bundle and no reasoning trace. The shape flags are empty, and
+`resolves_named=1` — the blurb names the existence question with
 "answering".
 
 ## Sources

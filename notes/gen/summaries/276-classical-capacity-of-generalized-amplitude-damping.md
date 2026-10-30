@@ -43,275 +43,42 @@ block length [S3:39–48].
 
 **The classical capacity of generalized amplitude damping**
 [S3:39–48, S2:643, S4:9].
-For
-every
-qubit
-generalized
-amplitude-damping
-channel
-with
-damping
-parameter
-$`\gamma
+For every qubit generalized amplitude-damping channel with damping
+parameter $`\gamma
 \in [0,1]`$
-and
-thermal
-occupation
-$`\nu
+and thermal occupation $`\nu
 \in [0,1]`$,
-the
-unassisted
-classical
-capacity
-equals
-the
-one-shot
-Holevo
-capacity
-and
-is
-given
-by
-an
-explicit
-one-variable
-maximum
-[S4:9].
-A
-binary
-pure-state
-ensemble
-attains
-the
-one-use
-optimum,
-and
-its
-independent
-products
-attain
-the
-optimum
-at
-every
-block
-length
-[S3:39–48].
-The
-formalization
-also
-covers
-the
-regularized
-setting
-and
-the
-additivity
-of
-one-shot
-Holevo
-capacity,
-minimum
-output
-entropy,
-and
-regularized
-unassisted
-classical
-capacity
-under
-tensor
-product
-with
-every
-finite-dimensional
-CPTP
-partner
-channel
-[S4:9].
+the unassisted classical capacity equals the one-shot Holevo capacity
+and is given by an explicit one-variable maximum [S4:9]. A binary pure-
+state ensemble attains the one-use optimum, and its independent products
+attain the optimum at every block length [S3:39–48]. The formalization
+also covers the regularized setting and the additivity of one-shot
+Holevo capacity, minimum output entropy, and regularized unassisted
+classical capacity under tensor product with every finite-dimensional
+CPTP partner channel [S4:9].
 
 ## History of the conjecture
 
-The
-classical
-capacity
-of
-quantum
-channels
-was
-a
-central
-open
-problem
-in
-quantum
-information
-theory.
-The
-Holevo
-capacity
-(the
-one-shot
-upper
-bound)
-was
-known
-since
-Holevo
-(1973),
-and
-Hawkins
-(2010)
-computed
-the
-capacity
-of
-the
-amplitude-damping
-channel
-in
-the
-zero-temperature
-limit.
-The
-**generalized**
-amplitude-damping
-channel
-adds
-a
-thermal
-component,
-making
-the
-one-shot
-and
-regularized
-capacities
-potentially
-different
-—
-the
-additivity
-question
-was
-open
-for
-this
-family.
-The
-manuscript
-[S3:39–48]
-resolves
-it:
-for
-every
-qubit
-GAD
-channel,
-the
-unassisted
-classical
-capacity
-equals
-the
-one-shot
-Holevo
-capacity
-(a
-one-variable
-maximum),
-a
-binary
-pure-state
-code
-attains
-it
-at
-every
-block
-length,
-and
-the
-three
-capacity
-measures
-are
-additive
-under
-tensor
-product
-with
-any
-finite-dimensional
-CPTP
-partner.
+The classical capacity of quantum channels was a central open problem in
+quantum information theory. The Holevo capacity (the one-shot upper
+bound) was known since Holevo (1973), and Hawkins (2010) computed the
+capacity of the amplitude-damping channel in the zero-temperature limit.
+The **generalized** amplitude-damping channel adds a thermal component,
+making the one-shot and regularized capacities potentially different —
+the additivity question was open for this family. The manuscript
+[S3:39–48] resolves it: for every qubit GAD channel, the unassisted
+classical capacity equals the one-shot Holevo capacity (a one-variable
+maximum), a binary pure-state code attains it at every block length, and
+the three capacity measures are additive under tensor product with any
+finite-dimensional CPTP partner.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-Holevo
-capacity,
-the
-amplitude-damping
-channel,
-and
-classical
-capacity
-additivity
-are
-standard
-in
-quantum
-information
-theory.
-The
-exact
-one-variable
-formula
-for
-every
-qubit
-GAD
-channel
-(the
-two-parameter
-family
-with
-both
-damping
-and
-thermal
-occupation),
-the
-binary
-code
-attainment
-at
-every
-block
-length,
-and
-the
-full
-additivity
-theorem
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** The Holevo capacity, the
+amplitude-damping channel, and classical capacity additivity are
+standard in quantum information theory. The exact one-variable formula
+for every qubit GAD channel (the two-parameter family with both damping
+and thermal occupation), the binary code attainment at every block
+length, and the full additivity theorem are the novel contributions. I
+cannot confirm these independently from training alone.
 
 ## Consequences
 
@@ -319,360 +86,60 @@ alone.
   capacity
   formula**
   [S3:39–48, S2:643]:
-  the
-  unassisted
-  classical
-  capacity
-  of
-  every
-  qubit
-  GAD
-  channel
-  equals
-  the
-  one-shot
-  Holevo
-  capacity,
-  given
-  by
-  an
-  explicit
-  one-variable
-  maximum.
+the unassisted classical capacity of every qubit GAD channel equals the
+one-shot Holevo capacity, given by an explicit one-variable maximum.
 - **Binary
-  code
-  attainment**
-  [S3:39–48]:
-  a
-  binary
-  pure-state
-  ensemble
-  attains
-  the
-  one-use
-  optimum,
-  and
-  its
-  independent
-  products
-  attain
-  the
-  optimum
-  at
-  every
-  block
-  length.
+code attainment** [S3:39–48]: a binary pure-state ensemble attains the
+one-use optimum, and its independent products attain the optimum at
+every block length.
 - **Additivity**
   [S3:39–48, S4:9]:
-  one-shot
-  Holevo
-  capacity,
-  minimum
-  output
-  entropy,
-  and
-  regularized
-  unassisted
-  classical
-  capacity
-  are
-  additive
-  under
-  tensor
-  product
-  with
-  every
-  finite-dimensional
-  CPTP
-  partner
-  channel.
+one-shot Holevo capacity, minimum output entropy, and regularized
+unassisted classical capacity are additive under tensor product with
+every finite-dimensional CPTP partner channel.
 
 ## Section skeleton
 
-One
-manuscript.
-[S3:38–48]
-(title
-[S3:33],
-date
-[S3:36])
-—
-`paper.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript. [S3:38–48] (title [S3:33], date [S3:36]) — `paper.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S4],
-one
-comparator
-stub
-[S5],
-and
-one
-`main_results`
-entry
-[S7].
-The
-scope
-note
-links
-the
-single
-manuscript
-[S4:5]
-and
-records
-the
-formalized
-scope:
-the
-full
-capacity
-formula
-for
-every
-qubit
-GAD
-channel
-[S4:9],
-covering
-both
-the
-one-shot
-and
-regularized
-settings,
-and
-the
-additivity
-property
-[S4:9].
-The
-formalized
-statement
-matches
-the
-manuscript's
-headline
-claim
-[S3:39–48]:
-the
-unassisted
-classical
-capacity
-equals
-the
-one-shot
-Holevo
-capacity,
-given
-by
-a
-one-variable
-maximum,
-with
-binary
-code
-attainment
-at
-every
-block
-length.
+The release formalises this family at tier T3 with one scope note [S4],
+one comparator stub [S5], and one `main_results` entry [S7]. The scope
+note links the single manuscript [S4:5] and records the formalized
+scope: the full capacity formula for every qubit GAD channel [S4:9],
+covering both the one-shot and regularized settings, and the additivity
+property [S4:9]. The formalized statement matches the manuscript's
+headline claim [S3:39–48]: the unassisted classical capacity equals the
+one-shot Holevo capacity, given by a one-variable maximum, with binary
+code attainment at every block length.
 
-The
-`main_results`
-entry
-[S7:995–997]
-names
-`OAI.GAD.main`
-in
-`lean/OAI/InformationTheory/AmplitudeDamping/Main.lean`
-(where
-the
-theorem
-`main`
-is
-stated
-and
-closed
-at
-[S6:38]).
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/InformationTheory/AmplitudeDamping/`
-tree
-(35
-`.lean`
-files).
+The `main_results` entry [S7:995–997] names `OAI.GAD.main` in
+`lean/OAI/InformationTheory/AmplitudeDamping/Main.lean` (where the
+theorem `main` is stated and closed at [S6:38]). `grep` finds **zero**
+`sorry` in the whole `lean/OAI/InformationTheory/AmplitudeDamping/` tree
+(35 `.lean` files).
 
-The
-one
-comparator
-stub
-[S5]
-carries
+The one comparator stub [S5] carries
 `theorem main`
-at
-[S5:113]
-with
-its
-`sorry`
-at
-[S5:122].
-It
-is
-a
-`main_results`
-registration.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+at [S5:113] with its `sorry` at [S5:122]. It is a `main_results`
+registration. A comparator stub is a target the release set itself; the
+proved version lives under `lean/OAI/`. The reading is of source text
+only — no `lake` or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=276`
-[S8]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=1`,
-`paps_form=1`,
-`chal=1`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-scope
-note
-links
-the
-manuscript
-[S4:5],
-and
-the
-`main_results`
-entry
-[S7]
-reaches
-the
-proved
-theorem
-[S6]
-in
-the
-zero-`sorry`
-OAI
-tree.
-The
-comparator
-stub
-[S5]
-carries
-one
-`sorry`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-empty,
-and
-`resolves_named=0`
-—
-the
-blurb
-states
-a
-capacity
-computation
-without
-naming
-a
-conjecture
-in
-the
-resolve
-form
-the
-ledger
-flags.
+The ledger row `fam=276` [S8] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=1` is the coverage signature: the scope note links the manuscript
+[S4:5], and the `main_results` entry [S7] reaches the proved theorem
+[S6] in the zero-`sorry` OAI tree. The comparator stub [S5] carries one
+`sorry`. There is no verification bundle and no reasoning trace. The
+shape flags are empty, and `resolves_named=0` — the blurb states a
+capacity computation without naming a conjecture in the resolve form the
+ledger flags.
 
 ## Sources
 

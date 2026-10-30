@@ -30,10 +30,8 @@ The second, *The crossing number of complete bipartite graphs*
 We prove the Zarankiewicz crossing-number conjecture, resolving
 Turan's brickyard problem. For all positive integers $`m,n`$, the
 ordinary crossing number of the complete bipartite graph $`K_{m,n}`$
-is
-$`\lfloor\tfrac{m}{2}\rfloor\lfloor\tfrac{m-1}{2}\rfloor
-\lfloor\tfrac{n}{2}\rfloor\lfloor\tfrac{n-1}{2}\rfloor`$
-[S4:39–47].
+is $`\lfloor\tfrac{m}{2}\rfloor\lfloor\tfrac{m-1}{2}\rfloor
+\lfloor\tfrac{n}{2}\rfloor\lfloor\tfrac{n-1}{2}\rfloor`$ [S4:39–47].
 
 ## Undergraduate summary
 

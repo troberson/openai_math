@@ -184,15 +184,8 @@ the proof.
 The ledger row `fam=236` [S8] records
 the tier
 and the
-counts:
-`tier=T3`,
-`paps=1`,
-`paps_form=1`,
-`chal=1`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
+counts: `tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`.
 The `paps_form=1`
 against `paps=1`
 is the
@@ -209,44 +202,15 @@ and
 the single
 `main_results`
 entry over
-that
-config
-reaches
-the
-full
-iff
-threshold
-claim
-—
-the
-equivariant
-construction
-is
+that config reaches the full iff threshold claim — the equivariant
+construction is
 the proved
 statement.
 There
 is no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-Lyons's
-question
-with
-"resolving".
+verification bundle and no reasoning trace. The shape flags are
+`resolution`, and `resolves_named=1` — the blurb names Lyons's question
+with "resolving".
 
 ## Sources
 

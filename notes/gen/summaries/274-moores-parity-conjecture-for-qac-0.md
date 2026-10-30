@@ -53,346 +53,56 @@ argument. Both resolve the same conjecture by independent routes.
 
 **The QAC	extsuperscript{0} parity lower bound**
 [S3:9–16, S2:639, S5:10].
-For
-every
-fixed
-circuit
-depth,
-every
-polynomial
-bound
-on
-the
-total
-number
-of
-qubits,
-and
-every
+For every fixed circuit depth, every polynomial bound on the total
+number of qubits, and every
 $`0 < \varepsilon \le 1/2`$,
-every
-sufficiently
-large
-input
-length
-admits
-an
-input
-on
-which
-a
-constant-depth
-quantum
-circuit
-with
-arbitrary
-one-qubit
-and
-unbounded-arity
-Toffoli
-gates,
-polynomially
-many
-zero-initialized
-ancillas,
-one
-measured
-output
-qubit,
-and
-unrestricted
-final
-garbage,
-computes
-measured-output
-parity
-with
-success
-probability
-less
-than
+every sufficiently large input length admits an input on which a
+constant-depth quantum circuit with arbitrary one-qubit and unbounded-
+arity Toffoli gates, polynomially many zero-initialized ancillas, one
+measured output qubit, and unrestricted final garbage, computes
+measured-output parity with success probability less than
 $`1/2 + \varepsilon`$
-[S5:10].
-A
-companion
-specialization
-gives
-success
-strictly
-below
-$`2/3`$
-[S5:10,
-S5:12].
+[S5:10]. A companion specialization gives success strictly below $`2/3`$
+[S5:10, S5:12].
 
-**The
-polynomial-size
-parity
-specialization**
-[S4:48–56,
-S2:639,
-S5:12].
-For
-every
-fixed
-circuit
-depth
-and
-polynomial
-bound
-on
-the
-number
-of
-qubits,
-all
-sufficiently
-large
-input
-lengths
-have
-an
-input
-on
-which
-any
-such
-constant-depth
-quantum
-circuit
-computes
-measured-output
-parity
-with
-probability
-strictly
-below
-$`2/3`$,
-ancillas
-starting
-at
-zero.
-The
-formalization
-also
-contains
-the
-general
-positive-advantage
-parity
-bound
-and
-its
-product-projection
-localization
-estimate;
-regular-trajectory
-propagation
-and
-pruning
-are
-not
-separate
-formalized
-statements
-[S5:12].
+**The polynomial-size parity specialization** [S4:48–56, S2:639, S5:12].
+For every fixed circuit depth and polynomial bound on the number of
+qubits, all sufficiently large input lengths have an input on which any
+such constant-depth quantum circuit computes measured-output parity with
+probability strictly below $`2/3`$, ancillas starting at zero. The
+formalization also contains the general positive-advantage parity bound
+and its product-projection localization estimate; regular-trajectory
+propagation and pruning are not separate formalized statements [S5:12].
 
 ## History of the conjecture
 
-**Moore's
-parity
-conjecture**
-(Moore,
-1989;
-in
-its
-quantum
-form,
-the
-question
-of
-whether
-pari
-ty
-lies
-in
-the
-constant-depth
-quantum
-circuit
+**Moore's parity conjecture** (Moore, 1989; in its quantum form, the
+question of whether pari ty lies in the constant-depth quantum circuit
 class
 **QAC	extsuperscript{0}**
-—
-quantum
-ancilla,
-classical
-wires,
-constant
-depth,
-with
-unbounded-arity
-Toffoli
-gates)
-was
-a
-central
-open
-problem
-in
-quantum
-circuit
-complexity.
-The
-classical
-analogue
-(par
-ity
-not
-in
+— quantum ancilla, classical wires, constant depth, with unbounded-arity
+Toffoli gates) was a central open problem in quantum circuit complexity.
+The classical analogue (par ity not in
 AC	extsuperscript{0},
-Razborov
-1987
-/
-Smolensky
-1987)
-was
-decades
-old,
-but
-the
-quantum
-version
-resisted
-proof
-because
-the
-gate
-set
-allows
-arbitrary
-one-qubit
-unitaries
-and
-multi-qubit
-Toffoli
-gates.
-The
-two
-manuscripts
-close
-it
-in
-the
-**measured-output**
-model
-—
-one
-qubit
-measured,
-all
-other
-final
-registers
-unrestricted
-—
-by
-independent
-methods:
-the
-product-projection
-localization
-estimate
-[S3:9–16]
-and
-the
-regular-trajectory
-pruning
-argument
-[S4:48–56].
-Xu–Li's
-reductions
-then
-transfer
-the
-obstruction
-to
-strict
-majority
-at
-bounded
-error
-[S1:6906].
+Razborov 1987 / Smolensky 1987) was decades old, but the quantum version
+resisted proof because the gate set allows arbitrary one-qubit unitaries
+and multi-qubit Toffoli gates. The two manuscripts close it in the
+**measured-output** model — one qubit measured, all other final
+registers unrestricted — by independent methods: the product-projection
+localization estimate [S3:9–16] and the regular-trajectory pruning
+argument [S4:48–56]. Xu–Li's reductions then transfer the obstruction to
+strict majority at bounded error [S1:6906].
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
+**Prior (my training data, not this repo).** The
 QAC	extsuperscript{0}
-circuit
-class,
-Moore's
-parity
-conjecture,
-the
-Razborov–Smolensky
+circuit class, Moore's parity conjecture, the Razborov–Smolensky
 AC	extsuperscript{0}
-parity
-lower
-bound,
-and
-quantum
-circuit
-lower
-bounds
-are
-standard
-in
-theoretical
-computer
-science
-and
-quantum
-computation.
-The
-resolution
-of
-Moore's
-parity
-conjecture
-in
-the
-measured-output
-model
-—
-both
-of
-the
-independent
-lower-bound
-arguments
-—
-and
-the
-Xu–Li
-transfer
-to
-strict
-majority
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+parity lower bound, and quantum circuit lower bounds are standard in
+theoretical computer science and quantum computation. The resolution of
+Moore's parity conjecture in the measured-output model — both of the
+independent lower-bound arguments — and the Xu–Li transfer to strict
+majority are the novel contributions. I cannot confirm these
+independently from training alone.
 
 ## Consequences
 
@@ -401,467 +111,80 @@ alone.
   conjecture
   resolved**
   [S3:9–16, S4:48–56, S2:639]:
-  constant-depth
-  quantum
-  circuits
-  with
-  arbitrary
-  one-qubit
-  and
-  unbounded-arity
-  Toffoli
-  gates
-  and
-  polynomially
-  many
-  qubits
-  cannot
-  compute
-  parity
-  with
-  any
-  fixed
-  positive
-  worst-case
-  advantage.
+constant-depth quantum circuits with arbitrary one-qubit and unbounded-
+arity Toffoli gates and polynomially many qubits cannot compute parity
+with any fixed positive worst-case advantage.
 - **The
   bounded-error
   form**
   [S5:10, S5:12]:
-  for
-  fixed
-  depth
-  and
-  polynomial
-  qubit
-  bound,
-  large
-  inputs
-  have
-  a
-  parity
-  input
-  on
-  which
-  success
-  is
-  strictly
-  below
-  $`2/3`$.
+for fixed depth and polynomial qubit bound, large inputs have a parity
+input on which success is strictly below $`2/3`$.
 - **The
-  strict-majority
-  transfer**
-  [S1:6906]:
-  Xu–Li's
-  reductions
-  give
-  the
-  same
-  bounded-error
-  obstruction
-  for
-  strict
-  majority.
+strict-majority transfer** [S1:6906]: Xu–Li's reductions give the same
+bounded-error obstruction for strict majority.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:9–16]
-(title
-[S3:3],
-date
-[S3:6])
-—
-`main.tex`
-under
-`build/`,
-with
-sections
-under
-`build/sections/`.
-[S4:48–56]
-(title
-[S4:43],
-date
-[S4:45])
-—
-`paper.tex`
-under
-`build/`,
-with
-sections
-under
-`build/sections/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+Two manuscripts. [S3:9–16] (title [S3:3], date [S3:6]) — `main.tex` under
+`build/`, with sections under `build/sections/`. [S4:48–56] (title [S4:43],
+date [S4:45]) — `paper.tex` under `build/`, with sections under
+`build/sections/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S5],
-two
-comparator
-stubs
-[S6]
-[S7],
-and
-two
-`main_results`
-entries
-[S10].
-The
-scope
-note
-links
-**both**
-manuscripts
-[S5:5–6],
-and
-the
-ledger
-records
-`paps_form=2`
-against
-`paps=2`:
-every
-manuscript
-is
-named
-as
-a
-formalization
-source.
-The
-recorded
-scope
-[S5:10]
-rules
-out
-bounded-error
-parity
-computation
-by
-constant-depth
-quantum
-circuits
-with
-polynomially
-many
-zero-initialized
-ancillas
-—
-for
-fixed
-depth,
-polynomial
-qubit
-bound,
-and
+The release formalises this family at tier T3 with one scope note [S5],
+two comparator stubs [S6] [S7], and two `main_results` entries [S10].
+The scope note links **both** manuscripts [S5:5–6], and the ledger
+records `paps_form=2` against `paps=2`: every manuscript is named as a
+formalization source. The recorded scope [S5:10] rules out bounded-error
+parity computation by constant-depth quantum circuits with polynomially
+many zero-initialized ancillas — for fixed depth, polynomial qubit
+bound, and
 $`0 < \varepsilon \le 1/2`$,
-a
-large
-input
-on
-which
-measured-output
-parity
-succeeds
-with
-probability
-less
-than
+a large input on which measured-output parity succeeds with probability
+less than
 $`1/2 + \varepsilon`$,
-with
-the
-product-projection
-localization
-estimate
-supporting
-the
-bound
-[S5:10].
-The
-scope
-note
-is
-explicit
-that
-**regular-trajectory
-propagation
-and
-pruning
-are
-not
-separate
-formalized
-statements**
-[S5:12]
-—
-so
-the
-second
-manuscript's
-pruning
-mechanism
-[S4:48–56]
-is
-formalized
-as
-the
-parity
-consequence
-it
-proves
-(S5:12),
-not
-as
-a
-standalone
-pruning
+with the product-projection localization estimate supporting the bound
+[S5:10]. The scope note is explicit that **regular-trajectory
+propagation and pruning are not separate formalized statements** [S5:12]
+— so the second manuscript's pruning mechanism [S4:48–56] is formalized as the
+parity consequence it proves (S5:12), not as a standalone pruning
 theorem.
 
-The
-two
-`main_results`
-entries
-are
-[S10:1555–1557]
-naming
-`OAI.QAC.parity_lower_bound`
-in
-`lean/OAI/InformationTheory/QuantumCircuit/Parity.lean`
-(where
-the
-theorem
-`parity_lower_bound`
-is
-stated
-and
-closed
-at
-[S8:45])
-and
-[S10:1595–1597]
-naming
-`OAI.QAC.parity_lower_bound_polynomial_size`
-in
-`lean/OAI/InformationTheory/QuantumCircuit/Main.lean`
-(where
-the
-theorem
-`parity_lower_bound_polynomial_size`
-is
-stated
-and
-closed
-at
-[S9:12]).
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/InformationTheory/QuantumCircuit/`
-tree
-(45
-`.lean`
-files).
+The two `main_results` entries are [S10:1555–1557] naming
+`OAI.QAC.parity_lower_bound` in
+`lean/OAI/InformationTheory/QuantumCircuit/Parity.lean` (where the
+theorem `parity_lower_bound` is stated and closed at [S8:45]) and
+[S10:1595–1597] naming `OAI.QAC.parity_lower_bound_polynomial_size` in
+`lean/OAI/InformationTheory/QuantumCircuit/Main.lean` (where the theorem
+`parity_lower_bound_polynomial_size` is stated and closed at [S9:12]).
+`grep` finds **zero** `sorry` in the whole
+`lean/OAI/InformationTheory/QuantumCircuit/` tree (45 `.lean` files).
 
-The
-two
-comparator
-stubs
-each
-carry
-one
-`sorry`:
-[S6]
-(`QAC.parity_lower_bound`
-at
-[S6:71],
-`sorry`
-at
-[S6:72])
-and
-[S7]
-(`parity_lower_bound_polynomial_size`
-at
-[S7:63],
-`sorry`
-at
-[S7:69]).
-Both
-are
-`main_results`
-registrations.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
+The two comparator stubs each carry one `sorry`: [S6]
+(`QAC.parity_lower_bound` at [S6:71], `sorry` at [S6:72]) and [S7]
+(`parity_lower_bound_polynomial_size` at [S7:63], `sorry` at [S7:69]).
+Both are `main_results` registrations. A comparator stub is a target the
+release set itself; the proved version lives under `lean/OAI/`. The
+reading is of source text only — no `lake` or `lean` run elaborates the
 proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=274`
-[S11]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=2`,
-`paps_form=2`,
-`chal=2`,
-`mainres=2`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=2`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-the
-scope
-note
-links
-both
-manuscripts
-[S5:5–6],
-and
-the
-two
-`main_results`
-entries
-[S10]
-reach
-the
-parity
-lower
-bound
-[S8]
-and
-the
-polynomial-size
-specialization
-[S9],
-both
-proved
-in
-the
-zero-`sorry`
-`QuantumCircuit`
-tree.
-The
-one
-caveat
-is
-scope-level:
-the
-second
-manuscript's
-regular-trajectory
-propagation
-and
-pruning
-are
-not
-separate
-formalized
-statements
-[S5:12]
-—
-only
-their
-parity
-consequence
-is
-registered.
-The
-two
-comparator
-stubs
-carry
-two
-`sorry`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution|bound|uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-Moore's
-parity
-conjecture
-with
-"Resolves".
+The ledger row `fam=274` [S11] records the tier and the counts:
+`tier=T3`, `paps=2`, `paps_form=2`, `chal=2`, `mainres=2`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=2` against
+`paps=2` is the coverage signature: the scope note links both
+manuscripts [S5:5–6], and the two `main_results` entries [S10] reach the
+parity lower bound [S8] and the polynomial-size specialization [S9],
+both proved in the zero-`sorry` `QuantumCircuit` tree. The one caveat is
+scope-level: the second manuscript's regular-trajectory propagation and
+pruning are not separate formalized statements [S5:12] — only their
+parity consequence is registered. The two comparator stubs carry two
+`sorry`. There is no verification bundle and no reasoning trace. The
+shape flags are `resolution|bound|uniform`, and `resolves_named=1` — the
+blurb names Moore's parity conjecture with "Resolves".
 
 ## Sources
 

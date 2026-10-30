@@ -58,698 +58,114 @@ vocabulary that
 is not
 definable in
 the full
-hereditarily
-finite-set
-counting
-formalism.
+hereditarily finite-set counting formalism.
 The query
-is
-the
-consistency
-of
-a
-linear
-system
-over
+is the consistency of a linear system over
 $`\mathbb F_3`$:
-given
-a
-finite
-structure
-encoding
-a
-matrix
-over
+given a finite structure encoding a matrix over
 $`\mathbb F_3`$,
-the
-query
-answers
-whether
-the
-system
-has
-a
-solution.
-The
-query
-is
-decidable
-in
-polynomial
-time
-(Gaussian
-elimination)
-and
-is
-invariant
-under
-isomorphism,
-but
-no
-sentence
-of
-the
-counting
-formalism
-defines
-it.
+the query answers whether the system has a solution. The query is
+decidable in polynomial time (Gaussian elimination) and is invariant
+under isomorphism, but no sentence of the counting formalism defines it.
 
 **Witnessed choice**
-[S4:65–68,
-S2:573].
-A
-fixed
-sentence
-with
-one
-witnessed-choice
-occurrence
-defines
-a
-Boolean
-query
-on
-every
-finite
-input
-that
-is
-not
-definable
-in
-the
-original
-counting
-formalism,
-so
-witnessed
-symmetric
-choice
-strictly
-increases
-the
-expressive
-power
-of
-CPT.
+[S4:65–68, S2:573]. A fixed sentence with one witnessed-choice
+occurrence defines a Boolean query on every finite input that is not
+definable in the original counting formalism, so witnessed symmetric
+choice strictly increases the expressive power of CPT.
 
 ## History of the conjecture
 
-The
-**Blass–Gurevich–Shelah
-conjecture**
-(1990s)
-predicted
-that
-choiceless
-polynomial
-time
-with
-counting
-does
-not
-capture
-polynomial
-time
-on
-unordered
-finite
-structures.
-The
-conjecture
-sits
-at
-the
-intersection
-of
-finitary
-model
-theory
-and
-complexity
-theory:
-it
-asks
-whether
-the
-logical
-machinery
-of
-counting
-quantifiers
-over
-hereditarily
-finite
-sets
-is
-sufficient
-to
-express
-every
-polynomial-time
-invariant.
-The
-noncapture
-result
-[S3:36–40]
-confirms
-the
-conjecture
-with
-an
+The **Blass–Gurevich–Shelah conjecture** (1990s) predicted that
+choiceless polynomial time with counting does not capture polynomial
+time on unordered finite structures. The conjecture sits at the
+intersection of finitary model theory and complexity theory: it asks
+whether the logical machinery of counting quantifiers over hereditarily
+finite sets is sufficient to express every polynomial-time invariant.
+The noncapture result [S3:36–40] confirms the conjecture with an
 explicit
 $`\mathbb F_3`$
-linear-consistency
-query.
-The
-witnessed-choice
-result
-[S4:65–68]
-adds
-a
-second
-separation:
-even
-the
-natural
-extension
-of
-CPT
-by
-one
-witnessed-choice
-occurrence
-defines
-queries
-outside
-the
-original
-formalism.
-Together,
-the
-two
-results
-map
-the
-boundary
-between
-the
-counting
-formalism
-and
-its
-extensions.
+linear-consistency query. The witnessed-choice result [S4:65–68] adds a
+second separation: even the natural extension of CPT by one witnessed-
+choice occurrence defines queries outside the original formalism.
+Together, the two results map the boundary between the counting
+formalism and its extensions.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-Blass–Gurevich–Shelah
-conjecture,
-choiceless
-polynomial
-time,
-and
-the
-finitary
-model
-theory
-of
-unordered
-structures
-are
-standard.
-The
-explicit
-noncapture
-proof
-and
-the
-witnessed-choice
-separation
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** The Blass–Gurevich–Shelah
+conjecture, choiceless polynomial time, and the finitary model theory of
+unordered structures are standard. The explicit noncapture proof and the
+witnessed-choice separation are the novel contributions. I cannot
+confirm these independently from training alone.
 
 ## Consequences
 
 - **Noncapture of
-  polynomial
-  time
-  by
-  CPT**
-  [S3:36–40]:
-  the
-  linear-consistency
-  query
-  over
+polynomial time by CPT** [S3:36–40]: the linear-consistency query over
   $`\mathbb F_3`$
-  is
-  a
-  polynomial-time
-  isomorphism-invariant
-  that
-  is
-  not
-  definable
-  in
-  the
-  full
-  counting
-  formalism,
-  confirming
-  the
-  Blass–Gurevich–Shelah
-  conjecture.
+is a polynomial-time isomorphism-invariant that is not definable in the
+full counting formalism, confirming the Blass–Gurevich–Shelah
+conjecture.
 - **Strict
-  gain
-  from
-  witnessed
-  choice**
-  [S4:65–68]:
-  one
-  witnessed-choice
-  occurrence
-  strictly
-  increases
-  the
-  expressive
-  power
-  of
-  CPT;
-  a
-  Boolean
-  query
-  definable
-  with
-  it
-  is
-  not
-  definable
-  without.
+gain from witnessed choice** [S4:65–68]: one witnessed-choice occurrence
+strictly increases the expressive power of CPT; a Boolean query
+definable with it is not definable without.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:35–41]
-(title
-[S3:30],
-date
-[S3:32])
-—
-`main.tex`
-under
-`build/`
-with
-`sections/`
-(introduction,
-structures,
-support,
-base-logic,
-hf-transfer,
-coding,
-separation).
-[S4:64–69]
-(title
-[S4:58–59],
-date
-[S4:61])
-—
-`main.tex`
-under
-`build/`
-with
-`sections/`
-(introduction,
-formalism,
-structures,
-sentence,
-grid-behavior,
-support,
-base-counting,
-hf-transfer,
-cpt-lower-bound).
-The
-family
-ships
-no
-`verification/`
+Two manuscripts. [S3:35–41] (title [S3:30], date [S3:32]) — `main.tex` under
+`build/` with `sections/` (introduction, structures, support, base-
+logic, hf-transfer, coding, separation). [S4:64–69] (title [S4:58–59], date
+[S4:61]) — `main.tex` under `build/` with `sections/` (introduction,
+formalism, structures, sentence, grid-behavior, support, base-counting,
+hf-transfer, cpt-lower-bound). The family ships no `verification/`
 bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S5],
-two
-comparator
-stubs
-[S6]
-[S7],
-and
-one
-`main_results`
-entry
-[S9].
-The
-scope
-note
-[S5:10]
-states
-the
-CPT-separation
-target:
-an
-explicit
-query
-on
-finite
-structures
-with
-eight
-relations
-that
-is
-isomorphism-invariant
-and
-polynomial-time
-decidable
-but
-not
-definable
-in
-the
-stated
-hereditarily
-finite-set
-language.
-The
-witnessed-choice
-result
-is
-separately
-scoped
-[S5:12]:
-one
-fixed
-sentence
-with
-exactly
-one
-witnessed-choice
-occurrence
-gives
-a
-Boolean
-answer
-on
-every
-finite
-input
-that
-no
-original-formalism
-sentence
-defines.
+The release formalises this family at tier T3 with one scope note [S5],
+two comparator stubs [S6] [S7], and one `main_results` entry [S9]. The
+scope note [S5:10] states the CPT-separation target: an explicit query
+on finite structures with eight relations that is isomorphism-invariant
+and polynomial-time decidable but not definable in the stated
+hereditarily finite-set language. The witnessed-choice result is
+separately scoped [S5:12]: one fixed sentence with exactly one
+witnessed-choice occurrence gives a Boolean answer on every finite input
+that no original-formalism sentence defines.
 
-The
-`main_results`
-entry
-[S9:1087–1089]
-names
-`OAI.CPTSeparation.main`
-in
-`lean/OAI/ModelTheory/Choiceless/Separation.lean`.
-In
-the
-source,
-the
-theorem
-is
-stated
-as
-a
-conjunction
-of
-three
-facts
-—
-isomorphism
-invariance,
-polynomial-time
-decidability,
-and
-non-definability
-in
-the
-full
-counting
-formalism
-—
-and
-is
-closed
-[S8].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/ModelTheory/Choiceless/`
-tree.
+The `main_results` entry [S9:1087–1089] names `OAI.CPTSeparation.main`
+in `lean/OAI/ModelTheory/Choiceless/Separation.lean`. In the source, the
+theorem is stated as a conjunction of three facts — isomorphism
+invariance, polynomial-time decidability, and non-definability in the
+full counting formalism — and is closed [S8]. `grep` finds **zero**
+`sorry` in the whole `lean/OAI/ModelTheory/Choiceless/` tree.
 
-The
-witnessed-choice
-formalization
-lives
-under
-`lean/OAI/Computability/WitnessedChoice/`
-(26
-files,
-`main`
-proved
-in
-`Main.lean`),
-also
-with
-**zero**
-`sorry`,
-but
-it
-has
-**no**
-`main_results`
-entry:
-the
-`mainres=1`
-count
-covers
-only
-the
-CPT
+The witnessed-choice formalization lives under
+`lean/OAI/Computability/WitnessedChoice/` (26 files, `main` proved in
+`Main.lean`), also with **zero** `sorry`, but it has **no**
+`main_results` entry: the `mainres=1` count covers only the CPT
 separation.
 
-The
-two
-comparator
-stubs
-carry
-the
-targets,
-each
-with
-one
-`sorry`:
-[S6]
-(noncapture),
-[S7]
-(witnessed
-choice).
-Only
-the
-CPT
-separation
-has
-a
-`main_results`
-registration;
-the
-witnessed-choice
-target
-is
-a
-stub
-without
-a
-corresponding
-entry.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The two comparator stubs carry the targets, each with one `sorry`: [S6]
+(noncapture), [S7] (witnessed choice). Only the CPT separation has a
+`main_results` registration; the witnessed-choice target is a stub
+without a corresponding entry. A comparator stub is a target the release
+set itself; the proved version, where it exists, lives under
+`lean/OAI/`. The reading is of source text only — no `lake` or `lean`
+run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=243`
-[S10]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=2`,
-`paps_form=1`,
-`chal=2`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-one
-of
-the
-two
-manuscripts
-is
-named
-as
-a
-formalization
-source
-(the
-noncapture
-paper),
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-full
-CPT-separation
-claim.
-The
-witnessed-choice
-manuscript
-has
-a
-proved
-OAI
-tree
-but
-no
-`main_results`
-registration.
-The
-two
-comparator
-stubs
-name
-both
-targets;
-only
-one
-has
-a
-`main_results`
-entry.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-noncapture
-conjecture
-with
+The ledger row `fam=243` [S10] records the tier and the counts:
+`tier=T3`, `paps=2`, `paps_form=1`, `chal=2`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=2` is the coverage signature: one of the two manuscripts is named
+as a formalization source (the noncapture paper), and the single
+`main_results` entry over that config reaches the full CPT-separation
+claim. The witnessed-choice manuscript has a proved OAI tree but no
+`main_results` registration. The two comparator stubs name both targets;
+only one has a `main_results` entry. There is no verification bundle and
+no reasoning trace. The shape flags are `uniform`, and
+`resolves_named=1` — the blurb names the noncapture conjecture with
 "Confirms".
 
 ## Sources

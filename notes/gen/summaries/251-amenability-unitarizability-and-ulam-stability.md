@@ -53,136 +53,22 @@ ones [S5:42–49, S2:591].
 
 **Dixmier's problem resolved**
 [S4:1–6, S2:591]. A
-discrete
-group
-is
-amenable
-if
-and
-only
-if
-every
-uniformly
-bounded
-representation
-on
-a
-complex
-Hilbert
-space
-is
-similar
-to
-a
-unitary
-representation.
-This
-resolves
-Dixmier's
-unitarizability
-problem
-affirmatively
-for
-discrete
-groups.
-For
-every
-nonamenable
-group
-and
-every
-$`arepsilon>0`$,
-there
-is
-a
-nonunitarizable
-representation
-with
-uniform
-operator
-bound
-at
-most
-$`1+arepsilon`$;
-the
-Hilbert
-space
-can
-be
-chosen
-separable
-for
-countable
-groups.
+discrete group is amenable if and only if every uniformly bounded
+representation on a complex Hilbert space is similar to a unitary
+representation. This resolves Dixmier's unitarizability problem
+affirmatively for discrete groups. For every nonamenable group and every
+$`arepsilon>0`$, there is a nonunitarizable representation with uniform
+operator bound at most $`1+ arepsilon`$; the Hilbert space can be chosen
+separable for countable groups.
 
 **Strong Ulam stability**
-[S5:42–49,
-S2:591].
-A
-countable
-discrete
-group
-is
-amenable
-if
-and
-only
-if
-it
-is
-strongly
-Ulam
-stable:
-every
-sufficiently
-accurate
-unitary
-almost
-representation,
-on
-any
-complex
-Hilbert
-space,
-is
-uniformly
-close
-in
-operator
-norm
-to
-a
-genuine
-representation
-on
-the
-same
-space.
-This
-is
-the
-converse
-to
-Kazhdan's
-amenable
-stability
-theorem,
-answering
-a
-question
-of
-Burger,
-Ozawa,
-and
-Thom;
-the
-inclusion
-of
-infinite-dimensional
-Hilbert
-spaces
-is
-essential.
+[S5:42–49, S2:591]. A countable discrete group is amenable if and only
+if it is strongly Ulam stable: every sufficiently accurate unitary
+almost representation, on any complex Hilbert space, is uniformly close
+in operator norm to a genuine representation on the same space. This is
+the converse to Kazhdan's amenable stability theorem, answering a
+question of Burger, Ozawa, and Thom; the inclusion of infinite-
+dimensional Hilbert spaces is essential.
 
 ## History of the conjecture
 
@@ -228,368 +114,55 @@ confirm these independently from training alone.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3]
-(title
-[S3:40],
-date
-[S3:42])
-—
-`main.tex`
-under
-`build/`
-with
-`sections/`
-(abstract
-in
-`sections/introduction.tex`).
-[S5:42–49]
-(title
-[S5:37],
-date
-[S5:39])
-—
-`strong-ulam-stability.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+Two manuscripts. [S3] (title [S3:40], date [S3:42]) — `main.tex` under
+`build/` with `sections/` (abstract in `sections/introduction.tex`).
+[S5:42–49] (title [S5:37], date [S5:39]) — `strong-ulam-stability.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S6],
-two
-comparator
-stubs
-[S7]
-[S8],
-and
-one
-`main_results`
-entry
-[S10].
-The
-scope
-note
-[S6:9–11]
-states
-the
-target:
-Dixmier's
-unitarizability
-problem
-—
-a
-discrete
-group
-is
-amenable
-exactly
-when
-every
-uniformly
-bounded
-Hilbert-space
-representation
-is
-similar
-to
-a
-unitary
-one
-—
-established
-for
-every
-discrete
-group,
-with
-a
-nonunitarizable
-representation
-of
-uniform
-bound
-at
-most
-$`1+arepsilon`$
-for
-every
-nonamenable
-group
-and
-every
-$`arepsilon>0`$.
-The
-Hilbert
-space
-can
-be
-chosen
-separable
-for
-countable
-groups;
-a
-separable
-witness
-with
-uniform
-bound
-$`101`$
-is
-recorded
-separately
-[S6:11].
-The
-strong
-Ulam
-stability
-manuscript
-is
-**not**
-in
-the
-formalization's
-source
-list.
+The release formalises this family at tier T3 with one scope note [S6],
+two comparator stubs [S7] [S8], and one `main_results` entry [S10]. The
+scope note [S6:9–11] states the target: Dixmier's unitarizability
+problem — a discrete group is amenable exactly when every uniformly
+bounded Hilbert-space representation is similar to a unitary one —
+established for every discrete group, with a nonunitarizable
+representation of uniform bound at most $`1+ arepsilon`$ for every
+nonamenable group and every $`arepsilon>0`$. The Hilbert space can be
+chosen separable for countable groups; a separable witness with uniform
+bound $`101`$ is recorded separately [S6:11]. The strong Ulam stability
+manuscript is **not** in the formalization's source list.
 
-The
-`main_results`
-entry
-[S10:1203–1205]
-names
-`OAI.Dixmier.current_main_theorem`
-in
-`lean/OAI/Analysis/Unitarizability/AllDiscrete.lean`.
-In
-the
-source,
-the
-theorem
-`current_main_theorem`
-is
-stated
-and
-closed
-at
-[S9:12].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/Analysis/Unitarizability/`
+The `main_results` entry [S10:1203–1205] names
+`OAI.Dixmier.current_main_theorem` in
+`lean/OAI/Analysis/Unitarizability/AllDiscrete.lean`. In the source, the
+theorem `current_main_theorem` is stated and closed at [S9:12]. `grep`
+finds **zero** `sorry` in the whole `lean/OAI/Analysis/Unitarizability/`
 tree.
 
-The
-two
-comparator
-stubs
-carry
-the
-targets,
-each
-with
-one
-`sorry`:
-[S7]
-(unitarizability
-for
-all
-discrete
-groups),
-[S8]
-(separable
-nonunitarizable
-witnesses).
-Only
-the
-unitarizability
-target
-has
-a
-`main_results`
-registration;
-the
-strong
-Ulam
-stability
-result
-has
-no
-formalization
-at
-all.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The two comparator stubs carry the targets, each with one `sorry`: [S7]
+(unitarizability for all discrete groups), [S8] (separable
+nonunitarizable witnesses). Only the unitarizability target has a
+`main_results` registration; the strong Ulam stability result has no
+formalization at all. A comparator stub is a target the release set
+itself; the proved version, where it exists, lives under `lean/OAI/`.
+The reading is of source text only — no `lake` or `lean` run elaborates
+the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=251`
-[S11]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=2`,
-`paps_form=1`,
-`chal=2`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-one
-of
-the
-two
-manuscripts
-is
-named
-as
-a
-formalization
-source
-(the
-unitarizability
-paper),
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-Dixmier
-equivalence
-with
-the
-$`1+arepsilon`$
-witness.
-The
-strong
-Ulam
-stability
-manuscript
-has
-no
-formalization
-—
-no
-scope-note
-source
-entry
-and
-no
-OAI
-tree.
-The
-two
-comparator
-stubs
-name
-the
-unitarizability
-targets;
-only
-one
-has
-a
-`main_results`
-entry.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution|bound|uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-Dixmier's
-problem
-with
-"Resolves".
+The ledger row `fam=251` [S11] records the tier and the counts:
+`tier=T3`, `paps=2`, `paps_form=1`, `chal=2`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=2` is the coverage signature: one of the two manuscripts is named
+as a formalization source (the unitarizability paper), and the single
+`main_results` entry over that config reaches the Dixmier equivalence
+with the $`1+ arepsilon`$ witness. The strong Ulam stability manuscript
+has no formalization — no scope-note source entry and no OAI tree. The
+two comparator stubs name the unitarizability targets; only one has a
+`main_results` entry. There is no verification bundle and no reasoning
+trace. The shape flags are `resolution|bound|uniform`, and
+`resolves_named=1` — the blurb names Dixmier's problem with "Resolves".
 
 ## Sources
 

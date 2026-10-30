@@ -42,664 +42,98 @@ families) still holds, but the full Axiom of Choice **fails**
 
 **Non-implication of AC from PP**
 [S3:49–54, S2:575]. If
-ZF
-is
-consistent,
-then
-so
-is
-ZF
-with
-the
-Partition
-Principle,
-Choice
-for
-ordinal-indexed
-families,
-and
-the
-negation
-of
-the
-Axiom
-of
-Choice.
-The
-Partition
-Principle
-—
-every
-surjection
-admits
-an
-injection
-in
-the
-reverse
-direction
-—
-together
-with
-ordinal
-choice,
-does
-not
-restore
-full
+ZF is consistent, then so is ZF with the Partition Principle, Choice for
+ordinal-indexed families, and the negation of the Axiom of Choice. The
+Partition Principle — every surjection admits an injection in the
+reverse direction — together with ordinal choice, does not restore full
 choice.
 
-**Transitive
-model
-construction**
-[S3:49–54,
-S2:575].
-Over
-every
-countable
-transitive
-model
-of
-ZFC
-with
-an
-internal
-strongly
-inaccessible
-cardinal,
-there
-is
-a
-transitive
-symmetric
-extension
-satisfying
-the
-Partition
-Principle
-and
-ordinal
-choice,
-failing
-AC,
-with
-the
-same
-ordinals
-and
-no
-new
-countable
-sequences
-of
-ground
-elements.
+**Transitive model construction** [S3:49–54, S2:575]. Over every
+countable transitive model of ZFC with an internal strongly inaccessible
+cardinal, there is a transitive symmetric extension satisfying the
+Partition Principle and ordinal choice, failing AC, with the same
+ordinals and no new countable sequences of ground elements.
 
 ## History of the conjecture
 
-The
-**Partition
-Principle**
-(PP)
-was
-studied
-in
-the
-early
-set-theoretic
-literature
-as
-a
-candidate
-intermediate
-between
-weaker
-choice
-principles
-and
-the
-full
-Axiom
-of
-Choice.
-It
-is
-implied
-by
-AC
-and
-implies
-several
-weaker
-principles
-(such
-as
-the
-Axiom
-of
-Dependent
-Choices
-in
-some
-variants),
-but
-its
-exact
-strength
-relative
-to
-AC
-was
-a
-classical
-open
-problem.
-The
-result
-[S3:49–54]
-settles
-it:
-PP
-does
-not
-imply
-AC,
-even
-when
-combined
-with
-ordinal
-choice.
-The
-proof
-uses
-a
-symmetric
-extension
-construction:
-starting
-from
-a
-countable
-transitive
-model
-of
-ZFC
-with
-a
-strongly
-inaccessible
-cardinal,
-one
-builds
-a
-symmetric
-submodel
-where
-PP
-holds
-and
-AC
-fails.
+The **Partition Principle** (PP) was studied in the early set-theoretic
+literature as a candidate intermediate between weaker choice principles
+and the full Axiom of Choice. It is implied by AC and implies several
+weaker principles (such as the Axiom of Dependent Choices in some
+variants), but its exact strength relative to AC was a classical open
+problem. The result [S3:49–54] settles it: PP does not imply AC, even
+when combined with ordinal choice. The proof uses a symmetric extension
+construction: starting from a countable transitive model of ZFC with a
+strongly inaccessible cardinal, one builds a symmetric submodel where PP
+holds and AC fails.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-Axiom
-of
-Choice,
-the
-Partition
-Principle,
-symmetric
-extensions,
-and
-the
-classical
-choice-principle
-hierarchy
-are
-standard
-set
-theory.
-The
-explicit
-non-implication
-result
-with
-ordinal
-choice
-retained,
-and
-the
-transitive
-model
-construction
-from
-a
-strongly
-inaccessible
-cardinal,
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** The Axiom of Choice, the
+Partition Principle, symmetric extensions, and the classical choice-
+principle hierarchy are standard set theory. The explicit non-
+implication result with ordinal choice retained, and the transitive
+model construction from a strongly inaccessible cardinal, are the novel
+contributions. I cannot confirm these independently from training alone.
 
 ## Consequences
 
 - **PP
-  does
-  not
-  imply
-  AC**
-  [S3:49–54]:
-  assuming
-  ZF
-  is
-  consistent,
-  ZF
-  +
-  PP
-  +
-  ordinal
-  choice
-  +
-  ¬
-  AC
-  is
-  consistent.
-  The
-  Partition
-  Principle,
-  even
-  with
-  choice
-  for
-  ordinal-indexed
-  families,
-  does
-  not
-  restore
-  the
-  full
-  Axiom
-  of
-  Choice.
+does not imply AC** [S3:49–54]: assuming ZF is consistent, ZF + PP +
+ordinal choice + ¬ AC is consistent. The Partition Principle, even with
+choice for ordinal-indexed families, does not restore the full Axiom of
+Choice.
 - **Transitive
-  model
-  existence**
-  [S3:49–54]:
-  from
-  any
-  countable
-  transitive
-  model
-  of
-  ZFC
-  with
-  an
-  internal
-  strongly
-  inaccessible
-  cardinal,
-  one
-  obtains
-  a
-  transitive
-  symmetric
-  extension
-  satisfying
-  PP
-  and
-  ordinal
-  choice,
-  failing
-  AC,
-  with
-  no
-  new
-  countable
-  sequences
-  of
-  ground
-  elements.
+model existence** [S3:49–54]: from any countable transitive model of ZFC
+with an internal strongly inaccessible cardinal, one obtains a
+transitive symmetric extension satisfying PP and ordinal choice, failing
+AC, with no new countable sequences of ground elements.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:48–55]
-(title
-[S3:43],
-date
-[S3:45])
-—
-`main.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:48–55] (title [S3:43], date [S3:45]) — `main.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S4],
-two
-comparator
-stubs
-[S5]
-[S6],
-and
-one
-`main_results`
-entry
-[S8].
-The
-scope
-note
-[S4:9–11]
-states
-two
-targets.
-The
-relative-consistency
-implication:
-if
-ZF
-is
-consistent,
-then
-so
-is
-ZF
-with
-the
-Partition
-Principle,
-Choice
-for
-ordinal-indexed
-families,
-and
-failure
-of
-the
-Axiom
-of
-Choice.
-The
-transitive-model
-construction:
-from
-an
-externally
-countable
-transitive
-ground
-model
-satisfying
-the
-stated
-axioms,
-including
-Choice
-and
-containing
-an
-internal
-strongly
-inaccessible
-cardinal,
-construct
-a
-transitive
-model
-of
-the
-Partition
-Principle
-without
-Choice.
-The
-paper's
-stronger
-transitive-model
-preservation
-assertions
-are
-outside
-that
-selected
-construction
-[S4:11].
+The release formalises this family at tier T3 with one scope note [S4],
+two comparator stubs [S5] [S6], and one `main_results` entry [S8]. The
+scope note [S4:9–11] states two targets. The relative-consistency
+implication: if ZF is consistent, then so is ZF with the Partition
+Principle, Choice for ordinal-indexed families, and failure of the Axiom
+of Choice. The transitive-model construction: from an externally
+countable transitive ground model satisfying the stated axioms,
+including Choice and containing an internal strongly inaccessible
+cardinal, construct a transitive model of the Partition Principle
+without Choice. The paper's stronger transitive-model preservation
+assertions are outside that selected construction [S4:11].
 
-The
-`main_results`
-entry
-[S8:1495–1497]
-names
-`OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice`
-in
-`lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean`.
-In
-the
-source,
-the
-theorem
-is
-stated
-at
-[S7:34]
-and
-closed.
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/SetTheory/PartitionPrinciple/`
-tree
-and
-in
-`lean/OAI/SetTheory/PartitionConsistency/`.
+The `main_results` entry [S8:1495–1497] names `OAI.PartitionPilot.Forcin
+g.TransitiveGround.exists_model_partitionPrinciple_without_choice` in
+`lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean`. In the
+source, the theorem is stated at [S7:34] and closed. `grep` finds
+**zero** `sorry` in the whole `lean/OAI/SetTheory/PartitionPrinciple/`
+tree and in `lean/OAI/SetTheory/PartitionConsistency/`.
 
-The
-two
-comparator
-stubs
-carry
-the
-targets,
-each
-with
-one
-`sorry`:
-[S5]
-(transitive
-model
-from
-ground
-model),
-[S6]
-(relative
-consistency).
-Only
-the
-transitive-model
-target
-has
-a
-`main_results`
-registration;
-the
-relative-consistency
-target
-is
-a
-stub
-without
-a
-corresponding
-entry.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The two comparator stubs carry the targets, each with one `sorry`: [S5]
+(transitive model from ground model), [S6] (relative consistency). Only
+the transitive-model target has a `main_results` registration; the
+relative-consistency target is a stub without a corresponding entry. A
+comparator stub is a target the release set itself; the proved version,
+where it exists, lives under `lean/OAI/`. The reading is of source text
+only — no `lake` or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=244`
-[S9]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=1`,
-`paps_form=1`,
-`chal=2`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-single
-manuscript
-is
-named
-as
-a
-formalization
-source,
-and
-the
-single
-`main_results`
-entry
-reaches
-the
-transitive-model
-construction.
-The
-relative-consistency
-target
-has
-a
-comparator
-stub
-but
-no
-`main_results`
-registration.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`counterexample|conditional`,
-`conditional=1`,
-`counterex_broad=1`,
-and
-`resolves_named=0`
-—
-the
-blurb
-names
-the
-partition
-principle
-with
-"does
-not
-imply",
-a
-conditional
-non-implication,
-not
-a
-named-conjecture
+The ledger row `fam=244` [S9] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=2`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=1` is the coverage signature: the single manuscript is named as a
+formalization source, and the single `main_results` entry reaches the
+transitive-model construction. The relative-consistency target has a
+comparator stub but no `main_results` registration. There is no
+verification bundle and no reasoning trace. The shape flags are
+`counterexample|conditional`, `conditional=1`, `counterex_broad=1`, and
+`resolves_named=0` — the blurb names the partition principle with "does
+not imply", a conditional non-implication, not a named-conjecture
 resolution.
 
 ## Sources

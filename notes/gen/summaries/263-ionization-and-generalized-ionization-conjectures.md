@@ -62,39 +62,10 @@ neutral count [S5:57–64].
 
 **Generalized ionization-energy asymptotics**
 [S3:52–56, S2:617]. For
-the
-full
-nonrelativistic
-two-spin
-Coulomb
-atom,
-let
-$`I_m(Z)`$
-be
-the
-energy
-needed
-to
-remove
-$`m`$
-electrons
-from
-a
-neutral
-atom
-of
-nuclear
-charge
-$`Z`$.
-There
-is
-a
-positive
-Thomas–Fermi
-coefficient
-$`a_{\mathrm{TF}}`$
-such
-that
+the full nonrelativistic two-spin Coulomb atom, let $`I_m(Z)`$ be the
+energy needed to remove $`m`$ electrons from a neutral atom of nuclear
+charge $`Z`$. There is a positive Thomas–Fermi coefficient
+$`a_{\mathrm{TF}}`$ such that
 $`I_m(Z)/m^{7/3} \to a_{\mathrm{TF}}`$
 whenever
 $`m \to \infty`$
@@ -103,339 +74,65 @@ $`Z/m \to \infty`$,
 with
 integers
 $`Z > m \ge 1`$;
-both
-conjectured
-iterated
-limits
-hold
-(the
+both conjectured iterated limits hold (the
 $`Z \to \infty`$-first
 limsup
 and
 liminf)
 [S3:52–56, S6:10].
 
-**Generalized
-outer-electron
-radii**
-[S4:51–55,
-S6:12–13].
-For
-neutral
-two-spin
-Coulomb
-atoms,
-for
-every
-choice
-of
-normalized
-ground
-states,
-the
-upper
-and
-lower
-large-nuclear-charge
-limits
-of
-the
-radius
-$`R_m`$
-defined
-by
-an
-expected
-exterior
-electron
-mass
-$`m`$
-satisfy
+**Generalized outer-electron radii** [S4:51–55, S6:12–13]. For neutral
+two-spin Coulomb atoms, for every choice of normalized ground states,
+the upper and lower large-nuclear-charge limits of the radius $`R_m`$
+defined by an expected exterior electron mass $`m`$ satisfy
 $`m^{1/3} R_m \to (81\pi^2/2)^{1/3}`$
 as
 $`m \to \infty`$,
 with
 the
 $`Z \to \infty`$
-limit
-taken
-first
-[S6:12–13].
+limit taken first [S6:12–13].
 
-**Uniform
-excess
-charge
-for
-molecules**
-[S5:57–64,
-S2:617].
-A
-molecule
-with
-$`M`$
-fixed
-nuclei
-of
-charges
-at
-least
-one
-and
-total
-nuclear
-charge
-$`Z`$
-strictly
-binds
-at
-most
+**Uniform excess charge for molecules** [S5:57–64, S2:617]. A molecule
+with $`M`$ fixed nuclei of charges at least one and total nuclear charge
+$`Z`$ strictly binds at most
 $`Z + CM`$
-electrons,
-for
-a
-universal
-constant
-$`C`$,
-for
-the
-full
-nonrelativistic
-Coulomb
-Hamiltonian
-with
-two
-spin
-states
-and
-arbitrary
-distinct
-nuclear
-positions.
-For
-neutral
-atoms
-with
-integer
+electrons, for a universal constant $`C`$, for the full nonrelativistic
+Coulomb Hamiltonian with two spin states and arbitrary distinct nuclear
+positions. For neutral atoms with integer
 $`Z \ge 1`$,
-the
-first
-ionization
-energy
-and
-the
-radius
-containing
-all
-but
-a
-half-electron
-are
-each
-bounded
-above
-and
-below
-by
-positive
-universal
-constants
-[S5:57–64].
+the first ionization energy and the radius containing all but a half-
+electron are each bounded above and below by positive universal
+constants [S5:57–64].
 
 ## History of the conjecture
 
-The
-**generalized
-ionization
-conjecture**
-extends
-the
-classical
-ionization-energy
-theory
-of
-Coulomb
-atoms
-from
-removing
-a
-fixed
-number
-of
-electrons
-to
-removing
-$`m`$
-electrons
-as
-$`m`$
-and
-$`Z`$
-both
-grow.
-The
-Thomas–Fermi
-theory
-predicts
-the
-large-atom
-energy
-scaling,
-and
-the
-conjecture
-asked
-for
-the
-precise
-$`m^{7/3}`$
-law
-for
-the
-generalized
-(repeat-removal)
-ionization
-energy
-and
-the
-matching
-$`m^{-1/3}`$
-law
-for
-the
-outer
-radius.
-The
-first
-manuscript
-[S3:52–56]
-proves
-the
-energy
-asymptotics
-with
-both
-iterated
-limits
-for
-the
-full
-two-spin
-model;
-the
-second
-[S4:51–55]
-proves
-the
-radius
-asymptotics.
-The
-**uniform
-excess
-charge**
-result
-[S5:57–64]
-is
-the
-molecular
-analogue:
-the
-number
-of
-extra-electron
-states
-grows
-at
-most
-linearly
-in
-the
-number
-of
-nuclei,
-with
-a
-universal
-coefficient,
-for
-the
-full
-Hamiltonian
-and
-arbitrary
+The **generalized ionization conjecture** extends the classical
+ionization-energy theory of Coulomb atoms from removing a fixed number
+of electrons to removing $`m`$ electrons as $`m`$ and $`Z`$ both grow. The
+Thomas–Fermi theory predicts the large-atom energy scaling, and the
+conjecture asked for the precise $`m^{7/3}`$ law for the generalized
+(repeat-removal) ionization energy and the matching $`m^{-1/3}`$ law for
+the outer radius. The first manuscript [S3:52–56] proves the energy
+asymptotics with both iterated limits for the full two-spin model; the
+second [S4:51–55] proves the radius asymptotics. The **uniform excess
+charge** result [S5:57–64] is the molecular analogue: the number of
+extra-electron states grows at most linearly in the number of nuclei,
+with a universal coefficient, for the full Hamiltonian and arbitrary
 geometry.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Coulomb
-atoms,
-ionization
-energies,
-the
-Thomas–Fermi
-limit,
-and
-the
-excess-charge
-problem
-are
-standard
-in
-rigorous
-quantum
-many-body
-physics.
-The
-full
-two-spin
-generalized
-ionization-energy
-asymptotics
-with
-both
-iterated
-limits,
-the
-matching
-outer-radius
-asymptotics,
-and
-the
-uniform
-excess-charge
-bound
-for
-arbitrary
-nuclear
-geometry
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Coulomb atoms, ionization
+energies, the Thomas–Fermi limit, and the excess-charge problem are
+standard in rigorous quantum many-body physics. The full two-spin
+generalized ionization-energy asymptotics with both iterated limits, the
+matching outer-radius asymptotics, and the uniform excess-charge bound
+for arbitrary nuclear geometry are the novel contributions. I cannot
+confirm these independently from training alone.
 
 ## Consequences
 
 - **The
-  energy
-  part
-  of
-  the
-  generalized
-  ionization
-  conjecture
-  proved**
+energy part of the generalized ionization conjecture proved**
   [S3:52–56, S2:617]:
   $`I_m(Z)/m^{7/3}
   \to a_{\mathrm{TF}}`$
@@ -443,15 +140,7 @@ alone.
   $`m \to \infty`$
   and
   $`Z/m \to \infty`$,
-  with
-  both
-  iterated
-  limits
-  for
-  the
-  full
-  two-spin
-  atom.
+with both iterated limits for the full two-spin atom.
 - **The
   radius
   part
@@ -459,146 +148,32 @@ alone.
   [S4:51–55, S6:12–13]:
   $`m^{1/3} R_m
   \to (81\pi^2/2)^{1/3}`$
-  for
-  the
-  outer
-  radius
-  at
-  expected
-  exterior
-  mass
-  $`m`$,
+for the outer radius at expected exterior mass $`m`$,
   $`Z \to \infty`$
   first.
 - **The
-  uniform
-  excess-charge
-  bound**
-  [S5:57–64]:
-  a
-  molecule
-  with
-  $`M`$
-  nuclei
-  binds
-  at
-  most
+uniform excess-charge bound** [S5:57–64]: a molecule with $`M`$ nuclei
+binds at most
   $`Z + CM`$
-  electrons,
-  with
-  universal
-  first-ionization
-  and
-  outer-radius
-  bounds
-  for
-  neutral
-  atoms.
+electrons, with universal first-ionization and outer-radius bounds for
+neutral atoms.
 
 ## Section skeleton
 
-Three
-manuscripts.
-[S3:51–57]
-(title
-[S3:46],
-date
-[S3:48])
-—
-`paper.tex`
-under
-`build/`.
-[S4:50–56]
-(title
-[S4:45],
-date
-[S4:47])
-—
-`paper.tex`
-under
-`build/`.
-[S5:56–65]
-(title
-[S5:51],
-date
-[S5:53])
-—
-`main.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+Three manuscripts. [S3:51–57] (title [S3:46], date [S3:48]) — `paper.tex`
+under `build/`. [S4:50–56] (title [S4:45], date [S4:47]) — `paper.tex` under
+`build/`. [S5:56–65] (title [S5:51], date [S5:53]) — `main.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S6],
-two
-comparator
-stubs
-[S7]
-[S8],
-and
-one
-`main_results`
-entry
-[S10].
-The
-scope
-note
-links
-the
-ionization-energies
-manuscript
-[S3:51–57]
-and
-the
-outer-radii
-manuscript
-[S4:50–56]
-[S6:5–6];
-the
-uniform-excess-charge
-manuscript
-[S5:56–65]
-is
-outside
-the
-formalization
-entirely.
-The
-recorded
-scope
-carries
-two
-statements.
-The
-ionization
-asymptotics
-[S6:10]:
-for
-the
-full
-nonrelativistic
-two-spin
-Coulomb
-atom,
-with
+The release formalises this family at tier T3 with one scope note [S6],
+two comparator stubs [S7] [S8], and one `main_results` entry [S10]. The
+scope note links the ionization-energies manuscript [S3:51–57] and the outer-
+radii manuscript [S4:50–56] [S6:5–6]; the uniform-excess-charge manuscript
+[S5:56–65] is outside the formalization entirely. The recorded scope carries
+two statements. The ionization asymptotics [S6:10]: for the full
+nonrelativistic two-spin Coulomb atom, with
 $`Z > m \ge 1`$
 integers,
 $`I_m(Z)/m^{7/3}
@@ -608,52 +183,12 @@ $`m
 \to \infty`$
 and
 $`Z/m \to \infty`$,
-with
-the
-iterated
-limsup
-and
-liminf
-limits
-holding
-with
-$`Z
+with the iterated limsup and liminf limits holding with $`Z
 \to \infty`$
-first;
-the
-statement
-uses
-the
-full
-antisymmetric
-Sobolev
-form
-domain,
-and
-fixed-$`m`$
-convergence
-and
-ground-state
-attainment
-are
-outside
-it
-[S6:10].
-The
-radii
-asymptotics
-[S6:12–13]:
-for
-neutral
-two-spin
-atoms,
-for
-every
-choice
-of
-normalized
-ground
-states,
+first; the statement uses the full antisymmetric Sobolev form domain,
+and fixed-$`m`$ convergence and ground-state attainment are outside it
+[S6:10]. The radii asymptotics [S6:12–13]: for neutral two-spin atoms,
+for every choice of normalized ground states,
 $`m^{1/3} R_m
 \to (81\pi^2/2)^{1/3}`$
 as
@@ -661,304 +196,45 @@ $`m
 \to \infty`$,
 $`Z
 \to \infty`$
-first;
-ground
-states
-are
-inputs
-to
-the
-statement,
-their
-existence
-not
-asserted
-separately.
+first; ground states are inputs to the statement, their existence not
+asserted separately.
 
-The
-single
-`main_results`
-entry
-[S10:1147–1149]
-names
-`OAI.CoulombAtom.generalized_ionization`
-in
-`lean/OAI/Analysis/CoulombIonization/Main.lean`.
-In
-the
-source,
-the
-theorem
-`generalized_ionization`
-is
-stated
-and
-closed
-at
-[S9:46].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/Analysis/CoulombIonization/`
-tree
-(607
-`.lean`
-files).
+The single `main_results` entry [S10:1147–1149] names
+`OAI.CoulombAtom.generalized_ionization` in
+`lean/OAI/Analysis/CoulombIonization/Main.lean`. In the source, the
+theorem `generalized_ionization` is stated and closed at [S9:46]. `grep`
+finds **zero** `sorry` in the whole
+`lean/OAI/Analysis/CoulombIonization/` tree (607 `.lean` files).
 
-The
-two
-comparator
-stubs
-carry
-the
-targets,
-each
-with
-one
-`sorry`:
-[S7]
-(`generalized_ionization`
-at
-[S7:92],
-the
-registered
-one)
-and
-[S8]
-(`generalized_outer_radii`
-at
-[S8:77],
-the
-unregistered
-one).
-Only
-the
-ionization
-target
-has
-a
-`main_results`
-registration;
-the
-outer-radii
-asymptotics
-[S4:50–56]
-have
-a
-scope-note
-statement
-and
-a
-comparator
-stub
-but
-no
-`main_results`
-entry
-and
-no
-OAI
-tree
-reachable
-through
-the
-yaml,
-so
-the
-proved
-copy
-for
-the
-radii
-result
-does
-not
-exist
-under
-`lean/OAI/`
-in
-this
-release.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists
-and
-is
-registered,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The two comparator stubs carry the targets, each with one `sorry`: [S7]
+(`generalized_ionization` at [S7:92], the registered one) and [S8]
+(`generalized_outer_radii` at [S8:77], the unregistered one). Only the
+ionization target has a `main_results` registration; the outer-radii
+asymptotics [S4:50–56] have a scope-note statement and a comparator stub but
+no `main_results` entry and no OAI tree reachable through the yaml, so
+the proved copy for the radii result does not exist under `lean/OAI/` in
+this release. A comparator stub is a target the release set itself; the
+proved version, where it exists and is registered, lives under
+`lean/OAI/`. The reading is of source text only — no `lake` or `lean`
+run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=263`
-[S11]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=3`,
-`paps_form=1`,
-`chal=2`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=3`
-is
-the
-coverage
-signature:
-only
-the
-ionization-energies
-manuscript
-[S3:51–57]
-is
-named
-as
-a
-formalization
-source,
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-Thomas–Fermi
-ionization
-asymptotics
-[S6:10].
-The
-outer-radii
-manuscript
-[S4:50–56]
-is
-linked
-in
-the
-scope
-note
-and
-carries
-a
-scope
-statement
-[S6:12–13]
-and
-a
-comparator
-stub
-[S8],
-but
-has
-no
-`main_results`
-entry
-and
-no
-OAI
-tree,
-so
-its
-radii
-asymptotics
-remain
-unproved
-in
-the
-formalization.
-The
-uniform-excess-charge
-manuscript
-[S5:56–65]
-is
-entirely
-outside
-the
-formalization
-—
-no
-scope-note
-source
-entry
-and
-no
-comparator
-stub.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`bound|partial`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-generalized
-ionization
-conjecture
-with
-"proves".
+The ledger row `fam=263` [S11] records the tier and the counts:
+`tier=T3`, `paps=3`, `paps_form=1`, `chal=2`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=3` is the coverage signature: only the ionization-energies
+manuscript [S3:51–57] is named as a formalization source, and the single
+`main_results` entry over that config reaches the Thomas–Fermi
+ionization asymptotics [S6:10]. The outer-radii manuscript [S4:50–56] is
+linked in the scope note and carries a scope statement [S6:12–13] and a
+comparator stub [S8], but has no `main_results` entry and no OAI tree,
+so its radii asymptotics remain unproved in the formalization. The
+uniform-excess-charge manuscript [S5:56–65] is entirely outside the
+formalization — no scope-note source entry and no comparator stub. There
+is no verification bundle and no reasoning trace. The shape flags are
+`bound|partial`, and `resolves_named=1` — the blurb names the
+generalized ionization conjecture with "proves".
 
 ## Sources
 

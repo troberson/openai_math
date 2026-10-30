@@ -57,628 +57,106 @@ perturbations.
 
 **The Fock-space inequality and uniform gap**
 [S4:89–97, S2:629].
-With
-coefficient
-one
-for
-each
-pair
-projector,
-the
-fermionic
-Laughlin
-$`V_1`$
-Hamiltonian
-at
-filling
-$`1/3`$
-on
-the
-round
-sphere
-has,
-for
-all
-sufficiently
-large
-flux
+With coefficient one for each pair projector, the fermionic Laughlin
+$`V_1`$ Hamiltonian at filling $`1/3`$ on the round sphere has, for all
+sufficiently large flux
 $`Q = 3(N-1)`$
-with
-large
-particle
-number
-$`N`$,
-a
-spectral
-gap
-of
-at
-least
-$`1/25`$
-above
-the
-Laughlin
-state.
-More
-generally,
+with large particle number $`N`$, a spectral gap of at least $`1/25`$ above
+the Laughlin state. More generally,
 $`H_Q^2 \ge \gamma H_Q`$
-on
-the
-entire
-lowest-Landau-level
-Fock
-space
-for
-every
-fixed
+on the entire lowest-Landau-level Fock space for every fixed
 $`0 < \gamma < \gamma_*`$,
-independently
-of
-particle
-number,
-with
+independently of particle number, with
 $`\gamma_* = 4616733319001/10^{14} > 1/25`$
 [S4:89–97, S5:14].
 
-**Uniform
-stability
-under
-bounded
-scalar
-disorder**
-[S3:27–37,
-S2:629].
-The
-fermionic
-Laughlin
-$`V_1`$
-Hamiltonian
-at
-filling
-$`1/3`$
-on
-expanding
-round
-spheres
-retains
-a
-unique
-ground
-state
-and
-a
-uniform
-spectral
-gap
-under
-sufficiently
-weak
-bounded
-real
-scalar
-one-body
-potentials
-projected
-to
-the
-lowest
-Landau
-level;
-with
-coefficient
-one
-per
-pair
-projector
-and
-flux
+**Uniform stability under bounded scalar disorder** [S3:27–37, S2:629].
+The fermionic Laughlin $`V_1`$ Hamiltonian at filling $`1/3`$ on expanding
+round spheres retains a unique ground state and a uniform spectral gap
+under sufficiently weak bounded real scalar one-body potentials
+projected to the lowest Landau level; with coefficient one per pair
+projector and flux
 $`q = 3(N-1)`$,
-the
-gap
-and
-perturbation
-threshold
-are
-uniform
-for
-all
-sufficiently
-large
-$`N`$
-and
-all
-potential
-profiles
-of
-supremum
-norm
-at
-most
-one,
-with
-existential
-constants
-[S3:27–37].
+the gap and perturbation threshold are uniform for all sufficiently
+large $`N`$ and all potential profiles of supremum norm at most one, with
+existential constants [S3:27–37].
 
 ## History of the conjecture
 
-The
-**fermionic
-Laughlin
-gap
-conjecture**
-asks
-for
-a
-positive,
-particle-number-uniform
-spectral
-gap
-in
-the
-interacting
-flat-band
-model
-at
-filling
-$`1/3`$.
-The
-gap
-had
-been
-established
-in
-various
-approximations
-and
-for
-simpler
-interactions,
-but
-the
-**full
-$`V_1`$
-interaction**
-on
-the
-sphere
-—
-with
-a
-**uniform**
-bound
-in
-the
-particle
-number
-and
-a
-**Fock-space
-inequation
+The **fermionic Laughlin gap conjecture** asks for a positive, particle-
+number-uniform spectral gap in the interacting flat-band model at
+filling $`1/3`$. The gap had been established in various approximations
+and for simpler interactions, but the **full $`V_1`$ interaction** on the
+sphere — with a **uniform** bound in the particle number and a **Fock-
+space inequation
 $`H_Q^2 \ge \gamma H_Q`$**
-valid
-independently
-of
-particle
-number
-—
-had
-remained
-open.
-The
-first
-(underlying)
-manuscript
-[S4:89–97]
-resolves
-the
-gap
-and
-the
-stronger
-Fock-space
-inequation
-with
-the
-explicit
-endpoint
-$`\gamma_*
+valid independently of particle number — had remained open. The first
+(underlying) manuscript [S4:89–97] resolves the gap and the stronger
+Fock-space inequation with the explicit endpoint $`\gamma_*
 > 1/25`$.
-The
-**stability**
-result
-[S3:27–37]
-is
-the
-robustness
-statement
-built
-on
-top:
-the
-unique
-gap
-survives
-weak
-bounded
-scalar
-disorder,
-uniform
-in
-potential
-profile,
-so
-the
-rigidity
-is
-not
-an
-artifact
-of
-a
-perfectly
-clean
-field.
+The **stability** result [S3:27–37] is the robustness statement built on
+top: the unique gap survives weak bounded scalar disorder, uniform in
+potential profile, so the rigidity is not an artifact of a perfectly
+clean field.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-Laughlin
-state,
-the
-lowest
-Landau
-level,
-flat-band
-fermionic
-Hartree
-models,
-and
-filling
-fraction
-$`1/3`$
-are
-standard
-in
-the
-fractional
-quantum
-Hall
-effect
-and
-rigorous
-many-body
-physics.
-The
-uniform
-$`V_1`$
-spectral
-gap
-with
-the
-Fock-space
-inequation
+**Prior (my training data, not this repo).** The Laughlin state, the
+lowest Landau level, flat-band fermionic Hartree models, and filling
+fraction $`1/3`$ are standard in the fractional quantum Hall effect and
+rigorous many-body physics. The uniform $`V_1`$ spectral gap with the
+Fock-space inequation
 $`H_Q^2 \ge \gamma H_Q`$
-at
-the
-explicit
-endpoint
-$`\gamma_*
+at the explicit endpoint $`\gamma_*
 > 1/25`$,
-and
-its
-stability
-under
-bounded
-scalar
-disorder
-with
-profile-uniform
-thresholds,
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+and its stability under bounded scalar disorder with profile-uniform
+thresholds, are the novel contributions. I cannot confirm these
+independently from training alone.
 
 ## Consequences
 
 - **The
-  uniform
-  fermionic
-  Laughlin
-  $`V_1`$
-  gap**
+uniform fermionic Laughlin $`V_1`$ gap**
   [S4:89–97, S2:629]:
-  a
-  spectral
-  gap
-  of
-  at
-  least
-  $`1/25`$
-  above
-  the
-  Laughlin
-  state
-  at
-  filling
-  $`1/3`$
-  for
-  all
-  sufficiently
-  large
-  systems,
-  with
-  the
-  Fock-space
-  inequation
+a spectral gap of at least $`1/25`$ above the Laughlin state at filling
+$`1/3`$ for all sufficiently large systems, with the Fock-space inequation
   $`H_Q^2 \ge \gamma H_Q`$
   for
   every
   fixed
   $`\gamma < \gamma_*`$,
-  independent
-  of
-  particle
-  number.
+independent of particle number.
 - **The
-  uniform
-  disorder
-  stability**
-  [S3:27–37]:
-  the
-  unique
-  gap
-  survives
-  weak
-  bounded
-  real
-  scalar
-  one-body
-  potentials
-  in
-  the
-  lowest
-  Landau
-  level,
-  with
-  the
-  gap
-  and
-  threshold
-  uniform
-  over
-  all
-  large
-  particle
-  numbers
-  and
-  all
-  normalized
-  potential
-  profiles.
+uniform disorder stability** [S3:27–37]: the unique gap survives weak
+bounded real scalar one-body potentials in the lowest Landau level, with
+the gap and threshold uniform over all large particle numbers and all
+normalized potential profiles.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:27–37]
-(title
-[S3:22],
-date
-[S3:24])
-—
-`paper.tex`
-under
-`build/`.
-[S4:89–97]
-(title
-[S4:80],
-date
-[S4:82])
-—
-`main.tex`
-under
-`build/`.
-Both
-manuscripts
-ship
-a
-`verification/`
-bundle,
-and
-each
-bundle
-is
-a
-single
-`verification/rows.txt`
-—
-no
-README
-names
-a
-run
-command
-in
-either,
-so
-the
-ledger's
-`verification`
-column
-is
-the
-only
-machine-readable
-pointer
-to
-them.
-The
-two
-`rows.txt`
-files
-are
-byte-identical
-and
-are
-typeset
-into
-the
-manuscripts.
-These
-are
-finite-arithmetic
-certificates,
-not
-Lean
-proofs.
+Two manuscripts. [S3:27–37] (title [S3:22], date [S3:24]) — `paper.tex` under
+`build/`. [S4:89–97] (title [S4:80], date [S4:82]) — `main.tex` under
+`build/`. Both manuscripts ship a `verification/` bundle, and each
+bundle is a single `verification/rows.txt` — no README names a run
+command in either, so the ledger's `verification` column is the only
+machine-readable pointer to them. The two `rows.txt` files are byte-
+identical and are typeset into the manuscripts. These are finite-
+arithmetic certificates, not Lean proofs.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S5],
-four
-comparator
-stubs
-[S6]
-[S7]
-[S8]
-[S9],
-and
-one
-`main_results`
-entry
-[S11].
-The
-scope
-note
-links
-**both**
-manuscripts
-[S5:5–6].
-The
-recorded
-scope
-[S5:10]
-is
-the
-**uniform
-unperturbed
-gap
-estimate**:
-at
-flux
+The release formalises this family at tier T3 with one scope note [S5],
+four comparator stubs [S6] [S7] [S8] [S9], and one `main_results` entry
+[S11]. The scope note links **both** manuscripts [S5:5–6]. The recorded
+scope [S5:10] is the **uniform unperturbed gap estimate**: at flux
 $`q = 3(N-1)`$
-and
-all
-sufficiently
-large
-particle
-numbers
-$`N`$,
-every
-antisymmetric
-state
-has
-$`V_1`$
-energy
-at
-least
-$`1/25`$
-times
-its
-squared
-distance
-from
-the
-Laughlin
-ground-state
-line.
-The
-scope
-note
-is
-explicit
-that
-"stability
-under
-projected
-one-body
-potentials
-and
-uniqueness
-of
-the
-perturbed
-ground
-state
-are
-outside
-it"
-[S5:12]
-—
-so
-the
-formalization
-proves
-the
-unperturbed
-gap
-used
-in
-the
-stability
-argument
-[S3:27–37],
-not
-the
-disorder-stability
-claim
-itself.
-It
-also
-carries
-the
-finite
-spherical
-$`V_1`$
-bound
-of
-$`1/100`$
-above
-the
-Laughlin
-state
-and
-the
-stronger
-Fock-space
-inequation
+and all sufficiently large particle numbers $`N`$, every antisymmetric
+state has $`V_1`$ energy at least $`1/25`$ times its squared distance from
+the Laughlin ground-state line. The scope note is explicit that
+"stability under projected one-body potentials and uniqueness of the
+perturbed ground state are outside it" [S5:12] — so the formalization
+proves the unperturbed gap used in the stability argument [S3:27–37], not the
+disorder-stability claim itself. It also carries the finite spherical
+$`V_1`$ bound of $`1/100`$ above the Laughlin state and the stronger Fock-
+space inequation
 $`H_Q^2 \ge \gamma H_Q`$
 for
 every
@@ -686,289 +164,44 @@ fixed
 $`0 < \gamma < \gamma_*`$,
 $`\gamma_*
 = 4616733319001/10^{14} > 1/25`$,
-independently
-of
-particle
-number
-[S5:14].
+independently of particle number [S5:14].
 
-The
-`main_results`
-entry
-[S11:1395–1397]
-names
-`OAI.Laughlin.mainTarget_proved`
-in
-`lean/OAI/Analysis/Laughlin/Main.lean`,
-where
-the
-theorem
-`mainTarget_proved`
-is
-stated
-and
-closed
-at
-[S10:19].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/Analysis/Laughlin/`
-tree
-(1,279
-`.lean`
-files).
+The `main_results` entry [S11:1395–1397] names
+`OAI.Laughlin.mainTarget_proved` in
+`lean/OAI/Analysis/Laughlin/Main.lean`, where the theorem
+`mainTarget_proved` is stated and closed at [S10:19]. `grep` finds
+**zero** `sorry` in the whole `lean/OAI/Analysis/Laughlin/` tree (1,279
+`.lean` files).
 
-The
-four
-comparator
-stubs
-each
-carry
-one
-`sorry`:
-[S6]
-(`thm_main`
-at
-[S6:78]),
-[S7]
-(`mainTarget_proved`
-at
-[S7:61],
-the
-registered
-one),
-[S8]
-(`thm_fock`
-at
-[S8:58]),
-and
-[S9]
-(`planar_gap`
-at
-[S9:76]).
-Only
-[S7]
-has
-a
-`main_results`
-registration;
-the
-gap,
-Fock-space,
-and
-planar
-comparators
-[S6]
-[S8]
-[S9]
-carry
-scope-note
-links
-but
-no
-`main_results`
-entry
-of
-their
-own.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists
-and
-is
-registered,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The four comparator stubs each carry one `sorry`: [S6] (`thm_main` at
+[S6:78]), [S7] (`mainTarget_proved` at [S7:61], the registered one),
+[S8] (`thm_fock` at [S8:58]), and [S9] (`planar_gap` at [S9:76]). Only
+[S7] has a `main_results` registration; the gap, Fock-space, and planar
+comparators [S6] [S8] [S9] carry scope-note links but no `main_results`
+entry of their own. A comparator stub is a target the release set
+itself; the proved version, where it exists and is registered, lives
+under `lean/OAI/`. The reading is of source text only — no `lake` or
+`lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=269`
-[S12]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=2`,
-`paps_form=1`,
-`chal=4`,
-`mainres=1`,
-`scope_note=1`,
-`verification=2`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-the
-scope
-note
-links
-both
-manuscripts
-[S5:5–6],
-but
-the
-single
-`main_results`
-entry
-[S11]
-reaches
-the
-**uniform
-unperturbed
-Fock-space
-gap**
-[S5:10],
-and
-the
-scope
-note
-is
-explicit
-that
-the
-stability-under-disorder
-claim
-[S3:27–37]
-and
-the
-uniqueness
-of
-the
-perturbed
-ground
-state
-are
-outside
-the
-formalized
-statement
-[S5:12]
-—
-so
-the
-disorder-stability
-manuscript
-[S3:27–37]
-is
-formalized
-only
-in
-the
-unperturbed
-gap
-it
-uses,
-not
-in
-its
-own
-stability
-result.
-The
-four
-comparator
-stubs
-carry
-four
-`sorry`.
-The
-`verification=2`
-is
-the
-ledger's
-pointer
-to
-the
-two
-byte-identical
-`rows.txt`
-certificate
-files
-—
-finite-arithmetic
-certificates,
-not
-theorem
-checks,
-and
-neither
-bundle
-ships
-a
-README
-naming
-a
-run
-command.
-There
-is
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution|bound|uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-fermionic
-Laughlin
-spectral-gap
-conjecture
-with
-"Proves".
+The ledger row `fam=269` [S12] records the tier and the counts:
+`tier=T3`, `paps=2`, `paps_form=1`, `chal=4`, `mainres=1`,
+`scope_note=1`, `verification=2`, `trace=`. The `paps_form=1` against
+`paps=2` is the coverage signature: the scope note links both
+manuscripts [S5:5–6], but the single `main_results` entry [S11] reaches
+the **uniform unperturbed Fock-space gap** [S5:10], and the scope note
+is explicit that the stability-under-disorder claim [S3:27–37] and the
+uniqueness of the perturbed ground state are outside the formalized
+statement [S5:12] — so the disorder-stability manuscript [S3:27–37] is
+formalized only in the unperturbed gap it uses, not in its own stability
+result. The four comparator stubs carry four `sorry`. The
+`verification=2` is the ledger's pointer to the two byte-identical
+`rows.txt` certificate files — finite-arithmetic certificates, not
+theorem checks, and neither bundle ships a README naming a run command.
+There is no reasoning trace. The shape flags are
+`resolution|bound|uniform`, and `resolves_named=1` — the blurb names the
+fermionic Laughlin spectral-gap conjecture with "Proves".
 
 ## Sources
 

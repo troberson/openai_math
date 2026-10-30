@@ -36,525 +36,81 @@ is **not** amenable [S3:10–13, S2:585].
 
 **Nonamenability of Thompson's group $`F`$**
 [S3:10–13, S2:585]. Thompson's
-group
-$`F`$,
-the
-group
-of
-dyadic
-piecewise-linear
-homeomorphisms
-of
-$`[0,1]`$,
-is
-nonamenable:
-it
-does
-not
-admit
-a
-positive
-normalized
-left-invariant
-mean
-on
-bounded
-real
-functions.
-This
-confirms
-Geoghegan's
-conjecture
-and
-resolves
-the
-amenability
-problem
-for
-$`F`$.
+group $`F`$, the group of dyadic piecewise-linear homeomorphisms of
+$`[0,1]`$, is nonamenable: it does not admit a positive normalized left-
+invariant mean on bounded real functions. This confirms Geoghegan's
+conjecture and resolves the amenability problem for $`F`$.
 
 ## History of the conjecture
 
 **Thompson's groups**
-$`F`$,
-$`T`$,
-and
-$`V`$
-were
-introduced
-by
-Thompson
-in
-1965
-as
-examples
-of
-groups
-with
-unusual
-properties.
-$`F`$
-is
-the
-smallest
-of
-the
-three
-and
-has
-been
-one
-of
-the
-most
-studied
-groups
-in
-geometric
-group
-theory.
-The
-**amenability
-problem**
-for
-$`F`$
-—
-whether
-$`F`$
-admits
-a
-left-invariant
-mean
-—
-was
-a
-long-standing
-open
-question.
-$`F`$
-is
-torsion-free,
-has
-a
-finite
-presentation,
-is
-simple
-in
-its
-commutator
-subgroup,
-and
-has
-many
-other
-exotic
-properties,
-yet
-its
-amenability
-status
-remained
-unknown.
-**Geoghegan's
-conjecture**
-predicted
-that
-$`F`$
-is
-nonamenable.
-The
-result
-[S3:10–13]
-confirms
-this
-conjecture,
-resolving
-the
-amenability
-problem.
+$`F`$, $`T`$, and $`V`$ were introduced by Thompson in 1965 as examples of
+groups with unusual properties. $`F`$ is the smallest of the three and has
+been one of the most studied groups in geometric group theory. The
+**amenability problem** for $`F`$ — whether $`F`$ admits a left-invariant
+mean — was a long-standing open question. $`F`$ is torsion-free, has a
+finite presentation, is simple in its commutator subgroup, and has many
+other exotic properties, yet its amenability status remained unknown.
+**Geoghegan's conjecture** predicted that $`F`$ is nonamenable. The result
+[S3:10–13] confirms this conjecture, resolving the amenability problem.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Thompson's
-group
-$`F`$,
-its
-definition
-as
-piecewise-linear
-homeomorphisms,
-and
-the
-general
-question
-of
-amenability
-for
-finitely
-presented
-groups
-are
-standard.
-The
-proof
-of
-nonamenability
-for
-$`F`$,
-confirming
-Geoghegan's
-conjecture,
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Thompson's group $`F`$, its
+definition as piecewise-linear homeomorphisms, and the general question
+of amenability for finitely presented groups are standard. The proof of
+nonamenability for $`F`$, confirming Geoghegan's conjecture, is the novel
+contribution. I cannot confirm this independently from training alone.
 
 ## Consequences
 
 - **Nonamenability
-  of
-  $`F`$**
-  [S3:10–13]:
-  Thompson's
-  group
-  $`F`$
-  does
-  not
-  admit
-  a
-  positive
-  normalized
-  left-invariant
-  mean
-  on
-  bounded
-  real
-  functions.
+of $`F`$** [S3:10–13]: Thompson's group $`F`$ does not admit a positive
+normalized left-invariant mean on bounded real functions.
 - **Geoghegan's
-  conjecture
-  confirmed**
-  [S3:10–13]:
-  the
-  1990s
-  conjecture
-  that
-  $`F`$
-  is
-  nonamenable
-  is
-  proved,
-  resolving
-  the
-  amenability
-  problem
-  for
-  $`F`$.
+conjecture confirmed** [S3:10–13]: the 1990s conjecture that $`F`$ is
+nonamenable is proved, resolving the amenability problem for $`F`$.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:10–13]
-(title
-[S3:4],
-date
-[S3:6])
-—
-`main.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:10–13] (title [S3:4], date [S3:6]) — `main.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S4],
-one
-comparator
-stub
-[S5],
-and
-one
-`main_results`
-entry
-[S7].
-The
-scope
-note
-[S4:9]
-states
-the
-target:
-the
-amenability
-problem
-for
-Thompson's
-group
-$`F`$
-—
-whether
-it
-admits
-a
-positive
-normalized
-left-invariant
-mean
-on
-bounded
-real
-functions.
-The
-formalized
-result
-rules
-out
-such
-a
-mean
-for
-the
-standard
-group
-of
-dyadic
-piecewise-linear
-homeomorphisms
-of
-the
-interval,
-proving
-nonamenability.
-No
-explicit
-boundary
-constant
-or
-prescribed
-generating
-set
-is
-given.
+The release formalises this family at tier T3 with one scope note [S4],
+one comparator stub [S5], and one `main_results` entry [S7]. The scope
+note [S4:9] states the target: the amenability problem for Thompson's
+group $`F`$ — whether it admits a positive normalized left-invariant mean
+on bounded real functions. The formalized result rules out such a mean
+for the standard group of dyadic piecewise-linear homeomorphisms of the
+interval, proving nonamenability. No explicit boundary constant or
+prescribed generating set is given.
 
-The
-`main_results`
-entry
-[S7:1731–1733]
-names
-`OAI.ThompsonNonamenability.thompson_F_nonamenable_composition`
-in
-`lean/OAI/GroupTheory/Thompson/Main.lean`.
-In
-the
-source,
-the
-theorem
-`thompson_F_not_amenable`
-[S6:65]
-states
-the
-negation
-of
-amenability
-directly,
-and
-`thompson_F_nonamenable_composition`
-[S6:69]
-is
-the
-composition
-form
-named
-by
-the
-`main_results`
-entry.
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/GroupTheory/Thompson/`
-tree.
+The `main_results` entry [S7:1731–1733] names
+`OAI.ThompsonNonamenability.thompson_F_nonamenable_composition` in
+`lean/OAI/GroupTheory/Thompson/Main.lean`. In the source, the theorem
+`thompson_F_not_amenable` [S6:65] states the negation of amenability
+directly, and `thompson_F_nonamenable_composition` [S6:69] is the
+composition form named by the `main_results` entry. `grep` finds
+**zero** `sorry` in the whole `lean/OAI/GroupTheory/Thompson/` tree.
 
-The
-one
-comparator
-stub
-[S5]
-states
-the
-nonamenability
-target
-and
-ends
-in
-`sorry`.
-The
-proved
-copy
-lives
-under
-`lean/OAI/`.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The one comparator stub [S5] states the nonamenability target and ends
+in `sorry`. The proved copy lives under `lean/OAI/`. A comparator stub
+is a target the release set itself; the proved version, where it exists,
+lives under `lean/OAI/`. The reading is of source text only — no `lake`
+or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=248`
-[S8]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=1`,
-`paps_form=1`,
-`chal=1`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-single
-manuscript
-is
-named
-as
-a
-formalization
-source,
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-full
-nonamenability
-claim.
-The
-comparator
-stub
-names
-the
-same
-target,
-and
-the
-proved
-copy
-lives
-under
-`lean/OAI/`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-amenability
-problem
-with
-"resolving".
+The ledger row `fam=248` [S8] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=1` is the coverage signature: the single manuscript is named as a
+formalization source, and the single `main_results` entry over that
+config reaches the full nonamenability claim. The comparator stub names
+the same target, and the proved copy lives under `lean/OAI/`. There is
+no verification bundle and no reasoning trace. The shape flags are
+`resolution`, and `resolves_named=1` — the blurb names the amenability
+problem with "resolving".
 
 ## Sources
 

@@ -39,489 +39,79 @@ automorphism is the identity map
 automorphism of the
 full partial
 order of
-Turing
-degrees
-is
-the
-identity.
-No
-nontrivial
-relabeling
-of
-degrees
-preserves
-the
-ordering
-by
-relative
-computability.
-The
-proof
-requires
-no
-definability
-or
-genericity
-assumption
-on
-the
-automorphism.
+Turing degrees is the identity. No nontrivial relabeling of degrees
+preserves the ordering by relative computability. The proof requires no
+definability or genericity assumption on the automorphism.
 
 ## History of the conjecture
 
-The
-**rigidity
-problem**
-for
-the
-Turing
-degrees
-has
-been
-a
-central
-question
-in
-computability
-theory
-since
-the
-1950s.
-The
-partial
-order
-of
-Turing
-degrees
-is
-extremely
-complex
-—
-it
-has
-antichains
-of
-every
-infinite
-size,
-and
-its
-structure
-is
-far
-richer
-than
-the
-computability
-hierarchy
-alone
-suggests.
-The
-question
-of
-whether
-this
-order
-is
-rigid
-—
-whether
-every
-order
-automorphism
-is
-the
-identity
-—
-was
-a
-long-standing
-open
-problem.
-The
-result
-[S3:40–44]
-resolves
-it
-positively:
-the
-Turing
-degree
-structure
-is
-rigid.
-The
-proof
-combined
-a
-representation
-theorem
-with
-a
-recovery
-argument
-to
-show
-that
-any
-order
-automorphism
-must
-fix
-every
-degree.
+The **rigidity problem** for the Turing degrees has been a central
+question in computability theory since the 1950s. The partial order of
+Turing degrees is extremely complex — it has antichains of every
+infinite size, and its structure is far richer than the computability
+hierarchy alone suggests. The question of whether this order is rigid —
+whether every order automorphism is the identity — was a long-standing
+open problem. The result [S3:40–44] resolves it positively: the Turing
+degree structure is rigid. The proof combined a representation theorem
+with a recovery argument to show that any order automorphism must fix
+every degree.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Turing
-degrees,
-their
-partial
-order,
-and
-the
-rigidity
-question
-are
-standard
-in
-computability
-theory.
-The
-positive
-resolution
-of
-the
-rigidity
-problem
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Turing degrees, their
+partial order, and the rigidity question are standard in computability
+theory. The positive resolution of the rigidity problem is the novel
+contribution. I cannot confirm this independently from training alone.
 
 ## Consequences
 
 - **The rigidity
-  theorem**
-  [S3:40–44]:
-  every
-  order
-  automorphism
-  of
-  the
-  full
-  Turing
-  degrees
-  is
-  the
-  identity.
-  No
-  nontrivial
-  relabeling
-  of
-  degrees
-  preserves
-  the
-  ordering
-  by
-  relative
-  computability.
+theorem** [S3:40–44]: every order automorphism of the full Turing
+degrees is the identity. No nontrivial relabeling of degrees preserves
+the ordering by relative computability.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:40–44]
-(title
-[S3:35],
-date
-[S3:37])
-—
-`main.tex`
-under
-`build/`
-with
-`sections/`
-in
-order:
-introduction,
-preliminaries,
-rigidity,
-recovery,
-representation.
-The
-family
-ships
-no
-`verification/`
+One manuscript: [S3:40–44] (title [S3:35], date [S3:37]) — `main.tex` under
+`build/` with `sections/` in order: introduction, preliminaries,
+rigidity, recovery, representation. The family ships no `verification/`
 bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S4],
-one
-comparator
-stub
-[S5],
-and
-one
-`main_results`
-entry
-[S7].
-The
-scope
-note
-[S4:9]
-states
-the
-target:
-every
-order
-automorphism
-of
-the
-full
-Turing
-degrees
-of
-subsets
-of
+The release formalises this family at tier T3 with one scope note [S4],
+one comparator stub [S5], and one `main_results` entry [S7]. The scope
+note [S4:9] states the target: every order automorphism of the full
+Turing degrees of subsets of
 $`\mathbb N`$
-fixes
-every
-degree,
-with
-no
-definability
-or
-genericity
-assumption.
-The
-additional
-representation
-corollaries
-are
-not
-included.
+fixes every degree, with no definability or genericity assumption. The
+additional representation corollaries are not included.
 
-The
-`main_results`
-entry
-[S7:1176–1177]
-names
-`OAI.TuringRigidity.ManuscriptMain.rigidity`
-in
-`lean/OAI/Computability/DegreeRigidity/Main.lean`.
-In
-the
-source,
-the
-theorem
-is
-stated
-and
-closed:
-"theorem
-rigidity
-:
-MainTheorem
-:=
-main_of_representation
-borel_representation"
-[S6:27],
-which
-calls
-the
-`borel_representation`
-theorem
-[S6:24]
-and
-the
-`generic_program_representation`
-theorem
-[S6:10].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-whole
-`lean/OAI/Computability/DegreeRigidity/`
-tree.
+The `main_results` entry [S7:1176–1177] names
+`OAI.TuringRigidity.ManuscriptMain.rigidity` in
+`lean/OAI/Computability/DegreeRigidity/Main.lean`. In the source, the
+theorem is stated and closed: "theorem rigidity : MainTheorem :=
+main_of_representation borel_representation" [S6:27], which calls the
+`borel_representation` theorem [S6:24] and the
+`generic_program_representation` theorem [S6:10]. `grep` finds **zero**
+`sorry` in the whole `lean/OAI/Computability/DegreeRigidity/` tree.
 
-The
-one
-comparator
-stub
-[S5]
-states
-the
-rigidity
-target
-and
-ends
-in
-`sorry`.
-The
-proved
-copy
-lives
-under
-`lean/OAI/`.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The one comparator stub [S5] states the rigidity target and ends in
+`sorry`. The proved copy lives under `lean/OAI/`. A comparator stub is a
+target the release set itself; the proved version, where it exists,
+lives under `lean/OAI/`. The reading is of source text only — no `lake`
+or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=241`
-[S8]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=1`,
-`paps_form=1`,
-`chal=1`,
-`mainres=1`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=1`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-one
-of
-the
-one
-manuscripts
-is
-named
-as
-a
-formalization
-source,
-and
-the
-single
-`main_results`
-entry
-over
-that
-config
-reaches
-the
-full
-rigidity
-claim.
-The
-comparator
-stub
-names
-the
-same
-target,
-and
-the
-proved
-copy
-lives
-under
-`lean/OAI/`.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-rigidity
-problem
-with
-"resolving".
+The ledger row `fam=241` [S8] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=1` against
+`paps=1` is the coverage signature: one of the one manuscripts is named
+as a formalization source, and the single `main_results` entry over that
+config reaches the full rigidity claim. The comparator stub names the
+same target, and the proved copy lives under `lean/OAI/`. There is no
+verification bundle and no reasoning trace. The shape flags are
+`resolution`, and `resolves_named=1` — the blurb names the rigidity
+problem with "resolving".
 
 ## Sources
 

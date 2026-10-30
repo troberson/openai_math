@@ -82,666 +82,130 @@ magnetization** itself in every dimension $`d \ge 3`$.
 
 **Bloch's $`T^{3/2}`$ law with exact coefficient**
 [S3:42–51, S2:633].
-For
-the
-three-dimensional
-quantum
-Heisenberg
-ferromagnet
-at
-every
-fixed
-positive
-quantum
-spin
-and
-every
-nonnegative
-symmetric
-finite-range
-coupling
-whose
-support
-generates
+For the three-dimensional quantum Heisenberg ferromagnet at every fixed
+positive quantum spin and every nonnegative symmetric finite-range
+coupling whose support generates
 $`\mathbb Z^3`$
-(including
-spatially
-anisotropic
-couplings),
-the
-spontaneous-magnetization
-deficit
-at
-low
-temperature
-has
-the
-leading
-term
-with
-the
-exact
-coefficient
-determined
-by
-the
-determinant
-of
-the
-quadratic
-one-magnon
-dispersion;
-the
-thermodynamic
-limit
-is
-taken
-before
-the
-zero-field
-right
-derivative
-and
-the
-low-temperature
-limit.
+(including spatially anisotropic couplings), the spontaneous-
+magnetization deficit at low temperature has the leading term with the
+exact coefficient determined by the determinant of the quadratic one-
+magnon dispersion; the thermodynamic limit is taken before the zero-
+field right derivative and the low-temperature limit.
 
-**First
-lattice
-correction
-**
-[S4:48–58,
-S2:633].
-For
-the
-three-dimensional
-nearest-neighbor
-quantum
-Heisenberg
-ferromagnet
-at
-every
-fixed
-spin
+**First lattice correction ** [S4:48–58, S2:633]. For the three-
+dimensional nearest-neighbor quantum Heisenberg ferromagnet at every
+fixed spin
 $`S \in \{1/2, 1, 3/2, \ldots\}`$,
-the
-spontaneous-magnetization
-deficit
-agrees
-with
-the
-full
-ideal-magnon
-density
-up
-to
-$`o(\beta^{-5/2})`$;
-beyond
-the
-leading
-Bloch
-term
-the
-correction
-is
+the spontaneous-magnetization deficit agrees with the full ideal-magnon
+density up to $`o(\beta^{-5/2})`$; beyond the leading Bloch term the
+correction is
 $`3\zeta(5/2)(\beta S)^{-5/2}/(128\pi^{3/2})`$.
-The
-magnetization
-is
-the
-right
-derivative
-at
-zero
-field
-of
-the
-thermodynamic
-pressure.
+The magnetization is the right derivative at zero field of the
+thermodynamic pressure.
 
-**Spherical
-magnetization
-law**
-[S5:52–62,
-S2:633].
-For
-the
-three-dimensional
-nearest-neighbor
-isotropic
-quantum
-Heisenberg
-ferromagnet
-at
-every
-fixed
-positive
-spin
-and
-every
-sufficiently
-low
-fixed
-positive
-temperature,
-as
-the
-even
-periodic
-cubes
-grow,
-the
-symmetric
-zero-field
-magnetization
-converges
-in
-moments
-to
-a
-uniform
-direction
-with
-deterministic
-positive
-magnitude,
-equal
-to
-the
-right
-derivative
-at
-zero
-field
-of
-the
-infinite-volume
-pressure.
+**Spherical magnetization law** [S5:52–62, S2:633]. For the three-
+dimensional nearest-neighbor isotropic quantum Heisenberg ferromagnet at
+every fixed positive spin and every sufficiently low fixed positive
+temperature, as the even periodic cubes grow, the symmetric zero-field
+magnetization converges in moments to a uniform direction with
+deterministic positive magnitude, equal to the right derivative at zero
+field of the infinite-volume pressure.
 
-**Spontaneous
-magnetization
-(formalization
-source)**
-[S6:42–51,
-S2:633,
-S7:9].
-For
-every
-dimension
+**Spontaneous magnetization (formalization source)** [S6:42–51, S2:633,
+S7:9]. For every dimension
 $`d \ge 3`$
 and
 every
 spin
 $`S \in \{1/2, 1, 3/2, \ldots\}`$,
-the
-nearest-neighbor
-isotropic
-quantum
-Heisenberg
-ferromagnet
-on
+the nearest-neighbor isotropic quantum Heisenberg ferromagnet on
 $`\mathbb Z^d`$
-has
-a
-translation-invariant
-spontaneously
-magnetized
-equilibrium
-state
-at
-every
-sufficiently
-low
-positive
-temperature,
-satisfying
-the
-KMS
-condition
-for
-the
-zero-field
-dynamics,
-with
-magnetization
-at
-least
-$`S/4`$
+has a translation-invariant spontaneously magnetized equilibrium state
+at every sufficiently low positive temperature, satisfying the KMS
+condition for the zero-field dynamics, with magnetization at least $`S/4`$
 [S7:9].
 
 ## History of the conjecture
 
-The
-**Bloch
-$`T^{3/2}`$
-law**
-(Bloch,
-1930)
-for
-the
-low-temperature
-spontaneous
-magnetization
-of
-a
-ferromagnet
-had
-been
-established
-for
-specific
-models
-and
-interactions,
-but
-for
-the
-**general
-three-dimensional
-quantum
-Heisenberg
-ferromagnet
-with
-arbitrary
-nonnegative
-symmetric
-finite-range
-couplings**
-whose
-support
-generates
+The **Bloch $`T^{3/2}`$ law** (Bloch, 1930) for the low-temperature
+spontaneous magnetization of a ferromagnet had been established for
+specific models and interactions, but for the **general three-
+dimensional quantum Heisenberg ferromagnet with arbitrary nonnegative
+symmetric finite-range couplings** whose support generates
 $`\mathbb Z^3`$
-—
-including
-spatially
-anisotropic
-ones
-—
-with
-the
-**exact
-coefficient**
-from
-the
-magnon
-dispersion
-determinant
-and
-the
-stated
-order
-of
-limits
-(thermodynamic
-first),
-the
-law
-had
-remained
-open.
-The
-first
-manuscript
-[S3:42–51]
-closes
-it.
-The
-**first
-lattice
-correction**
-[S4:48–58]
-—
-the
-$`5/2`$
-power
-beyond
-the
-leading
-term
-—
-and
-the
-**spherical
-magnetization
-law**
-[S5:52–62]
-are
-the
-next-order
-refinements
-for
-the
-nearest-neighbor
-isotropic
-model.
-The
-**spontaneous
-magnetization
-itself**
-—
-the
-existence
-of
-a
-KMS
-equilibrium
-state
-with
-magnetization
+— including spatially anisotropic ones — with the **exact coefficient**
+from the magnon dispersion determinant and the stated order of limits
+(thermodynamic first), the law had remained open. The first manuscript
+[S3:42–51] closes it. The **first lattice correction** [S4:48–58] — the
+$`5/2`$ power beyond the leading term — and the **spherical magnetization
+law** [S5:52–62] are the next-order refinements for the nearest-neighbor
+isotropic model. The **spontaneous magnetization itself** — the
+existence of a KMS equilibrium state with magnetization
 $`\ge S/4`$
 in
 every
 $`d \ge 3`$
-—
-is
-the
-foundational
-ordering
-result
-that
-the
-formalization
-targets
+— is the foundational ordering result that the formalization targets
 [S6:42–51, S7:9].
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Bloch's
-$`T^{3/2}`$
-law,
-magnons,
-the
-quantum
-Heisenberg
-ferromagnet,
-the
-KMS
-condition,
-and
-spontaneous
-magnetization
-in
+**Prior (my training data, not this repo).** Bloch's $`T^{3/2}`$ law,
+magnons, the quantum Heisenberg ferromagnet, the KMS condition, and
+spontaneous magnetization in
 $`d \ge 3`$
-are
-standard
-in
-mathematical
-statistical
-mechanics
-and
-condensed-matter
-physics.
-The
-general-finite-range
-$`T^{3/2}`$
-law
-with
-the
-exact
-dispersion-determinant
-coefficient
-and
-the
-stated
-limit
-order,
-the
-first
-lattice
-correction
-at
-the
-$`5/2`$
-power,
-the
-spherical
-magnetization
-law
-with
-moment
-convergence,
-and
-the
-rigorous
-$`S/4`$
-KMS
-magnetization
-in
-all
+are standard in mathematical statistical mechanics and condensed-matter
+physics. The general-finite-range $`T^{3/2}`$ law with the exact
+dispersion-determinant coefficient and the stated limit order, the first
+lattice correction at the $`5/2`$ power, the spherical magnetization law
+with moment convergence, and the rigorous $`S/4`$ KMS magnetization in all
 $`d \ge 3`$
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+are the novel contributions. I cannot confirm these independently from
+training alone.
 
 ## Consequences
 
 - **Bloch's
-  $`T^{3/2}`$
-  law
-  with
-  exact
-  coefficient**
+$`T^{3/2}`$ law with exact coefficient**
   [S3:42–51, S2:633]:
-  for
-  every
-  3D
-  quantum
-  Heisenberg
-  ferromagnet
-  with
-  nonnegative
-  symmetric
-  finite-range
-  couplings
-  generating
+for every 3D quantum Heisenberg ferromagnet with nonnegative symmetric
+finite-range couplings generating
   $`\mathbb Z^3`$,
-  the
-  magnetization
-  deficit
-  has
-  the
-  leading
-  $`T^{3/2}`$
-  term
-  with
-  the
-  exact
-  dispersion-determinant
-  coefficient.
+the magnetization deficit has the leading $`T^{3/2}`$ term with the exact
+dispersion-determinant coefficient.
 - **The
-  first
-  lattice
-  correction**
-  [S4:48–58]:
-  the
-  $`5/2`$
-  power
-  term
+first lattice correction** [S4:48–58]: the $`5/2`$ power term
   $`3\zeta(5/2)(\beta S)^{-5/2}/(128\pi^{3/2})`$
-  for
-  the
-  3D
-  nearest-neighbor
-  model.
+for the 3D nearest-neighbor model.
 - **The
-  spherical
-  magnetization
-  law**
-  [S5:52–62]:
-  moment
-  convergence
-  of
-  the
-  symmetric
-  zero-field
-  magnetization
-  to
-  a
-  uniform
-  direction
-  of
-  positive
-  magnitude.
+spherical magnetization law** [S5:52–62]: moment convergence of the
+symmetric zero-field magnetization to a uniform direction of positive
+magnitude.
 - **Spontaneous
   magnetization
   in
   $`d \ge 3`$**
   [S6:42–51, S7:9]:
-  a
-  translation-invariant
-  KMS
-  equilibrium
-  state
-  with
-  magnetization
-  at
-  least
-  $`S/4`$
-  at
-  every
-  sufficiently
-  low
-  temperature.
+a translation-invariant KMS equilibrium state with magnetization at
+least $`S/4`$ at every sufficiently low temperature.
 
 ## Section skeleton
 
-Four
-manuscripts.
-[S3:42–51]
-(title
-[S3:37],
-date
-[S3:39])
-—
-`main.tex`
-under
-`build/`.
-[S4:48–58]
-(title
-[S4:43],
-date
-[S4:45])
-—
-`main.tex`
-under
-`build/`.
-[S5:52–62]
-(title
-[S5:47],
-date
-[S5:49])
-—
-`main.tex`
-under
-`build/`.
-[S6:42–51]
-(title
-[S6:37],
-date
-[S6:39])
-—
-`main.tex`
-under
-`build/source/`.
-The
-family
-ships
-no
-`verification/`
-bundle,
-but
-it
-does
-ship
-a
-published
-reasoning
-trace
-[S9]
-—
-`spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf`.
+Four manuscripts. [S3:42–51] (title [S3:37], date [S3:39]) — `main.tex` under
+`build/`. [S4:48–58] (title [S4:43], date [S4:45]) — `main.tex` under
+`build/`. [S5:52–62] (title [S5:47], date [S5:49]) — `main.tex` under
+`build/`. [S6:42–51] (title [S6:37], date [S6:39]) — `main.tex` under
+`build/source/`. The family ships no `verification/` bundle, but it does
+ship a published reasoning trace [S9] — `spontaneous-magnetization-
+quantum-heisenberg-ferromagnet.pdf`.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T2
-with
-one
-scope
-note
-[S7]
-and
-one
-comparator
-stub
-[S8],
-but
-no
-`main_results`
-entry.
-The
-scope
-note
-links
-**only
-the
-spontaneous-magnetization
-manuscript**
-[S6:42–51]
-[S7:5];
-the
-Bloch's-law
-[S3:42–51]
-,
-lattice-correction
-[S4:48–58]
-,
-and
-spherical-magnetization
-[S5:52–62]
-manuscripts
-are
-outside
-the
-formalization
-entirely.
-The
-recorded
-scope
-[S7:9]
-is
-the
-**spontaneous
-magnetization**
-itself:
-for
-the
-nearest-neighbor
-isotropic
-quantum
-Heisenberg
-ferromagnet
-on
+The release formalises this family at tier T2 with one scope note [S7]
+and one comparator stub [S8], but no `main_results` entry. The scope
+note links **only the spontaneous-magnetization manuscript** [S6:42–51]
+[S7:5]; the Bloch's-law [S3:42–51] , lattice-correction [S4:48–58] , and spherical-
+magnetization [S5:52–62] manuscripts are outside the formalization entirely.
+The recorded scope [S7:9] is the **spontaneous magnetization** itself:
+for the nearest-neighbor isotropic quantum Heisenberg ferromagnet on
 $`\mathbb Z^d`$
 for
 every
@@ -750,297 +214,42 @@ and
 every
 spin
 $`S \in \{1/2, 1, 3/2, \ldots\}`$,
-at
-every
-sufficiently
-low
-positive
-temperature
-it
-constructs
-a
-translation-invariant
-equilibrium
-state
-satisfying
-the
-KMS
-condition
-for
-the
-zero-field
-dynamics
-and
-having
-magnetization
-at
-least
-$`S/4`$.
-It
-also
-proves
-convergence
-of
-the
-finite-volume
-dynamics
-to
-the
-infinite-volume
-dynamics
-used
-in
-the
-KMS
-statement
-[S7:11].
-The
-$`T^{3/2}`$
-Bloch
-law
-[S3:42–51]
-,
-its
-lattice
-correction
-[S4:48–58]
-,
-and
-the
-spherical
-magnetization
-law
-[S5:52–62]
-are
-**not**
-in
-the
-formalized
-statement
-at
-all
-—
-the
-formalization
-proves
-only
-the
-existence
-of
-the
-ordering
-state
-the
-Bloch
-law
-measures.
+at every sufficiently low positive temperature it constructs a
+translation-invariant equilibrium state satisfying the KMS condition for
+the zero-field dynamics and having magnetization at least $`S/4`$. It also
+proves convergence of the finite-volume dynamics to the infinite-volume
+dynamics used in the KMS statement [S7:11]. The $`T^{3/2}`$ Bloch law [S3:42–51]
+, its lattice correction [S4:48–58] , and the spherical magnetization law [S5:52–62]
+are **not** in the formalized statement at all — the formalization
+proves only the existence of the ordering state the Bloch law measures.
 
-There
-is
-no
-`main_results`
-entry
-naming
-this
-family,
-so
-there
-is
-no
-registered
-proved
-declaration
-and
-no
-OAI
-tree
-reachable
-through
-the
+There is no `main_results` entry naming this family, so there is no
+registered proved declaration and no OAI tree reachable through the
 yaml.
 
-The
-one
-comparator
-stub
-[S8]
-carries
-the
-spontaneous-magnetization
-target
-and
-ends
-in
-`sorry`
-([S8:212]).
-It
-is
-not
-a
-`main_results`
-registration.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists
-and
-is
-registered,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-library.
+The one comparator stub [S8] carries the spontaneous-magnetization
+target and ends in `sorry` ([S8:212]). It is not a `main_results`
+registration. A comparator stub is a target the release set itself; the
+proved version, where it exists and is registered, lives under
+`lean/OAI/`. The reading is of source text only — no `lake` or `lean`
+run elaborates the library.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=271`
-[S10]
-records
-the
-tier
-and
-the
-counts:
-`tier=T2`,
-`paps=4`,
-`paps_form=0`,
-`chal=1`,
-`mainres=0`,
-`scope_note=1`,
-`verification=0`,
-`trace=spontaneous-magnetization-quantum-heisenberg-ferromagnet`.
-The
-`paps_form=0`
-against
-`paps=4`
-is
-the
-coverage
-signature:
-the
-scope
-note
-links
-only
-the
-spontaneous-magnetization
-manuscript
-[S7:5],
-no
-`main_results`
-entry
-registers
-a
-proved
-declaration,
-and
-the
-three
-Bloch-law
-manuscripts
-[S3:42–51]
-[S4:48–58]
-[S5:52–62]
-are
-entirely
-unformalized.
-The
-single
-comparator
-stub
-[S8]
-carries
-one
-`sorry`.
-There
-is
-no
-verification
-bundle,
-but
-the
-family
-ships
-the
-published
-reasoning
-trace
-[S9]
-—
-one
-of
-the
-trace-carrying
-families
-in
-the
-release.
-The
-shape
-flags
-are
-empty
-—
-the
-blurb
-states
-the
-Bloch
-law,
-the
-lattice
-correction,
-the
-spherical
-magnetization
-law,
-and
-the
-spontaneous
-magnetization
-without
-a
-named
-conjecture
-in
-the
-resolve
-form
-the
-ledger
-flags,
-so
-`resolves_named=0`.
+The ledger row `fam=271` [S10] records the tier and the counts:
+`tier=T2`, `paps=4`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `verification=0`, `trace=spontaneous-magnetization-
+quantum-heisenberg-ferromagnet`. The `paps_form=0` against `paps=4` is
+the coverage signature: the scope note links only the spontaneous-
+magnetization manuscript [S7:5], no `main_results` entry registers a
+proved declaration, and the three Bloch-law manuscripts [S3:42–51] [S4:48–58] [S5:52–62]
+are entirely unformalized. The single comparator stub [S8] carries one
+`sorry`. There is no verification bundle, but the family ships the
+published reasoning trace [S9] — one of the trace-carrying families in
+the release. The shape flags are empty — the blurb states the Bloch law,
+the lattice correction, the spherical magnetization law, and the
+spontaneous magnetization without a named conjecture in the resolve form
+the ledger flags, so `resolves_named=0`.
 
 ## Sources
 

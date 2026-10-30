@@ -43,171 +43,30 @@ logarithmically many shuffles, which is
 [S3:27–29, S2:561]. The Thorp shuffle
 on $`2^d`$ cards mixes in
 $`\Theta(d)`$ complete
-shuffles.
-The
-full
-permutation
-law
-after
-1600d
-shuffles
-converges
-to
-uniform
-in
-total
-variation
-as
-$`d\to\infty`$,
-uniformly
-over
-the
-initial
-deck,
-while
-a
-support
-count
-gives
-a
-lower
-bound
-of
-$`2d-O(1)`$.
+shuffles. The full permutation law after 1600d shuffles converges to
+uniform in total variation as $`d\to\infty`$, uniformly over the initial
+deck, while a support count gives a lower bound of $`2d-O(1)`$.
 
 ## History of the conjecture
 
 The **Thorp shuffle** (also called
-the
-Faro
-shuffle)
-was
-studied
-extensively
-in
-the
-1990s,
-and
-the
-mixing
-time
-for
-individual
-cards
-or
-small
-sets
-of
-cards
-was
-known.
-The
-**full-permutation**
-mixing
-time
-—
-when
-the
-entire
-ordering
-becomes
-uniform
-—
-was
-open
-for
-power-of-two
-deck
-sizes.
-The
-result
-[S3:27–29]
-settles
-it:
+the Faro shuffle) was studied extensively in the 1990s, and the mixing
+time for individual cards or small sets of cards was known. The **full-
+permutation** mixing time — when the entire ordering becomes uniform —
+was open for power-of-two deck sizes. The result [S3:27–29] settles it:
 $`\Theta(\log N)`$
-physical
-shuffles,
-with
-a
-$`2d-O(1)`$
-lower
-bound
-and
-a
-$`1600d`$
-upper
-bound.
-The
-eleven
-supporting
-manuscripts
-build
-the
-representation-theoretic
-and
-Fourier-analytic
-machinery:
-routing
-density
-estimates,
-spectral
-bounds,
-signed
-moments,
-compatibility
-entropy,
-and
-the
-strict
-four-row
-permanent
-inequality.
+physical shuffles, with a $`2d-O(1)`$ lower bound and a $`1600d`$ upper
+bound. The eleven supporting manuscripts build the representation-
+theoretic and Fourier-analytic machinery: routing density estimates,
+spectral bounds, signed moments, compatibility entropy, and the strict
+four-row permanent inequality.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-Thorp
-shuffle,
-the
-Faro
-shuffle,
-and
-the
-general
-framework
-of
-mixing
-times
-for
-card
-shuffles
-are
-well-known.
-The
-full-permutation
+**Prior (my training data, not this repo).** The Thorp shuffle, the Faro
+shuffle, and the general framework of mixing times for card shuffles are
+well-known. The full-permutation
 $`\Theta(\log N)`$
-mixing
-result
-for
-power-of-two
-decks
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+mixing result for power-of-two decks is the novel contribution. I cannot
+confirm this independently from training alone.
 
 ## Consequences
 
@@ -219,428 +78,74 @@ alone.
   $`\Theta(d)
   =
   \Theta(\log N)`$
-  physical
-  shuffles,
-  for
-  the
-  full
-  permutation
-  in
-  total
-  variation.
+physical shuffles, for the full permutation in total variation.
 - **The upper bound**
-  [S3:28]:
-  1600d
-  shuffles
-  suffices.
+[S3:28]: 1600d shuffles suffices.
 - **The lower bound**
   [S3:29]:
   $`2d -
-  O(1)`$
-  shuffles
-  are
-  necessary.
+O(1)`$ shuffles are necessary.
 
 ## Section skeleton
 
 Twelve manuscripts.
-[S3:27–29]
-(title
-[S3:22],
-date
-[S3:24])
-—
-`main.tex`
-under
-`build/`
-(the
-main
-paper,
-shipping
-as
-`paper.pdf`).
-The
-remaining
-eleven
-cover
-random
-coordinate
-frames,
-partial
-permutation
-Fourier
-bounds,
-deterministic
-sweep
-information,
-revealed
-switching
-permutations,
-routing
-and
-representation
-contraction,
-row-column
-symmetry
-and
-sweep
-contraction,
-random
-subspace
-tests
-and
-trace
-smoothing,
-compatibility
-entropy
-and
-spectrum,
-signed
-tensor
-densities
-and
-diagram
-budgets,
-conditional
-sweeps
-and
-analytic
-transfer,
-and
-the
-strict
-four-row
-permanent
-inequality.
-The
-family
-ships
-no
-`verification/`
-bundle.
+[S3:27–29] (title [S3:22], date [S3:24]) — `main.tex` under `build/` (the main
+paper, shipping as `paper.pdf`). The remaining eleven cover random
+coordinate frames, partial permutation Fourier bounds, deterministic
+sweep information, revealed switching permutations, routing and
+representation contraction, row-column symmetry and sweep contraction,
+random subspace tests and trace smoothing, compatibility entropy and
+spectrum, signed tensor densities and diagram budgets, conditional
+sweeps and analytic transfer, and the strict four-row permanent
+inequality. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T3
-with
-one
-scope
-note
-[S4],
-thirteen
-comparator
-stubs,
-and
-four
-`main_results`
-entries
-[S13].
-The
-scope
-note
-[S4:18–61]
-states
-the
-main
-target
-—
-optimal-order
-mixing
-of
-the
-Thorp
-shuffle
-on
-$`2^d`$
-cards
-—
-and
-nine
-routing
-estimates,
-the
-weighted
-compatibility
-theorem,
-the
-binary
-sweep
-contraction,
-the
-conditional
-sweep
-moment,
-the
-signed
-tensor
-density
-estimates,
-the
-compatibility
-entropy
-bound,
-and
-the
-strict
-four-row
-permanent
-inequality.
-The
-paper's
-asymptotic
-product
-conclusion,
-the
-changed
-later
-statements,
-and
-the
-full
-$`L^2`$
-and
-total-variation
-mixing
-conclusion
-are
-outside
-the
-selected
-estimates.
+The release formalises this family at tier T3 with one scope note [S4],
+thirteen comparator stubs, and four `main_results` entries [S13]. The
+scope note [S4:18–61] states the main target — optimal-order mixing of
+the Thorp shuffle on $`2^d`$ cards — and nine routing estimates, the
+weighted compatibility theorem, the binary sweep contraction, the
+conditional sweep moment, the signed tensor density estimates, the
+compatibility entropy bound, and the strict four-row permanent
+inequality. The paper's asymptotic product conclusion, the changed later
+statements, and the full $`L^2`$ and total-variation mixing conclusion are
+outside the selected estimates.
 
-The
-four
-`main_results`
-entries
-[S13]
-name:
-`OAI.ThorpNine.main`
-in
-[S9]
-(the
-nine
-routing
-estimates),
-`OAI.ThorpCompatibility.weightedCompatibility_main`
-in
-[S10],
-`OAI.binary_sweep_contraction_and_mixing`
-in
-[S11],
-and
-`OAI.CoordinateSweeps.conditional_main`
-in
-[S12].
-`grep`
-finds
-**zero**
-`sorry`
-in
-the
-`lean/OAI/Probability/ThorpRouting/`,
-`ThorpCompatibility/`,
-`BinarySweep/`,
-and
-`CoordinateSweeps/`
-trees.
+The four `main_results` entries [S13] name: `OAI.ThorpNine.main` in [S9]
+(the nine routing estimates),
+`OAI.ThorpCompatibility.weightedCompatibility_main` in [S10],
+`OAI.binary_sweep_contraction_and_mixing` in [S11], and
+`OAI.CoordinateSweeps.conditional_main` in [S12]. `grep` finds **zero**
+`sorry` in the `lean/OAI/Probability/ThorpRouting/`,
+`ThorpCompatibility/`, `BinarySweep/`, and `CoordinateSweeps/` trees.
 
-The
-thirteen
-comparator
-stubs
-carry
-the
-targets,
-each
-with
-one
-`sorry`:
-[S5]
-(ThorpRouting),
-[S6]
-(ThorpWeightedCompatibility),
-[S7]
-(BinarySweep),
-[S8]
-(CoordinateSweeps),
-and
-nine
-remaining
-stubs
-(CoordinateTrace,
-FourRowPermanent,
-OccupiedOverlap,
-PartialPermutation,
-SignedSweepMoment,
-SpinAngle,
-ThorpFirstReciprocal,
-ThorpRemaining,
-WeightedSweepMoments).
-Only
-the
-four
-`main_results`
-targets
-have
-proved
-copies
-under
-`lean/OAI/`;
-the
-other
-nine
-targets
-are
-stubs
-without
-a
-corresponding
-entry.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+The thirteen comparator stubs carry the targets, each with one `sorry`:
+[S5] (ThorpRouting), [S6] (ThorpWeightedCompatibility), [S7]
+(BinarySweep), [S8] (CoordinateSweeps), and nine remaining stubs
+(CoordinateTrace, FourRowPermanent, OccupiedOverlap, PartialPermutation,
+SignedSweepMoment, SpinAngle, ThorpFirstReciprocal, ThorpRemaining,
+WeightedSweepMoments). Only the four `main_results` targets have proved
+copies under `lean/OAI/`; the other nine targets are stubs without a
+corresponding entry. A comparator stub is a target the release set
+itself; the proved version, where it exists, lives under `lean/OAI/`.
+The reading is of source text only — no `lake` or `lean` run elaborates
+the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=238`
-[S14]
-records
-the
-tier
-and
-the
-counts:
-`tier=T3`,
-`paps=12`,
-`paps_form=3`,
-`chal=13`,
-`mainres=4`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=3`
-against
-`paps=12`
-is
-the
-coverage
-signature:
-three
-of
-the
-twelve
-manuscripts
-are
-named
-as
-formalization
-sources,
-and
-the
-four
-`main_results`
-entries
-reach
-the
-routing
-estimates,
-weighted
-compatibility,
-binary
-sweep
-contraction,
-and
-conditional
-sweep
-moment
-—
-the
-full
+The ledger row `fam=238` [S14] records the tier and the counts:
+`tier=T3`, `paps=12`, `paps_form=3`, `chal=13`, `mainres=4`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=3` against
+`paps=12` is the coverage signature: three of the twelve manuscripts are
+named as formalization sources, and the four `main_results` entries
+reach the routing estimates, weighted compatibility, binary sweep
+contraction, and conditional sweep moment — the full
 $`\Theta(\log N)`$
-mixing
-conclusion
-and
-the
-remaining
-nine
-targets
-have
-no
-`main_results`
-registration.
-The
-thirteen
-comparator
-stubs
-name
-all
-thirteen
-targets,
-but
-only
-four
-have
-proved
-copies.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-empty,
-and
-`resolves_named=0`.
+mixing conclusion and the remaining nine targets have no `main_results`
+registration. The thirteen comparator stubs name all thirteen targets,
+but only four have proved copies. There is no verification bundle and no
+reasoning trace. The shape flags are empty, and `resolves_named=0`.
 
 ## Sources
 

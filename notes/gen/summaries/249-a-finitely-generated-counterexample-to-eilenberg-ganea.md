@@ -35,40 +35,15 @@ geometric dimension three [S3:41, S2:587].
 
 **Eilenberg–Ganea counterexample**
 [S3:41, S2:587]. There
-exists
-a
-finitely
-generated
-residually
-finite
-group
-$`G`$
-with
-integral
-cohomological
-dimension
+exists a finitely generated residually finite group $`G`$ with integral
+cohomological dimension
 $`\mathrm{cd}(G) = 2`$
 and
 geometric
 dimension
 $`\mathrm{gd}(G) = 3`$.
-In
-particular,
-$`G`$
-has
-no
-two-dimensional
-classifying
-space,
-even
-with
-infinitely
-many
-cells,
-disproving
-the
-Eilenberg–Ganea
-conjecture.
+In particular, $`G`$ has no two-dimensional classifying space, even with
+infinitely many cells, disproving the Eilenberg–Ganea conjecture.
 
 ## History of the conjecture
 
@@ -94,272 +69,44 @@ independently from training alone.
 ## Consequences
 
 - **The
-  Eilenberg–Ganea
-  conjecture
-  is
-  false**
-  [S3:41]:
-  a
-  finitely
-  generated
-  residually
-  finite
-  group
-  has
-  cohomological
-  dimension
-  two
-  and
-  geometric
-  dimension
-  three.
+Eilenberg–Ganea conjecture is false** [S3:41]: a finitely generated
+residually finite group has cohomological dimension two and geometric
+dimension three.
 - **No
-  two-dimensional
-  classifying
-  space**
-  [S3:41]:
-  the
-  constructed
-  group
-  has
-  no
-  $`K(G,1)`$
-  of
-  dimension
-  two,
-  even
-  with
-  infinitely
-  many
-  cells.
+two-dimensional classifying space** [S3:41]: the constructed group has
+no $`K(G,1)`$ of dimension two, even with infinitely many cells.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:40–42]
-(title
-[S3:35],
-date
-[S3:37])
-—
-`main.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:40–42] (title [S3:35], date [S3:37]) — `main.tex` under
+`build/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T2
-with
-one
-scope
-note
-[S4]
-and
-one
-comparator
-stub
-[S5].
-The
-scope
-note
-[S4:9]
-states
-the
-target:
-a
-finitely
-generated
-residually
-finite
-group
-of
-integral
-cohomological
-dimension
-two
-with
-a
-three-dimensional
-classifying
-space
-but
-no
-two-dimensional
-one,
-so
-its
-geometric
-dimension
-is
-three.
+The release formalises this family at tier T2 with one scope note [S4]
+and one comparator stub [S5]. The scope note [S4:9] states the target: a
+finitely generated residually finite group of integral cohomological
+dimension two with a three-dimensional classifying space but no two-
+dimensional one, so its geometric dimension is three.
 
-There
-is
-**no**
-`main_results`
-entry
-and
-**no**
-OAI
-tree:
-the
-formalization
-is
-a
-comparator
-stub
-only.
-The
-one
-comparator
-stub
-[S5]
-states
-the
-counterexample
-target
-and
-ends
-in
-`sorry`.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-Here
-no
-proved
-copy
-exists.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+There is **no** `main_results` entry and **no** OAI tree: the
+formalization is a comparator stub only. The one comparator stub [S5]
+states the counterexample target and ends in `sorry`. A comparator stub
+is a target the release set itself; the proved version, where it exists,
+lives under `lean/OAI/`. Here no proved copy exists. The reading is of
+source text only — no `lake` or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=249`
-[S6]
-records
-the
-tier
-and
-the
-counts:
-`tier=T2`,
-`paps=1`,
-`paps_form=0`,
-`chal=1`,
-`mainres=0`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-manuscript
-is
-**not**
-named
-as
-a
-formalization
-source,
-and
-there
-is
-no
-`main_results`
-entry
-—
-the
-formalization
-exists
-only
-as
-a
-scope
-note
-and
-a
-comparator
-stub.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-empty,
-`counterex_broad=1`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-Eilenberg–Ganea
-conjecture
-with
-"disproving".
+The ledger row `fam=249` [S6] records the tier and the counts:
+`tier=T2`, `paps=1`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=1` is the coverage signature: the manuscript is **not** named as a
+formalization source, and there is no `main_results` entry — the
+formalization exists only as a scope note and a comparator stub. There
+is no verification bundle and no reasoning trace. The shape flags are
+empty, `counterex_broad=1`, and `resolves_named=1` — the blurb names the
+Eilenberg–Ganea conjecture with "disproving".
 
 ## Sources
 

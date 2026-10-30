@@ -53,241 +53,42 @@ For
 every
 finite
 $`N \ge 2`$,
-the
-undeformed
-relative
-$`\mathrm{SU}(N)`$
-BFSS
-matrix
-quantum
-mechanics
-has
-exactly
-one
-normalizable
-zero-energy
-state
-after
-the
-center
-of
-mass
-is
-removed,
-establishing
-the
-threshold-bound-state
-conjecture
+the undeformed relative $`\mathrm{SU}(N)`$ BFSS matrix quantum mechanics
+has exactly one normalizable zero-energy state after the center of mass
+is removed, establishing the threshold-bound-state conjecture
 [S3:66–71].
 
-**Positive
-eigenvalues
-at
-$`N=2`$**
-[S4:44–50,
-S2:631].
-The
-relative
-$`\mathrm{SU}(2)`$
-BFSS
-Hamiltonian,
-defined
-by
-closing
-the
-gauge-invariant
-supercharge
-form,
-has
-infinitely
-many
-positive
-eigenvalues
-tending
-to
-infinity
-with
-square-integrable
-eigenvectors,
-refuting
-at
-$`N=2`$
-the
-exclusion
-of
-normalizable
-positive-energy
-states
-stated
-in
-the
-original
-BFSS
-paper
-[S4:44–50].
+**Positive eigenvalues at $`N=2`$** [S4:44–50, S2:631]. The relative
+$`\mathrm{SU}(2)`$ BFSS Hamiltonian, defined by closing the gauge-
+invariant supercharge form, has infinitely many positive eigenvalues
+tending to infinity with square-integrable eigenvectors, refuting at
+$`N=2`$ the exclusion of normalizable positive-energy states stated in the
+original BFSS paper [S4:44–50].
 
 ## History of the conjecture
 
-The
-**BFSS
-model**
-(Banks,
-Fischler,
-Shenker,
-and
-Susskind,
-1997)
-is
-a
-holographic
-quantum-mechanical
-model
-of
-matrix
-quantum
-mechanics,
-proposed
-as
-a
-nonperturbative
-definition
-of
-M-theory
-in
-the
-light-cone
-frame.
-The
-**threshold-bound-state
-conjecture**
-asserts
-a
-unique
-normalizable
-zero-energy
-state
-in
-the
-relative
-model.
-That
-uniqueness
-had
-remained
-open,
-and
-the
-first
-manuscript
-[S3:66–71]
-resolves
-it
-for
-all
-finite
+The **BFSS model** (Banks, Fischler, Shenker, and Susskind, 1997) is a
+holographic quantum-mechanical model of matrix quantum mechanics,
+proposed as a nonperturbative definition of M-theory in the light-cone
+frame. The **threshold-bound-state conjecture** asserts a unique
+normalizable zero-energy state in the relative model. That uniqueness
+had remained open, and the first manuscript [S3:66–71] resolves it for
+all finite
 $`N \ge 2`$.
-The
-original
-BFSS
-paper
-**excluded**
-the
-existence
-of
-additional
-normalizable
-positive-energy
-bound
-states
-at
-$`N=2`$;
-the
-second
-manuscript
-[S4:44–50]
-**refutes**
-that
-exclusion
-by
-constructing
-infinitely
-many
-such
-states
-with
-square-integrable
-eigenvectors
-and
-unbounded
-energies.
+The original BFSS paper **excluded** the existence of additional
+normalizable positive-energy bound states at $`N=2`$; the second
+manuscript [S4:44–50] **refutes** that exclusion by constructing
+infinitely many such states with square-integrable eigenvectors and
+unbounded energies.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-The
-BFSS
-matrix
-model,
-its
-relative
-form,
-the
-supercharge
-form,
-and
-the
-threshold
-bound-state
-uniqueness
-question
-are
-standard
-in
-matrix
-quantum
-mechanics
-and
-the
-AdS/CFT
-literature.
-The
-proof
-of
-unique
-threshold
-bound
-state
-for
-all
+**Prior (my training data, not this repo).** The BFSS matrix model, its
+relative form, the supercharge form, and the threshold bound-state
+uniqueness question are standard in matrix quantum mechanics and the
+AdS/CFT literature. The proof of unique threshold bound state for all
 $`N \ge 2`$
-and
-the
-refutation
-of
-the
-$`N=2`$
-positive-energy
-exclusion
-with
-explicit
-unbounded
-eigenvalues
-are
-the
-novel
-contributions.
-I
-cannot
-confirm
-these
-independently
-from
-training
-alone.
+and the refutation of the $`N=2`$ positive-energy exclusion with explicit
+unbounded eigenvalues are the novel contributions. I cannot confirm
+these independently from training alone.
 
 ## Consequences
 
@@ -296,225 +97,43 @@ alone.
   conjecture
   proved**
   [S3:66–71, S2:631]:
-  exactly
-  one
-  normalizable
-  zero-energy
-  state
-  for
-  the
-  undeformed
-  relative
-  $`\mathrm{SU}(N)`$
-  BFSS
-  model
-  at
-  every
-  finite
+exactly one normalizable zero-energy state for the undeformed relative
+$`\mathrm{SU}(N)`$ BFSS model at every finite
   $`N \ge 2`$.
 - **The
-  $`N=2`$
-  positive-energy
-  refutation**
-  [S4:44–50]:
-  infinitely
-  many
-  normalizable
-  positive-energy
-  eigenstates
-  with
-  unbounded
-  energies,
-  contradicting
-  the
-  original
-  BFSS
-  paper's
-  exclusion.
+$`N=2`$ positive-energy refutation** [S4:44–50]: infinitely many
+normalizable positive-energy eigenstates with unbounded energies,
+contradicting the original BFSS paper's exclusion.
 
 ## Section skeleton
 
-Two
-manuscripts.
-[S3:66–71]
-(title
-[S3:60],
-date
-[S3:62])
-—
-`main.tex`
-under
-`build/manuscript/`.
-[S4:44–50]
-(title
-[S4:33],
-date
-[S4:36])
-—
-`positive-eigenvalues-relative-su2-bfss.tex`
-under
-`build/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+Two manuscripts. [S3:66–71] (title [S3:60], date [S3:62]) — `main.tex` under
+`build/manuscript/`. [S4:44–50] (title [S4:33], date [S4:36]) — `positive-
+eigenvalues-relative-su2-bfss.tex` under `build/`. The family ships no
+`verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-does
-**not**
-formalize
-this
-family.
-There
-is
-no
-scope
-note
-at
-`lean/docs/270.md`,
-no
-comparator
-stub
-under
-`lean/ComparatorChallenges/`,
-no
-`main_results`
-entry
-in
-`lean/formalization.yaml`,
-and
-no
-OAI
-tree
-reachable
-through
-the
-yaml.
-Both
-manuscripts
-[S3:66–71]
-[S4:44–50]
-sit
-entirely
-outside
-the
-formalization,
-so
-the
-$`2`/2`$
-coverage
-signature
-is
-`paps_form=0`.
-There
-is
-no
-LEAN
-reading
-to
-report
-for
-this
-family.
+The release does **not** formalize this family. There is no scope note
+at `lean/docs/270.md`, no comparator stub under
+`lean/ComparatorChallenges/`, no `main_results` entry in
+`lean/formalization.yaml`, and no OAI tree reachable through the yaml.
+Both manuscripts [S3:66–71] [S4:44–50] sit entirely outside the formalization, so
+the $`2`/2`$ coverage signature is `paps_form=0`. There is no LEAN reading
+to report for this family.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=270`
-[S5]
-records
-the
-tier
-and
-the
-counts:
-`tier=T0`,
-`paps=2`,
-`paps_form=0`,
-`chal=0`,
-`mainres=0`,
-`scope_note=0`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=2`
-is
-the
-coverage
-signature:
-the
-family
-is
-entirely
-unformalized
-—
-no
-scope
-note,
-no
-comparator
-stub,
-no
-`main_results`
-entry,
-no
-OAI
-tree.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-`companion_word`
-flag
-is
-set
-(the
-blurb
-says
-"a
-companion
-proves"),
-but
-the
-release
-records
-no
-`companions`
-edge
-for
-this
-family.
-The
-shape
-flags
-are
-`resolution|bound|uniform`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-threshold-bound-state
-conjecture
-with
-"resolving".
+The ledger row `fam=270` [S5] records the tier and the counts:
+`tier=T0`, `paps=2`, `paps_form=0`, `chal=0`, `mainres=0`,
+`scope_note=0`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=2` is the coverage signature: the family is entirely unformalized
+— no scope note, no comparator stub, no `main_results` entry, no OAI
+tree. There is no verification bundle and no reasoning trace. The
+`companion_word` flag is set (the blurb says "a companion proves"), but
+the release records no `companions` edge for this family. The shape
+flags are `resolution|bound|uniform`, and `resolves_named=1` — the blurb
+names the threshold-bound-state conjecture with "resolving".
 
 ## Sources
 

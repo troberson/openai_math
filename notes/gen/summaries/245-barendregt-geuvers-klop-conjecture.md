@@ -42,519 +42,79 @@ $`eta`$-Barendregt–Geuvers–Klop conjecture
 
 **Strong normalization from weak**
 [S3:31–35, S2:577]. If
-a
-pure
-type
-system
-is
-weakly
-$`eta`$-normalizing
-—
-every
-closed
-well-typed
-term
-has
-a
-$`eta`$-normal
-form
-—
-then
-it
-is
-strongly
-$`eta`$-normalizing
-—
-every
-well-typed
-term,
-with
-or
-without
-free
-variables,
-has
-a
-$`eta`$-normal
-form.
-Both
-properties
-quantify
-over
-all
-legal
-expressions
-in
-all
-valid
-contexts,
-and
-the
-$`eta`$-reduction
-rule
-acts
-inside
-type
-annotations
-as
-well
-as
-inside
-terms.
-**No
-functionality
-hypothesis**
-is
-required:
-the
-implication
-holds
-for
-the
-full
-general
-PTS,
-not
-only
-for
-functional
-subsystem.
+a pure type system is weakly $`eta`$-normalizing — every closed well-
+typed term has a $`eta`$-normal form — then it is strongly
+$`eta`$-normalizing — every well-typed term, with or without free
+variables, has a $`eta`$-normal form. Both properties quantify over all
+legal expressions in all valid contexts, and the $`eta`$-reduction rule
+acts inside type annotations as well as inside terms. **No functionality
+hypothesis** is required: the implication holds for the full general
+PTS, not only for functional subsystem.
 
 ## History of the conjecture
 
-The
-**Barendregt–Geuvers–Klop
-conjecture**
-(1990s)
-predicted
-that
-weak
-normalization
-implies
-strong
-normalization
-for
-pure
-type
-systems
-with
-$`eta`$-reduction.
-The
-conjecture
-was
-long
-open:
-the
-implication
-holds
-for
-$`\lambda`$-calculus
-itself
-(by
-the
-standard
-result
-that
-weak
-$`eta`$-normalization
-implies
-strong
-$`eta`$-normalization
-for
-the
-simply-typed
-$`\lambda`$-calculus),
-but
-the
-extension
-to
-the
-full
-PTS
-framework
-—
-with
-dependent
-types,
-multiple
-type-level
-universe,
-and
-reduction
-inside
-annotations
-—
-was
-unresolved.
-The
-result
-[S3:31–35]
-proves
-the
-general
-implication
-without
-a
-functionality
-assumption,
-resolving
-the
+The **Barendregt–Geuvers–Klop conjecture** (1990s) predicted that weak
+normalization implies strong normalization for pure type systems with
+$`eta`$-reduction. The conjecture was long open: the implication holds
+for $`\lambda`$-calculus itself (by the standard result that weak
+$`eta`$-normalization implies strong $`eta`$-normalization for the simply-
+typed $`\lambda`$-calculus), but the extension to the full PTS framework —
+with dependent types, multiple type-level universe, and reduction inside
+annotations — was unresolved. The result [S3:31–35] proves the general
+implication without a functionality assumption, resolving the
 conjecture.
 
-**Prior
-(my
-training
-data,
-not
-this
-repo).**
-Pure
-type
-systems,
-$`eta`$-reduction,
-weak
-and
-strong
-normalization,
-and
-the
-Barendregt–Geuvers–Klop
-conjecture
-are
-standard
-in
-type
-theory.
-The
-proof
-of
-the
-implication
-without
-the
-functionality
-hypothesis,
-for
-the
-full
-PTS
-framework
-with
-reduction
-inside
-annotations,
-is
-the
-novel
-contribution.
-I
-cannot
-confirm
-this
-independently
-from
-training
-alone.
+**Prior (my training data, not this repo).** Pure type systems,
+$`eta`$-reduction, weak and strong normalization, and the
+Barendregt–Geuvers–Klop conjecture are standard in type theory. The
+proof of the implication without the functionality hypothesis, for the
+full PTS framework with reduction inside annotations, is the novel
+contribution. I cannot confirm this independently from training alone.
 
 ## Consequences
 
 - **Strong
-  normalization
-  from
-  weak**
-  [S3:31–35]:
-  every
-  weakly
-  $`eta`$-normalizing
-  pure
-  type
-  system
-  is
-  strongly
-  $`eta`$-normalizing,
-  with
-  no
-  functionality
-  hypothesis
-  and
-  with
-  reduction
-  acting
-  inside
-  type
-  annotations.
+normalization from weak** [S3:31–35]: every weakly $`eta`$-normalizing
+pure type system is strongly $`eta`$-normalizing, with no functionality
+hypothesis and with reduction acting inside type annotations.
 - **The
-  $`eta`$-Barendregt–Geuvers–Klop
-  conjecture
-  resolved**
-  [S3:31–35]:
-  the
-  1990s
-  conjecture
-  that
-  weak
-  normalization
-  implies
-  strong
-  normalization
-  for
-  PTS
-  is
-  proved
-  in
-  the
-  general
-  case.
+$`eta`$-Barendregt–Geuvers–Klop conjecture resolved** [S3:31–35]: the
+1990s conjecture that weak normalization implies strong normalization
+for PTS is proved in the general case.
 
 ## Section skeleton
 
-One
-manuscript:
-[S3:30–36]
-(title
-[S3:25],
-date
-[S3:27])
-—
-`paper.tex`
-under
-`build/`
-with
-`sections/`.
-The
-family
-ships
-no
-`verification/`
-bundle.
+One manuscript: [S3:30–36] (title [S3:25], date [S3:27]) — `paper.tex` under
+`build/` with `sections/`. The family ships no `verification/` bundle.
 
 ## Comparison with the formalized statement
 
-The
-release
-formalises
-this
-family
-at
-tier
-T2
-with
-one
-scope
-note
-[S4]
-and
-one
-comparator
-stub
-[S5].
-The
-scope
-note
-[S4:9–11]
-states
-the
-target:
-for
-the
-selected
-PTS,
-weak
-and
-strong
-normalization
-quantify
-over
-all
-closed
-and
-all
-open
-well-typed
-expressions,
-with
-no
-functionality
-assumption
-and
-reduction
-acting
-inside
-annotations.
-The
-formalized
-PTS
-has
-a
-set-level
-universe
-and
-a
-sort-level
-object
-universe.
-The
-excluded
-statements
-are
-the
-remaining
-PTS
-rules
-[S4:11].
+The release formalises this family at tier T2 with one scope note [S4]
+and one comparator stub [S5]. The scope note [S4:9–11] states the
+target: for the selected PTS, weak and strong normalization quantify
+over all closed and all open well-typed expressions, with no
+functionality assumption and reduction acting inside annotations. The
+formalized PTS has a set-level universe and a sort-level object
+universe. The excluded statements are the remaining PTS rules [S4:11].
 
-There
-is
-**no**
-`main_results`
-entry
-and
-**no**
-OAI
-tree:
-the
-formalization
-is
-a
-comparator
-stub
-only.
-The
-one
-comparator
-stub
-[S5]
-states
-the
-strong-normalization
-target
-and
-ends
-in
-`sorry`.
-A
-comparator
-stub
-is
-a
-target
-the
-release
-set
-itself;
-the
-proved
-version,
-where
-it
-exists,
-lives
-under
-`lean/OAI/`.
-Here
-no
-proved
-copy
-exists.
-The
-reading
-is
-of
-source
-text
-only
-—
-no
-`lake`
-or
-`lean`
-run
-elaborates
-the
-proof.
+There is **no** `main_results` entry and **no** OAI tree: the
+formalization is a comparator stub only. The one comparator stub [S5]
+states the strong-normalization target and ends in `sorry`. A comparator
+stub is a target the release set itself; the proved version, where it
+exists, lives under `lean/OAI/`. Here no proved copy exists. The reading
+is of source text only — no `lake` or `lean` run elaborates the proof.
 
 ## Coverage
 
-The
-ledger
-row
-`fam=245`
-[S6]
-records
-the
-tier
-and
-the
-counts:
-`tier=T2`,
-`paps=1`,
-`paps_form=0`,
-`chal=1`,
-`mainres=0`,
-`scope_note=1`,
-`verification=0`,
-`trace=`.
-The
-`paps_form=0`
-against
-`paps=1`
-is
-the
-coverage
-signature:
-the
-manuscript
-is
-**not**
-named
-as
-a
-formalization
-source,
-and
-there
-is
-no
-`main_results`
-entry
-—
-the
-formalization
-exists
-only
-as
-a
-scope
-note
-and
-a
-comparator
-stub.
-There
-is
-no
-verification
-bundle
-and
-no
-reasoning
-trace.
-The
-shape
-flags
-are
-`resolution`,
-and
-`resolves_named=1`
-—
-the
-blurb
-names
-the
-$`eta`$-Barendregt–Geuvers–Klop
-conjecture
-with
-"resolving".
+The ledger row `fam=245` [S6] records the tier and the counts:
+`tier=T2`, `paps=1`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `verification=0`, `trace=`. The `paps_form=0` against
+`paps=1` is the coverage signature: the manuscript is **not** named as a
+formalization source, and there is no `main_results` entry — the
+formalization exists only as a scope note and a comparator stub. There
+is no verification bundle and no reasoning trace. The shape flags are
+`resolution`, and `resolves_named=1` — the blurb names the
+$`eta`$-Barendregt–Geuvers–Klop conjecture with "resolving".
 
 ## Sources
 
