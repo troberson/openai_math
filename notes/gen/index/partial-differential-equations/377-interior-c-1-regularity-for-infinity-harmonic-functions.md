@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [377-interior-c-1-regularity-for-infinity-harmonic-functions.md](../../../../notes/gen/summaries/377-interior-c-1-regularity-for-infinity-harmonic-functions.md) |
 
 ## Manuscripts
 
