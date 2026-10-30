@@ -1,6 +1,6 @@
 # Family summary pages
 
-336 extended summaries, one per family, each built from the manuscript's own LaTeX and
+337 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **336** of **373** families have a page.
+The summaries are a fifth layer: **337** of **373** families have a page.
 
 ## The pages
 
@@ -326,6 +326,7 @@ The summaries are a fifth layer: **336** of **373** families have a page.
 - [309](309-kervaire-invariant-problem-at-the-prime-three.md) — The Kervaire invariant problem at the prime three
 - [310](310-quillens-conjecture-in-rational-homology.md) — Quillen's conjecture in rational homology
 - [311](311-chais-invariant-ideal-conjecture.md) — Chai's invariant-ideal conjecture
+- [312](312-grothendieck-homotopy-hypothesis.md) — The Grothendieck homotopy hypothesis
 - [313](313-finite-generation-for-the-k-n-local-sphere.md) — Finite generation for the $`K(n)`$-local sphere
 - [315](315-four-dimensional-singer-conjecture.md) — The four-dimensional Singer conjecture
 - [316](316-curtiss-conjecture.md) — Curtis’s conjecture
@@ -379,7 +380,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **37 families have no summary page.** The 336 pages cover 336 of 373 families; the rest are recorded
+- **36 families have no summary page.** The 337 pages cover 337 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

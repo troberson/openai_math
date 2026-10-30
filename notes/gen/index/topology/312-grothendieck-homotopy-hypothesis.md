@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [stable-homotopy](../topics/stable-homotopy.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [312-grothendieck-homotopy-hypothesis.md](../../../../notes/gen/summaries/312-grothendieck-homotopy-hypothesis.md) |
 
 ## Manuscripts
 
