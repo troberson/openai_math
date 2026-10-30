@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md](../../../../notes/gen/summaries/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) |
 
 ## Manuscripts
 
