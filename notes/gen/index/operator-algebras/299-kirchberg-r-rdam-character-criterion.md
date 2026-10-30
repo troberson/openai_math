@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [299-kirchberg-r-rdam-character-criterion.md](../../../../notes/gen/summaries/299-kirchberg-r-rdam-character-criterion.md) |
 
 ## Manuscripts
 

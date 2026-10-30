@@ -1,0 +1,163 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 299](../index/operator-algebras/299-kirchberg-r-rdam-character-criterion.md)
+
+# 299 — The Kirchberg–Rø rdam character criterion
+
+[Index page](../index/operator-algebras/299-kirchberg-r-rdam-character-criterion.md)
+
+## Original CONTENTS.md summary
+
+[S1:7423] (family entry):
+
+> **299. The Kirchberg–Rørdam character criterion and infinite tensor-power Jiang–Su stability.** A nonzero unital separable complex <i>C</i><sup>∗</sup>-algebra is Jiang–Su stable exactly when its norm central-sequence algebra has no characters, for every free ultrafilter. This answers the Kirchberg–Rørdam character question. Also, the infinite minimal tensor power of every such algebra without characters is Jiang–Su stable, answering the Dadarlat–Toms question. ([Lean](../../../lean/docs/299.md))
+
+[S2:692] carries the `\resultentry` with the single manuscript [S3:58, S3:60]. The abstract 
+
+> We prove the Kirchberg–Rø rdam character criterion: for every free
+ultrafilter on $`\mathbb N`$, a nonzero unital separable complex $`C^*`$-algebra
+absorbs the Jiang–Su algebra if and only if its norm central-sequence
+algebra has no characters. We also prove that the infinite minimal tensor
+power of every nonzero unital separable complex $`C^*`$-algebra without
+characters is $`\mathcal Z`$-stable and contains a unital copy of $`\mathcal Z`$. [S3:63–70]
+
+## Undergraduate summary
+
+A **$`C^*`$-algebra** "absorbs" the Jiang–Su algebra $`\mathcal{Z}`$ if
+tensoring with it doesn't change the algebra up to isomorphism:
+$`A \cong A \otimes_{\\min} \\mathcal{Z}`$. Algebras that do this are called
+**$`\\mathcal{Z}`$-stable**, and $`\\mathcal{Z}`$-stability is one of the
+central features that lets you classify them.
+
+The **central-sequence algebra** is a way of looking at the "asymptotic
+center" of $`A`$ — the elements that commute with everything up to an error
+that vanishes along a sequence. A **character** on it is a one-dimensional
+representation, a kind of "trivial direction" hiding in the center.
+
+The **Kirchberg–Rørdam character question** asked: is $`A`$
+$`\\mathcal{Z}`$-stable exactly when its central-sequence algebra has no
+characters? The answer is **yes**, for every free ultrafilter
+[S3:63–70]. The criterion needs no nuclearity, simplicity, trace, or
+comparison hypothesis [S4:9] — it applies to every nonzero unital
+separable complex $`C^*`$-algebra.
+
+There's a companion result [S3:67–70]: the infinite minimal tensor power
+$`A \\otimes \\otimes \\cdots`$ of any such algebra without characters is
+itself $`\\mathcal{Z}`$-stable. This answers a separate question of
+Dadarlat and Toms.
+
+## Graduate summary
+
+**Main theorem (formalized)** [S3:63–70, S2:692].
+For every nonzero unital separable complex $`C^*`$-algebra $`A`$ and every
+free ultrafilter $`\\omega`$ on $`\\mathbb{N}`$, the norm
+central-sequence algebra $`A^\\omega`$ has no nonzero character if and
+only if $`A \\cong A \\otimes_{\\min} \\mathcal{Z}`$. No nuclearity,
+simplicity, trace, or comparison hypothesis is imposed [S4:9].
+
+**The infinite tensor-power companion** [S3:67–70].
+If $`A`$ is a nonzero unital separable complex $`C^*`$-algebra whose
+central-sequence algebra has no characters, then the infinite minimal
+tensor power $`A^{\\otimes \\infty}`$ is $`\\mathcal{Z}`$-stable and
+contains a unital copy of $`\\mathcal{Z}`$. This is the Dadarlat–Toms
+conclusion [S3:67–70].
+
+**The formalization target.** The release selects the character
+criterion itself as the `main_results` statement —
+`OAI.KirchbergRordam.character_criterion` — and proves it in the
+62-file OAI tree under `lean/OAI/Analysis/CharacterCriterion/` [S6].
+
+## History of the conjecture
+
+The Kirchberg–Rørdam question sits in the classification program for
+$`C^*`$-algebras. Kirchberg and Rørdam observed that $`\\mathcal{Z}`$-
+stability is closely tied to the structure of the central-sequence
+algebra, and asked whether the absence of characters is the exact
+obstruction to $`\\mathcal{Z}`$-stability. The criterion connects an
+analytic property (absorption of $`\\mathcal{Z}`$) to an algebraic one
+(the character structure of the asymptotic center).
+
+The infinite tensor-power question of Dadarlat and Toms asks whether a
+"generic" limit of tensoring $`A`$ with itself recovers
+$`\\mathcal{Z}`$-stability. The companion result [S3:67–70] answers this
+for algebras without characters, so the two questions are resolved in the
+same paper.
+
+**Prior (my training data, not this repo).** The centrality of
+$`\\mathcal{Z}`$-stability in the classification of simple
+$`C^*`$-algebras, and the role of the central-sequence algebra, are
+well-established in the literature (Kirchberg, Rørdam, Dadarlat, Toms,
+and others). The unconditional character criterion — no nuclearity,
+simplicity, or trace hypothesis — and the tensor-power companion are the
+novel contributions claimed here; I cannot verify the
+operator-algebraic arguments independently from training alone.
+
+## Consequences
+
+- **The Kirchberg–Rørdam character question is resolved** [S3:63–70,
+  S2:692]: a nonzero unital separable complex $`C^*`$-algebra is
+  $`\\mathcal{Z}`$-stable exactly when its norm central-sequence algebra
+  has no characters, for every free ultrafilter. This is the named
+  resolution the ledger's `resolves_named` flag records.
+- **The criterion is unconditional** [S4:9]: no nuclearity, simplicity,
+  trace, or comparison hypothesis is required — it applies to all
+  nonzero unital separable complex $`C^*`$-algebras.
+- **The Dadarlat–Toms question is answered** [S3:67–70]: the infinite
+  minimal tensor power of every such algebra without characters is
+  $`\\mathcal{Z}`$-stable and contains a unital copy of $`\\mathcal{Z}`$.
+- **Characters of the central-sequence algebra are the exact
+  obstruction to $`\\mathcal{Z}`$-stability** [S3:64–67]: the analytic
+  and algebraic conditions are two faces of the same property.
+
+## Section skeleton
+
+One manuscript [S3:63–70]. Root `build/paper.tex` (78 lines), abstract in the
+root [S3:63–70]. Sections under `build/sections/`: `introduction`,
+`preliminaries`, `rw-criterion`, `tensor`, `dimension-drop`,
+`application`, plus a `references.tex` and a `figures/` directory. No
+verification bundle.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T3** with a scope note [S4:9],
+one comparator stub [S5], one `main_results` entry
+(`OAI.KirchbergRordam.character_criterion` from
+`ComparatorChallenges/CharacterCriterion.json`, file
+`OAI/Analysis/CharacterCriterion/Main.lean`), and a proved OAI tree.
+
+The scope note [S4:9] selects the character criterion: for every nonzero
+unital separable complex $`C^*`$-algebra $`A`$ and every free ultrafilter on
+$`\\mathbb{N}`$, the norm central-sequence algebra has no nonzero character
+exactly when
+$`A \\cong A \\otimes_{\\min} \\mathcal{Z}`$, with no nuclearity,
+simplicity, trace, or comparison hypothesis imposed [S4:9].
+
+The single comparator stub carries 1 `sorry`:
+`CharacterCriterion.lean` (2138 lines) with
+`theorem character_criterion` at [S5:2128] and the `sorry` at
+[S5:2132]. The proved copy of the `main_results` declaration lives under
+`lean/OAI/Analysis/CharacterCriterion/` — a 62-file tree with 0 `sorry`
+— where `Main.lean` carries `theorem character_criterion` at [S6]. The
+reading is of source text only.
+
+## Coverage
+
+The ledger row `fam=299` [S6] records the tier and the counts:
+`tier=T3`, `paps=1`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `scope_chars=423`, `verification=0`, `trace=`. The T3
+shape is "scope note, comparators, `main_results`, and a proved OAI tree
+exist." The `main_results` target is
+`character_criterion`; the 62-file OAI tree under
+`lean/OAI/Analysis/CharacterCriterion/` carries 0 `sorry`. The single
+comparator stub carries 1 `sorry`. The shape flags are
+`shapes=uniform`, `resolves_named=1` — this is a resolution family
+resolving the Kirchberg–Rørdam character question.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7423] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 299 at [S2:692] |
+| S3 | [`preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/build/paper.tex`](../../../preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/build/paper.tex) | 78 | manuscript (root); title [S3:58], date [S3:60], abstract [S3:63–70] |
+| S4 | [`lean/docs/299.md`](../../../lean/docs/299.md) | 15 | scope note — Scope at [S4:9] and the comparator link `CharacterCriterion.lean` |
+| S5 | [`lean/ComparatorChallenges/CharacterCriterion.lean`](../../../lean/ComparatorChallenges/CharacterCriterion.lean) | 2138 | comparator stub (formalized target) — 2138 lines, 1 `sorry` |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=299`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
