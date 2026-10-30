@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial, uniform |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [metric-geometry](../topics/metric-geometry.md) · [spectral-theory](../topics/spectral-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [336-spectral-scalar-curvature-and-codimension-two-width.md](../../../../notes/gen/summaries/336-spectral-scalar-curvature-and-codimension-two-width.md) |
 
 ## Manuscripts
 
