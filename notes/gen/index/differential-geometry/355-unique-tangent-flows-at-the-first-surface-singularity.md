@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [surfaces](../topics/surfaces.md) · [minimal-surfaces](../topics/minimal-surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [355-unique-tangent-flows-at-the-first-surface-singularity.md](../../../../notes/gen/summaries/355-unique-tangent-flows-at-the-first-surface-singularity.md) |
 
 ## Manuscripts
 
