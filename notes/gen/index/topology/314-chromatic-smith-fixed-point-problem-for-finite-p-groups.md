@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [stable-homotopy](../topics/stable-homotopy.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [314-chromatic-smith-fixed-point-problem-for-finite-p-groups.md](../../../../notes/gen/summaries/314-chromatic-smith-fixed-point-problem-for-finite-p-groups.md) |
 
 ## Manuscripts
 
