@@ -13,7 +13,7 @@
 | Claim shapes | bound, density |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [kinetic-theory](../topics/kinetic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [363-boltzmann-nonuniqueness-with-exact-local-conservation.md](../../../../notes/gen/summaries/363-boltzmann-nonuniqueness-with-exact-local-conservation.md) |
 
 ## Manuscripts
 
