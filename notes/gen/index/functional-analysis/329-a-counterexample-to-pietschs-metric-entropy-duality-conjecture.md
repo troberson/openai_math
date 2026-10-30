@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [convex-geometry](../topics/convex-geometry.md) · [banach-spaces](../topics/banach-spaces.md) · [information-theory](../topics/information-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [329-a-counterexample-to-pietschs-metric-entropy-duality-conjecture.md](../../../../notes/gen/summaries/329-a-counterexample-to-pietschs-metric-entropy-duality-conjecture.md) |
 
 ## Manuscripts
 

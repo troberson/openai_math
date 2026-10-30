@@ -1,6 +1,6 @@
 # Family summary pages
 
-345 extended summaries, one per family, each built from the manuscript's own LaTeX and
+346 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **345** of **373** families have a page.
+The summaries are a fifth layer: **346** of **373** families have a page.
 
 ## The pages
 
@@ -343,6 +343,7 @@ The summaries are a fifth layer: **345** of **373** families have a page.
 - [326](326-cotype-cotype-conjecture-under-the-approximation-property.md) — The cotype–cotype conjecture under the approximation property
 - [327](327-markov-type-characterizes-superreflexivity.md) — Markov type characterizes superreflexivity
 - [328](328-fixed-points-of-nonexpansive-maps-in-reflexive-banach-spaces.md) — Fixed points of nonexpansive maps in reflexive Banach spaces
+- [329](329-a-counterexample-to-pietschs-metric-entropy-duality-conjecture.md) — A counterexample to Pietsch's metric-entropy duality conjecture
 - [331](331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming
 - [332](332-metric-markov-cotype-two-for-1.md) — Metric Markov cotype two for $`\ell_1`$
 - [334](334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md) — A smooth surface metric with no local immersion in $`\mathbb R^3`$
@@ -388,7 +389,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **28 families have no summary page.** The 345 pages cover 345 of 373 families; the rest are recorded
+- **27 families have no summary page.** The 346 pages cover 346 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
