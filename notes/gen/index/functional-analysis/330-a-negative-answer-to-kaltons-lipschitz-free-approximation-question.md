@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [metric-geometry](../topics/metric-geometry.md) · [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md](../../../../notes/gen/summaries/330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md) |
 
 ## Manuscripts
 
