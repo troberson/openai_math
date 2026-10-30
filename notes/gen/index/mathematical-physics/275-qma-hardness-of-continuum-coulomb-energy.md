@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [275-qma-hardness-of-continuum-coulomb-energy.md](../../../../notes/gen/summaries/275-qma-hardness-of-continuum-coulomb-energy.md) |
 
 ## Manuscripts
 
