@@ -1,6 +1,6 @@
 # Family summary pages
 
-350 extended summaries, one per family, each built from the manuscript's own LaTeX and
+351 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **350** of **373** families have a page.
+The summaries are a fifth layer: **351** of **373** families have a page.
 
 ## The pages
 
@@ -357,6 +357,7 @@ The summaries are a fifth layer: **350** of **373** families have a page.
 - [340](340-a-counterexample-to-the-nearby-lagrangian-conjecture.md) — A counterexample to the nearby Lagrangian conjecture
 - [341](341-donaldsons-hypersymplectic-deformation-conjecture.md) — Donaldson's hypersymplectic deformation conjecture
 - [342](342-donaldsons-tamed-to-compatible-conjecture.md) — Donaldson's tamed-to-compatible conjecture
+- [343](343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md) — Sharp symplectic ball-packing criteria in higher dimensions
 - [344](344-metric-blaschke-conjecture.md) — The metric Blaschke conjecture
 - [345](345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md) — Infinitely many closed geodesics on spheres and three-manifolds
 - [346](346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md) — Sharp singular-set bounds for stationary integral varifolds
@@ -393,7 +394,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **23 families have no summary page.** The 350 pages cover 350 of 373 families; the rest are recorded
+- **22 families have no summary page.** The 351 pages cover 351 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

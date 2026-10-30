@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [symplectic-geometry](../topics/symplectic-geometry.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md](../../../../notes/gen/summaries/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md) |
 
 ## Manuscripts
 
