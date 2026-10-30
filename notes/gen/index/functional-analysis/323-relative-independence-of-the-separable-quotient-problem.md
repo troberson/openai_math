@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [measure-theory](../topics/measure-theory.md) · [banach-spaces](../topics/banach-spaces.md) · [logic](../topics/logic.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [323-relative-independence-of-the-separable-quotient-problem.md](../../../../notes/gen/summaries/323-relative-independence-of-the-separable-quotient-problem.md) |
 
 ## Manuscripts
 
