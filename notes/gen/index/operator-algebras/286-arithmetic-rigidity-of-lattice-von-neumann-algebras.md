@@ -13,7 +13,7 @@
 | Claim shapes | classification, uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [number-fields](../topics/number-fields.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [286-arithmetic-rigidity-of-lattice-von-neumann-algebras.md](../../../../notes/gen/summaries/286-arithmetic-rigidity-of-lattice-von-neumann-algebras.md) |
 
 ## Manuscripts
 
