@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [primes](../topics/primes.md) · [stable-homotopy](../topics/stable-homotopy.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [308-smith-toda-complexes-at-every-height-with-varying-primes.md](../../../../notes/gen/summaries/308-smith-toda-complexes-at-every-height-with-varying-primes.md) |
 
 ## Manuscripts
 
