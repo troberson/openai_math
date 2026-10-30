@@ -1,0 +1,201 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Partial differential equations](../index/disciplines/partial-differential-equations.md) / [Family 364](../index/partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md)
+
+# 364 — Kinetic limits and fluctuations over the Boltzmann lifespan
+
+[Index page](../index/partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md)
+
+## Original CONTENTS.md summary
+
+[S1:8822] (family entry):
+
+> **364. Kinetic limits and fluctuations over the Boltzmann lifespan.** Derives the nonlinear Boltzmann equation from three-dimensional grand-canonical Newtonian gases throughout every regular kinetic interval with uniform Gaussian decay. Stable finite-range radial potentials may have attractive wells and a singular repulsive core; initial pair exclusion and spatially summable Gaussian density and gradient bounds are assumed. A companion gives finite-dimensional hard-sphere Gaussian fluctuations, centered at the exact microscopic expectation and governed by the linear fluctuating Boltzmann equation.
+
+[S2:830] carries the `\resultentry` with two manuscripts —
+manuscript 1 [S3] (the Boltzmann–Grad limit for stable radial
+potentials) and manuscript 2 [S4] (the hard-sphere fluctuations). The
+content blurb calls the second a "companion" [S1:8822]; the ledger
+records `companion_word=1` but **no** cross-family edge in
+`companions` [S5]. The family has **no** formalization in the release
+[S5].
+
+## Undergraduate summary
+
+The **Boltzmann equation** is the macroscopic law that a gas of many
+colliding particles obeys. A long-standing goal of kinetic theory is to
+**derive** it from the microscopic Newtonian physics of the particles
+themselves, in the limit where the particles are very small but their
+total amount of stuff stays fixed — this is the **Boltzmann–Grad
+limit**.
+
+Classically that limit was proved only for the simplest interaction:
+identical **hard spheres** (billiard-ball collisions). This result
+extends the derivation to a much wider class of forces. Manuscript 1
+[S3] shows the Boltzmann equation emerges from a three-dimensional
+gas whose particles interact through **stable, finite-range radial
+potentials** — forces that can have an attractive "well" at long range
+and a steep repulsive "core" up close, including a singular
+repulsion right at the origin. The derivation holds on every interval
+where the resulting kinetic solution stays well-behaved (uniform
+Gaussian decay).
+
+Manuscript 2 [S4] is the **fluctuation** companion [S1:8822]: it proves
+a finite-dimensional **central limit theorem** for the hard-sphere
+gas away from equilibrium. Around its exact average, the random
+fluctuations of the particle distribution converge to a Gaussian
+whose evolution is governed by the **linear fluctuating Boltzmann
+equation** — the small-noise, linearized version of the kinetic law.
+
+## Graduate summary
+
+**Main theorem (manuscript 1, the Boltzmann–Grad limit)**
+[S3:128–140, S2:830].
+The nonlinear Boltzmann equation is derived from a grand-canonical
+Newtonian gas with initial pair exclusion, for stable, finite-range
+radial potentials that are $`C^2`$ except for an allowed repulsive
+singularity at the origin, and $`C^1`$ initial probability densities
+with spatially summable Gaussian bounds on the density and its spatial
+gradient. All fixed-order rescaled factorial marginals converge in
+$`L^1`$ uniformly throughout every finite interval on which the
+classical kinetic solution has a uniform Gaussian bound [S3:128–140].
+The result allows attractive wells and dynamically formed clusters,
+without restrictions on the differential scattering cross-section.
+
+**Companion theorem (manuscript 2, the hard-sphere fluctuations)**
+[S4:68–78, S1:8822].
+A finite-dimensional central limit theorem away from equilibrium for a
+deterministic grand-canonical hard-sphere gas in three dimensions: for
+a smooth initial probability density with spatially summable Gaussian
+velocity bounds on the density and its spatial gradient, on every
+finite interval on which the classical Boltzmann solution has uniform
+Gaussian velocity decay, the empirical measure is centered by its exact
+microscopic expectation, and its fluctuations converge to the Gaussian
+solution of the linear fluctuating Boltzmann equation [S4:68–78].
+
+**The pair is a companion, not a cross-family edge** [S1:8822, S5].
+The content blurb introduces manuscript 2 as "A companion" to
+manuscript 1 [S1:8822], and the ledger records `companion_word=1`.
+This word fires only inside this family's own abstract; the ledger's
+`companions` column is empty [S5], so there is no release-recorded
+edge to another family — the two manuscripts are a single result
+family with a shared regular-kinetic-interval hypothesis.
+
+## History of the conjecture
+
+The **Boltzmann–Grad limit** is the kinetic derivation of the
+nonlinear Boltzmann equation from Newtonian particle dynamics in the
+limit where the particle diameter $`\epsilon \to 0`$ with $`\epsilon N \to \nu`$
+fixed (particle number and density scaled so the macroscopic gas is
+finite). The classical theory, from **Boltzmann**, **Grad**, and the
+modern rigorous program of **Lanford** and **Dray–Newell–Pulver**
+among others, established the limit for **hard spheres** — the
+interacting-potential case is the hard open extension, because the
+attractive well lets particles form long-lived bound pairs and
+clusters that a pure hard-sphere argument cannot control.
+
+The **novel contributions** are the two complementary statements
+[S3, S4]. Manuscript 1 [S3] extends the Boltzmann–Grad limit to
+**stable, finite-range radial potentials** with attractive wells and
+a singular repulsive core, on every **regular kinetic interval** with
+uniform Gaussian decay, and with **no restriction on the differential
+scattering cross-section** [S3:128–140] — the cross-section restriction
+is a standing artifact of earlier soft-potential results.
+Manuscript 2 [S4] is the **fluctuation** companion: a finite-dimensional
+**central limit theorem** for the deterministic hard-sphere gas away
+from equilibrium, with the empirical measure centered at its *exact*
+microscopic expectation and converging to the Gaussian solution of the
+**linear fluctuating Boltzmann equation** [S4:68–78]. The two share the
+"regular kinetic interval with uniform Gaussian decay" hypothesis,
+which is the common regularity condition the "companion" pairing rests
+on [S1:8822].
+
+**Prior (my training data, not this repo).** As of my training cutoff,
+the Boltzmann–Grad limit for **hard spheres** was classical, and an
+extension to **stable radial potentials with attractive wells and a
+singular repulsive core** — without a cross-section restriction, on the
+full regular kinetic lifespan — was at the frontier of the kinetic
+derivation program. A finite-dimensional **away-from-equilibrium**
+central limit theorem for the hard-sphere gas, centered at the exact
+microscopic expectation and governed by the linear fluctuating
+Boltzmann equation, was a natural and largely open target. I cannot
+verify the kinetic-theoretic derivations independently from training
+alone.
+
+## Consequences
+
+- **The Boltzmann equation is derived from stable radial
+  potentials** [S3:128–140]: the nonlinear Boltzmann equation emerges
+  from a grand-canonical Newtonian gas whose particles interact
+  through stable, finite-range radial potentials with attractive
+  wells and a singular repulsive core.
+- **The derivation holds on the full regular kinetic lifespan**
+  [S3:128–140]: convergence of the rescaled factorial marginals is
+  uniform in $`L^1`$ on every finite interval where the classical
+  kinetic solution has uniform Gaussian decay.
+- **No scattering cross-section restriction** [S3:128–140]: the
+  result allows attractive wells and dynamically formed clusters
+  without restricting the differential scattering cross-section.
+- **A hard-sphere central limit theorem away from equilibrium**
+  [S4:68–78, S1:8822]: the companion gives finite-dimensional Gaussian
+  fluctuations of the deterministic hard-sphere gas, centered at the
+  exact microscopic expectation and governed by the linear
+  fluctuating Boltzmann equation.
+- **The two manuscripts are a companion pair** [S1:8822, S5]: the
+  content blurb names the fluctuations manuscript a "companion" to the
+  limit manuscript, sharing the regular-kinetic-interval hypothesis;
+  the release records no cross-family edge.
+
+## Section skeleton
+
+Two manuscripts, with different root filenames.
+Manuscript 1 [S3] (Boltzmann–Grad limit, `build/paper.tex`, 153
+lines): a `preamble` [S3:54] and 7 `input` files [S3:143–150]:
+`00-introduction`, `01-preliminaries`, `02-cell-expansion`,
+`03-centering`, `04-history-estimates`, `05-exposure`,
+`06-closure`, plus a BibTeX `references.bib`.
+Manuscript 2 [S4] (hard-sphere fluctuations, `build/main.tex`, 92
+lines): a `preamble` [S4:1] and 8 `input` files [S4:82–89]:
+`01-introduction`, `02-initial-target`, `03-dhm-inputs`,
+`04-cluster-expansion`, `06-sharp-asymptotics`, `07-gaussian-limit`,
+`05-cutoff`, `08-transfer`, plus a BibTeX `references.bib` — the input
+order is **not monotone** in its numeric prefix (06 then 07 then 05),
+which is the shipped order. **No verification bundles.**
+
+## Comparison with the formalized statement
+
+The family is **T0**: there is no scope note, no comparator stub, no
+`main_results` entry, and no OAI tree for it in the release
+[S5]. The ledger row records `tier=T0` with `mainres=0`, `chal=0`,
+`scope_note=0`, and `paps_form=0` — neither manuscript is
+formalized. The T0 shape is "manuscript only, no Lean surface," so
+there is nothing to read on the formalization side: both the
+Boltzmann–Grad limit and the hard-sphere central limit theorem stand
+on the manuscripts alone [S2:830, S5].
+
+## Coverage
+
+The ledger row `fam=364` [S5] records the tier and the counts:
+`tier=T0`, `paps=2`, `paps_form=0`, `chal=0`, `mainres=0`,
+`scope_note=0`, `scope_chars=0`, `verification=0`, `trace=`,
+`companions=`. The shape flags are
+`shapes=bound|density|uniform`, `resolves_named=0`,
+`counterex_broad=0`, `covmd=0` — a kinetic **bound**-type derivation
+(uniform $`L^1`$ marginal convergence over the kinetic lifespan)
+carrying a **density**-type object (a probability density / factorial
+marginals) and a **uniform** character (uniform on every regular
+kinetic interval). No named conjecture in the title, no
+counterexample. The `companion_word=1` flag records the "A companion"
+phrase in the content blurb [S1:8822]; `companions=` stays empty, so
+the pairing is intra-family, not a release-recorded edge. The family
+is a kinetic-derivation and fluctuation result that the release ships
+without any Lean formalization, so the only evidence for both claims
+is the two manuscripts themselves [S3, S4].
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:8822] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 364 at [S2:830] |
+| S3 | [`preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/build/paper.tex`](../../../preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/build/paper.tex) | 153 | the `\documentclass` root (manuscript 1, the Boltzmann–Grad limit) — 153 lines, title [S3:122–123], date [S3:125], abstract [S3:128–140], 7 `input` files [S3:143–150] |
+| S4 | [`preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/build/main.tex`](../../../preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/build/main.tex) | 92 | the `\documentclass` root (manuscript 2, the hard-sphere fluctuations) — 92 lines, title [S4:63], date [S4:65], abstract [S4:68–78], 8 `input` files [S4:82–89] |
+| S5 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=364`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

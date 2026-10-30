@@ -13,7 +13,7 @@
 | Claim shapes | bound, density, uniform |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [kinetic-theory](../topics/kinetic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md](../../../../notes/gen/summaries/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) |
 
 ## Manuscripts
 
