@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [primes](../topics/primes.md) · [stable-homotopy](../topics/stable-homotopy.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [318-chromatic-splitting-counterexamples-and-filtrations.md](../../../../notes/gen/summaries/318-chromatic-splitting-counterexamples-and-filtrations.md) |
 
 ## Manuscripts
 
