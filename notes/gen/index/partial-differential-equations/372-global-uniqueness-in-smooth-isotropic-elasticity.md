@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [algorithms](../topics/algorithms.md) · [convex-geometry](../topics/convex-geometry.md) · [partial-differential-equations](../topics/partial-differential-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [372-global-uniqueness-in-smooth-isotropic-elasticity.md](../../../../notes/gen/summaries/372-global-uniqueness-in-smooth-isotropic-elasticity.md) |
 
 ## Manuscripts
 
