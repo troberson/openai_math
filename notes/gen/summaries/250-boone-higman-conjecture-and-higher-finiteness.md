@@ -15,15 +15,22 @@ The three manuscripts:
 
 **Finite algebraic envelopes and the Boone–Higman conjecture** [S3:33, S3:35]:
 
-> 1
+> We prove the Boone–Higman conjecture. A finitely generated group has
+decidable word problem if and only if it embeds in a finitely presented
+simple group. [S3:38–42]
 
 **Simple $`F_\infty`$ overgroups** [S4:39–41, S4:42]:
 
-> 2
+> Every finitely generated group with decidable word problem embeds in a
+simple group of type $`F_\infty`$. This resolves the higher-finiteness
+strengthening of the Boone–Higman conjecture. [S4:45–49]
 
 **Universal $`F_\infty`$ group** [S5:34, S5:36]:
 
-> 3
+> We construct a single group of type $`F_\infty`$ containing every finitely
+presented group. Its finitely generated subgroups, up to isomorphism, are
+exactly the finitely generated recursively presented groups. This answers
+the $`F_\infty`$ form of the higher-dimensional Higman embedding question. [S5:50–55]
 
 ## Undergraduate summary
 
@@ -401,7 +408,7 @@ alone.
 
 Three
 manuscripts.
-[S3]
+[S3:38–42]
 (title
 [S3:33],
 date
@@ -410,7 +417,7 @@ date
 `paper.tex`
 under
 `build/`.
-[S4]
+[S4:45–49]
 (title
 [S4:39–41],
 date
@@ -419,7 +426,7 @@ date
 `main.tex`
 under
 `build/`.
-[S5]
+[S5:50–55]
 (title
 [S5:34],
 date

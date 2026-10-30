@@ -15,7 +15,7 @@ The family ships twelve manuscripts; the main paper:
 
 **Optimal-order mixing** [S3:22, S3:24]:
 
-> 1
+> We prove that the Thorp shuffle on $`2^d`$ cards mixes in $`\Theta(d)`$ complete shuffles. The full permutation law after $`1600d`$ shuffles converges to uniform in total variation as $`d\to\infty`$, uniformly over the initial deck, while a support count gives a lower bound of $`2d-O(1)`$. [S3:27–29]
 
 The remaining eleven build the random coordinate frames, partial-permutation
 Fourier bounds, deterministic-sweep information, revealed-switching
@@ -244,7 +244,7 @@ alone.
 ## Section skeleton
 
 Twelve manuscripts.
-[S3]
+[S3:27–29]
 (title
 [S3:22],
 date

@@ -15,23 +15,54 @@ The five manuscripts:
 
 **Positive-temperature condensation (hard spheres)** [S3:54, S3:56]:
 
-> 1
+> We prove Bose–Einstein condensation at positive temperature in the
+three-dimensional dilute hard-sphere gas. For each fixed exclusion distance
+and every sufficiently small fixed density, there is a strictly positive
+temperature, independent of the volume, at which the exact canonical Gibbs
+state has a positive condensate fraction in the thermodynamic limit.
+The condensate occupies the constant orbital. [S3:59–66]
 
 **Quantum depletion and momentum distribution (hard spheres)** [S4:36, S4:38]:
 
-> 2
+> We prove the full scaled Bogoliubov momentum distribution for the depleted
+particles in the three-dimensional hard-sphere Bose gas at zero
+temperature. The thermodynamic limit is taken at each fixed density
+before the dilute limit, uniformly over all pure and mixed ground states.
+All thermodynamic accumulation values have the same dilute asymptotic:
+the limiting nonzero-momentum occupation measure has total mass
+$`8/(3\sqrt\pi)`$, giving the depletion fraction
+$`\frac{8}{3\sqrt\pi}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})`$ for density
+$`\rho`$ and hard-sphere exclusion distance $`a`$. [S4:41–51]
 
 **Quantum depletion for fixed bounded repulsive potentials** [S5:45, S5:47]:
 
-> 3
+> We prove the Bogoliubov quantum-depletion asymptotic for the ground state
+of a three-dimensional Bose gas with a fixed bounded, nonnegative, radial
+interaction of finite range and positive scattering length $`a`$.
+The thermodynamic limit is taken at each fixed density $`\rho`$ before the
+dilute limit. Every thermodynamic accumulation value of the fraction
+outside the constant mode is
+$`\frac{8}{3\sqrt\pi}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})`$ as
+$`\rho\downarrow0`$. The assertion is uniform over ground-state density
+matrices and does not require the occupation to have a unique
+thermodynamic limit. [S5:50–61]
 
 **A density-uniform condensate bound** [S6:34, S6:36]:
 
-> 4
+> For each fixed bounded measurable, nonnegative, radial interaction of finite
+range in three dimensions that is not zero almost everywhere, we prove
+a positive lower bound on the constant-orbital
+condensate fraction that is uniform over all sufficiently small densities
+and all temperatures between zero and the square of the density.
+The interaction and density remain fixed in the thermodynamic limit. [S6:39–46]
 
 **Ground-state condensation (the formalization source)** [S7:54, S7:56]:
 
-> 5
+> We prove Bose–Einstein condensation in every ground state of a dilute
+three-dimensional hard-sphere Bose gas. At every sufficiently small fixed gas
+parameter, the constant orbital contains a positive fraction of the particles
+in the thermodynamic limit. The fraction can be chosen independently of the
+gas parameter, and the conclusion holds for arbitrary complex ground states. [S7:59–65]
 
 ## Undergraduate summary
 
@@ -628,7 +659,7 @@ alone.
 
 Five
 manuscripts.
-[S3]
+[S3:59–66]
 (title
 [S3:54],
 date
@@ -637,7 +668,7 @@ date
 `main.tex`
 under
 `build/`.
-[S4]
+[S4:41–51]
 (title
 [S4:36],
 date
@@ -646,7 +677,7 @@ date
 `main.tex`
 under
 `build/`.
-[S5]
+[S5:50–61]
 (title
 [S5:45],
 date
@@ -655,7 +686,7 @@ date
 `main.tex`
 under
 `build/source/`.
-[S6]
+[S6:39–46]
 (title
 [S6:34],
 date
@@ -664,7 +695,7 @@ date
 `main.tex`
 under
 `build/`.
-[S7]
+[S7:59–65]
 (title
 [S7:54],
 date
@@ -713,18 +744,18 @@ the
 ground-state
 condensation
 manuscript**
-[S7]
+[S7:59–65]
 [S8:5];
 the
 positive-temperature
-[S3],
+[S3:59–66],
 momentum-distribution
-[S4],
+[S4:41–51],
 repulsive-potential
-[S5],
+[S5:50–61],
 and
 density-uniform-bound
-[S6]
+[S6:39–46]
 manuscripts
 are
 outside
@@ -806,15 +837,15 @@ proves
 the
 positive-temperature
 condensation
-[S3]
+[S3:59–66]
 n
 or
 the
 Bogoliubov
 depletion
 laws
-[S4]
-[S5].
+[S4:41–51]
+[S5:50–61].
 
 There
 is
@@ -1008,10 +1039,10 @@ The
 four
 other
 manuscripts
-[S3]
-[S4]
-[S5]
-[S6]
+[S3:59–66]
+[S4:41–51]
+[S5:50–61]
+[S6:39–46]
 are
 entirely
 unformalized.

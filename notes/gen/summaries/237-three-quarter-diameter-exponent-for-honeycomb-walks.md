@@ -15,11 +15,11 @@ The family ships thirteen manuscripts; the two headline papers:
 
 **Radial transfer and polygon length laws** [S3:40, S3:42]:
 
-> 1
+> We prove critical diameter-tail exponents $`-2`$ for unrooted honeycomb polygons and $`-2/3`$ for length-weighted polygons, together with a truncated second-length-moment bound of exponent $`2/3`$. Consequently, polygons conditioned to have length at least $`n`$ have diameter $`n^{3/4+o(1)}`$ in probability under either weight. [S3:45–47]
 
 **Critical chords with prescribed endpoints** [S4:22, S4:23]:
 
-> 2
+> Critical self-avoiding walks between prescribed, macroscopically separated boundary ports of a regular honeycomb hexagon have length $`R^{4/3+o(1)}`$ in probability, where $`R`$ is the scale of the hexagon. We prove the corresponding statements for half-plane arches, parallel cuts and nonparallel pure cuts. The half-plane law also has mean length $`R^{4/3+o(1)}`$. A separate strip argument gives endpoint mean laws on one density-one set of heights and in an aligned, critically weighted mixture of all even heights in a macroscopic interval. [S4:25–27]
 
 The remaining eleven manuscripts build the radial transfer,
 cylinder loop-weight, marked-polygon, disk transfer, polynomial
@@ -100,8 +100,8 @@ confirm these independently from training alone.
 
 ## Section skeleton
 
-Thirteen manuscripts. [S3] (title [S3:40], date [S3:42])
-— `main.tex` under `build/`; [S4] (title [S4:22],
+Thirteen manuscripts. [S3:45–47] (title [S3:40], date [S3:42])
+— `main.tex` under `build/`; [S4:25–27] (title [S4:22],
 date [S4:23]) — `main.tex` under `build/`. The
 remaining eleven cover cylinder loop weights, marked
 polygons, disk transfer, polynomial vacuum, renewal,

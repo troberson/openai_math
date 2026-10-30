@@ -396,7 +396,7 @@ def strip_own_markers(body: str, quotes: dict[int, dict]) -> str:
     return "\n".join(lines)
 
 
-def resolve_token(token: str, quotes: dict[int, dict], main_tex_map: dict[str, str] | None = None) -> str:
+def resolve_token(token: str, quotes: dict[int, dict], main_tex_map: dict[str, str] | None = None, fam: str = "") -> str:
     """Resolve a {{seq}} token to its normalized quote text plus the citation marker.
 
     The span comes from the data file's quotes block. The marker `label(sid, start, end)`
@@ -405,7 +405,11 @@ def resolve_token(token: str, quotes: dict[int, dict], main_tex_map: dict[str, s
     """
     row = quotes.get(int(token))
     if row is None:
-        return token
+        prefix = f"family {fam}: " if fam else ""
+        raise ValueError(
+            f"resolve_token: {prefix}{{{{{token}}}}} has no matching row in the quotes block "
+            f"(available: {sorted(quotes)})"
+        )
     span = row["span"]
     if not span:
         return ""
@@ -590,7 +594,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
 
         def _replace(m: re.Match[str]) -> str:
             prefix = m.group(1) or ""
-            resolved = resolve_token(m.group(2), quotes, main_tex_map)
+            resolved = resolve_token(m.group(2), quotes, main_tex_map, fam)
             # A code fence cannot sit inside a blockquote: the `> ` prefix the
             # author wrote lands on the fence opener only, leaving the body and
             # closing fence outside the quote and breaking the block. A fenced

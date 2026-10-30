@@ -15,7 +15,7 @@ The single manuscript:
 
 **Exact quantum factoring over a fixed finite gate set** [S3:57, S3:59]:
 
-> 1
+> We give a polynomial-time uniform quantum circuit family that outputs the complete prime factorization of every integer $`N\ge2`$ with probability one. A fixed finite set of bounded-arity gates suffices, and both the gate count and the number of qubits have polynomial worst-case bounds in the input length. [S3:62–64]
 
 ## Undergraduate summary
 
@@ -352,7 +352,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:62–64]
 (title
 [S3:57],
 date

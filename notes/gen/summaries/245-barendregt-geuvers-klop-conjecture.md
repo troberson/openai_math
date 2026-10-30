@@ -14,7 +14,11 @@
 
 **Weak and strong normalization in pure type systems** [S3:25, S3:27]:
 
-> 1
+> We prove that every weakly $`\beta`$-normalizing pure type system is strongly
+$`\beta`$-normalizing. Both properties quantify over all legal expressions
+in all valid contexts, and reduction acts inside type annotations.
+No functionality hypothesis is required. This resolves the
+$`\beta`$-Barendregt–Geuvers–Klop conjecture. [S3:30–36]
 
 ## Undergraduate summary
 
@@ -306,7 +310,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:30–36]
 (title
 [S3:25],
 date

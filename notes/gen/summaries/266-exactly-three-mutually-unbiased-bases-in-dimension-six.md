@@ -15,11 +15,21 @@ The two manuscripts:
 
 **The maximum number of mutually unbiased bases in dimension six** [S3:49, S3:51]:
 
-> 1
+> We prove that the maximum number of mutually unbiased orthonormal bases
+in $`\mathbb C^6`$ is three, resolving Zauner's dimension-six MUB conjecture.
+The upper bound is computer-assisted: under the stated binary64 arithmetic
+and compiler conditions, a complete execution of the documented verification
+pipeline excludes four arbitrary complex bases. [S3:55–61]
 
 **Exact Fourier certificates for complex Hadamard matrices of order six** [S4:4, S4:6]:
 
-> 2
+> We prove the Fourier-vanishing conjecture of Matolcsi, Ruzsa, and Weiner:
+every complex Hadamard matrix of order six outside Tao's cubic equivalence
+class has a vanishing character sum at every permutation of
+$`(1,1,1,-1,-1,-1)`$. We also give an exact certificate excluding seven
+mutually unbiased bases in $`\mathbb C^6`$; by Weiner's completion theorem, this
+yields an upper bound of five. Both certificates use only integer and
+rational arithmetic, and the complete verifier is included. [S4:11–19]
 
 ## Undergraduate summary
 
@@ -444,7 +454,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:55–61]
 (title
 [S3:49],
 date
@@ -453,7 +463,7 @@ date
 `paper.tex`
 under
 `build/`.
-[S4]
+[S4:11–19]
 (title
 [S4:4],
 date
@@ -468,13 +478,13 @@ ship
 a
 `verification/`
 bundle:
-[S3]
+[S3:55–61]
 ships
 `verification/code/`
 and
 `verification/saved-run/`,
 and
-[S4]
+[S4:11–19]
 ships
 `verification/run.py`
 and

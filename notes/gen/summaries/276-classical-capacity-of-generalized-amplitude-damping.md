@@ -15,7 +15,15 @@ The single manuscript:
 
 **Classical capacity and entropy inequalities for generalized amplitude damping** [S3:33, S3:35]:
 
-> 1
+> We determine the unassisted classical capacity of every qubit generalized
+amplitude-damping channel, for all damping strengths and thermal
+occupations. It equals the one-shot Holevo capacity and is given by a
+one-variable maximum. A binary pure-state ensemble attains the one-use
+optimum, and its independent products attain the optimum at every block
+length. We also prove that one-shot Holevo capacity, minimum output entropy,
+and regularized unassisted classical capacity are additive under tensor
+product with every finite-dimensional completely positive trace-preserving
+partner channel. [S3:38–48]
 
 ## Undergraduate summary
 
@@ -383,7 +391,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:38–48]
 (title
 [S3:33],
 date

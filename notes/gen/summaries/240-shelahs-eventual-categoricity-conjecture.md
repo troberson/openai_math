@@ -15,11 +15,22 @@ The two manuscripts:
 
 **Eventual categoricity in ZFC** [S3:59, S3:61]:
 
-> 1
+> We prove Shelah's eventual categoricity conjecture for abstract elementary
+classes in ZFC. For each infinite bound on the Löwenheim–Skolem number
+there is a uniform threshold such that categoricity in any one cardinal
+at or above that threshold implies categoricity in every cardinal at or
+above the same threshold. [S3:64–70]
 
 **CH obstruction** [S4:3, S4:5]:
 
-> 2
+> Assuming the continuum hypothesis, we construct an abstract elementary
+class with Löwenheim–Skolem number $`\aleph_0`$ that is categorical in
+every sufficiently large cardinal but has at least two nonisomorphic
+models of cardinality $`\beth_{\omega_2}`$.
+Thus categoricity does not transfer down to the proposed bound
+$`\beth_{(2^{\aleph_0})^+}`$, which equals $`\beth_{\omega_2}`$ under CH.
+Consequently, if ZFC is consistent, the prescribed-threshold
+form of Shelah's categoricity conjecture is not provable in ZFC. [S5:1–10]
 
 ## Undergraduate summary
 
@@ -339,7 +350,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:64–70]
 (title
 [S3:59],
 date

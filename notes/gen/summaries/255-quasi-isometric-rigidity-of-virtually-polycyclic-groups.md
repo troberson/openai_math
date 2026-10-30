@@ -14,7 +14,11 @@
 
 **Quasi-isometric recognition of virtually polycyclic groups** [S3:45, S3:47]:
 
-> 1
+> We prove that every finitely generated group quasi-isometric to a finitely
+generated virtually polycyclic group is virtually polycyclic. This resolves
+the lattice-recognition conjecture of Eskin, Fisher and Whyte, which allows
+the ambient solvable Lie group in the conclusion to differ from the one in
+the hypothesis. [S3:50–56]
 
 ## Undergraduate summary
 
@@ -311,7 +315,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:50–56]
 (title
 [S3:45],
 date

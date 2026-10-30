@@ -15,11 +15,17 @@ The two manuscripts:
 
 **Baumslag–Solitar-free one-relator groups are hyperbolic** [S3:24, S3:26]:
 
-> 1
+> We prove Gersten's conjecture: every finitely generated one-relator group
+containing no subgroup isomorphic to a Baumslag–Solitar group
+$`\mathrm{BS}(m,n)`$, for nonzero integers $`m,n`$, is word-hyperbolic. [S3:29–33]
 
 **Virtual compact specialness of hyperbolic one-relator groups** [S4:52, S4:54]:
 
-> 2
+> We prove that every word-hyperbolic one-relator group is virtually compact
+special. Combined with the work of Kielak–Linton, this resolves Wise's
+virtual free-by-cyclic conjecture for hyperbolic one-relator groups: every
+such group is virtually free-by-cyclic, with the free kernel allowed to have
+infinite rank. [S4:57–63]
 
 ## Undergraduate summary
 
@@ -283,7 +289,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:29–33]
 (title
 [S3:24],
 date
@@ -292,7 +298,7 @@ date
 `paper.tex`
 under
 `build/source/`.
-[S4]
+[S4:57–63]
 (title
 [S4:52],
 date
@@ -344,8 +350,8 @@ the
 yaml.
 Both
 manuscripts
-[S3]
-[S4]
+[S3:29–33]
+[S4:57–63]
 sit
 entirely
 outside

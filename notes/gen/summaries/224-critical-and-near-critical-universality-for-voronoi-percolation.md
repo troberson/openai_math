@@ -15,15 +15,29 @@ The three manuscripts:
 
 **Quenched near-critical universality** [S3:31, S3:33]:
 
-> 1
+> Taking Cardy's crossing formula for critical Poisson–Voronoi
+percolation as an input, we prove a universal joint limit for the
+near-critical crossing thresholds of rational polygonal quadrilaterals
+under the monotone coupling. Conditional on the Poisson tessellation,
+the threshold law converges in probability over tessellations to the same
+law as on the triangular lattice. Each model is normalized by its own
+expected number of color-pivotal sites for a unit-square crossing. [S3:36–44]
 
 **Pivotal amplitude** [S4:38, S4:40]:
 
-> 2
+> Taking Cardy's conformal crossing formula for critical planar
+Poisson–Voronoi percolation in every bounded Jordan quadrilateral as an
+input, we prove that the expected number of color-pivotal cells for a
+unit-square crossing is asymptotic to a positive constant times
+$`\varepsilon^{-3/4}`$, where the point intensity is $`\varepsilon^{-2}`$.
+No rate of convergence in Cardy's formula is required. [S4:43–50]
 
 **Cardy's formula** [S5:50, S5:52]:
 
-> 3
+> We prove Cardy's formula for annealed crossing probabilities in critical
+planar Poisson–Voronoi percolation in every bounded Jordan quadrilateral.
+This proves the annealed crossing-probability form of the conformal-invariance
+conjecture for this model. [S5:55–60]
 
 ## Undergraduate summary
 
@@ -107,11 +121,11 @@ independently from training alone.
 
 ## Section skeleton
 
-Three manuscripts: [S3] (title [S3:31], date [S3:33])
+Three manuscripts: [S3:36–44] (title [S3:31], date [S3:33])
 — `paper.tex` under `build/` with `sections/`,
-`references.tex`; [S4] (title [S4:38], date [S4:40])
+`references.tex`; [S4:43–50] (title [S4:38], date [S4:40])
 — `paper.tex` under `build/` with `sections/`,
-`figures/`, `references.tex`; [S5] (title [S5:50],
+`figures/`, `references.tex`; [S5:55–60] (title [S5:50],
 date [S5:52]) — `paper.tex` under `build/` with
 `sections/`, `references.bib`, `math-glyph-
 unicode.tex`. The family ships no `verification/`

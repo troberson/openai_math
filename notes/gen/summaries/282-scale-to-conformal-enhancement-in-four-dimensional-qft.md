@@ -15,7 +15,22 @@ The single manuscript:
 
 **Scale and conformal symmetry in four-dimensional operational quantum field theory** [S3:45–46, S3:47]:
 
-> 1
+> We prove that scale symmetry implies local conformal symmetry for a class
+of four-dimensional unitary, positive-energy quantum field theories with a
+Poincaré- and scale-invariant vacuum. The class has a discrete,
+bounded-below spectrum of scaling dimensions with finite multiplicities,
+and each original field has finite scaling support. The original fields
+and their adjoints have compatible affiliated realizations in a causally
+commuting bounded local net, and a physical local dilatation current
+generates scale transformations through its local Ward identities. The
+operational framework admits sharply localized reconstructed fields after
+their joint products and compatible affiliated realizations in the same
+net have been established. Under these hypotheses, the stress tensor admits
+a symmetric, conserved, traceless improvement with unchanged translation
+and Lorentz charges. The corresponding conformal currents satisfy unbroken
+local Ward identities on the physical field algebra. The conclusion is
+local; integration to a global conformal action on the whole bounded net
+remains a separate question. [S3:50–67]
 
 ## Undergraduate summary
 
@@ -470,7 +485,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:50–67]
 (title
 [S3:45–46],
 date

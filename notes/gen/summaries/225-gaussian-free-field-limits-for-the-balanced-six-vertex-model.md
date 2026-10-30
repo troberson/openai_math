@@ -13,7 +13,11 @@
 [S2:535] carries the `\resultentry`, so the release blurb and the overview agree.
 The single manuscript [S3:3, S3:5]:
 
-> 1
+> We prove that the height function of the square-lattice six-vertex model
+with weights $`a=b=1`$ and $`0<c\le2`$, in the plane state obtained from
+balanced tori, converges to a multiple of the Gaussian free field.
+For unit height jumps and Green kernel $`-(2\pi)^{-1}\log|x-y|`$, the
+squared multiplier is $`1/\arcsin(c/2)`$. [S3:8–14]
 
 ## Undergraduate summary
 
@@ -73,7 +77,7 @@ independently from training alone.
 
 ## Section skeleton
 
-One manuscript [S3]: `main.tex` under `build/` with
+One manuscript [S3:8–14]: `main.tex` under `build/` with
 `sections/`, `figures/`, `preamble.tex`,
 `references.bib`. The family ships no
 `verification/` bundle.

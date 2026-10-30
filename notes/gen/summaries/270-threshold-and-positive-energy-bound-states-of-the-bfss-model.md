@@ -15,11 +15,18 @@ The two manuscripts:
 
 **The unique threshold bound state of the SU(N) BFSS model** [S3:60, S3:62]:
 
-> 1
+> For every finite $`N\ge2`$, we prove that undeformed $`\mathrm{SU}(N)`$ BFSS matrix
+quantum mechanics has exactly one normalizable zero-energy state after
+removing the center of mass. This establishes the threshold-bound-state
+conjecture. [S3:66–71]
 
 **Positive eigenvalues of the relative SU(2) BFSS Hamiltonian** [S4:33, S4:36]:
 
-> 2
+> We prove that the relative $`\mathrm{SU}(2)`$ BFSS Hamiltonian has infinitely many
+positive eigenvalues tending to infinity, with square-integrable
+eigenvectors. The operator is defined by closing the gauge-invariant
+supercharge form. This refutes, at $`N=2`$, the exclusion of normalizable
+positive-energy states stated in the original BFSS paper. [S4:44–50]
 
 ## Undergraduate summary
 
@@ -329,7 +336,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:66–71]
 (title
 [S3:60],
 date
@@ -338,7 +345,7 @@ date
 `main.tex`
 under
 `build/manuscript/`.
-[S4]
+[S4:44–50]
 (title
 [S4:33],
 date
@@ -390,8 +397,8 @@ the
 yaml.
 Both
 manuscripts
-[S3]
-[S4]
+[S3:66–71]
+[S4:44–50]
 sit
 entirely
 outside

@@ -15,11 +15,18 @@ The two manuscripts:
 
 **Noncapture** [S3:30, S3:32]:
 
-> 1
+> We prove that choiceless polynomial time with counting does not capture
+polynomial time on unordered finite structures, confirming the noncapture
+conjecture of Blass, Gurevich and Shelah. A linear-consistency query over
+$`\mathbb F_3`$ in a fixed binary vocabulary is decidable in polynomial time
+but not in the full counting formalism. [S3:35–41]
 
 **Witnessed choice** [S4:58–59, S4:61]:
 
-> 2
+> We prove that witnessed symmetric choice strictly increases the expressive
+power of choiceless polynomial time with counting. A fixed sentence with
+one witnessed-choice occurrence defines a Boolean query on every finite
+input that is not definable in the original counting formalism. [S4:64–69]
 
 ## Undergraduate summary
 
@@ -358,7 +365,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:35–41]
 (title
 [S3:30],
 date
@@ -376,7 +383,7 @@ base-logic,
 hf-transfer,
 coding,
 separation).
-[S4]
+[S4:64–69]
 (title
 [S4:58–59],
 date

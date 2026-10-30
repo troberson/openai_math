@@ -14,7 +14,12 @@
 
 **The Partition Principle does not imply Choice** [S3:43, S3:45]:
 
-> 1
+> We prove that the Partition Principle does not imply the Axiom of Choice:
+if ZF is consistent, then so is ZF with the Partition Principle, Choice for
+ordinal-indexed families, and the negation of the Axiom of Choice.
+Separately, over every countable transitive model of ZFC, we construct a
+transitive symmetric model of this theory with the same ordinals and no new
+countable sequences of ground elements. [S3:48–55]
 
 ## Undergraduate summary
 
@@ -376,7 +381,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:48–55]
 (title
 [S3:43],
 date

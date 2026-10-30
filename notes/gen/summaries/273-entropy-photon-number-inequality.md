@@ -15,7 +15,7 @@ The manuscript:
 
 **The entropy photon-number inequality** [S3:29, S3:31]:
 
-> 1
+> We prove the entropy photon-number inequality for two independent bosonic inputs with finite mean energy, for every finite number of modes. This resolves the entropy photon-number conjecture in this finite-energy setting while allowing arbitrary entanglement among the modes within either input. As a consequence, we determine the exact minimum output entropy at fixed input entropy for every finite tensor power of an identical thermal attenuator, over finite-energy inputs that may be entangled across modes. We also obtain the exact classical capacity region of the degraded two-receiver pure-loss bosonic broadcast channel under a mean photon constraint. [S3:34–36]
 
 ## Undergraduate summary
 
@@ -368,7 +368,7 @@ ho_B)`$.
 
 One
 manuscript.
-[S3]
+[S3:34–36]
 (title
 [S3:29],
 date
@@ -414,7 +414,7 @@ note
 links
 the
 manuscript
-[S3]
+[S3:34–36]
 [S4:5].
 The
 recorded

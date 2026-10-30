@@ -15,11 +15,17 @@ The two manuscripts:
 
 **Uniform symmetric signs** [S3:49–50, S3:52]:
 
-> 1
+> Let $`A_n`$ be a symmetric $`n\times n`$ matrix whose entries on and above
+the diagonal are independent uniform signs. We prove
+$$\Pr(\det A_n=0)=\left(\frac12+o(1)\right)^n.$$ [S3:57–63]
 
 **Biased symmetric signs** [S4:43, S4:45]:
 
-> 2
+> Let $`A_n`$ be a symmetric random matrix whose entries on and above the
+diagonal are independent signs, equal to $`1`$ with fixed probability
+$`p\in(0,1)\setminus\{1/2\}`$. We prove that
+$`\mathbb P(\det A_n=0)=(p^2+(1-p)^2+o(1))^n`$.
+The rate is attained by the event that two rows agree. [S4:48–54]
 
 ## Undergraduate summary
 
@@ -268,7 +274,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:57–63]
 (title
 [S3:49–50],
 date
@@ -279,7 +285,7 @@ under
 `build/`
 with
 `sections/`.
-[S4]
+[S4:48–54]
 (title
 [S4:43],
 date

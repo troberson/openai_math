@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) · [conformal-universality](../topics/conformal-universality.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [224-critical-and-near-critical-universality-for-voronoi-percolation.md](../../../../notes/gen/summaries/224-critical-and-near-critical-universality-for-voronoi-percolation.md) |
 
 ## Manuscripts
 

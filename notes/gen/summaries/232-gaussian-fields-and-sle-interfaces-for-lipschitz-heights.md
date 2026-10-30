@@ -15,15 +15,29 @@ The three manuscripts:
 
 **Weighted integer heights** [S3:40, S3:42]:
 
-> 1
+> We prove a Gaussian free field scaling limit for weighted integer Lipschitz
+heights on the triangular lattice. With zero boundary values and a factor $`x`$
+for each edge on which the height changes, the field converges after division
+by a positive constant depending only on $`x`$ to the zero-Dirichlet Gaussian
+free field, for every fixed $`x\in[1/\sqrt2,1]`$. The convergence holds as a
+random distribution on every bounded $`C^2`$ Jordan domain under inside lattice
+approximations with uniformly convergent boundary parametrizations. This
+includes the uniform height model and the predicted critical endpoint. [S3:46–55]
 
 **Integer heights with two-arc boundary** [S4:99, S4:101]:
 
-> 2
+> We prove that the centered uniform odd integer height function on triangular-lattice approximations of a smooth simply connected domain, with neighboring differences zero or two and boundary values $`+1`$ and $`-1`$ on two arcs, converges to a universal multiple of the Dirichlet Gaussian free field. This resolves the field part of Schramm's Problem 2.2. We give an absolutely convergent finite-volume formula for the normalization. The proof combines reflection positivity, a spectral sum rule, and boundary comparison with Gaussian moment identities. [S4:104–106]
 
 **Uniform real Lipschitz surfaces** [S5:37, S5:39]:
 
-> 3
+> We prove the Gaussian free field and SLE$`_4`$ scaling limits for uniformly
+sampled real nearest-neighbor Lipschitz heights on the triangular lattice,
+resolving Schramm's Problem 2.3. On approximations of smooth simply connected
+domains, the centered height field converges as a random distribution to a
+multiple of the Dirichlet Gaussian free field. At one tuned two-arc boundary
+amplitude, the zero-height interface converges in uniform curve distance to
+chordal SLE$`_4`$. We identify the relation between the field variance and the
+boundary height in terms of an implicit stationary tangent-flux coefficient. [S5:42–51]
 
 ## Undergraduate summary
 
@@ -121,11 +135,11 @@ these independently from training alone.
 
 ## Section skeleton
 
-Three manuscripts: [S3] (title [S3:40], date [S3:42])
+Three manuscripts: [S3:46–55] (title [S3:40], date [S3:42])
 — `main.tex` under `build/` with `sections/`;
-[S4] (title [S4:99], date [S4:101]) —
+[S4:104–106] (title [S4:99], date [S4:101]) —
 `paper.tex` under `build/` with `sections/`;
-[S5] (title [S5:37], date [S5:39]) —
+[S5:42–51] (title [S5:37], date [S5:39]) —
 `paper.tex` under `build/` with `sections/`.
 The family ships no `verification/` bundle.
 

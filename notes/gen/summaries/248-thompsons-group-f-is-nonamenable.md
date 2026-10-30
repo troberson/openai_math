@@ -14,7 +14,8 @@
 
 **Thompson's group $`F`$ is nonamenable** [S3:4, S3:6]:
 
-> 1
+> We prove that Thompson's group $`F`$ is nonamenable. This confirms
+Geoghegan's conjecture and resolves the amenability problem for $`F`$. [S3:10–13]
 
 ## Undergraduate summary
 
@@ -267,7 +268,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:10–13]
 (title
 [S3:4],
 date

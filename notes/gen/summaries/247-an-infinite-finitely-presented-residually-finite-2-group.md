@@ -15,11 +15,27 @@ The two manuscripts:
 
 **Infinite finitely presented periodic group** [S3:43, S3:45]:
 
-> 1
+> We construct an infinite group with an ordinary finite presentation in
+which every element has finite order, answering the finitely presented
+Burnside question negatively. We also construct an infinite-dimensional
+finitely presented nonunital nil associative algebra over $`\mathbb F_2`$ that is
+Jacobson radical but not nilpotent. Its unitization is finitely presented,
+algebraic, and infinite-dimensional. These algebras answer the finitely
+presented nil- and radical-algebra nilpotence questions and the
+finite-presentation version of Kurosh's algebraic finiteness question
+negatively. [S3:49–59]
 
 **Residually finite 2-group** [S4:38, S4:40]:
 
-> 2
+> We prove that the infinite, ordinarily finitely presented periodic
+Steinberg group $`\Gamma=\mathrm{St}_{12}(R)`$ of a companion paper is residually
+finite. Its finite-index subgroup
+$`G=\ker(\Gamma\to\mathrm{St}_{12}(\mathbb F_2))`$ is infinite, ordinarily finitely
+presented, and residually finite, and every element of $`G`$ has finite
+$`2`$-power order. The orders of its elements are unbounded.
+Phases of long words in the companion's graded algebra allow finite
+degree truncations to detect all elements of $`\Gamma`$, including the
+central kernel. [S4:43–53]
 
 ## Undergraduate summary
 
@@ -202,7 +218,7 @@ cannot confirm these independently from training alone.
 
 Two
 manuscripts.
-[S3]
+[S3:49–59]
 (title
 [S3:43],
 date
@@ -213,7 +229,7 @@ under
 `build/`
 with
 `sections/`.
-[S4]
+[S4:43–53]
 (title
 [S4:38],
 date

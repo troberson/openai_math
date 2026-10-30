@@ -15,11 +15,17 @@ The two manuscripts:
 
 **Periodic Haldane gap** [S3:85, S3:87]:
 
-> 1
+> We prove a uniform positive spectral gap for the pure antiferromagnetic
+spin-one Heisenberg chain on even periodic rings, establishing the
+positive even-periodic formulation of the spin-one Haldane conjecture. [S3:90–94]
 
 **Boundary-field gap** [S4:32, S4:34]:
 
-> 2
+> We prove a uniform spectral gap for odd open spin-one antiferromagnetic
+Heisenberg chains with the same fixed magnetic field at both endpoints.
+The field $`h=3/5`$ gives a gap greater than $`\log(10)/392`$ on every chain
+of $`2L+1`$ sites with $`L\ge960`$. Tasaki's index theorem then gives index $`-1`$
+for every subsequential local limit of these boundary-selected ground states. [S4:41–47]
 
 ## Undergraduate summary
 
@@ -406,7 +412,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:90–94]
 (title
 [S3:85],
 date
@@ -415,7 +421,7 @@ date
 `main.tex`
 under
 `build/`.
-[S4]
+[S4:41–47]
 (title
 [S4:32],
 date
@@ -430,13 +436,13 @@ ship
 a
 `verification/`
 bundle:
-[S3]
+[S3:90–94]
 ships
 `verification/computations`
 and
 `verification/verify.py`,
 and
-[S4]
+[S4:41–47]
 ships
 `verification/README.md`
 with
@@ -489,8 +495,8 @@ the
 yaml.
 Both
 manuscripts
-[S3]
-[S4]
+[S3:90–94]
+[S4:41–47]
 sit
 entirely
 outside
@@ -517,7 +523,7 @@ for
 the
 periodic
 gap
-[S3]
+[S3:90–94]
 and
 scalar/thermal
 certificate
@@ -526,7 +532,7 @@ for
 the
 boundary-field
 gap
-[S4]
+[S4:41–47]
 —
 not
 Lean

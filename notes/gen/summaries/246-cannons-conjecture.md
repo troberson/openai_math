@@ -14,7 +14,10 @@
 
 **A Modulus Proof of Cannon's Conjecture** [S3:63, S3:65]:
 
-> 1
+> We prove that every hyperbolic group whose boundary is homeomorphic to
+the two-sphere admits a proper cocompact isometric action on hyperbolic
+three-space with finite kernel. This resolves Cannon's conjecture
+positively. [S3:69–74]
 
 ## Undergraduate summary
 
@@ -112,7 +115,7 @@ from training alone.
 
 One
 manuscript:
-[S3]
+[S3:69–74]
 (title
 [S3:63],
 date

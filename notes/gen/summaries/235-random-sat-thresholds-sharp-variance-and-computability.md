@@ -15,19 +15,44 @@ The four manuscripts:
 
 **Fixed-clause-size threshold** [S3:3, S3:5]:
 
-> 1
+> For every fixed integer $`k\ge3`$, random $`k`$-SAT with independent
+uniformly signed clauses on distinct variables, sampled with replacement,
+has a finite positive limiting satisfiability threshold.
+We credit Gaia Carenini with priority for
+resolving the satisfiability conjecture. This paper gives an alternative
+proof, using concentration of a capped last satisfiable index and a
+comparison between different system sizes. [S3:9–17]
 
 **3-SAT linear variance** [S4:31, S4:33]:
 
-> 2
+> For random 3-SAT on $`n`$ Boolean variables, with independent uniformly
+signed clauses on three distinct variables sampled with replacement,
+we prove that the first unsatisfiable prefix has variance $`\Theta(n)`$.
+The upper bound removes the logarithmic loss in the earlier variance estimate;
+the matching lower bound follows from Wilson's transition-width theorem. [S4:38–44]
 
 **k-SAT variance** [S5:3, S5:5]:
 
-> 3
+> Let $`H_n`$ be the index of the first unsatisfiable prefix in random $`k`$-SAT
+on $`n`$ variables, with independent uniformly signed clauses using $`k`$
+distinct variables and sampled with replacement. For every fixed $`k\ge4`$,
+we prove $`\mathrm{Var}(H_n)=\Theta_k(n)`$. For $`k=3`$, the variance is bounded below
+by a positive multiple of $`n`$ and above by a constant multiple of $`n\log n`$;
+the companion paper on random 3-SAT sharpens this to $`\Theta(n)`$.
+The same upper bounds proved here hold after clipping at any fixed positive
+multiple of $`n`$. [S5:8–17]
 
 **3-SAT threshold computability** [S6:40, S6:42]:
 
-> 4
+> The limiting satisfiability threshold of uniform random 3-SAT is a
+computable real. We credit Gaia Carenini 
+with priority for resolving the satisfiability conjecture, which
+establishes the threshold's existence. We prove that one finite
+deterministic machine can approximate it to any prescribed accuracy. A deletion estimate gives
+explicit lower certificates, while a finite hierarchical approximation
+of the soft pressure gives upper certificates at every larger rational
+density. A fair search through these certificates halts without
+requiring a computable rate of finite-size convergence. [S6:45–55]
 
 ## Undergraduate summary
 
@@ -120,13 +145,13 @@ independently from training alone.
 
 ## Section skeleton
 
-Four manuscripts: [S3] (title [S3:3], date [S3:5])
+Four manuscripts: [S3:9–17] (title [S3:3], date [S3:5])
 — `paper.tex` under `build/source/`;
-[S4] (title [S4:31], date [S4:33]) —
+[S4:38–44] (title [S4:31], date [S4:33]) —
 `main.tex` under `build/source/`;
-[S5] (title [S5:3], date [S5:5]) —
+[S5:8–17] (title [S5:3], date [S5:5]) —
 `paper.tex` under `build/source/` with `sections/`;
-[S6] (title [S6:40], date [S6:42]) —
+[S6:45–55] (title [S6:40], date [S6:42]) —
 `paper.tex` under `build/` with `sections/`.
 The family ships no `verification/` bundle.
 

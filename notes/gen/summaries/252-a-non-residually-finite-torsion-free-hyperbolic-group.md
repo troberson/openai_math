@@ -313,7 +313,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:48–50]
 (title
 [S3:42],
 date

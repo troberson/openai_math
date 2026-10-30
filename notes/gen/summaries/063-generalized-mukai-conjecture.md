@@ -97,17 +97,7 @@ differentials is invariant even under changes of basis depending on
 $`q`$. Computing it in a common triangular basis detects the independent
 eigenvalues; computing it in the fixed cohomology basis detects a
 nonzero product in independent curve degrees. This argument also
-applies to nonsemisimple commuting matrices.
-7.inline	S8	25	36	\begintheorem[The ordered-chain bound]
- 
-Let $`Y`$ be a smooth complex projective variety. Let
-$`V^1,\ldots,V^k`$ be proper irreducible components of
-$`\mathrm{RatCurves}^{\mathrm n}(Y)`$ whose numerical classes are
-linearly independent. For every $`y\in Y`$, the ordered endpoint locus
-is either empty or satisfies
-$$\dim\mathrm{Locus}(V^1,\ldots,V^k)_y
- \ge\sum_{j=1}^k(-K_Y\cdot V^j-1).$$
-\endtheorem [S3:110–127]
+applies to nonsemisimple commuting matrices. [S3:110–127]
 
 The alternating trace of matrix-valued differentials, computed in
 a common triangular basis versus the fixed cohomology basis,
@@ -117,9 +107,16 @@ argument applies to nonsemisimple commuting matrices.
 **The equality case.** At equality all selected degrees are
 minimal, so the nonzero quantum product implies a chain of actual
 rational curves. The ordered-chain bound gives the dimension
-estimate [S8:25–36]:
+estimate 
 
-> 7
+> **Theorem 6.1**
+Let $`Y`$ be a smooth complex projective variety. Let
+$`V^1,\ldots,V^k`$ be proper irreducible components of
+$`\mathrm{RatCurves}^{\mathrm n}(Y)`$ whose numerical classes are
+linearly independent. For every $`y\in Y`$, the ordered endpoint locus
+is either empty or satisfies
+$$\dim\mathrm{Locus}(V^1,\ldots,V^k)_y
+ \ge\sum_{j=1}^k(-K_Y\cdot V^j-1).$$ [S8:25–36]
 
 And Occhetta's product characterization identifies the manifold
 
@@ -171,7 +168,7 @@ semisimple, so it covers nonsemisimple Fano manifolds [S3:110–127].
 3. Descendants (point-descendant lower bound) [S5]
 4. Spectral (eigenvalue independence) [S6]
 5. Trace (alternating trace and curve correspondences) [S7]
-6. Equality (ordered-chain bound and product characterization) [S8:43–50]
+6. Equality (ordered-chain bound and product characterization) [S8]
 
 ## Coverage
 

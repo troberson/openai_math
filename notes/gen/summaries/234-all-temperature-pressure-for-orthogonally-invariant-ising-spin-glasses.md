@@ -14,7 +14,13 @@
 
 **Invariant Ising spin glass pressure** [S3:51, S3:53]:
 
-> 1
+> We determine the limiting pressure of an Ising spin glass with Haar
+orthogonal eigenvectors, a compact limiting spectral law, and no
+asymptotic outliers, at every fixed temperature. The pressure converges
+in expectation and almost surely to a variational formula. We also give
+the limiting pressure with deterministic external fields whose empirical
+laws converge in first-moment transport distance, and derive a formula
+for the zero-field ground-state energy by taking temperature to zero. [S3:64–72]
 
 ## Undergraduate summary
 
@@ -87,7 +93,7 @@ independently from training alone.
 
 ## Section skeleton
 
-One manuscript: [S3] (title [S3:51], date [S3:53])
+One manuscript: [S3:64–72] (title [S3:51], date [S3:53])
 — `invariant-sk.tex` under `build/` with section
 files `10-arrays.tex` through `70-magnetic.tex`.
 The family ships no `verification/` bundle.

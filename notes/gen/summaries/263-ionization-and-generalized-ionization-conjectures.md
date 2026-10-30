@@ -15,15 +15,30 @@ The three manuscripts:
 
 **Generalized ionization energies (formalization source)** [S3:46, S3:48]:
 
-> 1
+> We prove the energy part of the generalized ionization conjecture for full
+nonrelativistic Coulomb atoms with two electron spin states. The energy needed
+to remove $`m`$ electrons is asymptotic to $`a_{\mathrm{TF}}m^{7/3}`$ whenever $`m\to\infty`$
+and $`Z/m\to\infty`$, with the Thomas–Fermi constant in atomic units.
+We also obtain both conjectured iterated limits. [S3:51–57]
 
 **Generalized outer-electron radii** [S4:45, S4:47]:
 
-> 2
+> We prove the radius part of the generalized ionization conjecture for
+neutral nonrelativistic Coulomb atoms with two spin states. For every
+choice of ground states, the upper and lower large-nuclear-charge limits
+of the radius defined by an expected exterior electron mass $`m`$ are both
+asymptotic to $`(81\pi^2/2)^{1/3}m^{-1/3}`$ as $`m`$ tends to infinity. [S4:50–56]
 
 **Uniform excess charge (outside the formalization)** [S5:51, S5:53]:
 
-> 3
+> We prove that a molecule with $`M`$ fixed nuclei of real charges at least one
+and total nuclear charge $`Z`$ strictly binds at most $`Z+CM`$ electrons,
+where $`C`$ is universal. The result holds for the full nonrelativistic
+Coulomb Hamiltonian with two spin states and arbitrary distinct nuclear
+positions. For neutral atoms with integer nuclear charge $`Z\ge1`$, the first
+ionization energy and, for every ground state, the radius outside which
+one half of an electron remains are each bounded above and below by positive
+universal constants. [S5:56–65]
 
 ## Undergraduate summary
 
@@ -484,7 +499,7 @@ alone.
 
 Three
 manuscripts.
-[S3]
+[S3:51–57]
 (title
 [S3:46],
 date
@@ -493,7 +508,7 @@ date
 `paper.tex`
 under
 `build/`.
-[S4]
+[S4:50–56]
 (title
 [S4:45],
 date
@@ -502,7 +517,7 @@ date
 `paper.tex`
 under
 `build/`.
-[S5]
+[S5:56–65]
 (title
 [S5:51],
 date
@@ -550,17 +565,17 @@ links
 the
 ionization-energies
 manuscript
-[S3]
+[S3:51–57]
 and
 the
 outer-radii
 manuscript
-[S4]
+[S4:50–56]
 [S6:5–6];
 the
 uniform-excess-charge
 manuscript
-[S5]
+[S5:56–65]
 is
 outside
 the
@@ -731,7 +746,7 @@ registration;
 the
 outer-radii
 asymptotics
-[S4]
+[S4:50–56]
 have
 a
 scope-note
@@ -840,7 +855,7 @@ only
 the
 ionization-energies
 manuscript
-[S3]
+[S3:51–57]
 is
 named
 as
@@ -864,7 +879,7 @@ asymptotics
 The
 outer-radii
 manuscript
-[S4]
+[S4:50–56]
 is
 linked
 in
@@ -903,7 +918,7 @@ formalization.
 The
 uniform-excess-charge
 manuscript
-[S5]
+[S5:56–65]
 is
 entirely
 outside

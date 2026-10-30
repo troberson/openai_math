@@ -15,11 +15,22 @@ The two manuscripts:
 
 **Product-projection localization and the QAC	extsuperscript{0} parity lower bound** [S3:3, S3:6]:
 
-> 1
+> We prove that constant-depth quantum circuits with arbitrary one-qubit
+and unbounded-arity Toffoli gates cannot compute parity with any fixed
+positive worst-case advantage using polynomially many qubits. Ancillas
+start in zero, only one output qubit is measured, and all final garbage
+is unrestricted. This resolves Moore's parity conjecture in the
+measured-output model. [S3:9–16]
 
 **Regular trajectories, pruning and quantum parity** [S4:43, S4:45]:
 
-> 2
+> We prove that constant-depth quantum circuits with arbitrary one-qubit
+gates and unbounded-arity Toffoli gates cannot compute parity with
+any fixed positive worst-case advantage using polynomially many total
+qubits. Ancillary qubits are initialized to $`|0\rangle`$, one output qubit
+is measured, and all other final registers may be discarded without
+restriction. This resolves Moore's parity conjecture in the
+measured-output model. [S4:48–56]
 
 ## Undergraduate summary
 
@@ -456,7 +467,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:9–16]
 (title
 [S3:3],
 date
@@ -469,7 +480,7 @@ with
 sections
 under
 `build/sections/`.
-[S4]
+[S4:48–56]
 (title
 [S4:43],
 date
@@ -608,7 +619,7 @@ second
 manuscript's
 pruning
 mechanism
-[S4]
+[S4:48–56]
 is
 formalized
 as

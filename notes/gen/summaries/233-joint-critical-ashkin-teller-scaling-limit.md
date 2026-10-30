@@ -14,7 +14,14 @@
 
 **Joint Ashkin–Teller scaling limit** [S3:52, S3:54]:
 
-> 1
+> For each fixed point on the critical Ashkin–Teller line, including the
+four-state Potts endpoint, we prove the conjectured joint scaling limit
+of the height and both current-cluster collections in every bounded
+Jordan domain, for every admissible polygonal approximation. The height
+converges to a Gaussian free field with the predicted coupling constant,
+and the clusters converge to canonical recursive two-valued local sets
+of that same field. The joint limit includes all nesting depths and the
+distinguished wired boundary cluster. [S3:57–66]
 
 ## Undergraduate summary
 
@@ -79,7 +86,7 @@ cannot confirm this independently from training alone.
 
 ## Section skeleton
 
-One manuscript: [S3] (title [S3:52], date [S3:54])
+One manuscript: [S3:57–66] (title [S3:52], date [S3:54])
 — `main.tex` under `build/` with `sections/`. The
 family ships no `verification/` bundle.
 

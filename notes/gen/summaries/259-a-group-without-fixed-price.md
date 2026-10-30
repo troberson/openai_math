@@ -14,7 +14,12 @@
 
 **A group without fixed price** [S3:19, S3:21]:
 
-> 1
+> We construct a finitely generated group with two essentially free
+probability-measure-preserving actions of different costs. This gives
+a negative answer to Gaboriau's general fixed-price problem. The group is an
+amalgam of a free group of rank $`100`$ with a direct product. Its
+Bernoulli action has cost bounded away from one, whereas finite height
+extensions have costs tending to one. [S3:24–31]
 
 ## Undergraduate summary
 
@@ -356,7 +361,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:24–31]
 (title
 [S3:19],
 date
@@ -415,7 +420,7 @@ yaml.
 The
 single
 manuscript
-[S3]
+[S3:24–31]
 sits
 entirely
 outside

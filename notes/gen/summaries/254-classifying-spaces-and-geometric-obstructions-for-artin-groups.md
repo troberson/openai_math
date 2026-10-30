@@ -15,15 +15,21 @@ The three manuscripts:
 
 **Harmonic heights and the Artin $`K(\pi,1)`$ conjecture** [S3:41, S3:43]:
 
-> 1
+> We prove that the standard Salvetti complex of every Artin group with
+finitely many standard generators is aspherical. This resolves the Artin
+$`K(\pi,1)`$ conjecture in finite rank. [S3:46–50]
 
 **No geometric CAT(0) action** [S4:3, S4:5]:
 
-> 2
+> We construct an Artin group on 116 generators that admits no proper,
+cocompact isometric action on a nonempty proper CAT(0) space.
+This refutes the CAT(0) conjecture for Artin groups. [S4:8–12]
 
 **Parabolic intersections** [S5:45, S5:47]:
 
-> 3
+> We prove that every intersection of parabolic subgroups of any finite-rank
+Artin group, with arbitrary finite or infinite Coxeter labels, is parabolic.
+This resolves the Parabolic Intersection Conjecture affirmatively. [S5:51–55]
 
 ## Undergraduate summary
 
@@ -408,7 +414,7 @@ alone.
 
 Three
 manuscripts.
-[S3]
+[S3:46–50]
 (title
 [S3:41],
 date
@@ -417,7 +423,7 @@ date
 `main.tex`
 under
 `build/`.
-[S4]
+[S4:8–12]
 (title
 [S4:3],
 date
@@ -426,7 +432,7 @@ date
 `main.tex`
 under
 `build/`.
-[S5]
+[S5:51–55]
 (title
 [S5:45],
 date
@@ -654,7 +660,7 @@ The
 parabolic
 intersection
 manuscript
-[S5]
+[S5:51–55]
 is
 **not**
 a

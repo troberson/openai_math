@@ -13,7 +13,12 @@
 [S2:527] carries the `\resultentry`, so the release blurb and the overview agree.
 The single manuscript [S3:49, S3:51]:
 
-> 1
+> We prove the Mézard–Parisi hierarchical cavity formula for diluted
+even-arity Ising models in the Panchenko–Talagrand class. This resolves
+the variational equality conjecture for that class: the limiting pressure
+equals the infimum of the trial functional over all finite hierarchy depths
+and trial laws. Only first moments of the interaction and external field
+are required. [S3:54–61]
 
 ## Undergraduate summary
 
@@ -91,7 +96,7 @@ confirm this result independently from training alone.
 
 ## Section skeleton
 
-One manuscript [S3]: `main.tex` under `build/`, with sections
+One manuscript [S3:54–61]: `main.tex` under `build/`, with sections
 under `build/sections/` (introduction, model, overview, trees,
 upper, cavity, perturbations). The shipped PDF [S4] is the
 manuscript in the form the release distributes. The family also
@@ -100,7 +105,7 @@ ships a published reasoning trace [S7] (LaTeX source and PDF).
 ## Comparison with the formalized statement
 
 The release formalises this family at tier T2 with one scope note
-[S5] and one comparator stub [S6], but **no** `main_results`
+[S5:9] and one comparator stub [S6], but **no** `main_results`
 entry and **no** OAI tree. The scope note [S5:9] describes the
 target: the M\'ezard–Parisi hierarchical cavity formula
 for the Panchenko–Talagrand class. The comparator stub

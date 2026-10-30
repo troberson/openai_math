@@ -15,11 +15,18 @@ The two manuscripts:
 
 **Continuum Coulomb hardness with binary nuclear charges** [S3:3, S3:5]:
 
-> 1
+> We prove that approximating the electronic Coulomb spectral infimum in three-dimensional space is QMA-hard when positive integer nuclear charges are encoded in binary. The nuclei have distinct rational positions, the electron number is unary, and the energy is minimized over all antisymmetric continuum states and spin sectors. A deterministic classical polynomial-time reduction produces instances with threshold separation at least one. The nuclear charges may be exponentially large, but every output has polynomial bit length. [S3:8–10]
 
 **QMA-hardness of continuum Coulomb energy with unit nuclear charges** [S4:23, S4:25]:
 
-> 2
+> We prove that approximating the electronic ground-energy infimum for
+clamped unit-charge nuclei is QMA-hard on the full spinful fermionic
+continuum space. A deterministic classical polynomial-time reduction
+produces polynomially many nuclei at distinct rational positions and
+polynomially many electrons, with polynomial rational bit lengths and
+threshold separation at least one. No orbital basis, magnetic field, or
+additional external potential is supplied, and no binding assumption is
+imposed. [S4:28–37]
 
 ## Undergraduate summary
 
@@ -458,7 +465,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:8–10]
 (title
 [S3:3],
 date
@@ -471,7 +478,7 @@ with
 sections
 under
 `build/sections/`.
-[S4]
+[S4:28–37]
 (title
 [S4:23],
 date

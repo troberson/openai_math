@@ -15,35 +15,78 @@ The eight manuscripts:
 
 **Quench autocorrelations** [S3:50, S3:52]:
 
-> 1
+> We prove joint functional convergence of the stationary and quench
+autocorrelations of zero-field Sherrington–Kirkpatrick heat-bath dynamics
+at inverse temperature $`\beta=1`$, with the same random limit for Gaussian
+and Rademacher couplings. Each site has a rate-one clock, mean spin
+autocorrelations are multiplied by $`n^{1/3}`$, and waiting times and lags
+are measured in units $`n^{2/3}`$. The quench starts from independent fair
+spins, and convergence is uniform on compact sets of positive waiting
+times and lags. The quench limit is selected by these initial states and
+relaxes to the stationary limiting autocorrelation as the waiting time
+tends to infinity. [S3:57–68]
 
 **Functional universality** [S4:4, S4:6]:
 
-> 2
+> We prove that the stationary spin autocorrelation of the zero-field
+Sherrington–Kirkpatrick model at inverse temperature $`\beta=1`$ has a common
+functional scaling limit for Gaussian and Rademacher couplings. With
+rate-one heat-bath clocks at every site, time is scaled by $`n^{2/3}`$ and the
+mean spin autocorrelation is multiplied by $`n^{1/3}`$. The functions converge
+in law uniformly on compact positive-time intervals. Their limiting law
+is not a point mass: it retains sample-to-sample randomness, and its
+functions decay to zero at large times. [S4:8–17]
 
 **Spectral gap** [S5:3, S5:5]:
 
-> 3
+> For every fixed inverse temperature $`0<\beta<1`$, we prove that the unscaled
+spectral gap of single-site heat-bath dynamics for the zero-field Gaussian
+Sherrington–Kirkpatrick model is bounded away from zero with probability
+tending to one over the disorder. Equivalently, the Gibbs law satisfies a
+dimension-free Poincaré inequality for all functions. [S5:8–14]
 
 **Cutoff** [S6:3, S6:5]:
 
-> 4
+> We prove worst-case total-variation cutoff for the zero-field Gaussian
+Sherrington–Kirkpatrick heat-bath dynamics at every fixed inverse
+temperature $`0\leq\beta<1`$.
+With rate-one refresh at each spin, the cutoff location is
+$`\log n/(2\lambda(\beta))`$ for a positive deterministic rate
+$`\lambda(\beta)`$. The location for uniformly chosen single-site
+update attempts is $`n`$ times as large. Convergence is in probability
+over the disorder. [S6:9–18]
 
 **Critical slowing** [S7:88, S7:90]:
 
-> 5
+> At the critical inverse temperature $`\beta=1`$, we prove slow mixing for zero-field Gaussian Sherrington–Kirkpatrick heat-bath dynamics from typical equilibrium configurations held fixed as initial states. For every deterministic sequence $`t_n=o(n^{2/3})`$ in rate-one-per-site time, the Gibbs mass of initial states whose time-$`t_n`$ total-variation distance from equilibrium exceeds $`1/4`$ tends to one in probability over the disorder. The same statement holds for every deterministic integer sequence $`k_n=o(n^{5/3})`$ of uniform-site update attempts. [S7:93–95]
 
 **Stretched-exponential barriers** [S8:4, S8:6]:
 
-> 6
+> At every fixed inverse temperature $`\beta>1`$, we prove a stretched-exponential
+obstruction to mixing for the zero-field Sherrington–Kirkpatrick model from
+typical equilibrium configurations held fixed as initial states. The Gibbs
+mass of states whose total-variation distance from equilibrium at time
+$`\exp(n^{1/10000})`$ exceeds $`1/4`$ tends to one in probability over the
+disorder. This holds for rate-one-per-site heat-bath dynamics and after the
+same stated number of discrete update attempts. [S8:9–17]
 
 **Typical-start subexponential mixing** [S9:22, S9:24]:
 
-> 7
+> For every fixed inverse temperature $`\beta>1`$, we prove subexponential
+mixing for rate-one-per-site heat-bath dynamics in the zero-field Gaussian
+Sherrington–Kirkpatrick model from a typical equilibrium configuration.
+If one Gibbs-sampled configuration is held fixed as the initial state,
+its total-variation distance from equilibrium is at most $`1/4`$ by time
+$`\exp(n^{1-1/40000000})`$, with joint probability tending to one over
+the disorder and the sampled state. [S9:26–34]
 
 **Critical mixing exponent** [S10:3, S10:5]:
 
-> 8
+> At the critical inverse temperature $`\beta=1`$, we determine the worst-start
+total-variation mixing exponent for single-site heat-bath dynamics in the
+zero-field Gaussian Sherrington–Kirkpatrick model. The mixing time is
+$`n^{2/3+o(1)}`$ when every site has rate one, or $`n^{5/3+o(1)}`$ attempted
+uniform-site updates, in probability over the disorder. [S10:8–14]
 
 ## Undergraduate summary
 
@@ -175,19 +218,19 @@ from training alone.
 
 ## Section skeleton
 
-Eight manuscripts: [S3] (title [S3:50], date [S3:52])
-— `main.tex` under `build/`; [S4] (title
+Eight manuscripts: [S3:57–68] (title [S3:50], date [S3:52])
+— `main.tex` under `build/`; [S4:8–17] (title
 [S4:4], date [S4:6]) — `main.tex` under
-`build/` with `sections/`; [S5] (title [S5:3],
+`build/` with `sections/`; [S5:8–14] (title [S5:3],
 date [S5:5]) — `main.tex` under `build/` with
-`sections/`; [S6] (title [S6:3], date [S6:5])
+`sections/`; [S6:9–18] (title [S6:3], date [S6:5])
 — `paper.tex` under `build/` with `sections/`;
-[S7] (title [S7:88], date [S7:90]) —
+[S7:93–95] (title [S7:88], date [S7:90]) —
 `paper.tex` under `build/` with `figures/`,
-`references.bib`; [S8] (title [S8:4], date [S8:6])
+`references.bib`; [S8:9–17] (title [S8:4], date [S8:6])
 — `main.tex` under `build/` with `sections/`;
-[S9] (title [S9:22], date [S9:24]) —
-`paper.tex` under `build/`; [S10] (title [S10:3],
+[S9:26–34] (title [S9:22], date [S9:24]) —
+`paper.tex` under `build/`; [S10:8–14] (title [S10:3],
 date [S10:5]) — `paper.tex` under `build/`
 with `sections/`. The family ships no
 `verification/` bundle.

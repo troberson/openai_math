@@ -15,11 +15,25 @@ The two manuscripts:
 
 **Uniform stability of the spherical Laughlin gap (under disorder)** [S3:22, S3:24]:
 
-> 1
+> We prove that the fermionic Laughlin $`V_1`$ Hamiltonian at filling $`1/3`$
+on expanding round spheres retains a unique ground state and a uniform
+spectral gap under sufficiently weak bounded real scalar one-body
+potentials projected to the lowest Landau level. With coefficient one
+for each pair projector and Laughlin flux $`q=3(N-1)`$, the gap and
+perturbation threshold are uniform for all sufficiently large particle
+numbers and all potential profiles of supremum norm at most one.
+The result uses the uniform unperturbed Fock-space gap and gives
+existential constants. [S3:27–37]
 
 **A Fock-space inequality and the Laughlin spectral gap** [S4:80, S4:82]:
 
-> 2
+> We prove the spherical fermionic Laughlin spectral-gap conjecture for the
+full $`V_1`$ interaction. With coefficient one for each pair projector,
+the gap above the Laughlin state at filling $`1/3`$ on the round sphere
+is at least $`1/25`$ for all sufficiently large systems.
+More generally, $`H_Q^2\ge\gamma H_Q`$ for some fixed $`\gamma>1/25`$
+on the entire lowest-Landau-level Fock space for all sufficiently large
+flux $`Q`$, independently of particle number. [S4:89–97]
 
 ## Undergraduate summary
 
@@ -461,7 +475,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:27–37]
 (title
 [S3:22],
 date
@@ -470,7 +484,7 @@ date
 `paper.tex`
 under
 `build/`.
-[S4]
+[S4:89–97]
 (title
 [S4:80],
 date
@@ -640,7 +654,7 @@ in
 the
 stability
 argument
-[S3],
+[S3:27–37],
 not
 the
 disorder-stability
@@ -860,7 +874,7 @@ that
 the
 stability-under-disorder
 claim
-[S3]
+[S3:27–37]
 and
 the
 uniqueness
@@ -880,7 +894,7 @@ so
 the
 disorder-stability
 manuscript
-[S3]
+[S3:27–37]
 is
 formalized
 only

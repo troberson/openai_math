@@ -15,11 +15,19 @@ The two manuscripts:
 
 **Unitarizability implies amenability** [S3:40, S3:42]:
 
-> 1
+> We prove that a discrete group is amenable if and only if every
+uniformly bounded representation on a complex Hilbert space is similar
+to a unitary representation. This resolves Dixmier's unitarizability
+problem affirmatively for discrete groups. [S4:1–6]
 
 **Strong Ulam stability characterizes amenability** [S5:37, S5:39]:
 
-> 2
+> A countable discrete group is amenable if and only if it is strongly Ulam
+stable: every sufficiently accurate unitary almost representation, on any
+complex Hilbert space, is uniformly close in operator norm to a genuine
+representation on the same space. We prove the converse to Kazhdan's
+amenable stability theorem, answering the question of Burger, Ozawa, and
+Thom. The inclusion of infinite-dimensional Hilbert spaces is essential. [S5:42–49]
 
 ## Undergraduate summary
 
@@ -236,7 +244,7 @@ with
 (abstract
 in
 `sections/introduction.tex`).
-[S5]
+[S5:42–49]
 (title
 [S5:37],
 date

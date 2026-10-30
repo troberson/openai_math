@@ -15,7 +15,14 @@ The manuscript:
 
 **Entanglement with zero distillable secret key in local dimension ten** [S3:39, S3:42]:
 
-> 1
+> We construct an entangled state on $`\mathbb C^{10}\otimes\mathbb C^{10}`$ with zero
+distillable secret key for the local-instrument protocols specified here.
+They allow joint processing of all copies and unlimited two-way public
+communication, with the input as the only shared private resource and an
+eavesdropper holding a purification and the complete public record.
+The construction also disproves the unrestricted two-map PPT-composition
+conjecture. A separate trace-preserving PPT channel on $`M_{21}(\mathbb C)`$ has a
+square that is not entanglement breaking. [S3:47–56]
 
 ## Undergraduate summary
 
@@ -427,7 +434,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:47–56]
 (title
 [S3:39],
 date
@@ -499,7 +506,7 @@ note
 links
 the
 manuscript
-[S3]
+[S3:47–56]
 [S4:5].
 The
 recorded
@@ -597,7 +604,7 @@ not
 the
 bound-entanglement
 construction
-[S3].
+[S3:47–56].
 
 There
 is

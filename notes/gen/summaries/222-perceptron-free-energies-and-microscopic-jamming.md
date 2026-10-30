@@ -15,19 +15,41 @@ The four manuscripts:
 
 **Ising perceptron free energy** [S3:3, S3:5]:
 
-> 1
+> We determine the limiting free energy of the Ising perceptron with independent
+Gaussian patterns for every bounded Borel log-potential, at every fixed positive
+temperature and pattern density. We give an explicit variational formula for
+the limit and prove convergence in expectation and probability. [S3:8–13]
 
 **Negative spherical perceptron jamming** [S4:43, S4:45]:
 
-> 2
+> We prove a sharp feasibility threshold and limiting gap and force laws for
+the spherical perceptron with margin $`-1`$ and quadratic penalty. The limits
+are taken successively in system size, inverse temperature, and density
+approaching the threshold from above. They agree for Gaussian coordinates
+and for the equal mixture of centered Gaussian coordinates with variances
+$`1-\varepsilon`$ and $`1+\varepsilon`$, for every sufficiently small fixed $`\varepsilon`$.
+The contact-removed gap cumulative law and the mean-one force cumulative
+law satisfy
+$$G_J(u)=u^{1-\gamma+o(1)},\qquad F_J(s)=s^{1+\theta+o(1)},$$
+as $`u\downarrow0`$ and $`s\downarrow0`$, with $`\gamma=(2+\theta)^{-1}`$,
+$`0.4126930<\gamma<0.4126934`$, and
+$`0.4231063<\theta<0.4231088`$.
+A finite numerical certificate for these exponent intervals, together with
+its mathematical error bounds, is included. [S4:48–65]
 
 **Bi-orthogonally invariant disorder** [S5:36, S5:38]:
 
-> 3
+> We determine the limiting free energy of a spherical perceptron with a bounded
+continuous activation and a bi-orthogonally invariant disorder matrix. The
+singular values may have any compact limiting distribution, provided there are
+no outliers. We give an explicit variational formula for this limit. [S5:41–46]
 
 **Spherical perceptron free energy** [S6:23, S6:25]:
 
-> 4
+> We prove an exact variational formula for the limiting pressure of the spherical
+random perceptron with an arbitrary bounded continuous single-pattern potential.
+The formula holds at every fixed positive density and inverse temperature,
+with convergence in expectation and in probability. [S6:28–33]
 
 ## Undergraduate summary
 
@@ -118,12 +140,12 @@ confirm these results independently from training alone.
 
 ## Section skeleton
 
-Four manuscripts: [S3] (title [S3:3], date [S3:5])
+Four manuscripts: [S3:8–13] (title [S3:3], date [S3:5])
 — `main.tex` under `build/` with `sections/` and
-`preamble.tex`; [S4] (title [S4:43], date [S4:45])
-— `main.tex` under `build/`; [S5] (title [S5:36],
+`preamble.tex`; [S4:48–65] (title [S4:43], date [S4:45])
+— `main.tex` under `build/`; [S5:41–46] (title [S5:36],
 date [S5:38]) — `paper.tex` under `build/`;
-[S6] (title [S6:23], date [S6:25]) — `paper.tex`
+[S6:28–33] (title [S6:23], date [S6:25]) — `paper.tex`
 under `build/` with `figures/` and `references.bib`.
 The family ships no `verification/` bundle.
 

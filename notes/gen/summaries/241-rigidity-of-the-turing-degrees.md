@@ -14,7 +14,9 @@
 
 **Rigidity of the Turing degrees** [S3:35, S3:37]:
 
-> 1
+> We prove that every order automorphism of the full partial order of
+Turing degrees is the identity, resolving the rigidity conjecture for
+the Turing degrees positively. [S3:40–44]
 
 ## Undergraduate summary
 
@@ -242,7 +244,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:40–44]
 (title
 [S3:35],
 date

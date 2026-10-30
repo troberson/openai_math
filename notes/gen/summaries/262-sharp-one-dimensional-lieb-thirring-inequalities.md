@@ -15,15 +15,30 @@ The three manuscripts:
 
 **Sharp one-dimensional Lieb–Thirring constants (scalar)** [S3:6, S3:8]:
 
-> 1
+> We resolve affirmatively the remaining cases of the scalar one-dimensional
+Lieb–Thirring conjecture: for every $`\frac12<\gamma<\frac32`$,
+the optimal constant is the one-bound-state constant.
+The estimate holds for every nonnegative potential in
+$`L^{\gamma+1/2}(\mathbb R)`$, with all negative eigenvalues included. [S3:11–17]
 
 **Sharp inequality for matrix potentials** [S4:3, S4:5]:
 
-> 2
+> We prove the sharp one-dimensional Lieb–Thirring inequality for every finite
+matrix size and every exponent $`1/2<\gamma<3/2`$. The optimal constant is the
+scalar one-bound-state constant, independently of the matrix size. The
+inequality bounds the full sum of negative eigenvalue moments for every
+measurable Hermitian positive semidefinite potential $`W`$ satisfying
+$`\int_\mathbb R\mathrm{tr}(W^{\gamma+1/2})<\infty`$. The matrices may have arbitrary rank and
+need not commute at different points. [S4:8–16]
 
 **Equality cases in the matrix inequality** [S5:3, S5:5]:
 
-> 3
+> We classify all equality cases in the sharp one-dimensional Lieb–Thirring
+inequality for every finite matrix size and $`1/2<\gamma<3/2`$. For measurable
+Hermitian positive semidefinite potentials $`W`$ with
+$`\int_\mathbb R\mathrm{tr}(W^{\gamma+1/2})<\infty`$, equality holds precisely for direct sums,
+in one constant unitary basis, of scalar one-bound-state solitons and zero
+channels. The nonzero solitons may have independent scales and centers. [S5:8–15]
 
 ## Undergraduate summary
 
@@ -464,7 +479,7 @@ alone.
 
 Three
 manuscripts.
-[S3]
+[S3:11–17]
 (title
 [S3:6],
 date
@@ -473,7 +488,7 @@ date
 `main.tex`
 under
 `build/`.
-[S4]
+[S4:8–16]
 (title
 [S4:3],
 date
@@ -482,7 +497,7 @@ date
 `main.tex`
 under
 `build/`.
-[S5]
+[S5:8–15]
 (title
 [S5:3],
 date
@@ -530,14 +545,14 @@ links
 the
 scalar-constants
 manuscript**
-[S3]
+[S3:11–17]
 [S6:5];
 the
 matrix-potential
-[S4]
+[S4:8–16]
 and
 equality-case
-[S5]
+[S5:8–15]
 manuscripts
 are
 outside
@@ -741,12 +756,12 @@ $`1/2 < \gamma < 3/2`$
 The
 matrix-potential
 manuscript
-[S4]
+[S4:8–16]
 and
 the
 equality-case
 manuscript
-[S5]
+[S5:8–15]
 are
 outside
 the

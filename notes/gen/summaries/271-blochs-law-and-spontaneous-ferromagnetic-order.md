@@ -15,19 +15,49 @@ The four manuscripts:
 
 **Bloch's law for finite-range Heisenberg ferromagnets** [S3:37, S3:39]:
 
-> 1
+> We prove Bloch's $`T^{3/2}`$ law for the spontaneous magnetization of
+three-dimensional quantum Heisenberg ferromagnets at every fixed positive
+quantum spin. The result holds for every nonnegative symmetric finite-range
+interaction whose support generates $`\mathbb Z^3`$, including spatially anisotropic
+couplings. The leading magnetization deficit has the exact coefficient
+determined by the determinant of the quadratic one-magnon dispersion.
+The thermodynamic limit is taken before the right field derivative at zero,
+and the low-temperature limit is taken last. [S3:42–51]
 
 **The first lattice correction to Bloch's law** [S4:43, S4:45]:
 
-> 2
+> We prove the first lattice correction to Bloch's law for the
+three-dimensional nearest-neighbor quantum Heisenberg ferromagnet at every
+fixed spin $`S=\tfrac12,1,\tfrac32,\ldots`$. The spontaneous-magnetization
+deficit agrees with the full ideal-magnon density up to
+$`o(\beta^{-5/2})`$. In addition to the leading Bloch term, this gives the
+correction $`3\zeta(5/2)(\beta S)^{-5/2}/(128\pi^{3/2})`$.
+The magnetization is the right derivative at zero field of the
+thermodynamic pressure; the volume limit precedes the field derivative,
+and the low-temperature limit is taken last. [S4:48–58]
 
 **The spherical magnetization law** [S5:47, S5:49]:
 
-> 3
+> We prove the spherical magnetization law for the three-dimensional
+nearest-neighbor isotropic quantum Heisenberg ferromagnet at every fixed
+positive quantum spin and every sufficiently low fixed positive
+temperature. As the even periodic cubes grow, the symmetric zero-field
+magnetization converges in moments to a uniform direction with a
+deterministic positive magnitude. This magnitude equals the right
+derivative at zero field of the infinite-volume pressure. The law is
+expressed through self-adjoint linear combinations of the spin components
+and requires no joint measurement of noncommuting observables. [S5:52–62]
 
 **Spontaneous magnetization (the formalization source)** [S6:37, S6:39]:
 
-> 4
+> For every dimension $`d\geq3`$ and every spin $`S\in\{\frac12,1,\frac32,\ldots\}`$,
+we prove that the nearest-neighbor isotropic quantum Heisenberg ferromagnet
+has a translation-invariant, spontaneously magnetized equilibrium state
+at every sufficiently low positive temperature.
+The same state satisfies the KMS condition for the zero-field dynamics
+and has magnetization at least $`S/4`$.
+This resolves the low-temperature ordering problem in the
+spontaneous-magnetization formulation. [S6:42–51]
 
 ## Undergraduate summary
 
@@ -591,7 +621,7 @@ alone.
 
 Four
 manuscripts.
-[S3]
+[S3:42–51]
 (title
 [S3:37],
 date
@@ -600,7 +630,7 @@ date
 `main.tex`
 under
 `build/`.
-[S4]
+[S4:48–58]
 (title
 [S4:43],
 date
@@ -609,7 +639,7 @@ date
 `main.tex`
 under
 `build/`.
-[S5]
+[S5:52–62]
 (title
 [S5:47],
 date
@@ -618,7 +648,7 @@ date
 `main.tex`
 under
 `build/`.
-[S6]
+[S6:42–51]
 (title
 [S6:37],
 date
@@ -677,18 +707,18 @@ links
 the
 spontaneous-magnetization
 manuscript**
-[S6]
+[S6:42–51]
 [S7:5];
 the
 Bloch's-law
-[S3]
+[S3:42–51]
 ,
 lattice-correction
-[S4]
+[S4:48–58]
 ,
 and
 spherical-magnetization
-[S5]
+[S5:52–62]
 manuscripts
 are
 outside
@@ -768,19 +798,19 @@ The
 $`T^{3/2}`$
 Bloch
 law
-[S3]
+[S3:42–51]
 ,
 its
 lattice
 correction
-[S4]
+[S4:48–58]
 ,
 and
 the
 spherical
 magnetization
 law
-[S5]
+[S5:52–62]
 are
 **not**
 in
@@ -938,9 +968,9 @@ the
 three
 Bloch-law
 manuscripts
-[S3]
-[S4]
-[S5]
+[S3:42–51]
+[S4:48–58]
+[S5:52–62]
 are
 entirely
 unformalized.

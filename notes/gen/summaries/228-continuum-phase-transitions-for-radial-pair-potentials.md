@@ -15,11 +15,20 @@ The two manuscripts:
 
 **Divergent-core temperature singularity** [S3:34, S3:36]:
 
-> 1
+> We construct a stable radial pair potential in three dimensions whose canonical
+free energy has a strict downward derivative jump at one common finite positive
+inverse temperature throughout an open interval of positive densities. The
+potential has a divergent repulsive core, a nontrivial attractive interval,
+and an integrable tail satisfying $`\phi(r)=o(r^{-3})`$. Its free-cube canonical
+free energy is finite at every positive inverse temperature and density. [S3:39–46]
 
 **Bounded algebraic-decay phase transition** [S4:48, S4:50]:
 
-> 2
+> We construct a bounded, continuous, stable radial pair potential in three
+dimensions with $`|\phi(r)|\le Cr^{-3-1/32}`$ for $`r\ge1`$. Throughout an
+open interval of positive densities, its canonical thermodynamic free energy
+is finite at every positive inverse temperature and has a strict downward
+derivative jump at one common finite positive inverse temperature. [S4:53–59]
 
 ## Undergraduate summary
 
@@ -106,11 +115,11 @@ independently from training alone.
 
 ## Section skeleton
 
-Two manuscripts: [S3] (title [S3:34], date [S3:36])
+Two manuscripts: [S3:39–46] (title [S3:34], date [S3:36])
 — `paper.tex` under `build/` with top-level
 section files (`introduction`, `model`,
 `convex-facts`, `kac`, `construction`,
-`convex`) and `refs.bib`; [S4] (title [S4:48],
+`convex`) and `refs.bib`; [S4:53–59] (title [S4:48],
 date [S4:50]) — `paper.tex` under `build/`
 with `sections/`, `figures/`, `refs.bib`. The
 family ships no `verification/` bundle.

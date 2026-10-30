@@ -15,7 +15,12 @@ The single manuscript:
 
 **A Coulomb ground-state density without Kohn--Sham ensemble representation** [S3:80–81, S3:82]:
 
-> 1
+> We construct a finite three-electron Coulomb molecule whose spin-summed
+ground-state density cannot be reproduced by any ground-state ensemble
+of noninteracting electrons in a single real, spin-independent local
+potential in $`L^{3/2}(\mathbf R^3)+L^\infty(\mathbf R^3)`$.
+The molecule has two equal positive integer nuclear charges,
+specified by an exact finite nonnumerical formula. [S3:83–90]
 
 ## Undergraduate summary
 
@@ -369,7 +374,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:83–90]
 (title
 [S3:80–81],
 date

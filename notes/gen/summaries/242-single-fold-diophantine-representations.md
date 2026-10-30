@@ -14,7 +14,10 @@
 
 **Single-fold Diophantine representations** [S3:28, S3:30]:
 
-> 1
+> Every recursively enumerable set of natural-number tuples has a polynomial
+Diophantine representation with exactly one complete auxiliary tuple for each
+member. This proves the single-fold conjecture and, consequently, the finite-fold
+conjecture. [S3:33–38]
 
 ## Undergraduate summary
 
@@ -279,7 +282,7 @@ alone.
 
 One
 manuscript:
-[S3]
+[S3:33–38]
 (title
 [S3:28],
 date

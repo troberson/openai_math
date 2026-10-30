@@ -14,15 +14,29 @@
 
 **Strict-ellipticity zero–one law** [S3:30, S3:32]:
 
-> 1
+> We prove the directional zero–one conjecture for nearest-neighbor random
+walks in independent and identically distributed strictly elliptic environments
+on $`\mathbb Z^d`$, $`d\ge3`$: the probability of escape in each fixed nonzero real
+direction is zero or one. Only strict positivity of the transition probabilities
+is required; no uniform lower bound or moment assumption is imposed. [S3:35–41]
 
 **Transience implies ballisticity** [S4:22, S4:24]:
 
-> 2
+> We prove that almost-sure transience in a fixed direction implies a
+deterministic limiting velocity with positive projection in that direction for
+nearest-neighbor random walks in independent and identically distributed
+uniformly elliptic environments on $`\mathbb Z^d`$, $`d\ge2`$. This resolves
+the ballisticity conjecture positively. [S4:27–33]
 
 **Finite-range-dependent zero–one law** [S5:31, S5:33]:
 
-> 3
+> We prove a directional zero–one law for uniformly elliptic nearest-neighbor
+random walks in stationary, ergodic, finite-range-dependent environments on
+$`\mathbb Z^d`$, $`d\ge3`$. For every fixed nonzero real direction, the probability
+of escape in that direction, averaged over the environment, is either zero
+or one. Finite-range dependence is imposed on the full transition rows:
+collections of rows at distance greater than a fixed range are independent,
+including collections indexed by infinite deterministic sets. [S5:36–44]
 
 ## Undergraduate summary
 
@@ -116,9 +130,9 @@ I cannot confirm these results independently from training alone.
 
 ## Section skeleton
 
-Three manuscripts: [S3] (title [S3:30], date [S3:32]) —
-`main.tex` under `build/`; [S4] (title [S4:22], date [S4:24])
-— `main.tex` under `build/`; [S5] (title [S5:31],
+Three manuscripts: [S3:35–41] (title [S3:30], date [S3:32]) —
+`main.tex` under `build/`; [S4:27–33] (title [S4:22], date [S4:24])
+— `main.tex` under `build/`; [S5:36–44] (title [S5:31],
 date [S5:33]) — `main.tex` under `build/manuscript/`.
 The family ships no `verification/` bundle.
 

@@ -15,8 +15,13 @@ projective contact Fano manifold of complex dimension at least three,
 with its given contact distribution, is contact-isomorphic to the
 adjoint variety of a simple complex Lie algebra. Consequently, every
 closed connected smooth positive quaternionic-Kähler manifold of real
-dimension $`4m\geq8`$ is homothetic to a compact symmetric Wolf space.
-3.inline	S3	3	18	Let $`X`$ be a smooth connected complex projective variety of dimension
+dimension $`4m\geq8`$ is homothetic to a compact symmetric Wolf space. [S2:60–66]"
+
+## Undergraduate summary
+
+A contact structure on a smooth complex projective variety of
+dimension $`2n+1`$ is an exact sequence of vector bundles with a
+nondegenerate Levi pairing "Let $`X`$ be a smooth connected complex projective variety of dimension
 $`2n+1`$, where $`n\geq1`$. A _contact structure_ on $`X`$ is an exact
 sequence of algebraic vector bundles
 $$0\longrightarrow F\longrightarrow T_X
@@ -27,13 +32,7 @@ $$F\otimes F\longrightarrow L,
 is everywhere nondegenerate. In a local frame of $`L`$, write $`\alpha`$
 for the scalar one-form representing $`\theta`$. The condition is
 equivalent to $`\alpha\wedge(d\alpha)^n`$ being nowhere zero. We call
-$`(X,F)`$ a _contact Fano manifold_ if $`-K_X`$ is ample. [S2:60–66]"
-
-## Undergraduate summary
-
-A contact structure on a smooth complex projective variety of
-dimension $`2n+1`$ is an exact sequence of vector bundles with a
-nondegenerate Levi pairing [S3:3–18]: "3"
+$`(X,F)`$ a _contact Fano manifold_ if $`-K_X`$ is ample. [S3:3–18]"
 
 When $`-K_X`$ is ample, the pair $`(X,F)`$ is a contact Fano manifold.
 The main theorem classifies them all 
@@ -96,9 +95,19 @@ quaternionic-Kähler Wolf space. [S3:105–114]
 A positive quaternionic-Kähler manifold has a twistor space that
 is contact Fano. The algebraic classification identifies the twistor
 space as an adjoint variety, and the metric is recovered from its
-Kähler--Einstein structure [S11:4–12]:
+Kähler--Einstein structure 
 
-> 8
+> To prove Corollary , we apply
+Theorem to the twistor space of a positive quaternionic
+Kähler manifold. The complex classification then determines
+the Riemannian metric after its scale has been fixed.
+
+\subsectionThe normalized metric and its twistor space
+
+For $`m\geq2`$, the holonomy containment in the corollary makes $`g`$
+Einstein ; see also \cite[Definition 1.1 and the
+following discussion]LeBrun1995. Thus, writing $`s>0`$ for its constant
+scalar curvature, we have $`\mathrm{Ric}_g=(s/4m)g`$. [S11:4–12]
 
 The holonomy condition makes the metric Einstein. After fixing the
 scale, the twistor bundle carries a Kähler--Einstein metric whose
@@ -136,18 +145,7 @@ Kähler–Einstein metric \cite[Theorem A]LeBrun1995. The finiteness and
 rigidity program of LeBrun and Salamon 
 provides the historical setting for the homogeneity conjecture. The general
 algebraic formulation, stated for example in
-\cite[Conjecture 1.1]Buczynski2010, concerns every contact Fano manifold.
-8.inline	S11	4	12	To prove Corollary , we apply
-Theorem to the twistor space of a positive quaternionic
-Kähler manifold. The complex classification then determines
-the Riemannian metric after its scale has been fixed.
-
-\subsectionThe normalized metric and its twistor space
-
-For $`m\geq2`$, the holonomy containment in the corollary makes $`g`$
-Einstein ; see also \cite[Definition 1.1 and the
-following discussion]LeBrun1995. Thus, writing $`s>0`$ for its constant
-scalar curvature, we have $`\mathrm{Ric}_g=(s/4m)g`$. [S3:128–140]
+\cite[Conjecture 1.1]Buczynski2010, concerns every contact Fano manifold. [S3:128–140]
 
 Poon and Salamon classified the dimension-eight case; Ye and Druel
 handled complex dimensions three and five. Buczyński and Wiśniewski
@@ -187,7 +185,7 @@ admits a Kähler--Einstein metric of positive scalar curvature
 6. Descent [S8]
 7. Jets [S9]
 8. Homogeneous classification [S10]
-9. Twistor spaces and quaternionic Kähler metric [S11]
+9. Twistor spaces and quaternionic Kähler metric [S11:4–12]
 
 ## Coverage
 

@@ -13,7 +13,11 @@
 [S2:537] carries the `\resultentry`, so the release blurb and the overview agree.
 The single manuscript [S3:36, S3:38]:
 
-> 1
+> We prove that the complete double-dimer loop ensemble for the Temperleyan
+square lattice in the upper half-plane converges to nested $`\mathrm{CLE}_4`$.
+The convergence holds along the full mesh limit and matches every macroscopic
+loop as an unparametrized curve. This resolves the half-plane Temperleyan form
+of the double-dimer $`\mathrm{CLE}_4`$ scaling-limit conjecture. [S3:41–47]
 
 ## Undergraduate summary
 
@@ -77,7 +81,7 @@ cannot confirm this independently from training alone.
 
 ## Section skeleton
 
-One manuscript [S3]: `main.tex` under `build/` with
+One manuscript [S3:41–47]: `main.tex` under `build/` with
 `sections/`, `figures/`, `references.tex`. The
 family ships no `verification/` bundle.
 

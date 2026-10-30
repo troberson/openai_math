@@ -15,11 +15,21 @@ The two manuscripts:
 
 **Pure-point spectrum, two-dimensional Anderson model** [S3:45, S3:47]:
 
-> 1
+> For each fixed positive disorder strength, we prove that the nearest-neighbor
+Anderson operator on the square lattice with independent uniform site
+potentials almost surely has pure-point spectral type throughout its spectrum.
+This resolves the pure-point assertion of the two-dimensional Anderson
+localization conjecture for the uniform single-site law. [S3:50–56]
 
 **Absolutely continuous spectrum, weak disorder, $`d \geq 3`$** [S4:35, S4:37]:
 
-> 2
+> For each fixed dimension $`d\ge3`$ and each fixed sufficiently small positive
+disorder strength, we prove that the Anderson operator on $`\mathbb Z^d`$ with
+independent uniform site potentials almost surely has purely absolutely
+continuous spectrum with nonzero weight on an open energy interval. The
+interval may depend on $`d`$ but is independent of the disorder strength.
+This settles the purely absolutely continuous energy-range question in
+Simon's Problem 1 for this model. [S4:40–48]
 
 ## Undergraduate summary
 
@@ -385,7 +395,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:50–56]
 (title
 [S3:45],
 date
@@ -394,7 +404,7 @@ date
 `paper.tex`
 under
 `build/`.
-[S4]
+[S4:40–48]
 (title
 [S4:35],
 date
@@ -443,13 +453,13 @@ links
 the
 pure-point
 manuscript**
-[S3]
+[S3:50–56]
 [S5:5];
 the
 absolutely
 continuous
 manuscript
-[S4]
+[S4:40–48]
 is
 outside
 the
@@ -675,7 +685,7 @@ The
 absolutely
 continuous
 manuscript
-[S4]
+[S4:40–48]
 is
 entirely
 unformalized,
@@ -686,7 +696,7 @@ the
 linked
 pure-point
 manuscript
-[S3]
+[S3:50–56]
 the
 formalized
 statement

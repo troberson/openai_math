@@ -15,15 +15,42 @@ The three manuscripts:
 
 **Four-state Potts threshold** [S3:37, S3:40]:
 
-> 1
+> We establish the exact Kesten–Stigum reconstruction threshold for the
+ferromagnetic four-state Potts broadcast model on every regular $`d`$-ary
+tree with $`d\ge2`$ and every Poisson Galton–Watson tree of mean $`d>0`$.
+Reconstruction occurs exactly when $`d\lambda^2>1`$; we prove
+nonreconstruction at and below the threshold, including equality.
+In the Poisson model the whole tree is observed and the reconstruction
+advantage is averaged without conditioning on survival. The proof uses
+reproducible exact-arithmetic verification of polynomial inequalities. [S3:43–52]
 
 **Four-state capacity criterion** [S4:27, S4:29]:
 
-> 2
+> For the ferromagnetic four-state broadcast model with $`0<\lambda<1`$,
+we prove that reconstruction on a bounded-degree deterministic rooted
+tree occurs exactly when its $`L^3`$ capacity with edge resistances
+$`\lambda^{-2|e|}`$ is positive. This gives an exact criterion without
+regularity or growth-rate assumptions on the tree, including at the
+exponential critical boundary. [S4:34–41]
 
 **Three-state symmetric threshold** [S5:3, S5:5]:
 
-> 3
+> We determine the exact reconstruction threshold for the symmetric
+three-state broadcast process on every regular $`b`$-ary tree, $`b\ge2`$,
+and every observed Poisson Galton–Watson tree of mean $`d>1`$.
+Reconstruction occurs exactly when $`d\lambda^2>1`$, with $`d=b`$ in the
+regular model; there is non-reconstruction at equality for either sign
+of the channel parameter. The Poisson advantage is averaged over trees
+and spins without conditioning on survival. This resolves the all-degree
+three-state regular-tree prediction.
+Combining the Poisson theorem with known tree-to-graph and algorithmic
+results gives the exact weak-recovery threshold for the symmetric
+three-community sparse stochastic block model with independent uniform
+labels, fixed within- and between-community rates $`a,b>0`$, and mean
+degree $`(a+2b)/3>1`$: recovery is possible exactly when
+$`(a-b)^2>3(a+2b)`$. Above this threshold it is achievable in
+$`O(n\log n)`$ time; at or below it, weak recovery is
+information-theoretically impossible. [S5:8–25]
 
 ## Undergraduate summary
 
@@ -123,10 +150,10 @@ confirm these independently from training alone.
 
 ## Section skeleton
 
-Three manuscripts: [S3] (title [S3:37], date [S3:40])
+Three manuscripts: [S3:43–52] (title [S3:37], date [S3:40])
 — `main.tex` under `build/` with
-`references.tex`; [S4] (title [S4:27], date [S4:29])
-— `main.tex` under `build/`; [S5] (title [S5:3],
+`references.tex`; [S4:34–41] (title [S4:27], date [S4:29])
+— `main.tex` under `build/`; [S5:8–25] (title [S5:3],
 date [S5:5]) — `main.tex` under `build/` with
 `preamble.tex`. Two verification bundles ship: the
 three-state bundle [S9] (`README.md`, `reproduce.py`,

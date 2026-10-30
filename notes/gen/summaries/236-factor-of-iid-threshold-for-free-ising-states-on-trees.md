@@ -14,7 +14,12 @@
 
 **Factor-of-IID threshold** [S3:34, S3:36]:
 
-> 1
+> For every integer $`d\ge3`$ and inverse temperature $`\beta\ge0`$, the free
+zero-field ferromagnetic Ising measure on the infinite $`d`$-regular tree is
+a factor of IID exactly when $`\tanh\beta\le(d-1)^{-1/2}`$. We prove the
+positive implication, including equality, resolving the conjecture of Nam,
+Sly and Zhang; the strict converse is known. The spin factor can be chosen
+to commute with every tree automorphism on every label input. [S3:39–46]
 
 ## Undergraduate summary
 
@@ -101,7 +106,7 @@ training alone.
 
 ## Section skeleton
 
-One manuscript: [S3] (title [S3:34], date [S3:36])
+One manuscript: [S3:39–46] (title [S3:34], date [S3:36])
 — `main.tex` under `build/` with `sections/`
 (including `03-critical-information.tex`,
 `08b-recovery.tex`). The family ships no

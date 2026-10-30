@@ -15,11 +15,23 @@ The two manuscripts:
 
 **Moment-integral construction** [S3:23, S3:26]:
 
-> 1
+> For each $`0<\kappa<8`$, we construct a deterministic Hausdorff gauge
+that almost surely assigns positive finite measure to every nontrivial
+compact positive-time segment of chordal Schramm–Loewner evolution.
+This answers Schramm's Hausdorff-measure existence problem in this
+parameter range. The entire trace has finite expected gauge measure
+in each bounded box. [S3:29–36]
 
 **Explicit gauge** [S4:20, S4:23]:
 
-> 2
+> For each fixed $`0<\kappa<8`$, let $`d=1+\kappa/8`$.
+The gauge $`h(r)=r^d(\log\log(1/r))^{(2-d)/2}`$ at sufficiently small
+radii almost surely gives positive finite Hausdorff measure to every
+nontrivial positive-time compact segment of chordal $`\mathrm{SLE}_\kappa`$.
+This gives an explicit solution to Schramm's Hausdorff-measure problem
+in this parameter range. The entire trace has finite expected measure
+in every bounded disk. The exponent-one iterated-logarithm gauge
+suggested by Schramm is not sigma-finite on any such segment. [S5:1–8]
 
 ## Undergraduate summary
 
@@ -90,7 +102,7 @@ from training alone.
 
 ## Section skeleton
 
-Two manuscripts: [S3] (title [S3:23], date [S3:26])
+Two manuscripts: [S3:29–36] (title [S3:23], date [S3:26])
 — `main.tex` under `build/` with `sections/`;
 [S4] (title [S4:20], date [S4:23]) — `main.tex`
 under `build/` with `sections/` (abstract in

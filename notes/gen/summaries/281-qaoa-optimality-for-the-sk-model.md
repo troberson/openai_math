@@ -15,11 +15,25 @@ The two manuscripts:
 
 **QAOA attains the SK ground-state energy in the thermodynamic-first limit** [S3:51–53, S3:54]:
 
-> 1
+> We prove that the Quantum Approximate Optimization Algorithm (QAOA)
+approaches the ground-state energy per spin of the Gaussian zero-field
+Sherrington–Kirkpatrick model when system size tends to infinity first
+and circuit depth then increases. For every accuracy, some finite depth
+and deterministic angles, independent of system size and disorder,
+achieve that accuracy in the limiting expected energy per spin using
+the standard cost Hamiltonian and transverse-field mixer. This proves
+the eventual Parisi-optimality conjecture of Basso, Farhi, Marwaha,
+Villalonga, and Zhou in its fixed-parameter thermodynamic formulation.
+We give no quantitative bound on the required depth or efficient
+angle-selection procedure. [S3:75–87]
 
 **Full support of the zero-temperature Sherrington–Kirkpatrick order parameter** [S4:26–28, S4:29]:
 
-> 2
+> We prove that every admissible integrable minimizer of the zero-temperature
+Parisi functional for the pure, zero-field Sherrington–Kirkpatrick model
+has full relative Stieltjes support on $`[0,1)`$. Thus its support has no
+gaps at any overlap scale below one. We use the covariance normalization
+$`\xi(t)=t^2/2`$. [S4:32–38]
 
 ## Undergraduate summary
 
@@ -487,7 +501,7 @@ alone.
 
 Two
 manuscripts.
-[S3]
+[S3:75–87]
 (title
 [S3:51–53],
 date
@@ -513,7 +527,7 @@ temperature,
 and
 regular
 MaxCut).
-[S4]
+[S4:32–38]
 (title
 [S4:26–28],
 date

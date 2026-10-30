@@ -15,15 +15,31 @@ The three manuscripts:
 
 **Square-integrable-connection inextendibility** [S3:7, S3:9]:
 
-> 1
+> For each fixed rotating subextremal Kerr background with mass $`M>0`$ and
+rotation $`0<|\mathfrak a|<M`$, we prove that the smooth vacuum data near
+its complete two-ended bridge whose full maximal globally hyperbolic
+development admits a future $`C^0\cap W^{1,2}_{\mathrm{loc}}`$ extension
+form a meagre set in the weighted smooth topology. The extension metric
+is continuous and nondegenerate, and its weak connection is locally
+square-integrable. The neighborhood requires smallness of only the tenth
+weighted seminorm, while the topology tests every finite order. [S3:13–22]
 
 **$`C^1`$ future inextendibility** [S4:44–46, S4:47]:
 
-> 2
+> For each fixed Kerr spacetime with mass $`M>0`$ and rotation
+$`0<\mathfrak a<M`$, we prove that a dense $`G_\delta`$ set of nearby smooth,
+complete two-ended vacuum data has a maximal globally hyperbolic
+development with no future $`C^1`$ extension. The neighborhood and
+genericity are defined in a weighted smooth topology, and ambient
+extensions may be nonvacuum. [S4:51–58]
 
 **$`C^2`$ future inextendibility** [S5:50–51, S5:52]:
 
-> 3
+> For every fixed rotating subextremal Kerr bridge, we prove that smooth
+vacuum data admitting a $`C^2`$ future extension of their full maximal
+globally hyperbolic development form a meagre set in a neighborhood
+defined by one finite-order seminorm. The topology allows arbitrary
+symbol-bounded asymptotically flat tails and imposes no symmetry. [S5:55–61]
 
 ## Undergraduate summary
 
@@ -532,7 +548,7 @@ alone.
 
 Three
 manuscripts.
-[S3]
+[S3:13–22]
 (title
 [S3:7],
 date
@@ -541,7 +557,7 @@ date
 `main.tex`
 under
 `build/`.
-[S4]
+[S4:51–58]
 (title
 [S4:44–46],
 date
@@ -550,7 +566,7 @@ date
 `main.tex`
 under
 `build/`.
-[S5]
+[S5:55–61]
 (title
 [S5:50–51],
 date
@@ -603,9 +619,9 @@ yaml.
 All
 three
 manuscripts
-[S3]
-[S4]
-[S5]
+[S3:13–22]
+[S4:51–58]
+[S5:55–61]
 sit
 entirely
 outside

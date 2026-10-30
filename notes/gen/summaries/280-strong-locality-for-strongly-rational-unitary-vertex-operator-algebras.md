@@ -15,7 +15,7 @@ The single manuscript:
 
 **Strongly rational unitary vertex operator algebras and conformal nets** [S3:40–41, S3:42]:
 
-> 1
+> Every simple unitary strongly rational vertex operator algebra generates a completely rational conformal net. All its simple grading-restricted modules are unitarizable, its canonical fusion forms are positive, and the Carpi–Weiner–Xu functor gives a braided unitary tensor equivalence from its grading-restricted finite-length module category onto the finite-index sectors of the net. Gui's extension theorems then identify normalized irreducible finite-index local extensions of these nets with simple CFT-type conformal extensions of the vertex operator algebras. [S3:45–47]
 
 ## Undergraduate summary
 
@@ -485,7 +485,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:45–47]
 (title
 [S3:40–41],
 date

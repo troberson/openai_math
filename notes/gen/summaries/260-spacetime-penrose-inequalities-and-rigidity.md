@@ -15,7 +15,15 @@ The family ships **13 manuscripts**; the scope note links one of them:
 
 **Area-controlled end replacement and the Bondi–Penrose inequality in the CKS class** [S3:46, S3:48]:
 
-> 1
+> We replace a three-dimensional Cha–Khuri–Sakovich hyperboloidal end
+by an asymptotically flat end while preserving the dominant energy
+condition and each fixed compact interior. For strictly future-timelike
+CKS initial-data charge, the replacements lose asymptotically no enclosing area
+and their ADM masses tend to the invariant Bondi mass. Combining this
+construction with the companion numerical spacetime Penrose theorem
+yields the sharp Bondi bound for possibly disconnected weakly future
+trapped boundaries in this class. Horizon-regular Schwarzschild
+exteriors attain equality at every positive mass. [S3:51–61]
 
 ## Undergraduate summary
 
@@ -523,7 +531,7 @@ only
 the
 CKS
 manuscript
-[S3]
+[S3:51–61]
 (title
 [S3:46],
 date
@@ -675,7 +683,7 @@ links
 the
 CKS
 manuscript**
-[S3]
+[S3:51–61]
 [S4:5];
 the
 other

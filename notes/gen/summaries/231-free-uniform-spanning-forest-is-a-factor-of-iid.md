@@ -14,7 +14,14 @@
 
 **Free USF as a factor of IID** [S3:35, S3:37]:
 
-> 1
+> We prove that the free uniform spanning forest is a factor of IID on every
+infinite connected locally finite simple unweighted graph. One Borel rule works
+for all such graphs and uses no root, answering affirmatively the general factor
+question for unimodular random graphs. We also show that every
+translation-invariant strongly Rayleigh process indexed by a
+countable group is a factor of IID, including invariant determinantal
+processes with Hermitian positive-contraction kernels. This group-action
+conclusion requires no amenability. [S3:41–50]
 
 ## Undergraduate summary
 
@@ -87,7 +94,7 @@ independently from training alone.
 
 ## Section skeleton
 
-One manuscript: [S3] (title [S3:35], date [S3:37])
+One manuscript: [S3:41–50] (title [S3:35], date [S3:37])
 — `paper.tex` under `build/` with `sections/`. The
 family ships no `verification/` bundle.
 

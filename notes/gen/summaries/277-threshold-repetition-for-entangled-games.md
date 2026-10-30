@@ -15,7 +15,15 @@ The single manuscript:
 
 **Threshold parallel repetition for finite-dimensional entangled games** [S3:25, S3:27]:
 
-> 1
+> For every finite two-player game with entangled value $`v<1`$, we prove
+exponential decay for the probability of winning at least a $`v+\delta`$
+fraction of $`k`$ independent repetitions, uniformly over all
+finite-dimensional joint strategies. The result allows arbitrary correlated
+question distributions and holds for every $`0<\delta<1-v`$ and $`k\ge1`$.
+Its universal rate is proportional to
+$`\delta^5/(1+\log(|\mathcal A||\mathcal B|))`$, where
+$`\mathcal A,\mathcal B`$ are the answer alphabets. For each fixed question
+distribution, we also obtain an explicit cubic rate in $`\delta`$. [S3:30–40]
 
 ## Undergraduate summary
 
@@ -369,7 +377,7 @@ alone.
 
 One
 manuscript.
-[S3]
+[S3:30–40]
 (title
 [S3:25],
 date
