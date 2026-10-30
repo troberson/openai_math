@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [mathematical-physics](../topics/mathematical-physics.md) · [category-theory](../topics/category-theory.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md](../../../../notes/gen/summaries/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md) |
 
 ## Manuscripts
 
