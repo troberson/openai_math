@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) · [calculus-of-variations](../topics/calculus-of-variations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [367-critical-dimension-for-the-one-phase-bernoulli-problem.md](../../../../notes/gen/summaries/367-critical-dimension-for-the-one-phase-bernoulli-problem.md) |
 
 ## Manuscripts
 
