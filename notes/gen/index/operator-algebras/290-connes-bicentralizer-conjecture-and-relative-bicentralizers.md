@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [290-connes-bicentralizer-conjecture-and-relative-bicentralizers.md](../../../../notes/gen/summaries/290-connes-bicentralizer-conjecture-and-relative-bicentralizers.md) |
 
 ## Manuscripts
 
