@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [354-isoperimetric-regions-in-the-cubic-three-torus.md](../../../../notes/gen/summaries/354-isoperimetric-regions-in-the-cubic-three-torus.md) |
 
 ## Manuscripts
 
