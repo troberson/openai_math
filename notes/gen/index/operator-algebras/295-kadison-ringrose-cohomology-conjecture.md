@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [295-kadison-ringrose-cohomology-conjecture.md](../../../../notes/gen/summaries/295-kadison-ringrose-cohomology-conjecture.md) |
 
 ## Manuscripts
 
