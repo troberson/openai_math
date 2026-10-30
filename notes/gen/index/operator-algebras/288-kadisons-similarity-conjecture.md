@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [288-kadisons-similarity-conjecture.md](../../../../notes/gen/summaries/288-kadisons-similarity-conjecture.md) |
 
 ## Manuscripts
 
