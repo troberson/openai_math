@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [quantum-theory](../topics/quantum-theory.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [371-stable-blowup-for-a-defocusing-schrodinger-equation.md](../../../../notes/gen/summaries/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) |
 
 ## Manuscripts
 
