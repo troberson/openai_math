@@ -1,0 +1,183 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 289](../index/operator-algebras/289-strong-kadison-kastler-conjecture.md)
+
+# 289 — The strong Kadison–Kastler conjecture
+
+[Index page](../index/operator-algebras/289-strong-kadison-kastler-conjecture.md)
+
+## Original CONTENTS.md summary
+
+[S1:7200] (family entry):
+
+> **289. Strong Kadison–Kastler stability and its spatial boundaries.** Proves that sufficiently close unital von Neumann algebras on the same Hilbert space are conjugate by a unitary arbitrarily close to the identity, with a universal tolerance in the operator-norm distance between unit balls. Counterexamples show that near-identity conjugacy fails for one-sided near inclusions, and that arbitrarily close norm-separable *C*^*-algebras need not be ambiently unitarily conjugate. ([Lean](../../../lean/docs/289.md))
+
+[S2:672] carries the `\resultentry` with all three manuscripts, so the release blurb and the overview agree. The three manuscripts [S3:3, S3:5, S4:33, S4:35, S5:33, S5:35]:
+
+> We prove that sufficiently close unital von Neumann algebras are
+conjugate by a unitary arbitrarily close to the identity. The tolerance
+depends only on the prescribed distance of that unitary from the
+identity, uniformly over all algebras, representations, and Hilbert
+spaces. This resolves the strong Kadison–Kastler conjecture. [S3:8–14]
+
+> We give a negative answer to the unrestricted small-spatial-embedding
+problem for one-sided near inclusions of von Neumann algebras. On
+separable complex Hilbert spaces, we construct pairs of unital von
+Neumann algebras with common identity whose one-sided gaps tend to zero.
+Spatial embeddings of the source into the target exist, but every
+implementing unitary stays a fixed positive distance from the identity.
+The obstruction therefore concerns small implementing unitaries, rather
+than the existence of spatial embeddings. [S4:38–47]
+
+> We disprove the separable $`C^*`$-algebraic spatial form of the
+Kadison–Kastler conjecture. For every $`\varepsilon>0`$, we construct
+unital, norm-separable $`C^*`$-algebras on a common separable complex
+Hilbert space, with the same identity and Kadison–Kastler distance less
+than $`\varepsilon`$, that are not conjugate by any unitary. The two
+algebras have the same von Neumann closure. [S5:40–47]
+
+## Undergraduate summary
+
+A **von Neumann algebra** is a collection of operators on a Hilbert space
+that is closed under taking adjoints and under "limits" of operators, and it
+is the language of noncommutative geometry and quantum measurement. Two such
+algebras sitting on the *same* Hilbert space can be nearly the same set of
+operators without being identical.
+
+The **Kadison–Kastler conjecture** is the question of how "close" two algebras
+must be before they are not just close but *the same up to a change of
+coordinates*. A **unitary** is an operator implementing such a coordinate
+change; the **strong** form asks for the change to be *arbitrarily small*
+— a unitary as close to "do nothing" as you please [S3:8–14].
+
+This family answers that question in three moves. The first manuscript proves
+the strong form positively: close enough, and a near-identity unitary does
+the job, with a tolerance that depends only on how close you want the unitary
+[​S3:8–14]. The second and third manuscripts then show the *boundaries* where
+the answer turns negative — near-identity conjugacy fails for one-sided near
+inclusions [S4:38–47] and for arbitrary close separable *C*^*-algebras
+[S5:40–47]. Together they map exactly where the positive theorem stops.
+
+## Graduate summary
+
+**Main theorem (Manuscript 1)** [S3:8–14, S2:672].
+For every $`\varepsilon>0`$ there is a $`\delta>0`$ such that any two unital von
+Neumann algebras $`M, N \subseteq B(H)`$ on the same complex Hilbert space with
+Kadison–Kastler distance $`\mathrm{kk}(M,N) < \delta`$ are conjugate by a
+unitary $`u`$ with $`\lVert u - 1\rVert < \varepsilon`$. The tolerance $`\delta`$
+depends only on $`\varepsilon`$, uniformly over the algebras, their
+representations, and $`H`$. This resolves the strong Kadison–Kastler
+conjecture. The Kadison–Kastler distance is the Hausdorff distance between
+the two unit balls in operator norm (the `kkDistance` the comparator defines
+[S7:19–20]).
+
+**Boundary 1 — one-sided near inclusions (Manuscript 2)** [S4:38–47].
+On separable complex Hilbert spaces there are pairs of unital von Neumann
+algebras with common identity whose *one-sided* gaps tend to zero, so that
+spatial embeddings of the source into the target exist, but every
+implementing unitary stays a fixed positive distance from the identity. The
+obstruction is the size of the implementing unitary, not the existence of an
+embedding — the strong form's $`\lVert u - 1\rVert < \varepsilon`$ requirement
+is exactly what fails.
+
+**Boundary 2 — separable *C*^*-algebras (Manuscript 3)** [S5:40–47].
+For every $`\varepsilon>0`$ there are unital, norm-separable $`C^*`$-algebras on
+a common separable Hilbert space, with the same identity and Kadison–Kastler
+distance less than $`\varepsilon`$, that are not conjugate by *any* unitary,
+and the two algebras have the same von Neumann closure. This disproves the
+separable $`C^*`$-algebraic spatial form: closeness in the Kadison–Kastler
+metric, even with identical bidual, does not force spatial conjugacy below
+the von Neumann level.
+
+## History of the conjecture
+
+The Kadison–Kastler problem asks whether sufficiently close von Neumann
+algebras are isomorphic, and the strong form — due in its sharp near-identity
+quadratic to the work on spatial stability — asks for the implementing
+unitary to be close to the identity with a tolerance uniform over the class.
+Manuscript 1 supplies that positive answer. The two negative results are the
+point of assembling the family: they show the theorem is genuinely sharp. The
+one-sided result [S4:38–47] shows the two-sided distance hypothesis is
+load-bearing, and the $`C^*`$-algebra result [S5:40–47] shows the conclusion
+does not survive below the von Neumann level, even with a match of von
+Neumann closures.
+
+**Prior (my training data, not this repo).** The original Kadison–Kastler
+conjecture (1970s) was resolved in the isomorphism form, and subsequent work
+sharpened it to quantitative spatial statements. The near-identity strong form
+with a universal tolerance, and the two sharp negative boundaries assembled as
+one family, are the novel contributions claimed here; I cannot verify the
+operator-algebraic estimates independently from training alone.
+
+## Consequences
+
+- **The strong Kadison–Kastler conjecture is resolved** [S3:8–14, S2:672]:
+  for every $`\varepsilon>0`$ a $`\delta>0`$ makes $`\mathrm{kk}`$-close unital
+  von Neumann algebras conjugate by a unitary within $`\varepsilon`$ of the
+  identity, uniformly. This is the named resolution the ledger's
+  `resolves_named` flag records.
+- **The two-sided hypothesis is sharp** [S4:38–47]: one-sided near inclusions
+  admit embeddings with no small implementing unitary, so the distance
+  cannot be weakened to one-sided.
+- **The von Neumann hypothesis is sharp** [S5:40–47]: arbitrarily close
+  separable $`C^*`$-algebras with the same von Neumann closure need not be
+  spatially conjugate at all, so the conclusion does not descend below the
+  von Neumann level.
+
+## Section skeleton
+
+Three manuscripts. Manuscript 1 [S3:8–14]: root `build/main.tex` (34 lines), 10
+sections under `build/sections/` (01-introduction through 10-comparison, the
+last an appendix), a `references.bib` bibliography. Manuscript 2 [S4:38–47]: root
+`build/main.tex` (54 lines), 4 sections under `build/sections/`
+(01-introduction, 02-circle, 03-near, 04-obstruction), a `references.bib`.
+Manuscript 3 [S5:40–47]: a single-file root `build/main.tex` (665 lines) with the
+introduction and the constructions inline plus a companion `references`. No
+verification bundle for any of the three.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T2** with one scope note [S6:9] and
+one comparator stub [S7], but **no** `main_results` entry and **no** OAI
+tree. The scope note [S6:9] states: "The formalization proves the strong
+Kadison–Kastler conjecture uniformly. For every $`\varepsilon>0`$, there is a
+$`\delta>0`$ such that any two unital von Neumann algebras on the same complex
+Hilbert space at Kadison–Kastler distance below $`\delta`$ are conjugate by a
+unitary $`u`$ with $`\lVert u-1\rVert<\varepsilon`$. The tolerance depends only
+on $`\varepsilon`$, uniformly over the algebras, their representations, and the
+Hilbert space." The comparator link [S6:15] names
+`StrongKadisonKastler.lean`.
+
+`StrongKadisonKastler.lean` (44 lines) carries 1 `sorry` occurrence — the
+`UniversalStrongStability` proposition [S7:31–35] is set up exactly as the
+manuscript's theorem (the `kkDistance` on unit balls, `NearConjugacy`
+requiring $`\lVert v - 1\rVert < \varepsilon`$), and
+`theorem universal_strong_stability` at [S7:37] ends in `sorry` at [S7:38].
+No proved copy exists under `lean/OAI/`. Only the positive manuscript is
+formalized as a target; neither counterexample [S4, S5] has a scope note or
+comparator. The gap is the formalization itself: the release set the target
+and described the scope, but shipped no proof. The reading is of source text
+only.
+
+## Coverage
+
+The ledger row `fam=289` [S8] records the tier and the counts:
+`tier=T2`, `paps=3`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `scope_chars=433`, `verification=0`, `trace=`. The T2 shape
+is "scope note and comparator stubs exist, no formalization": the release
+identified the target of the positive manuscript, wrote a scope note, and
+created one challenge stub with a single `sorry` (`StrongKadisonKastler.lean`),
+but did not produce a `main_results` entry or an OAI proof. The shape flags
+are `counterexample`, `resolves_named=1`, `counterex_broad=1` — the two
+negative manuscripts are what drive the counterexample shape.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7200] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 289 at [S2:672] |
+| S3 | [`preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/main.tex`](../../../preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/main.tex) | 34 | manuscript 1 (strong stability); title [S3:3], date [S3:5], abstract [S3:8–14] |
+| S4 | [`preprints/Near-Inclusions-of-von-Neumann-Algebras-Without-Small-Spatial-Embeddings-October-5-2026/build/main.tex`](../../../preprints/Near-Inclusions-of-von-Neumann-Algebras-Without-Small-Spatial-Embeddings-October-5-2026/build/main.tex) | 54 | manuscript 2 (one-sided near inclusions); title [S4:33], date [S4:35], abstract [S4:38–47] |
+| S5 | [`preprints/Close-Separable-Cstar-Algebras-Without-Spatial-Conjugacy-October-5-2026/build/main.tex`](../../../preprints/Close-Separable-Cstar-Algebras-Without-Spatial-Conjugacy-October-5-2026/build/main.tex) | 664 | manuscript 3 (C*-algebra obstruction); title [S5:33], date [S5:35], abstract [S5:40–47] |
+| S6 | [`lean/docs/289.md`](../../../lean/docs/289.md) | 15 | scope note — the formalization's Scope at [S6:9] and its comparator link at [S6:15] |
+| S7 | [`lean/ComparatorChallenges/StrongKadisonKastler.lean`](../../../lean/ComparatorChallenges/StrongKadisonKastler.lean) | 44 | comparator stub — `universal_strong_stability` at [S7:37] with its `sorry` at [S7:38] |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=289`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

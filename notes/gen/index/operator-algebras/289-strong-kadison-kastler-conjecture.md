@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [289-strong-kadison-kastler-conjecture.md](../../../../notes/gen/summaries/289-strong-kadison-kastler-conjecture.md) |
 
 ## Manuscripts
 
