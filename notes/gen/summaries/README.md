@@ -1,6 +1,6 @@
 # Family summary pages
 
-370 extended summaries, one per family, each built from the manuscript's own LaTeX and
+371 extended summaries, one per family, each built from the manuscript's own LaTeX and
 verified by script. The pages are rendered by `build_summaries.py` from a hand-edited data
 file and the page skeleton; the checker measures the rendered bytes and writes nothing.
 
@@ -16,7 +16,7 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **418** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub** with a `sorry` body. |
 | `main_results` entries | **191** entries over reaching **138** of 373 families | `lean/formalization.yaml`'s `main_results:` list. |
 
-The summaries are a fifth layer: **370** of **373** families have a page.
+The summaries are a fifth layer: **371** of **373** families have a page.
 
 ## The pages
 
@@ -388,6 +388,7 @@ The summaries are a fifth layer: **370** of **373** families have a page.
 - [371](371-stable-blowup-for-a-defocusing-schrodinger-equation.md) — Stable blowup for a defocusing Schrödinger equation
 - [372](372-global-uniqueness-in-smooth-isotropic-elasticity.md) — Global uniqueness in smooth isotropic elasticity
 - [373](373-nonattainment-in-three-marginal-coulomb-transport.md) — Nonattainment in three-marginal Coulomb transport
+- [374](374-sharp-one-third-stability-of-optimal-transport-maps.md) — Sharp one-third stability of optimal transport maps
 - [375](375-de-giorgis-conjecture-in-dimension-eight.md) — De Giorgi's conjecture in dimension eight
 - [378](378-disproof-of-the-exponential-time-hypothesis.md) — Disproof of the Exponential Time Hypothesis
 
@@ -413,7 +414,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **3 families have no summary page.** The 370 pages cover 370 of 373 families; the rest are recorded
+- **2 families have no summary page.** The 371 pages cover 371 of 373 families; the rest are recorded
   in the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

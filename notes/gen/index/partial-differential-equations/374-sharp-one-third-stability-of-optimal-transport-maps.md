@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [convex-geometry](../topics/convex-geometry.md) · [optimal-transport](../topics/optimal-transport.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [374-sharp-one-third-stability-of-optimal-transport-maps.md](../../../../notes/gen/summaries/374-sharp-one-third-stability-of-optimal-transport-maps.md) |
 
 ## Manuscripts
 
