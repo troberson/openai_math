@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, classification |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) · [logic](../topics/logic.md) · [representation-theory](../topics/representation-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [297-a-zfc-counterexample-to-naimarks-problem.md](../../../../notes/gen/summaries/297-a-zfc-counterexample-to-naimarks-problem.md) |
 
 ## Manuscripts
 
