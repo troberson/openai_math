@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [operator-algebras](../topics/operator-algebras.md) · [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [information-theory](../topics/information-theory.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [273-entropy-photon-number-inequality.md](../../../../notes/gen/summaries/273-entropy-photon-number-inequality.md) |
 
 ## Manuscripts
 
