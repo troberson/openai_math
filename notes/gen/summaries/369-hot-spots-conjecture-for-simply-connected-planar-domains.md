@@ -1,0 +1,149 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Partial differential equations](../index/disciplines/partial-differential-equations.md) / [Family 369](../index/partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md)
+
+# 369 — The hot spots conjecture for simply connected planar domains
+
+[Index page](../index/partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md)
+
+## Original CONTENTS.md summary
+
+[S1:8938] (family entry):
+
+> **369. The hot spots conjecture for simply connected planar domains.** Proves a strict form of Burdzy's simply connected hot spots conjecture. On every smooth bounded simply connected planar domain, each nonzero eigenfunction for the first positive Neumann eigenvalue has no interior critical point, so all global extrema lie on the boundary. Eigenvalue multiplicity is allowed. ([Lean](lean/docs/369.md))
+
+[S2:841] carries the `\resultentry` with a single manuscript [S3].
+The scope note states the formalized result:
+
+> The strict hot-spots conjecture asks whether extrema of a first nonconstant Neumann eigenfunction occur only on the boundary. The formalization proves the stronger interior statement on every nonempty smooth bounded simply connected planar domain: every nonzero eigenfunction in the first positive Neumann eigenspace has nonvanishing gradient throughout the interior. Consequently all global maxima and minima lie on the boundary. The conclusion applies to every eigenfunction even when the eigenvalue is multiple. [S4:9]
+
+## Undergraduate summary
+
+The **hot spots conjecture** is a question about where the hottest
+and coldest points are in a region. Take a thin metal plate shaped
+like a simply connected region (no holes), heat it, and let heat
+flow until it reaches a steady state. The **first positive Neumann
+eigenfunction** describes the slowest-decaying steady-state
+temperature pattern (Neumann boundary conditions mean the edges are
+thermally insulated — no heat flows in or out).
+
+The conjecture says: the **hottest and coldest points are always on
+the boundary** of the plate, never in the interior. In other words,
+a steady-state temperature pattern on a simply connected planar
+region has **no interior peak or valley** — the gradient is
+nonzero everywhere inside.
+
+This result proves that conjecture in its **strict** form, for every
+smooth bounded simply connected planar domain, and even when the
+eigenvalue is **multiple** (when there is more than one independent
+such pattern, every one of them has the boundary-extrema property).
+
+The release formalizes this result at tier T2 — the scope note and
+one comparator stub are present, but there is no proved Lean tree
+[S4, S5, S6].
+
+## Graduate summary
+
+**Main theorem** [S3:59–61, S1:8938, S4:9].
+On every smooth bounded simply connected planar domain
+$`\Omega \subset \mathbb R^2`$, every nonzero eigenfunction
+$`u`$ for the first positive Neumann eigenvalue satisfies
+$`\nabla u \neq 0`$ throughout the interior of $`\Omega`$.
+Consequently all global maxima and minima of $`u`$ lie on
+$`\partial\Omega`$. The conclusion applies to **every** eigenfunction
+in the eigenspace, even when the first positive Neumann eigenvalue
+is multiple [S4:9].
+
+**The formalization is T2, not T3** [S4, S5, S6].
+The scope note [S4:9] and one comparator stub [S5] are present, but
+there is **no** `main_results` entry and **no** proved OAI tree
+[S6]. The comparator stub `HotSpots.lean` (57 lines) states
+`theorem main_theorem` [S5:49] with the `sorry` at [S5:52]
+(1 in this stub), and the statement is left as a challenge, not
+promoted to a proved declaration. The T2 shape is "scope note plus
+comparator stub, no `main_results` entry, no OAI tree."
+
+## History of the conjecture
+
+The **hot spots conjecture** was posed by **Hamel** (1974) and
+restated by **Burdzy** (1997) in the simply connected planar setting:
+extrema of the first nonconstant Neumann eigenfunction occur only on
+the boundary. The conjecture is known in special cases —
+**Friedlander–Stroock** (1979) for convex domains, **Rabier** (1984)
+for certain symmetric domains — but the general simply connected
+planar case was open. The "strict" form (nonvanishing gradient
+everywhere in the interior, not just at the extremal points) is a
+strengthening that controls all critical points, not just the
+maximizers.
+
+The **novel contribution** is the **general simply connected planar
+resolution** [S3:59–61, S4:9]: the strict form on every smooth
+bounded simply connected planar domain, with the eigenvalue
+multiplicity allowed. The proof uses a vector-form reformulation [S3:64],
+boundary kernel analysis [S3:65], and reciprocal kernel estimates
+[S3:66] to show the gradient cannot vanish in the interior. The
+multiplicity statement is the precision of the result: it is not
+enough to show one eigenfunction has boundary extrema — every
+eigenfunction in the eigenspace must.
+
+**Prior (my training data, not this repo).** As of my training cutoff,
+the hot spots conjecture for general simply connected planar domains
+was a well-known open problem in spectral geometry. The convex case
+was classical, and partial results existed for domains with symmetry
+or small perturbations of convex domains. A general resolution with
+the strict (nonvanishing gradient) form and multiplicity allowance
+was at the frontier of the spectral geometry program. I cannot verify
+the PDE analysis independently from training alone.
+
+## Consequences
+
+- **No interior critical points for first Neumann eigenfunctions**
+  [S3:59–61, S4:9]: on every smooth bounded simply connected planar
+  domain, the gradient of every nonzero first positive Neumann
+  eigenfunction is nonzero throughout the interior.
+- **All global extrema lie on the boundary** [S1:8938, S4:9]: the
+  strict hot spots conjecture is resolved for simply connected
+  planar domains.
+- **The eigenvalue multiplicity is allowed** [S4:9, S1:8938]: the
+  conclusion applies to every eigenfunction in the eigenspace, not
+  just a generic one.
+- **The result is T2, a challenge not a proof** [S5, S6]: the
+  comparator stub carries `theorem main_theorem` with a `sorry`
+  [S5:52] and there is no `main_results` entry or OAI tree, so the
+  formalized statement stands only as a target.
+
+## Section skeleton
+
+One manuscript, `build/main.tex` root (70 lines). The root declares
+the theorem environments and macros inline [S3:18–48], the title at
+[S3:50], and 6 `input` files [S3:62–67]: `01-introduction`,
+`02-preliminaries`, `03-vector-form`, `04-boundary-kernels`,
+`05-reciprocal-kernels`, `06-conclusion`, plus a BibTeX
+`references/references.bib`. **No verification bundles.**
+
+## Coverage
+
+The ledger row `fam=369` [S6] records the tier and the counts:
+`tier=T2`, `paps=1`, `paps_form=0`, `chal=1`, `mainres=0`,
+`scope_note=1`, `scope_chars=514`, `verification=0`, `trace=`,
+`companions=`. The T2 shape is "scope note plus comparator stub,
+no `main_results` entry, no OAI tree." The single comparator stub
+carries 1 `sorry` [S5:52]. The shape flags are
+`shapes=bound`, `resolves_named=1`, `counterex_broad=0`,
+`covmd=0` — a **bound**-type result (the first positive Neumann
+eigenvalue, the spectral bound) with `resolves_named=1` for the
+"hot spots conjecture" named in the title. No counterexample. The
+family has no verification bundle and no trace. Note `paps_form=0`:
+the manuscript does not appear in `formalization.yaml`'s `sources:`
+list, and there is no `main_results` entry — the T2 formalization is
+the scope note's description and the comparator's challenge only,
+with no proved Lean surface.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:8938] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 369 at [S2:841] |
+| S3 | [`preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/build/main.tex`](../../../preprints/Strict-hot-spots-and-absence-of-interior-critical-points-on-smooth-simply-connected-planar-domains-September-24-2026/build/main.tex) | 70 | the `\documentclass` root — 70 lines, title [S3:50], date [S3:52], abstract [S3:59–61], 6 `input` files [S3:62–67] |
+| S4 | [`lean/docs/369.md`](../../../lean/docs/369.md) | 15 | scope note — Scope at [S4:9], comparator link at [S4:15] |
+| S5 | [`lean/ComparatorChallenges/HotSpots.lean`](../../../lean/ComparatorChallenges/HotSpots.lean) | 57 | comparator stub — 57 lines, `def MainConclusion` [S5:45], `theorem main_theorem` [S5:49], `sorry` [S5:52] |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=369`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
