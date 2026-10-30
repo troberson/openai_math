@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, density |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [278-failure-of-kohn-sham-ensemble-representation.md](../../../../notes/gen/summaries/278-failure-of-kohn-sham-ensemble-representation.md) |
 
 ## Manuscripts
 
