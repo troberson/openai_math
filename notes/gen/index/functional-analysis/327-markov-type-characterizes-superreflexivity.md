@@ -13,7 +13,7 @@
 | Claim shapes | classification, uniform |
 | Topics | [metric-geometry](../topics/metric-geometry.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [327-markov-type-characterizes-superreflexivity.md](../../../../notes/gen/summaries/327-markov-type-characterizes-superreflexivity.md) |
 
 ## Manuscripts
 
