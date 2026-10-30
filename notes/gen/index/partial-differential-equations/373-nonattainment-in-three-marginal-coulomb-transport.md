@@ -13,7 +13,7 @@
 | Claim shapes | density, uniform |
 | Topics | [measure-theory](../topics/measure-theory.md) · [ergodic-theory](../topics/ergodic-theory.md) · [optimal-transport](../topics/optimal-transport.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [373-nonattainment-in-three-marginal-coulomb-transport.md](../../../../notes/gen/summaries/373-nonattainment-in-three-marginal-coulomb-transport.md) |
 
 ## Manuscripts
 
