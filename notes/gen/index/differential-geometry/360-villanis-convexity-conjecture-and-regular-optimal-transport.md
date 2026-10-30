@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [measure-theory](../topics/measure-theory.md) · [optimal-transport](../topics/optimal-transport.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [360-villanis-convexity-conjecture-and-regular-optimal-transport.md](../../../../notes/gen/summaries/360-villanis-convexity-conjecture-and-regular-optimal-transport.md) |
 
 ## Manuscripts
 
