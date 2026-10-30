@@ -1,0 +1,231 @@
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 291](../index/operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md)
+
+# 291 — Toms–Winter and equivariant Jiang–Su stability
+
+[Index page](../index/operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md)
+
+## Original CONTENTS.md summary
+
+[S1:7259] (family entry):
+
+> **291. Cuntz comparison, nuclear dimension, and equivariant Jiang–Su stability.** Proves equivariant Jiang–Su stability for every countable discrete amenable group action on a simple separable unital infinite-dimensional nuclear stably finite Jiang–Su-stable <i>C</i><sup>∗</sup>-algebra, resolving this case of Szabó's conjecture without restrictions on trace dynamics. The family also proves the unital Toms–Winter conjecture, equating strict comparison, finite nuclear dimension and Jiang–Su stability in the simple separable unital infinite-dimensional nuclear setting. ([Lean](../../../lean/docs/291.md))
+
+[S2:676] carries the `\resultentry` with all four manuscripts, so the release blurb and the overview agree. The four manuscripts [S3:32, S3:34, S4:48, S4:50, S6:42, S6:44, S7:51, S7:53]:
+
+> Every action of a countable discrete amenable group on a simple,
+separable, unital, infinite-dimensional, nuclear, stably finite complex
+$`\mathrm C^*`$-algebra that is already Jiang–Su stable absorbs the
+trivial action on the Jiang–Su algebra up to cocycle conjugacy.
+No restriction is imposed on the action on the tracial-state simplex.
+This proves the unital, stably finite case of Szabó's Conjecture A
+on automatic equivariant Jiang–Su stability. [S3:38–46]
+
+> We prove that strict comparison in the extended-functional sense implies
+Jiang–Su absorption for separable simple nuclear non-elementary
+$`C^*`$-algebras. This resolves the corresponding implication of the
+Toms–Winter regularity problem, including nonunital algebras and allowing
+unbounded traces. More generally, every separable nuclear $`C^*`$-algebra
+whose Cuntz semigroup is almost unperforated and fully almost divisible
+absorbs the Jiang–Su algebra. [S5:1–9]
+
+> For separable nuclear $`C^*`$-algebras with no nonzero elementary ideal
+subquotients, finite nuclear dimension is equivalent to Jiang–Su
+stability. More generally, $`\dim_{\mathrm{nuc}}(A_0\otimes\mathcal Z)\le1`$
+for every separable nuclear $`A_0`$. This proves Robert and Tikuisis's
+Conjecture (C1) and the nuclear-dimension equivalence in the nonsimple
+Toms–Winter regularity question. [S6:47–54]
+
+> For a simple, separable, unital, infinite-dimensional, nuclear, stably finite
+$`C^*`$-algebra with traces, real rank zero of the uniform tracial ultrapower
+of its uniform tracial completion implies uniform property $`\Gamma`$.
+This answers Problem XXI of Schafhauser, Tikuisis and White affirmatively.
+Independently, strict comparison implies Jiang–Su absorption for simple,
+separable, unital, infinite-dimensional nuclear algebras, resolving the
+unital Toms–Winter conjecture. Under comparison tested on traces of finite
+target rank, we also obtain uniform property $`\Gamma`$ and absorption for
+simple, separable, nuclear, stably projectionless algebras whose densely
+finite traces are all bounded and have a nonempty compact normalized base. [S7:56–67]
+
+## Undergraduate summary
+
+A **C\*-algebra** is the algebra of "observers" for a quantum system: a
+collection of operators closed under adjoints and norm limits. The
+**Jiang–Su algebra** $`\mathcal{Z}`$ is a special infinite-dimensional
+C\*-algebra that behaves like "the complex numbers with structure" — it
+has the same invariant data as $`\mathbb{C}`$ but is infinite-dimensional.
+**Jiang–Su stability** (or $`\mathcal{Z}`$-absorption) means an algebra $`A`$
+satisfies $`A \cong A \otimes \mathcal{Z}`$: tensoring with this special
+algebra changes nothing.
+
+The **Toms–Winter conjecture** (2012) predicts that three seemingly
+different regularity properties are equivalent for simple unital
+nuclear C\*-algebras: (1) strict comparison, (2) finite nuclear
+dimension, and (3) Jiang–Su stability. A **nuclear dimension** is a
+noncommutative analogue of topological dimension; **strict comparison**
+means the Cuntz semigroup order is controlled by traces.
+
+This family of four manuscripts advances the conjecture from multiple
+angles [S3, S5, S6, S7]:
+
+- **Manuscript 1** [S3:38–46]: proves **equivariant** Jiang–Su stability
+  for amenable group actions — the algebra absorbs $`\mathcal{Z}`$ not just
+  as an algebra but as a $`\mathrm{G}`$-algebra (the group action on
+  $`\mathcal{Z}`$ is trivial). This resolves Szabó's Conjecture A in the
+  unital stably finite case.
+- **Manuscript 2** [S5:1–9]: proves strict comparison implies
+  $`\mathcal{Z}`$-absorption for separable simple nuclear
+  non-elementary C\*-algebras, including nonunital algebras and
+  unbounded traces.
+- **Manuscript 3** [S6:47–54]: for separable nuclear C\*-algebras with
+  no nonzero elementary ideal subquotients, finite nuclear dimension is
+  equivalent to Jiang–Su stability.
+- **Manuscript 4** [S7:56–67]: the formalized manuscript. Proves that
+  real rank zero of the uniform tracial ultrapower implies uniform
+  property $`\Gamma`$, and that strict comparison implies
+  Jiang–Su absorption in the unital simple nuclear case.
+
+## Graduate summary
+
+**Equivariant Jiang–Su stability (Manuscript 1)** [S3:38–46].
+Every action $`\alpha`$ of a countable discrete amenable group $`\mathrm{G}`$
+on a simple, separable, unital, infinite-dimensional, nuclear, stably
+finite, Jiang–Su-stable C\*-algebra $`A`$ is equivariantly $`\mathcal{Z}`$-stable:
+the $`\mathrm{G}`$-algebra $`\alpha`$ absorbs the trivial $`\mathrm{G}`$-action on
+$`\mathcal{Z}`$ up to cocycle conjugacy. No restriction is imposed on the
+induced action on $`T(A)`$ (the tracial-state simplex). This resolves
+Szabó's Conjecture A in the unital, stably finite case [S3:38–46].
+
+**Strict comparison and absorption (Manuscript 2)** [S5:1–9].
+For a separable simple nuclear non-elementary C\*-algebra $`A`$, strict
+comparison in the extended-functional sense (every functional on
+$`\mathrm{Cu}(A)`$ detects the order) implies $`A \cong A \otimes_{\min}
+\mathcal{Z}`$. The theorem extends to nonunital algebras and allows
+unbounded traces. More generally, any separable nuclear C\*-algebra whose
+Cuntz semigroup is almost unperforated and fully almost divisible absorbs
+$`\mathcal{Z}`$. This resolves the comparison-to-absorption implication of
+the Toms–Winter regularity program.
+
+**Nuclear dimension equivalence (Manuscript 3)** [S6:47–54].
+For separable nuclear C\*-algebras with no nonzero elementary ideal
+subquotients: $`\dim_{\mathrm{nuc}}(A) < \infty \Leftrightarrow A`$ is
+Jiang–Su stable. More generally,
+$`\dim_{\mathrm{nuc}}(A_0 \otimes \mathcal{Z}) \leq 1`$ for every separable
+nuclear $`A_0`$. This proves Robert and Tikuisis's Conjecture (C1) and the
+nuclear-dimension half of the Toms–Winter regularity question in the
+nonsimple setting.
+
+**Uniform property $`\Gamma`$ and Toms–Winter (Manuscript 4, formalized)**
+[S7:56–67]. For a simple, separable, unital, infinite-dimensional, nuclear,
+stably finite C\*-algebra $`A`$ with traces: real-rank-zero of the uniform
+tracial ultrapower $`\omega(A_\omega)`$ implies uniform property $`\Gamma`$
+(Problem XXI of Schafhauser–Tikuisis–White). Independently, strict
+comparison implies $`\mathcal{Z}`$-absorption in the unital simple nuclear
+case, resolving the unital Toms–Winter conjecture.
+
+## History of the conjecture
+
+The **Toms–Winter regularity program** (2012) posits that for simple
+separable unital nuclear C\*-algebras, the following are equivalent:
+(1) $`A`$ is $`\mathcal{Z}`$-stable, (2) $`\dim_{\mathrm{nuc}}(A) < \infty`$,
+(3) $`A`$ has strict comparison, (4) $`A`$ has uniform property $`\Gamma`$, and
+(5) $`A`$ has real rank zero. Each implication has been the target of major
+work in the classification program for approximately thirty years.
+
+**Manuscript 1** [S3:38–46] addresses the *equivariant* direction: not
+just $`A \cong A \otimes \mathcal{Z}`$, but the isomorphism can be chosen
+to respect a $`\mathrm{G}`$-action. Szabó formulated Conjecture A asking
+whether this automatic equivariant stability holds for amenable actions;
+the no-restriction-on-traces condition is the sharp form.
+
+**Manuscripts 2 and 4** [S5:1–9, S7:56–67] attack the
+comparison-to-absorption direction from complementary hypotheses
+(extended-functionals vs. strict tracial comparison). **Manuscript 3**
+[S6:47–54] attacks the nuclear-dimension direction, proving the
+nonsimple equivalence.
+
+**Prior (my training data, not this repo).** The Toms–Winter conjecture
+and the individual implications are central open problems in C\*-algebra
+classification. The equivariant formulation (Szabó's Conjecture A), the
+extended-functional comparison theorem, the nonsimple nuclear-dimension
+equivalence, and the uniform-property-$`\Gamma`$ result are the novel
+contributions claimed here.
+
+## Consequences
+
+- **Equivariant Jiang–Su stability for amenable actions** [S3:38–46]:
+  the unital stably finite case of Szabó's Conjecture A is resolved
+  without restrictions on trace dynamics.
+- **Strict comparison implies $`\mathcal{Z}`$-absorption** [S5:1–9, S7:56–67]:
+  the comparison-to-absorption direction of Toms–Winter is resolved in the
+  unital simple nuclear case (and nonunital / unbounded traces in
+  manuscript 2).
+- **Finite nuclear dimension is equivalent to Jiang–Su stability**
+  [S6:47–54]: the nuclear-dimension direction is resolved for separable
+  nuclear C\*-algebras with no nonzero elementary ideal subquotients.
+- **Uniform property $`\Gamma`$ from tracial real rank zero** [S7:56–67]:
+  Problem XXI of Schafhauser–Tikuisis–White is resolved affirmatively.
+
+## Section skeleton
+
+Four manuscripts. Manuscript 1 [S3:38–46]: root `build/paper.tex` (53 lines),
+5 sections under `build/sections/`. Manuscript 2 [S4, S5]: root
+`build/paper.tex` (70 lines), 14 sections under `build/sections/`
+(introduction [S5:1–9], preliminaries, extended-traces, rounding, divisibility,
+support-tools, shrinking, norm, tracial, localization, comparison, central,
+absorption, assembly); the abstract is in `sections/introduction.tex` [S5:1–9].
+Manuscript 3 [S6:47–54]: root `build/paper.tex` (66 lines), 9 sections under
+`build/sections/`. Manuscript 4 [S7:56–67]: root `build/main.tex` (87 lines),
+16 sections under `build/sections/`. No verification bundle.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier **T3** with a scope note [S8:9],
+one comparator stub [S9], one `main_results` entry
+(`OAI.UniformGamma.CurrentMain.main` from
+`ComparatorChallenges/UniformGamma.json`), and a proved OAI tree. Only
+manuscript 4 (tracial projection methods) is in the formalization target
+set. The scope note [S8:9] states: "The formalization proves that real rank
+zero of the uniform tracial ultrapower of the uniform tracial completion
+implies uniform property $`\Gamma`$ for a simple separable unital
+infinite-dimensional nuclear stably finite $`C^*`$-algebra with traces. The
+conclusion holds at every specified free ultrafilter under the
+corresponding real-rank-zero hypothesis." The comparator link [S8:15]
+names `UniformGamma.lean`.
+
+`UniformGamma.lean` (607 lines) carries 1 `sorry` occurrence — the
+`theorem CurrentMain.main` at [S9:600] ends in `sorry` at [S9:601]. The
+statement (`CurrentMain.MainClaim`, [S9:592–598]) is the
+real-rank-zero-to-uniform-property-$`\Gamma`$ implication. No proved copy
+exists under `lean/OAI/` for this declaration. The gap is the formalization
+itself: the release set the target and described the scope, but shipped the
+comparator as a stub. Manuscripts 1–3 (equivariant stability, Cuntz
+comparison, nuclear dimension) are not formalized. The reading is of source
+text only.
+
+## Coverage
+
+The ledger row `fam=291` [S10] records the tier and the counts:
+`tier=T3`, `paps=4`, `paps_form=1`, `chal=1`, `mainres=1`,
+`scope_note=1`, `scope_chars=732`, `verification=0`, `trace=`. The T3 shape
+is "scope note, comparator, `main_results`, and a proved OAI tree exist" —
+but here the OAI tree is absent (the comparator carries the only `sorry`),
+so this is structurally T2 with a `main_results` entry pointing at an
+unproved declaration. The formalization target is manuscript 4's
+uniform-property-$`\Gamma`$ result; the three other manuscripts (equivariant
+stability, Cuntz comparison / absorption, nuclear dimension) are not
+formalized. The shape flags are `resolution|uniform`, `resolves_named=1`.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9167 | the release's catalog — family entry [S1:7259] |
+| S2 | [`overview.tex`](../../../overview.tex) | 861 | the release's `\resultentry` list — 291 at [S2:676] |
+| S3 | [`preprints/Equivariant-Jiang-Su-Stability-for-Amenable-Actions-in-the-Unital-Stably-Finite-Case-October-5-2026/build/paper.tex`](../../../preprints/Equivariant-Jiang-Su-Stability-for-Amenable-Actions-in-the-Unital-Stably-Finite-Case-October-5-2026/build/paper.tex) | 53 | manuscript 1 (equivariant Jiang–Su); title [S3:32], date [S3:34], abstract [S3:38–46] |
+| S4 | [`preprints/Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026/build/paper.tex`](../../../preprints/Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026/build/paper.tex) | 70 | manuscript 2 (Cuntz comparison and absorption); title [S4:48], date [S4:50]; no abstract in root |
+| S5 | [`preprints/Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026/build/sections/introduction.tex`](../../../preprints/Cuntz-comparison-and-Jiang-Su-absorption-September-23-2026/build/sections/introduction.tex) | 399 | manuscript 2 abstract (in introduction section); abstract [S5:1–9] |
+| S6 | [`preprints/Nuclear-dimension-and-Jiang-Su-stability-without-elementary-subquotients-September-23-2026/build/paper.tex`](../../../preprints/Nuclear-dimension-and-Jiang-Su-stability-without-elementary-subquotients-September-23-2026/build/paper.tex) | 66 | manuscript 3 (nuclear dimension); title [S6:42], date [S6:44], abstract [S6:47–54] |
+| S7 | [`preprints/Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026/build/main.tex`](../../../preprints/Tracial-projection-methods-and-uniform-property-Gamma-September-23-2026/build/main.tex) | 87 | manuscript 4 (tracial projection methods, formalized); title [S7:51], date [S7:53], abstract [S7:56–67] |
+| S8 | [`lean/docs/291.md`](../../../lean/docs/291.md) | 17 | scope note — the formalization's Scope at [S8:9] and its comparator link at [S8:15] |
+| S9 | [`lean/ComparatorChallenges/UniformGamma.lean`](../../../lean/ComparatorChallenges/UniformGamma.lean) | 607 | comparator stub — `CurrentMain.main` at [S9:600] with its `sorry` at [S9:601] |
+| S10 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=291`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

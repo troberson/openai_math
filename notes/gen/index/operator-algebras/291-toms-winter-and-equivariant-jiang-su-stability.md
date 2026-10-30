@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [291-toms-winter-and-equivariant-jiang-su-stability.md](../../../../notes/gen/summaries/291-toms-winter-and-equivariant-jiang-su-stability.md) |
 
 ## Manuscripts
 
