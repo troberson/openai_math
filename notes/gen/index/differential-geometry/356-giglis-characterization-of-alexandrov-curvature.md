@@ -13,7 +13,7 @@
 | Claim shapes | classification |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [356-giglis-characterization-of-alexandrov-curvature.md](../../../../notes/gen/summaries/356-giglis-characterization-of-alexandrov-curvature.md) |
 
 ## Manuscripts
 
