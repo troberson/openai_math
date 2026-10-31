@@ -207,7 +207,7 @@ The formalization consequence is a gap, not a coverage. The declaration proves t
 | S18 | [`lean/ComparatorChallenges/TamingCompatibility.json`](../../../lean/ComparatorChallenges/TamingCompatibility.json) | 14 | Challenge record |
 | S19 | [`lean/ComparatorChallenges/TamingCompatibility.lean`](../../../lean/ComparatorChallenges/TamingCompatibility.lean) | 68 | Comparator stub, definitions, target, `sorry` |
 | S20 | [`lean/OAI/Geometry/TamingCompatibility/Main.lean`](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean) | 56 | Formalized declaration |
-| S21 | [`history.md`](../../../history.md) | 50 | Release update log |
+| S21 | [`history.md`](../../../history.md) | 56 | Release update log |
 | S22 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | Ledger row for family 342 |
 
 ## Bibliography
