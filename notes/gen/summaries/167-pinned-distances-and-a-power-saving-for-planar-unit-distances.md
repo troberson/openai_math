@@ -210,6 +210,16 @@ with a bare `sorry` [S7:19–21]. The release records
 comparators' `sorry` bodies are the targets the release set itself,
 and the proved `main` in the OAI tree is the registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.WeakPinned.main resolves to `OAI/Geometry/PinnedDistances/Main.lean` (37 lines); the top-level theorem is `theorem mainStatement`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 48 files with 41 theorems and 199 defs.
+
+The preprint states 49 theorem environments while the tree carries only 41 (0.84×), indicating a focused sub-formalization (source-level).
+
 ## Sources
 
 | # | File | Lines | Role |

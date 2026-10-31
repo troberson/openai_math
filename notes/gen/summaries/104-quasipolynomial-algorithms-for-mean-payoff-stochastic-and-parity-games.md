@@ -193,6 +193,16 @@ parity-conjunction theorem [S8:33–42] have no `main_results` entry in
 Truffet counterexample and the randomized statement only. A comparator stub is
 a target the release set itself, not a proof — both end in `sorry`.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.randomized_quasipolynomial_mean_payoff resolves to `OAI/Computability/RandomMean/Main.lean` (69 lines); the top-level theorem is `theorem correct_probability {K`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 17 files with 265 theorems and 190 defs.
+
+The preprint states 60 theorem environments; the tree carries 4× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=104` [S18] records the tier and the counts: `tier=T3`,

@@ -195,6 +195,16 @@ of source text only — no `lake` or `lean` run elaborates the library,
 so the claim here is that the statements and their `sorry` exist in
 the source, not that the declarations are proved.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Fifths.Single.unknown resolves to `OAI/Computability/SpaceSimulation/Main.lean` (91 lines); the top-level theorem is `theorem accessed (A`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 49 files with 497 theorems and 293 defs.
+
+The preprint states 12 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=137` [S8] records: `tier=T3`, `paps=1`,

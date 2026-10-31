@@ -175,6 +175,16 @@ itself with named entry points. The reading is of source text only — no
 the statements and their `sorry` exist in the source, not that the
 declarations are proved.
 
+**Tree measurement (source-level).**
+
+The family registers 3 `main_results` declarations (`OAI.TwoWayComplementation.complementation_lower_bound_finite`; `OAI.TwoWayComplementation.explicit_family_main`; `OAI.OneWayLiveness.main_theorem`); the primary file `OAI/Combinatorics/TwoWayAutomata/Main.lean` carries 139 lines with top-level theorem `theorem complementation_lower_bound (n`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 26 files with 195 theorems and 64 defs.
+
+The preprint states 28 theorem environments; the tree carries 7× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=129` [S13] records: `tier=T3`, `paps=2`,

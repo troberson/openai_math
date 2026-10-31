@@ -100,6 +100,16 @@ target the release set itself; the proved version, where it exists,
 lives under `lean/OAI/`. The reading is of source text only — no `lake`
 or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.TuringRigidity.ManuscriptMain.rigidity resolves to `OAI/Computability/DegreeRigidity/Main.lean` (31 lines); the top-level theorem is `theorem generic_program_representation (π`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 975 files, 4399 theorems, 1667 defs.
+
+The preprint states 8 theorem environments; the tree carries 550× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=241` [S8] records the tier and the counts:

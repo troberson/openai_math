@@ -190,6 +190,16 @@ stubs are answered by a real proof in the OAI tree.
 The quasi-transitive manuscript (M2) is entirely
 unregistered.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.CriticalZ3.critical_no_infinite resolves to `OAI/Probability/CriticalZ3/Main.lean` (114 lines); the top-level theorem is `theorem bond_critical_origin`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 34 files with 683 theorems and 234 defs.
+
+The preprint states 35 theorem environments; the tree carries 20× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

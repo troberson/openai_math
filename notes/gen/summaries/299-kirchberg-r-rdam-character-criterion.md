@@ -138,6 +138,16 @@ The single comparator stub carries 1 `sorry`:
 — where `Main.lean` carries `theorem character_criterion` at [S6]. The
 reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.KirchbergRordam.character_criterion resolves to `OAI/Analysis/CharacterCriterion/Main.lean` (62 lines); the top-level theorem is `theorem character_criterion`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 62 files, 188 theorems, 583 defs.
+
+The preprint states 18 theorem environments; the tree carries 10× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=299` [S6] records the tier and the counts:

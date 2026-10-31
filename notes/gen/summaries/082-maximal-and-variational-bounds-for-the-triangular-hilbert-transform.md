@@ -208,6 +208,16 @@ declaration `OAI.TriangularHilbert.main_estimate` in
 `OAI/Analysis/TriangularHilbert/Main.lean`. The OAI `TriangularHilbert`
 tree is 105 `.lean` files over 10,861 lines with zero `sorry`.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.TriangularHilbert.main_estimate resolves to `OAI/Analysis/TriangularHilbert/Main.lean` (47 lines); the top-level theorem is `theorem main_estimate`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 105 files, 130 theorems, 161 defs.
+
+The preprint states 57 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=082` records `paps 3`,

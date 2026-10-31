@@ -273,6 +273,16 @@ The release records `scope: "Partial progress."` and
 are the targets the release set, and the two proved theorems in
 the OAI tree are the registered results.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence`; `OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity`); the primary file `OAI/Combinatorics/ExpectationThreshold/Main.lean` carries 43 lines with top-level theorem `theorem talagrand_expectation_threshold_equivalence [Nonempty α]`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 47 files with 267 theorems and 72 defs.
+
+The preprint states 17 theorem environments; the tree carries 16× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

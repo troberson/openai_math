@@ -169,6 +169,16 @@ lives under `lean/OAI/`. The reading is of
 source text only — no `lake` or `lean` run
 elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.ContinuumTemperature.main_theorem`; `OAI.RadialTransition.main`); the primary file `OAI/Probability/ContinuumTransition/Main.lean` carries 65 lines with top-level theorem `theorem main_theorem`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 161 files, 568 theorems, 151 defs.
+
+The preprint states 42 theorem environments; the tree carries 14× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=228` [S12] records the tier

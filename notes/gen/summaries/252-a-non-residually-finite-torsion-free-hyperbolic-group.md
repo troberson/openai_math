@@ -107,6 +107,16 @@ stub is a target the release set itself; the proved version, where it
 exists, lives under `lean/OAI/`. The reading is of source text only — no
 `lake` or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Release075.main resolves to `OAI/GroupTheory/Hyperbolic/Main.lean` (20 lines); the top-level theorem is `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 29 files with 517 theorems and 203 defs.
+
+The preprint states 13 theorem environments; the tree carries 40× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=252` [S8] records the tier and the counts:

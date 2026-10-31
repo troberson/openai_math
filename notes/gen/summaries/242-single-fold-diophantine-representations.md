@@ -105,6 +105,16 @@ target the release set itself; the proved version, where it exists,
 lives under `lean/OAI/`. The reading is of source text only — no `lake`
 or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SingleFold.main resolves to `OAI/NumberTheory/SingleFold/Main.lean` (28 lines); the top-level theorem is `theorem recursively_enumerable_sf {n`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 28 files with 47 theorems and 166 defs.
+
+The preprint states 13 theorem environments; the tree carries 4× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=242` [S8] records the tier and the counts:

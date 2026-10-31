@@ -251,6 +251,16 @@ BassTorsionFree `sorry` stub has no OAI tree answer.
 The $`\ell^1`$-Bass manuscript (M1) is entirely
 unregistered.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support resolves to `OAI/RingTheory/BassTrace/Main.lean` (34 lines); the top-level theorem is `theorem bassTraceModules {G`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 73 files, 76 theorems, 347 defs.
+
+The preprint states 40 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

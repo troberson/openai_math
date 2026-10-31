@@ -89,6 +89,16 @@ The scope note states what is not included. says: "The separate very-ampleness r
 
 The declaration is `OAI.QuadricCounterexample.main_theorem` [S12:10]. The comparator stub carries `sorry` at `QuadricBundles.lean:175` [S13:175].
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.QuadricCounterexample.main_theorem resolves to `OAI/Geometry/QuadricBundles/Main.lean` (35 lines); the top-level theorem is `theorem main_theorem`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 34 files with 71 theorems and 240 defs.
+
+The preprint states 10 theorem environments; the tree carries 7× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

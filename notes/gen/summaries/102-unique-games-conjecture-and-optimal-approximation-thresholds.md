@@ -192,6 +192,16 @@ results are established by "Independent direct reductions [S1:2502]" (). The rel
 the derivation behind the main result as a reasoning trace, "Ordinary NP-hardness at the basic
 semidefinite threshold" ([S3:31], [S20]).
 
+**Tree measurement (source-level).**
+
+The family registers 3 `main_results` declarations (`OAI.UniqueGamesTheorem.theorem11`; `OAI.OptimalMaxCut.main`; `OAI.VertexCover.every_fixed_factor_below_two`); the primary file `OAI/Computability/UniqueGames/Theorem.lean` carries 36 lines with top-level theorem `theorem exists_binaryGapReduction (ε δ`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 478 files, 8457 theorems, 5696 defs.
+
+The preprint states 103 theorem environments; the tree carries 82× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

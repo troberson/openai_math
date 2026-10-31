@@ -171,6 +171,16 @@ but are not the `main_results` declaration; the formalized statement
 is the pinched-construction `main_theorem` [S5:9]. The reading is of
 source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.PinchedHartogs.main_theorem resolves to `OAI/Geometry/Kahler/Main.lean` (44 lines); the top-level theorem is `theorem controlled_potential`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 119 files, 108 theorems, 221 defs.
+
+The preprint states 54 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=359` [S9] records the tier and the counts:

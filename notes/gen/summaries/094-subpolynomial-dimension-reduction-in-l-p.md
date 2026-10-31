@@ -191,6 +191,16 @@ this is the family's headline theorem, registered and proven. The
 OAI `LpDimension` tree is 45 files over 7,918 lines with zero
 `sorry`.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SubpolynomialLp.source_main resolves to `OAI/Analysis/LpDimension/Main.lean` (63 lines); the top-level theorem is `theorem source_main (p`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 45 files with 5 theorems and 56 defs.
+
+The preprint states 7 theorem environments while the tree carries only 5 (0.71×), indicating a focused sub-formalization (source-level).
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=094` records

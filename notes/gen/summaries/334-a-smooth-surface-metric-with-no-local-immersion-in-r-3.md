@@ -248,6 +248,16 @@ Inside the release, the formalization is one declaration, `OAI.SmoothLocal.Geome
 
 What has not been checked: no Lean or comparator run was performed, so nothing here proves the formalized declaration elaborates, and the carrier under `lean/OAI/Geometry/IsometricImmersion/` was not read beyond `Main.lean`; the manuscript's four section files were read at the statement level, not line by line across all 1,284 lines, so a proof step inside `caps.tex`, `pulse.tex`, or `assembly.tex` can be mis-stated here; the manuscript's own NY2002 discrepancy is recorded as unresolved by the manuscript and is not adjudicated; the prior paragraph is a training-data recollection, not a literature check; the page covers one family, and 19 differential-geometry families in bead `math-ckd.4`'s group have no page.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion resolves to `OAI/Geometry/IsometricImmersion/Main.lean` (67 lines); the top-level theorem is `theorem zero_mem_coordinateSquareOpen`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 447 files, 2793 theorems, 671 defs.
+
+The preprint states 11 theorem environments; the tree carries 254× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

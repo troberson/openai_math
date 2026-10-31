@@ -232,6 +232,16 @@ The OAI `LatticeCovering` tree is 41 files over 25,913 lines with zero
 `sorry`; the `CoveringDensity` tree is 3 files over 306 lines; the
 `TranslativeCovering` tree is 100 files over 13,879 lines.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SingleLatticeCovering.single_lattice_covering resolves to `OAI/Geometry/LatticeCovering/Main.lean` (42 lines); the top-level theorem is `theorem single_lattice_covering`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 41 files with 157 theorems and 311 defs.
+
+The preprint states 27 theorem environments; the tree carries 6× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: the family is partially formalized. The ledger row `fam=092`

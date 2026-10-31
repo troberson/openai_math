@@ -126,6 +126,16 @@ is a target the release set itself; the proved version, where it exists,
 lives under `lean/OAI/`. The reading is of source text only — no `lake`
 or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.CHObstruction.main resolves to `OAI/ModelTheory/Categoricity/Main.lean` (270 lines); the top-level theorem is `theorem countableData_object (hCH`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 15 files with 230 theorems and 157 defs.
+
+The preprint states 130 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=240` [S10] records the tier and the counts:

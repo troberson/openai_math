@@ -183,6 +183,16 @@ The cone characterization is the part of the result with content beyond the theo
 
 The formalization consequence is a gap, not a coverage. The declaration proves the single-class form, which is the shape the scope note describes; the cone theorem, the corollary, the density-splitting theorem, the quadratic mass bound, and the strict-inclusion example are not formalized. The comparator challenge for this family is a stub with one `sorry`, and the release's review status for the whole formalization is unchecked [S19:58–63] [S17:1773–1777]. The manuscript states no open directions: its conclusion section is the proof of the main theorem, and the introduction's closing paragraph points to the companion paper, not to a question [S12:1–70] [S6:207–215].
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.TamingCompatibility.taming_implies_compatibility resolves to `OAI/Geometry/TamingCompatibility/Main.lean` (56 lines); the top-level theorem is `theorem taming_implies_compatibility`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 582 files, 250 theorems, 903 defs.
+
+The preprint states 20 theorem environments; the tree carries 12× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

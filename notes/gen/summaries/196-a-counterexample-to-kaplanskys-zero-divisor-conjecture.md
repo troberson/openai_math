@@ -209,6 +209,16 @@ stronger zero-divisor form. The release records
 `scope: "Partial progress."` and `review: status:
 unchecked`.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.TorsionFreeZeroDivisors.main resolves to `OAI/Algebra/GroupRing/Main.lean` (24 lines); the top-level theorem is `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 124 files, 766 theorems, 1267 defs.
+
+The preprint states 12 theorem environments; the tree carries 64× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

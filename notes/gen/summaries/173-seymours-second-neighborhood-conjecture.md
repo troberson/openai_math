@@ -170,6 +170,16 @@ The release records `scope: "Partial progress."` and
 the release set, and the proved `exists_goodVertex` in the OAI tree
 is the registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SeymourSecondNeighborhood.exists_goodVertex resolves to `OAI/Combinatorics/SecondNeighborhood/Main.lean` (22 lines); the top-level theorem is `theorem exists_goodVertex (r`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 43 files with 192 theorems and 76 defs.
+
+The preprint states 9 theorem environments; the tree carries 21× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

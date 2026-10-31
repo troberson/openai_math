@@ -110,6 +110,16 @@ stub is a target the release set itself; the proved version, where it
 exists, lives under `lean/OAI/`. The reading is of source text only — no
 `lake` or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SimpleAmenable.main resolves to `OAI/GroupTheory/SimpleAmenable/Main.lean` (116 lines); the top-level theorem is `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 550 files, 2304 theorems, 1745 defs.
+
+The preprint states 47 theorem environments; the tree carries 49× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=253` [S8] records the tier and the counts:

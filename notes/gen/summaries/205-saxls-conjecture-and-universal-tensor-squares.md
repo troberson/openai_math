@@ -229,6 +229,16 @@ answered by a real proof in the OAI tree. The
 UniversalTensorSquares `sorry` stub has no OAI tree
 answer.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Saxl.saxl_conjecture resolves to `OAI/RepresentationTheory/Saxl/Main.lean` (128 lines); the top-level theorem is `theorem band_cut_support (h s m`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 38 files with 65 theorems and 174 defs.
+
+The preprint states 42 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

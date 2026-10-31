@@ -177,6 +177,16 @@ The reading is of source text only — no `lake` or `lean` run elaborates
 the library, so the claim here is that the declaration and its proof
 terms exist in the source, not that the library elaborates.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.BinPackingGap.main_results resolves to `OAI/Computability/BinPacking/Main.lean` (34 lines); the top-level theorem is `theorem main_results`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 284 files, 7292 theorems, 6060 defs.
+
+The preprint states 17 theorem environments; the tree carries 429× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=118` [S11] records: `tier=T3`, `paps=1`,

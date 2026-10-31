@@ -140,6 +140,16 @@ The proved OAI declaration is `OAI.Cotype.mainTarget_proved` at
 `sorry` occurrences — the cotype–cotype equivalence is proved in the
 OAI library. The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Cotype.mainTarget_proved resolves to `OAI/Analysis/Cotype/Main.lean` (34 lines); the top-level theorem is `theorem kConvex_of_nontrivialType (h`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 125 files, 651 theorems, 182 defs.
+
+The preprint states 11 theorem environments; the tree carries 59× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=326` [S7] records the tier and the counts:

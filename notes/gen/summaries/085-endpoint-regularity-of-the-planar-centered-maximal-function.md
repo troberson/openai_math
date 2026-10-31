@@ -233,6 +233,16 @@ signed-band statement of the two. The OAI `DiskMaximal` tree is 30
 `.lean` files over 19,398 lines with zero `sorry`, and the OAI
 `SignedDisk` tree is 39 files over 17,108 lines with zero `sorry`.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SignedDisk.CenteredDiskEndpoint.main_signed_finite_band resolves to `OAI/Analysis/SignedDisk/Main.lean` (345 lines); the top-level theorem is `theorem smooth_dyadic_bound_including_zero`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 39 files with 178 theorems and 223 defs.
+
+The preprint states 21 theorem environments; the tree carries 8× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=085` records `paps 1`,

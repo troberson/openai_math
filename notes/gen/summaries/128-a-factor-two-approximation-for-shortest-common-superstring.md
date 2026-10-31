@@ -146,6 +146,16 @@ named entry point. The reading is of source text only — no `lake` or
 `lean` run elaborates the library, so the claim here is that the statement
 and its `sorry` exist in the source, not that the declaration is proved.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Superstring.main resolves to `OAI/Computability/Superstring/Main.lean` (65 lines); the top-level theorem is `theorem bitsList_eq_encodeList {α`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 51 files, 819 theorems, 437 defs.
+
+The preprint states 17 theorem environments; the tree carries 48× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=128` [S8] records: `tier=T3`, `paps=1`,

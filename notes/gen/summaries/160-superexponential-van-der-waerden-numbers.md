@@ -223,6 +223,16 @@ The release records `scope: "Partial progress."` and
 the target the release set itself, and the proved version in
 the OAI tree is the registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.QuantitativeVanDerWaerden.uniform_lower_bound resolves to `OAI/Combinatorics/ProgressionColoring/Main.lean` (49 lines); the top-level theorem is `theorem uniform_lower_bound`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 115 files, 734 theorems, 188 defs.
+
+The preprint states 23 theorem environments; the tree carries 32× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

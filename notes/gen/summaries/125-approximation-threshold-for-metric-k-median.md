@@ -181,6 +181,16 @@ the library, so the claim here is that the stubs' statements and their
 `sorry` exist in the source, and that one declaration's file exists, not
 that anything is proved.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.MetricKMedianRecovery.global_application resolves to `OAI/Combinatorics/KMedianRecovery/Main.lean` (24 lines); the top-level theorem is `theorem global_application`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 522 files, 254 theorems, 4844 defs.
+
+The preprint states 40 theorem environments; the tree carries 6× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=125` [S14] records: `tier=T3`, `paps=2`,

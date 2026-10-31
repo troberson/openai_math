@@ -263,6 +263,16 @@ The release records `scope: "Partial progress."` and
 stubs are the targets the release set, and both are
 answered by real proofs in the OAI trees.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.ArExplicit.Statement.main`; `OAI.Tachikawa.main_theorem`); the primary file `OAI/Algebra/AuslanderReiten/All.lean` carries 744 lines with top-level theorem `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 732 files, 2032 theorems, 1328 defs.
+
+The preprint states 51 theorem environments; the tree carries 40× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

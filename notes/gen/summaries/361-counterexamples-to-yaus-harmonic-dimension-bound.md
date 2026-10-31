@@ -164,6 +164,16 @@ predicates and states `theorem main : MainClaim` [S7:98] with the
 of a 36-file OAI tree carrying 0 `sorry`. The reading is of source
 text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.HarmonicCounterexample.main resolves to `OAI/Geometry/HarmonicGrowth/Main.lean` (488 lines); the top-level theorem is `theorem absorb_compact {E`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 36 files with 258 theorems and 678 defs.
+
+The preprint states 27 theorem environments; the tree carries 10× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=361` [S10] records the tier and the counts:

@@ -170,6 +170,16 @@ release set itself; the proved version, where it exists,
 lives under `lean/OAI/`. The reading is of source text
 only — no `lake` or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.DirectionalTransience.directional_transience_implies_ballisticity resolves to `OAI/Probability/Ballisticity/Main.lean` (33 lines); the top-level theorem is `theorem directional_transience_implies_ballisticity`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 516 files, 275 theorems, 777 defs.
+
+The preprint states 74 theorem environments; the tree carries 4× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=220` [S12] records the tier and the

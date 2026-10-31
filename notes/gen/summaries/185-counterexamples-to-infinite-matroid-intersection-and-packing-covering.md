@@ -260,6 +260,16 @@ records `scope: "Partial progress."` and `review: status:
 unchecked`, and the proved `main` in the OAI tree is the
 registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.InfiniteMatroidCounterexample.main resolves to `OAI/Combinatorics/InfiniteMatroid/Main.lean` (51 lines); the top-level theorem is `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 33 files with 5 theorems and 89 defs.
+
+The preprint states 21 theorem environments while the tree carries only 5 (0.24×), indicating a focused sub-formalization (source-level).
+
 ## Sources
 
 | # | File | Lines | Role |

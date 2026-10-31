@@ -126,6 +126,16 @@ The first declaration is `OAI.LipschitzCounterexample.main` [S25:8]. The second 
 
 The comparator stubs carry `sorry`. `OAI.LipschitzEquivalence.main` is at `LipschitzEquivalence.lean:39` [S27:39] and `OAI.C0Absorption.main` at `C0Absorption.lean:29` [S28:29].
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.LipschitzCounterexample.main`; `OAI.C0Absorption.main_result`); the primary file `OAI/Analysis/LipschitzEquivalence/Main.lean` carries 15 lines with top-level theorem `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 60 files, 570 theorems, 176 defs.
+
+The preprint states 34 theorem environments; the tree carries 17× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

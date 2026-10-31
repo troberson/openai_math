@@ -247,6 +247,16 @@ The companion manuscript's dimension is stated consistently: real dimension 3332
 
 What has not been checked: no Lean, lake, or comparator run was performed, and the comparator stub carries `sorry`, so the proved version under `lean/OAI/Geometry/Arnold/` was read as source text, not elaborated; the five manuscripts carry 762, 1,496, 1,080, 1,222 and 1,120 lines in their section files, and I read only the five introductions line by line, so every section-file claim in the machinery paragraphs is a section name the introduction names, not a statement read in the section file; the prior paragraph is a training-data recollection, not a literature check; the page covers one family, and 14 differential-geometry families in bead `math-ckd.4`'s group have no page.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.ArnoldCounterexample.main resolves to `OAI/Geometry/Arnold/Main.lean` (25 lines); the top-level theorem is `theorem main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 36 files with 42 theorems and 139 defs.
+
+The preprint states 52 theorem environments while the tree carries only 42 (0.81×), indicating a focused sub-formalization (source-level).
+
 ## Sources
 
 | # | File | Lines | Role |

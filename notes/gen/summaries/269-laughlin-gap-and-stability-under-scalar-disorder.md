@@ -183,6 +183,16 @@ itself; the proved version, where it exists and is registered, lives
 under `lean/OAI/`. The reading is of source text only — no `lake` or
 `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Laughlin.mainTarget_proved resolves to `OAI/Analysis/Laughlin/Main.lean` (46 lines); the top-level theorem is `theorem distanceToLaughlinSq_le {N Q`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 1279 files, 9918 theorems, 460 defs.
+
+The preprint states 60 theorem environments; the tree carries 165× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=269` [S12] records the tier and the counts:

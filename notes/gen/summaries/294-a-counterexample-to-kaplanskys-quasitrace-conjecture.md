@@ -139,6 +139,16 @@ The two comparator stubs carry 2 `sorry` occurrences total:
 `theorem kaplansky_quasitrace_counterexample` [S8]. The reading is of
 source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Kaplansky.kaplansky_quasitrace_counterexample resolves to `OAI/Analysis/Kaplansky/Main.lean` (25 lines); the top-level theorem is `theorem actual_normalizedTwoQuasitrace_exists`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 72 files, 127 theorems, 132 defs.
+
+The preprint states 8 theorem environments; the tree carries 16× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=294` [S8] records the tier and the counts:

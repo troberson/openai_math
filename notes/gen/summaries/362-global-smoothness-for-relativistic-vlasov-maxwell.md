@@ -355,6 +355,16 @@ The caution is the third consequence, and the paper raises it itself: the concur
 
 What has not been checked: nothing here is a machine-checked verification of the manuscript. The comparator file contains a `sorry` [S16:106], the release marks its formalizations as agent-generated and unchecked, and no build was run. The reasoning trace is a six-page PDF, so its content is not quotable from this page.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.RVM.global_classical_solution resolves to `OAI/Analysis/VlasovMaxwell/Main.lean` (54 lines); the top-level theorem is `theorem global_classical_solution (d`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 207 files, 52 theorems, 485 defs.
+
+The preprint states 24 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

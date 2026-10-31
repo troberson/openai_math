@@ -225,6 +225,16 @@ release set for the ring properties, and the proved
 registered result — a proper subset of the
 manuscript's claim.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.SmallCM.candidate_ring_properties resolves to `OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean` (29 lines); the top-level theorem is `theorem candidate_ring_properties`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 66 files, 171 theorems, 897 defs.
+
+The preprint states 8 theorem environments; the tree carries 21× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

@@ -164,6 +164,16 @@ irrational-rotation construction and the product-Brown-measure statement,
 which the scope note describes but the `main_results` entry does not
 target. The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.BackwardIntertwiners.direct_algebra_corollary resolves to `OAI/Analysis/BackwardIntertwiners/AlgebraCorollary.lean` (95 lines); the top-level theorem is `theorem direct_algebra_corollary (H`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 23 files with 25 theorems and 113 defs.
+
+The preprint states 40 theorem environments while the tree carries only 25 (0.62×), indicating a focused sub-formalization (source-level).
+
 ## Coverage
 
 The ledger row `fam=293` [S12] records the tier and the counts:

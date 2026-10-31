@@ -236,6 +236,16 @@ the comparators' `sorry` bodies are the targets the release set
 itself, and the proved versions in the OAI trees are the registered
 results.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.Paper170.complete_graph_crossing_number`; `OAI.Zarankiewicz.mainTarget_proof`); the primary file `OAI/Combinatorics/CompleteCrossing/Main.lean` carries 91 lines with top-level theorem `theorem complete_graph_odd_lower_bound (s`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 46 files with 823 theorems and 243 defs.
+
+The preprint states 19 theorem environments; the tree carries 43× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

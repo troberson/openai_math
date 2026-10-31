@@ -156,6 +156,16 @@ this is the family's headline counterexample, registered and proven.
 The OAI `HyperbolicCones` tree is 101 files over 6,612 lines with
 zero `sorry`.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Paper256.main_result resolves to `OAI/Analysis/HyperbolicCones/Main.lean` (40 lines); the top-level theorem is `theorem cone_not_spectrahedral (N`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 101 files, 385 theorems, 55 defs.
+
+The preprint states 30 theorem environments; the tree carries 13× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=095` records

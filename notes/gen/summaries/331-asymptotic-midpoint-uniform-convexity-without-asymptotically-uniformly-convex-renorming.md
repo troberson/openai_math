@@ -75,6 +75,16 @@ The catalog consequence is that two properties treated as close relatives are se
 
 The formalization's own limits are part of the record: the forest results do not identify the closed coordinate span with the full dual, and the graph deductions carry twenty-two companion assumptions the diamond bound does not need. Reading the scope note is what tells you which half of the manuscript's claim the Lean code carries. [S18:17]
 
+**Tree measurement (source-level).**
+
+The family registers 7 `main_results` declarations (`OAI.ForestSpace.main_theorem`; `OAI.SegmentLenses.midpoint_lens_main`; `OAI.DiamondDistortion.headline_all_pairs`…); the primary file `OAI/Analysis/ForestSpace/Main.lean` carries 53 lines with top-level theorem `theorem main_theorem`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 20 files with 301 theorems and 80 defs.
+
+The preprint states 187 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

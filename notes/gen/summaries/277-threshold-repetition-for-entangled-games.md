@@ -143,6 +143,16 @@ registration. A comparator stub is a target the release set itself; the
 proved version lives under `lean/OAI/`. The reading is of source text
 only — no `lake` or `lean` run elaborates the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.ThresholdParallelRepetition.threshold_parallel_repetition resolves to `OAI/Probability/EntangledGames/Main.lean` (46 lines); the top-level theorem is `theorem threshold_parallel_repetition`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 30 files with 8 theorems and 131 defs.
+
+The preprint states 12 theorem environments while the tree carries only 8 (0.67×), indicating a focused sub-formalization (source-level).
+
 ## Coverage
 
 The ledger row `fam=277` [S8] records the tier and the counts:

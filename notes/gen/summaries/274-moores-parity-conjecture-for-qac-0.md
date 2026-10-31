@@ -170,6 +170,16 @@ release set itself; the proved version lives under `lean/OAI/`. The
 reading is of source text only — no `lake` or `lean` run elaborates the
 proof.
 
+**Tree measurement (source-level).**
+
+The family registers 4 `main_results` declarations (`OAI.QAC.parity_lower_bound`; `OAI.QAC.parity_lower_bound_polynomial_size`; `OAI.QAC.parity_lower_bound_polynomial_size`…); the primary file `OAI/InformationTheory/QuantumCircuit/Parity.lean` carries 82 lines with top-level theorem `theorem parity_lower_bound`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 45 files with 26 theorems and 102 defs.
+
+The preprint states 24 theorem environments; the tree carries 1× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=274` [S11] records the tier and the counts:

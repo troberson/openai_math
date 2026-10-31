@@ -158,6 +158,16 @@ over 12,093 lines with zero `sorry`. The release records
 `sorry` in the Lean source is not a comparator pass, and the library has
 not been built here.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.EntropyRateDimension.entropy_rate_dimension resolves to `OAI/MeasureTheory/SelfSimilar/Main.lean` (69 lines); the top-level theorem is `theorem exists_slightly_larger_depth {d χ h`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 64 files, 705 theorems, 141 defs.
+
+The preprint states 15 theorem environments; the tree carries 47× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: the family is formally registered. The ledger row `fam=148` records

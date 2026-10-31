@@ -133,6 +133,16 @@ where `Main.lean` carries
 `theorem single_generation_of_II1_separable_predual` [S7]. The reading is
 of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Generator.single_generation_of_II1_separable_predual resolves to `OAI/Analysis/FactorGeneration/Main.lean` (47 lines); the top-level theorem is `theorem single_generation_of_II1_separable_predual`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 85 files, 1826 theorems, 444 defs.
+
+The preprint states 15 theorem environments; the tree carries 122× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=296` [S7] records the tier and the counts:

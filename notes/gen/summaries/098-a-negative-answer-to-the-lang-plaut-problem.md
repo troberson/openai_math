@@ -141,6 +141,16 @@ The declaration is `OAI.DoublingHilbert.main` at `lean/OAI/Geometry/DoublingHilb
 
 The comparator stubs carry `sorry` at `lean/ComparatorChallenges/DoublingHilbert.lean:27` [S7:26] and `lean/ComparatorChallenges/CompactBanach.lean:31` [S8:30].
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.DoublingHilbert.main`; `OAI.CompactBanach.main`); the primary file `OAI/Geometry/DoublingHilbert/Main.lean` carries 69 lines with top-level theorem `theorem no_normalized_embedding {f`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 28 files with 244 theorems and 64 defs.
+
+The preprint states 6 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

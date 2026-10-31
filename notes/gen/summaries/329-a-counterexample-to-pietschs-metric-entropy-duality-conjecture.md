@@ -162,6 +162,16 @@ under `lean/OAI/Analysis/MetricEntropy/` comprises 52 `.lean` files
 with 0 `sorry` occurrences — the counterexample is proved in the OAI
 library. The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers resolves to `OAI/Analysis/MetricEntropy/Main.lean` (109 lines); the top-level theorem is `theorem exists_entropy_duality_counterexample_with_covers`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 52 files, 366 theorems, 90 defs.
+
+The preprint states 9 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=329` [S7] records the tier and the counts:

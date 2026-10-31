@@ -161,6 +161,16 @@ separating-state data. The gap is manuscript 1's relative construction and
 the absolute-bicentralizer application, which the scope note excludes. The
 reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.BoundedRecovery.bounded_recovery resolves to `OAI/Analysis/ModularRecovery/Recovery.lean` (265 lines); the top-level theorem is `theorem bounded_recovery (S`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 27 files with 2 theorems and 117 defs.
+
+The preprint states 22 theorem environments while the tree carries only 2 (0.09×), indicating a focused sub-formalization (source-level).
+
 ## Coverage
 
 The ledger row `fam=290` [S7] records the tier and the counts:

@@ -257,6 +257,16 @@ of the direct-finiteness disproof, removing the torsion
 assumption. The release records `scope: "Partial
 progress."` and `review: status: unchecked`.
 
+**Tree measurement (source-level).**
+
+The family registers 3 `main_results` declarations (`OAI.KaplanskyCounterexample.finitelyPresented_counterexample`; `OAI.GroupRingDeterminant.main`; `OAI.OddKaplansky.main_theorem`); the primary file `OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean` carries 44 lines with top-level theorem `theorem thm_main`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 126 files, 58 theorems, 264 defs.
+
+The preprint states 60 theorem environments while the tree carries only 58 (0.97×), indicating a focused sub-formalization (source-level).
+
 ## Sources
 
 | # | File | Lines | Role |

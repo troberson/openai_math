@@ -230,6 +230,16 @@ The release records `scope: "Partial progress."` and
 stubs are the targets the release set, and both are
 answered by real proofs in the OAI trees.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.LittleFinitistic.Main.exists_counterexample`; `OAI.LittleFinitistic.extreme_left_right_asymmetry`); the primary file `OAI/Algebra/Finitistic/Main.lean` carries 56 lines with top-level theorem `theorem algebra_finite`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 546 files, 1400 theorems, 1411 defs.
+
+The preprint states 16 theorem environments; the tree carries 88× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

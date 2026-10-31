@@ -140,6 +140,16 @@ The OAI tree under `lean/OAI/CategoryTheory/Globular/` comprises 58 `.lean`
 files with 0 `sorry` occurrences — the elementary-expansion theorem is
 proved in the OAI library. The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Grothendieck.elementary_expansion resolves to `OAI/CategoryTheory/Globular/ElementaryExpansion.lean` (66 lines); the top-level theorem is `theorem exactBoundaryTest_at_of_low_square.{v} {X Y R S`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 58 files, 380 theorems, 379 defs.
+
+The preprint states 19 theorem environments; the tree carries 20× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=312` [S7] records the tier and the counts:

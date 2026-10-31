@@ -72,6 +72,16 @@ The general theorem settles the nonsymmetric case in every dimension, which clos
 
 Two gaps follow from the formalization record rather than from the mathematics. The functional inequalities are stated, sharp, and used [S6:211–216] [S17:172–177], and no 087 tree formalizes them — the scope note says so [S29:13] [S29:17], and the general theorem's formal statement is the geometric infimum alone [S29:15–16]. And the general theorem's formal proof exists with no `sorry` [S41:17–33] while the release's own index records neither a bibliography entry for its manuscript [S30:757–760] nor a main result for its challenge [S36]. The published mathematics and the release's index of it are out of step there, in the direction of the index being behind.
 
+**Tree measurement (source-level).**
+
+The family registers 3 `main_results` declarations (`OAI.SymmetricMahler.symmetric_mahler`; `OAI.SymmetricMahler.symmetric_mahler_equality`; `OAI.SymmetricPolar.symmetric_polar_main`); the primary file `OAI/Analysis/Mahler/MainTheorem.lean` carries 28 lines with top-level theorem `theorem symmetric_mahler {n`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 243 files, 685 theorems, 356 defs.
+
+The preprint states 60 theorem environments; the tree carries 11× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

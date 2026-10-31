@@ -168,6 +168,16 @@ the comparators' `sorry` bodies are the targets the release set
 itself, and the proved versions in the OAI tree are the registered
 results.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.EuclideanFiveColor.no_proper_five_coloring`; `OAI.Problem160.properColoring_seven`); the primary file `OAI/Geometry/PlaneColoring/Five.lean` carries 131 lines with top-level theorem `theorem graph_map_small_mesh_impossible`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 46 files with 49 theorems and 204 defs.
+
+The preprint states 45 theorem environments; the tree carries 1× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

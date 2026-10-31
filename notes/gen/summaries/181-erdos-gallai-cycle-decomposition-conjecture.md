@@ -196,6 +196,16 @@ and `review: status: unchecked`; the comparator's `sorry` is
 the target the release set, and the proved `erdos_gallai` in
 the OAI tree is the registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.ErdosGallai.erdos_gallai resolves to `OAI/Combinatorics/CycleDecomposition/Main.lean` (226 lines); the top-level theorem is `theorem main_cost_bound`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 34 files with 219 theorems and 262 defs.
+
+The preprint states 16 theorem environments; the tree carries 14× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

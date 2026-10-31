@@ -129,6 +129,16 @@ tree under `lean/OAI/Analysis/SphereIsometry/` comprises 67 `.lean` files
 with 0 `sorry` occurrences — the sphere-isometry extension is proved in
 the OAI library. The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Tingley.tingley_sphere_isometry_full resolves to `OAI/Analysis/SphereIsometry/Extension.lean` (120 lines); the top-level theorem is `theorem no_attained_positive_defect`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 67 files, 493 theorems, 120 defs.
+
+The preprint states 12 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=322` [S7] records the tier and the counts:

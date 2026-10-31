@@ -169,6 +169,16 @@ The release records `scope: "Partial progress."` and
 the release set itself, and the proved version in the OAI tree is the
 registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.BorsukNine.main_theorem resolves to `OAI/Geometry/Borsuk/Counterexample.lean` (60 lines); the top-level theorem is `theorem Admissible.support_ten_system {f`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 269 files, 3926 theorems, 134 defs.
+
+The preprint states 16 theorem environments; the tree carries 245× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

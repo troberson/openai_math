@@ -177,6 +177,16 @@ the polynomial ring. The uniform Cartier-section theorem [S5:21–27],
 the bounded klt complement theorem [S3:22–36], and the real-boundary and
 companion conclusions of both manuscripts are outside this comparison.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.CartierSections.isCompact_closedChartFieldRetraction_cone resolves to `OAI/AlgebraicGeometry/CartierSections/ChartCompactness.lean` (61 lines); the top-level theorem is `n/a`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 22 files with 73 theorems and 49 defs.
+
+The preprint states 131 theorem environments while the tree carries only 73 (0.56×), indicating a focused sub-formalization (source-level).
+
 ## Coverage
 
 T3: two manuscripts, one formalized (a supporting compactness lemma in

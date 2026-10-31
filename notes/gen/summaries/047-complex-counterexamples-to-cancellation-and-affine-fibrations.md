@@ -103,6 +103,16 @@ The scope note states what is not included. says: "The separate stable-coordinat
 
 The declaration is `OAI.ComplexCancellation.main` [S14:32]. The comparator stub carries `sorry` at `ComplexCancellation.lean:26` [S15:26].
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.ComplexCancellation.main resolves to `OAI/Algebra/AffineCancellation/Main.lean` (38 lines); the top-level theorem is `theorem nonpolynomiality`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 55 files, 13 theorems, 220 defs.
+
+The preprint states 17 theorem environments while the tree carries only 13 (0.76×), indicating a focused sub-formalization (source-level).
+
 ## Sources
 
 | # | File | Lines | Role |

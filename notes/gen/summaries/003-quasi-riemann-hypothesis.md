@@ -189,6 +189,16 @@ rule out real zeros elsewhere in $`(0,1)`$."
 The scope note [S5:12] states the exclusion of later applications:
 "The paper's later applications are not included."
 
+**Tree measurement (source-level).**
+
+The family registers 4 `main_results` declarations (`OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re`; `OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re`; `OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re`…); the primary file `OAI/NumberTheory/DirichletL/Nonvanishing.lean` carries 33 lines with top-level theorem `theorem LFunction_ne_zero_of_seven_eighths_lt_re`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 2926 files, 13254 theorems, 4775 defs.
+
+The preprint states 93 theorem environments; the tree carries 143× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: three manuscripts, two formalized, four comparator challenges,

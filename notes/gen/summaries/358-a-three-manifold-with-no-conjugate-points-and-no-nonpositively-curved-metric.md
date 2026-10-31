@@ -143,6 +143,16 @@ The `main_results` entry [S6:1131–1133] resolves the declaration
 lines), the entry point of a 19-file OAI tree carrying 0 `sorry`.
 The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.ThreeManifold.main_theorem resolves to `OAI/Geometry/ConjugatePoints/ThreeManifold.lean` (271 lines); the top-level theorem is `theorem fiberClass_ne_one (i`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 19 files with 110 theorems and 398 defs.
+
+The preprint states 17 theorem environments; the tree carries 6× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=358` [S8] records the tier and the counts:

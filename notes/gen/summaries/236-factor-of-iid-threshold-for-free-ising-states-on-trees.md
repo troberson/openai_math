@@ -179,6 +179,16 @@ or `lean` run
 elaborates
 the proof.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Problem367.free_ising_factor_iff_threshold resolves to `OAI/Probability/FreeIsing/Main.lean` (31 lines); the top-level theorem is `theorem free_ising_factor_below_threshold`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 891 files, 4457 theorems, 747 defs.
+
+The preprint states 26 theorem environments; the tree carries 171× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=236` [S8] records

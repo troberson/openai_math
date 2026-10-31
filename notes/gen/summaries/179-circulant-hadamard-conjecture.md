@@ -211,6 +211,16 @@ the targets the release set, and the proved
 `exists_iff_order_one_or_four` in the OAI tree is the
 registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.CirculantHadamard.exists_iff_order_one_or_four resolves to `OAI/LinearAlgebra/CirculantHadamard/Main.lean` (38 lines); the top-level theorem is `theorem exists_iff_order_one_or_four (n`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 68 files, 537 theorems, 148 defs.
+
+The preprint states 8 theorem environments; the tree carries 67× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

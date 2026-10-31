@@ -192,6 +192,16 @@ set itself. The reading is of source text only — no `lake` or `lean` run
 elaborates the proof, so the claim here is that the proof body exists in
 the source, not that the file compiles.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound resolves to `OAI/Computability/DepthThree/Main.lean` (20 lines); the top-level theorem is `theorem exists_polynomial_time_language_depth_three_lower_bound`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 179 files, 1191 theorems, 746 defs.
+
+The preprint states 7 theorem environments; the tree carries 170× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=112` [S14] records the tier and the counts: `tier=T3`,

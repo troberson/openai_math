@@ -175,6 +175,16 @@ manuscript proves the full all-dimension statement, the formalization
 carries a proof for the planar slice, and the all-dimension comparator is
 the unproved target.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.PlanarFalconer.mainTarget_proved resolves to `OAI/MeasureTheory/Falconer/Main.lean` (54 lines); the top-level theorem is `theorem manuscript_main (E`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 2461 files, 7196 theorems, 1394 defs.
+
+The preprint states 46 theorem environments; the tree carries 156× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 T3: one manuscript, one scope note, two comparator challenges, one

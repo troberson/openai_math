@@ -65,6 +65,16 @@ The formalization's record adds a structural detail the manuscripts' statements 
 
 The two October manuscripts are the part of the family with no formalization and no scope note, so their claims are readable only from the manuscripts.
 
+**Tree measurement (source-level).**
+
+The family registers 2 `main_results` declarations (`OAI.Nagata.nagata_conjecture`; `OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants`); the primary file `OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean` carries 169 lines with top-level theorem `theorem fullNagata_iff_effectiveCurves`.
+
+A carrier `FullNagataCurves : Prop` at line 19 states the formalized claim.
+
+The surrounding directory is large: 117 files, 1820 theorems, 485 defs.
+
+The preprint states 80 theorem environments; the tree carries 23× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |

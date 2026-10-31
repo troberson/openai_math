@@ -190,6 +190,16 @@ The release's own record is source-level. The scope note says the formalized
 claims exist and names their declarations; the three comparator configs carry
 `sorry`; no Lean run in this repository proves any of them elaborates.
 
+**Tree measurement (source-level).**
+
+The family registers 3 `main_results` declarations (`OAI.Brennan.main_theorem`; `OAI.Brennan.Sharp.sharp_endpoints`; `OAI.StrictInverseFirstPower.main`); the primary file `OAI/Analysis/IntegralMeans/Main.lean` carries 24 lines with top-level theorem `theorem main_theorem`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory carries 47 files with 8 theorems and 169 defs.
+
+The preprint states 38 theorem environments while the tree carries only 8 (0.21×), indicating a focused sub-formalization (source-level).
+
 ## Sources
 
 | # | File | Lines | Role |

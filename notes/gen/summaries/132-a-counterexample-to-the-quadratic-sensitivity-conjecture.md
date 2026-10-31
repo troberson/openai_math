@@ -147,6 +147,16 @@ text only — no `lake` or `lean` run elaborates the library, so the claim
 here is that the statement and its `sorry` exist in the source, not that
 the declaration is proved.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.Paper320.quantitative_separation resolves to `OAI/Combinatorics/Sensitivity/Separation.lean` (57 lines); the top-level theorem is `theorem quantitative_separation (d`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 51 files, 249 theorems, 57 defs.
+
+The preprint states 8 theorem environments; the tree carries 31× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=132` [S8] records: `tier=T3`, `paps=1`,

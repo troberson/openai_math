@@ -202,6 +202,16 @@ comparator as a stub. Manuscripts 1–3 (equivariant stability, Cuntz
 comparison, nuclear dimension) are not formalized. The reading is of source
 text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.ComparatorModel.CurrentMain.main resolves to `OAI/Analysis/TracialSplitting/Challenge.lean` (82 lines); the top-level theorem is `theorem statement_iff_original`.
+
+A carrier `OriginalGammaStatement : Prop` at line 14 states the formalized claim.
+
+The surrounding directory is large: 51 files, 122 theorems, 227 defs.
+
+The preprint states 146 theorem environments while the tree carries only 122 (0.84×), indicating a focused sub-formalization (source-level).
+
 ## Coverage
 
 The ledger row `fam=291` [S10] records the tier and the counts:

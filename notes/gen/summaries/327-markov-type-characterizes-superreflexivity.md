@@ -161,6 +161,16 @@ at `lean/OAI/Analysis/MarkovType/Main.lean` [S6:36]. The OAI tree under
 `sorry` occurrences — the Markov-type/superreflexivity equivalence is
 proved in the OAI library. The reading is of source text only.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.MarkovSuperreflexivity.hasNontrivialMarkovType_iff_hasEquivalentUCNorm resolves to `OAI/Analysis/MarkovType/Main.lean` (43 lines); the top-level theorem is `theorem MarkovTypeWith.hasEquivalentUCNorm {p K`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 212 files, 1392 theorems, 390 defs.
+
+The preprint states 8 theorem environments; the tree carries 174× as many (source-level count, not a proof-quality ratio).
+
 ## Coverage
 
 The ledger row `fam=327` [S7] records the tier and the counts:

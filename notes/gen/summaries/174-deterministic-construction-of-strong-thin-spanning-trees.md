@@ -223,6 +223,16 @@ comparators' `sorry` bodies are the targets the release set
 itself, and the proved `strongThinTree` in the OAI tree is the
 registered result.
 
+**Tree measurement (source-level).**
+
+The `main_results` entry OAI.StrongThinTree.strongThinTree resolves to `OAI/Combinatorics/ThinTrees/Main.lean` (70 lines); the top-level theorem is `theorem strongThinTree`.
+
+No carrier `def … : Prop` is present; the theorem states its claim directly.
+
+The surrounding directory is large: 183 files, 114 theorems, 869 defs.
+
+The preprint states 58 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
+
 ## Sources
 
 | # | File | Lines | Role |
