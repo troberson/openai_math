@@ -33,7 +33,8 @@ Waerden number* $`W(r,k)`$ is the **smallest** interval length
 $`N`$ such that every coloring of
 $`\{1,\ldots,N\}`$ with $`r`$ colors forces a monochromatic
 $`k`$-term arithmetic progression. Classical results
-(bibercourt, Hales–Jewett, etc.) gave **tower-type** upper
+(van der Waerden's original proof, and subsequent refinements)
+gave **tower-type** upper
 bounds, and Erdős asked whether a **superexponential lower
 bound** holds — is $`W(r,k)`$ growing faster than
 $`2^{ck}`$, faster than any fixed exponential in $`k`$? This
@@ -86,11 +87,12 @@ do not provide uniformly [S3:9–13, S2:403, S4:9].
 ## History of the conjecture
 
 The van der Waerden numbers have been a central object in Ramsey
-theory since 1927. The **upper** bounds are classical:
-B\H{a}b (1933), Hales–Jewett (1963), and subsequent
-improvements give tower-type bounds
-$`W(r,k)`$ growing like a tower of twos of height polynomial in
-$`k`$. The **lower** bound for a single color and small $`r`$ was
+theory since 1927. The **upper** bounds go back to van der
+Waerden's original proof and grow at a
+tower-like (indeed far worse, primitive-recursive) rate;
+the quantitative upper bounds include Shelah's
+primitive-recursive bound and those following from
+Gowers's proof of Szemerédi's theorem. The **lower** bound for a single color and small $`r`$ was
 long at best exponential: $`W(2,k)\ge e^{ck}`$ (the best
 known **before** this work, roughly, was
 $`W(2,k)\ge 2^{c' k}`$ for some $`c'>0`$, with $`c'`$ not
