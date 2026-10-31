@@ -344,6 +344,13 @@ L1: dict[str, tuple[str, ...]] = {
     "build_summaries.py": ("README.md", "notes/data/summaries/",
                            "notes/templates/summaries/summary.md.j2",
                            "notes/gen/tables/catalog.tsv"),
+    # The proof renderer reads the data files, the skeleton, and README.md (through
+    # build_catalog's trace attribution). Its README generator uses the fams dict, not the
+    # ledger, so it reads no catalog.tsv. The quote spans come from the data file's quotes
+    # block, so the renderer is a root: it reads only hand-maintained data.
+    # Probe record pending: the writer is new and the audit-hook probe has not been re-run over it.
+    "build_proofs.py": ("README.md", "notes/data/proofs/",
+                        "notes/templates/proofs/proof.md.j2"),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -379,6 +386,8 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     "measure_check_calls.py": (),
     # The summary renderer writes the 60 family pages and passes the index README through.
     "build_summaries.py": ("notes/gen/summaries/",),
+    # The proof renderer writes the per-family audit pages and the index README.
+    "build_proofs.py": ("notes/gen/proofs/",),
 }
 
 
@@ -416,6 +425,9 @@ ARGS: dict[str, tuple[str, ...]] = {
     # The plain run renders the 60 pages and passes the README through; `--check-only` measures
     # without writing, so the canonical key is the plain run's.
     "build_summaries.py": (),
+    # The plain run renders the audit pages and the README; `--check-only` measures without
+    # writing, so the canonical key is the plain run's.
+    "build_proofs.py": (),
 }
 
 # The writers table names three writers the protocol deliberately excludes. `measure_open_probe.py`'s
@@ -443,7 +455,8 @@ PAGE_EXTRA: frozenset[str] = frozenset()
 # record prints, so the exactness pass has nothing to compare it with. `measure_check_calls.py` names
 # the script tree, which the record's printed scope excludes, so its entry is hashed and never compared.
 PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py",
-                          "measure_check_calls.py", "build_summaries.py"})
+                          "measure_check_calls.py", "build_summaries.py",
+                          "build_proofs.py"})
 
 # The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
 # reads. Its own output feeds one of the L1 entries: `notes/development/templates.md` tabulates the
@@ -1648,6 +1661,17 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/reports/named-conjectures.md",
             "notes/scripts/verify_named_conjectures.py",
             "notes/gen/tables/catalog.tsv",
+        ),
+    "verify_proofs.py": (
+            "notes/data/proofs/072.md",
+            "notes/data/proofs/091.md",
+            "notes/gen/proofs/072.md",
+            "notes/gen/proofs/091.md",
+            "notes/scripts/build_catalog.py",
+            "notes/scripts/build_proofs.py",
+            "notes/scripts/build_summaries.py",
+            "notes/scripts/verify_proofs.py",
+            "notes/templates/proofs/proof.md.j2",
         ),
     "verify_scope_exclusions.py": (
             "README.md",

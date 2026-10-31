@@ -81,6 +81,9 @@ ROWS = [
     # the quotes, so it runs after the two. This is the chain that used to be a cycle
     # (seed -> pages -> quotes -> pages) broken by moving the quote span into the data file.
     ("build_summaries.py", (), ("summaries",)),
+    # The proof renderer is a root: it reads only the hand-maintained data files, the skeleton and
+    # the root README, so it reads no artifact any other row writes.
+    ("build_proofs.py", (), ("proofs",)),
     ("render_reports.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index",
       "check_calls_pre"), ("pages",)),
@@ -101,6 +104,7 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_proof_density.py -q", ("pages",), ()),
     ("verify_summaries.py", ("pages", "summaries"), ()),
     ("run_tests.py notes/scripts/tests/test_summaries.py -q", ("pages", "summaries"), ()),
+    ("verify_proofs.py", ("proofs",), ()),
     ("verify_abstracts.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_abstracts.py -q", ("pages",), ()),
     ("verify_named_results.py", ("pages",), ()),
@@ -152,10 +156,10 @@ ROWS = [
     # that reads a cache entry a concurrent writer has not landed yet reports a missing entry.
     ("verify_cache_promotion.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages",
-      "quotes", "summaries", "checker_reads"), ()),
+      "quotes", "summaries", "proofs", "checker_reads"), ()),
     ("run_tests.py notes/scripts/tests/test_cache_promotion.py -q",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages",
-      "quotes", "summaries", "checker_reads"), ()),
+      "quotes", "summaries", "proofs", "checker_reads"), ()),
     ("verify_conjecture_standing.py", ("catalog",), ()),
     ("run_tests.py notes/scripts/tests/test_conjecture_standing.py -q", ("catalog",), ()),
     ("verify_tsv_quoting.py",

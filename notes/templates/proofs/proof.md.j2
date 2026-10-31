@@ -1,0 +1,30 @@
+{# proof.md.j2 — the skeleton for notes/gen/proofs/<NNN>.md.
+
+   One hand-written skeleton owns the mechanical surface of a proof-level
+   faithfulness audit page; a per-family data file (notes/data/proofs/<NNN>.md)
+   supplies the section bodies with quote tokens. The renderer (build_proofs.py)
+   composes them, resolving each quote through the same path
+   build_summaries.resolve_token uses for summary pages.
+
+   Proof audits are family-shaped — the set of `## sections` one audit carries
+   is not a fixed canonical set the way the summary sections are (091 has
+   statement / l_p / proof structure / dimension handling / …, 072 has
+   statement / sign convention / sign audit / …). The template renders
+   whichever sections the data file carries, in the order it carries them,
+   and then the fixed `## Sources` table.
+#}
+[Notes](../../README.md) / [Proofs](README.md)
+
+# {{ p['fam'] }} — {{ p['title'] }}
+{% for s in p['sections'] %}
+
+## {{ s.name }}
+
+{{ s.body }}
+{% endfor %}
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+{{ p['sources_rows'] }}

@@ -47,6 +47,7 @@ GATE_ROWS_TSV = TABLES / "gate-rows.tsv"
 SPLIT_TSV = TABLES / "splits.tsv"
 INDEX_DIR = GEN / "index"
 SUMMARIES_DIR = GEN / "summaries"
+PROOFS_DIR = GEN / "proofs"
 
 # The gate driver's report for the last completed run. It is untracked scratch, truncated at run
 # start, so a writer reading it sees the previous completed run — which is what the census page
