@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **068. Anticanonical nonvanishing in every dimension.** If X is a smooth connected complex projective variety and $`-K_X`$ admits a smooth Hermitian metric with nonnegative curvature, then $`H^0(X,-mK_X)\ne0`$ for some m > 0. Thus smooth semipositivity forces a nonzero section of a positive tensor power of the anticanonical bundle in every dimension. [S1:1695]
+> **068. Anticanonical nonvanishing in every dimension.** If *X* is a smooth connected complex projective variety and $`-K_X`$ admits a smooth Hermitian metric with nonnegative curvature, then $`H^0(X,-mK_X)\ne0`$ for some *m* > 0. Thus smooth semipositivity forces a nonzero section of a positive tensor power of the anticanonical bundle in every dimension. [S1:1695]
 
 This is the largest family in the release so far: **seven** companion
 manuscripts, each attacking the same headline from a different

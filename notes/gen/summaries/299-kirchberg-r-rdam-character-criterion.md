@@ -8,7 +8,7 @@
 
 [S1:7423] (family entry):
 
-> **299. The Kirchberg–Rørdam character criterion and infinite tensor-power Jiang–Su stability.** A nonzero unital separable complex <i>C</i><sup>∗</sup>-algebra is Jiang–Su stable exactly when its norm central-sequence algebra has no characters, for every free ultrafilter. This answers the Kirchberg–Rørdam character question. Also, the infinite minimal tensor power of every such algebra without characters is Jiang–Su stable, answering the Dadarlat–Toms question. ([Lean](../../../lean/docs/299.md))
+> **299. The Kirchberg–Rørdam character criterion and infinite tensor-power Jiang–Su stability.** A nonzero unital separable complex *C*∗-algebra is Jiang–Su stable exactly when its norm central-sequence algebra has no characters, for every free ultrafilter. This answers the Kirchberg–Rørdam character question. Also, the infinite minimal tensor power of every such algebra without characters is Jiang–Su stable, answering the Dadarlat–Toms question. ([Lean](../../../lean/docs/299.md))
 
 [S2:692] carries the `\resultentry` with the single manuscript [S3:58, S3:60]. The abstract 
 

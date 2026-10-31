@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **069. Global quantum geometric Langlands at irrational level.** Proves the unramified de Rham quantum geometric Langlands equivalence for every connected simple complex algebraic group on every smooth projective connected complex curve, at every shifted level $`c\in\mathbb C\setminus\mathbb Q`$. It identifies the full derived categories of twisted D-modules for the group and its Langlands dual, retaining all global forms and connected components. [S1:1765]
+> **069. Global quantum geometric Langlands at irrational level.** Proves the unramified de Rham quantum geometric Langlands equivalence for every connected simple complex algebraic group on every smooth projective connected complex curve, at every shifted level $`c\in\mathbb C\setminus\mathbb Q`$. It identifies the full derived categories of twisted *D*-modules for the group and its Langlands dual, retaining all global forms and connected components. [S1:1765]
 
 This family ships a single manuscript. The abstract:
 

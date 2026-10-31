@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **020. Squarefree quartics and power-free polynomial values.** Proves the squarefree-values conjecture for irreducible integer quartics with no fixed prime-square divisor: squarefree values on positive integers have the predicted positive Euler-product density. More generally, establishes the $`(d-2)`$-power-free density for irreducible integer polynomials of degrees four through eight under the necessary local condition; together with Browning's higher-degree theorem, this covers every d ≥ 4. [S1:554]
+> **020. Squarefree quartics and power-free polynomial values.** Proves the squarefree-values conjecture for irreducible integer quartics with no fixed prime-square divisor: squarefree values on positive integers have the predicted positive Euler-product density. More generally, establishes the $`(d-2)`$-power-free density for irreducible integer polynomials of degrees four through eight under the necessary local condition; together with Browning's higher-degree theorem, this covers every *d* ≥ 4. [S1:554]
 
 The manuscript abstract 
 

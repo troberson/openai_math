@@ -8,7 +8,7 @@
 
 [S1:6679] (family entry):
 
-> **266. Exactly three mutually unbiased bases in dimension six.** Proves $`N(6)=3`$, resolving Zauner's dimension-six mutually unbiased bases conjecture: three such bases exist in ℭ<sup>6</sup>, but four cannot. The exclusion is a complete certified computation under the stated binary64 arithmetic and compiler conditions. An independent companion proves the Matolcsi–Ruzsa–Weiner Fourier-vanishing conjecture for order-six complex Hadamard matrices outside Tao's cubic equivalence class. ([Lean](../../../lean/docs/266.md))
+> **266. Exactly three mutually unbiased bases in dimension six.** Proves $`N(6)=3`$, resolving Zauner's dimension-six mutually unbiased bases conjecture: three such bases exist in ℭ6, but four cannot. The exclusion is a complete certified computation under the stated binary64 arithmetic and compiler conditions. An independent companion proves the Matolcsi–Ruzsa–Weiner Fourier-vanishing conjecture for order-six complex Hadamard matrices outside Tao's cubic equivalence class. ([Lean](../../../lean/docs/266.md))
 
 [S2:623] carries the `\resultentry`, so the release blurb and the overview agree.
 The two manuscripts:

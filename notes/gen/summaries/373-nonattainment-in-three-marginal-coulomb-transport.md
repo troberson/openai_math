@@ -8,7 +8,7 @@
 
 [S1:9002] (family entry):
 
-> **373. Nonattainment of the three-marginal Coulomb Monge problem.** An optimal three-particle Coulomb configuration need not be a deterministic function of the first particle, even for smooth identical spatial densities. The Monge and Kantorovich infima agree, but the Monge infimum is not attained. The same phenomenon occurs for every inverse-power Riesz exponent in each dimension at least two, with a suitable density in each case. ([Lean](lean/docs/373.md))
+> **373. Nonattainment of the three-marginal Coulomb Monge problem.** An optimal three-particle Coulomb configuration need not be a deterministic function of the first particle, even for smooth identical spatial densities. The Monge and Kantorovich infima agree, but the Monge infimum is not attained. The same phenomenon occurs for every inverse-power Riesz exponent in each dimension at least two, with a suitable density in each case. ([Lean](../../../lean/docs/373.md))
 
 [S2:850] carries the `\resultentry` with a single manuscript [S3].
 The scope note states the formalized result:

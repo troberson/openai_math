@@ -8,7 +8,7 @@
 
 [S1:8797] (family entry):
 
-> **363. Nonuniqueness with local conservation for the hard-sphere Boltzmann equation.** Constructs two distinct global entropy solutions of the three-dimensional periodic hard-sphere Boltzmann equation from the same nonnegative initial density, with bounded velocity support and finite mass, energy and absolute entropy. Both are strongly continuous in <i>L</i><sup>1</sup> and satisfy exact local conservation of mass, momentum and kinetic energy. ([Lean](lean/docs/363.md))
+> **363. Nonuniqueness with local conservation for the hard-sphere Boltzmann equation.** Constructs two distinct global entropy solutions of the three-dimensional periodic hard-sphere Boltzmann equation from the same nonnegative initial density, with bounded velocity support and finite mass, energy and absolute entropy. Both are strongly continuous in *L*1 and satisfy exact local conservation of mass, momentum and kinetic energy. ([Lean](../../../lean/docs/363.md))
 
 [S2:828] carries the `\resultentry` with two manuscripts —
 manuscript 1 [S3] (the local-conservation headline) and manuscript 2

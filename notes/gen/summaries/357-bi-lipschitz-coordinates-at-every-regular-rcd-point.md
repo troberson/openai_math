@@ -8,9 +8,9 @@
 
 [S1:8674] (family entry):
 
-> **357. Bi-Lipschitz coordinates at every regular RCD point.** Proves that every regular point of a noncollapsed $`\mathop{\mathrm{RCD}}\nolimits (K,n)`$ space, for <i>K</i> ∈ ℝ and integer <i>n</i> ≥ 2, has an open neighborhood bi-Lipschitz to an open subset of ℝ<sup><i>n</i></sup>. Regularity requires all pointed tangents to be Euclidean, the reference measure is exactly $`\mathcal H^n`$, and the chart compares ambient distances with a point-dependent finite constant.
+> **357. Bi-Lipschitz coordinates at every regular RCD point.** Proves that every regular point of a noncollapsed $`\mathop{\mathrm{RCD}}\nolimits (K,n)`$ space, for *K* ∈ ℝ and integer *n* ≥ 2, has an open neighborhood bi-Lipschitz to an open subset of ℝ*n*. Regularity requires all pointed tangents to be Euclidean, the reference measure is exactly $`\mathcal H^n`$, and the chart compares ambient distances with a point-dependent finite constant.
 
-[S2:814] carries the `\resultentry` with a single manuscript [S3].
+[S2:814] carries the `\resultentry` with a single manuscript [S3:44–49].
 The family has **no** formalization in the release [S4].
 
 ## Undergraduate summary
@@ -72,7 +72,7 @@ constant.
 
 The **novel contribution** is the **noncollapsed** resolution: with the
 reference measure pinned to $`\mathcal H^n`$ and regularity read as
-pointed-tangent Euclideanity [S3], every regular point carries a
+pointed-tangent Euclideanity [S3:44–49], every regular point carries a
 bi-Lipschitz chart [S2:814]. The dimensional dependence of the
 constant and the use of the restricted ambient distance are the
 precision of the statement [S1:8674].
@@ -131,7 +131,7 @@ The ledger row `fam=357` [S4] records the tier and the counts:
 claim-shape tag, `resolves_named=0`, `counterex_broad=0`, `covmd=0`.
 The family is a regularity/structure result (a bi-Lipschitz chart at
 regular points) that the release ships without any Lean formalization,
-so the only evidence for the claim is the manuscript itself [S3].
+so the only evidence for the claim is the manuscript itself [S3:44–49].
 
 ## Sources
 

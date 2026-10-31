@@ -8,7 +8,7 @@
 
 [S1:6781] (family entry):
 
-> **269. Uniform Laughlin gap and stability under bounded scalar disorder.** Proves the fermionic Laughlin spectral-gap conjecture for the full <i>V</i><sub>1</sub> interaction at filling 1/3 on the round sphere. The unique ground state remains uniformly gapped under sufficiently weak bounded real scalar one-body potentials projected to the lowest Landau level. Both the gap and disorder threshold are uniform over all sufficiently large particle numbers and all normalized potential profiles. ([Lean](../../../lean/docs/269.md))
+> **269. Uniform Laughlin gap and stability under bounded scalar disorder.** Proves the fermionic Laughlin spectral-gap conjecture for the full *V*1 interaction at filling 1/3 on the round sphere. The unique ground state remains uniformly gapped under sufficiently weak bounded real scalar one-body potentials projected to the lowest Landau level. Both the gap and disorder threshold are uniform over all sufficiently large particle numbers and all normalized potential profiles. ([Lean](../../../lean/docs/269.md))
 
 [S2:629] carries the `\resultentry`, so the release blurb and the overview agree.
 The two manuscripts:

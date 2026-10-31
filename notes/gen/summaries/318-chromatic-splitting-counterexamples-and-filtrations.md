@@ -8,7 +8,7 @@
 
 [S1:7781] (family entry):
 
-> **318. Chromatic splitting: filtrations and counterexamples.** Disproves strong chromatic splitting at height three for primes <i>p</i> ≥ 5, and weak splitting for the derived <i>p</i>-completed sphere at heights <i>p</i> (<i>p</i> ≥ 5) and $`p+1`$ (<i>p</i> ≥ 7). Nevertheless, for <i>n</i> ≥ 1 and $`p\gt n+1`$, the overlap $`L_{n-1}L_{K(n)}S_p^\wedge`$ admits a $`2^n`$-stage filtration by the predicted localized-sphere pieces. At height three and prime three, even finite assembly from such pieces fails in the category of $`E(2)`$-local modules over the derived completed sphere.
+> **318. Chromatic splitting: filtrations and counterexamples.** Disproves strong chromatic splitting at height three for primes *p* ≥ 5, and weak splitting for the derived *p*-completed sphere at heights *p* (*p* ≥ 5) and $`p+1`$ (*p* ≥ 7). Nevertheless, for *n* ≥ 1 and $`p\gt n+1`$, the overlap $`L_{n-1}L_{K(n)}S_p^\wedge`$ admits a $`2^n`$-stage filtration by the predicted localized-sphere pieces. At height three and prime three, even finite assembly from such pieces fails in the category of $`E(2)`$-local modules over the derived completed sphere.
 
 [S2:732] carries the `\resultentry` with all five manuscripts [S3:3, S4:3, S5:3, S6:47, S7:3]. The five abstracts:
 

@@ -10,7 +10,7 @@
 
 > **355. Unique tangent flows at the first surface singularity.** Proves the first-singular-time case of tangent-flow uniqueness for smooth compact connected embedded surfaces without boundary in $`\mathbb R^3`$. At every singular point, all fixed-center backward tangent flows agree as area measures at every negative time in the original ambient coordinates, without mean-convexity or a prescribed tangent model.
 
-[S2:810] carries the `\resultentry` with the single manuscript [S3].
+[S2:810] carries the `\resultentry` with the single manuscript [S3:70–76].
 The abstract states the result:
 
 **Uniqueness of tangent flows** [S3:71–77]: at each singular point of
@@ -122,7 +122,7 @@ scope note under `lean/docs/`, no comparator stub under
 **T0** — the least-formalized tier: the release ships the manuscript
 but no Lean statement, no comparator target, and no proof. The
 result is therefore known to us only from the manuscript's source
-[S3] and the catalog blurb [S1, S2]; nothing in the release's checking
+[S3:70–76] and the catalog blurb [S1, S2]; nothing in the release's checking
 workflow (comparator build, `main_results` resolution, OAI `sorry`
 census) has been applied to it.
 

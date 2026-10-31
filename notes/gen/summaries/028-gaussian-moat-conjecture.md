@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **028. Uniformly bounded components of Gaussian-prime graphs.** Proves the Gaussian moat conjecture: no infinite walk through distinct Gaussian primes can have uniformly bounded steps. More strongly, for every distance bound D, the graph joining Gaussian primes at distance at most D has uniformly bounded finite component sizes, depending only on D, including primes on the coordinate axes. [S1:682]
+> **028. Uniformly bounded components of Gaussian-prime graphs.** Proves the Gaussian moat conjecture: no infinite walk through distinct Gaussian primes can have uniformly bounded steps. More strongly, for every distance bound *D*, the graph joining Gaussian primes at distance at most *D* has uniformly bounded finite component sizes, depending only on *D*, including primes on the coordinate axes. [S1:682]
 
 The manuscript abstract 
 

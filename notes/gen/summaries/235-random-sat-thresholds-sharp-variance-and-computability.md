@@ -8,7 +8,7 @@
 
 [S1:5664] (family entry):
 
-> **235. Limiting random SAT thresholds, sharp variance and computability.** For random $`k`$-SAT with independent uniformly signed proper clauses sampled with replacement, proves finite positive limiting thresholds and hitting-time variance $`\Theta_k(n)`$ for every fixed $`k\ge3`$, and computability of the 3-SAT threshold. We credit Gaia Carenini with priority for resolving the threshold-existence conjecture in her concurrent [ECCC TR26-229](https://eccc.weizmann.ac.il/report/2026/229/), made public October 5, 2026; this family supplies another proof and the sharper variance and computability results. ([Lean](../../../lean/docs/235.md))
+> **235. Limiting random SAT thresholds, sharp variance and computability.** For random $`k`$-SAT with independent uniformly signed proper clauses sampled with replacement, proves finite positive limiting thresholds and hitting-time variance $`\Theta_k(n)`$ for every fixed $`k\ge3`$, and computability of the 3-SAT threshold. We credit Gaia Carenini with priority for resolving the threshold-existence conjecture in her concurrent ECCC TR26-229, made public October 5, 2026; this family supplies another proof and the sharper variance and computability results. ([Lean](../../../lean/docs/235.md))
 
 [S2:555] carries the `\resultentry`, so the release blurb and the overview agree.
 The four manuscripts:

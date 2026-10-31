@@ -60,7 +60,7 @@ $`\|\mathrm{diag}(Y) X_h - X_h \mathrm{diag}(Y)\|
 \leq C \cdot \|Y a - a Y\|_{\infty} \cdot \|X_h\|`$
 where the commutator seminorm is taken over the unit ball of $`P`$. The key
 feature is that $`C`$ is *independent* of the algebra, the Hilbert space, and
-the amplification size [S6:30–41]. This uniformity is what allows the local
+the amplification size [S6:26–34]. This uniformity is what allows the local
 estimates to propagate to the global similarity result.
 
 **The method.** The manuscript builds the proof in stages: preliminaries on
@@ -99,7 +99,7 @@ from training alone.
 - **A universal hyperreflexivity constant** [S3:8–14, S4:9]: one constant
   works for all unital von Neumann algebras on arbitrary complex Hilbert
   spaces, as a byproduct of the similarity proof.
-- **A uniform commutator estimate** [S6:30–41]: the deviation of a homomorphism
+- **A uniform commutator estimate** [S6:26–34]: the deviation of a homomorphism
   from $`^*`$-form is controlled by a constant independent of the algebra, the
   Hilbert space, and the amplification size — the quantitative backbone of
   the similarity result.
@@ -124,9 +124,9 @@ name `KadisonSimilarity.lean` and `UniformCommutator.lean`.
 similarity statement is set up with the `SimilarToStar` predicate (an
 invertible $`S`$ conjugating $`\pi`$ to a $`^*`$-homomorphism) but the proof is
 unfinished. `UniformCommutator.lean` (40 lines) states
-`theorem uniform_commutator` at [S6:30] — the existence of a constant $`C`$
+`theorem uniform_commutator` at [S6:26] — the existence of a constant $`C`$
 uniform over all algebras, Hilbert spaces, and amplification sizes — and ends
-in `sorry` at [S6:41]. No proved copy exists under `lean/OAI/`. The gap is the
+in `sorry` at [S6:34]. No proved copy exists under `lean/OAI/`. The gap is the
 formalization itself: the release set the target and described the scope, but
 shipped no proof. The reading is of source text only.
 
@@ -150,5 +150,5 @@ OAI proof. The shape flags are `bound`, `resolves_named=1`.
 | S3 | [`preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/build/main.tex`](../../../preprints/Kadisons-similarity-theorem-through-uniform-derivation-estimates-September-23-2026/build/main.tex) | 28 | the manuscript; title [S3:3], date [S3:5], abstract [S3:8–14] |
 | S4 | [`lean/docs/288.md`](../../../lean/docs/288.md) | 18 | scope note — the formalization's Scope at [S4:9] and its comparator links at [S4:17–18] |
 | S5 | [`lean/ComparatorChallenges/KadisonSimilarity.lean`](../../../lean/ComparatorChallenges/KadisonSimilarity.lean) | 122 | comparator stub 1 — the similarity statement; 3 `sorry` |
-| S6 | [`lean/ComparatorChallenges/UniformCommutator.lean`](../../../lean/ComparatorChallenges/UniformCommutator.lean) | 40 | comparator stub 2 — `uniform_commutator` at [S6:30] with its `sorry` at [S6:41] |
+| S6 | [`lean/ComparatorChallenges/UniformCommutator.lean`](../../../lean/ComparatorChallenges/UniformCommutator.lean) | 40 | comparator stub 2 — `uniform_commutator` at [S6:26] with its `sorry` at [S6:34] |
 | S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 374 | the ledger row `fam=288`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

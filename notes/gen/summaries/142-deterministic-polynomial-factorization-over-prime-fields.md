@@ -8,7 +8,7 @@
 
 [S1:3436] (family entry):
 
-> **142. Deterministic polynomial factorization over prime fields.** Gives a uniform deterministic algorithm that completely factors every nonzero dense degree-n polynomial over a prime field 𝔽p, including multiplicities, in bit complexity polynomial in $`(n+1)\log p`$. The prime is supplied in binary. No randomness, integer-factorization or primitive-root oracle, or GRH assumption is required.
+> **142. Deterministic polynomial factorization over prime fields.** Gives a uniform deterministic algorithm that completely factors every nonzero dense degree-*n* polynomial over a prime field 𝔽*p*, including multiplicities, in bit complexity polynomial in $`(n+1)\log p`$. The prime is supplied in binary. No randomness, integer-factorization or primitive-root oracle, or GRH assumption is required.
 
 [S2:361] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

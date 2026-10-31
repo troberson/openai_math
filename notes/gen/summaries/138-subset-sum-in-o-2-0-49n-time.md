@@ -8,7 +8,7 @@
 
 [S1:3318] (family entry):
 
-> **138. Subset Sum in $`O(2^{0.49n})`$ time.** Gives a uniform randomized classical algorithm for worst-case Subset Sum in ordinary $`O(2^{0.49n})`$ word-RAM time on polynomial-bit inputs, where n counts the integers. The time bound holds on every execution and success probability is at least 2/3 on every input. Inputs may repeat positive integers; words have $`O(n+b)`$ bits for maximum input bit length b.
+> **138. Subset Sum in $`O(2^{0.49n})`$ time.** Gives a uniform randomized classical algorithm for worst-case Subset Sum in ordinary $`O(2^{0.49n})`$ word-RAM time on polynomial-bit inputs, where *n* counts the integers. The time bound holds on every execution and success probability is at least 2/3 on every input. Inputs may repeat positive integers; words have $`O(n+b)`$ bits for maximum input bit length *b*.
 
 [S2:353] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement. The `\resultentry` lists two manuscripts:

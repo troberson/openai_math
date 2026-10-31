@@ -8,7 +8,7 @@
 
 The release's blurb 
 
-> **073. The Falconer distance conjecture.** Resolves the Falconer distance conjecture in every dimension d ≥ 2: every compact set $`E\subset\mathbb R^d`$ with Hausdorff dimension greater than $`d/2`$ determines a set of Euclidean distances of positive Lebesgue measure. (Lean) [S1:1831]
+> **073. The Falconer distance conjecture.** Resolves the Falconer distance conjecture in every dimension *d* ≥ 2: every compact set $`E\subset\mathbb R^d`$ with Hausdorff dimension greater than $`d/2`$ determines a set of Euclidean distances of positive Lebesgue measure. (Lean) [S1:1831]
 
 The catalog entry [S9:220] states the same. The manuscript abstract 
 

@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **033. Iitaka subadditivity, variation, and logarithmic additivity.** Proves Campana's orbifold Iitaka subadditivity conjecture for smooth Fujiki-class-$`C`$ manifolds with rational simple-normal-crossing boundaries. For projective fibrations $`f:U\to V`$ of smooth complex quasi-projective varieties with connected fibers, general fiber F, and $`\bar\kappa(V)\ge0`$, proves Popa's inequality $`\bar\kappa(U)\ge\kappa(F)+\max\{\bar\kappa(V),\mathop{\mathrm{Var}}\nolimits (f)\}`$, where variation measures the whole geometric generic fiber. [S1:807]
+> **033. Iitaka subadditivity, variation, and logarithmic additivity.** Proves Campana's orbifold Iitaka subadditivity conjecture for smooth Fujiki-class-$`C`$ manifolds with rational simple-normal-crossing boundaries. For projective fibrations $`f:U\to V`$ of smooth complex quasi-projective varieties with connected fibers, general fiber *F*, and $`\bar\kappa(V)\ge0`$, proves Popa's inequality $`\bar\kappa(U)\ge\kappa(F)+\max\{\bar\kappa(V),\mathop{\mathrm{Var}}\nolimits (f)\}`$, where variation measures the whole geometric generic fiber. [S1:807]
 
 This family ships **five** manuscripts. Their abstracts:
 

@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **036. Numerical semiampleness and generalized minimal models.** Proves numerical semiampleness for nef adjoints $`K_X+B+M`$ with $`K_X+B`$ pseudo-effective and M nef rational, for projective klt rational pairs over algebraically closed characteristic-zero fields and smooth compact Kähler rational klt simple-normal-crossing pairs, using Bott–Chern cohomology in the latter case. Separately, projective generalized log canonical rational pairs over such fields admit minimal models for pseudo-effective adjoints and Mori fiber spaces otherwise, with nef b-data fixed. [S1:1017]
+> **036. Numerical semiampleness and generalized minimal models.** Proves numerical semiampleness for nef adjoints $`K_X+B+M`$ with $`K_X+B`$ pseudo-effective and *M* nef rational, for projective klt rational pairs over algebraically closed characteristic-zero fields and smooth compact Kähler rational klt simple-normal-crossing pairs, using Bott–Chern cohomology in the latter case. Separately, projective generalized log canonical rational pairs over such fields admit minimal models for pseudo-effective adjoints and Mori fiber spaces otherwise, with nef b-data fixed. [S1:1017]
 
 This family ships **four** manuscripts, in two pairs. The numerical
 semiampleness pair:

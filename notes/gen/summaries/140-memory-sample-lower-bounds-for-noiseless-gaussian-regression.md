@@ -8,7 +8,7 @@
 
 [S1:3359] (family entry):
 
-> **140. Memory–sample lower bounds for noiseless Gaussian regression.** For fixed A > 0, a one-pass learner with $`Ad^2`$ persistent bits needs $`\Omega_A(d\log(1/\epsilon))`$ noiseless Gaussian samples to recover a unit vector to angular error $`0\lt \epsilon\le1/10`$ with probability 2/3, uniformly in accuracy for large d. Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness. (Lean)
+> **140. Memory–sample lower bounds for noiseless Gaussian regression.** For fixed *A* > 0, a one-pass learner with $`Ad^2`$ persistent bits needs $`\Omega_A(d\log(1/\epsilon))`$ noiseless Gaussian samples to recover a unit vector to angular error $`0\lt \epsilon\le1/10`$ with probability 2/3, uniformly in accuracy for large *d*. Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness. (Lean)
 
 [S2:357] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement. The `\resultentry` lists six manuscripts:

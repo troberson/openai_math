@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **058. Semialgebraic universal covers and bounded domains.** Proves the Kollár–Pardon conjecture: the semialgebraic universal covers of connected normal projective complex varieties are exactly products $`D\times\mathbb C^m\times F`$, with D bounded symmetric and F simply connected, normal, and projective. A universal cover is quasi-projective exactly when the bounded symmetric factor is absent. In particular, a smooth projective variety covered by ℂn has a finite étale cover by an abelian variety. [S1:1515]
+> **058. Semialgebraic universal covers and bounded domains.** Proves the Kollár–Pardon conjecture: the semialgebraic universal covers of connected normal projective complex varieties are exactly products $`D\times\mathbb C^m\times F`$, with *D* bounded symmetric and *F* simply connected, normal, and projective. A universal cover is quasi-projective exactly when the bounded symmetric factor is absent. In particular, a smooth projective variety covered by ℂ*n* has a finite étale cover by an abelian variety. [S1:1515]
 
 This family ships **two** companion manuscripts. The classification:
 

@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **021. A quadratic bound for Jacobsthal’s function.** Answers Jacobsthal's quadratic-bound question: every interval of $`Ck^2`$ consecutive integers contains an integer coprime to any prescribed positive integer with at most k distinct prime divisors, for an absolute constant C. The bound is uniform over prime sets and interval positions and removes the classical logarithmic loss. [S1:570]
+> **021. A quadratic bound for Jacobsthal’s function.** Answers Jacobsthal's quadratic-bound question: every interval of $`Ck^2`$ consecutive integers contains an integer coprime to any prescribed positive integer with at most *k* distinct prime divisors, for an absolute constant *C*. The bound is uniform over prime sets and interval positions and removes the classical logarithmic loss. [S1:570]
 
 The manuscript abstract 
 

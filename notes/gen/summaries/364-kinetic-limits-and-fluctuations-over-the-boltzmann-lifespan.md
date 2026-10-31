@@ -11,7 +11,7 @@
 > **364. Kinetic limits and fluctuations over the Boltzmann lifespan.** Derives the nonlinear Boltzmann equation from three-dimensional grand-canonical Newtonian gases throughout every regular kinetic interval with uniform Gaussian decay. Stable finite-range radial potentials may have attractive wells and a singular repulsive core; initial pair exclusion and spatially summable Gaussian density and gradient bounds are assumed. A companion gives finite-dimensional hard-sphere Gaussian fluctuations, centered at the exact microscopic expectation and governed by the linear fluctuating Boltzmann equation.
 
 [S2:830] carries the `\resultentry` with two manuscripts —
-manuscript 1 [S3] (the Boltzmann–Grad limit for stable radial
+manuscript 1 [S3:129–139] (the Boltzmann–Grad limit for stable radial
 potentials) and manuscript 2 [S4] (the hard-sphere fluctuations). The
 content blurb calls the second a "companion" [S1:8822]; the ledger
 records `companion_word=1` but **no** cross-family edge in
@@ -30,7 +30,7 @@ limit**.
 Classically that limit was proved only for the simplest interaction:
 identical **hard spheres** (billiard-ball collisions). This result
 extends the derivation to a much wider class of forces. Manuscript 1
-[S3] shows the Boltzmann equation emerges from a three-dimensional
+[S3:129–139] shows the Boltzmann equation emerges from a three-dimensional
 gas whose particles interact through **stable, finite-range radial
 potentials** — forces that can have an attractive "well" at long range
 and a steep repulsive "core" up close, including a singular
@@ -93,7 +93,7 @@ attractive well lets particles form long-lived bound pairs and
 clusters that a pure hard-sphere argument cannot control.
 
 The **novel contributions** are the two complementary statements
-[S3, S4]. Manuscript 1 [S3] extends the Boltzmann–Grad limit to
+[S3, S4]. Manuscript 1 [S3:129–139] extends the Boltzmann–Grad limit to
 **stable, finite-range radial potentials** with attractive wells and
 a singular repulsive core, on every **regular kinetic interval** with
 uniform Gaussian decay, and with **no restriction on the differential
@@ -147,7 +147,7 @@ alone.
 ## Section skeleton
 
 Two manuscripts, with different root filenames.
-Manuscript 1 [S3] (Boltzmann–Grad limit, `build/paper.tex`, 153
+Manuscript 1 [S3:129–139] (Boltzmann–Grad limit, `build/paper.tex`, 153
 lines): a `preamble` [S3:54] and 7 `input` files [S3:143–150]:
 `00-introduction`, `01-preliminaries`, `02-cell-expansion`,
 `03-centering`, `04-history-estimates`, `05-exposure`,

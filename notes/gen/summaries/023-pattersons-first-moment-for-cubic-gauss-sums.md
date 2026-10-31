@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **023. Patterson's first moment for cubic Gauss sums.** Proves unconditionally the all-primary-prime form of Patterson's first-moment asymptotic: normalized cubic Gauss sums over primary Eisenstein primes of norm at most X, including both conjugates, have an explicit positive main term of order $`X^{5/6}/\log X`$. Every fixed nonzero prime-angle Fourier mode has smaller order. [S1:602]
+> **023. Patterson's first moment for cubic Gauss sums.** Proves unconditionally the all-primary-prime form of Patterson's first-moment asymptotic: normalized cubic Gauss sums over primary Eisenstein primes of norm at most *X*, including both conjugates, have an explicit positive main term of order $`X^{5/6}/\log X`$. Every fixed nonzero prime-angle Fourier mode has smaller order. [S1:602]
 
 The manuscript abstract 
 

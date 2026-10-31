@@ -8,7 +8,7 @@
 
 [S1:3343] (family entry):
 
-> **139. Subpolynomial query complexity for log-concave sampling.** For C2 potentials with a supplied minimizer and $`I\preceq\nabla^2V\preceq2I`$, proves that sampling within total variation 1/10 requires only $`C_\varepsilon d^\varepsilon`$ exact value-and-gradient queries for every fixed ε > 0. The bound holds on every run, with unrestricted computation between queries. A logarithmic lower bound also holds, so the optimal power-law exponent in this oracle model is zero. (Lean)
+> **139. Subpolynomial query complexity for log-concave sampling.** For *C*2 potentials with a supplied minimizer and $`I\preceq\nabla^2V\preceq2I`$, proves that sampling within total variation 1/10 requires only $`C_\varepsilon d^\varepsilon`$ exact value-and-gradient queries for every fixed *ε* > 0. The bound holds on every run, with unrestricted computation between queries. A logarithmic lower bound also holds, so the optimal power-law exponent in this oracle model is zero. (Lean)
 
 [S2:355] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

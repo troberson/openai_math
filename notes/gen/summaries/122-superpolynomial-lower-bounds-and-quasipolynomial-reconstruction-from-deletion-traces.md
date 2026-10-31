@@ -8,7 +8,7 @@
 
 [S1:2988] (family entry):
 
-> **122. Quantitative trace-reconstruction bounds with a uniform decoder.** At every fixed deletion probability in $`(0,1)`$, reconstructing an arbitrary length-n binary string requires $`n^{\Omega(\log\log n)}`$ independent traces, ruling out polynomial-sample reconstruction. A uniform decoder achieves quasipolynomial sample and running-time bounds for known fixed rational retention probabilities. When the deletion probability is at most $`n^{-\varepsilon}`$ for fixed ε > 0, both bounds become polynomial in the input and parameter encoding. (Lean)
+> **122. Quantitative trace-reconstruction bounds with a uniform decoder.** At every fixed deletion probability in $`(0,1)`$, reconstructing an arbitrary length-*n* binary string requires $`n^{\Omega(\log\log n)}`$ independent traces, ruling out polynomial-sample reconstruction. A uniform decoder achieves quasipolynomial sample and running-time bounds for known fixed rational retention probabilities. When the deletion probability is at most $`n^{-\varepsilon}`$ for fixed *ε* > 0, both bounds become polynomial in the input and parameter encoding. (Lean)
 
 [S2:322] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.

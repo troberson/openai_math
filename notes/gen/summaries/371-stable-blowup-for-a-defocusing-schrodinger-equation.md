@@ -8,7 +8,7 @@
 
 [S1:8970] (family entry):
 
-> **371. Stable blowup for the defocusing Schrödinger equation.** For a sufficiently large odd nonlinearity power, constructs a nonempty open set of initial data in $`H^k(\mathbb T^{12})`$, with <i>k</i> &gt; 8, whose solutions of the scalar defocusing nonlinear Schrödinger equation blow up in finite time. Thus finite-time blowup is stable under Sobolev perturbations in this supercritical regime. ([Lean](lean/docs/371.md))
+> **371. Stable blowup for the defocusing Schrödinger equation.** For a sufficiently large odd nonlinearity power, constructs a nonempty open set of initial data in $`H^k(\mathbb T^{12})`$, with *k* > 8, whose solutions of the scalar defocusing nonlinear Schrödinger equation blow up in finite time. Thus finite-time blowup is stable under Sobolev perturbations in this supercritical regime. ([Lean](../../../lean/docs/371.md))
 
 [S2:845] carries the `\resultentry` with a single manuscript [S3].
 The scope note states the formalized result:

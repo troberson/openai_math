@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **009. Function-field reconstruction from Milnor K-theory and Galois data.** Reconstructs function fields of transcendence degree at least two over algebraically closed constants from $`K^{\mathrm M}_1/\ell`$, $`K^{\mathrm M}_2/\ell`$, and their product. These data recover the perfect closure and constants when ℓ differs from the characteristic, and the original field and its named base in equal characteristic. Also proves Bogomolov–Pop reconstruction from abelian-by-central pro-ℓ Galois data away from the characteristic. [S1:198]
+> **009. Function-field reconstruction from Milnor K-theory and Galois data.** Reconstructs function fields of transcendence degree at least two over algebraically closed constants from $`K^{\mathrm M}_1/\ell`$, $`K^{\mathrm M}_2/\ell`$, and their product. These data recover the perfect closure and constants when *ℓ* differs from the characteristic, and the original field and its named base in equal characteristic. Also proves Bogomolov–Pop reconstruction from abelian-by-central pro-*ℓ* Galois data away from the characteristic. [S1:198]
 
 The headline manuscript (Bogomolov–Pop) abstract 
 

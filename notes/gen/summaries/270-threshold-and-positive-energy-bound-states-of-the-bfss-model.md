@@ -8,7 +8,7 @@
 
 [S1:6806] (family entry):
 
-> **270. Threshold and positive-energy bound states of the BFSS matrix model.** Proves that the undeformed relative $`\mathrm{SU}(N)`$ BFSS model has exactly one normalizable zero-energy state for every finite <i>N</i> ≥ 2, resolving the threshold-bound-state conjecture. For $`\mathrm{SU}(2)`$, a companion proves infinitely many normalizable positive-energy eigenstates with unbounded energies, contradicting the original BFSS paper's exclusion of additional bound states at <i>N</i> = 2.
+> **270. Threshold and positive-energy bound states of the BFSS matrix model.** Proves that the undeformed relative $`\mathrm{SU}(N)`$ BFSS model has exactly one normalizable zero-energy state for every finite *N* ≥ 2, resolving the threshold-bound-state conjecture. For $`\mathrm{SU}(2)`$, a companion proves infinitely many normalizable positive-energy eigenstates with unbounded energies, contradicting the original BFSS paper's exclusion of additional bound states at *N* = 2.
 
 [S2:631] carries the `\resultentry`, so the release blurb and the overview agree.
 The two manuscripts:

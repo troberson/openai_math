@@ -8,7 +8,7 @@
 
 [S1:8731] (family entry):
 
-> **360. Weak MTW curvature gives convexity and regular optimal transport.** On every closed connected Riemannian manifold of dimension at least two satisfying weak Ma–Trudinger–Wang curvature, all tangent injectivity domains are convex, resolving Villani's conjecture in this setting. For squared-distance transport between measurable probability densities bounded above and away from zero, the optimal map and its inverse are Hölder continuous. ([Lean](lean/docs/360.md))
+> **360. Weak MTW curvature gives convexity and regular optimal transport.** On every closed connected Riemannian manifold of dimension at least two satisfying weak Ma–Trudinger–Wang curvature, all tangent injectivity domains are convex, resolving Villani's conjecture in this setting. For squared-distance transport between measurable probability densities bounded above and away from zero, the optimal map and its inverse are Hölder continuous. ([Lean](../../../lean/docs/360.md))
 
 [S2:820] carries the `\resultentry` with two manuscripts —
 manuscript 1 [S3] (convex injectivity domains) and manuscript 2

@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **012. Independent largest prime factors of consecutive integers.** Resolves the Erdős–Pomerance joint Dickman conjecture: the logarithmic sizes of the largest prime factors of n and $`n+1`$ are asymptotically independent in ordinary natural density. In particular, the integers satisfying $`P^+(n)\lt P^+(n+1)`$ have density 1/2. [S1:300]
+> **012. Independent largest prime factors of consecutive integers.** Resolves the Erdős–Pomerance joint Dickman conjecture: the logarithmic sizes of the largest prime factors of *n* and $`n+1`$ are asymptotically independent in ordinary natural density. In particular, the integers satisfying $`P^+(n)\lt P^+(n+1)`$ have density 1/2. [S1:300]
 
 The manuscript abstract 
 

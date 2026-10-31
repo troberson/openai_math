@@ -8,7 +8,7 @@
 
 [S1:9018] (family entry):
 
-> **374. Sharp one-third stability of Brenier maps.** For uniform source measure <i>ρ</i> on a compact convex body with interior in dimension at least two, quadratic optimal transport maps satisfy $`\|T_\mu-T_\nu\|_{L^2(\rho)}\le C W_2(\mu,\nu)^{1/3}`$ uniformly over targets in a fixed compact set. The exponent is sharp, even for three-atom targets, disproving Letrouit's conjectured square-root bound. ([Lean](lean/docs/374.md))
+> **374. Sharp one-third stability of Brenier maps.** For uniform source measure *ρ* on a compact convex body with interior in dimension at least two, quadratic optimal transport maps satisfy $`\|T_\mu-T_\nu\|_{L^2(\rho)}\le C W_2(\mu,\nu)^{1/3}`$ uniformly over targets in a fixed compact set. The exponent is sharp, even for three-atom targets, disproving Letrouit's conjectured square-root bound. ([Lean](../../../lean/docs/374.md))
 
 [S2:852] carries the `\resultentry` with a single manuscript [S3].
 The scope note states the formalized result:

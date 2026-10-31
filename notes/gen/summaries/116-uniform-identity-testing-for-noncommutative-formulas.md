@@ -14,13 +14,13 @@
 
 > Uniform Matrix Hitting Points in Every Positive Characteristic
 
-> We construct a single matrix substitution that detects every nonzero size-s division-free noncommutative formula in n variables over every field of a given positive characteristic. One deterministic machine, given a promised prime p in binary and n, s in unary, outputs matrices over 𝔽p of dimension $`O(n^3s^6)`$ in polynomial bit time. The same tuple works with arbitrary extension-field coefficients, including in characteristic two. The construction also applies to the stated acyclic algebraic path programs.
+> We construct a single matrix substitution that detects every nonzero size-*s* division-free noncommutative formula in *n* variables over every field of a given positive characteristic. One deterministic machine, given a promised prime *p* in binary and *n*, *s* in unary, outputs matrices over 𝔽*p* of dimension $`O(n^3s^6)`$ in polynomial bit time. The same tuple works with arbitrary extension-field coefficients, including in characteristic two. The construction also applies to the stated acyclic algebraic path programs.
 
 [S1:2872] (the one-rational manuscript entry, with its abstract at [S1:2874]):
 
 > One Rational Matrix Hitting Point for Noncommutative Formulas
 
-> We construct, in deterministic polynomial bit time, one tuple of rational matrices that detects every nonzero polynomial computed by a noncommutative division-free formula of a prescribed size. The matrices have dimension $`O(ns^2)`$ for n variables and formula size s, and the same tuple works over every field of characteristic zero.
+> We construct, in deterministic polynomial bit time, one tuple of rational matrices that detects every nonzero polynomial computed by a noncommutative division-free formula of a prescribed size. The matrices have dimension $`O(ns^2)`$ for *n* variables and formula size *s*, and the same tuple works over every field of characteristic zero.
 
 [S1:2881] (the hitting-lists manuscript entry, with its abstract at [S1:2883]):
 

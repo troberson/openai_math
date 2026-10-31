@@ -8,7 +8,7 @@
 
 [S1:8756] (family entry):
 
-> **361. Failure of integer-degree harmonic dimension comparison.** Disproves Yau's proposed Euclidean dimension bound for harmonic functions of integer growth on manifolds with nonnegative Ricci curvature. For every sufficiently large integer <i>k</i>, a complete smooth metric on ℝ<sup>3</sup> has at least $`(k+2)^2`$ independent harmonic functions of growth at most <i>k</i>, exceeding the Euclidean count $`(k+1)^2`$. The metric may depend on <i>k</i>. ([Lean](lean/docs/361.md))
+> **361. Failure of integer-degree harmonic dimension comparison.** Disproves Yau's proposed Euclidean dimension bound for harmonic functions of integer growth on manifolds with nonnegative Ricci curvature. For every sufficiently large integer *k*, a complete smooth metric on ℝ3 has at least $`(k+2)^2`$ independent harmonic functions of growth at most *k*, exceeding the Euclidean count $`(k+1)^2`$. The metric may depend on *k*. ([Lean](../../../lean/docs/361.md))
 
 [S2:822] carries the `\resultentry` with two manuscripts —
 manuscript 1 [S3] (the even-dimensional counterexample) and

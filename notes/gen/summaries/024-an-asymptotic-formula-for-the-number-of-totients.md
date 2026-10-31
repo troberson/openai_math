@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **024. An asymptotic formula for the number of totients.** Gives an asymptotic equivalent for the number $`V(x)`$ of distinct totient values up to x, with a positive bounded phase-dependent factor determined by convergent arithmetic approximations. In particular, $`V(cx)/V(x)\to c`$ for every fixed c > 0, answering Erdős and Hall’s scaling question. [S1:618]
+> **024. An asymptotic formula for the number of totients.** Gives an asymptotic equivalent for the number $`V(x)`$ of distinct totient values up to *x*, with a positive bounded phase-dependent factor determined by convergent arithmetic approximations. In particular, $`V(cx)/V(x)\to c`$ for every fixed *c* > 0, answering Erdős and Hall’s scaling question. [S1:618]
 
 The manuscript abstract 
 

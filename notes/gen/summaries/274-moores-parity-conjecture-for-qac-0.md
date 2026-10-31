@@ -8,7 +8,7 @@
 
 [S1:6906] (family entry):
 
-> **274. Parity is not in QAC<sup>0</sup>.** Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu–Li's reductions give the same bounded-error obstruction for strict majority. ([Lean](../../../lean/docs/274.md))
+> **274. Parity is not in QAC0.** Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu–Li's reductions give the same bounded-error obstruction for strict majority. ([Lean](../../../lean/docs/274.md))
 
 [S2:639] carries the `\resultentry`, so the release blurb and the overview agree.
 The two manuscripts:

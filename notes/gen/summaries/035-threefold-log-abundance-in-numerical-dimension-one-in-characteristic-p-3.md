@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **035. Log-canonical threefold abundance in numerical dimension one.** Proves log abundance for projective log canonical threefold pairs over algebraically closed fields of characteristic p > 3 when the effective boundary is rational and the ℚ-Cartier adjoint is nef of numerical dimension one. The adjoint is semiample, without requiring the original variety to be terminal or ℚ-factorial. [S1:992]
+> **035. Log-canonical threefold abundance in numerical dimension one.** Proves log abundance for projective log canonical threefold pairs over algebraically closed fields of characteristic *p* > 3 when the effective boundary is rational and the ℚ-Cartier adjoint is nef of numerical dimension one. The adjoint is semiample, without requiring the original variety to be terminal or ℚ-factorial. [S1:992]
 
 This family ships **two** manuscripts. Their abstracts:
 

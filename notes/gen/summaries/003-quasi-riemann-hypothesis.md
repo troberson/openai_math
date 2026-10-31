@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **003. The quasi-Riemann hypothesis.** Proves that every Dirichlet L-function, including $`\zeta(s)`$, is zero-free in $`\Re s\gt 7/8`$, resolving the quasi-Riemann hypothesis. The same half-plane is zero-free for every finite-order Hecke L-function over $`\mathbb Q(\sqrt{-3})`$. A companion gives a different proof of the zero-free half-plane $`\Re s\gt 11/12`$. [S1:66]
+> **003. The quasi-Riemann hypothesis.** Proves that every Dirichlet *L*-function, including $`\zeta(s)`$, is zero-free in $`\Re s\gt 7/8`$, resolving the quasi-Riemann hypothesis. The same half-plane is zero-free for every finite-order Hecke *L*-function over $`\mathbb Q(\sqrt{-3})`$. A companion gives a different proof of the zero-free half-plane $`\Re s\gt 11/12`$. [S1:66]
 
 The headline manuscript (September 30) proves the stronger 7/8 bound
 

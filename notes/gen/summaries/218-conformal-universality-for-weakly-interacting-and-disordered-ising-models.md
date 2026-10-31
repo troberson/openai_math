@@ -119,7 +119,7 @@ arbitrary common pinned spins, and the finite
 stopping-band approximation. The full SLE$`_3`$
 convergence and conformal universality results are
 **outside** the formalized scope [S9:11]. The
-scope note names one comparator [S9:17]:
+scope note names one comparator [S9:15]:
 `BufferedIsing.lean`.
 
 ## History of the conjecture
@@ -203,7 +203,7 @@ observable and every comparison ratio in total
 variation [S9:9]. The full SLE$`_3`$ convergence
 and conformal universality results are outside
 the formalized scope [S9:11]. The scope note
-names one comparator [S9:17]:
+names one comparator [S9:15]:
 `BufferedIsing.lean`.
 
 **The registration gap.** The family is at tier

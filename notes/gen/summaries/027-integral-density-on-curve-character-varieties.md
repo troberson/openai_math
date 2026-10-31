@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **027. Potential integral density on curve character varieties.** Resolves the determinant-one curve case of Litt's integral-density question. For every smooth connected complex algebraic curve and every rank, integral points become Zariski dense in every component of its SLr character variety over the full ring of integers of one number field. Prescribed quasi-unipotent boundary conjugacy classes are allowed, including nonsemisimple classes. [S1:666]
+> **027. Potential integral density on curve character varieties.** Resolves the determinant-one curve case of Litt's integral-density question. For every smooth connected complex algebraic curve and every rank, integral points become Zariski dense in every component of its SL*r* character variety over the full ring of integers of one number field. Prescribed quasi-unipotent boundary conjugacy classes are allowed, including nonsemisimple classes. [S1:666]
 
 The manuscript abstract 
 

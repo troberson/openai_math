@@ -8,7 +8,7 @@
 
 The release blurb 
 
-> **066. Bounded klt complements for Fano contractions.** Proves the finite-rational-coefficient form of Shokurov’s bounded-klt-complement conjecture for ϵ-lc complex Fano-type pairs with nef anti-log-canonical divisor. For ϵ-lc Fano contractions over any algebraically closed characteristic-zero field, it gives klt complements near every base point, with index bounded only by dimension and positive rational ϵ. [S1:1654]
+> **066. Bounded klt complements for Fano contractions.** Proves the finite-rational-coefficient form of Shokurov’s bounded-klt-complement conjecture for *ϵ*-lc complex Fano-type pairs with nef anti-log-canonical divisor. For *ϵ*-lc Fano contractions over any algebraically closed characteristic-zero field, it gives klt complements near every base point, with index bounded only by dimension and positive rational *ϵ*. [S1:1654]
 
 This family ships **two** companion manuscripts. The bounded klt
 complement theorem (the headline):

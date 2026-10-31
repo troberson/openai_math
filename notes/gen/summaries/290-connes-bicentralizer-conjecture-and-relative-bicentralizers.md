@@ -8,7 +8,7 @@
 
 [S1:7234] (family entry):
 
-> **290. Relative bicentralizers and modular spectral recovery.** Proves Connes' bicentralizer conjecture for every type III<sub>1</sub> factor with separable predual and every faithful normal state. More generally, for every inclusion $`N\subset M`$ of von Neumann algebras with separable preduals admitting a faithful normal conditional expectation, constructs an amenable expected subalgebra $`P\subset N`$ with $`P'\cap c(M)=N'\cap c(M)`$, resolving the relative bicentralizer conjecture. ([Lean](../../../lean/docs/290.md))
+> **290. Relative bicentralizers and modular spectral recovery.** Proves Connes' bicentralizer conjecture for every type III1 factor with separable predual and every faithful normal state. More generally, for every inclusion $`N\subset M`$ of von Neumann algebras with separable preduals admitting a faithful normal conditional expectation, constructs an amenable expected subalgebra $`P\subset N`$ with $`P'\cap c(M)=N'\cap c(M)`$, resolving the relative bicentralizer conjecture. ([Lean](../../../lean/docs/290.md))
 
 [S2:674] carries the `\resultentry` with both manuscripts, so the release blurb and the overview agree. The two manuscripts [S3:55, S3:57, S4:3, S4:5]:
 

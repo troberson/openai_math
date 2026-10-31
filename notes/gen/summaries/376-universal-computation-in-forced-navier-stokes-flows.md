@@ -8,7 +8,7 @@
 
 [S1:9050] (family entry):
 
-> **376. Universal computation in forced Navier–Stokes flows.** Constructs viscous incompressible flows starting from rest on a fixed flat three-dimensional domain that perform universal computation under smooth external forcing. A terminating compiler turns a Turing machine and input into a finite program for the force, so a designated particle reaches a fixed region exactly when the machine halts. The viscosity is fixed, positive and computable. ([Lean](lean/docs/376.md))
+> **376. Universal computation in forced Navier–Stokes flows.** Constructs viscous incompressible flows starting from rest on a fixed flat three-dimensional domain that perform universal computation under smooth external forcing. A terminating compiler turns a Turing machine and input into a finite program for the force, so a designated particle reaches a fixed region exactly when the machine halts. The viscosity is fixed, positive and computable. ([Lean](../../../lean/docs/376.md))
 
 [S2:857] carries the `\resultentry` with nine manuscripts.
 The scope note states the formalized result:

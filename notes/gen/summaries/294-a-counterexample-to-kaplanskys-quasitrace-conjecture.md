@@ -8,16 +8,16 @@
 
 [S1:7343] (family entry):
 
-> **294. Kaplansky's quasitrace conjecture and failure of tensor-product stable finiteness.** Disproves Kaplansky's quasitrace conjecture by constructing a separable unital complex <i>C</i><sup>∗</sup>-algebra admitting normalized 2-quasitraces, all of which are nonadditive. As a consequence, two unital simple stably finite <i>C</i><sup>∗</sup>-algebras can have a properly infinite minimal tensor product, with one factor $`C_r^*(\mathbb F_2)`$. ([Lean](../../../lean/docs/294.md))
+> **294. Kaplansky's quasitrace conjecture and failure of tensor-product stable finiteness.** Disproves Kaplansky's quasitrace conjecture by constructing a separable unital complex *C*∗-algebra admitting normalized 2-quasitraces, all of which are nonadditive. As a consequence, two unital simple stably finite *C*∗-algebras can have a properly infinite minimal tensor product, with one factor $`C_r^*(\mathbb F_2)`$. ([Lean](../../../lean/docs/294.md))
 
-[S2:682] carries the `\resultentry` with the single manuscript [S3:40, S3:42]. The abstract [S4:1–8]:
+[S2:682] carries the `\resultentry` with the single manuscript [S3:40, S3:42]. The abstract 
 
 > We refute Kaplansky's quasitrace conjecture by constructing a separable
 unital complex $`C^*`$-algebra that admits normalized $`2`$-quasitraces
 but has no tracial state. As a consequence, we show that the minimal tensor
 product of two unital simple stably finite complex $`C^*`$-algebras can be
 properly infinite, even when one factor is the reduced free-group algebra
-$`C_r^*(\mathbb F_2)`$. [S4:1–9]
+$`C_r^*(\mathbb F_2)`$. [S4:1–8]
 
 ## Undergraduate summary
 
@@ -48,7 +48,7 @@ negatively.
 
 ## Graduate summary
 
-**Main theorem (formalized)** [S4:1–9, S2:682].
+**Main theorem (formalized)** [S4:1–8, S2:682].
 There exists a separable unital complex $`C^*`$-algebra $`A`$ admitting
 normalized $`2`$-quasitraces, and fixed positive contractions
 $`a, b \\in A_+`$, such that for every normalized $`2`$-quasitrace
@@ -94,7 +94,7 @@ constructions independently from training alone.
 
 ## Consequences
 
-- **Kaplansky's quasitrace conjecture is disproven** [S4:1–9, S2:682]:
+- **Kaplansky's quasitrace conjecture is disproven** [S4:1–8, S2:682]:
   there exists a separable unital $`C^*`$-algebra with normalized
   $`2`$-quasitraces, all nonadditive. This is the named resolution the
   ledger's `resolves_named` flag records.
