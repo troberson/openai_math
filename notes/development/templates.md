@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,486** lines, **606,543** bytes, **1,845** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,695** lines, **621,539** bytes, **1,948** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,486** lines, **606,553** bytes, **1,846** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,695** lines, **621,549** bytes, **1,949** slots.
 
 ## The report tree
 
@@ -20,7 +20,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `abstracts.md.j2` | 406 | 32,557 | 42 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,875 | 87 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,578 | 95 | `notes/gen/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
-| `findings.md.j2` | 282 | 21,564 | 4 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
+| `findings.md.j2` | 282 | 21,574 | 5 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
 | `fleet-design.md.j2` | 485 | 42,056 | 32 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
 | `formalization-deps.md.j2` | 186 | 9,476 | 53 | `notes/gen/reports/formalization-deps.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `formalization-faithfulness.md.j2` | 265 | 11,826 | 65 | `notes/gen/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
@@ -37,7 +37,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `t0-chains.md.j2` | 571 | 34,287 | 61 | `notes/gen/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 109 | 5,123 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
-| **report tree** | **22** | **9,486** | **606,543** | **1,845** | | |
+| **report tree** | **22** | **9,486** | **606,553** | **1,846** | | |
 
 ## The index tree
 

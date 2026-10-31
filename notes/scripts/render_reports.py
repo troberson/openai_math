@@ -3067,6 +3067,7 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
     return {
         "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
+        "cov_frac": f"**{p['sum_fams']}** of {p['families']}",
         "index_links": f"**{p['idx_pages']:,}** pages carry **{p['idx_links']:,}** links with "
                        f"**{p['idx_broken']}** broken [S27].",
         "tc_coverage": (f'"no coverage signal" holds for **{p["tc_zero"]}** of the '

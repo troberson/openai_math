@@ -55,9 +55,9 @@ Mathlib, so it contributes 3 to `all` and 0 to Mathlib. Comments are not strippe
 
 The counts above are over **`lean/OAI/**/*.lean` (162,417 files)**, which is what the acceptance line
 reproduces. Over the whole tree `lean/**/*.lean` (163,097 files) the same rule yields **OAI 370,312 /
-Mathlib 69,231** — the additions are `lean/OAI.lean`, the top-level module file whose 928
+Mathlib 69,506** — the additions are `lean/OAI.lean`, the top-level module file whose 928
 `import OAI.…` statements sit outside the `OAI/` glob, and `lean/ComparatorChallenges/`, whose 678
-files import Mathlib **642** times and import OAI **4** times, those 4 statements sitting in 3 files
+files import Mathlib **917** times and import OAI **4** times, those 4 statements sitting in 3 files
 (`CartierChartCompactnessSupport.lean:1-2`, `CharacterVarietiesAllSeamsSupport.lean:1`,
 `HodgeConjectureCMAbelianVarieties/Solution.lean:1`). The 680-file
 gap between the two scopes is those two trees plus `lean/OAI.lean` and `lean/lakefile.lean`, the

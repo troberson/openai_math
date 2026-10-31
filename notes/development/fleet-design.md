@@ -92,8 +92,8 @@ and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py` and `rende
 checker carries the pattern in its count pass and the writer carries it as its `FLEET_ATOMIC` constant,
 so counting either would read a needle as a site and the rule would be about the censuses, not the
 fleet. Over **74** scripts and **21** catlib modules the count is **2 matches**, both in
-`catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:51`, which promotes the sibling temp onto
-the target, and the one at `catlib/atomic.py:110`, which promotes a staged slot onto its tracked path.
+`catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:66`, which promotes the sibling temp onto
+the target, and the one at `catlib/atomic.py:125`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
 opened its tracked target directly, so a crash mid-write left a half-written tracked file. Atomic
 promotion is now **2** sites, both in the package, and every writer's write goes through them —
@@ -406,7 +406,7 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    page carries the anchors the checker counts, the four named here
    (`build_catalog.py:128`, `build_index.py:595`, `render_reports.py:1223`, `render_reports.py:2043`),
    the eight call-site anchors in the amplification section, the unsorted-walk list, the two measured
-   site anchors the four do not carry (`catlib/atomic.py:51`, `catlib/atomic.py:110`), and
+   site anchors the four do not carry (`catlib/atomic.py:66`, `catlib/atomic.py:125`), and
    `catlib/preprints.py:77`, `catlib/preprints.py:192`,
    `catlib/yaml.py:126`; an anchor written with trailing text
    (`` `render_reports.py:128 def measure()` ``) is not a form the checker parses, which is why the

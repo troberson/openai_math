@@ -110,7 +110,7 @@ README naming the command and its success criteria; **18** ship no README [S14].
 
 **The remaining layers are small.** **10** reasoning traces, all attributed to families by `README.md`
 [S15], 0 unattributed, shipping in 11 files (the Mézard–Parisi trace ships as both `.pdf` and `.tex`).
-**163** of 373 families have a summary page, covering **297** manuscripts [S2].
+**373** of 373 families have a summary page, covering **721** manuscripts [S2].
 
 **The counterexample families are the best-evidenced and the thinnest-evidenced at once.** The
 reading population is the counterexample tag intersected with tier ≠ T0: **28** families (19 T3,
@@ -173,7 +173,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,630** links with **0** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,840** links with **0** broken [S27].
 
 ## The dependency record
 
@@ -271,6 +271,6 @@ not survive a re-run.
   inferred from their file names, not from a stated criterion.
 - **Not measured:** proof density per discipline (only per tier and per shape); the 101 families with
   no titled headline (why the manuscript names no headline is a reading question); the 225
-  manuscripts invisible to the citation method; the 4 topics with no hit; the 39 of 372 families that
+  manuscripts invisible to the citation method; the 4 topics with no hit; the **373** of 373 families that
   have a summary page, which is a coverage fraction, not a coverage claim.
 
