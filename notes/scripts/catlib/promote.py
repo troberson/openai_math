@@ -28,10 +28,11 @@ so it is a measurement of a run, not a function of a digest, and a cache would s
 from __future__ import annotations
 
 import contextlib
+import os
 import shutil
 import subprocess
 from collections.abc import Callable
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 from catlib.atomic import RECORDS_ROOT, cache_text, write_atomic
 from catlib.paths import ROOT, SCRIPTS
@@ -2239,6 +2240,28 @@ RUN_ARGS: dict[str, Callable[[], tuple[str, ...]]] = {
 }
 
 
+def git_show_text(rev: str, repo_rel: str, max_hops: int = 8) -> str:
+    """Read a tracked path's bytes at a revision, FOLLOWING a git symlink (tree mode 120000).
+
+    `git show <rev>:<symlink>` returns the stored target **string**, not the target's content, and a
+    link's target is relative to the link's own directory. So a page kept as a symlink into
+    notes/gen/ reads as a path under the plain revision read; resolve it with
+    `normpath(join(dirname(link), target))` and re-read, following the chain to its end. A plain
+    blob (mode 100644) returns unchanged, so this is a superset of the plain read.
+    """
+    cur = repo_rel
+    for _ in range(max_hops):
+        listed = subprocess.run(["git", "-C", str(ROOT), "ls-tree", rev, cur],
+                                capture_output=True, text=True, check=True).stdout
+        mode = listed.split("\t")[0].split()[0] if listed.strip() else ""
+        blob = subprocess.run(["git", "-C", str(ROOT), "show", f"{rev}:{cur}"],
+                              capture_output=True, text=True, check=True).stdout
+        if mode != "120000":
+            return blob
+        cur = os.path.normpath(PurePosixPath(cur).parent.joinpath(blob.strip()).as_posix())
+    raise RuntimeError(f"symlink chain unresolved in {max_hops} hops: {repo_rel}")
+
+
 def git_short(ref: str) -> str:
     return subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--short", ref],
                           check=True, capture_output=True).stdout.decode("utf-8").strip()
@@ -2254,9 +2277,7 @@ def key_for(name: str, args: tuple[str, ...] = ()) -> str:
     """The builder's cache key: tree digests, the builder's source, its L1 inputs, its args."""
     script = SCRIPTS / name
     if name in L1_HEAD:
-        texts = tuple(subprocess.run(["git", "-C", str(ROOT), "show", f"HEAD:{p.relative_to(ROOT)}"],
-                                     check=True, capture_output=True).stdout.decode("utf-8")
-                      for p in l1_paths(name))
+        texts = tuple(git_show_text("HEAD", str(p.relative_to(ROOT))) for p in l1_paths(name))
     else:
         texts = tuple(p.read_text(encoding="utf-8") for p in l1_paths(name))
     fn = RUN_ARGS.get(name)

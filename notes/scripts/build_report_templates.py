@@ -56,7 +56,6 @@ from __future__ import annotations
 import multiprocessing as mp
 import pathlib
 import re
-import subprocess
 import sys
 
 import render_reports as R  # prewarm() before the fork; see main()
@@ -66,7 +65,7 @@ from catlib import text as TX
 from catlib import tsv as TSV
 from catlib.atomic import Staging
 from catlib.paths import SPLIT_TSV
-from catlib.promote import key_for
+from catlib.promote import git_show_text, key_for
 from catlib.records import require_record
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -88,8 +87,7 @@ POOL = 6
 # this module is the writer path that turns them into a template.
 
 def committed_page(page_rel: str) -> str:
-    return subprocess.run(["git", "-C", str(ROOT), "show", f"HEAD:{page_rel}"],
-                          capture_output=True, text=True, check=True).stdout
+    return git_show_text("HEAD", page_rel)
 
 
 def split_parts(matched: str, label: str, phrase: str) -> tuple[list[str], list[str]]:

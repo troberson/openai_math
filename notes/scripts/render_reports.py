@@ -86,7 +86,7 @@ from catlib.paths import (
     SUBFINDINGS_TSV,
     owner,
 )
-from catlib.promote import CHECKER_L1, key_for
+from catlib.promote import CHECKER_L1, git_show_text, key_for
 from catlib.quotes import resolve
 from jinja2 import Environment, FileSystemLoader
 
@@ -2722,12 +2722,8 @@ def named_before() -> int:
                           text=True, cwd=ROOT, check=True).stdout.split()
     if not base:
         return 0
-    head_readme = subprocess.run(["git", "show", base[0] + "^:notes/README.md"],
-                                 capture_output=True, text=True, cwd=ROOT,
-                                 check=True).stdout
-    head_agents = subprocess.run(["git", "show", base[0] + "^:AGENTS.md"],
-                                 capture_output=True, text=True, cwd=ROOT,
-                                 check=True).stdout
+    head_readme = git_show_text(base[0] + "^", "notes/README.md")
+    head_agents = git_show_text(base[0] + "^", "AGENTS.md")
     gaps = [n for n in names if n not in head_readme and n not in head_agents]
     return len(names) - len(gaps)
 

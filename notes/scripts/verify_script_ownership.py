@@ -37,7 +37,7 @@ import sys
 from catlib import render as RD
 from catlib.atomic import RECORDS_ROOT
 from catlib.paths import GATE_ROWS_TSV, NOTES, ROOT, SCRIPTS, read_text
-from catlib.promote import CHECKER_L1, key_for
+from catlib.promote import CHECKER_L1, git_show_text, key_for
 from catlib.records import require_record
 
 PAGE = SCRIPTS / "README.md"
@@ -646,12 +646,8 @@ def check(text):
         ["git", "log", "--format=%H", "--reverse", "--", "notes/scripts/README.md"],
         cwd=ROOT, capture_output=True, text=True, check=False).stdout.split()
     ref = f"{base[0]}^" if base else "HEAD"
-    head_readme = subprocess.run(
-        ["git", "show", f"{ref}:notes/README.md"], cwd=ROOT, capture_output=True, text=True, check=False
-    ).stdout
-    head_agents = subprocess.run(
-        ["git", "show", f"{ref}:AGENTS.md"], cwd=ROOT, capture_output=True, text=True, check=False
-    ).stdout
+    head_readme = git_show_text(ref, "notes/README.md")
+    head_agents = git_show_text(ref, "AGENTS.md")
     gaps = sorted(n for n in names if n not in head_readme and n not in head_agents)
     named_before = len(names) - len(gaps)
     if f"named **{named_before}** of the {len(names)} scripts" not in text:
