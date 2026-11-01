@@ -37,6 +37,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `t0-chains.md.j2` | 571 | 34,287 | 61 | `notes/gen/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 109 | 5,123 | 47 | `notes/gen/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
+| `verification-dirs.md.j2` | 408 | 37,956 | 44 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
 | **report tree** | **22** | **9,486** | **606,553** | **1,846** | | |
 
 ## The index tree
