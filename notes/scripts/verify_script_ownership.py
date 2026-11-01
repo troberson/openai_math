@@ -601,6 +601,9 @@ def check(text):
         "notes/development/probe/": len(probe),
         "notes/gen/tables/*.tsv": len(tables_tsv),
         "notes/gen/reports/*.md": len(reports_md),
+        # The A2 symlink move lands six generated pages as byte files here; the census row counts
+        # the .md byte files, not the symlinks the entry points carry at their own paths.
+        "notes/gen/*.md": len([f for f in gen if f.suffix == ".md"]),
         "notes/*.md": len(top_md),
         "notes/": len(files),
     }

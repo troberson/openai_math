@@ -3020,6 +3020,10 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
                           f"**{p['reports_hand']}** hand-written. **{p['reports_checked']}** with a "
                           f"checker, **{p['reports_md'] - p['reports_checked']}** without. `math-faz.4` "
                           "moved them here from the top level. |",
+        "census_gen": f"| `notes/gen/*.md` | **{p['gen_md']}** | generated — the six byte files the "
+                      "symlink move lands here; the six entry points that readers, the census and the "
+                      "registry key on (`notes/README.md`, `notes/scripts/README.md` and the four "
+                      "`notes/development/` pages) are git symlinks to them |",
         "census_notes_md": f"| `notes/*.md` | **{p['notes_md']}** | `notes/README.md`, the entry point — "
                            "hand-written, no checker |",
         "census_total": f"| `notes/` total, scripts excluded | **{p['notes_total']:,}** | — |",
