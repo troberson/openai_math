@@ -43,6 +43,11 @@ from catlib.records import require_record
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
 README = NOTES / "README.md"
+# The generated pages land as byte files under notes/gen/; their entry points are symlinks. The
+# render-diff compares the page's content (read through the link) with the writer's render, whose
+# page key is the byte target — a link path is not a key in PAGE_RENDERERS, so the diff must name
+# the byte target, while the text is read through the link.
+README_MD = NOTES / "gen" / "README.md"
 TEMPLATES_PAGE = NOTES / "development" / "templates.md"
 TPL_DIR = NOTES / "templates"
 # The report templates moved out of notes/templates/report/ into the generated tree in the
@@ -854,7 +859,7 @@ def main():
     p = check(text)
     cost = cost_problems(text)
     importers = importer_problems(text)
-    sync = sync_problems(README, read_text(README))
+    sync = sync_problems(README_MD, read_text(README))
     for x in p + tpl + cost + importers + sync:
         print(f"PROBLEM: {x}")
     print(f"Cost pass (Cost cells, self-test row figures, check() counts): {len(cost)} problems")
