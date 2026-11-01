@@ -1,175 +1,204 @@
 page	label	part
-notes/README.md	cov_agree	135 families have ≥1 formalized manuscript and 136 have
-notes/README.md	cov_t2	The
-notes/README.md	tier_flag	86 of the 130 are flagged, including 11 of the 19 families with no shape
-notes/README.md	cc_decl	The 28
-notes/README.md	cc_gaps	Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3
-notes/README.md	cw_fire	fires on
-notes/README.md	scan_links	**66,223** links, **133** broken, **17,700** of
-notes/README.md	trace_fams	(007, 017, 087, 102,
-notes/development/fleet-design.md	gate_rows	carries
-notes/development/fleet-design.md	gate_writers_class	Non-determinism sources in the **14** writers,
-notes/development/index-design.md	population totals	Totals: **2,560** index nodes (excluding the **122,458** `.lean` files) and **3,415** edges, or
-notes/development/index-design.md	builds-on declaration count	(**30** `builds-on` declarations at
-notes/development/index-design.md	added TSV byte figures	`notes/tables/abstracts.tsv` (**89476** B over **372** rows), `notes/tables/citation.tsv` (**64092** B over **391** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/config-declaration.tsv` (**27385** B over **200** rows), `notes/tables/configs.tsv` (**65790** B over **416** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/families.tsv` (**108554** B over **372** rows), `notes/tables/family-config.tsv` (**8893** B over **416** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/family-lean.tsv` (**21287** B over **200** rows), `notes/tables/family-manuscript.tsv` (**135963** B over **719** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23741** B over **980** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/gate-rows.tsv` (**3545** B over **82** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), `notes/tables/manuscripts.tsv` (**277825** B over **719** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**621437** B over **3313** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/splits.tsv` (**18255** B over **174** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22650** B over **92** rows) and
-notes/development/index-design.md	all-TSV byte total	every
-notes/development/index-design.md	manuscripts-per-family distribution	a family carries a maximum of **14**
-notes/development/index-design.md	subfindings key counts	keyed by
-notes/development/index-design.md	MSC hit count	family → MSC code
-notes/development/index-design.md	bib keywords count	bibliography entry → `keywords` field **0** over **13,802**
-notes/development/index-design.md	namespace agreement count	the triples name **183** module dirs, and the declaration
-notes/development/index-design.md	raw-bib projection	**13,802** rows at the measured **150** B/row is
-notes/development/index-design.md	derivable lean reach	config → file (yaml: **189** configs, all **189** of them also named by a scope note), which reaches
-notes/development/index-design.md	lean edge scope	The index carries family → Lean file for **136** families; the **172** is a
-notes/development/index-design.md	substring vs line-start counts	373. The brace-qualified substring reads **17** and **372** only because each definition writes
-notes/development/index-design.md	substring vs line-start counts	so a substring count of the command name reads 18 and
-notes/development/index-design.md	link occurrence gap	**426** scope-note link occurrences against **416** distinct configs: 7 scope notes link one config
-notes/development/index-design.md	index tree bytes	the index tree
-notes/development/index-design.md	disk link check	covers **66,223** links over the same 1,033 pages, also with
-notes/development/index-design.md	superseded estimate	superseded by the measured **2,560**
-notes/development/index-links.md	hl_canon	719
-notes/development/index-links.md	hl_canon	configs (JSON and Lean side by side), 192 Lean files named by `formalization.yaml` over 183
-notes/development/index-links.md	hl_canon	manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, 416 comparator
-notes/development/index-links.md	prose_lean200	`lean-dir` counts 200 links over
-notes/development/index-links.md	prose_leanhost	14 dirs host more than one `main_results` declaration (max 3), and 6 files host
-notes/development/index-links.md	prose_extra	`manuscript-dir` is the one category whose target count exceeds the canonical count: 746
-notes/development/index-links.md	prose_superseded	The 27 extra targets are directories the upstream merge superseded —
-notes/development/index-links.md	prose_superseded	every one exists on disk, none is listed as a manuscript in `notes/tables/subfindings.tsv`, and all 27
-notes/development/index-links.md	prose_indexpage	`index-page` 521 targets = 372 family pages + 92 topic
-notes/development/index-links.md	prose_indexpage	pages + 17 discipline pages + 40 name pages, and the 40 name pages are linked only from the entry
-notes/development/index-links.md	prose_latexsource	`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, all 719 present in
-notes/development/index-links.md	prose_notesdoc	551 name pages and one from the entry point), the 133 `notes/summaries/` pages family pages link,
-notes/development/index-links.md	prose_notesdoc	`notes-doc` 137 targets = `notes/reports/names.md` (552 links: one from each of the
-notes/development/index-links.md	prose_notesdoc	and the 4 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
-notes/development/index-links.md	prose_tablestsv	`tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from each of the 551 name
-notes/development/index-links.md	prose_tablestsv	pages and 2 from the entry point) and `notes/tables/topics.tsv`
-notes/development/index-links.md	prose_tracefiles	`reasoning_traces/` ships **11 files
-notes/development/index-links.md	prose_regchecked	**48,131 links checked, 0
-notes/development/index-links.md	prose_surplus	The 18,092 surplus links are
-notes/development/index-links.md	prose_basenames	The index tree carries 1,027 distinct file basenames over 1,033 pages and `notes/tables/` carries
-notes/reports/abstracts.md	family relation counts	Over the 372 family best matches: **0 identical,
-notes/reports/abstracts.md	near-identical families	**005** (0.972), **098** (0.901), **198** (0.989),
-notes/reports/abstracts.md	resolution over-flag rate	144 of 372 families (39%) call a resolution in the
-notes/reports/counterexample-crosscheck.md	cc_t2gap	**12**
-notes/reports/counterexample-crosscheck.md	cc_stub_cov	which is why 28 entries
-notes/reports/counterexample-crosscheck.md	cc_bead_21	The
-notes/reports/dependency-drift.md	p1_tc_move	The 22 toolchain
-notes/reports/dependency-drift.md	p1_tc_move	hunks move 8 distinct upstream versions onto the release's own: `v4.32.0` ×13, `v4.34.0` ×3, and one
-notes/reports/dependency-drift.md	p1_sits	It sits on 30 pinned commits plus 160,187 lines of release-specific edits to 23 of them,
-notes/reports/dependency-drift.md	p1_ratio	The compatibility layer is 1.3 lines of patch
-notes/reports/dependency-drift.md	p5_nopatch	**6 of
-notes/reports/dependency-drift.md	p5_plus	It is achieved by last-wins ordering plus 22 patches that rewrite each
-notes/reports/dependency-drift.md	p5_imposed	The
-notes/reports/dependency-drift.md	p6_table_intro	The table is all **23** declared
-notes/reports/dependency-drift.md	p6_median	Median patch lines: **2,575** for declared libraries with any direct import, **408** for declared
-notes/reports/dependency-drift.md	p6_largest	The largest patch in the release, PrimeNumberTheoremAnd at 39,904 lines, sits
-notes/reports/dependency-drift.md	p6_largest_unused	The
-notes/reports/dependency-drift.md	p6_tau	A library can be load-bearing and
-notes/reports/dependency-drift.md	p7_zerolist	`AINTLIB`, `LeanArchitect`,
-notes/reports/dependency-drift.md	p7_zerolist	`PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`, `doc-gen4`, `elliptic-curves`,
-notes/reports/dependency-drift.md	p7_zerolist	`formal-schemes`, `genl`, `heights`, `iut`, `leancert`, `oka`, `orbicurve-cores`, `pi1`,
-notes/reports/dependency-drift.md	p7_zeropatched	**14 of those 19 ship a patch**; the 5 that do not
-notes/reports/dependency-drift.md	p7_allpre	All 11 pre-resolution
-notes/reports/dependency-drift.md	p7_allpre	libraries are in the zero-import set, and 3 of the 12 `post_update` libraries are
-notes/reports/dependency-drift.md	p7_violist	gromov 2 above heights 0; schoenflies-lean 2 above iut 0; AbsorptionCutoff 1 above
-notes/reports/dependency-drift.md	p7_violist	strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;
-notes/reports/dependency-drift.md	p7_zero19	The 19 zero-import libraries sit beside that claim: an ordering-by-import
-notes/reports/dependency-drift.md	p7_zero19	comment over a list in which 19 of 30 entries import nothing directly is a claim about a list that is
-notes/reports/dependency-drift.md	p7_transitive	The
-notes/reports/dependency-drift.md	p7_transitive	manifest's 12 transitive-only packages (`Qq`, `aesop`, `batteries`, …) are none of the 19 zero-import
-notes/reports/dependency-drift.md	p7_floor	the direct-import counts are the floor they are: **no direct
-notes/reports/formalization-faithfulness.md	fa_surface	
-notes/reports/formalization-faithfulness.md	fa_surface	- **189** of the 189 declarations resolve to a statement in the file the yaml names.
-notes/reports/formalization-faithfulness.md	fa_surface	- **61** of the 189 statements are opaque: the type is a name that must be opened, not a formula.
-notes/reports/formalization-faithfulness.md	fa_surface	- Carrier bodies: min **1** line, median **6**, max **17**, sum **417** lines.
-notes/reports/formalization-faithfulness.md	fa_surface	All **61** carriers resolve through the declaration file's import closure.
-notes/reports/formalization-faithfulness.md	fa_surface	Over the **200** `main_results` entries over **189** unique configs:
-notes/reports/formalization-faithfulness.md	fa_pair	**15** overlap, **2** disjoint, **10** carriers with no literal, **2** families with no headline
-notes/reports/formalization-faithfulness.md	fa_pair	Over the **61** carriers, all **61** have a scope-note family: **1** exact, **31** lean-subset,
-notes/reports/formalization-faithfulness.md	fa_ae	**2,288** theorem environments; **48** carry an `a.e.`-style phrase (`a.e.`, `almost every`,
-notes/reports/formalization-faithfulness.md	fa_ae	Over the 719 listed manuscripts there are
-notes/reports/formalization-faithfulness.md	fa_ae	`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. **19** of those 32 families
-notes/reports/formalization-faithfulness.md	fa_ae	have a scope-note config; the 19 link **54** configs, of which **19** have a `main_results` entry and
-notes/reports/links.md	sec426_chal	sums to **416** while this row
-notes/reports/links.md	mm_targets	span **268** target
-notes/reports/links.md	mm_same	**287** point at a
-notes/reports/links.md	mm_tree	resolves **432** hrefs, of which **22** point at **16**
-notes/reports/links.md	mm_edges	carries 391 resolved manuscript→manuscript
-notes/reports/links.md	rec_all	over all 500 listed files: **16** families, **11**
-notes/reports/links.md	knob_quote	Quote 13 with its
-notes/reports/links.md	neg_word	"**9** families use the word ""companion"" in an"
-notes/reports/named-results.md	tex files (intro)	re-derives every count from the ledger and the
-notes/reports/named-results.md	overview families	**372** families in
-notes/reports/named-results.md	per-line warning	rule: **1,609** is the per-line scan, **1,619** is the
-notes/reports/named-results.md	target counts	Over **1,609** titled headline statements, **17** titles name a conjecture, question, or problem, in
-notes/reports/named-results.md	target split	One of the 17 (275) sits in a family the column reads 0; the
-notes/reports/named-results.md	subject vocabulary	one of the 551
-notes/reports/named-results.md	subject-not-rn list	002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238
-notes/reports/named-results.md	no-headline claim	**76 of the 248 flagged families ship no titled
-notes/reports/named-results.md	rn-not-abstract list	020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299
-notes/reports/named-results.md	layer 2 union	it would read 248 + 48
-notes/reports/named-results.md	layer 3 core	**6** families are `rn = 1` and name no target anywhere in their manuscript prose under **both** rules:
-notes/reports/named-results.md	additions not dir-named	**9** of the
-notes/reports/named-results.md	abstract layer reach	The manuscript-abstract
-notes/reports/named-results.md	direction B split	the 8 split **3 corroborated / 5 resting on the overview paraphrase
-notes/reports/named-results.md	load-bearing negative	Over 1,609 titled
-notes/reports/named-results.md	overlap	**10 real misses** (Direction A) and **15 title-scope additions**, overlapping in 022 039 044 151 209
-notes/reports/named-results.md	corpus sorry facts	zero of the 122,458 files under `lean/OAI/**/*.lean` contain `sorry` while the 416
-notes/reports/names.md	names_subject	551 of
-notes/reports/names.md	names_citation	The other 5,291 are
-notes/reports/names.md	names_zero	No name resolves to
-notes/reports/names.md	names_allfams	every family has a subject-name hit (372 of 372, so 0 families with no name
-notes/reports/names.md	prose550	550 of 551 subject names also
-notes/reports/names.md	escape_of	one of the 16 family-title escape
-notes/reports/names.md	decl_pairs	200 `main_results` entries over 189 configs, whose declaration names decompose into 351
-notes/reports/names.md	decl_pairs	the corpus has
-notes/reports/names.md	wang_zhang	`wang` is a subject name in 74 families' records and a bibliography author in 53 of
-notes/reports/names.md	fail_factor	`the` and `all` fail by a factor of 36 and
-notes/reports/names.md	ladder_reject	2,851 are rejected, leaving 557; the plural merge below removes 6,
-notes/reports/names.md	cat_adm	`cat` (169/42) and
-notes/reports/names.md	boolean_kept	`boolean` (596 mid / 28
-notes/reports/names.md	maker_snaky	142/0 and
-notes/reports/names.md	dist_median	Median 7
-notes/reports/names.md	totals	7,240 `.tex` files at depth 1–3; 16,889 statement environments carrying an optional title;
-notes/reports/names.md	sources_env	`notes/tables/sources.tsv` reports 21,288
-notes/reports/names.md	plural_forms	266 plural
-notes/reports/names.md	plural_forms	forms appear in a title layer whose singular also appears in a title layer; 6 of them clear the
-notes/reports/names.md	notchecked_prose	2,381 candidates were rejected as prose-words by
-notes/reports/scope-exclusions.md	ex_prose	121 of 242 sections state at least one exclusion, carrying 143 exclusion
-notes/reports/scope-exclusions.md	ex_narrow_detail	It hits 5 of 242 — families 003, 020, 049, 173, 360,
-notes/reports/scope-exclusions.md	ex_floor_b	A keyword filter finds 5 sections; the reading pass
-notes/reports/subfinding-pairs.md	sp_notread	Every family with two or more manuscripts is read: the page covers 167 of the 167, carrying 514
-notes/reports/t0-chains.md	tc_firstpass	**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, 059, 209), so **27**
-notes/reports/t0-chains.md	tc_firstpass	Of the
-notes/reports/t0-chains.md	tc_edges	Over **372** families
-notes/reports/t0-chains.md	tc_cw	families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry a `companions`
-notes/reports/t0-chains.md	tc_cw	fires on **9**
-notes/reports/t0-chains.md	tc_layer	2 edges over 372 families, while the
-notes/reports/t0-chains.md	tc_layer	companion relation it describes in prose is at least 9 families wide, and the manuscript-level
-notes/reports/t0-chains.md	tc_cite	**15** of the 27 cite their sibling: **8** mutual pairs and **7** one-directional. **12** cite no
-notes/reports/t0-chains.md	tc_cite	sibling, and **3** of those (200, 239, 300) ship no `.bib` file at all, so their absence is
-notes/reports/t0-chains.md	tc_oneway	The one-directional edges are 037,
-notes/reports/t0-chains.md	tc_trueof	That is true of
-notes/reports/topics.md	tp_headline	92 patterns matched case-insensitively against the title,
-notes/reports/topics.md	tp_headline	abstract, scope-note text, and derived Lean file paths of the 372 catalogued families → 980
-notes/reports/topics.md	tp_neg	0 MSC codes over 8,206 files, 0 `keywords` fields over 12,876 bibliography entries,
-notes/reports/topics.md	tp_yieldhist	yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:6 9:6 10:2 11:6 12:1 13:4 14:1 15:1 16:3
-notes/reports/topics.md	tp_thin	**17** terms have a yield of 3 or less
-notes/reports/verification-dirs.md	v_dirs_fams	**30 dirs over
-notes/reports/verification-dirs.md	v_famlist	(059, 067, 087, 090, 101, 107, 119, 153, 187, 189, 205, 210, 229, 266, 268, 269, 272,
-notes/reports/verification-dirs.md	v_covmd	`covmd` counts 2
-notes/reports/verification-dirs.md	v_doc_readme	**12 of 30** ship a `README.md` with a run command and success criteria: 087, 090 (×4), 107, 119,
-notes/reports/verification-dirs.md	v_classes	**12** top-level `README.md`, **6** a subdirectory `README.md`, **5** a top-level
-notes/reports/verification-dirs.md	v_declaring	the two family-348 dirs that declare `main_command` are claimed by
-notes/reports/verification-dirs.md	v_v348	the
-notes/reports/verification-dirs.md	v_verify	`verify.py` is 504 lines with 6 `check_*` functions (at lines 157, 170, 271,
-notes/reports/verification-dirs.md	v_cov	`COVERAGE.md` points at `results.json`, `verify.py`,
-notes/scripts/README.md	checker_sum	The 23 checker invocations sum
+notes/gen/README.md	cov_agree	138 families have ≥1 formalized manuscript and 138 have
+notes/gen/README.md	cov_t2	The
+notes/gen/README.md	tier_flag	84 of the 128 are flagged, including 11 of the 19 families with no shape
+notes/gen/README.md	cc_decl	The 28
+notes/gen/README.md	cc_gaps	Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3
+notes/gen/README.md	cw_fire	fires on
+notes/gen/README.md	scan_links	**66,840** links, **0** broken, **17,795** of
+notes/gen/README.md	trace_fams	(007, 017, 087, 102,
+notes/gen/fleet-design.md	gate_rows	carries
+notes/gen/fleet-design.md	gate_writers_class	Non-determinism sources in the **15** writers,
+notes/gen/index-design.md	population totals	Totals: **2,684** index nodes (excluding the **162,417** `.lean` files) and **3,437** edges, or
+notes/gen/index-design.md	builds-on declaration count	(**31** `builds-on` declarations at
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/abstracts.tsv` (**89656** B over **373** rows), `notes/gen/tables/citation.tsv` (**64549** B over **394** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/config-declaration.tsv` (**28597** B over **207** rows), `notes/gen/tables/configs.tsv` (**66828** B over **418** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/families.tsv` (**108828** B over **373** rows), `notes/gen/tables/family-config.tsv` (**8934** B over **418** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/family-lean.tsv` (**22237** B over **207** rows), `notes/gen/tables/family-manuscript.tsv` (**136257** B over **721** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/family-name.tsv` (**137478** B over **9872** rows), `notes/gen/tables/family-topic.tsv` (**23906** B over **987** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/family-trace.tsv` (**855** B over **10** rows), `notes/gen/tables/gate-rows.tsv` (**3549** B over **82** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/lean-dirs.tsv` (**48565** B over **668** rows), `notes/gen/tables/manuscripts.tsv` (**278481** B over **721** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/names.tsv` (**305925** B over **5864** rows), `notes/gen/tables/quotes.tsv` (**655560** B over **4029** rows),
+notes/gen/index-design.md	added TSV byte figures	`notes/gen/tables/scope-notes.tsv` (**27035** B over **245** rows), `notes/gen/tables/sources.tsv` (**221978** B over **721** rows), `notes/gen/tables/splits.tsv` (**18257** B over **174** rows), `notes/gen/tables/topics-rendered.tsv` (**19129** B over **92** rows) and
+notes/gen/index-design.md	all-TSV byte total	every
+notes/gen/index-design.md	manuscripts-per-family distribution	a family carries a maximum of **14**
+notes/gen/index-design.md	subfindings key counts	keyed by
+notes/gen/index-design.md	MSC hit count	family → MSC code
+notes/gen/index-design.md	bib keywords count	bibliography entry → `keywords` field **0** over **13,883**
+notes/gen/index-design.md	namespace agreement count	the triples name **185** module dirs, and the declaration
+notes/gen/index-design.md	raw-bib projection	**13,883** rows at the measured **150** B/row is
+notes/gen/index-design.md	derivable lean reach	config → file (yaml: **191** configs, all **191** of them also named by a scope note), which reaches
+notes/gen/index-design.md	lean edge scope	The index carries family → Lean file for **138** families; the **175** is a
+notes/gen/index-design.md	substring vs line-start counts	374. The brace-qualified substring reads **17** and **373** only because each definition writes
+notes/gen/index-design.md	substring vs line-start counts	so a substring count of the command name reads 18 and
+notes/gen/index-design.md	link occurrence gap	**428** scope-note link occurrences against **418** distinct configs: 8 scope notes link one config
+notes/gen/index-design.md	index tree bytes	the index tree
+notes/gen/index-design.md	disk link check	covers **66,840** links over the same 1,033 pages, also with
+notes/gen/index-design.md	superseded estimate	superseded by the measured **2,684**
+notes/gen/index-links.md	hl_canon	721
+notes/gen/index-links.md	hl_canon	configs (JSON and Lean side by side), 194 Lean files named by `formalization.yaml` over 185
+notes/gen/index-links.md	hl_canon	manuscript PDFs, 721 `build/` trees, 721 `README.md` stubs, 245 scope notes, 418 comparator
+notes/gen/index-links.md	prose_lean200	`lean-dir` counts 207 links over
+notes/gen/index-links.md	prose_leanhost	15 dirs host more than one `main_results` declaration (max 6), and 7 files host
+notes/gen/index-links.md	prose_extra	`manuscript-dir` is the one category whose target count exceeds the canonical count: 748
+notes/gen/index-links.md	prose_superseded	The 27 extra targets are directories the upstream merge superseded —
+notes/gen/index-links.md	prose_superseded	every one exists on disk, none is listed as a manuscript in `notes/gen/tables/subfindings.tsv`, and all 27
+notes/gen/index-links.md	prose_indexpage	`index-page` 522 targets = 522 family pages + 0 topic
+notes/gen/index-links.md	prose_indexpage	pages + 0 discipline pages + 0 name pages, and the 0 name pages are linked only from the entry
+notes/gen/index-links.md	prose_latexsource	`latex-source` 721 = the `main_tex` of each of the 721 manuscripts, all 721 present in
+notes/gen/index-links.md	prose_notesdoc	550 name pages and one from the entry point), the 373 `notes/gen/summaries/` pages family pages link,
+notes/gen/index-links.md	prose_notesdoc	`notes-doc` 378 targets = `notes/gen/reports/names.md` (551 links: one from each of the
+notes/gen/index-links.md	prose_notesdoc	and the 5 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
+notes/gen/index-links.md	prose_tablestsv	`tables-tsv` 1 targets = `notes/gen/tables/names.tsv` (551 links: one from each of the 550 name
+notes/gen/index-links.md	prose_tablestsv	pages and 1 from the entry point) and `notes/data/topics.tsv`
+notes/gen/index-links.md	prose_tracefiles	`reasoning_traces/` ships **11 files
+notes/gen/index-links.md	prose_regchecked	**48,643 links checked, 0
+notes/gen/index-links.md	prose_surplus	The 18,197 surplus links are
+notes/gen/index-links.md	prose_basenames	The index tree carries 1,027 distinct file basenames over 1,033 pages and `notes/gen/tables/` carries
+notes/gen/reports/abstracts.md	family relation counts	Over the 373 family best matches: **0 identical,
+notes/gen/reports/abstracts.md	near-identical families	**005** (0.972), **098** (0.901), **198** (0.989),
+notes/gen/reports/abstracts.md	resolution over-flag rate	143 of 373 families (38%) call a resolution in the
+notes/gen/reports/counterexample-crosscheck.md	cc_t2gap	**12**
+notes/gen/reports/counterexample-crosscheck.md	cc_stub_cov	which is why 28 entries
+notes/gen/reports/counterexample-crosscheck.md	cc_bead_21	The
+notes/gen/reports/dependency-drift.md	p1_tc_move	The 22 toolchain
+notes/gen/reports/dependency-drift.md	p1_tc_move	hunks move 8 distinct upstream versions onto the release's own: `v4.32.0` ×13, `v4.34.0` ×3, and one
+notes/gen/reports/dependency-drift.md	p1_sits	It sits on 30 pinned commits plus 160,187 lines of release-specific edits to 23 of them,
+notes/gen/reports/dependency-drift.md	p1_ratio	The compatibility layer is 1.0 lines of patch
+notes/gen/reports/dependency-drift.md	p5_nopatch	**6 of
+notes/gen/reports/dependency-drift.md	p5_plus	It is achieved by last-wins ordering plus 22 patches that rewrite each
+notes/gen/reports/dependency-drift.md	p5_imposed	The
+notes/gen/reports/dependency-drift.md	p6_table_intro	The table is all **23** declared
+notes/gen/reports/dependency-drift.md	p6_median	Median patch lines: **2,575** for declared libraries with any direct import, **408** for declared
+notes/gen/reports/dependency-drift.md	p6_largest	The largest patch in the release, PrimeNumberTheoremAnd at 39,904 lines, sits
+notes/gen/reports/dependency-drift.md	p6_largest_unused	The
+notes/gen/reports/dependency-drift.md	p6_tau	A library can be load-bearing and
+notes/gen/reports/dependency-drift.md	p7_zerolist	`AINTLIB`, `LeanArchitect`,
+notes/gen/reports/dependency-drift.md	p7_zerolist	`PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`, `doc-gen4`, `elliptic-curves`,
+notes/gen/reports/dependency-drift.md	p7_zerolist	`formal-schemes`, `genl`, `heights`, `iut`, `leancert`, `oka`, `orbicurve-cores`, `pi1`,
+notes/gen/reports/dependency-drift.md	p7_zeropatched	**14 of those 19 ship a patch**; the 5 that do not
+notes/gen/reports/dependency-drift.md	p7_allpre	All 11 pre-resolution
+notes/gen/reports/dependency-drift.md	p7_allpre	libraries are in the zero-import set, and 3 of the 12 `post_update` libraries are
+notes/gen/reports/dependency-drift.md	p7_violist	gromov 2 above heights 0; schoenflies-lean 2 above iut 0; AbsorptionCutoff 1 above
+notes/gen/reports/dependency-drift.md	p7_violist	strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;
+notes/gen/reports/dependency-drift.md	p7_zero19	The 19 zero-import libraries sit beside that claim: an ordering-by-import
+notes/gen/reports/dependency-drift.md	p7_zero19	comment over a list in which 19 of 30 entries import nothing directly is a claim about a list that is
+notes/gen/reports/dependency-drift.md	p7_transitive	The
+notes/gen/reports/dependency-drift.md	p7_transitive	manifest's 12 transitive-only packages (`Qq`, `aesop`, `batteries`, …) are none of the 19 zero-import
+notes/gen/reports/dependency-drift.md	p7_floor	the direct-import counts are the floor they are: **no direct
+notes/gen/reports/formalization-deps.md	xm	The 30 lakefile declarations and the 31 yaml entries cross-match: 30 declared in both
+notes/gen/reports/formalization-deps.md	xm	layers, 0 declared in the lakefile only, 1 declared in the yaml only (`formal-conjectures`). The row
+notes/gen/reports/formalization-deps.md	xm	set is the union of the declared libraries, the yaml-only entry, and the import roots that are
+notes/gen/reports/formalization-deps.md	man_intro	and lists **42 resolved git packages**, every `rev`
+notes/gen/reports/formalization-deps.md	man_decl	**30 of 42** are the declared libraries, and **all 30 manifest revs equal the lakefile pins** — 0
+notes/gen/reports/formalization-deps.md	man_trans	**12 of 42** are transitive-only: `BibtexQuery`, `Cli`, `LeanSearchClient`, `MD4Lean`, `Qq`,
+notes/gen/reports/formalization-deps.md	man_trans	These are the Mathlib-ecosystem closure; none is declared in `lakefile.lean` and none is an import
+notes/gen/reports/formalization-deps.md	man_trans	`UnicodeBasic`, `aesop`, `batteries`, `importGraph`, `leansqlite`, `plausible`, `proofwidgets`.
+notes/gen/reports/formalization-deps.md	scope_oai	The counts above are over **`lean/OAI/**/*.lean` (162,417 files)**, which is what the acceptance line
+notes/gen/reports/formalization-deps.md	scope_tree	(`CartierChartCompactnessSupport.lean:1-2`, `CharacterVarietiesAllSeamsSupport.lean:1`,
+notes/gen/reports/formalization-deps.md	scope_tree	Mathlib 69,506** — the additions are `lean/OAI.lean`, the top-level module file whose 928
+notes/gen/reports/formalization-deps.md	scope_tree	Over the whole tree `lean/**/*.lean` (163,097 files) the same rule yields **OAI 370,312 /
+notes/gen/reports/formalization-deps.md	scope_tree	`import OAI.…` statements sit outside the `OAI/` glob, and `lean/ComparatorChallenges/`, whose 678
+notes/gen/reports/formalization-deps.md	scope_tree	files import Mathlib **917** times and import OAI **4** times, those 4 statements sitting in 3 files
+notes/gen/reports/formalization-deps.md	scope_gap	The 680-file
+notes/gen/reports/formalization-deps.md	scope_gap	gap between the two scopes is those two trees plus `lean/OAI.lean` and `lean/lakefile.lean`, the
+notes/gen/reports/formalization-deps.md	scope_ext	There are **12 external import roots** carrying **68,875**
+notes/gen/reports/formalization-deps.md	vi_5	Measured against the import counts, **5 entries are out of order** — each has a measured count
+notes/gen/reports/formalization-deps.md	zlist	`AINTLIB`, `LeanArchitect`, `PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`,
+notes/gen/reports/formalization-deps.md	zlist	`doc-gen4`, `elliptic-curves`, `formal-schemes`, `genl`, `heights`, `iut`, `leancert`, `oka`,
+notes/gen/reports/formalization-deps.md	zlist	`orbicurve-cores`, `pi1`, `tate-curves-theta`, `tempered-fundamental-groups` — recorded with
+notes/gen/reports/formalization-deps.md	imp_rows	68,589 of the 68,875 external statements — **99.6%** — so the OAI tree is a Mathlib project with a
+notes/gen/reports/formalization-deps.md	imp_rows	Only **12 of 32** rows have any direct import: mathlib 68,589, then PrimeNumberTheoremAnd 244,
+notes/gen/reports/formalization-deps.md	imp_rows	SphereEversion 2, gromov 2, schoenflies-lean 2, AbsorptionCutoff 1, BernoulliRegular 1. Mathlib is
+notes/gen/reports/formalization-deps.md	imp_rows	StrongPNT 12, rellich-kondrachov 9, TauCeti 5, ClassFieldTheory 4, fixed-point-theorems 4,
+notes/gen/reports/formalization-deps.md	n_7	**7 declared libraries ship no patch**: mathlib, TauCeti, LeanArchitect, PrimeCert, checkdecls,
+notes/gen/reports/formalization-deps.md	n_7	ClassFieldTheory 31,757, StrongPNT 26,284, AINTLIB 23,288, gromov 18,638 — while TauCeti, with 5
+notes/gen/reports/formalization-deps.md	n_7	doc-gen4, leancert. The last four are tooling, not mathematics. Patch size tracks how much upstream
+notes/gen/reports/formalization-deps.md	n_7	surgery was needed, not how much a library is used: PrimeNumberTheoremAnd 39,904 lines,
+notes/gen/reports/formalization-faithfulness.md	fa_surface	
+notes/gen/reports/formalization-faithfulness.md	fa_surface	- **191** of the 191 declarations resolve to a statement in the file the yaml names.
+notes/gen/reports/formalization-faithfulness.md	fa_surface	- **61** of the 191 statements are opaque: the type is a name that must be opened, not a formula.
+notes/gen/reports/formalization-faithfulness.md	fa_surface	- Carrier bodies: min **1** line, median **6**, max **17**, sum **417** lines.
+notes/gen/reports/formalization-faithfulness.md	fa_surface	All **61** carriers resolve through the declaration file's import closure.
+notes/gen/reports/formalization-faithfulness.md	fa_surface	Over the **207** `main_results` entries over **191** unique configs:
+notes/gen/reports/formalization-faithfulness.md	fa_pair	**15** overlap, **2** disjoint, **10** carriers with no literal, **2** families with no headline
+notes/gen/reports/formalization-faithfulness.md	fa_pair	Over the **61** carriers, all **61** have a scope-note family: **1** exact, **31** lean-subset,
+notes/gen/reports/formalization-faithfulness.md	fa_ae	**2,298** theorem environments; **49** carry an `a.e.`-style phrase (`a.e.`, `almost every`,
+notes/gen/reports/formalization-faithfulness.md	fa_ae	Over the 719 listed manuscripts there are
+notes/gen/reports/formalization-faithfulness.md	fa_ae	`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. **20** of those 32 families
+notes/gen/reports/formalization-faithfulness.md	fa_ae	have a scope-note config; the 20 link **55** configs, of which **20** have a `main_results` entry and
+notes/gen/reports/links.md	sec426_chal	sums to **418** while this row
+notes/gen/reports/links.md	mm_targets	span **269** target
+notes/gen/reports/links.md	mm_same	**287** point at a
+notes/gen/reports/links.md	mm_tree	resolves **435** hrefs, of which **22** point at **16**
+notes/gen/reports/links.md	mm_edges	carries 394 resolved manuscript→manuscript
+notes/gen/reports/links.md	rec_all	over all 501 listed files: **16** families, **11**
+notes/gen/reports/links.md	knob_quote	Quote 13 with its
+notes/gen/reports/links.md	neg_word	"**9** families use the word ""companion"" in an"
+notes/gen/reports/named-results.md	tex files (intro)	re-derives every count from the ledger and the
+notes/gen/reports/named-results.md	overview families	**373** families in
+notes/gen/reports/named-results.md	per-line warning	rule: **1,616** is the per-line scan, **1,626** is the
+notes/gen/reports/named-results.md	target counts	Over **1,616** titled headline statements, **18** titles name a conjecture, question, or problem, in
+notes/gen/reports/named-results.md	target split	One of the 18 (275) sits in a family the column reads 0; the
+notes/gen/reports/named-results.md	subject vocabulary	one of the 550
+notes/gen/reports/named-results.md	subject-not-rn list	002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238
+notes/gen/reports/named-results.md	no-headline claim	**76 of the 248 flagged families ship no titled
+notes/gen/reports/named-results.md	rn-not-abstract list	020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299
+notes/gen/reports/named-results.md	layer 2 union	it would read 248 + 48
+notes/gen/reports/named-results.md	layer 3 core	**6** families are `rn = 1` and name no target anywhere in their manuscript prose under **both** rules:
+notes/gen/reports/named-results.md	additions not dir-named	**9** of the
+notes/gen/reports/named-results.md	abstract layer reach	The manuscript-abstract
+notes/gen/reports/named-results.md	direction B split	the 8 split **3 corroborated / 5 resting on the overview paraphrase
+notes/gen/reports/named-results.md	load-bearing negative	Over 1,616 titled
+notes/gen/reports/named-results.md	overlap	**10 real misses** (Direction A) and **15 title-scope additions**, overlapping in 022 039 044 151 209
+notes/gen/reports/named-results.md	corpus sorry facts	zero of the 162,417 files under `lean/OAI/**/*.lean` contain `sorry` while the 418
+notes/gen/reports/names.md	names_subject	550 of
+notes/gen/reports/names.md	names_citation	The other 5,314 are
+notes/gen/reports/names.md	names_zero	No name resolves to
+notes/gen/reports/names.md	names_allfams	every family has a subject-name hit (373 of 373, so 0 families with no name
+notes/gen/reports/names.md	prose550	549 of 550 subject names also
+notes/gen/reports/names.md	escape_of	one of the 17 family-title escape
+notes/gen/reports/names.md	decl_pairs	207 `main_results` entries over 191 configs, whose declaration names decompose into 356
+notes/gen/reports/names.md	decl_pairs	the corpus has
+notes/gen/reports/names.md	wang_zhang	`wang` is a subject name in 75 families' records and a bibliography author in 53 of
+notes/gen/reports/names.md	fail_factor	`the` and `all` fail by a factor of 36 and
+notes/gen/reports/names.md	ladder_reject	2,858 are rejected, leaving 556; the plural merge below removes 6,
+notes/gen/reports/names.md	cat_adm	`cat` (169/42) and
+notes/gen/reports/names.md	boolean_kept	`boolean` (655 mid / 35
+notes/gen/reports/names.md	maker_snaky	142/0 and
+notes/gen/reports/names.md	dist_median	Median 7
+notes/gen/reports/names.md	totals	7,266 `.tex` files at depth 1–3; 16,919 statement environments carrying an optional title;
+notes/gen/reports/names.md	sources_env	`notes/gen/tables/sources.tsv` reports 21,353
+notes/gen/reports/names.md	plural_forms	266 plural
+notes/gen/reports/names.md	plural_forms	forms appear in a title layer whose singular also appears in a title layer; 6 of them clear the
+notes/gen/reports/names.md	notchecked_prose	2,385 candidates were rejected as prose-words by
+notes/gen/reports/scope-exclusions.md	ex_prose	121 of 242 sections state at least one exclusion, carrying 143 exclusion
+notes/gen/reports/scope-exclusions.md	ex_narrow_detail	It hits 5 of 245 — families 003, 020, 049, 173, 360,
+notes/gen/reports/scope-exclusions.md	ex_floor_b	A keyword filter finds 5 sections; the reading pass
+notes/gen/reports/subfinding-pairs.md	sp_notread	Every family with two or more manuscripts is read: the page covers 168 of the 168, carrying 516
+notes/gen/reports/t0-chains.md	tc_firstpass	**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, 059, 209), so **27**
+notes/gen/reports/t0-chains.md	tc_firstpass	Of the
+notes/gen/reports/t0-chains.md	tc_edges	Over **373** families
+notes/gen/reports/t0-chains.md	tc_cw	families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry a `companions`
+notes/gen/reports/t0-chains.md	tc_cw	fires on **9**
+notes/gen/reports/t0-chains.md	tc_layer	2 edges over 373 families, while the
+notes/gen/reports/t0-chains.md	tc_layer	companion relation it describes in prose is at least 9 families wide, and the manuscript-level
+notes/gen/reports/t0-chains.md	tc_cite	**15** of the 27 cite their sibling: **8** mutual pairs and **7** one-directional. **12** cite no
+notes/gen/reports/t0-chains.md	tc_cite	sibling, and **3** of those (200, 239, 300) ship no `.bib` file at all, so their absence is
+notes/gen/reports/t0-chains.md	tc_oneway	The one-directional edges are 037,
+notes/gen/reports/t0-chains.md	tc_trueof	That is true of
+notes/gen/reports/topics.md	tp_headline	92 patterns matched case-insensitively against the title,
+notes/gen/reports/topics.md	tp_headline	abstract, scope-note text, and derived Lean file paths of the 373 catalogued families → 987
+notes/gen/reports/topics.md	tp_neg	0 MSC codes over 8,233 files, 0 `keywords` fields over 12,957 bibliography entries,
+notes/gen/reports/topics.md	tp_yieldhist	yield histogram 0:4 1:5 2:3 3:5 4:8 5:5 6:5 7:8 8:6 9:4 10:4 11:6 12:1 13:4 15:2 16:3 17:3
+notes/gen/reports/topics.md	tp_thin	**17** terms have a yield of 3 or less
+notes/gen/reports/verification-dirs.md	v_dirs_fams	**31 dirs over
+notes/gen/reports/verification-dirs.md	v_famlist	(059, 067, 087, 090, 101, 107, 119, 153, 187, 189, 205, 210, 229, 266, 268, 269, 272,
+notes/gen/reports/verification-dirs.md	v_covmd	`covmd` counts 2
+notes/gen/reports/verification-dirs.md	v_doc_readme	**12 of 31** ship a `README.md` with a run command and success criteria: 087, 090 (×4), 107, 119,
+notes/gen/reports/verification-dirs.md	v_classes	**12** top-level `README.md`, **6** a subdirectory `README.md`, **5** a top-level
+notes/gen/reports/verification-dirs.md	v_declaring	the two family-348 dirs that declare `main_command` are claimed by
+notes/gen/reports/verification-dirs.md	v_v348	the
+notes/gen/reports/verification-dirs.md	v_verify	`verify.py` is 504 lines with 6 `check_*` functions (at lines 157, 170, 271,
+notes/gen/reports/verification-dirs.md	v_cov	`COVERAGE.md` points at `results.json`, `verify.py`,
+notes/gen/scripts-README.md	checker_sum	The 23 checker invocations sum
