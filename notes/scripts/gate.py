@@ -113,6 +113,7 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_named_conjectures.py -q", ("pages",), ()),
     ("verify_scope_exclusions.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_scope_exclusions.py -q", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_render_slot_guard.py -q", ("pages",), ()),
     ("verify_subfindings.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_subfindings.py -q", ("pages",), ()),
     ("verify_subfinding_pairs.py", ("pages",), ()),

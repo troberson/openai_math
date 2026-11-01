@@ -88,15 +88,19 @@ from catlib.paths import (
 )
 from catlib.promote import CHECKER_L1, git_show_text, key_for
 from catlib.quotes import resolve
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 TPL = ROOT / "notes" / "gen" / "templates" / "report"
 
 # The builder's key is computed inside main(), not at import: its L1 names the 1,049-file index tree
 # it reads, and `catlib/templates.py` imports this module, so a module-level key would make every
 # consumer of the registry pay that read. The L1 list is the registry's.
+# StrictUndefined: a template that references a key the writer never supplies raises at render time
+# instead of silently rendering the empty string. This is the slot-coverage guard that replaces the
+# builder's "slot set is the writer's" safety property (math-v5o.1).
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
-                  trim_blocks=True, lstrip_blocks=True, autoescape=False)
+                  trim_blocks=True, lstrip_blocks=True, autoescape=False,
+                  undefined=StrictUndefined)
 TSV = ROOT / "notes" / "gen" / "tables" / "sources.tsv"
 # One constant per page, written by name in main(): the ownership checker derives a writer's targets
 # from the receiver of its write call, so a write through a loop variable is invisible to it.
