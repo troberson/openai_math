@@ -73,9 +73,29 @@ def rendered(page: pathlib.Path) -> str:
     try:
         import render_reports as R
 
-        return R.render_page(page)
+        return R.render_page(_byte_target(page))
     finally:
         _IN_RENDER = False
+
+
+def _byte_target(page: pathlib.Path) -> pathlib.Path:
+    """Resolve a symlinked page entry point to the byte file the writer keys its render on.
+
+    The A2 move left the six generated pages as byte files under `notes/gen/` with a symlink at
+    each entry point. A checker reads the page through the link, but the writer's `render_page`
+    is keyed by the byte target, so a link path is not a key in `PAGE_RENDERERS` and the diff
+    raises `KeyError`. A page that is not a symlink is returned unchanged, so the pass is inert
+    for a tree without the move.
+    """
+    if not page.is_symlink():
+        return page
+    from catlib.paths import ROOT
+
+    resolved = page.resolve()
+    try:
+        return ROOT / resolved.relative_to(ROOT)
+    except ValueError:
+        return resolved
 
 
 def sync_inert() -> bool:
