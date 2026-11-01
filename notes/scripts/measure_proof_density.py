@@ -36,13 +36,13 @@ SOURCES = REPO / "notes" / "gen" / "tables" / "sources.tsv"
 LEDGER = REPO / "notes" / "gen" / "tables" / "catalog.tsv"
 YAML = REPO / "lean" / "formalization.yaml"
 
-# Totals recorded in beads math-hqd.3 and in notes/gen/reports/sources.md, re-measured 2026-10-09 after the
-# upstream merge (719 manuscripts / 20,341 proofs / 21,288 statements / tiers 136-106-0-130).
-EXPECTED_ROWS = 719
-EXPECTED_FAMS = 372
-EXPECTED_PROOFS = 20341
-EXPECTED_THMS = 21288
-EXPECTED_TIERS = {"T3": 136, "T2": 106, "T1": 0, "T0": 130}
+# Totals recorded in beads math-hqd.3 and in notes/gen/reports/sources.md, re-measured 2026-11-01 after the
+# corpus growth (721 manuscripts / 20,403 proofs / 21,353 statements / tiers 138-106-1-128).
+EXPECTED_ROWS = 721
+EXPECTED_FAMS = 373
+EXPECTED_PROOFS = 20403
+EXPECTED_THMS = 21353
+EXPECTED_TIERS = {"T3": 138, "T2": 106, "T1": 1, "T0": 128}
 
 AUC_MIN = 0.65
 P_MAX = 0.01

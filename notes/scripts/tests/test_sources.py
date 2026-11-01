@@ -232,13 +232,13 @@ def test_clean_page(mod, text, ledger):
     assert m["cols"] == 14, f"cols {m['cols']}"
     assert (m["superseded"], m["notices"]) == (27, 3), \
         f"superseded {m['superseded']}, notices {m['notices']}"
-    assert (m["main_no_dc"], m["six"], m["decl"]) == (12, 21203, 21288), \
+    assert (m["main_no_dc"], m["six"], m["decl"]) == (12, 21268, 21353), \
         f"main_no_dc {m['main_no_dc']}, envs {m['six']}, declared {m['decl']}"
     rd = m["rootdist"]
-    assert (rd[1], rd[2], rd[3]) == (715, 3, 1), f"root distribution {dict(rd)}"
+    assert (rd[1], rd[2], rd[3]) == (717, 3, 1), f"root distribution {dict(rd)}"
     s = m["sums"]
     assert (s["roots"], s["proofs"], s["thms"], s["subsections"], s["tex_bytes"]) == \
-        (724, 20341, 21288, 16297, 127456942), f"column sums {dict(s)}"
+        (726, 20403, 21353, 16370, 127933852), f"column sums {dict(s)}"
     for key in ("pdf_missing", "main_missing", "main_not_root", "fam_outside", "paps_diff",
                 "pdf_ov_diff"):
         assert m[key] == 0, f"integrity {key}: {m[key]} differences"
