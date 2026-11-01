@@ -8,9 +8,10 @@ formalization excludes is what the release asserts, not what a build has confirm
 
 ## How this was read
 
-All 245 scope notes on disk were read in full, section by section — the 235 of the original pass
-plus the 7 that the 2026-10-07 upstream merge added (027, 066, 075, 103, 137, 195, 301), read
-2026-10-08. Each note has exactly two `## `
+All 245 scope notes on disk were read in full, section by section — the 235 of the original pass,
+the 7 that the 2026-10-07 upstream merge added (027, 066, 075, 103, 137, 195, 301), read
+2026-10-08, and the 3 that the 2026-10-26 upstream merge added (032, 079, 378), read 2026-11-01.
+Each note has exactly two `## `
 sections — `## Scope` and `## Comparator links` — so the section boundaries are unambiguous, and every
 citation below points inside the `## Scope` section. An entry records:
 
@@ -51,7 +52,7 @@ with per-phrase hits 0 / 3 / 0 / 1 / 1. The broad list adds `not included`, `not
 `not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 45 of 245.
 
 So 5 is a floor under a narrow rule, not a census. A keyword filter finds 5 sections; the reading pass
-finds exclusions in 121 of the 245. The gap is the reason this page is a reading record and not a tag.
+finds exclusions in 122 of the 245. The gap is the reason this page is a reading record and not a tag.
 
 ## Entries
 
@@ -74,8 +75,9 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 024 | **None stated.** |
 | 025 | **None stated.** |
 | 026 | **None stated.** |
-| 027 | “Potential integral density, including the prescribed-boundary and all-component conclusions, remains outside the selected statement.” `lean/docs/027.md:11` |
-| 028 | “No explicit function of $D$ is supplied.” `lean/docs/028.md:9` |
+| 027 | "The paper's main theorem—potential integral density for $\mathrm{SL}_r$ curve character varieties over one finite extension, including prescribed quasi-unipotent boundary data and every irreducible component—is outside this comparison." `lean/docs/027.md:11` |
+| 028 | "No explicit function of $D$ is supplied." `lean/docs/028.md:9` |
+| 032 | "The paper's consequences for the Tate conjecture over finite fields and the Hodge standard conjecture in arbitrary characteristic are outside this selected statement." `lean/docs/032.md:13` |
 | 033 | “The finite-dimension and negative-base branches of the paper's additivity theorem are outside this selected statement.” `lean/docs/033.md:11` |
 | 039 | “The threshold is not explicit or uniform over all surfaces.” `lean/docs/039.md:16` |
 | 047 | “The separate stable-coordinate and general line-bundle lifting consequences are not included.” `lean/docs/047.md:11` |
@@ -83,12 +85,13 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 050 | “The separate very-ampleness result for all admissible even exponents is not included.” `lean/docs/050.md:11` |
 | 052 | “Automatic integrability and the paper's additional corollaries are not included.” `lean/docs/052.md:12` · “The paper's compatible product decomposition is a separate consequence, outside this selected statement.” `lean/docs/052.md:14` |
 | 058 | **None stated.** |
-| 066 | “Uniform Cartier sections, bounded klt complements, and the paper's real-boundary and companion conclusions are outside this supporting statement.” `lean/docs/066.md:11` |
+| 066 | "Bounded klt complements and the paper's real-boundary and companion conclusions are also outside this comparison." `lean/docs/066.md:13` |
 | 071 | **None stated.** |
 | 072 | “no numerical value of $\varepsilon$ is specified.” `lean/docs/072.md:16` |
 | 073 | **None stated.** |
 | 075 | **None stated.** |
-| 076 | “The results are existential and do not give an effective convergence rate or a signing algorithm.” `lean/docs/076.md:11` |
+| 076 | "The results are existential and do not give an effective convergence rate or a signing algorithm." `lean/docs/076.md:11` |
+| 079 | **None stated.** |
 | 081 | “The variation and principal-value corollary is not included.” `lean/docs/081.md:9` |
 | 082 | **None stated.** |
 | 083 | **None stated.** |
@@ -184,7 +187,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 191 | “The linked construction is for an unbounded sequence of sizes; the paper's statement for every sufficiently large $n$ is broader.” `lean/docs/191.md:9` |
 | 192 | **None stated.** |
 | 194 | “This selected statement is the complete-domain Dutta comparison. The paper's full flat-local result in arbitrary characteristic is outside it.” `lean/docs/194.md:11` |
-| 195 | “It does not prove that this ring lacks a nonzero finitely generated maximal Cohen–Macaulay module, or the paper's counterexample essentially of finite type.” `lean/docs/195.md:11` |
+| 195 | "That conclusion, the numerical obstruction used to prove it, and the counterexample essentially of finite type are outside this comparison." `lean/docs/195.md:13` |
 | 196 | **None stated.** |
 | 197 | “The further conclusion that the group is nonsofic is outside these statements.” `lean/docs/197.md:13` · “The paper's additional spectral-measure integral conclusion is not included.” `lean/docs/197.md:23` |
 | 198 | **None stated.** |
@@ -260,7 +263,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 297 | **None stated.** |
 | 298 | **None stated.** |
 | 299 | **None stated.** |
-| 301 | “Spatial classification, existence of the stabilization models, norm uniqueness, and final intertwining are outside this supporting comparison.” `lean/docs/301.md:11` |
+| 301 | "This comparison does not establish that conclusion. Existence of the stabilization models, norm uniqueness, and final intertwining are also outside it." `lean/docs/301.md:15` |
 | 303 | **None stated.** |
 | 307 | **None stated.** |
 | 312 | “The later semi-model structure and full comparison with the homotopy theory of spaces are not included.” `lean/docs/312.md:11` |
@@ -300,7 +303,8 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 372 | “The selected statement is uniqueness; it does not supply a reconstruction algorithm.” `lean/docs/372.md:9` |
 | 373 | “This is the three-dimensional Coulomb result; the paper's inverse-power extensions in every dimension are outside this statement.” `lean/docs/373.md:11` |
 | 374 | **None stated.** |
-| 376 | “This selected statement covers the sheet programs. The paper's fixed-particle halting detector and its reciprocal maps on solid boxes are outside its scope.” `lean/docs/376.md:14` |
+| 376 | "This selected statement covers the sheet programs. The paper's fixed-particle halting detector and its reciprocal maps on solid boxes are outside its scope." `lean/docs/376.md:14` |
+| 378 | "For $m$ clauses, the October 25 manuscript gives the sharper time bound $(n+m)^{O_k(1)}2^{O_k(n\log\log n/\sqrt{\log n})}$. When $m\le Dn$ for fixed $D>0$, this improves to $(n+m)^{O_{k,D}(1)}2^{O_{k,D}(n/\sqrt{\log n})}$." `lean/docs/378.md:11` |
 
 ## Not checked
 
