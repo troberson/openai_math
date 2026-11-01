@@ -42,10 +42,10 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/gen/reports/sources.md": R.measure,
     "notes/gen/reports/abstracts.md": R.CA.measure,
     "notes/gen/reports/named-results.md": R.en.population,
-    "notes/development/index-design.md": R.M.population,
+    "notes/gen/index-design.md": R.M.population,
     "notes/gen/reports/names.md": R.names_population,
     "notes/gen/reports/proof-density.md": R.proof_density_population,
-    "notes/development/index-links.md": R.index_links_population,
+    "notes/gen/index-links.md": R.index_links_population,
     # Both links pages read the SAME cached population. render_reports.py:3262 builds its topics
     # population from population_of("links"), and population_of is @cache'd, so the links walk is paid
     # once per process. Calling R.links_population() directly here made notes/gen/reports/topics.md re-run the
@@ -63,8 +63,8 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # subfinding-pairs.md's population is the pairing report's own, imported from
     # extract_subfinding_pairs.py, plus the reading record parsed back out of the page.
     "notes/gen/reports/subfinding-pairs.md": R.subfinding_pairs_population,
-    # notes/README.md is derived from the ledger alone plus the yaml's sources/main_results counts.
-    "notes/README.md": R.readme_population,
+    # notes/gen/README.md is derived from the ledger alone plus the yaml's sources/main_results counts.
+    "notes/gen/README.md": R.readme_population,
     # counterexample-crosscheck.md re-runs the crosscheck extractor's own report-only helpers
     # (main_results / scope_note / declaration_statement / carrier) over the ledger population.
     "notes/gen/reports/counterexample-crosscheck.md": R.crosscheck_population,
@@ -75,14 +75,14 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # grep, the sync census, the digests, the du sizes, the gate rows, the three site lists, the probe
     # parse. The page's checker measures the same figures with its own reads: a checker that compared
     # the page with the writer's numbers would prove nothing about them.
-    "notes/development/fleet-design.md": R.fleet_population,
+    "notes/gen/fleet-design.md": R.fleet_population,
     # templates.md's census is measure_templates.population(); the page also compares a template's slot
     # count with the writer's label count, so the abstracts label count travels inside the population —
     # the same CA.measure() call abstracts_page() makes.
-    "notes/development/templates.md": lambda: R.templates_population(len(R.abstracts_phrases(R.CA.measure()))),
-    # notes/scripts/README.md's census is the writer's own tree walk. The page's checker walks the same
+    "notes/gen/templates.md": lambda: R.templates_population(len(R.abstracts_phrases(R.CA.measure()))),
+    # notes/gen/scripts-README.md's census is the writer's own tree walk. The page's checker walks the same
     # trees with its own rule, so the two measurements are independent by construction.
-    "notes/scripts/README.md": R.ownership_population,
+    "notes/gen/scripts-README.md": R.ownership_population,
     # findings.md's summary-page and index-link counts move when a summary page is added, so the page's
     # slots are the writer's measurement of the summaries tree, the ledger, and the cached index scan.
     "notes/gen/reports/findings.md": R.findings_population,
@@ -93,12 +93,12 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/gen/reports/sources.md": lambda: R.phrases(POPULATIONS["notes/gen/reports/sources.md"]()),
     "notes/gen/reports/abstracts.md": lambda: R.abstracts_phrases(POPULATIONS["notes/gen/reports/abstracts.md"]()),
     "notes/gen/reports/named-results.md": lambda: R.named_results_phrases(POPULATIONS["notes/gen/reports/named-results.md"]()),
-    "notes/development/index-design.md": lambda: R.index_phrases(
-        POPULATIONS["notes/development/index-design.md"]()),
+    "notes/gen/index-design.md": lambda: R.index_phrases(
+        POPULATIONS["notes/gen/index-design.md"]()),
     "notes/gen/reports/names.md": lambda: R.names_phrases(POPULATIONS["notes/gen/reports/names.md"]()),
     "notes/gen/reports/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/gen/reports/proof-density.md"]()),
-    "notes/development/index-links.md": lambda: R.index_links_phrases(
-        POPULATIONS["notes/development/index-links.md"]()),
+    "notes/gen/index-links.md": lambda: R.index_links_phrases(
+        POPULATIONS["notes/gen/index-links.md"]()),
     # links.md prints the MSC/keywords/bibliography figures formatted (**8,206**, 13,802), while
     # links_full also carries each as an unformatted string for the topics page, which prints them
     # bare (render_reports.py:2412). Requiring a raw label in the links page aborts the build with
@@ -115,23 +115,23 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/gen/reports/t0-chains.md": lambda: R.t0_chains_phrases(POPULATIONS["notes/gen/reports/t0-chains.md"]()),
     "notes/gen/reports/subfinding-pairs.md": lambda: R.subfinding_pairs_phrases(
         POPULATIONS["notes/gen/reports/subfinding-pairs.md"]()),
-    "notes/README.md": lambda: R.readme_phrases(POPULATIONS["notes/README.md"]()),
+    "notes/gen/README.md": lambda: R.readme_phrases(POPULATIONS["notes/gen/README.md"]()),
     "notes/gen/reports/counterexample-crosscheck.md": lambda: R.crosscheck_phrases(
         POPULATIONS["notes/gen/reports/counterexample-crosscheck.md"]()),
     "notes/gen/reports/formalization-faithfulness.md": lambda: R.faithfulness_phrases(
         POPULATIONS["notes/gen/reports/formalization-faithfulness.md"]()),
-    "notes/development/fleet-design.md": lambda: R.fleet_phrases(
-        POPULATIONS["notes/development/fleet-design.md"]()),
-    "notes/development/templates.md": lambda: R.templates_phrases(
-        POPULATIONS["notes/development/templates.md"]()),
-    "notes/scripts/README.md": lambda: R.ownership_phrases(POPULATIONS["notes/scripts/README.md"]()),
+    "notes/gen/fleet-design.md": lambda: R.fleet_phrases(
+        POPULATIONS["notes/gen/fleet-design.md"]()),
+    "notes/gen/templates.md": lambda: R.templates_phrases(
+        POPULATIONS["notes/gen/templates.md"]()),
+    "notes/gen/scripts-README.md": lambda: R.ownership_phrases(POPULATIONS["notes/gen/scripts-README.md"]()),
     "notes/gen/reports/findings.md": lambda: R.findings_phrases(POPULATIONS["notes/gen/reports/findings.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
     "notes/gen/reports/abstracts.md": "verify_abstracts.py",
-    "notes/development/index-links.md": "check_index_links.py",
-    "notes/development/index-design.md": "verify_index_design.py",
+    "notes/gen/index-links.md": "check_index_links.py",
+    "notes/gen/index-design.md": "verify_index_design.py",
     # links.md has no page checker: its counts come from the gated writer extract_links.py, which
     # prints its report and writes notes/gen/tables/links.tsv and carries no count_phrases/size_phrases, so
     # the builder reports this coverage as NOT DERIVED.
@@ -167,12 +167,12 @@ ALL_PAGES = {
     # proven by the render diff plus the checker's own 7 mutants, which pin every quoted clause and
     # title to the family's \resultentry line.
     "notes/gen/reports/subfinding-pairs.md": "verify_subfinding_pairs.py",
-    # notes/README.md has no page checker at all: it is the ledger's reading guide, and the only
+    # notes/gen/README.md has no page checker at all: it is the ledger's reading guide, and the only
     # script that checks any part of it is verify_script_ownership.py, which verifies the command
     # block and the ownership census rows and carries no count_phrases/size_phrases. The builder
     # therefore reports this coverage as NOT DERIVED, and the page is proven by the twice-render
     # byte-identity diff plus that checker's plain run and its 16 mutants.
-    "notes/README.md": "verify_script_ownership.py",
+    "notes/gen/README.md": "verify_script_ownership.py",
     # counterexample-crosscheck.md's checker exports population() and count_phrases(), so the builder
     # derives its needle list from the checker itself - as it now does for the six other report-fed
     # pages, whose per-page counts are the Needles column of the templates census.
@@ -184,28 +184,30 @@ ALL_PAGES = {
     # needle list from the checker itself. The page's dated observations (the free -h line, the wall
     # times, the cold/warm swing) are deliberately NOT slots: a writer that recomputed them would move
     # the page the day the machine changed, so they stay literal in the template.
-    "notes/development/fleet-design.md": "verify_fleet_design.py",
+    "notes/gen/fleet-design.md": "verify_fleet_design.py",
     # templates.md has no page checker of its own: its census comes from the gated report-only
     # measure_templates.py, and the script that checks any part of it is verify_script_ownership.py,
     # which verifies the census rows and carries no count_phrases/size_phrases, so the builder reports
     # this coverage as NOT DERIVED. The page is proven by the twice-render byte-identity diff plus that
     # checker's plain run and its mutants.
-    "notes/development/templates.md": "verify_script_ownership.py",
-    # notes/scripts/README.md is the script census. Its checker, verify_script_ownership.py, derives the
+    "notes/gen/templates.md": "verify_script_ownership.py",
+    # notes/gen/scripts-README.md is the script census. Its checker, verify_script_ownership.py, derives the
     # writer set from the scripts' own sources and compares the census count cells with the trees on disk;
     # it carries no count_phrases/size_phrases, so the builder reports this coverage as NOT DERIVED. The
     # page is proven by the render diff plus that checker's plain run and its extracted mutants.
-    "notes/scripts/README.md": "verify_script_ownership.py",
+    "notes/gen/scripts-README.md": "verify_script_ownership.py",
     # findings.md is the reading synthesis. Its checker, verify_findings.py, runs seven passes over the
     # page's sources, quotations, ledger rows, tables, report lines, records and closing block; the
     # summary-page and index-link counts are now writer slots, so the render diff is the pass that proves
     # them. The checker carries no count_phrases/size_phrases, so the builder reports NOT DERIVED.
     "notes/gen/reports/findings.md": "verify_findings.py",
 }
-# The template file name per page. The builder names a template by the page's basename, so the two
-# README.md pages collide: notes/README.md owns README.md.j2 and the scripts census takes
-# scripts-README.md.j2. The writer's page function reads the same name from here.
-TEMPLATE_NAME = {"notes/scripts/README.md": "scripts-README.md.j2"}
+# The template file name per page. The builder names a template by the page's basename, so the map is
+# the override for a page whose basename collides with another page. The six pages the A2 symlink move
+# generates now name their byte target under notes/gen/, whose basenames are all distinct
+# (README.md and scripts-README.md no longer collide, because the byte target of the ownership census
+# is notes/gen/scripts-README.md), so the basename default names every page and the map is empty.
+TEMPLATE_NAME: dict[str, str] = {}
 
 
 def checker_needles(checker: pathlib.Path) -> list[tuple[str, str]]:

@@ -39,11 +39,14 @@ from catlib.paths import ROOT, SCRIPTS
 from catlib.records import key as digest_key
 from catlib.text import first_group
 
-# The 21 report-fed pages, in the order the registry in `catlib/templates.py` lists them.
+# The 21 report-fed pages, in the order the registry in `catlib/templates.py` lists them. The six
+# pages the A2 symlink move generates outside notes/gen/ now name their byte target there; the
+# tracked entry-point paths (notes/README.md, notes/scripts/README.md, the four notes/development/
+# pages) stay symlinks to these, so a reader keyed on the entry-point path follows the link.
 REPORT_PAGES = (
     "notes/gen/reports/abstracts.md",
-    "notes/development/index-links.md",
-    "notes/development/index-design.md",
+    "notes/gen/index-links.md",
+    "notes/gen/index-design.md",
     "notes/gen/reports/links.md",
     "notes/gen/reports/dependency-drift.md",
     "notes/gen/reports/named-results.md",
@@ -57,10 +60,10 @@ REPORT_PAGES = (
     "notes/gen/reports/subfinding-pairs.md",
     "notes/gen/reports/counterexample-crosscheck.md",
     "notes/gen/reports/formalization-faithfulness.md",
-    "notes/development/fleet-design.md",
-    "notes/development/templates.md",
-    "notes/README.md",
-    "notes/scripts/README.md",
+    "notes/gen/fleet-design.md",
+    "notes/gen/templates.md",
+    "notes/gen/README.md",
+    "notes/gen/scripts-README.md",
     "notes/gen/reports/findings.md",
 )
 

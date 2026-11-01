@@ -553,8 +553,11 @@ def check(text):
     dev = [f for f in files if f.parent == DEV_DIR]
     reports = [f for f in files if f.parent == REPORTS_DIR]
     top = [f for f in files if f.parent == NOTES]
+    # The A2 symlink move lands the six generated pages' bytes at the top of notes/gen/ (the entry
+    # points keep them as symlinks), so a byte file at parent == notes/gen is a rule of its own.
+    gen = [f for f in files if f.parent == NOTES / "gen"]
     owned = (set(index) | set(summaries) | set(data) | set(templates) | set(uphist) | set(probe)
-             | set(tables) | set(dev) | set(reports) | set(top))
+             | set(tables) | set(dev) | set(reports) | set(top) | set(gen))
     for f in files:
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")

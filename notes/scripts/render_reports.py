@@ -103,10 +103,10 @@ TSV = ROOT / "notes" / "gen" / "tables" / "sources.tsv"
 SOURCES_MD = ROOT / "notes" / "gen" / "reports" / "sources.md"
 ABSTRACTS_MD = ROOT / "notes" / "gen" / "reports" / "abstracts.md"
 NAMED_RESULTS_MD = ROOT / "notes" / "gen" / "reports" / "named-results.md"
-INDEX_DESIGN_MD = ROOT / "notes" / "development" / "index-design.md"
+INDEX_DESIGN_MD = ROOT / "notes" / "gen" / "index-design.md"
 NAMES_MD = ROOT / "notes" / "gen" / "reports" / "names.md"
 PROOF_DENSITY_MD = ROOT / "notes" / "gen" / "reports" / "proof-density.md"
-INDEX_LINKS_MD = ROOT / "notes" / "development" / "index-links.md"
+INDEX_LINKS_MD = ROOT / "notes" / "gen" / "index-links.md"
 LINKS_MD = ROOT / "notes" / "gen" / "reports" / "links.md"
 LINKS_TSV = ROOT / "notes" / "gen" / "tables" / "links.tsv"
 DRIFT_MD = ROOT / "notes" / "gen" / "reports" / "dependency-drift.md"
@@ -118,7 +118,7 @@ EX_MD = ROOT / "notes" / "gen" / "reports" / "scope-exclusions.md"
 TOPICS_MD = ROOT / "notes" / "gen" / "reports" / "topics.md"
 T0_CHAINS_MD = ROOT / "notes" / "gen" / "reports" / "t0-chains.md"
 SP_MD = ROOT / "notes" / "gen" / "reports" / "subfinding-pairs.md"
-README_MD = ROOT / "notes" / "README.md"
+README_MD = ROOT / "notes" / "gen" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "gen" / "reports" / "counterexample-crosscheck.md"
 
 # The census trees notes/scripts/README.md tabulates. The page's checker walks them with its own rule;
@@ -134,7 +134,7 @@ SKEL_DIR = NOTES_DIR / "templates"
 INDEX_DIR = NOTES_DIR / "gen" / "index"
 SUM_DIR = NOTES_DIR / "gen" / "summaries"
 TABLES_DIR = NOTES_DIR / "gen" / "tables"
-OWNERSHIP_MD = SCRIPTS_DIR / "README.md"
+OWNERSHIP_MD = NOTES_DIR / "gen" / "scripts-README.md"
 # The two TSVs the page records as hand-authored, and the eight the ledger scripts write. The census
 # row splits the table tree into generated and hand-authored, so the writer names both sets.
 OWN_HAND_TSV = {"topics.tsv", "conjecture-standing.tsv"}
@@ -155,8 +155,8 @@ OWN_PROBE_PREFIX = (
     "`measure_templates.py` record that proves the census L1 names the 1,033-page index tree after the "
     "move, and the 2026-10-13 `build_index_db.py` record that proves the FTS builder's L1 is empty")
 FAITH_MD = ROOT / "notes" / "gen" / "reports" / "formalization-faithfulness.md"
-TEMPLATES_MD = ROOT / "notes" / "development" / "templates.md"
-FLEET_MD = ROOT / "notes" / "development" / "fleet-design.md"
+TEMPLATES_MD = ROOT / "notes" / "gen" / "templates.md"
+FLEET_MD = ROOT / "notes" / "gen" / "fleet-design.md"
 FINDINGS_MD = REPORTS_DIR / "findings.md"
 VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
 VZERO = preprints.bundle_of(PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026")
@@ -2790,6 +2790,10 @@ def ownership_population() -> dict[str, Any]:
         "reports_hand": len(reports_md) - reports_gen,
         "reports_checked": checked,
         "notes_md": len(list(NOTES_DIR.glob("*.md"))),
+        # The six generated pages the A2 symlink move lands as byte files at the top of notes/gen/;
+        # the entry points (notes/README.md, notes/scripts/README.md and the four notes/development/
+        # pages) keep them as symlinks, so the byte file and the link are the same page.
+        "gen_md": len(list((NOTES_DIR / "gen").glob("*.md"))),
         "notes_total": len([p for p in NOTES_DIR.rglob("*") if p.is_file()
                             and "scripts" not in p.parts]),
     }
