@@ -174,7 +174,6 @@ L1: dict[str, tuple[str, ...]] = {
                           "notes/development/probe/2026-10-11_checkers.txt",
                           "notes/gen/templates/",
         ),
-    "build_report_templates.py": REPORT_PAGES,
     # The names measurement is a record producer, not a page writer: its only tracked input is the
     # ledger, which the probe records as the single notes/ path it opens read-only. Its record is the
     # population, so render_reports.py, build_index.py, extract_named_results.py and
@@ -362,10 +361,6 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     "compare_abstracts.py": ("notes/gen/tables/abstracts.tsv",),
     "build_index.py": ("notes/gen/index/",),
     "render_reports.py": REPORT_PAGES,
-    # The template tree plus the split table the builder derives from HEAD's page bytes. The table is
-    # the render's input, so the render's L1 names it through the `notes/gen/tables/` tree entry; the
-    # builder's own output cannot be part of its own read surface, so it appears only here.
-    "build_report_templates.py": ("notes/templates/report/", "notes/gen/tables/splits.tsv"),
     # A record producer has no tracked artifact: its bytes land under the keyed store, which the
     # `.qwen/*` rule keeps untracked. The empty tuple is what makes the cache check read it as
     # "no tracked bytes to compare" and the L1 check still prove its inputs.
@@ -402,7 +397,6 @@ ARGS: dict[str, tuple[str, ...]] = {
     "compare_abstracts.py": ("--tsv",),
     "build_index.py": (),
     "render_reports.py": (),
-    "build_report_templates.py": (),
     # The canonical run is the plain report; `--json` dumps the same population, so a `--json` run
     # does not share the record. The key is the plain run's.
     "measure_names.py": (),
@@ -448,26 +442,20 @@ NON_CACHED = frozenset({"measure_open_probe.py", "measure_checker_reads.py",
 # (Line cells included) from the data files.
 PAGE_EXTRA: frozenset[str] = frozenset()
 
-# Three writers' L1 cannot be proved against the audit-hook record. `build_report_templates.py` reads
-# each page with `git show HEAD:<page>`, a subprocess read the `open` audit event never sees, so the
-# record for it carries only the reads its imports perform; its L1 is the page set its own source names.
-# `measure_gate_rows.py` reads the gate driver's report under `.qwen/`, outside the `notes/` bucket the
-# record prints, so the exactness pass has nothing to compare it with. `measure_check_calls.py` names
-# the script tree, which the record's printed scope excludes, so its entry is hashed and never compared.
-PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py",
-                          "measure_check_calls.py", "build_summaries.py",
-                          "build_proofs.py"})
+# Two writers' L1 cannot be proved against the audit-hook record. `measure_gate_rows.py` reads the
+# gate driver's report under `.qwen/`, outside the `notes/` bucket the record prints, so the
+# exactness pass has nothing to compare it with. `measure_check_calls.py` names the script tree,
+# which the record's printed scope excludes, so its entry is hashed and never compared.
+PROBE_EXEMPT = frozenset({"measure_gate_rows.py", "measure_check_calls.py",
+                          "build_summaries.py", "build_proofs.py"})
 
-# The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
-# reads. Its own output feeds one of the L1 entries: `notes/development/templates.md` tabulates the
-# template bytes, so a render after the builder moves that page's bytes and a working-tree key stops
-# matching the key the builder used. Hashing the read surface the writer actually reads makes the key
-# a function of HEAD.
-#
-# Only writers whose own output feeds an L1 entry belong here — a writer that reads the working tree
-# (like `measure_check_calls.py`, whose record is a function of the working-tree pages it runs) must
-# hash the working tree, so a page sweep invalidates its record. math-544.
-L1_HEAD = frozenset({"build_report_templates.py"})
+# No writer currently needs its L1 hashed from HEAD. This set held `build_report_templates.py`,
+# which read each page with `git show HEAD:<page>` and fed an L1 entry from its own output; it was
+# deleted with the builder. A writer whose own output feeds an L1 entry (hash HEAD, not the working
+# tree, so the key is a function of HEAD) and a writer that reads the working tree (like
+# `measure_check_calls.py`, whose record is a function of the working-tree pages it runs) are
+# distinguished by this membership. math-544.
+L1_HEAD: frozenset[str] = frozenset()
 
 
 # CHECKER_L1 is the checkers' read surface, a separate registry from L1. A checker writes

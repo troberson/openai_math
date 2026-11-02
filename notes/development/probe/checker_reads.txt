@@ -1839,36 +1839,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -3730,38 +3708,37 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
               1  r        notes/gen/templates.md
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
               1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -3771,7 +3748,6 @@
               1  r        notes/scripts/build_index.py
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_proofs.py
-              1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
               1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
@@ -3789,7 +3765,6 @@
               1  r        notes/scripts/catlib/quotes.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/catlib/render.py
-              1  r        notes/scripts/catlib/splits.py
               1  r        notes/scripts/catlib/summaries.py
               1  r        notes/scripts/catlib/templates.py
               1  r        notes/scripts/catlib/text.py
@@ -3866,6 +3841,7 @@
               1  r        notes/scripts/tests/test_proof_density.py
               1  r        notes/scripts/tests/test_prune_stale.py
               1  r        notes/scripts/tests/test_quotes.py
+              1  r        notes/scripts/tests/test_render_slot_guard.py
               1  r        notes/scripts/tests/test_scope_exclusions.py
               1  r        notes/scripts/tests/test_script_ownership.py
               1  r        notes/scripts/tests/test_sources.py
@@ -5762,36 +5738,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -7641,36 +7595,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -9520,36 +9452,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -11438,36 +11348,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -11475,7 +11363,6 @@
               1  r        notes/scripts/build_index.py
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_proofs.py
-              1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
               1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
@@ -11493,7 +11380,6 @@
               1  r        notes/scripts/catlib/quotes.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/catlib/render.py
-              1  r        notes/scripts/catlib/splits.py
               1  r        notes/scripts/catlib/summaries.py
               1  r        notes/scripts/catlib/templates.py
               1  r        notes/scripts/catlib/text.py
@@ -13411,36 +13297,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/index-design.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -15308,38 +15172,37 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
               1  r        notes/gen/templates.md
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
               1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -15349,7 +15212,6 @@
               1  r        notes/scripts/build_index.py
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_proofs.py
-              1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
               1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
@@ -15367,7 +15229,6 @@
               1  r        notes/scripts/catlib/quotes.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/catlib/render.py
-              1  r        notes/scripts/catlib/splits.py
               1  r        notes/scripts/catlib/summaries.py
               1  r        notes/scripts/catlib/templates.py
               1  r        notes/scripts/catlib/text.py
@@ -15444,6 +15305,7 @@
               1  r        notes/scripts/tests/test_proof_density.py
               1  r        notes/scripts/tests/test_prune_stale.py
               1  r        notes/scripts/tests/test_quotes.py
+              1  r        notes/scripts/tests/test_render_slot_guard.py
               1  r        notes/scripts/tests/test_scope_exclusions.py
               1  r        notes/scripts/tests/test_script_ownership.py
               1  r        notes/scripts/tests/test_sources.py
@@ -17334,38 +17196,37 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
               1  r        notes/gen/templates.md
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
               1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -17375,7 +17236,6 @@
               1  r        notes/scripts/build_index.py
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_proofs.py
-              1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
               1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
@@ -17393,7 +17253,6 @@
               1  r        notes/scripts/catlib/quotes.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/catlib/render.py
-              1  r        notes/scripts/catlib/splits.py
               1  r        notes/scripts/catlib/summaries.py
               1  r        notes/scripts/catlib/templates.py
               1  r        notes/scripts/catlib/text.py
@@ -17470,6 +17329,7 @@
               1  r        notes/scripts/tests/test_proof_density.py
               1  r        notes/scripts/tests/test_prune_stale.py
               1  r        notes/scripts/tests/test_quotes.py
+              1  r        notes/scripts/tests/test_render_slot_guard.py
               1  r        notes/scripts/tests/test_scope_exclusions.py
               1  r        notes/scripts/tests/test_script_ownership.py
               1  r        notes/scripts/tests/test_sources.py
@@ -19359,36 +19219,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -21250,38 +21088,37 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
               1  r        notes/gen/templates.md
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
               1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -21291,7 +21128,6 @@
               1  r        notes/scripts/build_index.py
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_proofs.py
-              1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
               1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
@@ -21309,7 +21145,6 @@
               1  r        notes/scripts/catlib/quotes.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/catlib/render.py
-              1  r        notes/scripts/catlib/splits.py
               1  r        notes/scripts/catlib/summaries.py
               1  r        notes/scripts/catlib/templates.py
               1  r        notes/scripts/catlib/text.py
@@ -21386,6 +21221,7 @@
               1  r        notes/scripts/tests/test_proof_density.py
               1  r        notes/scripts/tests/test_prune_stale.py
               1  r        notes/scripts/tests/test_quotes.py
+              1  r        notes/scripts/tests/test_render_slot_guard.py
               1  r        notes/scripts/tests/test_scope_exclusions.py
               1  r        notes/scripts/tests/test_script_ownership.py
               1  r        notes/scripts/tests/test_sources.py
@@ -23264,36 +23100,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/sources.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -25144,36 +24958,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -27789,36 +27581,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -27850,7 +27620,6 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
@@ -29706,36 +29475,14 @@
               1  r        notes/gen/tables/quotes.tsv
               1  r        notes/gen/tables/scope-notes.tsv
               1  r        notes/gen/tables/sources.tsv
-              1  r        notes/gen/tables/splits.tsv
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
-              1  r        notes/gen/templates/report/README.md.j2
-              1  r        notes/gen/templates/report/abstracts.md.j2
-              1  r        notes/gen/templates/report/counterexample-crosscheck.md.j2
-              1  r        notes/gen/templates/report/dependency-drift.md.j2
-              1  r        notes/gen/templates/report/findings.md.j2
-              1  r        notes/gen/templates/report/fleet-design.md.j2
-              1  r        notes/gen/templates/report/formalization-deps.md.j2
-              1  r        notes/gen/templates/report/formalization-faithfulness.md.j2
-              1  r        notes/gen/templates/report/index-design.md.j2
-              1  r        notes/gen/templates/report/index-links.md.j2
-              1  r        notes/gen/templates/report/links.md.j2
-              1  r        notes/gen/templates/report/named-results.md.j2
-              1  r        notes/gen/templates/report/names.md.j2
-              1  r        notes/gen/templates/report/proof-density.md.j2
-              1  r        notes/gen/templates/report/scope-exclusions.md.j2
-              1  r        notes/gen/templates/report/scripts-README.md.j2
-              1  r        notes/gen/templates/report/sources.md.j2
-              1  r        notes/gen/templates/report/subfinding-pairs.md.j2
-              1  r        notes/gen/templates/report/t0-chains.md.j2
-              1  r        notes/gen/templates/report/templates.md.j2
-              1  r        notes/gen/templates/report/topics.md.j2
-              1  r        notes/gen/templates/report/verification-dirs.md.j2
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):

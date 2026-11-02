@@ -38,6 +38,8 @@ python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where 
 python3 notes/scripts/diff_outdir.py <outdir> [in-tree-root]  # diffs a render's out-of-tree output against the tracked tree; reports ok/stale/missing; not a gate row — run by hand against a render's outdir
 python3 notes/scripts/extract_summary_data.py  # one-time bootstrap: reads the 60 family pages and writes the notes/data/summaries/ data files the summary renderer renders from; not a gate row — re-running would clobber the hand-edited prose
 python3 notes/scripts/build_summaries.py  # renders notes/gen/summaries/ from the notes/data/summaries/ data files and the skeleton; a gate row, before seed_quotes.py so the render chain stays acyclic
+python3 notes/scripts/build_proofs.py  # renders notes/gen/proofs/ from the notes/data/proofs/ data files and the skeleton; a writer, not yet a gate row
+python3 notes/scripts/verify_proofs.py  # checks notes/gen/proofs/ against the data files it renders from; a checker, not yet a gate row
 python3 notes/scripts/fix_blank_cites.py  # fixes blank-line citations in the notes/data/summaries/ data files; an authoring tool run by hand after writing a data file, before build_summaries.py
 python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript's abstract, section skeleton and titled statement environments with file:line anchors (--limit N, --all, --sections-only)
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/data/conjecture-standing.tsv against the ledger and overview.tex

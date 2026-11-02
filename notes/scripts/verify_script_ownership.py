@@ -50,9 +50,9 @@ README = NOTES / "README.md"
 README_MD = NOTES / "gen" / "README.md"
 TEMPLATES_PAGE = NOTES / "development" / "templates.md"
 TPL_DIR = NOTES / "templates"
-# The report templates moved out of notes/templates/report/ into the generated tree in the
-# math-v5s reorg; the hand-written index skeletons stayed at top-level notes/templates/.
-REPORT_TPL_DIR = NOTES / "gen" / "templates" / "report"
+# The report templates live at notes/templates/report/ (hand-authored source, moved there from the
+# generated tree in math-v5o.3); the hand-written index skeletons stay at top-level notes/templates/.
+REPORT_TPL_DIR = NOTES / "templates" / "report"
 INDEX_DIR = NOTES / "gen" / "index"
 PROBE_DIR = NOTES / "development" / "probe"
 DEV_DIR = NOTES / "development"
@@ -550,6 +550,7 @@ def check(text):
     # notes/templates/summaries/ is owned by `templates`, so a substring rule over-matches both.
     # `data` is the renderer's hand-maintained input tree, a rule of its own.
     summaries = [f for f in files if f.relative_to(NOTES).parts[:2] == ("gen", "summaries")]
+    proofs = [f for f in files if f.relative_to(NOTES).parts[:2] == ("gen", "proofs")]
     data = [f for f in files if f.relative_to(NOTES).parts[:1] == ("data",)]
     templates = [f for f in files if "templates" in f.parts]
     uphist = [f for f in files if "upstream_history" in f.parts]
@@ -561,8 +562,8 @@ def check(text):
     # The A2 symlink move lands the six generated pages' bytes at the top of notes/gen/ (the entry
     # points keep them as symlinks), so a byte file at parent == notes/gen is a rule of its own.
     gen = [f for f in files if f.parent == NOTES / "gen"]
-    owned = (set(index) | set(summaries) | set(data) | set(templates) | set(uphist) | set(probe)
-             | set(tables) | set(dev) | set(reports) | set(top) | set(gen))
+    owned = (set(index) | set(summaries) | set(proofs) | set(data) | set(templates) | set(uphist)
+             | set(probe) | set(tables) | set(dev) | set(reports) | set(top) | set(gen))
     for f in files:
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")

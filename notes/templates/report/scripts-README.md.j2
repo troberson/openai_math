@@ -13,10 +13,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **76** scripts: **22** writers, **31** report-only, **23** checkers,
-and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
+file. The classes partition the **76** scripts: **21** writers, **31** report-only, **24** checkers,
+and `verify_script_ownership.py` itself, which is the 24th checker and is not listed in its own table.
 
-## The split: 22 write, 54 write nothing
+## The split: 21 write, 55 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -37,7 +37,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **21** writers over **75** scripts.
+finds **21** writers over **76** scripts.
 
 ### Writers
 
@@ -54,8 +54,7 @@ finds **21** writers over **75** scripts.
 | `extract_subfindings.py` | `notes/gen/tables/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/gen/reports/subfinding-pairs.md` |
 | `extract_summary_data.py` | `notes/data/summaries/` | not in `gate.py` — a one-time bootstrap: it reads the 60 family pages and writes the `notes/data/summaries/` data files the summary renderer renders from, which are tracked in git and edited as prose, so re-running it would re-derive them from the pages and clobber hand edits | the 60 `notes/data/summaries/` data files `build_summaries.py` reads |
 | `fix_blank_cites.py` | `notes/data/summaries` | not in `gate.py` — an authoring tool: run by hand after writing a data file and before `build_summaries.py`, so the render picks up the corrected citations | the data files `build_summaries.py` renders |
-| `render_reports.py` | `notes/README.md`, `notes/gen/reports/abstracts.md`, `notes/gen/reports/dependency-drift.md`, `notes/development/index-design.md`, `notes/development/index-links.md`, `notes/gen/reports/links.md`, `notes/gen/reports/named-results.md`, `notes/gen/reports/names.md`, `notes/gen/reports/proof-density.md`, `notes/gen/reports/sources.md`, `notes/gen/reports/verification-dirs.md`, `notes/gen/reports/scope-exclusions.md`, `notes/gen/reports/topics.md`, `notes/gen/reports/t0-chains.md`, `notes/gen/reports/subfinding-pairs.md`, `notes/gen/reports/counterexample-crosscheck.md`, `notes/gen/reports/formalization-faithfulness.md`, `notes/development/fleet-design.md`, `notes/development/templates.md` | single run; cached bytes == promoted bytes for all 19 pages | the nineteen report-fed pages |
-| `build_report_templates.py` | `notes/gen/tables/splits.tsv`, `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all nineteen pages) or 2 (one page) after a writer's slot dict changes | the nineteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
+| `render_reports.py` | `notes/gen/README.md`, `notes/gen/reports/abstracts.md`, `notes/gen/reports/dependency-drift.md`, `notes/gen/index-design.md`, `notes/gen/index-links.md`, `notes/gen/reports/links.md`, `notes/gen/reports/named-results.md`, `notes/gen/reports/names.md`, `notes/gen/reports/proof-density.md`, `notes/gen/reports/sources.md`, `notes/gen/reports/verification-dirs.md`, `notes/gen/reports/scope-exclusions.md`, `notes/gen/reports/topics.md`, `notes/gen/reports/t0-chains.md`, `notes/gen/reports/subfinding-pairs.md`, `notes/gen/reports/counterexample-crosscheck.md`, `notes/gen/reports/formalization-faithfulness.md`, `notes/gen/fleet-design.md`, `notes/gen/templates.md` | single run; cached bytes == promoted bytes for all 19 pages | the nineteen report-fed pages |
 | `measure_names.py` | `.qwen/cache/records/<key>/names.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/gen/reports/names.md`, and the 551 name pages `build_index.py` renders from `--json` |
 | `extract_named_results.py` | `.qwen/cache/records/<key>/named_results.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/gen/reports/named-results.md` — the writer, `verify_named_results.py` and `notes/scripts/tests/test_named_results.py` read the same record, so the 7,240-file `.tex` walk is paid once per key, not once per process |
 | `measure_templates.py` | `.qwen/cache/records/<key>/templates.json`
@@ -131,7 +130,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **54** scripts write nothing. **31** of them print a report: **19** print the report a page's
+The other **55** scripts write nothing. **31** of them print a report: **19** print the report a page's
 counts come from, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
 after it, **7** print a wall, a candidate comparison, or a fleet census that no page's counts come from
@@ -257,7 +256,7 @@ rows into the page's scanner table.
 
 ### Checkers
 
-The remaining **23** scripts verify a page or a table. Each exits non-zero when what it checks has
+The remaining **24** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; **0** take `--mutant` — after the twenty-fourth extraction no checker carries a mutant
 branch any more — and **23** —
 `verify_scope_exclusions.py`, `verify_conjecture_standing.py`, `verify_abstracts.py`,
@@ -336,6 +335,7 @@ self-tests rows are report-only rows, not checker invocations:
 {{ p['cost_subfinding_pairs'] }}
 {{ p['cost_subfindings'] }}
 {{ p['cost_summaries'] }}
+| `verify_proofs.py` | `notes/gen/proofs/` | — | — | — |
 {{ p['cost_t0_chains'] }}
 {{ p['cost_tsv_quoting'] }}
 {{ p['cost_upstream_history'] }}
@@ -366,7 +366,7 @@ row makes pay the preprints/overview walk once.
 `verify_index_design.py` is the same case with the index tree: `population()` is under
 `functools.cache` (`:66`) and delegates to `measure_index_sizes.population()`, so its `run_tests.py`
 row measures **5.5 s** where the `--mutant` row took **20.3 s** before that row was replaced: the
-17 `check()` calls the row makes pay the `notes/gen/index/` walk once.
+15 `check()` calls the row makes pay the `notes/gen/index/` walk once.
 `verify_fleet_design.py` is the same case with the `git`/`du`/script-tree walk: `population()` is under
 `functools.cache` (`:151`), so its `run_tests.py` row measures **0.7 s** where the `--mutant` row took
 **0.8 s** before that row was replaced: {{ p['calls_fleet_design'] }}
@@ -468,14 +468,15 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-{% raw %}**66** of the **75** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+{% raw %}**67** of the **76** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
 {% endraw %}
 each script's own source: **12** `extract_` (all of them), **6** `build_` (all), **14** `measure_`
 (all 20 but `measure_needles.py`, `measure_proof_density.py`, `measure_topics.py` and the three render
 probes, which reach `render_reports` directly), **2** `check_` (`check_index_links.py` and
 `check_summary_manuscripts.py`),
-**23** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
-`read_manuscript.py`, `compare_abstracts.py`, `locate_summary_quotes.py`, `run_tests.py` and `gate.py`.
+**24** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
+`read_manuscript.py`, `compare_abstracts.py`, `locate_summary_quotes.py`, `run_tests.py`, `gate.py`
+and `fix_blank_cites.py`.
 The nine scripts that do not are `check_gate_budget.py`, which reads the gate wall log and the gate row TSV
 directly; `diff_outdir.py`, which walks a render's outdir against the in-tree with plain `pathlib` and
 reads no corpus; `dump_template_slots.py`, which reaches the slot dict through
@@ -556,10 +557,11 @@ The generated TSVs are the **25** the writer set writes: the 9 named writer targ
 | `notes/data/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/gen/tables/topics-rendered.tsv`. A generated file inside `notes/gen/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree; `math-faz.6` put the render in `notes/gen/tables/`, where the vocabulary and the render sit side by side. |
 | `notes/data/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
-Across the **24** prose pages — the 23 report pages and the entry point — **19** with a checker, **5** without.
-The 5 pages with no checker are `notes/README.md`,
+Across the **24** prose pages — the 23 report pages and the entry point — **19** with a checker, **6** without.
+The 6 pages with no checker are `notes/README.md`,
 `notes/gen/reports/conjecture-standing.md`,
-`notes/gen/reports/counterexample-tag.md`, `notes/gen/reports/resolution-tag.md` and `notes/gen/reports/t0-triage.md`. Their counts
+`notes/gen/reports/counterexample-tag.md`, `notes/gen/reports/resolution-tag.md`,
+`notes/gen/reports/summary-review.md` and `notes/gen/reports/t0-triage.md`. Their counts
 are reproduced by the report-only
 scripts above; nothing verifies them against the page. `notes/development/summaries-workflow.md` is
 the one page under `notes/development/` with no checker — it is the resume protocol, a procedure, not a
@@ -595,8 +597,8 @@ carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 75 scripts before this pass. 41 are named
-nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
+`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 76 scripts before this pass. 42 are named
+nowhere in the repo at the pinned baseline: `build_index_db.py`, `build_proofs.py`, `verify_proofs.py`,
 `verify_tsv_quoting.py`,
 `check_summary_manuscripts.py`, `diff_outdir.py`, `check_gate_budget.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
