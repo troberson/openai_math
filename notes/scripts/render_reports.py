@@ -359,6 +359,8 @@ def abstracts_phrases(m: dict[str, Any]) -> dict[str, str]:
             f"**{x}** ({m['fam_best'][x]['ratio']:.3f})" for x in hi[:3]) + ",",
         "near-identical families b": f"**{hi[3]}** ({m['fam_best'][hi[3]]['ratio']:.3f}).",
         "manuscript-level floor": f"**{len(low)} of the {n}** comparisons fall below 0.05,",
+        "manuscript-level floor families": f"spread over **{len({x['fam'] for x in low})}** families.",
+        "manuscript tag token": f"man{n}",
         "shape disagreement count":
             f"**{len(dis)} of {fam} families have at least one shape disagreement between the two "
             f"texts; {fam - len(dis)} have none.**",

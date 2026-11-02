@@ -82,7 +82,7 @@ Four families have a best match at ≥0.90: {{ p['near-identical families a'] }}
 {{ p['near-identical families b'] }} Eighteen families have a best match below 0.05: 021, 027, 053, 081, 093, 124, 126,
 128, 174, 206, 214, 231, 234, 261, 264, 275, 361, 373. Label the unit when quoting the floor:
 counting per manuscript instead of per family, {{ p['manuscript-level floor'] }}
-spread over **88** families. The manuscript-level minimum 0.006 is family 032's surviving
+{{ p['manuscript-level floor families'] }} The manuscript-level minimum 0.006 is family 032's surviving
 `A-Conditional-Reduction-for-Algebraic-Kuga-Satake-…` manuscript.
 
 **The floor moved from the 87 this page recorded before the 2026-10-07 merge, and the merge is not
@@ -107,12 +107,12 @@ is unchanged by the merge and does reproduce.
 ## Tag-level: what the shape rules see in each text
 
 `ovfam` = families whose **overview** abstract fires the shape (this is what the ledger records);
-`msfam` = families whose **union of manuscript abstracts** fires it; `man719` = manuscripts that
+`msfam` = families whose **union of manuscript abstracts** fires it; `{{ p['manuscript tag token'] }}` = manuscripts that
 fire it, which is the control for union inflation (a 14-manuscript family gets 14 chances to flag a
-shape, so `msfam` ≥ `man719` by construction and the comparison to `ovfam` must be read through
-`man719`).
+shape, so `msfam` ≥ `{{ p['manuscript tag token'] }}` by construction and the comparison to `ovfam` must be read through
+`{{ p['manuscript tag token'] }}`).
 
-| shape | ovfam | msfam | man719 | ov-only | ms-only |
+| shape | ovfam | msfam | {{ p['manuscript tag token'] }} | ov-only | ms-only |
 |---|---|---|---|---|---|
 {{ p['tag row bound'] }}
 {{ p['tag row classification'] }}

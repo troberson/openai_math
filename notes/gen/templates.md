@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,494** lines, **609,516** bytes, **1,924** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,703** lines, **624,512** bytes, **2,027** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,494** lines, **609,630** bytes, **1,929** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,703** lines, **624,626** bytes, **2,032** slots.
 
 ## The report tree
 
@@ -17,7 +17,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
 | `README.md.j2` | 792 | 78,281 | 77 | `notes/gen/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `abstracts.md.j2` | 406 | 32,557 | 42 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
+| `abstracts.md.j2` | 406 | 32,671 | 47 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 47,425 | 155 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,578 | 95 | `notes/gen/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `findings.md.j2` | 282 | 21,574 | 5 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
@@ -38,7 +38,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 110 | 5,137 | 48 | `notes/gen/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 409 | 38,470 | 48 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,494** | **609,516** | **1,924** | | |
+| **report tree** | **22** | **9,494** | **609,630** | **1,929** | | |
 
 ## The index tree
 
@@ -59,15 +59,15 @@ the count of pages on disk that the template produced, read from the tree it wri
 A slot is a `{{ ` occurrence in the template file, counted over the whole file. Slot expressions
 are not required to be unique. The gap between `{{ ... }}` expressions and distinct expressions,
 over the **27** committed templates, is
-**39** repeat expressions over **8** templates —
-`counterexample-crosscheck.md.j2` (11 repeats); `fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (2 repeats); `scripts-README.md.j2` (12 repeats); `templates.md.j2` (1 repeat); `verification-dirs.md.j2` (3 repeats); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
+**42** repeat expressions over **9** templates —
+`abstracts.md.j2` (3 repeats); `counterexample-crosscheck.md.j2` (11 repeats); `fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (2 repeats); `scripts-README.md.j2` (12 repeats); `templates.md.j2` (1 repeat); `verification-dirs.md.j2` (3 repeats); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
 where a table row is emitted from the same label more than once. Each report template also carries
 a generated header comment whose closing line holds one literal `{{ }}`, so the header contributes
 exactly 1 slot to every report template; the header comment is **4** lines and the index templates
 have none.
 
 The builder's report line prints a *label* count, which is a different measure from the `{{ `
-occurrences in the file it wrote: **41** writer labels against **42** slots in `abstracts.md.j2`,
+occurrences in the file it wrote: **43** writer labels against **47** slots in `abstracts.md.j2`,
 the 1-slot difference being the header. Quote a slot count with the rule that yields it.
 
 ## What the builder can prove, and what it cannot

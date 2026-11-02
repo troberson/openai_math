@@ -75,7 +75,7 @@ Four families have a best match at ≥0.90: **005** (0.972), **098** (0.901), **
 **368** (0.929). Eighteen families have a best match below 0.05: 021, 027, 053, 081, 093, 124, 126,
 128, 174, 206, 214, 231, 234, 261, 264, 275, 361, 373. Label the unit when quoting the floor:
 counting per manuscript instead of per family, **150 of the 721** comparisons fall below 0.05,
-spread over **88** families. The manuscript-level minimum 0.006 is family 032's surviving
+spread over **89** families. The manuscript-level minimum 0.006 is family 032's surviving
 `A-Conditional-Reduction-for-Algebraic-Kuga-Satake-…` manuscript.
 
 **The floor moved from the 87 this page recorded before the 2026-10-07 merge, and the merge is not
@@ -100,12 +100,12 @@ is unchanged by the merge and does reproduce.
 ## Tag-level: what the shape rules see in each text
 
 `ovfam` = families whose **overview** abstract fires the shape (this is what the ledger records);
-`msfam` = families whose **union of manuscript abstracts** fires it; `man719` = manuscripts that
+`msfam` = families whose **union of manuscript abstracts** fires it; `man721` = manuscripts that
 fire it, which is the control for union inflation (a 14-manuscript family gets 14 chances to flag a
-shape, so `msfam` ≥ `man719` by construction and the comparison to `ovfam` must be read through
-`man719`).
+shape, so `msfam` ≥ `man721` by construction and the comparison to `ovfam` must be read through
+`man721`).
 
-| shape | ovfam | msfam | man719 | ov-only | ms-only |
+| shape | ovfam | msfam | man721 | ov-only | ms-only |
 |---|---|---|---|---|---|
 | bound | 141 | 163 | 291 | 27 | 49 |
 | classification | 34 | 44 | 72 | 4 | 14 |
