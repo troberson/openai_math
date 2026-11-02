@@ -4142,6 +4142,10 @@ def crosscheck_phrases(p: dict[str, Any]) -> dict[str, str]:
     # `main_results_entries()[0]["line"]` is the first `- comparator_config:` line,
     # which is exactly one below the `main_results:` header.
     out["cc_yaml_mr_start"] = str(Y.main_results_entries()[0]["line"] - 1)
+    # Per-family overview.tex line: the \resultentry line for each population family.
+    ov_lines = overview.overview_lines()
+    for f in pop:
+        out[f"cc_ov_{f}"] = str(ov_lines[f])
     for label, prefixes in CC_SPLIT.items():
         base = out.pop(label)
         rest = base

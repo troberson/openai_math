@@ -262,11 +262,11 @@ counterexample sentence does not name.
 
 ### 155 — A counterexample to periodic tiling in dimension three
 
-Claim 1 (`overview.tex:391`) — *"Constructs a finite translational tile in $\mathbb Z^3$ that tiles space but admits no
+Claim 1 (`overview.tex:393`) — *"Constructs a finite translational tile in $\mathbb Z^3$ that tiles space but admits no
 fully periodic tiling, disproving the periodic tiling conjecture in the smallest possible lattice
 dimension."*
 
-Claim 2 (`overview.tex:391`) — *"Its unit-cube thickening gives the same counterexample in $\mathbb R^3$, even with
+Claim 2 (`overview.tex:393`) — *"Its unit-cube thickening gives the same counterexample in $\mathbb R^3$, even with
 arbitrary real translation vectors."*
 
 `PeriodicTilingThree` — `lean/docs/155.md:15`
@@ -296,9 +296,9 @@ lattice dimension".
 
 ### 157 — Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures
 
-Claim 1 (`overview.tex:395`) — *"Disproves Hadwiger's conjecture even for fractional coloring: arbitrarily large finite simple graphs with independence number at most two satisfy $\chi_f(G)>h(G)$, where $h(G)$ is the largest clique-minor order."*
+Claim 1 (`overview.tex:397`) — *"Disproves Hadwiger's conjecture even for fractional coloring: arbitrarily large finite simple graphs with independence number at most two satisfy $\chi_f(G)>h(G)$, where $h(G)$ is the largest clique-minor order."*
 
-Claim 2 (`overview.tex:395`) — *"Also disproves the fractional Colin de Verdi\`ere chromatic bound $\chi_f(G)\le\mu(G)+1$."*
+Claim 2 (`overview.tex:397`) — *"Also disproves the fractional Colin de Verdi\`ere chromatic bound $\chi_f(G)\le\mu(G)+1$."*
 
 `ListHadwiger` — `lean/docs/157.md:20` — no `main_results` entry.
 
@@ -327,11 +327,11 @@ which is the weaker statement the integer negation implies. The list-coloring co
 
 ### 162 — Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures
 
-Claim 1 (`overview.tex:405`) — *"Disproves Ryser's covering conjecture by constructing intersecting $(q+1)$-partite,
+Claim 1 (`overview.tex:407`) — *"Disproves Ryser's covering conjecture by constructing intersecting $(q+1)$-partite,
 $(q+1)$-uniform hypergraphs with covering number $q+1$, rather than the predicted bound $q$, for
 every sufficiently large prime $q$."*
 
-Claim 2 (`overview.tex:405`) — *"A separate construction over extension fields also disproves Gy\'arf\'as's monochromatic
+Claim 2 (`overview.tex:407`) — *"A separate construction over extension fields also disproves Gy\'arf\'as's monochromatic
 tree-cover conjecture."*
 
 `BalancedRyser` — `lean/docs/162.md:18` — no `main_results` entry.
@@ -380,7 +380,7 @@ carries no entry.
 
 ### 172 — Classification of finite Euclidean Ramsey configurations
 
-Claim 1 (`overview.tex:423`) — *"It also disproves the Leader--Russell--Walters conjecture that every such configuration is
+Claim 1 (`overview.tex:425`) — *"It also disproves the Leader--Russell--Walters conjecture that every such configuration is
 a subset of a finite transitive set."*
 
 `EuclideanRamsey` — `lean/docs/172.md:17`
@@ -437,10 +437,10 @@ points on the unit circle. Five of the family's seven linked configs are unforma
 
 ### 185 — Counterexamples to infinite matroid intersection and packing/covering
 
-Claim 1 (`overview.tex:449`) — *"Disproves the unrestricted infinite matroid intersection and packing/covering conjectures
+Claim 1 (`overview.tex:451`) — *"Disproves the unrestricted infinite matroid intersection and packing/covering conjectures
 in ZFC, using two self-dual partitional matroids on a countably infinite ground set."*
 
-Claim 2 (`overview.tex:449`) — *"The same examples answer Jo\'o’s partitional-matroid question negatively."*
+Claim 2 (`overview.tex:451`) — *"The same examples answer Jo\'o’s partitional-matroid question negatively."*
 
 `InfiniteMatroid` — `lean/docs/185.md:17`
 
@@ -470,7 +470,7 @@ under `InfiniteMatroidCorollaries`, which has no entry.
 
 ### 190 — Polynomial removal fails for ordered binary matrices
 
-Claim 1 (`overview.tex:459`) — *"Disproves polynomial ordered binary matrix removal with one fixed $66\times66$ zero--one
+Claim 1 (`overview.tex:461`) — *"Disproves polynomial ordered binary matrix removal with one fixed $66\times66$ zero--one
 pattern."*
 
 `MatrixRemoval` — `lean/docs/190.md:15`
@@ -499,13 +499,13 @@ is below `c · ε^C · n^132`, so no polynomial removal bound holds for the fixe
 
 ### 197 — Nonsofic groups and group-ring counterexamples
 
-Claim 1 (`overview.tex:475`) — *"Constructs a finitely presented torsion-free nonsofic group whose group algebra over
+Claim 1 (`overview.tex:477`) — *"Constructs a finitely presented torsion-free nonsofic group whose group algebra over
 $\mathbb F_2$ is not directly finite, disproving Kaplansky's conjecture even without torsion."*
 
-Claim 2 (`overview.tex:475`) — *"Companion examples give injective nonsurjective cellular automata on all configurations,
+Claim 2 (`overview.tex:477`) — *"Companion examples give injective nonsurjective cellular automata on all configurations,
 refuting Gottschalk's surjunctivity conjecture."*
 
-Claim 3 (`overview.tex:475`) — *"Another counterexample is an integral group-ring matrix, invertible over the rational group
+Claim 3 (`overview.tex:477`) — *"Another counterexample is an integral group-ring matrix, invertible over the rational group
 ring, with Fuglede--Kadison determinant strictly between zero and one, disproving the unrestricted
 Determinant Conjecture."*
 
@@ -590,7 +590,7 @@ field for a finitely presented group — and its group carries an element of odd
 
 ### 198 — A counterexample to the little finitistic-dimension conjecture
 
-Claim 1 (`overview.tex:477`) — *"This disproves the little finitistic-dimension conjecture."*
+Claim 1 (`overview.tex:479`) — *"This disproves the little finitistic-dimension conjecture."*
 
 `LittleFinitistic` — `lean/docs/198.md:17`
 
@@ -636,14 +636,14 @@ left/right asymmetry — and the family's single counterexample sentence does no
 
 ### 199 — Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama
 
-Claim 1 (`overview.tex:479`) — *"Constructs finite-dimensional algebras over a characteristic-two rational-function field
+Claim 1 (`overview.tex:481`) — *"Constructs finite-dimensional algebras over a characteristic-two rational-function field
 that disprove the Auslander--Reiten and Gorenstein-projective conjectures, and Tachikawa's second
 conjecture."*
 
-Claim 2 (`overview.tex:479`) — *"An associated endomorphism algebra also disproves the classical, generalized and strong
+Claim 2 (`overview.tex:481`) — *"An associated endomorphism algebra also disproves the classical, generalized and strong
 Nakayama conjectures, the Auslander--Gorenstein conjecture, and the Wakamatsu tilting conjecture."*
 
-Claim 3 (`overview.tex:479`) — *"The counterexamples persist under every extension of the base field."*
+Claim 3 (`overview.tex:481`) — *"The counterexamples persist under every extension of the base field."*
 
 `AuslanderReiten` — `lean/docs/199.md:22`
 
@@ -716,7 +716,7 @@ so it has no formalized counterpart.
 
 ### 244 — The partition principle does not imply choice
 
-Claim 1 (`overview.tex:573`) — *"Assuming ZF is consistent, constructs a model in which every surjective image of a set
+Claim 1 (`overview.tex:575`) — *"Assuming ZF is consistent, constructs a model in which every surjective image of a set
 injects into that set, yet the axiom of choice fails."*
 
 `PartitionPrinciple` — `lean/docs/244.md:17`
@@ -753,7 +753,7 @@ entry.
 
 ### 294 — A counterexample to Kaplansky's quasitrace conjecture
 
-Claim 1 (`overview.tex:680`) — *"Disproves Kaplansky's quasitrace conjecture by constructing a separable unital complex
+Claim 1 (`overview.tex:682`) — *"Disproves Kaplansky's quasitrace conjecture by constructing a separable unital complex
 $C^*$-algebra admitting normalized $2$-quasitraces, all of which are nonadditive."*
 
 `KaplanskyQuasitrace` — `lean/docs/294.md:17`
@@ -792,9 +792,9 @@ contractions. The carrier is not in the declaration's own tree: `Main.lean` impo
 
 ### 329 — A counterexample to Pietsch's metric-entropy duality conjecture
 
-Claim 1 (`overview.tex:754`) — *"Disproves Pietsch's dimension-free duality conjecture for metric entropy."*
+Claim 1 (`overview.tex:756`) — *"Disproves Pietsch's dimension-free duality conjecture for metric entropy."*
 
-Claim 2 (`overview.tex:754`) — *"Origin-symmetric convex bodies violate every proposed choice of universal constants in the
+Claim 2 (`overview.tex:756`) — *"Origin-symmetric convex bodies violate every proposed choice of universal constants in the
 conjectured comparison between covering numbers and those of the polar bodies, even when the covering
 body is a cube."*
 
@@ -827,7 +827,7 @@ the polar-side covering number beats the original by any prescribed factor `b`, 
 
 Claim 1 — *"Disproves stable-Morse lower bounds for nondegenerate Hamiltonian fixed points: on simply
 connected closed K\"ahler manifolds of real dimension $22$, the deficit below the stable Morse number
-is unbounded."* (`overview.tex:792`)
+is unbounded."* (`overview.tex:794`)
 
 `ArnoldCounterexample` — `lean/docs/347.md:15`
 
@@ -853,7 +853,7 @@ manifold, one fixed-point count, and a degenerate fixed point.
 
 ### 350 — Yau's nodal conjecture: surfaces and counterexamples
 
-Claim 1 (`overview.tex:798`) — *"The upper bound fails for fixed smooth metrics in dimensions three and four, including
+Claim 1 (`overview.tex:800`) — *"The upper bound fails for fixed smooth metrics in dimensions three and four, including
 metrics on $S^3$ arbitrarily close to round."*
 
 `NodalLength` — `lean/docs/350.md:21` — no `main_results` entry.
@@ -910,7 +910,7 @@ model, not the 3- and 4-dimensional metrics claim 1 names. `NodalLength` has no 
 
 ### 361 — Counterexamples to Yau's harmonic dimension bound
 
-Claim 1 (`overview.tex:820`) — *"Disproves Yau's proposed Euclidean dimension bound for harmonic functions of integer
+Claim 1 (`overview.tex:822`) — *"Disproves Yau's proposed Euclidean dimension bound for harmonic functions of integer
 growth on manifolds with nonnegative Ricci curvature."*
 
 `HarmonicGrowth` — `lean/docs/361.md:15`
@@ -991,29 +991,29 @@ The counterexample sentence each family ships:
 Claim 100-1 (`overview.tex:276`) — *"This disproves Bang's half-area cylinder-covering bound and the stronger directionwise
 normalized conjecture in dimension three."*
 
-Claim 151-1 (`overview.tex:381`) — *"This disproves the homological entropy lower bound for general $C^1$ self-maps:
+Claim 151-1 (`overview.tex:383`) — *"This disproves the homological entropy lower bound for general $C^1$ self-maps:
 homological growth need not force positive orbit complexity."*
 
-Claim 161-1 (`overview.tex:403`) — *"Disproves Sidorenko's conjecture with a connected bipartite pattern on $35$ vertices
+Claim 161-1 (`overview.tex:405`) — *"Disproves Sidorenko's conjecture with a connected bipartite pattern on $35$ vertices
 and $66$ edges that occurs less frequently than in a random graph of the same edge density."*
 
-Claim 191-1 (`overview.tex:461`) — *"This disproves the conjectured almost-$n^{-2}$ upper bound in Heilbronn's triangle
+Claim 191-1 (`overview.tex:463`) — *"This disproves the conjectured almost-$n^{-2}$ upper bound in Heilbronn's triangle
 problem, which asks how large the smallest determined triangle can be."*
 
-Claim 192-1 (`overview.tex:463`) — *"Disproves the proposed square-root bound relating a Boolean function's linear Fourier
+Claim 192-1 (`overview.tex:465`) — *"Disproves the proposed square-root bound relating a Boolean function's linear Fourier
 coefficients to its polynomial degree."*
 
-Claim 272-1 (`overview.tex:633`) — *"A trace-preserving PPT channel on $M_{21}(\mathbb C)$ whose square is not entanglement
+Claim 272-1 (`overview.tex:635`) — *"A trace-preserving PPT channel on $M_{21}(\mathbb C)$ whose square is not entanglement
 breaking disproves Christandl\textquotesingle s PPT-square conjecture."*
 
-Claim 289-1 (`overview.tex:670`) — *"Counterexamples show that near-identity conjugacy fails for one-sided near inclusions,
+Claim 289-1 (`overview.tex:672`) — *"Counterexamples show that near-identity conjugacy fails for one-sided near inclusions,
 and that arbitrarily close norm-separable $C^*$-algebras need not be ambiently unitarily
 conjugate."*
 
-Claim 297-1 (`overview.tex:686`) — *"Thus the unrestricted compact-operator characterization fails without additional
+Claim 297-1 (`overview.tex:688`) — *"Thus the unrestricted compact-operator characterization fails without additional
 set-theoretic assumptions; the counterexample is nonseparable."*
 
-Claim 323-1 (`overview.tex:742`) — *"The assertion that every infinite-dimensional Banach space has a separable
+Claim 323-1 (`overview.tex:744`) — *"The assertion that every infinite-dimensional Banach space has a separable
 infinite-dimensional quotient can hold for all real and complex Banach spaces, whereas the continuum
 hypothesis yields counterexamples over both fields."*
 

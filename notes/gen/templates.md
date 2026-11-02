@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,493** lines, **608,339** bytes, **1,881** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,702** lines, **623,335** bytes, **1,984** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,493** lines, **609,002** bytes, **1,920** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,702** lines, **623,998** bytes, **2,023** slots.
 
 ## The report tree
 
@@ -18,7 +18,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 |---|---|---|---|---|---|---|
 | `README.md.j2` | 792 | 78,281 | 77 | `notes/gen/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `abstracts.md.j2` | 406 | 32,557 | 42 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
-| `counterexample-crosscheck.md.j2` | 1,089 | 46,762 | 116 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
+| `counterexample-crosscheck.md.j2` | 1,089 | 47,425 | 155 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,578 | 95 | `notes/gen/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `findings.md.j2` | 282 | 21,574 | 5 | `notes/gen/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
 | `fleet-design.md.j2` | 485 | 42,048 | 32 | `notes/gen/fleet-design.md` | `verify_fleet_design.py` | 20 |
@@ -38,7 +38,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 110 | 5,137 | 48 | `notes/gen/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,956 | 44 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,493** | **608,339** | **1,881** | | |
+| **report tree** | **22** | **9,493** | **609,002** | **1,920** | | |
 
 ## The index tree
 
@@ -59,8 +59,8 @@ the count of pages on disk that the template produced, read from the tree it wri
 A slot is a `{{ ` occurrence in the template file, counted over the whole file. Slot expressions
 are not required to be unique. The gap between `{{ ... }}` expressions and distinct expressions,
 over the **27** committed templates, is
-**25** repeat expressions over **6** templates —
-`fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (2 repeats); `scripts-README.md.j2` (12 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
+**36** repeat expressions over **7** templates —
+`counterexample-crosscheck.md.j2` (11 repeats); `fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (2 repeats); `scripts-README.md.j2` (12 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
 where a table row is emitted from the same label more than once. Each report template also carries
 a generated header comment whose closing line holds one literal `{{ }}`, so the header contributes
 exactly 1 slot to every report template; the header comment is **4** lines and the index templates
