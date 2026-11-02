@@ -160,6 +160,8 @@ notes/gen/reports/subfinding-pairs.md	077	2	main	overview.tex	228	228	Proves the
 notes/gen/reports/subfinding-pairs.md	077	2	title	overview.tex	228	228	Diagonal Fourier extension	
 notes/gen/reports/subfinding-pairs.md	077	1	clause	overview.tex	228	228	For every compact	for every $p>3$.
 notes/gen/reports/subfinding-pairs.md	077	1	title	overview.tex	228	228	Sphere restriction	
+notes/gen/reports/subfinding-pairs.md	079	1	main	overview.tex	232	232	Proves Sogge's local	sharp Sobolev threshold.
+notes/gen/reports/subfinding-pairs.md	079	1	title	overview.tex	232	232	Local smoothing for	Euclidean wave equation
 notes/gen/reports/subfinding-pairs.md	080	2	main	overview.tex	234	234	Proves almost-everywhere convergence	every dimension $n\ge2$.
 notes/gen/reports/subfinding-pairs.md	080	2	title	overview.tex	234	234	Higher-dimensional endpoint convergence	
 notes/gen/reports/subfinding-pairs.md	080	1	clause	overview.tex	234	234	including the planar endpoint $H^{1/3}$.	

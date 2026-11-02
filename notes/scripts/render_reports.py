@@ -3746,6 +3746,10 @@ SP_SPLIT = {
 
 def subfinding_pairs_phrases(p: dict[str, Any]) -> dict[str, str]:
     out = subfinding_pairs_full(p)
+    # Per-family overview.tex line: the \resultentry line for each population family.
+    ov_lines = overview.overview_lines()
+    for f in p["v"]["pop"]:
+        out[f"sp_ov_{f}"] = str(ov_lines[f])
     for label, prefixes in SP_SPLIT.items():
         base = out.pop(label)
         rest = base
