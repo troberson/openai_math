@@ -116,6 +116,7 @@ lives in the manuscript README and not in the bundle.
 | 229 | `The-Reconstruction-Threshold…Four-State-Potts` | `verification/checks/README.txt` | *"It does not repeat the full C++ traversals."* (`preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/verification/checks/README.txt:29`) |
 | 367 | `The-critical-dimension…` | `verification/checks/README.md` | *"This command verifies finite algebra and coefficient comparisons, not the analytic reduction, the correspondence between mathematical formulas and code, or the whole proof."* (`preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/verification/checks/README.md:13`) |
 | 229 | `The-exact-reconstruction-threshold…three-state` | `verification/README.md` | *"Do not use Python's `-O` or `-OO` options or define `NDEBUG`."* (`preprints/The-exact-reconstruction-threshold-for-the-three-state-symmetric-channel-September-25-2026/verification/README.md:5`) |
+| 266 | `The-maximum-number-of-mutually-unbiased-bases…` | **none** | 309 files (a saved C++ build and its numerical records), no README; the manuscript section points at `verification/saved-run/VERIFY.md`, whose checker reads the execution data and says *"It does not run the numerical C++ programs."* (`preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/verification/saved-run/VERIFY.md:22`) |
 | 268 | `The-periodic-spin-one-Haldane-gap` | `verification/computations/README.md` | *"Verification requires no GPU or network access."* (`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/verification/computations/README.md:13`) |
 | 090 | `Triangular-minimality…` | `verification/README.md` | *"The wrapper does not read the manuscript."* (`preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/verification/README.md:39`) |
 | 269 | `Uniform-Stability-of-the-Spherical-Laughlin-Gap` | **none** | One file, `verification/rows.txt`, byte-identical to the other 269 bundle's; typeset at `preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026/build/appendices/retained-blocks.tex:619`. |
@@ -212,12 +213,12 @@ tests naming a rejection: **7** whose names end in `rejected` (`altered_saved_re
 `triangle_degree_truncation`, `inexact_polynomial_division`, `floating_point_coefficient`) plus
 `incorrect_printed_triple_rejected_under_O`, which appends the flag it tests. The other three are
 `relocated_run_from_different_cwd`, `optimized_python_checks_remain_active`, and
-`original_runtime_files_unchanged`. This is the only bundle among the 30 that demonstrates its own
+`original_runtime_files_unchanged`. This is the only bundle among the 31 that demonstrates its own
 checks fail on bad input; the report is a shipped artifact, not a run this session performed.
 
 ## What the scripts compute (read 2026-10-11)
 
-Read as text; nothing was executed. Over the 30 bundles: 21 ship Python only, 7 ship C++ alongside
+Read as text; nothing was executed. Over the 31 bundles: 21 ship Python only, 8 ship C++ alongside
 Python, 2 ship no source at all. The source surface is 23,606 lines of `.py`, `.cpp`, `.c`, `.h`, and
 the `.py` files carry 1,164 occurrences of `assert` (a substring count over the Python sources). The
 counts come from `.qwen/tmp/bundle_inventory.py`, which walks each `verification/` tree, maps slug to
@@ -225,7 +226,7 @@ family through `catlib.overview.parse_overview()` manuscript ownership, and coun
 
 Every bundle computes a **closed finite statement**: a fixed list of integers, rationals, matrices,
 or enumerated objects, checked against literals written into the script, with a printed marker as the
-verdict. Four shapes cover the 30.
+verdict. Four shapes cover the 31.
 
 **Exact rational and interval enclosures (the largest group).** No floating-point arithmetic enters
 the check. 153's `verify_degree31.py` represents every real as an integer over `S = 10**30` and every
@@ -309,7 +310,7 @@ and its program-to-claim table maps each of the ten programs to the finite compu
 
 ## What a run costs, read from the shipped logs (2026-10-11)
 
-Six of the 30 bundles ship recorded timings; 24 ship none. Nothing was executed to produce these
+Six of the 31 bundles ship recorded timings; 25 ship none. Nothing was executed to produce these
 numbers — they are the release's own reports, read as text.
 
 | Fam | Bundle | Recorded time | Where |

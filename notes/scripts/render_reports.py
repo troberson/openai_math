@@ -2466,6 +2466,7 @@ def verification_dirs_full(v: dict[str, Any]) -> dict[str, str]:
     cls, cov_fams = v["classes"], v["cov_fams"]
     readme_n = len(v["readme_fams"])
     out: dict[str, str] = {}
+    out["v_bundle_n"] = str(dirs)
     out["v_dirs_fams"] = f"**{dirs} dirs over {fams} families**"
     out["v_famlist"] = f"({v['fam_list']})"
     out["v_covmd"] = f"`covmd` counts {v['covn']} `verification/COVERAGE.md`, both in family {cov_fams[0]}"
