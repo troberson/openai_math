@@ -5,18 +5,18 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,507** lines, **612,891** bytes, **2,098** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,716** lines, **627,887** bytes, **2,201** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,502** lines, **612,231** bytes, **2,098** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,711** lines, **627,227** bytes, **2,201** slots.
 
 ## The report tree
 
-`notes/gen/templates/report/*.j2`, rendered by `notes/scripts/render_reports.py`. Needles is the count
-of (phrase, label) pairs the builder can derive from that page's checker source by calling its
+`notes/templates/report/*.j2`, rendered by `notes/scripts/render_reports.py`. Needles is the count
+of (phrase, label) pairs the writer can derive from that page's checker source by calling its
 `count_phrases` / `size_phrases` with the population the checker exports as `population()`;
 `NOT DERIVED` is printed, not omitted, when the checker exposes no such call.
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 794 | 78,571 | 77 | `notes/gen/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `README.md.j2` | 791 | 78,140 | 77 | `notes/gen/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `abstracts.md.j2` | 406 | 32,671 | 47 | `notes/gen/reports/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 47,425 | 155 | `notes/gen/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,578 | 95 | `notes/gen/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
@@ -35,10 +35,10 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `sources.md.j2` | 156 | 9,424 | 29 | `notes/gen/reports/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 1,641 | 63,380 | 591 | `notes/gen/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 571 | 34,287 | 61 | `notes/gen/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
-| `templates.md.j2` | 110 | 5,137 | 48 | `notes/gen/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `templates.md.j2` | 108 | 4,908 | 48 | `notes/gen/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 409 | 38,470 | 48 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,507** | **612,891** | **2,098** | | |
+| **report tree** | **22** | **9,502** | **612,231** | **2,098** | | |
 
 ## The index tree
 
@@ -72,13 +72,13 @@ the 1-slot difference being the header. Quote a slot count with the rule that yi
 
 ## What the builder can prove, and what it cannot
 
-`notes/scripts/build_report_templates.py` rewrites `git show HEAD:<page>` by replacing every phrase
-the writer's slot dict supplies with a slot, so a template's literal text — quotations, anchors,
-fenced blocks, and every number the writer does not compute — is byte-exact from the committed
-page. A phrase the page wraps across lines is split at the page's own line breaks only when the
-writer supplies it as split labels; a phrase the writer supplies as one string is left literal,
-which is why every count on this page is a per-row slot: a report template carries no Jinja loop,
-so a census that grows grows the slot set.
+A report template is hand-edited source; `render_reports.py` renders it, so a template's literal
+text — quotations, anchors, fenced blocks, and every number the writer does not compute — is what
+the author writes into the `.j2` (there is no builder and no `git show HEAD:<page>` step). A phrase
+the page wraps across lines is split at the page's own line breaks only when the writer supplies it
+as split labels; a phrase the writer supplies as one string is left literal, which is why every count
+on this page is a per-row slot: a report template carries no Jinja loop, so a census that grows grows
+the slot set.
 
 Needle coverage is reported, not assumed: **9** of **22** pages have a checker whose needle list the
 builder can derive, and the per-page counts are the Needles column of the report-tree table above.

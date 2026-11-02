@@ -57,10 +57,9 @@ lives in this file and nowhere else.
   paper's two signatures, the 189 resolved declarations, the 61 carrier bodies, the literal pairing,
   and the `a.e.` surface),
   `summaries/<discipline>/<NNN>-<name>.md`, `templates/` (the page skeletons the renderers read —
-  **5** hand-written index skeletons `build_index.py` renders, plus **19** report templates under
-  `templates/report/` that `build_report_templates.py` builds from a page's own bytes at `HEAD`; a
-  report template is generated, so edit the writer's label dict in `render_reports.py` and re-render
-  rather than hand-editing it) — the only place a generated page's text lives, `notes/scripts/`.
+  **5** hand-written index skeletons `build_index.py` renders, plus **22** report templates under
+  `templates/report/` that `render_reports.py` renders; a report template is hand-edited source, so
+  edit the `.j2` and re-render) — the only place a generated page's text lives, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
 ## Dev environment tips
@@ -111,12 +110,11 @@ lives in this file and nowhere else.
   import `catlib.overview` / `catlib.ledger` / `catlib.paths` directly. `measure_names.py` stays a
   library: `measure()` is that script's own product (the six-layer measurement `notes/gen/reports/names.md` is
   checked against), and `dir_of` is its tolerance of a non-`preprints/` path over `catlib.paths.owner`.
-  `catlib/templates.py` carries the report-template registry (page → checker, 17 entries), the writer's
-  per-page slot dicts, the needle derivation and the split-label grouping, so the builder,
-  `measure_checker_needles.py` and `measure_templates.py` read one registry instead of three routes to
-  the builder. The template construction stays in `build_report_templates.py` — the whitespace-flexible
-  locate, the split at the page's own line breaks, the raw-block wrapping, and the `git show HEAD:<page>`
-  read, which is a revision the package does not own. `catlib/templates.py` imports the writer at module
+  `catlib/templates.py` carries the report-template registry (page → checker, 22 entries), the writer's
+  per-page slot dicts, the needle derivation and the split-label grouping, so `measure_checker_needles.py`
+  and `measure_templates.py` read one registry instead of three re-derivations. The report templates are
+  hand-edited source under `notes/templates/report/`; `render_reports.py` renders them (there is no
+  builder and no `git show HEAD:<page>` step). `catlib/templates.py` imports the writer at module
   level, so a consumer that the writer imports must import it only inside a function
   (`measure_templates.py`'s `registry()`).
 - The digest-keyed record store is `notes/scripts/catlib/records.py`. `manuscript_store()` reads
@@ -430,12 +428,13 @@ lives in this file and nowhere else.
   `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
   `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
   by hand before and after each move.
-  Scripts and generated files are **not** 1-to-1: of the **73** scripts, **18** write
-  (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
-  only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
-  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`,
-  `measure_checker_reads.py`, `measure_gate_rows.py` and `measure_check_calls.py`) and **55**
+  Scripts and generated files are **not** 1-to-1: of the **76** scripts, **21** write
+  (`build_catalog.py`, `build_sources.py`, `build_index.py`, `build_summaries.py`, `build_proofs.py`,
+  `build_index_db.py`, `compare_abstracts.py` — with `--tsv` only — `extract_formalization_deps.py`,
+  `extract_links.py`, `extract_subfindings.py`, `extract_summary_data.py`, `render_reports.py`,
+  `measure_open_probe.py`, `measure_names.py`, `seed_quotes.py`, `extract_named_results.py`,
+  `measure_templates.py`, `measure_checker_reads.py`, `measure_gate_rows.py`, `measure_check_calls.py`
+  and `fix_blank_cites.py`) and **55**
   write nothing, and `build_index.py` alone renders **1,049** files. **Three** of the writers are
   record producers: `measure_names.py` lands `names.json`, `extract_named_results.py` lands
   `named_results.json`, `measure_templates.py` lands `templates.json`, all under
@@ -473,9 +472,10 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **87** invocations — the **10**
-  gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 44 gated report-only rows (including `check_summary_manuscripts.py`,
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **85** invocations — the **17**
+  writer rows (16 of the 21 writers; the five the gate does not run are `build_index_db.py`,
+  `extract_summary_data.py`, `fix_blank_cites.py`, `measure_gate_rows.py` and `measure_open_probe.py`),
+  the 44 report-only rows (including `check_summary_manuscripts.py`,
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
   twenty-six extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
@@ -1080,12 +1080,10 @@ lives in this file and nowhere else.
   `notes/scripts/` and `notes/development/probe/`, so an `L1` tree entry naming the script tree hashes the sources
   a census scans without demanding the record name them; and every tracked
   artifact's bytes against the cache entry under the key the registry recomputes with the canonical gate
-  args. `build_report_templates.py` is exempt from the probe check because it reads pages with
-  `git show HEAD:`, a subprocess read the `open` event cannot see — and `key_for()` hashes **that**
-  writer's `L1` from HEAD for the same reason: it reads HEAD, so the key must hash HEAD. Its own output
-  feeds one `L1` entry (`notes/development/templates.md` tabulates the template bytes), so a render after the builder
-  moves that page and a working-tree key stops matching the key the builder used — measured 2026-10-12,
-  **18** problems with the working-tree read, **0** with the HEAD read. The test file injects eight
+  args. `PROBE_EXEMPT` has **4** writers: `measure_gate_rows.py`, `measure_check_calls.py`,
+  `build_summaries.py` and `build_proofs.py` — the first two read outside the `notes/` bucket the
+  record prints, and the last two read untracked data files. `L1_HEAD` is empty: no writer currently
+  needs its `L1` hashed from `HEAD`. The test file injects eight
   faults, one per pass: five in the registry structures the passes take as arguments (a removed `L1`
   entry the probe names, an `L1` entry added that is a self-output, a dropped writer, an altered page
   list, shifted canonical args) and three in the cache entries under the untracked key (corrupted,
