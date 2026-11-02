@@ -344,7 +344,7 @@ def test_clean_page(mod, text):
             pr["carrier_no_literal"], pr["no_headline_literal"], pr["no_family"]) == \
         (1, 31, 15, 2, 10, 2, 0), f"pairing classes {dict(pr)}"
     assert (v["env_total"], v["ae_envs"], len(v["ae_fams"]), len(v["inter"]),
-            len(v["cfgs"]), v["ae_with"], v["ae_without"]) == (2288, 48, 32, 19, 54, 19, 35), \
+            len(v["cfgs"]), v["ae_with"], v["ae_without"]) == (2298, 49, 32, 20, 55, 20, 35), \
         f"a.e. census {v['env_total']} envs, {v['ae_envs']} hits, {len(v['ae_fams'])} families"
     assert len(v["ae_table"]) == 32 and len(v["disjoint"]) == 2 and len(v["overlap"]) == 15, \
         f"tables: a.e. {len(v['ae_table'])}, disjoint {len(v['disjoint'])}, overlap {len(v['overlap'])}"

@@ -143,7 +143,7 @@ OWNERSHIP_MD = NOTES_DIR / "gen" / "scripts-README.md"
 # row splits the table tree into generated and hand-authored, so the writer names both sets.
 OWN_HAND_TSV = {"topics.tsv", "conjecture-standing.tsv"}
 OWN_LEDGER_TSV = {"catalog.tsv", "sources.tsv", "subfindings.tsv", "links.tsv", "abstracts.tsv",
-                  "quotes.tsv", "formalization-deps.tsv", "gate-rows.tsv", "splits.tsv"}
+                  "quotes.tsv", "formalization-deps.tsv", "gate-rows.tsv"}
 # The records the page describes in prose the writer cannot derive — the write-mode pair, the render
 # after-record, the purity pair, the fleet census record, and the two keyed-record producers. The
 # seed_quotes records are described mechanically from what each one names, so a new summary page
@@ -797,7 +797,6 @@ INDEX_SPLIT = {
          "`notes/gen/tables/quotes.tsv` (**985428** B over **2848** rows),"),
         ("`notes/gen/tables/scope-notes.tsv` (**26694** B over **242** rows), "
          "`notes/gen/tables/sources.tsv` (**221463** B over **719** rows), "
-         "`notes/gen/tables/splits.tsv` (**18257** B over **174** rows), "
          "`notes/gen/tables/topics-rendered.tsv` (**19127** B over **92** rows) and")],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
@@ -2619,8 +2618,8 @@ def scope_exclusions_full(p: dict[str, str]) -> dict[str, str]:
 
 
 EX_SPLIT = {
-    "ex_prose": ["121 of 242 sections state at least one exclusion, carrying 143 exclusion"],
-    "ex_narrow_detail": ["It hits 5 of 242 — families 003, 020, 049, 173, 360,"],
+    "ex_prose": ["123 of 245 sections state at least one exclusion, carrying 136 exclusion"],
+    "ex_narrow_detail": ["It hits 5 of 245 — families 003, 020, 049, 173, 360,"],
     "ex_floor_b": ["A keyword filter finds 5 sections; the reading pass"],
 }
 

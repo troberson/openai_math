@@ -1610,7 +1610,7 @@ manuscript of family NNN in `notes/gen/tables/subfindings.tsv`, whose `title` co
   families over 514 manuscripts, and the revisit condition is in the population section.
 - Every family with two or more manuscripts is read: the page covers 168 of the 168, carrying 516
   manuscripts.
-- The 428 comparator-link rows in `notes/gen/tables/subfindings.tsv` are not paired; only the 721 manuscript rows
+- The 434 comparator-link rows in `notes/gen/tables/subfindings.tsv` are not paired; only the 721 manuscript rows
   are eligible, and only 516 of those are in this population.
 - Clause boundaries were chosen by reading, not by a parser: a clause is a sentence, or a sentence
   fragment when one sentence states two results (039, 227, 271). Two clauses are quoted twice because

@@ -768,6 +768,12 @@ comparator-link	073	2					Falconer distance theorem in every dimension	FalconerA
 comparator-link	075	1					Almost-everywhere convergence of full symmetric Fourier partial sums	FourierLLogL.lean
 comparator-link	076	1					Asymptotically minimal Littlewood maximum	AsymptoticallyMinimalLittlewood.lean
 comparator-link	076	2					Finite-exponent flatness of one all-length Littlewood family	LittlewoodFiniteFlatness.lean
+comparator-link	079	1					Euclidean half-wave local smoothing	LocalSmoothing.lean
+comparator-link	079	2					Bochner–Riesz multiplier bounds uniform in the radius	LocalSmoothing.lean
+comparator-link	079	3					Spherical restriction in extension form	LocalSmoothing.lean
+comparator-link	079	4					Kakeya maximal estimate	LocalSmoothing.lean
+comparator-link	079	5					Full Hausdorff dimension of Euclidean Kakeya sets	LocalSmoothing.lean
+comparator-link	079	6					Stein square-function estimate	LocalSmoothing.lean
 comparator-link	081	1					Quantitative higher-codimension Riesz rectifiability	RieszQuantitative.lean
 comparator-link	082	1					Maximal triangular Hilbert transform bound	TriangularHilbert.lean
 comparator-link	083	1					Uniform short Hilbert-transform bounds for Lipschitz directions	LipschitzHilbert.lean

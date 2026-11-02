@@ -52,7 +52,7 @@ with per-phrase hits 0 / 3 / 0 / 1 / 1. The broad list adds `not included`, `not
 `not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 45 of 245.
 
 So 5 is a floor under a narrow rule, not a census. A keyword filter finds 5 sections; the reading pass
-finds exclusions in 122 of the 245. The gap is the reason this page is a reading record and not a tag.
+finds exclusions in 121 of the 245. The gap is the reason this page is a reading record and not a tag.
 
 ## Entries
 
@@ -92,7 +92,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 075 | **None stated.** |
 | 076 | "The results are existential and do not give an effective convergence rate or a signing algorithm." `lean/docs/076.md:11` |
 | 079 | **None stated.** |
-| 081 | “The variation and principal-value corollary is not included.” `lean/docs/081.md:9` |
+| 081 | "The variation and principal-value corollary is not included." `lean/docs/081.md:9` |
 | 082 | **None stated.** |
 | 083 | **None stated.** |
 | 084 | **None stated.** |

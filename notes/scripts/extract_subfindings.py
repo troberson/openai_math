@@ -43,8 +43,10 @@ KEY = key_for("extract_subfindings.py", tuple(sys.argv[1:]))
 COLS = ["kind", "fam", "seq", "title", "path", "formalized", "tier", "statement", "lean_file"]
 
 # A comparator table row: | named statement | [Name.lean](../ComparatorChallenges/Name.lean) |
+# The link may carry a line-fragment anchor (#L84, #L84-L90) that points at a specific comparator
+# line; it is kept out of the lean_file column so the distinct-.lean count stays clean.
 COMPARATOR_ROW = re.compile(
-    r"^\|\s*(.+?)\s*\|\s*\[(.+?)\]\(\.\./ComparatorChallenges/(.+?)\.lean\)\s*\|\s*$")
+    r"^\|\s*(.+?)\s*\|\s*\[(.+?)\]\(\.\./ComparatorChallenges/(.+?)\.lean(?:#[^)\s]*)?\)\s*\|\s*$")
 
 
 def resultentry_link_fields():

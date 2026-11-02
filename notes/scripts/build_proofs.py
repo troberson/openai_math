@@ -33,12 +33,13 @@ import build_summaries as BS
 from catlib import normalizer
 from catlib import text as CTEXT
 from catlib.atomic import Staging, outdir_of
-from catlib.paths import PROOFS_DIR, ROOT
+from catlib.paths import ROOT
 from catlib.promote import key_for
 from jinja2 import Environment, FileSystemLoader
 
 TPL_DIR = ROOT / "notes" / "templates" / "proofs"
 DATA_DIR = ROOT / "notes" / "data" / "proofs"
+PROOFS_DIR = ROOT / "notes" / "gen" / "proofs"
 
 ENV = Environment(loader=FileSystemLoader(str(TPL_DIR)),
                   keep_trailing_newline=True,
