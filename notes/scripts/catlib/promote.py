@@ -289,7 +289,7 @@ L1: dict[str, tuple[str, ...]] = {
         ),
     # The template census reads the top-level index skeletons and the report templates, the index tree
     # it counts renders into, and the registry module it reads the page set from. Its two `glob("*.j2")`
-    # walks are `notes/templates/*.j2` (the five index skeletons) and `notes/gen/templates/report/*.j2`
+    # walks are `notes/templates/*.j2` (the five index skeletons) and `notes/templates/report/*.j2`
     # (the twenty-one report templates) — `glob` does not recurse, so the `summaries/` subdirectory's
     # skeleton is NOT in its read surface and a `notes/templates/` tree entry over-names it by one.
     # The registry entry is hashed, not compared: the probe's printed scope excludes `notes/scripts/`.
@@ -299,7 +299,7 @@ L1: dict[str, tuple[str, ...]] = {
                              "notes/templates/index-readme.md.j2",
                              "notes/templates/name.md.j2",
                              "notes/templates/topic.md.j2",
-                             "notes/gen/templates/report/",
+                             "notes/templates/report/",
                              "notes/gen/index/",
                              "notes/scripts/catlib/templates.py",
                              "notes/data/summaries/",
@@ -365,7 +365,7 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # The template tree plus the split table the builder derives from HEAD's page bytes. The table is
     # the render's input, so the render's L1 names it through the `notes/gen/tables/` tree entry; the
     # builder's own output cannot be part of its own read surface, so it appears only here.
-    "build_report_templates.py": ("notes/gen/templates/report/", "notes/gen/tables/splits.tsv"),
+    "build_report_templates.py": ("notes/templates/report/", "notes/gen/tables/splits.tsv"),
     # A record producer has no tracked artifact: its bytes land under the keyed store, which the
     # `.qwen/*` rule keeps untracked. The empty tuple is what makes the cache check read it as
     # "no tracked bytes to compare" and the L1 check still prove its inputs.
@@ -492,7 +492,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/catalog.tsv",
             "notes/gen/tables/sources.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/abstracts.md.j2",
+            "notes/templates/report/abstracts.md.j2",
         ),
     "verify_citations.py": (
             "notes/gen/reports/citations.md",
@@ -520,7 +520,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/catalog.tsv",
             "notes/gen/tables/sources.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/counterexample-crosscheck.md.j2",
+            "notes/templates/report/counterexample-crosscheck.md.j2",
         ),
     "verify_dependency_drift.py": (
             "README.md",
@@ -535,7 +535,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/formalization-deps.tsv",
             "notes/gen/tables/sources.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/dependency-drift.md.j2",
+            "notes/templates/report/dependency-drift.md.j2",
         ),
     "verify_faithfulness.py": (
             "README.md",
@@ -548,7 +548,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/catalog.tsv",
             "notes/gen/tables/sources.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/formalization-faithfulness.md.j2",
+            "notes/templates/report/formalization-faithfulness.md.j2",
         ),
     "verify_findings.py": (
             "README.md",
@@ -1649,7 +1649,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
         "notes/gen/tables/subfindings.tsv",
         "notes/gen/tables/topics-rendered.tsv",
         "notes/gen/tables/traces.tsv",
-        "notes/gen/templates/report/index-design.md.j2",
+        "notes/templates/report/index-design.md.j2",
         "notes/scripts/build_catalog.py",
         "notes/scripts/build_sources.py",
         "notes/scripts/compare_abstracts.py",
@@ -1681,7 +1681,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/catalog.tsv",
             "notes/gen/tables/sources.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/scope-exclusions.md.j2",
+            "notes/templates/report/scope-exclusions.md.j2",
         ),
     "verify_sources.py": (
             "README.md",
@@ -1696,7 +1696,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/sources.tsv",
             "notes/gen/tables/subfindings.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/sources.md.j2",
+            "notes/templates/report/sources.md.j2",
         ),
     "verify_subfinding_pairs.py": (
             "README.md",
@@ -1711,7 +1711,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/sources.tsv",
             "notes/gen/tables/subfindings.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/subfinding-pairs.md.j2",
+            "notes/templates/report/subfinding-pairs.md.j2",
         ),
     "verify_subfindings.py": (
             "README.md",
@@ -2073,7 +2073,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/sources.tsv",
             "notes/gen/tables/subfindings.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/t0-chains.md.j2",
+            "notes/templates/report/t0-chains.md.j2",
         ),
     "verify_tsv_quoting.py": (
         "notes/gen/tables/abstracts.tsv",
@@ -2113,7 +2113,7 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/catalog.tsv",
             "notes/gen/tables/sources.tsv",
             "notes/data/topics.tsv",
-            "notes/gen/templates/report/verification-dirs.md.j2",
+            "notes/templates/report/verification-dirs.md.j2",
         ),
 }
 

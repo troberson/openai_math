@@ -2,7 +2,7 @@
 """Report-only: measure notes/templates/ — every count notes/development/templates.md quotes.
 
 Writes nothing, and reads only template text plus the writer's registry. Two trees:
-notes/gen/templates/report/*.j2 render the report pages under notes/ through render_reports.py;
+notes/templates/report/*.j2 render the report pages under notes/ through render_reports.py;
 notes/templates/*.j2 render the page types under notes/gen/index/ through build_index.py.
 
 Slot rule: a slot is a "{{ " occurrence counted over the WHOLE template file. Each report template
@@ -29,7 +29,7 @@ from catlib.promote import key_for, prune_stale
 from catlib.records import cached
 
 TEMPLATES = P.NOTES / "templates"
-REPORT_DIR = P.NOTES / "gen" / "templates" / "report"
+REPORT_DIR = P.NOTES / "templates" / "report"
 SLOT = "{{ "
 EXPR = re.compile(r"\{\{[^}]*\}\}")
 INDEX_TREE = {"discipline.md.j2": "disciplines", "name.md.j2": "names", "topic.md.j2": "topics"}

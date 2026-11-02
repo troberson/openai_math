@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Render the report-fed notes pages from the templates at notes/gen/templates/report/.
+"""Render the report-fed notes pages from the templates at notes/templates/report/.
 
 Writer: the 22 report-fed pages under notes/ — sources.md, abstracts.md, named-results.md,
 index-design.md, names.md, proof-density.md, index-links.md, links.md, dependency-drift.md,
 formalization-deps.md, verification-dirs.md, scope-exclusions.md, topics.md, t0-chains.md,
-subfinding-pairs.md and README.md — each from its template at notes/gen/templates/report/. Every
+subfinding-pairs.md and README.md — each from its template at notes/templates/report/. Every
 number on a page is measured here, either by calling the report the page itself names as its rule
 (compare_abstracts.measure() for abstracts.md, extract_named_results.population() for
 named-results.md, measure_index_sizes.population() for index-design.md, check_index_links.measure()
@@ -90,7 +90,7 @@ from catlib.promote import CHECKER_L1, git_show_text, key_for
 from catlib.quotes import resolve
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-TPL = ROOT / "notes" / "gen" / "templates" / "report"
+TPL = ROOT / "notes" / "templates" / "report"
 
 # The builder's key is computed inside main(), not at import: its L1 names the 1,049-file index tree
 # it reads, and `catlib/templates.py` imports this module, so a module-level key would make every
