@@ -13,10 +13,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **75** scripts: **21** writers, **31** report-only, **23** checkers,
+file. The classes partition the **76** scripts: **22** writers, **31** report-only, **23** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 21 write, 54 write nothing
+## The split: 22 write, 54 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -46,6 +46,7 @@ finds **21** writers over **75** scripts.
 | `build_catalog.py` | `notes/gen/tables/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/gen/reports/findings.md` |
 | `build_sources.py` | `notes/gen/tables/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/gen/reports/sources.md` |
 | `build_index.py` | `notes/gen/index` | single run; cached bytes == promoted bytes for all 1,049 files | `notes/development/index-links.md` |
+| `build_proofs.py` | `notes/gen/proofs` | a gate row; single run, cached bytes == promoted bytes for the 4 files it renders (3 proof pages + README) | none yet |
 | `build_summaries.py` | `notes/gen/summaries` | a gate row; single run, cached bytes == promoted bytes for the 61 pages it renders — before `seed_quotes.py` (which re-seeds the quote specs from the pages) so the render chain stays acyclic | `notes/gen/summaries/` — the per-family pages `verify_summaries.py` checks and `seed_quotes.py` re-seeds from |
 | `compare_abstracts.py` | `notes/gen/tables/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/gen/reports/abstracts.md` |
 | `extract_formalization_deps.py` | `notes/gen/tables/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/gen/reports/dependency-drift.md` |
@@ -79,7 +80,7 @@ store, not to a tracked path: `measure_names.py`'s consumers (`render_reports.py
 `measure_templates.py`'s (`render_reports.py` and `build_report_templates.py`'s floor page) read it
 through `population()`, so each walk is paid once per key instead of once per process.
 
-All **18** writers take `--check-only`: the run does its full measurement, prints its report, and writes
+All **19** writers take `--check-only`: the run does its full measurement, prints its report, and writes
 nothing. Measured 2026-10-11 by running each writer plain and then with the flag — the report is
 identical in both runs (the write announcement is the only line that differs) and
 `git status --porcelain` is unchanged by the flagged run. The three record producers are the case where
@@ -87,10 +88,11 @@ the flagged run's proof is the report identity alone: their write lands in the u
 `git status` is clean for them plain and flagged alike. `gate.py` runs the writers plain; the read-only
 rows `math-o3a.5.2` pooled are the rows that run with the flag, which is why the flag comes first.
 
-All sixteen writers reach `write_atomic()` in `catlib/atomic.py`, so a crash never leaves a
+All seventeen writers reach `write_atomic()` in `catlib/atomic.py`, so a crash never leaves a
 half-written tracked file. The single-file writers use `write_atomic()`, which lands bytes on a sibling
-temp name in the same directory, fsyncs, and moves the temp onto the target. The three multi-file
-writers (`build_index.py`, `render_reports.py`, `build_report_templates.py`) use `Staging(name)`:
+temp name in the same directory, fsyncs, and moves the temp onto the target. The four multi-file
+writers (`build_index.py`, `render_reports.py`, `build_report_templates.py`, `build_proofs.py`) use
+`Staging(name)`:
 `stage()` lands bytes under `.qwen/cache/staging/<name>/`, which the `.qwen/*` rule in `.gitignore`
 keeps untracked, and records the tracked path; `promote()` moves every staged slot onto its tracked
 path. The three record producers reach `write_atomic()` through `catlib/records.py`'s `cached()`,
