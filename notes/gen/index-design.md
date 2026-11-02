@@ -108,7 +108,7 @@ entries, and manuscript → `\keywords` macro **12** of **721** (**1.7%**). The 
 exist are unaligned: **17** catalog disciplines against **27** Lean discipline dirs.
 
 The Lean path hierarchy is not a vocabulary either. Each yaml triple names a config, a declaration,
-and a file (`lean/formalization.yaml:977`); the triples name **185** module dirs, and the declaration
+and a file (`lean/formalization.yaml:995`); the triples name **185** module dirs, and the declaration
 namespace equals the file's module dir in only **50** of **207** entries:
 
 ```
@@ -118,8 +118,8 @@ namespace equals the file's module dir in only **50** of **207** entries:
 ```
 
 `OAI.GAD.main` is filed under `AmplitudeDamping`, and `OAI.ArnoldCounterexample.main`
-(`lean/formalization.yaml:982`) is filed at `OAI/Geometry/Arnold/Main.lean`
-(`lean/formalization.yaml:983`). A name-based guess is wrong **157** times out of **207**, which is
+(`lean/formalization.yaml:1000`) is filed at `OAI/Geometry/Arnold/Main.lean`
+(`lean/formalization.yaml:1001`). A name-based guess is wrong **157** times out of **207**, which is
 why the index carries the edge instead of deriving it.
 
 Decision, as shipped: the vocabulary is a hand-authored file at `notes/data/topics.tsv` — **92** terms,
@@ -189,7 +189,7 @@ with a title-or-declaration hit get a page. The **5,291** citation-only keys are
 **manuscript → Lean file.** The bead's edge list carries "manuscript->Lean file (162 formalized)".
 The yaml has no such edge. `sources:` is a flat list of manuscript paths
 (`lean/formalization.yaml:11`) and `main_results:` sits under `status:`
-(`lean/formalization.yaml:969`, `lean/formalization.yaml:972`) as a flat list of
+(`lean/formalization.yaml:987`, `lean/formalization.yaml:990`) as a flat list of
 config→declaration→file triples. Nothing joins a source to a main result. The derivable path is
 family → config (scope notes: **418** occurrences, **418** distinct configs, **245** families) →
 config → file (yaml: **191** configs, all **191** of them also named by a scope note), which reaches

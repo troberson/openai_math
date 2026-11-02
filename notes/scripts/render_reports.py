@@ -604,6 +604,16 @@ def builds_on_anchor() -> int:
     raise SystemExit("no builds-on declaration in lean/formalization.yaml")
 
 
+def yaml_config_anchor(config: str) -> int:
+    """The `- comparator_config:` line for a named config — the index-design page's
+    worked-example anchor. Measured, not hand-stale: a yaml that grows shifts it, and the slot
+    follows."""
+    for e in Y.main_results_entries():
+        if e["config"] == config:
+            return e["line"]
+    raise SystemExit(f"no main_results entry for {config} in lean/formalization.yaml")
+
+
 def index_full(p: dict[str, Any]) -> dict[str, str]:
     """label -> the exact phrase notes/development/index-design.md must carry.
 
@@ -753,6 +763,12 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "disk link check": f"covers **{p['disk_links']:,}** links over the same "
                            f"{p['index_pages']:,} pages, also with **{p['disk_broken']}** broken, "
                            f"and **{p['disk_dirs']:,}** of them resolve to a directory",
+        # yaml line anchors: measured, not hand-stale
+        "yaml amplitude-damping anchor": str(yaml_config_anchor("AmplitudeDamping")),
+        "yaml arnold declaration anchor": str(yaml_config_anchor("ArnoldCounterexample") + 1),
+        "yaml arnold file anchor": str(yaml_config_anchor("ArnoldCounterexample") + 2),
+        "yaml status line": str(Y.yaml_section_lines()["status"]),
+        "yaml main_results line": str(Y.yaml_section_lines()["main_results"]),
     }
     for name in M.LEDGER_SET:
         size, rows = p["sizes"][name]
@@ -4116,6 +4132,16 @@ def crosscheck_phrases(p: dict[str, Any]) -> dict[str, str]:
     out["cc_nc_t0"] = f"The {p['shape'] - len(pop)} T0 families with the shape tag"
     out["cc_nc_outside"] = (f"the {len(set(p['entries']))} − {p['mainres']} = "
                             f"{len(set(p['entries'])) - p['mainres']} configs named by")
+    # Per-config yaml line: the `- comparator_config:` line is two above the `file:` line
+    # that main_results() records.
+    for c in p["all_cfg"]:
+        ent = p["mr"].get(c)
+        if ent is not None:
+            out[f"cc_yaml_{c}"] = str(ent[2] - 2)
+    # The `main_results:` section start line (the Population prose anchor).
+    # `main_results_entries()[0]["line"]` is the first `- comparator_config:` line,
+    # which is exactly one below the `main_results:` header.
+    out["cc_yaml_mr_start"] = str(Y.main_results_entries()[0]["line"] - 1)
     for label, prefixes in CC_SPLIT.items():
         base = out.pop(label)
         rest = base

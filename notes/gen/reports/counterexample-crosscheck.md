@@ -13,7 +13,7 @@ Ledger sums over the 28: **28** `main_results` declarations, **52** comparator c
 formalized manuscripts out of **50**. Every one of the 28 has a scope note.
 
 `lean/formalization.yaml` carries **207** `main_results` entries over **191** unique configs (one
-block, `lean/formalization.yaml:972`). Of the 28 families, **19** have at least one entry and **9**
+block, `lean/formalization.yaml:990`). Of the 28 families, **19** have at least one entry and **9**
 have none, and the no-entry tier counter reads `{'T2': 9}`: the absence is structural, not a reading
 gap — T2 is the tier the release assigns to a family whose scope note links configs that no
 `main_results` entry names.
@@ -86,7 +86,7 @@ three-space but are not Zariski-locally trivial."*
 
 `ComplexCancellation` — `lean/docs/047.md:17`
 
-`lean/formalization.yaml:1105`
+`lean/formalization.yaml:1123`
 ```yaml
     - comparator_config: ComparatorChallenges/ComplexCancellation.json
       declaration: OAI.ComplexCancellation.main
@@ -117,7 +117,7 @@ prediction at that parameter."*
 
 `Brennan` — `lean/docs/072.md:22`
 
-`lean/formalization.yaml:1041`
+`lean/formalization.yaml:1059`
 ```yaml
     - comparator_config: ComparatorChallenges/Brennan.json
       declaration: OAI.Brennan.main_theorem
@@ -148,7 +148,7 @@ def MainStatement : Prop :=
 
 `BrennanSharp` — `lean/docs/072.md:23`
 
-`lean/formalization.yaml:1045`
+`lean/formalization.yaml:1063`
 ```yaml
     - comparator_config: ComparatorChallenges/BrennanSharp.json
       declaration: OAI.Brennan.Sharp.sharp_endpoints
@@ -172,7 +172,7 @@ def SharpEndpointStatement : Prop :=
 
 `StrictMeans` — `lean/docs/072.md:24`
 
-`lean/formalization.yaml:1625`
+`lean/formalization.yaml:1671`
 ```yaml
     - comparator_config: ComparatorChallenges/StrictMeans.json
       declaration: OAI.StrictInverseFirstPower.main
@@ -206,7 +206,7 @@ spectrahedral."*
 
 `HyperbolicCones` — `lean/docs/095.md:15`
 
-`lean/formalization.yaml:1301`
+`lean/formalization.yaml:1323`
 ```yaml
     - comparator_config: ComparatorChallenges/HyperbolicCones.json
       declaration: OAI.Paper256.main_result
@@ -237,7 +237,7 @@ additive constant."*
 
 `BinPackingGap` — `lean/docs/118.md:15`
 
-`lean/formalization.yaml:1009`
+`lean/formalization.yaml:1027`
 ```yaml
     - comparator_config: ComparatorChallenges/BinPackingGap.json
       declaration: OAI.BinPackingGap.main_results
@@ -271,7 +271,7 @@ arbitrary real translation vectors."*
 
 `PeriodicTilingThree` — `lean/docs/155.md:15`
 
-`lean/formalization.yaml:1457`
+`lean/formalization.yaml:1503`
 ```yaml
     - comparator_config: ComparatorChallenges/PeriodicTilingThree.json
       declaration: OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality
@@ -304,7 +304,7 @@ Claim 2 (`overview.tex:395`) — *"Also disproves the fractional Colin de Verdi\
 
 `HadwigerCounterexample` — `lean/docs/157.md:21`
 
-`lean/formalization.yaml:1277`
+`lean/formalization.yaml:1295`
 ```yaml
     - comparator_config: ComparatorChallenges/HadwigerCounterexample.json
       declaration: OAI.HadwigerCounterexample.not_hadwiger_conjecture
@@ -338,7 +338,7 @@ tree-cover conjecture."*
 
 `RyserCovering` — `lean/docs/162.md:19`
 
-`lean/formalization.yaml:1557`
+`lean/formalization.yaml:1603`
 ```yaml
     - comparator_config: ComparatorChallenges/RyserCovering.json
       declaration: OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank
@@ -355,7 +355,7 @@ theorem exists_prime_eventually_counterexampleRank :
 
 `RyserOddExtensions` — `lean/docs/162.md:20`
 
-`lean/formalization.yaml:1561`
+`lean/formalization.yaml:1607`
 ```yaml
     - comparator_config: ComparatorChallenges/RyserOddExtensions.json
       declaration: OAI.RyserOdd.eventualOddFailures_and_infinite
@@ -385,7 +385,7 @@ a subset of a finite transitive set."*
 
 `EuclideanRamsey` — `lean/docs/172.md:17`
 
-`lean/formalization.yaml:1213`
+`lean/formalization.yaml:1231`
 ```yaml
     - comparator_config: ComparatorChallenges/EuclideanRamsey.json
       declaration: OAI.EuclideanRamsey.classification
@@ -402,7 +402,7 @@ Ramsey a ↔ FieldCriterion a :=
 
 `GrahamSpherical` — `lean/docs/172.md:18`
 
-`lean/formalization.yaml:1265`
+`lean/formalization.yaml:1283`
 ```yaml
     - comparator_config: ComparatorChallenges/GrahamSpherical.json
       declaration: OAI.GrahamSpherical.full_main
@@ -444,7 +444,7 @@ Claim 2 (`overview.tex:449`) — *"The same examples answer Jo\'o’s partitiona
 
 `InfiniteMatroid` — `lean/docs/185.md:17`
 
-`lean/formalization.yaml:1321`
+`lean/formalization.yaml:1343`
 ```yaml
     - comparator_config: ComparatorChallenges/InfiniteMatroid.json
       declaration: OAI.InfiniteMatroidCounterexample.main
@@ -475,7 +475,7 @@ pattern."*
 
 `MatrixRemoval` — `lean/docs/190.md:15`
 
-`lean/formalization.yaml:1405`
+`lean/formalization.yaml:1451`
 ```yaml
     - comparator_config: ComparatorChallenges/MatrixRemoval.json
       declaration: OAI.Problem348.no_polynomial_removal_bound
@@ -511,7 +511,7 @@ Determinant Conjecture."*
 
 `GroupRingDeterminant` — `lean/docs/197.md:35`
 
-`lean/formalization.yaml:1273`
+`lean/formalization.yaml:1291`
 ```yaml
     - comparator_config: ComparatorChallenges/GroupRingDeterminant.json
       declaration: OAI.GroupRingDeterminant.main
@@ -537,7 +537,7 @@ def MainStatement : Prop :=
 
 `KaplanskyFinitelyPresented` — `lean/docs/197.md:33`
 
-`lean/formalization.yaml:1341`
+`lean/formalization.yaml:1363`
 ```yaml
     - comparator_config: ComparatorChallenges/KaplanskyFinitelyPresented.json
       declaration: OAI.KaplanskyCounterexample.finitelyPresented_counterexample
@@ -555,7 +555,7 @@ theorem finitelyPresented_counterexample :
 
 `OddKaplansky` — `lean/docs/197.md:36`
 
-`lean/formalization.yaml:1429`
+`lean/formalization.yaml:1475`
 ```yaml
     - comparator_config: ComparatorChallenges/OddKaplansky.json
       declaration: OAI.OddKaplansky.main_theorem
@@ -594,7 +594,7 @@ Claim 1 (`overview.tex:477`) — *"This disproves the little finitistic-dimensio
 
 `LittleFinitistic` — `lean/docs/198.md:17`
 
-`lean/formalization.yaml:1361`
+`lean/formalization.yaml:1407`
 ```yaml
     - comparator_config: ComparatorChallenges/LittleFinitistic.json
       declaration: OAI.LittleFinitistic.Main.exists_counterexample
@@ -613,7 +613,7 @@ theorem exists_counterexample :
 
 `FinitisticAsymmetry` — `lean/docs/198.md:18`
 
-`lean/formalization.yaml:1225`
+`lean/formalization.yaml:1243`
 ```yaml
     - comparator_config: ComparatorChallenges/FinitisticAsymmetry.json
       declaration: OAI.LittleFinitistic.extreme_left_right_asymmetry
@@ -647,7 +647,7 @@ Claim 3 (`overview.tex:479`) — *"The counterexamples persist under every exten
 
 `AuslanderReiten` — `lean/docs/199.md:22`
 
-`lean/formalization.yaml:993`
+`lean/formalization.yaml:1011`
 ```yaml
     - comparator_config: ComparatorChallenges/AuslanderReiten.json
       declaration: OAI.ArExplicit.Statement.main
@@ -677,7 +677,7 @@ def FullStatement : Prop :=
 
 `Tachikawa` — `lean/docs/199.md:23`
 
-`lean/formalization.yaml:1665`
+`lean/formalization.yaml:1715`
 ```yaml
     - comparator_config: ComparatorChallenges/Tachikawa.json
       declaration: OAI.Tachikawa.main_theorem
@@ -721,7 +721,7 @@ injects into that set, yet the axiom of choice fails."*
 
 `PartitionPrinciple` — `lean/docs/244.md:17`
 
-`lean/formalization.yaml:1449`
+`lean/formalization.yaml:1495`
 ```yaml
     - comparator_config: ComparatorChallenges/PartitionPrinciple.json
       declaration: OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice
@@ -758,7 +758,7 @@ $C^*$-algebra admitting normalized $2$-quasitraces, all of which are nonadditive
 
 `KaplanskyQuasitrace` — `lean/docs/294.md:17`
 
-`lean/formalization.yaml:1345`
+`lean/formalization.yaml:1367`
 ```yaml
     - comparator_config: ComparatorChallenges/KaplanskyQuasitrace.json
       declaration: OAI.Kaplansky.kaplansky_quasitrace_counterexample
@@ -800,7 +800,7 @@ body is a cube."*
 
 `MetricEntropyDuality` — `lean/docs/329.md:15`
 
-`lean/formalization.yaml:1417`
+`lean/formalization.yaml:1463`
 ```yaml
     - comparator_config: ComparatorChallenges/MetricEntropyDuality.json
       declaration: OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers
@@ -831,7 +831,7 @@ is unbounded."* (`overview.tex:792`)
 
 `ArnoldCounterexample` — `lean/docs/347.md:15`
 
-`lean/formalization.yaml:981`
+`lean/formalization.yaml:999`
 ```yaml
     - comparator_config: ComparatorChallenges/ArnoldCounterexample.json
       declaration: OAI.ArnoldCounterexample.main
@@ -860,7 +860,7 @@ metrics on $S^3$ arbitrarily close to round."*
 
 `SmoothYau` — `lean/docs/350.md:22`
 
-`lean/formalization.yaml:1613`
+`lean/formalization.yaml:1659`
 ```yaml
     - comparator_config: ComparatorChallenges/SmoothYau.json
       declaration: OAI.YauCounterexamples.sphere_two_torus_two
@@ -876,7 +876,7 @@ theorem sphere_two_torus_two :
 
 `YauCounterexample` — `lean/docs/350.md:23`
 
-`lean/formalization.yaml:1769`
+`lean/formalization.yaml:1819`
 ```yaml
     - comparator_config: ComparatorChallenges/YauCounterexample.json
       declaration: OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample
@@ -915,7 +915,7 @@ growth on manifolds with nonnegative Ricci curvature."*
 
 `HarmonicGrowth` — `lean/docs/361.md:15`
 
-`lean/formalization.yaml:1285`
+`lean/formalization.yaml:1303`
 ```yaml
     - comparator_config: ComparatorChallenges/HarmonicGrowth.json
       declaration: OAI.HarmonicCounterexample.main

@@ -66,6 +66,24 @@ def parse_yaml() -> tuple[set[str], Counter]:
     return parse_yaml_text(read_text(FORMALIZATION_YAML))
 
 
+def yaml_section_lines() -> dict[str, int]:
+    """The structural line numbers in formalization.yaml: sources, status, main_results.
+
+    A writer that quotes a section header as a `path:line` anchor reads from this, so the
+    line is measured, not hand-stale.
+    """
+    lines = read_text(FORMALIZATION_YAML).splitlines()
+    out: dict[str, int] = {}
+    for i, line in enumerate(lines, 1):
+        if re.match(r"^sources:\s*$", line):
+            out["sources"] = i
+        elif re.match(r"^status:\s*$", line):
+            out["status"] = i
+        elif re.match(r"^\s+main_results:\s*$", line):
+            out["main_results"] = i
+    return out
+
+
 def main_results_entries() -> list[dict[str, Any]]:
     """Every main_results entry with its yaml line anchor: {config, declaration, file, line}.
 
