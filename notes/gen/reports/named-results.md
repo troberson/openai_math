@@ -66,6 +66,7 @@ Over **1,616** titled headline statements, **18** titles name a conjecture, ques
 | 060 | T0 | 1 | `preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex:102` | *"Global Spherical Shell conjecture"* |
 | 072 | T3 | 1 | `preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/sections/00-introduction.tex:52` | *"Brennan's conjecture and inverse-square means"* |
 | 074 | T0 | 1 | `preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/02-framework.tex:1160` | *"Reduction to a bad weighted problem"* |
+| 079 | T3 | 1 | `preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/build/sections/dirichlet.tex:24` | *"Periodic Dirichlet problem"* |
 | 087 | T3 | 1 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex:26` | *"General Mahler conjecture"* |
 | 119 | T3 | 1 | `preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex:54` | *"Hellinger conjecture"* |
 | 186 | T2 | 1 | `preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/build/sections/introduction.tex:12` | *"Friedgut--Kalai sharp-threshold conjecture"* |
@@ -227,8 +228,8 @@ remain unflagged**; 275 remains the false positive.
 
 Seven are named in the **overview title** while the overview abstract carries only a prove-verb, so the
 abstract-only rule could not see them: 022 (`overview.tex:120`), 039 (`:156`), 044 (`:166`), 151
-(`:381`), 209 (`:499`), 297 (`:686`), 263 (`:615`). Three are named by **manuscript name plus
-manuscript abstract only**: 354 (`overview.tex:806`), 365 (`:830`), 372 (`:846`).
+(`:383`), 209 (`:501`), 297 (`:688`), 263 (`:617`). Three are named by **manuscript name plus
+manuscript abstract only**: 354 (`overview.tex:808`), 365 (`:832`), 372 (`:848`).
 
 - 022 — *"We prove the weak inhomogeneous Duffin--Schaeffer conjecture."*
   (`preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex:37`)
@@ -263,18 +264,18 @@ reads **10 real misses and 1 false positive**.
 ## Direction B — the column reads 1, the manuscript naming is thin
 
 **8** families, all `rn = 1`, that name no target in manuscript prose under either prose rule: 085
-(`overview.tex:244`), 094 (`:264`), 126 (`:329`), 144 (`:367`), 187 (`:453`), 299 (`:690`), 323
-(`:742`), 333 (`:764`). In every one of the 8 the naming is supplied by the release's overview
+(`overview.tex:244`), 094 (`:264`), 126 (`:329`), 144 (`:369`), 187 (`:455`), 299 (`:692`), 323
+(`:744`), 333 (`:766`). In every one of the 8 the naming is supplied by the release's overview
 abstract:
 
 - 085 (`overview.tex:244`) — *"Resolves the planar centered-disk case of the Haj{\l}asz--Onninen maximal-function regularity problem."*
 - 094 (`overview.tex:264`) — *"answering Naor's sublinear-dimension question for $p\ne2$"*
 - 126 (`overview.tex:329`) — *"answering Rothvoss's polynomial-size lift question negatively"*
-- 144 (`overview.tex:367`) — *"Resolves the probability-preserving form of Banach's simple Lebesgue-spectrum problem"*
-- 187 (`overview.tex:453`) — *"Settles the Snaky achievement problem"*
-- 299 (`overview.tex:690`) — *"This answers the Kirchberg--R\o rdam character question."*
-- 323 (`overview.tex:742`) — *"the separable quotient problem is independent of ZFC"*
-- 333 (`overview.tex:764`) — *"resolving the closed-surface form of the four-dimensional isometric-immersion problem"*
+- 144 (`overview.tex:369`) — *"Resolves the probability-preserving form of Banach's simple Lebesgue-spectrum problem"*
+- 187 (`overview.tex:455`) — *"Settles the Snaky achievement problem"*
+- 299 (`overview.tex:692`) — *"This answers the Kirchberg--R\o rdam character question."*
+- 323 (`overview.tex:744`) — *"the separable quotient problem is independent of ZFC"*
+- 333 (`overview.tex:766`) — *"resolving the closed-surface form of the four-dimensional isometric-immersion problem"*
 
 Read against the manuscripts, the 8 split **3 corroborated / 5 resting on the overview paraphrase
 alone**:

@@ -25,8 +25,8 @@ comparison hypothesis is imposed” — widen the formalized claim instead of bo
 entries. A family whose section states no exclusion gets an explicit **None stated.** row; that is a
 finding about the notes, not a claim that the formalization covers the whole paper.
 
-121 of 242 sections state at least one exclusion, carrying 143 exclusion
-statements; 121 state none.
+123 of 245 sections state at least one exclusion, carrying 135 exclusion
+statements; 122 state none.
 
 ## Measurements
 
@@ -52,7 +52,7 @@ with per-phrase hits 0 / 3 / 0 / 1 / 1. The broad list adds `not included`, `not
 `not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 45 of 245.
 
 So 5 is a floor under a narrow rule, not a census. A keyword filter finds 5 sections; the reading pass
-finds exclusions in 121 of the 245. The gap is the reason this page is a reading record and not a tag.
+finds exclusions in 123 of the 245. The gap is the reason this page is a reading record and not a tag.
 
 ## Entries
 
