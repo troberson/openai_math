@@ -273,104 +273,104 @@ $2/3$ on every input."* Citation layer: 1 `.bib` file, 0 intra-family edges, 0 m
 
 ### 147 — The near-boundary Birkhoff conjecture
 
-- **1** (`overview.tex:373`) — *"Analytic caustic collars"*
+- **1** (`overview.tex:375`) — *"Analytic caustic collars"*
   → `preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf`
-- **2** (`overview.tex:373`) — *"Billiard rigidity"*
+- **2** (`overview.tex:375`) — *"Billiard rigidity"*
   → `preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/paper.pdf`
 
 Pairing: the mechanism that produces a collar, then the rigidity conclusion it feeds. Scope limit
-(`overview.tex:373`) — *"Such a billiard is an ellipse whenever a full grazing annulus is continuously
+(`overview.tex:375`) — *"Such a billiard is an ellipse whenever a full grazing annulus is continuously
 foliated by individually invariant essential curves."* Citation layer: 2 `.bib` files, 1 intra-family
 edges, 0 mutual pair.
 
 ### 200 — Eisenbud--Green--Harris and lex-plus-powers in characteristic zero
 
-- **1** (`overview.tex:481`) — *"Artinian lex-plus-powers Betti theorem"*
+- **1** (`overview.tex:483`) — *"Artinian lex-plus-powers Betti theorem"*
   → `preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/paper.pdf`
-- **2** (`overview.tex:481`) — *"Commuting division-coefficient forms"*
+- **2** (`overview.tex:483`) — *"Commuting division-coefficient forms"*
   → `preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/paper.pdf`
 
-Pairing: the two named conjectures, one per manuscript. Scope limit (`overview.tex:481`) — *"of
+Pairing: the two named conjectures, one per manuscript. Scope limit (`overview.tex:483`) — *"of
 arbitrary length and degrees at least two, admits a lex-plus-powers ideal with the same Hilbert
 function and no smaller graded Betti numbers"*. Citation layer: 0 `.bib` files, 0 intra-family edges,
 0 mutual pair.
 
 ### 203 — Donovan's conjecture over fields and discrete valuation rings
 
-- **1** (`overview.tex:487`) — *"Donovan over algebraically closed fields"*
+- **1** (`overview.tex:489`) — *"Donovan over algebraically closed fields"*
   → `preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/main.pdf`
-- **2** (`overview.tex:487`) — *"Integral Donovan over Witt vectors"*
+- **2** (`overview.tex:489`) — *"Integral Donovan over Witt vectors"*
   → `preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/main.pdf`
 
-Pairing: the field form, then the integral form. Scope limit (`overview.tex:487`) — *"over each fixed
+Pairing: the field form, then the integral form. Scope limit (`overview.tex:489`) — *"over each fixed
 algebraically closed field of characteristic $p$, blocks of finite groups with bounded defect-group
 order have only finitely many Morita-equivalence classes, for every prime $p$"*. Citation layer: 1
 `.bib` files, 1 intra-family edges, 0 mutual pair.
 
 ### 217 — The low-temperature Sherrington--Kirkpatrick fluctuation law
 
-- **1** (`overview.tex:517`) — *"Free-energy limiting law"*
+- **1** (`overview.tex:519`) — *"Free-energy limiting law"*
   → `preprints/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026.pdf`
-- **2** (`overview.tex:517`) — *"Fluctuation scale"*
+- **2** (`overview.tex:519`) — *"Fluctuation scale"*
   → `preprints/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026.pdf`
 
-Pairing: the limiting law and the scale it fluctuates at. Scope limit (`overview.tex:517`) — *"For
+Pairing: the limiting law and the scale it fluctuates at. Scope limit (`overview.tex:519`) — *"For
 every fixed inverse temperature $\beta>1$"*. Citation layer: 2 `.bib` files, 2 intra-family edges, 1
 mutual pair.
 
 ### 219 — GOE universality for random regular graphs with weak disorder
 
-- **1** (`overview.tex:521`) — *"Fixed-energy universality for weak Anderson disorder on random regular graphs"*
+- **1** (`overview.tex:523`) — *"Fixed-energy universality for weak Anderson disorder on random regular graphs"*
   → `preprints/Fixed-energy-universality-for-weak-Anderson-disorder-on-random-regular-graphs-October-5-2026/fixed-energy-universality-weak-anderson-disorder-random-regular-graphs.pdf`
-- **2** (`overview.tex:521`) — *"GOE bulk universality for fixed-degree random regular graphs"*
+- **2** (`overview.tex:523`) — *"GOE bulk universality for fixed-degree random regular graphs"*
   → `preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/paper.pdf`
 
-Pairing: the clean graph, then the disordered graph. Scope limit (`overview.tex:521`) — *"throughout
+Pairing: the clean graph, then the disordered graph. Scope limit (`overview.tex:523`) — *"throughout
 compact bands strictly inside the clean spectral edges"*. Citation layer: 1 `.bib` file, 0
 intra-family edges, 0 mutual pair.
 
 ### 239 — Sharp singularity rates for symmetric sign matrices
 
-- **1** (`overview.tex:561`) — *"The sharp exponential rate of singularity for symmetric Bernoulli matrices"*
+- **1** (`overview.tex:563`) — *"The sharp exponential rate of singularity for symmetric Bernoulli matrices"*
   → `preprints/The-sharp-exponential-rate-of-singularity-for-symmetric-Bernoulli-matrices-October-3-2026/symmetric-bernoulli-singularity.pdf`
-- **2** (`overview.tex:561`) — *"The sharp singularity rate for biased symmetric sign matrices"*
+- **2** (`overview.tex:563`) — *"The sharp singularity rate for biased symmetric sign matrices"*
   → `preprints/The-sharp-singularity-rate-for-biased-symmetric-sign-matrices-October-4-2026/biased-symmetric-sign-singularity.pdf`
 
-Pairing: uniform signs, then biased signs. Scope limit (`overview.tex:561`) — *"symmetric random sign
+Pairing: uniform signs, then biased signs. Scope limit (`overview.tex:563`) — *"symmetric random sign
 matrices with independent entries on and above the diagonal"*. Citation layer: 0 `.bib` files, 0
 intra-family edges, 0 mutual pair.
 
 ### 258 — Gersten's conjecture for one-relator groups
 
-- **1** (`overview.tex:603`) — *"Baumslag–Solitar-free one-relator groups"*
+- **1** (`overview.tex:605`) — *"Baumslag–Solitar-free one-relator groups"*
   → `preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/paper.pdf`
-- **2** (`overview.tex:603`) — *"Virtual compact specialness"*
+- **2** (`overview.tex:605`) — *"Virtual compact specialness"*
   → `preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/paper.pdf`
 
 Pairing: the two claims of the family; 258 is the only population family with no claim-shape tag at
-all. Scope limit (`overview.tex:603`) — *"containing no Baumslag--Solitar subgroup $\mathrm{BS}(m,n)$,
+all. Scope limit (`overview.tex:605`) — *"containing no Baumslag--Solitar subgroup $\mathrm{BS}(m,n)$,
 with $m,n\ne0$, is word-hyperbolic"*. Citation layer: 1 `.bib` file, 1 intra-family edges, 0 mutual
 pair.
 
 ### 265 — The two-dimensional gapped area law
 
-- **1** (`overview.tex:619`) — *"Two-dimensional area law"*
+- **1** (`overview.tex:621`) — *"Two-dimensional area law"*
   → `preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf`
-- **2** (`overview.tex:619`) — *"Polynomial PEPS approximation"*
+- **2** (`overview.tex:621`) — *"Polynomial PEPS approximation"*
   → `preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/paper.pdf`
 
-Pairing: the entropy law, then the tensor-network approximation. Scope limit (`overview.tex:619`) —
+Pairing: the entropy law, then the tensor-network approximation. Scope limit (`overview.tex:621`) —
 *"using only a uniform full-system spectral gap and bounds on the local interactions"*. Citation layer:
 2 `.bib` files, 2 intra-family edges, 1 mutual pair.
 
 ### 268 — The spin-one Haldane gap
 
-- **1** (`overview.tex:625`) — *"Periodic Haldane gap"*
+- **1** (`overview.tex:627`) — *"Periodic Haldane gap"*
   → `preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf`
-- **2** (`overview.tex:625`) — *"Boundary-field gap"*
+- **2** (`overview.tex:627`) — *"Boundary-field gap"*
   → `preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/paper.pdf`
 
-Pairing: the release calls 2 explicitly a companion (`overview.tex:625`) — *"A companion establishes
+Pairing: the release calls 2 explicitly a companion (`overview.tex:627`) — *"A companion establishes
 a gap for odd open chains with endpoint field $h=3/5$ and gives boundary-selected infinite-volume
 states with topological index $-1$."* The headline's scope limit is the geometry it covers — *"for the
 pure antiferromagnetic Heisenberg chain on even periodic rings"*.
@@ -378,107 +378,107 @@ Citation layer: 2 `.bib` files, 2 intra-family edges, 1 mutual pair.
 
 ### 270 — Threshold and positive-energy bound states of the BFSS model
 
-- **1** (`overview.tex:629`) — *"The unique threshold bound state of the SU(N) BFSS model"*
+- **1** (`overview.tex:631`) — *"The unique threshold bound state of the SU(N) BFSS model"*
   → `preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/paper.pdf`
-- **2** (`overview.tex:629`) — *"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*
+- **2** (`overview.tex:631`) — *"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*
   → `preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/positive-eigenvalues-relative-su2-bfss.pdf`
 
 Pairing: the headline at every $N$, then the companion at $N=2$, which the release records as
-contradicting an external paper (`overview.tex:629`) — *"For $\mathrm{SU}(2)$, a companion proves
+contradicting an external paper (`overview.tex:631`) — *"For $\mathrm{SU}(2)$, a companion proves
 infinitely many normalizable positive-energy eigenstates with unbounded energies"*. Scope limit of the
 headline — *"has exactly one normalizable zero-energy state for every finite $N\ge2$"*.
 Citation layer: 1 `.bib` file, 0 intra-family edges, 0 mutual pair.
 
 ### 286 — Arithmetic rigidity of lattice von Neumann algebras
 
-- **1** (`overview.tex:664`) — *"Twisted finite correspondences"*
+- **1** (`overview.tex:666`) — *"Twisted finite correspondences"*
   → `preprints/Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026/paper.pdf`
-- **2** (`overview.tex:664`) — *"Arithmetic category and stable recovery"*
+- **2** (`overview.tex:666`) — *"Arithmetic category and stable recovery"*
   → `preprints/The-arithmetic-category-and-stable-recovery-of-lattice-factors-September-23-2026/paper.pdf`
 
 Pairing: the bimodule classification, then the recovery of the group data from it. Scope limit
-(`overview.tex:664`) — *"between scalar-twisted group factors of ICC groups commensurable with
+(`overview.tex:666`) — *"between scalar-twisted group factors of ICC groups commensurable with
 property-$(T)$ lattices over characteristic-zero local fields and arbitrary ICC group factors"*.
 Citation layer: 2 `.bib` files, 2 intra-family edges, 1 mutual pair.
 
 ### 300 — The Popa--Vaes quadratic strong-operator paving conjecture
 
-- **1** (`overview.tex:692`) — *"Approximation paving"*
+- **1** (`overview.tex:694`) — *"Approximation paving"*
   → `preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf`
-- **2** (`overview.tex:692`) — *"Quadratic strong-operator paving"*
+- **2** (`overview.tex:694`) — *"Quadratic strong-operator paving"*
   → `preprints/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf`
 
 Pairing: the approximation form, then the quadratic form the family is named for. Scope limit
-(`overview.tex:692`) — *"admits strong-operator paving relative to any maximal abelian subalgebra with
+(`overview.tex:694`) — *"admits strong-operator paving relative to any maximal abelian subalgebra with
 $O(\varepsilon^{-2})$ blocks"*. Citation layer: 0 `.bib` files, 0 intra-family edges, 0 mutual pair.
 
 ### 302 — The Phillips--Toms formula for minimal integer actions
 
-- **1** (`overview.tex:696`) — *"Boundary-preserving cobordism compression"*
+- **1** (`overview.tex:698`) — *"Boundary-preserving cobordism compression"*
   → `preprints/Filtered-products-and-boundary-preserving-compression-in-complex-cobordism-September-25-2026/paper.pdf`
-- **2** (`overview.tex:696`) — *"Radius $=\frac12$ mean dimension"*
+- **2** (`overview.tex:698`) — *"Radius $=\frac12$ mean dimension"*
   → `preprints/Radius-of-comparison-equals-half-the-mean-dimension-September-25-2026/paper.pdf`
 
-Pairing: the compression tool, then the radius-of-comparison formula. Scope limit (`overview.tex:696`)
+Pairing: the compression tool, then the radius-of-comparison formula. Scope limit (`overview.tex:698`)
 — *"the radius of comparison of $C(X)\rtimes_h\mathbb Z$ equals $\tfrac12\mathrm{mdim}(X,h)$,
 including infinite values"*. Citation layer: 2 `.bib` files, 2 intra-family edges, 1 mutual pair.
 
 ### 308 — Smith--Toda complexes at every height with varying primes
 
-- **1** (`overview.tex:710`) — *"Varying primes"*
+- **1** (`overview.tex:712`) — *"Varying primes"*
   → `preprints/Finite-Smith-Toda-Complexes-at-Varying-Primes-September-23-2026/paper.pdf`
-- **2** (`overview.tex:710`) — *"V(4) at prime 1009"*
+- **2** (`overview.tex:712`) — *"V(4) at prime 1009"*
   → `preprints/A-finite-Smith-Toda-complex-V4-at-the-prime-1009-September-23-2026/paper.pdf`
 
-Pairing: the general construction, then the single explicit instance. Scope limit (`overview.tex:710`)
+Pairing: the general construction, then the single explicit instance. Scope limit (`overview.tex:712`)
 — *"constructs a finite Smith--Toda spectrum at a prime $p$ depending on $n$"*. Citation layer: 2
 `.bib` files, 0 intra-family edges, 0 mutual pair.
 
 ### 335 — Gromov's integral scalar-curvature inequality
 
-- **1** (`overview.tex:768`) — *"An integral scalar curvature bound for real simplicial volume"*
+- **1** (`overview.tex:770`) — *"An integral scalar curvature bound for real simplicial volume"*
   → `preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/v126-proof.pdf`
-- **2** (`overview.tex:768`) — *"Positive scalar curvature forces rational inessentiality"*
+- **2** (`overview.tex:770`) — *"Positive scalar curvature forces rational inessentiality"*
   → `preprints/Positive-scalar-curvature-forces-rational-inessentiality-September-23-2026/paper.pdf`
 
-Pairing: the integral inequality, then the Gromov--Lawson resolution. Scope limit (`overview.tex:768`)
+Pairing: the integral inequality, then the Gromov--Lawson resolution. Scope limit (`overview.tex:770`)
 — *"for every closed connected oriented smooth $n$-manifold, $n\ge3$, and every smooth metric, with
 $a_n>0$ depending only on dimension"*. Citation layer: 1 `.bib` file, 0 intra-family edges, 0 mutual
 pair.
 
 ### 346 — Sharp singular-set bounds for stationary integral varifolds
 
-- **1** (`overview.tex:790`) — *"A Codimension-One Bound for the Singular Set of a Stationary Integral Varifold"*
+- **1** (`overview.tex:792`) — *"A Codimension-One Bound for the Singular Set of a Stationary Integral Varifold"*
   → `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf`
-- **2** (`overview.tex:790`) — *"Almost-everywhere regularity of stationary integral varifolds"*
+- **2** (`overview.tex:792`) — *"Almost-everywhere regularity of stationary integral varifolds"*
   → `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf`
 
 Pairing: the dimension bound, then measure-zero regularity on spheres. Scope limit
-(`overview.tex:790`) — *"has singular set of Hausdorff dimension at most $m-1$, a sharp bound in every
+(`overview.tex:792`) — *"has singular set of Hausdorff dimension at most $m-1$, a sharp bound in every
 positive dimension and codimension"*. Citation layer: 2 `.bib` files, 1 intra-family edges, 0 mutual
 pair.
 
 ### 364 — Kinetic limits and fluctuations over the Boltzmann lifespan
 
-- **1** (`overview.tex:828`) — *"Boltzmann–Grad limit for stable radial potentials"*
+- **1** (`overview.tex:830`) — *"Boltzmann–Grad limit for stable radial potentials"*
   → `preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/paper.pdf`
-- **2** (`overview.tex:828`) — *"Hard-sphere fluctuations"*
+- **2** (`overview.tex:830`) — *"Hard-sphere fluctuations"*
   → `preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/paper.pdf`
 
-Pairing: the derivation, then the companion's fluctuation theorem. Scope limit (`overview.tex:828`) —
+Pairing: the derivation, then the companion's fluctuation theorem. Scope limit (`overview.tex:830`) —
 *"Stable finite-range radial potentials may have attractive wells and a singular repulsive core;
 initial pair exclusion and spatially summable Gaussian density and gradient bounds are assumed."*
 Citation layer: 2 `.bib` files, 0 intra-family edges, 0 mutual pair.
 
 ### 368 — The three-dimensional Ball--Evans approximation problem
 
-- **1** (`overview.tex:837`) — *"Diffeomorphic approximation, $1\le p\le2$"*
+- **1** (`overview.tex:839`) — *"Diffeomorphic approximation, $1\le p\le2$"*
   → `preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf`
-- **2** (`overview.tex:837`) — *"Diffeomorphic approximation, $p>2$"*
+- **2** (`overview.tex:839`) — *"Diffeomorphic approximation, $p>2$"*
   → `preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf`
 
 Pairing: the family's resolution is split at $p=2$ across the two manuscripts, and the overview
-abstract states only the merged conclusion (`overview.tex:837`) — *"every $W^{1,p}$ homeomorphism
+abstract states only the merged conclusion (`overview.tex:839`) — *"every $W^{1,p}$ homeomorphism
 between arbitrary bounded domains in $\mathbb R^3$, for $1\le p<\infty$, is a strong $W^{1,p}$ limit of
 smooth diffeomorphisms onto the same target."* Citation layer: 2 `.bib` files, 2 intra-family edges, 1
 mutual pair.
