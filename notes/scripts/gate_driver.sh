@@ -40,8 +40,15 @@ step() {
 }
 start=$(date -u +%s.%N)
 python3 "$G" > "$R/gate_run1.txt" 2>&1
+gate_rc=$?
 end=$(date -u +%s.%N)
 wall=$(python3 -c "print('%.2f' % ($end - $start))")
+if [ $gate_rc -ne 0 ]; then
+  echo "gate.py exited $gate_rc — report tail:"
+  tail -5 "$R/gate_run1.txt"
+  echo "GATE CRASHED — stopping before the post-gate sweep"
+  exit $gate_rc
+fi
 echo "wall $wall s"
 echo "wall $wall s" > "$R/gate_wall.txt"
 snap > "$R/gate_md5_run1.txt"
