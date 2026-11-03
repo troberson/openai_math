@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,502** lines, **612,231** bytes, **2,098** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,711** lines, **627,227** bytes, **2,201** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,502** lines, **612,271** bytes, **2,098** slots; index tree: **5** templates, **209** lines, **14,996** bytes, **103** slots; all **27** templates: **9,711** lines, **627,267** bytes, **2,201** slots.
 
 ## The report tree
 
@@ -30,7 +30,7 @@ of (phrase, label) pairs the writer can derive from that page's checker source b
 | `named-results.md.j2` | 369 | 25,480 | 83 | `notes/gen/reports/named-results.md` | `verify_named_results.py` | 65 |
 | `names.md.j2` | 277 | 13,905 | 130 | `notes/gen/reports/names.md` | `measure_names.py` | NOT DERIVED |
 | `proof-density.md.j2` | 122 | 8,681 | 66 | `notes/gen/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
-| `scope-exclusions.md.j2` | 332 | 27,395 | 19 | `notes/gen/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
+| `scope-exclusions.md.j2` | 332 | 27,435 | 19 | `notes/gen/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
 | `scripts-README.md.j2` | 740 | 67,379 | 66 | `notes/gen/scripts-README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `sources.md.j2` | 156 | 9,424 | 29 | `notes/gen/reports/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 1,641 | 63,380 | 591 | `notes/gen/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
@@ -38,7 +38,7 @@ of (phrase, label) pairs the writer can derive from that page's checker source b
 | `templates.md.j2` | 108 | 4,908 | 48 | `notes/gen/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,088 | 117 | `notes/gen/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 409 | 38,470 | 48 | `notes/gen/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,502** | **612,231** | **2,098** | | |
+| **report tree** | **22** | **9,502** | **612,271** | **2,098** | | |
 
 ## The index tree
 
