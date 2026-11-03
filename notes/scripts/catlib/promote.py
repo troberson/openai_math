@@ -114,8 +114,7 @@ L1: dict[str, tuple[str, ...]] = {
                        "notes/gen/tables/subfindings.tsv",
                        "notes/gen/tables/topics-rendered.tsv",
                        "notes/gen/tables/traces.tsv",
-                       "notes/gen/templates/",
-                       "notes/templates/summaries/",
+                                              "notes/templates/summaries/",
                        "notes/README.md",
                        "notes/data/conjecture-standing.tsv",
                        "notes/development/fleet-design.md",
@@ -124,7 +123,18 @@ L1: dict[str, tuple[str, ...]] = {
                        "notes/development/lean-fidelity.md",
                        "notes/development/summaries-workflow.md",
                        "notes/development/templates.md",
-        ),
+                  "notes/templates/report/",
+          "notes/templates/proofs/",
+          "notes/data/proofs/",
+          "notes/gen/proofs/",
+          "notes/data/themes.tsv",
+          "notes/gen/README.md",
+          "notes/gen/fleet-design.md",
+          "notes/gen/index-design.md",
+          "notes/gen/index-links.md",
+          "notes/gen/scripts-README.md",
+          "notes/gen/templates.md",
+),
     # The workflow page counts the summaries tree through `catlib.summaries`, so the writer opens
     # every page it counts and the key hashes the tree.
     "render_reports.py": (
@@ -172,8 +182,14 @@ L1: dict[str, tuple[str, ...]] = {
                           "notes/scripts/",
                           "notes/development/probe/2026-10-11_writers.txt",
                           "notes/development/probe/2026-10-11_checkers.txt",
-                          "notes/gen/templates/",
-        ),
+                                            "notes/gen/proofs/",
+          "notes/README.md",
+          "notes/development/fleet-design.md",
+          "notes/development/index-design.md",
+          "notes/development/index-links.md",
+          "notes/development/templates.md",
+          "notes/gen/reports/summary-review.md",
+),
     # The names measurement is a record producer, not a page writer: its only tracked input is the
     # ledger, which the probe records as the single notes/ path it opens read-only. Its record is the
     # population, so render_reports.py, build_index.py, extract_named_results.py and
@@ -208,8 +224,7 @@ L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/subfindings.tsv",
             "notes/gen/tables/topics-rendered.tsv",
             "notes/gen/tables/traces.tsv",
-            "notes/gen/templates/",
-            "notes/templates/summaries/",
+                        "notes/templates/summaries/",
             "notes/README.md",
             "notes/data/conjecture-standing.tsv",
             "notes/data/topics.tsv",
@@ -224,7 +239,18 @@ L1: dict[str, tuple[str, ...]] = {
             "notes/templates/index-readme.md.j2",
             "notes/templates/name.md.j2",
             "notes/templates/topic.md.j2",
-        ),
+                  "notes/templates/report/",
+          "notes/templates/proofs/",
+          "notes/data/proofs/",
+          "notes/gen/proofs/",
+          "notes/data/themes.tsv",
+          "notes/gen/README.md",
+          "notes/gen/fleet-design.md",
+          "notes/gen/index-design.md",
+          "notes/gen/index-links.md",
+          "notes/gen/scripts-README.md",
+          "notes/gen/templates.md",
+),
     # The seeder reads one page, one source, the 21 summaries pages, and the notes pages those pages
     # declare as sources. `overview.tex` is inside a hashed tree, so the key already covers it; the
     # pair page, the summaries tree and the three cited notes pages are not, so the L1 names them. The
@@ -269,8 +295,7 @@ L1: dict[str, tuple[str, ...]] = {
             "notes/gen/tables/subfindings.tsv",
             "notes/gen/tables/topics-rendered.tsv",
             "notes/gen/tables/traces.tsv",
-            "notes/gen/templates/",
-            "notes/templates/summaries/",
+                        "notes/templates/summaries/",
             "notes/README.md",
             "notes/data/conjecture-standing.tsv",
             "notes/data/topics.tsv",
@@ -285,7 +310,18 @@ L1: dict[str, tuple[str, ...]] = {
             "notes/templates/index-readme.md.j2",
             "notes/templates/name.md.j2",
             "notes/templates/topic.md.j2",
-        ),
+                  "notes/templates/report/",
+          "notes/templates/proofs/",
+          "notes/data/proofs/",
+          "notes/gen/proofs/",
+          "notes/data/themes.tsv",
+          "notes/gen/README.md",
+          "notes/gen/fleet-design.md",
+          "notes/gen/index-design.md",
+          "notes/gen/index-links.md",
+          "notes/gen/scripts-README.md",
+          "notes/gen/templates.md",
+),
     # The template census reads the top-level index skeletons and the report templates, the index tree
     # it counts renders into, and the registry module it reads the page set from. Its two `glob("*.j2")`
     # walks are `notes/templates/*.j2` (the five index skeletons) and `notes/templates/report/*.j2`
@@ -316,7 +352,17 @@ L1: dict[str, tuple[str, ...]] = {
                              "notes/development/lean-fidelity.md",
                              "notes/development/summaries-workflow.md",
                              "notes/development/templates.md",
-        ),
+                  "notes/data/proofs/",
+          "notes/gen/proofs/",
+          "notes/data/themes.tsv",
+          "notes/gen/README.md",
+          "notes/gen/fleet-design.md",
+          "notes/gen/index-design.md",
+          "notes/gen/index-links.md",
+          "notes/gen/scripts-README.md",
+          "notes/gen/templates.md",
+          "notes/templates/proofs/",
+),
     # The FTS builder reads only the corpus: every `.tex` under `preprints/` and `overview.tex`, both
     # inside the hashed trees. It opens no `notes/` file, so its L1 is empty and the probe scope
     # (which excludes `notes/scripts/`) has nothing to compare.
@@ -2128,6 +2174,12 @@ def l1_paths(name: str) -> list[Path]:
 
 
 PROBES = (
+          ROOT / "notes" / "development" / "probe" / "2026-11-03_bi.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-11-03_rr.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-11-03_mn.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-11-03_sq.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-11-03_enr.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-11-03_mt.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-26_bi.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-26_bs.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-26_ca.txt",
