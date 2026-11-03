@@ -161,7 +161,7 @@ def test_clean_page(load, text):
     assert measured["families with >=1 clause recorded unmatched"] <= measured["families read"]
     assert measured["families with an accepted sub-finding pair and no probe hit"] <= \
         measured["families with >=1 accepted sub-finding pair"]
-    assert measured["probe hits over the multi set"] <= measured["probe hits over all 372"]
+    assert measured["probe hits over the multi set"] <= measured["probe hits over all 373"]
     assert 0 < len(multi) == measured["multi-manuscript families"]
     assert len(probe) <= len(probe_all) <= len(multi)
     # The rejected-rule bands are nested by construction: the widest is the loosest rule.

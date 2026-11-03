@@ -42,7 +42,7 @@ MUTANTS = [
     ("anchor shifted",
      "notes/development/upstream_history/2026-10-07_3014888.md",
      "not verbatim in its anchored lines",
-     lambda t: t.replace("`history.md:38`", "`history.md:37`")),
+     lambda t: t.replace("`history.md:56`", "`history.md:20`")),
     ("anchor path that is not a file",
      "notes/development/upstream_history/2026-10-07_3014888.md",
      "is not a file",

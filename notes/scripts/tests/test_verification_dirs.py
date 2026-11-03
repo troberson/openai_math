@@ -45,8 +45,8 @@ present, 9 shared, 7 identical, 2 differing, 8 entries, 0 mismatches, 53 identit
 rows, 15 reported, 6 supplementary, 12 triangle rows, 9 determinant floors, 24 exact, 41
 subintervals, 504 lines, 6 check functions, 9 printed keys, 13 `require` calls, 151 passed-record
 occurrences, 11 checks with 8 negative and 7 ending `rejected`; and the entry recomputation over 22
-families, 28 named by a README section, 27 by a `## Verification` heading and 1 by
-the other heading, 6 with no entry point, 0 rule-4 firings, 2 declaring READMEs, and the two
+families, 29 named by a README section, 28 by a `## Verification` heading and 1 by
+the other heading, 7 with no entry point, 0 rule-4 firings, 2 declaring READMEs, and the two
 `rows.txt` files at 20 lines and 1,436 bytes, byte-identical. The bundle count is pinned as a **walk
 equality**: the test walks `preprints/` for directories carrying a `verification/` directory itself and
 the entry pass's count must equal the walk, so a bundle added to the corpus moves the walk, not the
@@ -320,7 +320,7 @@ def test_clean_page(mod, text):
     """Every pass is silent, and the counts the passes report are pinned."""
     problems, counters = mod.check(text, text)
     assert not problems, problems[:3]
-    assert counters == (42, 3, 2, 27, 1, 16, 5, 9, 30, 0), f"counters {counters}"
+    assert counters == (43, 3, 2, 28, 1, 16, 5, 9, 31, 0), f"counters {counters}"
     p = mod.population()
     assert (p["cov_named"], p["cov_present"], p["shared"], p["identical"], p["differ"],
             p["entries"], p["mismatches"]) == (4, 4, 9, 7, 2, 8, 0), f"cov {p['cov_named']}"
@@ -334,9 +334,9 @@ def test_clean_page(mod, text):
     assert e["dirs"] == len(tree_bundles()) > 0, \
         f"entry dirs {e['dirs']} against {len(tree_bundles())} bundles walked under preprints/"
     assert (e["fams"], e["named"], e["ver"], e["run"], e["no_entry"],
-            e["rule4"], e["declaring"]) == (22, 28, 27, 1, 6, 0, 2), \
+            e["rule4"], e["declaring"]) == (22, 29, 28, 1, 7, 0, 2), \
         f"named {e['named']}, no_entry {e['no_entry']}"
-    assert e["classes"] == {"none": 6, "top-level README.md": 12, "top-level script by name": 5,
+    assert e["classes"] == {"none": 7, "top-level README.md": 12, "top-level script by name": 5,
                             "subdirectory README.md": 6, "subdirectory README.txt": 1}, e["classes"]
     assert (e["rows_lines"], e["rows_bytes"], e["rows_identical"]) == (20, 1436, True), \
         f"rows.txt {e['rows_lines']} lines"
@@ -378,5 +378,5 @@ def test_padded_table_cells_are_dropped(mod, text):
     assert cand != text, "padding changed nothing"
     found, counters = mod.check(cand, cand)
     assert counters[8] == 0, f"the padded page still reads {counters[8]} entry-point rows"
-    assert any("entry-point table has 0 rows, the bundle count is 30" in x for x in found), \
+    assert any("entry-point table has 0 rows, the bundle count is 31" in x for x in found), \
         f"padding did not drop the entry-point rows: {found[:3]}"
