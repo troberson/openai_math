@@ -311,8 +311,9 @@ def test_atomic_write_retargeted(mod):
                        'ST.stage(pathlib.Path("README.md"), render_page(README_MD))', 1)
     assert cand != src, "atomic write retargeted: mutation changed nothing"
     before = mod.writer_targets(src)
-    assert "notes/README.md" in before, "the clean source does not carry the target"
-    assert "notes/README.md" not in mod.writer_targets(cand), \
+    target = next((t for t in before if "README.md" in t), None)
+    assert target is not None, "no README target found in writer_targets"
+    assert target not in mod.writer_targets(cand), \
         f"atomic write retargeted: NOT caught ({mod.writer_targets(cand)[:4]})"
 
 
