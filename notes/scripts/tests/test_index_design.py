@@ -33,14 +33,14 @@ the manuscript count equals the ledger's `paps` sum, the formalized count equals
 `paps_form` sum, the two comparator surfaces count the same configs, and the `main_results` entry count
 exceeds the unique config count. The census counts are pinned as **walk equalities**: the test walks
 `preprints/`, `lean/OAI/`, `notes/gen/index/`, `notes/gen/tables/` and `reasoning_traces/` itself, and the
-population's count must equal the walk — 749 preprint dirs, 122,458 `.lean` files, 1,033 index pages,
+population's count must equal the walk — 751 preprint dirs, 162,417 `.lean` files, 1,033 index pages,
 16 index tables, 11 trace files folding to 10 distinct stems. The figures that stay literal are the ones
 neither the join nor a file walk can produce: 9 anchors, 3 block lines, 84 count and byte phrases, 0
-sync problems, 2,560 nodes over 3,415 resolved edges (17,217 raw), 391 citation edges over
-104 cross-family, 242 scope notes, 559 module dirs, 17 disciplines against 23 Lean dirs, 30
-verification bundles, 521 `.bib` files with 13,802 entries and 393 hrefs, 66,115 disk links with 0
-broken and 17,700 resolving to a directory, over 1,033 index pages, and the substring counts 18 / 373
-against the brace-qualified 17 / 372. The byte sums are not literals: the test re-derives the
+sync problems, 2,684 nodes over 3,443 resolved edges (17,326 raw), 394 citation edges over
+107 cross-family, 245 scope notes, 668 module dirs, 17 disciplines against 27 Lean dirs, 31
+verification bundles, 522 `.bib` files with 13,883 entries and 396 hrefs, 66,840 disk links with 0
+broken and 17,795 resolving to a directory, over 1,033 index pages, and the substring counts 18 / 374
+against the brace-qualified 17 / 373. The byte sums are not literals: the test re-derives the
 ledger-set and all-TSV totals by walking `notes/gen/tables/*.tsv` on disk and requires the index-tree
 total to be positive, so they move with a re-seed and the disk walk is the test. A page with fewer
 anchors, block lines or phrases is a pass that stopped checking, not a pass that passed.
@@ -134,10 +134,10 @@ def tree_lean_files():
 
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
-    ("anchor line shifted", "lean/formalization.yaml:976",
-     lambda t: t.replace("`lean/formalization.yaml:977`", "`lean/formalization.yaml:976`", 1)),
+    ("anchor line shifted", "lean/formalization.yaml:986",
+     lambda t: t.replace("`lean/formalization.yaml:987`", "`lean/formalization.yaml:986`", 1)),
     ("anchor file renamed", "lean/formalization.yml does not exist",
-     lambda t: t.replace("`lean/formalization.yaml:982`", "`lean/formalization.yml:982`", 1)),
+     lambda t: t.replace("`lean/formalization.yaml:990`", "`lean/formalization.yml:990`", 1)),
     ("block line altered", "OAI.AmplitudeDamping.main",
      lambda t: t.replace("      declaration: OAI.GAD.main",
                          "      declaration: OAI.AmplitudeDamping.main", 1)),
@@ -219,13 +219,13 @@ def test_clean_page(mod, text, ledger):
     assert p["mr_configs"] < p["mr_entries"], \
         f"main_results: {p['mr_configs']} unique configs against {p['mr_entries']} entries"
     assert (p["nodes"], p["edges_resolved"], p["edges_rawbib"], p["resolved"], p["cross"]) == \
-        (2560, 3415, 17217, 391, 104), f"nodes {p['nodes']}, edges {p['edges_resolved']}"
-    assert p["scope_notes"] == 242, f"scope notes {p['scope_notes']}"
+        (2684, 3443, 17326, 394, 107), f"nodes {p['nodes']}, edges {p['edges_resolved']}"
+    assert p["scope_notes"] == 245, f"scope notes {p['scope_notes']}"
     assert p["preprint_dirs"] == len(tree_preprint_dirs()) > 0, \
         f"preprint dirs {p['preprint_dirs']} against {len(tree_preprint_dirs())} directories walked"
     assert p["lean_files"] == len(tree_lean_files()) > 0, \
         f"lean files {p['lean_files']} against {len(tree_lean_files())} .lean files walked under lean/OAI/"
-    assert (p["lean_mods"], p["disciplines"], p["lean_disc"]) == (559, 17, 23), \
+    assert (p["lean_mods"], p["disciplines"], p["lean_disc"]) == (668, 17, 27), \
         f"module dirs {p['lean_mods']}, disciplines {p['disciplines']} against {p['lean_disc']} Lean dirs"
     walked = tree_traces()
     assert p["trace_files"] == len(walked) > 0, \
@@ -233,7 +233,7 @@ def test_clean_page(mod, text, ledger):
     assert p["traces"] == len({f.stem for f in walked}) > 0, \
         f"traces {p['traces']} against {len({f.stem for f in walked})} distinct stems over the walk"
     assert (p["ver_dirs"], p["bib_files"], p["bib_entries"],
-            p["bib_hrefs"]) == (30, 521, 13802, 393), f"ver dirs {p['ver_dirs']}, bib {p['bib_files']}"
+            p["bib_hrefs"]) == (31, 522, 13883, 396), f"ver dirs {p['ver_dirs']}, bib {p['bib_files']}"
     # The byte sums are the files on disk, so the tree walk is the test: a figure that no longer
     # equals the bytes it names is a stale page, not a changed corpus. The link count is the
     # checker's scan, so it is pinned as invariants — 0 broken, a strict containment of the
@@ -254,7 +254,7 @@ def test_clean_page(mod, text, ledger):
         f"index tables {p['index_tables']} against {len(tree_index_tables(mod))} .tsv files walked under notes/gen/tables/"
     assert p["index_bytes"] > 0, f"index tree {p['index_bytes']} B"
     assert (p["substr_disc"], p["substr_res"], p["brace_disc"], p["brace_res"],
-            p["resultentries"]) == (18, 373, 17, 372, 372), f"substring {p['substr_disc']}"
+            p["resultentries"]) == (18, 374, 17, 373, 373), f"substring {p['substr_disc']}"
 
 
 @pytest.mark.parametrize("label,needle,mut", MUTANTS)
