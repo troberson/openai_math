@@ -154,7 +154,7 @@ MUTANTS = [
      lambda p: p.replace('*"The unique threshold bound state of the SU(N) BFSS model"*',
                          '*"The unique threshold bound state for the SU(N) BFSS model"*')),
     ("title swap",
-     quote_needle("`overview.tex:625`) — *\"Positive eigenvalues"),
+     "Positive eigenvalues of the relative SU(2) BFSS",
      lambda p: p.replace('*"Boundary-field gap"*',
                          '*"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*')),
     ("chain table tier",

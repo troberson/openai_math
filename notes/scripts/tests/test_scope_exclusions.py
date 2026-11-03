@@ -144,9 +144,9 @@ def test_deleted_family_row(mod, lines, setup, page):
 def test_prose_count_outside_the_measured_tables(mod, lines, page):
     """How many scope notes a merge added is not a Measurements row and not one of the prose counts
     Pass D reads. Only the render diff can see it."""
-    prose = next(n for n, line in enumerate(lines) if re.match(r"plus the \d+ that the 2026-10-07", line))
+    prose = next(n for n, line in enumerate(lines) if re.search(r"the \d+ that the 2026-10-07", line))
     cand = list(lines)
-    cand[prose] = bump(cand[prose], r"plus the (\d+) that", 1)
+    cand[prose] = bump(cand[prose], r"the (\d+) that the 2026-10-07", 1)
     assert cand != lines, "the mutation changed nothing"
     assert flagged(mod, cand, page, "page is not the writer's render"), \
         "the render diff did not flag the prose count"

@@ -191,11 +191,9 @@ def bare_needle(c, mod, p, fam):
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
     ("count: rn share", "COUNT missing (rn share)",
-     lambda t: t.replace("It reads **248** of **372** families",
-                         "It reads **249** of **372** families")),
+     lambda t: bump(t, r"It reads \*\*\d+\*\* of \*\*(\d+)\*\* families", 1)),
     ("count: titled per-line", "COUNT missing (titled per-line)",
-     lambda t: t.replace("| titled headline begins | 1,609 |",
-                         "| titled headline begins | 1,619 |")),
+     lambda t: bump(t, r"\| titled headline begins \| ([\d,]+) \|", 1)),
     ("family list: layer-1 drops 372", "COUNT missing (layer 1)",
      lambda t: t.replace("are not: 354 365 372.", "are not: 354 365.")),
     ("inline quotation",
