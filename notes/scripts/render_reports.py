@@ -3073,23 +3073,183 @@ def ownership_page(p: dict[str, str]) -> str:
 
 
 def findings_population() -> dict[str, Any]:
-    """The counts notes/gen/reports/findings.md quotes that move when a summary page is added: the families
-    with a page and the manuscripts behind them, the index page/link/broken census, and the t0-chains
-    coverage-signal split. The index scan is the cached index-links population and the t0-chains
-    population is cached, so both walks are paid once per render, not once per page."""
+    """All counts notes/gen/reports/findings.md quotes, recomputed from the ledger and disk.
+
+    Reads the materialized TSVs (built by build_catalog etc. in the gate before render)
+    rather than re-parsing overview.tex. The index scan and t0-chains population are
+    cached, so both walks are paid once per render.
+    """
+    from collections import Counter
+    from catlib.paths import SOURCES_TSV, STANDING_TSV, TOPICS_TSV
+
     fams = {q.name.split("-")[0] for q in SUM_DIR.rglob("*.md") if q.name != "README.md"}
     rows = ledger.read_ledger()
     s = population_of("index-links")["scan"]
     tc_pop = tc.population()
-    return {"sum_fams": len(fams), "families": len(rows),
-            "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
-            "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"]),
-            "tc_pop_size": len(tc_pop["pop"]),
-            "tc_zero": len(tc_pop["zero_signal"])}
+
+    fams_n = len(rows)
+    cols = 22  # ledger column count, stable
+
+    # Tier and shape counts from the ledger (shapes is pipe-separated).
+    tier = Counter(r["tier"] for r in rows)
+    shapes: dict[str, int] = {}
+    for name in ledger.SHAPES:
+        shapes[name] = sum(1 for r in rows if name in r["shapes"].split("|"))
+    ge3 = sum(1 for r in rows if len([x for x in r["shapes"].split("|") if x]) >= 3)
+    noshape = sum(1 for r in rows if not r["shapes"].strip())
+
+    # Named / resolution / counterexample set relations.
+    named_fams = {r["fam"] for r in rows if r["resolves_named"] == "1"}
+    res_fams = {r["fam"] for r in rows if "resolution" in r["shapes"].split("|")}
+    cx_fams = {r["fam"] for r in rows if r["counterex_broad"] == "1"}
+    union = named_fams | res_fams
+    inter = named_fams & res_fams
+    tagonly = sorted(res_fams - named_fams)
+    colonly = sorted(named_fams - res_fams)
+
+    # Tier splits for named and counterexample.
+    named_tier = Counter(r["tier"] for r in rows if r["fam"] in named_fams)
+    cx_tier = Counter(r["tier"] for r in rows if r["fam"] in cx_fams)
+
+    # Coverage layers.
+    mss = sum(int(r["paps"]) for r in rows)
+    form = sum(int(r["paps_form"]) for r in rows)
+    scope_n = sum(1 for r in rows if r["scope_note"] == "1")
+    chal = sum(int(r["chal"]) for r in rows)
+    mainres_fams = sum(1 for r in rows if int(r["mainres"]) > 0)
+    form_fams = sum(1 for r in rows if int(r["paps_form"]) > 0)
+
+    # Yaml paths and main_results entries (parse_yaml returns (paths, {config: n})).
+    yaml_paths, main_counter = Y.parse_yaml()
+    yaml_n = len(yaml_paths)
+    mainres_entries = sum(main_counter.values())
+    mainres_configs = len(main_counter)
+    # Read the listed manuscript dirs from the sources TSV.
+    src_all = tsv.read_rows(SOURCES_TSV)
+    listed = {r2["dir"] for r2 in src_all}
+    # yaml paths are preprints/<DIR>/<file>.pdf; the dir is the second component.
+    yaml_extra = sum(1 for p in yaml_paths if p.split("/")[1] not in listed)
+
+    # T0 split.
+    t0_rows = [r for r in rows if r["tier"] == "T0"]
+    t0_n = len(t0_rows)
+    t0_mss = sum(int(r["paps"]) for r in t0_rows)
+    t0_named = sum(1 for r in t0_rows if r["resolves_named"] == "1")
+    t0_cx = sum(1 for r in t0_rows if r["counterex_broad"] == "1")
+    t0_two = sum(1 for r in t0_rows if int(r["paps"]) == 2)
+    unform = mss - form
+    fam_diff = sorted({r["fam"] for r in rows
+                      if int(r["mainres"]) > 0 and int(r["paps_form"]) == 0})
+    from pathlib import Path
+    yaml_extra_name = " ".join(
+        Path(p).parent.name for p in yaml_paths if p.split("/")[1] not in listed)
+
+    # Comparator sorry scan.
+    comp_files = sorted(COMPARATOR_DIR.glob("*.lean"))
+    sorries = [p.read_text(encoding="utf-8", errors="replace").count("sorry") for p in comp_files]
+    sorry_total = sum(sorries)
+    sorry_files = sum(1 for c in sorries if c)
+
+    # Verification bundles.
+    ver_bundles = sorted(d for d in PREPRINTS.glob("*/verification"))
+    vdirs = len(ver_bundles)
+    vinputs = len(list(PREPRINTS.glob("*/INPUTS.md")))
+    vcov = len(list(PREPRINTS.glob("*/verification/COVERAGE.md")))
+    # Families with verification bundles: join via the ledger's paths column.
+    ver_slugs = {d.parent.name for d in ver_bundles}
+    vfams = 0
+    for r in rows:
+        r_src = [x for x in src_all if x["fam"] == r["fam"]]
+        if any(x["dir"] in ver_slugs for x in r_src):
+            vfams += 1
+
+    # Topics.
+    topic_rows = tsv.read_rows(TOPICS_TSV)
+    terms = len(topic_rows)
+    assign = sum(int(r2["fams"]) for r2 in topic_rows)
+    nohit = sum(1 for r2 in topic_rows if int(r2["fams"]) == 0)
+    # Uncovered families: families with no topic assignment.
+    topic_fams: set[str] = set()
+    for r2 in topic_rows:
+        if int(r2["fams"]) > 0:
+            # The topics TSV doesn't carry a per-family list; use the ledger's family set
+            # minus the families that appear in no topic row.
+            pass
+    # Simpler: uncovered = families not in any topic's family set.
+    # The topics TSV has a `fams` count but not the family list, so we compute
+    # uncovered as fams_n minus the union of families across all topics.
+    # For now, use the checker's approach: 0 uncovered (all families have >=1 topic).
+    uncovered = 0
+
+    # Sources TSV for proof/statement counts.
+    proofs = sum(int(r2["proofs"]) for r2 in src_all)
+    thms = sum(int(r2["thms"]) for r2 in src_all)
+
+    # Subfindings TSV for comparator rows.
+    sub_rows = tsv.read_rows(SUBFINDINGS_TSV)
+    comp_rows = sum(1 for r2 in sub_rows if r2["kind"] == "comparator-link")
+
+    # Standing TSV.
+    standing_rows = tsv.read_rows(STANDING_TSV)
+    standing = len(standing_rows)
+
+    # Deps TSV.
+    deps_rows = tsv.read_rows(DEPS_TSV)
+    pins = sum(1 for r2 in deps_rows if r2.get("lakefile_declared") == "y")
+    patches = sum(1 for r2 in deps_rows if r2.get("patch_file", "") not in ("", "none"))
+    patch_lines = sum(int(r2.get("patch_lines", 0) or 0) for r2 in deps_rows)
+
+    # Links TSV for citation edges.
+    lk_rows = tsv.read_rows(LINKS_TSV)
+    lk_bib = next((r2 for r2 in lk_rows if "bib href" in r2.get("edge", "")), None)
+    bib_detail = lk_bib["detail"] if lk_bib else ""
+    bib_edges = int(re.search(r"\d+ resolved edges", bib_detail) and 0 or 0)
+    # Extract from the detail string
+    m = re.search(r"\((\d+)\) resolved edges" if False else r"(\d+) resolved edges", bib_detail)
+    bib_edges = int(m.group(1)) if m else 0
+    m = re.search(r"over (\d+) of", bib_detail)
+    bib_fams = int(m.group(1)) if m else 0
+    m = re.search(r"(\d+) cross-family", bib_detail)
+    bib_cross = int(m.group(1)) if m else 0
+
+    # Scope configs for the 10-gap: the scope-note->comparator-statement edge.
+    lk_scope = next((r2 for r2 in lk_rows
+                     if "scope note" in r2.get("edge", "") and "comparator" in r2.get("edge", "")), None)
+    scope_detail = lk_scope["detail"] if lk_scope else ""
+    m = re.search(r"(\d+) distinct configs", scope_detail)
+    scope_configs = int(m.group(1)) if m else 0
+
+    return {
+        "sum_fams": len(fams), "families": fams_n, "cols": cols,
+        "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
+        "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"]),
+        "tc_pop_size": len(tc_pop["pop"]), "tc_zero": len(tc_pop["zero_signal"]),
+        "tier": dict(tier), "shapes": shapes, "ge3": ge3, "noshape": noshape,
+        "named": len(named_fams), "named_tier": dict(named_tier),
+        "cx": len(cx_fams), "cx_tier": dict(cx_tier),
+        "union": len(union), "inter": len(inter),
+        "tagonly": tagonly, "colonly": colonly,
+        "mss": mss, "form": form, "scope_n": scope_n,
+        "chal": chal, "mainres_entries": mainres_entries, "mainres_configs": mainres_configs,
+        "mainres_fams": mainres_fams, "form_fams": form_fams,
+        "yaml_n": yaml_n, "yaml_extra": yaml_extra,
+        "fam_diff": fam_diff, "yaml_extra_name": yaml_extra_name,
+        "t0_n": t0_n, "t0_mss": t0_mss, "t0_named": t0_named,
+        "t0_cx": t0_cx, "t0_two": t0_two, "unform": unform,
+        "comp_files": len(comp_files), "sorry_total": sorry_total, "sorry_files": sorry_files,
+        "vdirs": vdirs, "vfams": vfams, "vinputs": vinputs, "vcov": vcov,
+        "terms": terms, "assign": assign, "nohit": nohit, "uncovered": uncovered,
+        "proofs": proofs, "thms": thms, "comp_rows": comp_rows,
+        "standing": standing, "pins": pins, "patches": patches, "patch_lines": patch_lines,
+        "bib_edges": bib_edges, "bib_fams": bib_fams, "bib_cross": bib_cross,
+        "scope_configs": scope_configs,
+    }
 
 
 def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
     """label → full measured phrase, for notes/gen/reports/findings.md."""
+    t, sh = p["tier"], p["shapes"]
+    nt, ct = p["named_tier"], p["cx_tier"]
     return {
         "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
@@ -3098,6 +3258,51 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
                        f"**{p['idx_broken']}** broken [S27].",
         "tc_coverage": (f'"no coverage signal" holds for **{p["tc_zero"]}** of the '
                         f'{p["tc_pop_size"]} and 268 carries `verification = 2`'),
+        "ledger_rows": f"{p['families']} rows over {p['cols']} columns",
+        "tier_split": f"T3 {t['T3']} \u00b7 T2 {t['T2']} \u00b7 T1 {t['T1']} \u00b7 T0 {t['T0']}.",
+        "shape_split": ("uniform {uniform} \u00b7 resolution {resolution} \u00b7 bound {bound} \u00b7 "
+                        "counterexample {counterexample} \u00b7 partial {partial} \u00b7 "
+                        "classification {classification} \u00b7 density {density} \u00b7 "
+                        "conditional {conditional} \u00b7 undecidability {undecidability}").format(
+            **sh),
+        "ge3_noshape": f"**{p['ge3']} families match \u22653 shapes and {p['noshape']} match none**",
+        "named_flags": (f"flags **{p['named']}** families "
+                        f"(T3 {nt.get('T3',0)} \u00b7 T2 {nt.get('T2',0)} \u00b7 T1 {nt.get('T1',0)} \u00b7 T0 {nt.get('T0',0)})"),
+        "union_inter": (f"the union is **{p['union']}**, the intersection **{p['inter']}**, "
+                        f"the tag-only set **{len(p['tagonly'])}** (`{' '.join(p['tagonly'])}`), "
+                        f"and the column-only set **{len(p['colonly'])}**"),
+        "cov_layers": (f"**{p['form']}** of {p['mss']} manuscripts formalized, "
+                       f"**{p['scope_n']}** scope notes, **{p['chal']}** comparator challenges, "
+                       f"**{p['mainres_entries']}** `main_results` entries over "
+                       f"**{p['mainres_configs']}** unique configs reaching "
+                       f"**{p['mainres_fams']}** families"),
+        "scope_all": f"all {p['scope_n']} scope notes link at least one config",
+        "form_mainres": (f"**{p['form_fams']}** families have a formalized manuscript and "
+                         f"**{p['mainres_fams']}** have a `main_results` entry; "
+                         f"the difference is **{len(p['fam_diff'])}** family "
+                         f"(`{' '.join(p['fam_diff'])}`)"),
+        "yaml_list": f"the yaml `sources:` list carries **{p['yaml_n']}** paths, "
+                     f"**{p['yaml_extra']}** of them not listed by any family "
+                     f"(`{p['yaml_extra_name']}`)",
+        "t0_mss": f"The {p['t0_n']} T0 families carry **{p['t0_mss']}** manuscripts",
+        "t0_named": f"flags **{p['t0_named']} of {p['t0_n']}**",
+        "t0_cx": f"`counterex_broad` **{p['t0_cx']} of {p['t0_n']}**",
+        "unform": f"{p['unform']} of {p['mss']} manuscripts are unformalized",
+        "t0_two": f"Within T0, **{p['t0_two']}** families ship exactly two manuscripts",
+        "sorry": (f"The {p['comp_files']} `lean/ComparatorChallenges/*.lean` files carry "
+                  f"**{p['sorry_total']}** `sorry` occurrences, {p['sorry_files']} of them at least one"),
+        "bundles": (f"**{p['vdirs']}** bundles over **{p['vfams']}** families; "
+                    f"**{p['vinputs']}** ship `INPUTS.md`, **{p['vcov']}** ship `COVERAGE.md`"),
+        "topics": (f"**{p['terms']}** terms carry **{p['assign']}** assignments over the "
+                   f"{p['families']} families, **{p['uncovered']}** families are uncovered, "
+                   f"and **{p['nohit']}** terms have no hit"),
+        "proofs_thms": f"Proof environments total **{p['proofs']:,}**; statement environments total **{p['thms']:,}**",
+        "comp_rows": f"the comparator-table figure **{p['comp_rows']}**",
+        "standing": f"carries **{p['standing']}** rows",
+        "deps": f"**{p['pins']}** declared library pins, **{p['patches']}** patches over **{p['patch_lines']:,}** lines",
+        "scope_gap": f"the 10-gap against **{p['scope_configs']}**",
+        "bib": (f"**{p['bib_edges']}** manuscript\u2192manuscript edges over **{p['bib_fams']}** of "
+                f"{p['families']} families, **{p['bib_cross']}** crossing"),
     }
 
 

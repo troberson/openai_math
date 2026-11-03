@@ -72,7 +72,7 @@ PAGES = [
     # from the page's own count, because the slot moves whenever a summary page lands — a needle that
     # recorded the count as committed is inert the moment the count moves.
     (ROOT / "notes" / "gen" / "reports" / "findings.md",
-     _count(r"\*\*(\d+)\*\* of 372 families have a summary page"),
+     _count(r"\*\*(\d+)\*\* of \d+ families have a summary page"),
      None),
     (ROOT / "notes" / "scripts" / "README.md",
      "Measured 2026-10-11 by",
