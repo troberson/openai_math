@@ -12,14 +12,14 @@ conjecture in the literature, and it does not compare against a formalized state
 
 Derived from `notes/tables/catalog.tsv` and `notes/scripts/triage_t0.py`, not copied:
 
-- T0 rows: 130 families, 244 manuscripts.
-- First pass (read in `notes/reports/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 43 families,
-  130 manuscripts.
-- Second pass (remaining): 87 families, 114 manuscripts.
+- T0 rows: 128 families, 238 manuscripts.
+- First pass (read in `notes/reports/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 42 families,
+  125 manuscripts.
+- Second pass (remaining): 86 families, 113 manuscripts.
 - Title-named: `re.search(r"conjectur|\bquestion|\bproblem", title)` over the second pass,
-  case-insensitive — 43 families, 50 manuscripts. Case-sensitive gives the same 43.
+  case-insensitive — 42 families, 49 manuscripts. Case-sensitive gives the same 42.
 - Manuscripts per family: 36 families with 1, 7 families with 2 (055, 080, 147, 203, 258, 300, 368).
-- Buckets over the 43: R 24, N 8, B 5, U 4, K 2.
+- Buckets over the 42: R 23, N 8, B 5, U 4, K 2.
 
 The population is keyed to the ledger's `tier` column, so it moves when upstream formalizes a family.
 **075** and **195** were read in this pass as second-pass T0 families; the 2026-10-07 upstream merge
@@ -105,28 +105,6 @@ eight.**
   $p=3$ the threshold is $3\cdot\tfrac16-\tfrac12=0$, so every $\delta>0$ is required, which is
   exactly the $L^3$ theorem's hypothesis; at $p=1$ and $p=\infty$ it is $3\cdot\tfrac12-\tfrac12=1$,
   consistent with the kernel being $L^1$ only for $\delta>1$. No off-by-one.
-
-### 079 - Sogge's local smoothing conjecture in dimension three
-
-- **Bucket**: R | **Manuscripts**: 1 | **Discipline**: Real and complex analysis
-- **Blurb**: Resolves Sogge's local smoothing conjecture for the Euclidean wave equation in three
-  spatial dimensions. The estimate holds throughout the full strict range $2<p<\infty$, with Sobolev
-  regularity above $\max\{0,1-3/p\}$. In particular, the critical $L^3$ estimate holds with every
-  positive Sobolev loss.
-- **Statement**: [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex:25-32`]
-  "\begin{theorem}[Critical local smoothing]\label{thm:main} For every $\eps>0$ there exists
-  $C_\eps<\infty$ such that \begin{equation}\label{eq:intro-main}
-  \norm{Uf}_{L^3(\R^3\times[1,2])} \le C_\eps\norm{J^\eps f}_{L^3(\R^3)} \qquad (f\in\mathcal
-  S(\R^3)). \end{equation} \end{theorem}"
-- **Statement**: [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/09-physical-wave.tex:551-561`]
-  "\begin{corollary}[The positive-regularity local-smoothing range] \label{cor:full-range} For every
-  $2<p<\infty$ and $\alpha>\max\{0,1-3/p\}$, \begin{equation}
-  \norm{Uf}_{L^p(\R^3\times[1,2])} \le C_{p,\alpha}\norm{J^\alpha f}_{L^p(\R^3)}
-  \qquad(f\in\mathcal S(\R^3)). \label{eq:phys-full-range} \end{equation} \end{corollary}"
-- **Reading**: `match`. Both blurb clauses are stated: the critical $L^3$ estimate with every
-  $\eps>0$, and the full range $2<p<\infty$, $\alpha>\max\{0,1-3/p\}$. The exponent was recomputed
-  against the standard local-smoothing threshold $\sigma(p)=\max\{0,n(\tfrac12-\tfrac1p)-\tfrac12\}$
-  at $n=3$, which gives $\max\{0,1-\tfrac3p\}$ — the manuscript's formula. No off-by-one.
 
 ### 101 - The sharp simplex conjecture for isotropic constants
 
@@ -994,28 +972,28 @@ Re-derived by `python3 notes/scripts/verify_named_conjectures.py` (report-only; 
 number below from `notes/tables/catalog.tsv`, `notes/scripts/triage_t0.py`, and this page, and exits 1 on a
 mismatch):
 
-- `entries` 44
+- `entries` 43
 - `promoted` 2
-- `pop_families` 43
-- `pop_manuscripts` 50
-- `second_families` 87
-- `second_manuscripts` 114
-- `first_families` 43
-- `first_manuscripts` 130
-- `t0_families` 130
-- `t0_manuscripts` 244
+- `pop_families` 42
+- `pop_manuscripts` 49
+- `second_families` 86
+- `second_manuscripts` 113
+- `first_families` 42
+- `first_manuscripts` 125
+- `t0_families` 128
+- `t0_manuscripts` 238
 - `two_pap_families` 7
-- `verdict_match` 36
+- `verdict_match` 35
 - `verdict_merge` 8
 - `verdict_wider` 1
 - `verdict_narrower` 1
-- `priority_in_pop` 7
-- `priority_outside_pop` 1
-- `anchors` 59
+- `priority_in_pop` 6
+- `priority_outside_pop` 2
+- `anchors` 57
 - `citations` 10
-- `bucket_R` 24
+- `bucket_R` 23
 - `bucket_N` 8
 - `bucket_B` 5
 - `bucket_U` 4
 - `bucket_K` 2
-- `disciplines` Algebraic and complex geometry=10, Topology=8, Algebra=5, Differential geometry=5, Combinatorics=3, Partial differential equations=3, Real and complex analysis=3, Convex and metric geometry=1, Dynamical systems and ergodic theory=1, Group theory=1, Operator algebras=1, Probability and statistical mechanics=1, Theoretical computer science=1
+- `disciplines` Algebraic and complex geometry=10, Topology=8, Algebra=5, Differential geometry=5, Combinatorics=3, Partial differential equations=3, Real and complex analysis=2, Convex and metric geometry=1, Dynamical systems and ergodic theory=1, Group theory=1, Operator algebras=1, Probability and statistical mechanics=1, Theoretical computer science=1
