@@ -3263,6 +3263,13 @@ def findings_population() -> dict[str, Any]:
     sf_fam = len(_pp["pop"])
     sf_man = sum(_pp["counts"][f] for f in _pp["pop"])
 
+    # Citations pair-counts: the S21 block quote carries the threshold pair
+    # figures; the writer parses them from the materialized report so the
+    # quote stays in sync with citations.md.
+    _cit = (ROOT / "notes/gen/reports/citations.md").read_text(encoding="utf-8", errors="replace")
+    _mc = re.search(r"(\d+) of (\d+) pairs at .5 shared titles cross a discipline boundary and (\d+) of (\d+) at .10", _cit)
+    cit5_cross, cit5_total, cit10_cross, cit10_total = _mc.group(1), _mc.group(2), _mc.group(3), _mc.group(4)
+
     return {
         "sum_fams": len(fams), "families": fams_n, "cols": cols,
         "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
@@ -3290,6 +3297,10 @@ def findings_population() -> dict[str, Any]:
         "src_lines": src_lines,
         "sf_fam": sf_fam,
         "sf_man": sf_man,
+        "cit5_cross": cit5_cross,
+        "cit5_total": cit5_total,
+        "cit10_cross": cit10_cross,
+        "cit10_total": cit10_total,
     }
 
 
@@ -3305,6 +3316,10 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
         "src_lines": p["src_lines"],
         "sf_fam": p["sf_fam"],
         "sf_man": p["sf_man"],
+        "cit5_cross": p["cit5_cross"],
+        "cit5_total": p["cit5_total"],
+        "cit10_cross": p["cit10_cross"],
+        "cit10_total": p["cit10_total"],
         "scope_excl": _se["excl"],
         "scope_total": _se["both"],
         "scope_quotes": _se["quotes"],
