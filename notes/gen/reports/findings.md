@@ -97,8 +97,8 @@ itself; the proved version, where it exists, lives under `lean/OAI/`.
 comparator pass and does not mean the library elaborates.
 
 **Verification bundles are arithmetic, not proofs.** "A verification bundle is a
-**finite-arithmetic certificate**, not a proof check" [S14:11-12]. **31** bundles over **22** families; **4** ship `INPUTS.md`, **2** ship `COVERAGE.md` (both family 348). **12** of the 30 ship a
-README naming the command and its success criteria; **18** ship no README [S14].
+**finite-arithmetic certificate**, not a proof check" [S14:11-12]. **31** bundles over **22** families; **4** ship `INPUTS.md`, **2** ship `COVERAGE.md` (both family 348). **12** of the 31 ship a
+README naming the command and its success criteria; **19** ship [S14].
 
 **The remaining layers are small.** **10** reasoning traces, all attributed to families by `README.md`
 [S15], 0 unattributed, shipping in 11 files (the Mézard–Parisi trace ships as both `.pdf` and `.tex`).
@@ -172,7 +172,7 @@ The formalization is pinned, patched, and toolchain-normalised: **30** declared 
 patches over **160,187** lines carrying **734** `diff --git` hunks, **22** of the 23 patches rewriting
 `lean-toolchain`, and **8** distinct source toolchains all normalised to `v4.34.1` [S28]. The patch
 volume is **1.3** lines per source file [S28]. Import counts over `lean/OAI/**/*.lean` are OAI
-**277,607** and Mathlib **56,416** [S29]; the same rule over `lean/**/*.lean` (122,876 files) yields
+**369,380** and Mathlib **68,589** [S29]; the same rule over `lean/**/*.lean` (163,097 files) yields
 278,523 / 56,944, the additions being `lean/OAI.lean`'s module imports and the 416 challenge stubs,
 which import Mathlib **528** times and OAI **3** times.
 
@@ -228,7 +228,7 @@ not survive a re-run.
 | S16 | [`notes/gen/reports/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
 | S17 | [`notes/scripts/extract_scope_notes.py`](../../scripts/extract_scope_notes.py) | 107 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/gen/reports/proof-density.md`](proof-density.md) | 115 | The proof-density test, its bar, and its nulls |
-| S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 332 | The AUC and p re-derivation for every density figure |
+| S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 340 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/gen/reports/named-results.md`](named-results.md) | 348 | Headline environments read for named targets |
 | S21 | [`notes/gen/reports/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
 | S22 | [`notes/scripts/extract_citations.py`](../../scripts/extract_citations.py) | 306 | The citation extractor and its coverage report |

@@ -22,6 +22,7 @@ Sections:
 2. Per-bundle entry point, with the entry point's heading, command, and scope lines numbered.
 3. Entry-point class counts and the ledger reconciliation.
 """
+import functools
 import re
 
 from catlib.ledger import read_ledger
@@ -137,6 +138,44 @@ def main():
           f"set equal to bundle families {led_fams == fams_with_bundle}")
     print(f"ledger inputs sum {sum(int(r['inputs']) for r in rows)}  "
           f"ledger covmd sum {sum(int(r['covmd']) for r in rows)}")
+
+
+
+
+@functools.cache
+def population():
+    """Return the verification-bundle entry-point counts the findings page
+    and the checker's RECORD dict derive their needles from.
+    """
+    fam_by_slug, _order, _fams = families_by_slug()
+    dirs = sorted(p_ for p_ in PREPRINTS.iterdir() if p_.is_dir())
+    bundles = [p_ for p_ in dirs if bundle_of(p_).is_dir()]
+    readmes = [p_ for p_ in dirs if (p_ / "README.md").is_file()]
+    fams_with_bundle = sorted({fam_by_slug.get(p_.name) for p_ in bundles})
+
+    named, runsec, unnamed = [], [], []
+    for p_ in bundles:
+        _, heads = headings(p_ / "README.md")
+        ver = [ln for ln, h in heads if "Verification" in h]
+        run = [ln for ln, h in heads if "Run the verification code" in h]
+        if ver:
+            named.append((p_.name, "## Verification", ver[0]))
+        elif run:
+            runsec.append((p_.name, "## Run the verification code", run[0]))
+        else:
+            unnamed.append(p_.name)
+
+    no_readme_bundles = sum(
+        1 for p_ in bundles
+        if not list((p_ / "verification").glob("**/README.*"))
+    )
+    ship_readme = len(bundles) - no_readme_bundles
+    return {
+        "bundles": len(bundles),
+        "families": len(fams_with_bundle),
+        "ship_readme": ship_readme,
+        "no_readme": no_readme_bundles,
+    }
 
 
 if __name__ == "__main__":

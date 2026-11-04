@@ -38,6 +38,8 @@ from pathlib import Path
 import extract_scope_notes as esn
 import extract_subfinding_pairs as ep
 import extract_citations as ec
+import extract_formalization_deps as efd
+import extract_verification_dirs as evd
 import measure_proof_density as mpd
 import compare_abstracts as ca
 import extract_named_results as enr
@@ -196,6 +198,29 @@ def s23_figures():
     return [f"{len(names):,}", str(subject), f"{len(names) - subject:,}", f"{edges:,}"]
 
 @cache
+def s14_figures():
+    """The verification-bundle entry-point counts the findings page quotes
+    from the S14 record.
+    """
+    p = evd.population()
+    return [f"{p['bundles']} dirs over {p['families']} families",
+            f"{p['no_readme']} of {p['bundles']}",
+            f"{p['ship_readme']} ship"]
+
+
+@cache
+def s29_figures():
+    """The import-count and file-count figures the findings page quotes
+    from the S29 record.
+    """
+    p = efd.population()
+    f = lambda n: f"{n:,}"
+    return [f(p["oai"]), f(p["mathlib"]),
+            f(p["whole_oai"]), f(p["whole_mathlib"]),
+            f(p["whole_files"])]
+
+
+@cache
 def s18_figures():
     """The proof-density median values the findings page quotes from the S18 record.
 
@@ -234,7 +259,7 @@ RECORD = {
             "34 manuscripts", "the whole body of evidence"],
     "S12": s12_figures(),
     "S13": ["156", "417", "500", "14", "not** typed", *s13_figures()],
-    "S14": ["**30 dirs over 22 families**", "**12 of 30**", "**18 ship no README**",
+    "S14": [*s14_figures(),
             "finite-arithmetic certificate", "counts 4 `INPUTS.md`",
             "counts 2 `verification/COVERAGE.md`"],
     "S16": ["**28**", "**19**", "**9**"],
@@ -247,7 +272,7 @@ RECORD = {
     "S26": ["719", "21,288", "21,203", "717", "5", *s26_figures()],
     "S27": ["1,033", "66,109"],
     "S28": ["160,187", "734", "v4.34.1", *s28_figures()],
-    "S29": ["277,607", "56,416", "278,523", "56,944", "122,458", "56,702"],
+    "S29": [*s29_figures()],
     "S31": ["139", "60", "64", "11", "42", "84", "13", "145",
             "the assistant's training-data prior, not a literature survey"],
 }

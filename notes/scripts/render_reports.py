@@ -57,6 +57,7 @@ import extract_named_results as en
 import extract_scope_notes as ex
 import extract_subfinding_pairs as ep
 import extract_t0_chains as tc
+import extract_formalization_deps as efd
 import extract_verification_dirs as evd
 import measure_faithfulness as FA
 import measure_index_sizes as M
@@ -3266,6 +3267,8 @@ def findings_population() -> dict[str, Any]:
 
     # Citations pair-counts: derived from extract_citations.population()
     # so the figures track the corpus without a regex over the rendered page.
+    _evd_data = evd.population()
+    _efd_data = efd.population()
     _ec = ec.population()
     cit5_cross, cit5_total = _ec["pairs5_cross"], _ec["pairs5_total"]
     cit10_cross, cit10_total = _ec["pairs10_cross"], _ec["pairs10_total"]
@@ -3301,6 +3304,12 @@ def findings_population() -> dict[str, Any]:
         "cit5_cross": cit5_cross,
         "no_bib": no_bib,
         "n_man": n_man,
+        "s14_no_readme": _evd_data["no_readme"],
+        "s14_bundles": _evd_data["bundles"],
+        "s14_ship": _evd_data["ship_readme"],
+        "s29_oai": f"{_efd_data['oai']:,}",
+        "s29_mathlib": f"{_efd_data['mathlib']:,}",
+        "s29_files": f"{_efd_data['whole_files']:,}",
         "cit5_total": cit5_total,
         "cit10_cross": cit10_cross,
         "cit10_total": cit10_total,
@@ -3326,6 +3335,12 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
         "cit5_cross": p["cit5_cross"],
         "no_bib": p["no_bib"],
         "n_man": p["n_man"],
+        "s14_no_readme": f"**{p['s14_no_readme']}**",
+        "s14_bundles": p["s14_bundles"],
+        "s14_ship": f"**{p['s14_ship']}**",
+        "s29_oai": f"**{p['s29_oai']}**",
+        "s29_mathlib": f"**{p['s29_mathlib']}**",
+        "s29_files": p["s29_files"],
         "cit5_total": p["cit5_total"],
         "cit10_cross": p["cit10_cross"],
         "cit10_total": p["cit10_total"],

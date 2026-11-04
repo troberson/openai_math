@@ -101,8 +101,8 @@ itself; the proved version, where it exists, lives under `lean/OAI/`.
 comparator pass and does not mean the library elaborates.
 
 **Verification bundles are arithmetic, not proofs.** "A verification bundle is a
-**finite-arithmetic certificate**, not a proof check" [S14:11-12]. {{ p['bundles'] }} (both family 348). **12** of the 30 ship a
-README naming the command and its success criteria; **18** ship no README [S14].
+**finite-arithmetic certificate**, not a proof check" [S14:11-12]. {{ p['bundles'] }} (both family 348). {{ p['s14_no_readme'] }} of the {{ p['s14_bundles'] }} ship a
+README naming the command and its success criteria; {{ p['s14_ship'] }} ship [S14].
 
 **The remaining layers are small.** **10** reasoning traces, all attributed to families by `README.md`
 [S15], 0 unattributed, shipping in 11 files (the Mézard–Parisi trace ships as both `.pdf` and `.tex`).
@@ -177,7 +177,7 @@ The formalization is pinned, patched, and toolchain-normalised: **30** declared 
 patches over **160,187** lines carrying **734** `diff --git` hunks, **22** of the 23 patches rewriting
 `lean-toolchain`, and **8** distinct source toolchains all normalised to `v4.34.1` [S28]. The patch
 volume is **1.3** lines per source file [S28]. Import counts over `lean/OAI/**/*.lean` are OAI
-**277,607** and Mathlib **56,416** [S29]; the same rule over `lean/**/*.lean` (122,876 files) yields
+{{ p['s29_oai'] }} and Mathlib {{ p['s29_mathlib'] }} [S29]; the same rule over `lean/**/*.lean` ({{ p['s29_files'] }} files) yields
 278,523 / 56,944, the additions being `lean/OAI.lean`'s module imports and the 416 challenge stubs,
 which import Mathlib **528** times and OAI **3** times.
 

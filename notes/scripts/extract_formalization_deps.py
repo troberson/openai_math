@@ -17,6 +17,7 @@ generated artifact, so its resolved revs are reconciled against the declared pin
 and reported, not written into the table.
 """
 import collections
+import functools
 import json
 import re
 import sys
@@ -331,6 +332,42 @@ def main():
         print(f"  pos {i} {name} {n} > above {above} {above_n}")
     print(f"written: {OUT.relative_to(REPO)}")
     return 0
+
+
+
+
+@functools.cache
+def population():
+    """Return the import-count and file-count figures the findings page
+    and the checker's RECORD dict derive their needles from.
+    """
+    counts, nfiles = import_counts()
+    oai = counts.get("OAI", 0)
+    mathlib = counts.get("Mathlib", 0)
+    external = sum(v for k, v in counts.items() if k not in ("OAI", "Mathlib", "all"))
+    # Whole-tree figures: lean/**/*.lean excluding build/ dirs
+    import re as _re
+    pat = _re.compile(r"^\s*import\s+(all|[A-Z][A-Za-z0-9_.]*)", _re.MULTILINE)
+    woi, wml, wfiles = 0, 0, 0
+    for p_ in sorted((REPO / "lean").glob("**/*.lean")):
+        if ".lake" in p_.parts or "build" in p_.parts:
+            continue
+        wfiles += 1
+        for root in pat.findall(p_.read_text(encoding="utf-8", errors="replace")):
+            r = root.split(".")[0]
+            if r == "OAI":
+                woi += 1
+            elif r == "Mathlib":
+                wml += 1
+    return {
+        "oai": oai,
+        "mathlib": mathlib,
+        "external": external,
+        "oai_files": nfiles,
+        "whole_oai": woi,
+        "whole_mathlib": wml,
+        "whole_files": wfiles,
+    }
 
 
 if __name__ == "__main__":
