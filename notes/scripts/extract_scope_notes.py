@@ -14,6 +14,7 @@ Definitions, stated so the counts are reproducible:
 
 Usage: python3 notes/scripts/extract_scope_notes.py
 """
+import functools
 import statistics
 
 from catlib import yaml as Y
@@ -72,6 +73,34 @@ def main():
     print()
     print("Not checked: whether a section states an exclusion without using any of this vocabulary.")
     print("That is what the reading pass in notes/gen/reports/scope-exclusions.md is for; these counts are floors.")
+
+
+@functools.cache
+def population():
+    """Return the scope-note phrase-hit counts as a dict.
+
+    The checker and the writer derive their needles from this function
+    rather than from the subprocess stdout.
+    """
+    from catlib import yaml as _Y
+
+    docs = _Y.doc_files()
+    sections = {}
+    for path in docs:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        span = _Y.scope_span_lines(lines)
+        if span is None:
+            continue
+        first, last = span
+        sections[path.stem] = (first, last, lines[first - 1:last])
+
+    result = {"total_docs": len(sections), "total_files": len(docs)}
+    for name, phrases in (("narrow", NARROW), ("broad", BROAD)):
+        hits = sum(1 for _, _, sec in sections.values()
+                   if any(p in " ".join(sec).lower() for p in phrases))
+        result[f"{name}_phrases"] = len(phrases)
+        result[f"{name}_hits"] = hits
+    return result
 
 
 if __name__ == "__main__":

@@ -113,8 +113,8 @@ and no trace [S11:551-556].
 
 **Scope notes bound the claims in prose, and rarely in vocabulary.** "123 of 245 sections state at
 least one exclusion, carrying 145 exclusion statements; 122 state none" [S5:28-29]. A phrase
-search finds far less than reading does: the 5-phrase narrow list hits **5** of 242 and the 24-phrase
-broad list hits **44** [S17]. A clause saying an assumption is *not imposed* widens the formalized
+search finds far less than reading does: the 5-phrase narrow list hits **5** of 245 and the 24-phrase
+broad list hits **45** [S17]. A clause saying an assumption is *not imposed* widens the formalized
 claim rather than bounding it, so the exclusion count is a reading result, not a keyword result.
 
 ## What the manuscript-source layers add
@@ -226,7 +226,7 @@ not survive a re-run.
 | S14 | [`notes/gen/reports/verification-dirs.md`](verification-dirs.md) | 401 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../../README.md) | 53 | The release's own trace attributions |
 | S16 | [`notes/gen/reports/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
-| S17 | [`notes/scripts/extract_scope_notes.py`](../../scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
+| S17 | [`notes/scripts/extract_scope_notes.py`](../../scripts/extract_scope_notes.py) | 107 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/gen/reports/proof-density.md`](proof-density.md) | 115 | The proof-density test, its bar, and its nulls |
 | S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 317 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/gen/reports/named-results.md`](named-results.md) | 348 | Headline environments read for named targets |

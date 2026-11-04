@@ -35,6 +35,7 @@ from collections import Counter
 from functools import cache
 from pathlib import Path
 
+import extract_scope_notes as esn
 import extract_subfinding_pairs as ep
 import compare_abstracts as ca
 import extract_named_results as enr
@@ -216,10 +217,12 @@ RECORD = {
 
 # (script, report line the page relies on, the page's rendering of it)
 REPORTS = [
-    ("extract_scope_notes.py", "narrow list: 5 phrases, 5 of 242 docs hit",
-     "the 5-phrase narrow list hits **5** of 242"),
-    ("extract_scope_notes.py", "broad list: 24 phrases, 44 of 242 docs hit",
-     "the 24-phrase broad list hits **44**"),
+    ("extract_scope_notes.py",
+     f"narrow list: {esn.population()['narrow_phrases']} phrases, {esn.population()['narrow_hits']} of {esn.population()['total_docs']} docs hit",
+     f"the {esn.population()['narrow_phrases']}-phrase narrow list hits **{esn.population()['narrow_hits']}** of {esn.population()['total_docs']}"),
+    ("extract_scope_notes.py",
+     f"broad list: {esn.population()['broad_phrases']} phrases, {esn.population()['broad_hits']} of {esn.population()['total_docs']} docs hit",
+     f"the {esn.population()['broad_phrases']}-phrase broad list hits **{esn.population()['broad_hits']}**"),
     ("extract_subfinding_pairs.py",
      (f"POPULATION {len(ep.population()['pop'])} families, "
       f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts"),

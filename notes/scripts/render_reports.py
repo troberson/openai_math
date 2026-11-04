@@ -3311,6 +3311,8 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
     # Scope-exclusion quote numbers: the S5 block quote carries four figures
     # that come from the scope-exclusions report; the writer measures them
     # from scope_exclusions_population so the quote stays in sync.
+    import extract_scope_notes as _esn
+    _sn = _esn.population()
     _se = scope_exclusions_population()
     return {
         "src_lines": p["src_lines"],
@@ -3325,6 +3327,9 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
         "scope_quotes": _se["quotes"],
         "scope_none": _se["none"],
         "bib_cross": p["bib_cross"],
+        "scope_narrow_hits": _sn["narrow_hits"],
+        "scope_narrow_total": _sn["total_docs"],
+        "scope_broad_hits": _sn["broad_hits"],
         "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
         "cov_frac": f"**{p['sum_fams']}** of {p['families']}",
