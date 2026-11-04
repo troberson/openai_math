@@ -19576,7 +19576,6 @@
               1  r        notes/templates/proofs/proof.md.j2
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/build_catalog.py
-              1  r        notes/scripts/build_proofs.py
               1  r        notes/scripts/catlib/records.py
               1  r        notes/scripts/verify_proofs.py
 [probe2] target notes/scripts/verify_scope_exclusions.py

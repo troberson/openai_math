@@ -20007,7 +20007,6 @@
       "notes/gen/proofs/072.md",
       "notes/gen/proofs/091.md",
       "notes/scripts/build_catalog.py",
-      "notes/scripts/build_proofs.py",
       "notes/scripts/catlib/records.py",
       "notes/scripts/verify_proofs.py",
       "notes/templates/proofs/proof.md.j2"
@@ -21912,7 +21911,6 @@
   },
   "verify_script_ownership.py": {
     "l1": [
-      "README.md",
       "notes/README.md",
       "notes/data/conjecture-standing.tsv",
       "notes/data/proofs/072.md",
@@ -24032,7 +24030,7 @@
       "notes/templates/summaries/summary.md.j2",
       "notes/templates/topic.md.j2"
     ],
-    "keyable": false
+    "keyable": true
   },
   "verify_sources.py": {
     "l1": [
