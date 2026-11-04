@@ -2,6 +2,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -375,6 +378,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -387,6 +391,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -1420,6 +1428,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -1444,6 +1455,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -1842,11 +1854,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
               1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -3901,6 +3936,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -4274,6 +4312,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -4286,6 +4325,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -5319,6 +5362,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -5343,6 +5389,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -5741,11 +5788,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
               1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -5758,6 +5828,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -6131,6 +6204,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -6143,6 +6217,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -7176,6 +7254,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -7200,6 +7281,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -7598,11 +7680,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
               1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -7615,6 +7720,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -7988,6 +8096,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -8000,6 +8109,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -9033,6 +9146,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -9057,6 +9173,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -9455,11 +9572,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
               1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -9511,6 +9651,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -9884,6 +10027,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -9896,6 +10040,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -10929,6 +11077,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -10953,6 +11104,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -11351,11 +11503,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
               1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -11460,6 +11635,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -11833,6 +12011,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -11845,6 +12024,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -12878,6 +13061,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -12902,6 +13088,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -13300,11 +13487,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
               1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -17382,6 +17592,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -17755,6 +17968,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -17767,6 +17981,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -18800,6 +19018,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -18824,6 +19045,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -19222,11 +19444,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
               1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -21263,6 +21508,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -21636,6 +21884,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -21648,6 +21897,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -22681,6 +22934,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -22705,6 +22961,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -23103,11 +23360,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
               1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -23121,6 +23401,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -23494,6 +23777,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -23506,6 +23790,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -24539,6 +24827,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -24563,6 +24854,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -24961,11 +25253,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
               1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -25744,6 +26059,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -26117,6 +26435,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -26129,6 +26448,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -27162,6 +27485,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -27186,6 +27512,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -27584,11 +27911,34 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
               1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
+              1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
@@ -27638,6 +27988,9 @@
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/data/conjecture-standing.tsv
+              1  r        notes/data/proofs/072.md
+              1  r        notes/data/proofs/091.md
+              1  r        notes/data/proofs/README.md
               1  r        notes/data/summaries/001.md
               1  r        notes/data/summaries/002.md
               1  r        notes/data/summaries/003.md
@@ -28011,6 +28364,7 @@
               1  r        notes/data/summaries/376.md
               1  r        notes/data/summaries/377.md
               1  r        notes/data/summaries/378.md
+              1  r        notes/data/themes.tsv
               1  r        notes/data/topics.tsv
               1  r        notes/development/fleet-design.md
               1  r        notes/development/index-design.md
@@ -28023,6 +28377,10 @@
               1  r        notes/development/upstream_history/2026-10-26_7ef5c0c.md
               1  r        notes/development/upstream_history/2026-10-29_204e5f8.md
               1  r        notes/development/upstream_history/README.md
+              1  r        notes/gen/README.md
+              1  r        notes/gen/fleet-design.md
+              1  r        notes/gen/index-design.md
+              1  r        notes/gen/index-links.md
               1  r        notes/gen/index/README.md
               1  r        notes/gen/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/gen/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -29056,6 +29414,9 @@
               1  r        notes/gen/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/gen/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/gen/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/gen/proofs/072.md
+              1  r        notes/gen/proofs/091.md
+              1  r        notes/gen/proofs/README.md
               1  r        notes/gen/reports/abstracts.md
               1  r        notes/gen/reports/citations.md
               1  r        notes/gen/reports/conditional.md
@@ -29080,6 +29441,7 @@
               1  r        notes/gen/reports/t0-triage.md
               1  r        notes/gen/reports/topics.md
               1  r        notes/gen/reports/verification-dirs.md
+              1  r        notes/gen/scripts-README.md
               1  r        notes/gen/summaries/001-milnes-rationality-conjecture.md
               1  r        notes/gen/summaries/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
               1  r        notes/gen/summaries/003-quasi-riemann-hypothesis.md
@@ -29478,10 +29840,33 @@
               1  r        notes/gen/tables/subfindings.tsv
               1  r        notes/gen/tables/topics-rendered.tsv
               1  r        notes/gen/tables/traces.tsv
+              1  r        notes/gen/templates.md
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
               1  r        notes/templates/name.md.j2
+              1  r        notes/templates/proofs/proof.md.j2
+              1  r        notes/templates/report/README.md.j2
+              1  r        notes/templates/report/abstracts.md.j2
+              1  r        notes/templates/report/counterexample-crosscheck.md.j2
+              1  r        notes/templates/report/dependency-drift.md.j2
+              1  r        notes/templates/report/findings.md.j2
+              1  r        notes/templates/report/fleet-design.md.j2
+              1  r        notes/templates/report/formalization-deps.md.j2
+              1  r        notes/templates/report/formalization-faithfulness.md.j2
+              1  r        notes/templates/report/index-design.md.j2
+              1  r        notes/templates/report/index-links.md.j2
+              1  r        notes/templates/report/links.md.j2
+              1  r        notes/templates/report/named-results.md.j2
+              1  r        notes/templates/report/names.md.j2
+              1  r        notes/templates/report/proof-density.md.j2
+              1  r        notes/templates/report/scope-exclusions.md.j2
+              1  r        notes/templates/report/scripts-README.md.j2
+              1  r        notes/templates/report/sources.md.j2
+              1  r        notes/templates/report/subfinding-pairs.md.j2
+              1  r        notes/templates/report/t0-chains.md.j2
+              1  r        notes/templates/report/templates.md.j2
+              1  r        notes/templates/report/topics.md.j2
               1  r        notes/templates/report/verification-dirs.md.j2
               1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
