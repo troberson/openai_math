@@ -185,6 +185,15 @@ def s23_figures():
     edges = sum(len(d.get("fams", [])) for d in names if d["role"] == "subject")
     return [f"{len(names):,}", str(subject), f"{len(names) - subject:,}", f"{edges:,}"]
 
+@cache
+def s21_figures():
+    """The citations pair-threshold and no-.bib counts the findings page quotes
+    from the citations record. The checker does not carry them.
+    """
+    p = ec.population()
+    return [f"{p['pairs5_cross']} of {p['pairs5_total']}", f"{p['pairs10_cross']} of {p['pairs10_total']}", str(p["no_bib"])]
+
+
 # Counts the page takes from a record rather than re-measuring. Each must appear in that record.
 RECORD = {
     "S5": ["121 of 242 sections state at least one exclusion", "143 exclusion", "121 state none"],
@@ -205,7 +214,7 @@ RECORD = {
     "S16": ["**28**", "**19**", "**9**"],
     "S18": ["30.0", "168.2", "0.965", "0.973", "No ledger column"],
     "S20": ["1,609", "271", "101", *s20_figures()],
-    "S21": ["6 of 419", "0 of 197", "225"],
+    "S21": [*s21_figures()],
     "S23": ["232", *s23_figures()],
     "S24": ["92", "978"],
     "S25": s25_figures(),
