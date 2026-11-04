@@ -114,6 +114,16 @@ def s25_figures():
 
 
 @cache
+def s5_figures():
+    """The scope-exclusion counts the findings page quotes from the S5 record."""
+    from render_reports import scope_exclusions_population
+    p = scope_exclusions_population()
+    return [f"{p['excl']} of {p['notes']} sections state at least one exclusion",
+            f"{p['quotes']} exclusion",
+            f"{p['none']} state none"]
+
+
+@cache
 def s13_figures():
     """The links counts the findings page quotes from the links record, measured from links.tsv.
     The checker does not carry them: a carried figure goes stale the day the corpus grows.
@@ -196,7 +206,7 @@ def s21_figures():
 
 # Counts the page takes from a record rather than re-measuring. Each must appear in that record.
 RECORD = {
-    "S5": ["121 of 242 sections state at least one exclusion", "143 exclusion", "121 state none"],
+    "S5": [*s5_figures()],
     "S6": ["233", "94", "144"],
     "S7": ["74", "44", "30", "348", "339", "355", "004"],
     "S8": ["Five families are genuinely conditional", "122,458"],
