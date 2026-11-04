@@ -1656,15 +1656,6 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/scripts/verify_named_conjectures.py",
             "notes/gen/tables/catalog.tsv",
         ),
-    "verify_proofs.py": (
-            "notes/data/proofs/072.md",
-            "notes/data/proofs/091.md",
-            "notes/gen/proofs/072.md",
-            "notes/gen/proofs/091.md",
-            "notes/scripts/build_catalog.py",
-            "notes/scripts/verify_proofs.py",
-            "notes/templates/proofs/proof.md.j2",
-        ),
     "verify_scope_exclusions.py": (
             "README.md",
             "notes/gen/reports/scope-exclusions.md",
