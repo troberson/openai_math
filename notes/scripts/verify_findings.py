@@ -36,7 +36,10 @@ from functools import cache
 from pathlib import Path
 
 import extract_subfinding_pairs as ep
+import compare_abstracts as ca
+import extract_named_results as enr
 import extract_t0_chains as t0c
+import measure_names as mn
 import verify_subfinding_pairs as SP
 from catlib import yaml as Y
 from catlib.ledger import (
@@ -150,13 +153,42 @@ def s28_figures():
     return [f"{total / src_files:.1f}"]
 
 
+@cache
+def s9_figures():
+    """The abstracts comparison count the findings page quotes: how many families
+    disagree with the overview on at least one shape. The checker does not carry it.
+    """
+    m = ca.measure()
+    return [str(len(m["fam_shape_dis"]))]
+
+
+@cache
+def s20_figures():
+    """The named-results headline count and target-title count the findings page
+    quotes. The checker does not carry them.
+    """
+    p = enr.population()
+    return [f"{p['begins']:,}", f"**{len(p['tgt'])}**"]
+
+
+@cache
+def s23_figures():
+    """The name-layer counts the findings page quotes: measured keys, subject,
+    citation-only, and family-name edges (subject-role fams sum). The checker
+    does not carry them.
+    """
+    names, _ = mn.measure()
+    subject = sum(1 for d in names if d["role"] == "subject")
+    edges = sum(len(d.get("fams", [])) for d in names if d["role"] == "subject")
+    return [f"{len(names):,}", str(subject), f"{len(names) - subject:,}", f"{edges:,}"]
+
 # Counts the page takes from a record rather than re-measuring. Each must appear in that record.
 RECORD = {
     "S5": ["121 of 242 sections state at least one exclusion", "143 exclusion", "121 state none"],
     "S6": ["233", "94", "144"],
     "S7": ["74", "44", "30", "348", "339", "355", "004"],
     "S8": ["Five families are genuinely conditional", "122,458"],
-    "S9": ["0.236", "283", "89", "127", "153"],
+    "S9": ["0.236", "89", "127", "153", *s9_figures()],
     "S11": ["| C | 16 | 29 |", "| R | 46 | 85 |", "| B | 27 | 54 |", "| K | 8 | 20 |",
             "| U | 12 | 17 |", "| O | 2 | 5 |", "| N | 19 | 34 |", "**130** | **244**",
             "86 of these 130", "21 of these 130", "547 of 719", "44 families",
@@ -169,9 +201,9 @@ RECORD = {
             "counts 2 `verification/COVERAGE.md`"],
     "S16": ["**28**", "**19**", "**9**"],
     "S18": ["30.0", "168.2", "0.965", "0.973", "No ledger column"],
-    "S20": ["2,410", "1,609", "271", "101", "**17**"],
+    "S20": ["1,609", "271", "101", *s20_figures()],
     "S21": ["6 of 419", "0 of 197", "225"],
-    "S23": ["5,842", "551", "5,291", "9,819", "232"],
+    "S23": ["232", *s23_figures()],
     "S24": ["92", "978"],
     "S25": s25_figures(),
     "S26": ["719", "21,288", "21,203", "717", "5", *s26_figures()],
