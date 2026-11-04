@@ -35,6 +35,7 @@ Usage:
 """
 
 import collections
+import functools
 import os
 import re
 import sys
@@ -251,6 +252,54 @@ def main():
     print("manuscripts with both a .bib and an inline thebibliography: %d"
           % sum(1 for d in owners if inline.get(d, 0) > 0))
     return 0
+
+
+
+
+@functools.cache
+def population():
+    """Return the pair-threshold and no-.bib counts the checker's REPORTS row
+    and the findings page derive their needles from.
+
+    Computes only the sharing/pair layer and the .bib-coverage caveat.
+    """
+    files = bib_files()
+    rows = ledger_rows()
+    led = {r["fam"]: r for r in rows}
+    man2fam = manuscript_map()
+
+    titles = collections.defaultdict(set)
+    owners = set()
+    for p in files:
+        man = owner(p)
+        owners.add(man)
+        text = read(p)
+        for _ty, _key, body, _line in entries(text):
+            ti = field(body, "title")
+            if ti:
+                nt = norm_title(ti)
+                if nt:
+                    titles[man].add(nt)
+
+    men = sorted(m for m in titles if m in man2fam)
+    n_man = sum(int(r["paps"]) for r in rows)
+    disc = {m: led[man2fam[m]]["discipline"] for m in men}
+    famof = {m: man2fam[m] for m in men}
+
+    inv = collections.defaultdict(set)
+    for m in men:
+        for nt in titles[m]:
+            inv[nt].add(m)
+    shared = {nt: s for nt, s in inv.items() if len(s) >= 2}
+    pairs = pair_counts(shared.values())
+
+    result = {"manuscripts": n_man, "no_bib": len([d for d in set(man2fam) if d not in owners])}
+    for k in THRESHOLDS:
+        ps = [(a, b, v) for (a, b), v in pairs.items() if v >= k]
+        result[f"pairs{k}_total"] = len(ps)
+        result[f"pairs{k}_samfam"] = sum(1 for a, b, v in ps if famof[a] == famof[b])
+        result[f"pairs{k}_cross"] = sum(1 for a, b, v in ps if disc[a] != disc[b])
+    return result
 
 
 if __name__ == "__main__":

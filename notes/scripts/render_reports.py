@@ -62,6 +62,7 @@ import measure_faithfulness as FA
 import measure_index_sizes as M
 import measure_move_surface as MS
 import measure_names as MN
+import extract_citations as ec
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
@@ -3263,12 +3264,12 @@ def findings_population() -> dict[str, Any]:
     sf_fam = len(_pp["pop"])
     sf_man = sum(_pp["counts"][f] for f in _pp["pop"])
 
-    # Citations pair-counts: the S21 block quote carries the threshold pair
-    # figures; the writer parses them from the materialized report so the
-    # quote stays in sync with citations.md.
-    _cit = (ROOT / "notes/gen/reports/citations.md").read_text(encoding="utf-8", errors="replace")
-    _mc = re.search(r"(\d+) of (\d+) pairs at .5 shared titles cross a discipline boundary and (\d+) of (\d+) at .10", _cit)
-    cit5_cross, cit5_total, cit10_cross, cit10_total = _mc.group(1), _mc.group(2), _mc.group(3), _mc.group(4)
+    # Citations pair-counts: derived from extract_citations.population()
+    # so the figures track the corpus without a regex over the rendered page.
+    _ec = ec.population()
+    cit5_cross, cit5_total = _ec["pairs5_cross"], _ec["pairs5_total"]
+    cit10_cross, cit10_total = _ec["pairs10_cross"], _ec["pairs10_total"]
+    no_bib, n_man = _ec["no_bib"], _ec["manuscripts"]
 
     return {
         "sum_fams": len(fams), "families": fams_n, "cols": cols,
@@ -3298,6 +3299,8 @@ def findings_population() -> dict[str, Any]:
         "sf_fam": sf_fam,
         "sf_man": sf_man,
         "cit5_cross": cit5_cross,
+        "no_bib": no_bib,
+        "n_man": n_man,
         "cit5_total": cit5_total,
         "cit10_cross": cit10_cross,
         "cit10_total": cit10_total,
@@ -3321,6 +3324,8 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
         "pd_auc": f"{PD.population()['auc']:.3f}",
         "pd_p": PD.population()["p"],
         "cit5_cross": p["cit5_cross"],
+        "no_bib": p["no_bib"],
+        "n_man": p["n_man"],
         "cit5_total": p["cit5_total"],
         "cit10_cross": p["cit10_cross"],
         "cit10_total": p["cit10_total"],

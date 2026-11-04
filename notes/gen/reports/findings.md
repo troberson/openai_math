@@ -135,7 +135,7 @@ least one titled headline and **101** with none, and **17** titles that name a t
 
 **Citation overlap is discipline-local, so it cannot rank consequence.** "At the threshold where
 sharing is a research signal, it is not: 6 of 424 pairs at ≥5 shared titles cross a discipline
-boundary and 0 of 198 at ≥10" [S21:8-9]. The method is blind to **225** of 719 manuscripts, which
+boundary and 0 of 198 at ≥10" [S21:8-9]. The method is blind to **226** of 721 manuscripts, which
 carry an inline `thebibliography` and no `.bib` file [S22].
 
 **Intra-release citation edges exist and carry no direction.** **393** release-labelled bibliography
@@ -231,7 +231,7 @@ not survive a re-run.
 | S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 332 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/gen/reports/named-results.md`](named-results.md) | 348 | Headline environments read for named targets |
 | S21 | [`notes/gen/reports/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
-| S22 | [`notes/scripts/extract_citations.py`](../../scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
+| S22 | [`notes/scripts/extract_citations.py`](../../scripts/extract_citations.py) | 306 | The citation extractor and its coverage report |
 | S23 | [`notes/gen/reports/names.md`](names.md) | 269 | The six-layer name measurement and the subject/citation split |
 | S24 | [`notes/gen/reports/topics.md`](topics.md) | 327 | The curated topic vocabulary and its per-layer counts |
 | S25 | [`notes/gen/reports/subfinding-pairs.md`](subfinding-pairs.md) | 1626 | The abstract-clause to display-title pairing, 167 families |

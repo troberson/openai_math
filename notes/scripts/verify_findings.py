@@ -37,6 +37,7 @@ from pathlib import Path
 
 import extract_scope_notes as esn
 import extract_subfinding_pairs as ep
+import extract_citations as ec
 import measure_proof_density as mpd
 import compare_abstracts as ca
 import extract_named_results as enr
@@ -232,13 +233,15 @@ REPORTS = [
     ("measure_proof_density.py",
      f"proofs per manuscript    counterex_broad  n={mpd.population()['n']:3d} AUC={mpd.population()['auc']:.3f} p={mpd.population()['p']}",
      f"AUC **{mpd.population()['auc']:.3f}**, p **{mpd.population()['p']}**"),
-    ("extract_citations.py", "pairs sharing >=5 titles: 419  same-family 296  cross-discipline 6",
-     "6 of 419 pairs at ≥5 shared titles cross a discipline boundary"),
-    ("extract_citations.py", "pairs sharing >=10 titles: 197  same-family 173  cross-discipline 0",
-     "0 of 197 at ≥10"),
     ("extract_citations.py",
-     "listed manuscripts with no .bib: 225 of 719, of which 225 carry an inline thebibliography and 0 carry neither",
-     "blind to **225** of 719 manuscripts"),
+     f"pairs sharing >=5 titles: {ec.population()['pairs5_total']}  same-family {ec.population()['pairs5_samfam']}  cross-discipline {ec.population()['pairs5_cross']}",
+     f"{ec.population()['pairs5_cross']} of {ec.population()['pairs5_total']} pairs at ≥5 shared titles cross a discipline boundary"),
+    ("extract_citations.py",
+     f"pairs sharing >=10 titles: {ec.population()['pairs10_total']}  same-family {ec.population()['pairs10_samfam']}  cross-discipline {ec.population()['pairs10_cross']}",
+     f"{ec.population()['pairs10_cross']} of {ec.population()['pairs10_total']} at ≥10"),
+    ("extract_citations.py",
+     f"listed manuscripts with no .bib: {ec.population()['no_bib']} of {ec.population()['manuscripts']}",
+     f"blind to **{ec.population()['no_bib']}** of {ec.population()['manuscripts']} manuscripts"),
 ]
 
 
