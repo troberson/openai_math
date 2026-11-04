@@ -37,6 +37,7 @@ from pathlib import Path
 
 import extract_scope_notes as esn
 import extract_subfinding_pairs as ep
+import measure_proof_density as mpd
 import compare_abstracts as ca
 import extract_named_results as enr
 import extract_t0_chains as t0c
@@ -229,8 +230,8 @@ REPORTS = [
      (f"**{len(ep.population()['pop'])} families over "
       f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts**")),
     ("measure_proof_density.py",
-     "proofs per manuscript    counterex_broad  n= 74 AUC=0.356 p=1.22e-04",
-     "AUC **0.356**, p **1.22e-04**"),
+     f"proofs per manuscript    counterex_broad  n={mpd.population()['n']:3d} AUC={mpd.population()['auc']:.3f} p={mpd.population()['p']}",
+     f"AUC **{mpd.population()['auc']:.3f}**, p **{mpd.population()['p']}**"),
     ("extract_citations.py", "pairs sharing >=5 titles: 419  same-family 296  cross-discipline 6",
      "6 of 419 pairs at ≥5 shared titles cross a discipline boundary"),
     ("extract_citations.py", "pairs sharing >=10 titles: 197  same-family 173  cross-discipline 0",

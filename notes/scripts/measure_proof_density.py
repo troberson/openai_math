@@ -313,5 +313,20 @@ def main():
     return 0
 
 
+@functools.cache
+def population():
+    """Return the counterex_broad flag-contrast AUC/p values as a dict.
+
+    The checker's REPORTS row and the findings page derive their
+    needles from this function rather than from the subprocess stdout.
+    """
+    sources = read_tsv(SOURCES)
+    ledger = read_tsv(LEDGER)
+    fams = build_families(sources, ledger)
+    grp = {f for f, d in fams.items() if d.get("counterex_broad") == "1"}
+    res = compare(fams, "proofs_per_man", {"counterex_broad": grp})["counterex_broad"]
+    return {"n": res[2], "auc": round(res[0], 3), "p": f"{res[1]:.2e}"}
+
+
 if __name__ == "__main__":
     raise SystemExit(main())

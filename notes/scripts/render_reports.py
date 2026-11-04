@@ -3318,6 +3318,8 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
         "src_lines": p["src_lines"],
         "sf_fam": p["sf_fam"],
         "sf_man": p["sf_man"],
+        "pd_auc": f"{PD.population()['auc']:.3f}",
+        "pd_p": PD.population()["p"],
         "cit5_cross": p["cit5_cross"],
         "cit5_total": p["cit5_total"],
         "cit10_cross": p["cit10_cross"],

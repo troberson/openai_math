@@ -125,8 +125,8 @@ proxy at the tier level, (b) flat at 0.97 proofs per statement, and (c) silent o
 while tex KB per manuscript is **168.2 / 118.7 / 89.0**, and proofs per statement is
 **0.965 / 0.962 / 0.973** [S19]. The direction is opposite the naive reading — T0, the
 least-formalized tier, has the most proofs per manuscript because its manuscripts are the largest.
-The one shape contrast that clears the bar is inverse: `counterex_broad` at AUC **0.356**,
-p **1.22e-04** on proofs per manuscript [S19].
+The one shape contrast that clears the bar is inverse: `counterex_broad` at AUC **0.355**,
+p **1.11e-04** on proofs per manuscript [S19].
 
 **Named results are named in the manuscript far less often than in the blurb.** Over the 719 resolved
 main files: **2,410** headline environment begins, **1,609** of them titled, **271** families with at
@@ -228,7 +228,7 @@ not survive a re-run.
 | S16 | [`notes/gen/reports/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
 | S17 | [`notes/scripts/extract_scope_notes.py`](../../scripts/extract_scope_notes.py) | 107 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/gen/reports/proof-density.md`](proof-density.md) | 115 | The proof-density test, its bar, and its nulls |
-| S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 317 | The AUC and p re-derivation for every density figure |
+| S19 | [`notes/scripts/measure_proof_density.py`](../../scripts/measure_proof_density.py) | 332 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/gen/reports/named-results.md`](named-results.md) | 348 | Headline environments read for named targets |
 | S21 | [`notes/gen/reports/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
 | S22 | [`notes/scripts/extract_citations.py`](../../scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
