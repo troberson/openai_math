@@ -3288,8 +3288,17 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
     """label → full measured phrase, for notes/gen/reports/findings.md."""
     t, sh = p["tier"], p["shapes"]
     nt, ct = p["named_tier"], p["cx_tier"]
+    # Scope-exclusion quote numbers: the S5 block quote carries four figures
+    # that come from the scope-exclusions report; the writer measures them
+    # from scope_exclusions_population so the quote stays in sync.
+    _se = scope_exclusions_population()
     return {
         "src_lines": p["src_lines"],
+        "scope_excl": _se["excl"],
+        "scope_total": _se["both"],
+        "scope_quotes": _se["quotes"],
+        "scope_none": _se["none"],
+        "bib_cross": p["bib_cross"],
         "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
         "cov_frac": f"**{p['sum_fams']}** of {p['families']}",

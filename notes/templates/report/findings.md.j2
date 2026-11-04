@@ -115,8 +115,8 @@ and all 9 of those are T2 [S16]. Meanwhile the object-level T0 counterexample ch
 families over **34** manuscripts, and all 21 have no scope note, no challenge, no `main_results` entry
 and no trace [S11:551-556].
 
-**Scope notes bound the claims in prose, and rarely in vocabulary.** "121 of 242 sections state at
-least one exclusion, carrying 143 exclusion statements; 121 state none" [S5:27-28]. A phrase
+**Scope notes bound the claims in prose, and rarely in vocabulary.** "{{ p['scope_excl'] }} of {{ p['scope_total'] }} sections state at
+least one exclusion, carrying {{ p['scope_quotes'] }} exclusion statements; {{ p['scope_none'] }} state none" [S5:28-29]. A phrase
 search finds far less than reading does: the 5-phrase narrow list hits **5** of 242 and the 24-phrase
 broad list hits **44** [S17]. A clause saying an assumption is *not imposed* widens the formalized
 claim rather than bounding it, so the exclusion count is a reading result, not a keyword result.
@@ -144,7 +144,7 @@ carry an inline `thebibliography` and no `.bib` file [S22].
 
 **Intra-release citation edges exist and carry no direction.** **393** release-labelled bibliography
 entries resolve to {{ p['bib'] }}
-a family boundary [S13]. "The 104 cross-family citation edges are **not** typed" [S13:198] — the
+a family boundary [S13]. "The {{ p['bib_cross'] }} cross-family citation edges are **not** typed" [S13:198] — the
 release records no builds-on / contrasts-with / refutes relation, so an edge is a citation choice.
 
 **Names split into subjects and citations, and only subjects get a page.** **5,842** measured keys
