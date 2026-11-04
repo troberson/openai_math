@@ -3256,6 +3256,13 @@ def findings_population() -> dict[str, Any]:
         "S31": len((ROOT / "notes/gen/reports/conjecture-standing.md").read_text(encoding="utf-8", errors="replace").splitlines()),
     }
 
+    # Sub-finding pair figures: the page quotes the population yield from
+    # extract_subfinding_pairs; the writer measures them so the figure stays
+    # in sync with the extraction script.
+    _pp = ep.population()
+    sf_fam = len(_pp["pop"])
+    sf_man = sum(_pp["counts"][f] for f in _pp["pop"])
+
     return {
         "sum_fams": len(fams), "families": fams_n, "cols": cols,
         "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
@@ -3281,6 +3288,8 @@ def findings_population() -> dict[str, Any]:
         "bib_edges": bib_edges, "bib_fams": bib_fams, "bib_cross": bib_cross,
         "scope_configs": scope_configs,
         "src_lines": src_lines,
+        "sf_fam": sf_fam,
+        "sf_man": sf_man,
     }
 
 
@@ -3294,6 +3303,8 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
     _se = scope_exclusions_population()
     return {
         "src_lines": p["src_lines"],
+        "sf_fam": p["sf_fam"],
+        "sf_man": p["sf_man"],
         "scope_excl": _se["excl"],
         "scope_total": _se["both"],
         "scope_quotes": _se["quotes"],

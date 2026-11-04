@@ -192,8 +192,8 @@ been run, so the tiers are a prior-based ranking, not a finding about the releas
 Six counts in this repo's own beads were quoted before anyone wrote down the rule that yields them,
 and each one is now reproducible or recorded as not reproducible: the counterexample figures **74 /
 30**, which no stem variant of the quoted vocabulary reproduces and which the written phrase rule does
-[S7]; the sub-finding population **51**, which does not reproduce — the recorded rule yields **167**
-families over 514 manuscripts, and nine of the ten named densest families sit outside the probe's own
+[S7]; the sub-finding population **51**, which does not reproduce — the recorded rule yields **168
+families over 516 manuscripts**, and nine of the ten named densest families sit outside the probe's own
 40 [S25:32]; the "14 of 372 family titles in the `.bib` files" figure, which reproduces under a 6-token
 lowercased title prefix over 417 of 500 files while its conclusion (that the manuscripts do not cite
 each other) does not follow from it [S13]; the preprint root counts **717 / 5**, which the line-start
