@@ -188,8 +188,8 @@ def bump_num(t, pat, delta=1.0):
 COST_CASES = [
     ("Wall cell altered", "Wall cell for verify_findings.py",
      lambda t: shift_cost_cell(t, "verify_findings.py")),
-    ("Read cell altered", "Read cell for verify_findings.py",
-     lambda t: shift_read_cell(t, "verify_findings.py")),
+    ("Read cell altered", "Read cell for verify_scope_exclusions.py",
+     lambda t: shift_read_cell(t, "verify_scope_exclusions.py")),
     ("Cost row deleted", "is a checker row the Cost table does not carry",
      lambda t: delete_cost_row(t, "verify_findings.py")),
     ("check() count altered", "verify_named_results: the check() count is not 15",
