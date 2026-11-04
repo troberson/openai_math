@@ -171,7 +171,7 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
     for name, entries in l1.items():
         for entry in entries:
             for own in artifacts.get(name, ()):
-                if norm(entry) == norm(own) or norm(entry).startswith(norm(own)):
+                if norm(entry) == norm(own) or norm(entry).startswith(norm(own) + "/"):
                     p.append(f"L1 self-read: {name} names its own output {entry}")
             if not entry.endswith("/") and not (ROOT / entry).is_file():
                 p.append(f"L1 entry not on disk: {name} {entry}")
