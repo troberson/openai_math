@@ -3219,6 +3219,43 @@ def findings_population() -> dict[str, Any]:
     m = re.search(r"(\d+) distinct configs", scope_detail)
     scope_configs = int(m.group(1)) if m else 0
 
+
+    # Sources-table line counts: 31 files the page cites; the writer measures them
+    # so the page is always current and the next corpus growth moves no hand-typed number.
+    src_lines = {
+        "S1": len((ROOT / "notes/gen/tables/catalog.tsv").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S2": len((ROOT / "notes/scripts/build_catalog.py").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S3": len((ROOT / "overview.tex").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S4": len((ROOT / "lean/formalization.yaml").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S5": len((ROOT / "notes/gen/reports/scope-exclusions.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S6": len((ROOT / "notes/gen/reports/resolution-tag.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S7": len((ROOT / "notes/gen/reports/counterexample-tag.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S8": len((ROOT / "notes/gen/reports/conditional.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S9": len((ROOT / "notes/gen/reports/abstracts.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S10": len((ROOT / "notes/scripts/compare_abstracts.py").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S11": len((ROOT / "notes/gen/reports/t0-triage.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S12": len((ROOT / "notes/gen/reports/t0-chains.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S13": len((ROOT / "notes/gen/reports/links.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S14": len((ROOT / "notes/gen/reports/verification-dirs.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S15": len((ROOT / "README.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S16": len((ROOT / "notes/gen/reports/counterexample-crosscheck.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S17": len((ROOT / "notes/scripts/extract_scope_notes.py").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S18": len((ROOT / "notes/gen/reports/proof-density.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S19": len((ROOT / "notes/scripts/measure_proof_density.py").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S20": len((ROOT / "notes/gen/reports/named-results.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S21": len((ROOT / "notes/gen/reports/citations.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S22": len((ROOT / "notes/scripts/extract_citations.py").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S23": len((ROOT / "notes/gen/reports/names.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S24": len((ROOT / "notes/gen/reports/topics.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S25": len((ROOT / "notes/gen/reports/subfinding-pairs.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S26": len((ROOT / "notes/gen/reports/sources.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S27": len((ROOT / "notes/development/index-links.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S28": len((ROOT / "notes/gen/reports/dependency-drift.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S29": len((ROOT / "notes/gen/reports/formalization-deps.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S30": len((ROOT / "notes/data/conjecture-standing.tsv").read_text(encoding="utf-8", errors="replace").splitlines()),
+        "S31": len((ROOT / "notes/gen/reports/conjecture-standing.md").read_text(encoding="utf-8", errors="replace").splitlines()),
+    }
+
     return {
         "sum_fams": len(fams), "families": fams_n, "cols": cols,
         "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
@@ -3243,6 +3280,7 @@ def findings_population() -> dict[str, Any]:
         "standing": standing, "pins": pins, "patches": patches, "patch_lines": patch_lines,
         "bib_edges": bib_edges, "bib_fams": bib_fams, "bib_cross": bib_cross,
         "scope_configs": scope_configs,
+        "src_lines": src_lines,
     }
 
 
@@ -3251,6 +3289,7 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
     t, sh = p["tier"], p["shapes"]
     nt, ct = p["named_tier"], p["cx_tier"]
     return {
+        "src_lines": p["src_lines"],
         "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
         "cov_frac": f"**{p['sum_fams']}** of {p['families']}",
