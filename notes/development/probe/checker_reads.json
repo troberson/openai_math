@@ -21911,6 +21911,7 @@
   },
   "verify_script_ownership.py": {
     "l1": [
+      "README.md",
       "notes/README.md",
       "notes/data/conjecture-standing.tsv",
       "notes/data/proofs/072.md",
@@ -24030,7 +24031,7 @@
       "notes/templates/summaries/summary.md.j2",
       "notes/templates/topic.md.j2"
     ],
-    "keyable": true
+    "keyable": false
   },
   "verify_sources.py": {
     "l1": [
