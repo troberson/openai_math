@@ -138,7 +138,7 @@ ROWS = [
     # gate time by construction. The driver runs it after the render that sweeps the page to the
     # TSV this run produced. The probe stays a row: it lands the keyed check() record the
     # post-gate checker reads, and the render writes inside the tree the probe's key hashes.
-    ("measure_check_calls.py", ("pages",), ("check_calls",)),
+    ("measure_check_calls.py", ("pages", "quotes",), ("check_calls",)),
     ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages", "check_calls"), ()),
     ("verify_findings.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_findings.py -q", ("pages",), ()),
