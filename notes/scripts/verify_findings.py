@@ -107,6 +107,49 @@ def s25_figures():
             str(len(pop)), str(mss), "10"]
 
 
+@cache
+def s13_figures():
+    """The links counts the findings page quotes from the links record, measured from links.tsv.
+    The checker does not carry them: a carried figure goes stale the day the corpus grows.
+    """
+    rows = read_rows(ROOT / "notes/gen/tables/links.tsv")
+
+    def find(edge):
+        return next(r for r in rows if r["edge"] == edge)
+
+    bib = find("manuscript->corpus manuscript (bib href)")
+    s2c = find("scope note->comparator statement")
+    return [
+        bib["count"],
+        re.search(r"(\d+) resolved edges", bib["detail"]).group(1),
+        re.search(r"(\d+) cross-family", bib["detail"]).group(1),
+        s2c["count"],
+        re.search(r"(\d+) distinct configs", s2c["detail"]).group(1),
+    ]
+
+
+@cache
+def s26_figures():
+    """The sources counts the findings page quotes from the sources record, measured from sources.tsv.
+    The checker does not carry them: a carried figure goes stale the day a manuscript lands.
+    """
+    rows = read_rows(ROOT / "notes/gen/tables/sources.tsv")
+    roots = sum(int(r["roots"]) for r in rows)
+    proofs = sum(int(r["proofs"]) for r in rows)
+    return [f"{roots}", f"{len(list(PREPRINTS.iterdir()))}", f"{proofs:,}"]
+
+
+@cache
+def s28_figures():
+    """The dependency-drift patch-density figure the findings page quotes from the drift record,
+    measured from formalization-deps.tsv and the Lean tree. The checker does not carry it.
+    """
+    rows = read_rows(ROOT / "notes/gen/tables/formalization-deps.tsv")
+    total = sum(int(r["patch_lines"]) for r in rows if r["patch_lines"])
+    src_files = len(list((ROOT / "lean/OAI").rglob("*.lean")))
+    return [f"{total / src_files:.1f}"]
+
+
 # Counts the page takes from a record rather than re-measuring. Each must appear in that record.
 RECORD = {
     "S5": ["121 of 242 sections state at least one exclusion", "143 exclusion", "121 state none"],
@@ -120,7 +163,7 @@ RECORD = {
             "134 manuscripts", "93 families, 121 manuscripts", "21 families",
             "34 manuscripts", "the whole body of evidence"],
     "S12": s12_figures(),
-    "S13": ["393", "391", "156", "104", "417", "500", "14", "426", "416", "not** typed"],
+    "S13": ["156", "417", "500", "14", "not** typed", *s13_figures()],
     "S14": ["**30 dirs over 22 families**", "**12 of 30**", "**18 ship no README**",
             "finite-arithmetic certificate", "counts 4 `INPUTS.md`",
             "counts 2 `verification/COVERAGE.md`"],
@@ -131,9 +174,9 @@ RECORD = {
     "S23": ["5,842", "551", "5,291", "9,819", "232"],
     "S24": ["92", "978"],
     "S25": s25_figures(),
-    "S26": ["724", "719", "749", "20,341", "21,288", "21,203", "717", "5"],
+    "S26": ["719", "21,288", "21,203", "717", "5", *s26_figures()],
     "S27": ["1,033", "66,109"],
-    "S28": ["160,187", "734", "v4.34.1", "1.3"],
+    "S28": ["160,187", "734", "v4.34.1", *s28_figures()],
     "S29": ["277,607", "56,416", "278,523", "56,944", "122,458", "56,702"],
     "S31": ["139", "60", "64", "11", "42", "84", "13", "145",
             "the assistant's training-data prior, not a literature survey"],
