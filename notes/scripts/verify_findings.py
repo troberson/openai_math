@@ -196,6 +196,22 @@ def s23_figures():
     return [f"{len(names):,}", str(subject), f"{len(names) - subject:,}", f"{edges:,}"]
 
 @cache
+def s18_figures():
+    """The proof-density median values the findings page quotes from the S18 record.
+
+    Returns the individual tier medians as they appear in the record's table cells.
+    """
+    m = mpd.population()["medians"]
+    out = []
+    for label in ("proofs per manuscript", "proofs per statement", "tex KB per manuscript (size control)"):
+        places = 1 if "KB" in label else (3 if "statement" in label else 1)
+        for tier in ("T0", "T2", "T3"):
+            out.append(f"{m[label][tier]:.{places}f}")
+    out.append("No ledger column")
+    return out
+
+
+@cache
 def s21_figures():
     """The citations pair-threshold and no-.bib counts the findings page quotes
     from the citations record. The checker does not carry them.
@@ -222,7 +238,7 @@ RECORD = {
             "finite-arithmetic certificate", "counts 4 `INPUTS.md`",
             "counts 2 `verification/COVERAGE.md`"],
     "S16": ["**28**", "**19**", "**9**"],
-    "S18": ["30.0", "168.2", "0.965", "0.973", "No ledger column"],
+    "S18": [*s18_figures()],
     "S20": ["1,609", "271", "101", *s20_figures()],
     "S21": [*s21_figures()],
     "S23": ["232", *s23_figures()],

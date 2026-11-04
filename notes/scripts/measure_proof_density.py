@@ -315,7 +315,8 @@ def main():
 
 @functools.cache
 def population():
-    """Return the counterex_broad flag-contrast AUC/p values as a dict.
+    """Return the counterex_broad flag-contrast AUC/p values and the per-tier
+    medians as a dict.
 
     The checker's REPORTS row and the findings page derive their
     needles from this function rather than from the subprocess stdout.
@@ -325,7 +326,14 @@ def population():
     fams = build_families(sources, ledger)
     grp = {f for f, d in fams.items() if d.get("counterex_broad") == "1"}
     res = compare(fams, "proofs_per_man", {"counterex_broad": grp})["counterex_broad"]
-    return {"n": res[2], "auc": round(res[0], 3), "p": f"{res[1]:.2e}"}
+    med = {}
+    for key, label in SIGNALS:
+        vals = {}
+        for tier in ("T0", "T2", "T3"):
+            v = median([d[key] for d in fams.values() if d["tier"] == tier])
+            vals[tier] = v
+        med[label] = vals
+    return {"n": res[2], "auc": round(res[0], 3), "p": f"{res[1]:.2e}", "medians": med}
 
 
 if __name__ == "__main__":
