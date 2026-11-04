@@ -331,7 +331,7 @@ self-tests rows are report-only rows, not checker invocations:
 | `verify_subfinding_pairs.py` | `notes/gen/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 13 | 1.3 | 0 |
 | `verify_subfindings.py` | `notes/gen/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 6 | 0.1 | 0 |
 | `verify_summaries.py` | `notes/gen/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 337 | 73.9 | 0 |
-| `verify_proofs.py` | `notes/gen/proofs/` | — | — | — |
+| `verify_proofs.py` | `notes/gen/proofs/` | plain; the self-tests are in `notes/scripts/tests/test_proofs.py`, run by the `run_tests.py` row | 9 | 0.2 | 0 |
 | `verify_t0_chains.py` | `notes/gen/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 13 | 2.0 | 0 |
 | `verify_tsv_quoting.py` | `notes/gen/tables/*.tsv` — the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled | plain; the self-tests are in `notes/scripts/tests/test_tsv_quoting.py`, run by the `run_tests.py` row | 25 | 0 | 0 |
 | `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | — | 0.6 | 0.6 |

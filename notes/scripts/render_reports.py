@@ -2889,6 +2889,7 @@ COST_CHECKS = {
     "verify_index_design.py": "`notes/development/index-design.md`",
     "verify_named_conjectures.py": "`notes/gen/reports/named-conjectures.md`",
     "verify_named_results.py": "`notes/gen/reports/named-results.md`",
+    "verify_proofs.py": "`notes/gen/proofs/`",
     "verify_page_sync.py": "`notes/gen/reports/links.md`, `notes/gen/reports/names.md`, "
         "`notes/gen/reports/topics.md`, `notes/gen/reports/proof-density.md`, "
         "`notes/development/index-links.md` — the render diff for the five pages whose sync pass "
