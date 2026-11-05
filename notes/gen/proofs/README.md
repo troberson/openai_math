@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-105 per-family audits comparing a preprint's proof with its Lean formalization. The
+107 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -45,6 +45,8 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [137](./137.md) — One-tape time simulation in two-fifths-power space
 - [139](./139.md) — Subpolynomial queries for log-concave sampling
 - [140](./140.md) — Memory–sample lower bounds for noiseless Gaussian regression
+- [143](./143.md) — Uniform limit-cycle bounds in Hilbert's sixteenth problem
+- [148](./148.md) — The dimension formula for self-similar measures on the line
 - [155](./155.md) — A counterexample to periodic tiling in dimension three
 - [156](./156.md) — Borsuk's conjecture fails in dimension nine
 - [157](./157.md) — Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures
