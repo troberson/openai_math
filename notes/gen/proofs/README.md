@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-68 per-family audits comparing a preprint's proof with its Lean formalization. The
+75 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -13,6 +13,13 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 ## The pages
 
 - [072](./072.md) — Brennan's conjecture and a counterexample to Kraetzer's prediction
+- [073](./073.md) — The Falconer distance conjecture
+- [075](./075.md) — The $L\log L$ Fourier-convergence conjecture
+- [076](./076.md) — Ultraflat real Littlewood polynomials
+- [079](./079.md) — Local smoothing for the Euclidean wave equation
+- [081](./081.md) — The David–Semmes Riesz-transform problem in higher codimension
+- [082](./082.md) — Maximal and variational bounds for the triangular Hilbert transform
+- [085](./085.md) — Endpoint regularity of the planar centered maximal function
 - [087](./087.md) — The Mahler conjectures and symplectic width
 - [091](./091.md) — The logarithmic Brunn–Minkowski conjecture
 - [094](./094.md) — Subpolynomial dimension reduction in $L_p$
