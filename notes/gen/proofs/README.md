@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-98 per-family audits comparing a preprint's proof with its Lean formalization. The
+103 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -84,6 +84,11 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [236](./236.md) — The factor-of-IID threshold for free Ising states on trees
 - [237](./237.md) — The three-quarter diameter exponent for honeycomb walks
 - [238](./238.md) — Optimal logarithmic mixing of the Thorp shuffle
+- [240](./240.md) — Shelah's eventual categoricity conjecture
+- [241](./241.md) — Rigidity of the Turing degrees
+- [242](./242.md) — Single-fold Diophantine representations
+- [243](./243.md) — Choiceless counting does not capture polynomial time
+- [244](./244.md) — The partition principle does not imply choice
 - [288](./288.md) — Kadison's similarity conjecture
 - [290](./290.md) — Connes' bicentralizer conjecture and relative bicentralizers
 - [291](./291.md) — Toms–Winter and equivariant Jiang–Su stability
