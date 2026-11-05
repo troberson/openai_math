@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-83 per-family audits comparing a preprint's proof with its Lean formalization. The
+91 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -85,6 +85,14 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [237](./237.md) — The three-quarter diameter exponent for honeycomb walks
 - [238](./238.md) — Optimal logarithmic mixing of the Thorp shuffle
 - [288](./288.md) — Kadison's similarity conjecture
+- [322](./322.md) — Tingley's sphere-isometry problem
+- [324](./324.md) — Lipschitz equivalence without linear isomorphism
+- [325](./325.md) — The complete Crouzeix conjecture
+- [326](./326.md) — The cotype–cotype conjecture under the approximation property
+- [327](./327.md) — Markov type characterizes superreflexivity
+- [328](./328.md) — Fixed points of nonexpansive maps in reflexive Banach spaces
+- [329](./329.md) — A counterexample to Pietsch's metric-entropy duality conjecture
+- [331](./331.md) — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming
 - [334](./334.md) — A smooth surface metric with no local immersion in $\mathbb R^3$
 - [342](./342.md) — Donaldson's tamed-to-compatible conjecture
 - [347](./347.md) — Counterexamples to strong forms of Arnold's fixed-point conjecture
