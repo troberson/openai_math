@@ -541,7 +541,7 @@ excludes them with the script tree, so they are not scripts.
 | `notes/gen/reports/*.md` | **24** | **16** generated — the report-fed pages `render_reports.py` renders; **8** hand-written. **12** with a checker, **12** without. `math-faz.4` moved them here from the top level. |
 | `notes/gen/*.md` | **6** | generated — the six byte files the symlink move lands here; the six entry points that readers, the census and the registry key on (`notes/README.md`, `notes/scripts/README.md` and the four `notes/development/` pages) are git symlinks to them |
 | `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
-| `notes/` total, scripts excluded | **2,114** | — |
+| `notes/` total, scripts excluded | **2,113** | — |
 
 The generated TSVs are the **25** the writer set writes: the 9 named writer targets and the 16 tables
 `build_index.py` stages into `notes/gen/tables/`. The two hand-authored tables are:
