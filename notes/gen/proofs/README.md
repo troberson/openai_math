@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-103 per-family audits comparing a preprint's proof with its Lean formalization. The
+105 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -89,6 +89,8 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [242](./242.md) — Single-fold Diophantine representations
 - [243](./243.md) — Choiceless counting does not capture polynomial time
 - [244](./244.md) — The partition principle does not imply choice
+- [276](./276.md) — The classical capacity of generalized amplitude damping
+- [277](./277.md) — Threshold repetition for entangled games
 - [288](./288.md) — Kadison's similarity conjecture
 - [290](./290.md) — Connes' bicentralizer conjecture and relative bicentralizers
 - [291](./291.md) — Toms–Winter and equivariant Jiang–Su stability
