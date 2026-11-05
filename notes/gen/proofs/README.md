@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-75 per-family audits comparing a preprint's proof with its Lean formalization. The
+83 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -64,6 +64,14 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [184](./184.md) — Coloring and independence in graphs with forbidden subgraphs
 - [185](./185.md) — Counterexamples to infinite matroid intersection and packing/covering
 - [190](./190.md) — Polynomial removal fails for ordered binary matrices
+- [195](./195.md) — A counterexample to the small Cohen–Macaulay module conjecture
+- [196](./196.md) — A counterexample to Kaplansky's zero-divisor conjecture
+- [197](./197.md) — Nonsofic groups and group-ring counterexamples
+- [198](./198.md) — A counterexample to the little finitistic-dimension conjecture
+- [199](./199.md) — Counterexamples to conjectures of Auslander–Reiten, Tachikawa, and Nakayama
+- [205](./205.md) — Saxl's conjecture and universal tensor squares
+- [207](./207.md) — The $\ell^1$-Bass and complex Bass trace conjectures
+- [210](./210.md) — Foulkes’ conjecture for sixth powers and quadratic stabilization
 - [212](./212.md) — No bigeodesics and smooth limit shapes in planar first-passage percolation
 - [213](./213.md) — No infinite critical clusters on quasi-transitive graphs
 - [215](./215.md) — Massive continuum limits and exact mass asymptotics for planar $O(n)$ models
