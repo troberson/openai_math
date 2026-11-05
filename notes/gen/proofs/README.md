@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-91 per-family audits comparing a preprint's proof with its Lean formalization. The
+98 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -85,6 +85,13 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [237](./237.md) — The three-quarter diameter exponent for honeycomb walks
 - [238](./238.md) — Optimal logarithmic mixing of the Thorp shuffle
 - [288](./288.md) — Kadison's similarity conjecture
+- [290](./290.md) — Connes' bicentralizer conjecture and relative bicentralizers
+- [291](./291.md) — Toms–Winter and equivariant Jiang–Su stability
+- [293](./293.md) — A counterexample to the hyperinvariant-subspace problem
+- [294](./294.md) — A counterexample to Kaplansky's quasitrace conjecture
+- [296](./296.md) — The generator problem for finite factors
+- [299](./299.md) — The Kirchberg–Rø rdam character criterion
+- [301](./301.md) — Classification by trace cones after Razak–Jacelon stabilization
 - [322](./322.md) — Tingley's sphere-isometry problem
 - [324](./324.md) — Lipschitz equivalence without linear isomorphism
 - [325](./325.md) — The complete Crouzeix conjecture
