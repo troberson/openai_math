@@ -1,6 +1,6 @@
 # Proof-level faithfulness audits
 
-107 per-family audits comparing a preprint's proof with its Lean formalization. The
+114 per-family audits comparing a preprint's proof with its Lean formalization. The
 statement-level comparison is family-specific; the proof-level comparison follows the
 shared protocol in the data file [`README.md`](../../data/proofs/README.md) — the
 "lost in translation" failure modes, the seven extraction targets, the reparameterization
@@ -91,6 +91,13 @@ Each page is rendered by `build_proofs.py` from a hand-edited data file
 - [242](./242.md) — Single-fold Diophantine representations
 - [243](./243.md) — Choiceless counting does not capture polynomial time
 - [244](./244.md) — The partition principle does not imply choice
+- [248](./248.md) — Thompson's group $F$ is nonamenable
+- [250](./250.md) — The Boone–Higman conjecture and higher finiteness
+- [251](./251.md) — Amenability, unitarizability, and Ulam stability
+- [252](./252.md) — A non-residually-finite torsion-free hyperbolic group
+- [253](./253.md) — An infinite finitely presented simple amenable group
+- [254](./254.md) — Classifying spaces and geometric obstructions for Artin groups
+- [257](./257.md) — A hyperbolic group with no geometric CAT(0) action
 - [276](./276.md) — The classical capacity of generalized amplitude damping
 - [277](./277.md) — Threshold repetition for entangled games
 - [288](./288.md) — Kadison's similarity conjecture
