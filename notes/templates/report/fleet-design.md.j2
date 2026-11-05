@@ -104,7 +104,7 @@ Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14**
 opened its tracked target directly, so a crash mid-write left a half-written tracked file. Atomic
 promotion is now {{ p['atomic_sites_count'] }}, both in the package, and every writer's write goes through them —
 `catlib/tsv.py`'s four TSV writers, `catlib/promote.py`'s `promote()`, `build_index.py`'s page writer,
-`render_reports.py`'s 19 page writes, `build_report_templates.py` and
+`render_reports.py`'s 19 page writes and
 `compare_abstracts.py --tsv` — so the count stays small by construction: two primitives, and no writer
 carries its own move.
 
@@ -193,7 +193,7 @@ thirty records for its L1 exactness pass; the
 |---|---|---|
 | `build_sources.py` | `notes/gen/tables/.sources.tsv.tmp` (w) — the atomic sibling temp, not the tracked target | `notes/gen/tables/catalog.tsv` (r), written at row 1 — forward |
 | `extract_links.py` | `notes/gen/tables/.links.tsv.tmp` (w) — the atomic sibling temp | `notes/gen/tables/catalog.tsv` (r), written at row 1 — forward |
-| `render_reports.py` | 0 under `notes/`: 18 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,078 generated reads (6 `notes/gen/tables/*.tsv`, 18 `notes/gen/templates/report/*.j2`, 5 `notes/templates/*.j2`, 1,049 `notes/gen/index/**`) — all written earlier in the same pass |
+| `render_reports.py` | 0 under `notes/`: 18 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,082 generated reads (6 `notes/gen/tables/*.tsv`, 22 `notes/templates/report/*.j2`, 5 `notes/templates/*.j2`, 1,049 `notes/gen/index/**`) — all written earlier in the same pass |
 | `build_index.py` | 0 under `notes/`: 1,049 staged slots (w), promoted by `os.replace` | 7 generated reads (2 `notes/gen/tables/*.tsv`, 5 `notes/templates/*.j2`) — forward |
 | `check_index_links.py` | 0 — `math-o3a.3` removed its page write | 1,033 `notes/gen/index/**` pages and `notes/gen/tables/catalog.tsv` (r), written at row 3 — forward |
 | `measure_proof_density.py` | 0 — `math-o3a.3` removed its page write | `notes/gen/tables/catalog.tsv`, `notes/gen/tables/sources.tsv` (r) — forward |
