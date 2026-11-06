@@ -71,7 +71,9 @@ printf '%s\n' "Land the measured figures the gate run produced" "" \
   "table are the writer's bytes for this run, not the previous run's." > "$R/msg_pages.txt"
 step "commit the swept pages" git commit -F "$R/msg_pages.txt" notes/scripts/README.md \
   notes/development/fleet-design.md notes/development/index-design.md notes/gen/tables/gate-rows.tsv
-step "re-land the check() probe (the render moved the tree key)" python3 notes/scripts/measure_check_calls.py
+step "re-land the check() probe (the commit moved the tree key)" python3 notes/scripts/measure_check_calls.py
+step "re-render the pages from the fresh count" python3 notes/scripts/render_reports.py
+step "re-land the check() probe (the re-render moved the tree key)" python3 notes/scripts/measure_check_calls.py
 step "verify script ownership (post-render, so the page is swept)" python3 notes/scripts/verify_script_ownership.py
 step "verify cache promotion (expect problems 0)" python3 notes/scripts/verify_cache_promotion.py
 step "assert the gate ran inside the budget" python3 notes/scripts/check_gate_budget.py
