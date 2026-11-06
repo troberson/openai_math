@@ -130,6 +130,40 @@ protocol. This is the weakest form of "different valid argument" and has no math
 consequence — the theorem is the same, the proof is valid, only the presentation order
 differs.
 
+## Partial verdicts
+
+Ten of the 114 proof pages carry a **Partial** verdict — the Lean carrier
+proves a genuine sub-statement (zero sorry), but the manuscript's headline
+claim is strictly stronger, or the comparison is incomplete for a structural
+reason. These are the cases the protocol exists to surface: the formalization
+is correct and complete for what it states, and the stated statement is a
+proper subclaim of the preprint's headline theorem, or the comparator stub
+has not been resolved into a proved entry.
+
+The two most instructive cases, where the Lean proves a real sub-theorem
+that is *not* what the title advertises:
+
+- **Family 195** — The Lean carrier `candidate_ring_properties` proves the
+  candidate ring's structure (Noetherian, a domain, finite-dimensional over the
+  base field) but does **not** prove the "no small Cohen–Macaulay module" claim
+  that is the manuscript's headline. The Lean builds the object; it does not
+  prove the property the title advertises.
+- **Family 210** — The Lean carrier `canonical_foulkes_howe_surjective` proves
+  the averaged Foulkes–Howe surjectivity in the range $a \ge 2$,
+  $b \ge a(a{-}1)$. For the sixth-power case ($a = 6$) this gives
+  $b \ge 30$, not the manuscript's full $b \ge 6$. The scope note records the
+  gap verbatim: "the companion's full range $b \ge 6$ is not included."
+
+The remaining eight Partials (087, 140, 157, 174, 179, 185, 290, 301) are
+comparator-coverage gaps: the comparator stub is present but the `main_results`
+entry has not been resolved into a proved declaration under `lean/OAI/`, so the
+proof-level comparison cannot be completed.
+
+The full distribution over the 114 proof pages: **65 Match**, **10 Partial**,
+**11 Not formalized** (the Lean covers no part of the preprint's proof), and
+**28 statement-only** files that carry a sign audit or a statement-level
+comparison without a top-level verdict line.
+
 ## Scope
 
 This protocol applies to T3 families (those with a `main_results` entry resolving to a file
