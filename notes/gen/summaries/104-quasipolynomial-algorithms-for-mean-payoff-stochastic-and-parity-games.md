@@ -203,6 +203,10 @@ The surrounding directory carries 17 files with 265 theorems and 190 defs.
 
 The preprint states 60 theorem environments; the tree carries 4× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/104.md) — The preprint's main theorem is a deterministic algorithm:
+
 ## Coverage
 
 The ledger row `fam=104` [S18] records the tier and the counts: `tier=T3`,

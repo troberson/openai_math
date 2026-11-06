@@ -134,6 +134,10 @@ The surrounding directory is large: 73 files, 263 theorems, 55 defs.
 
 The preprint states 145 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/079.md) — Match. The manuscript's headline is the critical local smoothing estimate at p=3: for every ε > 0 there exists C_ε such that the L³ norm of the wave solution over ℝ³×[1,2] is bounded by C_ε times the L³ norm of the Bessel potential of order ε.
+
 ## Coverage
 
 T0: no Lean, no scope note, no comparator challenge, no reasoning

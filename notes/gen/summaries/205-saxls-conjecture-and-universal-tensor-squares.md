@@ -239,6 +239,10 @@ The surrounding directory carries 38 files with 65 theorems and 174 defs.
 
 The preprint states 42 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/205.md) — Match. The manuscript's headline is Saxl's conjecture: for every staircase partition, the tensor square of the corresponding irreducible representation of the symmetric group contains every irreducible representation.
+
 ## Sources
 
 | # | File | Lines | Role |

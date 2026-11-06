@@ -205,6 +205,10 @@ The directory is small (5 files, 4 theorems, 15 defs).
 
 The preprint states 71 theorem environments while the tree carries only 4 (0.06×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/350.md) — Match. The manuscript's headline is the sharp nodal length conjecture: for a closed connected smooth Riemannian surface, the nodal length of a Laplace eigenfunction is bounded by a sharp constant C(M,g) times the square root of the eigenvalue.
+
 ## Coverage
 
 The ledger row `fam=350` [S12] records the tier and the counts:

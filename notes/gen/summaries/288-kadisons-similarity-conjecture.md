@@ -130,6 +130,10 @@ in `sorry` at [S6:34]. No proved copy exists under `lean/OAI/`. The gap is the
 formalization itself: the release set the target and described the scope, but
 shipped no proof. The reading is of source text only.
 
+## Proof analysis
+
+[Proof analysis](../proofs/288.md) — Not formalized. The scope note claims that "The formalization proves this for arbitrary Hilbert spaces." Both comparators are `sorry` stubs with no `main_results` entries in `formalization.yaml` and no Lean file under `lean/OAI/`.
+
 ## Coverage
 
 The ledger row `fam=288` [S7] records the tier and the counts:

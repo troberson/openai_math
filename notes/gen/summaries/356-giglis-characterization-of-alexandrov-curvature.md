@@ -175,6 +175,10 @@ The surrounding directory is large: 542 files, 50 theorems, 219 defs.
 
 The preprint states 44 theorem environments; the tree carries 1× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/356.md) — Match. The manuscript's headline is the weak Hessian bound along every geodesic: on a full-support RCD(K,N) space, a bounded globally-Lipschitz F with a bounded weak Hessian in the distributional sense has its Hessian bounded along every geodesic.
+
 ## Coverage
 
 The ledger row `fam=356` [S9] records the tier and the counts:

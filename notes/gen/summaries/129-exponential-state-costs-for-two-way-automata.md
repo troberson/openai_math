@@ -185,6 +185,10 @@ The surrounding directory carries 26 files with 195 theorems and 64 defs.
 
 The preprint states 28 theorem environments; the tree carries 7× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/129.md) — Family 129 ships two preprints and three proven declarations. The complementation bound :
+
 ## Coverage
 
 The ledger row `fam=129` [S13] records: `tier=T3`, `paps=2`,

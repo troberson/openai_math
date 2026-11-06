@@ -181,6 +181,10 @@ The surrounding directory is large: 119 files, 108 theorems, 221 defs.
 
 The preprint states 54 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/359.md) — Match. The manuscript's headline is the existence of a contractible domain M in C^3 with a smooth complete Kahler metric g whose sectional curvature is pinched negative and which admits no bounded holomorphic coordinates.
+
 ## Coverage
 
 The ledger row `fam=359` [S9] records the tier and the counts:

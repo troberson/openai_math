@@ -168,6 +168,10 @@ The surrounding directory is large: 64 files, 705 theorems, 141 defs.
 
 The preprint states 15 theorem environments; the tree carries 47× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/148.md) — Match. The scope note states the formalized result.
+
 ## Coverage
 
 T3: the family is formally registered. The ledger row `fam=148` records

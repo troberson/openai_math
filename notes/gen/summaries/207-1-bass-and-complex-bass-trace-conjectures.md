@@ -261,6 +261,10 @@ The surrounding directory is large: 73 files, 76 theorems, 347 defs.
 
 The preprint states 40 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/207.md) — Match. The manuscript's headline is the complex Bass trace conjecture for every discrete group: the Hattori–Stallings trace of a finitely generated projective module over the complex group ring is supported on conjugacy classes of finite-order elements.
+
 ## Sources
 
 | # | File | Lines | Role |

@@ -202,6 +202,10 @@ The surrounding directory is large: 478 files, 8457 theorems, 5696 defs.
 
 The preprint states 103 theorem environments; the tree carries 82× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/102.md) — The preprint's main theorem:
+
 ## Sources
 
 | # | File | Lines | Role |

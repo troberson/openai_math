@@ -136,6 +136,10 @@ The surrounding directory is large: 60 files, 570 theorems, 176 defs.
 
 The preprint states 34 theorem environments; the tree carries 17× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/324.md) — Match. This family carries two manuscripts. The first proves that there is a separable real Banach space Z containing no closed linear subspace isomorphic to c0, and an onto bi-Lipschitz map from Z ⊕∞ c0 onto Z.
+
 ## Sources
 
 | # | File | Lines | Role |

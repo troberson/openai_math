@@ -185,6 +185,10 @@ The surrounding directory is large: 2461 files, 7196 theorems, 1394 defs.
 
 The preprint states 46 theorem environments; the tree carries 156× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/073.md) — Match. The manuscript's headline is the all-dimensional Falconer distance conjecture: for every integer $d \ge 2$ and compact $E \subset \mathbb{R}^d$ with $\dim_H E > d/2$, the distance set has positive Lebesgue measure.
+
 ## Coverage
 
 T3: one manuscript, one scope note, two comparator challenges, one

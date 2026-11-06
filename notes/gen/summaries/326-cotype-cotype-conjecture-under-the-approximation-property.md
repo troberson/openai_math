@@ -150,6 +150,10 @@ The surrounding directory is large: 125 files, 651 theorems, 182 defs.
 
 The preprint states 11 theorem environments; the tree carries 59× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/326.md) — Match. The manuscript's headline proves the cotype–cotype conjecture: a real Banach space with the approximation property that has nontrivial type has nontrivial cotype.
+
 ## Coverage
 
 The ledger row `fam=326` [S7] records the tier and the counts:

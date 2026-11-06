@@ -132,6 +132,10 @@ created a challenge stub, but did not produce a
 of source text only — no `lake` or `lean` run
 elaborates the proof.
 
+## Proof analysis
+
+[Proof analysis](../proofs/230.md) — Not formalized. The scope note claims that "The formalization proves" the positivity of the explicit gauge, but the sole comparator `SLELowerPositivity.lean` is a `sorry` stub with no `main_results` entry in `formalization.yaml`.
+
 ## Coverage
 
 The ledger row `fam=230` [S8] records the tier and the

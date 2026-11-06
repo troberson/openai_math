@@ -284,6 +284,10 @@ The directory is small (2 files, 3 theorems, 0 defs).
 
 The preprint states 327 theorem environments while the tree carries only 3 (0.01×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/227.md) — Partial (2 of 5). The scope note makes five claims over the high-temperature spectral gap , ratio cutoff , critical mixing bounds, covariance/Rayleigh estimates, and stretched-exponential barriers.
+
 ## Coverage
 
 The ledger row `fam=227` [S21] records the tier

@@ -245,6 +245,10 @@ The surrounding directory is large: 117 files, 748 theorems, 297 defs.
 
 The preprint states 185 theorem environments; the tree carries 4× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/215.md) — Match. The scope note states exponential decay of spin correlations for $n\ge 3$ at every temperature, with the infinite-volume limit and the $O(4)$ spectral-gap claim excluded.
+
 ## Sources
 
 | # | File | Lines | Role |

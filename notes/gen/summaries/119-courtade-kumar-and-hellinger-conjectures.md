@@ -239,6 +239,10 @@ The surrounding directory carries 41 files with 563 theorems and 88 defs.
 
 The preprint states 41 theorem environments; the tree carries 14× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/119.md) — The preprint's main theorem (sharp soft-channel contraction):
+
 ## Coverage
 
 The ledger row `fam=119` [S11] records: `tier=T3`, `paps=2`,

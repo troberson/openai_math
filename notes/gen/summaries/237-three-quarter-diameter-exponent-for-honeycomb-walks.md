@@ -152,6 +152,10 @@ The surrounding directory is large: 100 files, 329 theorems, 1375 defs.
 
 The preprint states 400 theorem environments while the tree carries only 329 (0.82×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/237.md) — Partial (1 of 4). The scope note makes four claims: bridge mass finiteness , free-energy existence , strip-crossing mass comparability, and chord mass comparability.
+
 ## Coverage
 
 The ledger row `fam=237` [S12] records the tier and the

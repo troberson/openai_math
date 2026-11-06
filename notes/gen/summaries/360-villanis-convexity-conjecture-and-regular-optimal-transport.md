@@ -181,6 +181,10 @@ The surrounding directory is large: 210 files, 647 theorems, 111 defs.
 
 The preprint states 55 theorem environments; the tree carries 12× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/360.md) — Match (2 of 2). The scope note states global $\mathcal{C}^2$-convexity under the weak MTW condition and uniform bi-H\"older transport.
+
 ## Coverage
 
 The ledger row `fam=360` [S11] records the tier and the counts:

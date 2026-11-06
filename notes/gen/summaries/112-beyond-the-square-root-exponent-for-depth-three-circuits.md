@@ -202,6 +202,10 @@ The surrounding directory is large: 179 files, 1191 theorems, 746 defs.
 
 The preprint states 7 theorem environments; the tree carries 170× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/112.md) — The preprint's main theorem:
+
 ## Coverage
 
 The ledger row `fam=112` [S14] records the tier and the counts: `tier=T3`,

@@ -174,6 +174,10 @@ The surrounding directory carries 42 files with 311 theorems and 69 defs.
 
 The preprint states 18 theorem environments; the tree carries 17× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/325.md) — Match. This family carries two manuscripts. The first states the complete Crouzeix inequality: for every pair of positive integers n, m, every bounded polynomial, and every n×n matrix A with spectrum in the unit disc, the operator norm of p(A) is bounded by 2 times the sup of |p(z)| over the disc.
+
 ## Sources
 
 | # | File | Lines | Role |

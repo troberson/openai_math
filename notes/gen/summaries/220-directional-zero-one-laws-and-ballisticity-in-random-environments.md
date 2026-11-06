@@ -180,6 +180,10 @@ The surrounding directory is large: 516 files, 275 theorems, 777 defs.
 
 The preprint states 74 theorem environments; the tree carries 4× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/220.md) — Match (3 of 3). All three comparators have `main_results` entries with OAI proofs (0 `sorry`). The scope note makes three claims: the zero-one law under strict ellipticity , ballisticity from transience , and the velocity hemisphere.
+
 ## Coverage
 
 The ledger row `fam=220` [S12] records the tier and the

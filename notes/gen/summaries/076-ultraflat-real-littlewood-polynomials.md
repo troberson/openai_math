@@ -295,6 +295,10 @@ The surrounding directory carries 27 files with 64 theorems and 78 defs.
 
 The preprint states 32 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/076.md) — Match. The manuscript's headline is the asymptotic bound: the minimum possible maximum modulus on the unit circle of a polynomial with N consecutive real coefficients in the set ±1 is (1+o(1))·sqrt(N).
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=076` records `paps 3`,

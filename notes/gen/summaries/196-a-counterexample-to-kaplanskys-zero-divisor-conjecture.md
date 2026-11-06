@@ -219,6 +219,10 @@ The surrounding directory is large: 124 files, 766 theorems, 1267 defs.
 
 The preprint states 12 theorem environments; the tree carries 64× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/196.md) — Match. The manuscript's headline is a counterexample to Kaplansky's zero-divisor conjecture: a finitely presented torsion-free group G for which F_2[G] has nonzero zero divisors, with a finite two-dimensional classifying space.
+
 ## Sources
 
 | # | File | Lines | Role |

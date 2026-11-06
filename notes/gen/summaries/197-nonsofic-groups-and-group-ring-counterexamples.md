@@ -267,6 +267,10 @@ The surrounding directory is large: 126 files, 58 theorems, 264 defs.
 
 The preprint states 60 theorem environments while the tree carries only 58 (0.97×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/197.md) — Match. The manuscript's headline is a counterexample to Kaplansky's direct-finiteness conjecture in characteristic two: a finite field K of characteristic 2, a finitely presented group G, and elements a, b in K[G] with ab=1 but ba != 1, with G nonsofic.
+
 ## Sources
 
 | # | File | Lines | Role |

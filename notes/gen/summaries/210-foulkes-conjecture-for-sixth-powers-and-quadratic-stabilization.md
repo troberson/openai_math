@@ -190,6 +190,10 @@ The surrounding directory is large: 77 files, 248 theorems, 74 defs.
 
 The preprint states 18 theorem environments; the tree carries 14× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/210.md) — Partial. The manuscript's headline is the sixth-symmetric-power case of Foulkes' conjecture: for every b ≥ 6 and every finite-dimensional complex V, there is a GL(V)-equivariant injection Sym^6(Sym^b V) into Sym^b(Sym^6 V).
+
 ## Sources
 
 | # | File | Lines | Role |

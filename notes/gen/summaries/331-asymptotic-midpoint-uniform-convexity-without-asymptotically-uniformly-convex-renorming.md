@@ -85,6 +85,10 @@ The surrounding directory carries 20 files with 301 theorems and 80 defs.
 
 The preprint states 187 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/331.md) — Match. The manuscript's headline is that the space X = J* (defined by the segment norm) is infinite dimensional, separable, and reflexive, has no equivalent AUC norm, and its given norm satisfies the asymptotic midpoint uniform convexity condition.
+
 ## Sources
 
 | # | File | Lines | Role |

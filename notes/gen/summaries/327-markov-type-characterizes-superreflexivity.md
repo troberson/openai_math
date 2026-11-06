@@ -171,6 +171,10 @@ The surrounding directory is large: 212 files, 1392 theorems, 390 defs.
 
 The preprint states 8 theorem environments; the tree carries 174× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/327.md) — Match. The manuscript's headline is that every real Banach space with Markov type p for some p > 1 is superreflexive.
+
 ## Coverage
 
 The ledger row `fam=327` [S7] records the tier and the counts:

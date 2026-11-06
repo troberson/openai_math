@@ -120,6 +120,10 @@ entry or an OAI proof. The reading is of source text
 only — no `lake` or `lean` run elaborates the
 proof.
 
+## Proof analysis
+
+[Proof analysis](../proofs/234.md) — Not formalized. The scope note claims that "The formalization proves" the pressure theorem, ground-state limit, and random-field variants. The sole comparator `InvariantIsing.lean` is a 496-line stub carrying 11 `sorry` occurrences, with no `main_results` entry in `formalization.yaml`.
+
 ## Coverage
 
 The ledger row `fam=234` [S6] records the tier and the

@@ -186,6 +186,10 @@ The directory is small (1 files, 183 theorems, 283 defs).
 
 The preprint states 7 theorem environments; the tree carries 26× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/091.md) — The preprint's main theorem:
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=091` records `paps 1`,

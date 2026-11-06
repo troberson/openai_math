@@ -220,6 +220,10 @@ The surrounding directory carries 48 files with 41 theorems and 199 defs.
 
 The preprint states 49 theorem environments while the tree carries only 41 (0.84×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/167.md) — Not formalized. Both comparator targets are `sorry` stubs with no Lean implementation.
+
 ## Sources
 
 | # | File | Lines | Role |

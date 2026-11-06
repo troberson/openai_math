@@ -189,6 +189,10 @@ The surrounding directory is large: 891 files, 4457 theorems, 747 defs.
 
 The preprint states 26 theorem environments; the tree carries 171× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/236.md) — Match. The scope note states the exact factor-of-IID threshold: the free zero-field Ising law on the $d$-regular tree is a factor of IID exactly when $\tanh\beta\le 1/\sqrt{d-1}$, with finitary coding and coding-radius bounds excluded. The manuscript's main theorem states this classification.
+
 ## Coverage
 
 The ledger row `fam=236` [S8] records

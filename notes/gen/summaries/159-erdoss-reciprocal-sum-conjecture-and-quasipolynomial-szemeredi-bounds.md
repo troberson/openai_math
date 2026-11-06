@@ -218,6 +218,10 @@ The manuscript ships as a 37-line `main.tex` with ten sections and a seven-file 
 
 Its README gives the release date "Date: September 23, 2026 [S3:5]".
 
+## Proof analysis
+
+[Proof analysis](../proofs/159.md) — Not formalized. The comparator is a `sorry` stub with no Lean implementation.
+
 ## Sources
 
 | # | File | Lines | Role |

@@ -221,6 +221,10 @@ The surrounding directory is large: 141 files, 434 theorems, 211 defs.
 
 The preprint states 88 theorem environments; the tree carries 5× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/212.md) — Partial (1 of 2). The scope note claims differentiability for "independent Gamma edge weights of every positive shape and rate," with the exponential model as a special case.
+
 ## Sources
 
 | # | File | Lines | Role |

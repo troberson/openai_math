@@ -149,6 +149,10 @@ The surrounding directory is large: 86 files, 528 theorems, 174 defs.
 
 The preprint states 13 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/328.md) — Match. The manuscript's headline is the nonexpansive fixed-point theorem for reflexive spaces: a nonexpansive map on a nonempty, norm closed, bounded, convex subset of a real reflexive Banach space has a fixed point.
+
 ## Coverage
 
 The ledger row `fam=328` [S7] records the tier and the counts:

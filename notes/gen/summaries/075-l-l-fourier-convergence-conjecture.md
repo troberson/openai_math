@@ -253,6 +253,10 @@ The surrounding directory is large: 155 files, 45 theorems, 642 defs.
 
 The preprint states 30 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/075.md) — Match. The manuscript's headline is a.e. Fourier convergence in the critical space L·log·L. The Lean carrier `paperMain` states the same: an L·log·L function on the circle has its Fourier series converging to the function almost everywhere. The hypothesis and conclusion match point for point.
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=075` records `paps 1`,

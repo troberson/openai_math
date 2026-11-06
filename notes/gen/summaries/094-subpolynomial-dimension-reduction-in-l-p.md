@@ -201,6 +201,10 @@ The surrounding directory carries 45 files with 5 theorems and 56 defs.
 
 The preprint states 7 theorem environments while the tree carries only 5 (0.71×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/094.md) — Match. The single comparator target is proven as a `main_results` entry.
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=094` records

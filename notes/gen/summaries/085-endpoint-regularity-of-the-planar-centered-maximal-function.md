@@ -243,6 +243,10 @@ The surrounding directory carries 39 files with 178 theorems and 223 defs.
 
 The preprint states 21 theorem environments; the tree carries 8× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/085.md) — Match. The manuscript's headline is the endpoint gradient bound: for every real-valued f in W^(1, 1)(R^2), the centered disk maximal operator Mf satisfies the gradient estimate, and Mf belongs to W^(1, 1)_loc with a globally integrable weak gradient.
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=085` records `paps 1`,

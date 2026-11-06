@@ -193,6 +193,10 @@ The surrounding directory is large: 582 files, 250 theorems, 903 defs.
 
 The preprint states 20 theorem environments; the tree carries 12× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/342.md) — Match. The manuscript's headline is Donaldson's tamed-to-compatible conjecture: if a smooth almost complex structure J on a closed connected smooth real four-manifold X is tamed by a symplectic form, then there is a smooth symplectic form compatible with J.
+
 ## Sources
 
 | # | File | Lines | Role |

@@ -243,6 +243,10 @@ The surrounding directory is large: 62 files, 370 theorems, 117 defs.
 
 The preprint states 35 theorem environments; the tree carries 11× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/162.md) — Not formalized. All three comparator targets are `sorry` stubs with no Lean implementation.
+
 ## Sources
 
 | # | File | Lines | Role |

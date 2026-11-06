@@ -172,6 +172,10 @@ The surrounding directory is large: 52 files, 366 theorems, 90 defs.
 
 The preprint states 9 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/329.md) — Match. The manuscript's headline is that for every a, b ≥ 1, there is a positive integer n and an origin-symmetric convex body K in R^n such that the covering number of K is strictly larger than the corresponding polar covering number bound raised to the b-th power.
+
 ## Coverage
 
 The ledger row `fam=329` [S7] records the tier and the counts:

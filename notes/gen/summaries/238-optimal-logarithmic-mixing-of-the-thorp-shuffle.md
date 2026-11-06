@@ -142,6 +142,10 @@ The surrounding directory is large: 174 files, 541 theorems, 2812 defs.
 
 The preprint states 396 theorem environments; the tree carries 1× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/238.md) — Partial (3 of 13). The scope note covers the first-reciprocal structure, the routing of a marked card, the weighted compatibility of the sweep structure, and the binary-sweep contraction.
+
 ## Coverage
 
 The ledger row `fam=238` [S14] records the tier and the counts:

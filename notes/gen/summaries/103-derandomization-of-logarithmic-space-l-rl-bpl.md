@@ -271,6 +271,10 @@ The surrounding directory carries 39 files with 104 theorems and 1483 defs.
 
 The preprint states 67 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/103.md) — The preprint's main theorem:
+
 ## Coverage
 
 The scope note [S10] states the formalization's scope and its one

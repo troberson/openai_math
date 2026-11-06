@@ -139,6 +139,10 @@ The surrounding directory is large: 67 files, 493 theorems, 120 defs.
 
 The preprint states 12 theorem environments; the tree carries 41× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/322.md) — Match. The manuscript's headline is Tingley's problem in the affirmative: every distance-preserving bijection of the unit sphere extends to a linear isometry of the ambient space.
+
 ## Coverage
 
 The ledger row `fam=322` [S7] records the tier and the counts:

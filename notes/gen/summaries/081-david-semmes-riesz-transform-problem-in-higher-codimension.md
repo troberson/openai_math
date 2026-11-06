@@ -204,6 +204,10 @@ The directory is small (4 files, 16 theorems, 0 defs).
 
 The preprint states 26 theorem environments while the tree carries only 16 (0.62×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/081.md) — Match. The manuscript's headline is: an n-Ahlfors–David regular Radon measure on ℝ^d is uniformly n-rectifiable if its Riesz transform is uniformly bounded in L², for d ≥ 4 and 2 ≤ n ≤ d−2.
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=081` records `paps 1`,

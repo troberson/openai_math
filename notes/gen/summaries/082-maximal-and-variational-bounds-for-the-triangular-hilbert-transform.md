@@ -218,6 +218,10 @@ The surrounding directory is large: 105 files, 130 theorems, 161 defs.
 
 The preprint states 57 theorem environments; the tree carries 2× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/082.md) — Match. The manuscript's headline is a uniform L3 x L3 x L3 estimate for the dyadic triangular Hilbert form: the sum of absolute local contributions over any finite set of scales is bounded by forty times the product of the input norms.
+
 ## Coverage
 
 T3: the family is formalized. The ledger row `fam=082` records `paps 3`,

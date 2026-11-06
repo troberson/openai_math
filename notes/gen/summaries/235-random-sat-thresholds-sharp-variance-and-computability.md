@@ -179,6 +179,10 @@ challenge stubs, but did not produce a
 is of source text only — no `lake` or `lean`
 run elaborates the proof.
 
+## Proof analysis
+
+[Proof analysis](../proofs/235.md) — Not formalized. The scope note claims that "The formalization proves" the limiting threshold, the variance bounds, and the computability of the 3-SAT threshold. All four comparators are `sorry` stubs with no `main_results` entries in `formalization.yaml`.
+
 ## Coverage
 
 The ledger row `fam=235` [S12] records the tier and

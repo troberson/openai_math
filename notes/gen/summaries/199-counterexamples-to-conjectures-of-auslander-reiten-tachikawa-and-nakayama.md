@@ -273,6 +273,10 @@ The surrounding directory is large: 732 files, 2032 theorems, 1328 defs.
 
 The preprint states 51 theorem environments; the tree carries 40× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/199.md) — Match. The manuscript's headline is Tachikawa's second conjecture disproved: a finite-dimensional symmetric algebra over k = F₂(q, H₁, H₂) with a finite-dimensional nonprojective module whose self-extension groups vanish in every positive degree.
+
 ## Sources
 
 | # | File | Lines | Role |

@@ -174,6 +174,10 @@ The surrounding directory carries 36 files with 258 theorems and 678 defs.
 
 The preprint states 27 theorem environments; the tree carries 10× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/361.md) — Match. The manuscript's headline is the counterexample: for every v in (4/9,1) and c in (1,9v/4), there is an integer k0 such that for every k >= k0, there is a complete smooth metric g_k on R^3, Euclidean near the origin, with Ricci >= 0, AVR = v, and the harmonic dimensions violating the comparison inequality.
+
 ## Coverage
 
 The ledger row `fam=361` [S10] records the tier and the counts:

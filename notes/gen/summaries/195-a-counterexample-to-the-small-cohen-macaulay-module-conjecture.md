@@ -235,6 +235,10 @@ The surrounding directory is large: 66 files, 171 theorems, 897 defs.
 
 The preprint states 8 theorem environments; the tree carries 21× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/195.md) — Partial. The manuscript's headline has two parts: (a) existence of a three-dimensional complete Noetherian normal local domain over C with residue field C, and (b) that domain has no nonzero finitely generated maximal Cohen-Macaulay module.
+
 ## Sources
 
 | # | File | Lines | Role |

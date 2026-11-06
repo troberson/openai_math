@@ -200,6 +200,10 @@ The surrounding directory carries 47 files with 8 theorems and 169 defs.
 
 The preprint states 38 theorem environments while the tree carries only 8 (0.21×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/072.md) — The preprint's critical-point-count argument uses the winding number of the gradient field $\nabla\ell$ on the boundary of each superlevel component:
+
 ## Sources
 
 | # | File | Lines | Role |

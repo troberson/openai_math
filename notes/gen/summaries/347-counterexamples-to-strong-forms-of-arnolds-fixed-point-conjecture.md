@@ -257,6 +257,10 @@ The surrounding directory carries 36 files with 42 theorems and 139 defs.
 
 The preprint states 52 theorem environments while the tree carries only 42 (0.81×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/347.md) — Match. The manuscript's headline is a smooth Hamiltonian diffeomorphism of the closed connected symplectic six-manifold Q^3 (the quadric threefold) with exactly 3 fixed points, fewer than the critical number Crit(Q^3) = 4.
+
 ## Sources
 
 | # | File | Lines | Role |

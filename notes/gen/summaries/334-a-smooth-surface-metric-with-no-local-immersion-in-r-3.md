@@ -258,6 +258,10 @@ The surrounding directory is large: 447 files, 2793 theorems, 671 defs.
 
 The preprint states 11 theorem environments; the tree carries 254× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/334.md) — Match. The scope note states the existence of a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into $\mathbb{R}^3$.
+
 ## Sources
 
 | # | File | Lines | Role |

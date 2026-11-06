@@ -200,6 +200,10 @@ The surrounding directory carries 50 files with 13 theorems and 88 defs.
 
 The preprint states 209 theorem environments while the tree carries only 13 (0.06×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/140.md) — Partial. 5 of 8 comparator targets are proven as `main_results` entries (7 declarations total); 3 comparators carry no entry.
+
 ## Coverage
 
 The ledger row `fam=140` [S12] records: `tier=T3`, `paps=6`,

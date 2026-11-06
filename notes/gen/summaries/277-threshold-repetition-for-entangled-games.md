@@ -153,6 +153,10 @@ The surrounding directory carries 30 files with 8 theorems and 131 defs.
 
 The preprint states 12 theorem environments while the tree carries only 8 (0.67×), indicating a focused sub-formalization (source-level).
 
+## Proof analysis
+
+[Proof analysis](../proofs/277.md) — Match. The scope note states the formalized result.
+
 ## Coverage
 
 The ledger row `fam=277` [S8] records the tier and the counts:

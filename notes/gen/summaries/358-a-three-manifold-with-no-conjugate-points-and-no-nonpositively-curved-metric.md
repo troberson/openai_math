@@ -153,6 +153,10 @@ The surrounding directory carries 19 files with 110 theorems and 398 defs.
 
 The preprint states 17 theorem environments; the tree carries 6× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/358.md) — Match. The manuscript's headline is the existence theorem: a closed connected orientable smooth three-manifold M with a smooth Riemannian metric without conjugate points, such that M admits no smooth Riemannian metric with sectional curvature everywhere at most zero.
+
 ## Coverage
 
 The ledger row `fam=358` [S8] records the tier and the counts:

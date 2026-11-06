@@ -240,6 +240,10 @@ The surrounding directory is large: 546 files, 1400 theorems, 1411 defs.
 
 The preprint states 16 theorem environments; the tree carries 88× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/198.md) — Match. The manuscript's headline is a finite-dimensional complex algebra whose finite-dimensional modules have unbounded finite projective dimensions, disproving the little finitistic-dimension conjecture.
+
 ## Sources
 
 | # | File | Lines | Role |

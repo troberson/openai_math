@@ -200,6 +200,10 @@ The surrounding directory carries 34 files with 683 theorems and 234 defs.
 
 The preprint states 35 theorem environments; the tree carries 20× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/213.md) — Partial (1 of 2). The scope note claims the $\mathbb{Z}^3$ result and claims the quasi-transitive generalization.
+
 ## Sources
 
 | # | File | Lines | Role |

@@ -179,6 +179,10 @@ The surrounding directory is large: 161 files, 568 theorems, 151 defs.
 
 The preprint states 42 theorem environments; the tree carries 14× as many (source-level count, not a proof-quality ratio).
 
+## Proof analysis
+
+[Proof analysis](../proofs/228.md) — Partial (2 of 3). The scope note makes three claims: the temperature singularity over a density interval , the fixed-density radial transition , and a common radial transition over a density interval.
+
 ## Coverage
 
 The ledger row `fam=228` [S12] records the tier
