@@ -35,6 +35,7 @@ from pathlib import Path
 import build_catalog as B
 import build_proofs
 from catlib import anchors
+from catlib.text import strip_markup
 from catlib.paths import PROOFS_DIR, ROOT, read_text
 from catlib.render import diff_problems
 from catlib.summaries import (
@@ -220,6 +221,18 @@ def provenance_pass(page: Page, data_text: str) -> tuple[int, int]:
                 if not lines[pos - 1].strip():
                     problems += 1
                     print(f"BLANK ENDPOINT seq {seq}: line {pos} of {path} is blank")
+                    continue
+            # Exact-text: the stored quote must appear in the source window, markup aside.
+            stored = p[5] if len(p) > 5 else ""
+            if stored:
+                source_window = " ".join(lines[si - 1 : ei])
+                if strip_markup(stored) not in strip_markup(source_window):
+                    problems += 1
+                    print(
+                        f"NOT VERBATIM seq {seq}: quote not in source window [{si},{ei}] of {path}\n"
+                        f"  stored:   {stored[:80]}{'...' if len(stored) > 80 else ''}\n"
+                        f"  source:   {source_window[:80]}{'...' if len(source_window) > 80 else ''}"
+                    )
     return specs, problems
 
 
