@@ -67,6 +67,45 @@ def disc_slug(discipline: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", discipline.lower()).strip("-")
 
 
+_PROOF_DIR = ROOT / "notes" / "data" / "proofs"
+
+
+def _proof_link(fam: str) -> str:
+    """Build the proof-analysis link slot for a family\u2019s summary page.
+
+    Reads the proof data file (if present), extracts the first prose paragraph,
+    strips source markers and quote tokens, and returns a one-line link with a
+    brief verdict discussion. Returns "" if no proof file exists for the family.
+    """
+    p = _PROOF_DIR / f"{fam}.md"
+    if not p.is_file():
+        return ""
+    text = p.read_text(encoding="utf-8", errors="replace")
+    if "<!-- family" not in text:
+        return ""
+    body = text.split("<!-- family", 1)[1]
+    body = body.split("-->", 1)[1] if "-->" in body else body
+    para = ""
+    for block in body.split("\n\n"):
+        s = block.strip()
+        if not s or s.startswith(("##", ">", "|", "<!--")):
+            continue
+        para = s
+        break
+    if not para:
+        return f"[Proof analysis](../proofs/{fam}.md)"
+    para = re.sub(r"\[S\d+:[^\]]+\]", "", para)
+    para = re.sub(r"\{\{\d+\}\}", "", para)
+    para = para.replace("**", "")
+    para = re.sub(r"\s+", " ", para).strip()
+    CAP = 320
+    if len(para) > CAP:
+        cut = para[:CAP]
+        i = cut.rfind(". ")
+        para = cut[: i + 1] if i > 60 else cut
+    return f"[Proof analysis](../proofs/{fam}.md) \u2014 {para}"
+
+
 def _parse_bibtex(path: str) -> list[dict[str, str]]:
     """Parse a .bib file into a list of {key, type, author, title, year} dicts."""
     p = REPO / path
@@ -655,6 +694,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         "history": resolved.get("history", ""),
         "consequences": resolved.get("consequences", ""),
         "section_skeleton": resolved.get("section_skeleton", ""),
+        "proof_link": _proof_link(fam),
         "formalized": resolved.get("formalized", ""),
         "coverage": resolved.get("coverage", ""),
         "sources_rows": "\n".join(src_rows),

@@ -387,6 +387,7 @@ L1: dict[str, tuple[str, ...]] = {
     # named here.
     # Probe record pending: the writer is new and the audit-hook probe has not been re-run over it.
     "build_summaries.py": ("README.md", "notes/data/summaries/",
+                           "notes/data/proofs/",
                            "notes/templates/summaries/summary.md.j2",
                            "notes/gen/tables/catalog.tsv"),
     # The proof renderer reads the data files, the skeleton, and README.md (through

@@ -71,6 +71,12 @@
 
 {{ p['formalized'] }}
 {% endif %}
+{% if p['proof_link'] %}
+
+## Proof analysis
+
+{{ p['proof_link'] }}
+{% endif %}
 {% if p['coverage'] %}
 
 ## Coverage
