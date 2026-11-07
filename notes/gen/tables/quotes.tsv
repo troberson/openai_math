@@ -2961,6 +2961,7 @@ notes/gen/summaries/211-geometry-diffusion-and-spectra-of-random-planar-maps.md	
 notes/gen/summaries/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md	212	1	block		0	0		
 notes/gen/summaries/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md	212	2	block		0	0		
 notes/gen/summaries/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md	212	3	inline		0	0		
+notes/gen/summaries/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md	212	4	inline		0	0		
 notes/gen/summaries/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md	213	1	block		0	0		
 notes/gen/summaries/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md	213	2	block		0	0		
 notes/gen/summaries/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md	213	3	inline		0	0		
@@ -3041,6 +3042,7 @@ notes/gen/summaries/230-exact-hausdorff-measure-for-sle.md	230	1	block	CONTENTS.
 notes/gen/summaries/230-exact-hausdorff-measure-for-sle.md	230	2	block		0	0		
 notes/gen/summaries/230-exact-hausdorff-measure-for-sle.md	230	3	block		0	0		
 notes/gen/summaries/230-exact-hausdorff-measure-for-sle.md	230	4	inline		0	0		
+notes/gen/summaries/230-exact-hausdorff-measure-for-sle.md	230	5	inline		0	0		
 notes/gen/summaries/231-free-uniform-spanning-forest-is-a-factor-of-iid.md	231	1	block	CONTENTS.md	0	0		
 notes/gen/summaries/231-free-uniform-spanning-forest-is-a-factor-of-iid.md	231	2	block		0	0		
 notes/gen/summaries/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md	232	1	block	CONTENTS.md	0	0		
@@ -3051,6 +3053,7 @@ notes/gen/summaries/233-joint-critical-ashkin-teller-scaling-limit.md	233	1	bloc
 notes/gen/summaries/233-joint-critical-ashkin-teller-scaling-limit.md	233	2	block		0	0		
 notes/gen/summaries/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md	234	1	block	CONTENTS.md	0	0		
 notes/gen/summaries/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md	234	2	block		0	0		
+notes/gen/summaries/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md	234	3	inline		0	0		
 notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	1	block	CONTENTS.md	0	0		
 notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	2	block		0	0		
 notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	3	block		0	0		
@@ -3058,6 +3061,7 @@ notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.m
 notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	5	block		0	0		
 notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	6	inline		0	0		
 notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	7	inline		0	0		
+notes/gen/summaries/235-random-sat-thresholds-sharp-variance-and-computability.md	235	8	inline		0	0		
 notes/gen/summaries/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md	236	1	block	CONTENTS.md	0	0		
 notes/gen/summaries/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md	236	2	block		0	0		
 notes/gen/summaries/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md	236	3	inline	lean/formalization.yaml	0	0		
@@ -3283,7 +3287,8 @@ notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	1	block	CONTENTS.m
 notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	2	block	overview.tex	0	0		
 notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	3	inline		0	0		
 notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	4	inline	lean/docs/288.md	9	9	The formalization proves	von Neumann algebras.
-notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	5	inline	notes/gen/tables/catalog.tsv	0	0		
+notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	5	inline		0	0		
+notes/gen/summaries/288-kadisons-similarity-conjecture.md	288	6	inline	notes/gen/tables/catalog.tsv	0	0		
 notes/gen/summaries/289-strong-kadison-kastler-conjecture.md	289	1	block	CONTENTS.md	0	0		
 notes/gen/summaries/289-strong-kadison-kastler-conjecture.md	289	2	block	overview.tex	0	0		
 notes/gen/summaries/289-strong-kadison-kastler-conjecture.md	289	3	block	preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/build/main.tex	0	0		
